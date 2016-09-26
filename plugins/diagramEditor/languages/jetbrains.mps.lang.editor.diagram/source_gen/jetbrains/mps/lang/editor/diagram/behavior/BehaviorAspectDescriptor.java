@@ -36,65 +36,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractDiagramCreation__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractDiagramCreation__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractFigureReference__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractFigureReference__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAttributedFigureReference__BehaviorDescriptor;
-          }
-          break;
+          return myAttributedFigureReference__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myCellModel_Diagram__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Diagram__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCellModel_DiagramConnector__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_DiagramConnector__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myCellModel_DiagramNode__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_DiagramNode__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myCellModel_DiagramPort__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_DiagramPort__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myDiagramConnectorCanCreateHandler__BehaviorDescriptor;
-          }
-          break;
+          return myDiagramConnectorCanCreateHandler__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myDiagramConnectorCreationHandler__BehaviorDescriptor;
-          }
-          break;
+          return myDiagramConnectorCreationHandler__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myDiagramElementCreationHandler__BehaviorDescriptor;
-          }
-          break;
+          return myDiagramElementCreationHandler__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myExternalFigureReference__BehaviorDescriptor;
-          }
-          break;
+          return myExternalFigureReference__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myFigureParameterMapping__BehaviorDescriptor;
-          }
-          break;
+          return myFigureParameterMapping__BehaviorDescriptor;
         default:
           // default 
       }

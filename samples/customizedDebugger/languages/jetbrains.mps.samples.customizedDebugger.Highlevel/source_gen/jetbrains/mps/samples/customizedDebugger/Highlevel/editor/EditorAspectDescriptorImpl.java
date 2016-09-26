@@ -21,20 +21,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Conversation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Conversation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Message_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Message_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Participant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Participant_Editor());
         default:
       }
     }

@@ -28,25 +28,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myConsoleModelExpression__BehaviorDescriptor;
-          }
-          break;
+          return myConsoleModelExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myInternalMode__BehaviorDescriptor;
-          }
-          break;
+          return myInternalMode__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myReloadClassesCommand__BehaviorDescriptor;
-          }
-          break;
+          return myReloadClassesCommand__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myShowRepositoryCommand__BehaviorDescriptor;
-          }
-          break;
+          return myShowRepositoryCommand__BehaviorDescriptor;
         default:
           // default 
       }

@@ -29,30 +29,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCurrentStockPrice__BehaviorDescriptor;
-          }
-          break;
+          return myCurrentStockPrice__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myMoneyLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myMoneyLiteral__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myMoneyType__BehaviorDescriptor;
-          }
-          break;
+          return myMoneyType__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myMovingAverage__BehaviorDescriptor;
-          }
-          break;
+          return myMovingAverage__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myStockSymbol__BehaviorDescriptor;
-          }
-          break;
+          return myStockSymbol__BehaviorDescriptor;
         default:
           // default 
       }

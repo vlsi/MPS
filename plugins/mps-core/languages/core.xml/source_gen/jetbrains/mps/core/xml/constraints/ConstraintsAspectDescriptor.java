@@ -22,90 +22,39 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new XmlAttribute_Constraints();
-          }
-          break;
+          return new XmlAttribute_Constraints();
         case 1:
-          if (true) {
-            return new XmlCDATA_Constraints();
-          }
-          break;
+          return new XmlCDATA_Constraints();
         case 2:
-          if (true) {
-            return new XmlCharRef_Constraints();
-          }
-          break;
+          return new XmlCharRef_Constraints();
         case 3:
-          if (true) {
-            return new XmlCharRefValue_Constraints();
-          }
-          break;
+          return new XmlCharRefValue_Constraints();
         case 4:
-          if (true) {
-            return new XmlCommentLine_Constraints();
-          }
-          break;
+          return new XmlCommentLine_Constraints();
         case 5:
-          if (true) {
-            return new XmlContent_Constraints();
-          }
-          break;
+          return new XmlContent_Constraints();
         case 6:
-          if (true) {
-            return new XmlDeclaration_Constraints();
-          }
-          break;
+          return new XmlDeclaration_Constraints();
         case 7:
-          if (true) {
-            return new XmlDoctypeDeclaration_Constraints();
-          }
-          break;
+          return new XmlDoctypeDeclaration_Constraints();
         case 8:
-          if (true) {
-            return new XmlElement_Constraints();
-          }
-          break;
+          return new XmlElement_Constraints();
         case 9:
-          if (true) {
-            return new XmlEntityRef_Constraints();
-          }
-          break;
+          return new XmlEntityRef_Constraints();
         case 10:
-          if (true) {
-            return new XmlEntityRefValue_Constraints();
-          }
-          break;
+          return new XmlEntityRefValue_Constraints();
         case 11:
-          if (true) {
-            return new XmlExternalId_Constraints();
-          }
-          break;
+          return new XmlExternalId_Constraints();
         case 12:
-          if (true) {
-            return new XmlProcessingInstruction_Constraints();
-          }
-          break;
+          return new XmlProcessingInstruction_Constraints();
         case 13:
-          if (true) {
-            return new XmlText_Constraints();
-          }
-          break;
+          return new XmlText_Constraints();
         case 14:
-          if (true) {
-            return new XmlTextValue_Constraints();
-          }
-          break;
+          return new XmlTextValue_Constraints();
         case 15:
-          if (true) {
-            return new XmlValuePart_Constraints();
-          }
-          break;
+          return new XmlValuePart_Constraints();
         case 16:
-          if (true) {
-            return new XmlWhitespace_Constraints();
-          }
-          break;
+          return new XmlWhitespace_Constraints();
         default:
           // default 
       }

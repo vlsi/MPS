@@ -22,40 +22,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ActionAsPattern_Constraints();
-          }
-          break;
+          return new ActionAsPattern_Constraints();
         case 1:
-          if (true) {
-            return new ActionStatement_Constraints();
-          }
-          break;
+          return new ActionStatement_Constraints();
         case 2:
-          if (true) {
-            return new LinkPatternVariableDeclaration_Constraints();
-          }
-          break;
+          return new LinkPatternVariableDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new OrPatternVariableReference_Constraints();
-          }
-          break;
+          return new OrPatternVariableReference_Constraints();
         case 4:
-          if (true) {
-            return new PatternVariableDeclaration_Constraints();
-          }
-          break;
+          return new PatternVariableDeclaration_Constraints();
         case 5:
-          if (true) {
-            return new PatternVariableReference_Constraints();
-          }
-          break;
+          return new PatternVariableReference_Constraints();
         case 6:
-          if (true) {
-            return new PropertyPatternVariableDeclaration_Constraints();
-          }
-          break;
+          return new PropertyPatternVariableDeclaration_Constraints();
         default:
           // default 
       }

@@ -29,50 +29,23 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Attribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Attribute_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseCommentAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseCommentAttribute_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseConcept_comment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseConcept_comment_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExportScopeModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExportScopeModule_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeAttribute_comment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeAttribute_comment_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
         default:
       }
     }
@@ -120,15 +93,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Attribute_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Attribute_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BaseConcept_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BaseConcept_TransformationMenu());
         default:
       }
     }
@@ -143,10 +110,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BaseConcept_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BaseConcept_SubstituteMenu());
         default:
       }
     }

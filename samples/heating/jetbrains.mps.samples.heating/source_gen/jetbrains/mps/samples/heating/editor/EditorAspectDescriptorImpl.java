@@ -24,50 +24,23 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Applicability_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Applicability_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ChangeEvent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ChangeEvent_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DailyPlanReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DailyPlanReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Slot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Slot_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SpecificDay_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SpecificDay_Editor());
         default:
       }
     }

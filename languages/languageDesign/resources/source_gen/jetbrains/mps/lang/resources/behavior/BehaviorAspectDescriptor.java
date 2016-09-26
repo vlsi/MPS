@@ -37,70 +37,31 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCircle__BehaviorDescriptor;
-          }
-          break;
+          return myCircle__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myColor__BehaviorDescriptor;
-          }
-          break;
+          return myColor__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myColorLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myColorLiteral__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myFileIcon__BehaviorDescriptor;
-          }
-          break;
+          return myFileIcon__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myIcon__BehaviorDescriptor;
-          }
-          break;
+          return myIcon__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myIconLayerDescription__BehaviorDescriptor;
-          }
-          break;
+          return myIconLayerDescription__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myImage__BehaviorDescriptor;
-          }
-          break;
+          return myImage__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myOldIconBundle__BehaviorDescriptor;
-          }
-          break;
+          return myOldIconBundle__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myOldIconReference__BehaviorDescriptor;
-          }
-          break;
+          return myOldIconReference__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myRect__BehaviorDescriptor;
-          }
-          break;
+          return myRect__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myResource__BehaviorDescriptor;
-          }
-          break;
+          return myResource__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myText__BehaviorDescriptor;
-          }
-          break;
+          return myText__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myTextIcon__BehaviorDescriptor;
-          }
-          break;
+          return myTextIcon__BehaviorDescriptor;
         default:
           // default 
       }

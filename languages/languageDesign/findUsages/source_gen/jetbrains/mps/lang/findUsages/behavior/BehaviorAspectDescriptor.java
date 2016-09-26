@@ -35,60 +35,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCategorizeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myCategorizeBlock__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myCheckCancelledStatusStatement__BehaviorDescriptor;
-          }
-          break;
+          return myCheckCancelledStatusStatement__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myExecuteFinderExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteFinderExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myFindBlock__BehaviorDescriptor;
-          }
-          break;
+          return myFindBlock__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myFinderDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myFinderDeclaration__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myIsApplicableBlock__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableBlock__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myIsUsedByDefault__BehaviorDescriptor;
-          }
-          break;
+          return myIsUsedByDefault__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myIsVisibleBlock__BehaviorDescriptor;
-          }
-          break;
+          return myIsVisibleBlock__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myNodeStatement__BehaviorDescriptor;
-          }
-          break;
+          return myNodeStatement__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myResultStatement__BehaviorDescriptor;
-          }
-          break;
+          return myResultStatement__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return mySearchedNodesBlock__BehaviorDescriptor;
-          }
-          break;
+          return mySearchedNodesBlock__BehaviorDescriptor;
         default:
           // default 
       }

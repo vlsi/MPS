@@ -21,25 +21,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Checkbox_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Checkbox_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckboxUI_Platform_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckboxUI_Platform_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckboxUI_Text_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckboxUI_Text_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubCellModel_Checkbox_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StubCellModel_Checkbox_Editor());
         default:
       }
     }

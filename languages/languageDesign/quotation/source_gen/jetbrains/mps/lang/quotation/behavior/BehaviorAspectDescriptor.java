@@ -33,50 +33,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractAntiquotation__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractAntiquotation__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAntiquotation__BehaviorDescriptor;
-          }
-          break;
+          return myAntiquotation__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myListAntiquotation__BehaviorDescriptor;
-          }
-          break;
+          return myListAntiquotation__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myNodeBuilder__BehaviorDescriptor;
-          }
-          break;
+          return myNodeBuilder__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myNodeBuilderInitLink__BehaviorDescriptor;
-          }
-          break;
+          return myNodeBuilderInitLink__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myNodeBuilderNode__BehaviorDescriptor;
-          }
-          break;
+          return myNodeBuilderNode__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myPropertyAntiquotation__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyAntiquotation__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myQuotation__BehaviorDescriptor;
-          }
-          break;
+          return myQuotation__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myReferenceAntiquotation__BehaviorDescriptor;
-          }
-          break;
+          return myReferenceAntiquotation__BehaviorDescriptor;
         default:
           // default 
       }

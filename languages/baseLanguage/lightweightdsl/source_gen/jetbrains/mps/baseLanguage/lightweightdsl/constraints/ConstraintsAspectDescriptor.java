@@ -22,35 +22,17 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CustomMemberDescriptor_Constraints();
-          }
-          break;
+          return new CustomMemberDescriptor_Constraints();
         case 1:
-          if (true) {
-            return new DSLDescriptor_Constraints();
-          }
-          break;
+          return new DSLDescriptor_Constraints();
         case 2:
-          if (true) {
-            return new MemberModifier_Constraints();
-          }
-          break;
+          return new MemberModifier_Constraints();
         case 3:
-          if (true) {
-            return new MethodInstance_Constraints();
-          }
-          break;
+          return new MethodInstance_Constraints();
         case 4:
-          if (true) {
-            return new MultipleModifier_Constraints();
-          }
-          break;
+          return new MultipleModifier_Constraints();
         case 5:
-          if (true) {
-            return new RequiredModifier_Constraints();
-          }
-          break;
+          return new RequiredModifier_Constraints();
         default:
           // default 
       }

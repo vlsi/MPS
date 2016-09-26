@@ -22,115 +22,49 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_Base_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_Base_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ContextVarRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ContextVarRef_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_CopyWithTrace_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_CopyWithTrace_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_CreateUniqueName_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_CreateUniqueName_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_DirtyNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_DirtyNode_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GenParameterRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GenParameterRef_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetCopiedOutputByInput_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetCopiedOutputByInput_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetExport_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetExport_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabel_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetPrevInputByLabel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetPrevInputByLabel_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_LinkPatternRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_LinkPatternRef_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_NodePatternRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_NodePatternRef_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ParameterRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ParameterRef_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_PropertyPatternRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_PropertyPatternRef_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_RegisterLabel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_RegisterLabel_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ShowMessageBase_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ShowMessageBase_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_UserObjectAccessBase_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_UserObjectAccessBase_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationContextOp_VarRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationContextOp_VarRef_Editor());
         default:
       }
     }
@@ -147,20 +81,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_Base_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_Base_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_ContextVarRef_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_ContextVarRef_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_generationContext_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_generationContext_SubstituteMenu());
         default:
       }
     }

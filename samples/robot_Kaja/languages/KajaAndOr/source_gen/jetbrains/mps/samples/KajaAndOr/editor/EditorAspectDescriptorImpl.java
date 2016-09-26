@@ -25,10 +25,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LogicalOperator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LogicalOperator_Editor());
         default:
       }
     }
@@ -45,15 +42,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new AndOrTransforms_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new AndOrTransforms_Contribution());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new AndOrTransforms_Looking_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new AndOrTransforms_Looking_Contribution());
         default:
       }
     }
@@ -91,10 +82,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new LogicalOperator_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new LogicalOperator_SubstituteMenu());
         default:
       }
     }

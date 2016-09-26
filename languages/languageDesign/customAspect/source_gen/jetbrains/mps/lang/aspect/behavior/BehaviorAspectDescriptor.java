@@ -28,25 +28,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myGenerationDescriptor_ByInterface__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationDescriptor_ByInterface__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myIAspectConcept__BehaviorDescriptor;
-          }
-          break;
+          return myIAspectConcept__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myLanguageAspectDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myLanguageAspectDescriptor__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return mySimpleLanguageAspectDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return mySimpleLanguageAspectDescriptor__BehaviorDescriptor;
         default:
           // default 
       }

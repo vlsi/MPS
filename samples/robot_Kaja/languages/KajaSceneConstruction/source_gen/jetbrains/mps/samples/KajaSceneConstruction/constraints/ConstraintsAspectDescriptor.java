@@ -22,10 +22,7 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AbstractBuilderCommand_Constraints();
-          }
-          break;
+          return new AbstractBuilderCommand_Constraints();
         default:
           // default 
       }

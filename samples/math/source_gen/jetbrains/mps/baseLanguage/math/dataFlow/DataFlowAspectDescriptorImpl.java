@@ -23,85 +23,37 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Determinant_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Determinant_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new DivExpressionFraction_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new DivExpressionFraction_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ExponentialOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ExponentialOperation_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LinearSolveOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LinearSolveOperation_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MathFuncExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MathFuncExpression_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MathSymbol_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MathSymbol_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MathSymbolFromToIndex_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MathSymbolFromToIndex_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndex_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndex_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndexReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndexReference_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatrixConstructor_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatrixConstructor_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatrixElementAccessExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatrixElementAccessExpression_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializer_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializer_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializerIndexReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializerIndexReference_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatrixNorm_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatrixNorm_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatrixZero_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatrixZero_DataFlow());
         case 15:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new VectorInitializer_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new VectorInitializer_DataFlow());
         default:
           // default 
       }

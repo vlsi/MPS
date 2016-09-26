@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myExternalViewFigure__BehaviorDescriptor;
-          }
-          break;
+          return myExternalViewFigure__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myExternalViewFigureParameter__BehaviorDescriptor;
-          }
-          break;
+          return myExternalViewFigureParameter__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myFigureAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myFigureAttribute__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myFigureParameter__BehaviorDescriptor;
-          }
-          break;
+          return myFigureParameter__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myFigureParameterAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myFigureParameterAttribute__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myFigureParameterAttributeField__BehaviorDescriptor;
-          }
-          break;
+          return myFigureParameterAttributeField__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myFigureParameterAttributeMethod__BehaviorDescriptor;
-          }
-          break;
+          return myFigureParameterAttributeMethod__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
-          }
-          break;
+          return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
         default:
           // default 
       }

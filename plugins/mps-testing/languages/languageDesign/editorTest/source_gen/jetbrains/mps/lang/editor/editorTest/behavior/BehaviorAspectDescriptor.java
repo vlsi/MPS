@@ -26,15 +26,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAttractsFocusBlock__BehaviorDescriptor;
-          }
-          break;
+          return myAttractsFocusBlock__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myReferenceAnnotataion__BehaviorDescriptor;
-          }
-          break;
+          return myReferenceAnnotataion__BehaviorDescriptor;
         default:
           // default 
       }

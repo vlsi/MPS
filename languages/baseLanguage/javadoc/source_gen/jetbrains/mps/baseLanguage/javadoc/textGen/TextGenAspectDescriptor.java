@@ -25,135 +25,57 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AuthorBlockDocTag_TextGen();
-          }
-          break;
+          return new AuthorBlockDocTag_TextGen();
         case 1:
-          if (true) {
-            return new BaseParameterReference_TextGen();
-          }
-          break;
+          return new BaseParameterReference_TextGen();
         case 2:
-          if (true) {
-            return new ClassifierDocComment_TextGen();
-          }
-          break;
+          return new ClassifierDocComment_TextGen();
         case 3:
-          if (true) {
-            return new ClassifierDocReference_TextGen();
-          }
-          break;
+          return new ClassifierDocReference_TextGen();
         case 4:
-          if (true) {
-            return new CodeInlineDocTag_TextGen();
-          }
-          break;
+          return new CodeInlineDocTag_TextGen();
         case 5:
-          if (true) {
-            return new CodeSnippet_TextGen();
-          }
-          break;
+          return new CodeSnippet_TextGen();
         case 6:
-          if (true) {
-            return new CommentLine_TextGen();
-          }
-          break;
+          return new CommentLine_TextGen();
         case 7:
-          if (true) {
-            return new DeprecatedBlockDocTag_TextGen();
-          }
-          break;
+          return new DeprecatedBlockDocTag_TextGen();
         case 8:
-          if (true) {
-            return new DocTypeParameterReference_TextGen();
-          }
-          break;
+          return new DocTypeParameterReference_TextGen();
         case 9:
-          if (true) {
-            return new FieldDocComment_TextGen();
-          }
-          break;
+          return new FieldDocComment_TextGen();
         case 10:
-          if (true) {
-            return new FieldDocReference_TextGen();
-          }
-          break;
+          return new FieldDocReference_TextGen();
         case 11:
-          if (true) {
-            return new HTMLElement_TextGen();
-          }
-          break;
+          return new HTMLElement_TextGen();
         case 12:
-          if (true) {
-            return new InheritDocInlineDocTag_TextGen();
-          }
-          break;
+          return new InheritDocInlineDocTag_TextGen();
         case 13:
-          if (true) {
-            return new InlineTagCommentLinePart_TextGen();
-          }
-          break;
+          return new InlineTagCommentLinePart_TextGen();
         case 14:
-          if (true) {
-            return new LinkInlineDocTag_TextGen();
-          }
-          break;
+          return new LinkInlineDocTag_TextGen();
         case 15:
-          if (true) {
-            return new MethodDocComment_TextGen();
-          }
-          break;
+          return new MethodDocComment_TextGen();
         case 16:
-          if (true) {
-            return new MethodDocReference_TextGen();
-          }
-          break;
+          return new MethodDocReference_TextGen();
         case 17:
-          if (true) {
-            return new ParameterBlockDocTag_TextGen();
-          }
-          break;
+          return new ParameterBlockDocTag_TextGen();
         case 18:
-          if (true) {
-            return new ReturnBlockDocTag_TextGen();
-          }
-          break;
+          return new ReturnBlockDocTag_TextGen();
         case 19:
-          if (true) {
-            return new SeeBlockDocTag_TextGen();
-          }
-          break;
+          return new SeeBlockDocTag_TextGen();
         case 20:
-          if (true) {
-            return new SinceBlockDocTag_TextGen();
-          }
-          break;
+          return new SinceBlockDocTag_TextGen();
         case 21:
-          if (true) {
-            return new StaticFieldDocReference_TextGen();
-          }
-          break;
+          return new StaticFieldDocReference_TextGen();
         case 22:
-          if (true) {
-            return new TextCommentLinePart_TextGen();
-          }
-          break;
+          return new TextCommentLinePart_TextGen();
         case 23:
-          if (true) {
-            return new ThrowsBlockDocTag_TextGen();
-          }
-          break;
+          return new ThrowsBlockDocTag_TextGen();
         case 24:
-          if (true) {
-            return new ValueInlineDocTag_TextGen();
-          }
-          break;
+          return new ValueInlineDocTag_TextGen();
         case 25:
-          if (true) {
-            return new VersionBlockDocTag_TextGen();
-          }
-          break;
+          return new VersionBlockDocTag_TextGen();
         default:
           // default 
       }

@@ -26,105 +26,45 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new XmlAttribute_TextGen();
-          }
-          break;
+          return new XmlAttribute_TextGen();
         case 1:
-          if (true) {
-            return new XmlCDATA_TextGen();
-          }
-          break;
+          return new XmlCDATA_TextGen();
         case 2:
-          if (true) {
-            return new XmlCharRef_TextGen();
-          }
-          break;
+          return new XmlCharRef_TextGen();
         case 3:
-          if (true) {
-            return new XmlCharRefValue_TextGen();
-          }
-          break;
+          return new XmlCharRefValue_TextGen();
         case 4:
-          if (true) {
-            return new XmlComment_TextGen();
-          }
-          break;
+          return new XmlComment_TextGen();
         case 5:
-          if (true) {
-            return new XmlCommentLine_TextGen();
-          }
-          break;
+          return new XmlCommentLine_TextGen();
         case 6:
-          if (true) {
-            return new XmlDeclaration_TextGen();
-          }
-          break;
+          return new XmlDeclaration_TextGen();
         case 7:
-          if (true) {
-            return new XmlDoctypeDeclaration_TextGen();
-          }
-          break;
+          return new XmlDoctypeDeclaration_TextGen();
         case 8:
-          if (true) {
-            return new XmlDocument_TextGen();
-          }
-          break;
+          return new XmlDocument_TextGen();
         case 9:
-          if (true) {
-            return new XmlElement_TextGen();
-          }
-          break;
+          return new XmlElement_TextGen();
         case 10:
-          if (true) {
-            return new XmlEntityRef_TextGen();
-          }
-          break;
+          return new XmlEntityRef_TextGen();
         case 11:
-          if (true) {
-            return new XmlEntityRefValue_TextGen();
-          }
-          break;
+          return new XmlEntityRefValue_TextGen();
         case 12:
-          if (true) {
-            return new XmlExternalId_TextGen();
-          }
-          break;
+          return new XmlExternalId_TextGen();
         case 13:
-          if (true) {
-            return new XmlFile_TextGen();
-          }
-          break;
+          return new XmlFile_TextGen();
         case 14:
-          if (true) {
-            return new XmlNoSpaceValue_TextGen();
-          }
-          break;
+          return new XmlNoSpaceValue_TextGen();
         case 15:
-          if (true) {
-            return new XmlProcessingInstruction_TextGen();
-          }
-          break;
+          return new XmlProcessingInstruction_TextGen();
         case 16:
-          if (true) {
-            return new XmlProlog_TextGen();
-          }
-          break;
+          return new XmlProlog_TextGen();
         case 17:
-          if (true) {
-            return new XmlText_TextGen();
-          }
-          break;
+          return new XmlText_TextGen();
         case 18:
-          if (true) {
-            return new XmlTextValue_TextGen();
-          }
-          break;
+          return new XmlTextValue_TextGen();
         case 19:
-          if (true) {
-            return new XmlWhitespace_TextGen();
-          }
-          break;
+          return new XmlWhitespace_TextGen();
         default:
           // default 
       }

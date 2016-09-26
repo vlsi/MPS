@@ -21,40 +21,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ABC_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ABC_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ABCDE_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ABCDE_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ABCDEF_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ABCDEF_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ABCDEG_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ABCDEG_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ABCEEG_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ABCEEG_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BAC_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BAC_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BCA_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BCA_Editor());
         default:
       }
     }

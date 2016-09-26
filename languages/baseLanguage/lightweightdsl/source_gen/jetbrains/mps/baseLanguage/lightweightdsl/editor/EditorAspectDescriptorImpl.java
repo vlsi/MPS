@@ -23,95 +23,41 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BooleanPropertyInstance_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BooleanPropertyInstance_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomMemberDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomMemberDescriptor_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DSLAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DSLAnnotation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DSLDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DSLDescriptor_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DependentTypeDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DependentTypeDescriptor_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DependentTypeInstance_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DependentTypeInstance_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmptyMemberDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmptyMemberDescriptor_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerateModifier_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerateModifier_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntegerPropertyInstance_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntegerPropertyInstance_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MemberPlaceholder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MemberPlaceholder_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MethodDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MethodDescriptor_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MethodInstance_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MethodInstance_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleModifier_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleModifier_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterDescriptor_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PlaceholderModifier_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PlaceholderModifier_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyDescriptor_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RequiredModifier_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RequiredModifier_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StringPropertyInstance_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StringPropertyInstance_Editor());
         default:
       }
     }
@@ -147,40 +93,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ClassLikeMembers_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ClassLikeMembers_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new DependentTypeInstance_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new DependentTypeInstance_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new GenerateModifier_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new GenerateModifier_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MemberModifier_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MemberModifier_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MemberPlaceholder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MemberPlaceholder_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MethodInstance_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MethodInstance_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PropertyInstance_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PropertyInstance_SubstituteMenu());
         default:
       }
     }

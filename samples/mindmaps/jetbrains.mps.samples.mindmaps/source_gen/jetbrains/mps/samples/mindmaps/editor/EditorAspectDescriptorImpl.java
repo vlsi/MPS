@@ -26,30 +26,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MindMap_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MindMap_diagram_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Relationship_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Relationship_diagram_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Specializes_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Specializes_diagram_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Thought_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Thought_diagram_Editor());
         default:
       }
     }

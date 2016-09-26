@@ -22,75 +22,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
         default:
       }
     }
@@ -107,20 +65,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_InternalReferenceHolder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_InternalReferenceHolder_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_PropertyDescriptor_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_PropertyDescriptor_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_ReferenceDescriptor_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_ReferenceDescriptor_SubstituteMenu());
         default:
       }
     }

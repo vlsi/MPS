@@ -29,30 +29,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractStateMachineElement__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractStateMachineElement__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myHierarchycalTable__BehaviorDescriptor;
-          }
-          break;
+          return myHierarchycalTable__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myLightWeightDecisionTable__BehaviorDescriptor;
-          }
-          break;
+          return myLightWeightDecisionTable__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myStateMachine__BehaviorDescriptor;
-          }
-          break;
+          return myStateMachine__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myTable__BehaviorDescriptor;
-          }
-          break;
+          return myTable__BehaviorDescriptor;
         default:
           // default 
       }

@@ -22,55 +22,25 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new LiteralReplacement_Constraints();
-          }
-          break;
+          return new LiteralReplacement_Constraints();
         case 1:
-          if (true) {
-            return new MatchRegexpOperation_Constraints();
-          }
-          break;
+          return new MatchRegexpOperation_Constraints();
         case 2:
-          if (true) {
-            return new MatchVariableReference_Constraints();
-          }
-          break;
+          return new MatchVariableReference_Constraints();
         case 3:
-          if (true) {
-            return new MatchVariableReferenceRegexp_Constraints();
-          }
-          break;
+          return new MatchVariableReferenceRegexp_Constraints();
         case 4:
-          if (true) {
-            return new MatchVariableReferenceReplacement_Constraints();
-          }
-          break;
+          return new MatchVariableReferenceReplacement_Constraints();
         case 5:
-          if (true) {
-            return new PredefinedSymbolClassDeclaration_Constraints();
-          }
-          break;
+          return new PredefinedSymbolClassDeclaration_Constraints();
         case 6:
-          if (true) {
-            return new RegexpDeclaration_Constraints();
-          }
-          break;
+          return new RegexpDeclaration_Constraints();
         case 7:
-          if (true) {
-            return new ReplaceRegexpOperation_Constraints();
-          }
-          break;
+          return new ReplaceRegexpOperation_Constraints();
         case 8:
-          if (true) {
-            return new ReplaceWithRegexpOperation_Constraints();
-          }
-          break;
+          return new ReplaceWithRegexpOperation_Constraints();
         case 9:
-          if (true) {
-            return new StringLiteralRegexp_Constraints();
-          }
-          break;
+          return new StringLiteralRegexp_Constraints();
         default:
           // default 
       }

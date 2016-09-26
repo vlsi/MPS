@@ -22,25 +22,13 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new NamedTupleComponentAccessOperation_Constraints();
-          }
-          break;
+          return new NamedTupleComponentAccessOperation_Constraints();
         case 1:
-          if (true) {
-            return new NamedTupleComponentDeclaration_Constraints();
-          }
-          break;
+          return new NamedTupleComponentDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new NamedTupleComponentReference_Constraints();
-          }
-          break;
+          return new NamedTupleComponentReference_Constraints();
         case 3:
-          if (true) {
-            return new NamedTupleType_Constraints();
-          }
-          break;
+          return new NamedTupleType_Constraints();
         default:
           // default 
       }

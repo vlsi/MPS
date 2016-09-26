@@ -22,75 +22,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Circle_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Circle_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ColorLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ColorLiteral_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptIconResourceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptIconResourceExpression_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FileIcon_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FileIcon_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IconExpression_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IconResourceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IconResourceExpression_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Image_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Image_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeIconResourceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeIconResourceExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OldIconBundle_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OldIconBundle_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OldIconDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OldIconDeclaration_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OldIconReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OldIconReference_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Rect_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Rect_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Text_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Text_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextIcon_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextIcon_Editor());
         default:
       }
     }
@@ -107,10 +65,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new IconResourceReference_subs_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new IconResourceReference_subs_Contribution());
         default:
       }
     }

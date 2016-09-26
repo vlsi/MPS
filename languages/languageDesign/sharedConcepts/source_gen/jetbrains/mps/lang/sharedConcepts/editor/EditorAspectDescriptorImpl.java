@@ -24,35 +24,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_operationContext_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_operationContext_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_progressMonitor_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_progressMonitor_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_scope_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_scope_SubstituteMenu());
         default:
       }
     }

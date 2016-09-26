@@ -26,15 +26,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myNullSafeDotExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNullSafeDotExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myNullUnsafeDotExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNullUnsafeDotExpression__BehaviorDescriptor;
         default:
           // default 
       }

@@ -22,285 +22,117 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AdditionalForLoopVariable_Constraints();
-          }
-          break;
+          return new AdditionalForLoopVariable_Constraints();
         case 1:
-          if (true) {
-            return new Annotation_Constraints();
-          }
-          break;
+          return new Annotation_Constraints();
         case 2:
-          if (true) {
-            return new AnnotationInstance_Constraints();
-          }
-          break;
+          return new AnnotationInstance_Constraints();
         case 3:
-          if (true) {
-            return new AnnotationInstanceValue_Constraints();
-          }
-          break;
+          return new AnnotationInstanceValue_Constraints();
         case 4:
-          if (true) {
-            return new AnnotationMethodDeclaration_Constraints();
-          }
-          break;
+          return new AnnotationMethodDeclaration_Constraints();
         case 5:
-          if (true) {
-            return new AnonymousClass_Constraints();
-          }
-          break;
+          return new AnonymousClass_Constraints();
         case 6:
-          if (true) {
-            return new ArrayCloneOperation_Constraints();
-          }
-          break;
+          return new ArrayCloneOperation_Constraints();
         case 7:
-          if (true) {
-            return new ArrayLengthOperation_Constraints();
-          }
-          break;
+          return new ArrayLengthOperation_Constraints();
         case 8:
-          if (true) {
-            return new ArrayLiteral_Constraints();
-          }
-          break;
+          return new ArrayLiteral_Constraints();
         case 9:
-          if (true) {
-            return new BaseMethodDeclaration_Constraints();
-          }
-          break;
+          return new BaseMethodDeclaration_Constraints();
         case 10:
-          if (true) {
-            return new BaseStringOperation_Constraints();
-          }
-          break;
+          return new BaseStringOperation_Constraints();
         case 11:
-          if (true) {
-            return new BaseVariableDeclaration_Constraints();
-          }
-          break;
+          return new BaseVariableDeclaration_Constraints();
         case 12:
-          if (true) {
-            return new ClassConcept_Constraints();
-          }
-          break;
+          return new ClassConcept_Constraints();
         case 13:
-          if (true) {
-            return new ClassCreator_Constraints();
-          }
-          break;
+          return new ClassCreator_Constraints();
         case 14:
-          if (true) {
-            return new Classifier_Constraints();
-          }
-          break;
+          return new Classifier_Constraints();
         case 15:
-          if (true) {
-            return new ClassifierClassExpression_Constraints();
-          }
-          break;
+          return new ClassifierClassExpression_Constraints();
         case 16:
-          if (true) {
-            return new ClassifierMember_Constraints();
-          }
-          break;
+          return new ClassifierMember_Constraints();
         case 17:
-          if (true) {
-            return new ClassifierType_Constraints();
-          }
-          break;
+          return new ClassifierType_Constraints();
         case 18:
-          if (true) {
-            return new ClosureParameterReference_Constraints();
-          }
-          break;
+          return new ClosureParameterReference_Constraints();
         case 19:
-          if (true) {
-            return new ConstructorDeclaration_Constraints();
-          }
-          break;
+          return new ConstructorDeclaration_Constraints();
         case 20:
-          if (true) {
-            return new DefaultClassCreator_Constraints();
-          }
-          break;
+          return new DefaultClassCreator_Constraints();
         case 21:
-          if (true) {
-            return new EnumConstantDeclaration_Constraints();
-          }
-          break;
+          return new EnumConstantDeclaration_Constraints();
         case 22:
-          if (true) {
-            return new EnumConstantReference_Constraints();
-          }
-          break;
+          return new EnumConstantReference_Constraints();
         case 23:
-          if (true) {
-            return new EnumValueOfExpression_Constraints();
-          }
-          break;
+          return new EnumValueOfExpression_Constraints();
         case 24:
-          if (true) {
-            return new EnumValuesExpression_Constraints();
-          }
-          break;
+          return new EnumValuesExpression_Constraints();
         case 25:
-          if (true) {
-            return new FieldReferenceOperation_Constraints();
-          }
-          break;
+          return new FieldReferenceOperation_Constraints();
         case 26:
-          if (true) {
-            return new IOperation_Constraints();
-          }
-          break;
+          return new IOperation_Constraints();
         case 27:
-          if (true) {
-            return new IValidIdentifier_Constraints();
-          }
-          break;
+          return new IValidIdentifier_Constraints();
         case 28:
-          if (true) {
-            return new ImplicitAnnotationInstanceValue_Constraints();
-          }
-          break;
+          return new ImplicitAnnotationInstanceValue_Constraints();
         case 29:
-          if (true) {
-            return new InstanceMethodCallOperation_Constraints();
-          }
-          break;
+          return new InstanceMethodCallOperation_Constraints();
         case 30:
-          if (true) {
-            return new InstanceMethodDeclaration_Constraints();
-          }
-          break;
+          return new InstanceMethodDeclaration_Constraints();
         case 31:
-          if (true) {
-            return new Interface_Constraints();
-          }
-          break;
+          return new Interface_Constraints();
         case 32:
-          if (true) {
-            return new LocalInstanceFieldReference_Constraints();
-          }
-          break;
+          return new LocalInstanceFieldReference_Constraints();
         case 33:
-          if (true) {
-            return new LocalInstanceMethodCall_Constraints();
-          }
-          break;
+          return new LocalInstanceMethodCall_Constraints();
         case 34:
-          if (true) {
-            return new LocalMethodCall_Constraints();
-          }
-          break;
+          return new LocalMethodCall_Constraints();
         case 35:
-          if (true) {
-            return new LocalPropertyReference_Constraints();
-          }
-          break;
+          return new LocalPropertyReference_Constraints();
         case 36:
-          if (true) {
-            return new LocalStaticFieldReference_Constraints();
-          }
-          break;
+          return new LocalStaticFieldReference_Constraints();
         case 37:
-          if (true) {
-            return new LocalStaticMethodCall_Constraints();
-          }
-          break;
+          return new LocalStaticMethodCall_Constraints();
         case 38:
-          if (true) {
-            return new LocalVariableDeclaration_Constraints();
-          }
-          break;
+          return new LocalVariableDeclaration_Constraints();
         case 39:
-          if (true) {
-            return new LocalVariableReference_Constraints();
-          }
-          break;
+          return new LocalVariableReference_Constraints();
         case 40:
-          if (true) {
-            return new LoopLabelReference_Constraints();
-          }
-          break;
+          return new LoopLabelReference_Constraints();
         case 41:
-          if (true) {
-            return new NestedNewExpression_Constraints();
-          }
-          break;
+          return new NestedNewExpression_Constraints();
         case 42:
-          if (true) {
-            return new ParameterReference_Constraints();
-          }
-          break;
+          return new ParameterReference_Constraints();
         case 43:
-          if (true) {
-            return new Property_Constraints();
-          }
-          break;
+          return new Property_Constraints();
         case 44:
-          if (true) {
-            return new PropertyReference_Constraints();
-          }
-          break;
+          return new PropertyReference_Constraints();
         case 45:
-          if (true) {
-            return new PropertyValueReference_Constraints();
-          }
-          break;
+          return new PropertyValueReference_Constraints();
         case 46:
-          if (true) {
-            return new QualifiedSuperMethodCall_Constraints();
-          }
-          break;
+          return new QualifiedSuperMethodCall_Constraints();
         case 47:
-          if (true) {
-            return new StaticFieldDeclaration_Constraints();
-          }
-          break;
+          return new StaticFieldDeclaration_Constraints();
         case 48:
-          if (true) {
-            return new StaticFieldReference_Constraints();
-          }
-          break;
+          return new StaticFieldReference_Constraints();
         case 49:
-          if (true) {
-            return new StaticMethodCall_Constraints();
-          }
-          break;
+          return new StaticMethodCall_Constraints();
         case 50:
-          if (true) {
-            return new SuperConstructorInvocation_Constraints();
-          }
-          break;
+          return new SuperConstructorInvocation_Constraints();
         case 51:
-          if (true) {
-            return new SuperMethodCall_Constraints();
-          }
-          break;
+          return new SuperMethodCall_Constraints();
         case 52:
-          if (true) {
-            return new ThisConstructorInvocation_Constraints();
-          }
-          break;
+          return new ThisConstructorInvocation_Constraints();
         case 53:
-          if (true) {
-            return new ThisExpression_Constraints();
-          }
-          break;
+          return new ThisExpression_Constraints();
         case 54:
-          if (true) {
-            return new TypeVariableReference_Constraints();
-          }
-          break;
+          return new TypeVariableReference_Constraints();
         case 55:
-          if (true) {
-            return new VariableReference_Constraints();
-          }
-          break;
+          return new VariableReference_Constraints();
         default:
           // default 
       }

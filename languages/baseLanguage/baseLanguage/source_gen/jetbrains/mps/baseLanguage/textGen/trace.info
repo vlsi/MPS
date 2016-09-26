@@ -21,7 +21,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="19,0,850,0" name="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
+      <unit at="19,0,427,0" name="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1214046978376812376">
@@ -580,7 +580,7 @@
       <unit id="1234886608901" at="14,0,37,0" name="jetbrains.mps.baseLanguage.textGen.Annotation_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="2341412953773654324" at="784,65,785,18" concept="11" />
+      <node id="2341412953773654324" at="361,65,362,18" concept="11" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234886915639">
@@ -1278,7 +1278,7 @@
       <unit id="1234891178357" at="19,0,68,0" name="jetbrains.mps.baseLanguage.textGen.ClassConcept_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="2341412953773654312" at="787,67,788,18" concept="11" />
+      <node id="2341412953773654312" at="364,67,365,18" concept="11" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234891338660">
@@ -1773,7 +1773,7 @@
       <unit id="1235068684876" at="18,0,54,0" name="jetbrains.mps.baseLanguage.textGen.Interface_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="2341412953773654320" at="790,64,791,18" concept="11" />
+      <node id="2341412953773654320" at="367,64,368,18" concept="11" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130112612">
@@ -3289,7 +3289,7 @@
       <unit id="1235740524220" at="19,0,75,0" name="jetbrains.mps.baseLanguage.textGen.EnumClass_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="2341412953773654316" at="793,64,794,18" concept="11" />
+      <node id="2341412953773654316" at="370,64,371,18" concept="11" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740896598">

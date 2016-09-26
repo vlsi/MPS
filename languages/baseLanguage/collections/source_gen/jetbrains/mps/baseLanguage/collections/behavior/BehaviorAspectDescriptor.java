@@ -72,245 +72,101 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractContainerCreator__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractContainerCreator__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractContainerType__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractContainerType__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAllConstant__BehaviorDescriptor;
-          }
-          break;
+          return myAllConstant__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myCollectionType__BehaviorDescriptor;
-          }
-          break;
+          return myCollectionType__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myConcatOperation__BehaviorDescriptor;
-          }
-          break;
+          return myConcatOperation__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myCustomContainerCreator__BehaviorDescriptor;
-          }
-          break;
+          return myCustomContainerCreator__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myCustomMapCreator__BehaviorDescriptor;
-          }
-          break;
+          return myCustomMapCreator__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myDequeType__BehaviorDescriptor;
-          }
-          break;
+          return myDequeType__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myEnumeratorType__BehaviorDescriptor;
-          }
-          break;
+          return myEnumeratorType__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myForEachStatement__BehaviorDescriptor;
-          }
-          break;
+          return myForEachStatement__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myForEachVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myForEachVariableReference__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myHashMapCreator__BehaviorDescriptor;
-          }
-          break;
+          return myHashMapCreator__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myHashSetCreator__BehaviorDescriptor;
-          }
-          break;
+          return myHashSetCreator__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myIApplicableToCollection__BehaviorDescriptor;
-          }
-          break;
+          return myIApplicableToCollection__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myIApplicableToDeque__BehaviorDescriptor;
-          }
-          break;
+          return myIApplicableToDeque__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myIApplicableToList__BehaviorDescriptor;
-          }
-          break;
+          return myIApplicableToList__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myIApplicableToNothing__BehaviorDescriptor;
-          }
-          break;
+          return myIApplicableToNothing__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myIApplicableToQueue__BehaviorDescriptor;
-          }
-          break;
+          return myIApplicableToQueue__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myIApplicableToStack__BehaviorDescriptor;
-          }
-          break;
+          return myIApplicableToStack__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myIContainerOperation__BehaviorDescriptor;
-          }
-          break;
+          return myIContainerOperation__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myIListOperation__BehaviorDescriptor;
-          }
-          break;
+          return myIListOperation__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myIteratorType__BehaviorDescriptor;
-          }
-          break;
+          return myIteratorType__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myLinkedHashMapCreator__BehaviorDescriptor;
-          }
-          break;
+          return myLinkedHashMapCreator__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myLinkedHashSetCreator__BehaviorDescriptor;
-          }
-          break;
+          return myLinkedHashSetCreator__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myLinkedListCreator__BehaviorDescriptor;
-          }
-          break;
+          return myLinkedListCreator__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myListCreatorWithInit__BehaviorDescriptor;
-          }
-          break;
+          return myListCreatorWithInit__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myListElementAccessExpression__BehaviorDescriptor;
-          }
-          break;
+          return myListElementAccessExpression__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myListType__BehaviorDescriptor;
-          }
-          break;
+          return myListType__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myMapElement__BehaviorDescriptor;
-          }
-          break;
+          return myMapElement__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myMapOperation__BehaviorDescriptor;
-          }
-          break;
+          return myMapOperation__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myMapType__BehaviorDescriptor;
-          }
-          break;
+          return myMapType__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myMappingType__BehaviorDescriptor;
-          }
-          break;
+          return myMappingType__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myMultiForEachStatement__BehaviorDescriptor;
-          }
-          break;
+          return myMultiForEachStatement__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myPriorityQueueCreator__BehaviorDescriptor;
-          }
-          break;
+          return myPriorityQueueCreator__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myQueueType__BehaviorDescriptor;
-          }
-          break;
+          return myQueueType__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return mySequenceOperation__BehaviorDescriptor;
-          }
-          break;
+          return mySequenceOperation__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return mySequenceType__BehaviorDescriptor;
-          }
-          break;
+          return mySequenceType__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return mySetType__BehaviorDescriptor;
-          }
-          break;
+          return mySetType__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return mySkipStatement__BehaviorDescriptor;
-          }
-          break;
+          return mySkipStatement__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return mySortDirection__BehaviorDescriptor;
-          }
-          break;
+          return mySortDirection__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return mySortOperation__BehaviorDescriptor;
-          }
-          break;
+          return mySortOperation__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return mySortedMapType__BehaviorDescriptor;
-          }
-          break;
+          return mySortedMapType__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return mySortedSetType__BehaviorDescriptor;
-          }
-          break;
+          return mySortedSetType__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myStackType__BehaviorDescriptor;
-          }
-          break;
+          return myStackType__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myTreeMapCreator__BehaviorDescriptor;
-          }
-          break;
+          return myTreeMapCreator__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myTreeSetCreator__BehaviorDescriptor;
-          }
-          break;
+          return myTreeSetCreator__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myValueAccessOperation__BehaviorDescriptor;
-          }
-          break;
+          return myValueAccessOperation__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myWhereOperation__BehaviorDescriptor;
-          }
-          break;
+          return myWhereOperation__BehaviorDescriptor;
         default:
           // default 
       }

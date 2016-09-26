@@ -21,35 +21,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommentAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CommentAttribute_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommentAttribute2_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CommentAttribute2_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HandlerAsChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HandlerAsChild_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HandlerAsRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HandlerAsRoot_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubConceptToTransform_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubConceptToTransform_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubConceptToTransformNested_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubConceptToTransformNested_Editor());
         default:
       }
     }

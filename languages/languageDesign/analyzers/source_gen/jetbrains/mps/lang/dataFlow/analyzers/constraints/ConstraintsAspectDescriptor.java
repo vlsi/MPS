@@ -22,60 +22,27 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new Analyzer_Constraints();
-          }
-          break;
+          return new Analyzer_Constraints();
         case 1:
-          if (true) {
-            return new AnalyzerConstructorParameterReference_Constraints();
-          }
-          break;
+          return new AnalyzerConstructorParameterReference_Constraints();
         case 2:
-          if (true) {
-            return new AnalyzerRunnerAnalyzeOperation_Constraints();
-          }
-          break;
+          return new AnalyzerRunnerAnalyzeOperation_Constraints();
         case 3:
-          if (true) {
-            return new AnalyzerRunnerCreator_Constraints();
-          }
-          break;
+          return new AnalyzerRunnerCreator_Constraints();
         case 4:
-          if (true) {
-            return new ApplicableNodeReference_Constraints();
-          }
-          break;
+          return new ApplicableNodeReference_Constraints();
         case 5:
-          if (true) {
-            return new ConceptCondition_Constraints();
-          }
-          break;
+          return new ConceptCondition_Constraints();
         case 6:
-          if (true) {
-            return new CustomInstructionsContainerReference_Constraints();
-          }
-          break;
+          return new CustomInstructionsContainerReference_Constraints();
         case 7:
-          if (true) {
-            return new InstructionReference_Constraints();
-          }
-          break;
+          return new InstructionReference_Constraints();
         case 8:
-          if (true) {
-            return new IsOperation_Constraints();
-          }
-          break;
+          return new IsOperation_Constraints();
         case 9:
-          if (true) {
-            return new ProgramParameter_Constraints();
-          }
-          break;
+          return new ProgramParameter_Constraints();
         case 10:
-          if (true) {
-            return new Rule_Constraints();
-          }
-          break;
+          return new Rule_Constraints();
         default:
           // default 
       }

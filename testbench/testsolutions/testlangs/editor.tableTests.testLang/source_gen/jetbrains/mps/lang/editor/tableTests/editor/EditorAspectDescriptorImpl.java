@@ -21,80 +21,35 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ContentElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ContentElement_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DataCell_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DataCell_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Event_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Event_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HierarchycalTable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HierarchycalTable_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LightWeightDecisionTable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LightWeightDecisionTable_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Matrix_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Matrix_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new State_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new State_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Table_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Table_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Transition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Transition_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UltimateContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UltimateContainer_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XElement_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new YElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new YElement_Editor());
         default:
       }
     }

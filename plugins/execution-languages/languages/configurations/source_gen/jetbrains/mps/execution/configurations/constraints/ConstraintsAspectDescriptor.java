@@ -22,70 +22,31 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AbstractRunConfigurationExecutor_Constraints();
-          }
-          break;
+          return new AbstractRunConfigurationExecutor_Constraints();
         case 1:
-          if (true) {
-            return new BeforeTaskParameterReference_Constraints();
-          }
-          break;
+          return new BeforeTaskParameterReference_Constraints();
         case 2:
-          if (true) {
-            return new ConfigurationFromExecutorReference_Constraints();
-          }
-          break;
+          return new ConfigurationFromExecutorReference_Constraints();
         case 3:
-          if (true) {
-            return new ContextExpression_Constraints();
-          }
-          break;
+          return new ContextExpression_Constraints();
         case 4:
-          if (true) {
-            return new Create_ConceptFunction_Constraints();
-          }
-          break;
+          return new Create_ConceptFunction_Constraints();
         case 5:
-          if (true) {
-            return new EnvironmentExpression_Constraints();
-          }
-          break;
+          return new EnvironmentExpression_Constraints();
         case 6:
-          if (true) {
-            return new GetProjectOperation_Constraints();
-          }
-          break;
+          return new GetProjectOperation_Constraints();
         case 7:
-          if (true) {
-            return new RunConfigurationCreator_Constraints();
-          }
-          break;
+          return new RunConfigurationCreator_Constraints();
         case 8:
-          if (true) {
-            return new RunConfigurationExecutor_Constraints();
-          }
-          break;
+          return new RunConfigurationExecutor_Constraints();
         case 9:
-          if (true) {
-            return new RunConfigurationProducer_Constraints();
-          }
-          break;
+          return new RunConfigurationProducer_Constraints();
         case 10:
-          if (true) {
-            return new RunConfigurationProducerPart_Constraints();
-          }
-          break;
+          return new RunConfigurationProducerPart_Constraints();
         case 11:
-          if (true) {
-            return new RunConfigurationSource_Constraints();
-          }
-          break;
+          return new RunConfigurationSource_Constraints();
         case 12:
-          if (true) {
-            return new StartProcessHandlerStatement_Constraints();
-          }
-          break;
+          return new StartProcessHandlerStatement_Constraints();
         default:
           // default 
       }

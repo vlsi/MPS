@@ -32,7 +32,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,126,0" name="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,84,0" name="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BuilderContainer_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderContainer_BehaviorDescriptor" />

@@ -23,90 +23,39 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AppendOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AppendOperation_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CollectionAppendPart_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CollectionAppendPart_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ConceptTextGenDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ConceptTextGenDeclaration_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ConstantStringAppendPart_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ConstantStringAppendPart_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new DecreaseDepthOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new DecreaseDepthOperation_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new FoundErrorOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new FoundErrorOperation_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IncreaseDepthOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IncreaseDepthOperation_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IndentBufferOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IndentBufferOperation_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LanguageTextGenDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LanguageTextGenDeclaration_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new NewLineAppendPart_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new NewLineAppendPart_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new NodeAppendPart_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new NodeAppendPart_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new OperationCall_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new OperationCall_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new OperationDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new OperationDeclaration_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ReferenceAppendPart_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ReferenceAppendPart_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodCall_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodCall_DataFlow());
         case 15:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodDeclaration_DataFlow());
         case 16:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new WithIndentOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new WithIndentOperation_DataFlow());
         default:
           // default 
       }

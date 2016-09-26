@@ -22,15 +22,9 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new TestPropertyVariableReference_Constraints();
-          }
-          break;
+          return new TestPropertyVariableReference_Constraints();
         case 1:
-          if (true) {
-            return new TestVariableReference_Constraints();
-          }
-          break;
+          return new TestVariableReference_Constraints();
         default:
           // default 
       }

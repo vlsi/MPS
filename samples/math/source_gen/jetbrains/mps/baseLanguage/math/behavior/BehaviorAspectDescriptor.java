@@ -45,110 +45,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBigMaxExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBigMaxExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBigMinExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBigMinExpression__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBigProdExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBigProdExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBigSumExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBigSumExpression__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myConjugateOperation__BehaviorDescriptor;
-          }
-          break;
+          return myConjugateOperation__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myDecimalBinaryOperation__BehaviorDescriptor;
-          }
-          break;
+          return myDecimalBinaryOperation__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myDecimalDivExpression__BehaviorDescriptor;
-          }
-          break;
+          return myDecimalDivExpression__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myDecimalMinusExpression__BehaviorDescriptor;
-          }
-          break;
+          return myDecimalMinusExpression__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myDecimalMulExpression__BehaviorDescriptor;
-          }
-          break;
+          return myDecimalMulExpression__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myDecimalPlusExpression__BehaviorDescriptor;
-          }
-          break;
+          return myDecimalPlusExpression__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myExponentialOperation__BehaviorDescriptor;
-          }
-          break;
+          return myExponentialOperation__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myInIntervalExpression__BehaviorDescriptor;
-          }
-          break;
+          return myInIntervalExpression__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myIntervalContainsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myIntervalContainsExpression__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myMathContext__BehaviorDescriptor;
-          }
-          break;
+          return myMathContext__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myMathSymbol__BehaviorDescriptor;
-          }
-          break;
+          return myMathSymbol__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myMatrixConstructor__BehaviorDescriptor;
-          }
-          break;
+          return myMatrixConstructor__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myMatrixElementAccessExpression__BehaviorDescriptor;
-          }
-          break;
+          return myMatrixElementAccessExpression__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myMatrixExponentialOperation__BehaviorDescriptor;
-          }
-          break;
+          return myMatrixExponentialOperation__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myMatrixInverseOperation__BehaviorDescriptor;
-          }
-          break;
+          return myMatrixInverseOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myMatrixType__BehaviorDescriptor;
-          }
-          break;
+          return myMatrixType__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myTransposeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myTransposeOperation__BehaviorDescriptor;
         default:
           // default 
       }

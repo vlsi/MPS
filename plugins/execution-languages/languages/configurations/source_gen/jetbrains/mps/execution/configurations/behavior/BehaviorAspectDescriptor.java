@@ -39,80 +39,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractRunConfigurationExecutor__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractRunConfigurationExecutor__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBeforeTask__BehaviorDescriptor;
-          }
-          break;
+          return myBeforeTask__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBeforeTaskParameter__BehaviorDescriptor;
-          }
-          break;
+          return myBeforeTaskParameter__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBeforeTaskParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myBeforeTaskParameterReference__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myConfigurationFromExecutorReference__BehaviorDescriptor;
-          }
-          break;
+          return myConfigurationFromExecutorReference__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myConsoleType__BehaviorDescriptor;
-          }
-          break;
+          return myConsoleType__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myCreate_ConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCreate_ConceptFunction__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myExecuteBeforeTask_ConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteBeforeTask_ConceptFunction__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myExecuteConfiguration_Function__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteConfiguration_Function__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myRunConfiguration__BehaviorDescriptor;
-          }
-          break;
+          return myRunConfiguration__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myRunConfigurationExecutor__BehaviorDescriptor;
-          }
-          break;
+          return myRunConfigurationExecutor__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myRunConfigurationKind__BehaviorDescriptor;
-          }
-          break;
+          return myRunConfigurationKind__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myRunConfigurationProducer__BehaviorDescriptor;
-          }
-          break;
+          return myRunConfigurationProducer__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myRunConfigurationProducerPart__BehaviorDescriptor;
-          }
-          break;
+          return myRunConfigurationProducerPart__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myStartProcessHandlerStatement__BehaviorDescriptor;
-          }
-          break;
+          return myStartProcessHandlerStatement__BehaviorDescriptor;
         default:
           // default 
       }

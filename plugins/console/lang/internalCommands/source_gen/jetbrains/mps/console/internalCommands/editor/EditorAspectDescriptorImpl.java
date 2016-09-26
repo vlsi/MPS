@@ -22,15 +22,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConsoleModelExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConsoleModelExpression_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalMode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalMode_Editor());
         default:
       }
     }
@@ -47,15 +41,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConsoleModelExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConsoleModelExpression_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ShowRepositoryCommand_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ShowRepositoryCommand_SubstituteMenu());
         default:
       }
     }

@@ -23,30 +23,15 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AsBuilderStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AsBuilderStatement_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BeanPropertyBuilder_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BeanPropertyBuilder_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BuilderCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BuilderCreator_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BuilderStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BuilderStatement_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SimpleBuilderPropertyBuilder_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SimpleBuilderPropertyBuilder_DataFlow());
         default:
           // default 
       }

@@ -22,25 +22,13 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new MathSymbolIndexReference_Constraints();
-          }
-          break;
+          return new MathSymbolIndexReference_Constraints();
         case 1:
-          if (true) {
-            return new MatrixElementAccessExpression_Constraints();
-          }
-          break;
+          return new MatrixElementAccessExpression_Constraints();
         case 2:
-          if (true) {
-            return new MatrixIndexWildcard_Constraints();
-          }
-          break;
+          return new MatrixIndexWildcard_Constraints();
         case 3:
-          if (true) {
-            return new MatrixInitializerIndexReference_Constraints();
-          }
-          break;
+          return new MatrixInitializerIndexReference_Constraints();
         default:
           // default 
       }

@@ -22,20 +22,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoneyCreator_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoneyMethodCall_Editor());
         default:
       }
     }
@@ -52,10 +43,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new MoneyMethods_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new MoneyMethods_Contribution());
         default:
       }
     }

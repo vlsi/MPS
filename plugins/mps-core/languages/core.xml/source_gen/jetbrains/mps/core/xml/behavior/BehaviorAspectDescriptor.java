@@ -45,110 +45,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myXmlAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myXmlAttribute__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myXmlBaseAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myXmlBaseAttribute__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myXmlBaseElement__BehaviorDescriptor;
-          }
-          break;
+          return myXmlBaseElement__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myXmlBasePrologElement__BehaviorDescriptor;
-          }
-          break;
+          return myXmlBasePrologElement__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myXmlCDATA__BehaviorDescriptor;
-          }
-          break;
+          return myXmlCDATA__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myXmlCharRef__BehaviorDescriptor;
-          }
-          break;
+          return myXmlCharRef__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myXmlComment__BehaviorDescriptor;
-          }
-          break;
+          return myXmlComment__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myXmlContent__BehaviorDescriptor;
-          }
-          break;
+          return myXmlContent__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myXmlDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myXmlDeclaration__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myXmlDoctypeDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myXmlDoctypeDeclaration__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myXmlElement__BehaviorDescriptor;
-          }
-          break;
+          return myXmlElement__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myXmlEntityRef__BehaviorDescriptor;
-          }
-          break;
+          return myXmlEntityRef__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myXmlFile__BehaviorDescriptor;
-          }
-          break;
+          return myXmlFile__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myXmlPart__BehaviorDescriptor;
-          }
-          break;
+          return myXmlPart__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myXmlProcessingInstruction__BehaviorDescriptor;
-          }
-          break;
+          return myXmlProcessingInstruction__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myXmlProlog__BehaviorDescriptor;
-          }
-          break;
+          return myXmlProlog__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myXmlPrologElement__BehaviorDescriptor;
-          }
-          break;
+          return myXmlPrologElement__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myXmlText__BehaviorDescriptor;
-          }
-          break;
+          return myXmlText__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myXmlTextValue__BehaviorDescriptor;
-          }
-          break;
+          return myXmlTextValue__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myXmlValuePart__BehaviorDescriptor;
-          }
-          break;
+          return myXmlValuePart__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myXmlWhitespace__BehaviorDescriptor;
-          }
-          break;
+          return myXmlWhitespace__BehaviorDescriptor;
         default:
           // default 
       }

@@ -40,85 +40,37 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBuilderBlockStatement__BehaviorDescriptor;
-          }
-          break;
+          return myBuilderBlockStatement__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBuilderParameter__BehaviorDescriptor;
-          }
-          break;
+          return myBuilderParameter__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myCommandBuilderExpression__BehaviorDescriptor;
-          }
-          break;
+          return myCommandBuilderExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myCommandDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myCommandDeclaration__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCommandMethod__BehaviorDescriptor;
-          }
-          break;
+          return myCommandMethod__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myCommandParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myCommandParameterDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myCommandPartLengthOperation__BehaviorDescriptor;
-          }
-          break;
+          return myCommandPartLengthOperation__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myCommandPartToListOperation__BehaviorDescriptor;
-          }
-          break;
+          return myCommandPartToListOperation__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myCommandType__BehaviorDescriptor;
-          }
-          break;
+          return myCommandType__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myExecuteCommandPart__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteCommandPart__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myNewProcessBuilderExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNewProcessBuilderExpression__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myRedirectOutputExpression__BehaviorDescriptor;
-          }
-          break;
+          return myRedirectOutputExpression__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myReportErrorStatement__BehaviorDescriptor;
-          }
-          break;
+          return myReportErrorStatement__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myReportExecutionError__BehaviorDescriptor;
-          }
-          break;
+          return myReportExecutionError__BehaviorDescriptor;
         default:
           // default 
       }

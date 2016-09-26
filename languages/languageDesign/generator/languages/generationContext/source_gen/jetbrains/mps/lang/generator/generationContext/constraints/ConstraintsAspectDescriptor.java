@@ -22,40 +22,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new GenerationContextOp_ContextVarRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_ContextVarRef_Constraints();
         case 1:
-          if (true) {
-            return new GenerationContextOp_GenParameterRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_GenParameterRef_Constraints();
         case 2:
-          if (true) {
-            return new GenerationContextOp_LinkPatternRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_LinkPatternRef_Constraints();
         case 3:
-          if (true) {
-            return new GenerationContextOp_NodePatternRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_NodePatternRef_Constraints();
         case 4:
-          if (true) {
-            return new GenerationContextOp_ParameterRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_ParameterRef_Constraints();
         case 5:
-          if (true) {
-            return new GenerationContextOp_PropertyPatternRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_PropertyPatternRef_Constraints();
         case 6:
-          if (true) {
-            return new GenerationContextOp_VarRef_Constraints();
-          }
-          break;
+          return new GenerationContextOp_VarRef_Constraints();
         default:
           // default 
       }

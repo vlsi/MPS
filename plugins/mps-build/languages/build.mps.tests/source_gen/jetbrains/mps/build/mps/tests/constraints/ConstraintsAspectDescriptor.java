@@ -22,20 +22,11 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new BuildMpsLayout_TestModule_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_TestModule_Constraints();
         case 1:
-          if (true) {
-            return new BuildMpsLayout_TestModuleGroup_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_TestModuleGroup_Constraints();
         case 2:
-          if (true) {
-            return new BuildMpsLayout_TestModules_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_TestModules_Constraints();
         default:
           // default 
       }

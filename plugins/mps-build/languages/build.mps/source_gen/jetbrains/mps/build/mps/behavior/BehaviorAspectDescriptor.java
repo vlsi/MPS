@@ -41,90 +41,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBuildMPSPlugin__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMPSPlugin__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myBuildMpsLayout_Plugin__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_Plugin__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myBuildMps_AbstractModule__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_AbstractModule__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myBuildMps_DevKit__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_DevKit__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myBuildMps_Generator__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_Generator__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myBuildMps_IdeaPlugin__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_IdeaPlugin__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myBuildMps_Language__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_Language__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myBuildMps_Module__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_Module__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myBuildMps_Solution__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMps_Solution__BehaviorDescriptor;
         default:
           // default 
       }

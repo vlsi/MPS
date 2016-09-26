@@ -43,100 +43,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractNodeReference__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractNodeReference__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myDataDependency__BehaviorDescriptor;
-          }
-          break;
+          return myDataDependency__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myDataDependencyReference__BehaviorDescriptor;
-          }
-          break;
+          return myDataDependencyReference__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myDirectNodeReference__BehaviorDescriptor;
-          }
-          break;
+          return myDirectNodeReference__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myExecuteAfterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteAfterDeclaration__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myIMigrationUnit__BehaviorDescriptor;
-          }
-          break;
+          return myIMigrationUnit__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myMigrationScript__BehaviorDescriptor;
-          }
-          break;
+          return myMigrationScript__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myMoveConcept__BehaviorDescriptor;
-          }
-          break;
+          return myMoveConcept__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myMoveConceptMember__BehaviorDescriptor;
-          }
-          break;
+          return myMoveConceptMember__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myMoveContainmentLink__BehaviorDescriptor;
-          }
-          break;
+          return myMoveContainmentLink__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myMoveNodeSpecialization__BehaviorDescriptor;
-          }
-          break;
+          return myMoveNodeSpecialization__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myMoveProperty__BehaviorDescriptor;
-          }
-          break;
+          return myMoveProperty__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myMoveReferenceLink__BehaviorDescriptor;
-          }
-          break;
+          return myMoveReferenceLink__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myProducedDataDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myProducedDataDeclaration__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myPureMigrationScript__BehaviorDescriptor;
-          }
-          break;
+          return myPureMigrationScript__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myRefactoringLog__BehaviorDescriptor;
-          }
-          break;
+          return myRefactoringLog__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myReflectionNodeReference__BehaviorDescriptor;
-          }
-          break;
+          return myReflectionNodeReference__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myRequiredDataDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myRequiredDataDeclaration__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myTransformStatement__BehaviorDescriptor;
-          }
-          break;
+          return myTransformStatement__BehaviorDescriptor;
         default:
           // default 
       }

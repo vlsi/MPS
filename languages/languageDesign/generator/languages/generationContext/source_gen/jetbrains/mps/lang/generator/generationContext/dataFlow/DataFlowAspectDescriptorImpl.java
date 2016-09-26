@@ -23,45 +23,21 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_CreateUniqueName_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_CreateUniqueName_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetCopiedOutputByInput_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetCopiedOutputByInput_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_ShowMessageBase_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_ShowMessageBase_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_UserObjectAccessBase_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_UserObjectAccessBase_DataFlow());
         default:
           // default 
       }

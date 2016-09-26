@@ -97,370 +97,151 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBuildCompositePath__BehaviorDescriptor;
-          }
-          break;
+          return myBuildCompositePath__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBuildExternalDependency__BehaviorDescriptor;
-          }
-          break;
+          return myBuildExternalDependency__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBuildExternalLayout__BehaviorDescriptor;
-          }
-          break;
+          return myBuildExternalLayout__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBuildExternalLayoutDependency__BehaviorDescriptor;
-          }
-          break;
+          return myBuildExternalLayoutDependency__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myBuildFolderMacro__BehaviorDescriptor;
-          }
-          break;
+          return myBuildFolderMacro__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myBuildInputFiles__BehaviorDescriptor;
-          }
-          break;
+          return myBuildInputFiles__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myBuildInputSingleFile__BehaviorDescriptor;
-          }
-          break;
+          return myBuildInputSingleFile__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myBuildInputSingleFolder__BehaviorDescriptor;
-          }
-          break;
+          return myBuildInputSingleFolder__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myBuildJavaPlugin__BehaviorDescriptor;
-          }
-          break;
+          return myBuildJavaPlugin__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myBuildLayout__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myBuildLayout_AbstractContainer__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_AbstractContainer__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myBuildLayout_AbstractCopy__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_AbstractCopy__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myBuildLayout_CompileOutputOf__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_CompileOutputOf__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myBuildLayout_Container__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Container__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myBuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myBuildLayout_Copy__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Copy__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myBuildLayout_CopyProcessor__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_CopyProcessor__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myBuildLayout_CustomCopy__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_CustomCopy__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myBuildLayout_EchoProperties__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_EchoProperties__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myBuildLayout_EchoXml__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_EchoXml__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myBuildLayout_ExportAsJavaLibrary__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_ExportAsJavaLibrary__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myBuildLayout_File__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_File__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myBuildLayout_FileSet__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_FileSet__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myBuildLayout_FileStub__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_FileStub__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myBuildLayout_Filemode__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Filemode__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myBuildLayout_Files__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Files__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myBuildLayout_Folder__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Folder__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myBuildLayout_Import__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Import__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myBuildLayout_ImportContent__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_ImportContent__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myBuildLayout_InJarNode__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_InJarNode__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myBuildLayout_Jar__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Jar__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myBuildLayout_JarManifest__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_JarManifest__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myBuildLayout_JarManifest_Attribute__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_JarManifest_Attribute__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myBuildLayout_NamedContainer__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_NamedContainer__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myBuildLayout_Node__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Node__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myBuildLayout_PathElement__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_PathElement__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myBuildLayout_Tar__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Tar__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myBuildLayout_TransparentContainer__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_TransparentContainer__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myBuildLayout_War__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_War__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myBuildLayout_Zip__BehaviorDescriptor;
-          }
-          break;
+          return myBuildLayout_Zip__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myBuildMacro__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMacro__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myBuildNamedLayout__BehaviorDescriptor;
-          }
-          break;
+          return myBuildNamedLayout__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myBuildPlugin__BehaviorDescriptor;
-          }
-          break;
+          return myBuildPlugin__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myBuildProject__BehaviorDescriptor;
-          }
-          break;
+          return myBuildProject__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myBuildProjectDependency__BehaviorDescriptor;
-          }
-          break;
+          return myBuildProjectDependency__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myBuildRelativePath__BehaviorDescriptor;
-          }
-          break;
+          return myBuildRelativePath__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myBuildSourceArchiveRelativePath__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSourceArchiveRelativePath__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myBuildSourceMacroRelativePath__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSourceMacroRelativePath__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myBuildSourcePath__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSourcePath__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myBuildSourceProjectRelativePath__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSourceProjectRelativePath__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myBuildSource_JavaCP__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaCP__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myBuildSource_JavaContentFolder__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaContentFolder__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myBuildSource_JavaDependencyExternalJar__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaDependencyExternalJar__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myBuildSource_JavaDependencyExternalJarInFolder__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaDependencyExternalJarInFolder__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myBuildSource_JavaDependencyLibrary__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaDependencyLibrary__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myBuildSource_JavaDependencyModule__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaDependencyModule__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myBuildSource_JavaExternalJarFolderRef__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaExternalJarFolderRef__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myBuildSource_JavaExternalJarRef__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaExternalJarRef__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myBuildSource_JavaLibrary__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaLibrary__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myBuildSource_JavaLibraryExternalJar__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaLibraryExternalJar__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myBuildSource_JavaLibraryExternalJarFolder__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaLibraryExternalJarFolder__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myBuildSource_JavaModule__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaModule__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myBuildSource_JavaOptions__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_JavaOptions__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myBuildSource_SingleFile__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_SingleFile__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myBuildSource_SingleFolder__BehaviorDescriptor;
-          }
-          break;
+          return myBuildSource_SingleFolder__BehaviorDescriptor;
         case 65:
-          if (true) {
-            return myBuildString__BehaviorDescriptor;
-          }
-          break;
+          return myBuildString__BehaviorDescriptor;
         case 66:
-          if (true) {
-            return myBuildStringContainer__BehaviorDescriptor;
-          }
-          break;
+          return myBuildStringContainer__BehaviorDescriptor;
         case 67:
-          if (true) {
-            return myBuildStringPart__BehaviorDescriptor;
-          }
-          break;
+          return myBuildStringPart__BehaviorDescriptor;
         case 68:
-          if (true) {
-            return myBuildTextStringPart__BehaviorDescriptor;
-          }
-          break;
+          return myBuildTextStringPart__BehaviorDescriptor;
         case 69:
-          if (true) {
-            return myBuildVarRefStringPart__BehaviorDescriptor;
-          }
-          break;
+          return myBuildVarRefStringPart__BehaviorDescriptor;
         case 70:
-          if (true) {
-            return myBuildVariableMacro__BehaviorDescriptor;
-          }
-          break;
+          return myBuildVariableMacro__BehaviorDescriptor;
         case 71:
-          if (true) {
-            return myBuildVariableMacroInitValue__BehaviorDescriptor;
-          }
-          break;
+          return myBuildVariableMacroInitValue__BehaviorDescriptor;
         case 72:
-          if (true) {
-            return myIWorkflowParticipant__BehaviorDescriptor;
-          }
-          break;
+          return myIWorkflowParticipant__BehaviorDescriptor;
         default:
           // default 
       }

@@ -34,55 +34,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAuthorBlockDocTag__BehaviorDescriptor;
-          }
-          break;
+          return myAuthorBlockDocTag__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBaseDocComment__BehaviorDescriptor;
-          }
-          break;
+          return myBaseDocComment__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myClassifierDocComment__BehaviorDescriptor;
-          }
-          break;
+          return myClassifierDocComment__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myCommentLine__BehaviorDescriptor;
-          }
-          break;
+          return myCommentLine__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCommentLinePart__BehaviorDescriptor;
-          }
-          break;
+          return myCommentLinePart__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myEmptyBlockDocTag__BehaviorDescriptor;
-          }
-          break;
+          return myEmptyBlockDocTag__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myFieldDocComment__BehaviorDescriptor;
-          }
-          break;
+          return myFieldDocComment__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myHTMLElement__BehaviorDescriptor;
-          }
-          break;
+          return myHTMLElement__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myInlineTagCommentLinePart__BehaviorDescriptor;
-          }
-          break;
+          return myInlineTagCommentLinePart__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myMethodDocComment__BehaviorDescriptor;
-          }
-          break;
+          return myMethodDocComment__BehaviorDescriptor;
         default:
           // default 
       }

@@ -22,125 +22,53 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DataDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DataDependency_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IncludeMigrationPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IncludeMigrationPart_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveConcept_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveContainmentLink_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveContainmentLink_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveNodeMigrationPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveNodeMigrationPart_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveProperty_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveReferenceLink_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveReferenceLink_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrderDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrderDependency_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformStatement_Editor());
         default:
       }
     }
@@ -157,15 +85,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PureMigrationScript_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PureMigrationScript_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new RefactoringLog_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new RefactoringLog_SubstituteMenu());
         default:
       }
     }

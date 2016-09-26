@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myFacetDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myFacetDeclaration__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myFacetReferenceExpression__BehaviorDescriptor;
-          }
-          break;
+          return myFacetReferenceExpression__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myForeignParametersComponentExpression__BehaviorDescriptor;
-          }
-          break;
+          return myForeignParametersComponentExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myIFacet__BehaviorDescriptor;
-          }
-          break;
+          return myIFacet__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myLocalParametersComponentExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLocalParametersComponentExpression__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myParametersDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myParametersDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myTargetDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myTargetDeclaration__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myTargetReferenceExpression__BehaviorDescriptor;
-          }
-          break;
+          return myTargetReferenceExpression__BehaviorDescriptor;
         default:
           // default 
       }

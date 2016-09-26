@@ -22,45 +22,21 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new EditorExpression_Constraints();
-          }
-          break;
+          return new EditorExpression_Constraints();
         case 1:
-          if (true) {
-            return new EditorOperationCall_Constraints();
-          }
-          break;
+          return new EditorOperationCall_Constraints();
         case 2:
-          if (true) {
-            return new EditorOperationDeclaration_Constraints();
-          }
-          break;
+          return new EditorOperationDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new EditorPropertyReference_Constraints();
-          }
-          break;
+          return new EditorPropertyReference_Constraints();
         case 4:
-          if (true) {
-            return new GetEditorOperation_Constraints();
-          }
-          break;
+          return new GetEditorOperation_Constraints();
         case 5:
-          if (true) {
-            return new PersistentPropertyReferenceOperation_Constraints();
-          }
-          break;
+          return new PersistentPropertyReferenceOperation_Constraints();
         case 6:
-          if (true) {
-            return new SettingsEditor_Constraints();
-          }
-          break;
+          return new SettingsEditor_Constraints();
         case 7:
-          if (true) {
-            return new TemplateParameterReference_Constraints();
-          }
-          break;
+          return new TemplateParameterReference_Constraints();
         default:
           // default 
       }

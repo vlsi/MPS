@@ -22,45 +22,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseIntentionDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseIntentionDeclaration_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ErrorIntentionPriority_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ErrorIntentionPriority_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ForConceptMethodParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ForConceptMethodParameter_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Intention_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Intention_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntentionParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntentionParameter_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Parameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Parameter_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterizedIntentionDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterizedIntentionDeclaration_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QueryBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QueryBlock_Editor());
         default:
       }
     }
@@ -77,25 +53,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_childNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_childNode_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new parameter_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new parameter_Contribution());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new IntentionParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new IntentionParameter_SubstituteMenu());
         default:
       }
     }

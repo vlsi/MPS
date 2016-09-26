@@ -21,60 +21,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
         default:
       }
     }

@@ -22,100 +22,43 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AsTypeBuilder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AsTypeBuilder_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeanBuilder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeanBuilder_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeanPropertyBuilder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeanPropertyBuilder_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Builder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Builder_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuilderCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuilderCreator_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuilderStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuilderStatement_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResultExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResultExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilder_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderChild_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderDeclaration_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderExpression_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderExtensionDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderExtensionDeclaration_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameter_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameterReference_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderProperty_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyBuilder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyBuilder_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyExpression_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleBuilders_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleBuilders_Editor());
         default:
       }
     }
@@ -132,25 +75,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AsTypeBuilder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AsTypeBuilder_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Builder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Builder_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuilderCreator_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuilderCreator_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new wrappers_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new wrappers_Contribution());
         default:
       }
     }

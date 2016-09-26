@@ -23,200 +23,83 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AttractsFocusBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AttractsFocusBlock_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AttributeChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AttributeChild_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AttributeWithChildren_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AttributeWithChildren_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AttributedConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AttributedConcept_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BinaryExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BinaryExpression_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BracesBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BracesBlock_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BracesStubBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BracesStubBlock_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClassReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClassReference_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CollapsedByDefault_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CollapsedByDefault_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CollapsedConditionally_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CollapsedConditionally_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CollapsibleConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CollapsibleConcept_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Composition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Composition_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DelTestChildContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DelTestChildContainer_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FoldingContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FoldingContainer_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor());
         default:
       }
     }
@@ -233,15 +116,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new IBaseTestBlock_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new IBaseTestBlock_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new SimplePropertyContainer_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new SimplePropertyContainer_TransformationMenu());
         default:
       }
     }
@@ -256,20 +133,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstTestAbstractChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstTestAbstractChild_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstTestBooleanPropertyChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstTestBooleanPropertyChild_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstTestEnumPropertyChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstTestEnumPropertyChild_SubstituteMenu());
         default:
       }
     }

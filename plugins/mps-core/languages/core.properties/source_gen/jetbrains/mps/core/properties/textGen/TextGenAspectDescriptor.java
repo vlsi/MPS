@@ -27,25 +27,13 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new PropertiesComment_TextGen();
-          }
-          break;
+          return new PropertiesComment_TextGen();
         case 1:
-          if (true) {
-            return new PropertiesDeclaration_TextGen();
-          }
-          break;
+          return new PropertiesDeclaration_TextGen();
         case 2:
-          if (true) {
-            return new PropertiesFile_TextGen();
-          }
-          break;
+          return new PropertiesFile_TextGen();
         case 3:
-          if (true) {
-            return new PropertiesLine_TextGen();
-          }
-          break;
+          return new PropertiesLine_TextGen();
         default:
           // default 
       }

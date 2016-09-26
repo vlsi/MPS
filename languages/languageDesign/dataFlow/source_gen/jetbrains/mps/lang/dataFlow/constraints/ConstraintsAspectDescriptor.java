@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new BaseInstructionOperation_Constraints();
-          }
-          break;
+          return new BaseInstructionOperation_Constraints();
         case 1:
-          if (true) {
-            return new DataFlowBuilderDeclaration_Constraints();
-          }
-          break;
+          return new DataFlowBuilderDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new EmitStatement_Constraints();
-          }
-          break;
+          return new EmitStatement_Constraints();
         case 3:
-          if (true) {
-            return new GetCodeForExpression_Constraints();
-          }
-          break;
+          return new GetCodeForExpression_Constraints();
         case 4:
-          if (true) {
-            return new LabelPosition_Constraints();
-          }
-          break;
+          return new LabelPosition_Constraints();
         default:
           // default 
       }

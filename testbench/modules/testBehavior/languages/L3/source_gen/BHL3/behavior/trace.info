@@ -19,7 +19,7 @@
       <unit at="11,0,17,0" name="BHL3.behavior.B_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,54,0" name="BHL3.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,48,0" name="BHL3.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d9b04982-8178-43b9-a21d-72c89abb9e5e(BHL3.behavior)/7688460527007462270">

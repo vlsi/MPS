@@ -22,85 +22,37 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AccountType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AccountType_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Date_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Date_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Date_Future_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Date_Future_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Date_Past_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Date_Past_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Event_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Event_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EventType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EventType_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EventVariable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EventVariable_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Plan_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Plan_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PostingRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PostingRule_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Quantity_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Quantity_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Value_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Value_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ValueReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ValueReference_Editor());
         default:
       }
     }
@@ -117,15 +69,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new quantity_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new quantity_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Quantity_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Quantity_SubstituteMenu());
         default:
       }
     }

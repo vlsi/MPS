@@ -22,275 +22,113 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BootstrapActionReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BootstrapActionReference_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckDataFlowOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckDataFlowOperation_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckNodeDataflow_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckNodeDataflow_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckNodeForErrorMessagesOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckNodeForErrorMessagesOperation_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckNodeForErrors_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckNodeForErrors_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DragMouseStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DragMouseStatement_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorComponentExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorComponentExpression_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorTestCase_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorTestCase_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExpressionContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExpressionContainer_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IRuleReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IRuleReference_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeActionStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InvokeActionStatement_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IsIntentionApplicableExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IsIntentionApplicableExpression_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MockAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MockAnnotation_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MockScopeProvider_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MockScopeProvider_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModelExpression_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedNodeReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedNodeReference_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeConstraintsErrorCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeConstraintsErrorCheckOperation_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeConstraintsWarningCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeConstraintsWarningCheckOperation_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeErrorCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeErrorCheckOperation_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeInfoCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeInfoCheckOperation_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeOperationsContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeOperationsContainer_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodePropertiesContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodePropertiesContainer_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeReachable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeReachable_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeTypeCheckOperation_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeUnknownErrorCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeUnknownErrorCheckOperation_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeUnknownWarningCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeUnknownWarningCheckOperation_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PressMouseStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PressMouseStatement_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopeEntry_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ScopeEntry_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
         case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
         case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
         case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
         case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
         case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
         case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
         case 51:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UntypedExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UntypedExpression_Editor());
         case 52:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
         case 53:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
         default:
       }
     }
@@ -307,25 +145,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NodeConstraintsErrorCheckOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NodeConstraintsErrorCheckOperation_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NodeConstraintsWarningCheckOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NodeConstraintsWarningCheckOperation_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NodeUnknownErrorCheckOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NodeUnknownErrorCheckOperation_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NodeUnknownWarningCheckOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NodeUnknownWarningCheckOperation_SubstituteMenu());
         default:
       }
     }

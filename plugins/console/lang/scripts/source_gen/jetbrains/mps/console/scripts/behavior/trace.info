@@ -16,7 +16,7 @@
       <unit at="11,0,14,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,60,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,51,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConsoleScript_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />

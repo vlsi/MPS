@@ -21,40 +21,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ListValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ListValue_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PatternTest_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PatternTest_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyValue_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestListReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestListReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestPropertyVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestPropertyVariableReference_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestVariableReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VariableValue_Editor());
         default:
       }
     }

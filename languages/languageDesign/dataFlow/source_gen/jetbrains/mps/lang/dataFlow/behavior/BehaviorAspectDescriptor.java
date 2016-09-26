@@ -30,35 +30,17 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBuilderBlock__BehaviorDescriptor;
-          }
-          break;
+          return myBuilderBlock__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myDataFlowBuilderDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myDataFlowBuilderDeclaration__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myEmitStatement__BehaviorDescriptor;
-          }
-          break;
+          return myEmitStatement__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myInstructionType__BehaviorDescriptor;
-          }
-          break;
+          return myInstructionType__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myLabelPosition__BehaviorDescriptor;
-          }
-          break;
+          return myLabelPosition__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myNodeParameter__BehaviorDescriptor;
-          }
-          break;
+          return myNodeParameter__BehaviorDescriptor;
         default:
           // default 
       }

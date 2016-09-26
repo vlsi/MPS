@@ -33,50 +33,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myExpectedOption__BehaviorDescriptor;
-          }
-          break;
+          return myExpectedOption__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myInputResourcesParameter__BehaviorDescriptor;
-          }
-          break;
+          return myInputResourcesParameter__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myJobDefinition__BehaviorDescriptor;
-          }
-          break;
+          return myJobDefinition__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myOptionType__BehaviorDescriptor;
-          }
-          break;
+          return myOptionType__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myQueryDefinition__BehaviorDescriptor;
-          }
-          break;
+          return myQueryDefinition__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myRelayQueryExpression__BehaviorDescriptor;
-          }
-          break;
+          return myRelayQueryExpression__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myResourceType__BehaviorDescriptor;
-          }
-          break;
+          return myResourceType__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myResultStatement__BehaviorDescriptor;
-          }
-          break;
+          return myResultStatement__BehaviorDescriptor;
         default:
           // default 
       }

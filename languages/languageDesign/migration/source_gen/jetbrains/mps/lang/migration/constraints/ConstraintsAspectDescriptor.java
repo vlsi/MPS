@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new DataDependencyReference_Constraints();
-          }
-          break;
+          return new DataDependencyReference_Constraints();
         case 1:
-          if (true) {
-            return new LinkPatternVariableReference_Constraints();
-          }
-          break;
+          return new LinkPatternVariableReference_Constraints();
         case 2:
-          if (true) {
-            return new ListPatternVariableReference_Constraints();
-          }
-          break;
+          return new ListPatternVariableReference_Constraints();
         case 3:
-          if (true) {
-            return new NodePatternVariableReference_Constraints();
-          }
-          break;
+          return new NodePatternVariableReference_Constraints();
         case 4:
-          if (true) {
-            return new PropertyPatternVariableReference_Constraints();
-          }
-          break;
+          return new PropertyPatternVariableReference_Constraints();
         default:
           // default 
       }

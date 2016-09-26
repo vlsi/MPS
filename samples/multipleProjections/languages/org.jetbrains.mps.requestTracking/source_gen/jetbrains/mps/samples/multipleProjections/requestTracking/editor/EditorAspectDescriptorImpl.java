@@ -26,15 +26,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Workflow_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Workflow_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new WorkflowContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new WorkflowContainer_Editor());
         default:
       }
     }

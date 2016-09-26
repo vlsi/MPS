@@ -22,40 +22,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
         default:
       }
     }
@@ -72,15 +51,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new DebuggerReference_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new DebuggerReference_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ChooseBreakpoint_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ChooseBreakpoint_Contribution());
         default:
       }
     }

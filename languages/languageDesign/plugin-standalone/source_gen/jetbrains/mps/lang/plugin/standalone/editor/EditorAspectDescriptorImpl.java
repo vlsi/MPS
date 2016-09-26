@@ -22,40 +22,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ApplicationPluginDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ApplicationPluginDeclaration_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ApplicationPluginType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ApplicationPluginType_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetPreferencesComponentInProjectOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetPreferencesComponentInProjectOperation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetToolInProjectOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetToolInProjectOperation_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ProjectPluginDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ProjectPluginDeclaration_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ProjectPluginType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ProjectPluginType_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StandalonePluginDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StandalonePluginDescriptor_Editor());
         default:
       }
     }
@@ -72,10 +51,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AddWorkbenchToActionParameters_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AddWorkbenchToActionParameters_Contribution());
         default:
       }
     }

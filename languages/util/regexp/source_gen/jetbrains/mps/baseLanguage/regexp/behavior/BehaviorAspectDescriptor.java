@@ -51,140 +51,59 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAtLeastNTimesRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myAtLeastNTimesRegexp__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myCharacterSymbolClassPart__BehaviorDescriptor;
-          }
-          break;
+          return myCharacterSymbolClassPart__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myFromNToMTimesRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myFromNToMTimesRegexp__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myIntersectionSymbolClassPart__BehaviorDescriptor;
-          }
-          break;
+          return myIntersectionSymbolClassPart__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myIntervalSymbolClassPart__BehaviorDescriptor;
-          }
-          break;
+          return myIntervalSymbolClassPart__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myLiteralReplacement__BehaviorDescriptor;
-          }
-          break;
+          return myLiteralReplacement__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myLookRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myLookRegexp__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myMatchParensRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myMatchParensRegexp__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myMatchVariableReferenceRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myMatchVariableReferenceRegexp__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myMatchVariableReferenceReplacement__BehaviorDescriptor;
-          }
-          break;
+          return myMatchVariableReferenceReplacement__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myNTimesRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myNTimesRegexp__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myOrRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myOrRegexp__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myParensRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myParensRegexp__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
-          }
-          break;
+          return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myRegexp__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myReplaceBlock__BehaviorDescriptor;
-          }
-          break;
+          return myReplaceBlock__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myReplaceRegexpOperation__BehaviorDescriptor;
-          }
-          break;
+          return myReplaceRegexpOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myReplacement__BehaviorDescriptor;
-          }
-          break;
+          return myReplacement__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return mySeqRegexp__BehaviorDescriptor;
-          }
-          break;
+          return mySeqRegexp__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myStringLiteralRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myStringLiteralRegexp__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return mySymbolClassPart__BehaviorDescriptor;
-          }
-          break;
+          return mySymbolClassPart__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return mySymbolClassRegexp__BehaviorDescriptor;
-          }
-          break;
+          return mySymbolClassRegexp__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return mySymbolClassRegexpAndPart__BehaviorDescriptor;
-          }
-          break;
+          return mySymbolClassRegexpAndPart__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myUnaryRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myUnaryRegexp__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myUnicodeCharacterRegexp__BehaviorDescriptor;
-          }
-          break;
+          return myUnicodeCharacterRegexp__BehaviorDescriptor;
         default:
           // default 
       }

@@ -22,40 +22,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AllConstant_Constraints();
-          }
-          break;
+          return new AllConstant_Constraints();
         case 1:
-          if (true) {
-            return new CustomContainerCreator_Constraints();
-          }
-          break;
+          return new CustomContainerCreator_Constraints();
         case 2:
-          if (true) {
-            return new CustomContainerDeclaration_Constraints();
-          }
-          break;
+          return new CustomContainerDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new CustomMapCreator_Constraints();
-          }
-          break;
+          return new CustomMapCreator_Constraints();
         case 4:
-          if (true) {
-            return new ForEachVariableReference_Constraints();
-          }
-          break;
+          return new ForEachVariableReference_Constraints();
         case 5:
-          if (true) {
-            return new MultiForEachVariableReference_Constraints();
-          }
-          break;
+          return new MultiForEachVariableReference_Constraints();
         case 6:
-          if (true) {
-            return new SmartClosureParameterDeclaration_Constraints();
-          }
-          break;
+          return new SmartClosureParameterDeclaration_Constraints();
         default:
           // default 
       }

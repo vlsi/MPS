@@ -25,75 +25,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FacetDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FacetDeclaration_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FacetJavaClassExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FacetJavaClassExpression_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FacetReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FacetReference_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FacetReferenceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FacetReferenceExpression_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ForeignParametersComponentExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ForeignParametersComponentExpression_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ForeignParametersExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ForeignParametersExpression_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LocalParametersComponentExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LocalParametersComponentExpression_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LocalParametersExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LocalParametersExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParametersDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParametersDeclaration_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResourceSpecificPropertiesExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResourceSpecificPropertiesExpression_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResourceTypeDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResourceTypeDeclaration_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TargetDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TargetDeclaration_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TargetDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TargetDependency_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TargetReferenceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TargetReferenceExpression_Editor());
         default:
       }
     }
@@ -110,20 +68,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new FacetReference_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new FacetReference_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new FacetReferenceExpression_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new FacetReferenceExpression_TransformationMenu());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new IPropertyExpression_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new IPropertyExpression_TransformationMenu());
         default:
       }
     }
@@ -161,40 +110,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new FacetReferenceExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new FacetReferenceExpression_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ForeignParametersExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ForeignParametersExpression_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new LocalParametersExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new LocalParametersExpression_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ResourceClassifierType_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ResourceClassifierType_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TargetDependency_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TargetDependency_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TargetReferenceExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TargetReferenceExpression_SubstituteMenu());
         default:
       }
     }

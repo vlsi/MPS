@@ -23,7 +23,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,144,0" name="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,93,0" name="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ClosureArgReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureArgReference_BehaviorDescriptor" />

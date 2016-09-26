@@ -23,25 +23,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildWall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildWall_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DestroyWall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DestroyWall_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DropMark_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DropMark_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PickMark_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PickMark_Editor());
         default:
       }
     }
@@ -77,10 +65,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new SceneBuildingCommands());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new SceneBuildingCommands());
         default:
       }
     }

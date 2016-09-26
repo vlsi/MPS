@@ -22,45 +22,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeStatement_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
         default:
       }
     }
@@ -77,10 +53,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
         default:
       }
     }

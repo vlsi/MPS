@@ -42,95 +42,41 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractPrintExpression__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractPrintExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBLCommand__BehaviorDescriptor;
-          }
-          break;
+          return myBLCommand__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBLExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBLExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myCommand__BehaviorDescriptor;
-          }
-          break;
+          return myCommand__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCommandHolder__BehaviorDescriptor;
-          }
-          break;
+          return myCommandHolder__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myExceptionHolder__BehaviorDescriptor;
-          }
-          break;
+          return myExceptionHolder__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myGeneratedCommand__BehaviorDescriptor;
-          }
-          break;
+          return myGeneratedCommand__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myHelpCommand__BehaviorDescriptor;
-          }
-          break;
+          return myHelpCommand__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myIActionHolder__BehaviorDescriptor;
-          }
-          break;
+          return myIActionHolder__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myINodeWithReference__BehaviorDescriptor;
-          }
-          break;
+          return myINodeWithReference__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myInterpretedCommand__BehaviorDescriptor;
-          }
-          break;
+          return myInterpretedCommand__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myModifiedCommandHistoryItem__BehaviorDescriptor;
-          }
-          break;
+          return myModifiedCommandHistoryItem__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myNodeReferencePresentation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeReferencePresentation__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myNodeReferenceString__BehaviorDescriptor;
-          }
-          break;
+          return myNodeReferenceString__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myNodeWithClosure__BehaviorDescriptor;
-          }
-          break;
+          return myNodeWithClosure__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myPastedNodeReference__BehaviorDescriptor;
-          }
-          break;
+          return myPastedNodeReference__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myPrintExpression__BehaviorDescriptor;
-          }
-          break;
+          return myPrintExpression__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myProjectExpression__BehaviorDescriptor;
-          }
-          break;
+          return myProjectExpression__BehaviorDescriptor;
         default:
           // default 
       }

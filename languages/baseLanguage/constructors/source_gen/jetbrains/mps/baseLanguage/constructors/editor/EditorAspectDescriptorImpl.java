@@ -24,45 +24,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomArgumentClause_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomArgumentClause_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomConstructor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomConstructor_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomConstructorContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomConstructorContainer_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomConstructorParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomConstructorParameter_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomConstructorParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomConstructorParameterReference_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomConstructorUsage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomConstructorUsage_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ListArgumentsClause_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ListArgumentsClause_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ListCustomParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ListCustomParameter_Editor());
         default:
       }
     }
@@ -79,15 +55,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ArgumentClause_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ArgumentClause_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CustomConstructorUsage_Substitute_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CustomConstructorUsage_Substitute_Contribution());
         default:
       }
     }

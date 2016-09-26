@@ -16,7 +16,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ArgumentClause_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,48,0" name="jetbrains.mps.baseLanguage.constructors.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,45,0" name="jetbrains.mps.baseLanguage.constructors.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CustomArgumentClause_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomArgumentClause_BehaviorDescriptor" />

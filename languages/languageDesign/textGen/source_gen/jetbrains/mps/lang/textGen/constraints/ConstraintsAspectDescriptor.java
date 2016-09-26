@@ -22,40 +22,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AttributedNodePart_Constraints();
-          }
-          break;
+          return new AttributedNodePart_Constraints();
         case 1:
-          if (true) {
-            return new ConceptTextGenDeclaration_Constraints();
-          }
-          break;
+          return new ConceptTextGenDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new EncodingLiteral_Constraints();
-          }
-          break;
+          return new EncodingLiteral_Constraints();
         case 3:
-          if (true) {
-            return new LanguageTextGenDeclaration_Constraints();
-          }
-          break;
+          return new LanguageTextGenDeclaration_Constraints();
         case 4:
-          if (true) {
-            return new OperationDeclaration_Constraints();
-          }
-          break;
+          return new OperationDeclaration_Constraints();
         case 5:
-          if (true) {
-            return new TextUnitLayout_Constraints();
-          }
-          break;
+          return new TextUnitLayout_Constraints();
         case 6:
-          if (true) {
-            return new UtilityMethodDeclaration_Constraints();
-          }
-          break;
+          return new UtilityMethodDeclaration_Constraints();
         default:
           // default 
       }

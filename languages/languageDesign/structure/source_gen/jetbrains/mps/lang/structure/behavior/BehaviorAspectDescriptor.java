@@ -38,75 +38,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractConceptDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractConceptDeclaration__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAttributeInfo__BehaviorDescriptor;
-          }
-          break;
+          return myAttributeInfo__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myConceptDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myConceptDeclaration__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myDataTypeDeclaration__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myDeprecatedNodeAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myDeprecatedNodeAnnotation__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myEnumerationMemberDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEnumerationMemberDeclaration__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myIConceptAspect__BehaviorDescriptor;
-          }
-          break;
+          return myIConceptAspect__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myIStructureDeprecatable__BehaviorDescriptor;
-          }
-          break;
+          return myIStructureDeprecatable__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myInterfaceConceptDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myInterfaceConceptDeclaration__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myLinkDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myLinkDeclaration__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myPropertyDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyDeclaration__BehaviorDescriptor;
         default:
           // default 
       }

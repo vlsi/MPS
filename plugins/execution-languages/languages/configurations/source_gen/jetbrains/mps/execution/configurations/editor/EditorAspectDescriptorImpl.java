@@ -24,105 +24,45 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeforeTask_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeforeTask_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeforeTaskCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeforeTaskCall_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeforeTaskParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeforeTaskParameter_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeforeTaskParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeforeTaskParameterReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConfigurationFromExecutorReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConfigurationFromExecutorReference_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConsoleCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConsoleCreator_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConsoleType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConsoleType_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EnvironmentExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EnvironmentExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeListSource_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeListSource_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeSource_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeSource_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StartProcessHandlerStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StartProcessHandlerStatement_Editor());
         default:
       }
     }
@@ -177,10 +117,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConfigurationFromExecutorReference_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConfigurationFromExecutorReference_SubstituteMenu());
         default:
       }
     }

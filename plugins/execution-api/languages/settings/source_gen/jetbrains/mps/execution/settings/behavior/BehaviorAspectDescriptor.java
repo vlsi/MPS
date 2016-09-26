@@ -41,90 +41,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myApplyTo_Function__BehaviorDescriptor;
-          }
-          break;
+          return myApplyTo_Function__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myCheckProperties_Function__BehaviorDescriptor;
-          }
-          break;
+          return myCheckProperties_Function__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myCreateEditor_Function__BehaviorDescriptor;
-          }
-          break;
+          return myCreateEditor_Function__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myDeprecatedAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myDeprecatedAnnotation__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myDispose_Function__BehaviorDescriptor;
-          }
-          break;
+          return myDispose_Function__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myEditorOperationDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEditorOperationDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myEditorPropertyDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEditorPropertyDeclaration__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myEditorPropertyReference__BehaviorDescriptor;
-          }
-          break;
+          return myEditorPropertyReference__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myPersistentConfiguration__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentConfiguration__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myPersistentConfigurationTemplate__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentConfigurationTemplate__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myPersistentConfigurationType__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentConfigurationType__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myPersistentPropertyDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentPropertyDeclaration__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myReportConfigurationErrorStatement__BehaviorDescriptor;
-          }
-          break;
+          return myReportConfigurationErrorStatement__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myResetFrom_Function__BehaviorDescriptor;
-          }
-          break;
+          return myResetFrom_Function__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return mySettingsEditor__BehaviorDescriptor;
-          }
-          break;
+          return mySettingsEditor__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myTemplateParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateParameterReference__BehaviorDescriptor;
         default:
           // default 
       }

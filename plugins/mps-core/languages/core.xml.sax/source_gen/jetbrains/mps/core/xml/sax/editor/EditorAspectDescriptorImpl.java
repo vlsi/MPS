@@ -22,70 +22,31 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeReference_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeRule_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXBreakStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXBreakStatement_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXChildRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXChildRule_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXDefaultChildRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXDefaultChildRule_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXFieldDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXFieldDeclaration_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXFieldReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXFieldReference_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXLocatorExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXLocatorExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRule_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParam_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParam_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParamRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParamRef_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXParser_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXParser_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XMLSAXTextRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XMLSAXTextRule_Editor());
         default:
       }
     }
@@ -102,10 +63,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XMLSAXNodeRuleParam_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XMLSAXNodeRuleParam_SubstituteMenu());
         default:
       }
     }

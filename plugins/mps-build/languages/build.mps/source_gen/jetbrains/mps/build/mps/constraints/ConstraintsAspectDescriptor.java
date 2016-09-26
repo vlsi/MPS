@@ -22,135 +22,57 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new BuildMpsAspect_Constraints();
-          }
-          break;
+          return new BuildMpsAspect_Constraints();
         case 1:
-          if (true) {
-            return new BuildMpsLayout_ModuleJars_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_ModuleJars_Constraints();
         case 2:
-          if (true) {
-            return new BuildMpsLayout_ModuleSources_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_ModuleSources_Constraints();
         case 3:
-          if (true) {
-            return new BuildMpsLayout_ModuleXml_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_ModuleXml_Constraints();
         case 4:
-          if (true) {
-            return new BuildMpsLayout_Plugin_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_Plugin_Constraints();
         case 5:
-          if (true) {
-            return new BuildMpsLayout_PluginDescriptor_Constraints();
-          }
-          break;
+          return new BuildMpsLayout_PluginDescriptor_Constraints();
         case 6:
-          if (true) {
-            return new BuildMps_Branding_Constraints();
-          }
-          break;
+          return new BuildMps_Branding_Constraints();
         case 7:
-          if (true) {
-            return new BuildMps_DevKit_Constraints();
-          }
-          break;
+          return new BuildMps_DevKit_Constraints();
         case 8:
-          if (true) {
-            return new BuildMps_DevKitExportLanguage_Constraints();
-          }
-          break;
+          return new BuildMps_DevKitExportLanguage_Constraints();
         case 9:
-          if (true) {
-            return new BuildMps_DevKitExportSolution_Constraints();
-          }
-          break;
+          return new BuildMps_DevKitExportSolution_Constraints();
         case 10:
-          if (true) {
-            return new BuildMps_DevKitRef_Constraints();
-          }
-          break;
+          return new BuildMps_DevKitRef_Constraints();
         case 11:
-          if (true) {
-            return new BuildMps_Generator_Constraints();
-          }
-          break;
+          return new BuildMps_Generator_Constraints();
         case 12:
-          if (true) {
-            return new BuildMps_Group_Constraints();
-          }
-          break;
+          return new BuildMps_Group_Constraints();
         case 13:
-          if (true) {
-            return new BuildMps_IdeaPlugin_Constraints();
-          }
-          break;
+          return new BuildMps_IdeaPlugin_Constraints();
         case 14:
-          if (true) {
-            return new BuildMps_IdeaPluginDependency_Constraints();
-          }
-          break;
+          return new BuildMps_IdeaPluginDependency_Constraints();
         case 15:
-          if (true) {
-            return new BuildMps_IdeaPluginGroup_Constraints();
-          }
-          break;
+          return new BuildMps_IdeaPluginGroup_Constraints();
         case 16:
-          if (true) {
-            return new BuildMps_IdeaPluginGroupCustomModule_Constraints();
-          }
-          break;
+          return new BuildMps_IdeaPluginGroupCustomModule_Constraints();
         case 17:
-          if (true) {
-            return new BuildMps_IdeaPluginModule_Constraints();
-          }
-          break;
+          return new BuildMps_IdeaPluginModule_Constraints();
         case 18:
-          if (true) {
-            return new BuildMps_Language_Constraints();
-          }
-          break;
+          return new BuildMps_Language_Constraints();
         case 19:
-          if (true) {
-            return new BuildMps_ModuleDependencyExtendLanguage_Constraints();
-          }
-          break;
+          return new BuildMps_ModuleDependencyExtendLanguage_Constraints();
         case 20:
-          if (true) {
-            return new BuildMps_ModuleDependencyOnDevKit_Constraints();
-          }
-          break;
+          return new BuildMps_ModuleDependencyOnDevKit_Constraints();
         case 21:
-          if (true) {
-            return new BuildMps_ModuleDependencyOnJavaModule_Constraints();
-          }
-          break;
+          return new BuildMps_ModuleDependencyOnJavaModule_Constraints();
         case 22:
-          if (true) {
-            return new BuildMps_ModuleDependencyOnModule_Constraints();
-          }
-          break;
+          return new BuildMps_ModuleDependencyOnModule_Constraints();
         case 23:
-          if (true) {
-            return new BuildMps_ModuleDependencyUseLanguage_Constraints();
-          }
-          break;
+          return new BuildMps_ModuleDependencyUseLanguage_Constraints();
         case 24:
-          if (true) {
-            return new BuildMps_ModuleSolutionRuntime_Constraints();
-          }
-          break;
+          return new BuildMps_ModuleSolutionRuntime_Constraints();
         case 25:
-          if (true) {
-            return new BuildMps_Solution_Constraints();
-          }
-          break;
+          return new BuildMps_Solution_Constraints();
         default:
           // default 
       }

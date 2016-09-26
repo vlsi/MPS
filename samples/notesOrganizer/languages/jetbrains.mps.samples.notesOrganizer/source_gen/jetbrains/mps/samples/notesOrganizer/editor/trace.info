@@ -22,7 +22,7 @@
       <unit at="14,0,57,0" name="jetbrains.mps.samples.notesOrganizer.editor.Checkbox_KeyMap_0" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="20,0,117,0" name="jetbrains.mps.samples.notesOrganizer.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,93,0" name="jetbrains.mps.samples.notesOrganizer.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:025f3f3b-a8d7-4b18-b0ed-c92fbe872489(jetbrains.mps.samples.notesOrganizer.editor)/3892287256988702643">

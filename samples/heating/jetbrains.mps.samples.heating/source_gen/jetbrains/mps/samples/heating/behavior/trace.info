@@ -18,7 +18,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.samples.heating.behavior.Applicability_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,84,0" name="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,63,0" name="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChangeEvent_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.heating.behavior.ChangeEvent_BehaviorDescriptor" />

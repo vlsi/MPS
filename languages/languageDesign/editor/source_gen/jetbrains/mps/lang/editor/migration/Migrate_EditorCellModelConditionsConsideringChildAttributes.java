@@ -183,22 +183,13 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
       switch (switchIndex) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
-            if (true) {
-              return isLeft;
-            }
-            break;
+            return isLeft;
           }
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
-            if (true) {
-              return !(isLeft);
-            }
-            break;
+            return !(isLeft);
           }
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
-            if (true) {
-              return true;
-            }
-            break;
+            return true;
           }
           // default 
       }

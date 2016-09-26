@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myApplicationPluginDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myApplicationPluginDeclaration__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myApplicationPluginDisposeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myApplicationPluginDisposeBlock__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myApplicationPluginInitBlock__BehaviorDescriptor;
-          }
-          break;
+          return myApplicationPluginInitBlock__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myApplicationPluginType__BehaviorDescriptor;
-          }
-          break;
+          return myApplicationPluginType__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myProjectPluginDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myProjectPluginDeclaration__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myProjectPluginDisposeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myProjectPluginDisposeBlock__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myProjectPluginInitBlock__BehaviorDescriptor;
-          }
-          break;
+          return myProjectPluginInitBlock__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myProjectPluginType__BehaviorDescriptor;
-          }
-          break;
+          return myProjectPluginType__BehaviorDescriptor;
         default:
           // default 
       }

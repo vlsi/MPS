@@ -25,145 +25,61 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfAntStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfAntStatement_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfAntTaskBundleDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfAntTaskBundleDeclaration_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfAntTaskDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfAntTaskDeclaration_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfCustomMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfCustomMacro_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfDependency_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfFileSet_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfFileSet_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaClassPath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaClassPath_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaDependency_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaDescriptor_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaLibrary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaLibrary_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaLibraryReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaLibraryReference_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaModule_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfJavaModuleReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfJavaModuleReference_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfMacro_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfMacroListImport_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfMacroListImport_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfPathDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfPathDeclaration_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfPathReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfPathReference_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfProject_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfProject_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfProjectPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfProjectPart_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfProjectPartStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfProjectPartStatement_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfStatement_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfSubTask_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfSubTask_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfSubTaskDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfSubTaskDependency_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfTask_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfTask_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfTaskDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfTaskDependency_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfTaskLibrary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfTaskLibrary_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfTaskLibraryDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfTaskLibraryDependency_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BwfTaskPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BwfTaskPart_Editor());
         default:
       }
     }
@@ -225,20 +141,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BwfFileSet_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BwfFileSet_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BwfJavaDependency_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BwfJavaDependency_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new java_module_content_XmlBaseElement_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new java_module_content_XmlBaseElement_Contribution());
         default:
       }
     }

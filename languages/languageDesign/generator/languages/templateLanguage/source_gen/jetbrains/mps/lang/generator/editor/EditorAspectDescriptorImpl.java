@@ -24,295 +24,121 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbandonInput_RuleConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbandonInput_RuleConsequence_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CopySrcListMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CopySrcListMacro_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CopySrcNodeMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CopySrcNodeMacro_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CreateRootRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CreateRootRule_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DismissTopMappingRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DismissTopMappingRule_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DropAttributeRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DropAttributeRule_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DropRootRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DropRootRule_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExportLabel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExportLabel_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExportMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExportMacro_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorDebug_InputNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorDebug_InputNode_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorDebug_LabelEntry_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorDebug_LabelEntry_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorDebug_Mappings_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorDebug_Mappings_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorDebug_NodeMapEntry_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorDebug_NodeMapEntry_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorDebug_NodeRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorDebug_NodeRef_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorMessage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorMessage_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorParameterReference_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IfMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IfMacro_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IncludeMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IncludeMacro_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineSwitch_Case_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineSwitch_Case_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineSwitch_RuleConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineSwitch_RuleConsequence_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineTemplateWithContext_RuleConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineTemplateWithContext_RuleConsequence_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineTemplate_RuleConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineTemplate_RuleConsequence_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InsertMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InsertMacro_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LabelMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LabelMacro_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LoopMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LoopMacro_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MapSrcListMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MapSrcListMacro_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MapSrcNodeMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MapSrcNodeMacro_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingConfiguration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingConfiguration_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingLabelDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingLabelDeclaration_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingScript_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingScript_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingScriptReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingScriptReference_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeMacro_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PatternReduction_MappingRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PatternReduction_MappingRule_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyMacro_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Reduction_MappingRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Reduction_MappingRule_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReferenceMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReferenceMacro_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RootTemplateAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RootTemplateAnnotation_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Root_MappingRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Root_MappingRule_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RuleConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RuleConsequence_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateArgumentLinkPatternRefExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateArgumentLinkPatternRefExpression_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateArgumentParameterExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateArgumentParameterExpression_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateArgumentPatternVarRefExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateArgumentPatternVarRefExpression_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateArgumentPropertyPatternRefExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateArgumentPropertyPatternRefExpression_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateArgumentQueryExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateArgumentQueryExpression_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateArgumentVariableRefExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateArgumentVariableRefExpression_Editor());
         case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateCallMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateCallMacro_Editor());
         case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateDeclaration_Editor());
         case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateDeclarationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateDeclarationReference_Editor());
         case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateFragment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateFragment_Editor());
         case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateParameterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateParameterDeclaration_Editor());
         case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateSwitch_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateSwitch_Editor());
         case 51:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateSwitchMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateSwitchMacro_Editor());
         case 52:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateSwitchReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateSwitchReference_Editor());
         case 53:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TraceMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TraceMacro_Editor());
         case 54:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VarMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VarMacro_Editor());
         case 55:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new WeaveEach_RuleConsequence_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new WeaveEach_RuleConsequence_Editor());
         case 56:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new WeaveMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new WeaveMacro_Editor());
         case 57:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Weaving_MappingRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Weaving_MappingRule_Editor());
         default:
       }
     }
@@ -386,60 +212,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new templateCallArguments_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new templateCallArguments_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InlineSwitch_RuleConsequence_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InlineSwitch_RuleConsequence_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PropertyMacro_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PropertyMacro_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new RuleConsequence_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new RuleConsequence_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_mainContextNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_mainContextNode_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_outputNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_outputNode_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_parentOutputNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_parentOutputNode_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_sourceNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_sourceNode_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_templatePropertyValue_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_templatePropertyValue_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_templateReferent_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_templateReferent_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new WeaveEach_RuleConsequence_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new WeaveEach_RuleConsequence_SubstituteMenu());
         default:
       }
     }

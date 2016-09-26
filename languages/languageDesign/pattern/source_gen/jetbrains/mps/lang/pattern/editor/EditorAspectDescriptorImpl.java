@@ -22,95 +22,41 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
         default:
       }
     }
@@ -127,10 +73,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new CreateOrPattern_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new CreateOrPattern_Contribution());
         default:
       }
     }

@@ -25,160 +25,67 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AuthorBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AuthorBlockDocTag_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseDocReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseDocReference_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseInlineDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseInlineDocTag_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseParameterReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseVariableDocReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseVariableDocReference_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClassifierDocComment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClassifierDocComment_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClassifierDocReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClassifierDocReference_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CodeInlineDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CodeInlineDocTag_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CodeSnippet_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CodeSnippet_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DeprecatedBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DeprecatedBlockDocTag_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DocMethodParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DocMethodParameterReference_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DocTypeParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DocTypeParameterReference_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmptyBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmptyBlockDocTag_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VersionBlockDocTag_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VersionBlockDocTag_Editor());
         default:
       }
     }
@@ -195,10 +102,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new TextCommentLinePart_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new TextCommentLinePart_TransformationMenu());
         default:
       }
     }
@@ -236,10 +140,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new EmptyBlockDocTag_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new EmptyBlockDocTag_SubstituteMenu());
         default:
       }
     }

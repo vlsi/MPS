@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractionVarRef__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractionVarRef__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myFunctionType__BehaviorDescriptor;
-          }
-          break;
+          return myFunctionType__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myLambdaAbstraction__BehaviorDescriptor;
-          }
-          break;
+          return myLambdaAbstraction__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myLambdaApplication__BehaviorDescriptor;
-          }
-          break;
+          return myLambdaApplication__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myLambdaExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLambdaExpression__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myLetExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLetExpression__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myLetRef__BehaviorDescriptor;
-          }
-          break;
+          return myLetRef__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myVariableOwner__BehaviorDescriptor;
-          }
-          break;
+          return myVariableOwner__BehaviorDescriptor;
         default:
           // default 
       }

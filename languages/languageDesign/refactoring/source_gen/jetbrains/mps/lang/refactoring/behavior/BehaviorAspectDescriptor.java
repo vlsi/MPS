@@ -48,125 +48,53 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractMoveExpression__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractMoveExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAffectedNodesClause__BehaviorDescriptor;
-          }
-          break;
+          return myAffectedNodesClause__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myConceptFunctionParameter_Model__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Model__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myConceptFunctionParameter_SModel__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_SModel__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myContextMemberOperation__BehaviorDescriptor;
-          }
-          break;
+          return myContextMemberOperation__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myDoRefactorClause__BehaviorDescriptor;
-          }
-          break;
+          return myDoRefactorClause__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myDoWhenDoneClause__BehaviorDescriptor;
-          }
-          break;
+          return myDoWhenDoneClause__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myGetModelsToUpdateClause__BehaviorDescriptor;
-          }
-          break;
+          return myGetModelsToUpdateClause__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myInitClause__BehaviorDescriptor;
-          }
-          break;
+          return myInitClause__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myIsApplicableToModelClause__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableToModelClause__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myIsApplicableToModuleClause__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableToModuleClause__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myIsApplicableToNodeClause__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableToNodeClause__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myMainProjectOperation__BehaviorDescriptor;
-          }
-          break;
+          return myMainProjectOperation__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myModelDescriptorOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModelDescriptorOperation__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myModelsToGenerateClause__BehaviorDescriptor;
-          }
-          break;
+          return myModelsToGenerateClause__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myModuleOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModuleOperation__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeOperation__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myNodesOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodesOperation__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myOperationContextOperation__BehaviorDescriptor;
-          }
-          break;
+          return myOperationContextOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myProjectOperation__BehaviorDescriptor;
-          }
-          break;
+          return myProjectOperation__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myRefactoring__BehaviorDescriptor;
-          }
-          break;
+          return myRefactoring__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myRefactoringFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myRefactoringFieldReference__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myRepositoryOperation__BehaviorDescriptor;
-          }
-          break;
+          return myRepositoryOperation__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myScopeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myScopeOperation__BehaviorDescriptor;
         default:
           // default 
       }

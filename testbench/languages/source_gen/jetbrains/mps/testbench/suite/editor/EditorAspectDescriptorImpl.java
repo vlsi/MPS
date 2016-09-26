@@ -22,35 +22,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ITestRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ITestRef_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new JUnit3TestCaseRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new JUnit3TestCaseRef_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new JUnit4TestCaseRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new JUnit4TestCaseRef_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModuleSuite_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModuleSuite_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SolutionRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SolutionRef_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestCaseRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestCaseRef_Editor());
         default:
       }
     }
@@ -67,25 +49,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new JUnit3TestCaseRef_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new JUnit3TestCaseRef_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new JUnit4TestCaseRef_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new JUnit4TestCaseRef_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SolutionRef_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SolutionRef_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TestCaseRef_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TestCaseRef_SubstituteMenu());
         default:
       }
     }

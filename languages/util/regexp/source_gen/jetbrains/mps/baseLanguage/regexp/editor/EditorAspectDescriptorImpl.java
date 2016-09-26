@@ -23,230 +23,95 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AtLeastNTimesRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AtLeastNTimesRegexp_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BinaryRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BinaryRegexp_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CharacterSymbolClassPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CharacterSymbolClassPart_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DotRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DotRegexp_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FindMatchExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FindMatchExpression_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FindMatchStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FindMatchStatement_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ForEachMatchStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ForEachMatchStatement_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FromNToMTimesRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FromNToMTimesRegexp_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineRegexpExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineRegexpExpression_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntersectionSymbolClassPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntersectionSymbolClassPart_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntervalSymbolClassPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntervalSymbolClassPart_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LineEndRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LineEndRegexp_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LineStartRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LineStartRegexp_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LiteralReplacement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LiteralReplacement_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LookRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LookRegexp_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchParensRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchParensRegexp_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchRegexpExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchRegexpExpression_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchRegexpOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchRegexpOperation_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchRegexpStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchRegexpStatement_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchVariableReference_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchVariableReferenceRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchVariableReferenceRegexp_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchVariableReferenceReplacement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchVariableReferenceReplacement_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NTimesRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NTimesRegexp_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NegativeSymbolClassRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NegativeSymbolClassRegexp_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrRegexp_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParensRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParensRegexp_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PositiveSymbolClassRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PositiveSymbolClassRegexp_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassDeclaration_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassRegexp_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassSymbolClassPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClassSymbolClassPart_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClasses_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PredefinedSymbolClasses_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Regexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Regexp_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RegexpDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RegexpDeclaration_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RegexpDeclarationReferenceRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RegexpDeclarationReferenceRegexp_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Regexps_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Regexps_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReplaceBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReplaceBlock_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReplaceRegexpOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReplaceRegexpOperation_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReplaceWithRegexpExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReplaceWithRegexpExpression_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReplaceWithRegexpOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReplaceWithRegexpOperation_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SeqRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SeqRegexp_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SplitExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SplitExpression_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SplitOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SplitOperation_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StringLiteralRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StringLiteralRegexp_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnaryRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnaryRegexp_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnicodeCharacterRegexp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnicodeCharacterRegexp_Editor());
         default:
       }
     }
@@ -263,35 +128,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new CharacterSymbolClassPart_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new CharacterSymbolClassPart_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new stringOperations_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new stringOperations_Contribution());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new InlineRegexpExpression_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new InlineRegexpExpression_TransformationMenu());
         case 3:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Regexp_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Regexp_TransformationMenu());
         case 4:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ReplaceRegexpOperation_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ReplaceRegexpOperation_TransformationMenu());
         case 5:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new SymbolClassPart_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new SymbolClassPart_TransformationMenu());
         default:
       }
     }
@@ -306,55 +153,25 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new FindMatchExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new FindMatchExpression_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new LiteralReplacement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new LiteralReplacement_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MatchParensRegexp_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MatchParensRegexp_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MatchRegexpExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MatchRegexpExpression_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Regexp_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Regexp_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ReplaceWithRegexpExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ReplaceWithRegexpExpression_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Replacement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Replacement_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SplitExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SplitExpression_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SplitOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SplitOperation_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SymbolClassPart_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SymbolClassPart_SubstituteMenu());
         default:
       }
     }

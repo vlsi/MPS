@@ -22,60 +22,27 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ClassifierDocReference_Constraints();
-          }
-          break;
+          return new ClassifierDocReference_Constraints();
         case 1:
-          if (true) {
-            return new DeprecatedBlockDocTag_Constraints();
-          }
-          break;
+          return new DeprecatedBlockDocTag_Constraints();
         case 2:
-          if (true) {
-            return new DocMethodParameterReference_Constraints();
-          }
-          break;
+          return new DocMethodParameterReference_Constraints();
         case 3:
-          if (true) {
-            return new DocTypeParameterReference_Constraints();
-          }
-          break;
+          return new DocTypeParameterReference_Constraints();
         case 4:
-          if (true) {
-            return new FieldDocReference_Constraints();
-          }
-          break;
+          return new FieldDocReference_Constraints();
         case 5:
-          if (true) {
-            return new MethodDocReference_Constraints();
-          }
-          break;
+          return new MethodDocReference_Constraints();
         case 6:
-          if (true) {
-            return new ParameterBlockDocTag_Constraints();
-          }
-          break;
+          return new ParameterBlockDocTag_Constraints();
         case 7:
-          if (true) {
-            return new ReturnBlockDocTag_Constraints();
-          }
-          break;
+          return new ReturnBlockDocTag_Constraints();
         case 8:
-          if (true) {
-            return new StaticFieldDocReference_Constraints();
-          }
-          break;
+          return new StaticFieldDocReference_Constraints();
         case 9:
-          if (true) {
-            return new ThrowsBlockDocTag_Constraints();
-          }
-          break;
+          return new ThrowsBlockDocTag_Constraints();
         case 10:
-          if (true) {
-            return new ValueInlineDocTag_Constraints();
-          }
-          break;
+          return new ValueInlineDocTag_Constraints();
         default:
           // default 
       }

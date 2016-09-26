@@ -35,60 +35,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAnalyzer__BehaviorDescriptor;
-          }
-          break;
+          return myAnalyzer__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAnalyzerFunFunction__BehaviorDescriptor;
-          }
-          break;
+          return myAnalyzerFunFunction__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myAnalyzerInitialFunction__BehaviorDescriptor;
-          }
-          break;
+          return myAnalyzerInitialFunction__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myAnalyzerMergeFunction__BehaviorDescriptor;
-          }
-          break;
+          return myAnalyzerMergeFunction__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myApplicableCondition__BehaviorDescriptor;
-          }
-          break;
+          return myApplicableCondition__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myConceptCondition__BehaviorDescriptor;
-          }
-          break;
+          return myConceptCondition__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myInstruction__BehaviorDescriptor;
-          }
-          break;
+          return myInstruction__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myInstructionReference__BehaviorDescriptor;
-          }
-          break;
+          return myInstructionReference__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myPatternCondition__BehaviorDescriptor;
-          }
-          break;
+          return myPatternCondition__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myRule__BehaviorDescriptor;
-          }
-          break;
+          return myRule__BehaviorDescriptor;
         default:
           // default 
       }

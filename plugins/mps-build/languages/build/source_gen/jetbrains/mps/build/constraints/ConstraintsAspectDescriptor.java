@@ -22,165 +22,69 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new BuildAspect_Constraints();
-          }
-          break;
+          return new BuildAspect_Constraints();
         case 1:
-          if (true) {
-            return new BuildExternalLayout_Constraints();
-          }
-          break;
+          return new BuildExternalLayout_Constraints();
         case 2:
-          if (true) {
-            return new BuildExternalLayoutDependency_Constraints();
-          }
-          break;
+          return new BuildExternalLayoutDependency_Constraints();
         case 3:
-          if (true) {
-            return new BuildLayout_Constraints();
-          }
-          break;
+          return new BuildLayout_Constraints();
         case 4:
-          if (true) {
-            return new BuildLayout_CompileOutputOf_Constraints();
-          }
-          break;
+          return new BuildLayout_CompileOutputOf_Constraints();
         case 5:
-          if (true) {
-            return new BuildLayout_File_Constraints();
-          }
-          break;
+          return new BuildLayout_File_Constraints();
         case 6:
-          if (true) {
-            return new BuildLayout_FileStub_Constraints();
-          }
-          break;
+          return new BuildLayout_FileStub_Constraints();
         case 7:
-          if (true) {
-            return new BuildLayout_Filemode_Constraints();
-          }
-          break;
+          return new BuildLayout_Filemode_Constraints();
         case 8:
-          if (true) {
-            return new BuildLayout_FilesOf_Constraints();
-          }
-          break;
+          return new BuildLayout_FilesOf_Constraints();
         case 9:
-          if (true) {
-            return new BuildLayout_Import_Constraints();
-          }
-          break;
+          return new BuildLayout_Import_Constraints();
         case 10:
-          if (true) {
-            return new BuildLayout_ImportContent_Constraints();
-          }
-          break;
+          return new BuildLayout_ImportContent_Constraints();
         case 11:
-          if (true) {
-            return new BuildLayout_JarManifest_Constraints();
-          }
-          break;
+          return new BuildLayout_JarManifest_Constraints();
         case 12:
-          if (true) {
-            return new BuildLayout_JarManifest_Section_Constraints();
-          }
-          break;
+          return new BuildLayout_JarManifest_Section_Constraints();
         case 13:
-          if (true) {
-            return new BuildLayout_NamedContainer_Constraints();
-          }
-          break;
+          return new BuildLayout_NamedContainer_Constraints();
         case 14:
-          if (true) {
-            return new BuildProjectDependency_Constraints();
-          }
-          break;
+          return new BuildProjectDependency_Constraints();
         case 15:
-          if (true) {
-            return new BuildSourceMacroRelativePath_Constraints();
-          }
-          break;
+          return new BuildSourceMacroRelativePath_Constraints();
         case 16:
-          if (true) {
-            return new BuildSourcePath_Constraints();
-          }
-          break;
+          return new BuildSourcePath_Constraints();
         case 17:
-          if (true) {
-            return new BuildSource_JavaClassFolder_Constraints();
-          }
-          break;
+          return new BuildSource_JavaClassFolder_Constraints();
         case 18:
-          if (true) {
-            return new BuildSource_JavaDependencyLibrary_Constraints();
-          }
-          break;
+          return new BuildSource_JavaDependencyLibrary_Constraints();
         case 19:
-          if (true) {
-            return new BuildSource_JavaExternalJarFolderRef_Constraints();
-          }
-          break;
+          return new BuildSource_JavaExternalJarFolderRef_Constraints();
         case 20:
-          if (true) {
-            return new BuildSource_JavaExternalJarRef_Constraints();
-          }
-          break;
+          return new BuildSource_JavaExternalJarRef_Constraints();
         case 21:
-          if (true) {
-            return new BuildSource_JavaLibrary_Constraints();
-          }
-          break;
+          return new BuildSource_JavaLibrary_Constraints();
         case 22:
-          if (true) {
-            return new BuildSource_JavaModule_Constraints();
-          }
-          break;
+          return new BuildSource_JavaModule_Constraints();
         case 23:
-          if (true) {
-            return new BuildSource_JavaModuleOptions_Constraints();
-          }
-          break;
+          return new BuildSource_JavaModuleOptions_Constraints();
         case 24:
-          if (true) {
-            return new BuildSource_JavaOptions_Constraints();
-          }
-          break;
+          return new BuildSource_JavaOptions_Constraints();
         case 25:
-          if (true) {
-            return new BuildSource_JavaSources_Constraints();
-          }
-          break;
+          return new BuildSource_JavaSources_Constraints();
         case 26:
-          if (true) {
-            return new BuildStringPart_Constraints();
-          }
-          break;
+          return new BuildStringPart_Constraints();
         case 27:
-          if (true) {
-            return new BuildTextStringPart_Constraints();
-          }
-          break;
+          return new BuildTextStringPart_Constraints();
         case 28:
-          if (true) {
-            return new BuildVarRefStringPart_Constraints();
-          }
-          break;
+          return new BuildVarRefStringPart_Constraints();
         case 29:
-          if (true) {
-            return new BuildVariableMacro_Constraints();
-          }
-          break;
+          return new BuildVariableMacro_Constraints();
         case 30:
-          if (true) {
-            return new BuildVariableMacroInitValue_Constraints();
-          }
-          break;
+          return new BuildVariableMacroInitValue_Constraints();
         case 31:
-          if (true) {
-            return new BuildVariableMacroInitWithDate_Constraints();
-          }
-          break;
+          return new BuildVariableMacroInitWithDate_Constraints();
         default:
           // default 
       }

@@ -22,115 +22,49 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ActionConstructionParameterDeclaration_Constraints();
-          }
-          break;
+          return new ActionConstructionParameterDeclaration_Constraints();
         case 1:
-          if (true) {
-            return new ActionDataParameterDeclaration_Constraints();
-          }
-          break;
+          return new ActionDataParameterDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new ActionDeclaration_Constraints();
-          }
-          break;
+          return new ActionDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new ActionGroupDeclaration_Constraints();
-          }
-          break;
+          return new ActionGroupDeclaration_Constraints();
         case 4:
-          if (true) {
-            return new ActionInstance_Constraints();
-          }
-          break;
+          return new ActionInstance_Constraints();
         case 5:
-          if (true) {
-            return new ActionParameterDeclaration_Constraints();
-          }
-          break;
+          return new ActionParameterDeclaration_Constraints();
         case 6:
-          if (true) {
-            return new ActionParameterReference_Constraints();
-          }
-          break;
+          return new ActionParameterReference_Constraints();
         case 7:
-          if (true) {
-            return new AddElementStatement_Constraints();
-          }
-          break;
+          return new AddElementStatement_Constraints();
         case 8:
-          if (true) {
-            return new AddStatement_Constraints();
-          }
-          break;
+          return new AddStatement_Constraints();
         case 9:
-          if (true) {
-            return new BaseProjectOperation_Constraints();
-          }
-          break;
+          return new BaseProjectOperation_Constraints();
         case 10:
-          if (true) {
-            return new ConceptCondition_Constraints();
-          }
-          break;
+          return new ConceptCondition_Constraints();
         case 11:
-          if (true) {
-            return new EditableModel_Constraints();
-          }
-          break;
+          return new EditableModel_Constraints();
         case 12:
-          if (true) {
-            return new GroupAnchor_Constraints();
-          }
-          break;
+          return new GroupAnchor_Constraints();
         case 13:
-          if (true) {
-            return new IdeaInitializerDescriptor_Constraints();
-          }
-          break;
+          return new IdeaInitializerDescriptor_Constraints();
         case 14:
-          if (true) {
-            return new InterfaceExtentionPoint_Constraints();
-          }
-          break;
+          return new InterfaceExtentionPoint_Constraints();
         case 15:
-          if (true) {
-            return new ModificationStatement_Constraints();
-          }
-          break;
+          return new ModificationStatement_Constraints();
         case 16:
-          if (true) {
-            return new Separator_Constraints();
-          }
-          break;
+          return new Separator_Constraints();
         case 17:
-          if (true) {
-            return new ShortcutChange_Constraints();
-          }
-          break;
+          return new ShortcutChange_Constraints();
         case 18:
-          if (true) {
-            return new SmartDisposeClosureParameterDeclaration_Constraints();
-          }
-          break;
+          return new SmartDisposeClosureParameterDeclaration_Constraints();
         case 19:
-          if (true) {
-            return new TabbedToolOperation_Constraints();
-          }
-          break;
+          return new TabbedToolOperation_Constraints();
         case 20:
-          if (true) {
-            return new ToolInstanceExpression_Constraints();
-          }
-          break;
+          return new ToolInstanceExpression_Constraints();
         case 21:
-          if (true) {
-            return new UpdateBlock_Constraints();
-          }
-          break;
+          return new UpdateBlock_Constraints();
         default:
           // default 
       }

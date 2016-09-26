@@ -22,120 +22,51 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ApplicableNodeReference_Constraints();
-          }
-          break;
+          return new ApplicableNodeReference_Constraints();
         case 1:
-          if (true) {
-            return new CaretPositionOperation_Constraints();
-          }
-          break;
+          return new CaretPositionOperation_Constraints();
         case 2:
-          if (true) {
-            return new ComparisonRule_Constraints();
-          }
-          break;
+          return new ComparisonRule_Constraints();
         case 3:
-          if (true) {
-            return new ConceptReference_Constraints();
-          }
-          break;
+          return new ConceptReference_Constraints();
         case 4:
-          if (true) {
-            return new InequationReference_Constraints();
-          }
-          break;
+          return new InequationReference_Constraints();
         case 5:
-          if (true) {
-            return new InequationReplacementRule_Constraints();
-          }
-          break;
+          return new InequationReplacementRule_Constraints();
         case 6:
-          if (true) {
-            return new InferenceRule_Constraints();
-          }
-          break;
+          return new InferenceRule_Constraints();
         case 7:
-          if (true) {
-            return new LinkPatternVariableReference_Constraints();
-          }
-          break;
+          return new LinkPatternVariableReference_Constraints();
         case 8:
-          if (true) {
-            return new MessageStatement_Constraints();
-          }
-          break;
+          return new MessageStatement_Constraints();
         case 9:
-          if (true) {
-            return new NonTypesystemRule_Constraints();
-          }
-          break;
+          return new NonTypesystemRule_Constraints();
         case 10:
-          if (true) {
-            return new PatternVariableReference_Constraints();
-          }
-          break;
+          return new PatternVariableReference_Constraints();
         case 11:
-          if (true) {
-            return new PropertyMessageTarget_Constraints();
-          }
-          break;
+          return new PropertyMessageTarget_Constraints();
         case 12:
-          if (true) {
-            return new PropertyPatternVariableReference_Constraints();
-          }
-          break;
+          return new PropertyPatternVariableReference_Constraints();
         case 13:
-          if (true) {
-            return new QuickFixArgumentReference_Constraints();
-          }
-          break;
+          return new QuickFixArgumentReference_Constraints();
         case 14:
-          if (true) {
-            return new QuickFixFieldReference_Constraints();
-          }
-          break;
+          return new QuickFixFieldReference_Constraints();
         case 15:
-          if (true) {
-            return new ReferenceMessageTarget_Constraints();
-          }
-          break;
+          return new ReferenceMessageTarget_Constraints();
         case 16:
-          if (true) {
-            return new SubstituteTypeRule_Constraints();
-          }
-          break;
+          return new SubstituteTypeRule_Constraints();
         case 17:
-          if (true) {
-            return new SubtypingRule_Constraints();
-          }
-          break;
+          return new SubtypingRule_Constraints();
         case 18:
-          if (true) {
-            return new TypeVarReference_Constraints();
-          }
-          break;
+          return new TypeVarReference_Constraints();
         case 19:
-          if (true) {
-            return new TypesystemIntentionArgument_Constraints();
-          }
-          break;
+          return new TypesystemIntentionArgument_Constraints();
         case 20:
-          if (true) {
-            return new TypesystemQuickFix_Constraints();
-          }
-          break;
+          return new TypesystemQuickFix_Constraints();
         case 21:
-          if (true) {
-            return new WasSelectedNodeOperation_Constraints();
-          }
-          break;
+          return new WasSelectedNodeOperation_Constraints();
         case 22:
-          if (true) {
-            return new WhenConcreteVariableReference_Constraints();
-          }
-          break;
+          return new WhenConcreteVariableReference_Constraints();
         default:
           // default 
       }

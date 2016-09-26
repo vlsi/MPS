@@ -22,60 +22,27 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ExtendsFacetReference_Constraints();
-          }
-          break;
+          return new ExtendsFacetReference_Constraints();
         case 1:
-          if (true) {
-            return new FacetDeclaration_Constraints();
-          }
-          break;
+          return new FacetDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new FacetReference_Constraints();
-          }
-          break;
+          return new FacetReference_Constraints();
         case 3:
-          if (true) {
-            return new ForeignParametersExpression_Constraints();
-          }
-          break;
+          return new ForeignParametersExpression_Constraints();
         case 4:
-          if (true) {
-            return new NamedFacetReference_Constraints();
-          }
-          break;
+          return new NamedFacetReference_Constraints();
         case 5:
-          if (true) {
-            return new RelatedFacetReference_Constraints();
-          }
-          break;
+          return new RelatedFacetReference_Constraints();
         case 6:
-          if (true) {
-            return new ResourceClassifierType_Constraints();
-          }
-          break;
+          return new ResourceClassifierType_Constraints();
         case 7:
-          if (true) {
-            return new ResourceTypeDeclaration_Constraints();
-          }
-          break;
+          return new ResourceTypeDeclaration_Constraints();
         case 8:
-          if (true) {
-            return new TargetDeclaration_Constraints();
-          }
-          break;
+          return new TargetDeclaration_Constraints();
         case 9:
-          if (true) {
-            return new TargetDependency_Constraints();
-          }
-          break;
+          return new TargetDependency_Constraints();
         case 10:
-          if (true) {
-            return new TargetReferenceExpression_Constraints();
-          }
-          break;
+          return new TargetReferenceExpression_Constraints();
         default:
           // default 
       }

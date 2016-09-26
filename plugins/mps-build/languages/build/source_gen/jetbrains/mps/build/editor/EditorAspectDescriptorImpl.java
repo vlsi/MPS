@@ -26,525 +26,213 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildAspect_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildAspect_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildCompositePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildCompositePath_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildCustomWorkflow_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildCustomWorkflow_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildDependency_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildExternalLayout_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildExternalLayout_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildExternalLayoutDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildExternalLayoutDependency_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildFileExcludeSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildFileExcludeSelector_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildFileIncludeSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildFileIncludeSelector_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildFileIncludesSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildFileIncludesSelector_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildFileSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildFileSelector_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildFolderMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildFolderMacro_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildInputFiles_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildInputFiles_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildInputFolders_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildInputFolders_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildInputResourceSet_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildInputResourceSet_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildInputSingleFile_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildInputSingleFile_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildInputSingleFolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildInputSingleFolder_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildJavaPlugin_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildJavaPlugin_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_AbstractCopy_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_AbstractCopy_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Comment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Comment_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CompileOutputOf_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CompileOutputOf_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterFixCRLF_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterFixCRLF_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceRegex_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceRegex_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceTokens_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceTokens_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFlattenMapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFlattenMapper_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyGlobMapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyGlobMapper_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyHandler_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyHandler_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyRegexMapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyRegexMapper_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_CustomCopy_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_CustomCopy_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoProperties_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoProperties_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoPropertyEntry_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoPropertyEntry_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoXml_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoXml_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_ExportAsJavaLibrary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_ExportAsJavaLibrary_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_File_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_File_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_FileStub_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_FileStub_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Filemode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Filemode_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Files_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Files_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_FilesOf_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_FilesOf_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Import_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Import_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_ImportContent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_ImportContent_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Attribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Attribute_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Section_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Section_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_NamedContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_NamedContainer_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Node_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Node_Editor());
         case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_Tar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_Tar_Editor());
         case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_TransparentContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_TransparentContainer_Editor());
         case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMacro_Editor());
         case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildNamedLayout_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildNamedLayout_Editor());
         case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildPlugin_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildPlugin_Editor());
         case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildProject_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildProject_Editor());
         case 51:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildProjectDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildProjectDependency_Editor());
         case 52:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildProjectPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildProjectPart_Editor());
         case 53:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSourceArchiveRelativePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSourceArchiveRelativePath_Editor());
         case 54:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSourceMacroRelativePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSourceMacroRelativePath_Editor());
         case 55:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSourcePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSourcePath_Editor());
         case 56:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSourceProjectRelativePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSourceProjectRelativePath_Editor());
         case 57:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaCP_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaCP_Editor());
         case 58:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaClassFolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaClassFolder_Editor());
         case 59:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentFolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentFolder_Editor());
         case 60:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentRoot_Editor());
         case 61:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependency_Editor());
         case 62:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJar_Editor());
         case 63:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_Editor());
         case 64:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyFileset_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyFileset_Editor());
         case 65:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyJar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyJar_Editor());
         case 66:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyLibrary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyLibrary_Editor());
         case 67:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyModule_Editor());
         case 68:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarFolderRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarFolderRef_Editor());
         case 69:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarRef_Editor());
         case 70:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaFiles_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaFiles_Editor());
         case 71:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJar_Editor());
         case 72:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJars_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJars_Editor());
         case 73:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibrary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibrary_Editor());
         case 74:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryCP_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryCP_Editor());
         case 75:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryElement_Editor());
         case 76:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJar_Editor());
         case 77:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJarFolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJarFolder_Editor());
         case 78:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModule_Editor());
         case 79:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModuleOptions_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModuleOptions_Editor());
         case 80:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaOptions_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaOptions_Editor());
         case 81:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaResources_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaResources_Editor());
         case 82:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaSources_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaSources_Editor());
         case 83:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildString_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildString_Editor());
         case 84:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildStringNotEmpty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildStringNotEmpty_Editor());
         case 85:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildStringPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildStringPart_Editor());
         case 86:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildTextStringPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildTextStringPart_Editor());
         case 87:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVarRefStringPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVarRefStringPart_Editor());
         case 88:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVariableMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVariableMacro_Editor());
         case 89:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitValue_Editor());
         case 90:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithDate_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithDate_Editor());
         case 91:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithFileContent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithFileContent_Editor());
         case 92:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithString_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithString_Editor());
         case 93:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithValueFromFile_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithValueFromFile_Editor());
         case 94:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_Folder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_Folder_Editor());
         case 95:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JarFolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JarFolder_Editor());
         case 96:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaJar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaJar_Editor());
         case 97:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_Editor());
         case 98:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaModule_Editor());
         case 99:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_SingleFile_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_SingleFile_Editor());
         case 100:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkflowParticipantReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkflowParticipantReference_Editor());
         case 101:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkfowParticipants_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkfowParticipants_Editor());
         case 102:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_LibraryArtifacts_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_LibraryArtifacts_Editor());
         case 103:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ProjectDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ProjectDependency_Editor());
         default:
       }
     }
@@ -580,70 +268,31 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildCompositePath_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildCompositePath_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildInputFiles_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildInputFiles_TransformationMenu());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSourceMacroRelativePath_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSourceMacroRelativePath_TransformationMenu());
         case 3:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSourcePath_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSourcePath_TransformationMenu());
         case 4:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSourceProjectRelativePath_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSourceProjectRelativePath_TransformationMenu());
         case 5:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJar_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJar_TransformationMenu());
         case 6:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_TransformationMenu());
         case 7:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyJar_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyJar_TransformationMenu());
         case 8:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyLibrary_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyLibrary_TransformationMenu());
         case 9:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyModule_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyModule_TransformationMenu());
         case 10:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarFolderRef_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarFolderRef_TransformationMenu());
         case 11:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarRef_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarRef_TransformationMenu());
         case 12:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildStringPart_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildStringPart_TransformationMenu());
         default:
       }
     }
@@ -692,80 +341,35 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildCompositePath_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildCompositePath_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildLayout_Copy_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildLayout_Copy_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildLayout_CustomCopy_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildLayout_CustomCopy_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildLayout_JarManifest_Part_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildLayout_JarManifest_Part_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildSourceArchiveRelativePath_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildSourceArchiveRelativePath_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaContentFolder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaContentFolder_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaDependencyJar_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaDependencyJar_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaFiles_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaFiles_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaLibraryCP_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaLibraryCP_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildString_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildString_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildStringPart_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildStringPart_SubstituteMenu());
         case 11:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildTextStringPart_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildTextStringPart_SubstituteMenu());
         case 12:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildVarRefStringPart_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildVarRefStringPart_SubstituteMenu());
         case 13:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitValue_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitValue_SubstituteMenu());
         case 14:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitWithString_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitWithString_SubstituteMenu());
         default:
       }
     }

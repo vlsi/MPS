@@ -23,80 +23,35 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ConceptSwitchStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ConceptSwitchStatement_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSubConceptOfOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSubConceptOfOperation_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSuperConceptOfOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSuperConceptOfOperation_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ExactConceptCase_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ExactConceptCase_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfStatement_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfVarReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfVarReference_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LinkAttributeQualifier_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LinkAttributeQualifier_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Node_IsInstanceOfOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Node_IsInstanceOfOperation_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PoundExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PoundExpression_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PropertyAttributeQualifier_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PropertyAttributeQualifier_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SemanticDowncastExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SemanticDowncastExpression_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SubconceptCase_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SubconceptCase_DataFlow());
         default:
           // default 
       }

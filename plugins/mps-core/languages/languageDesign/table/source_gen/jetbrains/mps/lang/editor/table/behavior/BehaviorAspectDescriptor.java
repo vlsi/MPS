@@ -26,15 +26,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCellModel_HierarchycalTable__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_HierarchycalTable__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myQueryFunction_TableModel__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TableModel__BehaviorDescriptor;
         default:
           // default 
       }

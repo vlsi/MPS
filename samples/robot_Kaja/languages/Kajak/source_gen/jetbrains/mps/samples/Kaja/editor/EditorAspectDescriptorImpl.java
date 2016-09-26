@@ -25,135 +25,57 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommandList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CommandList_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Drop_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Drop_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new East_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new East_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Heading_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Heading_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IfStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IfStatement_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IsFull_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IsFull_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IsMark_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IsMark_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IsWall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IsWall_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LeftTurn_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LeftTurn_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Library_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Library_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Looking_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Looking_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new North_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new North_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Not_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Not_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Pick_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Pick_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Repeat_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Repeat_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Require_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Require_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RoutineCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RoutineCall_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RoutineDefinition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RoutineDefinition_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Script_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Script_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new South_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new South_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Step_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Step_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TraceMessage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TraceMessage_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new West_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new West_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new While_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new While_Editor());
         default:
       }
     }
@@ -170,15 +92,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Direction_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Direction_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
         default:
       }
     }
@@ -245,15 +161,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CommandList_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CommandList_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new EmptyLine_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new EmptyLine_SubstituteMenu());
         default:
       }
     }

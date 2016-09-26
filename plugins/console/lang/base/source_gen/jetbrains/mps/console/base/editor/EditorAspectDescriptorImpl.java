@@ -26,95 +26,41 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractPrintExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractPrintExpression_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BLExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BLExpression_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConsoleRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConsoleRoot_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HelpCommand_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HelpCommand_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HelpConceptReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HelpConceptReference_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new History_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new History_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NewLineResponseItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NewLineResponseItem_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeResponseItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeResponseItem_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OutputConsoleRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OutputConsoleRoot_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Response_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Response_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextResponseItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextResponseItem_Editor());
         default:
       }
     }
@@ -157,10 +103,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BLCommand_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BLCommand_TransformationMenu());
         default:
       }
     }
@@ -198,20 +141,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Command_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Command_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PastedNodeReference_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PastedNodeReference_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Response_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Response_SubstituteMenu());
         default:
       }
     }

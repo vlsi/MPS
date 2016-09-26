@@ -28,7 +28,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,78,0" name="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BooleanInstructionOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.behavior.BooleanInstructionOperation_BehaviorDescriptor" />

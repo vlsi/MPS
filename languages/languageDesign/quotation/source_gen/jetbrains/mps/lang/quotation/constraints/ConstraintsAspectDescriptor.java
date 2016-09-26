@@ -22,50 +22,23 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AbstractAntiquotation_Constraints();
-          }
-          break;
+          return new AbstractAntiquotation_Constraints();
         case 1:
-          if (true) {
-            return new NodeBuilder_Constraints();
-          }
-          break;
+          return new NodeBuilder_Constraints();
         case 2:
-          if (true) {
-            return new NodeBuilderExpression_Constraints();
-          }
-          break;
+          return new NodeBuilderExpression_Constraints();
         case 3:
-          if (true) {
-            return new NodeBuilderInitLink_Constraints();
-          }
-          break;
+          return new NodeBuilderInitLink_Constraints();
         case 4:
-          if (true) {
-            return new NodeBuilderInitProperty_Constraints();
-          }
-          break;
+          return new NodeBuilderInitProperty_Constraints();
         case 5:
-          if (true) {
-            return new NodeBuilderList_Constraints();
-          }
-          break;
+          return new NodeBuilderList_Constraints();
         case 6:
-          if (true) {
-            return new NodeBuilderNode_Constraints();
-          }
-          break;
+          return new NodeBuilderNode_Constraints();
         case 7:
-          if (true) {
-            return new NodeBuilderRef_Constraints();
-          }
-          break;
+          return new NodeBuilderRef_Constraints();
         case 8:
-          if (true) {
-            return new Quotation_Constraints();
-          }
-          break;
+          return new Quotation_Constraints();
         default:
           // default 
       }

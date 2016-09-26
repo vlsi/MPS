@@ -23,55 +23,25 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggedType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DebuggedType_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DownCastToLowLevel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DownCastToLowLevel_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Evaluator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Evaluator_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EvaluatorConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EvaluatorConcept_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EvaluatorsSuperMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EvaluatorsSuperMethodCall_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EvaluatorsThisExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EvaluatorsThisExpression_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationHelperAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationHelperAnnotation_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LowLevelVariable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LowLevelVariable_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LowLevelVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LowLevelVariableReference_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnitNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnitNode_Editor());
         default:
       }
     }
@@ -88,10 +58,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new dowcast_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new dowcast_Contribution());
         default:
       }
     }
@@ -106,10 +73,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new DownCastToLowLevel_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new DownCastToLowLevel_SubstituteMenu());
         default:
       }
     }

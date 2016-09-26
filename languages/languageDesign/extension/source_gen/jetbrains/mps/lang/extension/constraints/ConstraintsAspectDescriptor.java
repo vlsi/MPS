@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ExtensionDeclaration_Constraints();
-          }
-          break;
+          return new ExtensionDeclaration_Constraints();
         case 1:
-          if (true) {
-            return new ExtensionFieldDeclaration_Constraints();
-          }
-          break;
+          return new ExtensionFieldDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new ExtensionPointDeclaration_Constraints();
-          }
-          break;
+          return new ExtensionPointDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new GetExtensionObjectsOperation_Constraints();
-          }
-          break;
+          return new GetExtensionObjectsOperation_Constraints();
         case 4:
-          if (true) {
-            return new IRootWithUniqueName_Constraints();
-          }
-          break;
+          return new IRootWithUniqueName_Constraints();
         default:
           // default 
       }

@@ -36,65 +36,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myA__BehaviorDescriptor;
-          }
-          break;
+          return myA__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myB__BehaviorDescriptor;
-          }
-          break;
+          return myB__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myC__BehaviorDescriptor;
-          }
-          break;
+          return myC__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myD__BehaviorDescriptor;
-          }
-          break;
+          return myD__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myE__BehaviorDescriptor;
-          }
-          break;
+          return myE__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myF__BehaviorDescriptor;
-          }
-          break;
+          return myF__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myG__BehaviorDescriptor;
-          }
-          break;
+          return myG__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myH__BehaviorDescriptor;
-          }
-          break;
+          return myH__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myI1__BehaviorDescriptor;
-          }
-          break;
+          return myI1__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myI2__BehaviorDescriptor;
-          }
-          break;
+          return myI2__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myI3__BehaviorDescriptor;
-          }
-          break;
+          return myI3__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myK__BehaviorDescriptor;
-          }
-          break;
+          return myK__BehaviorDescriptor;
         default:
           // default 
       }

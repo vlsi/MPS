@@ -36,65 +36,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myExtractStatementListExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExtractStatementListExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myExtractStaticInnerClassExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExtractStaticInnerClassExpression__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myExtractStaticMethodExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExtractStaticMethodExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myInternalAnonymousClass__BehaviorDescriptor;
-          }
-          break;
+          return myInternalAnonymousClass__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myInternalClassCreator__BehaviorDescriptor;
-          }
-          break;
+          return myInternalClassCreator__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myInternalNewExpression__BehaviorDescriptor;
-          }
-          break;
+          return myInternalNewExpression__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myInternalPartialFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myInternalPartialFieldReference__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myInternalStaticMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myInternalStaticMethodCall__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myInternalSuperMethodCallOperation__BehaviorDescriptor;
-          }
-          break;
+          return myInternalSuperMethodCallOperation__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myInternalVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myInternalVariableReference__BehaviorDescriptor;
         default:
           // default 
       }

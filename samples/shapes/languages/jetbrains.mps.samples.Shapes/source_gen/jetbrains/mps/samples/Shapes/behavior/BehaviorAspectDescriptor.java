@@ -29,30 +29,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCanvas__BehaviorDescriptor;
-          }
-          break;
+          return myCanvas__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myCircle__BehaviorDescriptor;
-          }
-          break;
+          return myCircle__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myColorReference__BehaviorDescriptor;
-          }
-          break;
+          return myColorReference__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myShape__BehaviorDescriptor;
-          }
-          break;
+          return myShape__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return mySquare__BehaviorDescriptor;
-          }
-          break;
+          return mySquare__BehaviorDescriptor;
         default:
           // default 
       }

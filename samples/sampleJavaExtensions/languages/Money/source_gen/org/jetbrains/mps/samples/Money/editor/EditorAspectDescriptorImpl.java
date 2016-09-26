@@ -22,55 +22,25 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConvertTo_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConvertTo_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CurrencyDefTable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CurrencyDefTable_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CurrencyUnit_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CurrencyUnit_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CurrentStockPrice_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CurrentStockPrice_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetAmount_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetAmount_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetCurrency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetCurrency_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoneyType_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MovingAverage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MovingAverage_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StockSymbol_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StockSymbol_Editor());
         default:
       }
     }
@@ -87,10 +57,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new makeMoneyFromInteger_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new makeMoneyFromInteger_Contribution());
         default:
       }
     }

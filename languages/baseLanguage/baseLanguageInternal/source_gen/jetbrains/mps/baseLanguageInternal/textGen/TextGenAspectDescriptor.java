@@ -25,75 +25,33 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new InternalAnonymousClass_TextGen();
-          }
-          break;
+          return new InternalAnonymousClass_TextGen();
         case 1:
-          if (true) {
-            return new InternalAnonymousClassCreator_TextGen();
-          }
-          break;
+          return new InternalAnonymousClassCreator_TextGen();
         case 2:
-          if (true) {
-            return new InternalClassCreator_TextGen();
-          }
-          break;
+          return new InternalClassCreator_TextGen();
         case 3:
-          if (true) {
-            return new InternalClassExpression_TextGen();
-          }
-          break;
+          return new InternalClassExpression_TextGen();
         case 4:
-          if (true) {
-            return new InternalClassifierType_TextGen();
-          }
-          break;
+          return new InternalClassifierType_TextGen();
         case 5:
-          if (true) {
-            return new InternalNewExpression_TextGen();
-          }
-          break;
+          return new InternalNewExpression_TextGen();
         case 6:
-          if (true) {
-            return new InternalPartialFieldReference_TextGen();
-          }
-          break;
+          return new InternalPartialFieldReference_TextGen();
         case 7:
-          if (true) {
-            return new InternalPartialInstanceMethodCall_TextGen();
-          }
-          break;
+          return new InternalPartialInstanceMethodCall_TextGen();
         case 8:
-          if (true) {
-            return new InternalStaticFieldReference_TextGen();
-          }
-          break;
+          return new InternalStaticFieldReference_TextGen();
         case 9:
-          if (true) {
-            return new InternalStaticMethodCall_TextGen();
-          }
-          break;
+          return new InternalStaticMethodCall_TextGen();
         case 10:
-          if (true) {
-            return new InternalSuperMethodCallOperation_TextGen();
-          }
-          break;
+          return new InternalSuperMethodCallOperation_TextGen();
         case 11:
-          if (true) {
-            return new InternalThisExpression_TextGen();
-          }
-          break;
+          return new InternalThisExpression_TextGen();
         case 12:
-          if (true) {
-            return new InternalVariableReference_TextGen();
-          }
-          break;
+          return new InternalVariableReference_TextGen();
         case 13:
-          if (true) {
-            return new TypeHintExpression_TextGen();
-          }
-          break;
+          return new TypeHintExpression_TextGen();
         default:
           // default 
       }

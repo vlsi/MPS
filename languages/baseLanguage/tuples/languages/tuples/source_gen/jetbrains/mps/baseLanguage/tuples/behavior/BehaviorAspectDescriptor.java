@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myIndexedTupleLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myIndexedTupleLiteral__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myIndexedTupleMemberAccessExpression__BehaviorDescriptor;
-          }
-          break;
+          return myIndexedTupleMemberAccessExpression__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myIndexedTupleType__BehaviorDescriptor;
-          }
-          break;
+          return myIndexedTupleType__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myNamedTupleComponentAccessOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNamedTupleComponentAccessOperation__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myNamedTupleComponentDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myNamedTupleComponentDeclaration__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myNamedTupleDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myNamedTupleDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myNamedTupleLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myNamedTupleLiteral__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myNamedTupleType__BehaviorDescriptor;
-          }
-          break;
+          return myNamedTupleType__BehaviorDescriptor;
         default:
           // default 
       }

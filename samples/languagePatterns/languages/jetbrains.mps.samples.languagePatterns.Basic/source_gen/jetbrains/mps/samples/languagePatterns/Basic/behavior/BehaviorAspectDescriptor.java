@@ -27,20 +27,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAddress__BehaviorDescriptor;
-          }
-          break;
+          return myAddress__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myComponent__BehaviorDescriptor;
-          }
-          break;
+          return myComponent__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myItemReference__BehaviorDescriptor;
-          }
-          break;
+          return myItemReference__BehaviorDescriptor;
         default:
           // default 
       }

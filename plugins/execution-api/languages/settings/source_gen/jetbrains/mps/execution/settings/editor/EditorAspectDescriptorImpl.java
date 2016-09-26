@@ -24,105 +24,45 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckProperitesOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CheckProperitesOperation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DeprecatedAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DeprecatedAnnotation_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorOperationCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorOperationCall_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorPropertyDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorPropertyDeclaration_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorPropertyReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorPropertyReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetEditorOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetEditorOperation_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GridBagConstraints_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GridBagConstraints_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentConfiguration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentConfiguration_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplate_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplate_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplateInitializer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplateInitializer_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentConfigurationType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentConfigurationType_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentPropertyReferenceOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentPropertyReferenceOperation_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReportConfigurationErrorStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReportConfigurationErrorStatement_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SettingsEditor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SettingsEditor_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SettingsEditorType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SettingsEditorType_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateParameter_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplateParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplateParameterReference_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TemplatePersistentConfigurationType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TemplatePersistentConfigurationType_Editor());
         default:
       }
     }
@@ -165,10 +105,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PersistentConfigurationType_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PersistentConfigurationType_Contribution());
         default:
       }
     }

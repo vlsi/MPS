@@ -22,125 +22,53 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConstantValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConstantValue_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractStatementListExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractStatementListExpression_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractStatementListInnerExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractStatementListInnerExpression_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractStaticInnerClassExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractStaticInnerClassExpression_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractStaticMethodExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractStaticMethodExpression_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractStaticMethod_CallExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractStaticMethod_CallExpression_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractToConstantExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractToConstantExpression_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtractToConstantRefExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtractToConstantRefExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalAnonymousClass_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalAnonymousClass_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalAnonymousClassCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalAnonymousClassCreator_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalClassCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalClassCreator_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalClassExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalClassExpression_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalClassifierType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalClassifierType_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalNewExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalNewExpression_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalPartialFieldReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalPartialFieldReference_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalPartialInstanceMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalPartialInstanceMethodCall_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalStaticFieldReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalStaticFieldReference_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalStaticMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalStaticMethodCall_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalSuperMethodCallOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalSuperMethodCallOperation_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalThisExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalThisExpression_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalTypedStaticFieldReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalTypedStaticFieldReference_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalVariableReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalVariableReference_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TypeHintExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TypeHintExpression_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new WeakClassReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new WeakClassReference_Editor());
         default:
       }
     }
@@ -157,20 +85,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SelectClass_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SelectClass_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InternalClassifierType_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InternalClassifierType_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new WeakClassReference_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new WeakClassReference_SubstituteMenu());
         default:
       }
     }

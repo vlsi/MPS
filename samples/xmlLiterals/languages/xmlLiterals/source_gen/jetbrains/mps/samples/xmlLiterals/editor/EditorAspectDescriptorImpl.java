@@ -22,20 +22,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ElementMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ElementMacro_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextMacro_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextMacro_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlLiteral_Editor());
         default:
       }
     }
@@ -52,10 +43,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Create_TextMacro_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Create_TextMacro_Contribution());
         default:
       }
     }

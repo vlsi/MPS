@@ -29,30 +29,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBaseExtensionMethodContainer__BehaviorDescriptor;
-          }
-          break;
+          return myBaseExtensionMethodContainer__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myExtensionMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionMethodCall__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myExtensionMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionMethodDeclaration__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myExtensionStaticFieldDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionStaticFieldDeclaration__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myExtensionStaticFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionStaticFieldReference__BehaviorDescriptor;
         default:
           // default 
       }

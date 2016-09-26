@@ -26,10 +26,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new TransformationMenu[]{new Child_MoreDefaultActions(), new DefaultMenuContribution(), new Extras(), new Parameterized()});
-          }
-          break;
+          return Arrays.asList(new TransformationMenu[]{new Child_MoreDefaultActions(), new DefaultMenuContribution(), new Extras(), new Parameterized()});
         default:
       }
     }

@@ -95,360 +95,147 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myConceptFunctionParameter_OperationContext__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_OperationContext__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myConceptFunctionParameter_childSetter__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_childSetter__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myConceptFunctionParameter_createdNode__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_createdNode__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myConceptFunctionParameter_pattern__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_pattern__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myConceptFunctionParameter_strictly__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_strictly__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myConceptFunctionParameter_targetNode__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_targetNode__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myCopyPasteHandlers__BehaviorDescriptor;
-          }
-          break;
+          return myCopyPasteHandlers__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myCopyPreProcessFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCopyPreProcessFunction__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myCopyPreProcessor__BehaviorDescriptor;
-          }
-          break;
+          return myCopyPreProcessor__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myExecuteSmartActionFunction__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteSmartActionFunction__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myGetActionUIFunction__BehaviorDescriptor;
-          }
-          break;
+          return myGetActionUIFunction__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myIsSmartActionApplicableFunction__BehaviorDescriptor;
-          }
-          break;
+          return myIsSmartActionApplicableFunction__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myNF_Concept_NewInstance__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Concept_NewInstance__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myNF_LinkList_AddNewChildOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_LinkList_AddNewChildOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myNF_Link_SetNewChildOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Link_SetNewChildOperation__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myNF_Model_CreateNewNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Model_CreateNewNodeOperation__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myNF_Model_CreateNewRootNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Model_CreateNewRootNodeOperation__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myNF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myNF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myNF_Node_ReplaceWithNewOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNF_Node_ReplaceWithNewOperation__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myNodeFactories__BehaviorDescriptor;
-          }
-          break;
+          return myNodeFactories__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myNodeFactory__BehaviorDescriptor;
-          }
-          break;
+          return myNodeFactory__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myNodeSetupFunction__BehaviorDescriptor;
-          }
-          break;
+          return myNodeSetupFunction__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myNodeSetupFunction_EnclosingNode__BehaviorDescriptor;
-          }
-          break;
+          return myNodeSetupFunction_EnclosingNode__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myNodeSetupFunction_SampleNode__BehaviorDescriptor;
-          }
-          break;
+          return myNodeSetupFunction_SampleNode__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myNodeSubstituteActions__BehaviorDescriptor;
-          }
-          break;
+          return myNodeSubstituteActions__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myNodeSubstituteActionsBuilder__BehaviorDescriptor;
-          }
-          break;
+          return myNodeSubstituteActionsBuilder__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myNodeSubstitutePreconditionFunction__BehaviorDescriptor;
-          }
-          break;
+          return myNodeSubstitutePreconditionFunction__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myPastePostProcessFunction__BehaviorDescriptor;
-          }
-          break;
+          return myPastePostProcessFunction__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myPastePostProcessor__BehaviorDescriptor;
-          }
-          break;
+          return myPastePostProcessor__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myPasteWrappers__BehaviorDescriptor;
-          }
-          break;
+          return myPasteWrappers__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myQueryFunction_ActionType__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ActionType__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myQueryFunction_CanSubstitute__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_CanSubstitute__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myQueryFunction_GenericSubstituteMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_GenericSubstituteMenuPart__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myQueryFunction_IconNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_IconNode__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myQueryFunction_ParameterizedSideTransform_Handler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParameterizedSideTransform_Handler__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myQueryFunction_ParameterizedSideTransform_Query__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParameterizedSideTransform_Query__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myQueryFunction_ParameterizedSubstitute_Handler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParameterizedSubstitute_Handler__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myQueryFunction_ParameterizedSubstitute_Icon__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParameterizedSubstitute_Icon__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myQueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myQueryFunction_ParameterizedSubstitute_String__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParameterizedSubstitute_String__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myQueryFunction_PasteWrapper__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_PasteWrapper__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myQueryFunction_RemoveBy_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_RemoveBy_Condition__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myQueryFunction_ReturnSmallPart__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ReturnSmallPart__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myQueryFunction_STVariableInitializer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_STVariableInitializer__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myQueryFunction_ST_CommonInitializer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ST_CommonInitializer__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myQueryFunction_ST_RemoveBy_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ST_RemoveBy_Condition__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myQueryFunction_SideTransform_ConceptHandler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SideTransform_ConceptHandler__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myQueryFunction_SideTransform_Handler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SideTransform_Handler__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myQueryFunction_SideTransform_Icon__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SideTransform_Icon__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myQueryFunction_SideTransform_NodeQuery__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SideTransform_NodeQuery__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myQueryFunction_SideTransform_String__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SideTransform_String__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myQueryFunction_SubstituteIcon__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteIcon__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myQueryFunction_SubstituteString__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteString__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myQueryFunction_SubstituteVariableInitializer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteVariableInitializer__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myQueryFunction_SubstituteWrapper__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteWrapper__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myQueryFunction_Substitute_CommonInitializer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Substitute_CommonInitializer__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myQueryFunction_Substitute_Handler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Substitute_Handler__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myQueryFunction_Substitute_SelectionHandler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Substitute_SelectionHandler__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myRemoveSTByConditionPart__BehaviorDescriptor;
-          }
-          break;
+          return myRemoveSTByConditionPart__BehaviorDescriptor;
         case 65:
-          if (true) {
-            return mySideTransformHintSubstituteActions__BehaviorDescriptor;
-          }
-          break;
+          return mySideTransformHintSubstituteActions__BehaviorDescriptor;
         case 66:
-          if (true) {
-            return mySideTransformHintSubstituteActionsBuilder__BehaviorDescriptor;
-          }
-          break;
+          return mySideTransformHintSubstituteActionsBuilder__BehaviorDescriptor;
         case 67:
-          if (true) {
-            return mySideTransformHintSubstitutePreconditionFunction__BehaviorDescriptor;
-          }
-          break;
+          return mySideTransformHintSubstitutePreconditionFunction__BehaviorDescriptor;
         case 68:
-          if (true) {
-            return mySideTransformVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return mySideTransformVariableReference__BehaviorDescriptor;
         case 69:
-          if (true) {
-            return mySmartActionParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return mySmartActionParameterReference__BehaviorDescriptor;
         case 70:
-          if (true) {
-            return mySubstituteNodeBuilderVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteNodeBuilderVariableReference__BehaviorDescriptor;
         default:
           // default 
       }

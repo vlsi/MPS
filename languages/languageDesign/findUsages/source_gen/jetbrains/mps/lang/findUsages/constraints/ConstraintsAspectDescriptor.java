@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CheckCancelledStatusStatement_Constraints();
-          }
-          break;
+          return new CheckCancelledStatusStatement_Constraints();
         case 1:
-          if (true) {
-            return new ExecuteFinderExpression_Constraints();
-          }
-          break;
+          return new ExecuteFinderExpression_Constraints();
         case 2:
-          if (true) {
-            return new FinderDeclaration_Constraints();
-          }
-          break;
+          return new FinderDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new NodeStatement_Constraints();
-          }
-          break;
+          return new NodeStatement_Constraints();
         case 4:
-          if (true) {
-            return new ResultStatement_Constraints();
-          }
-          break;
+          return new ResultStatement_Constraints();
         default:
           // default 
       }

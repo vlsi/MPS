@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myConverter__BehaviorDescriptor;
-          }
-          break;
+          return myConverter__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myFilter__BehaviorDescriptor;
-          }
-          break;
+          return myFilter__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myMap__BehaviorDescriptor;
-          }
-          break;
+          return myMap__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myPipeline__BehaviorDescriptor;
-          }
-          break;
+          return myPipeline__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return mySourceDataType__BehaviorDescriptor;
-          }
-          break;
+          return mySourceDataType__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return mySwingBuilderMember__BehaviorDescriptor;
-          }
-          break;
+          return mySwingBuilderMember__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myTargetDataType__BehaviorDescriptor;
-          }
-          break;
+          return myTargetDataType__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myTransformers__BehaviorDescriptor;
-          }
-          break;
+          return myTransformers__BehaviorDescriptor;
         default:
           // default 
       }

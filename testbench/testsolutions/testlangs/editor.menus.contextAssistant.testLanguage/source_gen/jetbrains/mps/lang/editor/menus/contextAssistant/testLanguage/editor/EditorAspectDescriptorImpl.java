@@ -24,25 +24,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Child_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Child_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OtherSubconceptOfChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OtherSubconceptOfChild_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Parent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Parent_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
         default:
       }
     }
@@ -59,15 +47,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Child_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Child_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
         default:
       }
     }

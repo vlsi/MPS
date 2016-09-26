@@ -22,60 +22,27 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CommandBuilderExpression_Constraints();
-          }
-          break;
+          return new CommandBuilderExpression_Constraints();
         case 1:
-          if (true) {
-            return new CommandDebuggerOperation_Constraints();
-          }
-          break;
+          return new CommandDebuggerOperation_Constraints();
         case 2:
-          if (true) {
-            return new CommandParameterAssignment_Constraints();
-          }
-          break;
+          return new CommandParameterAssignment_Constraints();
         case 3:
-          if (true) {
-            return new CommandParameterReference_Constraints();
-          }
-          break;
+          return new CommandParameterReference_Constraints();
         case 4:
-          if (true) {
-            return new CommandPartLengthOperation_Constraints();
-          }
-          break;
+          return new CommandPartLengthOperation_Constraints();
         case 5:
-          if (true) {
-            return new CommandPartToListOperation_Constraints();
-          }
-          break;
+          return new CommandPartToListOperation_Constraints();
         case 6:
-          if (true) {
-            return new CommandProcessType_Constraints();
-          }
-          break;
+          return new CommandProcessType_Constraints();
         case 7:
-          if (true) {
-            return new DebuggerSettingsCommandParameterDeclaration_Constraints();
-          }
-          break;
+          return new DebuggerSettingsCommandParameterDeclaration_Constraints();
         case 8:
-          if (true) {
-            return new ExecuteCommandPart_Constraints();
-          }
-          break;
+          return new ExecuteCommandPart_Constraints();
         case 9:
-          if (true) {
-            return new ProcessType_Constraints();
-          }
-          break;
+          return new ProcessType_Constraints();
         case 10:
-          if (true) {
-            return new StartAndWaitOperation_Constraints();
-          }
-          break;
+          return new StartAndWaitOperation_Constraints();
         default:
           // default 
       }

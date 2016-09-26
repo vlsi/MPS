@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ContextMemberOperation_Constraints();
-          }
-          break;
+          return new ContextMemberOperation_Constraints();
         case 1:
-          if (true) {
-            return new ModelsToGenerateByDefault_Constraints();
-          }
-          break;
+          return new ModelsToGenerateByDefault_Constraints();
         case 2:
-          if (true) {
-            return new RefactoringAction_Constraints();
-          }
-          break;
+          return new RefactoringAction_Constraints();
         case 3:
-          if (true) {
-            return new RefactoringFieldReference_Constraints();
-          }
-          break;
+          return new RefactoringFieldReference_Constraints();
         case 4:
-          if (true) {
-            return new RefactoringParameterReference_Constraints();
-          }
-          break;
+          return new RefactoringParameterReference_Constraints();
         default:
           // default 
       }

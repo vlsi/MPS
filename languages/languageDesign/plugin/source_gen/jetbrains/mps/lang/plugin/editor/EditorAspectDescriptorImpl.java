@@ -24,335 +24,137 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionAccessOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionAccessOperation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionConstructionParameterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionConstructionParameterDeclaration_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionConstructorParameterReferenceOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionConstructorParameterReferenceOperation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionDataParameterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionDataParameterDeclaration_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionDataParameterReferenceOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionDataParameterReferenceOperation_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionDeclaration_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionGroupDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionGroupDeclaration_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionGroupRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionGroupRef_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionInstance_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionInstance_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionParameterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionParameterDeclaration_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionParameterReferenceOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionParameterReferenceOperation_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionReference_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionType_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AddElementStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AddElementStatement_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AddKeystrokeStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AddKeystrokeStatement_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AddStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AddStatement_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AddTabOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AddTabOperation_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ButtonCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ButtonCreator_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CloseTabOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CloseTabOperation_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CreateTabBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CreateTabBlock_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditableModel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditableModel_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorTab_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorTab_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorTabReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorTabReference_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ElementListContents_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ElementListContents_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EverywhereActionPlace_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EverywhereActionPlace_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetGroupOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetGroupOperation_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetSelectedTabOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetSelectedTabOperation_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GroupAccessOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GroupAccessOperation_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GroupAnchor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GroupAnchor_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GroupType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GroupType_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaActionsDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IdeaActionsDescriptor_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaConfigurationXml_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IdeaConfigurationXml_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaInitializerDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IdeaInitializerDescriptor_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaPluginDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IdeaPluginDependency_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InterfaceExtentionPoint_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InterfaceExtentionPoint_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InterfaceGroup_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InterfaceGroup_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeyMapKeystroke_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new KeyMapKeystroke_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeyStrokeType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new KeyStrokeType_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeymapChangesDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new KeymapChangesDeclaration_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeymapRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new KeymapRef_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MPSPluginDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MPSPluginDependency_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModificationStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModificationStatement_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NonDumbAwareActions_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NonDumbAwareActions_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Order_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Order_Editor());
         case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrderReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrderReference_Editor());
         case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterizedShortcutChange_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterizedShortcutChange_Editor());
         case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
         case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentPropertyReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PersistentPropertyReference_Editor());
         case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PinTabOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PinTabOperation_Editor());
         case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PopupCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PopupCreator_Editor());
         case 51:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreferencePage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PreferencePage_Editor());
         case 52:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreferencesComponentDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PreferencesComponentDeclaration_Editor());
         case 53:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreferencesComponentType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PreferencesComponentType_Editor());
         case 54:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RequiredCondition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RequiredCondition_Editor());
         case 55:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Separator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Separator_Editor());
         case 56:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleShortcutChange_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleShortcutChange_Editor());
         case 57:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SmartDisposeClosureParameterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SmartDisposeClosureParameterDeclaration_Editor());
         case 58:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TabbedToolDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TabbedToolDeclaration_Editor());
         case 59:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ToolDeclaration_Editor());
         case 60:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolInstanceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ToolInstanceExpression_Editor());
         case 61:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolTab_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ToolTab_Editor());
         case 62:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ToolType_Editor());
         case 63:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolbarCreator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ToolbarCreator_Editor());
         case 64:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnpinTabOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnpinTabOperation_Editor());
         case 65:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UpdateGroupBlock_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UpdateGroupBlock_Editor());
         default:
       }
     }
@@ -400,85 +202,37 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ActionParameter_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AddElementStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AddElementStatement_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_AnActionEvent_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_AnActionEvent_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_IModule_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_IModule_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_MPSProject_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_MPSProject_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Model_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Model_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_OperationContext_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_OperationContext_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_PreferencePage_component_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_PreferencePage_component_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Project_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Project_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InterfaceExtentionPoint_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InterfaceExtentionPoint_SubstituteMenu());
         case 11:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InterfaceGroup_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InterfaceGroup_SubstituteMenu());
         case 12:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SimpleActionPlace_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SimpleActionPlace_SubstituteMenu());
         case 13:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ToStringParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ToStringParameter_SubstituteMenu());
         case 14:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ToolActionPlace_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ToolActionPlace_SubstituteMenu());
         case 15:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ComplexParameters_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ComplexParameters_Contribution());
         default:
       }
     }

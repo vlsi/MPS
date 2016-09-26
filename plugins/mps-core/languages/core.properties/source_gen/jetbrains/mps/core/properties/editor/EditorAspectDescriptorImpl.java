@@ -22,25 +22,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertiesComment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertiesComment_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertiesDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertiesDeclaration_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertiesFile_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertiesFile_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertiesLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertiesLine_Editor());
         default:
       }
     }
@@ -57,10 +45,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PropertiesLine_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PropertiesLine_SubstituteMenu());
         default:
       }
     }

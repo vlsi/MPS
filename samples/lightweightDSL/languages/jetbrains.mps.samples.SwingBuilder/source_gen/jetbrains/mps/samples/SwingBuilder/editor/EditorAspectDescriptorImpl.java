@@ -22,70 +22,31 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Button_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Button_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ElementReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ElementReference_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmptyComponent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmptyComponent_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Filter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Filter_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Frame_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Frame_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Label_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Label_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Map_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Map_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Panel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Panel_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SourceDataType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SourceDataType_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SwingBuilderMember_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SwingBuilderMember_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TargetDataType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TargetDataType_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextField_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextField_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Transformers_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Transformers_Editor());
         default:
       }
     }
@@ -102,10 +63,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new EmptyComponent_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new EmptyComponent_SubstituteMenu());
         default:
       }
     }

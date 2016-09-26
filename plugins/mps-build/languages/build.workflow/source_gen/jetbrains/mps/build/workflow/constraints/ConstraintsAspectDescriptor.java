@@ -22,35 +22,17 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new BwfFileSet_Constraints();
-          }
-          break;
+          return new BwfFileSet_Constraints();
         case 1:
-          if (true) {
-            return new BwfJavaClassPath_Constraints();
-          }
-          break;
+          return new BwfJavaClassPath_Constraints();
         case 2:
-          if (true) {
-            return new BwfSubTask_Constraints();
-          }
-          break;
+          return new BwfSubTask_Constraints();
         case 3:
-          if (true) {
-            return new BwfSubTaskDependency_Constraints();
-          }
-          break;
+          return new BwfSubTaskDependency_Constraints();
         case 4:
-          if (true) {
-            return new BwfTask_Constraints();
-          }
-          break;
+          return new BwfTask_Constraints();
         case 5:
-          if (true) {
-            return new BwfTaskLibrary_Constraints();
-          }
-          break;
+          return new BwfTaskLibrary_Constraints();
         default:
           // default 
       }

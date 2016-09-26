@@ -23,305 +23,125 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractContainerCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractContainerCreator_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddAllElementsOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddAllElementsOperation_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddAllSetElementsOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddAllSetElementsOperation_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddElementOperation_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddFirstElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddFirstElementOperation_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddLastElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddLastElementOperation_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddSetElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddSetElementOperation_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ChunkOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ChunkOperation_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ComparatorSortOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ComparatorSortOperation_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ContainsAllOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ContainsAllOperation_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ContainsKeyOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ContainsKeyOperation_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ContainsOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ContainsOperation_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ContainsValueOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ContainsValueOperation_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new DowncastExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new DowncastExpression_DataFlow());
         case 15:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new FoldLeftOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new FoldLeftOperation_DataFlow());
         case 16:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new FoldRightOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new FoldRightOperation_DataFlow());
         case 17:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ForEachStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ForEachStatement_DataFlow());
         case 18:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ForEachVariable_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ForEachVariable_DataFlow());
         case 19:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ForEachVariableReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ForEachVariableReference_DataFlow());
         case 20:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GetElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GetElementOperation_DataFlow());
         case 21:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GetIndexOfOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GetIndexOfOperation_DataFlow());
         case 22:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GetLastIndexOfOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GetLastIndexOfOperation_DataFlow());
         case 23:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new HashMapCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new HashMapCreator_DataFlow());
         case 24:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new HeadListOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new HeadListOperation_DataFlow());
         case 25:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new HeadMapOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new HeadMapOperation_DataFlow());
         case 26:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new HeadSetOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new HeadSetOperation_DataFlow());
         case 27:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InsertElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InsertElementOperation_DataFlow());
         case 28:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InternalSequenceOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InternalSequenceOperation_DataFlow());
         case 29:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new JoinOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new JoinOperation_DataFlow());
         case 30:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ListElementAccessExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ListElementAccessExpression_DataFlow());
         case 31:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MapElement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MapElement_DataFlow());
         case 32:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MapEntry_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MapEntry_DataFlow());
         case 33:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MapInitializer_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MapInitializer_DataFlow());
         case 34:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MapOperationExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MapOperationExpression_DataFlow());
         case 35:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MapRemoveOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MapRemoveOperation_DataFlow());
         case 36:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MultiForEachStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MultiForEachStatement_DataFlow());
         case 37:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariable_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariable_DataFlow());
         case 38:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariableReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariableReference_DataFlow());
         case 39:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PageOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PageOperation_DataFlow());
         case 40:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PushOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PushOperation_DataFlow());
         case 41:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PutAllOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PutAllOperation_DataFlow());
         case 42:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RemoveAllElementsOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RemoveAllElementsOperation_DataFlow());
         case 43:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RemoveAllSetElementsOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RemoveAllSetElementsOperation_DataFlow());
         case 44:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RemoveAtElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RemoveAtElementOperation_DataFlow());
         case 45:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RemoveElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RemoveElementOperation_DataFlow());
         case 46:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RemoveSetElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RemoveSetElementOperation_DataFlow());
         case 47:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SequenceCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SequenceCreator_DataFlow());
         case 48:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SetElementOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SetElementOperation_DataFlow());
         case 49:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SingleArgumentSequenceOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SingleArgumentSequenceOperation_DataFlow());
         case 50:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SingletonSequenceCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SingletonSequenceCreator_DataFlow());
         case 51:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SkipOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SkipOperation_DataFlow());
         case 52:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SortOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SortOperation_DataFlow());
         case 53:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SubListOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SubListOperation_DataFlow());
         case 54:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SubMapOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SubMapOperation_DataFlow());
         case 55:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SubSetOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SubSetOperation_DataFlow());
         case 56:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TailListOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TailListOperation_DataFlow());
         case 57:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TailMapOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TailMapOperation_DataFlow());
         case 58:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TailSetOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TailSetOperation_DataFlow());
         case 59:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TakeOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TakeOperation_DataFlow());
         default:
           // default 
       }

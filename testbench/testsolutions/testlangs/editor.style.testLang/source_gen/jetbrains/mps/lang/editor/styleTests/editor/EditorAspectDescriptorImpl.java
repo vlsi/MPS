@@ -27,45 +27,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HugePriorityStyle_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HugePriorityStyle_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LeafNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LeafNode_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PriorityStyle_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PriorityStyle_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PriorityStyleCopy_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PriorityStyleCopy_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestConceptWithStyleAttributes_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestConceptWithStyleAttributes_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestInheritedAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestInheritedAttribute_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSimpleAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TestSimpleAttribute_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnapplyPriorityStyleCopy_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnapplyPriorityStyleCopy_Editor());
         default:
       }
     }

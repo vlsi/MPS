@@ -24,110 +24,47 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AppendOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AppendOperation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AttributedNodePart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AttributedNodePart_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CollectionAppendPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CollectionAppendPart_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptTextGenDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptTextGenDeclaration_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConstantStringAppendPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConstantStringAppendPart_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EncodingLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EncodingLiteral_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FoundErrorOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FoundErrorOperation_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IndentPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IndentPart_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LanguageTextGenDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LanguageTextGenDeclaration_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LayoutPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LayoutPart_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NewLineAppendPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NewLineAppendPart_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeAppendPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeAppendPart_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OperationCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OperationCall_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OperationDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OperationDeclaration_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReferenceAppendPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReferenceAppendPart_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleTextGenOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleTextGenOperation_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubOperationDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StubOperationDeclaration_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextUnitLayout_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextUnitLayout_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UtilityMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UtilityMethodCall_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UtilityMethodDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UtilityMethodDeclaration_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new WithIndentOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new WithIndentOperation_Editor());
         default:
       }
     }
@@ -144,10 +81,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new TransformationMenu[]{new CollectionAppendPartWithSeparator(), new addSeparator_Contribution()});
-          }
-          break;
+          return Arrays.asList(new TransformationMenu[]{new CollectionAppendPartWithSeparator(), new addSeparator_Contribution()});
         default:
       }
     }
@@ -162,25 +96,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AbstractTextGenParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AbstractTextGenParameter_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstantStringAppendPart_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstantStringAppendPart_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new operationParameters_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new operationParameters_Contribution());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new StubOperationDeclaration_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new StubOperationDeclaration_SubstituteMenu());
         default:
       }
     }

@@ -34,55 +34,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myExpressionHelpProvider__BehaviorDescriptor;
-          }
-          break;
+          return myExpressionHelpProvider__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myHelpProvider__BehaviorDescriptor;
-          }
-          break;
+          return myHelpProvider__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myInstancesExpression__BehaviorDescriptor;
-          }
-          break;
+          return myInstancesExpression__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myModelsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myModelsExpression__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myModulesExpression__BehaviorDescriptor;
-          }
-          break;
+          return myModulesExpression__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myNodesExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNodesExpression__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myOperationHelpProvider__BehaviorDescriptor;
-          }
-          break;
+          return myOperationHelpProvider__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myQueryExpression__BehaviorDescriptor;
-          }
-          break;
+          return myQueryExpression__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myReferencesExpression__BehaviorDescriptor;
-          }
-          break;
+          return myReferencesExpression__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myUsagesExpression__BehaviorDescriptor;
-          }
-          break;
+          return myUsagesExpression__BehaviorDescriptor;
         default:
           // default 
       }

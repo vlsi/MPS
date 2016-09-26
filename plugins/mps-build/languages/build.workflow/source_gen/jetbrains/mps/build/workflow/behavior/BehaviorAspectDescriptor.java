@@ -38,75 +38,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBwfAntTaskDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBwfAntTaskDeclaration__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBwfCustomMacro__BehaviorDescriptor;
-          }
-          break;
+          return myBwfCustomMacro__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBwfJavaDependency__BehaviorDescriptor;
-          }
-          break;
+          return myBwfJavaDependency__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myBwfJavaModule__BehaviorDescriptor;
-          }
-          break;
+          return myBwfJavaModule__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myBwfJavaModuleReference__BehaviorDescriptor;
-          }
-          break;
+          return myBwfJavaModuleReference__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myBwfMacro__BehaviorDescriptor;
-          }
-          break;
+          return myBwfMacro__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myBwfMacroListImport__BehaviorDescriptor;
-          }
-          break;
+          return myBwfMacroListImport__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myBwfPathDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBwfPathDeclaration__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myBwfProject__BehaviorDescriptor;
-          }
-          break;
+          return myBwfProject__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myBwfProjectPart__BehaviorDescriptor;
-          }
-          break;
+          return myBwfProjectPart__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myBwfSubTask__BehaviorDescriptor;
-          }
-          break;
+          return myBwfSubTask__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myBwfTask__BehaviorDescriptor;
-          }
-          break;
+          return myBwfTask__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myBwfTaskPart__BehaviorDescriptor;
-          }
-          break;
+          return myBwfTaskPart__BehaviorDescriptor;
         default:
           // default 
       }

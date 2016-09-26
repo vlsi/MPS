@@ -26,10 +26,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ErrorReportingRoot_TextGen();
-          }
-          break;
+          return new ErrorReportingRoot_TextGen();
         default:
           // default 
       }

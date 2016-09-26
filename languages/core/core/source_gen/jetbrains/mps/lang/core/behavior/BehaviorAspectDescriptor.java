@@ -43,100 +43,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myAttribute__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBaseCommentAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myBaseCommentAttribute__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBaseConcept__BehaviorDescriptor;
-          }
-          break;
+          return myBaseConcept__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myChildAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myChildAttribute__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myExportScope__BehaviorDescriptor;
-          }
-          break;
+          return myExportScope__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myExportScopeModule__BehaviorDescriptor;
-          }
-          break;
+          return myExportScopeModule__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myExportScopeNamespace__BehaviorDescriptor;
-          }
-          break;
+          return myExportScopeNamespace__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myExportScopePublic__BehaviorDescriptor;
-          }
-          break;
+          return myExportScopePublic__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myIDeprecatable__BehaviorDescriptor;
-          }
-          break;
+          return myIDeprecatable__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myIMetaLevelChanger__BehaviorDescriptor;
-          }
-          break;
+          return myIMetaLevelChanger__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myINamedConcept__BehaviorDescriptor;
-          }
-          break;
+          return myINamedConcept__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myIOldCommentContainer__BehaviorDescriptor;
-          }
-          break;
+          return myIOldCommentContainer__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myIResolveInfo__BehaviorDescriptor;
-          }
-          break;
+          return myIResolveInfo__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myISuppressErrors__BehaviorDescriptor;
-          }
-          break;
+          return myISuppressErrors__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myImplementationContainer__BehaviorDescriptor;
-          }
-          break;
+          return myImplementationContainer__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myLinkAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myLinkAttribute__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myPropertyAttribute__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyAttribute__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myScopeProvider__BehaviorDescriptor;
-          }
-          break;
+          return myScopeProvider__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return mySuppressErrorsAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return mySuppressErrorsAnnotation__BehaviorDescriptor;
         default:
           // default 
       }

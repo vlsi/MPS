@@ -26,30 +26,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
         case 1:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new ComponentSet_Editor(), new ComponentSet_diagram_Editor(), new ComponentSet_table_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new ComponentSet_Editor(), new ComponentSet_diagram_Editor(), new ComponentSet_table_Editor()});
         case 2:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()});
         case 3:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()});
         case 4:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()});
         default:
       }
     }

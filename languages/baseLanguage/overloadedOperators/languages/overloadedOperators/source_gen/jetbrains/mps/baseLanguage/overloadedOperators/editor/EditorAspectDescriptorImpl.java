@@ -22,40 +22,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
         default:
       }
     }
@@ -72,10 +51,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new CustomOperatorUsageTransform_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new CustomOperatorUsageTransform_Contribution());
         default:
       }
     }

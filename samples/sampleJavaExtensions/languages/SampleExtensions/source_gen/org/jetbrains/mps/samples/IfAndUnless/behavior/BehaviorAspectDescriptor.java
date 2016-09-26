@@ -27,20 +27,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myFalseFlow__BehaviorDescriptor;
-          }
-          break;
+          return myFalseFlow__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myFlow__BehaviorDescriptor;
-          }
-          break;
+          return myFlow__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myTrueFlow__BehaviorDescriptor;
-          }
-          break;
+          return myTrueFlow__BehaviorDescriptor;
         default:
           // default 
       }

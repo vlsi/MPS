@@ -39,80 +39,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myXMLSAXAttributeHandler__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXAttributeHandler__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myXMLSAXChildHandler__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXChildHandler__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myXMLSAXChildRule__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXChildRule__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myXMLSAXChildRuleCondition__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXChildRuleCondition__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myXMLSAXFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXFieldReference__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myXMLSAXHandlerFunction__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXHandlerFunction__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myXMLSAXNodeCreator__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXNodeCreator__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myXMLSAXNodeRule__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXNodeRule__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myXMLSAXNodeValidator__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXNodeValidator__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myXMLSAXParser__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXParser__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myXMLSAXTextHandler__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXTextHandler__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myXMLSAXTextHandler_value__BehaviorDescriptor;
-          }
-          break;
+          return myXMLSAXTextHandler_value__BehaviorDescriptor;
         default:
           // default 
       }

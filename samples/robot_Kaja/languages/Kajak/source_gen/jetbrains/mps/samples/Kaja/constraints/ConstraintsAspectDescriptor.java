@@ -22,20 +22,11 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new Require_Constraints();
-          }
-          break;
+          return new Require_Constraints();
         case 1:
-          if (true) {
-            return new RoutineCall_Constraints();
-          }
-          break;
+          return new RoutineCall_Constraints();
         case 2:
-          if (true) {
-            return new RoutineDefinition_Constraints();
-          }
-          break;
+          return new RoutineDefinition_Constraints();
         default:
           // default 
       }

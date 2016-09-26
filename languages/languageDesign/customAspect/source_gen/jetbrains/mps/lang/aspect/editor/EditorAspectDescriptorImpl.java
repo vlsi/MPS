@@ -21,40 +21,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HelpURL_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HelpURL_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
         default:
       }
     }

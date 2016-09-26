@@ -94,355 +94,145 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBaseMappingRule__BehaviorDescriptor;
-          }
-          break;
+          return myBaseMappingRule__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBaseMappingRule_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myBaseMappingRule_Condition__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myContextVariableProvider__BehaviorDescriptor;
-          }
-          break;
+          return myContextVariableProvider__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myCopySrcListMacro__BehaviorDescriptor;
-          }
-          break;
+          return myCopySrcListMacro__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCopySrcNodeMacro__BehaviorDescriptor;
-          }
-          break;
+          return myCopySrcNodeMacro__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myCreateRootRule__BehaviorDescriptor;
-          }
-          break;
+          return myCreateRootRule__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myCreateRootRule_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myCreateRootRule_Condition__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myDropAttributeRule_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myDropAttributeRule_Condition__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myDropRootRule_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myDropRootRule_Condition__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myGeneratorDebug_LabelEntry__BehaviorDescriptor;
-          }
-          break;
+          return myGeneratorDebug_LabelEntry__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myGeneratorDebug_NodeMapEntry__BehaviorDescriptor;
-          }
-          break;
+          return myGeneratorDebug_NodeMapEntry__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myIGeneratorParameter__BehaviorDescriptor;
-          }
-          break;
+          return myIGeneratorParameter__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myITemplateCall__BehaviorDescriptor;
-          }
-          break;
+          return myITemplateCall__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myIfMacro__BehaviorDescriptor;
-          }
-          break;
+          return myIfMacro__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myIfMacro_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myIfMacro_Condition__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myIncludeMacro__BehaviorDescriptor;
-          }
-          break;
+          return myIncludeMacro__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
-          }
-          break;
+          return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myInlineTemplate_RuleConsequence__BehaviorDescriptor;
-          }
-          break;
+          return myInlineTemplate_RuleConsequence__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myInsertMacro__BehaviorDescriptor;
-          }
-          break;
+          return myInsertMacro__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myInsertMacro_CreateNodeQuery__BehaviorDescriptor;
-          }
-          break;
+          return myInsertMacro_CreateNodeQuery__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myLabelMacro__BehaviorDescriptor;
-          }
-          break;
+          return myLabelMacro__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myLoopMacro__BehaviorDescriptor;
-          }
-          break;
+          return myLoopMacro__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myMapSrcListMacro__BehaviorDescriptor;
-          }
-          break;
+          return myMapSrcListMacro__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myMapSrcMacro_MapperFunction__BehaviorDescriptor;
-          }
-          break;
+          return myMapSrcMacro_MapperFunction__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myMapSrcMacro_PostMapperFunction__BehaviorDescriptor;
-          }
-          break;
+          return myMapSrcMacro_PostMapperFunction__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myMapSrcNodeMacro__BehaviorDescriptor;
-          }
-          break;
+          return myMapSrcNodeMacro__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myMappingConfiguration__BehaviorDescriptor;
-          }
-          break;
+          return myMappingConfiguration__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myMappingConfiguration_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myMappingConfiguration_Condition__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myMappingScript_CodeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myMappingScript_CodeBlock__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myMarshalFunction__BehaviorDescriptor;
-          }
-          break;
+          return myMarshalFunction__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myModelIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myModelIdentity__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myNodeIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myNodeIdentity__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myNodeMacro__BehaviorDescriptor;
-          }
-          break;
+          return myNodeMacro__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myPatternReduction_MappingRule__BehaviorDescriptor;
-          }
-          break;
+          return myPatternReduction_MappingRule__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myPropertyMacro__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyMacro__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myPropertyMacro_GetPropertyValue__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyMacro_GetPropertyValue__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myReduction_MappingRule__BehaviorDescriptor;
-          }
-          break;
+          return myReduction_MappingRule__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myReferenceMacro__BehaviorDescriptor;
-          }
-          break;
+          return myReferenceMacro__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myReferenceMacro_GetReferent__BehaviorDescriptor;
-          }
-          break;
+          return myReferenceMacro_GetReferent__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myRootTemplateAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myRootTemplateAnnotation__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myRoot_MappingRule__BehaviorDescriptor;
-          }
-          break;
+          return myRoot_MappingRule__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myRuleConsequence__BehaviorDescriptor;
-          }
-          break;
+          return myRuleConsequence__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return mySourceSubstituteMacro__BehaviorDescriptor;
-          }
-          break;
+          return mySourceSubstituteMacro__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor;
-          }
-          break;
+          return mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor;
-          }
-          break;
+          return mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myTemplateArgumentPatternRef__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateArgumentPatternRef__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myTemplateArgumentQuery__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateArgumentQuery__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myTemplateCallMacro__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateCallMacro__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myTemplateDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateDeclaration__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myTemplateDeclarationReference__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateDeclarationReference__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myTemplateFragment__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFragment__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myTemplateFunctionParameter_sourceNode__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFunctionParameter_sourceNode__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myTemplateFunctionParameter_templateReferent__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFunctionParameter_templateReferent__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myTemplateQueryBase__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateQueryBase__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myTemplateSwitch__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateSwitch__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myTemplateSwitchMacro__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateSwitchMacro__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myTrivialModelId__BehaviorDescriptor;
-          }
-          break;
+          return myTrivialModelId__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myTrivialNodeId__BehaviorDescriptor;
-          }
-          break;
+          return myTrivialNodeId__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myUnmarshalFunction__BehaviorDescriptor;
-          }
-          break;
+          return myUnmarshalFunction__BehaviorDescriptor;
         case 65:
-          if (true) {
-            return myVarMacro__BehaviorDescriptor;
-          }
-          break;
+          return myVarMacro__BehaviorDescriptor;
         case 66:
-          if (true) {
-            return myVarMacro_ValueQuery__BehaviorDescriptor;
-          }
-          break;
+          return myVarMacro_ValueQuery__BehaviorDescriptor;
         case 67:
-          if (true) {
-            return myWeaveMacro__BehaviorDescriptor;
-          }
-          break;
+          return myWeaveMacro__BehaviorDescriptor;
         case 68:
-          if (true) {
-            return myWeavingAnchorQuery__BehaviorDescriptor;
-          }
-          break;
+          return myWeavingAnchorQuery__BehaviorDescriptor;
         case 69:
-          if (true) {
-            return myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor;
-          }
-          break;
+          return myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor;
         default:
           // default 
       }

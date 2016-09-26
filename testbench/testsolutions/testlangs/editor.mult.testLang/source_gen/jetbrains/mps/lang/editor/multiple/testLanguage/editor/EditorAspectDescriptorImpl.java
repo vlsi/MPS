@@ -27,45 +27,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentChild_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentRoot_Editor());
         case 3:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestMostSpecificChild_Editor(), new MultipleEditorsTestMostSpecificChild_compact_Editor(), new MultipleEditorsTestMostSpecificChild_rich_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestMostSpecificChild_Editor(), new MultipleEditorsTestMostSpecificChild_compact_Editor(), new MultipleEditorsTestMostSpecificChild_rich_Editor()});
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestMostSpecificRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestMostSpecificRoot_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeListRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeListRoot_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeRoot_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRoot_Editor());
         default:
       }
     }

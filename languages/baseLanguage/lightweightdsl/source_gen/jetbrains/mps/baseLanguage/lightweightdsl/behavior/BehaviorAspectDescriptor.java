@@ -42,95 +42,41 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAutoInitDSLClass__BehaviorDescriptor;
-          }
-          break;
+          return myAutoInitDSLClass__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBooleanPropertyInstance__BehaviorDescriptor;
-          }
-          break;
+          return myBooleanPropertyInstance__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myCustomMemberDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myCustomMemberDescriptor__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myDSLClassMember__BehaviorDescriptor;
-          }
-          break;
+          return myDSLClassMember__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myDSLDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myDSLDescriptor__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myDependentTypeDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myDependentTypeDescriptor__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myDependentTypeInstance__BehaviorDescriptor;
-          }
-          break;
+          return myDependentTypeInstance__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myEmptyMemberDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myEmptyMemberDescriptor__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myIntegerPropertyInstance__BehaviorDescriptor;
-          }
-          break;
+          return myIntegerPropertyInstance__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myMemberInstance__BehaviorDescriptor;
-          }
-          break;
+          return myMemberInstance__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myMemberPlaceholder__BehaviorDescriptor;
-          }
-          break;
+          return myMemberPlaceholder__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myMethodDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myMethodDescriptor__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myMethodInstance__BehaviorDescriptor;
-          }
-          break;
+          return myMethodInstance__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myParameterDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myParameterDescriptor__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myPlaceholderModifier__BehaviorDescriptor;
-          }
-          break;
+          return myPlaceholderModifier__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myPropertyDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyDescriptor__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myPropertyInstance__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyInstance__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myStringPropertyInstance__BehaviorDescriptor;
-          }
-          break;
+          return myStringPropertyInstance__BehaviorDescriptor;
         default:
           // default 
       }

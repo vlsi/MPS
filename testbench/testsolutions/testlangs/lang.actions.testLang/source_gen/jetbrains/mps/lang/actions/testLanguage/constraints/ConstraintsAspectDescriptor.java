@@ -22,15 +22,9 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ActionTestSidetransformTestAncestor_Constraints();
-          }
-          break;
+          return new ActionTestSidetransformTestAncestor_Constraints();
         case 1:
-          if (true) {
-            return new ActionTestSidetransformTestContainer_Constraints();
-          }
-          break;
+          return new ActionTestSidetransformTestContainer_Constraints();
         default:
           // default 
       }

@@ -51,16 +51,10 @@ public final class AnnotationInstance__BehaviorDescriptor extends BaseBHDescript
       switch (switchIndex) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"))) {
-            if (true) {
-              return new NamedElementsScope(methods);
-            }
-            break;
+            return new NamedElementsScope(methods);
           }
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5ce6f8ed8648519aL, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"))) {
-            if (true) {
-              return (Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
-            }
-            break;
+            return (Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
           }
       }
     }

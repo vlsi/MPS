@@ -34,55 +34,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myGenerationContextOp_PatternRef__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_PatternRef__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
-          }
-          break;
+          return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
-          }
-          break;
+          return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
         default:
           // default 
       }

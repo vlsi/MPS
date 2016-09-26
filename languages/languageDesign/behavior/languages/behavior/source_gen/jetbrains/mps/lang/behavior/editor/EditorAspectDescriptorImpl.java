@@ -23,45 +23,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptBehavior_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptBehavior_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptConstructorDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptConstructorDeclaration_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptMethodDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptMethodDeclaration_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationsHolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationsHolder_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LocalBehaviorMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LocalBehaviorMethodCall_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SuperNodeExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SuperNodeExpression_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThisNodeExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ThisNodeExpression_Editor());
         default:
       }
     }
@@ -78,10 +54,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new SuperNodeExpression_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new SuperNodeExpression_TransformationMenu());
         default:
       }
     }
@@ -96,20 +69,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptMethodsWithoutThis_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptMethodsWithoutThis_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InternalConceptDeclarationReference_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InternalConceptDeclarationReference_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InternalConceptDeclarationsHolder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InternalConceptDeclarationsHolder_SubstituteMenu());
         default:
       }
     }

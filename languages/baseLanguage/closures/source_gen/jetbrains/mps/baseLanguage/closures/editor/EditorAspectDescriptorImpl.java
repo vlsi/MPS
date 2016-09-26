@@ -25,100 +25,43 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractFunctionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractFunctionType_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClosureArgReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClosureArgReference_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClosureControlStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClosureControlStatement_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClosureLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClosureLiteral_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClosureLiteralType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClosureLiteralType_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new YieldStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new YieldStatement_Editor());
         default:
       }
     }
@@ -135,20 +78,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ClosureControlStatement_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ClosureControlStatement_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Expression_default_RTransform_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Expression_default_RTransform_Contribution());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Type_default_RTransform_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Type_default_RTransform_Contribution());
         default:
       }
     }
@@ -208,65 +142,29 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ClosureControlStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ClosureControlStatement_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ClosureLiteralType_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ClosureLiteralType_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CompactInvokeFunctionExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CompactInvokeFunctionExpression_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ControlAbstractionContainer_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ControlAbstractionContainer_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new subs_InvokeFunction_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new subs_InvokeFunction_Contribution());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InvokeExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InvokeExpression_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InvokeFunctionExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InvokeFunctionExpression_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Statement_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Statement_Contribution());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new subs_ThisExpression_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new subs_ThisExpression_Contribution());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new UnboundClosureParameterDeclaration_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new UnboundClosureParameterDeclaration_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new YieldAllStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new YieldAllStatement_SubstituteMenu());
         case 11:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new YieldStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new YieldStatement_SubstituteMenu());
         default:
       }
     }

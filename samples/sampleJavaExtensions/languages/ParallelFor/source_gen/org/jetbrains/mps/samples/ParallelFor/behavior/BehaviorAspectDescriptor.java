@@ -27,20 +27,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myNonThreadSafeClass__BehaviorDescriptor;
-          }
-          break;
+          return myNonThreadSafeClass__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myParallelFor__BehaviorDescriptor;
-          }
-          break;
+          return myParallelFor__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myThreadSafe__BehaviorDescriptor;
-          }
-          break;
+          return myThreadSafe__BehaviorDescriptor;
         default:
           // default 
       }

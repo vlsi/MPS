@@ -22,35 +22,17 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ExtensionMethodCall_Constraints();
-          }
-          break;
+          return new ExtensionMethodCall_Constraints();
         case 1:
-          if (true) {
-            return new ExtensionMethodDeclaration_Constraints();
-          }
-          break;
+          return new ExtensionMethodDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new ExtensionStaticFieldReference_Constraints();
-          }
-          break;
+          return new ExtensionStaticFieldReference_Constraints();
         case 3:
-          if (true) {
-            return new LocalExtendedMethodCall_Constraints();
-          }
-          break;
+          return new LocalExtendedMethodCall_Constraints();
         case 4:
-          if (true) {
-            return new ThisExtensionExpression_Constraints();
-          }
-          break;
+          return new ThisExtensionExpression_Constraints();
         case 5:
-          if (true) {
-            return new TypeExtension_Constraints();
-          }
-          break;
+          return new TypeExtension_Constraints();
         default:
           // default 
       }

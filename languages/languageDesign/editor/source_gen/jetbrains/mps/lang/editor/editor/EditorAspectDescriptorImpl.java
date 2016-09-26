@@ -26,860 +26,347 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractPaddingStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractPaddingStyleClassItem_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractStyledTextOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractStyledTextOperation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ApplyStyleClass_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ApplyStyleClass_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ApplyStyleClassCondition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ApplyStyleClassCondition_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AttributeStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AttributeStyleClassItem_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BooleanStyleSheetItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BooleanStyleSheetItem_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CaretPositionParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CaretPositionParameter_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellActionMapDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellActionMapDeclaration_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellActionMapItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellActionMapItem_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellIdReferenceSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellIdReferenceSelector_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellKeyMapDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellKeyMapDeclaration_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellKeyMapItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellKeyMapItem_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellKeyMapKeystroke_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellKeyMapKeystroke_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellLayout_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellLayout_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuComponent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuComponent_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Link_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Link_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Property_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Property_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuDescriptor_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_Abstract_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_Abstract_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ApplySideTransforms_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ApplySideTransforms_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_CellMenuComponent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_CellMenuComponent_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Group_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Group_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Item_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Item_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyPostfixHints_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyPostfixHints_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyValues_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyValues_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReferentPrimary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReferentPrimary_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChildPrimary_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChildPrimary_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Group_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Group_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Item_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Item_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_Group_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_Group_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Alternation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Alternation_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_AttributedLinkCell_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_AttributedLinkCell_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_AttributedNodeCell_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_AttributedNodeCell_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_AttributedPropertyCell_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_AttributedPropertyCell_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Block_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Block_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_BlockEnd_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_BlockEnd_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_BlockStart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_BlockStart_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Collection_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Collection_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Component_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Component_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Constant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Constant_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_ContextAssistant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_ContextAssistant_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Custom_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Custom_Editor());
         case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Empty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Empty_Editor());
         case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Error_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Error_Editor());
         case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Image_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Image_Editor());
         case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Indent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Indent_Editor());
         case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_JComponent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_JComponent_Editor());
         case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_ModelAccess_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_ModelAccess_Editor());
         case 51:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_NextEditor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_NextEditor_Editor());
         case 52:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_Property_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_Property_Editor());
         case 53:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_ReadOnlyModelAccessor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_ReadOnlyModelAccessor_Editor());
         case 54:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_RefCell_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_RefCell_Editor());
         case 55:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_RefNode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_RefNode_Editor());
         case 56:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_RefNodeList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_RefNodeList_Editor());
         case 57:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_ReferencePresentation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_ReferencePresentation_Editor());
         case 58:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_TransactionalProperty_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_TransactionalProperty_Editor());
         case 59:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CellModel_URL_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CellModel_URL_Editor());
         case 60:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ColorStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ColorStyleClassItem_Editor());
         case 61:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptEditorContextHints_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptEditorContextHints_Editor());
         case 62:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptEditorDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptEditorDeclaration_Editor());
         case 63:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclaration_Editor());
         case 64:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReference_Editor());
         case 65:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReferenceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReferenceExpression_Editor());
         case 66:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ContextVariable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ContextVariable_Editor());
         case 67:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultBaseLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultBaseLine_Editor());
         case 68:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
         case 69:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DominatesRecord_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DominatesRecord_Editor());
         case 70:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorCellId_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorCellId_Editor());
         case 71:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorCellModel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorCellModel_Editor());
         case 72:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorComponentDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorComponentDeclaration_Editor());
         case 73:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorComponentDeclarationReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EditorComponentDeclarationReference_Editor());
         case 74:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExplicitHintsSpecification_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExplicitHintsSpecification_Editor());
         case 75:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FloatStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FloatStyleClassItem_Editor());
         case 76:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FontSizeStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FontSizeStyleClassItem_Editor());
         case 77:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FontStyleStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FontStyleStyleClassItem_Editor());
         case 78:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HorizontalAlign_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new HorizontalAlign_Editor());
         case 79:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IOutputConceptTransformationMenuPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IOutputConceptTransformationMenuPart_Editor());
         case 80:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IdSelector_Editor());
         case 81:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineEditorComponent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineEditorComponent_Editor());
         case 82:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InlineStyleDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InlineStyleDeclaration_Editor());
         case 83:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LayoutConstraintStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LayoutConstraintStyleClassItem_Editor());
         case 84:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatchingLabelStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatchingLabelStyleClassItem_Editor());
         case 85:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MaxWidthStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MaxWidthStyleClassItem_Editor());
         case 86:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MigrateManuallyAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MigrateManuallyAnnotation_Editor());
         case 87:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MigratedSideTransformMenuAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MigratedSideTransformMenuAttribute_Editor());
         case 88:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MigratedToAnnotation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MigratedToAnnotation_Editor());
         case 89:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelAccessor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModelAccessor_Editor());
         case 90:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NavigatableNodeStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NavigatableNodeStyleClassItem_Editor());
         case 91:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NavigatableReferenceStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NavigatableReferenceStyleClassItem_Editor());
         case 92:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OptionalConceptReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OptionalConceptReference_Editor());
         case 93:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrCellSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OrCellSelector_Editor());
         case 94:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParametersInformationQuery_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParametersInformationQuery_Editor());
         case 95:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParametersInformationStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParametersInformationStyleClassItem_Editor());
         case 96:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PositionChildrenStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PositionChildrenStyleClassItem_Editor());
         case 97:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PositionStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PositionStyleClassItem_Editor());
         case 98:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreDefinedStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PreDefinedStyleClassItem_Editor());
         case 99:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PredefinedSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PredefinedSelector_Editor());
         case 100:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyDeclarationCellSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyDeclarationCellSelector_Editor());
         case 101:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PropertyExpressionCellSelector_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PropertyExpressionCellSelector_Editor());
         case 102:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RGBColor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RGBColor_Editor());
         case 103:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReadOnlyModelAccessor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReadOnlyModelAccessor_Editor());
         case 104:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RightTransformAnchorTagWrapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RightTransformAnchorTagWrapper_Editor());
         case 105:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScriptKindClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ScriptKindClassItem_Editor());
         case 106:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SelectInEditorOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SelectInEditorOperation_Editor());
         case 107:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SelectPositionParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SelectPositionParameter_Editor());
         case 108:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ShowBoundariesInStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ShowBoundariesInStyleClassItem_Editor());
         case 109:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
         case 110:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubEditorCellModel_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StubEditorCellModel_Editor());
         case 111:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleAttributeDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleAttributeDeclaration_Editor());
         case 112:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleAttributeReferenceExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleAttributeReferenceExpression_Editor());
         case 113:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleClass_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleClass_Editor());
         case 114:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleClassReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleClassReference_Editor());
         case 115:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleClassReferenceList_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleClassReferenceList_Editor());
         case 116:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleKey_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleKey_Editor());
         case 117:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleKeyPack_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleKeyPack_Editor());
         case 118:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleReference_Editor());
         case 119:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleSheet_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleSheet_Editor());
         case 120:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleSheetClass_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleSheetClass_Editor());
         case 121:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleSheetClassReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StyleSheetClassReference_Editor());
         case 122:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteFeature_ActionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_ActionType_Editor());
         case 123:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteFeature_CanSubstitute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_CanSubstitute_Editor());
         case 124:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteFeature_DescriptionText_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_DescriptionText_Editor());
         case 125:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Icon_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Icon_Editor());
         case 126:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteFeature_MatchingText_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_MatchingText_Editor());
         case 127:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Selection_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Selection_Editor());
         case 128:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Action_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Action_Editor());
         case 129:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_AddConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_AddConcept_Editor());
         case 130:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Concepts_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Concepts_Editor());
         case 131:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Group_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Group_Editor());
         case 132:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_IncludeMenu_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_IncludeMenu_Editor());
         case 133:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Parameterized_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Parameterized_Editor());
         case 134:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Placeholder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Placeholder_Editor());
         case 135:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Subconcepts_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Subconcepts_Editor());
         case 136:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Wrapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Wrapper_Editor());
         case 137:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Default_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Default_Editor());
         case 138:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_DefaultWithFunction_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_DefaultWithFunction_Editor());
         case 139:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Named_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Named_Editor());
         case 140:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenuVariableDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenuVariableDeclaration_Editor());
         case 141:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Contribution_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Contribution_Editor());
         case 142:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Default_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Default_Editor());
         case 143:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Named_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Named_Editor());
         case 144:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstituteMenu_SimpleString_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_SimpleString_Editor());
         case 145:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TableComponentStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TableComponentStyleClassItem_Editor());
         case 146:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationFeature_ActionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationFeature_ActionType_Editor());
         case 147:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationFeature_DescriptionText_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationFeature_DescriptionText_Editor());
         case 148:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationFeature_Icon_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationFeature_Icon_Editor());
         case 149:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationLocation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationLocation_Editor());
         case 150:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_Editor());
         case 151:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_PlaceInCellHolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_PlaceInCellHolder_Editor());
         case 152:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuContribution_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuContribution_Editor());
         case 153:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Editor());
         case 154:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Action_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Action_Editor());
         case 155:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Group_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Group_Editor());
         case 156:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeMenu_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeMenu_Editor());
         case 157:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeSubstituteMenu_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeSubstituteMenu_Editor());
         case 158:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Parameterized_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Parameterized_Editor());
         case 159:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Placeholder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Placeholder_Editor());
         case 160:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_SubMenu_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_SubMenu_Editor());
         case 161:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Super_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Super_Editor());
         case 162:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_WrapSubstituteMenu_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_WrapSubstituteMenu_Editor());
         case 163:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Default_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Default_Editor());
         case 164:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Named_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Named_Editor());
         case 165:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuSection_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuSection_Editor());
         case 166:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuVariableDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuVariableDeclaration_Editor());
         case 167:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenu_Default_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenu_Default_Editor());
         case 168:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenu_Named_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenu_Named_Editor());
         case 169:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnapplyStyle_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnapplyStyle_Editor());
         case 170:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnderlinedStyleClassItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UnderlinedStyleClassItem_Editor());
         default:
       }
     }
@@ -993,20 +480,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new AbstractCellSelector_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new AbstractCellSelector_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new EditorCellModel_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new EditorCellModel_TransformationMenu());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new SelectInEditorOperationSideTransforms_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new SelectInEditorOperationSideTransforms_Contribution());
         default:
       }
     }
@@ -1062,220 +540,91 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AbstractCellSelector_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AbstractCellSelector_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AbstractStyledTextOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AbstractStyledTextOperation_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellActionMapItem_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellActionMapItem_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_AbstractGroup_parameterObject_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_AbstractGroup_parameterObject_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_editedNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_editedNode_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyPostfixHints_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyPostfixHints_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyValues_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyValues_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReferentPrimary_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReferentPrimary_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChildPrimary_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChildPrimary_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_SubstituteMenu());
         case 11:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Group_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Group_SubstituteMenu());
         case 12:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Item_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Item_SubstituteMenu());
         case 13:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_currentChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_currentChild_SubstituteMenu());
         case 14:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_defaultConceptOfChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_defaultConceptOfChild_SubstituteMenu());
         case 15:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellModel_NonEmptyProperty_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellModel_NonEmptyProperty_SubstituteMenu());
         case 16:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new CellModel_TransactionalProperty_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new CellModel_TransactionalProperty_SubstituteMenu());
         case 17:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_StyledText_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_StyledText_SubstituteMenu());
         case 18:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_childNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_childNode_SubstituteMenu());
         case 19:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
         case 20:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
         case 21:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_nextNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_nextNode_SubstituteMenu());
         case 22:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
         case 23:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_oldText_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_oldText_SubstituteMenu());
         case 24:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_parameterObject_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_parameterObject_SubstituteMenu());
         case 25:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_prevNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_prevNode_SubstituteMenu());
         case 26:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_selectedNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_selectedNode_SubstituteMenu());
         case 27:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_text_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_text_SubstituteMenu());
         case 28:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ContextHintsSpecification_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ContextHintsSpecification_SubstituteMenu());
         case 29:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new EditorCellId_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new EditorCellId_SubstituteMenu());
         case 30:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new EditorCellModel_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new EditorCellModel_SubstituteMenu());
         case 31:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstituteAbstractStyledTextOperation_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstituteAbstractStyledTextOperation_Contribution());
         case 32:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new StubEditorCellModel_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new StubEditorCellModel_SubstituteMenu());
         case 33:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new StyleClassReferenceList_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new StyleClassReferenceList_SubstituteMenu());
         case 34:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new StyleSheetClass_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new StyleSheetClass_SubstituteMenu());
         case 35:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstituteMenuPart_Placeholder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstituteMenuPart_Placeholder_SubstituteMenu());
         case 36:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstituteMenuReference_DefaultWithFunction_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstituteMenuReference_DefaultWithFunction_SubstituteMenu());
         case 37:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstituteMenuVariableDeclaration_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstituteMenuVariableDeclaration_SubstituteMenu());
         case 38:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TransactionPropertyHandler_newValue_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TransactionPropertyHandler_newValue_SubstituteMenu());
         case 39:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TransformationFeature_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TransformationFeature_SubstituteMenu());
         case 40:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TransformationLocation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TransformationLocation_SubstituteMenu());
         case 41:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TransformationMenuPart_Placeholder_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TransformationMenuPart_Placeholder_SubstituteMenu());
         case 42:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TransformationMenuVariableDeclaration_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new TransformationMenuVariableDeclaration_SubstituteMenu());
         default:
       }
     }

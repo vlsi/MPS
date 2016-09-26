@@ -22,25 +22,13 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new JUnit3TestCaseRef_Constraints();
-          }
-          break;
+          return new JUnit3TestCaseRef_Constraints();
         case 1:
-          if (true) {
-            return new JUnit4TestCaseRef_Constraints();
-          }
-          break;
+          return new JUnit4TestCaseRef_Constraints();
         case 2:
-          if (true) {
-            return new ModuleSuite_Constraints();
-          }
-          break;
+          return new ModuleSuite_Constraints();
         case 3:
-          if (true) {
-            return new TestCaseRef_Constraints();
-          }
-          break;
+          return new TestCaseRef_Constraints();
         default:
           // default 
       }

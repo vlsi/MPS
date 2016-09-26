@@ -22,45 +22,21 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AbstractFunctionType_Constraints();
-          }
-          break;
+          return new AbstractFunctionType_Constraints();
         case 1:
-          if (true) {
-            return new CompactInvokeFunctionExpression_Constraints();
-          }
-          break;
+          return new CompactInvokeFunctionExpression_Constraints();
         case 2:
-          if (true) {
-            return new ControlAbstractionContainer_Constraints();
-          }
-          break;
+          return new ControlAbstractionContainer_Constraints();
         case 3:
-          if (true) {
-            return new ControlAbstractionDeclaration_Constraints();
-          }
-          break;
+          return new ControlAbstractionDeclaration_Constraints();
         case 4:
-          if (true) {
-            return new FunctionMethodDeclaration_Constraints();
-          }
-          break;
+          return new FunctionMethodDeclaration_Constraints();
         case 5:
-          if (true) {
-            return new FunctionType_Constraints();
-          }
-          break;
+          return new FunctionType_Constraints();
         case 6:
-          if (true) {
-            return new InvokeFunctionOperation_Constraints();
-          }
-          break;
+          return new InvokeFunctionOperation_Constraints();
         case 7:
-          if (true) {
-            return new UnboundClosureParameterDeclaration_Constraints();
-          }
-          break;
+          return new UnboundClosureParameterDeclaration_Constraints();
         default:
           // default 
       }

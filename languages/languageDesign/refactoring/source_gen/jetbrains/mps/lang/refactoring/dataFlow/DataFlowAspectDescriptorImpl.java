@@ -23,30 +23,15 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractMoveExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractMoveExpression_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CreateRefactoringContext_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CreateRefactoringContext_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ExecuteRefactoringStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ExecuteRefactoringStatement_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IsRefactoringApplicable_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IsRefactoringApplicable_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MoveNodeToNodeExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MoveNodeToNodeExpression_DataFlow());
         default:
           // default 
       }

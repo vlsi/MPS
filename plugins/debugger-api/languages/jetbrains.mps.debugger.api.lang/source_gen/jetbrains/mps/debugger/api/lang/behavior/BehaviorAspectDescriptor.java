@@ -31,40 +31,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myConceptFunctionParameter_Concept__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Concept__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myDebuggerReference__BehaviorDescriptor;
-          }
-          break;
+          return myDebuggerReference__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myGetDebuggerSettings_Function__BehaviorDescriptor;
-          }
-          break;
+          return myGetDebuggerSettings_Function__BehaviorDescriptor;
         default:
           // default 
       }

@@ -22,70 +22,31 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CreateRootRule_Constraints();
-          }
-          break;
+          return new CreateRootRule_Constraints();
         case 1:
-          if (true) {
-            return new GeneratorParameterReference_Constraints();
-          }
-          break;
+          return new GeneratorParameterReference_Constraints();
         case 2:
-          if (true) {
-            return new Root_MappingRule_Constraints();
-          }
-          break;
+          return new Root_MappingRule_Constraints();
         case 3:
-          if (true) {
-            return new TemplateArgumentLinkPatternRefExpression_Constraints();
-          }
-          break;
+          return new TemplateArgumentLinkPatternRefExpression_Constraints();
         case 4:
-          if (true) {
-            return new TemplateArgumentParameterExpression_Constraints();
-          }
-          break;
+          return new TemplateArgumentParameterExpression_Constraints();
         case 5:
-          if (true) {
-            return new TemplateArgumentPatternVarRefExpression_Constraints();
-          }
-          break;
+          return new TemplateArgumentPatternVarRefExpression_Constraints();
         case 6:
-          if (true) {
-            return new TemplateArgumentPropertyPatternRefExpression_Constraints();
-          }
-          break;
+          return new TemplateArgumentPropertyPatternRefExpression_Constraints();
         case 7:
-          if (true) {
-            return new TemplateArgumentQueryExpression_Constraints();
-          }
-          break;
+          return new TemplateArgumentQueryExpression_Constraints();
         case 8:
-          if (true) {
-            return new TemplateArgumentVariableRefExpression_Constraints();
-          }
-          break;
+          return new TemplateArgumentVariableRefExpression_Constraints();
         case 9:
-          if (true) {
-            return new TemplateCallMacro_Constraints();
-          }
-          break;
+          return new TemplateCallMacro_Constraints();
         case 10:
-          if (true) {
-            return new TemplateDeclarationReference_Constraints();
-          }
-          break;
+          return new TemplateDeclarationReference_Constraints();
         case 11:
-          if (true) {
-            return new TemplateSwitch_Constraints();
-          }
-          break;
+          return new TemplateSwitch_Constraints();
         case 12:
-          if (true) {
-            return new TemplateSwitchMacro_Constraints();
-          }
-          break;
+          return new TemplateSwitchMacro_Constraints();
         default:
           // default 
       }

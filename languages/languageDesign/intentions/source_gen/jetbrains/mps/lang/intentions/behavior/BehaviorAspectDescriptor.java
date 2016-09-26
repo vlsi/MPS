@@ -36,65 +36,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBaseIntentionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBaseIntentionDeclaration__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myChildFilterFunction__BehaviorDescriptor;
-          }
-          break;
+          return myChildFilterFunction__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myDescriptionBlock__BehaviorDescriptor;
-          }
-          break;
+          return myDescriptionBlock__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myExecuteBlock__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteBlock__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myIntention__BehaviorDescriptor;
-          }
-          break;
+          return myIntention__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myIntentionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myIntentionDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myIsApplicableBlock__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableBlock__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myParameter__BehaviorDescriptor;
-          }
-          break;
+          return myParameter__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myParameterizedDescriptionBlock__BehaviorDescriptor;
-          }
-          break;
+          return myParameterizedDescriptionBlock__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myParameterizedExecuteBlock__BehaviorDescriptor;
-          }
-          break;
+          return myParameterizedExecuteBlock__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myParameterizedIntentionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myParameterizedIntentionDeclaration__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myQueryBlock__BehaviorDescriptor;
-          }
-          break;
+          return myQueryBlock__BehaviorDescriptor;
         default:
           // default 
       }

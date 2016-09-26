@@ -25,10 +25,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myTransformationLocation_WithFeatures__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationLocation_WithFeatures__BehaviorDescriptor;
         default:
           // default 
       }

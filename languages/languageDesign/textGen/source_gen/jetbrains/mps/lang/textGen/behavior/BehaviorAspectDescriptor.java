@@ -43,100 +43,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractAppendPart__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractAppendPart__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractTextGenDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractTextGenDeclaration__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAbstractTextGenParameter__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractTextGenParameter__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBufferParameter__BehaviorDescriptor;
-          }
-          break;
+          return myBufferParameter__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCollectionAppendPart__BehaviorDescriptor;
-          }
-          break;
+          return myCollectionAppendPart__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myConceptTextGenDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myConceptTextGenDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myConstantStringAppendPart__BehaviorDescriptor;
-          }
-          break;
+          return myConstantStringAppendPart__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myContextParameter__BehaviorDescriptor;
-          }
-          break;
+          return myContextParameter__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myEncodingDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEncodingDeclaration__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myExtensionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionDeclaration__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myFilenameFunction__BehaviorDescriptor;
-          }
-          break;
+          return myFilenameFunction__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myGenerateTextDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myGenerateTextDeclaration__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myLanguageTextGenDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myLanguageTextGenDeclaration__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myNodeAppendPart__BehaviorDescriptor;
-          }
-          break;
+          return myNodeAppendPart__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myNodeParameter__BehaviorDescriptor;
-          }
-          break;
+          return myNodeParameter__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myOperationDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myOperationDeclaration__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myStubOperationDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myStubOperationDeclaration__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myUtilityMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myUtilityMethodCall__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myWithIndentOperation__BehaviorDescriptor;
-          }
-          break;
+          return myWithIndentOperation__BehaviorDescriptor;
         default:
           // default 
       }

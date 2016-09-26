@@ -23,50 +23,23 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IndexedTupleLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IndexedTupleLiteral_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IndexedTupleMemberAccessExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IndexedTupleMemberAccessExpression_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IndexedTupleType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IndexedTupleType_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedTupleComponentAccessOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedTupleComponentAccessOperation_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedTupleComponentDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedTupleComponentDeclaration_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedTupleComponentReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedTupleComponentReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedTupleDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedTupleDeclaration_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedTupleLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedTupleLiteral_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedTupleType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NamedTupleType_Editor());
         default:
       }
     }
@@ -83,15 +56,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new tuple_member_access_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new tuple_member_access_Contribution());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new NTCD_add_final_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new NTCD_add_final_Contribution());
         default:
       }
     }
@@ -106,30 +73,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new namedTupleDeclaration_extends_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new namedTupleDeclaration_extends_Contribution());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NamedTupleLiteral_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NamedTupleLiteral_Contribution());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new IndexedTupleMemberAccessExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new IndexedTupleMemberAccessExpression_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NamedTupleType_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NamedTupleType_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NamedTupleType_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NamedTupleType_Contribution());
         default:
       }
     }

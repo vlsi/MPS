@@ -243,1100 +243,443 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractComponent__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractComponent__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAbstractStyledTextOperation__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractStyledTextOperation__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myAppendTextOperation__BehaviorDescriptor;
-          }
-          break;
+          return myAppendTextOperation__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myAutoDeletableStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myAutoDeletableStyleClassItem__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myBaseEditorComponent__BehaviorDescriptor;
-          }
-          break;
+          return myBaseEditorComponent__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myBaseLineCell__BehaviorDescriptor;
-          }
-          break;
+          return myBaseLineCell__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myBooleanStyleSheetItem__BehaviorDescriptor;
-          }
-          break;
+          return myBooleanStyleSheetItem__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myCellActionMapDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myCellActionMapDeclaration__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myCellKeyMapDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myCellKeyMapDeclaration__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myCellMenuComponent__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuComponent__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myCellMenuComponentFeature_Link__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuComponentFeature_Link__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myCellMenuComponentFeature_Property__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuComponentFeature_Property__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myCellMenuDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuDescriptor__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myCellMenuPart_Abstract__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_Abstract__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
-          }
-          break;
+          return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myCellModel_Alternation__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Alternation__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myCellModel_AttributedLinkCell__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_AttributedLinkCell__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myCellModel_AttributedNodeCell__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_AttributedNodeCell__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myCellModel_Block__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Block__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myCellModel_BlockEnd__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_BlockEnd__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myCellModel_BlockStart__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_BlockStart__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myCellModel_Collection__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Collection__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myCellModel_Component__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Component__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myCellModel_Constant__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Constant__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myCellModel_Custom__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Custom__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myCellModel_Empty__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Empty__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myCellModel_Error__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Error__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myCellModel_Indent__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Indent__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myCellModel_ListWithRole__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_ListWithRole__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myCellModel_ModelAccess__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_ModelAccess__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myCellModel_NextEditor__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_NextEditor__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myCellModel_NonEmptyProperty__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_NonEmptyProperty__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myCellModel_Property__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_Property__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myCellModel_RefCell__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_RefCell__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myCellModel_RefNode__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_RefNode__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myCellModel_RefNodeList__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_RefNodeList__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myCellModel_TransactionalProperty__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_TransactionalProperty__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myCellModel_URL__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_URL__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myCellModel_WithRole__BehaviorDescriptor;
-          }
-          break;
+          return myCellModel_WithRole__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myConceptEditorDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myConceptEditorDeclaration__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myConceptEditorHintDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myConceptEditorHintDeclaration__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myConceptFunctionParameter_model__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_model__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myConceptFunctionParameter_oldText__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_oldText__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
         case 65:
-          if (true) {
-            return myConceptFunctionParameter_text__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_text__BehaviorDescriptor;
         case 66:
-          if (true) {
-            return myContextVariable__BehaviorDescriptor;
-          }
-          break;
+          return myContextVariable__BehaviorDescriptor;
         case 67:
-          if (true) {
-            return myContextVariable_EditorContext__BehaviorDescriptor;
-          }
-          break;
+          return myContextVariable_EditorContext__BehaviorDescriptor;
         case 68:
-          if (true) {
-            return myContextVariable_Node__BehaviorDescriptor;
-          }
-          break;
+          return myContextVariable_Node__BehaviorDescriptor;
         case 69:
-          if (true) {
-            return myDefaultBaseLine__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultBaseLine__BehaviorDescriptor;
         case 70:
-          if (true) {
-            return myDrawBorderStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myDrawBorderStyleClassItem__BehaviorDescriptor;
         case 71:
-          if (true) {
-            return myDrawBracketsStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myDrawBracketsStyleClassItem__BehaviorDescriptor;
         case 72:
-          if (true) {
-            return myEditableStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myEditableStyleClassItem__BehaviorDescriptor;
         case 73:
-          if (true) {
-            return myEditorCellModel__BehaviorDescriptor;
-          }
-          break;
+          return myEditorCellModel__BehaviorDescriptor;
         case 74:
-          if (true) {
-            return myEditorComponentDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEditorComponentDeclaration__BehaviorDescriptor;
         case 75:
-          if (true) {
-            return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
         case 76:
-          if (true) {
-            return myForegroundColorStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myForegroundColorStyleClassItem__BehaviorDescriptor;
         case 77:
-          if (true) {
-            return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
         case 78:
-          if (true) {
-            return myIContextVariableProvider__BehaviorDescriptor;
-          }
-          break;
+          return myIContextVariableProvider__BehaviorDescriptor;
         case 79:
-          if (true) {
-            return myIExtensibleSubstituteMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return myIExtensibleSubstituteMenuPart__BehaviorDescriptor;
         case 80:
-          if (true) {
-            return myIExtensibleTransformationMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return myIExtensibleTransformationMenuPart__BehaviorDescriptor;
         case 81:
-          if (true) {
-            return myIIncludeSubstituteMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return myIIncludeSubstituteMenuPart__BehaviorDescriptor;
         case 82:
-          if (true) {
-            return myIMenu__BehaviorDescriptor;
-          }
-          break;
+          return myIMenu__BehaviorDescriptor;
         case 83:
-          if (true) {
-            return myIMenuPartParameterized__BehaviorDescriptor;
-          }
-          break;
+          return myIMenuPartParameterized__BehaviorDescriptor;
         case 84:
-          if (true) {
-            return myIMenuReference__BehaviorDescriptor;
-          }
-          break;
+          return myIMenuReference__BehaviorDescriptor;
         case 85:
-          if (true) {
-            return myIMenuReference_Default__BehaviorDescriptor;
-          }
-          break;
+          return myIMenuReference_Default__BehaviorDescriptor;
         case 86:
-          if (true) {
-            return myIMenuReference_Named__BehaviorDescriptor;
-          }
-          break;
+          return myIMenuReference_Named__BehaviorDescriptor;
         case 87:
-          if (true) {
-            return myIMenu_Concept__BehaviorDescriptor;
-          }
-          break;
+          return myIMenu_Concept__BehaviorDescriptor;
         case 88:
-          if (true) {
-            return myIMenu_Contribution__BehaviorDescriptor;
-          }
-          break;
+          return myIMenu_Contribution__BehaviorDescriptor;
         case 89:
-          if (true) {
-            return myINodeProvider__BehaviorDescriptor;
-          }
-          break;
+          return myINodeProvider__BehaviorDescriptor;
         case 90:
-          if (true) {
-            return myIParameterizableMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return myIParameterizableMenuPart__BehaviorDescriptor;
         case 91:
-          if (true) {
-            return myIQueryFunction_Color__BehaviorDescriptor;
-          }
-          break;
+          return myIQueryFunction_Color__BehaviorDescriptor;
         case 92:
-          if (true) {
-            return myIStyleContainer__BehaviorDescriptor;
-          }
-          break;
+          return myIStyleContainer__BehaviorDescriptor;
         case 93:
-          if (true) {
-            return myIStyleSheetMember__BehaviorDescriptor;
-          }
-          break;
+          return myIStyleSheetMember__BehaviorDescriptor;
         case 94:
-          if (true) {
-            return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
         case 95:
-          if (true) {
-            return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
         case 96:
-          if (true) {
-            return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
         case 97:
-          if (true) {
-            return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
         case 98:
-          if (true) {
-            return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
         case 99:
-          if (true) {
-            return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
         case 100:
-          if (true) {
-            return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
         case 101:
-          if (true) {
-            return myInlineEditorComponent__BehaviorDescriptor;
-          }
-          break;
+          return myInlineEditorComponent__BehaviorDescriptor;
         case 102:
-          if (true) {
-            return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
         case 103:
-          if (true) {
-            return myPaddingBottomStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myPaddingBottomStyleClassItem__BehaviorDescriptor;
         case 104:
-          if (true) {
-            return myPaddingLeftStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myPaddingLeftStyleClassItem__BehaviorDescriptor;
         case 105:
-          if (true) {
-            return myPaddingRightStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myPaddingRightStyleClassItem__BehaviorDescriptor;
         case 106:
-          if (true) {
-            return myPaddingTopStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myPaddingTopStyleClassItem__BehaviorDescriptor;
         case 107:
-          if (true) {
-            return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
         case 108:
-          if (true) {
-            return myPunctuationRightStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myPunctuationRightStyleClassItem__BehaviorDescriptor;
         case 109:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_Concept__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_Concept__BehaviorDescriptor;
         case 110:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDescriptor;
         case 111:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_CurrentTargetNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_CurrentTargetNode__BehaviorDescriptor;
         case 112:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_Link__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_Link__BehaviorDescriptor;
         case 113:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor;
         case 114:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_ParentNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_ParentNode__BehaviorDescriptor;
         case 115:
-          if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor;
         case 116:
-          if (true) {
-            return myQueryFunctionParameter_TransformationMenu_CreatedNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_TransformationMenu_CreatedNode__BehaviorDescriptor;
         case 117:
-          if (true) {
-            return myQueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor;
         case 118:
-          if (true) {
-            return myQueryFunctionParameter_parameterObject__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_parameterObject__BehaviorDescriptor;
         case 119:
-          if (true) {
-            return myQueryFunctionParameter_pattern__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_pattern__BehaviorDescriptor;
         case 120:
-          if (true) {
-            return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
         case 121:
-          if (true) {
-            return myQueryFunction_Boolean__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Boolean__BehaviorDescriptor;
         case 122:
-          if (true) {
-            return myQueryFunction_CellProvider__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_CellProvider__BehaviorDescriptor;
         case 123:
-          if (true) {
-            return myQueryFunction_Color__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Color__BehaviorDescriptor;
         case 124:
-          if (true) {
-            return myQueryFunction_ColorComposit__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ColorComposit__BehaviorDescriptor;
         case 125:
-          if (true) {
-            return myQueryFunction_FontStyle__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_FontStyle__BehaviorDescriptor;
         case 126:
-          if (true) {
-            return myQueryFunction_ImagePath__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ImagePath__BehaviorDescriptor;
         case 127:
-          if (true) {
-            return myQueryFunction_Integer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Integer__BehaviorDescriptor;
         case 128:
-          if (true) {
-            return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
         case 129:
-          if (true) {
-            return myQueryFunction_JComponent__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_JComponent__BehaviorDescriptor;
         case 130:
-          if (true) {
-            return myQueryFunction_Menu__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Menu__BehaviorDescriptor;
         case 131:
-          if (true) {
-            return myQueryFunction_MethodPresentation__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_MethodPresentation__BehaviorDescriptor;
         case 132:
-          if (true) {
-            return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
         case 133:
-          if (true) {
-            return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
         case 134:
-          if (true) {
-            return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
         case 135:
-          if (true) {
-            return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
         case 136:
-          if (true) {
-            return myQueryFunction_NodeCondition__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_NodeCondition__BehaviorDescriptor;
         case 137:
-          if (true) {
-            return myQueryFunction_NodeFactory__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_NodeFactory__BehaviorDescriptor;
         case 138:
-          if (true) {
-            return myQueryFunction_NodeListFilter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_NodeListFilter__BehaviorDescriptor;
         case 139:
-          if (true) {
-            return myQueryFunction_ParametersList__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_ParametersList__BehaviorDescriptor;
         case 140:
-          if (true) {
-            return myQueryFunction_SNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SNode__BehaviorDescriptor;
         case 141:
-          if (true) {
-            return myQueryFunction_SeparatorText__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SeparatorText__BehaviorDescriptor;
         case 142:
-          if (true) {
-            return myQueryFunction_String__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_String__BehaviorDescriptor;
         case 143:
-          if (true) {
-            return myQueryFunction_Style__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Style__BehaviorDescriptor;
         case 144:
-          if (true) {
-            return myQueryFunction_StyleParameter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_StyleParameter__BehaviorDescriptor;
         case 145:
-          if (true) {
-            return myQueryFunction_SubstituteMenu__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu__BehaviorDescriptor;
         case 146:
-          if (true) {
-            return myQueryFunction_SubstituteMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenuPart__BehaviorDescriptor;
         case 147:
-          if (true) {
-            return myQueryFunction_SubstituteMenuVariable_Initializer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenuVariable_Initializer__BehaviorDescriptor;
         case 148:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_ActionType__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_ActionType__BehaviorDescriptor;
         case 149:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_CanSubstitute__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_CanSubstitute__BehaviorDescriptor;
         case 150:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Concept__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Concept__BehaviorDescriptor;
         case 151:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Concepts__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Concepts__BehaviorDescriptor;
         case 152:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Condition__BehaviorDescriptor;
         case 153:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_FilterConcepts__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_FilterConcepts__BehaviorDescriptor;
         case 154:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Icon__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Icon__BehaviorDescriptor;
         case 155:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Parameter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Parameter__BehaviorDescriptor;
         case 156:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Select__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Select__BehaviorDescriptor;
         case 157:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_Substitute__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_Substitute__BehaviorDescriptor;
         case 158:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_SubstituteString__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_SubstituteString__BehaviorDescriptor;
         case 159:
-          if (true) {
-            return myQueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor;
         case 160:
-          if (true) {
-            return myQueryFunction_TransformationMenu__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu__BehaviorDescriptor;
         case 161:
-          if (true) {
-            return myQueryFunction_TransformationMenuVariable_Initializer__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenuVariable_Initializer__BehaviorDescriptor;
         case 162:
-          if (true) {
-            return myQueryFunction_TransformationMenu_ActionLabelText__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_ActionLabelText__BehaviorDescriptor;
         case 163:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Condition__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Condition__BehaviorDescriptor;
         case 164:
-          if (true) {
-            return myQueryFunction_TransformationMenu_DescriptionText__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_DescriptionText__BehaviorDescriptor;
         case 165:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Execute__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Execute__BehaviorDescriptor;
         case 166:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Extensible__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Extensible__BehaviorDescriptor;
         case 167:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Icon__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Icon__BehaviorDescriptor;
         case 168:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Node__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Node__BehaviorDescriptor;
         case 169:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Parameter__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Parameter__BehaviorDescriptor;
         case 170:
-          if (true) {
-            return myQueryFunction_TransformationMenu_TargetNode__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_TargetNode__BehaviorDescriptor;
         case 171:
-          if (true) {
-            return myQueryFunction_TransformationMenu_Text__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_Text__BehaviorDescriptor;
         case 172:
-          if (true) {
-            return myQueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor;
         case 173:
-          if (true) {
-            return myQueryFunction_Underlined__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunction_Underlined__BehaviorDescriptor;
         case 174:
-          if (true) {
-            return myQueryHintsSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myQueryHintsSpecification__BehaviorDescriptor;
         case 175:
-          if (true) {
-            return myRGBColor__BehaviorDescriptor;
-          }
-          break;
+          return myRGBColor__BehaviorDescriptor;
         case 176:
-          if (true) {
-            return myReadOnlyStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myReadOnlyStyleClassItem__BehaviorDescriptor;
         case 177:
-          if (true) {
-            return myScriptKindClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myScriptKindClassItem__BehaviorDescriptor;
         case 178:
-          if (true) {
-            return mySelectInEditorOperation__BehaviorDescriptor;
-          }
-          break;
+          return mySelectInEditorOperation__BehaviorDescriptor;
         case 179:
-          if (true) {
-            return mySelectableStyleSheetItem__BehaviorDescriptor;
-          }
-          break;
+          return mySelectableStyleSheetItem__BehaviorDescriptor;
         case 180:
-          if (true) {
-            return mySetBoldOperation__BehaviorDescriptor;
-          }
-          break;
+          return mySetBoldOperation__BehaviorDescriptor;
         case 181:
-          if (true) {
-            return myStrikeOutStyleSheet__BehaviorDescriptor;
-          }
-          break;
+          return myStrikeOutStyleSheet__BehaviorDescriptor;
         case 182:
-          if (true) {
-            return myStyleAttributeDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myStyleAttributeDeclaration__BehaviorDescriptor;
         case 183:
-          if (true) {
-            return myStyleClass__BehaviorDescriptor;
-          }
-          break;
+          return myStyleClass__BehaviorDescriptor;
         case 184:
-          if (true) {
-            return myStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myStyleClassItem__BehaviorDescriptor;
         case 185:
-          if (true) {
-            return myStyleKey__BehaviorDescriptor;
-          }
-          break;
+          return myStyleKey__BehaviorDescriptor;
         case 186:
-          if (true) {
-            return myStyleSheet__BehaviorDescriptor;
-          }
-          break;
+          return myStyleSheet__BehaviorDescriptor;
         case 187:
-          if (true) {
-            return myStyleSheetClass__BehaviorDescriptor;
-          }
-          break;
+          return myStyleSheetClass__BehaviorDescriptor;
         case 188:
-          if (true) {
-            return mySubstituteMenu__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenu__BehaviorDescriptor;
         case 189:
-          if (true) {
-            return mySubstituteMenuPart__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart__BehaviorDescriptor;
         case 190:
-          if (true) {
-            return mySubstituteMenuPart_Action__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart_Action__BehaviorDescriptor;
         case 191:
-          if (true) {
-            return mySubstituteMenuPart_Concepts__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart_Concepts__BehaviorDescriptor;
         case 192:
-          if (true) {
-            return mySubstituteMenuPart_Group__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart_Group__BehaviorDescriptor;
         case 193:
-          if (true) {
-            return mySubstituteMenuPart_IncludeMenu__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart_IncludeMenu__BehaviorDescriptor;
         case 194:
-          if (true) {
-            return mySubstituteMenuPart_Parameterized__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart_Parameterized__BehaviorDescriptor;
         case 195:
-          if (true) {
-            return mySubstituteMenuPart_Wrapper__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuPart_Wrapper__BehaviorDescriptor;
         case 196:
-          if (true) {
-            return mySubstituteMenuReference_DefaultWithFunction__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuReference_DefaultWithFunction__BehaviorDescriptor;
         case 197:
-          if (true) {
-            return mySubstituteMenuReference_Named__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuReference_Named__BehaviorDescriptor;
         case 198:
-          if (true) {
-            return mySubstituteMenuVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenuVariableReference__BehaviorDescriptor;
         case 199:
-          if (true) {
-            return mySubstituteMenu_Contribution__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenu_Contribution__BehaviorDescriptor;
         case 200:
-          if (true) {
-            return mySubstituteMenu_Default__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteMenu_Default__BehaviorDescriptor;
         case 201:
-          if (true) {
-            return mySynchronizeable__BehaviorDescriptor;
-          }
-          break;
+          return mySynchronizeable__BehaviorDescriptor;
         case 202:
-          if (true) {
-            return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
         case 203:
-          if (true) {
-            return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
-          }
-          break;
+          return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
         case 204:
-          if (true) {
-            return myTransactionalPropertyHandler__BehaviorDescriptor;
-          }
-          break;
+          return myTransactionalPropertyHandler__BehaviorDescriptor;
         case 205:
-          if (true) {
-            return myTransformationLocation__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationLocation__BehaviorDescriptor;
         case 206:
-          if (true) {
-            return myTransformationLocation_Completion__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationLocation_Completion__BehaviorDescriptor;
         case 207:
-          if (true) {
-            return myTransformationLocation_SideTransform__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationLocation_SideTransform__BehaviorDescriptor;
         case 208:
-          if (true) {
-            return myTransformationMenu__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenu__BehaviorDescriptor;
         case 209:
-          if (true) {
-            return myTransformationMenuContribution__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuContribution__BehaviorDescriptor;
         case 210:
-          if (true) {
-            return myTransformationMenuPart_Action__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_Action__BehaviorDescriptor;
         case 211:
-          if (true) {
-            return myTransformationMenuPart_Group__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_Group__BehaviorDescriptor;
         case 212:
-          if (true) {
-            return myTransformationMenuPart_IncludeMenu__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_IncludeMenu__BehaviorDescriptor;
         case 213:
-          if (true) {
-            return myTransformationMenuPart_IncludeSubstituteMenu__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_IncludeSubstituteMenu__BehaviorDescriptor;
         case 214:
-          if (true) {
-            return myTransformationMenuPart_Parameterized__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_Parameterized__BehaviorDescriptor;
         case 215:
-          if (true) {
-            return myTransformationMenuPart_WrapSubstituteMenu__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_WrapSubstituteMenu__BehaviorDescriptor;
         case 216:
-          if (true) {
-            return myTransformationMenuReference_Named__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuReference_Named__BehaviorDescriptor;
         case 217:
-          if (true) {
-            return myTransformationMenuVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuVariableReference__BehaviorDescriptor;
         case 218:
-          if (true) {
-            return myTransformationMenu_Default__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenu_Default__BehaviorDescriptor;
         default:
           // default 
       }

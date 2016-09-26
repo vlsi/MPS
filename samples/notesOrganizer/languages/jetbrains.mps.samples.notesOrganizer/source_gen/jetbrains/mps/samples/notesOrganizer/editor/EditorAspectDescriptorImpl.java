@@ -27,45 +27,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Category_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Category_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
         case 2:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Note_Editor(), new Note_compact_Editor(), new Note_inspected_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Note_Editor(), new Note_compact_Editor(), new Note_inspected_Editor()});
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Notes_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Notes_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NotesConfiguration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NotesConfiguration_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Priority_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Priority_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Status_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Status_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextNotePart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextNotePart_Editor());
         default:
       }
     }

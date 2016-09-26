@@ -22,65 +22,29 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AsTypeBuilder_Constraints();
-          }
-          break;
+          return new AsTypeBuilder_Constraints();
         case 1:
-          if (true) {
-            return new BaseSimpleBuilderDeclaration_Constraints();
-          }
-          break;
+          return new BaseSimpleBuilderDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new BeanBuilder_Constraints();
-          }
-          break;
+          return new BeanBuilder_Constraints();
         case 3:
-          if (true) {
-            return new BeanPropertyBuilder_Constraints();
-          }
-          break;
+          return new BeanPropertyBuilder_Constraints();
         case 4:
-          if (true) {
-            return new ResultExpression_Constraints();
-          }
-          break;
+          return new ResultExpression_Constraints();
         case 5:
-          if (true) {
-            return new SimpleBuilder_Constraints();
-          }
-          break;
+          return new SimpleBuilder_Constraints();
         case 6:
-          if (true) {
-            return new SimpleBuilderChildExpression_Constraints();
-          }
-          break;
+          return new SimpleBuilderChildExpression_Constraints();
         case 7:
-          if (true) {
-            return new SimpleBuilderDeclaration_Constraints();
-          }
-          break;
+          return new SimpleBuilderDeclaration_Constraints();
         case 8:
-          if (true) {
-            return new SimpleBuilderExpression_Constraints();
-          }
-          break;
+          return new SimpleBuilderExpression_Constraints();
         case 9:
-          if (true) {
-            return new SimpleBuilderParameterReference_Constraints();
-          }
-          break;
+          return new SimpleBuilderParameterReference_Constraints();
         case 10:
-          if (true) {
-            return new SimpleBuilderPropertyBuilder_Constraints();
-          }
-          break;
+          return new SimpleBuilderPropertyBuilder_Constraints();
         case 11:
-          if (true) {
-            return new SimpleBuilderPropertyExpression_Constraints();
-          }
-          break;
+          return new SimpleBuilderPropertyExpression_Constraints();
         default:
           // default 
       }

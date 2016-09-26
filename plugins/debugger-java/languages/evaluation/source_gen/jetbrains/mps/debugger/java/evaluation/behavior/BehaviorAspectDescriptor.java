@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myDebuggedType__BehaviorDescriptor;
-          }
-          break;
+          return myDebuggedType__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myDoNotTransformAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myDoNotTransformAnnotation__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myEvaluator__BehaviorDescriptor;
-          }
-          break;
+          return myEvaluator__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myEvaluatorConcept__BehaviorDescriptor;
-          }
-          break;
+          return myEvaluatorConcept__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myIEvaluatorConcept__BehaviorDescriptor;
-          }
-          break;
+          return myIEvaluatorConcept__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myLowLevelVariable__BehaviorDescriptor;
-          }
-          break;
+          return myLowLevelVariable__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myUnprocessedAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myUnprocessedAnnotation__BehaviorDescriptor;
         default:
           // default 
       }

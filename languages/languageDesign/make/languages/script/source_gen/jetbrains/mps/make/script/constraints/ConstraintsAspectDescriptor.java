@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AdvanceWorkStatement_Constraints();
-          }
-          break;
+          return new AdvanceWorkStatement_Constraints();
         case 1:
-          if (true) {
-            return new FinishWorkStatement_Constraints();
-          }
-          break;
+          return new FinishWorkStatement_Constraints();
         case 2:
-          if (true) {
-            return new RelayQueryExpression_Constraints();
-          }
-          break;
+          return new RelayQueryExpression_Constraints();
         case 3:
-          if (true) {
-            return new ResourceType_Constraints();
-          }
-          break;
+          return new ResourceType_Constraints();
         case 4:
-          if (true) {
-            return new ResultStatement_Constraints();
-          }
-          break;
+          return new ResultStatement_Constraints();
         default:
           // default 
       }

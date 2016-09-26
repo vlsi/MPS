@@ -25,160 +25,67 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntervalType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntervalType_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LiteralI_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LiteralI_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MathSymbol_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MathSymbol_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixType_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MatrixZero_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MatrixZero_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PowExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new PowExpression_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
         default:
       }
     }
@@ -221,15 +128,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new TransformationMenu[]{new ML_SideTransforms_Expression_Contribution(), new Math()});
-          }
-          break;
+          return Arrays.asList(new TransformationMenu[]{new ML_SideTransforms_Expression_Contribution(), new Math()});
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ML_SideTransforms_LocalVariableDeclaration_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ML_SideTransforms_LocalVariableDeclaration_Contribution());
         default:
       }
     }
@@ -244,30 +145,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ComplexLiteral_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ComplexLiteral_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ExponentialOperation_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ExponentialOperation_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ML_Actions_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ML_Actions_Contribution());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MathTypeCast_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MathTypeCast_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new MatrixElementAccessExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new MatrixElementAccessExpression_SubstituteMenu());
         default:
       }
     }

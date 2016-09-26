@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ActionCallDeclaredParameter_Constraints();
-          }
-          break;
+          return new ActionCallDeclaredParameter_Constraints();
         case 1:
-          if (true) {
-            return new ModelReference_Constraints();
-          }
-          break;
+          return new ModelReference_Constraints();
         case 2:
-          if (true) {
-            return new NodeReference_Constraints();
-          }
-          break;
+          return new NodeReference_Constraints();
         case 3:
-          if (true) {
-            return new OfAspectOperation_Constraints();
-          }
-          break;
+          return new OfAspectOperation_Constraints();
         case 4:
-          if (true) {
-            return new SubtreeStatisticsTarget_Constraints();
-          }
-          break;
+          return new SubtreeStatisticsTarget_Constraints();
         default:
           // default 
       }

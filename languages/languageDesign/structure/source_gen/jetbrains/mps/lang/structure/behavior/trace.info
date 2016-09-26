@@ -35,7 +35,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.AttributeInfo_IsMultiple_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,126,0" name="jetbrains.mps.lang.structure.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,84,0" name="jetbrains.mps.lang.structure.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConceptDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.ConceptDeclaration_BehaviorDescriptor" />

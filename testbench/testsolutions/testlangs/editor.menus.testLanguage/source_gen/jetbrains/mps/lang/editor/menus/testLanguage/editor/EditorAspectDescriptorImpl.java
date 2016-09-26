@@ -25,25 +25,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeHolder_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeHolder_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParentWithEmptyCell_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParentWithEmptyCell_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopesTestConceptBase_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ScopesTestConceptBase_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TransformationMenuTestConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TransformationMenuTestConcept_Editor());
         default:
       }
     }
@@ -60,30 +48,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Base_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Base_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BaseWithNonEmptyMenu_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BaseWithNonEmptyMenu_TransformationMenu());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new Derived_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new Derived_TransformationMenu());
         case 3:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new DerivedWithEmptyMenu_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new DerivedWithEmptyMenu_TransformationMenu());
         case 4:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new TransformationMenuTestConcept_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new TransformationMenuTestConcept_TransformationMenu());
         default:
       }
     }
@@ -169,10 +142,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ChildOfParentWithEmptyCell_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ChildOfParentWithEmptyCell_SubstituteMenu());
         default:
       }
     }

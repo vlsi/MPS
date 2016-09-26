@@ -22,40 +22,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CellModel_Diagram_Constraints();
-          }
-          break;
+          return new CellModel_Diagram_Constraints();
         case 1:
-          if (true) {
-            return new CellModel_DiagramConnector_Constraints();
-          }
-          break;
+          return new CellModel_DiagramConnector_Constraints();
         case 2:
-          if (true) {
-            return new CreationActionReference_Constraints();
-          }
-          break;
+          return new CreationActionReference_Constraints();
         case 3:
-          if (true) {
-            return new FigureParameterMapping_Constraints();
-          }
-          break;
+          return new FigureParameterMapping_Constraints();
         case 4:
-          if (true) {
-            return new LinkArgument_Constraints();
-          }
-          break;
+          return new LinkArgument_Constraints();
         case 5:
-          if (true) {
-            return new PropertyArgument_Constraints();
-          }
-          break;
+          return new PropertyArgument_Constraints();
         case 6:
-          if (true) {
-            return new ThisEditorNodeExpression_Constraints();
-          }
-          break;
+          return new ThisEditorNodeExpression_Constraints();
         default:
           // default 
       }

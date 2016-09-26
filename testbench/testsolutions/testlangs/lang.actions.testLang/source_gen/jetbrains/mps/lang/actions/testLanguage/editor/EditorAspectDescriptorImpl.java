@@ -25,100 +25,43 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChild1_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChild1_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChild1Child_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChild1Child_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChild1SubConcept_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChild1SubConcept_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChild2_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChild2_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap1_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap1_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap2_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap2_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestChildWrapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestChildWrapper_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestContainer_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild1_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild1_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild2_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild2_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAbstractChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAbstractChild_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptAbstractChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptAbstractChild_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptChild_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherAbstractChild_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherAbstractChild_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild1_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild1_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild2_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild2_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformChild1_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformChild1_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestAncestor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestAncestor_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestContainer_Editor());
         default:
       }
     }
@@ -135,20 +78,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAbstractChild_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAbstractChild_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu());
         default:
       }
     }
@@ -163,30 +97,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChild_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChildWrapper_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChildWrapper_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionTestChild1SubConcept_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ActionTestChild1SubConcept_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionTestChildToWrap1_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ActionTestChildToWrap1_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionTestDefaultAbstractChild_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ActionTestDefaultAbstractChild_SubstituteMenu());
         default:
       }
     }

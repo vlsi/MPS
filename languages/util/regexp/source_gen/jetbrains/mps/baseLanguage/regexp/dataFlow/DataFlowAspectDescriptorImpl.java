@@ -23,125 +23,53 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BinaryRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BinaryRegexp_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new FindMatchExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new FindMatchExpression_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new FindMatchStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new FindMatchStatement_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ForEachMatchStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ForEachMatchStatement_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InlineRegexpExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InlineRegexpExpression_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LookRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LookRegexp_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchParensRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchParensRegexp_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpExpression_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpOperation_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpStatement_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReference_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceRegexp_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceReplacement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceReplacement_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ParensRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ParensRegexp_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Regexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Regexp_DataFlow());
         case 15:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclaration_DataFlow());
         case 16:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclarationReferenceRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclarationReferenceRegexp_DataFlow());
         case 17:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RegexpExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RegexpExpression_DataFlow());
         case 18:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Regexps_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Regexps_DataFlow());
         case 19:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ReplaceRegexpOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ReplaceRegexpOperation_DataFlow());
         case 20:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ReplaceWithRegexpOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ReplaceWithRegexpOperation_DataFlow());
         case 21:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SplitOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SplitOperation_DataFlow());
         case 22:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SymbolClassRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SymbolClassRegexp_DataFlow());
         case 23:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new UnaryRegexp_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new UnaryRegexp_DataFlow());
         default:
           // default 
       }

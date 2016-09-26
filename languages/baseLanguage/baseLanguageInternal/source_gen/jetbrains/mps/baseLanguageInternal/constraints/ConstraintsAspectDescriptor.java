@@ -22,55 +22,25 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ConstantValue_Constraints();
-          }
-          break;
+          return new ConstantValue_Constraints();
         case 1:
-          if (true) {
-            return new ExtractStatementListInnerExpression_Constraints();
-          }
-          break;
+          return new ExtractStatementListInnerExpression_Constraints();
         case 2:
-          if (true) {
-            return new ExtractStaticInnerClassConcept_Constraints();
-          }
-          break;
+          return new ExtractStaticInnerClassConcept_Constraints();
         case 3:
-          if (true) {
-            return new ExtractStaticInnerClassCreator_Constraints();
-          }
-          break;
+          return new ExtractStaticInnerClassCreator_Constraints();
         case 4:
-          if (true) {
-            return new ExtractStaticMethod_CallExpression_Constraints();
-          }
-          break;
+          return new ExtractStaticMethod_CallExpression_Constraints();
         case 5:
-          if (true) {
-            return new ExtractToConstantRefExpression_Constraints();
-          }
-          break;
+          return new ExtractToConstantRefExpression_Constraints();
         case 6:
-          if (true) {
-            return new InternalAnonymousClass_Constraints();
-          }
-          break;
+          return new InternalAnonymousClass_Constraints();
         case 7:
-          if (true) {
-            return new InternalPartialInstanceMethodCall_Constraints();
-          }
-          break;
+          return new InternalPartialInstanceMethodCall_Constraints();
         case 8:
-          if (true) {
-            return new InternalSuperMethodCallOperation_Constraints();
-          }
-          break;
+          return new InternalSuperMethodCallOperation_Constraints();
         case 9:
-          if (true) {
-            return new WeakClassReference_Constraints();
-          }
-          break;
+          return new WeakClassReference_Constraints();
         default:
           // default 
       }

@@ -154,16 +154,10 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
       switch (switchIndex) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
-            if (true) {
-              return new EmptyScope();
-            }
-            break;
+            return new EmptyScope();
           }
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
-            if (true) {
-              return new EmptyScope();
-            }
-            break;
+            return new EmptyScope();
           }
       }
     }

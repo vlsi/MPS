@@ -132,545 +132,221 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractNodeRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractNodeRefExpression__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractTypeCastExpression__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractTypeCastExpression__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAggregationIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myAggregationIdentity__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myAsNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myAsNodeOperation__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myAsSConcept__BehaviorDescriptor;
-          }
-          break;
+          return myAsSConcept__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myAssociationIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myAssociationIdentity__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myAttributeAccess__BehaviorDescriptor;
-          }
-          break;
+          return myAttributeAccess__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myAttributeQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myAttributeQualifier__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myChildAttributeQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myChildAttributeQualifier__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myChildNodeRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myChildNodeRefExpression__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myConceptId__BehaviorDescriptor;
-          }
-          break;
+          return myConceptId__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myConceptIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myConceptIdentity__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myConceptNodeType__BehaviorDescriptor;
-          }
-          break;
+          return myConceptNodeType__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myConcept_GetAllSubConcepts__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_GetAllSubConcepts__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myConcept_GetAllSuperConcepts__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_GetAllSuperConcepts__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myConcept_GetDirectSuperConcepts__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_GetDirectSuperConcepts__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myConcept_GetHierarchy__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_GetHierarchy__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myConcept_IsExactlyOperation__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_IsExactlyOperation__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myConcept_IsSubConceptOfOperation__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_IsSubConceptOfOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myConcept_IsSuperConceptOfOperation__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_IsSuperConceptOfOperation__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myConcept_NewInstance__BehaviorDescriptor;
-          }
-          break;
+          return myConcept_NewInstance__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myContainmentLinkId__BehaviorDescriptor;
-          }
-          break;
+          return myContainmentLinkId__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myEnumMemberReference__BehaviorDescriptor;
-          }
-          break;
+          return myEnumMemberReference__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myEqualsStructurallyExpression__BehaviorDescriptor;
-          }
-          break;
+          return myEqualsStructurallyExpression__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myILinkAccess__BehaviorDescriptor;
-          }
-          break;
+          return myILinkAccess__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myILinkAccessQualifierContainer__BehaviorDescriptor;
-          }
-          break;
+          return myILinkAccessQualifierContainer__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myIfInstanceOfVariable__BehaviorDescriptor;
-          }
-          break;
+          return myIfInstanceOfVariable__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myLanguageId__BehaviorDescriptor;
-          }
-          break;
+          return myLanguageId__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myLanguageIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myLanguageIdentity__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myLanguageRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLanguageRefExpression__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myLanguageReferenceExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLanguageReferenceExpression__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myLinkAttributeQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myLinkAttributeQualifier__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myLinkList_AddNewChildOperation__BehaviorDescriptor;
-          }
-          break;
+          return myLinkList_AddNewChildOperation__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myLinkRefQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myLinkRefQualifier__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myLink_SetNewChildOperation__BehaviorDescriptor;
-          }
-          break;
+          return myLink_SetNewChildOperation__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myLink_SetTargetOperation__BehaviorDescriptor;
-          }
-          break;
+          return myLink_SetTargetOperation__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myModelReferenceExpression__BehaviorDescriptor;
-          }
-          break;
+          return myModelReferenceExpression__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myModel_AddRootOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_AddRootOperation__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myModel_CreateNewNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_CreateNewNodeOperation__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myModel_CreateNewRootNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_CreateNewRootNodeOperation__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myModel_GetLongNameOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_GetLongNameOperation__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myModel_GetModule__BehaviorDescriptor;
-          }
-          break;
+          return myModel_GetModule__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myModel_NodesIncludingImportedOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_NodesIncludingImportedOperation__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myModel_NodesOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_NodesOperation__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myModel_RootsIncludingImportedOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_RootsIncludingImportedOperation__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myModel_RootsOperation__BehaviorDescriptor;
-          }
-          break;
+          return myModel_RootsOperation__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myModuleIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myModuleIdentity__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myModulePointer__BehaviorDescriptor;
-          }
-          break;
+          return myModulePointer__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myModuleReferenceExpression__BehaviorDescriptor;
-          }
-          break;
+          return myModuleReferenceExpression__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myNodeAttributeQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myNodeAttributeQualifier__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myNodeRefExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNodeRefExpression__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myNode_ConceptMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myNode_ConceptMethodCall__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myNode_CopyOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_CopyOperation__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myNode_DeleteOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_DeleteOperation__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myNode_DetachOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_DetachOperation__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myNode_GetAllSiblingsOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetAllSiblingsOperation__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myNode_GetAncestorOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetAncestorOperation__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myNode_GetAncestorsOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetAncestorsOperation__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myNode_GetChildrenOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetChildrenOperation__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myNode_GetConceptOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetConceptOperation__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myNode_GetContainingLinkOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetContainingLinkOperation__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myNode_GetContainingRoleOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetContainingRoleOperation__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myNode_GetContainingRootOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetContainingRootOperation__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myNode_GetDescendantsOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetDescendantsOperation__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myNode_GetIndexInParentOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetIndexInParentOperation__BehaviorDescriptor;
         case 65:
-          if (true) {
-            return myNode_GetModelOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetModelOperation__BehaviorDescriptor;
         case 66:
-          if (true) {
-            return myNode_GetNextSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetNextSiblingOperation__BehaviorDescriptor;
         case 67:
-          if (true) {
-            return myNode_GetNextSiblingsOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetNextSiblingsOperation__BehaviorDescriptor;
         case 68:
-          if (true) {
-            return myNode_GetParentOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetParentOperation__BehaviorDescriptor;
         case 69:
-          if (true) {
-            return myNode_GetPrevSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetPrevSiblingOperation__BehaviorDescriptor;
         case 70:
-          if (true) {
-            return myNode_GetPrevSiblingsOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetPrevSiblingsOperation__BehaviorDescriptor;
         case 71:
-          if (true) {
-            return myNode_GetReferenceOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetReferenceOperation__BehaviorDescriptor;
         case 72:
-          if (true) {
-            return myNode_GetReferencesOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetReferencesOperation__BehaviorDescriptor;
         case 73:
-          if (true) {
-            return myNode_GetReferentSearchScopeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetReferentSearchScopeOperation__BehaviorDescriptor;
         case 74:
-          if (true) {
-            return myNode_GetSConceptOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_GetSConceptOperation__BehaviorDescriptor;
         case 75:
-          if (true) {
-            return myNode_InsertNewNextSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_InsertNewNextSiblingOperation__BehaviorDescriptor;
         case 76:
-          if (true) {
-            return myNode_InsertNewPrevSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_InsertNewPrevSiblingOperation__BehaviorDescriptor;
         case 77:
-          if (true) {
-            return myNode_InsertNextSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_InsertNextSiblingOperation__BehaviorDescriptor;
         case 78:
-          if (true) {
-            return myNode_InsertPrevSiblingOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_InsertPrevSiblingOperation__BehaviorDescriptor;
         case 79:
-          if (true) {
-            return myNode_IsAttributeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_IsAttributeOperation__BehaviorDescriptor;
         case 80:
-          if (true) {
-            return myNode_IsInstanceOfOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_IsInstanceOfOperation__BehaviorDescriptor;
         case 81:
-          if (true) {
-            return myNode_IsNotNullOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_IsNotNullOperation__BehaviorDescriptor;
         case 82:
-          if (true) {
-            return myNode_IsNullOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_IsNullOperation__BehaviorDescriptor;
         case 83:
-          if (true) {
-            return myNode_IsRoleOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_IsRoleOperation__BehaviorDescriptor;
         case 84:
-          if (true) {
-            return myNode_PointerOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_PointerOperation__BehaviorDescriptor;
         case 85:
-          if (true) {
-            return myNode_ReplaceWithAnotherOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_ReplaceWithAnotherOperation__BehaviorDescriptor;
         case 86:
-          if (true) {
-            return myNode_ReplaceWithNewOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_ReplaceWithNewOperation__BehaviorDescriptor;
         case 87:
-          if (true) {
-            return myOperationParm_LinkQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myOperationParm_LinkQualifier__BehaviorDescriptor;
         case 88:
-          if (true) {
-            return myPropertyAttributeQualifier__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyAttributeQualifier__BehaviorDescriptor;
         case 89:
-          if (true) {
-            return myPropertyId__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyId__BehaviorDescriptor;
         case 90:
-          if (true) {
-            return myPropertyIdentity__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyIdentity__BehaviorDescriptor;
         case 91:
-          if (true) {
-            return myProperty_HasValue_Enum__BehaviorDescriptor;
-          }
-          break;
+          return myProperty_HasValue_Enum__BehaviorDescriptor;
         case 92:
-          if (true) {
-            return myProperty_HasValue_Simple__BehaviorDescriptor;
-          }
-          break;
+          return myProperty_HasValue_Simple__BehaviorDescriptor;
         case 93:
-          if (true) {
-            return myProperty_RemoveOperation__BehaviorDescriptor;
-          }
-          break;
+          return myProperty_RemoveOperation__BehaviorDescriptor;
         case 94:
-          if (true) {
-            return myProperty_SetOperation__BehaviorDescriptor;
-          }
-          break;
+          return myProperty_SetOperation__BehaviorDescriptor;
         case 95:
-          if (true) {
-            return myReferenceLinkId__BehaviorDescriptor;
-          }
-          break;
+          return myReferenceLinkId__BehaviorDescriptor;
         case 96:
-          if (true) {
-            return mySConceptType__BehaviorDescriptor;
-          }
-          break;
+          return mySConceptType__BehaviorDescriptor;
         case 97:
-          if (true) {
-            return mySEnumMemberType__BehaviorDescriptor;
-          }
-          break;
+          return mySEnumMemberType__BehaviorDescriptor;
         case 98:
-          if (true) {
-            return mySEnumOperation__BehaviorDescriptor;
-          }
-          break;
+          return mySEnumOperation__BehaviorDescriptor;
         case 99:
-          if (true) {
-            return mySLinkAccess__BehaviorDescriptor;
-          }
-          break;
+          return mySLinkAccess__BehaviorDescriptor;
         case 100:
-          if (true) {
-            return mySLinkListAccess__BehaviorDescriptor;
-          }
-          break;
+          return mySLinkListAccess__BehaviorDescriptor;
         case 101:
-          if (true) {
-            return mySModelType__BehaviorDescriptor;
-          }
-          break;
+          return mySModelType__BehaviorDescriptor;
         case 102:
-          if (true) {
-            return mySNodeListType__BehaviorDescriptor;
-          }
-          break;
+          return mySNodeListType__BehaviorDescriptor;
         case 103:
-          if (true) {
-            return mySNodeOperation__BehaviorDescriptor;
-          }
-          break;
+          return mySNodeOperation__BehaviorDescriptor;
         case 104:
-          if (true) {
-            return mySNodeType__BehaviorDescriptor;
-          }
-          break;
+          return mySNodeType__BehaviorDescriptor;
         case 105:
-          if (true) {
-            return mySNodeTypeCastExpression__BehaviorDescriptor;
-          }
-          break;
+          return mySNodeTypeCastExpression__BehaviorDescriptor;
         case 106:
-          if (true) {
-            return mySPropertyAccess__BehaviorDescriptor;
-          }
-          break;
+          return mySPropertyAccess__BehaviorDescriptor;
         case 107:
-          if (true) {
-            return mySemanticDowncastExpression__BehaviorDescriptor;
-          }
-          break;
+          return mySemanticDowncastExpression__BehaviorDescriptor;
         default:
           // default 
       }

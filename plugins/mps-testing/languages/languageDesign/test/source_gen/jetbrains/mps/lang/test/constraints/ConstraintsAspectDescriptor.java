@@ -22,20 +22,11 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ScopesExpectedNode_Constraints();
-          }
-          break;
+          return new ScopesExpectedNode_Constraints();
         case 1:
-          if (true) {
-            return new ScopesTest_Constraints();
-          }
-          break;
+          return new ScopesTest_Constraints();
         case 2:
-          if (true) {
-            return new TestNodeReference_Constraints();
-          }
-          break;
+          return new TestNodeReference_Constraints();
         default:
           // default 
       }

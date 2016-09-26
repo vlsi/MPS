@@ -25,130 +25,55 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlAttribute_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlBaseAttribute_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlBaseAttribute_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlBaseElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlBaseElement_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlCDATA_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlCDATA_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlCharRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlCharRef_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlCharRefValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlCharRefValue_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlComment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlComment_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlCommentLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlCommentLine_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlContent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlContent_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlDeclaration_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlDoctypeDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlDoctypeDeclaration_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlDocument_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlDocument_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlElement_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlEntityRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlEntityRef_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlEntityRefValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlEntityRefValue_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlExternalId_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlExternalId_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlFile_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlFile_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlNoSpaceValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlNoSpaceValue_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlProcessingInstruction_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlProcessingInstruction_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlProlog_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlProlog_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlPrologElement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlPrologElement_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlText_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlText_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlTextValue_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlTextValue_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlValuePart_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlValuePart_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new XmlWhitespace_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new XmlWhitespace_Editor());
         default:
       }
     }
@@ -165,20 +90,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new XmlBaseAttribute_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new XmlBaseAttribute_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new XmlContent_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new XmlContent_TransformationMenu());
         case 2:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new XmlValuePart_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new XmlValuePart_TransformationMenu());
         default:
       }
     }
@@ -216,60 +132,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlAttribute_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlAttribute_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlBaseAttribute_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlBaseAttribute_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlCharRefValue_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlCharRefValue_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlCommentLine_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlCommentLine_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlElement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlElement_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlEntityRefValue_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlEntityRefValue_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlPrologElement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlPrologElement_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlText_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlText_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlTextValue_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlTextValue_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlValuePart_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlValuePart_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new XmlWhitespace_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new XmlWhitespace_SubstituteMenu());
         default:
       }
     }

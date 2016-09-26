@@ -35,60 +35,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBaseClassifierType__BehaviorDescriptor;
-          }
-          break;
+          return myBaseClassifierType__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myDefaultClassifierType__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultClassifierType__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myIClassifier__BehaviorDescriptor;
-          }
-          break;
+          return myIClassifier__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myIClassifierPart__BehaviorDescriptor;
-          }
-          break;
+          return myIClassifierPart__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myIMember__BehaviorDescriptor;
-          }
-          break;
+          return myIMember__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myIMemberOperation__BehaviorDescriptor;
-          }
-          break;
+          return myIMemberOperation__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return mySuperClassifierExpresson__BehaviorDescriptor;
-          }
-          break;
+          return mySuperClassifierExpresson__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myThisClassifierExpression__BehaviorDescriptor;
-          }
-          break;
+          return myThisClassifierExpression__BehaviorDescriptor;
         default:
           // default 
       }

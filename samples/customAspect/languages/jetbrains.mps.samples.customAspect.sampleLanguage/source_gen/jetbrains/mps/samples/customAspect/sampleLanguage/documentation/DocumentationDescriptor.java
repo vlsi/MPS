@@ -16,10 +16,7 @@ public class DocumentationDescriptor implements DocumentationAspectDescriptor {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return "Hello, documentation world!";
-          }
-          break;
+          return "Hello, documentation world!";
         default:
           // default 
       }

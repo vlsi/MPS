@@ -89,330 +89,135 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myActionDataParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myActionDataParameterDeclaration__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myActionDataParameterReferenceOperation__BehaviorDescriptor;
-          }
-          break;
+          return myActionDataParameterReferenceOperation__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myActionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myActionDeclaration__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myActionGroupDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myActionGroupDeclaration__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myActionParameter__BehaviorDescriptor;
-          }
-          break;
+          return myActionParameter__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myActionParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myActionParameterDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myActionParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myActionParameterReference__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myActionParameterReferenceOperation__BehaviorDescriptor;
-          }
-          break;
+          return myActionParameterReferenceOperation__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myActionType__BehaviorDescriptor;
-          }
-          break;
+          return myActionType__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myBaseNodeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myBaseNodeBlock__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myBaseToolDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBaseToolDeclaration__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myBuildGroupBlock__BehaviorDescriptor;
-          }
-          break;
+          return myBuildGroupBlock__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myConceptFunctionParameter_AnActionEvent__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_AnActionEvent__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myConceptFunctionParameter_Concept__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Concept__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myConceptFunctionParameter_IModule__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_IModule__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myConceptFunctionParameter_MPSProject__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_MPSProject__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myConceptFunctionParameter_Model__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Model__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myConceptFunctionParameter_OperationContext__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_OperationContext__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myConceptFunctionParameter_Project__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Project__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myConceptFunctionParameter_SConceptClass__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_SConceptClass__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myConceptFunctionParameter_node__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_node__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myConceptsBlock__BehaviorDescriptor;
-          }
-          break;
+          return myConceptsBlock__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myCreateBlock__BehaviorDescriptor;
-          }
-          break;
+          return myCreateBlock__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myCreateNodeAspectBlock__BehaviorDescriptor;
-          }
-          break;
+          return myCreateNodeAspectBlock__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myCustomCondition__BehaviorDescriptor;
-          }
-          break;
+          return myCustomCondition__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myDisposeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myDisposeBlock__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myDoUpdateBlock__BehaviorDescriptor;
-          }
-          break;
+          return myDoUpdateBlock__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myEditorTab__BehaviorDescriptor;
-          }
-          break;
+          return myEditorTab__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myEnumerateChildrenFunction__BehaviorDescriptor;
-          }
-          break;
+          return myEnumerateChildrenFunction__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myExecuteBlock__BehaviorDescriptor;
-          }
-          break;
+          return myExecuteBlock__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myGetComponentBlock__BehaviorDescriptor;
-          }
-          break;
+          return myGetComponentBlock__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myGetNodeBlock__BehaviorDescriptor;
-          }
-          break;
+          return myGetNodeBlock__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myGetNodesBlock__BehaviorDescriptor;
-          }
-          break;
+          return myGetNodesBlock__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myGroupAnchor__BehaviorDescriptor;
-          }
-          break;
+          return myGroupAnchor__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myGroupType__BehaviorDescriptor;
-          }
-          break;
+          return myGroupType__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myIdeaInitializerDescriptor__BehaviorDescriptor;
-          }
-          break;
+          return myIdeaInitializerDescriptor__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myIdeaPluginDependency__BehaviorDescriptor;
-          }
-          break;
+          return myIdeaPluginDependency__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myInitBlock__BehaviorDescriptor;
-          }
-          break;
+          return myInitBlock__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myIsApplicableBlock__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableBlock__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myIsApplicableTabBlock__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableTabBlock__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myKeyMapKeystroke__BehaviorDescriptor;
-          }
-          break;
+          return myKeyMapKeystroke__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myKeymapChangesDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myKeymapChangesDeclaration__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myListenBlock__BehaviorDescriptor;
-          }
-          break;
+          return myListenBlock__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myMPSPluginDependency__BehaviorDescriptor;
-          }
-          break;
+          return myMPSPluginDependency__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myOldConceptsBlock__BehaviorDescriptor;
-          }
-          break;
+          return myOldConceptsBlock__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myOldCreateBlock__BehaviorDescriptor;
-          }
-          break;
+          return myOldCreateBlock__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myOnAfterReadBlock__BehaviorDescriptor;
-          }
-          break;
+          return myOnAfterReadBlock__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myOnBeforeWriteBlock__BehaviorDescriptor;
-          }
-          break;
+          return myOnBeforeWriteBlock__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myOrder__BehaviorDescriptor;
-          }
-          break;
+          return myOrder__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myOrderConstraints__BehaviorDescriptor;
-          }
-          break;
+          return myOrderConstraints__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myOrderReference__BehaviorDescriptor;
-          }
-          break;
+          return myOrderReference__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myParameterizedShortcutChange__BehaviorDescriptor;
-          }
-          break;
+          return myParameterizedShortcutChange__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myPersistentPropertyDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentPropertyDeclaration__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myPersistentPropertyReference__BehaviorDescriptor;
-          }
-          break;
+          return myPersistentPropertyReference__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myPluginDependency__BehaviorDescriptor;
-          }
-          break;
+          return myPluginDependency__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myPreferencePage__BehaviorDescriptor;
-          }
-          break;
+          return myPreferencePage__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myPreferencePageCommitBlock__BehaviorDescriptor;
-          }
-          break;
+          return myPreferencePageCommitBlock__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myPreferencePageIsModifiedBlock__BehaviorDescriptor;
-          }
-          break;
+          return myPreferencePageIsModifiedBlock__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myPreferencePageResetBlock__BehaviorDescriptor;
-          }
-          break;
+          return myPreferencePageResetBlock__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myPreferencesComponentDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myPreferencesComponentDeclaration__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myPreferencesComponentType__BehaviorDescriptor;
-          }
-          break;
+          return myPreferencesComponentType__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myToStringConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myToStringConceptFunction__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myToolType__BehaviorDescriptor;
-          }
-          break;
+          return myToolType__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myUpdateBlock__BehaviorDescriptor;
-          }
-          break;
+          return myUpdateBlock__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myUpdateGroupFunction__BehaviorDescriptor;
-          }
-          break;
+          return myUpdateGroupFunction__BehaviorDescriptor;
         default:
           // default 
       }

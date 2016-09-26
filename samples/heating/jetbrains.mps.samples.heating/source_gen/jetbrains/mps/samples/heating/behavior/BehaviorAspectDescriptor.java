@@ -31,40 +31,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myDailyPlan__BehaviorDescriptor;
-          }
-          break;
+          return myDailyPlan__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myDayRange__BehaviorDescriptor;
-          }
-          break;
+          return myDayRange__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myHeatingPlan__BehaviorDescriptor;
-          }
-          break;
+          return myHeatingPlan__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return mySlot__BehaviorDescriptor;
-          }
-          break;
+          return mySlot__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return mySpecificDay__BehaviorDescriptor;
-          }
-          break;
+          return mySpecificDay__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myWeekDays__BehaviorDescriptor;
-          }
-          break;
+          return myWeekDays__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myWeekendDay__BehaviorDescriptor;
-          }
-          break;
+          return myWeekendDay__BehaviorDescriptor;
         default:
           // default 
       }

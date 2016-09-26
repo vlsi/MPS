@@ -26,30 +26,15 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new Category_TextGen();
-          }
-          break;
+          return new Category_TextGen();
         case 1:
-          if (true) {
-            return new CategoryReference_TextGen();
-          }
-          break;
+          return new CategoryReference_TextGen();
         case 2:
-          if (true) {
-            return new Note_TextGen();
-          }
-          break;
+          return new Note_TextGen();
         case 3:
-          if (true) {
-            return new Notes_TextGen();
-          }
-          break;
+          return new Notes_TextGen();
         case 4:
-          if (true) {
-            return new TextNotePart_TextGen();
-          }
-          break;
+          return new TextNotePart_TextGen();
         default:
           // default 
       }

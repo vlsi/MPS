@@ -59,180 +59,75 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myConceptConstraints__BehaviorDescriptor;
-          }
-          break;
+          return myConceptConstraints__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
-          }
-          break;
+          return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myConstraintFunctionParameter_exists__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_exists__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myConstraintFunctionParameter_link__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_link__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myConstraintFunctionParameter_position__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_position__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myConstraintFunctionParameter_visible__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunctionParameter_visible__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myConstraintFunction_PropertySetter__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_PropertySetter__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myConstraintsFunctionParameter_node__BehaviorDescriptor;
-          }
-          break;
+          return myConstraintsFunctionParameter_node__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myNodeDefaultSearchScope__BehaviorDescriptor;
-          }
-          break;
+          return myNodeDefaultSearchScope__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myNodePropertyConstraint__BehaviorDescriptor;
-          }
-          break;
+          return myNodePropertyConstraint__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myNodeReferentConstraint__BehaviorDescriptor;
-          }
-          break;
+          return myNodeReferentConstraint__BehaviorDescriptor;
         default:
           // default 
       }

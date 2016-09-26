@@ -23,55 +23,25 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionConstructionParameterDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionConstructionParameterDeclaration_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionConstructorParameterReferenceOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionConstructorParameterReferenceOperation_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterDeclaration_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterReferenceOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterReferenceOperation_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionInstance_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionInstance_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionParameterDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionParameterDeclaration_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ActionParameterReferenceOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ActionParameterReferenceOperation_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddStatement_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddTabOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddTabOperation_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ToolTab_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ToolTab_DataFlow());
         default:
           // default 
       }

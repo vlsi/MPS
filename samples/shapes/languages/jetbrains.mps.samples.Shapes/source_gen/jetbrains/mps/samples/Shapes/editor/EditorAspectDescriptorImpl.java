@@ -27,25 +27,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
         case 1:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
         case 3:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
         default:
       }
     }

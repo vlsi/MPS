@@ -33,50 +33,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractClassifierSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractClassifierSpecification__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractMethodSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractMethodSpecification__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myDirectClassifierSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myDirectClassifierSpecification__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myDirectMethodSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myDirectMethodSpecification__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myFQNameClassifierSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myFQNameClassifierSpecification__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myFQNameMethodSpecification__BehaviorDescriptor;
-          }
-          break;
+          return myFQNameMethodSpecification__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
-          }
-          break;
+          return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
-          }
-          break;
+          return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myPullUpMethod__BehaviorDescriptor;
-          }
-          break;
+          return myPullUpMethod__BehaviorDescriptor;
         default:
           // default 
       }

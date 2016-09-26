@@ -26,60 +26,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Diagram1_DiagramTestTextual_Editor(), new Diagram1_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Diagram1_DiagramTestTextual_Editor(), new Diagram1_Editor()});
         case 1:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Diagram2_DiagramTestTextual_Editor(), new Diagram2_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Diagram2_DiagramTestTextual_Editor(), new Diagram2_Editor()});
         case 2:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new InputPort_DiagramTestTextual_Editor(), new InputPort_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new InputPort_DiagramTestTextual_Editor(), new InputPort_Editor()});
         case 3:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new Node_DiagramTestTextual_Editor(), new Node_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new Node_DiagramTestTextual_Editor(), new Node_Editor()});
         case 4:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new NodeWithName_DiagramTestTextual_Editor(), new NodeWithName_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new NodeWithName_DiagramTestTextual_Editor(), new NodeWithName_Editor()});
         case 5:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new NodeWithPortQueries_DiagramTestTextual_Editor(), new NodeWithPortQueries_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new NodeWithPortQueries_DiagramTestTextual_Editor(), new NodeWithPortQueries_Editor()});
         case 6:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new NodeWithPorts_DiagramTestTextual_Editor(), new NodeWithPorts_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new NodeWithPorts_DiagramTestTextual_Editor(), new NodeWithPorts_Editor()});
         case 7:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new NodeWithSize_DiagramTestTextual_Editor(), new NodeWithSize_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new NodeWithSize_DiagramTestTextual_Editor(), new NodeWithSize_Editor()});
         case 8:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
         case 9:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
         case 10:
-          if (true) {
-            return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
-          }
-          break;
+          return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
         default:
       }
     }

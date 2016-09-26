@@ -29,710 +29,287 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AdditionalForLoopVariable_TextGen();
-          }
-          break;
+          return new AdditionalForLoopVariable_TextGen();
         case 1:
-          if (true) {
-            return new AndExpression_TextGen();
-          }
-          break;
+          return new AndExpression_TextGen();
         case 2:
-          if (true) {
-            return new Annotation_TextGen();
-          }
-          break;
+          return new Annotation_TextGen();
         case 3:
-          if (true) {
-            return new AnnotationInstance_TextGen();
-          }
-          break;
+          return new AnnotationInstance_TextGen();
         case 4:
-          if (true) {
-            return new AnnotationInstanceExpression_TextGen();
-          }
-          break;
+          return new AnnotationInstanceExpression_TextGen();
         case 5:
-          if (true) {
-            return new AnnotationInstanceValue_TextGen();
-          }
-          break;
+          return new AnnotationInstanceValue_TextGen();
         case 6:
-          if (true) {
-            return new AnnotationMethodDeclaration_TextGen();
-          }
-          break;
+          return new AnnotationMethodDeclaration_TextGen();
         case 7:
-          if (true) {
-            return new AnonymousClass_TextGen();
-          }
-          break;
+          return new AnonymousClass_TextGen();
         case 8:
-          if (true) {
-            return new AnonymousClassCreator_TextGen();
-          }
-          break;
+          return new AnonymousClassCreator_TextGen();
         case 9:
-          if (true) {
-            return new ArrayAccessExpression_TextGen();
-          }
-          break;
+          return new ArrayAccessExpression_TextGen();
         case 10:
-          if (true) {
-            return new ArrayClassExpression_TextGen();
-          }
-          break;
+          return new ArrayClassExpression_TextGen();
         case 11:
-          if (true) {
-            return new ArrayCloneOperation_TextGen();
-          }
-          break;
+          return new ArrayCloneOperation_TextGen();
         case 12:
-          if (true) {
-            return new ArrayCreator_TextGen();
-          }
-          break;
+          return new ArrayCreator_TextGen();
         case 13:
-          if (true) {
-            return new ArrayCreatorWithInitializer_TextGen();
-          }
-          break;
+          return new ArrayCreatorWithInitializer_TextGen();
         case 14:
-          if (true) {
-            return new ArrayLengthOperation_TextGen();
-          }
-          break;
+          return new ArrayLengthOperation_TextGen();
         case 15:
-          if (true) {
-            return new ArrayLiteral_TextGen();
-          }
-          break;
+          return new ArrayLiteral_TextGen();
         case 16:
-          if (true) {
-            return new ArrayType_TextGen();
-          }
-          break;
+          return new ArrayType_TextGen();
         case 17:
-          if (true) {
-            return new AssertStatement_TextGen();
-          }
-          break;
+          return new AssertStatement_TextGen();
         case 18:
-          if (true) {
-            return new BaseAssignmentExpression_TextGen();
-          }
-          break;
+          return new BaseAssignmentExpression_TextGen();
         case 19:
-          if (true) {
-            return new BitwiseAndExpression_TextGen();
-          }
-          break;
+          return new BitwiseAndExpression_TextGen();
         case 20:
-          if (true) {
-            return new BitwiseNotExpression_TextGen();
-          }
-          break;
+          return new BitwiseNotExpression_TextGen();
         case 21:
-          if (true) {
-            return new BitwiseOrExpression_TextGen();
-          }
-          break;
+          return new BitwiseOrExpression_TextGen();
         case 22:
-          if (true) {
-            return new BitwiseXorExpression_TextGen();
-          }
-          break;
+          return new BitwiseXorExpression_TextGen();
         case 23:
-          if (true) {
-            return new BlockStatement_TextGen();
-          }
-          break;
+          return new BlockStatement_TextGen();
         case 24:
-          if (true) {
-            return new BooleanConstant_TextGen();
-          }
-          break;
+          return new BooleanConstant_TextGen();
         case 25:
-          if (true) {
-            return new BooleanType_TextGen();
-          }
-          break;
+          return new BooleanType_TextGen();
         case 26:
-          if (true) {
-            return new BreakStatement_TextGen();
-          }
-          break;
+          return new BreakStatement_TextGen();
         case 27:
-          if (true) {
-            return new ByteType_TextGen();
-          }
-          break;
+          return new ByteType_TextGen();
         case 28:
-          if (true) {
-            return new CastExpression_TextGen();
-          }
-          break;
+          return new CastExpression_TextGen();
         case 29:
-          if (true) {
-            return new CatchClause_TextGen();
-          }
-          break;
+          return new CatchClause_TextGen();
         case 30:
-          if (true) {
-            return new CharConstant_TextGen();
-          }
-          break;
+          return new CharConstant_TextGen();
         case 31:
-          if (true) {
-            return new CharType_TextGen();
-          }
-          break;
+          return new CharType_TextGen();
         case 32:
-          if (true) {
-            return new ClassConcept_TextGen();
-          }
-          break;
+          return new ClassConcept_TextGen();
         case 33:
-          if (true) {
-            return new ClassCreator_TextGen();
-          }
-          break;
+          return new ClassCreator_TextGen();
         case 34:
-          if (true) {
-            return new ClassifierClassExpression_TextGen();
-          }
-          break;
+          return new ClassifierClassExpression_TextGen();
         case 35:
-          if (true) {
-            return new ClassifierType_TextGen();
-          }
-          break;
+          return new ClassifierType_TextGen();
         case 36:
-          if (true) {
-            return new CommentedStatement_TextGen();
-          }
-          break;
+          return new CommentedStatement_TextGen();
         case 37:
-          if (true) {
-            return new CommentedStatementsBlock_TextGen();
-          }
-          break;
+          return new CommentedStatementsBlock_TextGen();
         case 38:
-          if (true) {
-            return new ConceptFunctionParameter_TextGen();
-          }
-          break;
+          return new ConceptFunctionParameter_TextGen();
         case 39:
-          if (true) {
-            return new ConstructorDeclaration_TextGen();
-          }
-          break;
+          return new ConstructorDeclaration_TextGen();
         case 40:
-          if (true) {
-            return new ContinueStatement_TextGen();
-          }
-          break;
+          return new ContinueStatement_TextGen();
         case 41:
-          if (true) {
-            return new DefaultClassCreator_TextGen();
-          }
-          break;
+          return new DefaultClassCreator_TextGen();
         case 42:
-          if (true) {
-            return new DimensionExpression_TextGen();
-          }
-          break;
+          return new DimensionExpression_TextGen();
         case 43:
-          if (true) {
-            return new DivExpression_TextGen();
-          }
-          break;
+          return new DivExpression_TextGen();
         case 44:
-          if (true) {
-            return new DoWhileStatement_TextGen();
-          }
-          break;
+          return new DoWhileStatement_TextGen();
         case 45:
-          if (true) {
-            return new DotExpression_TextGen();
-          }
-          break;
+          return new DotExpression_TextGen();
         case 46:
-          if (true) {
-            return new DoubleType_TextGen();
-          }
-          break;
+          return new DoubleType_TextGen();
         case 47:
-          if (true) {
-            return new ElsifClause_TextGen();
-          }
-          break;
+          return new ElsifClause_TextGen();
         case 48:
-          if (true) {
-            return new EnumClass_TextGen();
-          }
-          break;
+          return new EnumClass_TextGen();
         case 49:
-          if (true) {
-            return new EnumConstantDeclaration_TextGen();
-          }
-          break;
+          return new EnumConstantDeclaration_TextGen();
         case 50:
-          if (true) {
-            return new EnumConstantReference_TextGen();
-          }
-          break;
+          return new EnumConstantReference_TextGen();
         case 51:
-          if (true) {
-            return new EnumValueOfExpression_TextGen();
-          }
-          break;
+          return new EnumValueOfExpression_TextGen();
         case 52:
-          if (true) {
-            return new EnumValuesExpression_TextGen();
-          }
-          break;
+          return new EnumValuesExpression_TextGen();
         case 53:
-          if (true) {
-            return new EqualsExpression_TextGen();
-          }
-          break;
+          return new EqualsExpression_TextGen();
         case 54:
-          if (true) {
-            return new ExpressionStatement_TextGen();
-          }
-          break;
+          return new ExpressionStatement_TextGen();
         case 55:
-          if (true) {
-            return new FieldDeclaration_TextGen();
-          }
-          break;
+          return new FieldDeclaration_TextGen();
         case 56:
-          if (true) {
-            return new FieldReferenceOperation_TextGen();
-          }
-          break;
+          return new FieldReferenceOperation_TextGen();
         case 57:
-          if (true) {
-            return new FloatType_TextGen();
-          }
-          break;
+          return new FloatType_TextGen();
         case 58:
-          if (true) {
-            return new FloatingPointConstant_TextGen();
-          }
-          break;
+          return new FloatingPointConstant_TextGen();
         case 59:
-          if (true) {
-            return new FloatingPointFloatConstant_TextGen();
-          }
-          break;
+          return new FloatingPointFloatConstant_TextGen();
         case 60:
-          if (true) {
-            return new ForStatement_TextGen();
-          }
-          break;
+          return new ForStatement_TextGen();
         case 61:
-          if (true) {
-            return new ForeachStatement_TextGen();
-          }
-          break;
+          return new ForeachStatement_TextGen();
         case 62:
-          if (true) {
-            return new GenericNewExpression_TextGen();
-          }
-          break;
+          return new GenericNewExpression_TextGen();
         case 63:
-          if (true) {
-            return new GreaterThanExpression_TextGen();
-          }
-          break;
+          return new GreaterThanExpression_TextGen();
         case 64:
-          if (true) {
-            return new GreaterThanOrEqualsExpression_TextGen();
-          }
-          break;
+          return new GreaterThanOrEqualsExpression_TextGen();
         case 65:
-          if (true) {
-            return new HexIntegerLiteral_TextGen();
-          }
-          break;
+          return new HexIntegerLiteral_TextGen();
         case 66:
-          if (true) {
-            return new IfStatement_TextGen();
-          }
-          break;
+          return new IfStatement_TextGen();
         case 67:
-          if (true) {
-            return new ImplicitAnnotationInstanceValue_TextGen();
-          }
-          break;
+          return new ImplicitAnnotationInstanceValue_TextGen();
         case 68:
-          if (true) {
-            return new InstanceInitializer_TextGen();
-          }
-          break;
+          return new InstanceInitializer_TextGen();
         case 69:
-          if (true) {
-            return new InstanceMethodCallOperation_TextGen();
-          }
-          break;
+          return new InstanceMethodCallOperation_TextGen();
         case 70:
-          if (true) {
-            return new InstanceMethodDeclaration_TextGen();
-          }
-          break;
+          return new InstanceMethodDeclaration_TextGen();
         case 71:
-          if (true) {
-            return new InstanceOfExpression_TextGen();
-          }
-          break;
+          return new InstanceOfExpression_TextGen();
         case 72:
-          if (true) {
-            return new IntegerConstant_TextGen();
-          }
-          break;
+          return new IntegerConstant_TextGen();
         case 73:
-          if (true) {
-            return new IntegerType_TextGen();
-          }
-          break;
+          return new IntegerType_TextGen();
         case 74:
-          if (true) {
-            return new Interface_TextGen();
-          }
-          break;
+          return new Interface_TextGen();
         case 75:
-          if (true) {
-            return new LessThanExpression_TextGen();
-          }
-          break;
+          return new LessThanExpression_TextGen();
         case 76:
-          if (true) {
-            return new LessThanOrEqualsExpression_TextGen();
-          }
-          break;
+          return new LessThanOrEqualsExpression_TextGen();
         case 77:
-          if (true) {
-            return new LocalMethodCall_TextGen();
-          }
-          break;
+          return new LocalMethodCall_TextGen();
         case 78:
-          if (true) {
-            return new LocalVariableDeclaration_TextGen();
-          }
-          break;
+          return new LocalVariableDeclaration_TextGen();
         case 79:
-          if (true) {
-            return new LocalVariableDeclarationStatement_TextGen();
-          }
-          break;
+          return new LocalVariableDeclarationStatement_TextGen();
         case 80:
-          if (true) {
-            return new LongLiteral_TextGen();
-          }
-          break;
+          return new LongLiteral_TextGen();
         case 81:
-          if (true) {
-            return new LongType_TextGen();
-          }
-          break;
+          return new LongType_TextGen();
         case 82:
-          if (true) {
-            return new LowerBoundType_TextGen();
-          }
-          break;
+          return new LowerBoundType_TextGen();
         case 83:
-          if (true) {
-            return new MinusExpression_TextGen();
-          }
-          break;
+          return new MinusExpression_TextGen();
         case 84:
-          if (true) {
-            return new MulExpression_TextGen();
-          }
-          break;
+          return new MulExpression_TextGen();
         case 85:
-          if (true) {
-            return new NestedNewExpression_TextGen();
-          }
-          break;
+          return new NestedNewExpression_TextGen();
         case 86:
-          if (true) {
-            return new NotEqualsExpression_TextGen();
-          }
-          break;
+          return new NotEqualsExpression_TextGen();
         case 87:
-          if (true) {
-            return new NotExpression_TextGen();
-          }
-          break;
+          return new NotExpression_TextGen();
         case 88:
-          if (true) {
-            return new NullLiteral_TextGen();
-          }
-          break;
+          return new NullLiteral_TextGen();
         case 89:
-          if (true) {
-            return new OrExpression_TextGen();
-          }
-          break;
+          return new OrExpression_TextGen();
         case 90:
-          if (true) {
-            return new ParameterDeclaration_TextGen();
-          }
-          break;
+          return new ParameterDeclaration_TextGen();
         case 91:
-          if (true) {
-            return new ParenthesizedExpression_TextGen();
-          }
-          break;
+          return new ParenthesizedExpression_TextGen();
         case 92:
-          if (true) {
-            return new PlaceholderMember_TextGen();
-          }
-          break;
+          return new PlaceholderMember_TextGen();
         case 93:
-          if (true) {
-            return new PlusExpression_TextGen();
-          }
-          break;
+          return new PlusExpression_TextGen();
         case 94:
-          if (true) {
-            return new PostfixDecrementExpression_TextGen();
-          }
-          break;
+          return new PostfixDecrementExpression_TextGen();
         case 95:
-          if (true) {
-            return new PostfixIncrementExpression_TextGen();
-          }
-          break;
+          return new PostfixIncrementExpression_TextGen();
         case 96:
-          if (true) {
-            return new PrefixDecrementExpression_TextGen();
-          }
-          break;
+          return new PrefixDecrementExpression_TextGen();
         case 97:
-          if (true) {
-            return new PrefixIncrementExpression_TextGen();
-          }
-          break;
+          return new PrefixIncrementExpression_TextGen();
         case 98:
-          if (true) {
-            return new PrimitiveClassExpression_TextGen();
-          }
-          break;
+          return new PrimitiveClassExpression_TextGen();
         case 99:
-          if (true) {
-            return new QualifiedSuperMethodCall_TextGen();
-          }
-          break;
+          return new QualifiedSuperMethodCall_TextGen();
         case 100:
-          if (true) {
-            return new RemExpression_TextGen();
-          }
-          break;
+          return new RemExpression_TextGen();
         case 101:
-          if (true) {
-            return new RemarkStatement_TextGen();
-          }
-          break;
+          return new RemarkStatement_TextGen();
         case 102:
-          if (true) {
-            return new ReturnStatement_TextGen();
-          }
-          break;
+          return new ReturnStatement_TextGen();
         case 103:
-          if (true) {
-            return new ShiftLeftExpression_TextGen();
-          }
-          break;
+          return new ShiftLeftExpression_TextGen();
         case 104:
-          if (true) {
-            return new ShiftRightExpression_TextGen();
-          }
-          break;
+          return new ShiftRightExpression_TextGen();
         case 105:
-          if (true) {
-            return new ShiftRightUnsignedExpression_TextGen();
-          }
-          break;
+          return new ShiftRightUnsignedExpression_TextGen();
         case 106:
-          if (true) {
-            return new ShortType_TextGen();
-          }
-          break;
+          return new ShortType_TextGen();
         case 107:
-          if (true) {
-            return new SingleLineComment_TextGen();
-          }
-          break;
+          return new SingleLineComment_TextGen();
         case 108:
-          if (true) {
-            return new Statement_TextGen();
-          }
-          break;
+          return new Statement_TextGen();
         case 109:
-          if (true) {
-            return new StatementCommentPart_TextGen();
-          }
-          break;
+          return new StatementCommentPart_TextGen();
         case 110:
-          if (true) {
-            return new StatementList_TextGen();
-          }
-          break;
+          return new StatementList_TextGen();
         case 111:
-          if (true) {
-            return new StaticFieldDeclaration_TextGen();
-          }
-          break;
+          return new StaticFieldDeclaration_TextGen();
         case 112:
-          if (true) {
-            return new StaticFieldReference_TextGen();
-          }
-          break;
+          return new StaticFieldReference_TextGen();
         case 113:
-          if (true) {
-            return new StaticInitializer_TextGen();
-          }
-          break;
+          return new StaticInitializer_TextGen();
         case 114:
-          if (true) {
-            return new StaticMethodCall_TextGen();
-          }
-          break;
+          return new StaticMethodCall_TextGen();
         case 115:
-          if (true) {
-            return new StaticMethodDeclaration_TextGen();
-          }
-          break;
+          return new StaticMethodDeclaration_TextGen();
         case 116:
-          if (true) {
-            return new StringLiteral_TextGen();
-          }
-          break;
+          return new StringLiteral_TextGen();
         case 117:
-          if (true) {
-            return new StringType_TextGen();
-          }
-          break;
+          return new StringType_TextGen();
         case 118:
-          if (true) {
-            return new SuperConstructorInvocation_TextGen();
-          }
-          break;
+          return new SuperConstructorInvocation_TextGen();
         case 119:
-          if (true) {
-            return new SuperMethodCall_TextGen();
-          }
-          break;
+          return new SuperMethodCall_TextGen();
         case 120:
-          if (true) {
-            return new SwitchStatement_TextGen();
-          }
-          break;
+          return new SwitchStatement_TextGen();
         case 121:
-          if (true) {
-            return new SynchronizedStatement_TextGen();
-          }
-          break;
+          return new SynchronizedStatement_TextGen();
         case 122:
-          if (true) {
-            return new TernaryOperatorExpression_TextGen();
-          }
-          break;
+          return new TernaryOperatorExpression_TextGen();
         case 123:
-          if (true) {
-            return new TextCommentPart_TextGen();
-          }
-          break;
+          return new TextCommentPart_TextGen();
         case 124:
-          if (true) {
-            return new ThisConstructorInvocation_TextGen();
-          }
-          break;
+          return new ThisConstructorInvocation_TextGen();
         case 125:
-          if (true) {
-            return new ThisExpression_TextGen();
-          }
-          break;
+          return new ThisExpression_TextGen();
         case 126:
-          if (true) {
-            return new ThrowStatement_TextGen();
-          }
-          break;
+          return new ThrowStatement_TextGen();
         case 127:
-          if (true) {
-            return new TryCatchStatement_TextGen();
-          }
-          break;
+          return new TryCatchStatement_TextGen();
         case 128:
-          if (true) {
-            return new TryStatement_TextGen();
-          }
-          break;
+          return new TryStatement_TextGen();
         case 129:
-          if (true) {
-            return new TypeVariableDeclaration_TextGen();
-          }
-          break;
+          return new TypeVariableDeclaration_TextGen();
         case 130:
-          if (true) {
-            return new TypeVariableReference_TextGen();
-          }
-          break;
+          return new TypeVariableReference_TextGen();
         case 131:
-          if (true) {
-            return new UnaryMinus_TextGen();
-          }
-          break;
+          return new UnaryMinus_TextGen();
         case 132:
-          if (true) {
-            return new UpperBoundType_TextGen();
-          }
-          break;
+          return new UpperBoundType_TextGen();
         case 133:
-          if (true) {
-            return new VarType_TextGen();
-          }
-          break;
+          return new VarType_TextGen();
         case 134:
-          if (true) {
-            return new VariableArityType_TextGen();
-          }
-          break;
+          return new VariableArityType_TextGen();
         case 135:
-          if (true) {
-            return new VariableDeclaration_TextGen();
-          }
-          break;
+          return new VariableDeclaration_TextGen();
         case 136:
-          if (true) {
-            return new VariableReference_TextGen();
-          }
-          break;
+          return new VariableReference_TextGen();
         case 137:
-          if (true) {
-            return new Visibility_TextGen();
-          }
-          break;
+          return new Visibility_TextGen();
         case 138:
-          if (true) {
-            return new VoidType_TextGen();
-          }
-          break;
+          return new VoidType_TextGen();
         case 139:
-          if (true) {
-            return new WhileStatement_TextGen();
-          }
-          break;
+          return new WhileStatement_TextGen();
         case 140:
-          if (true) {
-            return new WildCardType_TextGen();
-          }
-          break;
+          return new WildCardType_TextGen();
         default:
           // default 
       }

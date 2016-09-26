@@ -23,90 +23,39 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseEmitJumpStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseEmitJumpStatement_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseEmitVariableStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseEmitVariableStatement_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BaseInstructionOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BaseInstructionOperation_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DataFlowBuilderDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DataFlowBuilderDeclaration_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitCodeForStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitCodeForStatement_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitLabelStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitLabelStatement_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitMayBeUnreachable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitMayBeUnreachable_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitNopStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitNopStatement_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitRetStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitRetStatement_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitTryFinallyStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitTryFinallyStatement_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EmitWriteStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new EmitWriteStatement_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetCodeForExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GetCodeForExpression_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InsertAfter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InsertAfter_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InsertBefore_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InsertBefore_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntraProcedural_BuilderMode_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IntraProcedural_BuilderMode_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LabelPosition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LabelPosition_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RelativePosition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RelativePosition_Editor());
         default:
       }
     }
@@ -123,15 +72,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BaseEmitJumpStatement_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BaseEmitJumpStatement_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new EmitStatement_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new EmitStatement_TransformationMenu());
         default:
       }
     }
@@ -146,10 +89,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new NodeParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new NodeParameter_SubstituteMenu());
         default:
       }
     }

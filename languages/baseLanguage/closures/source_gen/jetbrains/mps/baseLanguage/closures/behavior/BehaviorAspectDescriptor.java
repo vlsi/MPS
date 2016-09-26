@@ -41,90 +41,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractFunctionType__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractFunctionType__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myClosureControlStatement__BehaviorDescriptor;
-          }
-          break;
+          return myClosureControlStatement__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myClosureLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myClosureLiteral__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myClosureLiteralType__BehaviorDescriptor;
-          }
-          break;
+          return myClosureLiteralType__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCompactInvokeFunctionExpression__BehaviorDescriptor;
-          }
-          break;
+          return myCompactInvokeFunctionExpression__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myControlAbstractionContainer__BehaviorDescriptor;
-          }
-          break;
+          return myControlAbstractionContainer__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myControlAbstractionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myControlAbstractionDeclaration__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myFunctionMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myFunctionMethodDeclaration__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myFunctionType__BehaviorDescriptor;
-          }
-          break;
+          return myFunctionType__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myInvokeExpression__BehaviorDescriptor;
-          }
-          break;
+          return myInvokeExpression__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myInvokeFunctionExpression__BehaviorDescriptor;
-          }
-          break;
+          return myInvokeFunctionExpression__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myInvokeFunctionOperation__BehaviorDescriptor;
-          }
-          break;
+          return myInvokeFunctionOperation__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myUnrestrictedClosureLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myUnrestrictedClosureLiteral__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myUnrestrictedFunctionType__BehaviorDescriptor;
-          }
-          break;
+          return myUnrestrictedFunctionType__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myYieldAllStatement__BehaviorDescriptor;
-          }
-          break;
+          return myYieldAllStatement__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myYieldStatement__BehaviorDescriptor;
-          }
-          break;
+          return myYieldStatement__BehaviorDescriptor;
         default:
           // default 
       }

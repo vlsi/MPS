@@ -26,15 +26,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myQueryFunctionParameter_IntentionExecutable__BehaviorDescriptor;
-          }
-          break;
+          return myQueryFunctionParameter_IntentionExecutable__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myTransformationMenuPart_Intention__BehaviorDescriptor;
-          }
-          break;
+          return myTransformationMenuPart_Intention__BehaviorDescriptor;
         default:
           // default 
       }

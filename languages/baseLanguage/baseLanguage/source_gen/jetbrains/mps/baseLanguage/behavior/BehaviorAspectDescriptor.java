@@ -228,1025 +228,413 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractForStatement__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractForStatement__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractLoopStatement__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractLoopStatement__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAbstractUnaryNumberOperation__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractUnaryNumberOperation__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myAndExpression__BehaviorDescriptor;
-          }
-          break;
+          return myAndExpression__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myAnnotation__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myAnnotationInstance__BehaviorDescriptor;
-          }
-          break;
+          return myAnnotationInstance__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myAnnotationInstanceValue__BehaviorDescriptor;
-          }
-          break;
+          return myAnnotationInstanceValue__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myAnnotationMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myAnnotationMethodDeclaration__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myAnonymousClass__BehaviorDescriptor;
-          }
-          break;
+          return myAnonymousClass__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myAnonymousClassCreator__BehaviorDescriptor;
-          }
-          break;
+          return myAnonymousClassCreator__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myArrayAccessExpression__BehaviorDescriptor;
-          }
-          break;
+          return myArrayAccessExpression__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myArrayLengthOperation__BehaviorDescriptor;
-          }
-          break;
+          return myArrayLengthOperation__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myArrayType__BehaviorDescriptor;
-          }
-          break;
+          return myArrayType__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myAssignmentExpression__BehaviorDescriptor;
-          }
-          break;
+          return myAssignmentExpression__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myBaseAssignmentExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBaseAssignmentExpression__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myBaseMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myBaseMethodCall__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myBaseMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBaseMethodDeclaration__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myBaseStringOperation__BehaviorDescriptor;
-          }
-          break;
+          return myBaseStringOperation__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myBinaryOperation__BehaviorDescriptor;
-          }
-          break;
+          return myBinaryOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myBitwiseAndExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBitwiseAndExpression__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myBitwiseOrExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBitwiseOrExpression__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myBitwiseXorExpression__BehaviorDescriptor;
-          }
-          break;
+          return myBitwiseXorExpression__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myBlockStatement__BehaviorDescriptor;
-          }
-          break;
+          return myBlockStatement__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myBooleanConstant__BehaviorDescriptor;
-          }
-          break;
+          return myBooleanConstant__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myBooleanType__BehaviorDescriptor;
-          }
-          break;
+          return myBooleanType__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myBreakStatement__BehaviorDescriptor;
-          }
-          break;
+          return myBreakStatement__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myByteType__BehaviorDescriptor;
-          }
-          break;
+          return myByteType__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myCastExpression__BehaviorDescriptor;
-          }
-          break;
+          return myCastExpression__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myCatchClause__BehaviorDescriptor;
-          }
-          break;
+          return myCatchClause__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myCharConstant__BehaviorDescriptor;
-          }
-          break;
+          return myCharConstant__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myCharType__BehaviorDescriptor;
-          }
-          break;
+          return myCharType__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myClassConcept__BehaviorDescriptor;
-          }
-          break;
+          return myClassConcept__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myClassCreator__BehaviorDescriptor;
-          }
-          break;
+          return myClassCreator__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myClassifier__BehaviorDescriptor;
-          }
-          break;
+          return myClassifier__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myClassifierClassExpression__BehaviorDescriptor;
-          }
-          break;
+          return myClassifierClassExpression__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myClassifierMember__BehaviorDescriptor;
-          }
-          break;
+          return myClassifierMember__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myClassifierType__BehaviorDescriptor;
-          }
-          break;
+          return myClassifierType__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myClosure__BehaviorDescriptor;
-          }
-          break;
+          return myClosure__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myClosureParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myClosureParameterReference__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myCommentPart__BehaviorDescriptor;
-          }
-          break;
+          return myCommentPart__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myCommentedStatement__BehaviorDescriptor;
-          }
-          break;
+          return myCommentedStatement__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myCommentedStatementsBlock__BehaviorDescriptor;
-          }
-          break;
+          return myCommentedStatementsBlock__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunction__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myConceptFunctionParameter__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myConstructorDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myConstructorDeclaration__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myConstructorInvocationStatement__BehaviorDescriptor;
-          }
-          break;
+          return myConstructorInvocationStatement__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return myContinueStatement__BehaviorDescriptor;
-          }
-          break;
+          return myContinueStatement__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return myCustomPropertyImplementation__BehaviorDescriptor;
-          }
-          break;
+          return myCustomPropertyImplementation__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return myCustomSetterPropertyImplementation__BehaviorDescriptor;
-          }
-          break;
+          return myCustomSetterPropertyImplementation__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myDefaultClassCreator__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultClassCreator__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myDefaultPropertyImplementation__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultPropertyImplementation__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myDefaultSetAccessor__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultSetAccessor__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myDivExpression__BehaviorDescriptor;
-          }
-          break;
+          return myDivExpression__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myDoWhileStatement__BehaviorDescriptor;
-          }
-          break;
+          return myDoWhileStatement__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myDotExpression__BehaviorDescriptor;
-          }
-          break;
+          return myDotExpression__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myDoubleType__BehaviorDescriptor;
-          }
-          break;
+          return myDoubleType__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myElsifClause__BehaviorDescriptor;
-          }
-          break;
+          return myElsifClause__BehaviorDescriptor;
         case 57:
-          if (true) {
-            return myEnumClass__BehaviorDescriptor;
-          }
-          break;
+          return myEnumClass__BehaviorDescriptor;
         case 58:
-          if (true) {
-            return myEnumConstantDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myEnumConstantDeclaration__BehaviorDescriptor;
         case 59:
-          if (true) {
-            return myEnumConstantReference__BehaviorDescriptor;
-          }
-          break;
+          return myEnumConstantReference__BehaviorDescriptor;
         case 60:
-          if (true) {
-            return myEqualsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myEqualsExpression__BehaviorDescriptor;
         case 61:
-          if (true) {
-            return myExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExpression__BehaviorDescriptor;
         case 62:
-          if (true) {
-            return myExpressionStatement__BehaviorDescriptor;
-          }
-          break;
+          return myExpressionStatement__BehaviorDescriptor;
         case 63:
-          if (true) {
-            return myFieldDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myFieldDeclaration__BehaviorDescriptor;
         case 64:
-          if (true) {
-            return myFieldReferenceOperation__BehaviorDescriptor;
-          }
-          break;
+          return myFieldReferenceOperation__BehaviorDescriptor;
         case 65:
-          if (true) {
-            return myFloatType__BehaviorDescriptor;
-          }
-          break;
+          return myFloatType__BehaviorDescriptor;
         case 66:
-          if (true) {
-            return myFloatingPointConstant__BehaviorDescriptor;
-          }
-          break;
+          return myFloatingPointConstant__BehaviorDescriptor;
         case 67:
-          if (true) {
-            return myFloatingPointFloatConstant__BehaviorDescriptor;
-          }
-          break;
+          return myFloatingPointFloatConstant__BehaviorDescriptor;
         case 68:
-          if (true) {
-            return myForStatement__BehaviorDescriptor;
-          }
-          break;
+          return myForStatement__BehaviorDescriptor;
         case 69:
-          if (true) {
-            return myForeachStatement__BehaviorDescriptor;
-          }
-          break;
+          return myForeachStatement__BehaviorDescriptor;
         case 70:
-          if (true) {
-            return myGenericDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myGenericDeclaration__BehaviorDescriptor;
         case 71:
-          if (true) {
-            return myGenericNewExpression__BehaviorDescriptor;
-          }
-          break;
+          return myGenericNewExpression__BehaviorDescriptor;
         case 72:
-          if (true) {
-            return myGetAccessor__BehaviorDescriptor;
-          }
-          break;
+          return myGetAccessor__BehaviorDescriptor;
         case 73:
-          if (true) {
-            return myGreaterThanExpression__BehaviorDescriptor;
-          }
-          break;
+          return myGreaterThanExpression__BehaviorDescriptor;
         case 74:
-          if (true) {
-            return myGreaterThanOrEqualsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myGreaterThanOrEqualsExpression__BehaviorDescriptor;
         case 75:
-          if (true) {
-            return myHasAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myHasAnnotation__BehaviorDescriptor;
         case 76:
-          if (true) {
-            return myHexIntegerLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myHexIntegerLiteral__BehaviorDescriptor;
         case 77:
-          if (true) {
-            return myIBLDeprecatable__BehaviorDescriptor;
-          }
-          break;
+          return myIBLDeprecatable__BehaviorDescriptor;
         case 78:
-          if (true) {
-            return myIBinaryLike__BehaviorDescriptor;
-          }
-          break;
+          return myIBinaryLike__BehaviorDescriptor;
         case 79:
-          if (true) {
-            return myIClassifier__BehaviorDescriptor;
-          }
-          break;
+          return myIClassifier__BehaviorDescriptor;
         case 80:
-          if (true) {
-            return myIClassifierMember__BehaviorDescriptor;
-          }
-          break;
+          return myIClassifierMember__BehaviorDescriptor;
         case 81:
-          if (true) {
-            return myIClassifierType__BehaviorDescriptor;
-          }
-          break;
+          return myIClassifierType__BehaviorDescriptor;
         case 82:
-          if (true) {
-            return myIConditional__BehaviorDescriptor;
-          }
-          break;
+          return myIConditional__BehaviorDescriptor;
         case 83:
-          if (true) {
-            return myIContainsStatementList__BehaviorDescriptor;
-          }
-          break;
+          return myIContainsStatementList__BehaviorDescriptor;
         case 84:
-          if (true) {
-            return myIExtractMethodAvailable__BehaviorDescriptor;
-          }
-          break;
+          return myIExtractMethodAvailable__BehaviorDescriptor;
         case 85:
-          if (true) {
-            return myIGenericType__BehaviorDescriptor;
-          }
-          break;
+          return myIGenericType__BehaviorDescriptor;
         case 86:
-          if (true) {
-            return myIIncompleteParen__BehaviorDescriptor;
-          }
-          break;
+          return myIIncompleteParen__BehaviorDescriptor;
         case 87:
-          if (true) {
-            return myIInternalType__BehaviorDescriptor;
-          }
-          break;
+          return myIInternalType__BehaviorDescriptor;
         case 88:
-          if (true) {
-            return myILocalDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myILocalDeclaration__BehaviorDescriptor;
         case 89:
-          if (true) {
-            return myILocalReference__BehaviorDescriptor;
-          }
-          break;
+          return myILocalReference__BehaviorDescriptor;
         case 90:
-          if (true) {
-            return myILocalVariableElement__BehaviorDescriptor;
-          }
-          break;
+          return myILocalVariableElement__BehaviorDescriptor;
         case 91:
-          if (true) {
-            return myILocalVariableElementList__BehaviorDescriptor;
-          }
-          break;
+          return myILocalVariableElementList__BehaviorDescriptor;
         case 92:
-          if (true) {
-            return myIMemberContainer__BehaviorDescriptor;
-          }
-          break;
+          return myIMemberContainer__BehaviorDescriptor;
         case 93:
-          if (true) {
-            return myIMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myIMethodCall__BehaviorDescriptor;
         case 94:
-          if (true) {
-            return myIMethodLike__BehaviorDescriptor;
-          }
-          break;
+          return myIMethodLike__BehaviorDescriptor;
         case 95:
-          if (true) {
-            return myIOperation__BehaviorDescriptor;
-          }
-          break;
+          return myIOperation__BehaviorDescriptor;
         case 96:
-          if (true) {
-            return myIParameter__BehaviorDescriptor;
-          }
-          break;
+          return myIParameter__BehaviorDescriptor;
         case 97:
-          if (true) {
-            return myIStatementListContainer__BehaviorDescriptor;
-          }
-          break;
+          return myIStatementListContainer__BehaviorDescriptor;
         case 98:
-          if (true) {
-            return myIStaticContainerForMethods__BehaviorDescriptor;
-          }
-          break;
+          return myIStaticContainerForMethods__BehaviorDescriptor;
         case 99:
-          if (true) {
-            return myITryCatchStatement__BehaviorDescriptor;
-          }
-          break;
+          return myITryCatchStatement__BehaviorDescriptor;
         case 100:
-          if (true) {
-            return myITypeApplicable__BehaviorDescriptor;
-          }
-          break;
+          return myITypeApplicable__BehaviorDescriptor;
         case 101:
-          if (true) {
-            return myIValidIdentifier__BehaviorDescriptor;
-          }
-          break;
+          return myIValidIdentifier__BehaviorDescriptor;
         case 102:
-          if (true) {
-            return myIVariableAssignment__BehaviorDescriptor;
-          }
-          break;
+          return myIVariableAssignment__BehaviorDescriptor;
         case 103:
-          if (true) {
-            return myIVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myIVariableReference__BehaviorDescriptor;
         case 104:
-          if (true) {
-            return myIVisible__BehaviorDescriptor;
-          }
-          break;
+          return myIVisible__BehaviorDescriptor;
         case 105:
-          if (true) {
-            return myIWillBeClassifier__BehaviorDescriptor;
-          }
-          break;
+          return myIWillBeClassifier__BehaviorDescriptor;
         case 106:
-          if (true) {
-            return myIYetUnresolved__BehaviorDescriptor;
-          }
-          break;
+          return myIYetUnresolved__BehaviorDescriptor;
         case 107:
-          if (true) {
-            return myIfStatement__BehaviorDescriptor;
-          }
-          break;
+          return myIfStatement__BehaviorDescriptor;
         case 108:
-          if (true) {
-            return myIncompleteMemberDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myIncompleteMemberDeclaration__BehaviorDescriptor;
         case 109:
-          if (true) {
-            return myInstanceInitializer__BehaviorDescriptor;
-          }
-          break;
+          return myInstanceInitializer__BehaviorDescriptor;
         case 110:
-          if (true) {
-            return myInstanceMethodCallOperation__BehaviorDescriptor;
-          }
-          break;
+          return myInstanceMethodCallOperation__BehaviorDescriptor;
         case 111:
-          if (true) {
-            return myInstanceMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myInstanceMethodDeclaration__BehaviorDescriptor;
         case 112:
-          if (true) {
-            return myIntegerConstant__BehaviorDescriptor;
-          }
-          break;
+          return myIntegerConstant__BehaviorDescriptor;
         case 113:
-          if (true) {
-            return myIntegerLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myIntegerLiteral__BehaviorDescriptor;
         case 114:
-          if (true) {
-            return myIntegerType__BehaviorDescriptor;
-          }
-          break;
+          return myIntegerType__BehaviorDescriptor;
         case 115:
-          if (true) {
-            return myInterface__BehaviorDescriptor;
-          }
-          break;
+          return myInterface__BehaviorDescriptor;
         case 116:
-          if (true) {
-            return myJavaImports__BehaviorDescriptor;
-          }
-          break;
+          return myJavaImports__BehaviorDescriptor;
         case 117:
-          if (true) {
-            return myLessThanExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLessThanExpression__BehaviorDescriptor;
         case 118:
-          if (true) {
-            return myLessThanOrEqualsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myLessThanOrEqualsExpression__BehaviorDescriptor;
         case 119:
-          if (true) {
-            return myLocalInstanceFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myLocalInstanceFieldReference__BehaviorDescriptor;
         case 120:
-          if (true) {
-            return myLocalInstanceMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myLocalInstanceMethodCall__BehaviorDescriptor;
         case 121:
-          if (true) {
-            return myLocalMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myLocalMethodCall__BehaviorDescriptor;
         case 122:
-          if (true) {
-            return myLocalPropertyReference__BehaviorDescriptor;
-          }
-          break;
+          return myLocalPropertyReference__BehaviorDescriptor;
         case 123:
-          if (true) {
-            return myLocalStaticFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myLocalStaticFieldReference__BehaviorDescriptor;
         case 124:
-          if (true) {
-            return myLocalStaticMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myLocalStaticMethodCall__BehaviorDescriptor;
         case 125:
-          if (true) {
-            return myLocalVariableDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myLocalVariableDeclaration__BehaviorDescriptor;
         case 126:
-          if (true) {
-            return myLocalVariableDeclarationStatement__BehaviorDescriptor;
-          }
-          break;
+          return myLocalVariableDeclarationStatement__BehaviorDescriptor;
         case 127:
-          if (true) {
-            return myLocalVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myLocalVariableReference__BehaviorDescriptor;
         case 128:
-          if (true) {
-            return myLongLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myLongLiteral__BehaviorDescriptor;
         case 129:
-          if (true) {
-            return myLongType__BehaviorDescriptor;
-          }
-          break;
+          return myLongType__BehaviorDescriptor;
         case 130:
-          if (true) {
-            return myLowerBoundType__BehaviorDescriptor;
-          }
-          break;
+          return myLowerBoundType__BehaviorDescriptor;
         case 131:
-          if (true) {
-            return myMinusExpression__BehaviorDescriptor;
-          }
-          break;
+          return myMinusExpression__BehaviorDescriptor;
         case 132:
-          if (true) {
-            return myMulExpression__BehaviorDescriptor;
-          }
-          break;
+          return myMulExpression__BehaviorDescriptor;
         case 133:
-          if (true) {
-            return myNPEEqualsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNPEEqualsExpression__BehaviorDescriptor;
         case 134:
-          if (true) {
-            return myNPENotEqualsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNPENotEqualsExpression__BehaviorDescriptor;
         case 135:
-          if (true) {
-            return myNestedNewExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNestedNewExpression__BehaviorDescriptor;
         case 136:
-          if (true) {
-            return myNotEqualsExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNotEqualsExpression__BehaviorDescriptor;
         case 137:
-          if (true) {
-            return myNotExpression__BehaviorDescriptor;
-          }
-          break;
+          return myNotExpression__BehaviorDescriptor;
         case 138:
-          if (true) {
-            return myNullLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myNullLiteral__BehaviorDescriptor;
         case 139:
-          if (true) {
-            return myOrExpression__BehaviorDescriptor;
-          }
-          break;
+          return myOrExpression__BehaviorDescriptor;
         case 140:
-          if (true) {
-            return myParameterDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myParameterDeclaration__BehaviorDescriptor;
         case 141:
-          if (true) {
-            return myParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myParameterReference__BehaviorDescriptor;
         case 142:
-          if (true) {
-            return myParenthesizedExpression__BehaviorDescriptor;
-          }
-          break;
+          return myParenthesizedExpression__BehaviorDescriptor;
         case 143:
-          if (true) {
-            return myPlaceholderMember__BehaviorDescriptor;
-          }
-          break;
+          return myPlaceholderMember__BehaviorDescriptor;
         case 144:
-          if (true) {
-            return myPlusExpression__BehaviorDescriptor;
-          }
-          break;
+          return myPlusExpression__BehaviorDescriptor;
         case 145:
-          if (true) {
-            return myPostfixDecrementExpression__BehaviorDescriptor;
-          }
-          break;
+          return myPostfixDecrementExpression__BehaviorDescriptor;
         case 146:
-          if (true) {
-            return myPostfixIncrementExpression__BehaviorDescriptor;
-          }
-          break;
+          return myPostfixIncrementExpression__BehaviorDescriptor;
         case 147:
-          if (true) {
-            return myPrefixDecrementExpression__BehaviorDescriptor;
-          }
-          break;
+          return myPrefixDecrementExpression__BehaviorDescriptor;
         case 148:
-          if (true) {
-            return myPrefixIncrementExpression__BehaviorDescriptor;
-          }
-          break;
+          return myPrefixIncrementExpression__BehaviorDescriptor;
         case 149:
-          if (true) {
-            return myPrimitiveType__BehaviorDescriptor;
-          }
-          break;
+          return myPrimitiveType__BehaviorDescriptor;
         case 150:
-          if (true) {
-            return myProperty__BehaviorDescriptor;
-          }
-          break;
+          return myProperty__BehaviorDescriptor;
         case 151:
-          if (true) {
-            return myPropertyImplementation__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyImplementation__BehaviorDescriptor;
         case 152:
-          if (true) {
-            return myPropertyReference__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyReference__BehaviorDescriptor;
         case 153:
-          if (true) {
-            return myPropertyValueReference__BehaviorDescriptor;
-          }
-          break;
+          return myPropertyValueReference__BehaviorDescriptor;
         case 154:
-          if (true) {
-            return myRemExpression__BehaviorDescriptor;
-          }
-          break;
+          return myRemExpression__BehaviorDescriptor;
         case 155:
-          if (true) {
-            return myRemarkStatement__BehaviorDescriptor;
-          }
-          break;
+          return myRemarkStatement__BehaviorDescriptor;
         case 156:
-          if (true) {
-            return myReturnStatement__BehaviorDescriptor;
-          }
-          break;
+          return myReturnStatement__BehaviorDescriptor;
         case 157:
-          if (true) {
-            return mySetAccessor__BehaviorDescriptor;
-          }
-          break;
+          return mySetAccessor__BehaviorDescriptor;
         case 158:
-          if (true) {
-            return myShiftLeftExpression__BehaviorDescriptor;
-          }
-          break;
+          return myShiftLeftExpression__BehaviorDescriptor;
         case 159:
-          if (true) {
-            return myShiftRightExpression__BehaviorDescriptor;
-          }
-          break;
+          return myShiftRightExpression__BehaviorDescriptor;
         case 160:
-          if (true) {
-            return myShiftRightUnsignedExpression__BehaviorDescriptor;
-          }
-          break;
+          return myShiftRightUnsignedExpression__BehaviorDescriptor;
         case 161:
-          if (true) {
-            return myShortType__BehaviorDescriptor;
-          }
-          break;
+          return myShortType__BehaviorDescriptor;
         case 162:
-          if (true) {
-            return mySingleLineComment__BehaviorDescriptor;
-          }
-          break;
+          return mySingleLineComment__BehaviorDescriptor;
         case 163:
-          if (true) {
-            return myStatement__BehaviorDescriptor;
-          }
-          break;
+          return myStatement__BehaviorDescriptor;
         case 164:
-          if (true) {
-            return myStatementList__BehaviorDescriptor;
-          }
-          break;
+          return myStatementList__BehaviorDescriptor;
         case 165:
-          if (true) {
-            return myStaticFieldDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myStaticFieldDeclaration__BehaviorDescriptor;
         case 166:
-          if (true) {
-            return myStaticFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myStaticFieldReference__BehaviorDescriptor;
         case 167:
-          if (true) {
-            return myStaticInitializer__BehaviorDescriptor;
-          }
-          break;
+          return myStaticInitializer__BehaviorDescriptor;
         case 168:
-          if (true) {
-            return myStaticMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return myStaticMethodCall__BehaviorDescriptor;
         case 169:
-          if (true) {
-            return myStaticMethodDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myStaticMethodDeclaration__BehaviorDescriptor;
         case 170:
-          if (true) {
-            return myStringLiteral__BehaviorDescriptor;
-          }
-          break;
+          return myStringLiteral__BehaviorDescriptor;
         case 171:
-          if (true) {
-            return myStringType__BehaviorDescriptor;
-          }
-          break;
+          return myStringType__BehaviorDescriptor;
         case 172:
-          if (true) {
-            return mySuperConstructorInvocation__BehaviorDescriptor;
-          }
-          break;
+          return mySuperConstructorInvocation__BehaviorDescriptor;
         case 173:
-          if (true) {
-            return mySuperMethodCall__BehaviorDescriptor;
-          }
-          break;
+          return mySuperMethodCall__BehaviorDescriptor;
         case 174:
-          if (true) {
-            return mySwitchCase__BehaviorDescriptor;
-          }
-          break;
+          return mySwitchCase__BehaviorDescriptor;
         case 175:
-          if (true) {
-            return mySwitchStatement__BehaviorDescriptor;
-          }
-          break;
+          return mySwitchStatement__BehaviorDescriptor;
         case 176:
-          if (true) {
-            return mySynchronizedStatement__BehaviorDescriptor;
-          }
-          break;
+          return mySynchronizedStatement__BehaviorDescriptor;
         case 177:
-          if (true) {
-            return myTernaryOperatorExpression__BehaviorDescriptor;
-          }
-          break;
+          return myTernaryOperatorExpression__BehaviorDescriptor;
         case 178:
-          if (true) {
-            return myTextCommentPart__BehaviorDescriptor;
-          }
-          break;
+          return myTextCommentPart__BehaviorDescriptor;
         case 179:
-          if (true) {
-            return myThisConstructorInvocation__BehaviorDescriptor;
-          }
-          break;
+          return myThisConstructorInvocation__BehaviorDescriptor;
         case 180:
-          if (true) {
-            return myThisExpression__BehaviorDescriptor;
-          }
-          break;
+          return myThisExpression__BehaviorDescriptor;
         case 181:
-          if (true) {
-            return myThrowStatement__BehaviorDescriptor;
-          }
-          break;
+          return myThrowStatement__BehaviorDescriptor;
         case 182:
-          if (true) {
-            return myTokens__BehaviorDescriptor;
-          }
-          break;
+          return myTokens__BehaviorDescriptor;
         case 183:
-          if (true) {
-            return myTryCatchStatement__BehaviorDescriptor;
-          }
-          break;
+          return myTryCatchStatement__BehaviorDescriptor;
         case 184:
-          if (true) {
-            return myTryStatement__BehaviorDescriptor;
-          }
-          break;
+          return myTryStatement__BehaviorDescriptor;
         case 185:
-          if (true) {
-            return myType__BehaviorDescriptor;
-          }
-          break;
+          return myType__BehaviorDescriptor;
         case 186:
-          if (true) {
-            return myTypeAnnotable__BehaviorDescriptor;
-          }
-          break;
+          return myTypeAnnotable__BehaviorDescriptor;
         case 187:
-          if (true) {
-            return myTypeDerivable__BehaviorDescriptor;
-          }
-          break;
+          return myTypeDerivable__BehaviorDescriptor;
         case 188:
-          if (true) {
-            return myTypeVariableDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myTypeVariableDeclaration__BehaviorDescriptor;
         case 189:
-          if (true) {
-            return myTypeVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myTypeVariableReference__BehaviorDescriptor;
         case 190:
-          if (true) {
-            return myUnaryMinus__BehaviorDescriptor;
-          }
-          break;
+          return myUnaryMinus__BehaviorDescriptor;
         case 191:
-          if (true) {
-            return myUnknownConsCall__BehaviorDescriptor;
-          }
-          break;
+          return myUnknownConsCall__BehaviorDescriptor;
         case 192:
-          if (true) {
-            return myUnknownDotCall__BehaviorDescriptor;
-          }
-          break;
+          return myUnknownDotCall__BehaviorDescriptor;
         case 193:
-          if (true) {
-            return myUnknownLocalCall__BehaviorDescriptor;
-          }
-          break;
+          return myUnknownLocalCall__BehaviorDescriptor;
         case 194:
-          if (true) {
-            return myUnknownNameRef__BehaviorDescriptor;
-          }
-          break;
+          return myUnknownNameRef__BehaviorDescriptor;
         case 195:
-          if (true) {
-            return myUnknownNew__BehaviorDescriptor;
-          }
-          break;
+          return myUnknownNew__BehaviorDescriptor;
         case 196:
-          if (true) {
-            return myUpperBoundType__BehaviorDescriptor;
-          }
-          break;
+          return myUpperBoundType__BehaviorDescriptor;
         case 197:
-          if (true) {
-            return myUsingStatement__BehaviorDescriptor;
-          }
-          break;
+          return myUsingStatement__BehaviorDescriptor;
         case 198:
-          if (true) {
-            return myVariableArityType__BehaviorDescriptor;
-          }
-          break;
+          return myVariableArityType__BehaviorDescriptor;
         case 199:
-          if (true) {
-            return myVariableDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myVariableDeclaration__BehaviorDescriptor;
         case 200:
-          if (true) {
-            return myVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myVariableReference__BehaviorDescriptor;
         case 201:
-          if (true) {
-            return myVoidType__BehaviorDescriptor;
-          }
-          break;
+          return myVoidType__BehaviorDescriptor;
         case 202:
-          if (true) {
-            return myWhileStatement__BehaviorDescriptor;
-          }
-          break;
+          return myWhileStatement__BehaviorDescriptor;
         case 203:
-          if (true) {
-            return myWildCardType__BehaviorDescriptor;
-          }
-          break;
+          return myWildCardType__BehaviorDescriptor;
         default:
           // default 
       }

@@ -32,45 +32,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myGenerator__BehaviorDescriptor;
-          }
-          break;
+          return myGenerator__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myMappingConfigExternalRef__BehaviorDescriptor;
-          }
-          break;
+          return myMappingConfigExternalRef__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myMappingConfigNormalRef__BehaviorDescriptor;
-          }
-          break;
+          return myMappingConfigNormalRef__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myMappingConfigRefBase__BehaviorDescriptor;
-          }
-          break;
+          return myMappingConfigRefBase__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myMappingConfigRefSet__BehaviorDescriptor;
-          }
-          break;
+          return myMappingConfigRefSet__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myModelReference__BehaviorDescriptor;
-          }
-          break;
+          return myModelReference__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myModule__BehaviorDescriptor;
-          }
-          break;
+          return myModule__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myModuleReference__BehaviorDescriptor;
-          }
-          break;
+          return myModuleReference__BehaviorDescriptor;
         default:
           // default 
       }

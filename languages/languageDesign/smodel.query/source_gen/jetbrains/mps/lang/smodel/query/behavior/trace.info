@@ -23,7 +23,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.BLExpression_old_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,102,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,72,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CustomScope_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.query.behavior.CustomScope_BehaviorDescriptor" />

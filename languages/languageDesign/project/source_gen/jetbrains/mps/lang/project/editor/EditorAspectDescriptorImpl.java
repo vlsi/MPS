@@ -21,90 +21,39 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DevKit_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DevKit_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Generator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Generator_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Language_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Language_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingConfigExternalRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingConfigExternalRef_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingConfigNormalRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingConfigNormalRef_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllGlobal_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllGlobal_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllLocal_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllLocal_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingConfigRefSet_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingConfigRefSet_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MappingPriorityRule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MappingPriorityRule_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModelRoot_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModuleDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModuleDependency_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Solution_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Solution_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SourcePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SourcePath_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubEntry_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StubEntry_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubSolution_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new StubSolution_Editor());
         default:
       }
     }

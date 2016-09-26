@@ -23,155 +23,65 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractCheckingRule_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractCheckingRule_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractEquationStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractEquationStatement_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractSubtypingRule_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractSubtypingRule_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AddDependencyStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AddDependencyStatement_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ApplicableNodeCondition_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ApplicableNodeCondition_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ApplicableNodeReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ApplicableNodeReference_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CoerceExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CoerceExpression_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CoerceStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CoerceStatement_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ComparisonRule_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ComparisonRule_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ImmediateSupertypesExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ImmediateSupertypesExpression_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InequationReplacementRule_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InequationReplacementRule_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InfoStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InfoStatement_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IsSubtypeExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IsSubtypeExpression_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchStatement_DataFlow());
         case 15:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MatchStatementItem_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MatchStatementItem_DataFlow());
         case 16:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new MultipleForeachLoop_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new MultipleForeachLoop_DataFlow());
         case 17:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new NormalTypeClause_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new NormalTypeClause_DataFlow());
         case 18:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PatternCondition_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PatternCondition_DataFlow());
         case 19:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PropertyNameTarget_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PropertyNameTarget_DataFlow());
         case 20:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ReferenceRoleTarget_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ReferenceRoleTarget_DataFlow());
         case 21:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ReportErrorStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ReportErrorStatement_DataFlow());
         case 22:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SubstituteTypeRule_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SubstituteTypeRule_DataFlow());
         case 23:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TypeOfExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TypeOfExpression_DataFlow());
         case 24:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TypeVarDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TypeVarDeclaration_DataFlow());
         case 25:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TypeVarReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TypeVarReference_DataFlow());
         case 26:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntention_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntention_DataFlow());
         case 27:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntentionArgument_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TypesystemIntentionArgument_DataFlow());
         case 28:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new WarningStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new WarningStatement_DataFlow());
         case 29:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new WhenConcreteStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new WhenConcreteStatement_DataFlow());
         default:
           // default 
       }

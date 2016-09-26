@@ -38,75 +38,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAsBuilderStatement__BehaviorDescriptor;
-          }
-          break;
+          return myAsBuilderStatement__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAsTypeBuilder__BehaviorDescriptor;
-          }
-          break;
+          return myAsTypeBuilder__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBaseSimpleBuilderDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myBaseSimpleBuilderDeclaration__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBeanBuilder__BehaviorDescriptor;
-          }
-          break;
+          return myBeanBuilder__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myBeanPropertyBuilder__BehaviorDescriptor;
-          }
-          break;
+          return myBeanPropertyBuilder__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myBuilder__BehaviorDescriptor;
-          }
-          break;
+          return myBuilder__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myBuilderContainer__BehaviorDescriptor;
-          }
-          break;
+          return myBuilderContainer__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myBuilderCreator__BehaviorDescriptor;
-          }
-          break;
+          return myBuilderCreator__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myBuilderStatement__BehaviorDescriptor;
-          }
-          break;
+          return myBuilderStatement__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return mySimpleBuilder__BehaviorDescriptor;
-          }
-          break;
+          return mySimpleBuilder__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return mySimpleBuilderDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return mySimpleBuilderDeclaration__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return mySimpleBuilderExtensionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return mySimpleBuilderExtensionDeclaration__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return mySimpleBuilderPropertyBuilder__BehaviorDescriptor;
-          }
-          break;
+          return mySimpleBuilderPropertyBuilder__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return mySimpleBuilders__BehaviorDescriptor;
-          }
-          break;
+          return mySimpleBuilders__BehaviorDescriptor;
         default:
           // default 
       }

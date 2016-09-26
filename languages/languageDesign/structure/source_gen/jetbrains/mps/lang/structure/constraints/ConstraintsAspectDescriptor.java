@@ -22,50 +22,23 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AbstractConceptDeclaration_Constraints();
-          }
-          break;
+          return new AbstractConceptDeclaration_Constraints();
         case 1:
-          if (true) {
-            return new ConceptDeclaration_Constraints();
-          }
-          break;
+          return new ConceptDeclaration_Constraints();
         case 2:
-          if (true) {
-            return new ConstrainedDataTypeDeclaration_Constraints();
-          }
-          break;
+          return new ConstrainedDataTypeDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new DataTypeDeclaration_Constraints();
-          }
-          break;
+          return new DataTypeDeclaration_Constraints();
         case 4:
-          if (true) {
-            return new EnumerationDataTypeDeclaration_Constraints();
-          }
-          break;
+          return new EnumerationDataTypeDeclaration_Constraints();
         case 5:
-          if (true) {
-            return new EnumerationMemberDeclaration_Constraints();
-          }
-          break;
+          return new EnumerationMemberDeclaration_Constraints();
         case 6:
-          if (true) {
-            return new InterfaceConceptDeclaration_Constraints();
-          }
-          break;
+          return new InterfaceConceptDeclaration_Constraints();
         case 7:
-          if (true) {
-            return new LinkDeclaration_Constraints();
-          }
-          break;
+          return new LinkDeclaration_Constraints();
         case 8:
-          if (true) {
-            return new PropertyDeclaration_Constraints();
-          }
-          break;
+          return new PropertyDeclaration_Constraints();
         default:
           // default 
       }

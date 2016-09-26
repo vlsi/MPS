@@ -22,25 +22,13 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new Event_Constraints();
-          }
-          break;
+          return new Event_Constraints();
         case 1:
-          if (true) {
-            return new State_Constraints();
-          }
-          break;
+          return new State_Constraints();
         case 2:
-          if (true) {
-            return new StateMachine_Constraints();
-          }
-          break;
+          return new StateMachine_Constraints();
         case 3:
-          if (true) {
-            return new StateMachineTest_Constraints();
-          }
-          break;
+          return new StateMachineTest_Constraints();
         default:
           // default 
       }

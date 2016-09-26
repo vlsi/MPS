@@ -21,40 +21,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BlockInstance_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BlockInstance_diagram_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Connector_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Connector_diagram_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagram_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InputPort_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InputPort_diagram_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OutputPort_diagram_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OutputPort_diagram_Editor());
         default:
       }
     }

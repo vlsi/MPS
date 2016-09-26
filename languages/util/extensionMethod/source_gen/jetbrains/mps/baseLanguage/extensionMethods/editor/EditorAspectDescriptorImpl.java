@@ -24,45 +24,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
         default:
       }
     }
@@ -79,10 +55,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
         default:
       }
     }

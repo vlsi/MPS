@@ -81,290 +81,119 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractInequationStatement__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractInequationStatement__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractRule__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractRule__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myAbstractSubtypingRule__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractSubtypingRule__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myApplicableNodeCondition__BehaviorDescriptor;
-          }
-          break;
+          return myApplicableNodeCondition__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myApplicableNodeReference__BehaviorDescriptor;
-          }
-          break;
+          return myApplicableNodeReference__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myComparisonRule__BehaviorDescriptor;
-          }
-          break;
+          return myComparisonRule__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myConceptFunctionParameter_ContextNode__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_ContextNode__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myConceptFunctionParameter_EditorContext__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_EditorContext__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myConceptFunctionParameter_Role__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Role__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myConceptFunctionParameter_Selection__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_Selection__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myConceptFunctionParameter_isAggregation__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_isAggregation__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myConceptFunctionParameter_node__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_node__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myConceptFunctionParameter_var__BehaviorDescriptor;
-          }
-          break;
+          return myConceptFunctionParameter_var__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myConceptReference__BehaviorDescriptor;
-          }
-          break;
+          return myConceptReference__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myDefaultGroupReference__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultGroupReference__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myIRuleWithTwoNodes__BehaviorDescriptor;
-          }
-          break;
+          return myIRuleWithTwoNodes__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myInequationReplacementRule__BehaviorDescriptor;
-          }
-          break;
+          return myInequationReplacementRule__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myInferenceRule__BehaviorDescriptor;
-          }
-          break;
+          return myInferenceRule__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myInfoStatement__BehaviorDescriptor;
-          }
-          break;
+          return myInfoStatement__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myIsApplicableConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myIsApplicableConceptFunction__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myIsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myIsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myJoinContainer__BehaviorDescriptor;
-          }
-          break;
+          return myJoinContainer__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myJoinType__BehaviorDescriptor;
-          }
-          break;
+          return myJoinType__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myLeftOperandType_parameter__BehaviorDescriptor;
-          }
-          break;
+          return myLeftOperandType_parameter__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myMeetContainer__BehaviorDescriptor;
-          }
-          break;
+          return myMeetContainer__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myMeetType__BehaviorDescriptor;
-          }
-          break;
+          return myMeetType__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myMessageStatement__BehaviorDescriptor;
-          }
-          break;
+          return myMessageStatement__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myMultipleForeachLoop__BehaviorDescriptor;
-          }
-          break;
+          return myMultipleForeachLoop__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myNode_InferTypeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_InferTypeOperation__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myNode_TypeOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_TypeOperation__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myNonTypesystemRule__BehaviorDescriptor;
-          }
-          break;
+          return myNonTypesystemRule__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myOperation_parameter__BehaviorDescriptor;
-          }
-          break;
+          return myOperation_parameter__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myOriginalNodeId__BehaviorDescriptor;
-          }
-          break;
+          return myOriginalNodeId__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myOverloadedOpIsApplicableFunction__BehaviorDescriptor;
-          }
-          break;
+          return myOverloadedOpIsApplicableFunction__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myOverloadedOperatorTypeFunction__BehaviorDescriptor;
-          }
-          break;
+          return myOverloadedOperatorTypeFunction__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myOverridesConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myOverridesConceptFunction__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myPatternCondition__BehaviorDescriptor;
-          }
-          break;
+          return myPatternCondition__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myProcessed__BehaviorDescriptor;
-          }
-          break;
+          return myProcessed__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myQuickFixDescriptionBlock__BehaviorDescriptor;
-          }
-          break;
+          return myQuickFixDescriptionBlock__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myQuickFixExecuteBlock__BehaviorDescriptor;
-          }
-          break;
+          return myQuickFixExecuteBlock__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myQuickFixFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myQuickFixFieldReference__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myQuickFixSetSelectionBlock__BehaviorDescriptor;
-          }
-          break;
+          return myQuickFixSetSelectionBlock__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myReportErrorStatement__BehaviorDescriptor;
-          }
-          break;
+          return myReportErrorStatement__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myRightOperandType_parameter__BehaviorDescriptor;
-          }
-          break;
+          return myRightOperandType_parameter__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myRuntimeErrorType__BehaviorDescriptor;
-          }
-          break;
+          return myRuntimeErrorType__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myRuntimeTypeVariable__BehaviorDescriptor;
-          }
-          break;
+          return myRuntimeTypeVariable__BehaviorDescriptor;
         case 46:
-          if (true) {
-            return mySubstituteTypeRule__BehaviorDescriptor;
-          }
-          break;
+          return mySubstituteTypeRule__BehaviorDescriptor;
         case 47:
-          if (true) {
-            return mySubtypingRule__BehaviorDescriptor;
-          }
-          break;
+          return mySubtypingRule__BehaviorDescriptor;
         case 48:
-          if (true) {
-            return mySupersedeConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return mySupersedeConceptFunction__BehaviorDescriptor;
         case 49:
-          if (true) {
-            return myTypeOfExpression__BehaviorDescriptor;
-          }
-          break;
+          return myTypeOfExpression__BehaviorDescriptor;
         case 50:
-          if (true) {
-            return myTypeVarReference__BehaviorDescriptor;
-          }
-          break;
+          return myTypeVarReference__BehaviorDescriptor;
         case 51:
-          if (true) {
-            return myTypesystemIntentionArgument__BehaviorDescriptor;
-          }
-          break;
+          return myTypesystemIntentionArgument__BehaviorDescriptor;
         case 52:
-          if (true) {
-            return myVariableConverterItem_ApplicableBlock__BehaviorDescriptor;
-          }
-          break;
+          return myVariableConverterItem_ApplicableBlock__BehaviorDescriptor;
         case 53:
-          if (true) {
-            return myVariableConverterItem_ConvertBlock__BehaviorDescriptor;
-          }
-          break;
+          return myVariableConverterItem_ConvertBlock__BehaviorDescriptor;
         case 54:
-          if (true) {
-            return myWarningStatement__BehaviorDescriptor;
-          }
-          break;
+          return myWarningStatement__BehaviorDescriptor;
         case 55:
-          if (true) {
-            return myWhenConcreteVariableDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myWhenConcreteVariableDeclaration__BehaviorDescriptor;
         case 56:
-          if (true) {
-            return myWhenConcreteVariableReference__BehaviorDescriptor;
-          }
-          break;
+          return myWhenConcreteVariableReference__BehaviorDescriptor;
         default:
           // default 
       }

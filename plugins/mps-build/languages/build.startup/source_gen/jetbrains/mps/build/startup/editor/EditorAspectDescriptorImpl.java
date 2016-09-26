@@ -21,30 +21,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ClassPathItem_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ClassPathItem_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MpsStartupScript_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MpsStartupScript_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleVmOptions_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleVmOptions_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextFile_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextFile_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextLine_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new TextLine_Editor());
         default:
       }
     }

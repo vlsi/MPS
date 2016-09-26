@@ -23,45 +23,21 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertEquals_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertEquals_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertFalse_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertFalse_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertInNotNull_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertInNotNull_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertIsNull_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertIsNull_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertSame_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertSame_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertThrows_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertThrows_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertTrue_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertTrue_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Message_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Message_DataFlow());
         default:
           // default 
       }

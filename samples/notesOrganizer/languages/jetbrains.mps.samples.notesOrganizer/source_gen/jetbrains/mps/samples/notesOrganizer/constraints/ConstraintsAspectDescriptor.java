@@ -22,15 +22,9 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new NoteMetaInfo_Constraints();
-          }
-          break;
+          return new NoteMetaInfo_Constraints();
         case 1:
-          if (true) {
-            return new NotesConfiguration_Constraints();
-          }
-          break;
+          return new NotesConfiguration_Constraints();
         default:
           // default 
       }

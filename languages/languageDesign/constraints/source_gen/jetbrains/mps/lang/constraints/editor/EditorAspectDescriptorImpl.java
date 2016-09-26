@@ -22,35 +22,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
         default:
       }
     }
@@ -67,105 +49,45 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptParameter_ReferentSearchScope_enclosingNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConceptParameter_ReferentSearchScope_enclosingNode_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_checkedNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_checkedNode_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConcept_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConcept_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childNode_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_containingLink_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_containingLink_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextNode_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextRole_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextRole_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_exists_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_exists_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_inEditor_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_inEditor_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_link_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_link_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkTarget_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkTarget_SubstituteMenu());
         case 11:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_newReferentNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_newReferentNode_SubstituteMenu());
         case 12:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_oldReferentNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_oldReferentNode_SubstituteMenu());
         case 13:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parameterNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parameterNode_SubstituteMenu());
         case 14:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parentNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parentNode_SubstituteMenu());
         case 15:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_position_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_position_SubstituteMenu());
         case 16:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_referenceNode_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_referenceNode_SubstituteMenu());
         case 17:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_smartReference_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_smartReference_SubstituteMenu());
         case 18:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_visible_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_visible_SubstituteMenu());
         case 19:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConstraintsFunctionParameter_node_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ConstraintsFunctionParameter_node_SubstituteMenu());
         default:
       }
     }

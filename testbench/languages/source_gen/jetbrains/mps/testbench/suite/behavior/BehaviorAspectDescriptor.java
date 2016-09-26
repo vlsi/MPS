@@ -31,40 +31,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myIModuleRef__BehaviorDescriptor;
-          }
-          break;
+          return myIModuleRef__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myITestRef__BehaviorDescriptor;
-          }
-          break;
+          return myITestRef__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myJUnit3TestCaseRef__BehaviorDescriptor;
-          }
-          break;
+          return myJUnit3TestCaseRef__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myJUnit4TestCaseRef__BehaviorDescriptor;
-          }
-          break;
+          return myJUnit4TestCaseRef__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myModuleSuite__BehaviorDescriptor;
-          }
-          break;
+          return myModuleSuite__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return mySolutionRef__BehaviorDescriptor;
-          }
-          break;
+          return mySolutionRef__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myTestCaseRef__BehaviorDescriptor;
-          }
-          break;
+          return myTestCaseRef__BehaviorDescriptor;
         default:
           // default 
       }

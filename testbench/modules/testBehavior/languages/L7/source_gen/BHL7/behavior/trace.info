@@ -19,7 +19,7 @@
       <unit at="11,0,17,0" name="BHL7.behavior.B_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,114,0" name="BHL7.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,78,0" name="BHL7.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="C_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="BHL7.behavior.C_BehaviorDescriptor" />

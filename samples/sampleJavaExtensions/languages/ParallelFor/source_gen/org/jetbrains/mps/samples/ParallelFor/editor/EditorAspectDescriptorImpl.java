@@ -24,30 +24,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NonThreadSafeClass_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NonThreadSafeClass_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParallelFor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParallelFor_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParallelLoopVariable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParallelLoopVariable_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThreadPool_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ThreadPool_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThreadSafe_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ThreadSafe_Editor());
         default:
       }
     }
@@ -64,15 +49,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new NoWaitTransforms_Contribution());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new NoWaitTransforms_Contribution());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ParallelFor_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ParallelFor_TransformationMenu());
         default:
       }
     }

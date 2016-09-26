@@ -22,180 +22,75 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CheckedModuleQualifiedName_Constraints();
-          }
-          break;
+          return new CheckedModuleQualifiedName_Constraints();
         case 1:
-          if (true) {
-            return new CheckedModuleReference_Constraints();
-          }
-          break;
+          return new CheckedModuleReference_Constraints();
         case 2:
-          if (true) {
-            return new ChildAttributeQualifier_Constraints();
-          }
-          break;
+          return new ChildAttributeQualifier_Constraints();
         case 3:
-          if (true) {
-            return new ChildNodeRefExpression_Constraints();
-          }
-          break;
+          return new ChildNodeRefExpression_Constraints();
         case 4:
-          if (true) {
-            return new EnumMemberReference_Constraints();
-          }
-          break;
+          return new EnumMemberReference_Constraints();
         case 5:
-          if (true) {
-            return new EnumMemberValueRefExpression_Constraints();
-          }
-          break;
+          return new EnumMemberValueRefExpression_Constraints();
         case 6:
-          if (true) {
-            return new IReferenceOperation_Constraints();
-          }
-          break;
+          return new IReferenceOperation_Constraints();
         case 7:
-          if (true) {
-            return new IfInstanceOfVarReference_Constraints();
-          }
-          break;
+          return new IfInstanceOfVarReference_Constraints();
         case 8:
-          if (true) {
-            return new LinkAttributeQualifier_Constraints();
-          }
-          break;
+          return new LinkAttributeQualifier_Constraints();
         case 9:
-          if (true) {
-            return new LinkIdRefExpression_Constraints();
-          }
-          break;
+          return new LinkIdRefExpression_Constraints();
         case 10:
-          if (true) {
-            return new LinkNameRefExpression_Constraints();
-          }
-          break;
+          return new LinkNameRefExpression_Constraints();
         case 11:
-          if (true) {
-            return new LinkQualifier_Constraints();
-          }
-          break;
+          return new LinkQualifier_Constraints();
         case 12:
-          if (true) {
-            return new LinkRefExpression_Constraints();
-          }
-          break;
+          return new LinkRefExpression_Constraints();
         case 13:
-          if (true) {
-            return new LinkRefQualifier_Constraints();
-          }
-          break;
+          return new LinkRefQualifier_Constraints();
         case 14:
-          if (true) {
-            return new ModelReferenceExpression_Constraints();
-          }
-          break;
+          return new ModelReferenceExpression_Constraints();
         case 15:
-          if (true) {
-            return new ModuleReferenceExpression_Constraints();
-          }
-          break;
+          return new ModuleReferenceExpression_Constraints();
         case 16:
-          if (true) {
-            return new NodeAttributeQualifier_Constraints();
-          }
-          break;
+          return new NodeAttributeQualifier_Constraints();
         case 17:
-          if (true) {
-            return new NodePointerExpression_Constraints();
-          }
-          break;
+          return new NodePointerExpression_Constraints();
         case 18:
-          if (true) {
-            return new NodeRefExpression_Constraints();
-          }
-          break;
+          return new NodeRefExpression_Constraints();
         case 19:
-          if (true) {
-            return new Node_ConceptMethodCall_Constraints();
-          }
-          break;
+          return new Node_ConceptMethodCall_Constraints();
         case 20:
-          if (true) {
-            return new Node_GetReferentSearchScopeOperation_Constraints();
-          }
-          break;
+          return new Node_GetReferentSearchScopeOperation_Constraints();
         case 21:
-          if (true) {
-            return new Node_IsRoleOperation_Constraints();
-          }
-          break;
+          return new Node_IsRoleOperation_Constraints();
         case 22:
-          if (true) {
-            return new PropertyAttributeQualifier_Constraints();
-          }
-          break;
+          return new PropertyAttributeQualifier_Constraints();
         case 23:
-          if (true) {
-            return new PropertyIdRefExpression_Constraints();
-          }
-          break;
+          return new PropertyIdRefExpression_Constraints();
         case 24:
-          if (true) {
-            return new PropertyNameRefExpression_Constraints();
-          }
-          break;
+          return new PropertyNameRefExpression_Constraints();
         case 25:
-          if (true) {
-            return new PropertyQualifier_Constraints();
-          }
-          break;
+          return new PropertyQualifier_Constraints();
         case 26:
-          if (true) {
-            return new SEnumMemberOperation_Constraints();
-          }
-          break;
+          return new SEnumMemberOperation_Constraints();
         case 27:
-          if (true) {
-            return new SEnumOperation_Constraints();
-          }
-          break;
+          return new SEnumOperation_Constraints();
         case 28:
-          if (true) {
-            return new SEnumOperationInvocation_Constraints();
-          }
-          break;
+          return new SEnumOperationInvocation_Constraints();
         case 29:
-          if (true) {
-            return new SEnum_MemberOperation_Constraints();
-          }
-          break;
+          return new SEnum_MemberOperation_Constraints();
         case 30:
-          if (true) {
-            return new SLinkAccess_Constraints();
-          }
-          break;
+          return new SLinkAccess_Constraints();
         case 31:
-          if (true) {
-            return new SLinkImplicitSelect_Constraints();
-          }
-          break;
+          return new SLinkImplicitSelect_Constraints();
         case 32:
-          if (true) {
-            return new SLinkListAccess_Constraints();
-          }
-          break;
+          return new SLinkListAccess_Constraints();
         case 33:
-          if (true) {
-            return new SPropertyAccess_Constraints();
-          }
-          break;
+          return new SPropertyAccess_Constraints();
         case 34:
-          if (true) {
-            return new SearchScope_ContainsOperation_Constraints();
-          }
-          break;
+          return new SearchScope_ContainsOperation_Constraints();
         default:
           // default 
       }

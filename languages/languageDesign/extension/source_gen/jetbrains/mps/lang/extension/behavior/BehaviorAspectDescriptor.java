@@ -33,50 +33,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myExtension__BehaviorDescriptor;
-          }
-          break;
+          return myExtension__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myExtensionDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionDeclaration__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myExtensionFieldReference__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionFieldReference__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myExtensionFunction__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionFunction__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myExtensionObjectGetter__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionObjectGetter__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myExtensionPointDeclaration__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionPointDeclaration__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myExtensionPointExpression__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionPointExpression__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myExtensionPointType__BehaviorDescriptor;
-          }
-          break;
+          return myExtensionPointType__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myIRootWithUniqueName__BehaviorDescriptor;
-          }
-          break;
+          return myIRootWithUniqueName__BehaviorDescriptor;
         default:
           // default 
       }

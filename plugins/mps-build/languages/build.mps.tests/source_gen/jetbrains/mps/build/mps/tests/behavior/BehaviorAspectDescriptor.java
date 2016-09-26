@@ -29,30 +29,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myBuildModuleTestsPlugin__BehaviorDescriptor;
-          }
-          break;
+          return myBuildModuleTestsPlugin__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myBuildMpsLayout_TestModule__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_TestModule__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myBuildMpsLayout_TestModules__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_TestModules__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
-          }
-          break;
+          return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
         default:
           // default 
       }

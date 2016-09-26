@@ -26,260 +26,107 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJarContent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJarContent_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingCompany_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingCompany_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingKeymap_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingKeymap_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingStats_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingStats_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor());
         case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor());
         case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor());
         case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor());
         case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor());
         case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
         case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
         case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor());
         case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
         case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
         case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
         case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
         case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
         case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
         case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
         case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
         case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
         case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
         case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
         case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
         case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
         case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
         case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
         case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
         case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
         case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
         case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
         case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
         case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
         case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
         case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
         case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
         case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
         case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
         default:
       }
     }
@@ -315,15 +162,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginGroup_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginGroup_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginModule_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginModule_TransformationMenu());
         default:
       }
     }
@@ -408,25 +249,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildMps_Generator_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildMps_Generator_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleJavaSource_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleJavaSource_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSource_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSource_SubstituteMenu());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleTestSource_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleTestSource_SubstituteMenu());
         default:
       }
     }

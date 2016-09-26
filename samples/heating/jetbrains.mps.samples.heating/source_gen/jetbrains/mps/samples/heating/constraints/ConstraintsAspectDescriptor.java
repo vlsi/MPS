@@ -22,30 +22,15 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new Applicability_Constraints();
-          }
-          break;
+          return new Applicability_Constraints();
         case 1:
-          if (true) {
-            return new ChangeEvent_Constraints();
-          }
-          break;
+          return new ChangeEvent_Constraints();
         case 2:
-          if (true) {
-            return new DailyPlan_Constraints();
-          }
-          break;
+          return new DailyPlan_Constraints();
         case 3:
-          if (true) {
-            return new DailyPlanReference_Constraints();
-          }
-          break;
+          return new DailyPlanReference_Constraints();
         case 4:
-          if (true) {
-            return new Slot_Constraints();
-          }
-          break;
+          return new Slot_Constraints();
         default:
           // default 
       }

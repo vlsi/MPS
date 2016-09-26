@@ -22,25 +22,13 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ConvertTo_Constraints();
-          }
-          break;
+          return new ConvertTo_Constraints();
         case 1:
-          if (true) {
-            return new GetAmount_Constraints();
-          }
-          break;
+          return new GetAmount_Constraints();
         case 2:
-          if (true) {
-            return new GetCurrency_Constraints();
-          }
-          break;
+          return new GetCurrency_Constraints();
         case 3:
-          if (true) {
-            return new MoneyLiteral_Constraints();
-          }
-          break;
+          return new MoneyLiteral_Constraints();
         default:
           // default 
       }

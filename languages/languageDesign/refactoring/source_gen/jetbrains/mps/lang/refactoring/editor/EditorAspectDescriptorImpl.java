@@ -22,85 +22,37 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
         default:
       }
     }

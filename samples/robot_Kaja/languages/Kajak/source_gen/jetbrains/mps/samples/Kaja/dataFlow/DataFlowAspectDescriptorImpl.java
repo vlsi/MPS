@@ -23,60 +23,27 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractCommand_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractCommand_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CommandList_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CommandList_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LogicalExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LogicalExpression_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Not_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Not_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Repeat_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Repeat_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RoutineCall_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RoutineCall_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RoutineDefinition_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RoutineDefinition_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Script_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Script_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Step_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Step_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new While_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new While_DataFlow());
         default:
           // default 
       }

@@ -22,235 +22,97 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new AbstractComponent_Constraints();
-          }
-          break;
+          return new AbstractComponent_Constraints();
         case 1:
-          if (true) {
-            return new AttributeStyleClassItem_Constraints();
-          }
-          break;
+          return new AttributeStyleClassItem_Constraints();
         case 2:
-          if (true) {
-            return new CellActionMapDeclaration_Constraints();
-          }
-          break;
+          return new CellActionMapDeclaration_Constraints();
         case 3:
-          if (true) {
-            return new CellIdReferenceSelector_Constraints();
-          }
-          break;
+          return new CellIdReferenceSelector_Constraints();
         case 4:
-          if (true) {
-            return new CellKeyMapDeclaration_Constraints();
-          }
-          break;
+          return new CellKeyMapDeclaration_Constraints();
         case 5:
-          if (true) {
-            return new CellMenuComponent_Constraints();
-          }
-          break;
+          return new CellMenuComponent_Constraints();
         case 6:
-          if (true) {
-            return new CellMenuComponentFeature_Link_Constraints();
-          }
-          break;
+          return new CellMenuComponentFeature_Link_Constraints();
         case 7:
-          if (true) {
-            return new CellMenuComponentFeature_Property_Constraints();
-          }
-          break;
+          return new CellMenuComponentFeature_Property_Constraints();
         case 8:
-          if (true) {
-            return new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints();
-          }
-          break;
+          return new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints();
         case 9:
-          if (true) {
-            return new CellModel_Component_Constraints();
-          }
-          break;
+          return new CellModel_Component_Constraints();
         case 10:
-          if (true) {
-            return new CellModel_NextEditor_Constraints();
-          }
-          break;
+          return new CellModel_NextEditor_Constraints();
         case 11:
-          if (true) {
-            return new CellModel_Property_Constraints();
-          }
-          break;
+          return new CellModel_Property_Constraints();
         case 12:
-          if (true) {
-            return new CellModel_RefCell_Constraints();
-          }
-          break;
+          return new CellModel_RefCell_Constraints();
         case 13:
-          if (true) {
-            return new CellModel_RefNode_Constraints();
-          }
-          break;
+          return new CellModel_RefNode_Constraints();
         case 14:
-          if (true) {
-            return new CellModel_RefNodeList_Constraints();
-          }
-          break;
+          return new CellModel_RefNodeList_Constraints();
         case 15:
-          if (true) {
-            return new CellModel_ReferencePresentation_Constraints();
-          }
-          break;
+          return new CellModel_ReferencePresentation_Constraints();
         case 16:
-          if (true) {
-            return new CellModel_TransactionalProperty_Constraints();
-          }
-          break;
+          return new CellModel_TransactionalProperty_Constraints();
         case 17:
-          if (true) {
-            return new CellModel_WithRole_Constraints();
-          }
-          break;
+          return new CellModel_WithRole_Constraints();
         case 18:
-          if (true) {
-            return new ConceptEditorDeclaration_Constraints();
-          }
-          break;
+          return new ConceptEditorDeclaration_Constraints();
         case 19:
-          if (true) {
-            return new ConceptEditorHintDeclaration_Constraints();
-          }
-          break;
+          return new ConceptEditorHintDeclaration_Constraints();
         case 20:
-          if (true) {
-            return new ContextVariable_Constraints();
-          }
-          break;
+          return new ContextVariable_Constraints();
         case 21:
-          if (true) {
-            return new EditorComponentDeclaration_Constraints();
-          }
-          break;
+          return new EditorComponentDeclaration_Constraints();
         case 22:
-          if (true) {
-            return new IMenuPartParameterized_Constraints();
-          }
-          break;
+          return new IMenuPartParameterized_Constraints();
         case 23:
-          if (true) {
-            return new IMenuReference_Default_Constraints();
-          }
-          break;
+          return new IMenuReference_Default_Constraints();
         case 24:
-          if (true) {
-            return new IMenu_Default_Constraints();
-          }
-          break;
+          return new IMenu_Default_Constraints();
         case 25:
-          if (true) {
-            return new IMenu_Named_Constraints();
-          }
-          break;
+          return new IMenu_Named_Constraints();
         case 26:
-          if (true) {
-            return new IStyle_Constraints();
-          }
-          break;
+          return new IStyle_Constraints();
         case 27:
-          if (true) {
-            return new NavigatableReferenceStyleClassItem_Constraints();
-          }
-          break;
+          return new NavigatableReferenceStyleClassItem_Constraints();
         case 28:
-          if (true) {
-            return new PropertyDeclarationCellSelector_Constraints();
-          }
-          break;
+          return new PropertyDeclarationCellSelector_Constraints();
         case 29:
-          if (true) {
-            return new RGBColor_Constraints();
-          }
-          break;
+          return new RGBColor_Constraints();
         case 30:
-          if (true) {
-            return new StyleClassItem_Constraints();
-          }
-          break;
+          return new StyleClassItem_Constraints();
         case 31:
-          if (true) {
-            return new StyleSheet_Constraints();
-          }
-          break;
+          return new StyleSheet_Constraints();
         case 32:
-          if (true) {
-            return new SubstituteMenu_Constraints();
-          }
-          break;
+          return new SubstituteMenu_Constraints();
         case 33:
-          if (true) {
-            return new SubstituteMenuReference_DefaultWithFunction_Constraints();
-          }
-          break;
+          return new SubstituteMenuReference_DefaultWithFunction_Constraints();
         case 34:
-          if (true) {
-            return new SubstituteMenuReference_Named_Constraints();
-          }
-          break;
+          return new SubstituteMenuReference_Named_Constraints();
         case 35:
-          if (true) {
-            return new SubstituteMenuVariableReference_Constraints();
-          }
-          break;
+          return new SubstituteMenuVariableReference_Constraints();
         case 36:
-          if (true) {
-            return new SubstituteMenu_Contribution_Constraints();
-          }
-          break;
+          return new SubstituteMenu_Contribution_Constraints();
         case 37:
-          if (true) {
-            return new SubstituteMenu_Default_Constraints();
-          }
-          break;
+          return new SubstituteMenu_Default_Constraints();
         case 38:
-          if (true) {
-            return new SubstituteMenu_Named_Constraints();
-          }
-          break;
+          return new SubstituteMenu_Named_Constraints();
         case 39:
-          if (true) {
-            return new TransformationMenu_Constraints();
-          }
-          break;
+          return new TransformationMenu_Constraints();
         case 40:
-          if (true) {
-            return new TransformationMenuContribution_Constraints();
-          }
-          break;
+          return new TransformationMenuContribution_Constraints();
         case 41:
-          if (true) {
-            return new TransformationMenuPart_IncludeSubstituteMenu_Constraints();
-          }
-          break;
+          return new TransformationMenuPart_IncludeSubstituteMenu_Constraints();
         case 42:
-          if (true) {
-            return new TransformationMenuReference_Named_Constraints();
-          }
-          break;
+          return new TransformationMenuReference_Named_Constraints();
         case 43:
-          if (true) {
-            return new TransformationMenuVariableReference_Constraints();
-          }
-          break;
+          return new TransformationMenuVariableReference_Constraints();
         case 44:
-          if (true) {
-            return new TransformationMenu_Default_Constraints();
-          }
-          break;
+          return new TransformationMenu_Default_Constraints();
         case 45:
-          if (true) {
-            return new TransformationMenu_Named_Constraints();
-          }
-          break;
+          return new TransformationMenu_Named_Constraints();
         default:
           // default 
       }

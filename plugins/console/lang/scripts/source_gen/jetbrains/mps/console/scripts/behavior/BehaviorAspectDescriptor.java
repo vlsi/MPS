@@ -27,20 +27,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractConsoleScript__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractConsoleScript__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myConsoleScript__BehaviorDescriptor;
-          }
-          break;
+          return myConsoleScript__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myRefactorOperation__BehaviorDescriptor;
-          }
-          break;
+          return myRefactorOperation__BehaviorDescriptor;
         default:
           // default 
       }

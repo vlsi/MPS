@@ -25,85 +25,37 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AdvanceWorkStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AdvanceWorkStatement_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AllWorkLeftExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new AllWorkLeftExpression_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BeginWorkStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new BeginWorkStatement_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExpectedOption_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ExpectedOption_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FinishWorkStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new FinishWorkStatement_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new JobDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new JobDeclaration_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Option_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Option_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OptionExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OptionExpression_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OptionType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OptionType_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OutputResources_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new OutputResources_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QueryDefinition_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QueryDefinition_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RelayQueryExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RelayQueryExpression_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReportFeedbackStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ReportFeedbackStatement_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResourceType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResourceType_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Text_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new Text_Editor());
         default:
       }
     }
@@ -143,60 +95,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AdvanceWorkStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AdvanceWorkStatement_SubstituteMenu());
         case 1:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AllWorkLeftExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new AllWorkLeftExpression_SubstituteMenu());
         case 2:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
         case 3:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new FinishWorkStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new FinishWorkStatement_SubstituteMenu());
         case 4:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InputResourcesParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new InputResourcesParameter_SubstituteMenu());
         case 5:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new OutputResources_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new OutputResources_SubstituteMenu());
         case 6:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new PropertiesAccessorParameter_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new PropertiesAccessorParameter_SubstituteMenu());
         case 7:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new RelayQueryExpression_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new RelayQueryExpression_SubstituteMenu());
         case 8:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ReportFeedbackStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ReportFeedbackStatement_SubstituteMenu());
         case 9:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ResultStatement_SubstituteMenu());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new ResultStatement_SubstituteMenu());
         case 10:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new Statement_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new Statement_Contribution());
         default:
       }
     }

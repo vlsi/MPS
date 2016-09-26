@@ -21,95 +21,41 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ArithmeticSimpleMathExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ArithmeticSimpleMathExpression_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LogicalSimpleMathExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new LogicalSimpleMathExpression_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NotSimpleMathExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NotSimpleMathExpression_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathAssignment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathAssignment_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanConstant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanConstant_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanType_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathElementType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathElementType_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathFloatConstant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathFloatConstant_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathFloatType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathFloatType_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerConstant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerConstant_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerType_Editor());
         case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathLongConstant_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathLongConstant_Editor());
         case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathLongType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathLongType_Editor());
         case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathNumberType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathNumberType_Editor());
         case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathTypedVarDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathTypedVarDeclaration_Editor());
         case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathVarDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathVarDeclaration_Editor());
         case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathVarReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathVarReference_Editor());
         case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleMathWrapper_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SimpleMathWrapper_Editor());
         default:
       }
     }

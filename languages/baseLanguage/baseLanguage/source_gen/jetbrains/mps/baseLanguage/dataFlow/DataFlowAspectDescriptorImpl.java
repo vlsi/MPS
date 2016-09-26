@@ -35,335 +35,137 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AbstractUnaryNumberOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AbstractUnaryNumberOperation_DataFlow());
         case 1:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AndExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AndExpression_DataFlow());
         case 2:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AnonymousClassCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AnonymousClassCreator_DataFlow());
         case 3:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ArrayAccessExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ArrayAccessExpression_DataFlow());
         case 4:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ArrayCreator_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ArrayCreator_DataFlow());
         case 5:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ArrayCreatorWithInitializer_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ArrayCreatorWithInitializer_DataFlow());
         case 6:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ArrayLiteral_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ArrayLiteral_DataFlow());
         case 7:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AsExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AsExpression_DataFlow());
         case 8:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
         case 9:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new AssignmentExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new AssignmentExpression_DataFlow());
         case 10:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BaseAssignmentExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BaseAssignmentExpression_DataFlow());
         case 11:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BaseMethodCall_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BaseMethodCall_DataFlow());
         case 12:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BaseMethodDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BaseMethodDeclaration_DataFlow());
         case 13:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
         case 14:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BitwiseNotExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BitwiseNotExpression_DataFlow());
         case 15:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BlockStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BlockStatement_DataFlow());
         case 16:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new BreakStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new BreakStatement_DataFlow());
         case 17:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CastExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CastExpression_DataFlow());
         case 18:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CatchClause_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CatchClause_DataFlow());
         case 19:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Closure_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Closure_DataFlow());
         case 20:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new CommentedStatementsBlock_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new CommentedStatementsBlock_DataFlow());
         case 21:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ConceptFunction_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ConceptFunction_DataFlow());
         case 22:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ContinueStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ContinueStatement_DataFlow());
         case 23:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new DimensionExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new DimensionExpression_DataFlow());
         case 24:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new DoWhileStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new DoWhileStatement_DataFlow());
         case 25:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new DotExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new DotExpression_DataFlow());
         case 26:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ElsifClause_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ElsifClause_DataFlow());
         case 27:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new Expression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new Expression_DataFlow());
         case 28:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ExpressionStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ExpressionStatement_DataFlow());
         case 29:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new FieldReferenceOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new FieldReferenceOperation_DataFlow());
         case 30:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ForStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ForStatement_DataFlow());
         case 31:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ForeachStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ForeachStatement_DataFlow());
         case 32:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new GenericNewExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new GenericNewExpression_DataFlow());
         case 33:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IMethodCall_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IMethodCall_DataFlow());
         case 34:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
         case 35:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InstanceInitializer_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InstanceInitializer_DataFlow());
         case 36:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InstanceMethodCallOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InstanceMethodCallOperation_DataFlow());
         case 37:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new InstanceOfExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new InstanceOfExpression_DataFlow());
         case 38:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclaration_DataFlow());
         case 39:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclarationStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclarationStatement_DataFlow());
         case 40:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new NestedNewExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new NestedNewExpression_DataFlow());
         case 41:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new NotExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new NotExpression_DataFlow());
         case 42:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new OrExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new OrExpression_DataFlow());
         case 43:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ParameterDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ParameterDeclaration_DataFlow());
         case 44:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ParenthesizedExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ParenthesizedExpression_DataFlow());
         case 45:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PostfixDecrementExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PostfixDecrementExpression_DataFlow());
         case 46:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PostfixIncrementExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PostfixIncrementExpression_DataFlow());
         case 47:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PrefixDecrementExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PrefixDecrementExpression_DataFlow());
         case 48:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new PrefixIncrementExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new PrefixIncrementExpression_DataFlow());
         case 49:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new RemarkStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new RemarkStatement_DataFlow());
         case 50:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ReturnStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ReturnStatement_DataFlow());
         case 51:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new StatementList_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new StatementList_DataFlow());
         case 52:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new StaticInitializer_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new StaticInitializer_DataFlow());
         case 53:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new StaticMethodCall_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new StaticMethodCall_DataFlow());
         case 54:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new StubStatementList_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new StubStatementList_DataFlow());
         case 55:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SubstringExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SubstringExpression_DataFlow());
         case 56:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SwitchCase_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SwitchCase_DataFlow());
         case 57:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SwitchStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SwitchStatement_DataFlow());
         case 58:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new SynchronizedStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new SynchronizedStatement_DataFlow());
         case 59:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TernaryOperatorExpression_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TernaryOperatorExpression_DataFlow());
         case 60:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ThrowStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ThrowStatement_DataFlow());
         case 61:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TryCatchStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TryCatchStatement_DataFlow());
         case 62:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new TryStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new TryStatement_DataFlow());
         case 63:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new VariableDeclaration_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new VariableDeclaration_DataFlow());
         case 64:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new VariableReference_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new VariableReference_DataFlow());
         case 65:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new WhileStatement_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new WhileStatement_DataFlow());
         default:
           // default 
       }

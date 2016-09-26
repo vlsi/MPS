@@ -30,35 +30,17 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
-          }
-          break;
+          return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myHighLevelCustomViewer__BehaviorDescriptor;
-          }
-          break;
+          return myHighLevelCustomViewer__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myToProcessMethod__BehaviorDescriptor;
-          }
-          break;
+          return myToProcessMethod__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myWatchableListType__BehaviorDescriptor;
-          }
-          break;
+          return myWatchableListType__BehaviorDescriptor;
         default:
           // default 
       }

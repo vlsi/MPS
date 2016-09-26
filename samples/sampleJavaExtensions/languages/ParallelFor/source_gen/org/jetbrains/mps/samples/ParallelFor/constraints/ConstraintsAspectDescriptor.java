@@ -22,15 +22,9 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new ParallelLoopVariable_Constraints();
-          }
-          break;
+          return new ParallelLoopVariable_Constraints();
         case 1:
-          if (true) {
-            return new ThreadPool_Constraints();
-          }
-          break;
+          return new ThreadPool_Constraints();
         default:
           // default 
       }

@@ -22,20 +22,11 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new DirectMethodSpecification_Constraints();
-          }
-          break;
+          return new DirectMethodSpecification_Constraints();
         case 1:
-          if (true) {
-            return new MigrationScriptPart_Constraints();
-          }
-          break;
+          return new MigrationScriptPart_Constraints();
         case 2:
-          if (true) {
-            return new PullUpMethod_Constraints();
-          }
-          break;
+          return new PullUpMethod_Constraints();
         default:
           // default 
       }

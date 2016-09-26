@@ -22,60 +22,27 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new CopyPasteHandlers_Constraints();
-          }
-          break;
+          return new CopyPasteHandlers_Constraints();
         case 1:
-          if (true) {
-            return new NodeFactories_Constraints();
-          }
-          break;
+          return new NodeFactories_Constraints();
         case 2:
-          if (true) {
-            return new NodeFactory_Constraints();
-          }
-          break;
+          return new NodeFactory_Constraints();
         case 3:
-          if (true) {
-            return new NodeSubstituteActions_Constraints();
-          }
-          break;
+          return new NodeSubstituteActions_Constraints();
         case 4:
-          if (true) {
-            return new PasteWrappers_Constraints();
-          }
-          break;
+          return new PasteWrappers_Constraints();
         case 5:
-          if (true) {
-            return new SideTransformHintSubstituteActions_Constraints();
-          }
-          break;
+          return new SideTransformHintSubstituteActions_Constraints();
         case 6:
-          if (true) {
-            return new SideTransformMenuPart_Constraints();
-          }
-          break;
+          return new SideTransformMenuPart_Constraints();
         case 7:
-          if (true) {
-            return new SideTransformVariableReference_Constraints();
-          }
-          break;
+          return new SideTransformVariableReference_Constraints();
         case 8:
-          if (true) {
-            return new SmartActionParameterReference_Constraints();
-          }
-          break;
+          return new SmartActionParameterReference_Constraints();
         case 9:
-          if (true) {
-            return new SubstituteMenuPart_Constraints();
-          }
-          break;
+          return new SubstituteMenuPart_Constraints();
         case 10:
-          if (true) {
-            return new SubstituteNodeBuilderVariableReference_Constraints();
-          }
-          break;
+          return new SubstituteNodeBuilderVariableReference_Constraints();
         default:
           // default 
       }

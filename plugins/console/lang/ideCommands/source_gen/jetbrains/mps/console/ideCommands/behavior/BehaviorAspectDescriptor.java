@@ -49,130 +49,55 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbsractMake__BehaviorDescriptor;
-          }
-          break;
+          return myAbsractMake__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myActionCallDeclaredParameter__BehaviorDescriptor;
-          }
-          break;
+          return myActionCallDeclaredParameter__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myActionCallGlobalParameter__BehaviorDescriptor;
-          }
-          break;
+          return myActionCallGlobalParameter__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myActionCallParameter__BehaviorDescriptor;
-          }
-          break;
+          return myActionCallParameter__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myCallActionExpression__BehaviorDescriptor;
-          }
-          break;
+          return myCallActionExpression__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myClean__BehaviorDescriptor;
-          }
-          break;
+          return myClean__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myClickableGenerator__BehaviorDescriptor;
-          }
-          break;
+          return myClickableGenerator__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myGlobalStatisticTarget__BehaviorDescriptor;
-          }
-          break;
+          return myGlobalStatisticTarget__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myINodeSetReference__BehaviorDescriptor;
-          }
-          break;
+          return myINodeSetReference__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myIStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
+          return myIStatisticsTarget__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myMake__BehaviorDescriptor;
-          }
-          break;
+          return myMake__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myModelProperties__BehaviorDescriptor;
-          }
-          break;
+          return myModelProperties__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myModelReference__BehaviorDescriptor;
-          }
-          break;
+          return myModelReference__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myModelStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
+          return myModelStatisticsTarget__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myModuleProperties__BehaviorDescriptor;
-          }
-          break;
+          return myModuleProperties__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myOfAspectOperation__BehaviorDescriptor;
-          }
-          break;
+          return myOfAspectOperation__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myProjectStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
+          return myProjectStatisticsTarget__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myRebuildProjectCommand__BehaviorDescriptor;
-          }
-          break;
+          return myRebuildProjectCommand__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myRemoveGenSources__BehaviorDescriptor;
-          }
-          break;
+          return myRemoveGenSources__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myShowBrokenReferences__BehaviorDescriptor;
-          }
-          break;
+          return myShowBrokenReferences__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myShowExpression__BehaviorDescriptor;
-          }
-          break;
+          return myShowExpression__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myShowGenPlan__BehaviorDescriptor;
-          }
-          break;
+          return myShowGenPlan__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myStatCommand__BehaviorDescriptor;
-          }
-          break;
+          return myStatCommand__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return mySubtreeStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
+          return mySubtreeStatisticsTarget__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myUnloadModelsCommand__BehaviorDescriptor;
-          }
-          break;
+          return myUnloadModelsCommand__BehaviorDescriptor;
         default:
           // default 
       }

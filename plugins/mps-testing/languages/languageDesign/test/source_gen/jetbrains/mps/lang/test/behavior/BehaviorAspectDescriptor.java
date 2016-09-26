@@ -70,235 +70,97 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myAbstractNodeErrorCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractNodeErrorCheckOperation__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myAbstractNodeWarningCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myAbstractNodeWarningCheckOperation__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myActionReference__BehaviorDescriptor;
-          }
-          break;
+          return myActionReference__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myAnonymousCellAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myAnonymousCellAnnotation__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myBootstrapActionReference__BehaviorDescriptor;
-          }
-          break;
+          return myBootstrapActionReference__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myCheckDataFlowOperation__BehaviorDescriptor;
-          }
-          break;
+          return myCheckDataFlowOperation__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myCheckNodeForErrorMessagesOperation__BehaviorDescriptor;
-          }
-          break;
+          return myCheckNodeForErrorMessagesOperation__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myDragMouseStatement__BehaviorDescriptor;
-          }
-          break;
+          return myDragMouseStatement__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myEditorTestCase__BehaviorDescriptor;
-          }
-          break;
+          return myEditorTestCase__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return myIChecksRules__BehaviorDescriptor;
-          }
-          break;
+          return myIChecksRules__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return myINodeAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myINodeAnnotation__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myINodesTestMethod__BehaviorDescriptor;
-          }
-          break;
+          return myINodesTestMethod__BehaviorDescriptor;
         case 12:
-          if (true) {
-            return myIReferenceAttachable__BehaviorDescriptor;
-          }
-          break;
+          return myIReferenceAttachable__BehaviorDescriptor;
         case 13:
-          if (true) {
-            return myIRuleReference__BehaviorDescriptor;
-          }
-          break;
+          return myIRuleReference__BehaviorDescriptor;
         case 14:
-          if (true) {
-            return myInfoStatementReference__BehaviorDescriptor;
-          }
-          break;
+          return myInfoStatementReference__BehaviorDescriptor;
         case 15:
-          if (true) {
-            return myMPSActionReference__BehaviorDescriptor;
-          }
-          break;
+          return myMPSActionReference__BehaviorDescriptor;
         case 16:
-          if (true) {
-            return myMockAnnotation__BehaviorDescriptor;
-          }
-          break;
+          return myMockAnnotation__BehaviorDescriptor;
         case 17:
-          if (true) {
-            return myMockScopeProvider__BehaviorDescriptor;
-          }
-          break;
+          return myMockScopeProvider__BehaviorDescriptor;
         case 18:
-          if (true) {
-            return myNodeCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeCheckOperation__BehaviorDescriptor;
         case 19:
-          if (true) {
-            return myNodeConstraintsErrorCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeConstraintsErrorCheckOperation__BehaviorDescriptor;
         case 20:
-          if (true) {
-            return myNodeConstraintsWarningCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeConstraintsWarningCheckOperation__BehaviorDescriptor;
         case 21:
-          if (true) {
-            return myNodeErrorCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeErrorCheckOperation__BehaviorDescriptor;
         case 22:
-          if (true) {
-            return myNodeExpectedTypeCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeExpectedTypeCheckOperation__BehaviorDescriptor;
         case 23:
-          if (true) {
-            return myNodeInfoCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeInfoCheckOperation__BehaviorDescriptor;
         case 24:
-          if (true) {
-            return myNodeOperationsContainer__BehaviorDescriptor;
-          }
-          break;
+          return myNodeOperationsContainer__BehaviorDescriptor;
         case 25:
-          if (true) {
-            return myNodePropertiesContainer__BehaviorDescriptor;
-          }
-          break;
+          return myNodePropertiesContainer__BehaviorDescriptor;
         case 26:
-          if (true) {
-            return myNodeReachable__BehaviorDescriptor;
-          }
-          break;
+          return myNodeReachable__BehaviorDescriptor;
         case 27:
-          if (true) {
-            return myNodeRuleCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeRuleCheckOperation__BehaviorDescriptor;
         case 28:
-          if (true) {
-            return myNodeTypeCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeTypeCheckOperation__BehaviorDescriptor;
         case 29:
-          if (true) {
-            return myNodeTypeSetCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeTypeSetCheckOperation__BehaviorDescriptor;
         case 30:
-          if (true) {
-            return myNodeTypeSystemErrorCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeTypeSystemErrorCheckOperation__BehaviorDescriptor;
         case 31:
-          if (true) {
-            return myNodeTypeSystemRuleCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeTypeSystemRuleCheckOperation__BehaviorDescriptor;
         case 32:
-          if (true) {
-            return myNodeTypeSystemWarningCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeTypeSystemWarningCheckOperation__BehaviorDescriptor;
         case 33:
-          if (true) {
-            return myNodeUnknownErrorCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeUnknownErrorCheckOperation__BehaviorDescriptor;
         case 34:
-          if (true) {
-            return myNodeUnknownWarningCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeUnknownWarningCheckOperation__BehaviorDescriptor;
         case 35:
-          if (true) {
-            return myNodeUnreachable__BehaviorDescriptor;
-          }
-          break;
+          return myNodeUnreachable__BehaviorDescriptor;
         case 36:
-          if (true) {
-            return myNodeWarningCheckOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNodeWarningCheckOperation__BehaviorDescriptor;
         case 37:
-          if (true) {
-            return myNodesTestCase__BehaviorDescriptor;
-          }
-          break;
+          return myNodesTestCase__BehaviorDescriptor;
         case 38:
-          if (true) {
-            return myNodesTestMethod__BehaviorDescriptor;
-          }
-          break;
+          return myNodesTestMethod__BehaviorDescriptor;
         case 39:
-          if (true) {
-            return myReportErrorStatementReference__BehaviorDescriptor;
-          }
-          break;
+          return myReportErrorStatementReference__BehaviorDescriptor;
         case 40:
-          if (true) {
-            return myScopesTest__BehaviorDescriptor;
-          }
-          break;
+          return myScopesTest__BehaviorDescriptor;
         case 41:
-          if (true) {
-            return myTestInfo__BehaviorDescriptor;
-          }
-          break;
+          return myTestInfo__BehaviorDescriptor;
         case 42:
-          if (true) {
-            return myUnknownRuleReference__BehaviorDescriptor;
-          }
-          break;
+          return myUnknownRuleReference__BehaviorDescriptor;
         case 43:
-          if (true) {
-            return myVariableAlive__BehaviorDescriptor;
-          }
-          break;
+          return myVariableAlive__BehaviorDescriptor;
         case 44:
-          if (true) {
-            return myVariableInitialized__BehaviorDescriptor;
-          }
-          break;
+          return myVariableInitialized__BehaviorDescriptor;
         case 45:
-          if (true) {
-            return myWarningStatementReference__BehaviorDescriptor;
-          }
-          break;
+          return myWarningStatementReference__BehaviorDescriptor;
         default:
           // default 
       }

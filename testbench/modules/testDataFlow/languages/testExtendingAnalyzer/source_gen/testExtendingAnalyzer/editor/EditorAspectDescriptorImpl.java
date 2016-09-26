@@ -21,15 +21,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NullSafeDotExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NullSafeDotExpression_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NullUnsafeDotExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new NullUnsafeDotExpression_Editor());
         default:
       }
     }

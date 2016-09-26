@@ -22,35 +22,17 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new XMLSAXAttributeReference_Constraints();
-          }
-          break;
+          return new XMLSAXAttributeReference_Constraints();
         case 1:
-          if (true) {
-            return new XMLSAXBreakStatement_Constraints();
-          }
-          break;
+          return new XMLSAXBreakStatement_Constraints();
         case 2:
-          if (true) {
-            return new XMLSAXChildRule_Constraints();
-          }
-          break;
+          return new XMLSAXChildRule_Constraints();
         case 3:
-          if (true) {
-            return new XMLSAXFieldReference_Constraints();
-          }
-          break;
+          return new XMLSAXFieldReference_Constraints();
         case 4:
-          if (true) {
-            return new XMLSAXLocatorExpression_Constraints();
-          }
-          break;
+          return new XMLSAXLocatorExpression_Constraints();
         case 5:
-          if (true) {
-            return new XMLSAXNodeRuleParamRef_Constraints();
-          }
-          break;
+          return new XMLSAXNodeRuleParamRef_Constraints();
         default:
           // default 
       }

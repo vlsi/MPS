@@ -25,35 +25,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultClassifierFieldAccessOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultClassifierFieldAccessOperation_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultClassifierMethodCallOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultClassifierMethodCallOperation_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultClassifierMethodDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultClassifierMethodDeclaration_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultClassifierType_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultClassifierType_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SuperClassifierExpresson_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new SuperClassifierExpresson_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThisClassifierExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ThisClassifierExpression_Editor());
         default:
       }
     }
@@ -70,10 +52,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new ThisClassifierExpression_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new ThisClassifierExpression_TransformationMenu());
         default:
       }
     }
@@ -111,10 +90,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SubstituteMembersInsideOfClassifier_Contribution());
-          }
-          break;
+          return Collections.<SubstituteMenu>singletonList(new SubstituteMembersInsideOfClassifier_Contribution());
         default:
       }
     }

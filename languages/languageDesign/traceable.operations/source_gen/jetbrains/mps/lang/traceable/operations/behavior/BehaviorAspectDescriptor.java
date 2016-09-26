@@ -25,10 +25,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myNode_CopyWithTraceOperation__BehaviorDescriptor;
-          }
-          break;
+          return myNode_CopyWithTraceOperation__BehaviorDescriptor;
         default:
           // default 
       }
