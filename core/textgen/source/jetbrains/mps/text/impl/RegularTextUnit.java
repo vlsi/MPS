@@ -185,7 +185,7 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   @ToRemove(version = 3.4)
   private String getLegacyEncoding() {
     Object rv;
-    if (myLegacyBuffer != null && (rv = myLegacyBuffer.getUserObject(TextGen.OUTPUT_ENCODING)) instanceof String) {
+    if (myLegacyBuffer != null && (rv = myLegacyBuffer.getUserObject(TextGenSupport.OUTPUT_ENCODING)) instanceof String) {
       return (String) rv;
     }
     return null;

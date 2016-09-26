@@ -48,6 +48,7 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public final class TextGenSupport implements TextArea {
+  /* package */ static final String OUTPUT_ENCODING = "OUTPUT_ENCODING";
   private final TextGenContext myContext;
   private final TraceInfoCollector myTraceInfoCollector;
 
@@ -170,7 +171,7 @@ public final class TextGenSupport implements TextArea {
   @Deprecated
   @ToRemove(version = 3.4)
   public void setEncoding(@Nullable String encoding) {
-    getLegacyBuffer().putUserObject(TextGen.OUTPUT_ENCODING, encoding);
+    getLegacyBuffer().putUserObject(OUTPUT_ENCODING, encoding);
   }
 
 

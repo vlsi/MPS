@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class TextGen {
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
-  public static final String OUTPUT_ENCODING = "OUTPUT_ENCODING";
   public static final String ROOT_NODE = "ROOT_NODE";
 
   public static TextGenBuffer newUserObjectHolder(SNode node) {
