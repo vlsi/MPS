@@ -131,6 +131,9 @@
       <property role="IQ2ns" value="1211979322383" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="2ZO5wSvHHyx" role="PzmwI">
+      <ref role="PrY4T" to="tpe3:h3_9g$o" resolve="MessageHolder" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hFquTD4">
     <property role="R5$K7" value="true" />
@@ -885,7 +888,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4531408400484511854" />
       <ref role="20lvS9" to="tpd4:h6MkqoE" resolve="ReportErrorStatement" />
-      <ref role="20ksaX" node="7eBNsYUkvtl" />
+      <ref role="20ksaX" node="7eBNsYUkvtl" resolve="declaration" />
     </node>
     <node concept="PrWs8" id="6EW1JnOGf1U" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
@@ -900,7 +903,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4531408400486526327" />
       <ref role="20lvS9" to="tpd4:h$a7r4L" resolve="WarningStatement" />
-      <ref role="20ksaX" node="7eBNsYUkvtl" />
+      <ref role="20ksaX" node="7eBNsYUkvtl" resolve="declaration" />
     </node>
     <node concept="PrWs8" id="6EW1JnOGkmU" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
@@ -951,7 +954,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7691029917083846666" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      <ref role="20ksaX" node="7eBNsYUkvtl" />
+      <ref role="20ksaX" node="7eBNsYUkvtl" resolve="declaration" />
     </node>
     <node concept="PrWs8" id="6EW1JnOFUJ3" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
@@ -1187,7 +1190,7 @@
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2153278993334181114" />
-      <ref role="20ksaX" node="7eBNsYUkvtl" />
+      <ref role="20ksaX" node="7eBNsYUkvtl" resolve="declaration" />
       <ref role="20lvS9" to="tpd4:hODpp5F" resolve="InfoStatement" />
     </node>
     <node concept="PrWs8" id="1RxYXnVZDNV" role="PzmwI">

@@ -61,7 +61,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.addEditorCell(createConstant_nev4di_f0());
     editorCell.addEditorCell(createRefNodeList_nev4di_g0());
     editorCell.addEditorCell(createConstant_nev4di_h0());
-    editorCell.addEditorCell(createConstant_nev4di_i0());
+    editorCell.addEditorCell(createComponent_nev4di_i0());
+    editorCell.addEditorCell(createConstant_nev4di_j0());
     return editorCell;
   }
   private EditorCell createConstant_nev4di_a0() {
@@ -220,9 +221,16 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_nev4di_i0() {
+  private EditorCell createComponent_nev4di_i0() {
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+  private EditorCell createConstant_nev4di_j0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
-    editorCell.setCellId("Constant_nev4di_i0");
+    editorCell.setCellId("Constant_nev4di_j0");
     Style style = new StyleImpl();
     new SemicolonStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

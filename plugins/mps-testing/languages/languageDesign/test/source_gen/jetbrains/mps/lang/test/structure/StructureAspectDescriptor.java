@@ -315,6 +315,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test", "AssertMatch", 0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
+    b.parent(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L);
     b.origin("r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/1211979288880");
     b.aggregate("before", 0x11a2f989195L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(true).origin("1211979305365").done();
     b.aggregate("after", 0x11a2f98d40fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(true).origin("1211979322383").done();
