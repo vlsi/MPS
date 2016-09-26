@@ -325,12 +325,18 @@
       <concept id="5573986434797682998" name="jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction" flags="ig" index="pF8on" />
       <concept id="5573986434797765074" name="jetbrains.mps.ide.httpsupport.structure.HttpRequestParameter" flags="ng" index="pFkrN" />
       <concept id="5573986434797590400" name="jetbrains.mps.ide.httpsupport.structure.RequestHandler" flags="ng" index="pFx2x">
-        <property id="8564455257661398345" name="queryPrefix" index="1pulfB" />
         <child id="5573986434797811183" name="handleFunction" index="pCJbe" />
         <child id="6004610301070397386" name="canHandleFunction" index="qDQqb" />
+        <child id="6040064942661848825" name="queryPrefix" index="std7D" />
         <child id="2332657309400291202" name="queryParameters" index="3_QDjO" />
       </concept>
       <concept id="6004610301070373654" name="jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction" flags="ig" index="qDXDn" />
+      <concept id="6040064942661848791" name="jetbrains.mps.ide.httpsupport.structure.QueryPath" flags="ng" index="std77">
+        <child id="6040064942661848818" name="segmetns" index="std7y" />
+      </concept>
+      <concept id="6040064942661848792" name="jetbrains.mps.ide.httpsupport.structure.QuerySegment" flags="ng" index="std78">
+        <property id="6040064942662280271" name="segment" index="svBHv" />
+      </concept>
       <concept id="610507601223140215" name="jetbrains.mps.ide.httpsupport.structure.RequestType" flags="ig" index="2RV3oq" />
       <concept id="4403308017441446661" name="jetbrains.mps.ide.httpsupport.structure.DeserializeFunction" flags="ig" index="3l8qDa" />
       <concept id="4403308017441390372" name="jetbrains.mps.ide.httpsupport.structure.ValueToSerializeParameter" flags="ng" index="3l8CTF" />
@@ -365,7 +371,6 @@
   </registry>
   <node concept="pFx2x" id="4yQMaPlJZ2q">
     <property role="TrG5h" value="JavaFileOpener" />
-    <property role="1pulfB" value="file" />
     <node concept="qDXDn" id="2Vd38uKuq4" role="qDQqb">
       <node concept="3clFbS" id="2Vd38uKuq5" role="2VODD2">
         <node concept="3clFbF" id="2Vd38uKu_K" role="3cqZAp">
@@ -971,10 +976,14 @@
         </node>
       </node>
     </node>
+    <node concept="std77" id="qifh9t60J4" role="std7D">
+      <node concept="std78" id="qifh9t61yM" role="std7y">
+        <property role="svBHv" value="file" />
+      </node>
+    </node>
   </node>
   <node concept="pFx2x" id="2lt1tUBuq2$">
     <property role="TrG5h" value="NodeOpener" />
-    <property role="1pulfB" value="node_ref" />
     <node concept="pF8on" id="2lt1tUBuq2_" role="pCJbe">
       <node concept="3clFbS" id="2lt1tUBuq2A" role="2VODD2">
         <node concept="3clFbJ" id="4yQMaPlI_5B" role="3cqZAp">
@@ -1055,6 +1064,11 @@
       <property role="3_QJtb" value="false" />
       <node concept="3uibUv" id="54yEpjYJDPp" role="2JBDeJ">
         <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      </node>
+    </node>
+    <node concept="std77" id="qifh9t62LH" role="std7D">
+      <node concept="std78" id="qifh9t62Md" role="std7y">
+        <property role="svBHv" value="node_ref" />
       </node>
     </node>
   </node>
@@ -1862,7 +1876,6 @@
   </node>
   <node concept="pFx2x" id="32YxhLfhS07">
     <property role="TrG5h" value="NodeReceiver" />
-    <property role="1pulfB" value="node" />
     <node concept="3_QJtf" id="32YxhLfhS1L" role="3_QDjO">
       <property role="TrG5h" value="node" />
       <property role="3_QJtb" value="true" />
@@ -2048,6 +2061,11 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="std77" id="qifh9t66jY" role="std7D">
+      <node concept="std78" id="qifh9t66kZ" role="std7y">
+        <property role="svBHv" value="node" />
       </node>
     </node>
   </node>
@@ -2594,7 +2612,6 @@
   </node>
   <node concept="pFx2x" id="xSXmQZxYrt">
     <property role="TrG5h" value="FileOpener" />
-    <property role="1pulfB" value="file" />
     <node concept="3_QJtf" id="xSXmQZxYwV" role="3_QDjO">
       <property role="TrG5h" value="file" />
       <property role="3_QJtb" value="true" />
@@ -2784,6 +2801,11 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="std77" id="5fiBL1fEkeZ" role="std7D">
+      <node concept="std78" id="5fiBL1fFjNT" role="std7y">
+        <property role="svBHv" value="file" />
       </node>
     </node>
   </node>

@@ -28,6 +28,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.common.FileOpenUtil" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" />
@@ -69,7 +71,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.common.FileOpenUtil" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" />
@@ -107,6 +111,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil" />
@@ -135,6 +141,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.ReceivedNodeDialog" />

@@ -33,7 +33,7 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
   }
 
   protected boolean checkQueryPrefix() {
-    List<String> queryPrefixSegments = HttpRequest.getSegmentsFor(getQueryPrefix());
+    List<String> queryPrefixSegments = getQueryPrefix();
     List<String> queryPathSegments = request.getSegments();
     if (ListSequence.fromList(queryPathSegments).count() < ListSequence.fromList(queryPrefixSegments).count()) {
       return false;
@@ -47,5 +47,5 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
   }
 
   protected abstract boolean initParameterValues();
-  protected abstract String getQueryPrefix();
+  protected abstract List<String> getQueryPrefix();
 }

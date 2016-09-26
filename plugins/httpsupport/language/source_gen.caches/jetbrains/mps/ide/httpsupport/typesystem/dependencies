@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.httpsupport.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.check_ParameterInitializer_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.check_QueryParameter_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.check_QuerySegment_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.check_RequestURIBuilderExpression_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.supertypesOf_RequestType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_HttpRequestParameter_InferenceRule" />
@@ -43,6 +44,20 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.typesystem.check_QuerySegment_NonTypesystemRule" file="check_QuerySegment_NonTypesystemRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

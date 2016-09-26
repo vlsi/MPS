@@ -36,9 +36,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
@@ -112,18 +109,12 @@
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4656991770397278593" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_exists" flags="nn" index="$OBjm" />
-      <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
-        <reference id="1147467295099" name="applicableProperty" index="EomxK" />
-        <child id="1212097481299" name="propertyValidator" index="QCWH9" />
-      </concept>
-      <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
       <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
         <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
-        <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213106463729" name="canBeChild" index="1MLUbF" />
       </concept>
@@ -131,7 +122,6 @@
         <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
         <child id="1148687345559" name="searchScopeFactory" index="1N6uqs" />
       </concept>
-      <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
@@ -205,24 +195,6 @@
   <node concept="1M2fIO" id="6GArDv5JHhB">
     <property role="3GE5qa" value="handler" />
     <ref role="1M2myG" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
-    <node concept="EnEH3" id="7rr3ESJCKu5" role="1MhHOB">
-      <ref role="EomxK" to="ndib:7rr3ESJC_P9" resolve="queryPrefix" />
-      <node concept="QB0g5" id="7rr3ESJCKuw" role="QCWH9">
-        <node concept="3clFbS" id="7rr3ESJCKux" role="2VODD2">
-          <node concept="3clFbF" id="7rr3ESJCKuM" role="3cqZAp">
-            <node concept="2OqwBi" id="7rr3ESJCKuO" role="3clFbG">
-              <node concept="1Wqviy" id="7rr3ESJCKuP" role="2Oq$k0" />
-              <node concept="liA8E" id="7rr3ESJCKuQ" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.matches(java.lang.String):boolean" resolve="matches" />
-                <node concept="Xl_RD" id="7rr3ESJCKuR" role="37wK5m">
-                  <property role="Xl_RC" value="[a-zA-Z0-9[-][_]/:@%]*" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="1M2fIO" id="21vgRr5y4Vv">
     <property role="3GE5qa" value="handler" />

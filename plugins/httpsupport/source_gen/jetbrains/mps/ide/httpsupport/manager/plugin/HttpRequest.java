@@ -15,7 +15,6 @@ import io.netty.buffer.Unpooled;
 import io.netty.util.CharsetUtil;
 import com.intellij.util.ExceptionUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.io.NettyKt;
 import com.intellij.openapi.util.text.StringUtil;
 import java.net.URI;
@@ -67,11 +66,10 @@ public class HttpRequest {
   }
 
   public static List<String> getSegmentsFor(String path) {
-    return Sequence.fromIterable(Sequence.fromArray(path.split("/"))).where(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return (it != null && it.length() > 0);
-      }
-    }).toListSequence();
+    if (path.startsWith("/")) {
+      path = path.substring(1);
+    }
+    return Sequence.fromIterable(Sequence.fromArray(path.split("/"))).toListSequence();
   }
 
   private static String getReferrerHost(io.netty.handler.codec.http.HttpRequest request) throws URISyntaxException {

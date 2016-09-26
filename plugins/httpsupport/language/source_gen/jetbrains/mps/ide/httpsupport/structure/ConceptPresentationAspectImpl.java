@@ -21,6 +21,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryPath = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QuerySegment = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestHandler = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestURIBuilderExpression = new ConceptPresentationBuilder().create();
@@ -53,18 +55,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 8:
         return props_QueryParameterReference;
       case 9:
-        return props_RequestHandler;
+        return props_QueryPath;
       case 10:
-        return props_RequestType;
+        return props_QuerySegment;
       case 11:
-        return props_RequestURIBuilderExpression;
+        return props_RequestHandler;
       case 12:
-        return props_ResponseSendOperation;
+        return props_RequestType;
       case 13:
-        return props_SerializeFunction;
+        return props_RequestURIBuilderExpression;
       case 14:
-        return props_SerializedValueParameter;
+        return props_ResponseSendOperation;
       case 15:
+        return props_SerializeFunction;
+      case 16:
+        return props_SerializedValueParameter;
+      case 17:
         return props_ValueToSerializeParameter;
     }
     throw new IllegalStateException();

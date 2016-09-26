@@ -37,6 +37,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -88,6 +89,9 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
+      <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
+        <child id="1207055552304" name="warningText" index="a7wSD" />
+      </concept>
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
@@ -754,6 +758,39 @@
     <node concept="1YaCAy" id="xSXmQZ_gST" role="1YuTPh">
       <property role="TrG5h" value="requestType" />
       <ref role="1YaFvo" to="ndib:xSXmQZ_cdR" resolve="RequestType" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="5fiBL1fFpuh">
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="check_QuerySegment" />
+    <node concept="3clFbS" id="5fiBL1fFpui" role="18ibNy">
+      <node concept="3clFbJ" id="5fiBL1fFr4g" role="3cqZAp">
+        <node concept="3clFbS" id="5fiBL1fFr4i" role="3clFbx">
+          <node concept="a7r0C" id="5fiBL1fFr3t" role="3cqZAp">
+            <node concept="Xl_RD" id="5fiBL1fFshk" role="a7wSD">
+              <property role="Xl_RC" value="Empty segmnet" />
+            </node>
+            <node concept="1YBJjd" id="5fiBL1fFsn1" role="2OEOjV">
+              <ref role="1YBMHb" node="5fiBL1fFpun" resolve="querySegment" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="5fiBL1fFrKY" role="3clFbw">
+          <node concept="2OqwBi" id="5fiBL1fFrb_" role="2Oq$k0">
+            <node concept="1YBJjd" id="5fiBL1fFr4I" role="2Oq$k0">
+              <ref role="1YBMHb" node="5fiBL1fFpun" resolve="querySegment" />
+            </node>
+            <node concept="3TrcHB" id="5fiBL1fFroV" role="2OqNvi">
+              <ref role="3TsBF5" to="ndib:5fiBL1fFehf" resolve="segment" />
+            </node>
+          </node>
+          <node concept="17RlXB" id="5fiBL1fFsel" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5fiBL1fFpun" role="1YuTPh">
+      <property role="TrG5h" value="querySegment" />
+      <ref role="1YaFvo" to="ndib:5fiBL1fD$Vo" resolve="QuerySegment" />
     </node>
   </node>
 </model>

@@ -11,6 +11,9 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
+        <property id="1083066089218" name="constraint" index="FLfZY" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -71,17 +74,19 @@
     <property role="3GE5qa" value="handler" />
     <property role="34LRSv" value="Request Handler" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5fiBL1fD$VT" role="1TKVEi">
+      <property role="IQ2ns" value="6040064942661848825" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="queryPrefix" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5fiBL1fD$Vn" resolve="QueryPath" />
+    </node>
     <node concept="1TJgyj" id="21vgRr5xtu2" role="1TKVEi">
       <property role="IQ2ns" value="2332657309400291202" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="queryParameters" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="21vgRr5xrgT" resolve="QueryParameter" />
-    </node>
-    <node concept="1TJgyi" id="7rr3ESJC_P9" role="1TKVEl">
-      <property role="TrG5h" value="queryPrefix" />
-      <property role="IQ2nx" value="8564455257661398345" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="5dkEk59WWZa" role="1TKVEi">
       <property role="IQ2ns" value="6004610301070397386" />
@@ -304,6 +309,36 @@
     <property role="TrG5h" value="RequestType" />
     <property role="34LRSv" value="request" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+  </node>
+  <node concept="1TIwiD" id="5fiBL1fD$Vn">
+    <property role="EcuMT" value="6040064942661848791" />
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="QueryPath" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5fiBL1fD$VM" role="1TKVEi">
+      <property role="IQ2ns" value="6040064942661848818" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="segmetns" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5fiBL1fD$Vo" resolve="QuerySegment" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5fiBL1fD$Vo">
+    <property role="EcuMT" value="6040064942661848792" />
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="QuerySegment" />
+    <property role="34LRSv" value="/" />
+    <property role="R4oN_" value="query segment" />
+    <node concept="1TJgyi" id="5fiBL1fFehf" role="1TKVEl">
+      <property role="IQ2nx" value="6040064942662280271" />
+      <property role="TrG5h" value="segment" />
+      <ref role="AX2Wp" node="5fiBL1fFehh" resolve="SegmentName" />
+    </node>
+  </node>
+  <node concept="Az7Fb" id="5fiBL1fFehh">
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="SegmentName" />
+    <property role="FLfZY" value="[a-zA-Z0-9$[_]:@&amp;=+$,]*" />
   </node>
 </model>
 

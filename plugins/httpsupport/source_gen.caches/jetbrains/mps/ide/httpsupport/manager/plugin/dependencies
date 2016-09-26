@@ -16,7 +16,6 @@
     <classNode dependClassName="java.net.URI" />
     <classNode dependClassName="java.net.URISyntaxException" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.io.NettyKt" />

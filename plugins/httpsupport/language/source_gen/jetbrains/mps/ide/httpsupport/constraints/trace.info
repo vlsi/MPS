@@ -271,34 +271,11 @@
   </root>
   <root nodeRef="r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)/7720980209310028903">
     <file name="RequestHandler_Constraints.java">
-      <node id="7720980209310028903" at="17,39,18,162" concept="10" />
-      <node id="7720980209310028903" at="22,84,23,119" concept="5" />
-      <node id="7720980209310028903" at="26,40,27,20" concept="6" />
-      <node id="7720980209310028903" at="30,70,31,44" concept="5" />
-      <node id="8564455257661441970" at="31,44,32,96" concept="6" />
-      <node id="7720980209310028903" at="34,7,35,22" concept="6" />
-      <node id="7720980209310028903" at="17,0,20,0" concept="1" trace="RequestHandler_Constraints#()V" />
-      <node id="7720980209310028903" at="25,0,29,0" concept="4" trace="hasOwnValidator#()Z" />
-      <node id="7720980209310028903" at="29,0,34,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="7720980209310028903" at="23,119,34,7" concept="2" />
-      <node id="7720980209310028903" at="21,0,37,0" concept="4" trace="getSpecifiedProperties#()Ljava/util/Map;" />
-      <scope id="7720980209310028903" at="17,39,18,162" />
-      <scope id="7720980209310028903" at="26,40,27,20" />
-      <scope id="7720980209310028903" at="30,70,32,96">
-        <var name="propertyName" id="7720980209310028903" />
-      </scope>
-      <scope id="7720980209310028903" at="17,0,20,0" />
-      <scope id="7720980209310028903" at="25,0,29,0" />
-      <scope id="7720980209310028903" at="29,0,34,0">
-        <var name="node" id="7720980209310028903" />
-        <var name="propertyValue" id="7720980209310028903" />
-      </scope>
-      <scope id="7720980209310028903" at="22,84,35,22">
-        <var name="properties" id="7720980209310028903" />
-      </scope>
-      <scope id="7720980209310028903" at="21,0,37,0" />
-      <unit id="7720980209310028903" at="24,154,34,5" name="jetbrains.mps.ide.httpsupport.constraints.RequestHandler_Constraints$1" />
-      <unit id="7720980209310028903" at="16,0,38,0" name="jetbrains.mps.ide.httpsupport.constraints.RequestHandler_Constraints" />
+      <node id="7720980209310028903" at="9,39,10,162" concept="10" />
+      <node id="7720980209310028903" at="9,0,12,0" concept="1" trace="RequestHandler_Constraints#()V" />
+      <scope id="7720980209310028903" at="9,39,10,162" />
+      <scope id="7720980209310028903" at="9,0,12,0" />
+      <unit id="7720980209310028903" at="8,0,14,0" name="jetbrains.mps.ide.httpsupport.constraints.RequestHandler_Constraints" />
     </file>
   </root>
 </debug-info>
