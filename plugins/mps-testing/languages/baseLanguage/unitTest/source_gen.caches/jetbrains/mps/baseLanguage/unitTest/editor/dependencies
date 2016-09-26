@@ -60,14 +60,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.AssertInNotNull_Editor" file="AssertInNotNull_Editor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertInNotNull_EditorBuilder_a" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNotNull_Editor" file="AssertIsNotNull_Editor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNotNull_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.AssertInNotNull_EditorBuilder_a" file="AssertInNotNull_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNotNull_EditorBuilder_a" file="AssertIsNotNull_EditorBuilder_a.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -265,7 +265,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertEquals_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertFalse_Editor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertInNotNull_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNotNull_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertIsNull_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertSame_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertThrows_Editor" />

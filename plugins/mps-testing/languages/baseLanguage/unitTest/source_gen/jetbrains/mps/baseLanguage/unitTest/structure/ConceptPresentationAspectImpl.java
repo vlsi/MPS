@@ -12,7 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AfterTest = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertEquals = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertFalse = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AssertInNotNull = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AssertIsNotNull = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertIsNull = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertSame = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertThrows = new ConceptPresentationBuilder().create();
@@ -41,8 +41,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AssertEquals;
       case LanguageConceptSwitch.AssertFalse:
         return props_AssertFalse;
-      case LanguageConceptSwitch.AssertInNotNull:
-        return props_AssertInNotNull;
+      case LanguageConceptSwitch.AssertIsNotNull:
+        return props_AssertIsNotNull;
       case LanguageConceptSwitch.AssertIsNull:
         return props_AssertIsNull;
       case LanguageConceptSwitch.AssertSame:

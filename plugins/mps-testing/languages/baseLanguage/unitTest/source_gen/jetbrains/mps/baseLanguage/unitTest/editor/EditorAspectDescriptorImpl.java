@@ -24,7 +24,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 1:
         return Collections.<ConceptEditor>singletonList(new AssertFalse_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new AssertInNotNull_Editor());
+        return Collections.<ConceptEditor>singletonList(new AssertIsNotNull_Editor());
       case 3:
         return Collections.<ConceptEditor>singletonList(new AssertIsNull_Editor());
       case 4:

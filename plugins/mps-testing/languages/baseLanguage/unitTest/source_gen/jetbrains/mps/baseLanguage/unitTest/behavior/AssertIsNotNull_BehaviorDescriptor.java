@@ -9,7 +9,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class AssertInNotNull_BehaviorDescriptor {
+public class AssertIsNotNull_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

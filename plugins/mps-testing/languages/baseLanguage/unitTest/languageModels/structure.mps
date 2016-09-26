@@ -303,7 +303,7 @@
   <node concept="1TIwiD" id="692cUnf6I3R">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="AssertInNotNull" />
+    <property role="TrG5h" value="AssertIsNotNull" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert is not null" />

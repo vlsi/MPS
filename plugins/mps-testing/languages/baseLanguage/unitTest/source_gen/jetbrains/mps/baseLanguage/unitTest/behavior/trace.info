@@ -23,8 +23,8 @@
     <file name="AssertFalse_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />
     </file>
-    <file name="AssertInNotNull_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
+    <file name="AssertIsNotNull_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNotNull_BehaviorDescriptor" />
     </file>
     <file name="AssertIsNull_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNull_BehaviorDescriptor" />

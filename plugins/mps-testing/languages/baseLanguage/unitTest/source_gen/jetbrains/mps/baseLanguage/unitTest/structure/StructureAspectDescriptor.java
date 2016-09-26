@@ -17,7 +17,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAfterTest = createDescriptorForAfterTest();
   /*package*/ final ConceptDescriptor myConceptAssertEquals = createDescriptorForAssertEquals();
   /*package*/ final ConceptDescriptor myConceptAssertFalse = createDescriptorForAssertFalse();
-  /*package*/ final ConceptDescriptor myConceptAssertInNotNull = createDescriptorForAssertInNotNull();
+  /*package*/ final ConceptDescriptor myConceptAssertIsNotNull = createDescriptorForAssertIsNotNull();
   /*package*/ final ConceptDescriptor myConceptAssertIsNull = createDescriptorForAssertIsNull();
   /*package*/ final ConceptDescriptor myConceptAssertSame = createDescriptorForAssertSame();
   /*package*/ final ConceptDescriptor myConceptAssertThrows = createDescriptorForAssertThrows();
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAfterTest, myConceptAssertEquals, myConceptAssertFalse, myConceptAssertInNotNull, myConceptAssertIsNull, myConceptAssertSame, myConceptAssertThrows, myConceptAssertTrue, myConceptBTestCase, myConceptBeforeTest, myConceptBinaryAssert, myConceptFail, myConceptITestCase, myConceptITestMethod, myConceptITestable, myConceptMessage, myConceptMessageHolder, myConceptPrepareMethod, myConceptTestMethod, myConceptTestMethodList);
+    return Arrays.asList(myConceptAfterTest, myConceptAssertEquals, myConceptAssertFalse, myConceptAssertIsNotNull, myConceptAssertIsNull, myConceptAssertSame, myConceptAssertThrows, myConceptAssertTrue, myConceptBTestCase, myConceptBeforeTest, myConceptBinaryAssert, myConceptFail, myConceptITestCase, myConceptITestMethod, myConceptITestable, myConceptMessage, myConceptMessageHolder, myConceptPrepareMethod, myConceptTestMethod, myConceptTestMethodList);
   }
 
   @Override
@@ -55,8 +55,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAssertEquals;
       case LanguageConceptSwitch.AssertFalse:
         return myConceptAssertFalse;
-      case LanguageConceptSwitch.AssertInNotNull:
-        return myConceptAssertInNotNull;
+      case LanguageConceptSwitch.AssertIsNotNull:
+        return myConceptAssertIsNotNull;
       case LanguageConceptSwitch.AssertIsNull:
         return myConceptAssertIsNull;
       case LanguageConceptSwitch.AssertSame:
@@ -127,8 +127,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("assert false");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForAssertInNotNull() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.unitTest", "AssertInNotNull", 0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x624233a5cf1ae0f7L);
+  private static ConceptDescriptor createDescriptorForAssertIsNotNull() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.unitTest", "AssertIsNotNull", 0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x624233a5cf1ae0f7L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
     b.parent(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L);
