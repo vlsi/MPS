@@ -9,11 +9,12 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,24 +30,22 @@ public final class LanguageTextGenDeclaration__BehaviorDescriptor extends BaseBH
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getParameters_idhXZLLl0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hXZLLl0").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameters_idhXZLLl0 = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hXZLLl0").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getAvailableOperations_idhXYHpEa = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAvailableOperations").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hXYHpEa").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getAvailableFunctions_idhXYGUKO = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAvailableFunctions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hXYGUKO").registry(REGISTRY).build();
   /*package*/ static final SMethod<List<SNode>> getBaseTextGenComponents_idhXYGUL$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getBaseTextGenComponents").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("hXYGUL$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getApplicableHiddenParameter_id2D1PBM_bxIF = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableHiddenParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxIF").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getApplicableHiddenParameter_id2D1PBM_bxIF = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getApplicableHiddenParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxIF").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhXZLLl0, getAvailableOperations_idhXYHpEa, getAvailableFunctions_idhXYGUKO, getBaseTextGenComponents_idhXYGUL$, getApplicableHiddenParameter_id2D1PBM_bxIF);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SNode> getParameters_idhXZLLl0(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SConcept> getParameters_idhXZLLl0(@NotNull SNode __thisNode__) {
     if (__thisNode__ == null) {
-      return ListSequence.fromList(new ArrayList<SNode>());
+      return ListSequence.fromList(new ArrayList<SConcept>());
     }
-    List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(LanguageTextGenDeclaration__BehaviorDescriptor.getApplicableHiddenParameter_id2D1PBM_bxIF.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
-    return (List<SNode>) result;
+    return LanguageTextGenDeclaration__BehaviorDescriptor.getApplicableHiddenParameter_id2D1PBM_bxIF.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)));
   }
   /*package*/ static List<SNode> getAvailableOperations_idhXYHpEa(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
@@ -81,10 +80,10 @@ public final class LanguageTextGenDeclaration__BehaviorDescriptor extends BaseBH
       return LanguageTextGenDeclaration__BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, list, (SNode) SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
     }
   }
-  /*package*/ static List<SNode> getApplicableHiddenParameter_id2D1PBM_bxIF(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234279682891"));
+  /*package*/ static List<SConcept> getApplicableHiddenParameter_id2D1PBM_bxIF(@NotNull SAbstractConcept __thisConcept__) {
+    List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f65197df2L, "jetbrains.mps.lang.textGen.structure.BufferParameter"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60cd534bL, "jetbrains.mps.lang.textGen.structure.ContextParameter"));
     return result;
   }
 
@@ -105,7 +104,7 @@ public final class LanguageTextGenDeclaration__BehaviorDescriptor extends BaseBH
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((List<SNode>) getParameters_idhXZLLl0(node));
+        return (T) ((List<SConcept>) getParameters_idhXZLLl0(node));
       case 1:
         return (T) ((List<SNode>) getAvailableOperations_idhXYHpEa(node));
       case 2:
@@ -125,7 +124,7 @@ public final class LanguageTextGenDeclaration__BehaviorDescriptor extends BaseBH
     }
     switch (methodIndex) {
       case 4:
-        return (T) ((List<SNode>) getApplicableHiddenParameter_id2D1PBM_bxIF(concept));
+        return (T) ((List<SConcept>) getApplicableHiddenParameter_id2D1PBM_bxIF(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 
@@ -36,17 +36,9 @@ public class operationParameters_Contribution extends SubstituteMenuBase {
       List<SNode> langTextGenComponents = SNodeOperations.getNodeAncestors(_context.getParentNode(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false);
       SNode langTextGen = ListSequence.fromList(langTextGenComponents).first();
       if (langTextGen != null) {
-        return ListSequence.fromList(LanguageTextGenDeclaration__BehaviorDescriptor.getParameters_idhXZLLl0.invoke(langTextGen)).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
-          }
-        }).toListSequence();
+        return LanguageTextGenDeclaration__BehaviorDescriptor.getParameters_idhXZLLl0.invoke(langTextGen);
       } else {
-        return ListSequence.fromList(ListSequence.fromList(new ArrayList<SNode>())).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
-          }
-        }).toListSequence();
+        return ListSequence.fromList(new ArrayList<SConcept>());
       }
     }
     @Override
