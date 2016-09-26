@@ -470,26 +470,20 @@
       <node id="3080189811177517668" at="149,62,150,17" concept="6" />
     </file>
     <file name="XmlFile_TextGen.java">
-      <node id="3080189811177517661" at="16,54,17,55" concept="5" />
-      <node id="3080189811177517661" at="17,55,18,25" concept="1" />
-      <node id="3080189811177517681" at="18,25,19,204" concept="1" />
-      <node id="3080189811177517661" at="20,30,21,291" concept="1" />
-      <node id="3080189811177517668" at="24,42,25,17" concept="6" />
-      <node id="3080189811177517661" at="19,204,22,5" concept="3" />
-      <node id="3080189811177517661" at="24,0,27,0" concept="4" trace="getExtension#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3080189811177517661" at="15,0,24,0" concept="4" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="3080189811177517661" at="20,30,21,291" />
-      <scope id="3080189811177517661" at="24,42,25,17" />
-      <scope id="3080189811177517661" at="24,0,27,0">
-        <var name="node" id="3080189811177517661" />
-      </scope>
-      <scope id="3080189811177517661" at="16,54,22,5">
+      <node id="3080189811177517661" at="15,54,16,55" concept="5" />
+      <node id="3080189811177517661" at="16,55,17,25" concept="1" />
+      <node id="3080189811177517681" at="17,25,18,204" concept="1" />
+      <node id="3080189811177517661" at="19,30,20,291" concept="1" />
+      <node id="3080189811177517661" at="18,204,21,5" concept="3" />
+      <node id="3080189811177517661" at="14,0,23,0" concept="4" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="3080189811177517661" at="19,30,20,291" />
+      <scope id="3080189811177517661" at="15,54,21,5">
         <var name="tgs" id="3080189811177517661" />
       </scope>
-      <scope id="3080189811177517661" at="15,0,24,0">
+      <scope id="3080189811177517661" at="14,0,23,0">
         <var name="ctx" id="3080189811177517661" />
       </scope>
-      <unit id="3080189811177517661" at="14,0,28,0" name="jetbrains.mps.core.xml.textGen.XmlFile_TextGen" />
+      <unit id="3080189811177517661" at="13,0,24,0" name="jetbrains.mps.core.xml.textGen.XmlFile_TextGen" />
     </file>
   </root>
   <root nodeRef="r:ea884767-f424-4c97-a82e-eccd57dbc217(jetbrains.mps.core.xml.textGen)/3080189811177517695">

@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -58,7 +59,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       if (root.getConcept().equals(MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a2754L, "jetbrains.mps.core.properties.structure.PropertiesFile"))) {
         String fname = getFileName_PropertiesFile(root);
         String ext = getFileExtension_PropertiesFile(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), Charset.forName(getEncoding_PropertiesFile()), root);
         continue;
       }
     }
@@ -68,6 +69,9 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   }
   private static String getFileExtension_PropertiesFile(SNode node) {
     return "properties";
+  }
+  private static String getEncoding_PropertiesFile() {
+    return "ISO-8859-1";
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
     HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();

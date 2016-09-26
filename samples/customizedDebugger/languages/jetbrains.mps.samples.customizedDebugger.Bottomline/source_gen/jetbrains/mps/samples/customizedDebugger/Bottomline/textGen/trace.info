@@ -39,20 +39,14 @@
       <node id="567241428659756160" at="48,18,49,25" concept="0" />
       <node id="567241428659757863" at="49,25,50,20" concept="0" />
       <node id="567241428659644018" at="51,30,52,291" concept="0" />
-      <node id="567241428659701633" at="55,42,56,18" concept="4" />
       <node id="567241428659749313" at="41,0,44,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="567241428659644018" at="50,20,53,5" concept="1" />
-      <node id="567241428659644018" at="55,0,58,0" concept="2" trace="getExtension#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="567241428659714798" at="39,44,44,7" concept="0" />
       <node id="567241428659644018" at="19,0,55,0" concept="2" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="567241428659749314" at="41,35,42,27" />
       <scope id="567241428659644018" at="51,30,52,291" />
-      <scope id="567241428659644018" at="55,42,56,18" />
       <scope id="567241428659749313" at="41,0,44,0">
         <var name="it" id="567241428659749313" />
-      </scope>
-      <scope id="567241428659644018" at="55,0,58,0">
-        <var name="node" id="567241428659644018" />
       </scope>
       <scope id="567241428659644018" at="20,54,53,5">
         <var name="fqName" id="567241428659662708" />
@@ -63,7 +57,7 @@
         <var name="ctx" id="567241428659644018" />
       </scope>
       <unit id="567241428659749313" at="40,224,44,5" name="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.MessageSequence_TextGen$1" />
-      <unit id="567241428659644018" at="18,0,59,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.MessageSequence_TextGen" />
+      <unit id="567241428659644018" at="18,0,56,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.MessageSequence_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="567241428659701633" at="59,70,60,18" concept="4" />
