@@ -50,7 +50,6 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
     public void test_startSimpleTestCase() throws Exception {
       List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380")));
       this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-
     }
     public void test_startFailedTestCase() throws Exception {
       List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082034140")));
@@ -81,11 +80,19 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
           }
         });
         OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
-        int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
-        if (exitcode != ListSequence.fromList(failure).count()) {
-          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);
-        } else if (exitcode < 0) {
+        int exitCode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
+        int failedMustBe = ListSequence.fromList(failure).count();
+        if (exitCode != failedMustBe) {
+          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitCode);
+        } else if (exitCode < 0) {
           Assert.fail("Process is running for too long");
+        }
+        if (runState.getFailedTests() != failedMustBe) {
+          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", but " + runState.getFailedTests());
+        }
+        int completedMustBe = ListSequence.fromList(failure).count() + ListSequence.fromList(success).count();
+        if (runState.getCompletedTests() != completedMustBe) {
+          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", but " + runState.getFailedTests());
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());
