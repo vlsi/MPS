@@ -7,9 +7,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
+import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
@@ -31,43 +30,41 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
 
   private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "file");
 
+  private boolean containsAllRequiredParameters = true;
+  private String file;
+  private Integer line;
+  private Project project;
+
+  public JavaFileOpener_RequestHandler(HttpRequest request) {
+    super(request);
+
+    {
+      String file_serialized = ListSequence.fromList(this.request.getParameterValue("file")).getElement(0);
+      if (file_serialized == null) {
+        containsAllRequiredParameters = false;
+      }
+      this.file = file_serialized;
+    }
+    {
+      String line_serialized = ListSequence.fromList(this.request.getParameterValue("line")).getElement(0);
+      this.line = HttpSupportUtil.silentParseInt(line_serialized);
+    }
+    {
+      String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
+      this.project = HttpSupportUtil.getProjectByName(project_serialized);
+    }
+  }
+
+
   @Override
   protected List<String> getQueryPrefix() {
     return QUERY_PREFIX;
   }
 
-  private String file;
-  private Integer line;
-  private Project project;
 
   @Override
-  protected boolean initParameterValues() {
-
-    {
-      String file_serialized = ListSequence.fromList(request.getParameterValue("file")).getElement(0);
-      if (file_serialized == null) {
-        return false;
-      }
-      this.file = file_serialized;
-
-    }
-    {
-      String line_serialized = ListSequence.fromList(request.getParameterValue("line")).getElement(0);
-      this.line = HttpSupportUtil.silentParseInt(line_serialized);
-
-    }
-    {
-      String project_serialized = ListSequence.fromList(request.getParameterValue("project")).getElement(0);
-      this.project = HttpSupportUtil.getProjectByName(project_serialized);
-
-    }
-    return true;
-  }
-
-
-  @Override
-  public boolean canHandle(@NotNull HttpRequest request) {
-    if (!(init(request))) {
+  public boolean canHandle() {
+    if (!(containsAllRequiredParameters)) {
       return false;
     }
 
@@ -76,7 +73,7 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
 
   protected static Logger LOG = LogManager.getLogger(JavaFileOpener_RequestHandler.class);
   @Override
-  public void handle(@NotNull HttpRequest request) throws Exception {
+  public void handle() throws Exception {
 
     if (this.project != null) {
       final com.intellij.openapi.project.Project ideaProject = ((this.project instanceof MPSProject) ? ((MPSProject) this.project).getProject() : null);

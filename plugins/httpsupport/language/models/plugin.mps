@@ -34,8 +34,8 @@
   <node concept="vrV6u" id="3UM$haIoGX9">
     <property role="TrG5h" value="HttpRequestHandlerEP" />
     <property role="3GE5qa" value="handler" />
-    <node concept="3uibUv" id="3UM$haIoHmW" role="luc8K">
-      <ref role="3uigEE" to="4h87:7IkZ1uxyiq5" resolve="IHttpRequestHandler" />
+    <node concept="3uibUv" id="3D_I_vuCfow" role="luc8K">
+      <ref role="3uigEE" to="4h87:3D_I_vuBX$7" resolve="IHttpRequestHandlerFactory" />
     </node>
   </node>
 </model>

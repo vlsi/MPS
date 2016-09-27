@@ -8,10 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
@@ -22,37 +21,36 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
   private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "node_ref");
 
+  private boolean containsAllRequiredParameters = true;
+  private SNodeReference ref;
+  private Project project;
+
+  public NodeOpener_RequestHandler(HttpRequest request) {
+    super(request);
+
+    {
+      String ref_serialized = ListSequence.fromList(this.request.getParameterValue("ref")).getElement(0);
+      if (ref_serialized == null) {
+        containsAllRequiredParameters = false;
+      }
+      this.ref = PersistenceFacade.getInstance().createNodeReference(ref_serialized);
+    }
+    {
+      String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
+      this.project = HttpSupportUtil.getProjectByName(project_serialized);
+    }
+  }
+
+
   @Override
   protected List<String> getQueryPrefix() {
     return QUERY_PREFIX;
   }
 
-  private SNodeReference ref;
-  private Project project;
 
   @Override
-  protected boolean initParameterValues() {
-
-    {
-      String ref_serialized = ListSequence.fromList(request.getParameterValue("ref")).getElement(0);
-      if (ref_serialized == null) {
-        return false;
-      }
-      this.ref = PersistenceFacade.getInstance().createNodeReference(ref_serialized);
-
-    }
-    {
-      String project_serialized = ListSequence.fromList(request.getParameterValue("project")).getElement(0);
-      this.project = HttpSupportUtil.getProjectByName(project_serialized);
-
-    }
-    return true;
-  }
-
-
-  @Override
-  public boolean canHandle(@NotNull HttpRequest request) {
-    if (!(init(request))) {
+  public boolean canHandle() {
+    if (!(containsAllRequiredParameters)) {
       return false;
     }
 
@@ -61,7 +59,7 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
   protected static Logger LOG = LogManager.getLogger(NodeOpener_RequestHandler.class);
   @Override
-  public void handle(@NotNull HttpRequest request) throws Exception {
+  public void handle() throws Exception {
     if (this.project != null) {
       this.project.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {

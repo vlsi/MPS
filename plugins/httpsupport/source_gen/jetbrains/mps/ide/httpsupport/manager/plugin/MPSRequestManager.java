@@ -34,12 +34,13 @@ public class MPSRequestManager extends HttpRequestHandler {
       return false;
     }
 
-    for (IHttpRequestHandler handler : Sequence.fromIterable(new ExtensionPoint<IHttpRequestHandler>("jetbrains.mps.ide.httpsupport.HttpRequestHandlerEP").getObjects())) {
-      if (handler.canHandle(boxedRequest)) {
+    for (IHttpRequestHandlerFactory handlerFactory : Sequence.fromIterable(new ExtensionPoint<IHttpRequestHandlerFactory>("jetbrains.mps.ide.httpsupport.HttpRequestHandlerEP").getObjects())) {
+      IHttpRequestHandler handler = handlerFactory.create(boxedRequest);
+      if (handler.canHandle()) {
         try {
-          handler.handle(boxedRequest);
+          handler.handle();
         } catch (Exception e) {
-          String errorHeader = "Request handler '" + handler.getName() + "' throws exception";
+          String errorHeader = "Request handler '" + handlerFactory.getHandlerName() + "' throws exception";
 
           boxedRequest.sendErrorResponse(HttpResponseStatus.INTERNAL_SERVER_ERROR, errorHeader, e);
           if (LOG.isEnabledFor(Level.ERROR)) {

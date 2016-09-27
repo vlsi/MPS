@@ -353,23 +353,39 @@
         <node concept="3clFbH" id="6qcSpWPRlWu" role="3cqZAp" />
         <node concept="2Gpval" id="7IkZ1uxyusv" role="3cqZAp">
           <node concept="2GrKxI" id="7IkZ1uxyusx" role="2Gsz3X">
-            <property role="TrG5h" value="handler" />
+            <property role="TrG5h" value="handlerFactory" />
           </node>
           <node concept="3clFbS" id="7IkZ1uxyus_" role="2LFqv$">
+            <node concept="3cpWs8" id="3D_I_vuChGC" role="3cqZAp">
+              <node concept="3cpWsn" id="3D_I_vuChGD" role="3cpWs9">
+                <property role="TrG5h" value="handler" />
+                <node concept="3uibUv" id="3D_I_vuChGE" role="1tU5fm">
+                  <ref role="3uigEE" node="7IkZ1uxyiq5" resolve="IHttpRequestHandler" />
+                </node>
+                <node concept="2OqwBi" id="3D_I_vuChY5" role="33vP2m">
+                  <node concept="2GrUjf" id="3D_I_vuChSf" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handlerFactory" />
+                  </node>
+                  <node concept="liA8E" id="3D_I_vuCifb" role="2OqNvi">
+                    <ref role="37wK5l" node="3D_I_vuCcUR" resolve="create" />
+                    <node concept="37vLTw" id="3D_I_vuCiBw" role="37wK5m">
+                      <ref role="3cqZAo" node="24d57bnBvUG" resolve="boxedRequest" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="6qcSpWPRll$" role="3cqZAp">
               <node concept="3clFbS" id="6qcSpWPRllA" role="3clFbx">
                 <node concept="2GUZhq" id="5dkEk59X871" role="3cqZAp">
                   <node concept="3clFbS" id="7IkZ1uxy$RQ" role="2GV8ay">
                     <node concept="3clFbF" id="7IkZ1uxy_l8" role="3cqZAp">
-                      <node concept="2OqwBi" id="7IkZ1uxy_EK" role="3clFbG">
-                        <node concept="2GrUjf" id="7IkZ1uxy_Bt" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handler" />
+                      <node concept="2OqwBi" id="3D_I_vuCk5t" role="3clFbG">
+                        <node concept="37vLTw" id="3D_I_vuCjTf" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3D_I_vuChGD" resolve="handler" />
                         </node>
-                        <node concept="liA8E" id="50XTAQ1LbLF" role="2OqNvi">
+                        <node concept="liA8E" id="3D_I_vuCkhE" role="2OqNvi">
                           <ref role="37wK5l" node="7IkZ1uxyivm" resolve="handle" />
-                          <node concept="37vLTw" id="4J0sGrnwRqy" role="37wK5m">
-                            <ref role="3cqZAo" node="24d57bnBvUG" resolve="boxedRequest" />
-                          </node>
                         </node>
                       </node>
                     </node>
@@ -393,10 +409,10 @@
                               </node>
                               <node concept="2OqwBi" id="5dkEk59XdNB" role="3uHU7w">
                                 <node concept="2GrUjf" id="5dkEk59XdNC" role="2Oq$k0">
-                                  <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handler" />
+                                  <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handlerFactory" />
                                 </node>
                                 <node concept="liA8E" id="5dkEk59XdND" role="2OqNvi">
-                                  <ref role="37wK5l" node="6qcSpWPQxIi" resolve="getName" />
+                                  <ref role="37wK5l" node="6qcSpWPQxIi" resolve="getHandlerName" />
                                 </node>
                               </node>
                             </node>
@@ -448,15 +464,12 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="5dkEk59X6_Y" role="3clFbw">
-                <node concept="2GrUjf" id="5dkEk59X6r2" role="2Oq$k0">
-                  <ref role="2Gs0qQ" node="7IkZ1uxyusx" resolve="handler" />
+              <node concept="2OqwBi" id="3D_I_vuCjkS" role="3clFbw">
+                <node concept="37vLTw" id="3D_I_vuCjdG" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3D_I_vuChGD" resolve="handler" />
                 </node>
-                <node concept="liA8E" id="5dkEk59X6YF" role="2OqNvi">
+                <node concept="liA8E" id="3D_I_vuCjwV" role="2OqNvi">
                   <ref role="37wK5l" node="5dkEk59WQFn" resolve="canHandle" />
-                  <node concept="37vLTw" id="4J0sGrnwQvo" role="37wK5m">
-                    <ref role="3cqZAo" node="24d57bnBvUG" resolve="boxedRequest" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -484,31 +497,10 @@
   <node concept="3HP615" id="7IkZ1uxyiq5">
     <property role="TrG5h" value="IHttpRequestHandler" />
     <node concept="2tJIrI" id="7IkZ1uxyvkG" role="jymVt" />
-    <node concept="3clFb_" id="6qcSpWPQxIi" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="getName" />
-      <node concept="3clFbS" id="6qcSpWPQxIl" role="3clF47" />
-      <node concept="3Tm1VV" id="6qcSpWPQxIm" role="1B3o_S" />
-      <node concept="17QB3L" id="6qcSpWPQxHR" role="3clF45" />
-      <node concept="2AHcQZ" id="6qcSpWPQ$Lr" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5FAyHK_FiVQ" role="jymVt" />
     <node concept="3clFb_" id="5dkEk59WQFn" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="canHandle" />
-      <node concept="37vLTG" id="5dkEk59WQVK" role="3clF46">
-        <property role="TrG5h" value="request" />
-        <node concept="3uibUv" id="5dkEk59WR0g" role="1tU5fm">
-          <ref role="3uigEE" node="6GArDv5HYVM" resolve="HttpRequest" />
-        </node>
-        <node concept="2AHcQZ" id="5dkEk59WR19" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
       <node concept="3clFbS" id="5dkEk59WQFq" role="3clF47" />
       <node concept="3Tm1VV" id="5dkEk59WQFr" role="1B3o_S" />
       <node concept="10P_77" id="5dkEk59WQE_" role="3clF45" />
@@ -518,15 +510,6 @@
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="handle" />
-      <node concept="37vLTG" id="7IkZ1uxyiwn" role="3clF46">
-        <property role="TrG5h" value="request" />
-        <node concept="3uibUv" id="24d57bnBukH" role="1tU5fm">
-          <ref role="3uigEE" node="6GArDv5HYVM" resolve="HttpRequest" />
-        </node>
-        <node concept="2AHcQZ" id="7IkZ1uxywND" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
       <node concept="3clFbS" id="7IkZ1uxyivp" role="3clF47" />
       <node concept="3Tm1VV" id="7IkZ1uxyivq" role="1B3o_S" />
       <node concept="3cqZAl" id="5dkEk59WR5q" role="3clF45" />
@@ -1330,6 +1313,45 @@
     <node concept="3uibUv" id="G$0uqqC9TU" role="1zkMxy">
       <ref role="3uigEE" to="iwnc:~CustomPortServerManagerBase" resolve="CustomPortServerManagerBase" />
     </node>
+  </node>
+  <node concept="3HP615" id="3D_I_vuBX$7">
+    <property role="TrG5h" value="IHttpRequestHandlerFactory" />
+    <node concept="2tJIrI" id="3D_I_vuBX$T" role="jymVt" />
+    <node concept="3clFb_" id="6qcSpWPQxIi" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getHandlerName" />
+      <node concept="3clFbS" id="6qcSpWPQxIl" role="3clF47" />
+      <node concept="3Tm1VV" id="6qcSpWPQxIm" role="1B3o_S" />
+      <node concept="17QB3L" id="6qcSpWPQxHR" role="3clF45" />
+      <node concept="2AHcQZ" id="6qcSpWPQ$Lr" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3D_I_vuCkGH" role="jymVt" />
+    <node concept="3clFb_" id="3D_I_vuCcUR" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="create" />
+      <node concept="3clFbS" id="3D_I_vuCcUU" role="3clF47" />
+      <node concept="3Tm1VV" id="3D_I_vuCcUV" role="1B3o_S" />
+      <node concept="3uibUv" id="3D_I_vuCd0s" role="3clF45">
+        <ref role="3uigEE" node="7IkZ1uxyiq5" resolve="IHttpRequestHandler" />
+      </node>
+      <node concept="37vLTG" id="3D_I_vuCcY7" role="3clF46">
+        <property role="TrG5h" value="request" />
+        <node concept="3uibUv" id="3D_I_vuCcY6" role="1tU5fm">
+          <ref role="3uigEE" node="6GArDv5HYVM" resolve="HttpRequest" />
+        </node>
+        <node concept="2AHcQZ" id="3D_I_vuCd9R" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3D_I_vuCd9b" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="3D_I_vuBX$8" role="1B3o_S" />
   </node>
 </model>
 

@@ -7,9 +7,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
+import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
@@ -20,37 +19,36 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
 
   private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "file");
 
+  private boolean containsAllRequiredParameters = true;
+  private String file;
+  private Project project;
+
+  public FileOpener_RequestHandler(HttpRequest request) {
+    super(request);
+
+    {
+      String file_serialized = ListSequence.fromList(this.request.getParameterValue("file")).getElement(0);
+      if (file_serialized == null) {
+        containsAllRequiredParameters = false;
+      }
+      this.file = file_serialized;
+    }
+    {
+      String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
+      this.project = HttpSupportUtil.getProjectByName(project_serialized);
+    }
+  }
+
+
   @Override
   protected List<String> getQueryPrefix() {
     return QUERY_PREFIX;
   }
 
-  private String file;
-  private Project project;
 
   @Override
-  protected boolean initParameterValues() {
-
-    {
-      String file_serialized = ListSequence.fromList(request.getParameterValue("file")).getElement(0);
-      if (file_serialized == null) {
-        return false;
-      }
-      this.file = file_serialized;
-
-    }
-    {
-      String project_serialized = ListSequence.fromList(request.getParameterValue("project")).getElement(0);
-      this.project = HttpSupportUtil.getProjectByName(project_serialized);
-
-    }
-    return true;
-  }
-
-
-  @Override
-  public boolean canHandle(@NotNull HttpRequest request) {
-    if (!(init(request))) {
+  public boolean canHandle() {
+    if (!(containsAllRequiredParameters)) {
       return false;
     }
 
@@ -58,9 +56,9 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
   }
 
   @Override
-  public void handle(@NotNull HttpRequest request) throws Exception {
+  public void handle() throws Exception {
     if (this.project instanceof MPSProject) {
-      final com.intellij.openapi.project.Project ideaProject = as_tdoo4z_a0a0a0a0n(this.project, MPSProject.class).getProject();
+      final com.intellij.openapi.project.Project ideaProject = as_tdoo4z_a0a0a0a0p(this.project, MPSProject.class).getProject();
       VirtualFile projectFile = ideaProject.getBaseDir();
       if (projectFile != null) {
         final VirtualFile virtualFile = projectFile.findFileByRelativePath(this.file);
@@ -79,7 +77,7 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
 
     this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
   }
-  private static <T> T as_tdoo4z_a0a0a0a0n(Object o, Class<T> type) {
+  private static <T> T as_tdoo4z_a0a0a0a0p(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -4,35 +4,20 @@ package jetbrains.mps.ide.httpsupport.runtime.base;
 
 import jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
-import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Objects;
 
 public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
 
-  protected HttpRequest request;
+  protected final HttpRequest request;
 
-  @NotNull
-  @Override
-  public String getName() {
-    return getClass().getSimpleName();
-  }
-
-
-  protected boolean init(@NotNull HttpRequest request) {
-    if (this.request == request) {
-      return true;
-    }
-
+  public HttpRequestHandlerBase(HttpRequest request) {
     this.request = request;
-    if (!(checkQueryPrefix())) {
-      return false;
-    }
-    return initParameterValues();
   }
 
-  protected boolean checkQueryPrefix() {
+  @Override
+  public boolean canHandle() {
     List<String> queryPrefixSegments = getQueryPrefix();
     List<String> queryPathSegments = request.getSegments();
     if (ListSequence.fromList(queryPathSegments).count() < ListSequence.fromList(queryPrefixSegments).count()) {
@@ -46,6 +31,5 @@ public abstract class HttpRequestHandlerBase implements IHttpRequestHandler {
     return true;
   }
 
-  protected abstract boolean initParameterValues();
   protected abstract List<String> getQueryPrefix();
 }

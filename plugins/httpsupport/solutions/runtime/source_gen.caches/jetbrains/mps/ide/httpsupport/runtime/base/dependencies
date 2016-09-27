@@ -7,7 +7,6 @@
     <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil" file="HttpSupportUtil.java">

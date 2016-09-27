@@ -44,8 +44,17 @@
     <file name="QueryParameter_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.QueryParameter_BehaviorDescriptor" />
     </file>
+    <file name="QueryPath_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.QueryPath_BehaviorDescriptor" />
+    </file>
+    <file name="QuerySegment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.QuerySegment_BehaviorDescriptor" />
+    </file>
     <file name="RequestHandler_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestHandler_BehaviorDescriptor" />
+    </file>
+    <file name="RequestType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestType_BehaviorDescriptor" />
     </file>
     <file name="RequestURIBuilderExpression_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression_BehaviorDescriptor" />

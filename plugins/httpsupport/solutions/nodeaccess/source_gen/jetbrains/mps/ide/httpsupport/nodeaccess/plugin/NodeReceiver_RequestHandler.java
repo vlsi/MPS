@@ -8,9 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
+import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.EditableModelDescriptor;
@@ -25,37 +24,36 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
 
   private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "node");
 
+  private boolean containsAllRequiredParameters = true;
+  private SNode node;
+  private Project project;
+
+  public NodeReceiver_RequestHandler(HttpRequest request) {
+    super(request);
+
+    {
+      String node_serialized = ListSequence.fromList(this.request.getParameterValue("node")).getElement(0);
+      if (node_serialized == null) {
+        containsAllRequiredParameters = false;
+      }
+      this.node = new nodeByModelPersistence_Converter().fromString(node_serialized);
+    }
+    {
+      String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
+      this.project = HttpSupportUtil.getProjectByName(project_serialized);
+    }
+  }
+
+
   @Override
   protected List<String> getQueryPrefix() {
     return QUERY_PREFIX;
   }
 
-  private SNode node;
-  private Project project;
 
   @Override
-  protected boolean initParameterValues() {
-
-    {
-      String node_serialized = ListSequence.fromList(request.getParameterValue("node")).getElement(0);
-      if (node_serialized == null) {
-        return false;
-      }
-      this.node = new nodeByModelPersistence_Converter().fromString(node_serialized);
-
-    }
-    {
-      String project_serialized = ListSequence.fromList(request.getParameterValue("project")).getElement(0);
-      this.project = HttpSupportUtil.getProjectByName(project_serialized);
-
-    }
-    return true;
-  }
-
-
-  @Override
-  public boolean canHandle(@NotNull HttpRequest request) {
-    if (!(init(request))) {
+  public boolean canHandle() {
+    if (!(containsAllRequiredParameters)) {
       return false;
     }
 
@@ -64,17 +62,17 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
 
   protected static Logger LOG = LogManager.getLogger(NodeReceiver_RequestHandler.class);
   @Override
-  public void handle(@NotNull HttpRequest request) throws Exception {
+  public void handle() throws Exception {
 
     this.project.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         try {
-          EditableModelDescriptor tmpModel = as_how0yc_a0a0a0a0a0a0a1a41(TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule()), EditableModelDescriptor.class);
+          EditableModelDescriptor tmpModel = as_how0yc_a0a0a0a0a0a0a1a61(TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule()), EditableModelDescriptor.class);
 
           tmpModel.addRootNode(NodeReceiver_RequestHandler.this.node);
           TemporaryModels.getInstance().addMissingImports(tmpModel);
 
-          ReceivedNodeDialog dialog = new ReceivedNodeDialog(as_how0yc_a0a0a5a0a0a0a0a1a41(NodeReceiver_RequestHandler.this.project, MPSProject.class), NodeReceiver_RequestHandler.this.node);
+          ReceivedNodeDialog dialog = new ReceivedNodeDialog(as_how0yc_a0a0a5a0a0a0a0a1a61(NodeReceiver_RequestHandler.this.project, MPSProject.class), NodeReceiver_RequestHandler.this.node);
           dialog.show();
 
           NodeReceiver_RequestHandler.this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer((dialog.isOK() ? HandlerUtil.SUCCESS_STREAM : HandlerUtil.FAILURE_STREAM)));
@@ -87,10 +85,10 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
       }
     });
   }
-  private static <T> T as_how0yc_a0a0a0a0a0a0a1a41(Object o, Class<T> type) {
+  private static <T> T as_how0yc_a0a0a0a0a0a0a1a61(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_how0yc_a0a0a5a0a0a0a0a1a41(Object o, Class<T> type) {
+  private static <T> T as_how0yc_a0a0a5a0a0a0a0a1a61(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

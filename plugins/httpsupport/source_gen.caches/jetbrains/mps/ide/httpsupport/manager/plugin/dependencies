@@ -23,8 +23,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" file="IHttpRequestHandler.java">
     <classNode dependClassName="java.lang.Exception" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" file="IHttpRequestHandlerFactory.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" file="MPSRequestManager.java">
@@ -40,6 +43,7 @@
     <classNode dependClassName="java.net.URISyntaxException" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode dependClassName="org.apache.log4j.Level" />
