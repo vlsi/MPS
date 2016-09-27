@@ -35,7 +35,7 @@ public final class ColorReference__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static Color findColor_id1Os2kBLuoy8(@NotNull SNode __thisNode__) {
-    SNode color = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, 0x3a2b0182df22029aL, "color"));
+    SNode color = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, 0x3a2b0182df22029aL, "target"));
     if (color == null) {
       return Color.BLUE;
     }
