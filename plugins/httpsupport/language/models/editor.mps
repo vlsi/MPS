@@ -310,9 +310,6 @@
     <property role="3GE5qa" value="handler" />
     <ref role="1XX52x" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
     <node concept="3EZMnI" id="21vgRr5xrjL" role="2wV5jI">
-      <node concept="3F1sOY" id="54yEpjYJ$Fa" role="3EZMnx">
-        <ref role="1NtTu8" to="ndib:54yEpjYJ3CV" resolve="type" />
-      </node>
       <node concept="3F0A7n" id="21vgRr5xrjV" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
@@ -320,12 +317,8 @@
       <node concept="3F0ifn" id="3OrGkZCk3BZ" role="3EZMnx">
         <property role="3F0ifm" value="converter:" />
       </node>
-      <node concept="1iCGBv" id="3OrGkZCk3UX" role="3EZMnx">
-        <property role="1$x2rV" value="default" />
-        <ref role="1NtTu8" to="ndib:3OrGkZCk3us" resolve="parameterConverter" />
-        <node concept="1sVBvm" id="3OrGkZCk3V0" role="1sWHZn">
-          <node concept="3SHvHV" id="3OrGkZCkeIF" role="2wV5jI" />
-        </node>
+      <node concept="3F1sOY" id="4rKp80ZJWpp" role="3EZMnx">
+        <ref role="1NtTu8" to="ndib:4rKp80ZJVCf" resolve="parameterConverter" />
       </node>
       <node concept="3F0ifn" id="21vgRr5xrk5" role="3EZMnx">
         <property role="3F0ifm" value="required" />
@@ -477,7 +470,7 @@
   </node>
   <node concept="24kQdi" id="3OrGkZCe517">
     <property role="3GE5qa" value="converter" />
-    <ref role="1XX52x" to="ndib:3OrGkZCe516" resolve="ParameterConverter" />
+    <ref role="1XX52x" to="ndib:3OrGkZCe516" resolve="ParameterConverterDeclaration" />
     <node concept="3EZMnI" id="3OrGkZCe519" role="2wV5jI">
       <node concept="3F0ifn" id="3OrGkZCeaje" role="3EZMnx">
         <property role="3F0ifm" value="parameter converter" />
@@ -734,6 +727,40 @@
           <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4rKp80ZJrhB">
+    <property role="3GE5qa" value="handler" />
+    <ref role="1XX52x" to="ndib:4rKp80ZJrh_" resolve="ParameterConverterReference" />
+    <node concept="1iCGBv" id="4rKp80ZJrhC" role="2wV5jI">
+      <ref role="1NtTu8" to="ndib:4rKp80ZJrhA" resolve="declaration" />
+      <node concept="1sVBvm" id="4rKp80ZJrhD" role="1sWHZn">
+        <node concept="3F0A7n" id="4rKp80ZJrhE" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4rKp80ZJsGL">
+    <property role="3GE5qa" value="handler" />
+    <ref role="1XX52x" to="ndib:4rKp80ZJsGI" resolve="DefaultParameterConverter" />
+    <node concept="3EZMnI" id="4rKp80ZJsGN" role="2wV5jI">
+      <node concept="PMmxH" id="4rKp80ZJsHi" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="4rKp80ZJsH0" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="4rKp80ZJsHB" role="3EZMnx">
+        <ref role="1NtTu8" to="ndib:4rKp80ZJsH8" resolve="parameterType" />
+      </node>
+      <node concept="3F0ifn" id="4rKp80ZJsHL" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="4rKp80ZJsGQ" role="2iSdaV" />
     </node>
   </node>
 </model>

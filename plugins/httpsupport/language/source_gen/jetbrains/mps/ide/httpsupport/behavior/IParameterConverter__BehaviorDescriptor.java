@@ -16,29 +16,23 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ValueToSerializeParameter__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8393f24L, "jetbrains.mps.ide.httpsupport.structure.ValueToSerializeParameter");
+public final class IParameterConverter__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L, "jetbrains.mps.ide.httpsupport.structure.IParameterConverter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getType_id27DJnJtIQ9C = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("27DJnJtIQ9C").registry(REGISTRY).build();
+  public static final SMethod<SNode> getParameterType_id4rKp80ZJrgq = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameterType").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4rKp80ZJrgq").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id27DJnJtIQ9C);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterType_id4rKp80ZJrgq);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__)), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterDeclaration")), MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x3d1bb14fe83869abL, "parameterType"));
-  }
 
-  /*package*/ ValueToSerializeParameter__BehaviorDescriptor() {
+  /*package*/ IParameterConverter__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -54,8 +48,6 @@ public final class ValueToSerializeParameter__BehaviorDescriptor extends BaseBHD
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 0:
-        return (T) ((SNode) getType_id27DJnJtIQ9C(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

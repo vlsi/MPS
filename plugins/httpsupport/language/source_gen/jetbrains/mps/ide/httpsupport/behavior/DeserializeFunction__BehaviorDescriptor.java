@@ -38,7 +38,7 @@ public final class DeserializeFunction__BehaviorDescriptor extends BaseBHDescrip
   }
 
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverter")), MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x3d1bb14fe83869abL, "parameterType"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterDeclaration")), MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x3d1bb14fe83869abL, "parameterType"));
   }
   /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838c5e4L, "jetbrains.mps.ide.httpsupport.structure.SerializedValueParameter").getDeclarationNode());

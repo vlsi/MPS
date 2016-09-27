@@ -22,6 +22,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -123,8 +124,8 @@
   <node concept="1TIwiD" id="21vgRr5xrgT">
     <property role="EcuMT" value="2332657309400282169" />
     <property role="TrG5h" value="QueryParameter" />
-    <property role="34LRSv" value="parameter" />
     <property role="3GE5qa" value="handler" />
+    <property role="R4oN_" value="Query Parameter" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="21vgRr5xrgX" role="1TKVEl">
       <property role="IQ2nx" value="2332657309400282173" />
@@ -137,19 +138,12 @@
     <node concept="PrWs8" id="xSXmQZxIZW" role="PzmwI">
       <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
     </node>
-    <node concept="1TJgyj" id="3OrGkZCk3us" role="1TKVEi">
-      <property role="IQ2ns" value="4403308017442895772" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="parameterConverter" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="3OrGkZCe516" resolve="ParameterConverter" />
-    </node>
-    <node concept="1TJgyj" id="54yEpjYJ3CV" role="1TKVEi">
-      <property role="IQ2ns" value="5846421723674327611" />
+    <node concept="1TJgyj" id="4rKp80ZJVCf" role="1TKVEi">
+      <property role="IQ2ns" value="5111696079053634063" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="type" />
+      <property role="20kJfa" value="parameterConverter" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+      <ref role="20lvS9" node="4rKp80ZJrfN" resolve="IParameterConverter" />
     </node>
   </node>
   <node concept="1TIwiD" id="21vgRr5y4Ul">
@@ -199,7 +193,7 @@
   </node>
   <node concept="1TIwiD" id="3OrGkZCe516">
     <property role="EcuMT" value="4403308017441329222" />
-    <property role="TrG5h" value="ParameterConverter" />
+    <property role="TrG5h" value="ParameterConverterDeclaration" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="converter" />
     <property role="34LRSv" value="Parameter Converter" />
@@ -339,6 +333,45 @@
     <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="SegmentName" />
     <property role="FLfZY" value="[a-zA-Z0-9$[_]:@&amp;=+$,]*" />
+  </node>
+  <node concept="PlHQZ" id="4rKp80ZJrfN">
+    <property role="EcuMT" value="5111696079053501427" />
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="IParameterConverter" />
+  </node>
+  <node concept="1TIwiD" id="4rKp80ZJrh_">
+    <property role="EcuMT" value="5111696079053501541" />
+    <property role="TrG5h" value="ParameterConverterReference" />
+    <property role="3GE5qa" value="handler" />
+    <property role="R4oN_" value="Parameter Converter" />
+    <node concept="1TJgyj" id="4rKp80ZJrhA" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="5111696079053501542" />
+      <property role="20kJfa" value="declaration" />
+      <ref role="20lvS9" node="3OrGkZCe516" resolve="ParameterConverterDeclaration" />
+    </node>
+    <node concept="PrWs8" id="4rKp80ZJrhF" role="PzmwI">
+      <ref role="PrY4T" node="4rKp80ZJrfN" resolve="IParameterConverter" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4rKp80ZJsGI">
+    <property role="EcuMT" value="5111696079053507374" />
+    <property role="3GE5qa" value="handler" />
+    <property role="TrG5h" value="DefaultParameterConverter" />
+    <property role="34LRSv" value="default" />
+    <property role="R4oN_" value="Default Parameter Converter" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4rKp80ZJsGJ" role="PzmwI">
+      <ref role="PrY4T" node="4rKp80ZJrfN" resolve="IParameterConverter" />
+    </node>
+    <node concept="1TJgyj" id="4rKp80ZJsH8" role="1TKVEi">
+      <property role="IQ2ns" value="5111696079053507400" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
   </node>
 </model>
 

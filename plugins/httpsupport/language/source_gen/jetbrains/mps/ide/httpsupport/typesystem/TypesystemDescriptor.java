@@ -10,6 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_DefaultParameterConverter_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_HttpRequestParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

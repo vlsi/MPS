@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.ide.httpsupport.behavior.IParameterConverter__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class typeof_QueryParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -20,14 +20,7 @@ public class typeof_QueryParameter_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = queryParameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)", "5846421723674361162", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)", "5846421723674358956", true), (SNode) SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x5122a994febc3a3bL, "type")), _info_12389875345);
-    }
-    if (!(typeCheckingContext.isSingleTypeComputation())) {
-      {
-        SNode _nodeToCheck_1029348928467 = queryParameter;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "parameter converter " + SPropertyOperations.getString(SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x3d1bb14fe850379cL, "parameterConverter")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is applicable only for supertypes of " + SLinkOperations.getTarget(SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x3d1bb14fe850379cL, "parameterConverter")), MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x3d1bb14fe83869abL, "parameterType")), "r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)", "5846421723674366220", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x5122a994febc3a3bL, "type")), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x3d1bb14fe850379cL, "parameterConverter")), MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x3d1bb14fe83869abL, "parameterType")), true, true, _info_12389875345);
-      }
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)", "5846421723674358956", true), (SNode) IParameterConverter__BehaviorDescriptor.getParameterType_id4rKp80ZJrgq.invoke(SLinkOperations.getTarget(queryParameter, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x46f064803fbfba0fL, "parameterConverter"))), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {

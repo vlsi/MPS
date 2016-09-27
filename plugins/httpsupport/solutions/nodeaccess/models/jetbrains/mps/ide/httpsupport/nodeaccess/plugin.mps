@@ -342,7 +342,7 @@
       <concept id="4403308017441390372" name="jetbrains.mps.ide.httpsupport.structure.ValueToSerializeParameter" flags="ng" index="3l8CTF" />
       <concept id="4403308017441350905" name="jetbrains.mps.ide.httpsupport.structure.SerializeFunction" flags="ig" index="3l8LmQ" />
       <concept id="4403308017441359332" name="jetbrains.mps.ide.httpsupport.structure.SerializedValueParameter" flags="ng" index="3l8RiF" />
-      <concept id="4403308017441329222" name="jetbrains.mps.ide.httpsupport.structure.ParameterConverter" flags="ng" index="3l8Y49">
+      <concept id="4403308017441329222" name="jetbrains.mps.ide.httpsupport.structure.ParameterConverterDeclaration" flags="ng" index="3l8Y49">
         <child id="4403308017441446657" name="deserializeFunctinon" index="3l8qDe" />
         <child id="4403308017441446654" name="serializeFunction" index="3l8qIL" />
         <child id="4403308017441335723" name="parameterType" index="3l8Xz$" />
@@ -352,8 +352,13 @@
       </concept>
       <concept id="2332657309400282169" name="jetbrains.mps.ide.httpsupport.structure.QueryParameter" flags="ng" index="3_QJtf">
         <property id="2332657309400282173" name="required" index="3_QJtb" />
-        <reference id="4403308017442895772" name="parameterConverter" index="3liSrj" />
-        <child id="5846421723674327611" name="type" index="2JBDeJ" />
+        <child id="5111696079053634063" name="parameterConverter" index="1TjXUf" />
+      </concept>
+      <concept id="5111696079053507374" name="jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter" flags="ng" index="1TjqYI">
+        <child id="5111696079053507400" name="parameterType" index="1TjqZ8" />
+      </concept>
+      <concept id="5111696079053501541" name="jetbrains.mps.ide.httpsupport.structure.ParameterConverterReference" flags="ng" index="1Tjt3_">
+        <reference id="5111696079053501542" name="declaration" index="1Tjt3A" />
       </concept>
       <concept id="6886330673564897217" name="jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation" flags="ng" index="1W9Qq2">
         <property id="6886330673564897341" name="type" index="1W9R_Y" />
@@ -391,19 +396,25 @@
     <node concept="3_QJtf" id="21vgRr5xw8R" role="3_QDjO">
       <property role="TrG5h" value="file" />
       <property role="3_QJtb" value="true" />
-      <node concept="17QB3L" id="54yEpjYJELF" role="2JBDeJ" />
+      <node concept="1TjqYI" id="4rKp80ZKTgI" role="1TjXUf">
+        <node concept="17QB3L" id="4rKp80ZKU2p" role="1TjqZ8" />
+      </node>
     </node>
     <node concept="3_QJtf" id="21vgRr5y35d" role="3_QDjO">
       <property role="TrG5h" value="line" />
       <property role="3_QJtb" value="false" />
-      <node concept="3uibUv" id="54yEpjYJGL8" role="2JBDeJ">
-        <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+      <node concept="1TjqYI" id="4rKp80ZN5sI" role="1TjXUf">
+        <node concept="3uibUv" id="4rKp80ZNnrV" role="1TjqZ8">
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+        </node>
       </node>
     </node>
     <node concept="3_QJtf" id="21vgRr5y35D" role="3_QDjO">
       <property role="TrG5h" value="project" />
-      <node concept="3uibUv" id="54yEpjYJGdE" role="2JBDeJ">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="1TjqYI" id="4rKp80ZKVZT" role="1TjXUf">
+        <node concept="3uibUv" id="4rKp80ZKWEw" role="1TjqZ8">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
       </node>
     </node>
     <node concept="pF8on" id="4yQMaPlJZ2t" role="pCJbe">
@@ -1055,15 +1066,19 @@
     <node concept="3_QJtf" id="21vgRr5xzVs" role="3_QDjO">
       <property role="TrG5h" value="ref" />
       <property role="3_QJtb" value="true" />
-      <node concept="3uibUv" id="54yEpjYJD58" role="2JBDeJ">
-        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      <node concept="1TjqYI" id="4rKp80ZKZez" role="1TjXUf">
+        <node concept="3uibUv" id="4rKp80ZKZtk" role="1TjqZ8">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        </node>
       </node>
     </node>
     <node concept="3_QJtf" id="21vgRr5xHMM" role="3_QDjO">
       <property role="TrG5h" value="project" />
       <property role="3_QJtb" value="false" />
-      <node concept="3uibUv" id="54yEpjYJDPp" role="2JBDeJ">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="1TjqYI" id="4rKp80ZKZvW" role="1TjXUf">
+        <node concept="3uibUv" id="4rKp80ZKZEP" role="1TjqZ8">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
       </node>
     </node>
     <node concept="std77" id="qifh9t62LH" role="std7D">
@@ -1879,13 +1894,16 @@
     <node concept="3_QJtf" id="32YxhLfhS1L" role="3_QDjO">
       <property role="TrG5h" value="node" />
       <property role="3_QJtb" value="true" />
-      <ref role="3liSrj" node="40BYgt0jDt8" resolve="nodeByModelPersistence" />
-      <node concept="3Tqbb2" id="40BYgt0kaGO" role="2JBDeJ" />
+      <node concept="1Tjt3_" id="4rKp80ZL0A6" role="1TjXUf">
+        <ref role="1Tjt3A" node="40BYgt0jDt8" resolve="nodeByModelPersistence" />
+      </node>
     </node>
     <node concept="3_QJtf" id="32YxhLfjFFM" role="3_QDjO">
       <property role="TrG5h" value="project" />
-      <node concept="3uibUv" id="54yEpjYK2cS" role="2JBDeJ">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="1TjqYI" id="4rKp80ZL0GQ" role="1TjXUf">
+        <node concept="3uibUv" id="4rKp80ZL0Xx" role="1TjqZ8">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
       </node>
     </node>
     <node concept="pF8on" id="32YxhLfhS08" role="pCJbe">
@@ -2615,12 +2633,16 @@
     <node concept="3_QJtf" id="xSXmQZxYwV" role="3_QDjO">
       <property role="TrG5h" value="file" />
       <property role="3_QJtb" value="true" />
-      <node concept="17QB3L" id="xSXmQZxY_h" role="2JBDeJ" />
+      <node concept="1TjqYI" id="4rKp80ZK$Uo" role="1TjXUf">
+        <node concept="17QB3L" id="4rKp80ZK_9T" role="1TjqZ8" />
+      </node>
     </node>
     <node concept="3_QJtf" id="xSXmQZy0Q7" role="3_QDjO">
       <property role="TrG5h" value="project" />
-      <node concept="3uibUv" id="xSXmQZy44e" role="2JBDeJ">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="1TjqYI" id="4rKp80ZK_CM" role="1TjXUf">
+        <node concept="3uibUv" id="4rKp80ZKA2h" role="1TjqZ8">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
       </node>
     </node>
     <node concept="pF8on" id="xSXmQZxYru" role="pCJbe">

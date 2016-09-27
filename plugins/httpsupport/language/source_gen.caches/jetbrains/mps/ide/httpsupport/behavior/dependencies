@@ -6,10 +6,12 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.CanHandleRequestFunction__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.DefaultParameterConverter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.DeserializeFunction__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.HandleRequestFunction__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.IParameterConverter__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.ParameterConverterReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.QueryParameterReference__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.QueryParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestHandler__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.SerializeFunction__BehaviorDescriptor" />
@@ -50,6 +52,34 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DefaultParameterConverter_BehaviorDescriptor" file="DefaultParameterConverter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.DefaultParameterConverter__BehaviorDescriptor" file="DefaultParameterConverter__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.behavior.DeserializeFunction_BehaviorDescriptor" file="DeserializeFunction_BehaviorDescriptor.java">
@@ -123,9 +153,62 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterConverter_BehaviorDescriptor" file="ParameterConverter_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.IParameterConverter_BehaviorDescriptor" file="IParameterConverter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.IParameterConverter__BehaviorDescriptor" file="IParameterConverter__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterConverterDeclaration_BehaviorDescriptor" file="ParameterConverterDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterConverterReference_BehaviorDescriptor" file="ParameterConverterReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterConverterReference__BehaviorDescriptor" file="ParameterConverterReference__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.behavior.ParameterInitializer_BehaviorDescriptor" file="ParameterInitializer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -161,33 +244,6 @@
   <dependency className="jetbrains.mps.ide.httpsupport.behavior.QueryParameter_BehaviorDescriptor" file="QueryParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.QueryParameter__BehaviorDescriptor" file="QueryParameter__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.behavior.QueryPath_BehaviorDescriptor" file="QueryPath_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />

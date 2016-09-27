@@ -7,13 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -21,10 +14,13 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -36,49 +32,15 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pp9zo5_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNode_pp9zo5_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_pp9zo5_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pp9zo5_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_pp9zo5_d0(editorContext, node));
-    if (renderingCondition_pp9zo5_a4a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_pp9zo5_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_pp9zo5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pp9zo5_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pp9zo5_c0(editorContext, node));
+    if (renderingCondition_pp9zo5_a3a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_pp9zo5_d0(editorContext, node));
     }
     return editorCell;
   }
-  private EditorCell createRefNode_pp9zo5_a0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new QueryParameter_Editor.typeSingleRoleHandler_pp9zo5_a0(node, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x5122a994febc3a3bL, "type"), editorContext);
-    return provider.createCell();
-  }
-  private class typeSingleRoleHandler_pp9zo5_a0 extends SingleRoleCellProvider {
-    public typeSingleRoleHandler_pp9zo5_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
-    }
-    protected EditorCell createChildCell(SNode child) {
-      EditorCell editorCell = super.createChildCell(child);
-      installCellInfo(child, editorCell);
-      return editorCell;
-    }
-    private void installCellInfo(SNode child, EditorCell editorCell) {
-      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x5122a994febc3a3bL, "type"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
-      }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("type");
-      }
-    }
-    @Override
-    protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_type");
-
-      installCellInfo(null, editorCell);
-      return editorCell;
-    }
-    protected String getNoTargetText() {
-      return "<no type>";
-    }
-  }
-  private EditorCell createProperty_pp9zo5_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pp9zo5_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -97,51 +59,48 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_pp9zo5_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pp9zo5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "converter:");
-    editorCell.setCellId("Constant_pp9zo5_c0");
+    editorCell.setCellId("Constant_pp9zo5_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_pp9zo5_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("parameterConverter");
-    provider.setNoTargetText("default");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new QueryParameter_Editor._Inline_pp9zo5_a3a());
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("parameterConverter");
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
+  private EditorCell createRefNode_pp9zo5_c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new QueryParameter_Editor.parameterConverterSingleRoleHandler_pp9zo5_c0(node, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x46f064803fbfba0fL, "parameterConverter"), editorContext);
+    return provider.createCell();
   }
-  public static class _Inline_pp9zo5_a3a extends InlineCellProvider {
-    public _Inline_pp9zo5_a3a() {
-      super();
+  private class parameterConverterSingleRoleHandler_pp9zo5_c0 extends SingleRoleCellProvider {
+    public parameterConverterSingleRoleHandler_pp9zo5_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
     }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReferencePresentation_pp9zo5_a0d0(editorContext, node);
-    }
-    private EditorCell createReferencePresentation_pp9zo5_a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "parameterConverter");
-      editorCell.setCellId("ReferencePresentation_pp9zo5_a0d0");
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
       return editorCell;
     }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x46f064803fbfba0fL, "parameterConverter"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
+      }
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("parameterConverter");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_parameterConverter");
+
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no parameterConverter>";
+    }
   }
-  private EditorCell createConstant_pp9zo5_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pp9zo5_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "required");
-    editorCell.setCellId("Constant_pp9zo5_e0");
+    editorCell.setCellId("Constant_pp9zo5_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -150,7 +109,7 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_pp9zo5_a4a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_pp9zo5_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"));
   }
 }

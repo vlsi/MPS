@@ -13,11 +13,14 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DefaultParameterConverter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeserializeFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParameterConverter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IParameterConverter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParameterConverterDeclaration = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParameterConverterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
@@ -39,38 +42,44 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 0:
         return props_CanHandleRequestFunction;
       case 1:
-        return props_DeserializeFunction;
+        return props_DefaultParameterConverter;
       case 2:
-        return props_HandleRequestFunction;
+        return props_DeserializeFunction;
       case 3:
-        return props_HttpRequestOperation;
+        return props_HandleRequestFunction;
       case 4:
-        return props_HttpRequestParameter;
+        return props_HttpRequestOperation;
       case 5:
-        return props_ParameterConverter;
+        return props_HttpRequestParameter;
       case 6:
-        return props_ParameterInitializer;
+        return props_IParameterConverter;
       case 7:
-        return props_QueryParameter;
+        return props_ParameterConverterDeclaration;
       case 8:
-        return props_QueryParameterReference;
+        return props_ParameterConverterReference;
       case 9:
-        return props_QueryPath;
+        return props_ParameterInitializer;
       case 10:
-        return props_QuerySegment;
+        return props_QueryParameter;
       case 11:
-        return props_RequestHandler;
+        return props_QueryParameterReference;
       case 12:
-        return props_RequestType;
+        return props_QueryPath;
       case 13:
-        return props_RequestURIBuilderExpression;
+        return props_QuerySegment;
       case 14:
-        return props_ResponseSendOperation;
+        return props_RequestHandler;
       case 15:
-        return props_SerializeFunction;
+        return props_RequestType;
       case 16:
-        return props_SerializedValueParameter;
+        return props_RequestURIBuilderExpression;
       case 17:
+        return props_ResponseSendOperation;
+      case 18:
+        return props_SerializeFunction;
+      case 19:
+        return props_SerializedValueParameter;
+      case 20:
         return props_ValueToSerializeParameter;
     }
     throw new IllegalStateException();

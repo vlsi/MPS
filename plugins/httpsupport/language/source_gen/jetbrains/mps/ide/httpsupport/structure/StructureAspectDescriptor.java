@@ -18,13 +18,16 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(18);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(21);
   /*package*/ final ConceptDescriptor myConceptCanHandleRequestFunction = createDescriptorForCanHandleRequestFunction();
+  /*package*/ final ConceptDescriptor myConceptDefaultParameterConverter = createDescriptorForDefaultParameterConverter();
   /*package*/ final ConceptDescriptor myConceptDeserializeFunction = createDescriptorForDeserializeFunction();
   /*package*/ final ConceptDescriptor myConceptHandleRequestFunction = createDescriptorForHandleRequestFunction();
   /*package*/ final ConceptDescriptor myConceptHttpRequestOperation = createDescriptorForHttpRequestOperation();
   /*package*/ final ConceptDescriptor myConceptHttpRequestParameter = createDescriptorForHttpRequestParameter();
-  /*package*/ final ConceptDescriptor myConceptParameterConverter = createDescriptorForParameterConverter();
+  /*package*/ final ConceptDescriptor myConceptIParameterConverter = createDescriptorForIParameterConverter();
+  /*package*/ final ConceptDescriptor myConceptParameterConverterDeclaration = createDescriptorForParameterConverterDeclaration();
+  /*package*/ final ConceptDescriptor myConceptParameterConverterReference = createDescriptorForParameterConverterReference();
   /*package*/ final ConceptDescriptor myConceptParameterInitializer = createDescriptorForParameterInitializer();
   /*package*/ final ConceptDescriptor myConceptQueryParameter = createDescriptorForQueryParameter();
   /*package*/ final ConceptDescriptor myConceptQueryParameterReference = createDescriptorForQueryParameterReference();
@@ -40,28 +43,31 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptCanHandleRequestFunction.getId(), 0);
-    myIndexMap.put(myConceptDeserializeFunction.getId(), 1);
-    myIndexMap.put(myConceptHandleRequestFunction.getId(), 2);
-    myIndexMap.put(myConceptHttpRequestOperation.getId(), 3);
-    myIndexMap.put(myConceptHttpRequestParameter.getId(), 4);
-    myIndexMap.put(myConceptParameterConverter.getId(), 5);
-    myIndexMap.put(myConceptParameterInitializer.getId(), 6);
-    myIndexMap.put(myConceptQueryParameter.getId(), 7);
-    myIndexMap.put(myConceptQueryParameterReference.getId(), 8);
-    myIndexMap.put(myConceptQueryPath.getId(), 9);
-    myIndexMap.put(myConceptQuerySegment.getId(), 10);
-    myIndexMap.put(myConceptRequestHandler.getId(), 11);
-    myIndexMap.put(myConceptRequestType.getId(), 12);
-    myIndexMap.put(myConceptRequestURIBuilderExpression.getId(), 13);
-    myIndexMap.put(myConceptResponseSendOperation.getId(), 14);
-    myIndexMap.put(myConceptSerializeFunction.getId(), 15);
-    myIndexMap.put(myConceptSerializedValueParameter.getId(), 16);
-    myIndexMap.put(myConceptValueToSerializeParameter.getId(), 17);
+    myIndexMap.put(myConceptDefaultParameterConverter.getId(), 1);
+    myIndexMap.put(myConceptDeserializeFunction.getId(), 2);
+    myIndexMap.put(myConceptHandleRequestFunction.getId(), 3);
+    myIndexMap.put(myConceptHttpRequestOperation.getId(), 4);
+    myIndexMap.put(myConceptHttpRequestParameter.getId(), 5);
+    myIndexMap.put(myConceptIParameterConverter.getId(), 6);
+    myIndexMap.put(myConceptParameterConverterDeclaration.getId(), 7);
+    myIndexMap.put(myConceptParameterConverterReference.getId(), 8);
+    myIndexMap.put(myConceptParameterInitializer.getId(), 9);
+    myIndexMap.put(myConceptQueryParameter.getId(), 10);
+    myIndexMap.put(myConceptQueryParameterReference.getId(), 11);
+    myIndexMap.put(myConceptQueryPath.getId(), 12);
+    myIndexMap.put(myConceptQuerySegment.getId(), 13);
+    myIndexMap.put(myConceptRequestHandler.getId(), 14);
+    myIndexMap.put(myConceptRequestType.getId(), 15);
+    myIndexMap.put(myConceptRequestURIBuilderExpression.getId(), 16);
+    myIndexMap.put(myConceptResponseSendOperation.getId(), 17);
+    myIndexMap.put(myConceptSerializeFunction.getId(), 18);
+    myIndexMap.put(myConceptSerializedValueParameter.getId(), 19);
+    myIndexMap.put(myConceptValueToSerializeParameter.getId(), 20);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptParameterConverter, myConceptParameterInitializer, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURIBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
+    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIParameterConverter, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURIBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
   }
 
   @Override
@@ -75,38 +81,44 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 0:
         return myConceptCanHandleRequestFunction;
       case 1:
-        return myConceptDeserializeFunction;
+        return myConceptDefaultParameterConverter;
       case 2:
-        return myConceptHandleRequestFunction;
+        return myConceptDeserializeFunction;
       case 3:
-        return myConceptHttpRequestOperation;
+        return myConceptHandleRequestFunction;
       case 4:
-        return myConceptHttpRequestParameter;
+        return myConceptHttpRequestOperation;
       case 5:
-        return myConceptParameterConverter;
+        return myConceptHttpRequestParameter;
       case 6:
-        return myConceptParameterInitializer;
+        return myConceptIParameterConverter;
       case 7:
-        return myConceptQueryParameter;
+        return myConceptParameterConverterDeclaration;
       case 8:
-        return myConceptQueryParameterReference;
+        return myConceptParameterConverterReference;
       case 9:
-        return myConceptQueryPath;
+        return myConceptParameterInitializer;
       case 10:
-        return myConceptQuerySegment;
+        return myConceptQueryParameter;
       case 11:
-        return myConceptRequestHandler;
+        return myConceptQueryParameterReference;
       case 12:
-        return myConceptRequestType;
+        return myConceptQueryPath;
       case 13:
-        return myConceptRequestURIBuilderExpression;
+        return myConceptQuerySegment;
       case 14:
-        return myConceptResponseSendOperation;
+        return myConceptRequestHandler;
       case 15:
-        return myConceptSerializeFunction;
+        return myConceptRequestType;
       case 16:
-        return myConceptSerializedValueParameter;
+        return myConceptRequestURIBuilderExpression;
       case 17:
+        return myConceptResponseSendOperation;
+      case 18:
+        return myConceptSerializeFunction;
+      case 19:
+        return myConceptSerializedValueParameter;
+      case 20:
         return myConceptValueToSerializeParameter;
       default:
         throw new IllegalStateException();
@@ -126,6 +138,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForCanHandleRequestFunction() {
     return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5354a94149f37316L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("canHandle", "Checks that handler can handle given HTTP Request").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "6004610301070373654")).create();
   }
+  private static ConceptDescriptor createDescriptorForDefaultParameterConverter() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdcb2eL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ide.httpsupport.structure.IParameterConverter").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x46f064803fbdcb48L, "parameterType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053507400"))).children(new String[]{"parameterType"}, new boolean[]{false}).alias("default", "Default Parameter Converter").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053507374")).create();
+  }
   private static ConceptDescriptor createDescriptorForDeserializeFunction() {
     return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.DeserializeFunction", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe83a1b05L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("deserialize", "").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441446661")).create();
   }
@@ -138,14 +153,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForHttpRequestParameter() {
     return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.HttpRequestParameter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f781d2L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("request", "Incoming HTTP Request").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5573986434797765074")).create();
   }
-  private static ConceptDescriptor createDescriptorForParameterConverter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.ParameterConverter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.extension.structure.IRootWithUniqueName").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2b7651d49ee9d72L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3d1bb14fe83869abL, "parameterType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441335723")), new ConceptDescriptorBuilder.Link(0x3d1bb14fe83a1afeL, "serializeFunction", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838a4f9L), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441446654")), new ConceptDescriptorBuilder.Link(0x3d1bb14fe83a1b01L, "deserializeFunctinon", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe83a1b05L), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441446657"))).children(new String[]{"parameterType", "serializeFunction", "deserializeFunctinon"}, new boolean[]{false, false, false}).rootable().alias("Parameter Converter", "").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441329222")).create();
+  private static ConceptDescriptor createDescriptorForIParameterConverter() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.IParameterConverter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L)).version(1).interface_().sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053501427")).create();
+  }
+  private static ConceptDescriptor createDescriptorForParameterConverterDeclaration() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.ParameterConverterDeclaration", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.extension.structure.IRootWithUniqueName").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2b7651d49ee9d72L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3d1bb14fe83869abL, "parameterType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441335723")), new ConceptDescriptorBuilder.Link(0x3d1bb14fe83a1afeL, "serializeFunction", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838a4f9L), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441446654")), new ConceptDescriptorBuilder.Link(0x3d1bb14fe83a1b01L, "deserializeFunctinon", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe83a1b05L), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441446657"))).children(new String[]{"parameterType", "serializeFunction", "deserializeFunctinon"}, new boolean[]{false, false, false}).rootable().alias("Parameter Converter", "").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017441329222")).create();
+  }
+  private static ConceptDescriptor createDescriptorForParameterConverterReference() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.ParameterConverterReference", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb465L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ide.httpsupport.structure.IParameterConverter").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x46f064803fbdb466L, "declaration", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L), false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053501542"))).references("declaration").alias("", "Parameter Converter").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053501541")).create();
   }
   private static ConceptDescriptor createDescriptorForParameterInitializer() {
     return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.ParameterInitializer", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4027f9073ff5cf18L, "parameter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L), false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4622937352052264728"))).references("parameter").childDescriptors(new ConceptDescriptorBuilder.Link(0x4027f9073ff5cf1aL, "value", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4622937352052264730"))).children(new String[]{"value"}, new boolean[]{false}).sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4622937352052264727")).create();
   }
   private static ConceptDescriptor createDescriptorForQueryParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.QueryParameter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x205f4376c585b43dL, "required", new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "2332657309400282173"))).properties("required").referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x3d1bb14fe850379cL, "parameterConverter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L), true, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4403308017442895772"))).references("parameterConverter").childDescriptors(new ConceptDescriptorBuilder.Link(0x5122a994febc3a3bL, "type", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5846421723674327611"))).children(new String[]{"type"}, new boolean[]{false}).alias("parameter", "").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "2332657309400282169")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.QueryParameter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x205f4376c585b43dL, "required", new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "2332657309400282173"))).properties("required").childDescriptors(new ConceptDescriptorBuilder.Link(0x46f064803fbfba0fL, "parameterConverter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L), false, false, false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053634063"))).children(new String[]{"parameterConverter"}, new boolean[]{false}).alias("", "Query Parameter").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "2332657309400282169")).create();
   }
   private static ConceptDescriptor createDescriptorForQueryParameterReference() {
     return new ConceptDescriptorBuilder("jetbrains.mps.ide.httpsupport.structure.QueryParameterReference", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IVariableReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x205f4376c5884e96L, "queryParameter", MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L), false, new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "2332657309400452758"))).references("queryParameter").alias("", "reference to query parameter").sourceNode(new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "2332657309400452757")).create();
