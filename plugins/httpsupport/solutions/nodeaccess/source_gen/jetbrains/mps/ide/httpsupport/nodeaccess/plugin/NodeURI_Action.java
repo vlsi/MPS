@@ -11,6 +11,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.project.Project;
 import io.netty.handler.codec.http.QueryStringEncoder;
 import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
 
@@ -44,14 +45,14 @@ public class NodeURI_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    CopyPasteUtil.copyTextToClipboard(buildRequest_aha6g5_a0a0a5(event));
+    CopyPasteUtil.copyTextToClipboard(buildRequest_aha6g5_a0a0a5(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
 
   }
-  private static String buildRequest_aha6g5_a0a0a5(AnActionEvent event) {
+  private static String buildRequest_aha6g5_a0a0a5(SNode node, Project project) {
     QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node");
 
-    encoder.addParam("node", new nodeByModelPersistence_Converter().toString(event.getData(MPSCommonDataKeys.NODE)));
-    encoder.addParam("project", event.getData(MPSCommonDataKeys.MPS_PROJECT).getName());
+    encoder.addParam("node", new nodeByModelPersistence_Converter().toString(node));
+    encoder.addParam("project", project.getName());
 
     return encoder.toString();
   }
