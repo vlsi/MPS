@@ -133,11 +133,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       }
       public boolean execute() {
         try {
-          myMpsMproject.getRepository().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              cc.execute(myMpsMproject);
-            }
-          });
+          cc.execute(myMpsMproject);
         } catch (Throwable e) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Could not execute script", e);
@@ -223,13 +219,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
                 return it.getDescription();
               }
               public boolean execute() {
-                final Wrappers._boolean res = new Wrappers._boolean();
-                myMpsMproject.getRepository().getModelAccess().executeCommand(new Runnable() {
-                  public void run() {
-                    res.value = it.execute(myMigrationComponent);
-                  }
-                });
-                return res.value;
+                return it.execute(myMigrationComponent);
               }
               public void forceExecutionNextTime() {
                 throw new UnsupportedOperationException("not supported for module migrations");

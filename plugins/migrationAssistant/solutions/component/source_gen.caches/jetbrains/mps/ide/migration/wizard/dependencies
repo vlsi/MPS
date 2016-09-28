@@ -89,6 +89,8 @@
     <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep" file="MigrationsProgressWizardStep.java">
+    <classNode dependClassName="com.intellij.history.LocalHistory" />
+    <classNode dependClassName="com.intellij.history.LocalHistoryAction" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />

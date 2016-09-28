@@ -51,6 +51,7 @@
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="82te" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.util(MPS.Platform/)" />
+    <import index="t2ei" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.history(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -273,6 +274,7 @@
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
+      <concept id="8974276187400348177" name="jetbrains.mps.lang.access.structure.ExecuteCommandStatement" flags="nn" index="1QHqEO" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
@@ -3430,25 +3432,74 @@
               <node concept="1bVj0M" id="513ZrA4wEkb" role="37wK5m">
                 <property role="3yWfEV" value="true" />
                 <node concept="3clFbS" id="513ZrA4wEkl" role="1bW5cS">
-                  <node concept="3clFbF" id="2htE_P_NuHV" role="3cqZAp">
-                    <node concept="37vLTI" id="2htE_P_NuHX" role="3clFbG">
-                      <node concept="2OqwBi" id="2htE_P_NuBh" role="37vLTx">
-                        <node concept="1eOMI4" id="2htE_P_NuBi" role="2Oq$k0">
-                          <node concept="10QFUN" id="2htE_P_NuBj" role="1eOMHV">
-                            <node concept="37vLTw" id="2htE_P_NuBk" role="10QFUP">
+                  <node concept="3cpWs8" id="1NxkXg8m5KZ" role="3cqZAp">
+                    <node concept="3cpWsn" id="1NxkXg8m5L0" role="3cpWs9">
+                      <property role="TrG5h" value="action" />
+                      <node concept="3uibUv" id="1NxkXg8m5KU" role="1tU5fm">
+                        <ref role="3uigEE" to="t2ei:~LocalHistoryAction" resolve="LocalHistoryAction" />
+                      </node>
+                      <node concept="2OqwBi" id="1NxkXg8m5L1" role="33vP2m">
+                        <node concept="2YIFZM" id="1NxkXg8m5L2" role="2Oq$k0">
+                          <ref role="37wK5l" to="t2ei:~LocalHistory.getInstance():com.intellij.history.LocalHistory" resolve="getInstance" />
+                          <ref role="1Pybhc" to="t2ei:~LocalHistory" resolve="LocalHistory" />
+                        </node>
+                        <node concept="liA8E" id="1NxkXg8m5L3" role="2OqNvi">
+                          <ref role="37wK5l" to="t2ei:~LocalHistory.startAction(java.lang.String):com.intellij.history.LocalHistoryAction" resolve="startAction" />
+                          <node concept="2OqwBi" id="1NxkXg8m5L4" role="37wK5m">
+                            <node concept="37vLTw" id="1NxkXg8m5L5" role="2Oq$k0">
                               <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
                             </node>
-                            <node concept="3uibUv" id="2htE_P_NuBl" role="10QFUM">
-                              <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+                            <node concept="liA8E" id="1NxkXg8m5L6" role="2OqNvi">
+                              <ref role="37wK5l" to="bim2:5SsFeroaabv" resolve="getDescription" />
                             </node>
                           </node>
                         </node>
-                        <node concept="liA8E" id="2htE_P_NuBm" role="2OqNvi">
-                          <ref role="37wK5l" to="bim2:5SsFeroaabz" resolve="execute" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="1QHqEO" id="1NxkXg8lWyr" role="3cqZAp">
+                    <node concept="1QHqEC" id="1NxkXg8lWyt" role="1QHqEI">
+                      <node concept="3clFbS" id="1NxkXg8lWyv" role="1bW5cS">
+                        <node concept="3clFbF" id="2htE_P_NuHV" role="3cqZAp">
+                          <node concept="37vLTI" id="2htE_P_NuHX" role="3clFbG">
+                            <node concept="2OqwBi" id="2htE_P_NuBh" role="37vLTx">
+                              <node concept="1eOMI4" id="2htE_P_NuBi" role="2Oq$k0">
+                                <node concept="10QFUN" id="2htE_P_NuBj" role="1eOMHV">
+                                  <node concept="37vLTw" id="2htE_P_NuBk" role="10QFUP">
+                                    <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
+                                  </node>
+                                  <node concept="3uibUv" id="2htE_P_NuBl" role="10QFUM">
+                                    <ref role="3uigEE" to="bim2:5SsFeroaabr" resolve="MigrationManager.MigrationStep" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="2htE_P_NuBm" role="2OqNvi">
+                                <ref role="37wK5l" to="bim2:5SsFeroaabz" resolve="execute" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="2htE_P_NuI1" role="37vLTJ">
+                              <ref role="3cqZAo" node="2htE_P_NuBg" resolve="noException" />
+                            </node>
+                          </node>
                         </node>
                       </node>
-                      <node concept="37vLTw" id="2htE_P_NuI1" role="37vLTJ">
-                        <ref role="3cqZAo" node="2htE_P_NuBg" resolve="noException" />
+                    </node>
+                    <node concept="2OqwBi" id="1NxkXg8lX_S" role="ukAjM">
+                      <node concept="1rXfSq" id="1NxkXg8lXkc" role="2Oq$k0">
+                        <ref role="37wK5l" node="6mkTi9xJFLO" resolve="getMPSProject" />
+                      </node>
+                      <node concept="liA8E" id="1NxkXg8lXXq" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="1NxkXg8m6we" role="3cqZAp">
+                    <node concept="2OqwBi" id="1NxkXg8m6Kg" role="3clFbG">
+                      <node concept="37vLTw" id="1NxkXg8m6wc" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1NxkXg8m5L0" resolve="action" />
+                      </node>
+                      <node concept="liA8E" id="1NxkXg8m6QI" role="2OqNvi">
+                        <ref role="37wK5l" to="t2ei:~LocalHistoryAction.finish():void" resolve="finish" />
                       </node>
                     </node>
                   </node>

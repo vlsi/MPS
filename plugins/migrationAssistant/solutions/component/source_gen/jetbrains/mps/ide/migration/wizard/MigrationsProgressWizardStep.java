@@ -47,6 +47,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.MigrationComponent;
+import com.intellij.history.LocalHistoryAction;
+import com.intellij.history.LocalHistory;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
@@ -363,7 +365,13 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     final Wrappers._boolean noException = new Wrappers._boolean();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
-        noException.value = ((MigrationManager.MigrationStep) result).execute();
+        LocalHistoryAction action = LocalHistory.getInstance().startAction(result.getDescription());
+        getMPSProject().getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            noException.value = ((MigrationManager.MigrationStep) result).execute();
+          }
+        });
+        action.finish();
       }
     }, myModalityState);
 
