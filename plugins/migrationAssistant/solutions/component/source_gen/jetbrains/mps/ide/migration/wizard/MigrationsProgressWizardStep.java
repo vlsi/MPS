@@ -33,6 +33,9 @@ import jetbrains.mps.ide.migration.ProgressEstimation;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.history.LocalHistory;
+import jetbrains.mps.ide.project.ProjectHelper;
+import java.awt.Color;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -48,7 +51,6 @@ import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.MigrationComponent;
 import com.intellij.history.LocalHistoryAction;
-import com.intellij.history.LocalHistory;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
@@ -177,6 +179,9 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     List<MigrationManager.MigrationStep> cleanupMigrations = ListSequence.fromList(new ArrayList<MigrationManager.MigrationStep>());
     int cleanupStepsCount = myManager.projectStepsCount(true);
     int stepNum = 0;
+
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Starting migration", Color.RED.getRGB());
+
     while (true) {
       MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
       if (step == null) {

@@ -1956,6 +1956,38 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1NxkXg8n1Yy" role="3cqZAp" />
+        <node concept="3clFbF" id="1NxkXg8nb9N" role="3cqZAp">
+          <node concept="2OqwBi" id="1NxkXg8n3yN" role="3clFbG">
+            <node concept="2YIFZM" id="1NxkXg8n3yO" role="2Oq$k0">
+              <ref role="1Pybhc" to="t2ei:~LocalHistory" resolve="LocalHistory" />
+              <ref role="37wK5l" to="t2ei:~LocalHistory.getInstance():com.intellij.history.LocalHistory" resolve="getInstance" />
+            </node>
+            <node concept="liA8E" id="1NxkXg8n3yP" role="2OqNvi">
+              <ref role="37wK5l" to="t2ei:~LocalHistory.putSystemLabel(com.intellij.openapi.project.Project,java.lang.String,int):com.intellij.history.Label" resolve="putSystemLabel" />
+              <node concept="2YIFZM" id="1NxkXg8n7uy" role="37wK5m">
+                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <node concept="1rXfSq" id="1NxkXg8n6g5" role="37wK5m">
+                  <ref role="37wK5l" node="6mkTi9xJFLO" resolve="getMPSProject" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="1NxkXg8n7Ro" role="37wK5m">
+                <property role="Xl_RC" value="Starting migration" />
+              </node>
+              <node concept="2OqwBi" id="1NxkXg8ngaG" role="37wK5m">
+                <node concept="10M0yZ" id="1NxkXg8neNw" role="2Oq$k0">
+                  <ref role="1PxDUh" to="z60i:~Color" resolve="Color" />
+                  <ref role="3cqZAo" to="z60i:~Color.RED" resolve="RED" />
+                </node>
+                <node concept="liA8E" id="1NxkXg8ngnw" role="2OqNvi">
+                  <ref role="37wK5l" to="z60i:~Color.getRGB():int" resolve="getRGB" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1NxkXg8n27d" role="3cqZAp" />
         <node concept="2$JKZl" id="2pwkv5pjIUn" role="3cqZAp">
           <node concept="3clFbS" id="2pwkv5pjIUo" role="2LFqv$">
             <node concept="3cpWs8" id="6EjSNQP6ita" role="3cqZAp">
