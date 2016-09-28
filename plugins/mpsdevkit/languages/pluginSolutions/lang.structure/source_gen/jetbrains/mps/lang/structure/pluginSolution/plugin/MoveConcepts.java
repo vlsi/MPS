@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -37,9 +37,9 @@ public class MoveConcepts implements MoveNodesAction {
       return new MoveConcepts();
     }
   }
-
+  private static final String NAME = "Move Concepts";
   public String getName() {
-    return "Move Concepts";
+    return NAME;
   }
   public boolean isApplicable(MPSProject project, final List<SNode> target) {
     if (!(MoveNodesUtil.areSiblings(target, project.getRepository()))) {
@@ -71,7 +71,7 @@ public class MoveConcepts implements MoveNodesAction {
       }
     });
     if (hasGenerator.value) {
-      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", "Move Concepts");
+      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", NAME);
     }
 
     final Wrappers._T<List<SModelReference>> structureModels = new Wrappers._T<List<SModelReference>>();
@@ -89,7 +89,7 @@ public class MoveConcepts implements MoveNodesAction {
         }).toListSequence();
       }
     }));
-    final SModelReference targetModelRef = SModelReferenceDialog.getSelectedModel(project, structureModels.value);
+    final SModelReference targetModelRef = CommonChoosers.showModelChooser(project, NAME, structureModels.value);
     if (targetModelRef == null) {
       return;
     }

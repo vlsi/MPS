@@ -1918,7 +1918,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.ChooseModuleDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
