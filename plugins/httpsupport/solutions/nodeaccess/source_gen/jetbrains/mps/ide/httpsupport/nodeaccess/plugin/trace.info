@@ -486,12 +486,11 @@
       <node id="64850105743184362" at="9,41,10,34" concept="13" />
       <node id="64850105743184362" at="10,34,11,30" concept="3" />
       <node id="64850105743184362" at="11,30,12,25" concept="3" />
-      <node id="3512391116031008589" at="12,25,13,52" concept="3" />
-      <node id="64850105743184429" at="13,52,14,123" concept="3" />
-      <node id="64850105743184362" at="9,0,16,0" concept="2" trace="NodeAsUriActions_ActionGroup#()V" />
-      <scope id="64850105743184362" at="9,41,14,123" />
-      <scope id="64850105743184362" at="9,0,16,0" />
-      <unit id="64850105743184362" at="7,0,17,0" name="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeAsUriActions_ActionGroup" />
+      <node id="64850105743184429" at="12,25,13,123" concept="3" />
+      <node id="64850105743184362" at="9,0,15,0" concept="2" trace="NodeAsUriActions_ActionGroup#()V" />
+      <scope id="64850105743184362" at="9,41,13,123" />
+      <scope id="64850105743184362" at="9,0,15,0" />
+      <unit id="64850105743184362" at="7,0,16,0" name="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeAsUriActions_ActionGroup" />
     </file>
   </root>
 </debug-info>

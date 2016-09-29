@@ -1765,9 +1765,6 @@
   <node concept="tC5Ba" id="3Apdfsu17E">
     <property role="TrG5h" value="NodeAsUriActions" />
     <node concept="ftmFs" id="3Apdfsu18E" role="ftER_">
-      <node concept="tCFHf" id="32YxhLfh1Xd" role="ftvYc">
-        <ref role="tCJdB" node="32YxhLfg2lv" resolve="NodeURI" />
-      </node>
       <node concept="tCFHf" id="3Apdfsu18H" role="ftvYc">
         <ref role="tCJdB" node="3ApdfstLXw" resolve="NodeReferenceURI" />
       </node>
