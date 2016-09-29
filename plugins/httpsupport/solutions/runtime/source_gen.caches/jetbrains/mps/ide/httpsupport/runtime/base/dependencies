@@ -25,8 +25,5 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.runtime.base.ParameterConverter" file="ParameterConverter.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
 </dependenciesRoot>
 

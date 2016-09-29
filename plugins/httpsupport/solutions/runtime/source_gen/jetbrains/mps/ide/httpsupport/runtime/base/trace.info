@@ -139,18 +139,5 @@
       <unit id="4403308017443708918" at="14,0,75,0" name="jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil" />
     </file>
   </root>
-  <root nodeRef="r:11b7cdb2-cc58-456e-bb9a-ce45b78edd2f(jetbrains.mps.ide.httpsupport.runtime.base)/4622937352053007370">
-    <file name="ParameterConverter.java">
-      <node id="4622937352053007438" at="8,0,9,0" concept="6" trace="fromString#(Ljava/lang/String;)null" />
-      <node id="4622937352053007590" at="9,0,10,0" concept="6" trace="toString#(null)Ljava/lang/String;" />
-      <scope id="4622937352053007438" at="8,0,9,0">
-        <var name="s" id="4622937352053007468" />
-      </scope>
-      <scope id="4622937352053007590" at="9,0,10,0">
-        <var name="t" id="4622937352053007639" />
-      </scope>
-      <unit id="4622937352053007370" at="6,0,11,0" name="jetbrains.mps.ide.httpsupport.runtime.base.ParameterConverter" />
-    </file>
-  </root>
 </debug-info>
 

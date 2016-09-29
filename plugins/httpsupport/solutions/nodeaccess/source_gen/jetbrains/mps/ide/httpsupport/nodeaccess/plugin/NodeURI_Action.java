@@ -51,7 +51,7 @@ public class NodeURI_Action extends BaseAction {
   private static String buildRequest_aha6g5_a0a0a5(SNode node, Project project) {
     QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node");
 
-    encoder.addParam("node", new nodeByModelPersistence_Converter().toString(node));
+    encoder.addParam("node", nodeByModelPersistence_Converter.serialize(node));
     encoder.addParam("project", project.getName());
 
     return encoder.toString();

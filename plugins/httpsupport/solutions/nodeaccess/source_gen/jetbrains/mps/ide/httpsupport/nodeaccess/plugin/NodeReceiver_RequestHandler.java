@@ -36,7 +36,7 @@ public class NodeReceiver_RequestHandler extends HttpRequestHandlerBase {
       if (node_serialized == null) {
         containsAllRequiredParameters = false;
       }
-      this.node = new nodeByModelPersistence_Converter().fromString(node_serialized);
+      this.node = nodeByModelPersistence_Converter.deserialize(node_serialized);
     }
     {
       String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
