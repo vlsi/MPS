@@ -16,6 +16,7 @@
     <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -55,6 +56,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -114,6 +116,7 @@
         <child id="1227096802790" name="nodeToReport" index="2OEOjV" />
       </concept>
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
+        <property id="1195213689297" name="overrides" index="18ip37" />
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
@@ -145,10 +148,13 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1145573345940" name="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" flags="nn" index="2TvwIu" />
+      <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -745,6 +751,83 @@
     <node concept="1YaCAy" id="4rKp80ZJYVB" role="1YuTPh">
       <property role="TrG5h" value="defaultParameterConverter" />
       <ref role="1YaFvo" to="ndib:4rKp80ZJsGI" resolve="DefaultParameterConverter" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="wgkxgTua2_">
+    <property role="18ip37" value="false" />
+    <property role="TrG5h" value="check_RequestHandler_inPluginModel" />
+    <property role="3GE5qa" value="handler" />
+    <node concept="3clFbS" id="wgkxgTua2C" role="18ibNy">
+      <node concept="3cpWs8" id="wgkxgTua2D" role="3cqZAp">
+        <node concept="3cpWsn" id="wgkxgTua2E" role="3cpWs9">
+          <property role="TrG5h" value="modelName" />
+          <node concept="17QB3L" id="wgkxgTua2F" role="1tU5fm" />
+          <node concept="2OqwBi" id="wgkxgTua2G" role="33vP2m">
+            <node concept="2OqwBi" id="wgkxgTua2H" role="2Oq$k0">
+              <node concept="1YBJjd" id="wgkxgTua2I" role="2Oq$k0">
+                <ref role="1YBMHb" node="wgkxgTua2L" resolve="requestHandler" />
+              </node>
+              <node concept="I4A8Y" id="wgkxgTua2J" role="2OqNvi" />
+            </node>
+            <node concept="LkI2h" id="wgkxgTua2K" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cpWs8" id="wgkxgTua69" role="3cqZAp">
+        <node concept="3cpWsn" id="wgkxgTua6c" role="3cpWs9">
+          <property role="TrG5h" value="correctName" />
+          <node concept="17QB3L" id="wgkxgTua67" role="1tU5fm" />
+          <node concept="3cpWs3" id="wgkxgTucxP" role="33vP2m">
+            <node concept="Xl_RD" id="wgkxgTucB2" role="3uHU7w">
+              <property role="Xl_RC" value=".plugin" />
+            </node>
+            <node concept="2OqwBi" id="wgkxgTubOv" role="3uHU7B">
+              <node concept="2OqwBi" id="wgkxgTubmq" role="2Oq$k0">
+                <node concept="2OqwBi" id="wgkxgTuagv" role="2Oq$k0">
+                  <node concept="1YBJjd" id="wgkxgTua6M" role="2Oq$k0">
+                    <ref role="1YBMHb" node="wgkxgTua2L" resolve="requestHandler" />
+                  </node>
+                  <node concept="I4A8Y" id="wgkxgTuaXh" role="2OqNvi" />
+                </node>
+                <node concept="13u695" id="wgkxgTubts" role="2OqNvi" />
+              </node>
+              <node concept="3TrcHB" id="wgkxgTue2L" role="2OqNvi">
+                <ref role="3TsBF5" to="hypd:5xDtKQA7vSz" resolve="namespace" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="wgkxgTuffI" role="3cqZAp" />
+      <node concept="3clFbJ" id="wgkxgTug9M" role="3cqZAp">
+        <node concept="3clFbS" id="wgkxgTug9O" role="3clFbx">
+          <node concept="2MkqsV" id="wgkxgTugv$" role="3cqZAp">
+            <node concept="1YBJjd" id="wgkxgTugEw" role="2OEOjV">
+              <ref role="1YBMHb" node="wgkxgTua2L" resolve="requestHandler" />
+            </node>
+            <node concept="Xl_RD" id="wgkxgTug0l" role="2MkJ7o">
+              <property role="Xl_RC" value="Request Handler instances must be in plugin model" />
+            </node>
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="wgkxgTugtq" role="3clFbw">
+          <node concept="2OqwBi" id="wgkxgTugts" role="3fr31v">
+            <node concept="37vLTw" id="wgkxgTugtt" role="2Oq$k0">
+              <ref role="3cqZAo" node="wgkxgTua2E" resolve="modelName" />
+            </node>
+            <node concept="liA8E" id="wgkxgTugtu" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="37vLTw" id="wgkxgTugtv" role="37wK5m">
+                <ref role="3cqZAo" node="wgkxgTua6c" resolve="correctName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="wgkxgTua2L" role="1YuTPh">
+      <property role="TrG5h" value="requestHandler" />
+      <ref role="1YaFvo" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     </node>
   </node>
 </model>
