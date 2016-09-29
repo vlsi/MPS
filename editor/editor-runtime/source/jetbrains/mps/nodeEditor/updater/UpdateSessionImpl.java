@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
@@ -68,6 +69,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
   private UpdateInfoIndex myUpdateInfoIndex;
   private UpdateInfoNode myCurrentUpdateInfo;
+  private EditorCellFactoryImpl myCellFactory;
 
   protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
@@ -256,6 +258,15 @@ public class UpdateSessionImpl implements UpdateSession {
     } finally {
       myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
     }
+  }
+
+  @Override
+  public EditorCellFactory getCellFactory() {
+    if (myCellFactory == null) {
+      myCellFactory = new EditorCellFactoryImpl(getUpdater().getEditorContext());
+    }
+    return myCellFactory;
+
   }
 
   private ReferencedNodeContext getCurrentContext() {
