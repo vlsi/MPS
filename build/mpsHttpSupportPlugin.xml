@@ -59,8 +59,14 @@
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/http-support/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/models">
+      <fileset dir="${plugin_home}/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <jar destfile="${build.layout}/http-support/lib/httpsupport.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/http-support" />
+      <zipfileset file="${plugin_home}/jetbrains.mps.ide.httpsupport.manager.msd" prefix="modules/jetbrains.mps.ide.httpsupport.manager" />
+      <zipfileset dir="${plugin_home}" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.httpsupport.manager" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/models" prefix="modules/jetbrains.mps.ide.httpsupport.manager/models" />
     </jar>
     <mkdir dir="${build.layout}/http-support/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport.jar" />
@@ -121,14 +127,6 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/language-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/http-support/solutions" />
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/models">
-      <fileset dir="${plugin_home}/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/http-support/solutions/jetbrains.mps.ide.httpsupport.manager.jar" duplicate="preserve">
-      <zipfileset file="${plugin_home}/jetbrains.mps.ide.httpsupport.manager.msd" prefix="modules/jetbrains.mps.ide.httpsupport.manager" />
-      <zipfileset dir="${plugin_home}" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.httpsupport.manager" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/models" prefix="modules/jetbrains.mps.ide.httpsupport.manager/models" />
-    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport.nodeaccess.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport.nodeaccess.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.httpsupport.nodeaccess.jar/META-INF/module.xml">
@@ -411,7 +409,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.httpsupport" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.ide.httpsupport" depends="java.compile.http-support, fetchDependencies">
     <mkdir dir="${plugin_home}/language/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -420,6 +418,7 @@
         <path location="${plugin_home}/language/source_gen" />
       </src>
       <classpath>
+        <pathelement path="${build.tmp}/java/out/http-support" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
@@ -458,6 +457,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
@@ -470,7 +470,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.httpsupport#4517832885627178591" depends="java.compile.jetbrains.mps.ide.httpsupport, java.compile.jetbrains.mps.ide.httpsupport.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.ide.httpsupport#4517832885627178591" depends="java.compile.http-support, java.compile.jetbrains.mps.ide.httpsupport, java.compile.jetbrains.mps.ide.httpsupport.runtime, fetchDependencies">
     <mkdir dir="${plugin_home}/language/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport#4517832885627178591" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport#4517832885627178591" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -479,6 +479,7 @@
         <path location="${plugin_home}/language/generator/source_gen" />
       </src>
       <classpath>
+        <pathelement path="${build.tmp}/java/out/http-support" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
@@ -524,7 +525,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.ide.httpsupport.nodeaccess" depends="java.compile.jetbrains.mps.ide.httpsupport.runtime, java.compile.http-support, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.ide.httpsupport.nodeaccess" depends="java.compile.http-support, java.compile.jetbrains.mps.ide.httpsupport.runtime, fetchDependencies">
     <mkdir dir="${plugin_home}/solutions/nodeaccess/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport.nodeaccess" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport.nodeaccess" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -533,6 +534,7 @@
         <path location="${plugin_home}/solutions/nodeaccess/source_gen" />
       </src>
       <classpath>
+        <pathelement path="${build.tmp}/java/out/http-support" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -545,7 +547,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport.runtime" />
-        <pathelement path="${build.tmp}/java/out/http-support" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
