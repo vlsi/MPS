@@ -251,6 +251,10 @@ public class RefactoringProcessor {
       }
     });
 
+    if (searchResults.value == null) {
+      return;
+    }
+
     refactoringUI.showRefactoringView(new Runnable() {
       public void run() {
         final Map<IS, FS> getFinalObject = doRefactor.invoke(participantChanges._0());

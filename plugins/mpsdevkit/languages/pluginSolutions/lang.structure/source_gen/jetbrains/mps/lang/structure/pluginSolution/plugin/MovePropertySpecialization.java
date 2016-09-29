@@ -51,7 +51,7 @@ public class MovePropertySpecialization extends StructureSpecializationBase<SPro
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldProperty.getOwner()))).toListSequence();
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldProperty.getOwner()), false)).toListSequence();
     }
   }
   public void doReplaceInstance(SNode instance, SProperty oldProperty, SProperty newProperty) {

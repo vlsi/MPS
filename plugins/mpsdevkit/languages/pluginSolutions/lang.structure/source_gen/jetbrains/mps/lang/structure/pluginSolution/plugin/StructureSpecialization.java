@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface StructureSpecialization<I, F> extends MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>> {
-  void confirm(Tuples._2<I, SNodeReference> initialState, Tuples._2<F, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder);
+  void confirm(Tuples._2<I, SNodeReference> initialState, Tuples._2<F, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder, boolean updateModuleDependencies);
   Collection<SNode> findInstances(I initialState, SearchScope searchScope);
   void doReplaceInstance(SNode instance, I initialState, F finalState);
 }

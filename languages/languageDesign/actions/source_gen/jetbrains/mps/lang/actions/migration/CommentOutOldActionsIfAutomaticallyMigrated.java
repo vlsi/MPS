@@ -36,7 +36,7 @@ public class CommentOutOldActionsIfAutomaticallyMigrated extends MigrationScript
           return scope;
         }
       };
-      if (CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7650d61a085f9929L, "jetbrains.mps.lang.actions.structure.ICouldBeAnnotatedWithMigrateManually"))).any(new IWhereFilter<SNode>() {
+      if (CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7650d61a085f9929L, "jetbrains.mps.lang.actions.structure.ICouldBeAnnotatedWithMigrateManually"), false)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, "jetbrains.mps.lang.actions.structure.MigrateManuallyAnnotation"))) != null) && !(CommentUtil.isCommentedOut(it));
         }
@@ -44,14 +44,14 @@ public class CommentOutOldActionsIfAutomaticallyMigrated extends MigrationScript
         return;
       }
 
-      Iterable<SNode> stBuilders = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"))).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> stBuilders = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(CommentUtil.isCommentedOut(it));
         }
       });
       CommentUtil.commentOutAll(stBuilders);
 
-      Iterable<SNode> substBuilders = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"))).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> substBuilders = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(CommentUtil.isCommentedOut(it));
         }

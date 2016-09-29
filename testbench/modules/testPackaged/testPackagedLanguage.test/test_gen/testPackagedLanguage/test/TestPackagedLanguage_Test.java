@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import com.intellij.openapi.util.IconLoader;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -48,6 +49,7 @@ public class TestPackagedLanguage_Test extends TestCase {
   public void test_testIcons() throws Exception {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        IconLoader.activate();
         Icon icon = IconManager.getIcon(MetaAdapterFactory.getConcept(0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL, "testPackagedLanguage.structure.TestConcept"));
         Assert.assertNotNull(icon);
         Assert.assertEquals(icon.getIconWidth(), 16);

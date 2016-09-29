@@ -26,6 +26,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
+    <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -301,6 +302,12 @@
           <node concept="1QHqEK" id="2$qzYDjh2fX" role="3cqZAp">
             <node concept="1QHqEC" id="2$qzYDjh2fZ" role="1QHqEI">
               <node concept="3clFbS" id="2$qzYDjh2g1" role="1bW5cS">
+                <node concept="3clFbF" id="6xD69EixYMo" role="3cqZAp">
+                  <node concept="2YIFZM" id="6xD69EixYWT" role="3clFbG">
+                    <ref role="37wK5l" to="zn9m:~IconLoader.activate():void" resolve="activate" />
+                    <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="1J9x1z49MYg" role="3cqZAp">
                   <node concept="3cpWsn" id="1J9x1z49MYh" role="3cpWs9">
                     <property role="TrG5h" value="icon" />

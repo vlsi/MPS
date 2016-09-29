@@ -53,7 +53,7 @@ public class MoveReferenceLinkSpecialization extends StructureSpecializationBase
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldLink.getOwner()))).toListSequence();
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldLink.getOwner()), false)).toListSequence();
     }
   }
   public void doReplaceInstance(SNode instance, SReferenceLink oldLink, SReferenceLink newLink) {

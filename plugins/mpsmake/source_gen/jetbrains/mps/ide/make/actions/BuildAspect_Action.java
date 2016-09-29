@@ -4,35 +4,40 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GenerationFacade;
 
-public class BuildAllTextGens_Action extends BaseAction {
+public class BuildAspect_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public BuildAllTextGens_Action() {
-    super("Rebuild All TextGen models", "", ICON);
+  private LanguageAspectDescriptor aspect;
+  public BuildAspect_Action(LanguageAspectDescriptor aspect_par) {
+    super("Rebuild All Aspect", "", ICON);
+    this.aspect = aspect_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
     return true;
+  }
+  @Override
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+    event.getPresentation().setText(NameUtil.capitalize(BuildAspect_Action.this.aspect.getPresentableAspectName()));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -52,18 +57,30 @@ public class BuildAllTextGens_Action extends BaseAction {
     final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules();
-        models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
-          public SModel select(Language it) {
-            return SModuleOperations.getAspect(it, "textGen");
+        List<Language> projectModules = ListSequence.fromList(((List<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModules())).ofType(Language.class).toListSequence();
+        models.value = ListSequence.fromList(projectModules).translate(new ITranslator2<Language, SModel>() {
+          public Iterable<SModel> translate(Language it) {
+            return BuildAspect_Action.this.aspect.getAspectModels(it);
           }
         }).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
-            return it != null && GenerationFacade.canGenerate(it);
+            return GenerationFacade.canGenerate(it);
           }
-        }));
+        }).toListSequence();
       }
     });
     new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models.value).cleanMake(true)).executeAction();
+  }
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(aspect_State((LanguageAspectDescriptor) this.aspect));
+    res.append("!");
+    return res.toString();
+  }
+  public static String aspect_State(LanguageAspectDescriptor object) {
+    return object.getPresentableAspectName();
   }
 }

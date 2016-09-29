@@ -42,7 +42,7 @@ public class Migrate_EditorCellModelShowIfConditionsToEmptyCell extends Migratio
           return scope;
         }
       };
-      Iterable<SNode> cellModels = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"))).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> cellModels = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return needToMigrate(it);
         }

@@ -25,19 +25,9 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new BuildAllActions_Action());
-    addAction(new BuildAllBehaviors_Action());
-    addAction(new BuildAllConstraints_Action());
-    addAction(new BuildAllDataFlows_Action());
-    addAction(new BuildAllEditors_Action());
     addAction(new BuildAllGeneratableGenerators_Action());
     addAction(new BuildAllGenerators_Action());
-    addAction(new BuildAllIntentions_Action());
     addAction(new BuildAllLanguageDescriptors_Action());
-    addAction(new BuildAllRefactorings_Action());
-    addAction(new BuildAllScripts_Action());
-    addAction(new BuildAllStructures_Action());
-    addAction(new BuildAllTextGens_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanModule_Action());
     addAction(new CleanProject_Action());
@@ -59,6 +49,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GlobalMake_ActionGroup());
     addGroup(new JavaModuleActions_ActionGroup());
     addGroup(new MakeAddition_ActionGroup());
+    addGroup(new MakeAspects_ActionGroup());
     addGroup(new Make_ActionGroup());
     addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectCompileActions_ActionGroup());
@@ -69,6 +60,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(MakeAspects_ActionGroup.ID, MakeAddition_ActionGroup.ID, MakeAddition_ActionGroup.LABEL_ID_aspects);
     insertGroupIntoAnother(ProjectCompileActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);

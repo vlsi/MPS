@@ -68,7 +68,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
           return scope;
         }
       };
-      Collection<SNode> allSideTransformActions = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"));
+      Collection<SNode> allSideTransformActions = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), false);
       for (SNode actions : CollectionSequence.fromCollection(allSideTransformActions)) {
         for (SNode builder : ListSequence.fromList(SLinkOperations.getChildren(actions, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
