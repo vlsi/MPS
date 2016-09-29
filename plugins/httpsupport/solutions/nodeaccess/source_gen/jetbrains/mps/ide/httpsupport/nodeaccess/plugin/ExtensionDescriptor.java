@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new JavaFileOpener_Extension(), new NodeOpener_Extension(), new NodeReceiver_Extension(), new FileOpener_Extension()};
+  private Extension[] extensions = new Extension[]{new JavaFileOpener_Extension(), new NodeOpener_Extension(), new FileOpener_Extension()};
   public ExtensionDescriptor() {
   }
   @Override

@@ -70,7 +70,7 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No project is available.");
       }
-      this.request.sendResponse(HttpResponseStatus.OK, "image/gif", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
+      this.request.sendResponse(HttpResponseStatus.OK, "", Unpooled.copiedBuffer(HandlerUtil.FAILURE_STREAM));
     }
   }
 }
