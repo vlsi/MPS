@@ -2,16 +2,16 @@
 <model ref="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
   </languages>
   <imports>
@@ -174,6 +174,12 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -453,7 +459,6 @@
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
-      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
@@ -488,34 +493,19 @@
       <ref role="2VPoh2" node="7ZU0Lz4JC2c" resolve="TextGenAspectDescriptor" />
       <node concept="2VP$b9" id="7ZU0Lz4JyEF" role="2VPoh3">
         <node concept="3clFbS" id="7ZU0Lz4JyEG" role="2VODD2">
-          <node concept="3cpWs8" id="7ZU0Lz4J_hx" role="3cqZAp">
-            <node concept="3cpWsn" id="7ZU0Lz4J_hy" role="3cpWs9">
-              <property role="TrG5h" value="model" />
-              <node concept="H_c77" id="7ZU0Lz4J_hw" role="1tU5fm" />
-              <node concept="2OqwBi" id="7ZU0Lz4J_hz" role="33vP2m">
-                <node concept="1iwH7S" id="7ZU0Lz4J_h$" role="2Oq$k0" />
-                <node concept="1st3f0" id="7ZU0Lz4J_h_" role="2OqNvi" />
-              </node>
+          <node concept="3SKdUt" id="6hfjOhYihiI" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYihiJ" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
             </node>
           </node>
           <node concept="3clFbF" id="7ZU0Lz4JyTj" role="3cqZAp">
-            <node concept="1Wc70l" id="7ZU0Lz4J$Yb" role="3clFbG">
-              <node concept="2OqwBi" id="4r4fzRRwlfB" role="3uHU7B">
-                <node concept="37vLTw" id="4r4fzRRwle6" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7ZU0Lz4J_hy" resolve="model" />
-                </node>
-                <node concept="3zA4fs" id="4r4fzRRwlhA" role="2OqNvi">
-                  <ref role="3zA4av" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
-                </node>
+            <node concept="2OqwBi" id="4r4fzRRwlfB" role="3clFbG">
+              <node concept="2OqwBi" id="21KZIiciru_" role="2Oq$k0">
+                <node concept="1iwH7S" id="21KZIiciruA" role="2Oq$k0" />
+                <node concept="1st3f0" id="21KZIiciruB" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="7ZU0Lz4JAaH" role="3uHU7w">
-                <node concept="2OqwBi" id="7ZU0Lz4J_rA" role="2Oq$k0">
-                  <node concept="37vLTw" id="7ZU0Lz4J_nN" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7ZU0Lz4J_hy" resolve="model" />
-                  </node>
-                  <node concept="2RRcyG" id="7ZU0Lz4J_Aw" role="2OqNvi" />
-                </node>
-                <node concept="3GX2aA" id="7ZU0Lz4JBW3" role="2OqNvi" />
+              <node concept="3zA4fs" id="4r4fzRRwlhA" role="2OqNvi">
+                <ref role="3zA4av" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
               </node>
             </node>
           </node>
@@ -4476,24 +4466,18 @@
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
+          <node concept="3SKdUt" id="6hfjOhYi4$u" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYi4$w" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
+            </node>
+          </node>
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
-            <node concept="1Wc70l" id="5cAnPGmopIC" role="3clFbG">
-              <node concept="2OqwBi" id="1KHvivZKB8J" role="3uHU7B">
-                <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
-                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                </node>
-                <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
-                  <ref role="3zA4av" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
-                </node>
+            <node concept="2OqwBi" id="1KHvivZKB8J" role="3clFbG">
+              <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
+                <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
               </node>
-              <node concept="2OqwBi" id="227lWzxVIY6" role="3uHU7w">
-                <node concept="2OqwBi" id="227lWzxVIY7" role="2Oq$k0">
-                  <node concept="v3LJS" id="5cAnPGmopNK" role="2Oq$k0">
-                    <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                  </node>
-                  <node concept="2RRcyG" id="4r4fzRRveZx" role="2OqNvi" />
-                </node>
-                <node concept="3GX2aA" id="4r4fzRRvfDn" role="2OqNvi" />
+              <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
+                <ref role="3zA4av" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
               </node>
             </node>
           </node>

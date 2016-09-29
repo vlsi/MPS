@@ -4,6 +4,9 @@
     <file name="AndOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.formulaLanguage.behavior.AndOperation_BehaviorDescriptor" />
     </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="13,0,41,0" name="jetbrains.mps.samples.formulaLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
     <file name="Constant_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.formulaLanguage.behavior.Constant_BehaviorDescriptor" />
     </file>

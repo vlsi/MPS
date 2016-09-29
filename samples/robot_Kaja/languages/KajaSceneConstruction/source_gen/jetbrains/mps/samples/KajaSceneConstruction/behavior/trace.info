@@ -4,6 +4,9 @@
     <file name="AbstractBuilderCommand_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.AbstractBuilderCommand_BehaviorDescriptor" />
     </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="13,0,41,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.BehaviorAspectDescriptor" />
+    </file>
     <file name="BuildWall_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.BuildWall_BehaviorDescriptor" />
     </file>

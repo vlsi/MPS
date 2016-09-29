@@ -8272,6 +8272,12 @@
               <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
             </node>
           </node>
+          <node concept="1SiIV0" id="6hfjOhYbLGZ" role="3bR37C">
+            <node concept="3bR9La" id="6hfjOhYbLH0" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+            </node>
+          </node>
         </node>
         <node concept="1E0d5M" id="2a9bszgruMH" role="1E1XAP">
           <ref role="1E0d5P" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
@@ -12534,6 +12540,12 @@
             <node concept="3bR9La" id="tXmJuW3tiI" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="6hfjOhYbMez" role="3bR37C">
+            <node concept="3bR9La" id="6hfjOhYbMe$" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
             </node>
           </node>
         </node>

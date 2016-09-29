@@ -173,7 +173,7 @@
               <ref role="3cqZAo" node="hfg3Xqb" resolve="regiserSelfMethod" />
             </node>
             <node concept="3TrEf2" id="hfg416l" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:fzclF7Z" />
+              <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
             </node>
           </node>
         </node>
@@ -247,7 +247,7 @@
               <ref role="3cqZAo" node="hfg4dk7" resolve="unRegiserSelfMethod" />
             </node>
             <node concept="3TrEf2" id="hfg4dkr" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:fzclF7Z" />
+              <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
             </node>
           </node>
         </node>

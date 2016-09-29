@@ -456,9 +456,6 @@
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
-      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
-        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
-      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -604,11 +601,16 @@
       <ref role="2VPoh2" node="gNb$Wqb" resolve="QueriesGenerated" />
       <node concept="2VP$b9" id="2TwMGXXlxh3" role="2VPoh3">
         <node concept="3clFbS" id="2TwMGXXlxh4" role="2VODD2">
+          <node concept="3SKdUt" id="21KZIicecFF" role="3cqZAp">
+            <node concept="3SKdUq" id="21KZIicecFH" role="3SKWNk">
+              <property role="3SKdUp" value="[MM] this code should not be used after migration to 3.4. That's why I don't change it like the code below" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="2TwMGXXlxyA" role="3cqZAp">
             <node concept="2OqwBi" id="qmfyRQPxFh" role="3clFbw">
-              <node concept="2OqwBi" id="qmfyRQPy_j" role="2Oq$k0">
-                <node concept="1iwH7S" id="qmfyRQPyyO" role="2Oq$k0" />
-                <node concept="1st3f0" id="qmfyRQPyCh" role="2OqNvi" />
+              <node concept="2OqwBi" id="21KZIiceu2F" role="2Oq$k0">
+                <node concept="1iwH7S" id="21KZIiceu2G" role="2Oq$k0" />
+                <node concept="1st3f0" id="21KZIiceu2H" role="2OqNvi" />
               </node>
               <node concept="3zA4fs" id="qmfyRQPxFj" role="2OqNvi">
                 <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
@@ -673,28 +675,19 @@
       <ref role="2VPoh2" node="52UGxk5s6_K" resolve="ActionAspectDescriptorImpl" />
       <node concept="2VP$b9" id="52UGxk5rm6P" role="2VPoh3">
         <node concept="3clFbS" id="52UGxk5rm6Q" role="2VODD2">
-          <node concept="3cpWs6" id="12VdU1xGw32" role="3cqZAp">
-            <node concept="1Wc70l" id="4UrKinLj41h" role="3cqZAk">
-              <node concept="2OqwBi" id="qmfyRQPyEu" role="3uHU7B">
-                <node concept="2OqwBi" id="qmfyRQPyEv" role="2Oq$k0">
-                  <node concept="1iwH7S" id="qmfyRQPyEw" role="2Oq$k0" />
-                  <node concept="1st3f0" id="qmfyRQPyEx" role="2OqNvi" />
-                </node>
-                <node concept="3zA4fs" id="qmfyRQPyEy" role="2OqNvi">
-                  <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
-                </node>
+          <node concept="3SKdUt" id="6hfjOhYipeU" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYipeV" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="21KZIice8KN" role="3cqZAp">
+            <node concept="2OqwBi" id="qmfyRQPyEu" role="3clFbG">
+              <node concept="2OqwBi" id="21KZIice9Ua" role="2Oq$k0">
+                <node concept="1iwH7S" id="21KZIice9Ub" role="2Oq$k0" />
+                <node concept="1st3f0" id="21KZIice9Uc" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="4UrKinLj4g_" role="3uHU7w">
-                <node concept="2OqwBi" id="4UrKinLj5DD" role="2Oq$k0">
-                  <node concept="2OqwBi" id="4UrKinLj4gB" role="2Oq$k0">
-                    <node concept="1iwH7S" id="4UrKinLj4gC" role="2Oq$k0" />
-                    <node concept="1r8y6K" id="4UrKinLj4gD" role="2OqNvi" />
-                  </node>
-                  <node concept="2RRcyG" id="4UrKinLj5Vf" role="2OqNvi">
-                    <ref role="2RRcyH" to="tpdg:gR7WgqM" resolve="NodeFactories" />
-                  </node>
-                </node>
-                <node concept="3GX2aA" id="4UrKinLj4gF" role="2OqNvi" />
+              <node concept="3zA4fs" id="qmfyRQPyEy" role="2OqNvi">
+                <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
               </node>
             </node>
           </node>
@@ -10623,26 +10616,18 @@
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
+          <node concept="3SKdUt" id="6hfjOhYi4$u" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYi4$w" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
+            </node>
+          </node>
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
-            <node concept="1Wc70l" id="qmfyRQIhz5" role="3clFbG">
-              <node concept="2OqwBi" id="1KHvivZKB8J" role="3uHU7B">
-                <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
-                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                </node>
-                <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
-                  <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
-                </node>
+            <node concept="2OqwBi" id="1KHvivZKB8J" role="3clFbG">
+              <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
+                <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
               </node>
-              <node concept="2YIFZM" id="4UrKinLirNQ" role="3uHU7w">
-                <ref role="37wK5l" to="zq1i:1XXGcSTYFLY" resolve="isAspectOfLanguage" />
-                <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
-                <node concept="v3LJS" id="qmfyRQPapc" role="37wK5m">
-                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                </node>
-                <node concept="1iwH7S" id="4UrKinLirNT" role="37wK5m" />
-                <node concept="35c_gC" id="4UrKinLirNU" role="37wK5m">
-                  <ref role="35c_gD" to="tpdg:gR7WgqM" resolve="NodeFactories" />
-                </node>
+              <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
+                <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
               </node>
             </node>
           </node>
@@ -10662,47 +10647,6 @@
           </node>
         </node>
         <node concept="3B5_sB" id="4WrOGsLZMQi" role="v9R3O">
-          <ref role="3B5MYn" to="9eus:~ActionAspectDescriptor" resolve="ActionAspectDescriptor" />
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="qmfyRQPau6" role="3aUrZf">
-      <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
-      <node concept="30G5F_" id="qmfyRQPau7" role="30HLyM">
-        <node concept="3clFbS" id="qmfyRQPau8" role="2VODD2">
-          <node concept="3clFbF" id="qmfyRQPau9" role="3cqZAp">
-            <node concept="1Wc70l" id="qmfyRQPaua" role="3clFbG">
-              <node concept="2OqwBi" id="qmfyRQPaub" role="3uHU7B">
-                <node concept="v3LJS" id="qmfyRQPauc" role="2Oq$k0">
-                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                </node>
-                <node concept="3zA4fs" id="qmfyRQPaud" role="2OqNvi">
-                  <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="qmfyRQPaz5" role="3uHU7w">
-                <node concept="2YIFZM" id="qmfyRQPaz7" role="3fr31v">
-                  <ref role="37wK5l" to="zq1i:1XXGcSTYFLY" resolve="isAspectOfLanguage" />
-                  <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
-                  <node concept="v3LJS" id="qmfyRQPaz8" role="37wK5m">
-                    <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
-                  </node>
-                  <node concept="1iwH7S" id="qmfyRQPaz9" role="37wK5m" />
-                  <node concept="35c_gC" id="qmfyRQPaza" role="37wK5m">
-                    <ref role="35c_gD" to="tpdg:gR7WgqM" resolve="NodeFactories" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="j$656" id="qmfyRQPaui" role="1lVwrX">
-        <ref role="v9R2y" to="ba7m:4WrOGsLZ$AX" resolve="GeneratedClassInstantiation" />
-        <node concept="Xl_RD" id="qmfyRQPaIb" role="v9R3O">
-          <property role="Xl_RC" value="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
-        </node>
-        <node concept="3B5_sB" id="qmfyRQPauo" role="v9R3O">
           <ref role="3B5MYn" to="9eus:~ActionAspectDescriptor" resolve="ActionAspectDescriptor" />
         </node>
       </node>

@@ -31,7 +31,7 @@
       <node id="1110928002290223181" at="37,17,38,16" concept="10" />
       <node id="1110928002290397037" at="41,5,42,59" concept="9" />
       <node id="1110928002290397037" at="44,52,45,23" concept="10" />
-      <node id="6537222822500053456" at="47,8,48,259" concept="9" />
+      <node id="6537222822500053456" at="47,8,48,266" concept="9" />
       <node id="1110928002290228947" at="50,41,51,191" concept="10" />
       <node id="6537222822500059352" at="54,46,55,188" concept="10" />
       <node id="6537222822500065764" at="59,41,60,194" concept="10" />
@@ -171,7 +171,7 @@
       <node id="4862225818732375014" at="148,0,155,0" concept="8" trace="isChildOfNotEmptyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2420890806621138250" at="260,0,267,0" concept="8" trace="replaceNodeWithNotEmptyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1110928002290223181" at="277,0,285,0" concept="14" trace="buildConceptIndices#(null)Ljava/util/Map;" />
-      <node id="6537222822500005201" at="48,259,57,9" concept="4" />
+      <node id="6537222822500005201" at="48,266,57,9" concept="4" />
       <node id="6537222822500065757" at="57,9,66,9" concept="4" />
       <node id="6537222822500069530" at="66,9,75,9" concept="4" />
       <node id="6537222822500084564" at="75,9,84,9" concept="4" />
@@ -595,7 +595,7 @@
         <var name="cellModel" id="1265112845350134233" />
       </scope>
       <unit id="1265112845350115501" at="40,42,44,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$1" />
-      <unit id="1265112845350411814" at="45,301,49,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$2" />
+      <unit id="1265112845350411814" at="45,308,49,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$2" />
       <unit id="1265112845350114910" at="25,0,127,0" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell" />
     </file>
   </root>
@@ -652,7 +652,7 @@
         <var name="m" id="306079339724313756" />
       </scope>
       <unit id="306079339724322822" at="34,42,38,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$1" />
-      <unit id="306079339724331675" at="39,310,43,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$2" />
+      <unit id="306079339724331675" at="39,317,43,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$2" />
       <unit id="306079339724347910" at="44,61,48,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$3" />
       <unit id="306079339724313756" at="19,0,56,0" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform" />
     </file>
@@ -720,7 +720,7 @@
         <var name="m" id="3841328616808513432" />
       </scope>
       <unit id="8525549501910192759" at="44,42,48,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$1" />
-      <unit id="8525549501910198677" at="49,298,53,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$2" />
+      <unit id="8525549501910198677" at="49,305,53,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$2" />
       <unit id="8525549501910212087" at="53,20,57,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$3" />
       <unit id="3841328616808513432" at="23,0,68,0" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms" />
     </file>
@@ -1354,7 +1354,7 @@
       <scope id="562388756448743649" at="76,30,212,5" />
       <scope id="562388756448743646" at="76,0,214,0" />
       <unit id="562388756450537283" at="79,42,83,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$1" />
-      <unit id="8810661107103759389" at="84,323,88,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$2" />
+      <unit id="8810661107103759389" at="84,330,88,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$2" />
       <unit id="6251423184563197312" at="261,141,265,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$3" />
       <unit id="562388756448624010" at="42,0,451,0" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper" />
     </file>
