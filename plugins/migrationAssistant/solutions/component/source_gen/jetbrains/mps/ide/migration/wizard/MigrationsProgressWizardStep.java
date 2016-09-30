@@ -9,6 +9,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import java.util.Set;
 import java.util.HashSet;
+import com.intellij.history.LocalHistoryAction;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
@@ -50,7 +51,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.MigrationComponent;
-import com.intellij.history.LocalHistoryAction;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
@@ -76,6 +76,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   private volatile boolean myIsComplete = true;
   private InitialStep myInitialStep;
   private boolean mySearchBrokenReferences;
+  private LocalHistoryAction myCurrentChange = null;
 
   protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
   public MigrationsProgressWizardStep(Project project, InitialStep initialStep, MigrationManager manager, MigrationProblemsContainer errorContainer, boolean searchBrokenReferences) {
@@ -189,7 +190,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       }
 
       ListSequence.fromList(cleanupMigrations).addElement(step);
-      if (!(executeSingleStep(step))) {
+      if (!(executeSingleStep(step, false))) {
         break;
       }
 
@@ -273,7 +274,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
     int projectStepsCount = myManager.projectStepsCount(false);
     stepNum = 0;
-    while (executeSingleStep(myManager.nextProjectStep(options, false))) {
+    while (executeSingleStep(myManager.nextProjectStep(options, false), false)) {
       stepNum++;
       setFraction(progress, ProgressEstimation.projectMigrations(1.0 * stepNum / projectStepsCount));
     }
@@ -284,23 +285,30 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
     int languageStepsCount = myManager.moduleStepsCount();
     stepNum = 0;
-    while (executeSingleStep(myManager.nextModuleStep())) {
+    MigrationManager.MigrationStep lastStep = null;
+    while (true) {
+      String mergeId = (lastStep == null ? null : lastStep.getMergeId());
+      MigrationManager.MigrationStep nextStep = myManager.nextModuleStep(mergeId);
+      boolean merge = (mergeId != null && nextStep != null && mergeId.equals(nextStep.getMergeId()));
+      lastStep = nextStep;
+      boolean res = executeSingleStep(nextStep, merge);
+      if (!(res)) {
+        break;
+      }
+
       stepNum++;
       setFraction(progress, ProgressEstimation.languageMigrations(1.0 * stepNum / languageStepsCount));
     }
+    if (myCurrentChange != null) {
+      saveAll(mpsProject);
+      myCurrentChange.finish();
+      myCurrentChange = null;
+    }
+
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Exception while running migration. Press 'Next' to continue.");
       return;
     }
-
-    addElementToMigrationList("Saving changed models...");
-
-    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-      public void run() {
-        mpsProject.getRepository().saveAll();
-      }
-    });
-    setFraction(progress, ProgressEstimation.saving(1.0));
 
     final Wrappers._boolean haveBadCode = new Wrappers._boolean(false);
     addElementToMigrationList("Checking models...");
@@ -344,6 +352,15 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList("Done!");
   }
 
+  private void saveAll(final jetbrains.mps.project.Project mpsProject) {
+    addElementToMigrationList("Saving changed models...");
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
+      public void run() {
+        mpsProject.getRepository().saveAll();
+      }
+    });
+  }
+
   public void setFraction(ProgressIndicator p, double fraction) {
     p.setFraction(fraction);
   }
@@ -359,7 +376,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }, myModalityState);
   }
 
-  private boolean executeSingleStep(final MigrationManager.MigrationStep result) {
+  private boolean executeSingleStep(final MigrationManager.MigrationStep result, final boolean mergeWithPrev) {
     if (result == null) {
       return false;
     }
@@ -368,15 +385,22 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList(step);
 
     final Wrappers._boolean noException = new Wrappers._boolean();
+
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
-        LocalHistoryAction action = LocalHistory.getInstance().startAction(result.getDescription());
+        if (!(mergeWithPrev) && myCurrentChange != null) {
+          saveAll(getMPSProject());
+          myCurrentChange.finish();
+          myCurrentChange = null;
+        }
+        if (myCurrentChange == null) {
+          myCurrentChange = LocalHistory.getInstance().startAction(result.getDescription());
+        }
         getMPSProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             noException.value = ((MigrationManager.MigrationStep) result).execute();
           }
         });
-        action.finish();
       }
     }, myModalityState);
 

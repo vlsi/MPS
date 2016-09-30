@@ -62,7 +62,7 @@ public class AntTaskExecutionUtil {
         }
 
         while (true) {
-          MigrationManager.MigrationStep step = m.nextModuleStep();
+          MigrationManager.MigrationStep step = m.nextModuleStep(null);
           if (step == null) {
             break;
           }

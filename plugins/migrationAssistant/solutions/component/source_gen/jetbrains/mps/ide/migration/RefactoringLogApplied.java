@@ -75,4 +75,9 @@ public final class RefactoringLogApplied implements ScriptApplied {
   public String getDescription() {
     return new RefactoringLogApplied.RefactoringLogAppliedReference(myRefactoringLog.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
   }
+  @Override
+  public String getId() {
+    RefactoringLogReference d = myRefactoringLog.getDescriptor();
+    return "refactoring:" + d.getModule().getModuleId().toString() + ":" + d.getFromVersion();
+  }
 }
