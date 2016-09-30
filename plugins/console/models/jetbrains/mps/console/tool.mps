@@ -77,6 +77,7 @@
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="3s15" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench(MPS.Workbench/)" />
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
+    <import index="vuw5" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.keymap(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -542,6 +543,15 @@
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" flags="nn" index="3dhRuq" />
+      <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
+        <child id="1197683466920" name="keyType" index="3rvQeY" />
+        <child id="1197683475734" name="valueType" index="3rvSg0" />
+      </concept>
+      <concept id="1197686869805" name="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" flags="nn" index="3rGOSV">
+        <child id="1197687026896" name="keyType" index="3rHrn6" />
+        <child id="1197687035757" name="valueType" index="3rHtpV" />
+        <child id="1206655950512" name="initializer" index="3Mj9YC" />
+      </concept>
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
@@ -552,6 +562,13 @@
       <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
+      <concept id="1206655653991" name="jetbrains.mps.baseLanguage.collections.structure.MapInitializer" flags="ng" index="3Mi1_Z">
+        <child id="1206655902276" name="entries" index="3MiYds" />
+      </concept>
+      <concept id="1206655735055" name="jetbrains.mps.baseLanguage.collections.structure.MapEntry" flags="ng" index="3Milgn">
+        <child id="1206655844556" name="key" index="3MiK7k" />
+        <child id="1206655853135" name="value" index="3MiMdn" />
+      </concept>
       <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
         <child id="5686963296372573084" name="elementType" index="3O5elw" />
       </concept>
@@ -1477,7 +1494,7 @@
       <node concept="3Tm1VV" id="1iC2RjkXSrP" role="1B3o_S" />
       <node concept="3clFbS" id="1iC2RjkXSrR" role="3clF47">
         <node concept="XkiVB" id="1iC2RjkXSrT" role="3cqZAp">
-          <ref role="37wK5l" to="71xd:~BaseTabbedProjectTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,int,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolve="BaseTabbedProjectTool" />
+          <ref role="37wK5l" to="71xd:~BaseTabbedProjectTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,java.util.Map,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolve="BaseTabbedProjectTool" />
           <node concept="2OqwBi" id="758rrhN5aMc" role="37wK5m">
             <node concept="37vLTw" id="1iC2RjkXSrX" role="2Oq$k0">
               <ref role="3cqZAo" node="1iC2RjkXSrU" resolve="project" />
@@ -1489,8 +1506,8 @@
           <node concept="Xl_RD" id="1iC2RjkXSX1" role="37wK5m">
             <property role="Xl_RC" value="Console" />
           </node>
-          <node concept="3cmrfG" id="1iC2RjkXT4R" role="37wK5m">
-            <property role="3cmrfH" value="-1" />
+          <node concept="1rXfSq" id="5JiSkBnO4v_" role="37wK5m">
+            <ref role="37wK5l" node="5JiSkBnO2aP" resolve="getKeymap" />
           </node>
           <node concept="10M0yZ" id="4QV_EvxNZxj" role="37wK5m">
             <ref role="1PxDUh" to="l7us:~MPSIcons$ToolWindows" resolve="MPSIcons.ToolWindows" />
@@ -1519,6 +1536,44 @@
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="758rrhN5a$q" role="1tU5fm">
           <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5JiSkBnNZdc" role="jymVt" />
+    <node concept="2YIFZL" id="5JiSkBnO2aP" role="jymVt">
+      <property role="TrG5h" value="getKeymap" />
+      <node concept="3rvAFt" id="5JiSkBnO4Tq" role="3clF45">
+        <node concept="17QB3L" id="5JiSkBnO5pt" role="3rvQeY" />
+        <node concept="3uibUv" id="5JiSkBnO5DO" role="3rvSg0">
+          <ref role="3uigEE" to="dxuu:~KeyStroke" resolve="KeyStroke" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="5JiSkBnO7oT" role="1B3o_S" />
+      <node concept="3clFbS" id="5JiSkBnO2aT" role="3clF47">
+        <node concept="3clFbF" id="5JiSkBnO4fB" role="3cqZAp">
+          <node concept="2ShNRf" id="5JiSkBnNYMR" role="3clFbG">
+            <node concept="3rGOSV" id="5JiSkBnNYMS" role="2ShVmc">
+              <node concept="17QB3L" id="5JiSkBnNYMT" role="3rHrn6" />
+              <node concept="3uibUv" id="5JiSkBnNYMU" role="3rHtpV">
+                <ref role="3uigEE" to="dxuu:~KeyStroke" resolve="KeyStroke" />
+              </node>
+              <node concept="3Mi1_Z" id="5JiSkBnNYMV" role="3Mj9YC">
+                <node concept="3Milgn" id="5JiSkBnNYMW" role="3MiYds">
+                  <node concept="10M0yZ" id="5JiSkBnNYMX" role="3MiK7k">
+                    <ref role="1PxDUh" to="vuw5:~KeymapManager" resolve="KeymapManager" />
+                    <ref role="3cqZAo" to="vuw5:~KeymapManager.DEFAULT_IDEA_KEYMAP" resolve="DEFAULT_IDEA_KEYMAP" />
+                  </node>
+                  <node concept="2YIFZM" id="5JiSkBnNYMY" role="3MiMdn">
+                    <ref role="37wK5l" to="dxuu:~KeyStroke.getKeyStroke(java.lang.String):javax.swing.KeyStroke" resolve="getKeyStroke" />
+                    <ref role="1Pybhc" to="dxuu:~KeyStroke" resolve="KeyStroke" />
+                    <node concept="Xl_RD" id="5JiSkBnNYMZ" role="37wK5m">
+                      <property role="Xl_RC" value="alt F11" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -1910,7 +1965,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7GtYJ30PCbU" role="jymVt" />
+    <node concept="2tJIrI" id="147lksmIiMM" role="jymVt" />
     <node concept="3clFb_" id="7GtYJ30PG8b" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initTabs" />
