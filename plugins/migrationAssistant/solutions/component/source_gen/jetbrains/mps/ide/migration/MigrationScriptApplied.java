@@ -91,7 +91,7 @@ public final class MigrationScriptApplied implements ScriptApplied {
   }
 
   public String getDescription() {
-    return new MigrationScriptApplied.MigrationScriptAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
+    return new MigrationScriptApplied.MigrationScriptAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this);
   }
   @Override
   public String getId() {

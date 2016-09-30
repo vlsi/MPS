@@ -73,7 +73,7 @@ public final class RefactoringLogApplied implements ScriptApplied {
     return migrationComponent.executeRefactoringLog(this);
   }
   public String getDescription() {
-    return new RefactoringLogApplied.RefactoringLogAppliedReference(myRefactoringLog.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
+    return new RefactoringLogApplied.RefactoringLogAppliedReference(myRefactoringLog.getDescriptor(), myModule).getKindDescription(this);
   }
   @Override
   public String getId() {

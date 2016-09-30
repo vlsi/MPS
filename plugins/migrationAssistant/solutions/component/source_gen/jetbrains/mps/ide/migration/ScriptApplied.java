@@ -14,5 +14,6 @@ public interface ScriptApplied {
   Iterable<ScriptApplied.ScriptAppliedReference> getDependencies();
   boolean execute(MigrationComponent migrationComponent);
   String getDescription();
+  SModule getModule();
   String getId();
 }

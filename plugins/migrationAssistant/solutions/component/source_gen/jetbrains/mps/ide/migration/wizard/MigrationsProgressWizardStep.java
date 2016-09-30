@@ -300,7 +300,17 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       setFraction(progress, ProgressEstimation.languageMigrations(1.0 * stepNum / languageStepsCount));
     }
     if (myCurrentChange != null) {
-      saveAll(mpsProject);
+      addElementToMigrationList("Saving changed models...");
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          mpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              mpsProject.getRepository().saveAll();
+            }
+          });
+        }
+      }, myModalityState);
+
       myCurrentChange.finish();
       myCurrentChange = null;
     }
@@ -352,15 +362,6 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList("Done!");
   }
 
-  private void saveAll(final jetbrains.mps.project.Project mpsProject) {
-    addElementToMigrationList("Saving changed models...");
-    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-      public void run() {
-        mpsProject.getRepository().saveAll();
-      }
-    });
-  }
-
   public void setFraction(ProgressIndicator p, double fraction) {
     p.setFraction(fraction);
   }
@@ -376,9 +377,25 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }, myModalityState);
   }
 
-  private boolean executeSingleStep(final MigrationManager.MigrationStep result, final boolean mergeWithPrev) {
+  private boolean executeSingleStep(final MigrationManager.MigrationStep result, boolean mergeWithPrev) {
     if (result == null) {
       return false;
+    }
+
+    final boolean startNewChange = !(mergeWithPrev) && myCurrentChange != null;
+
+    if (startNewChange) {
+      addElementToMigrationList("Saving changed models...");
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          final jetbrains.mps.project.Project mpsProject = getMPSProject();
+          mpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              mpsProject.getRepository().saveAll();
+            }
+          });
+        }
+      }, myModalityState);
     }
 
     final String step = ((MigrationManager.MigrationStep) result).getDescription();
@@ -388,13 +405,12 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
-        if (!(mergeWithPrev) && myCurrentChange != null) {
-          saveAll(getMPSProject());
+        if (startNewChange) {
           myCurrentChange.finish();
           myCurrentChange = null;
         }
         if (myCurrentChange == null) {
-          myCurrentChange = LocalHistory.getInstance().startAction(result.getDescription());
+          myCurrentChange = LocalHistory.getInstance().startAction(result.getCommonDescription());
         }
         getMPSProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {

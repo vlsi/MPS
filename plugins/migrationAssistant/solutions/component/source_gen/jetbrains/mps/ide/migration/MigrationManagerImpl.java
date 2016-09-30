@@ -132,6 +132,10 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
         return cc.getDescription();
       }
       @Override
+      public String getCommonDescription() {
+        return cc.getDescription();
+      }
+      @Override
       public String getMergeId() {
         return null;
       }
@@ -234,6 +238,10 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
         ScriptApplied applied = Sequence.fromIterable(preferred).first();
         result.value = new MigrationManager.MigrationStep() {
           public String getDescription() {
+            return applied.getDescription() + ": " + applied.getModule().getModuleName();
+          }
+          @Override
+          public String getCommonDescription() {
             return applied.getDescription();
           }
           @Override

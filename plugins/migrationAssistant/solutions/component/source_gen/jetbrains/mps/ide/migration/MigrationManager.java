@@ -30,6 +30,7 @@ public interface MigrationManager {
 
   interface MigrationStep {
     String getDescription();
+    String getCommonDescription();
     String getMergeId();
     boolean execute();
     void forceExecutionNextTime();
