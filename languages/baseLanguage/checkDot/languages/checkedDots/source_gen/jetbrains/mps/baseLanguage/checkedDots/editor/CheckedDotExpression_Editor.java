@@ -20,7 +20,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.baseLanguage.editor.DotExpression_Actions_DeleteOperation;
 
 public class CheckedDotExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -102,7 +101,7 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
       if (true) {
         editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
       }
-      DotExpression_Actions_DeleteOperation.setCellActions(editorCell, myOwnerNode, myEditorContext);
+      CheckedDotExpression_Actions_DeleteOperation.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
     @Override
     protected EditorCell createEmptyCell() {
