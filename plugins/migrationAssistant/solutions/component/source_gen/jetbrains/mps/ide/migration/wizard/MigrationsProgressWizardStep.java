@@ -181,7 +181,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     int cleanupStepsCount = myManager.projectStepsCount(true);
     int stepNum = 0;
 
-    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Starting migration", Color.RED.getRGB());
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Starting migration", Color.ORANGE.getRGB());
 
     while (true) {
       MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
@@ -243,7 +243,6 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
     setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
-
 
     addElementToMigrationList("Checking models...");
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -314,6 +313,8 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       myCurrentChange.finish();
       myCurrentChange = null;
     }
+
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Migration finished", Color.ORANGE.getRGB());
 
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Exception while running migration. Press 'Next' to continue.");

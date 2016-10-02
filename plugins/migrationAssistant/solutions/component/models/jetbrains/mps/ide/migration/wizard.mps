@@ -1987,7 +1987,7 @@
               <node concept="2OqwBi" id="1NxkXg8ngaG" role="37wK5m">
                 <node concept="10M0yZ" id="1NxkXg8neNw" role="2Oq$k0">
                   <ref role="1PxDUh" to="z60i:~Color" resolve="Color" />
-                  <ref role="3cqZAo" to="z60i:~Color.RED" resolve="RED" />
+                  <ref role="3cqZAo" to="z60i:~Color.ORANGE" resolve="ORANGE" />
                 </node>
                 <node concept="liA8E" id="1NxkXg8ngnw" role="2OqNvi">
                   <ref role="37wK5l" to="z60i:~Color.getRGB():int" resolve="getRGB" />
@@ -2534,7 +2534,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="ANqTy7n9YH" role="3cqZAp" />
-        <node concept="3clFbH" id="3OvHNCMjt_7" role="3cqZAp" />
         <node concept="3clFbF" id="6Sxc5MiBsne" role="3cqZAp">
           <node concept="1rXfSq" id="6Sxc5MiBsnf" role="3clFbG">
             <ref role="37wK5l" node="513ZrA4x4$8" resolve="addElementToMigrationList" />
@@ -3105,6 +3104,37 @@
             <node concept="10Nm6u" id="45hrIBvk5Lv" role="3uHU7w" />
             <node concept="37vLTw" id="45hrIBvk4sm" role="3uHU7B">
               <ref role="3cqZAo" node="45hrIBvjy9$" resolve="myCurrentChange" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6nIivhatxFN" role="3cqZAp" />
+        <node concept="3clFbF" id="6nIivhatzqK" role="3cqZAp">
+          <node concept="2OqwBi" id="6nIivhatzqL" role="3clFbG">
+            <node concept="2YIFZM" id="6nIivhatzqM" role="2Oq$k0">
+              <ref role="37wK5l" to="t2ei:~LocalHistory.getInstance():com.intellij.history.LocalHistory" resolve="getInstance" />
+              <ref role="1Pybhc" to="t2ei:~LocalHistory" resolve="LocalHistory" />
+            </node>
+            <node concept="liA8E" id="6nIivhatzqN" role="2OqNvi">
+              <ref role="37wK5l" to="t2ei:~LocalHistory.putSystemLabel(com.intellij.openapi.project.Project,java.lang.String,int):com.intellij.history.Label" resolve="putSystemLabel" />
+              <node concept="2YIFZM" id="6nIivhatzqO" role="37wK5m">
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                <node concept="1rXfSq" id="6nIivhatzqP" role="37wK5m">
+                  <ref role="37wK5l" node="6mkTi9xJFLO" resolve="getMPSProject" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="6nIivhatzqQ" role="37wK5m">
+                <property role="Xl_RC" value="Migration finished" />
+              </node>
+              <node concept="2OqwBi" id="6nIivhatzqR" role="37wK5m">
+                <node concept="10M0yZ" id="6nIivhatzqS" role="2Oq$k0">
+                  <ref role="1PxDUh" to="z60i:~Color" resolve="Color" />
+                  <ref role="3cqZAo" to="z60i:~Color.ORANGE" resolve="ORANGE" />
+                </node>
+                <node concept="liA8E" id="6nIivhatzqT" role="2OqNvi">
+                  <ref role="37wK5l" to="z60i:~Color.getRGB():int" resolve="getRGB" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
