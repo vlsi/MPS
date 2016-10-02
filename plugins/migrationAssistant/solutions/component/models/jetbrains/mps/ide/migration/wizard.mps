@@ -1982,7 +1982,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="1NxkXg8n7Ro" role="37wK5m">
-                <property role="Xl_RC" value="Starting migration" />
+                <property role="Xl_RC" value="Migration started" />
               </node>
               <node concept="2OqwBi" id="1NxkXg8ngaG" role="37wK5m">
                 <node concept="10M0yZ" id="1NxkXg8neNw" role="2Oq$k0">
@@ -3789,12 +3789,17 @@
                             </node>
                             <node concept="liA8E" id="1NxkXg8m5L3" role="2OqNvi">
                               <ref role="37wK5l" to="t2ei:~LocalHistory.startAction(java.lang.String):com.intellij.history.LocalHistoryAction" resolve="startAction" />
-                              <node concept="2OqwBi" id="5tBZROX1vYu" role="37wK5m">
-                                <node concept="37vLTw" id="5tBZROX0NMY" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
+                              <node concept="3cpWs3" id="4ZWn912VlNv" role="37wK5m">
+                                <node concept="Xl_RD" id="4ZWn912Vm3b" role="3uHU7B">
+                                  <property role="Xl_RC" value="Applying migration " />
                                 </node>
-                                <node concept="liA8E" id="5tBZROX1w8x" role="2OqNvi">
-                                  <ref role="37wK5l" to="bim2:5tBZROX0QC7" resolve="getCommonDescription" />
+                                <node concept="2OqwBi" id="5tBZROX1vYu" role="3uHU7w">
+                                  <node concept="37vLTw" id="5tBZROX0NMY" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
+                                  </node>
+                                  <node concept="liA8E" id="5tBZROX1w8x" role="2OqNvi">
+                                    <ref role="37wK5l" to="bim2:5tBZROX0QC7" resolve="getCommonDescription" />
+                                  </node>
                                 </node>
                               </node>
                             </node>

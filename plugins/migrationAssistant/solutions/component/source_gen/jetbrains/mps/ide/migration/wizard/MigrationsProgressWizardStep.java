@@ -181,7 +181,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     int cleanupStepsCount = myManager.projectStepsCount(true);
     int stepNum = 0;
 
-    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Starting migration", Color.ORANGE.getRGB());
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Migration started", Color.ORANGE.getRGB());
 
     while (true) {
       MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
@@ -411,7 +411,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
           myCurrentChange = null;
         }
         if (myCurrentChange == null) {
-          myCurrentChange = LocalHistory.getInstance().startAction(result.getCommonDescription());
+          myCurrentChange = LocalHistory.getInstance().startAction("Applying migration " + result.getCommonDescription());
         }
         getMPSProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
