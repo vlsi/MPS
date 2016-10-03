@@ -821,18 +821,22 @@
       </node>
       <node concept="9aQIb" id="14R2qyOBxcc" role="3rFUVF">
         <node concept="3clFbS" id="14R2qyOBxcd" role="9aQI4">
-          <node concept="3cpWs8" id="14R2qyOBxce" role="3cqZAp">
-            <node concept="3cpWsn" id="14R2qyOBxcf" role="3cpWs9">
-              <property role="TrG5h" value="java" />
-              <node concept="3uibUv" id="14R2qyOBxcg" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~File" resolve="File" />
-              </node>
-              <node concept="2OqwBi" id="14R2qyOBxch" role="33vP2m">
-                <node concept="2WthIp" id="14R2qyOBxci" role="2Oq$k0" />
-                <node concept="2XshWL" id="14R2qyOBxcj" role="2OqNvi">
-                  <ref role="2WH_rO" node="14R2qyOBxja" resolve="getJavaCommand" />
-                  <node concept="2LYoG9" id="14R2qyOBxck" role="2XxRq1">
-                    <ref role="2LYoGb" node="14R2qyOBxbV" resolve="jrePath" />
+          <node concept="3cpWs8" id="7t_vtr6qJ8z" role="3cqZAp">
+            <node concept="3cpWsn" id="7t_vtr6qGvl" role="3cpWs9">
+              <property role="TrG5h" value="classPathPart" />
+              <node concept="2dOA70" id="7t_vtr6qGvc" role="1tU5fm" />
+              <node concept="2dOGH5" id="7t_vtr6qGvm" role="33vP2m">
+                <property role="Lv5iS" value="true" />
+                <node concept="Xl_RD" id="7t_vtr6qGvn" role="2dOGIT">
+                  <property role="Xl_RC" value="classpath" />
+                </node>
+                <node concept="1tenjt" id="7t_vtr6qRyy" role="2dOGIY">
+                  <node concept="10M0yZ" id="7t_vtr6qRyz" role="1tenjo">
+                    <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+                    <ref role="3cqZAo" to="guwi:~File.pathSeparator" resolve="pathSeparator" />
+                  </node>
+                  <node concept="2LYoG9" id="7t_vtr6qRy$" role="1tenjv">
+                    <ref role="2LYoGb" node="14R2qyOBxc6" resolve="classPath" />
                   </node>
                 </node>
               </node>
@@ -851,6 +855,23 @@
                 <ref role="2LYoGb" node="14R2qyOBxc4" resolve="className" />
               </node>
               <node concept="17RlXB" id="14R2qyOBxcr" role="2OqNvi" />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="14R2qyOBxce" role="3cqZAp">
+            <node concept="3cpWsn" id="14R2qyOBxcf" role="3cpWs9">
+              <property role="TrG5h" value="java" />
+              <node concept="3uibUv" id="14R2qyOBxcg" role="1tU5fm">
+                <ref role="3uigEE" to="guwi:~File" resolve="File" />
+              </node>
+              <node concept="2OqwBi" id="14R2qyOBxch" role="33vP2m">
+                <node concept="2WthIp" id="14R2qyOBxci" role="2Oq$k0" />
+                <node concept="2XshWL" id="14R2qyOBxcj" role="2OqNvi">
+                  <ref role="2WH_rO" node="14R2qyOBxja" resolve="getJavaCommand" />
+                  <node concept="2LYoG9" id="14R2qyOBxck" role="2XxRq1">
+                    <ref role="2LYoGb" node="14R2qyOBxbV" resolve="jrePath" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
           <node concept="3clFbJ" id="14R2qyOBxcs" role="3cqZAp">
@@ -892,7 +913,7 @@
                         <node concept="2XshWL" id="14R2qyOBxcI" role="2OqNvi">
                           <ref role="2WH_rO" node="14R2qyOBxml" resolve="writeToTmpFile" />
                           <node concept="2OqwBi" id="14R2qyOBxcJ" role="2XxRq1">
-                            <node concept="2LYoG9" id="14R2qyOBxcK" role="2Oq$k0">
+                            <node concept="2LYoG9" id="7t_vtr6qTFM" role="2Oq$k0">
                               <ref role="2LYoGb" node="14R2qyOBxc6" resolve="classPath" />
                             </node>
                             <node concept="3$u5V9" id="14R2qyOBxcL" role="2OqNvi">
@@ -1042,7 +1063,7 @@
                         <ref role="3cqZAo" node="14R2qyOBxdz" resolve="e" />
                       </node>
                       <node concept="Xl_RD" id="14R2qyOBxdC" role="2LYoNm">
-                        <property role="Xl_RC" value="Could not create temporal file for program parameters." />
+                        <property role="Xl_RC" value="Could not create temporary file for program parameters and class path." />
                       </node>
                     </node>
                   </node>
@@ -1051,17 +1072,33 @@
               <node concept="3clFbH" id="14R2qyOBxdD" role="3cqZAp" />
             </node>
             <node concept="2d3UOw" id="14R2qyOBxdE" role="3clFbw">
+              <node concept="3cpWs3" id="tWcxWgc0JI" role="3uHU7B">
+                <node concept="2OqwBi" id="7t_vtr6qOnc" role="3uHU7w">
+                  <node concept="37vLTw" id="7t_vtr6qO5o" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7t_vtr6qGvl" resolve="classPathPart" />
+                  </node>
+                  <node concept="LvFIo" id="7t_vtr6qOD6" role="2OqNvi" />
+                </node>
+                <node concept="3cpWs3" id="tWcxWgbYjp" role="3uHU7B">
+                  <node concept="2EnYce" id="14R2qyOBxdI" role="3uHU7B">
+                    <node concept="2LYoG9" id="14R2qyOBxdJ" role="2Oq$k0">
+                      <ref role="2LYoGb" node="14R2qyOBxc0" resolve="programParameter" />
+                    </node>
+                    <node concept="LvFIo" id="14R2qyOBxdK" role="2OqNvi" />
+                  </node>
+                  <node concept="2EnYce" id="tWcxWgbYUf" role="3uHU7w">
+                    <node concept="2LYoG9" id="tWcxWgbYj$" role="2Oq$k0">
+                      <ref role="2LYoGb" node="14R2qyOBxc2" resolve="virtualMachineParameter" />
+                    </node>
+                    <node concept="LvFIo" id="tWcxWgbYBe" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
               <node concept="2OqwBi" id="14R2qyOBxdF" role="3uHU7w">
                 <node concept="2WthIp" id="14R2qyOBxdG" role="2Oq$k0" />
                 <node concept="2XshWL" id="14R2qyOBxdH" role="2OqNvi">
                   <ref role="2WH_rO" node="14R2qyOBxhl" resolve="getMaxCommandLine" />
                 </node>
-              </node>
-              <node concept="2EnYce" id="14R2qyOBxdI" role="3uHU7B">
-                <node concept="2LYoG9" id="14R2qyOBxdJ" role="2Oq$k0">
-                  <ref role="2LYoGb" node="14R2qyOBxc0" resolve="programParameter" />
-                </node>
-                <node concept="LvFIo" id="14R2qyOBxdK" role="2OqNvi" />
               </node>
             </node>
             <node concept="9aQIb" id="14R2qyOBxdL" role="9aQIa">
@@ -1077,20 +1114,8 @@
                     <node concept="2LYoG9" id="14R2qyOBxdR" role="3CLvVg">
                       <ref role="2LYoGb" node="14R2qyOBxgu" resolve="debuggerSettings" />
                     </node>
-                    <node concept="2dOGH5" id="14R2qyOBxdS" role="3CLvVg">
-                      <property role="Lv5iS" value="true" />
-                      <node concept="Xl_RD" id="14R2qyOBxdT" role="2dOGIT">
-                        <property role="Xl_RC" value="classpath" />
-                      </node>
-                      <node concept="1tenjt" id="14R2qyOBxdU" role="2dOGIY">
-                        <node concept="10M0yZ" id="14R2qyOBxdV" role="1tenjo">
-                          <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                          <ref role="3cqZAo" to="guwi:~File.pathSeparator" resolve="pathSeparator" />
-                        </node>
-                        <node concept="2LYoG9" id="14R2qyOBxdW" role="1tenjv">
-                          <ref role="2LYoGb" node="14R2qyOBxc6" resolve="classPath" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="7t_vtr6qGvr" role="3CLvVg">
+                      <ref role="3cqZAo" node="7t_vtr6qGvl" resolve="classPathPart" />
                     </node>
                     <node concept="2LYoG9" id="14R2qyOBxdX" role="3CLvVg">
                       <ref role="2LYoGb" node="14R2qyOBxc4" resolve="className" />
