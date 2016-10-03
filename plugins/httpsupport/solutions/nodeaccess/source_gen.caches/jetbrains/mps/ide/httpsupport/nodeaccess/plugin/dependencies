@@ -40,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.HandlerUtil" file="HandlerUtil.java">
@@ -89,6 +90,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.BaseLanguageNodeLookup" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.DebugInfo" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.DebugInfoRoot" />
@@ -127,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

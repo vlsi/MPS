@@ -4,7 +4,9 @@ package jetbrains.mps.ide.httpsupport.runtime.base;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,32 +17,28 @@ public class HttpSupportUtil {
 
 
   protected static Logger LOG = LogManager.getLogger(HttpSupportUtil.class);
-  public static Project getProjectByName(final String name) {
+  @Nullable
+  public static Project getProjectByName(@NotNull final String name) {
     List<Project> openedProjects = ProjectManager.getInstance().getOpenedProjects();
     if (ListSequence.fromList(openedProjects).isEmpty()) {
       return null;
     }
 
-    Project project;
-    if ((name == null || name.length() == 0)) {
+    Project project = ListSequence.fromList(openedProjects).findFirst(new IWhereFilter<Project>() {
+      public boolean accept(Project it) {
+        return it.getName().equals(name);
+      }
+    });
+    if (project == null) {
       project = ListSequence.fromList(openedProjects).first();
-    } else {
-      project = ListSequence.fromList(openedProjects).findFirst(new IWhereFilter<Project>() {
-        public boolean accept(Project it) {
-          return it.getName().equals(name);
-        }
-      });
-      if (project == null) {
-        project = ListSequence.fromList(openedProjects).first();
-        if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn("Can't find project '" + name + "'. Using '" + project.getName() + "' instead.");
-        }
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("Can't find project '" + name + "'. Using '" + project.getName() + "' instead.");
       }
     }
     return project;
   }
 
-  public static Integer silentParseInt(String str) {
+  public static Integer parseInt(String str) {
     try {
       return Integer.valueOf(str);
     } catch (NumberFormatException e) {
@@ -48,7 +46,7 @@ public class HttpSupportUtil {
     }
   }
 
-  public static Long silentParseLong(String str) {
+  public static Long parseLong(String str) {
     try {
       return Long.valueOf(str);
     } catch (NumberFormatException e) {
@@ -56,7 +54,7 @@ public class HttpSupportUtil {
     }
   }
 
-  public static Float silentParseFloat(String str) {
+  public static Float parseFloat(String str) {
     try {
       return Float.valueOf(str);
     } catch (NumberFormatException e) {
@@ -64,7 +62,7 @@ public class HttpSupportUtil {
     }
   }
 
-  public static Double silentParseDouble(String str) {
+  public static Double parseDouble(String str) {
     try {
       return Double.valueOf(str);
     } catch (NumberFormatException e) {

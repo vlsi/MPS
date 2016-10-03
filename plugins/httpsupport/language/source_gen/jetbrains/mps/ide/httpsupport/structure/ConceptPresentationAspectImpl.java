@@ -7,13 +7,11 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultParameterConverter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DefaultValueFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeserializeFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestOperation = new ConceptPresentationBuilder().create();
@@ -37,51 +35,53 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) LanguageRegistry.getInstance().getLanguage(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("817e4e70-961e-4a95-98a1-15e9f32231f1"), "jetbrains.mps.ide.httpsupport")).getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
         return props_CanHandleRequestFunction;
       case 1:
         return props_DefaultParameterConverter;
       case 2:
-        return props_DeserializeFunction;
+        return props_DefaultValueFunction;
       case 3:
-        return props_HandleRequestFunction;
+        return props_DeserializeFunction;
       case 4:
-        return props_HttpRequestOperation;
+        return props_HandleRequestFunction;
       case 5:
-        return props_HttpRequestParameter;
+        return props_HttpRequestOperation;
       case 6:
-        return props_IParameterConverter;
+        return props_HttpRequestParameter;
       case 7:
-        return props_ParameterConverterDeclaration;
+        return props_IParameterConverter;
       case 8:
-        return props_ParameterConverterReference;
+        return props_ParameterConverterDeclaration;
       case 9:
-        return props_ParameterInitializer;
+        return props_ParameterConverterReference;
       case 10:
-        return props_QueryParameter;
+        return props_ParameterInitializer;
       case 11:
-        return props_QueryParameterReference;
+        return props_QueryParameter;
       case 12:
-        return props_QueryPath;
+        return props_QueryParameterReference;
       case 13:
-        return props_QuerySegment;
+        return props_QueryPath;
       case 14:
-        return props_RequestHandler;
+        return props_QuerySegment;
       case 15:
-        return props_RequestType;
+        return props_RequestHandler;
       case 16:
-        return props_RequestURIBuilderExpression;
+        return props_RequestType;
       case 17:
-        return props_ResponseSendOperation;
+        return props_RequestURIBuilderExpression;
       case 18:
-        return props_SerializeFunction;
+        return props_ResponseSendOperation;
       case 19:
-        return props_SerializedValueParameter;
+        return props_SerializeFunction;
       case 20:
+        return props_SerializedValueParameter;
+      case 21:
         return props_ValueToSerializeParameter;
     }
-    throw new IllegalStateException();
+    throw new IllegalStateException("Unknown concept " + c);
   }
 }

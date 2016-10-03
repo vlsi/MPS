@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
+import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
@@ -19,24 +20,31 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
 
   private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "file");
 
-  private boolean containsAllRequiredParameters = true;
-  private String file;
-  private Project project;
+  private final boolean myCorrectRequest;
+  private final String file;
+  private final Project project;
 
   public FileOpener_RequestHandler(HttpRequest request) {
     super(request);
-
+    boolean correctRequest = true;
     {
       String file_serialized = ListSequence.fromList(this.request.getParameterValue("file")).getElement(0);
-      if (file_serialized == null) {
-        containsAllRequiredParameters = false;
+      if (file_serialized != null) {
+        this.file = file_serialized;
+      } else {
+        correctRequest = false;
+        this.file = null;
       }
-      this.file = file_serialized;
     }
     {
       String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
-      this.project = HttpSupportUtil.getProjectByName(project_serialized);
+      if (project_serialized != null) {
+        this.project = HttpSupportUtil.getProjectByName(project_serialized);
+      } else {
+        this.project = ProjectManager.getInstance().getOpenedProjects().get(0);
+      }
     }
+    myCorrectRequest = correctRequest;
   }
 
 
@@ -48,7 +56,7 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
 
   @Override
   public boolean canHandle() {
-    if (!(containsAllRequiredParameters)) {
+    if (!(myCorrectRequest) && super.canHandle()) {
       return false;
     }
 

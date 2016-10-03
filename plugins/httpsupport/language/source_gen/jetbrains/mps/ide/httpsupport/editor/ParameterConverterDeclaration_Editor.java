@@ -41,6 +41,8 @@ public class ParameterConverterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_h55ano_h0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h55ano_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h55ano_j0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_h55ano_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_h55ano_l0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_h55ano_a0(EditorContext editorContext, SNode node) {
@@ -212,8 +214,53 @@ public class ParameterConverterDeclaration_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createConstant_h55ano_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_h55ano_j0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_h55ano_k0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new ParameterConverterDeclaration_Editor.defaultValueFunctionSingleRoleHandler_h55ano_k0(node, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x2d9d5d4572ccb260L, "defaultValueFunction"), editorContext);
+    return provider.createCell();
+  }
+  private class defaultValueFunctionSingleRoleHandler_h55ano_k0 extends SingleRoleCellProvider {
+    public defaultValueFunctionSingleRoleHandler_h55ano_k0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, 0x2d9d5d4572ccb260L, "defaultValueFunction"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
+      }
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("defaultValueFunction");
+      }
+      Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+      editorCell.getStyle().putAll(style);
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_defaultValueFunction");
+
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "no default value";
+    }
+  }
+  private EditorCell createConstant_h55ano_l0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_h55ano_l0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);

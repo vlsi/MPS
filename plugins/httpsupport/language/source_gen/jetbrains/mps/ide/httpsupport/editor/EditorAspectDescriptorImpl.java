@@ -23,60 +23,27 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DefaultParameterConverter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new DefaultParameterConverter_Editor());
         case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterConverterDeclaration_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterConverterDeclaration_Editor());
         case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterConverterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterConverterReference_Editor());
         case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterInitializer_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ParameterInitializer_Editor());
         case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
         case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QueryParameterReference_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QueryParameterReference_Editor());
         case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QueryPath_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QueryPath_Editor());
         case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new QuerySegment_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new QuerySegment_Editor());
         case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RequestHandler_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RequestHandler_Editor());
         case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new RequestURIBuilderExpression_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new RequestURIBuilderExpression_Editor());
         case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResponseSendOperation_Editor());
-          }
-          break;
+          return Collections.<ConceptEditor>singletonList(new ResponseSendOperation_Editor());
         default:
       }
     }
@@ -112,15 +79,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new QueryParameter_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new QueryParameter_TransformationMenu());
         case 1:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new QuerySegment_TransformationMenu());
-          }
-          break;
+          return Collections.<TransformationMenu>singletonList(new QuerySegment_TransformationMenu());
         default:
       }
     }

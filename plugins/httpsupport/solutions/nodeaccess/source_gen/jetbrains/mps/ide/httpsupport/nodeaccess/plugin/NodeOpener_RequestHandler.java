@@ -11,6 +11,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
+import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
@@ -21,24 +22,31 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
   private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "node_ref");
 
-  private boolean containsAllRequiredParameters = true;
-  private SNodeReference ref;
-  private Project project;
+  private final boolean myCorrectRequest;
+  private final SNodeReference ref;
+  private final Project project;
 
   public NodeOpener_RequestHandler(HttpRequest request) {
     super(request);
-
+    boolean correctRequest = true;
     {
       String ref_serialized = ListSequence.fromList(this.request.getParameterValue("ref")).getElement(0);
-      if (ref_serialized == null) {
-        containsAllRequiredParameters = false;
+      if (ref_serialized != null) {
+        this.ref = PersistenceFacade.getInstance().createNodeReference(ref_serialized);
+      } else {
+        correctRequest = false;
+        this.ref = null;
       }
-      this.ref = PersistenceFacade.getInstance().createNodeReference(ref_serialized);
     }
     {
       String project_serialized = ListSequence.fromList(this.request.getParameterValue("project")).getElement(0);
-      this.project = HttpSupportUtil.getProjectByName(project_serialized);
+      if (project_serialized != null) {
+        this.project = HttpSupportUtil.getProjectByName(project_serialized);
+      } else {
+        this.project = ProjectManager.getInstance().getOpenedProjects().get(0);
+      }
     }
+    myCorrectRequest = correctRequest;
   }
 
 
@@ -50,7 +58,7 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
   @Override
   public boolean canHandle() {
-    if (!(containsAllRequiredParameters)) {
+    if (!(myCorrectRequest) && super.canHandle()) {
       return false;
     }
 

@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myQueryParameterReference__BehaviorDescriptor = new QueryParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myDefaultValueFunction__BehaviorDescriptor = new DefaultValueFunction__BehaviorDescriptor();
   private final BHDescriptor mySerializeFunction__BehaviorDescriptor = new SerializeFunction__BehaviorDescriptor();
   private final BHDescriptor mySerializedValueParameter__BehaviorDescriptor = new SerializedValueParameter__BehaviorDescriptor();
   private final BHDescriptor myValueToSerializeParameter__BehaviorDescriptor = new ValueToSerializeParameter__BehaviorDescriptor();
@@ -32,69 +33,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0p.get(cncpt);
+      Integer preIndex = indices_846f5o_a0q.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return myCanHandleRequestFunction__BehaviorDescriptor;
-          }
-          break;
+          return myCanHandleRequestFunction__BehaviorDescriptor;
         case 1:
-          if (true) {
-            return myDefaultParameterConverter__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultParameterConverter__BehaviorDescriptor;
         case 2:
-          if (true) {
-            return myDeserializeFunction__BehaviorDescriptor;
-          }
-          break;
+          return myDefaultValueFunction__BehaviorDescriptor;
         case 3:
-          if (true) {
-            return myHandleRequestFunction__BehaviorDescriptor;
-          }
-          break;
+          return myDeserializeFunction__BehaviorDescriptor;
         case 4:
-          if (true) {
-            return myIParameterConverter__BehaviorDescriptor;
-          }
-          break;
+          return myHandleRequestFunction__BehaviorDescriptor;
         case 5:
-          if (true) {
-            return myParameterConverterReference__BehaviorDescriptor;
-          }
-          break;
+          return myIParameterConverter__BehaviorDescriptor;
         case 6:
-          if (true) {
-            return myQueryParameterReference__BehaviorDescriptor;
-          }
-          break;
+          return myParameterConverterReference__BehaviorDescriptor;
         case 7:
-          if (true) {
-            return myRequestHandler__BehaviorDescriptor;
-          }
-          break;
+          return myQueryParameterReference__BehaviorDescriptor;
         case 8:
-          if (true) {
-            return myRequestURIBuilderExpression__BehaviorDescriptor;
-          }
-          break;
+          return myRequestHandler__BehaviorDescriptor;
         case 9:
-          if (true) {
-            return mySerializeFunction__BehaviorDescriptor;
-          }
-          break;
+          return myRequestURIBuilderExpression__BehaviorDescriptor;
         case 10:
-          if (true) {
-            return mySerializedValueParameter__BehaviorDescriptor;
-          }
-          break;
+          return mySerializeFunction__BehaviorDescriptor;
         case 11:
-          if (true) {
-            return myValueToSerializeParameter__BehaviorDescriptor;
-          }
-          break;
+          return mySerializedValueParameter__BehaviorDescriptor;
+        case 12:
+          return myValueToSerializeParameter__BehaviorDescriptor;
         default:
           // default 
       }
@@ -109,5 +76,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5354a94149f37316L, "jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdcb2eL, "jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe83a1b05L, "jetbrains.mps.ide.httpsupport.structure.DeserializeFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f64136L, "jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction"), MetaAdapterFactory.getInterfaceConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L, "jetbrains.mps.ide.httpsupport.structure.IParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb465L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, "jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838a4f9L, "jetbrains.mps.ide.httpsupport.structure.SerializeFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838c5e4L, "jetbrains.mps.ide.httpsupport.structure.SerializedValueParameter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8393f24L, "jetbrains.mps.ide.httpsupport.structure.ValueToSerializeParameter"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0q = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5354a94149f37316L, "jetbrains.mps.ide.httpsupport.structure.CanHandleRequestFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdcb2eL, "jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x2d9d5d4572ccaf5cL, "jetbrains.mps.ide.httpsupport.structure.DefaultValueFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe83a1b05L, "jetbrains.mps.ide.httpsupport.structure.DeserializeFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f64136L, "jetbrains.mps.ide.httpsupport.structure.HandleRequestFunction"), MetaAdapterFactory.getInterfaceConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L, "jetbrains.mps.ide.httpsupport.structure.IParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb465L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, "jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838a4f9L, "jetbrains.mps.ide.httpsupport.structure.SerializeFunction"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe838c5e4L, "jetbrains.mps.ide.httpsupport.structure.SerializedValueParameter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8393f24L, "jetbrains.mps.ide.httpsupport.structure.ValueToSerializeParameter"));
 }
