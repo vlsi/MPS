@@ -28,8 +28,10 @@ import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressManager;
-import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import java.util.Map;
 import jetbrains.mps.ide.migration.ProgressEstimation;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -65,6 +67,9 @@ import jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem;
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
   public static final String ID_fallback = "progressFallback";
+  public static final String START_LABEL_TEXT = "Migration started";
+  public static final String FINISH_LABEL_TEXT = "Migration finished";
+  public static final String APPLYING_MIG_LABEL = "Applying migration ";
   private MigrationManager myManager;
   private JBList myList;
   private ModalityState myModalityState;
@@ -172,6 +177,24 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     });
   }
 
+  public static void runMigrationsInTests(Project p) {
+    InitialStep initialStep = new InitialStep(p, Collections.<ProjectMigrationWithOptions.Option>emptyList());
+    MigrationProblemsContainer mpc = new MigrationProblemsContainer() {
+      private MigrationErrorDescriptor myD;
+      @Nullable
+      public MigrationErrorDescriptor getErrorDescriptor() {
+        return myD;
+      }
+      public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+        myD = errors;
+      }
+    };
+    MigrationsProgressWizardStep step = new MigrationsProgressWizardStep(p, initialStep, p.getComponent(MigrationManager.class), mpc, false);
+    step.myList = new JBList(new DefaultListModel());
+    step.myModalityState = ModalityState.any();
+    step.doRun(new EmptyProgressIndicator());
+  }
+
   private void doRun(final ProgressIndicator progress) {
     Map<ProjectMigrationWithOptions.Option, Object> options = myInitialStep.getOptions();
     setFraction(progress, ProgressEstimation.initial());
@@ -181,7 +204,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     int cleanupStepsCount = myManager.projectStepsCount(true);
     int stepNum = 0;
 
-    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Migration started", Color.ORANGE.getRGB());
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), START_LABEL_TEXT, Color.ORANGE.getRGB());
 
     while (true) {
       MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
@@ -314,7 +337,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       myCurrentChange = null;
     }
 
-    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), "Migration finished", Color.ORANGE.getRGB());
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), FINISH_LABEL_TEXT, Color.ORANGE.getRGB());
 
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Exception while running migration. Press 'Next' to continue.");
@@ -411,7 +434,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
           myCurrentChange = null;
         }
         if (myCurrentChange == null) {
-          myCurrentChange = LocalHistory.getInstance().startAction("Applying migration " + result.getCommonDescription());
+          myCurrentChange = LocalHistory.getInstance().startAction(APPLYING_MIG_LABEL + result.getCommonDescription());
         }
         getMPSProject().getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
