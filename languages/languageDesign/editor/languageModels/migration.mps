@@ -5,7 +5,7 @@
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
@@ -3245,7 +3245,7 @@
                               </node>
                               <node concept="3CFZ6_" id="7pgPxC8nrqM" role="2OqNvi">
                                 <node concept="3CFYIy" id="7pgPxC8nrCg" role="3CFYIz">
-                                  <ref role="3CFYIx" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+                                  <ref role="3CFYIx" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
                                 </node>
                               </node>
                             </node>
@@ -3502,12 +3502,12 @@
                 <node concept="3cpWsn" id="1wEcoXivv4d" role="3cpWs9">
                   <property role="TrG5h" value="annotation" />
                   <node concept="3Tqbb2" id="1wEcoXivv4e" role="1tU5fm">
-                    <ref role="ehGHo" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+                    <ref role="ehGHo" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
                   </node>
                   <node concept="2ShNRf" id="1wEcoXivv4f" role="33vP2m">
                     <node concept="3zrR0B" id="1wEcoXivv4g" role="2ShVmc">
                       <node concept="3Tqbb2" id="1wEcoXivv4h" role="3zrR0E">
-                        <ref role="ehGHo" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+                        <ref role="ehGHo" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
                       </node>
                     </node>
                   </node>
@@ -3554,7 +3554,7 @@
                         </node>
                         <node concept="3CFZ6_" id="1wEcoXivv4_" role="2OqNvi">
                           <node concept="3CFYIy" id="1wEcoXivwNb" role="3CFYIz">
-                            <ref role="3CFYIx" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+                            <ref role="3CFYIx" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
                           </node>
                         </node>
                       </node>
@@ -3587,7 +3587,7 @@
                           </node>
                           <node concept="3CFZ6_" id="1wEcoXivv4N" role="2OqNvi">
                             <node concept="3CFYIy" id="1wEcoXivwV_" role="3CFYIz">
-                              <ref role="3CFYIx" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallynnotation" />
+                              <ref role="3CFYIx" to="tpc2:ve0pwAv4UM" resolve="MigrateManuallyAnnotation" />
                             </node>
                           </node>
                         </node>

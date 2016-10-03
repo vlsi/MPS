@@ -4,14 +4,15 @@ package jetbrains.mps.console.tool;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -28,7 +29,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -36,7 +36,21 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
 
   private SNode myNewCommand = null;
-  private SNode myCursor = null;
+  private SNode myCursor;
+  private void setCommandCursor(SNode commandHolder) {
+    if (commandHolder == null && myCursor != null) {
+      SNodeOperations.deleteNode(myCursor);
+      myCursor = null;
+    }
+    if (commandHolder != null && myCursor == null) {
+      myCursor = SModelOperations.createNewRootNode(getConsoleModel(), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, "jetbrains.mps.console.base.structure.CommandHolderRef"));
+      SLinkOperations.setTarget(myCursor, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"), commandHolder);
+    }
+  }
+  private SNode getCommandCursor() {
+    return SLinkOperations.getTarget(myCursor, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"));
+  }
+
 
   public DialogConsoleTab(MPSProject project, ConsoleTool tool, String title, @Nullable String history) {
     super(project, tool, title, history);
@@ -97,7 +111,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     final Wrappers._boolean emptyCommand = new Wrappers._boolean();
     getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        myCursor = null;
+        setCommandCursor(null);
         TemporaryModels.getInstance().addMissingImports(getConsoleModel());
         emptyCommand.value = (SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) == null);
       }
@@ -107,7 +121,10 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     }
     execute(null, new Runnable() {
       public void run() {
-        myNewCommand = null;
+        if ((myNewCommand != null)) {
+          SNodeOperations.deleteNode(myNewCommand);
+          myNewCommand = null;
+        }
       }
     }, new Runnable() {
       public void run() {
@@ -147,25 +164,26 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
       }
 
       SNode newCursor;
-      if (myCursor == null) {
+      if (getCommandCursor() == null) {
         newCursor = lastCmd;
         myNewCommand = SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
+        SModelOperations.addRootNode(getConsoleModel(), myNewCommand);
       } else {
-        newCursor = getPrevCmd(myCursor);
+        newCursor = getPrevCmd(getCommandCursor());
         if ((newCursor == null)) {
           return;
         }
-        SNode myCursorCommand = SLinkOperations.getTarget(myCursor, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
+        SNode myCursorCommand = SLinkOperations.getTarget(getCommandCursor(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
         SNode myCursorNew = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x9992dadc6de20a7L, "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem"));
         SLinkOperations.setTarget(myCursorNew, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), myCursorCommand);
         SLinkOperations.setTarget(myCursorNew, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x9992dadc6de20a7L, 0x9992dadc6de20d6L, "modifiedCommand"), SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
-        SNodeOperations.replaceWithAnother(myCursor, myCursorNew);
+        SNodeOperations.replaceWithAnother(getCommandCursor(), myCursorNew);
       }
       if ((newCursor == null)) {
         return;
       }
-      myCursor = newCursor;
-      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(myCursor, SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
+      setCommandCursor(newCursor);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(getCommandCursor(), SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
       setSelection();
     }
   }
@@ -175,22 +193,22 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
       super("Next", "Next command", AllIcons.Actions.NextOccurence);
     }
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      if ((myCursor == null)) {
+      if ((getCommandCursor() == null)) {
         return;
       }
-      SNode newCursor = getNextCmd(myCursor);
+      SNode newCursor = getNextCmd(getCommandCursor());
 
-      SNode myCursorCommand = SLinkOperations.getTarget(myCursor, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
+      SNode myCursorCommand = SLinkOperations.getTarget(getCommandCursor(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
       SNode myCursorNew = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x9992dadc6de20a7L, "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem"));
       SLinkOperations.setTarget(myCursorNew, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), myCursorCommand);
       SLinkOperations.setTarget(myCursorNew, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x9992dadc6de20a7L, 0x9992dadc6de20d6L, "modifiedCommand"), SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
-      SNodeOperations.replaceWithAnother(myCursor, myCursorNew);
+      SNodeOperations.replaceWithAnother(getCommandCursor(), myCursorNew);
 
       if (!((newCursor == null))) {
-        myCursor = newCursor;
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(myCursor, SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
+        setCommandCursor(newCursor);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(getCommandCursor(), SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
       } else {
-        myCursor = null;
+        setCommandCursor(null);
         SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(myNewCommand, SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
       }
       setSelection();

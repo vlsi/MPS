@@ -453,5 +453,17 @@
     <property role="EcuMT" value="752693057587755272" />
     <ref role="1TJDcQ" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
   </node>
+  <node concept="1TIwiD" id="4ZD9PNE1R8L">
+    <property role="EcuMT" value="5758176878586720817" />
+    <property role="TrG5h" value="CommandHolderRef" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4ZD9PNE1R8M" role="1TKVEi">
+      <property role="IQ2ns" value="5758176878586720818" />
+      <property role="20lmBu" value="reference" />
+      <property role="20lbJX" value="0..1" />
+      <property role="20kJfa" value="target" />
+      <ref role="20lvS9" node="jysm2GH4xb" resolve="CommandHolder" />
+    </node>
+  </node>
 </model>
 

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -232,7 +232,7 @@
                               <ref role="3cqZAo" node="5HOQcpHJZ0i" resolve="it" />
                             </node>
                             <node concept="3Tsc0h" id="5HOQcpHJZz_" role="2OqNvi">
-                              <ref role="3TtcxE" to="hfbu:5iYmYly31HR" />
+                              <ref role="3TtcxE" to="hfbu:5iYmYly31HR" resolve="mainLanguages" />
                             </node>
                           </node>
                           <node concept="X8dFx" id="5HOQcpHK3Bf" role="2OqNvi">
@@ -242,7 +242,7 @@
                                   <ref role="3cqZAo" node="5HOQcpHJZ0i" resolve="it" />
                                 </node>
                                 <node concept="3Tsc0h" id="5HOQcpHK6Mr" role="2OqNvi">
-                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2k" />
+                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2k" resolve="oldMainLanguages" />
                                 </node>
                               </node>
                               <node concept="3$u5V9" id="5HOQcpHKf6Q" role="2OqNvi">
@@ -254,7 +254,7 @@
                                           <ref role="3cqZAo" node="5HOQcpHKf6U" resolve="it" />
                                         </node>
                                         <node concept="3TrEf2" id="5HOQcpHKkfd" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="tp25:34EJa6aIpny" />
+                                          <ref role="3Tt5mk" to="tp25:34EJa6aIpny" resolve="languageId" />
                                         </node>
                                       </node>
                                     </node>
@@ -276,7 +276,7 @@
                               <ref role="3cqZAo" node="5HOQcpHJZ0i" resolve="it" />
                             </node>
                             <node concept="3Tsc0h" id="5HOQcpHKzPA" role="2OqNvi">
-                              <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2k" />
+                              <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2k" resolve="oldMainLanguages" />
                             </node>
                           </node>
                           <node concept="2Kehj3" id="5HOQcpHKJ4w" role="2OqNvi" />
@@ -290,7 +290,7 @@
                               <ref role="3cqZAo" node="5HOQcpHJZ0i" resolve="it" />
                             </node>
                             <node concept="3Tsc0h" id="5HOQcpHKrR_" role="2OqNvi">
-                              <ref role="3TtcxE" to="hfbu:5iYmYly31HX" />
+                              <ref role="3TtcxE" to="hfbu:5iYmYly31HX" resolve="additionalLanguages" />
                             </node>
                           </node>
                           <node concept="X8dFx" id="5HOQcpHKphZ" role="2OqNvi">
@@ -300,7 +300,7 @@
                                   <ref role="3cqZAo" node="5HOQcpHJZ0i" resolve="it" />
                                 </node>
                                 <node concept="3Tsc0h" id="5HOQcpHKuKt" role="2OqNvi">
-                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2m" />
+                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2m" resolve="oldAdditionalLanguages" />
                                 </node>
                               </node>
                               <node concept="3$u5V9" id="5HOQcpHKpi4" role="2OqNvi">
@@ -312,7 +312,7 @@
                                           <ref role="3cqZAo" node="5HOQcpHKpib" resolve="it" />
                                         </node>
                                         <node concept="3TrEf2" id="5HOQcpHKpia" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="tp25:34EJa6aIpny" />
+                                          <ref role="3Tt5mk" to="tp25:34EJa6aIpny" resolve="languageId" />
                                         </node>
                                       </node>
                                     </node>
@@ -334,7 +334,7 @@
                               <ref role="3cqZAo" node="5HOQcpHJZ0i" resolve="it" />
                             </node>
                             <node concept="3Tsc0h" id="5HOQcpHKYCF" role="2OqNvi">
-                              <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2m" />
+                              <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2m" resolve="oldAdditionalLanguages" />
                             </node>
                           </node>
                           <node concept="2Kehj3" id="5HOQcpHLeVH" role="2OqNvi" />
@@ -394,7 +394,7 @@
                                   <ref role="3cqZAo" node="6En3ZbjqiKL" resolve="it" />
                                 </node>
                                 <node concept="3Tsc0h" id="5HOQcpHLwWZ" role="2OqNvi">
-                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2k" />
+                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2k" resolve="oldMainLanguages" />
                                 </node>
                               </node>
                               <node concept="3GX2aA" id="5HOQcpHLBIO" role="2OqNvi" />
@@ -405,7 +405,7 @@
                                   <ref role="3cqZAo" node="6En3ZbjqiKL" resolve="it" />
                                 </node>
                                 <node concept="3Tsc0h" id="5HOQcpHLFFi" role="2OqNvi">
-                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2m" />
+                                  <ref role="3TtcxE" to="hfbu:2Y$EcRKMr2m" resolve="oldAdditionalLanguages" />
                                 </node>
                               </node>
                               <node concept="3GX2aA" id="5HOQcpHLMtP" role="2OqNvi" />

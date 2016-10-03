@@ -14,6 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BLExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Command = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommandHolder = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CommandHolderRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExceptionHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratedCommand = new ConceptPresentationBuilder().create();
@@ -60,62 +61,64 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 4:
         return props_CommandHolder;
       case 5:
-        return props_ConsoleRoot;
+        return props_CommandHolderRef;
       case 6:
-        return props_ExceptionHolder;
+        return props_ConsoleRoot;
       case 7:
-        return props_GeneratedCommand;
+        return props_ExceptionHolder;
       case 8:
-        return props_HelpCommand;
+        return props_GeneratedCommand;
       case 9:
-        return props_HelpConceptReference;
+        return props_HelpCommand;
       case 10:
-        return props_History;
+        return props_HelpConceptReference;
       case 11:
-        return props_HistoryItem;
+        return props_History;
       case 12:
-        return props_IActionHolder;
+        return props_HistoryItem;
       case 13:
-        return props_IClickable;
+        return props_IActionHolder;
       case 14:
-        return props_INodeWithReference;
+        return props_IClickable;
       case 15:
-        return props_InterpretedCommand;
+        return props_INodeWithReference;
       case 16:
-        return props_ModifiedCommandHistoryItem;
+        return props_InterpretedCommand;
       case 17:
-        return props_NewLineResponseItem;
+        return props_ModifiedCommandHistoryItem;
       case 18:
-        return props_NodeReferencePresentation;
+        return props_NewLineResponseItem;
       case 19:
-        return props_NodeReferenceString;
+        return props_NodeReferencePresentation;
       case 20:
-        return props_NodeResponseItem;
+        return props_NodeReferenceString;
       case 21:
-        return props_NodeWithClosure;
+        return props_NodeResponseItem;
       case 22:
-        return props_OutputConsoleRoot;
+        return props_NodeWithClosure;
       case 23:
-        return props_PastedNodeReference;
+        return props_OutputConsoleRoot;
       case 24:
-        return props_PrintExpression;
+        return props_PastedNodeReference;
       case 25:
-        return props_PrintNodeExpression;
+        return props_PrintExpression;
       case 26:
-        return props_PrintNodeReferenceExpression;
+        return props_PrintNodeExpression;
       case 27:
-        return props_PrintSequenceExpression;
+        return props_PrintNodeReferenceExpression;
       case 28:
-        return props_PrintTextExpression;
+        return props_PrintSequenceExpression;
       case 29:
-        return props_ProjectExpression;
+        return props_PrintTextExpression;
       case 30:
-        return props_ProjectScope;
+        return props_ProjectExpression;
       case 31:
-        return props_Response;
+        return props_ProjectScope;
       case 32:
-        return props_ResponseItem;
+        return props_Response;
       case 33:
+        return props_ResponseItem;
+      case 34:
         return props_TextResponseItem;
     }
     throw new IllegalStateException("Unknown concept " + c);

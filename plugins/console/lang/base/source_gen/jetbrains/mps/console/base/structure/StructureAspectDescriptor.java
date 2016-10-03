@@ -18,12 +18,13 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(34);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(35);
   /*package*/ final ConceptDescriptor myConceptAbstractPrintExpression = createDescriptorForAbstractPrintExpression();
   /*package*/ final ConceptDescriptor myConceptBLCommand = createDescriptorForBLCommand();
   /*package*/ final ConceptDescriptor myConceptBLExpression = createDescriptorForBLExpression();
   /*package*/ final ConceptDescriptor myConceptCommand = createDescriptorForCommand();
   /*package*/ final ConceptDescriptor myConceptCommandHolder = createDescriptorForCommandHolder();
+  /*package*/ final ConceptDescriptor myConceptCommandHolderRef = createDescriptorForCommandHolderRef();
   /*package*/ final ConceptDescriptor myConceptConsoleRoot = createDescriptorForConsoleRoot();
   /*package*/ final ConceptDescriptor myConceptExceptionHolder = createDescriptorForExceptionHolder();
   /*package*/ final ConceptDescriptor myConceptGeneratedCommand = createDescriptorForGeneratedCommand();
@@ -60,40 +61,41 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptBLExpression.getId(), 2);
     myIndexMap.put(myConceptCommand.getId(), 3);
     myIndexMap.put(myConceptCommandHolder.getId(), 4);
-    myIndexMap.put(myConceptConsoleRoot.getId(), 5);
-    myIndexMap.put(myConceptExceptionHolder.getId(), 6);
-    myIndexMap.put(myConceptGeneratedCommand.getId(), 7);
-    myIndexMap.put(myConceptHelpCommand.getId(), 8);
-    myIndexMap.put(myConceptHelpConceptReference.getId(), 9);
-    myIndexMap.put(myConceptHistory.getId(), 10);
-    myIndexMap.put(myConceptHistoryItem.getId(), 11);
-    myIndexMap.put(myConceptIActionHolder.getId(), 12);
-    myIndexMap.put(myConceptIClickable.getId(), 13);
-    myIndexMap.put(myConceptINodeWithReference.getId(), 14);
-    myIndexMap.put(myConceptInterpretedCommand.getId(), 15);
-    myIndexMap.put(myConceptModifiedCommandHistoryItem.getId(), 16);
-    myIndexMap.put(myConceptNewLineResponseItem.getId(), 17);
-    myIndexMap.put(myConceptNodeReferencePresentation.getId(), 18);
-    myIndexMap.put(myConceptNodeReferenceString.getId(), 19);
-    myIndexMap.put(myConceptNodeResponseItem.getId(), 20);
-    myIndexMap.put(myConceptNodeWithClosure.getId(), 21);
-    myIndexMap.put(myConceptOutputConsoleRoot.getId(), 22);
-    myIndexMap.put(myConceptPastedNodeReference.getId(), 23);
-    myIndexMap.put(myConceptPrintExpression.getId(), 24);
-    myIndexMap.put(myConceptPrintNodeExpression.getId(), 25);
-    myIndexMap.put(myConceptPrintNodeReferenceExpression.getId(), 26);
-    myIndexMap.put(myConceptPrintSequenceExpression.getId(), 27);
-    myIndexMap.put(myConceptPrintTextExpression.getId(), 28);
-    myIndexMap.put(myConceptProjectExpression.getId(), 29);
-    myIndexMap.put(myConceptProjectScope.getId(), 30);
-    myIndexMap.put(myConceptResponse.getId(), 31);
-    myIndexMap.put(myConceptResponseItem.getId(), 32);
-    myIndexMap.put(myConceptTextResponseItem.getId(), 33);
+    myIndexMap.put(myConceptCommandHolderRef.getId(), 5);
+    myIndexMap.put(myConceptConsoleRoot.getId(), 6);
+    myIndexMap.put(myConceptExceptionHolder.getId(), 7);
+    myIndexMap.put(myConceptGeneratedCommand.getId(), 8);
+    myIndexMap.put(myConceptHelpCommand.getId(), 9);
+    myIndexMap.put(myConceptHelpConceptReference.getId(), 10);
+    myIndexMap.put(myConceptHistory.getId(), 11);
+    myIndexMap.put(myConceptHistoryItem.getId(), 12);
+    myIndexMap.put(myConceptIActionHolder.getId(), 13);
+    myIndexMap.put(myConceptIClickable.getId(), 14);
+    myIndexMap.put(myConceptINodeWithReference.getId(), 15);
+    myIndexMap.put(myConceptInterpretedCommand.getId(), 16);
+    myIndexMap.put(myConceptModifiedCommandHistoryItem.getId(), 17);
+    myIndexMap.put(myConceptNewLineResponseItem.getId(), 18);
+    myIndexMap.put(myConceptNodeReferencePresentation.getId(), 19);
+    myIndexMap.put(myConceptNodeReferenceString.getId(), 20);
+    myIndexMap.put(myConceptNodeResponseItem.getId(), 21);
+    myIndexMap.put(myConceptNodeWithClosure.getId(), 22);
+    myIndexMap.put(myConceptOutputConsoleRoot.getId(), 23);
+    myIndexMap.put(myConceptPastedNodeReference.getId(), 24);
+    myIndexMap.put(myConceptPrintExpression.getId(), 25);
+    myIndexMap.put(myConceptPrintNodeExpression.getId(), 26);
+    myIndexMap.put(myConceptPrintNodeReferenceExpression.getId(), 27);
+    myIndexMap.put(myConceptPrintSequenceExpression.getId(), 28);
+    myIndexMap.put(myConceptPrintTextExpression.getId(), 29);
+    myIndexMap.put(myConceptProjectExpression.getId(), 30);
+    myIndexMap.put(myConceptProjectScope.getId(), 31);
+    myIndexMap.put(myConceptResponse.getId(), 32);
+    myIndexMap.put(myConceptResponseItem.getId(), 33);
+    myIndexMap.put(myConceptTextResponseItem.getId(), 34);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
+    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptCommandHolderRef, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
   }
 
   @Override
@@ -115,62 +117,64 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptCommandHolder;
       case 5:
-        return myConceptConsoleRoot;
+        return myConceptCommandHolderRef;
       case 6:
-        return myConceptExceptionHolder;
+        return myConceptConsoleRoot;
       case 7:
-        return myConceptGeneratedCommand;
+        return myConceptExceptionHolder;
       case 8:
-        return myConceptHelpCommand;
+        return myConceptGeneratedCommand;
       case 9:
-        return myConceptHelpConceptReference;
+        return myConceptHelpCommand;
       case 10:
-        return myConceptHistory;
+        return myConceptHelpConceptReference;
       case 11:
-        return myConceptHistoryItem;
+        return myConceptHistory;
       case 12:
-        return myConceptIActionHolder;
+        return myConceptHistoryItem;
       case 13:
-        return myConceptIClickable;
+        return myConceptIActionHolder;
       case 14:
-        return myConceptINodeWithReference;
+        return myConceptIClickable;
       case 15:
-        return myConceptInterpretedCommand;
+        return myConceptINodeWithReference;
       case 16:
-        return myConceptModifiedCommandHistoryItem;
+        return myConceptInterpretedCommand;
       case 17:
-        return myConceptNewLineResponseItem;
+        return myConceptModifiedCommandHistoryItem;
       case 18:
-        return myConceptNodeReferencePresentation;
+        return myConceptNewLineResponseItem;
       case 19:
-        return myConceptNodeReferenceString;
+        return myConceptNodeReferencePresentation;
       case 20:
-        return myConceptNodeResponseItem;
+        return myConceptNodeReferenceString;
       case 21:
-        return myConceptNodeWithClosure;
+        return myConceptNodeResponseItem;
       case 22:
-        return myConceptOutputConsoleRoot;
+        return myConceptNodeWithClosure;
       case 23:
-        return myConceptPastedNodeReference;
+        return myConceptOutputConsoleRoot;
       case 24:
-        return myConceptPrintExpression;
+        return myConceptPastedNodeReference;
       case 25:
-        return myConceptPrintNodeExpression;
+        return myConceptPrintExpression;
       case 26:
-        return myConceptPrintNodeReferenceExpression;
+        return myConceptPrintNodeExpression;
       case 27:
-        return myConceptPrintSequenceExpression;
+        return myConceptPrintNodeReferenceExpression;
       case 28:
-        return myConceptPrintTextExpression;
+        return myConceptPrintSequenceExpression;
       case 29:
-        return myConceptProjectExpression;
+        return myConceptPrintTextExpression;
       case 30:
-        return myConceptProjectScope;
+        return myConceptProjectExpression;
       case 31:
-        return myConceptResponse;
+        return myConceptProjectScope;
       case 32:
-        return myConceptResponseItem;
+        return myConceptResponse;
       case 33:
+        return myConceptResponseItem;
+      case 34:
         return myConceptTextResponseItem;
       default:
         throw new IllegalStateException();
@@ -201,6 +205,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForCommandHolder() {
     return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x4e27160acb44924L, "command", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL), true, false, false, new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "351968380916615460"))).children(new String[]{"command"}, new boolean[]{false}).sourceNode(new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "351968380916615243")).create();
+  }
+  private static ConceptDescriptor createDescriptorForCommandHolderRef() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolderRef", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4fe9275cea077232L, "target", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL), true, new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "5758176878586720818"))).references("target").sourceNode(new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "5758176878586720817")).create();
   }
   private static ConceptDescriptor createDescriptorForConsoleRoot() {
     return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ConsoleRoot", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x15fb34051f725bafL, "history", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL), false, false, false, new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "1583916890557930415")), new ConceptDescriptorBuilder.Link(0x15fb34051f725bb1L, "commandHolder", MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL), false, false, false, new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "1583916890557930417"))).children(new String[]{"history", "commandHolder"}, new boolean[]{false, false}).rootable().sourceNode(new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "1583916890557930028")).create();
