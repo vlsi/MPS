@@ -22,35 +22,17 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return new HttpRequestOperation_Constraints();
-          }
-          break;
+          return new HttpRequestOperation_Constraints();
         case 1:
-          if (true) {
-            return new ParameterInitializer_Constraints();
-          }
-          break;
+          return new ParameterInitializer_Constraints();
         case 2:
-          if (true) {
-            return new QueryParameter_Constraints();
-          }
-          break;
+          return new QueryParameter_Constraints();
         case 3:
-          if (true) {
-            return new QueryParameterReference_Constraints();
-          }
-          break;
+          return new QueryParameterReference_Constraints();
         case 4:
-          if (true) {
-            return new RequestHandler_Constraints();
-          }
-          break;
+          return new RequestHandler_Constraints();
         case 5:
-          if (true) {
-            return new SerializeFunction_Constraints();
-          }
-          break;
+          return new SerializeFunction_Constraints();
         default:
           // default 
       }

@@ -23,10 +23,7 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
-          if (true) {
-            return Collections.<IDataFlowBuilder>singletonList(new ResponseSendOperation_DataFlow());
-          }
-          break;
+          return Collections.<IDataFlowBuilder>singletonList(new ResponseSendOperation_DataFlow());
         default:
           // default 
       }
