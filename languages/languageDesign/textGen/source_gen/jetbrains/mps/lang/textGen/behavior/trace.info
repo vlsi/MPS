@@ -36,6 +36,9 @@
     <file name="BufferParameter_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
     </file>
+    <file name="ClassConceptUnitContext_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.ClassConceptUnitContext_BehaviorDescriptor" />
+    </file>
     <file name="CollectionAppendPart_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_BehaviorDescriptor" />
     </file>
@@ -44,6 +47,9 @@
     </file>
     <file name="ConstantStringAppendPart_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_BehaviorDescriptor" />
+    </file>
+    <file name="ContextInstanceSpecification_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.textGen.behavior.ContextInstanceSpecification_BehaviorDescriptor" />
     </file>
     <file name="ContextParameter_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.ContextParameter_BehaviorDescriptor" />
@@ -81,6 +87,9 @@
     <file name="IndentPart_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.IndentPart_BehaviorDescriptor" />
     </file>
+    <file name="InstancePerUnitContextObject_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.InstancePerUnitContextObject_BehaviorDescriptor" />
+    </file>
     <file name="LanguageTextGenDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
     </file>
@@ -113,6 +122,15 @@
     </file>
     <file name="TextUnitLayout_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.TextUnitLayout_BehaviorDescriptor" />
+    </file>
+    <file name="UnitContextDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.UnitContextDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="UnitContextObject_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.UnitContextObject_BehaviorDescriptor" />
+    </file>
+    <file name="UnitContextReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.UnitContextReference_BehaviorDescriptor" />
     </file>
     <file name="UtilityMethodCall_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />

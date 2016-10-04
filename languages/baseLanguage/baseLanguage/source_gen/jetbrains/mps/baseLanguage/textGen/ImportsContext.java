@@ -22,7 +22,7 @@ public class ImportsContext {
   private final Map<String, String> bindings;
   private ContextClassifiersInRoot contextClassifiers;
 
-  private ImportsContext(SNode rootNode) {
+  /*package*/ ImportsContext(SNode rootNode) {
     this.packageName = SModelOperations.getModelName(SNodeOperations.getModel(rootNode));
 
     contextClassifiers = new ContextClassifiersInRoot(rootNode);

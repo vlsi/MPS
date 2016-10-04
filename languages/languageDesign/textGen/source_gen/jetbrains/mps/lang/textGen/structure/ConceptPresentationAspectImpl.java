@@ -15,9 +15,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AppendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributedNodePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BufferParameter = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ClassConceptUnitContext = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CollectionAppendPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
+  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_ConstantStringAppendPart = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ContextInstanceSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextParameter = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_DecreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EncodingDeclaration = new ConceptPresentationBuilder().create();
@@ -30,7 +32,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IncreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentBufferOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0v).create();
+  private final ConceptPresentation props_InstancePerUnitContextObject = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0y).create();
   private final ConceptPresentation props_LayoutPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NewLineAppendPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeAppendPart = new ConceptPresentationBuilder().create();
@@ -41,6 +44,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SimpleTextGenOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubOperationDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextUnitLayout = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnitContextDeclaration = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnitContextObject = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnitContextReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UtilityMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UtilityMethodDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_WithIndentOperation = new ConceptPresentationBuilder().create();
@@ -63,62 +69,74 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 5:
         return props_BufferParameter;
       case 6:
-        return props_CollectionAppendPart;
+        return props_ClassConceptUnitContext;
       case 7:
-        return props_ConceptTextGenDeclaration;
+        return props_CollectionAppendPart;
       case 8:
-        return props_ConstantStringAppendPart;
+        return props_ConceptTextGenDeclaration;
       case 9:
-        return props_ContextParameter;
+        return props_ConstantStringAppendPart;
       case 10:
-        return props_DecreaseDepthOperation;
+        return props_ContextInstanceSpecification;
       case 11:
-        return props_EncodingDeclaration;
+        return props_ContextParameter;
       case 12:
-        return props_EncodingDeclarationBase;
+        return props_DecreaseDepthOperation;
       case 13:
-        return props_EncodingLiteral;
+        return props_EncodingDeclaration;
       case 14:
-        return props_ExtensionDeclaration;
+        return props_EncodingDeclarationBase;
       case 15:
-        return props_FilenameFunction;
+        return props_EncodingLiteral;
       case 16:
-        return props_FoundErrorOperation;
+        return props_ExtensionDeclaration;
       case 17:
-        return props_GenerateTextDeclaration;
+        return props_FilenameFunction;
       case 18:
-        return props_IncreaseDepthOperation;
+        return props_FoundErrorOperation;
       case 19:
-        return props_IndentBufferOperation;
+        return props_GenerateTextDeclaration;
       case 20:
-        return props_IndentPart;
+        return props_IncreaseDepthOperation;
       case 21:
-        return props_LanguageTextGenDeclaration;
+        return props_IndentBufferOperation;
       case 22:
-        return props_LayoutPart;
+        return props_IndentPart;
       case 23:
-        return props_NewLineAppendPart;
+        return props_InstancePerUnitContextObject;
       case 24:
-        return props_NodeAppendPart;
+        return props_LanguageTextGenDeclaration;
       case 25:
-        return props_NodeParameter;
+        return props_LayoutPart;
       case 26:
-        return props_OperationCall;
+        return props_NewLineAppendPart;
       case 27:
-        return props_OperationDeclaration;
+        return props_NodeAppendPart;
       case 28:
-        return props_ReferenceAppendPart;
+        return props_NodeParameter;
       case 29:
-        return props_SimpleTextGenOperation;
+        return props_OperationCall;
       case 30:
-        return props_StubOperationDeclaration;
+        return props_OperationDeclaration;
       case 31:
-        return props_TextUnitLayout;
+        return props_ReferenceAppendPart;
       case 32:
-        return props_UtilityMethodCall;
+        return props_SimpleTextGenOperation;
       case 33:
-        return props_UtilityMethodDeclaration;
+        return props_StubOperationDeclaration;
       case 34:
+        return props_TextUnitLayout;
+      case 35:
+        return props_UnitContextDeclaration;
+      case 36:
+        return props_UnitContextObject;
+      case 37:
+        return props_UnitContextReference;
+      case 38:
+        return props_UtilityMethodCall;
+      case 39:
+        return props_UtilityMethodDeclaration;
+      case 40:
         return props_WithIndentOperation;
     }
     throw new IllegalStateException("Unknown concept " + c);
