@@ -23,7 +23,6 @@ import jetbrains.mps.text.TextArea;
 import jetbrains.mps.text.TextAreaToken;
 import jetbrains.mps.text.TextMark;
 import jetbrains.mps.text.rt.TextGenContext;
-import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
@@ -236,6 +235,13 @@ public final class TextGenSupport implements TextArea {
       String msg = String.format("Unit name has to match \"modelFqName.shortUnitName\" where short unit name does not contain dots. Fix %s in %s", unitName, modelName);
       LogManager.getLogger(getClass()).warn(Log4jUtil.createMessageObject(msg, node));
     }
+  }
+
+  /**
+   * Mechanism to access context object instance in a typed manner.
+   */
+  public <T> T getContextObject(String identity, Class<T> kind) {
+    return kind.cast(getLegacyBuffer().getUserObject(identity));
   }
 
 
