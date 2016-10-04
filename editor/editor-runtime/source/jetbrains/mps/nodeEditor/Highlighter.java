@@ -35,6 +35,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.highlighter.EditorCheckerWrapper;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorList;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorTracker;
@@ -42,6 +43,7 @@ import jetbrains.mps.nodeEditor.highlighter.HighlighterEventCollector;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterUpdateSession;
 import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -50,6 +52,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
@@ -58,7 +61,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
@@ -81,7 +83,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private ScheduledExecutorService myBackgroundExecutor;
   private ScheduleHighlighterUpdate myScheduleHighlighterUpdate;
 
-  private final List<EditorChecker> myCheckers = new CopyOnWriteArrayList<EditorChecker>();
+  private final List<EditorCheckerWrapper> myCheckers = new CopyOnWriteArrayList<>();
 
   /**
    * Whether to force running all checkers in power-save mode. Accessed from the highlighter thread only, therefore non-volatile.
@@ -192,11 +194,13 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   public void addChecker(@NotNull final EditorChecker checker) {
-    if (RuntimeFlags.isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
     addPendingAction(new Runnable() {
       @Override
       public void run() {
-        myCheckers.add(checker);
+        myCheckers.add(new EditorCheckerWrapper(checker));
         myEditorTracker.markEverythingUnchecked();
       }
     });
@@ -208,52 +212,59 @@ public class Highlighter implements IHighlighter, ProjectComponent {
    * @param checker the checker to remove
    */
   public void removeChecker(@NotNull final EditorChecker checker) {
-    if (RuntimeFlags.isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
     ThreadUtils.assertEDT();
 
     // Checker removal is done in three steps:
     //
-    // 1. In the highlighter thread remove the checker from myCheckers. Although myCheckers may be accessed from any thread, removing it on the highlighter
-    //    thread ensures that from this point on the checker will not be used to create any new messages.
-    //
-    // 2. In EDT (since UI access is required) get a list of all editors that are currently open.
-    //
-    // 3. In the highlighter thread again (actually, any background thread would do), go through the list retrieved in the previous step and remove
-    //    the checker's messages from each editor.
+    // 1. Remove the checker's wrapper from the internal list of checkers and stop it.
+    EditorCheckerWrapper wrapper = findWrapperFor(checker);
 
-    try {
-      pauseUpdater();
-      if (LOG.isDebugEnabled()) {
-        LOG.debug("Removing " + checker + " from checkers list");
-      }
-      if (!addPendingAction(() -> myCheckers.remove(checker)).get()) {
-        return;
-      }
-    } catch (InterruptedException | ExecutionException e) {
-      // Shouldn't happen
-      throw new RuntimeException(e);
-    } finally {
-      LOG.debug("Done removing " + checker + " from checkers list");
-      resumeUpdater();
+    if (wrapper == null) {
+      return;
     }
 
-    final List<EditorComponent> editors = myEditorList.getAllEditors();
-    if (editors.isEmpty()) return;
+    myCheckers.remove(wrapper);
+    EditorMessageOwner messageOwner = wrapper.getEditorMessageOwner();
 
+    // After dispose() completes it is guaranteed that the highlighter will not run the checker in the background anymore.
+    wrapper.stop();
+
+    // 2. In EDT (since UI access is required) get a list of all editors that are currently open.
+    final List<EditorComponent> editors = myEditorList.getAllEditors();
+    if (editors.isEmpty()) {
+      return;
+    }
+
+    // 3. In the highlighter thread again (actually, any background thread would do), go through the list retrieved in the previous step and remove
+    //    the checker's messages from each editor.
     addPendingAction(new Runnable() {
       @Override
       public void run() {
         long time = System.currentTimeMillis();
         for (EditorComponent component : editors) {
-          component.getHighlightManager().clearForOwner(checker.getEditorMessageOwner(), true);
+          component.getHighlightManager().clearForOwner(messageOwner, true);
         }
         if (LOG.isDebugEnabled()) {
           long elapsed = System.currentTimeMillis() - time;
-          LOG.debug(String.format("Removing %s messages from %d editors took %d ms",
-              checker, editors.size(), elapsed));
+          LOG.debug(String.format("Removing %s messages from %d editors took %d ms", messageOwner, editors.size(), elapsed));
         }
       }
     });
+  }
+
+  @Nullable
+  private EditorCheckerWrapper findWrapperFor(@NotNull EditorChecker checker) {
+    EditorCheckerWrapper wrapper = null;
+    for (EditorCheckerWrapper candidate : myCheckers) {
+      if (candidate.isWrapping(checker)) {
+        wrapper = candidate;
+        break;
+      }
+    }
+    return wrapper;
   }
 
   public void addAdditionalEditorComponent(EditorComponent additionalEditorComponent) {
@@ -298,11 +309,11 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private HighlighterUpdateSession createUpdateSession(List<EditorComponent> activeEditors, boolean essentialOnly) {
     processAccumulatedEvents();
 
-    final Set<EditorChecker> checkers = new LinkedHashSet<EditorChecker>();
+    final Set<EditorCheckerWrapper> checkers = new LinkedHashSet<>();
     if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
       // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
       // explicit update action (available in powerSafeMode only)
-      for (EditorChecker checker : myCheckers) {
+      for (EditorCheckerWrapper checker : myCheckers) {
         if (checker.isEssential() || !essentialOnly) {
           checkers.add(checker);
         }
@@ -331,7 +342,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
         if (myEditorTracker.isInspector(editorComponent)) {
           return;
         }
-        for (EditorChecker checker : myCheckers) {
+        for (EditorCheckerWrapper checker : myCheckers) {
           checker.forceAutofix(editorComponent);
         }
       }
@@ -350,7 +361,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private EditorComponent getInspector() {
-    if (myInspectorTool == null) return null;
+    if (myInspectorTool == null) {
+      return null;
+    }
     return myInspectorTool.getInspector();
   }
 
@@ -368,7 +381,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       }
     }
 
-    for (EditorChecker checker : myCheckers) {
+    for (EditorCheckerWrapper checker : myCheckers) {
       checker.processEvents(events);
     }
   }
@@ -388,12 +401,12 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   private class PauseDuringWriteAction extends ApplicationAdapter {
     @Override
-    public void beforeWriteActionStart(Object action) {
+    public void beforeWriteActionStart(@NotNull Object action) {
       pauseUpdater();
     }
 
     @Override
-    public void writeActionFinished(Object action) {
+    public void writeActionFinished(@NotNull Object action) {
       resumeUpdater();
     }
   }

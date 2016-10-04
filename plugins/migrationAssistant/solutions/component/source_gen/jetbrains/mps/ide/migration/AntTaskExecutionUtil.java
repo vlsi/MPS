@@ -4,12 +4,12 @@ package jetbrains.mps.ide.migration;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
@@ -17,60 +17,61 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class AntTaskExecutionUtil {
   public static boolean migrate(final Project project) throws Exception {
-    MigrationManager m = ProjectHelper.toIdeaProject(project).getComponent(MigrationManager.class);
+    final MigrationManager m = ProjectHelper.toIdeaProject(project).getComponent(MigrationManager.class);
     if (!(m.isMigrationRequired())) {
       return false;
     }
 
-    while (true) {
-      // we don't know which options are "better" so we "select" no one 
-      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), true);
-      if (step == null) {
-        break;
-      }
-      if (!(step.execute())) {
-        throw new Exception("Problem on executing cleanup migrations");
-      }
-    }
-
-    List<ScriptApplied.ScriptAppliedReference> missingMigrations = m.getMissingMigrations();
-    if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
-      throw new Exception("Some migrations are missing");
-    }
-
     final Wrappers._boolean ok = new Wrappers._boolean(true);
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
+        while (true) {
+          // we don't know which options are "better" so we "select" no one 
+          MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), true);
+          if (step == null) {
+            break;
+          }
+          if (!(step.execute())) {
+            throw new RuntimeException("Problem on executing cleanup migrations");
+          }
+        }
+
+        List<ScriptApplied.ScriptAppliedReference> missingMigrations = m.getMissingMigrations();
+        if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
+          throw new RuntimeException("Some migrations are missing");
+        }
+
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         ok.value = !(MigrationCheckUtil.haveProblems(modules, true, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
           }
         }));
+
+        if (!(ok.value)) {
+          throw new RuntimeException("Pre-check failed");
+        }
+
+        while (true) {
+          MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), false);
+          if (step == null) {
+            break;
+          }
+          if (!(step.execute())) {
+            throw new RuntimeException("Problem on executing project migrations");
+          }
+        }
+
+        while (true) {
+          MigrationManager.MigrationStep step = m.nextModuleStep(null);
+          if (step == null) {
+            break;
+          }
+          if (!(step.execute())) {
+            throw new RuntimeException("Problem on executing language migrations");
+          }
+        }
       }
     });
-    if (!(ok.value)) {
-      throw new Exception("Pre-check failed");
-    }
-
-    while (true) {
-      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<ProjectMigrationWithOptions.Option, Object>()), false);
-      if (step == null) {
-        break;
-      }
-      if (!(step.execute())) {
-        throw new Exception("Problem on executing project migrations");
-      }
-    }
-
-    while (true) {
-      MigrationManager.MigrationStep step = m.nextModuleStep();
-      if (step == null) {
-        break;
-      }
-      if (!(step.execute())) {
-        throw new Exception("Problem on executing language migrations");
-      }
-    }
 
     project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
@@ -88,7 +89,7 @@ public class AntTaskExecutionUtil {
       }
     });
     if (!(ok.value)) {
-      throw new Exception("Post-check failed");
+      throw new RuntimeException("Post-check failed");
     }
 
     return true;

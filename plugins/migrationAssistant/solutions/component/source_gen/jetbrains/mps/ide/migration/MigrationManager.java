@@ -7,6 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import org.jetbrains.annotations.Nullable;
 
 public interface MigrationManager {
   boolean isMigrationRequired();
@@ -25,10 +26,12 @@ public interface MigrationManager {
 
   int moduleStepsCount();
 
-  MigrationManager.MigrationStep nextModuleStep();
+  MigrationManager.MigrationStep nextModuleStep(@Nullable String preferredId);
 
   interface MigrationStep {
     String getDescription();
+    String getCommonDescription();
+    String getMergeId();
     boolean execute();
     void forceExecutionNextTime();
   }

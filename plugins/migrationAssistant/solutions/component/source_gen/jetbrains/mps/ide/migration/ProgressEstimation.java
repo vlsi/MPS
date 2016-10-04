@@ -8,9 +8,7 @@ public class ProgressEstimation {
   private static final double CHECKS_FRACTION = 0.4;
   private static final double OTHER_FRACTION = 1.0 - MIGRATIONS_FRACTION - CHECKS_FRACTION;
 
-
-  private static final double SAVING_FRACTION = OTHER_FRACTION * 0.9;
-  private static final double START_FRACTION = OTHER_FRACTION - SAVING_FRACTION;
+  private static final double START_FRACTION = OTHER_FRACTION;
 
   private static final double PRECHECK_FRACTION = CHECKS_FRACTION * 0.2;
   private static final double POSTCHECK_FRACTION = CHECKS_FRACTION * 0.2;
@@ -49,12 +47,8 @@ public class ProgressEstimation {
     return projectMigrations(1.0) + LANGUAGE_MIGRATIONS_FRACTION * doneFraction;
   }
 
-  public static double saving(double doneFraction) {
-    return languageMigrations(1.0) + SAVING_FRACTION * doneFraction;
-  }
-
   public static double postCheck(double doneFraction) {
-    return saving(1.0) + POSTCHECK_FRACTION * doneFraction;
+    return languageMigrations(1.0) + POSTCHECK_FRACTION * doneFraction;
   }
 
   public static double nonMigratedCheck(double doneFraction) {
