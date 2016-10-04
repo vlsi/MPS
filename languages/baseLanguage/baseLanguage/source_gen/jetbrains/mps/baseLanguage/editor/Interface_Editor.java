@@ -249,7 +249,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_4hcgjd_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_4hcgjd_a8a");
+    editorCell.setCellId("OpenBraceInterfaceCell");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a0a8a(editorContext, node));

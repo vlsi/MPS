@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class _ClassConcept_Extends_Delete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,7 +36,11 @@ public class _ClassConcept_Extends_Delete {
           SNodeOperations.deleteNode(it);
         }
       });
-      editorContext.selectWRTFocusPolicy(node);
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).isNotEmpty()) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "ImplementsCell", 0);
+      } else {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "OpenBraceClassCell", 0);
+      }
     }
   }
   public static class _ClassConcept_Extends_Delete_BACKSPACE extends AbstractCellAction {
@@ -53,7 +58,11 @@ public class _ClassConcept_Extends_Delete {
           SNodeOperations.deleteNode(it);
         }
       });
-      editorContext.selectWRTFocusPolicy(node);
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).isNotEmpty()) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "ImplementsCell", 0);
+      } else {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "OpenBraceClassCell", 0);
+      }
     }
   }
 }

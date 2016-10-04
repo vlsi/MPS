@@ -1512,29 +1512,13 @@
           <node concept="A1WHu" id="1wEcoXjJMEl" role="3vIgyS">
             <ref role="A1WHt" node="1wEcoXjIEfO" resolve="ClassConceptModifiersExtendsAndImplements" />
           </node>
+          <node concept="2SqB2G" id="6Lg4EWPbbn$" role="2SqHTX">
+            <property role="TrG5h" value="ImplementsCell" />
+          </node>
         </node>
         <node concept="3F2HdR" id="g7HXLFc" role="3EZMnx">
           <property role="2czwfO" value="," />
           <ref role="1NtTu8" to="tpee:fWEKbgp" resolve="implementedInterface" />
-          <node concept="pkWqt" id="7_64S$ZQbbR" role="pqm2j">
-            <node concept="3clFbS" id="7_64S$ZQbbS" role="2VODD2">
-              <node concept="3clFbF" id="7_64S$ZQbJ2" role="3cqZAp">
-                <node concept="2OqwBi" id="2_1mL0eog2U" role="3clFbG">
-                  <node concept="2OqwBi" id="7_64S$ZQbJ6" role="2Oq$k0">
-                    <node concept="pncrf" id="7_64S$ZQbJ8" role="2Oq$k0" />
-                    <node concept="Bykcj" id="2_1mL0eog2R" role="2OqNvi">
-                      <node concept="1aIX9F" id="2_1mL0eog2S" role="1xVPHs">
-                        <node concept="26LbJo" id="2_1mL0eog2T" role="1aIX9E">
-                          <ref role="26LbJp" to="tpee:fWEKbgp" resolve="implementedInterface" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3GX2aA" id="2_1mL0eog2V" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3F0ifn" id="g7HXLFd" role="2czzBI">
             <property role="ilYzB" value="&lt;none&gt;" />
             <node concept="VPxyj" id="hEZKQye" role="3F10Kt">
@@ -1620,6 +1604,9 @@
           </node>
           <node concept="A1WHu" id="1wEcoXjJMEz" role="3vIgyS">
             <ref role="A1WHt" node="1wEcoXjIEfO" resolve="ClassConceptModifiersExtendsAndImplements" />
+          </node>
+          <node concept="2SqB2G" id="6Lg4EWP8Ddy" role="2SqHTX">
+            <property role="TrG5h" value="OpenBraceClassCell" />
           </node>
         </node>
         <node concept="PMmxH" id="3Z61ZaMckgG" role="3EZMnx">
@@ -6151,6 +6138,7 @@
         <node concept="l2Vlx" id="6dNQRbCEha3" role="2iSdaV" />
         <node concept="3F0ifn" id="fMVQ5Oj" role="3EZMnx">
           <property role="3F0ifm" value="{" />
+          <property role="1cu_pB" value="0" />
           <ref role="1k5W1q" node="hFD5onb" resolve="LeftBrace" />
           <node concept="ljvvj" id="i0HIrhr" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -6167,6 +6155,9 @@
           </node>
           <node concept="A1WHu" id="1wEcoXjJMEa" role="3vIgyS">
             <ref role="A1WHt" node="1wEcoXjIEfO" resolve="ClassConceptModifiersExtendsAndImplements" />
+          </node>
+          <node concept="2SqB2G" id="6Lg4EWPiW1q" role="2SqHTX">
+            <property role="TrG5h" value="OpenBraceEnumCell" />
           </node>
         </node>
         <node concept="3F2HdR" id="fMVQ5Om" role="3EZMnx">
@@ -6838,6 +6829,9 @@
           </node>
           <node concept="A1WHu" id="1wEcoXjJMED" role="3vIgyS">
             <ref role="A1WHt" node="1wEcoXjIFgl" resolve="InterfaceModifiersAndExtends_ext_2" />
+          </node>
+          <node concept="2SqB2G" id="6Lg4EWPiMmi" role="2SqHTX">
+            <property role="TrG5h" value="OpenBraceInterfaceCell" />
           </node>
         </node>
         <node concept="PMmxH" id="3Z61ZaMcuh3" role="3EZMnx">
@@ -23943,6 +23937,20 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="6Lg4EWP8i7Y" role="3cqZAp">
+            <node concept="2OqwBi" id="6Lg4EWP8mal" role="3clFbG">
+              <node concept="0IXxy" id="6Lg4EWP8i7W" role="2Oq$k0" />
+              <node concept="1OKiuA" id="6Lg4EWP8ngm" role="2OqNvi">
+                <node concept="1Q80Hx" id="6Lg4EWP8nij" role="lBI5i" />
+                <node concept="2TlHUq" id="6Lg4EWP8HK2" role="lGT1i">
+                  <ref role="2TlMyj" node="6Lg4EWP8Ddy" resolve="OpenBraceClassCell" />
+                </node>
+                <node concept="3cmrfG" id="6Lg4EWP8HNT" role="3dN3m$">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -24001,13 +24009,49 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="6XT2l8Wraj2" role="3cqZAp">
-            <node concept="2OqwBi" id="6XT2l8WrayA" role="3clFbG">
-              <node concept="liA8E" id="6XT2l8Wrboo" role="2OqNvi">
-                <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
-                <node concept="0IXxy" id="6XT2l8Wrbsf" role="37wK5m" />
+          <node concept="3clFbJ" id="6Lg4EWPbdEp" role="3cqZAp">
+            <node concept="3clFbS" id="6Lg4EWPbdEr" role="3clFbx">
+              <node concept="3clFbF" id="6Lg4EWPbc4$" role="3cqZAp">
+                <node concept="2OqwBi" id="6Lg4EWPbcln" role="3clFbG">
+                  <node concept="0IXxy" id="6Lg4EWPbc4y" role="2Oq$k0" />
+                  <node concept="1OKiuA" id="6Lg4EWPbdr6" role="2OqNvi">
+                    <node concept="1Q80Hx" id="6Lg4EWPbdsL" role="lBI5i" />
+                    <node concept="2TlHUq" id="6Lg4EWPbduH" role="lGT1i">
+                      <ref role="2TlMyj" node="6Lg4EWPbbn$" resolve="ImplementsCell" />
+                    </node>
+                    <node concept="3cmrfG" id="6Lg4EWPbdy0" role="3dN3m$">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node concept="1Q80Hx" id="6XT2l8Wraj0" role="2Oq$k0" />
+            </node>
+            <node concept="2OqwBi" id="6Lg4EWPbi3j" role="3clFbw">
+              <node concept="2OqwBi" id="6Lg4EWPbe55" role="2Oq$k0">
+                <node concept="0IXxy" id="6Lg4EWPbdMy" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="6Lg4EWPbf5o" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpee:fWEKbgp" resolve="implementedInterface" />
+                </node>
+              </node>
+              <node concept="3GX2aA" id="6Lg4EWPbn6w" role="2OqNvi" />
+            </node>
+            <node concept="9aQIb" id="6Lg4EWPbnlt" role="9aQIa">
+              <node concept="3clFbS" id="6Lg4EWPbnlu" role="9aQI4">
+                <node concept="3clFbF" id="6Lg4EWPbnqA" role="3cqZAp">
+                  <node concept="2OqwBi" id="6Lg4EWPbnqB" role="3clFbG">
+                    <node concept="0IXxy" id="6Lg4EWPbnqC" role="2Oq$k0" />
+                    <node concept="1OKiuA" id="6Lg4EWPbnqD" role="2OqNvi">
+                      <node concept="1Q80Hx" id="6Lg4EWPbnqE" role="lBI5i" />
+                      <node concept="2TlHUq" id="6Lg4EWPbnsM" role="lGT1i">
+                        <ref role="2TlMyj" node="6Lg4EWP8Ddy" resolve="OpenBraceClassCell" />
+                      </node>
+                      <node concept="3cmrfG" id="6Lg4EWPbnqG" role="3dN3m$">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -24033,6 +24077,20 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="6Lg4EWPiQOh" role="3cqZAp">
+            <node concept="2OqwBi" id="6Lg4EWPiUOX" role="3clFbG">
+              <node concept="0IXxy" id="6Lg4EWPiQOf" role="2Oq$k0" />
+              <node concept="1OKiuA" id="6Lg4EWPiVl4" role="2OqNvi">
+                <node concept="1Q80Hx" id="6Lg4EWPiVrr" role="lBI5i" />
+                <node concept="2TlHUq" id="6Lg4EWPiVw2" role="lGT1i">
+                  <ref role="2TlMyj" node="6Lg4EWPiMmi" resolve="OpenBraceInterfaceCell" />
+                </node>
+                <node concept="3cmrfG" id="6Lg4EWPiVys" role="3dN3m$">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -24053,6 +24111,20 @@
                   <ref role="3TtcxE" to="tpee:fWEKbgp" resolve="implementedInterface" />
                 </node>
                 <node concept="0IXxy" id="1ZiYQdz0ZhH" role="2Oq$k0" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="6Lg4EWPj3NW" role="3cqZAp">
+            <node concept="2OqwBi" id="6Lg4EWPj7Pf" role="3clFbG">
+              <node concept="0IXxy" id="6Lg4EWPj3NU" role="2Oq$k0" />
+              <node concept="1OKiuA" id="6Lg4EWPj8mZ" role="2OqNvi">
+                <node concept="1Q80Hx" id="6Lg4EWPj8_t" role="lBI5i" />
+                <node concept="2TlHUq" id="6Lg4EWPj8C7" role="lGT1i">
+                  <ref role="2TlMyj" node="6Lg4EWPiW1q" resolve="OpenBraceEnumCell" />
+                </node>
+                <node concept="3cmrfG" id="6Lg4EWPj8G8" role="3dN3m$">
+                  <property role="3cmrfH" value="0" />
+                </node>
               </node>
             </node>
           </node>

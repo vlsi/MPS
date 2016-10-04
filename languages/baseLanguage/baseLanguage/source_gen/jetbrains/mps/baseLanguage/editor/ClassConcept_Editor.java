@@ -249,9 +249,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uj0cpq_k0");
     editorCell.addEditorCell(this.createConstant_uj0cpq_a01a(editorContext, node));
-    if (renderingCondition_uj0cpq_a1k0(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_uj0cpq_b01a(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNodeList_uj0cpq_b01a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_uj0cpq_a01a(SNode node, EditorContext editorContext) {
@@ -259,7 +257,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_uj0cpq_a01a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implements");
-    editorCell.setCellId("Constant_uj0cpq_a01a");
+    editorCell.setCellId("ImplementsCell");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, true);
@@ -334,9 +332,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-  private static boolean renderingCondition_uj0cpq_a1k0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).isNotEmpty();
-  }
   private EditorCell createCollection_uj0cpq_l0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uj0cpq_l0");
@@ -358,7 +353,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_uj0cpq_a11a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_uj0cpq_a11a");
+    editorCell.setCellId("OpenBraceClassCell");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a0a11a(editorContext, node));
