@@ -7,6 +7,7 @@
     <use id="7a6f7ef7-3988-464b-8cc5-1182671c136e" name="jetbrains.mps.samples.languagePatterns.Basic" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="vseb" ref="r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)" implicit="true" />
@@ -196,13 +197,13 @@
                                   <node concept="2OqwBi" id="7UfLy9aMw1g" role="1iwH7V">
                                     <node concept="30H73N" id="7UfLy9aMvXJ" role="2Oq$k0" />
                                     <node concept="3TrEf2" id="7UfLy9aMwaY" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="vseb:7UfLy9aLY1k" />
+                                      <ref role="3Tt5mk" to="vseb:7UfLy9aLY1k" resolve="item" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="7UfLy9aMwww" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:fzcpWvL" />
+                                <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
                               </node>
                             </node>
                           </node>

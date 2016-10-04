@@ -8,6 +8,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -253,7 +254,7 @@
                         <node concept="2OqwBi" id="hS9mpRB" role="3clFbG">
                           <node concept="30H73N" id="hS9mpRC" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hS9mpRD" role="2OqNvi">
-                            <ref role="3Tt5mk" to="dghb:hP5YayS" />
+                            <ref role="3Tt5mk" to="dghb:hP5YayS" resolve="rootElement" />
                           </node>
                         </node>
                       </node>

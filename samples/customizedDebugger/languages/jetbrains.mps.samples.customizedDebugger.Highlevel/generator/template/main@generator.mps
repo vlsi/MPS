@@ -8,6 +8,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3f028972-a290-4cf2-a87e-9b8f7e56076b" name="jetbrains.mps.samples.customizedDebugger.Bottomline" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="mlwq" ref="r:a4d9660d-2a29-4de5-9b2f-b601f2b0ff83(jetbrains.mps.samples.customizedDebugger.Bottomline.structure)" />
@@ -123,7 +124,7 @@
                         <node concept="2OqwBi" id="77mX7nW_3bM" role="2Oq$k0">
                           <node concept="30H73N" id="77mX7nW_2XD" role="2Oq$k0" />
                           <node concept="3TrEf2" id="77mX7nW_3tb" role="2OqNvi">
-                            <ref role="3Tt5mk" to="phaa:77mX7nW$Zsv" />
+                            <ref role="3Tt5mk" to="phaa:77mX7nW$Zsv" resolve="author" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="77mX7nW_8CM" role="2OqNvi">
@@ -160,7 +161,7 @@
             <node concept="3clFbF" id="77mX7nW_1ba" role="3cqZAp">
               <node concept="2OqwBi" id="77mX7nW_1b5" role="3clFbG">
                 <node concept="3Tsc0h" id="77mX7nW_1b8" role="2OqNvi">
-                  <ref role="3TtcxE" to="phaa:77mX7nW$Zsz" />
+                  <ref role="3TtcxE" to="phaa:77mX7nW$Zsz" resolve="smallTalk" />
                 </node>
                 <node concept="30H73N" id="77mX7nW_1b9" role="2Oq$k0" />
               </node>

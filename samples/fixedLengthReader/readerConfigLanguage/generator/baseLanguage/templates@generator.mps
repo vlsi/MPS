@@ -7,6 +7,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -223,7 +224,7 @@
                   <node concept="2OqwBi" id="hHLmVdE" role="3clFbG">
                     <node concept="30H73N" id="hrrmyq1" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="hHLmVed" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpnu:gfQFMcV" />
+                      <ref role="3TtcxE" to="tpnu:gfQFMcV" resolve="mapping" />
                     </node>
                   </node>
                 </node>
@@ -368,7 +369,7 @@
                   <node concept="2OqwBi" id="hHLmVbC" role="3clFbG">
                     <node concept="30H73N" id="hrrpzJU" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="hHLmVeu" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpnu:gfQHmRd" />
+                      <ref role="3TtcxE" to="tpnu:gfQHmRd" resolve="field" />
                     </node>
                   </node>
                 </node>
@@ -474,7 +475,7 @@
               <node concept="2OqwBi" id="hHLmVb3" role="3clFbG">
                 <node concept="30H73N" id="hrrmAln" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="hHLmVee" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpnu:gfQFMcV" />
+                  <ref role="3TtcxE" to="tpnu:gfQFMcV" resolve="mapping" />
                 </node>
               </node>
             </node>

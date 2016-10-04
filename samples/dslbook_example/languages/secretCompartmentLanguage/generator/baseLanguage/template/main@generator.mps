@@ -9,6 +9,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="tpo2" ref="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" />
@@ -373,7 +374,7 @@
                   <node concept="2OqwBi" id="hI08aYi" role="3clFbG">
                     <node concept="30H73N" id="hr0bwrE" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="hI0tKil" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpo2:hqWRrc6" />
+                      <ref role="3TtcxE" to="tpo2:hqWRrc6" resolve="event" />
                     </node>
                   </node>
                 </node>
@@ -438,7 +439,7 @@
                   <node concept="2OqwBi" id="hI087pc" role="3clFbG">
                     <node concept="30H73N" id="hr0cRb0" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="hI0tKkB" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpo2:hr03EUJ" />
+                      <ref role="3TtcxE" to="tpo2:hr03EUJ" resolve="state" />
                     </node>
                   </node>
                 </node>
@@ -487,7 +488,7 @@
                               <node concept="2OqwBi" id="hI08aDV" role="2Oq$k0">
                                 <node concept="30H73N" id="hr1bZVs" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="hr1c0Ug" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpo2:hr14QoW" />
+                                  <ref role="3Tt5mk" to="tpo2:hr14QoW" resolve="trigger" />
                                 </node>
                               </node>
                               <node concept="3TrcHB" id="hr1c1nB" role="2OqNvi">
@@ -509,7 +510,7 @@
                         <node concept="2OqwBi" id="hIfNF4U" role="3clFbG">
                           <node concept="30H73N" id="hIfNF4V" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIfNF4W" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpo2:hr14S0H" />
+                            <ref role="3Tt5mk" to="tpo2:hr14S0H" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -532,7 +533,7 @@
                   <node concept="2OqwBi" id="hI0879N" role="3clFbG">
                     <node concept="30H73N" id="hr1aXRN" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="hI0tKxe" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpo2:hr03EUJ" />
+                      <ref role="3TtcxE" to="tpo2:hr03EUJ" resolve="state" />
                     </node>
                   </node>
                 </node>
@@ -566,7 +567,7 @@
                       <node concept="2OqwBi" id="hI087rb" role="3clFbG">
                         <node concept="30H73N" id="hr13iJG" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hr13kIe" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpo2:hr11S1x" />
+                          <ref role="3Tt5mk" to="tpo2:hr11S1x" resolve="startState" />
                         </node>
                       </node>
                     </node>
@@ -677,7 +678,7 @@
                 <node concept="2OqwBi" id="b3cCzsTPYt" role="3clFbG">
                   <node concept="30H73N" id="b3cCzsTPYu" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="b3cCzsTPYv" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpo2:hr1P$7t" />
+                    <ref role="3TtcxE" to="tpo2:hr1P$7t" resolve="testMethod" />
                   </node>
                 </node>
               </node>
@@ -764,7 +765,7 @@
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="572jgSUxnUa" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="tpo2:hr1xS$3" />
+                                        <ref role="3Tt5mk" to="tpo2:hr1xS$3" resolve="stateMachine" />
                                       </node>
                                     </node>
                                   </node>
@@ -805,7 +806,7 @@
                       <node concept="2OqwBi" id="b3cCzsTQfj" role="3clFbG">
                         <node concept="30H73N" id="b3cCzsTQfk" role="2Oq$k0" />
                         <node concept="3Tsc0h" id="b3cCzsTQfl" role="2OqNvi">
-                          <ref role="3TtcxE" to="tpo2:hr20vOZ" />
+                          <ref role="3TtcxE" to="tpo2:hr20vOZ" resolve="handleEvent" />
                         </node>
                       </node>
                     </node>
@@ -826,7 +827,7 @@
                           <node concept="2OqwBi" id="b3cCzsTPZ6" role="2Oq$k0">
                             <node concept="30H73N" id="b3cCzsTPZ7" role="2Oq$k0" />
                             <node concept="3TrEf2" id="b3cCzsTPZ8" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpo2:hr1YeKF" />
+                              <ref role="3Tt5mk" to="tpo2:hr1YeKF" resolve="finalState" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="b3cCzsTPZ9" role="2OqNvi">
@@ -925,7 +926,7 @@
                             <node concept="2OqwBi" id="hI088Wc" role="2Oq$k0">
                               <node concept="30H73N" id="hr23C63" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hr23Dke" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpo2:hr20na8" />
+                                <ref role="3Tt5mk" to="tpo2:hr20na8" resolve="event" />
                               </node>
                             </node>
                             <node concept="3TrcHB" id="hr23DIT" role="2OqNvi">
