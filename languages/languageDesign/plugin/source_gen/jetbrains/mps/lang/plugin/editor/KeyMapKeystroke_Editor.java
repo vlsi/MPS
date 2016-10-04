@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 
 public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -47,6 +48,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     if (renderingCondition_paq7mh_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_paq7mh_h0(editorContext, node));
     }
+    editorCell.addEditorCell(this.createContextAssistant_paq7mh_i0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_paq7mh_a0(EditorContext editorContext, SNode node) {
@@ -183,6 +185,14 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
   private static boolean renderingCondition_paq7mh_a7a(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null));
+  }
+  private EditorCell createContextAssistant_paq7mh_i0(final EditorContext editorContext, final SNode node) {
+    EditorCell editorCell = new EditorCell_ContextAssistantComponent(editorContext, node);
+    editorCell.setCellId("ContextAssistant_paq7mh_i0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
