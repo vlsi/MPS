@@ -13,11 +13,11 @@ public class MyDrawing extends JFrame {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
-      graphics.setColor(Color.BLUE);
+      graphics.setColor(Color.blue);
       graphics.drawOval(200, 300, 100, 100);
-      graphics.setColor(Color.GREEN);
+      graphics.setColor(Color.green);
       graphics.drawRect(50, 150, 100, 100);
-      graphics.setColor(Color.RED);
+      graphics.setColor(Color.red);
       graphics.drawRect(350, 150, 100, 100);
     }
   };

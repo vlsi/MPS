@@ -29,14 +29,14 @@ public class ColorReference_Editor extends DefaultNodeEditor {
   }
   private EditorCell createRefCell_m0piq_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("color");
-    provider.setNoTargetText("<no color>");
+    provider.setRole("target");
+    provider.setNoTargetText("<no target>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ColorReference_Editor._Inline_m0piq_a0a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("color");
+      editorCell.setRole("target");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

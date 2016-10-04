@@ -35,10 +35,10 @@ public final class Shape__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void drawShape_idW6XMzE_hbz(@NotNull SNode __thisNode__, Graphics graphics) {
-    graphics.setColor(ColorReference__BehaviorDescriptor.findColor_id1Os2kBLuoy8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "color"))));
+    graphics.setColor(ColorReference__BehaviorDescriptor.findColor_id1Os2kBLuoy8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "colorRef"))));
   }
   /*package*/ static void drawShapeAt_id3u6SZi0POQS(@NotNull SNode __thisNode__, Graphics graphics, int x, int y) {
-    graphics.setColor(ColorReference__BehaviorDescriptor.findColor_id1Os2kBLuoy8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "color"))));
+    graphics.setColor(ColorReference__BehaviorDescriptor.findColor_id1Os2kBLuoy8.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "colorRef"))));
   }
 
   /*package*/ Shape__BehaviorDescriptor() {

@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Canvas = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Square = new ConceptPresentationBuilder().create();
@@ -25,10 +26,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 1:
         return props_Circle;
       case 2:
-        return props_ColorReference;
+        return props_Color;
       case 3:
-        return props_Shape;
+        return props_ColorReference;
       case 4:
+        return props_Shape;
+      case 5:
         return props_Square;
     }
     throw new IllegalStateException("Unknown concept " + c);
