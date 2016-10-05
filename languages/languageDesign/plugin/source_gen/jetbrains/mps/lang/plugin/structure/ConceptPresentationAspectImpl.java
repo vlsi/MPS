@@ -10,13 +10,15 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_AbstractToolKeystroke = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AbstractToolShortcut = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionAccessOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionConstructionParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionConstructorParameterReferenceOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterReferenceOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD34/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0f).create();
-  private final ConceptPresentation props_ActionGroupDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
+  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD34/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0h).create();
+  private final ConceptPresentation props_ActionGroupDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_ActionGroupMember = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionGroupRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionInstance = new ConceptPresentationBuilder().create();
@@ -34,7 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AddTabOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseNodeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseProjectOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BaseToolDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cedcL, "caption"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x22ace24ea9f7487cL, "position"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf6eL, "icon")).icon(IconContainer.RESOURCE_a0a0y).create();
+  private final ConceptPresentation props_BaseToolDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cedcL, "caption"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x22ace24ea9f7487cL, "position"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf6eL, "icon")).icon(IconContainer.RESOURCE_a0a0ab).create();
   private final ConceptPresentation props_BuildGroupBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ButtonCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CloseTabOperation = new ConceptPresentationBuilder().create();
@@ -55,10 +57,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CreateNodeAspectBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CreateTabBlock = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66eL, "commandOnCreate")).create();
   private final ConceptPresentation props_CustomCondition = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CustomToolShortcut = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DisposeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DoUpdateBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditableModel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorTab = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d37L, "shortcutChar"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x71dc7d539b7857cfL, "commandOnCreate"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")).icon(IconContainer.RESOURCE_a0a0wb).create();
+  private final ConceptPresentation props_EditorTab = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d37L, "shortcutChar"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x71dc7d539b7857cfL, "commandOnCreate"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")).icon(IconContainer.RESOURCE_a0a0zb).create();
   private final ConceptPresentation props_EditorTabReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ElementListContents = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EnumerateChildrenFunction = new ConceptPresentationBuilder().create();
@@ -75,7 +78,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GroupType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IdeaActionsDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IdeaConfigurationXml = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IdeaInitializerDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nc).create();
+  private final ConceptPresentation props_IdeaInitializerDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0qc).create();
   private final ConceptPresentation props_IdeaPluginDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InterfaceExtentionPoint = new ConceptPresentationBuilder().create();
@@ -84,13 +87,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsApplicableTabBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_KeyMapKeystroke = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_KeyStrokeType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_KeymapChangesDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wc).create();
+  private final ConceptPresentation props_KeymapChangesDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zc).create();
   private final ConceptPresentation props_KeymapRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ListenBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MPSPluginDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModificationStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodesBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NonDumbAwareActions = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NumberToolShortcut = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OldConceptsBlock = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_OldCreateBlock = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_OnAfterReadBlock = new ConceptPresentationBuilder().create();
@@ -109,7 +113,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PreferencePageCommitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageIsModifiedBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageResetBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PreferencesComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vd).create();
+  private final ConceptPresentation props_PreferencesComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zd).create();
   private final ConceptPresentation props_PreferencesComponentType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequiredCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Separator = new ConceptPresentationBuilder().create();
@@ -124,6 +128,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ToolActionPlace = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ToolDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ToolInstanceExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ToolKeystroke = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ToolTab = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ToolType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ToolbarCreator = new ConceptPresentationBuilder().create();
@@ -138,246 +143,256 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
-        return props_ActionAccessOperation;
+        return props_AbstractToolKeystroke;
       case 1:
-        return props_ActionConstructionParameterDeclaration;
+        return props_AbstractToolShortcut;
       case 2:
-        return props_ActionConstructorParameterReferenceOperation;
+        return props_ActionAccessOperation;
       case 3:
-        return props_ActionDataParameterDeclaration;
+        return props_ActionConstructionParameterDeclaration;
       case 4:
-        return props_ActionDataParameterReferenceOperation;
+        return props_ActionConstructorParameterReferenceOperation;
       case 5:
-        return props_ActionDeclaration;
+        return props_ActionDataParameterDeclaration;
       case 6:
-        return props_ActionGroupDeclaration;
+        return props_ActionDataParameterReferenceOperation;
       case 7:
-        return props_ActionGroupMember;
+        return props_ActionDeclaration;
       case 8:
-        return props_ActionGroupRef;
+        return props_ActionGroupDeclaration;
       case 9:
-        return props_ActionInstance;
+        return props_ActionGroupMember;
       case 10:
-        return props_ActionParameter;
+        return props_ActionGroupRef;
       case 11:
-        return props_ActionParameterCondition;
+        return props_ActionInstance;
       case 12:
-        return props_ActionParameterDeclaration;
+        return props_ActionParameter;
       case 13:
-        return props_ActionParameterReference;
+        return props_ActionParameterCondition;
       case 14:
-        return props_ActionParameterReferenceOperation;
+        return props_ActionParameterDeclaration;
       case 15:
-        return props_ActionPlaceSpecification;
+        return props_ActionParameterReference;
       case 16:
-        return props_ActionReference;
+        return props_ActionParameterReferenceOperation;
       case 17:
-        return props_ActionType;
+        return props_ActionPlaceSpecification;
       case 18:
-        return props_AddElementStatement;
+        return props_ActionReference;
       case 19:
-        return props_AddKeystrokeStatement;
+        return props_ActionType;
       case 20:
-        return props_AddStatement;
+        return props_AddElementStatement;
       case 21:
-        return props_AddTabOperation;
+        return props_AddKeystrokeStatement;
       case 22:
-        return props_BaseNodeBlock;
+        return props_AddStatement;
       case 23:
-        return props_BaseProjectOperation;
+        return props_AddTabOperation;
       case 24:
-        return props_BaseToolDeclaration;
+        return props_BaseNodeBlock;
       case 25:
-        return props_BuildGroupBlock;
+        return props_BaseProjectOperation;
       case 26:
-        return props_ButtonCreator;
+        return props_BaseToolDeclaration;
       case 27:
-        return props_CloseTabOperation;
+        return props_BuildGroupBlock;
       case 28:
-        return props_ConceptCondition;
+        return props_ButtonCreator;
       case 29:
-        return props_ConceptFunctionParameter_AnActionEvent;
+        return props_CloseTabOperation;
       case 30:
-        return props_ConceptFunctionParameter_Concept;
+        return props_ConceptCondition;
       case 31:
-        return props_ConceptFunctionParameter_CreatorType;
+        return props_ConceptFunctionParameter_AnActionEvent;
       case 32:
-        return props_ConceptFunctionParameter_IModule;
+        return props_ConceptFunctionParameter_Concept;
       case 33:
-        return props_ConceptFunctionParameter_MPSProject;
+        return props_ConceptFunctionParameter_CreatorType;
       case 34:
-        return props_ConceptFunctionParameter_Model;
+        return props_ConceptFunctionParameter_IModule;
       case 35:
-        return props_ConceptFunctionParameter_OperationContext;
+        return props_ConceptFunctionParameter_MPSProject;
       case 36:
-        return props_ConceptFunctionParameter_PreferencePage_component;
+        return props_ConceptFunctionParameter_Model;
       case 37:
-        return props_ConceptFunctionParameter_Project;
+        return props_ConceptFunctionParameter_OperationContext;
       case 38:
-        return props_ConceptFunctionParameter_SConceptClass;
+        return props_ConceptFunctionParameter_PreferencePage_component;
       case 39:
-        return props_ConceptFunctionParameter_node;
+        return props_ConceptFunctionParameter_Project;
       case 40:
-        return props_ConceptsBlock;
+        return props_ConceptFunctionParameter_SConceptClass;
       case 41:
-        return props_CreateBlock;
+        return props_ConceptFunctionParameter_node;
       case 42:
-        return props_CreateNodeAspectBlock;
+        return props_ConceptsBlock;
       case 43:
-        return props_CreateTabBlock;
+        return props_CreateBlock;
       case 44:
-        return props_CustomCondition;
+        return props_CreateNodeAspectBlock;
       case 45:
-        return props_DisposeBlock;
+        return props_CreateTabBlock;
       case 46:
-        return props_DoUpdateBlock;
+        return props_CustomCondition;
       case 47:
-        return props_EditableModel;
+        return props_CustomToolShortcut;
       case 48:
-        return props_EditorTab;
+        return props_DisposeBlock;
       case 49:
-        return props_EditorTabReference;
+        return props_DoUpdateBlock;
       case 50:
-        return props_ElementListContents;
+        return props_EditableModel;
       case 51:
-        return props_EnumerateChildrenFunction;
+        return props_EditorTab;
       case 52:
-        return props_EverywhereActionPlace;
+        return props_EditorTabReference;
       case 53:
-        return props_ExecuteBlock;
+        return props_ElementListContents;
       case 54:
-        return props_GetComponentBlock;
+        return props_EnumerateChildrenFunction;
       case 55:
-        return props_GetGroupOperation;
+        return props_EverywhereActionPlace;
       case 56:
-        return props_GetNodeBlock;
+        return props_ExecuteBlock;
       case 57:
-        return props_GetNodesBlock;
+        return props_GetComponentBlock;
       case 58:
-        return props_GetSelectedTabOperation;
+        return props_GetGroupOperation;
       case 59:
-        return props_GroupAccessOperation;
+        return props_GetNodeBlock;
       case 60:
-        return props_GroupAnchor;
+        return props_GetNodesBlock;
       case 61:
-        return props_GroupContents;
+        return props_GetSelectedTabOperation;
       case 62:
-        return props_GroupType;
+        return props_GroupAccessOperation;
       case 63:
-        return props_IdeaActionsDescriptor;
+        return props_GroupAnchor;
       case 64:
-        return props_IdeaConfigurationXml;
+        return props_GroupContents;
       case 65:
-        return props_IdeaInitializerDescriptor;
+        return props_GroupType;
       case 66:
-        return props_IdeaPluginDependency;
+        return props_IdeaActionsDescriptor;
       case 67:
-        return props_InitBlock;
+        return props_IdeaConfigurationXml;
       case 68:
-        return props_InterfaceExtentionPoint;
+        return props_IdeaInitializerDescriptor;
       case 69:
-        return props_InterfaceGroup;
+        return props_IdeaPluginDependency;
       case 70:
-        return props_IsApplicableBlock;
+        return props_InitBlock;
       case 71:
-        return props_IsApplicableTabBlock;
+        return props_InterfaceExtentionPoint;
       case 72:
-        return props_KeyMapKeystroke;
+        return props_InterfaceGroup;
       case 73:
-        return props_KeyStrokeType;
+        return props_IsApplicableBlock;
       case 74:
-        return props_KeymapChangesDeclaration;
+        return props_IsApplicableTabBlock;
       case 75:
-        return props_KeymapRef;
+        return props_KeyMapKeystroke;
       case 76:
-        return props_ListenBlock;
+        return props_KeyStrokeType;
       case 77:
-        return props_MPSPluginDependency;
+        return props_KeymapChangesDeclaration;
       case 78:
-        return props_ModificationStatement;
+        return props_KeymapRef;
       case 79:
-        return props_NodesBlock;
+        return props_ListenBlock;
       case 80:
-        return props_NonDumbAwareActions;
+        return props_MPSPluginDependency;
       case 81:
-        return props_OldConceptsBlock;
+        return props_ModificationStatement;
       case 82:
-        return props_OldCreateBlock;
+        return props_NodesBlock;
       case 83:
-        return props_OnAfterReadBlock;
+        return props_NonDumbAwareActions;
       case 84:
-        return props_OnBeforeWriteBlock;
+        return props_NumberToolShortcut;
       case 85:
-        return props_Order;
+        return props_OldConceptsBlock;
       case 86:
-        return props_OrderConstraints;
+        return props_OldCreateBlock;
       case 87:
-        return props_OrderReference;
+        return props_OnAfterReadBlock;
       case 88:
-        return props_ParameterCondition_ConceptFunctionParameter;
+        return props_OnBeforeWriteBlock;
       case 89:
-        return props_ParameterizedShortcutChange;
+        return props_Order;
       case 90:
-        return props_PersistentPropertyDeclaration;
+        return props_OrderConstraints;
       case 91:
-        return props_PersistentPropertyReference;
+        return props_OrderReference;
       case 92:
-        return props_PinTabOperation;
+        return props_ParameterCondition_ConceptFunctionParameter;
       case 93:
-        return props_PluginDependency;
+        return props_ParameterizedShortcutChange;
       case 94:
-        return props_PopupCreator;
+        return props_PersistentPropertyDeclaration;
       case 95:
-        return props_PreferencePage;
+        return props_PersistentPropertyReference;
       case 96:
-        return props_PreferencePageCommitBlock;
+        return props_PinTabOperation;
       case 97:
-        return props_PreferencePageIsModifiedBlock;
+        return props_PluginDependency;
       case 98:
-        return props_PreferencePageResetBlock;
+        return props_PopupCreator;
       case 99:
-        return props_PreferencesComponentDeclaration;
+        return props_PreferencePage;
       case 100:
-        return props_PreferencesComponentType;
+        return props_PreferencePageCommitBlock;
       case 101:
-        return props_RequiredCondition;
+        return props_PreferencePageIsModifiedBlock;
       case 102:
-        return props_Separator;
+        return props_PreferencePageResetBlock;
       case 103:
-        return props_ShortcutChange;
+        return props_PreferencesComponentDeclaration;
       case 104:
-        return props_SimpleActionPlace;
+        return props_PreferencesComponentType;
       case 105:
-        return props_SimpleShortcutChange;
+        return props_RequiredCondition;
       case 106:
-        return props_SmartDisposeClosureParameterDeclaration;
+        return props_Separator;
       case 107:
-        return props_TabbedToolDeclaration;
+        return props_ShortcutChange;
       case 108:
-        return props_TabbedToolOperation;
+        return props_SimpleActionPlace;
       case 109:
-        return props_ToStringConceptFunction;
+        return props_SimpleShortcutChange;
       case 110:
-        return props_ToStringParameter;
+        return props_SmartDisposeClosureParameterDeclaration;
       case 111:
-        return props_ToolActionPlace;
+        return props_TabbedToolDeclaration;
       case 112:
-        return props_ToolDeclaration;
+        return props_TabbedToolOperation;
       case 113:
-        return props_ToolInstanceExpression;
+        return props_ToStringConceptFunction;
       case 114:
-        return props_ToolTab;
+        return props_ToStringParameter;
       case 115:
-        return props_ToolType;
+        return props_ToolActionPlace;
       case 116:
-        return props_ToolbarCreator;
+        return props_ToolDeclaration;
       case 117:
-        return props_UnpinTabOperation;
+        return props_ToolInstanceExpression;
       case 118:
-        return props_UpdateBlock;
+        return props_ToolKeystroke;
       case 119:
-        return props_UpdateGroupBlock;
+        return props_ToolTab;
       case 120:
+        return props_ToolType;
+      case 121:
+        return props_ToolbarCreator;
+      case 122:
+        return props_UnpinTabOperation;
+      case 123:
+        return props_UpdateBlock;
+      case 124:
+        return props_UpdateGroupBlock;
+      case 125:
         return props_UpdateGroupFunction;
     }
     throw new IllegalStateException("Unknown concept " + c);

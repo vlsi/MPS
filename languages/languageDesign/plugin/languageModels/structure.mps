@@ -1244,6 +1244,13 @@
       <property role="IQ2ns" value="6791676465872004185" />
       <ref role="20lvS9" to="1oap:2p1v3tOa9VI" resolve="Icon" />
     </node>
+    <node concept="1TJgyj" id="qbzkx3I1mI" role="1TKVEi">
+      <property role="IQ2ns" value="471625927503648174" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="shortcut" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="qbzkx3HvA1" resolve="AbstractToolShortcut" />
+    </node>
     <node concept="1TJgyi" id="5FstybB4cVs" role="1TKVEl">
       <property role="TrG5h" value="caption" />
       <property role="IQ2nx" value="6547237850567462620" />
@@ -2297,6 +2304,65 @@
     <property role="34LRSv" value="concept" />
     <property role="EcuMT" value="7459370737647671570" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="qbzkx3HvA1">
+    <property role="EcuMT" value="471625927503509889" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="TrG5h" value="AbstractToolShortcut" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="qbzkx3HQ47">
+    <property role="EcuMT" value="471625927503601927" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="TrG5h" value="NumberToolShortcut" />
+    <property role="34LRSv" value="number" />
+    <ref role="1TJDcQ" node="qbzkx3HvA1" resolve="AbstractToolShortcut" />
+    <node concept="1TJgyi" id="qbzkx3HQ4z" role="1TKVEl">
+      <property role="IQ2nx" value="471625927503601955" />
+      <property role="TrG5h" value="number" />
+      <ref role="AX2Wp" node="hDjkga7" resolve="digit" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qbzkx3HQ4_">
+    <property role="EcuMT" value="471625927503601957" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="TrG5h" value="CustomToolShortcut" />
+    <ref role="1TJDcQ" node="qbzkx3HvA1" resolve="AbstractToolShortcut" />
+    <node concept="1TJgyj" id="qbzkx3HQmS" role="1TKVEi">
+      <property role="IQ2ns" value="471625927503603128" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1..n" />
+      <property role="20kJfa" value="changes" />
+      <ref role="20lvS9" node="qbzkx3SSja" resolve="AbstractToolKeystroke" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qbzkx3HQmK">
+    <property role="EcuMT" value="471625927503603120" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="TrG5h" value="ToolKeystroke" />
+    <ref role="1TJDcQ" node="qbzkx3SSja" resolve="AbstractToolKeystroke" />
+    <node concept="1TJgyi" id="qbzkx3HQmQ" role="1TKVEl">
+      <property role="IQ2nx" value="471625927503603126" />
+      <property role="TrG5h" value="keymap" />
+      <ref role="AX2Wp" node="1mJS7WEAV1S" resolve="Keymap" />
+    </node>
+    <node concept="1TJgyj" id="qbzkx3HQ4A" role="1TKVEi">
+      <property role="IQ2ns" value="471625927503601958" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="keystroke" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="h$pLAnk" resolve="KeyMapKeystroke" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qbzkx3SSja">
+    <property role="EcuMT" value="471625927506494666" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="TrG5h" value="AbstractToolKeystroke" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

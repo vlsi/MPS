@@ -19,7 +19,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(121);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(126);
+  /*package*/ final ConceptDescriptor myConceptAbstractToolKeystroke = createDescriptorForAbstractToolKeystroke();
+  /*package*/ final ConceptDescriptor myConceptAbstractToolShortcut = createDescriptorForAbstractToolShortcut();
   /*package*/ final ConceptDescriptor myConceptActionAccessOperation = createDescriptorForActionAccessOperation();
   /*package*/ final ConceptDescriptor myConceptActionConstructionParameterDeclaration = createDescriptorForActionConstructionParameterDeclaration();
   /*package*/ final ConceptDescriptor myConceptActionConstructorParameterReferenceOperation = createDescriptorForActionConstructorParameterReferenceOperation();
@@ -65,6 +67,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCreateNodeAspectBlock = createDescriptorForCreateNodeAspectBlock();
   /*package*/ final ConceptDescriptor myConceptCreateTabBlock = createDescriptorForCreateTabBlock();
   /*package*/ final ConceptDescriptor myConceptCustomCondition = createDescriptorForCustomCondition();
+  /*package*/ final ConceptDescriptor myConceptCustomToolShortcut = createDescriptorForCustomToolShortcut();
   /*package*/ final ConceptDescriptor myConceptDisposeBlock = createDescriptorForDisposeBlock();
   /*package*/ final ConceptDescriptor myConceptDoUpdateBlock = createDescriptorForDoUpdateBlock();
   /*package*/ final ConceptDescriptor myConceptEditableModel = createDescriptorForEditableModel();
@@ -101,6 +104,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptModificationStatement = createDescriptorForModificationStatement();
   /*package*/ final ConceptDescriptor myConceptNodesBlock = createDescriptorForNodesBlock();
   /*package*/ final ConceptDescriptor myConceptNonDumbAwareActions = createDescriptorForNonDumbAwareActions();
+  /*package*/ final ConceptDescriptor myConceptNumberToolShortcut = createDescriptorForNumberToolShortcut();
   /*package*/ final ConceptDescriptor myConceptOldConceptsBlock = createDescriptorForOldConceptsBlock();
   /*package*/ final ConceptDescriptor myConceptOldCreateBlock = createDescriptorForOldCreateBlock();
   /*package*/ final ConceptDescriptor myConceptOnAfterReadBlock = createDescriptorForOnAfterReadBlock();
@@ -134,6 +138,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptToolActionPlace = createDescriptorForToolActionPlace();
   /*package*/ final ConceptDescriptor myConceptToolDeclaration = createDescriptorForToolDeclaration();
   /*package*/ final ConceptDescriptor myConceptToolInstanceExpression = createDescriptorForToolInstanceExpression();
+  /*package*/ final ConceptDescriptor myConceptToolKeystroke = createDescriptorForToolKeystroke();
   /*package*/ final ConceptDescriptor myConceptToolTab = createDescriptorForToolTab();
   /*package*/ final ConceptDescriptor myConceptToolType = createDescriptorForToolType();
   /*package*/ final ConceptDescriptor myConceptToolbarCreator = createDescriptorForToolbarCreator();
@@ -143,132 +148,137 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptUpdateGroupFunction = createDescriptorForUpdateGroupFunction();
 
   public StructureAspectDescriptor() {
-    myIndexMap.put(myConceptActionAccessOperation.getId(), 0);
-    myIndexMap.put(myConceptActionConstructionParameterDeclaration.getId(), 1);
-    myIndexMap.put(myConceptActionConstructorParameterReferenceOperation.getId(), 2);
-    myIndexMap.put(myConceptActionDataParameterDeclaration.getId(), 3);
-    myIndexMap.put(myConceptActionDataParameterReferenceOperation.getId(), 4);
-    myIndexMap.put(myConceptActionDeclaration.getId(), 5);
-    myIndexMap.put(myConceptActionGroupDeclaration.getId(), 6);
-    myIndexMap.put(myConceptActionGroupMember.getId(), 7);
-    myIndexMap.put(myConceptActionGroupRef.getId(), 8);
-    myIndexMap.put(myConceptActionInstance.getId(), 9);
-    myIndexMap.put(myConceptActionParameter.getId(), 10);
-    myIndexMap.put(myConceptActionParameterCondition.getId(), 11);
-    myIndexMap.put(myConceptActionParameterDeclaration.getId(), 12);
-    myIndexMap.put(myConceptActionParameterReference.getId(), 13);
-    myIndexMap.put(myConceptActionParameterReferenceOperation.getId(), 14);
-    myIndexMap.put(myConceptActionPlaceSpecification.getId(), 15);
-    myIndexMap.put(myConceptActionReference.getId(), 16);
-    myIndexMap.put(myConceptActionType.getId(), 17);
-    myIndexMap.put(myConceptAddElementStatement.getId(), 18);
-    myIndexMap.put(myConceptAddKeystrokeStatement.getId(), 19);
-    myIndexMap.put(myConceptAddStatement.getId(), 20);
-    myIndexMap.put(myConceptAddTabOperation.getId(), 21);
-    myIndexMap.put(myConceptBaseNodeBlock.getId(), 22);
-    myIndexMap.put(myConceptBaseProjectOperation.getId(), 23);
-    myIndexMap.put(myConceptBaseToolDeclaration.getId(), 24);
-    myIndexMap.put(myConceptBuildGroupBlock.getId(), 25);
-    myIndexMap.put(myConceptButtonCreator.getId(), 26);
-    myIndexMap.put(myConceptCloseTabOperation.getId(), 27);
-    myIndexMap.put(myConceptConceptCondition.getId(), 28);
-    myIndexMap.put(myConceptConceptFunctionParameter_AnActionEvent.getId(), 29);
-    myIndexMap.put(myConceptConceptFunctionParameter_Concept.getId(), 30);
-    myIndexMap.put(myConceptConceptFunctionParameter_CreatorType.getId(), 31);
-    myIndexMap.put(myConceptConceptFunctionParameter_IModule.getId(), 32);
-    myIndexMap.put(myConceptConceptFunctionParameter_MPSProject.getId(), 33);
-    myIndexMap.put(myConceptConceptFunctionParameter_Model.getId(), 34);
-    myIndexMap.put(myConceptConceptFunctionParameter_OperationContext.getId(), 35);
-    myIndexMap.put(myConceptConceptFunctionParameter_PreferencePage_component.getId(), 36);
-    myIndexMap.put(myConceptConceptFunctionParameter_Project.getId(), 37);
-    myIndexMap.put(myConceptConceptFunctionParameter_SConceptClass.getId(), 38);
-    myIndexMap.put(myConceptConceptFunctionParameter_node.getId(), 39);
-    myIndexMap.put(myConceptConceptsBlock.getId(), 40);
-    myIndexMap.put(myConceptCreateBlock.getId(), 41);
-    myIndexMap.put(myConceptCreateNodeAspectBlock.getId(), 42);
-    myIndexMap.put(myConceptCreateTabBlock.getId(), 43);
-    myIndexMap.put(myConceptCustomCondition.getId(), 44);
-    myIndexMap.put(myConceptDisposeBlock.getId(), 45);
-    myIndexMap.put(myConceptDoUpdateBlock.getId(), 46);
-    myIndexMap.put(myConceptEditableModel.getId(), 47);
-    myIndexMap.put(myConceptEditorTab.getId(), 48);
-    myIndexMap.put(myConceptEditorTabReference.getId(), 49);
-    myIndexMap.put(myConceptElementListContents.getId(), 50);
-    myIndexMap.put(myConceptEnumerateChildrenFunction.getId(), 51);
-    myIndexMap.put(myConceptEverywhereActionPlace.getId(), 52);
-    myIndexMap.put(myConceptExecuteBlock.getId(), 53);
-    myIndexMap.put(myConceptGetComponentBlock.getId(), 54);
-    myIndexMap.put(myConceptGetGroupOperation.getId(), 55);
-    myIndexMap.put(myConceptGetNodeBlock.getId(), 56);
-    myIndexMap.put(myConceptGetNodesBlock.getId(), 57);
-    myIndexMap.put(myConceptGetSelectedTabOperation.getId(), 58);
-    myIndexMap.put(myConceptGroupAccessOperation.getId(), 59);
-    myIndexMap.put(myConceptGroupAnchor.getId(), 60);
-    myIndexMap.put(myConceptGroupContents.getId(), 61);
-    myIndexMap.put(myConceptGroupType.getId(), 62);
-    myIndexMap.put(myConceptIdeaActionsDescriptor.getId(), 63);
-    myIndexMap.put(myConceptIdeaConfigurationXml.getId(), 64);
-    myIndexMap.put(myConceptIdeaInitializerDescriptor.getId(), 65);
-    myIndexMap.put(myConceptIdeaPluginDependency.getId(), 66);
-    myIndexMap.put(myConceptInitBlock.getId(), 67);
-    myIndexMap.put(myConceptInterfaceExtentionPoint.getId(), 68);
-    myIndexMap.put(myConceptInterfaceGroup.getId(), 69);
-    myIndexMap.put(myConceptIsApplicableBlock.getId(), 70);
-    myIndexMap.put(myConceptIsApplicableTabBlock.getId(), 71);
-    myIndexMap.put(myConceptKeyMapKeystroke.getId(), 72);
-    myIndexMap.put(myConceptKeyStrokeType.getId(), 73);
-    myIndexMap.put(myConceptKeymapChangesDeclaration.getId(), 74);
-    myIndexMap.put(myConceptKeymapRef.getId(), 75);
-    myIndexMap.put(myConceptListenBlock.getId(), 76);
-    myIndexMap.put(myConceptMPSPluginDependency.getId(), 77);
-    myIndexMap.put(myConceptModificationStatement.getId(), 78);
-    myIndexMap.put(myConceptNodesBlock.getId(), 79);
-    myIndexMap.put(myConceptNonDumbAwareActions.getId(), 80);
-    myIndexMap.put(myConceptOldConceptsBlock.getId(), 81);
-    myIndexMap.put(myConceptOldCreateBlock.getId(), 82);
-    myIndexMap.put(myConceptOnAfterReadBlock.getId(), 83);
-    myIndexMap.put(myConceptOnBeforeWriteBlock.getId(), 84);
-    myIndexMap.put(myConceptOrder.getId(), 85);
-    myIndexMap.put(myConceptOrderConstraints.getId(), 86);
-    myIndexMap.put(myConceptOrderReference.getId(), 87);
-    myIndexMap.put(myConceptParameterCondition_ConceptFunctionParameter.getId(), 88);
-    myIndexMap.put(myConceptParameterizedShortcutChange.getId(), 89);
-    myIndexMap.put(myConceptPersistentPropertyDeclaration.getId(), 90);
-    myIndexMap.put(myConceptPersistentPropertyReference.getId(), 91);
-    myIndexMap.put(myConceptPinTabOperation.getId(), 92);
-    myIndexMap.put(myConceptPluginDependency.getId(), 93);
-    myIndexMap.put(myConceptPopupCreator.getId(), 94);
-    myIndexMap.put(myConceptPreferencePage.getId(), 95);
-    myIndexMap.put(myConceptPreferencePageCommitBlock.getId(), 96);
-    myIndexMap.put(myConceptPreferencePageIsModifiedBlock.getId(), 97);
-    myIndexMap.put(myConceptPreferencePageResetBlock.getId(), 98);
-    myIndexMap.put(myConceptPreferencesComponentDeclaration.getId(), 99);
-    myIndexMap.put(myConceptPreferencesComponentType.getId(), 100);
-    myIndexMap.put(myConceptRequiredCondition.getId(), 101);
-    myIndexMap.put(myConceptSeparator.getId(), 102);
-    myIndexMap.put(myConceptShortcutChange.getId(), 103);
-    myIndexMap.put(myConceptSimpleActionPlace.getId(), 104);
-    myIndexMap.put(myConceptSimpleShortcutChange.getId(), 105);
-    myIndexMap.put(myConceptSmartDisposeClosureParameterDeclaration.getId(), 106);
-    myIndexMap.put(myConceptTabbedToolDeclaration.getId(), 107);
-    myIndexMap.put(myConceptTabbedToolOperation.getId(), 108);
-    myIndexMap.put(myConceptToStringConceptFunction.getId(), 109);
-    myIndexMap.put(myConceptToStringParameter.getId(), 110);
-    myIndexMap.put(myConceptToolActionPlace.getId(), 111);
-    myIndexMap.put(myConceptToolDeclaration.getId(), 112);
-    myIndexMap.put(myConceptToolInstanceExpression.getId(), 113);
-    myIndexMap.put(myConceptToolTab.getId(), 114);
-    myIndexMap.put(myConceptToolType.getId(), 115);
-    myIndexMap.put(myConceptToolbarCreator.getId(), 116);
-    myIndexMap.put(myConceptUnpinTabOperation.getId(), 117);
-    myIndexMap.put(myConceptUpdateBlock.getId(), 118);
-    myIndexMap.put(myConceptUpdateGroupBlock.getId(), 119);
-    myIndexMap.put(myConceptUpdateGroupFunction.getId(), 120);
+    myIndexMap.put(myConceptAbstractToolKeystroke.getId(), 0);
+    myIndexMap.put(myConceptAbstractToolShortcut.getId(), 1);
+    myIndexMap.put(myConceptActionAccessOperation.getId(), 2);
+    myIndexMap.put(myConceptActionConstructionParameterDeclaration.getId(), 3);
+    myIndexMap.put(myConceptActionConstructorParameterReferenceOperation.getId(), 4);
+    myIndexMap.put(myConceptActionDataParameterDeclaration.getId(), 5);
+    myIndexMap.put(myConceptActionDataParameterReferenceOperation.getId(), 6);
+    myIndexMap.put(myConceptActionDeclaration.getId(), 7);
+    myIndexMap.put(myConceptActionGroupDeclaration.getId(), 8);
+    myIndexMap.put(myConceptActionGroupMember.getId(), 9);
+    myIndexMap.put(myConceptActionGroupRef.getId(), 10);
+    myIndexMap.put(myConceptActionInstance.getId(), 11);
+    myIndexMap.put(myConceptActionParameter.getId(), 12);
+    myIndexMap.put(myConceptActionParameterCondition.getId(), 13);
+    myIndexMap.put(myConceptActionParameterDeclaration.getId(), 14);
+    myIndexMap.put(myConceptActionParameterReference.getId(), 15);
+    myIndexMap.put(myConceptActionParameterReferenceOperation.getId(), 16);
+    myIndexMap.put(myConceptActionPlaceSpecification.getId(), 17);
+    myIndexMap.put(myConceptActionReference.getId(), 18);
+    myIndexMap.put(myConceptActionType.getId(), 19);
+    myIndexMap.put(myConceptAddElementStatement.getId(), 20);
+    myIndexMap.put(myConceptAddKeystrokeStatement.getId(), 21);
+    myIndexMap.put(myConceptAddStatement.getId(), 22);
+    myIndexMap.put(myConceptAddTabOperation.getId(), 23);
+    myIndexMap.put(myConceptBaseNodeBlock.getId(), 24);
+    myIndexMap.put(myConceptBaseProjectOperation.getId(), 25);
+    myIndexMap.put(myConceptBaseToolDeclaration.getId(), 26);
+    myIndexMap.put(myConceptBuildGroupBlock.getId(), 27);
+    myIndexMap.put(myConceptButtonCreator.getId(), 28);
+    myIndexMap.put(myConceptCloseTabOperation.getId(), 29);
+    myIndexMap.put(myConceptConceptCondition.getId(), 30);
+    myIndexMap.put(myConceptConceptFunctionParameter_AnActionEvent.getId(), 31);
+    myIndexMap.put(myConceptConceptFunctionParameter_Concept.getId(), 32);
+    myIndexMap.put(myConceptConceptFunctionParameter_CreatorType.getId(), 33);
+    myIndexMap.put(myConceptConceptFunctionParameter_IModule.getId(), 34);
+    myIndexMap.put(myConceptConceptFunctionParameter_MPSProject.getId(), 35);
+    myIndexMap.put(myConceptConceptFunctionParameter_Model.getId(), 36);
+    myIndexMap.put(myConceptConceptFunctionParameter_OperationContext.getId(), 37);
+    myIndexMap.put(myConceptConceptFunctionParameter_PreferencePage_component.getId(), 38);
+    myIndexMap.put(myConceptConceptFunctionParameter_Project.getId(), 39);
+    myIndexMap.put(myConceptConceptFunctionParameter_SConceptClass.getId(), 40);
+    myIndexMap.put(myConceptConceptFunctionParameter_node.getId(), 41);
+    myIndexMap.put(myConceptConceptsBlock.getId(), 42);
+    myIndexMap.put(myConceptCreateBlock.getId(), 43);
+    myIndexMap.put(myConceptCreateNodeAspectBlock.getId(), 44);
+    myIndexMap.put(myConceptCreateTabBlock.getId(), 45);
+    myIndexMap.put(myConceptCustomCondition.getId(), 46);
+    myIndexMap.put(myConceptCustomToolShortcut.getId(), 47);
+    myIndexMap.put(myConceptDisposeBlock.getId(), 48);
+    myIndexMap.put(myConceptDoUpdateBlock.getId(), 49);
+    myIndexMap.put(myConceptEditableModel.getId(), 50);
+    myIndexMap.put(myConceptEditorTab.getId(), 51);
+    myIndexMap.put(myConceptEditorTabReference.getId(), 52);
+    myIndexMap.put(myConceptElementListContents.getId(), 53);
+    myIndexMap.put(myConceptEnumerateChildrenFunction.getId(), 54);
+    myIndexMap.put(myConceptEverywhereActionPlace.getId(), 55);
+    myIndexMap.put(myConceptExecuteBlock.getId(), 56);
+    myIndexMap.put(myConceptGetComponentBlock.getId(), 57);
+    myIndexMap.put(myConceptGetGroupOperation.getId(), 58);
+    myIndexMap.put(myConceptGetNodeBlock.getId(), 59);
+    myIndexMap.put(myConceptGetNodesBlock.getId(), 60);
+    myIndexMap.put(myConceptGetSelectedTabOperation.getId(), 61);
+    myIndexMap.put(myConceptGroupAccessOperation.getId(), 62);
+    myIndexMap.put(myConceptGroupAnchor.getId(), 63);
+    myIndexMap.put(myConceptGroupContents.getId(), 64);
+    myIndexMap.put(myConceptGroupType.getId(), 65);
+    myIndexMap.put(myConceptIdeaActionsDescriptor.getId(), 66);
+    myIndexMap.put(myConceptIdeaConfigurationXml.getId(), 67);
+    myIndexMap.put(myConceptIdeaInitializerDescriptor.getId(), 68);
+    myIndexMap.put(myConceptIdeaPluginDependency.getId(), 69);
+    myIndexMap.put(myConceptInitBlock.getId(), 70);
+    myIndexMap.put(myConceptInterfaceExtentionPoint.getId(), 71);
+    myIndexMap.put(myConceptInterfaceGroup.getId(), 72);
+    myIndexMap.put(myConceptIsApplicableBlock.getId(), 73);
+    myIndexMap.put(myConceptIsApplicableTabBlock.getId(), 74);
+    myIndexMap.put(myConceptKeyMapKeystroke.getId(), 75);
+    myIndexMap.put(myConceptKeyStrokeType.getId(), 76);
+    myIndexMap.put(myConceptKeymapChangesDeclaration.getId(), 77);
+    myIndexMap.put(myConceptKeymapRef.getId(), 78);
+    myIndexMap.put(myConceptListenBlock.getId(), 79);
+    myIndexMap.put(myConceptMPSPluginDependency.getId(), 80);
+    myIndexMap.put(myConceptModificationStatement.getId(), 81);
+    myIndexMap.put(myConceptNodesBlock.getId(), 82);
+    myIndexMap.put(myConceptNonDumbAwareActions.getId(), 83);
+    myIndexMap.put(myConceptNumberToolShortcut.getId(), 84);
+    myIndexMap.put(myConceptOldConceptsBlock.getId(), 85);
+    myIndexMap.put(myConceptOldCreateBlock.getId(), 86);
+    myIndexMap.put(myConceptOnAfterReadBlock.getId(), 87);
+    myIndexMap.put(myConceptOnBeforeWriteBlock.getId(), 88);
+    myIndexMap.put(myConceptOrder.getId(), 89);
+    myIndexMap.put(myConceptOrderConstraints.getId(), 90);
+    myIndexMap.put(myConceptOrderReference.getId(), 91);
+    myIndexMap.put(myConceptParameterCondition_ConceptFunctionParameter.getId(), 92);
+    myIndexMap.put(myConceptParameterizedShortcutChange.getId(), 93);
+    myIndexMap.put(myConceptPersistentPropertyDeclaration.getId(), 94);
+    myIndexMap.put(myConceptPersistentPropertyReference.getId(), 95);
+    myIndexMap.put(myConceptPinTabOperation.getId(), 96);
+    myIndexMap.put(myConceptPluginDependency.getId(), 97);
+    myIndexMap.put(myConceptPopupCreator.getId(), 98);
+    myIndexMap.put(myConceptPreferencePage.getId(), 99);
+    myIndexMap.put(myConceptPreferencePageCommitBlock.getId(), 100);
+    myIndexMap.put(myConceptPreferencePageIsModifiedBlock.getId(), 101);
+    myIndexMap.put(myConceptPreferencePageResetBlock.getId(), 102);
+    myIndexMap.put(myConceptPreferencesComponentDeclaration.getId(), 103);
+    myIndexMap.put(myConceptPreferencesComponentType.getId(), 104);
+    myIndexMap.put(myConceptRequiredCondition.getId(), 105);
+    myIndexMap.put(myConceptSeparator.getId(), 106);
+    myIndexMap.put(myConceptShortcutChange.getId(), 107);
+    myIndexMap.put(myConceptSimpleActionPlace.getId(), 108);
+    myIndexMap.put(myConceptSimpleShortcutChange.getId(), 109);
+    myIndexMap.put(myConceptSmartDisposeClosureParameterDeclaration.getId(), 110);
+    myIndexMap.put(myConceptTabbedToolDeclaration.getId(), 111);
+    myIndexMap.put(myConceptTabbedToolOperation.getId(), 112);
+    myIndexMap.put(myConceptToStringConceptFunction.getId(), 113);
+    myIndexMap.put(myConceptToStringParameter.getId(), 114);
+    myIndexMap.put(myConceptToolActionPlace.getId(), 115);
+    myIndexMap.put(myConceptToolDeclaration.getId(), 116);
+    myIndexMap.put(myConceptToolInstanceExpression.getId(), 117);
+    myIndexMap.put(myConceptToolKeystroke.getId(), 118);
+    myIndexMap.put(myConceptToolTab.getId(), 119);
+    myIndexMap.put(myConceptToolType.getId(), 120);
+    myIndexMap.put(myConceptToolbarCreator.getId(), 121);
+    myIndexMap.put(myConceptUnpinTabOperation.getId(), 122);
+    myIndexMap.put(myConceptUpdateBlock.getId(), 123);
+    myIndexMap.put(myConceptUpdateGroupBlock.getId(), 124);
+    myIndexMap.put(myConceptUpdateGroupFunction.getId(), 125);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptActionAccessOperation, myConceptActionConstructionParameterDeclaration, myConceptActionConstructorParameterReferenceOperation, myConceptActionDataParameterDeclaration, myConceptActionDataParameterReferenceOperation, myConceptActionDeclaration, myConceptActionGroupDeclaration, myConceptActionGroupMember, myConceptActionGroupRef, myConceptActionInstance, myConceptActionParameter, myConceptActionParameterCondition, myConceptActionParameterDeclaration, myConceptActionParameterReference, myConceptActionParameterReferenceOperation, myConceptActionPlaceSpecification, myConceptActionReference, myConceptActionType, myConceptAddElementStatement, myConceptAddKeystrokeStatement, myConceptAddStatement, myConceptAddTabOperation, myConceptBaseNodeBlock, myConceptBaseProjectOperation, myConceptBaseToolDeclaration, myConceptBuildGroupBlock, myConceptButtonCreator, myConceptCloseTabOperation, myConceptConceptCondition, myConceptConceptFunctionParameter_AnActionEvent, myConceptConceptFunctionParameter_Concept, myConceptConceptFunctionParameter_CreatorType, myConceptConceptFunctionParameter_IModule, myConceptConceptFunctionParameter_MPSProject, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_PreferencePage_component, myConceptConceptFunctionParameter_Project, myConceptConceptFunctionParameter_SConceptClass, myConceptConceptFunctionParameter_node, myConceptConceptsBlock, myConceptCreateBlock, myConceptCreateNodeAspectBlock, myConceptCreateTabBlock, myConceptCustomCondition, myConceptDisposeBlock, myConceptDoUpdateBlock, myConceptEditableModel, myConceptEditorTab, myConceptEditorTabReference, myConceptElementListContents, myConceptEnumerateChildrenFunction, myConceptEverywhereActionPlace, myConceptExecuteBlock, myConceptGetComponentBlock, myConceptGetGroupOperation, myConceptGetNodeBlock, myConceptGetNodesBlock, myConceptGetSelectedTabOperation, myConceptGroupAccessOperation, myConceptGroupAnchor, myConceptGroupContents, myConceptGroupType, myConceptIdeaActionsDescriptor, myConceptIdeaConfigurationXml, myConceptIdeaInitializerDescriptor, myConceptIdeaPluginDependency, myConceptInitBlock, myConceptInterfaceExtentionPoint, myConceptInterfaceGroup, myConceptIsApplicableBlock, myConceptIsApplicableTabBlock, myConceptKeyMapKeystroke, myConceptKeyStrokeType, myConceptKeymapChangesDeclaration, myConceptKeymapRef, myConceptListenBlock, myConceptMPSPluginDependency, myConceptModificationStatement, myConceptNodesBlock, myConceptNonDumbAwareActions, myConceptOldConceptsBlock, myConceptOldCreateBlock, myConceptOnAfterReadBlock, myConceptOnBeforeWriteBlock, myConceptOrder, myConceptOrderConstraints, myConceptOrderReference, myConceptParameterCondition_ConceptFunctionParameter, myConceptParameterizedShortcutChange, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReference, myConceptPinTabOperation, myConceptPluginDependency, myConceptPopupCreator, myConceptPreferencePage, myConceptPreferencePageCommitBlock, myConceptPreferencePageIsModifiedBlock, myConceptPreferencePageResetBlock, myConceptPreferencesComponentDeclaration, myConceptPreferencesComponentType, myConceptRequiredCondition, myConceptSeparator, myConceptShortcutChange, myConceptSimpleActionPlace, myConceptSimpleShortcutChange, myConceptSmartDisposeClosureParameterDeclaration, myConceptTabbedToolDeclaration, myConceptTabbedToolOperation, myConceptToStringConceptFunction, myConceptToStringParameter, myConceptToolActionPlace, myConceptToolDeclaration, myConceptToolInstanceExpression, myConceptToolTab, myConceptToolType, myConceptToolbarCreator, myConceptUnpinTabOperation, myConceptUpdateBlock, myConceptUpdateGroupBlock, myConceptUpdateGroupFunction);
+    return Arrays.asList(myConceptAbstractToolKeystroke, myConceptAbstractToolShortcut, myConceptActionAccessOperation, myConceptActionConstructionParameterDeclaration, myConceptActionConstructorParameterReferenceOperation, myConceptActionDataParameterDeclaration, myConceptActionDataParameterReferenceOperation, myConceptActionDeclaration, myConceptActionGroupDeclaration, myConceptActionGroupMember, myConceptActionGroupRef, myConceptActionInstance, myConceptActionParameter, myConceptActionParameterCondition, myConceptActionParameterDeclaration, myConceptActionParameterReference, myConceptActionParameterReferenceOperation, myConceptActionPlaceSpecification, myConceptActionReference, myConceptActionType, myConceptAddElementStatement, myConceptAddKeystrokeStatement, myConceptAddStatement, myConceptAddTabOperation, myConceptBaseNodeBlock, myConceptBaseProjectOperation, myConceptBaseToolDeclaration, myConceptBuildGroupBlock, myConceptButtonCreator, myConceptCloseTabOperation, myConceptConceptCondition, myConceptConceptFunctionParameter_AnActionEvent, myConceptConceptFunctionParameter_Concept, myConceptConceptFunctionParameter_CreatorType, myConceptConceptFunctionParameter_IModule, myConceptConceptFunctionParameter_MPSProject, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_PreferencePage_component, myConceptConceptFunctionParameter_Project, myConceptConceptFunctionParameter_SConceptClass, myConceptConceptFunctionParameter_node, myConceptConceptsBlock, myConceptCreateBlock, myConceptCreateNodeAspectBlock, myConceptCreateTabBlock, myConceptCustomCondition, myConceptCustomToolShortcut, myConceptDisposeBlock, myConceptDoUpdateBlock, myConceptEditableModel, myConceptEditorTab, myConceptEditorTabReference, myConceptElementListContents, myConceptEnumerateChildrenFunction, myConceptEverywhereActionPlace, myConceptExecuteBlock, myConceptGetComponentBlock, myConceptGetGroupOperation, myConceptGetNodeBlock, myConceptGetNodesBlock, myConceptGetSelectedTabOperation, myConceptGroupAccessOperation, myConceptGroupAnchor, myConceptGroupContents, myConceptGroupType, myConceptIdeaActionsDescriptor, myConceptIdeaConfigurationXml, myConceptIdeaInitializerDescriptor, myConceptIdeaPluginDependency, myConceptInitBlock, myConceptInterfaceExtentionPoint, myConceptInterfaceGroup, myConceptIsApplicableBlock, myConceptIsApplicableTabBlock, myConceptKeyMapKeystroke, myConceptKeyStrokeType, myConceptKeymapChangesDeclaration, myConceptKeymapRef, myConceptListenBlock, myConceptMPSPluginDependency, myConceptModificationStatement, myConceptNodesBlock, myConceptNonDumbAwareActions, myConceptNumberToolShortcut, myConceptOldConceptsBlock, myConceptOldCreateBlock, myConceptOnAfterReadBlock, myConceptOnBeforeWriteBlock, myConceptOrder, myConceptOrderConstraints, myConceptOrderReference, myConceptParameterCondition_ConceptFunctionParameter, myConceptParameterizedShortcutChange, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReference, myConceptPinTabOperation, myConceptPluginDependency, myConceptPopupCreator, myConceptPreferencePage, myConceptPreferencePageCommitBlock, myConceptPreferencePageIsModifiedBlock, myConceptPreferencePageResetBlock, myConceptPreferencesComponentDeclaration, myConceptPreferencesComponentType, myConceptRequiredCondition, myConceptSeparator, myConceptShortcutChange, myConceptSimpleActionPlace, myConceptSimpleShortcutChange, myConceptSmartDisposeClosureParameterDeclaration, myConceptTabbedToolDeclaration, myConceptTabbedToolOperation, myConceptToStringConceptFunction, myConceptToStringParameter, myConceptToolActionPlace, myConceptToolDeclaration, myConceptToolInstanceExpression, myConceptToolKeystroke, myConceptToolTab, myConceptToolType, myConceptToolbarCreator, myConceptUnpinTabOperation, myConceptUpdateBlock, myConceptUpdateGroupBlock, myConceptUpdateGroupFunction);
   }
 
   @Override
@@ -280,246 +290,256 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
     switch (((int) index)) {
       case 0:
-        return myConceptActionAccessOperation;
+        return myConceptAbstractToolKeystroke;
       case 1:
-        return myConceptActionConstructionParameterDeclaration;
+        return myConceptAbstractToolShortcut;
       case 2:
-        return myConceptActionConstructorParameterReferenceOperation;
+        return myConceptActionAccessOperation;
       case 3:
-        return myConceptActionDataParameterDeclaration;
+        return myConceptActionConstructionParameterDeclaration;
       case 4:
-        return myConceptActionDataParameterReferenceOperation;
+        return myConceptActionConstructorParameterReferenceOperation;
       case 5:
-        return myConceptActionDeclaration;
+        return myConceptActionDataParameterDeclaration;
       case 6:
-        return myConceptActionGroupDeclaration;
+        return myConceptActionDataParameterReferenceOperation;
       case 7:
-        return myConceptActionGroupMember;
+        return myConceptActionDeclaration;
       case 8:
-        return myConceptActionGroupRef;
+        return myConceptActionGroupDeclaration;
       case 9:
-        return myConceptActionInstance;
+        return myConceptActionGroupMember;
       case 10:
-        return myConceptActionParameter;
+        return myConceptActionGroupRef;
       case 11:
-        return myConceptActionParameterCondition;
+        return myConceptActionInstance;
       case 12:
-        return myConceptActionParameterDeclaration;
+        return myConceptActionParameter;
       case 13:
-        return myConceptActionParameterReference;
+        return myConceptActionParameterCondition;
       case 14:
-        return myConceptActionParameterReferenceOperation;
+        return myConceptActionParameterDeclaration;
       case 15:
-        return myConceptActionPlaceSpecification;
+        return myConceptActionParameterReference;
       case 16:
-        return myConceptActionReference;
+        return myConceptActionParameterReferenceOperation;
       case 17:
-        return myConceptActionType;
+        return myConceptActionPlaceSpecification;
       case 18:
-        return myConceptAddElementStatement;
+        return myConceptActionReference;
       case 19:
-        return myConceptAddKeystrokeStatement;
+        return myConceptActionType;
       case 20:
-        return myConceptAddStatement;
+        return myConceptAddElementStatement;
       case 21:
-        return myConceptAddTabOperation;
+        return myConceptAddKeystrokeStatement;
       case 22:
-        return myConceptBaseNodeBlock;
+        return myConceptAddStatement;
       case 23:
-        return myConceptBaseProjectOperation;
+        return myConceptAddTabOperation;
       case 24:
-        return myConceptBaseToolDeclaration;
+        return myConceptBaseNodeBlock;
       case 25:
-        return myConceptBuildGroupBlock;
+        return myConceptBaseProjectOperation;
       case 26:
-        return myConceptButtonCreator;
+        return myConceptBaseToolDeclaration;
       case 27:
-        return myConceptCloseTabOperation;
+        return myConceptBuildGroupBlock;
       case 28:
-        return myConceptConceptCondition;
+        return myConceptButtonCreator;
       case 29:
-        return myConceptConceptFunctionParameter_AnActionEvent;
+        return myConceptCloseTabOperation;
       case 30:
-        return myConceptConceptFunctionParameter_Concept;
+        return myConceptConceptCondition;
       case 31:
-        return myConceptConceptFunctionParameter_CreatorType;
+        return myConceptConceptFunctionParameter_AnActionEvent;
       case 32:
-        return myConceptConceptFunctionParameter_IModule;
+        return myConceptConceptFunctionParameter_Concept;
       case 33:
-        return myConceptConceptFunctionParameter_MPSProject;
+        return myConceptConceptFunctionParameter_CreatorType;
       case 34:
-        return myConceptConceptFunctionParameter_Model;
+        return myConceptConceptFunctionParameter_IModule;
       case 35:
-        return myConceptConceptFunctionParameter_OperationContext;
+        return myConceptConceptFunctionParameter_MPSProject;
       case 36:
-        return myConceptConceptFunctionParameter_PreferencePage_component;
+        return myConceptConceptFunctionParameter_Model;
       case 37:
-        return myConceptConceptFunctionParameter_Project;
+        return myConceptConceptFunctionParameter_OperationContext;
       case 38:
-        return myConceptConceptFunctionParameter_SConceptClass;
+        return myConceptConceptFunctionParameter_PreferencePage_component;
       case 39:
-        return myConceptConceptFunctionParameter_node;
+        return myConceptConceptFunctionParameter_Project;
       case 40:
-        return myConceptConceptsBlock;
+        return myConceptConceptFunctionParameter_SConceptClass;
       case 41:
-        return myConceptCreateBlock;
+        return myConceptConceptFunctionParameter_node;
       case 42:
-        return myConceptCreateNodeAspectBlock;
+        return myConceptConceptsBlock;
       case 43:
-        return myConceptCreateTabBlock;
+        return myConceptCreateBlock;
       case 44:
-        return myConceptCustomCondition;
+        return myConceptCreateNodeAspectBlock;
       case 45:
-        return myConceptDisposeBlock;
+        return myConceptCreateTabBlock;
       case 46:
-        return myConceptDoUpdateBlock;
+        return myConceptCustomCondition;
       case 47:
-        return myConceptEditableModel;
+        return myConceptCustomToolShortcut;
       case 48:
-        return myConceptEditorTab;
+        return myConceptDisposeBlock;
       case 49:
-        return myConceptEditorTabReference;
+        return myConceptDoUpdateBlock;
       case 50:
-        return myConceptElementListContents;
+        return myConceptEditableModel;
       case 51:
-        return myConceptEnumerateChildrenFunction;
+        return myConceptEditorTab;
       case 52:
-        return myConceptEverywhereActionPlace;
+        return myConceptEditorTabReference;
       case 53:
-        return myConceptExecuteBlock;
+        return myConceptElementListContents;
       case 54:
-        return myConceptGetComponentBlock;
+        return myConceptEnumerateChildrenFunction;
       case 55:
-        return myConceptGetGroupOperation;
+        return myConceptEverywhereActionPlace;
       case 56:
-        return myConceptGetNodeBlock;
+        return myConceptExecuteBlock;
       case 57:
-        return myConceptGetNodesBlock;
+        return myConceptGetComponentBlock;
       case 58:
-        return myConceptGetSelectedTabOperation;
+        return myConceptGetGroupOperation;
       case 59:
-        return myConceptGroupAccessOperation;
+        return myConceptGetNodeBlock;
       case 60:
-        return myConceptGroupAnchor;
+        return myConceptGetNodesBlock;
       case 61:
-        return myConceptGroupContents;
+        return myConceptGetSelectedTabOperation;
       case 62:
-        return myConceptGroupType;
+        return myConceptGroupAccessOperation;
       case 63:
-        return myConceptIdeaActionsDescriptor;
+        return myConceptGroupAnchor;
       case 64:
-        return myConceptIdeaConfigurationXml;
+        return myConceptGroupContents;
       case 65:
-        return myConceptIdeaInitializerDescriptor;
+        return myConceptGroupType;
       case 66:
-        return myConceptIdeaPluginDependency;
+        return myConceptIdeaActionsDescriptor;
       case 67:
-        return myConceptInitBlock;
+        return myConceptIdeaConfigurationXml;
       case 68:
-        return myConceptInterfaceExtentionPoint;
+        return myConceptIdeaInitializerDescriptor;
       case 69:
-        return myConceptInterfaceGroup;
+        return myConceptIdeaPluginDependency;
       case 70:
-        return myConceptIsApplicableBlock;
+        return myConceptInitBlock;
       case 71:
-        return myConceptIsApplicableTabBlock;
+        return myConceptInterfaceExtentionPoint;
       case 72:
-        return myConceptKeyMapKeystroke;
+        return myConceptInterfaceGroup;
       case 73:
-        return myConceptKeyStrokeType;
+        return myConceptIsApplicableBlock;
       case 74:
-        return myConceptKeymapChangesDeclaration;
+        return myConceptIsApplicableTabBlock;
       case 75:
-        return myConceptKeymapRef;
+        return myConceptKeyMapKeystroke;
       case 76:
-        return myConceptListenBlock;
+        return myConceptKeyStrokeType;
       case 77:
-        return myConceptMPSPluginDependency;
+        return myConceptKeymapChangesDeclaration;
       case 78:
-        return myConceptModificationStatement;
+        return myConceptKeymapRef;
       case 79:
-        return myConceptNodesBlock;
+        return myConceptListenBlock;
       case 80:
-        return myConceptNonDumbAwareActions;
+        return myConceptMPSPluginDependency;
       case 81:
-        return myConceptOldConceptsBlock;
+        return myConceptModificationStatement;
       case 82:
-        return myConceptOldCreateBlock;
+        return myConceptNodesBlock;
       case 83:
-        return myConceptOnAfterReadBlock;
+        return myConceptNonDumbAwareActions;
       case 84:
-        return myConceptOnBeforeWriteBlock;
+        return myConceptNumberToolShortcut;
       case 85:
-        return myConceptOrder;
+        return myConceptOldConceptsBlock;
       case 86:
-        return myConceptOrderConstraints;
+        return myConceptOldCreateBlock;
       case 87:
-        return myConceptOrderReference;
+        return myConceptOnAfterReadBlock;
       case 88:
-        return myConceptParameterCondition_ConceptFunctionParameter;
+        return myConceptOnBeforeWriteBlock;
       case 89:
-        return myConceptParameterizedShortcutChange;
+        return myConceptOrder;
       case 90:
-        return myConceptPersistentPropertyDeclaration;
+        return myConceptOrderConstraints;
       case 91:
-        return myConceptPersistentPropertyReference;
+        return myConceptOrderReference;
       case 92:
-        return myConceptPinTabOperation;
+        return myConceptParameterCondition_ConceptFunctionParameter;
       case 93:
-        return myConceptPluginDependency;
+        return myConceptParameterizedShortcutChange;
       case 94:
-        return myConceptPopupCreator;
+        return myConceptPersistentPropertyDeclaration;
       case 95:
-        return myConceptPreferencePage;
+        return myConceptPersistentPropertyReference;
       case 96:
-        return myConceptPreferencePageCommitBlock;
+        return myConceptPinTabOperation;
       case 97:
-        return myConceptPreferencePageIsModifiedBlock;
+        return myConceptPluginDependency;
       case 98:
-        return myConceptPreferencePageResetBlock;
+        return myConceptPopupCreator;
       case 99:
-        return myConceptPreferencesComponentDeclaration;
+        return myConceptPreferencePage;
       case 100:
-        return myConceptPreferencesComponentType;
+        return myConceptPreferencePageCommitBlock;
       case 101:
-        return myConceptRequiredCondition;
+        return myConceptPreferencePageIsModifiedBlock;
       case 102:
-        return myConceptSeparator;
+        return myConceptPreferencePageResetBlock;
       case 103:
-        return myConceptShortcutChange;
+        return myConceptPreferencesComponentDeclaration;
       case 104:
-        return myConceptSimpleActionPlace;
+        return myConceptPreferencesComponentType;
       case 105:
-        return myConceptSimpleShortcutChange;
+        return myConceptRequiredCondition;
       case 106:
-        return myConceptSmartDisposeClosureParameterDeclaration;
+        return myConceptSeparator;
       case 107:
-        return myConceptTabbedToolDeclaration;
+        return myConceptShortcutChange;
       case 108:
-        return myConceptTabbedToolOperation;
+        return myConceptSimpleActionPlace;
       case 109:
-        return myConceptToStringConceptFunction;
+        return myConceptSimpleShortcutChange;
       case 110:
-        return myConceptToStringParameter;
+        return myConceptSmartDisposeClosureParameterDeclaration;
       case 111:
-        return myConceptToolActionPlace;
+        return myConceptTabbedToolDeclaration;
       case 112:
-        return myConceptToolDeclaration;
+        return myConceptTabbedToolOperation;
       case 113:
-        return myConceptToolInstanceExpression;
+        return myConceptToStringConceptFunction;
       case 114:
-        return myConceptToolTab;
+        return myConceptToStringParameter;
       case 115:
-        return myConceptToolType;
+        return myConceptToolActionPlace;
       case 116:
-        return myConceptToolbarCreator;
+        return myConceptToolDeclaration;
       case 117:
-        return myConceptUnpinTabOperation;
+        return myConceptToolInstanceExpression;
       case 118:
-        return myConceptUpdateBlock;
+        return myConceptToolKeystroke;
       case 119:
-        return myConceptUpdateGroupBlock;
+        return myConceptToolTab;
       case 120:
+        return myConceptToolType;
+      case 121:
+        return myConceptToolbarCreator;
+      case 122:
+        return myConceptUnpinTabOperation;
+      case 123:
+        return myConceptUpdateBlock;
+      case 124:
+        return myConceptUpdateGroupBlock;
+      case 125:
         return myConceptUpdateGroupFunction;
       default:
         throw new IllegalStateException();
@@ -536,6 +556,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return (res == null ? -1 : res);
   }
 
+  private static ConceptDescriptor createDescriptorForAbstractToolKeystroke() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.AbstractToolKeystroke", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927506494666")).create();
+  }
+  private static ConceptDescriptor createDescriptorForAbstractToolShortcut() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503509889")).create();
+  }
   private static ConceptDescriptor createDescriptorForActionAccessOperation() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.ActionAccessOperation", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x2c7cd89ac8d14570L, "action", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L), false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "3205675194086671728"))).references("action").alias("action<<{action}>>", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "3205675194086589964")).create();
   }
@@ -609,7 +635,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.BaseProjectOperation", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2e56fadb4d375f27L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "3339131993542057767")).create();
   }
   private static ConceptDescriptor createDescriptorForBaseToolDeclaration() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L), MetaIdFactory.conceptId(0xfe9d76d7580945c9L, 0xae28a40915b4d6ffL, 0x433c3c31e7218f38L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x5adc7622e710cedcL, "caption", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462620")), new ConceptDescriptorBuilder.Prop(0x5adc7622e710cf2dL, "number", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462701")), new ConceptDescriptorBuilder.Prop(0x22ace24ea9f7487cL, "position", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "2498620720770664572")), new ConceptDescriptorBuilder.Prop(0x5adc7622e710cf6eL, "icon", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462766"))).properties("caption", "number", "position", "icon").childDescriptors(new ConceptDescriptorBuilder.Link(0x5adc7622e710cfc0L, "methodDeclaration", MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462848")), new ConceptDescriptorBuilder.Link(0x5adc7622e710cfc1L, "fieldDeclaration", MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc0293L), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462849")), new ConceptDescriptorBuilder.Link(0x705d0a376e81592eL, "toolInitBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa166ea48L), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "8096638938275469614")), new ConceptDescriptorBuilder.Link(0x705d0a376e81592fL, "toolDisposeBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa167474fL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "8096638938275469615")), new ConceptDescriptorBuilder.Link(0x5e40e1c309ae6459L, "toolIcon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6791676465872004185"))).children(new String[]{"methodDeclaration", "fieldDeclaration", "toolInitBlock", "toolDisposeBlock", "toolIcon"}, new boolean[]{true, true, false, false, false}).abstract_().alias("Base Tool", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567458268")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L), MetaIdFactory.conceptId(0xfe9d76d7580945c9L, 0xae28a40915b4d6ffL, 0x433c3c31e7218f38L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x5adc7622e710cedcL, "caption", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462620")), new ConceptDescriptorBuilder.Prop(0x5adc7622e710cf2dL, "number", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462701")), new ConceptDescriptorBuilder.Prop(0x22ace24ea9f7487cL, "position", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "2498620720770664572")), new ConceptDescriptorBuilder.Prop(0x5adc7622e710cf6eL, "icon", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462766"))).properties("caption", "number", "position", "icon").childDescriptors(new ConceptDescriptorBuilder.Link(0x5adc7622e710cfc0L, "methodDeclaration", MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462848")), new ConceptDescriptorBuilder.Link(0x5adc7622e710cfc1L, "fieldDeclaration", MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc0293L), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567462849")), new ConceptDescriptorBuilder.Link(0x705d0a376e81592eL, "toolInitBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa166ea48L), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "8096638938275469614")), new ConceptDescriptorBuilder.Link(0x705d0a376e81592fL, "toolDisposeBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa167474fL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "8096638938275469615")), new ConceptDescriptorBuilder.Link(0x5e40e1c309ae6459L, "toolIcon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6791676465872004185")), new ConceptDescriptorBuilder.Link(0x68b8d4843b815aeL, "shortcut", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503648174"))).children(new String[]{"methodDeclaration", "fieldDeclaration", "toolInitBlock", "toolDisposeBlock", "toolIcon", "shortcut"}, new boolean[]{true, true, false, false, false, false}).abstract_().alias("Base Tool", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6547237850567458268")).create();
   }
   private static ConceptDescriptor createDescriptorForBuildGroupBlock() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.BuildGroupBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f786becL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.plugin.structure.GroupContents").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L), MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f747b3dL)).alias("build", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1207145360364")).create();
@@ -670,6 +696,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForCustomCondition() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.CustomCondition", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f46cb3L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.plugin.structure.ActionParameterCondition").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L), MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52facL)).alias("custom precondition", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "5538333046911298739")).create();
+  }
+  private static ConceptDescriptor createDescriptorForCustomToolShortcut() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.CustomToolShortcut", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L)).super_("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut").version(1).super_(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L)).parents("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut").parentIds(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x68b8d4843b765b8L, "changes", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL), false, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503603128"))).children(new String[]{"changes"}, new boolean[]{true}).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503601957")).create();
   }
   private static ConceptDescriptor createDescriptorForDisposeBlock() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.DisposeBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa167474fL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("dispose", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1213888677711")).create();
@@ -779,6 +808,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForNonDumbAwareActions() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.NonDumbAwareActions", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dcL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x14fc9beabb2214ddL, "actions", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL), true, true, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1512255007353869533"))).children(new String[]{"actions"}, new boolean[]{true}).rootable().sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1512255007353869532")).create();
   }
+  private static ConceptDescriptor createDescriptorForNumberToolShortcut() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.NumberToolShortcut", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L)).super_("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut").version(1).super_(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L)).parents("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut").parentIds(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x68b8d4843b76123L, "number", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503601955"))).properties("number").alias("number", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503601927")).create();
+  }
   private static ConceptDescriptor createDescriptorForOldConceptsBlock() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.OldConceptsBlock", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218aa1eL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("getConcepts (deprecated)", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "7692832593197705758")).create();
   }
@@ -877,6 +909,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForToolInstanceExpression() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870178843L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).alias("instance", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1204471433283")).create();
+  }
+  private static ConceptDescriptor createDescriptorForToolKeystroke() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.ToolKeystroke", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L)).super_("jetbrains.mps.lang.plugin.structure.AbstractToolKeystroke").version(1).super_(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL)).parents("jetbrains.mps.lang.plugin.structure.AbstractToolKeystroke").parentIds(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x68b8d4843b765b6L, "keymap", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503603126"))).properties("keymap").childDescriptors(new ConceptDescriptorBuilder.Link(0x68b8d4843b76126L, "keystroke", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L), false, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503601958"))).children(new String[]{"keystroke"}, new boolean[]{false}).sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "471625927503603120")).create();
   }
   private static ConceptDescriptor createDescriptorForToolTab() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.plugin.structure.ToolTab", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6048eaf0c78f324eL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6048eaf0c78fad10L, "componentExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6938053545825381648")), new ConceptDescriptorBuilder.Link(0x6048eaf0c78fad11L, "titleExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6938053545825381649")), new ConceptDescriptorBuilder.Link(0x6048eaf0c78fad12L, "iconExpression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6938053545825381650")), new ConceptDescriptorBuilder.Link(0x6048eaf0c78fad13L, "disposeTabClosure", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6938053545825381651"))).children(new String[]{"componentExpression", "titleExpression", "iconExpression", "disposeTabClosure"}, new boolean[]{false, false, false, false}).alias("tab", "").sourceNode(new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "6938053545825350222")).create();

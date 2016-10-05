@@ -130,225 +130,240 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           break;
         case 21:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditableModel_Editor());
+            return Collections.<ConceptEditor>singletonList(new CustomToolShortcut_Editor());
           }
           break;
         case 22:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorTab_Editor());
+            return Collections.<ConceptEditor>singletonList(new EditableModel_Editor());
           }
           break;
         case 23:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorTabReference_Editor());
+            return Collections.<ConceptEditor>singletonList(new EditorTab_Editor());
           }
           break;
         case 24:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ElementListContents_Editor());
+            return Collections.<ConceptEditor>singletonList(new EditorTabReference_Editor());
           }
           break;
         case 25:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new EverywhereActionPlace_Editor());
+            return Collections.<ConceptEditor>singletonList(new ElementListContents_Editor());
           }
           break;
         case 26:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetGroupOperation_Editor());
+            return Collections.<ConceptEditor>singletonList(new EverywhereActionPlace_Editor());
           }
           break;
         case 27:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new GetSelectedTabOperation_Editor());
+            return Collections.<ConceptEditor>singletonList(new GetGroupOperation_Editor());
           }
           break;
         case 28:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new GroupAccessOperation_Editor());
+            return Collections.<ConceptEditor>singletonList(new GetSelectedTabOperation_Editor());
           }
           break;
         case 29:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new GroupAnchor_Editor());
+            return Collections.<ConceptEditor>singletonList(new GroupAccessOperation_Editor());
           }
           break;
         case 30:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new GroupType_Editor());
+            return Collections.<ConceptEditor>singletonList(new GroupAnchor_Editor());
           }
           break;
         case 31:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaActionsDescriptor_Editor());
+            return Collections.<ConceptEditor>singletonList(new GroupType_Editor());
           }
           break;
         case 32:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaConfigurationXml_Editor());
+            return Collections.<ConceptEditor>singletonList(new IdeaActionsDescriptor_Editor());
           }
           break;
         case 33:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaInitializerDescriptor_Editor());
+            return Collections.<ConceptEditor>singletonList(new IdeaConfigurationXml_Editor());
           }
           break;
         case 34:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IdeaPluginDependency_Editor());
+            return Collections.<ConceptEditor>singletonList(new IdeaInitializerDescriptor_Editor());
           }
           break;
         case 35:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InterfaceExtentionPoint_Editor());
+            return Collections.<ConceptEditor>singletonList(new IdeaPluginDependency_Editor());
           }
           break;
         case 36:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InterfaceGroup_Editor());
+            return Collections.<ConceptEditor>singletonList(new InterfaceExtentionPoint_Editor());
           }
           break;
         case 37:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeyMapKeystroke_Editor());
+            return Collections.<ConceptEditor>singletonList(new InterfaceGroup_Editor());
           }
           break;
         case 38:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeyStrokeType_Editor());
+            return Collections.<ConceptEditor>singletonList(new KeyMapKeystroke_Editor());
           }
           break;
         case 39:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeymapChangesDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new KeyStrokeType_Editor());
           }
           break;
         case 40:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new KeymapRef_Editor());
+            return Collections.<ConceptEditor>singletonList(new KeymapChangesDeclaration_Editor());
           }
           break;
         case 41:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new MPSPluginDependency_Editor());
+            return Collections.<ConceptEditor>singletonList(new KeymapRef_Editor());
           }
           break;
         case 42:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModificationStatement_Editor());
+            return Collections.<ConceptEditor>singletonList(new MPSPluginDependency_Editor());
           }
           break;
         case 43:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new NonDumbAwareActions_Editor());
+            return Collections.<ConceptEditor>singletonList(new ModificationStatement_Editor());
           }
           break;
         case 44:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new Order_Editor());
+            return Collections.<ConceptEditor>singletonList(new NonDumbAwareActions_Editor());
           }
           break;
         case 45:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new OrderReference_Editor());
+            return Collections.<ConceptEditor>singletonList(new NumberToolShortcut_Editor());
           }
           break;
         case 46:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ParameterizedShortcutChange_Editor());
+            return Collections.<ConceptEditor>singletonList(new Order_Editor());
           }
           break;
         case 47:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new OrderReference_Editor());
           }
           break;
         case 48:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PersistentPropertyReference_Editor());
+            return Collections.<ConceptEditor>singletonList(new ParameterizedShortcutChange_Editor());
           }
           break;
         case 49:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PinTabOperation_Editor());
+            return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
           }
           break;
         case 50:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PopupCreator_Editor());
+            return Collections.<ConceptEditor>singletonList(new PersistentPropertyReference_Editor());
           }
           break;
         case 51:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreferencePage_Editor());
+            return Collections.<ConceptEditor>singletonList(new PinTabOperation_Editor());
           }
           break;
         case 52:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreferencesComponentDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new PopupCreator_Editor());
           }
           break;
         case 53:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new PreferencesComponentType_Editor());
+            return Collections.<ConceptEditor>singletonList(new PreferencePage_Editor());
           }
           break;
         case 54:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new RequiredCondition_Editor());
+            return Collections.<ConceptEditor>singletonList(new PreferencesComponentDeclaration_Editor());
           }
           break;
         case 55:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new Separator_Editor());
+            return Collections.<ConceptEditor>singletonList(new PreferencesComponentType_Editor());
           }
           break;
         case 56:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleShortcutChange_Editor());
+            return Collections.<ConceptEditor>singletonList(new RequiredCondition_Editor());
           }
           break;
         case 57:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SmartDisposeClosureParameterDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new Separator_Editor());
           }
           break;
         case 58:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new TabbedToolDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new SimpleShortcutChange_Editor());
           }
           break;
         case 59:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolDeclaration_Editor());
+            return Collections.<ConceptEditor>singletonList(new SmartDisposeClosureParameterDeclaration_Editor());
           }
           break;
         case 60:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolInstanceExpression_Editor());
+            return Collections.<ConceptEditor>singletonList(new TabbedToolDeclaration_Editor());
           }
           break;
         case 61:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolTab_Editor());
+            return Collections.<ConceptEditor>singletonList(new ToolDeclaration_Editor());
           }
           break;
         case 62:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolType_Editor());
+            return Collections.<ConceptEditor>singletonList(new ToolInstanceExpression_Editor());
           }
           break;
         case 63:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ToolbarCreator_Editor());
+            return Collections.<ConceptEditor>singletonList(new ToolKeystroke_Editor());
           }
           break;
         case 64:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new UnpinTabOperation_Editor());
+            return Collections.<ConceptEditor>singletonList(new ToolTab_Editor());
           }
           break;
         case 65:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ToolType_Editor());
+          }
+          break;
+        case 66:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ToolbarCreator_Editor());
+          }
+          break;
+        case 67:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnpinTabOperation_Editor());
+          }
+          break;
+        case 68:
           if (true) {
             return Collections.<ConceptEditor>singletonList(new UpdateGroupBlock_Editor());
           }
@@ -385,6 +400,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
             }
           }
           break;
+        case 2:
+          if (true) {
+            if ("jetbrains.mps.lang.plugin.editor.BaseToolDeclaration_Header".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new BaseToolDeclaration_Header());
+            }
+          }
+          break;
         default:
       }
     }
@@ -401,80 +423,95 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       switch (switchIndex) {
         case 0:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ActionParameter_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new AbstractToolShortcut_SubstituteMenu());
           }
           break;
         case 1:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new AddElementStatement_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ActionParameter_SubstituteMenu());
           }
           break;
         case 2:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_AnActionEvent_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new AddElementStatement_SubstituteMenu());
           }
           break;
         case 3:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_IModule_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_AnActionEvent_SubstituteMenu());
           }
           break;
         case 4:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_MPSProject_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_IModule_SubstituteMenu());
           }
           break;
         case 5:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Model_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_MPSProject_SubstituteMenu());
           }
           break;
         case 6:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_OperationContext_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Model_SubstituteMenu());
           }
           break;
         case 7:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_PreferencePage_component_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_OperationContext_SubstituteMenu());
           }
           break;
         case 8:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Project_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_PreferencePage_component_SubstituteMenu());
           }
           break;
         case 9:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Project_SubstituteMenu());
           }
           break;
         case 10:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InterfaceExtentionPoint_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
           }
           break;
         case 11:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new InterfaceGroup_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new InterfaceExtentionPoint_SubstituteMenu());
           }
           break;
         case 12:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new SimpleActionPlace_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new InterfaceGroup_SubstituteMenu());
           }
           break;
         case 13:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ToStringParameter_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new NumberToolShortcut_SubstituteMenu());
           }
           break;
         case 14:
           if (true) {
-            return Collections.<SubstituteMenu>singletonList(new ToolActionPlace_SubstituteMenu());
+            return Collections.<SubstituteMenu>singletonList(new SimpleActionPlace_SubstituteMenu());
           }
           break;
         case 15:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ToStringParameter_SubstituteMenu());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ToolActionPlace_SubstituteMenu());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<SubstituteMenu>singletonList(new ToolKeystroke_SubstituteMenu());
+          }
+          break;
+        case 18:
           if (true) {
             return Collections.<SubstituteMenu>singletonList(new ComplexParameters_Contribution());
           }
@@ -493,8 +530,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL, "jetbrains.mps.lang.plugin.structure.ActionAccessOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6d2bdcL, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6e60e3L, "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e60be0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71fL, "jetbrains.mps.lang.plugin.structure.ActionGroupRef"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, "jetbrains.mps.lang.plugin.structure.ActionInstance"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b812427fL, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118d0b7fab3L, "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL, "jetbrains.mps.lang.plugin.structure.ActionReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118c26632a3L, "jetbrains.mps.lang.plugin.structure.ActionType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, "jetbrains.mps.lang.plugin.structure.AddElementStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x70d8274412a8919cL, "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11dafad4b27L, "jetbrains.mps.lang.plugin.structure.AddStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17237b8L, "jetbrains.mps.lang.plugin.structure.AddTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207afL, "jetbrains.mps.lang.plugin.structure.ButtonCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x50be5f478b3541f2L, "jetbrains.mps.lang.plugin.structure.CloseTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0xe9375051ff52781L, "jetbrains.mps.lang.plugin.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, "jetbrains.mps.lang.plugin.structure.CreateTabBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ecd9810833251a2L, "jetbrains.mps.lang.plugin.structure.EditableModel"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd7814bL, "jetbrains.mps.lang.plugin.structure.EditorTabReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f756bc5L, "jetbrains.mps.lang.plugin.structure.ElementListContents"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f513474398L, "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119b4514b56L, "jetbrains.mps.lang.plugin.structure.GetGroupOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x19da07a14b82ef06L, "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d17d74L, "jetbrains.mps.lang.plugin.structure.GroupAccessOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11840f36089L, "jetbrains.mps.lang.plugin.structure.GroupAnchor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71eL, "jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x45b64b294c2b3514L, "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x516313f5e8537eecL, "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186bb08443L, "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186ae0bf01L, "jetbrains.mps.lang.plugin.structure.InterfaceGroup"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x7a5e2454bfcdad14L, "jetbrains.mps.lang.plugin.structure.KeyStrokeType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa87eL, "jetbrains.mps.lang.plugin.structure.KeymapRef"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2d2ad2584076330L, "jetbrains.mps.lang.plugin.structure.MPSPluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181de4920dL, "jetbrains.mps.lang.plugin.structure.ModificationStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dcL, "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd78147L, "jetbrains.mps.lang.plugin.structure.Order"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, "jetbrains.mps.lang.plugin.structure.OrderReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e096c3aL, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44cfd36L, "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c466b22aL, "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x3b9dce676f3861a1L, "jetbrains.mps.lang.plugin.structure.PinTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207abL, "jetbrains.mps.lang.plugin.structure.PopupCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44c226fL, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c497fc64L, "jetbrains.mps.lang.plugin.structure.PreferencesComponentType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52faeL, "jetbrains.mps.lang.plugin.structure.RequiredCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1188a1ecd8aL, "jetbrains.mps.lang.plugin.structure.Separator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6bd88e2e00aae68L, "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17223c5L, "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca8f3faL, "jetbrains.mps.lang.plugin.structure.ToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870178843L, "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6048eaf0c78f324eL, "jetbrains.mps.lang.plugin.structure.ToolTab"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L, "jetbrains.mps.lang.plugin.structure.ToolType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb01f6f6L, "jetbrains.mps.lang.plugin.structure.ToolbarCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ac06ca1bf6e6788L, "jetbrains.mps.lang.plugin.structure.UnpinTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44a69d3L, "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, "jetbrains.mps.lang.plugin.structure.AddElementStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181d54406fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870797a07L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118707cdfb8L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x513f22c4bae4fb15L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118565418cbL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e2cb827fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa1691a43L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b3b848fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186bb08443L, "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186ae0bf01L, "jetbrains.mps.lang.plugin.structure.InterfaceGroup"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f5134202ebL, "jetbrains.mps.lang.plugin.structure.SimpleActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11db00cd5f8L, "jetbrains.mps.lang.plugin.structure.ToStringParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f513426286L, "jetbrains.mps.lang.plugin.structure.ToolActionPlace"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL, "jetbrains.mps.lang.plugin.structure.ActionAccessOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6d2bdcL, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6e60e3L, "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e60be0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71fL, "jetbrains.mps.lang.plugin.structure.ActionGroupRef"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, "jetbrains.mps.lang.plugin.structure.ActionInstance"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b812427fL, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118d0b7fab3L, "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL, "jetbrains.mps.lang.plugin.structure.ActionReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118c26632a3L, "jetbrains.mps.lang.plugin.structure.ActionType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, "jetbrains.mps.lang.plugin.structure.AddElementStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x70d8274412a8919cL, "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11dafad4b27L, "jetbrains.mps.lang.plugin.structure.AddStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17237b8L, "jetbrains.mps.lang.plugin.structure.AddTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207afL, "jetbrains.mps.lang.plugin.structure.ButtonCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x50be5f478b3541f2L, "jetbrains.mps.lang.plugin.structure.CloseTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0xe9375051ff52781L, "jetbrains.mps.lang.plugin.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, "jetbrains.mps.lang.plugin.structure.CreateTabBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L, "jetbrains.mps.lang.plugin.structure.CustomToolShortcut"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ecd9810833251a2L, "jetbrains.mps.lang.plugin.structure.EditableModel"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd7814bL, "jetbrains.mps.lang.plugin.structure.EditorTabReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f756bc5L, "jetbrains.mps.lang.plugin.structure.ElementListContents"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f513474398L, "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119b4514b56L, "jetbrains.mps.lang.plugin.structure.GetGroupOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x19da07a14b82ef06L, "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d17d74L, "jetbrains.mps.lang.plugin.structure.GroupAccessOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11840f36089L, "jetbrains.mps.lang.plugin.structure.GroupAnchor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71eL, "jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x45b64b294c2b3514L, "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x516313f5e8537eecL, "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186bb08443L, "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186ae0bf01L, "jetbrains.mps.lang.plugin.structure.InterfaceGroup"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x7a5e2454bfcdad14L, "jetbrains.mps.lang.plugin.structure.KeyStrokeType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa87eL, "jetbrains.mps.lang.plugin.structure.KeymapRef"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2d2ad2584076330L, "jetbrains.mps.lang.plugin.structure.MPSPluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181de4920dL, "jetbrains.mps.lang.plugin.structure.ModificationStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dcL, "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd78147L, "jetbrains.mps.lang.plugin.structure.Order"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, "jetbrains.mps.lang.plugin.structure.OrderReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e096c3aL, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44cfd36L, "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c466b22aL, "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x3b9dce676f3861a1L, "jetbrains.mps.lang.plugin.structure.PinTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207abL, "jetbrains.mps.lang.plugin.structure.PopupCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44c226fL, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c497fc64L, "jetbrains.mps.lang.plugin.structure.PreferencesComponentType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52faeL, "jetbrains.mps.lang.plugin.structure.RequiredCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1188a1ecd8aL, "jetbrains.mps.lang.plugin.structure.Separator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6bd88e2e00aae68L, "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17223c5L, "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca8f3faL, "jetbrains.mps.lang.plugin.structure.ToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870178843L, "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L, "jetbrains.mps.lang.plugin.structure.ToolKeystroke"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6048eaf0c78f324eL, "jetbrains.mps.lang.plugin.structure.ToolTab"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L, "jetbrains.mps.lang.plugin.structure.ToolType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb01f6f6L, "jetbrains.mps.lang.plugin.structure.ToolbarCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ac06ca1bf6e6788L, "jetbrains.mps.lang.plugin.structure.UnpinTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44a69d3L, "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L, "jetbrains.mps.lang.plugin.structure.AbstractToolShortcut"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, "jetbrains.mps.lang.plugin.structure.AddElementStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181d54406fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870797a07L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118707cdfb8L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x513f22c4bae4fb15L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118565418cbL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e2cb827fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa1691a43L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b3b848fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186bb08443L, "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186ae0bf01L, "jetbrains.mps.lang.plugin.structure.InterfaceGroup"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f5134202ebL, "jetbrains.mps.lang.plugin.structure.SimpleActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11db00cd5f8L, "jetbrains.mps.lang.plugin.structure.ToStringParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f513426286L, "jetbrains.mps.lang.plugin.structure.ToolActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L, "jetbrains.mps.lang.plugin.structure.ToolKeystroke"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a2 = new String[]{"jetbrains.mps.lang.plugin.editor.ActionParameter_Hint", "jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent"};
 }
