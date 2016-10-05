@@ -617,6 +617,16 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/languages/updatedLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage2/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage2/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/solutions/NewSolution2/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/solutions/NewSolution2/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/solutions/NewSolution3/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/solutions/NewSolution3/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testActions/source_gen" includeSubdirectories="true" />

@@ -4347,9 +4347,6 @@
     <node concept="lpD6D" id="4sZg1XOxVb" role="lpD6w">
       <ref role="lpD7u" to="cl80:74sHQpDbWgb" resolve="MigrationAssistant_Test" />
     </node>
-    <node concept="lpD6D" id="6khVpJeulhw" role="lpD6w">
-      <ref role="lpD7u" to="cl80:5p2CmeDXeJB" resolve="MigrationLocalHistory_Test" />
-    </node>
     <node concept="2R4zua" id="441$VdogCcI" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.migration.test" />
       <property role="2R4zu8" value="5cc84139-6daa-4cf6-9a75-d1505100aeb4" />
