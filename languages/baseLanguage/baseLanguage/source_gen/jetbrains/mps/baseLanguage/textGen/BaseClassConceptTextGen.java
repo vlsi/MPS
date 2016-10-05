@@ -7,8 +7,6 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 
 public abstract class BaseClassConceptTextGen {
@@ -31,7 +29,8 @@ public abstract class BaseClassConceptTextGen {
     // just for first element 
     boolean isWrappedElementBefore = true;
     SNode lastMember = Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)).last();
-    for (SNode member : SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))) {
+    // FIXME can't use members child as there are still uses of deprecated containment roles (e.g. Classifier.method) 
+    for (SNode member : Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)) {
       boolean needsLineBefore = (boolean) ClassifierMember__BehaviorDescriptor.needsEmptyLineBefore_idzB21h1tQit.invoke(member);
       boolean needsLineAfter = (boolean) ClassifierMember__BehaviorDescriptor.needsEmptyLineAfter_idzB21h1tQNm.invoke(member);
       BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), ctx);

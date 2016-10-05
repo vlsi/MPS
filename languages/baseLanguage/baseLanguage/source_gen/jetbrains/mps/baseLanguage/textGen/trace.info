@@ -3892,57 +3892,58 @@
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/3408882292339889057">
     <file name="BaseClassConceptTextGen.java">
-      <node id="3408882292339889057" at="15,117,16,55" concept="10" />
-      <node id="5574237510125076807" at="17,143,18,22" concept="4" />
-      <node id="5574237510125076807" at="18,22,19,20" concept="4" />
-      <node id="5574237510125076807" at="19,20,20,46" concept="4" />
-      <node id="5574237510125076813" at="20,46,21,55" concept="4" />
-      <node id="5574237510125076807" at="21,55,22,46" concept="4" />
-      <node id="5574237510125076807" at="22,46,23,19" concept="4" />
-      <node id="5574237510125076807" at="23,19,24,22" concept="4" />
-      <node id="5574237510138062261" at="25,12,26,23" concept="4" />
-      <node id="3408882292339889057" at="29,74,30,55" concept="10" />
-      <node id="287631085801560058" at="30,55,31,30" concept="12" />
-      <node id="287631085801516588" at="31,30,32,42" concept="10" />
-      <node id="641490355012088265" at="32,42,33,125" concept="10" />
-      <node id="287631085801563753" at="34,194,35,128" concept="10" />
-      <node id="641490355014543868" at="35,128,36,126" concept="10" />
-      <node id="287631085801611166" at="36,126,37,85" concept="4" />
-      <node id="287631085801510599" at="37,85,38,29" concept="4" />
-      <node id="287631085801616658" at="38,29,39,84" concept="4" />
-      <node id="287631085801617592" at="39,84,40,46" concept="4" />
-      <node id="5574237510125076818" at="25,10,27,5" concept="1" />
-      <node id="287631085801392980" at="33,125,41,5" concept="7" />
-      <node id="5574237510125076801" at="16,55,27,5" concept="8" />
-      <node id="3408882292339889057" at="15,0,29,0" concept="15" trace="membersWithBrackets#(Lorg/jetbrains/mps/openapi/model/SNode;ZLjetbrains/mps/text/rt/TextGenContext;)V" />
-      <node id="3408882292339889057" at="29,0,43,0" concept="15" trace="members#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="5574237510125076819" at="25,12,26,23" />
-      <scope id="287631085801392982" at="34,194,40,46">
+      <node id="3408882292339889057" at="13,117,14,55" concept="10" />
+      <node id="5574237510125076807" at="15,143,16,22" concept="4" />
+      <node id="5574237510125076807" at="16,22,17,20" concept="4" />
+      <node id="5574237510125076807" at="17,20,18,46" concept="4" />
+      <node id="5574237510125076813" at="18,46,19,55" concept="4" />
+      <node id="5574237510125076807" at="19,55,20,46" concept="4" />
+      <node id="5574237510125076807" at="20,46,21,19" concept="4" />
+      <node id="5574237510125076807" at="21,19,22,22" concept="4" />
+      <node id="5574237510138062261" at="23,12,24,23" concept="4" />
+      <node id="3408882292339889057" at="27,74,28,55" concept="10" />
+      <node id="287631085801560058" at="28,55,29,30" concept="12" />
+      <node id="287631085801516588" at="29,30,30,42" concept="10" />
+      <node id="641490355012088265" at="30,42,31,125" concept="10" />
+      <node id="1697917907976772554" at="31,125,32,118" concept="12" />
+      <node id="287631085801563753" at="33,98,34,128" concept="10" />
+      <node id="641490355014543868" at="34,128,35,126" concept="10" />
+      <node id="287631085801611166" at="35,126,36,85" concept="4" />
+      <node id="287631085801510599" at="36,85,37,29" concept="4" />
+      <node id="287631085801616658" at="37,29,38,84" concept="4" />
+      <node id="287631085801617592" at="38,84,39,46" concept="4" />
+      <node id="5574237510125076818" at="23,10,25,5" concept="1" />
+      <node id="287631085801392980" at="32,118,40,5" concept="7" />
+      <node id="5574237510125076801" at="14,55,25,5" concept="8" />
+      <node id="3408882292339889057" at="13,0,27,0" concept="15" trace="membersWithBrackets#(Lorg/jetbrains/mps/openapi/model/SNode;ZLjetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="3408882292339889057" at="27,0,42,0" concept="15" trace="members#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="5574237510125076819" at="23,12,24,23" />
+      <scope id="287631085801392982" at="33,98,39,46">
         <var name="needsLineAfter" id="641490355014543871" />
         <var name="needsLineBefore" id="287631085801563756" />
       </scope>
-      <scope id="5574237510125076807" at="17,143,24,22" />
-      <scope id="287631085801392980" at="33,125,41,5">
+      <scope id="5574237510125076807" at="15,143,22,22" />
+      <scope id="287631085801392980" at="32,118,40,5">
         <var name="member" id="287631085801392983" />
       </scope>
-      <scope id="3408882292339889057" at="15,117,27,5">
+      <scope id="3408882292339889057" at="13,117,25,5">
         <var name="tgs" id="3408882292339889057" />
       </scope>
-      <scope id="3408882292339889057" at="29,74,41,5">
+      <scope id="3408882292339889057" at="27,74,40,5">
         <var name="isWrappedElementBefore" id="287631085801516591" />
         <var name="lastMember" id="641490355012088268" />
         <var name="tgs" id="3408882292339889057" />
       </scope>
-      <scope id="3408882292339889057" at="15,0,29,0">
+      <scope id="3408882292339889057" at="13,0,27,0">
         <var name="classifier" id="5574237510125059782" />
         <var name="ctx" id="3408882292339889057" />
         <var name="newLineOnEmptyMembers" id="5574237510137940236" />
       </scope>
-      <scope id="3408882292339889057" at="29,0,43,0">
+      <scope id="3408882292339889057" at="27,0,42,0">
         <var name="classifier" id="1465982738256644319" />
         <var name="ctx" id="3408882292339889057" />
       </scope>
-      <unit id="3408882292339889057" at="14,0,44,0" name="jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen" />
+      <unit id="3408882292339889057" at="12,0,43,0" name="jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/3409542372145539379">

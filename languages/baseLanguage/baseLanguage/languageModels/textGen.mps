@@ -9608,10 +9608,15 @@
             <node concept="3Tqbb2" id="zB21h1lr77" role="1tU5fm" />
           </node>
         </node>
+        <node concept="3SKdUt" id="1ugdPtyIHJa" role="3cqZAp">
+          <node concept="3SKdUq" id="1ugdPtyIHJc" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME can't use members child as there are still uses of deprecated containment roles (e.g. Classifier.method)" />
+          </node>
+        </node>
         <node concept="1DcWWT" id="fXRJbnzkHk" role="3cqZAp">
           <node concept="2OqwBi" id="fXRJbnznBn" role="1DdaDG">
-            <node concept="3Tsc0h" id="3tQ$H_xEk3G" role="2OqNvi">
-              <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" resolve="member" />
+            <node concept="2qgKlT" id="1ugdPtyIjiu" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:1hodSy8nQmC" resolve="members" />
             </node>
             <node concept="37vLTw" id="fXRJbnznb5" role="2Oq$k0">
               <ref role="3cqZAo" node="1hodSy8D4zv" resolve="classifier" />
