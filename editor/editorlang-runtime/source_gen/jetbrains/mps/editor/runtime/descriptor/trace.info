@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root nodeRef="r:8ff33705-85bf-4855-805c-06d68fbe233c(jetbrains.mps.editor.runtime.descriptor)/4302900529822367990">
+    <file name="AbstractCellFactory.java">
+      <node id="5090800358950996323" at="12,68,13,36" concept="1" />
+      <node id="5090800358950997949" at="17,43,18,27" concept="4" />
+      <node id="5090800358950984588" at="9,0,11,0" concept="2" trace="myEditorContext" />
+      <node id="4302900529822368020" at="12,0,15,0" concept="0" trace="AbstractCellFactory#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5090800358950997623" at="16,0,20,0" concept="3" trace="getEditorContext#()Ljetbrains/mps/openapi/editor/EditorContext;" />
+      <scope id="4302900529822368024" at="12,68,13,36" />
+      <scope id="5090800358950997627" at="17,43,18,27" />
+      <scope id="4302900529822368020" at="12,0,15,0">
+        <var name="editorContext" id="825332792092992853" />
+      </scope>
+      <scope id="5090800358950997623" at="16,0,20,0" />
+      <unit id="4302900529822367990" at="8,0,21,0" name="jetbrains.mps.editor.runtime.descriptor.AbstractCellFactory" />
+    </file>
+  </root>
+</debug-info>
+
