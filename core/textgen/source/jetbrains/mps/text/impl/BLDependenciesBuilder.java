@@ -17,6 +17,7 @@ package jetbrains.mps.text.impl;
 
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
+import jetbrains.mps.make.java.RootDependencies.Source;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextUnit;
@@ -47,6 +48,17 @@ public class BLDependenciesBuilder {
     for (TextUnit tu : textResult.getUnits()) {
       if (tu.getState() == TextUnit.Status.Empty) {
         continue;
+      }
+      if (tu instanceof RegularTextUnit) {
+        Source co = ((RegularTextUnit) tu).findContextObject(Source.class);
+        if (co != null) {
+          RootDependencies deps = co.getDependencies();
+          if (deps != null) {
+            modelDependencies.addDependencies(deps);
+            continue;
+          }
+        }
+        // fall-through
       }
       if (!(tu instanceof RegularTextUnit2)) {
         continue;
