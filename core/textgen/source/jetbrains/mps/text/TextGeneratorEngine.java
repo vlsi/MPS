@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.text.TextUnit.Status;
 import jetbrains.mps.text.impl.ModelOutline;
 import jetbrains.mps.text.impl.RegularTextUnit;
-import jetbrains.mps.text.impl.RegularTextUnit2;
 import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.text.rt.TextGenAspectBase;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
@@ -168,7 +167,7 @@ public final class TextGeneratorEngine {
     if (textUnits.size() == 1) {
       textUnit = textUnits.get(0);
     } else {
-      textUnit = new RegularTextUnit2(node, "dummy.txt", null);
+      textUnit = new RegularTextUnit(node, "dummy.txt", null);
     }
 
     textUnit.generate();

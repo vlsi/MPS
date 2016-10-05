@@ -30,6 +30,8 @@ import java.util.List;
 /**
  * @deprecated This class is part of legacy textGen, left for compatibility with generated code (MPS 3.2),
  * new code shall utilize API of <code>jetbrains.mps.text.*</code> package.
+ * Mechanism to replace user objects has been introduced in 3.5 only, hence this class shall persist until MPS 3.5 is out
+ * so that users get a chance to migrate to new context object mechanism.
  * User: Dmitriev.
  * Date: Dec 22, 2003
  */
@@ -44,7 +46,7 @@ public final class TextGenBuffer {
   /**
    * INTENDED FOR TRANSITION PERIOD ONLY, DO NOT USE
    */
-  TextGenBuffer() {
+  public TextGenBuffer() {
   }
 
   public boolean hasErrors() {

@@ -20,7 +20,6 @@ import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
@@ -40,9 +39,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * General {@link TextUnit} implementation, intended for direct replacement of legacy TextGen.
- * At the moment, addresses compatibility with generated TextGen classes, except for pure BL
- * functionality like dependencies, which are handled in {@link RegularTextUnit2}.
+ * General {@link TextUnit} implementation for use both Java and non-Java source code, as well as binary (Base64-encoded) units.
  *
  * @author Artem Tikhomirov
  */
@@ -129,7 +126,7 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
     myTraceCollector = new TraceInfoCollector();
     TextBuffer trueBuffer = new TextBufferImpl();
     myLayoutBuilder.prepareBuffer(trueBuffer);
-    myLegacyBuffer = TextGen.newUserObjectHolder(getStartNode());
+    myLegacyBuffer = new TextGenBuffer();
 
     if (myContextObjects != null) {
       for (Pair<String, Object> p : myContextObjects) {

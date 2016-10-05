@@ -3542,12 +3542,12 @@
         <node concept="3cpWs8" id="RqKTrXUk2m" role="3cqZAp">
           <node concept="3cpWsn" id="RqKTrXUk2n" role="3cpWs9">
             <property role="TrG5h" value="rv" />
-            <node concept="3uibUv" id="RqKTrXUk2o" role="1tU5fm">
-              <ref role="3uigEE" to="kpbf:~RegularTextUnit2" resolve="RegularTextUnit2" />
+            <node concept="3uibUv" id="4AZHjWe01IJ" role="1tU5fm">
+              <ref role="3uigEE" to="kpbf:~RegularTextUnit" resolve="RegularTextUnit" />
             </node>
             <node concept="2ShNRf" id="RqKTrXUkf_" role="33vP2m">
               <node concept="1pGfFk" id="RqKTrXUmQE" role="2ShVmc">
-                <ref role="37wK5l" to="kpbf:~RegularTextUnit2.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.nio.charset.Charset)" resolve="RegularTextUnit2" />
+                <ref role="37wK5l" to="kpbf:~RegularTextUnit.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.nio.charset.Charset)" resolve="RegularTextUnit" />
                 <node concept="37vLTw" id="RqKTrXUmZb" role="37wK5m">
                   <ref role="3cqZAo" node="RqKTrXUb9U" resolve="node" />
                 </node>
