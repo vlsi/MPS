@@ -12,11 +12,8 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.textGen.TextGenBuffer;
-import jetbrains.mps.textGen.TextGen;
 
-public class ImportsContext {
-  private static final String USER_OBJECT_KEY = "CLASS_IMPORTS_CONTEXT";
+/*package*/ class ImportsContext {
   private final String packageName;
   private final Set<String> packageSimpleNames;
   private final Map<String, String> bindings;
@@ -37,7 +34,7 @@ public class ImportsContext {
     }
   }
 
-  public ImportEntry getClassifierRefText(String packageName, String fqName, SNode contextNode) {
+  /*package*/ ImportEntry getClassifierRefText(String packageName, String fqName, SNode contextNode) {
     // main invariant: use always nested names, import only root classifiers 
     String nestedName = JavaNameUtil.nestedClassName(packageName, fqName);
 
@@ -91,18 +88,5 @@ public class ImportsContext {
       shouldBeImported = true;
     }
     return new ImportEntry((shouldBeImported ? fqName : null), className);
-  }
-
-  public static ImportsContext getInstance(TextGenBuffer buffer) {
-    ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);
-    if (instance == null) {
-      SNode rootNode = (SNode) buffer.getUserObject(TextGen.ROOT_NODE);
-      if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
-        throw new IllegalStateException();
-      }
-      instance = new ImportsContext(SNodeOperations.cast(rootNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
-      buffer.putUserObject(USER_OBJECT_KEY, instance);
-    }
-    return instance;
   }
 }
