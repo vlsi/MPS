@@ -697,7 +697,7 @@
                           <node concept="2OqwBi" id="7Muxx6JTrDe" role="33vP2m">
                             <node concept="30H73N" id="7Muxx6JTrDf" role="2Oq$k0" />
                             <node concept="3Tsc0h" id="7Muxx6JTrDg" role="2OqNvi">
-                              <ref role="3TtcxE" to="s7om:3nFPImNgRsC" />
+                              <ref role="3TtcxE" to="s7om:3nFPImNgRsC" resolve="bootClasspath" />
                             </node>
                           </node>
                         </node>
@@ -881,7 +881,7 @@
               <node concept="2pNNFK" id="7d8Y7G7P4eu" role="3o6s8t">
                 <property role="2pNNFO" value="string" />
                 <node concept="3o6iSG" id="7d8Y7G7PRyo" role="3o6s8t">
-                  <property role="3o6i5n" value="MPS34" />
+                  <property role="3o6i5n" value="MPS35" />
                 </node>
               </node>
               <node concept="3o6iSG" id="7d8Y7G7PT4P" role="3o6s8t" />
@@ -1353,7 +1353,7 @@
                       <node concept="2OqwBi" id="1w81suLSU9w" role="2Oq$k0">
                         <node concept="30H73N" id="1w81suLSU9x" role="2Oq$k0" />
                         <node concept="3Tsc0h" id="1w81suLSU9y" role="2OqNvi">
-                          <ref role="3TtcxE" to="s7om:3nFPImNgRsC" />
+                          <ref role="3TtcxE" to="s7om:3nFPImNgRsC" resolve="bootClasspath" />
                         </node>
                       </node>
                       <node concept="1uHKPH" id="1w81suLSU9z" role="2OqNvi" />
@@ -1393,7 +1393,7 @@
                 <node concept="2OqwBi" id="1w81suLSVSj" role="2Oq$k0">
                   <node concept="30H73N" id="1w81suLSVSk" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="1w81suLSVSl" role="2OqNvi">
-                    <ref role="3TtcxE" to="s7om:3nFPImNgRsC" />
+                    <ref role="3TtcxE" to="s7om:3nFPImNgRsC" resolve="bootClasspath" />
                   </node>
                 </node>
               </node>
@@ -2174,7 +2174,7 @@
             <node concept="3clFbF" id="3T7P3nAar76" role="3cqZAp">
               <node concept="2OqwBi" id="3T7P3nAar71" role="3clFbG">
                 <node concept="3Tsc0h" id="3T7P3nAar74" role="2OqNvi">
-                  <ref role="3TtcxE" to="s7om:3nFPImNgRsC" />
+                  <ref role="3TtcxE" to="s7om:3nFPImNgRsC" resolve="bootClasspath" />
                 </node>
                 <node concept="30H73N" id="3T7P3nAar75" role="2Oq$k0" />
               </node>

@@ -354,6 +354,7 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
+        <property id="3497141547781541446" name="eap" index="2OjLBN" />
         <child id="6845119683729424406" name="customXmlElement" index="27hc03" />
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
         <child id="6845119683729294884" name="progressColor" index="27hGoL" />
@@ -2266,7 +2267,7 @@
       <node concept="aVJcg" id="5HVSRHdVf2e" role="aVJcv">
         <node concept="NbPM2" id="5HVSRHdVf2f" role="aVJcq">
           <node concept="3Mxwew" id="5HVSRHdVf2g" role="3MwsjC">
-            <property role="3MwjfP" value="3.4" />
+            <property role="3MwjfP" value="3.5" />
           </node>
         </node>
       </node>
@@ -18354,9 +18355,10 @@
       <ref role="1l3spb" node="7pdFgzxlDme" resolve="mpsBuild" />
     </node>
     <node concept="1zClus" id="6Iq8148fw_a" role="3989C9">
-      <property role="2OjLBK" value="4" />
+      <property role="2OjLBK" value="5" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
+      <property role="2OjLBN" value="true" />
       <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
         <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
           <property role="3MwjfP" value="002387" />
@@ -18515,7 +18517,7 @@
         </node>
         <node concept="NbPM2" id="6Iq8148f_YW" role="HFWMp">
           <node concept="3Mxwew" id="6Iq8148f_YX" role="3MwsjC">
-            <property role="3MwjfP" value="MPS34" />
+            <property role="3MwjfP" value="MPS35" />
           </node>
         </node>
       </node>
@@ -27506,7 +27508,7 @@
       <property role="26Ea6C" value="-Dide.mac.message.dialogs.as.sheets=false" />
     </node>
     <node concept="26Ea6D" id="41$40Av8yB1" role="2hID6k">
-      <property role="26Ea6C" value="-Didea.paths.selector=MPS34" />
+      <property role="26Ea6C" value="-Didea.paths.selector=MPS35" />
     </node>
     <node concept="26Ea6D" id="41$40Av8yAw" role="2hID6k">
       <property role="26Ea6C" value="-Dintellij.config.imported.in.current.session=true" />
@@ -27558,7 +27560,7 @@
       <property role="26Ea6C" value="-Dide.mac.message.dialogs.as.sheets=false" />
     </node>
     <node concept="26Ea6D" id="41$40Av8yBe" role="26FZ21">
-      <property role="26Ea6C" value="-Didea.paths.selector=MPS34" />
+      <property role="26Ea6C" value="-Didea.paths.selector=MPS35" />
     </node>
     <node concept="26Ea6D" id="41$40Av8yAF" role="26FZ21">
       <property role="26Ea6C" value="-Dintellij.config.imported.in.current.session=true" />

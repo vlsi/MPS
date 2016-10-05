@@ -53,7 +53,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="3" minor="4" eap="false" update-channel="MPS34" />
+        <version codename="MPS" major="3" minor="5" eap="true" update-channel="MPS35" />
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="002387" progressColor="00E184" progressY="393" progressHeight="3" />
@@ -71,7 +71,7 @@
         <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/" />
         <documentation url="https://www.jetbrains.com/mps/documentation" />
         <support url="https://www.jetbrains.com/support/mps/index.html" />
-        <feedback release-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
+        <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
         <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html" />
         <keymap win="https://confluence.jetbrains.com/display/MPSD34/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD34/Default+Keymap+Reference" />
         <third-party url="http://www.jetbrains.org/" />
