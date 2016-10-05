@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.util;
 
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -45,6 +45,9 @@ public final class JavaNameUtil {
   private JavaNameUtil() {
   }
 
+  /**
+   * Beware, for nested classes this method yields incorrect result (consider Classifier.getFqName() instead).
+   */
   public static String fqClassName(@NotNull SModel model, @NotNull String shortClassName) {
     String packageName = packageName(model);
     if (packageName == null || packageName.length() == 0) {
@@ -62,7 +65,7 @@ public final class JavaNameUtil {
   }
 
   public static String packageName(@NotNull SModel model) {
-    return packageNameForModelUID(model.getReference());
+    return model.getName().getLongName();
   }
 
   public static String packageName(@Nullable String fqName) {

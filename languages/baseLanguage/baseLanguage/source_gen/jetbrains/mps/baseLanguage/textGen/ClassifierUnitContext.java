@@ -12,6 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +42,8 @@ public class ClassifierUnitContext implements RootDependencies.Source {
   public ImportEntry getClassifierRefText(String packageName, String fqName, SNode contextNode) {
     addDependency(packageName, fqName);
     // FIXME there's likely no reason to pass package name and fqName (except, perhaps, for nested classes) 
-    // Could we instead pass node<Classifier> here directly? 
+    // Could we instead pass node<Classifier> here directly? Indeed, although it's a major refactoring of crapy  
+    // BaseLanguageTextGen, where we go back and forth from node<Classifier> to strings 
     return myImports.getClassifierRefText(packageName, fqName, contextNode);
   }
 
@@ -77,11 +82,28 @@ public class ClassifierUnitContext implements RootDependencies.Source {
 
     // set<string> dependencies = getUserObjects(isTopClassifier ? TextGen.EXTENDS : TextGen.DEPENDENCY); 
     HashSet<String> deps = (isTopClassifier ? myExtends : myDepends);
-    for (SNode c : classifiers) {
-      // FIXME why not Java-specific naming utility here? JavaNameUtil? 
-      // XXX what if classifier is inner, NameUitlnodeFQName gives mode-name.node-name, while node.getFqName would include name of nesting class 
-      deps.add(NameUtil.nodeFQName(SLinkOperations.getTarget(c, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
+    for (SNode c : Sequence.fromIterable(classifiers).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+      }
+    })) {
+      deps.add(getTopmostClassifierName(c));
     }
+  }
+
+  private String getTopmostClassifierName(SNode c) {
+    // Classifier could be inner, for our purposes it's sufficent to record dependency from the top-most classifier 
+    //     We use these to build module dependency graph for compilation, nested classes are irrelevant as  
+    //     (a) they are in the same module anyway 
+    //     (b) reverse map of class to module is built for top classifiers only, we won't find anything there for nested class 
+    //         (see j.m.make.Dependencies) 
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(ListSequence.fromList(SNodeOperations.getNodeAncestors(c, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).last());
+    // I don't need list of ancestors, but c.ancestor<root,concept> looks at the root node only (which is not right, IMO) 
+    // Why not Java-specific naming utility here, e.g. JavaNameUtil? Because getFqName does the same better (respects nested classifiers) and without any statics. 
   }
 
   @Override

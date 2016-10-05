@@ -38,7 +38,7 @@ import jetbrains.mps.util.JavaNameUtil;
     // main invariant: use always nested names, import only root classifiers 
     String nestedName = JavaNameUtil.nestedClassName(packageName, fqName);
 
-    int dotIndex = nestedName.indexOf(".");
+    int dotIndex = nestedName.indexOf('.');
     String rootClassifierName = (dotIndex == -1 ? nestedName : nestedName.substring(0, dotIndex));
     String nestedPart = nestedName.substring(rootClassifierName.length());
 

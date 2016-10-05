@@ -376,6 +376,7 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
+      <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -392,6 +393,9 @@
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
+        <reference id="3562215692195600259" name="link" index="13MTZf" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -407,6 +411,7 @@
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -9983,9 +9988,9 @@
                 <ref role="3cqZAo" node="6DQGhlrjhwr" resolve="nestedName" />
               </node>
               <node concept="liA8E" id="6DQGhlrjhzV" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.indexOf(java.lang.String):int" resolve="indexOf" />
-                <node concept="Xl_RD" id="6DQGhlrjhzW" role="37wK5m">
-                  <property role="Xl_RC" value="." />
+                <ref role="37wK5l" to="wyt6:~String.indexOf(int):int" resolve="indexOf" />
+                <node concept="1Xhbcc" id="5dE_lK2urdu" role="37wK5m">
+                  <property role="1XhdNS" value="." />
                 </node>
               </node>
             </node>
@@ -11875,7 +11880,12 @@
         </node>
         <node concept="3SKdUt" id="23Rh9MB7hSt" role="3cqZAp">
           <node concept="3SKdUq" id="23Rh9MB7hSv" role="3SKWNk">
-            <property role="3SKdUp" value="Could we instead pass node&lt;Classifier&gt; here directly?" />
+            <property role="3SKdUp" value="Could we instead pass node&lt;Classifier&gt; here directly? Indeed, although it's a major refactoring of crapy " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dE_lK2uHN6" role="3cqZAp">
+          <node concept="3SKdUq" id="5dE_lK2uHN7" role="3SKWNk">
+            <property role="3SKdUp" value="BaseLanguageTextGen, where we go back and forth from node&lt;Classifier&gt; to strings" />
           </node>
         </node>
         <node concept="3cpWs6" id="23Rh9MB7h2s" role="3cqZAp">
@@ -12222,16 +12232,6 @@
         </node>
         <node concept="1DcWWT" id="23Rh9MB86qd" role="3cqZAp">
           <node concept="3clFbS" id="23Rh9MB86qe" role="2LFqv$">
-            <node concept="3SKdUt" id="23Rh9MB8pc7" role="3cqZAp">
-              <node concept="3SKdUq" id="23Rh9MB8pc9" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME why not Java-specific naming utility here? JavaNameUtil?" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="79YVnsaQhKz" role="3cqZAp">
-              <node concept="3SKdUq" id="79YVnsaQhK_" role="3SKWNk">
-                <property role="3SKdUp" value="XXX what if classifier is inner, NameUitlnodeFQName gives mode-name.node-name, while node.getFqName would include name of nesting class" />
-              </node>
-            </node>
             <node concept="3clFbF" id="23Rh9MB86qf" role="3cqZAp">
               <node concept="2OqwBi" id="23Rh9MB8kEK" role="3clFbG">
                 <node concept="37vLTw" id="23Rh9MB8hKr" role="2Oq$k0">
@@ -12239,16 +12239,10 @@
                 </node>
                 <node concept="liA8E" id="23Rh9MB8mM8" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~HashSet.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="2YIFZM" id="23Rh9MB86qj" role="37wK5m">
-                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                    <ref role="37wK5l" to="18ew:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                    <node concept="2OqwBi" id="23Rh9MB86qk" role="37wK5m">
-                      <node concept="37vLTw" id="23Rh9MB86ql" role="2Oq$k0">
-                        <ref role="3cqZAo" node="23Rh9MB86qn" resolve="c" />
-                      </node>
-                      <node concept="3TrEf2" id="23Rh9MB86qm" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                      </node>
+                  <node concept="1rXfSq" id="5dE_lK2phae" role="37wK5m">
+                    <ref role="37wK5l" node="5dE_lK2pedi" resolve="getTopmostClassifierName" />
+                    <node concept="37vLTw" id="5dE_lK2phE$" role="37wK5m">
+                      <ref role="3cqZAo" node="23Rh9MB86qn" resolve="c" />
                     </node>
                   </node>
                 </node>
@@ -12258,11 +12252,16 @@
           <node concept="3cpWsn" id="23Rh9MB86qn" role="1Duv9x">
             <property role="TrG5h" value="c" />
             <node concept="3Tqbb2" id="23Rh9MB86qo" role="1tU5fm">
-              <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
             </node>
           </node>
-          <node concept="37vLTw" id="23Rh9MB86qp" role="1DdaDG">
-            <ref role="3cqZAo" node="23Rh9MB895U" resolve="classifiers" />
+          <node concept="2OqwBi" id="5dE_lK2pi$5" role="1DdaDG">
+            <node concept="37vLTw" id="23Rh9MB86qp" role="2Oq$k0">
+              <ref role="3cqZAo" node="23Rh9MB895U" resolve="classifiers" />
+            </node>
+            <node concept="13MTOL" id="5dE_lK2piRX" role="2OqNvi">
+              <ref role="13MTZf" to="tpee:g7uigIF" resolve="classifier" />
+            </node>
           </node>
         </node>
       </node>
@@ -12278,6 +12277,84 @@
           <node concept="zr_55" id="23Rh9MB8at7" role="zr_5Q">
             <ref role="zr_51" node="23Rh9MB895W" resolve="isTopClassifier" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5dE_lK2p9Vb" role="jymVt" />
+    <node concept="3clFb_" id="5dE_lK2pedi" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getTopmostClassifierName" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5dE_lK2pedl" role="3clF47">
+        <node concept="3SKdUt" id="79YVnsaQhKz" role="3cqZAp">
+          <node concept="3SKdUq" id="79YVnsaQhK_" role="3SKWNk">
+            <property role="3SKdUp" value="Classifier could be inner, for our purposes it's sufficent to record dependency from the top-most classifier" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dE_lK2pMjv" role="3cqZAp">
+          <node concept="3SKdUq" id="5dE_lK2pMjx" role="3SKWNk">
+            <property role="3SKdUp" value="    We use these to build module dependency graph for compilation, nested classes are irrelevant as " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dE_lK2r105" role="3cqZAp">
+          <node concept="3SKdUq" id="5dE_lK2r106" role="3SKWNk">
+            <property role="3SKdUp" value="    (a) they are in the same module anyway" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dE_lK2r3NL" role="3cqZAp">
+          <node concept="3SKdUq" id="5dE_lK2r3NN" role="3SKWNk">
+            <property role="3SKdUp" value="    (b) reverse map of class to module is built for top classifiers only, we won't find anything there for nested class" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dE_lK2r6ad" role="3cqZAp">
+          <node concept="3SKdUq" id="5dE_lK2r6af" role="3SKWNk">
+            <property role="3SKdUp" value="        (see j.m.make.Dependencies)" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5dE_lK2pMH7" role="3cqZAp">
+          <node concept="2OqwBi" id="5dE_lK2pP3d" role="3cqZAk">
+            <node concept="2qgKlT" id="5dE_lK2pQy5" role="2OqNvi">
+              <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+            </node>
+            <node concept="2OqwBi" id="5dE_lK2pLgo" role="2Oq$k0">
+              <node concept="2OqwBi" id="5dE_lK2pxnb" role="2Oq$k0">
+                <node concept="37vLTw" id="5dE_lK2pxaE" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5dE_lK2pfuj" resolve="c" />
+                </node>
+                <node concept="z$bX8" id="5dE_lK2pEBl" role="2OqNvi">
+                  <node concept="1xIGOp" id="5dE_lK2pKoo" role="1xVPHs" />
+                  <node concept="1xMEDy" id="5dE_lK2pMyZ" role="1xVPHs">
+                    <node concept="chp4Y" id="5dE_lK2pMAA" role="ri$Ld">
+                      <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1yVyf7" id="5dE_lK2pMfy" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dE_lK2pMun" role="3cqZAp">
+          <node concept="3SKdUq" id="5dE_lK2pMup" role="3SKWNk">
+            <property role="3SKdUp" value="I don't need list of ancestors, but c.ancestor&lt;root,concept&gt; looks at the root node only (which is not right, IMO)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="23Rh9MB8pc7" role="3cqZAp">
+          <node concept="3SKdUq" id="23Rh9MB8pc9" role="3SKWNk">
+            <property role="3SKdUp" value="Why not Java-specific naming utility here, e.g. JavaNameUtil? Because getFqName does the same better (respects nested classifiers) and without any statics." />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="5dE_lK2pcV4" role="1B3o_S" />
+      <node concept="3uibUv" id="5dE_lK2pebt" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="37vLTG" id="5dE_lK2pfuj" role="3clF46">
+        <property role="TrG5h" value="c" />
+        <node concept="3Tqbb2" id="5dE_lK2pfui" role="1tU5fm">
+          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
         </node>
       </node>
     </node>
