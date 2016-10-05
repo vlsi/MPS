@@ -395,22 +395,33 @@ public abstract class BaseNodeEditor implements Editor {
 
     @Override
     public void clearSessionState() {
-      memento.clearSessionState();
-      inspectorMemento.clearSessionState();
+      if (memento != null) {
+        memento.clearSessionState();
+      }
+      if (inspectorMemento != null) {
+        inspectorMemento.clearSessionState();
+      }
     }
 
+    @Override
     public int hashCode() {
-      return memento.hashCode() + inspectorMemento.hashCode();
+      int result = memento != null ? memento.hashCode() : 0;
+      result = 31 * result + (inspectorMemento != null ? inspectorMemento.hashCode() : 0);
+      return result;
     }
 
-    public boolean equals(Object obj) {
-      if (!(obj instanceof BaseEditorState)) {
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
         return false;
       }
 
-      BaseEditorState state = (BaseEditorState) obj;
-      return EqualUtil.equals(state.memento, memento) && EqualUtil.equals(state.inspectorMemento, inspectorMemento) &&
-          state.isEditorFocused == isEditorFocused && state.isInspectorFocused == isInspectorFocused;
+      BaseEditorState that = (BaseEditorState) o;
+      return EqualUtil.equals(that.memento, memento) && EqualUtil.equals(that.inspectorMemento, inspectorMemento) &&
+          that.isEditorFocused == isEditorFocused && that.isInspectorFocused == isInspectorFocused;
     }
   }
 }
