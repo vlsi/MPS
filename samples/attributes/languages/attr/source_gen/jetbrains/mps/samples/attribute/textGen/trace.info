@@ -3,9 +3,22 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="19,0,80,0" name="jetbrains.mps.samples.attribute.textGen.TextGenAspectDescriptor" />
+      <unit at="19,0,81,0" name="jetbrains.mps.samples.attribute.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:edfeddd0-4d5d-4ba0-8508-4c23321fc724(jetbrains.mps.samples.attribute.textGen)/2961526844137706193">
+    <file name="Auxiliary.java">
+      <node id="2961526844137706193" at="9,89,10,55" concept="3" />
+      <node id="2961526844137706193" at="9,0,12,0" concept="4" trace="contextObjectInstance_ctx#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/textGen/ClassifierUnitContext;" />
+      <scope id="2961526844137706193" at="9,89,10,55" />
+      <scope id="2961526844137706193" at="9,0,12,0">
+        <var name="primaryInputNode" id="2961526844137706193" />
+      </scope>
+      <unit id="2961526844137706193" at="8,0,13,0" name="jetbrains.mps.samples.attribute.textGen.Auxiliary" />
     </file>
   </root>
   <root nodeRef="r:edfeddd0-4d5d-4ba0-8508-4c23321fc724(jetbrains.mps.samples.attribute.textGen)/7205391946760606066">

@@ -65,6 +65,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.activate("BODY");
     RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
     rv.setBufferLayout(lb.create());
+    rv.addContextObject("ctx", Auxiliary.contextObjectInstance_ctx(node));
     return rv;
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
