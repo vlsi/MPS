@@ -7146,14 +7146,15 @@
       <node id="6649467621790014147" at="26,459,27,459" concept="0" />
       <node id="6649467621790015035" at="27,459,28,461" concept="0" />
       <node id="6649467621790015071" at="28,461,29,461" concept="0" />
+      <node id="7102466869931835904" at="29,461,30,465" concept="0" />
       <node id="6649467621789725810" at="16,0,21,0" concept="4" trace="test_testJavaNames#()V" />
-      <node id="6649467621789800767" at="24,0,31,0" concept="4" trace="test_testJavaNames#()V" />
+      <node id="6649467621789800767" at="24,0,32,0" concept="4" trace="test_testJavaNames#()V" />
       <scope id="6649467621789725810" at="17,53,19,112" />
       <scope id="6649467621789725810" at="16,0,21,0" />
-      <scope id="6649467621789800767" at="24,55,29,461" />
-      <scope id="6649467621789800767" at="24,0,31,0" />
-      <unit id="6649467621789725810" at="22,0,34,0" name="jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test$TestBody" />
-      <unit id="6649467621789725810" at="14,0,35,0" name="jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test" />
+      <scope id="6649467621789800767" at="24,55,30,465" />
+      <scope id="6649467621789800767" at="24,0,32,0" />
+      <unit id="6649467621789725810" at="22,0,35,0" name="jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test$TestBody" />
+      <unit id="6649467621789725810" at="14,0,36,0" name="jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7187651930235347758">
