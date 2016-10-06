@@ -32799,12 +32799,6 @@
               <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
             </node>
           </node>
-          <node concept="1SiIV0" id="xSXmQZArRO" role="3bR37C">
-            <node concept="3bR9La" id="xSXmQZArRP" role="1SiIV1">
-              <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="7YI57w6K0nr" resolve="jetbrains.mps.lang.plugin#1203080439937" />
-            </node>
-          </node>
         </node>
         <node concept="1SiIV0" id="xSXmQZAqQt" role="3bR37C">
           <node concept="3bR9La" id="xSXmQZAqQu" role="1SiIV1">
@@ -32825,6 +32819,12 @@
           <node concept="3bR9La" id="5l3AbnKPAFq" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="67KK6fqofGm" role="3bR37C">
+          <node concept="3bR9La" id="67KK6fqofGn" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
           </node>
         </node>
       </node>

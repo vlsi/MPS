@@ -540,7 +540,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.DeleteFavoritesList_Action" file="DeleteFavoritesList_Action.java">
@@ -1721,7 +1720,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Mac_KeymapChanges" file="Mac_KeymapChanges.java">
@@ -1733,7 +1731,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.MappingDialog" file="MappingDialog.java">
@@ -3409,7 +3406,6 @@
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SReferenceBase" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
