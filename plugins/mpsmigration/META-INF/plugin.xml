@@ -24,5 +24,8 @@
     <component>
       <implementation-class>jetbrains.mps.ide.mpsmigration.v34.Migrations34</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.v35.Migrations35</implementation-class>
+    </component>
   </application-components>
 </idea-plugin>

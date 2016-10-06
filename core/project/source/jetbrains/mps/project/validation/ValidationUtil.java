@@ -84,7 +84,9 @@ public class ValidationUtil {
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<ValidationProblem> processor) {
     for (SNode root : roots) {
       for (SNode node : SNodeUtil.getDescendants(root)) {
-        if (!validateSingleNode(node, processor)) return;
+        if (!validateSingleNode(node, processor)) {
+          return;
+        }
       }
     }
   }
@@ -105,7 +107,9 @@ public class ValidationUtil {
     // in case of props, refs, links, list should be better than set
     List<SProperty> props = IterableUtil.asList(concept.getProperties());
     for (SProperty p : node.getProperties()) {
-      if (props.contains(p)) continue;
+      if (props.contains(p)) {
+        continue;
+      }
       if (!processor.process(new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName())))) {
         return false;
       }
@@ -114,7 +118,9 @@ public class ValidationUtil {
     List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
     for (SNode n : node.getChildren()) {
       SContainmentLink l = n.getContainmentLink();
-      if (links.contains(l)) continue;
+      if (links.contains(l)) {
+        continue;
+      }
       if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName())))) {
         return false;
       }
@@ -140,7 +146,9 @@ public class ValidationUtil {
       Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
       if (!link.isOptional() && children.isEmpty()) {
         // TODO this is a hack for constructor declarations
-        if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
+        if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) {
+          continue;
+        }
 
         // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
         // todo state behavior on a meeting and remove this hack
@@ -268,7 +276,7 @@ public class ValidationUtil {
         }
       } else {
         if (moduleScope != null && moduleScope.resolve(reference) == null) {
-          String msg = String.format("Imported model %s is not visible in module's scope",reference.getName());
+          String msg = String.format("Imported model %s is not visible in module's scope", reference.getName());
           // FIXME could have dedicated problem kind with quick fix to add module import
           if (!processor.process(new ValidationProblem(Severity.ERROR, msg))) {
             return;
@@ -317,7 +325,7 @@ public class ValidationUtil {
         if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()))) {
           return;
         }
-      } else if (devkitModule instanceof DevKit){
+      } else if (devkitModule instanceof DevKit) {
         final SModelReference plan = ((DevKit) devkitModule).getModuleDescriptor().getAssociatedGenPlan();
         if (plan != null) {
           if (devkitAssociatedPlan == null) {
@@ -336,7 +344,9 @@ public class ValidationUtil {
   }
 
   public static void validateModule(final SModule m, Processor<ValidationProblem> processor) {
-    if (m instanceof TransientSModule || m instanceof ProjectStructureModule) return;
+    if (m instanceof TransientSModule || m instanceof ProjectStructureModule) {
+      return;
+    }
 
     if (m instanceof DevKit) {
       validateDevkit((DevKit) m, processor);
@@ -354,21 +364,35 @@ public class ValidationUtil {
   private static void validateDevkit(final DevKit dk, Processor<ValidationProblem> processor) {
     Throwable loadException = dk.getModuleDescriptor().getLoadException();
     if (loadException != null) {
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Couldn't load devkit: " + loadException.getMessage()))) return;
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Couldn't load devkit: " + loadException.getMessage()))) {
+        return;
+      }
       return;
     }
 
     for (SModuleReference extDevkit : dk.getModuleDescriptor().getExtendedDevkits()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(extDevkit) != null) continue;
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()))) return;
+      if (ModuleRepositoryFacade.getInstance().getModule(extDevkit) != null) {
+        continue;
+      }
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()))) {
+        return;
+      }
     }
     for (SModuleReference expLang : dk.getModuleDescriptor().getExportedLanguages()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(expLang) != null) continue;
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expLang.getModuleName()))) return;
+      if (ModuleRepositoryFacade.getInstance().getModule(expLang) != null) {
+        continue;
+      }
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expLang.getModuleName()))) {
+        return;
+      }
     }
     for (SModuleReference expSol : dk.getModuleDescriptor().getExportedSolutions()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(expSol) != null) continue;
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expSol.getModuleName()))) return;
+      if (ModuleRepositoryFacade.getInstance().getModule(expSol) != null) {
+        continue;
+      }
+      if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find exported language: " + expSol.getModuleName()))) {
+        return;
+      }
     }
   }
 
@@ -457,9 +481,13 @@ public class ValidationUtil {
       SModule depTarget = dep.getTarget();
       if (depTarget == null ||
           seen.contains(depTarget) ||
-          (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) continue;
+          (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) {
+        continue;
+      }
 
-      if (!(depTarget instanceof Generator)) continue;
+      if (!(depTarget instanceof Generator)) {
+        continue;
+      }
 
       HashSet<SModelReference> otherGeneratorModels = new HashSet<SModelReference>();
       for (SModel m : depTarget.getModels()) {
@@ -470,11 +498,15 @@ public class ValidationUtil {
         otherGeneratorModels.add(m.getReference());
       }
       seen.add(depTarget);
-      if (CollectionUtil.intersects(dependencies.getCrossModelReferences(), otherGeneratorModels)) continue;
+      if (CollectionUtil.intersects(dependencies.getCrossModelReferences(), otherGeneratorModels)) {
+        continue;
+      }
 
       // models of the dep.target are not referenced, likely superfluous dependency.
       String msg = "Superfluous dependency to generator " + depTarget.getModuleName() + ", no generator template nor its source language's node is in use";
-      if (!processor.process(new ValidationProblem(Severity.WARNING, msg))) return false;
+      if (!processor.process(new ValidationProblem(Severity.WARNING, msg))) {
+        return false;
+      }
     }
     return true;
   }
@@ -517,7 +549,8 @@ public class ValidationUtil {
 
   //returns true to continue analysing, false to stop
   // package-local until extracted into AbstractModuleValidator superclass to get subclassed by validators of particular module kind
-  /*package*/ static boolean validateAbstractModule(final AbstractModule module, Processor<ValidationProblem> processor) {
+  /*package*/
+  static boolean validateAbstractModule(final AbstractModule module, Processor<ValidationProblem> processor) {
     Throwable loadException = module.getModuleDescriptor().getLoadException();
     if (loadException != null) {
       return processor.process(new ValidationProblem(Severity.ERROR, "Couldn't load module: " + loadException.getMessage()));
@@ -572,19 +605,6 @@ public class ValidationUtil {
             return false;
           }
         }
-      }
-    }
-
-    // todo: =(
-    if (module instanceof Generator) {
-      return true;
-    }
-    for (SDependency dependency : module.getDeclaredDependencies()) {
-      if (!(dependency.getTarget() instanceof Generator)) {
-        continue;
-      }
-      if (!processor.process(new ValidationProblem(Severity.ERROR, "Contains dependency on generator: " + dependency.getTargetModule().getModuleName()))) {
-        return false;
       }
     }
     return true;
