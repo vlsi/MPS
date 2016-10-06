@@ -1306,6 +1306,9 @@
     <node concept="lpD6D" id="2TdQhrRQmmk" role="lpD6w">
       <ref role="lpD7u" to="tpej:fNOVZ7NMpi" resolve="AbstractPrivateMethod" />
     </node>
+    <node concept="lpD6D" id="5L7DT9mgG7G" role="lpD6w">
+      <ref role="lpD7u" to="tpej:5L7DT9mffhM" resolve="AnonymousClassJavaName" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRQmvc" role="lpD6w">
       <ref role="lpD7u" to="tpej:X70sDCE7IU" resolve="ArrayCreatorTest" />
     </node>

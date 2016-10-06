@@ -7137,6 +7137,25 @@
       <unit id="6640766779615010044" at="14,0,104,0" name="jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6649467621789725810">
+    <file name="AnonymousClassJavaName_Test.java">
+      <node id="6649467621789725810" at="17,53,18,116" concept="3" />
+      <node id="6649467621789725810" at="18,116,19,112" concept="3" />
+      <node id="6649467621789800767" at="24,55,25,41" concept="3" />
+      <node id="6649467621789930734" at="25,41,26,459" concept="0" />
+      <node id="6649467621790014147" at="26,459,27,459" concept="0" />
+      <node id="6649467621790015035" at="27,459,28,461" concept="0" />
+      <node id="6649467621790015071" at="28,461,29,461" concept="0" />
+      <node id="6649467621789725810" at="16,0,21,0" concept="4" trace="test_testJavaNames#()V" />
+      <node id="6649467621789800767" at="24,0,31,0" concept="4" trace="test_testJavaNames#()V" />
+      <scope id="6649467621789725810" at="17,53,19,112" />
+      <scope id="6649467621789725810" at="16,0,21,0" />
+      <scope id="6649467621789800767" at="24,55,29,461" />
+      <scope id="6649467621789800767" at="24,0,31,0" />
+      <unit id="6649467621789725810" at="22,0,34,0" name="jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test$TestBody" />
+      <unit id="6649467621789725810" at="14,0,35,0" name="jetbrains.mps.baseLanguage.test.AnonymousClassJavaName_Test" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7187651930235347758">
     <file name="TestGenerationMode_Test.java">
       <node id="7187651930235347758" at="16,54,17,116" concept="3" />

@@ -848,12 +848,12 @@
       <scope id="103026555327165290" at="306,55,329,22">
         <var name="method" id="103026555327165292" />
       </scope>
-      <unit id="103026555324297162" at="229,415,233,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$14" />
-      <unit id="103026555325379545" at="257,432,261,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$15" />
-      <unit id="103026555326747267" at="285,432,289,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$16" />
-      <unit id="103026555328573314" at="290,409,294,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$16" />
-      <unit id="103026555328712251" at="318,415,322,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$17" />
-      <unit id="103026555328712269" at="323,409,327,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$17" />
+      <unit id="103026555324297162" at="229,415,233,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$13$1" />
+      <unit id="103026555325379545" at="257,432,261,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$14$1" />
+      <unit id="103026555326747267" at="285,432,289,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$15$1" />
+      <unit id="103026555328573314" at="290,409,294,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$15$2" />
+      <unit id="103026555328712251" at="318,415,322,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$16$1" />
+      <unit id="103026555328712269" at="323,409,327,9" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$16$2" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/1296460694774881120">
