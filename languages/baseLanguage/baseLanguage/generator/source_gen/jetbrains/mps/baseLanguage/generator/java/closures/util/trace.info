@@ -382,7 +382,7 @@
         <var name="localVars" id="1238943730126" />
         <var name="node" id="1238943722342" />
       </scope>
-      <unit id="9209581912524271953" at="35,100,39,5" name="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$1" />
+      <unit id="9209581912524271953" at="35,100,39,5" name="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$null$1" />
       <unit id="1238944138203" at="152,0,198,0" name="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$ClosureContextData" />
       <unit id="1238940012773" at="24,0,199,0" name="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
     </file>

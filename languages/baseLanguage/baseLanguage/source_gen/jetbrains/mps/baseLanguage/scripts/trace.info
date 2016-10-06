@@ -64,7 +64,7 @@
       </scope>
       <scope id="1240068519431" at="16,51,48,7" />
       <scope id="1240068519431" at="16,0,50,0" />
-      <unit id="1240068519431" at="18,28,48,5" name="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript$1" />
+      <unit id="1240068519431" at="18,28,48,5" name="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript$null$1" />
       <unit id="1240068519431" at="15,0,57,0" name="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript" />
     </file>
   </root>
@@ -163,7 +163,7 @@
       <unit id="1645752949777015860" at="61,252,65,13" name="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$1$2$1" />
       <unit id="1645752949776078802" at="42,120,50,9" name="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$1$1" />
       <unit id="1645752949777015854" at="59,120,67,9" name="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$1$2" />
-      <unit id="1645752949772869851" at="27,28,77,5" name="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$1" />
+      <unit id="1645752949772869851" at="27,28,77,5" name="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$null$1" />
       <unit id="1645752949772869851" at="24,0,92,0" name="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript" />
     </file>
   </root>
@@ -273,9 +273,9 @@
       </scope>
       <scope id="1704189004094297789" at="18,55,106,7" />
       <scope id="1704189004094297789" at="18,0,108,0" />
-      <unit id="1704189004094297789" at="20,28,48,5" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$1" />
-      <unit id="1704189004094297789" at="49,28,77,5" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$2" />
-      <unit id="1704189004094297789" at="78,28,106,5" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$3" />
+      <unit id="1704189004094297789" at="20,28,48,5" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$null$1" />
+      <unit id="1704189004094297789" at="49,28,77,5" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$null$2" />
+      <unit id="1704189004094297789" at="78,28,106,5" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$null$3" />
       <unit id="1704189004094297789" at="17,0,115,0" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" />
     </file>
   </root>
@@ -321,7 +321,7 @@
       <scope id="2214637407304092437" at="48,0,53,0" />
       <scope id="2214637407304092437" at="17,50,45,7" />
       <scope id="2214637407304092437" at="17,0,47,0" />
-      <unit id="2214637407304092437" at="19,28,45,5" name="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript$1" />
+      <unit id="2214637407304092437" at="19,28,45,5" name="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript$null$1" />
       <unit id="2214637407304092437" at="16,0,54,0" name="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript" />
     </file>
   </root>
@@ -369,7 +369,7 @@
       </scope>
       <scope id="4536253685767003451" at="18,51,47,7" />
       <scope id="4536253685767003451" at="18,0,49,0" />
-      <unit id="4536253685767003451" at="20,28,47,5" name="jetbrains.mps.baseLanguage.scripts.WrapNotChildWithParens_MigrationScript$1" />
+      <unit id="4536253685767003451" at="20,28,47,5" name="jetbrains.mps.baseLanguage.scripts.WrapNotChildWithParens_MigrationScript$null$1" />
       <unit id="4536253685767003451" at="17,0,56,0" name="jetbrains.mps.baseLanguage.scripts.WrapNotChildWithParens_MigrationScript" />
     </file>
   </root>
@@ -545,9 +545,9 @@
       </scope>
       <scope id="4581730695772514123" at="21,53,150,7" />
       <scope id="4581730695772514123" at="21,0,152,0" />
-      <unit id="4581730695772514123" at="125,28,150,5" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$3" />
-      <unit id="4581730695772514123" at="23,28,73,5" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$1" />
-      <unit id="4581730695772514123" at="74,28,124,5" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$2" />
+      <unit id="4581730695772514123" at="125,28,150,5" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$null$3" />
+      <unit id="4581730695772514123" at="23,28,73,5" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$null$1" />
+      <unit id="4581730695772514123" at="74,28,124,5" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$null$2" />
       <unit id="4581730695772514123" at="20,0,166,0" name="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" />
     </file>
   </root>
@@ -595,7 +595,7 @@
       </scope>
       <scope id="481464699838541779" at="19,55,48,7" />
       <scope id="481464699838541779" at="19,0,50,0" />
-      <unit id="481464699838541779" at="21,28,48,5" name="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript$1" />
+      <unit id="481464699838541779" at="21,28,48,5" name="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript$null$1" />
       <unit id="481464699838541779" at="18,0,57,0" name="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript" />
     </file>
   </root>
@@ -649,7 +649,7 @@
       </scope>
       <scope id="818296778609449086" at="18,66,47,7" />
       <scope id="818296778609449086" at="18,0,49,0" />
-      <unit id="818296778609449086" at="20,28,47,5" name="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript$1" />
+      <unit id="818296778609449086" at="20,28,47,5" name="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript$null$1" />
       <unit id="818296778609449086" at="17,0,59,0" name="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript" />
     </file>
   </root>
@@ -692,7 +692,7 @@
       <scope id="8355037393080348187" at="46,0,51,0" />
       <scope id="8355037393080348187" at="16,54,43,7" />
       <scope id="8355037393080348187" at="16,0,45,0" />
-      <unit id="8355037393080348187" at="18,28,43,5" name="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript$1" />
+      <unit id="8355037393080348187" at="18,28,43,5" name="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript$null$1" />
       <unit id="8355037393080348187" at="15,0,52,0" name="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript" />
     </file>
   </root>
