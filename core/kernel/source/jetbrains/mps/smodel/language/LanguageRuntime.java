@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -93,21 +94,27 @@ public abstract class LanguageRuntime {
    * @see jetbrains.mps.smodel.runtime.ILanguageAspect
    */
   public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> aspectClass) {
-    T aspectDescriptor = aspectClass.cast(myAspectDescriptors.get(aspectClass));
-    if (aspectDescriptor == null) {
-      aspectDescriptor = createAspect(aspectClass);
+    try {
+      T aspectDescriptor = aspectClass.cast(myAspectDescriptors.get(aspectClass));
       if (aspectDescriptor == null) {
-        return null;
+        aspectDescriptor = createAspect(aspectClass);
+        if (aspectDescriptor == null) {
+          return null;
+        }
+        if (aspectDescriptor instanceof LanguageRuntimeAware) {
+          ((LanguageRuntimeAware) aspectDescriptor).setLanguageRuntime(this);
+        }
+        T alreadyThere = aspectClass.cast(myAspectDescriptors.putIfAbsent(aspectClass, aspectDescriptor));
+        if (alreadyThere != null) {
+          return alreadyThere;
+        }
       }
-      if (aspectDescriptor instanceof LanguageRuntimeAware) {
-        ((LanguageRuntimeAware) aspectDescriptor).setLanguageRuntime(this);
-      }
-      T alreadyThere = aspectClass.cast(myAspectDescriptors.putIfAbsent(aspectClass, aspectDescriptor));
-      if (alreadyThere != null) {
-        return alreadyThere;
-      }
+      return aspectDescriptor;
+    } catch (Throwable th) {
+      String msg = String.format("Failed to instantiate aspect %s in language %s", aspectClass, getNamespace());
+      Logger.getLogger(LanguageRuntime.class).error(msg, th);
+      return null;
     }
-    return aspectDescriptor;
   }
 
   /**
@@ -117,11 +124,7 @@ public abstract class LanguageRuntime {
    * @param <T> aspect class
    * @return may return {@code null} indicating language has no such aspect
    */
-  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    // FIXME make it abstract once 3.4 is out (if template changes that doesn't delegate in there get into release)
-    // Left non-abstract for compatibility with languages generated with MPS 3.3 and EAP/preview builds (they used to delegate to super.createAspect)
-    return null;
-  }
+  protected abstract <T extends ILanguageAspect> T createAspect(Class<T> aspectClass);
 
   /*
    * perhaps, could use WeakHashMap, although proper registration/un-registration sequence shall enforce no stale entries
