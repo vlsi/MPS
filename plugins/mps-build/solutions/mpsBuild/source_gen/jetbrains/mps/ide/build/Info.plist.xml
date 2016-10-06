@@ -97,7 +97,7 @@
         <string>false</string>
         
         <key>idea.path.selector</key>
-        <string>MPS34</string>
+        <string>MPS35</string>
         
         <key>idea.java.redist</key>
         <string>NoJavaDistribution</string>
@@ -105,7 +105,7 @@
         <string>$APP_PACKAGE/Contents</string>
       </dict>
       <key>VMOptions</key>
-      <string>-Dintellij.config.imported.in.current.session=true -Didea.paths.selector=MPS34 -Dide.mac.message.dialogs.as.sheets=false -Dapple.awt.graphics.UseQuartz=true -Dfile.encoding=UTF-8 -client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none</string>
+      <string>-Dintellij.config.imported.in.current.session=true -Didea.paths.selector=MPS35 -Dide.mac.message.dialogs.as.sheets=false -Dapple.awt.graphics.UseQuartz=true -Dfile.encoding=UTF-8 -client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none</string>
       <key>WorkingDirectory</key>
       <string>$APP_PACKAGE/Contents/bin</string>
     </dict>

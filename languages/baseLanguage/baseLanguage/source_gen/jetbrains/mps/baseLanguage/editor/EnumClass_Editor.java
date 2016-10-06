@@ -220,7 +220,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_y68cfu_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_y68cfu_a7a");
+    editorCell.setCellId("OpenBraceEnumCell");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);

@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.text.impl.BufferLayoutBuilder;
-import jetbrains.mps.text.impl.RegularTextUnit2;
+import jetbrains.mps.text.impl.RegularTextUnit;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -377,8 +377,9 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
     rv.setBufferLayout(lb.create());
+    rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
   }
   private static TextUnit createTextUnit1(String filename, SNode node) {
@@ -388,8 +389,9 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
     rv.setBufferLayout(lb.create());
+    rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
   }
   private static TextUnit createTextUnit2(String filename, SNode node) {
@@ -399,8 +401,9 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
     rv.setBufferLayout(lb.create());
+    rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
   }
   private static TextUnit createTextUnit3(String filename, SNode node) {
@@ -410,8 +413,9 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     lb.add("SEPARATOR");
     lb.add("BODY");
     lb.activate("BODY");
-    RegularTextUnit2 rv = new RegularTextUnit2(node, filename, null);
+    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
     rv.setBufferLayout(lb.create());
+    rv.addContextObject("ctx", BaseLanguageTextGen.contextObjectInstance_ctx(node));
     return rv;
   }
   private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {

@@ -41,11 +41,11 @@ public class ShapeColor implements ConceptEditorComponent {
     return editorCell;
   }
   private EditorCell createRefNode_mblc8h_b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new ShapeColor.colorSingleRoleHandler_mblc8h_b0(node, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "color"), editorContext);
+    SingleRoleCellProvider provider = new ShapeColor.colorRefSingleRoleHandler_mblc8h_b0(node, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "colorRef"), editorContext);
     return provider.createCell();
   }
-  private class colorSingleRoleHandler_mblc8h_b0 extends SingleRoleCellProvider {
-    public colorSingleRoleHandler_mblc8h_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class colorRefSingleRoleHandler_mblc8h_b0 extends SingleRoleCellProvider {
+    public colorRefSingleRoleHandler_mblc8h_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -55,22 +55,22 @@ public class ShapeColor implements ConceptEditorComponent {
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "color"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "colorRef"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
       }
       if (editorCell.getRole() == null) {
-        editorCell.setRole("color");
+        editorCell.setRole("colorRef");
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_color");
+      editorCell.setCellId("empty_colorRef");
 
       installCellInfo(null, editorCell);
       return editorCell;
     }
     protected String getNoTargetText() {
-      return "<no color>";
+      return "<no colorRef>";
     }
   }
 }

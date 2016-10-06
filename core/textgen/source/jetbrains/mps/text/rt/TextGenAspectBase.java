@@ -15,27 +15,10 @@
  */
 package jetbrains.mps.text.rt;
 
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.text.impl.JavaTextUnit;
-import jetbrains.mps.text.impl.RegularTextUnit;
-import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Base implementation of {@link TextGenAspectDescriptor} to extend from generated code
@@ -47,21 +30,6 @@ public abstract class TextGenAspectBase implements TextGenAspectDescriptor {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SConceptId concept) {
     return getDescriptor(MetaAdapterFactory.getConceptById(concept));
-  }
-
-  @Nullable
-  @Override
-  public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    //default implementation to be removed after 3.4
-    //default implementation to be removed after 3.4
-    if (concept instanceof SConceptAdapterById) {
-      return getDescriptor(((SConceptAdapterById) concept).getId());
-    }
-    if (concept instanceof SInterfaceConceptAdapterById) {
-      return getDescriptor(((SInterfaceConceptAdapterById) concept).getId());
-    }
-
-    return null;
   }
 
   public void breakdownToUnits(@NotNull TextGenModelOutline modelOutline) {

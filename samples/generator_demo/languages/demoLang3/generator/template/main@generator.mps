@@ -10,6 +10,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" />
@@ -502,7 +503,7 @@
                               <node concept="2OqwBi" id="hSa9meP" role="2Oq$k0">
                                 <node concept="30H73N" id="hSa9meQ" role="2Oq$k0" />
                                 <node concept="3Tsc0h" id="hSa9meR" role="2OqNvi">
-                                  <ref role="3TtcxE" to="dghb:hP5YayU" />
+                                  <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
                                 </node>
                               </node>
                               <node concept="1z4cxt" id="hSa9meS" role="2OqNvi">
@@ -554,7 +555,7 @@
                         <node concept="2OqwBi" id="hSa8Ooa" role="2Oq$k0">
                           <node concept="30H73N" id="hSa8O1G" role="2Oq$k0" />
                           <node concept="3Tsc0h" id="hSa8PvZ" role="2OqNvi">
-                            <ref role="3TtcxE" to="dghb:hP5YayU" />
+                            <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
                           </node>
                         </node>
                         <node concept="1z4cxt" id="hSa91_3" role="2OqNvi">
@@ -677,7 +678,7 @@
                               <node concept="2OqwBi" id="hSa9z94" role="2Oq$k0">
                                 <node concept="30H73N" id="hSa9z95" role="2Oq$k0" />
                                 <node concept="3Tsc0h" id="hSa9z96" role="2OqNvi">
-                                  <ref role="3TtcxE" to="dghb:hP5YayU" />
+                                  <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
                                 </node>
                               </node>
                               <node concept="1z4cxt" id="hSa9z97" role="2OqNvi">
@@ -729,7 +730,7 @@
                         <node concept="2OqwBi" id="hSa9z9q" role="2Oq$k0">
                           <node concept="30H73N" id="hSa9z9r" role="2Oq$k0" />
                           <node concept="3Tsc0h" id="hSa9z9s" role="2OqNvi">
-                            <ref role="3TtcxE" to="dghb:hP5YayU" />
+                            <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
                           </node>
                         </node>
                         <node concept="1z4cxt" id="hSa9z9t" role="2OqNvi">
@@ -860,7 +861,7 @@
                       <node concept="2OqwBi" id="hSaexGp" role="2Oq$k0">
                         <node concept="30H73N" id="hSaexvd" role="2Oq$k0" />
                         <node concept="3Tsc0h" id="hSaexVl" role="2OqNvi">
-                          <ref role="3TtcxE" to="dghb:hP5YayU" />
+                          <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
                         </node>
                       </node>
                       <node concept="1z4cxt" id="hSaezrP" role="2OqNvi">
@@ -951,7 +952,7 @@
                       <node concept="2OqwBi" id="hSago_0" role="2Oq$k0">
                         <node concept="30H73N" id="hSago_1" role="2Oq$k0" />
                         <node concept="3Tsc0h" id="hSago_2" role="2OqNvi">
-                          <ref role="3TtcxE" to="dghb:hP5YayU" />
+                          <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
                         </node>
                       </node>
                       <node concept="1z4cxt" id="hSago_3" role="2OqNvi">

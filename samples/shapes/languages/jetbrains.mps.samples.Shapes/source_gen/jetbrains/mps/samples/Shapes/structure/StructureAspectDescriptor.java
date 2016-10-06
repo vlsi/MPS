@@ -18,9 +18,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(5);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(6);
   /*package*/ final ConceptDescriptor myConceptCanvas = createDescriptorForCanvas();
   /*package*/ final ConceptDescriptor myConceptCircle = createDescriptorForCircle();
+  /*package*/ final ConceptDescriptor myConceptColor = createDescriptorForColor();
   /*package*/ final ConceptDescriptor myConceptColorReference = createDescriptorForColorReference();
   /*package*/ final ConceptDescriptor myConceptShape = createDescriptorForShape();
   /*package*/ final ConceptDescriptor myConceptSquare = createDescriptorForSquare();
@@ -28,14 +29,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   public StructureAspectDescriptor() {
     myIndexMap.put(myConceptCanvas.getId(), 0);
     myIndexMap.put(myConceptCircle.getId(), 1);
-    myIndexMap.put(myConceptColorReference.getId(), 2);
-    myIndexMap.put(myConceptShape.getId(), 3);
-    myIndexMap.put(myConceptSquare.getId(), 4);
+    myIndexMap.put(myConceptColor.getId(), 2);
+    myIndexMap.put(myConceptColorReference.getId(), 3);
+    myIndexMap.put(myConceptShape.getId(), 4);
+    myIndexMap.put(myConceptSquare.getId(), 5);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCanvas, myConceptCircle, myConceptColorReference, myConceptShape, myConceptSquare);
+    return Arrays.asList(myConceptCanvas, myConceptCircle, myConceptColor, myConceptColorReference, myConceptShape, myConceptSquare);
   }
 
   @Override
@@ -51,10 +53,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 1:
         return myConceptCircle;
       case 2:
-        return myConceptColorReference;
+        return myConceptColor;
       case 3:
-        return myConceptShape;
+        return myConceptColorReference;
       case 4:
+        return myConceptShape;
+      case 5:
         return myConceptSquare;
       default:
         throw new IllegalStateException();
@@ -77,11 +81,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForCircle() {
     return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Circle", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L)).super_("jetbrains.mps.samples.Shapes.structure.Shape").version(1).super_(MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L)).parents("jetbrains.mps.samples.Shapes.structure.Shape").parentIds(MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x51dcaa29974fc199L, "x", new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474713")), new ConceptDescriptorBuilder.Prop(0x51dcaa29974fc19bL, "y", new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474715")), new ConceptDescriptorBuilder.Prop(0x51dcaa29974fc19eL, "radius", new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474718"))).properties("x", "y", "radius").alias("circle", "").sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474712")).create();
   }
+  private static ConceptDescriptor createDescriptorForColor() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Color", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x6314ff8d5bf97588L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).rootable().alias("color", "").sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "7139612291887625608")).create();
+  }
   private static ConceptDescriptor createDescriptorForColorReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.ColorReference", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x3a2b0182df22029aL, "color", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL), false, new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "4191445539799302810"))).references("color").sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "4191445539799302575")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.ColorReference", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x3a2b0182df22029aL, "target", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x6314ff8d5bf97588L), false, new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "4191445539799302810"))).references("target").sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "4191445539799302575")).create();
   }
   private static ConceptDescriptor createDescriptorForShape() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Shape", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3a2b0182df24928cL, "color", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL), false, false, false, new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "4191445539799470732"))).children(new String[]{"color"}, new boolean[]{false}).abstract_().sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474657")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Shape", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3a2b0182df24928cL, "colorRef", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL), false, false, false, new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "4191445539799470732"))).children(new String[]{"colorRef"}, new boolean[]{false}).abstract_().sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474657")).create();
   }
   private static ConceptDescriptor createDescriptorForSquare() {
     return new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Square", MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L)).super_("jetbrains.mps.samples.Shapes.structure.Shape").version(1).super_(MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L)).parents("jetbrains.mps.samples.Shapes.structure.Shape").parentIds(MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x51dcaa29974fc1a3L, "upperLeftX", new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474723")), new ConceptDescriptorBuilder.Prop(0x51dcaa29974fc1a5L, "upperLeftY", new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474725")), new ConceptDescriptorBuilder.Prop(0x51dcaa29974fc1a8L, "size", new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474728"))).properties("upperLeftX", "upperLeftY", "size").alias("square", "").sourceNode(new SNodePointer("r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)", "5898776707557474722")).create();

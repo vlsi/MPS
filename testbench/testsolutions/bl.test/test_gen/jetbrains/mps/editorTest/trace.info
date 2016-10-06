@@ -7487,6 +7487,38 @@
       <unit id="5938462602860217357" at="10,0,28,0" name="jetbrains.mps.editorTest.MoveInManyStatementsListCommentedDown_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5967765797429375677">
+    <file name="RemoveParensFromNullExprLeft_Test.java">
+      <node id="5967765797429375677" at="13,68,14,102" concept="3" />
+      <node id="5967765797429375677" at="14,102,15,104" concept="3" />
+      <node id="5967765797429375677" at="21,51,22,72" concept="3" />
+      <node id="5967765797429375711" at="22,72,23,72" concept="3" />
+      <node id="5967765797429375677" at="12,0,17,0" concept="6" trace="test_RemoveParensFromNullExprLeft#()V" />
+      <node id="5967765797429375677" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5967765797429375677" at="13,68,15,104" />
+      <scope id="5967765797429375677" at="21,51,23,72" />
+      <scope id="5967765797429375677" at="12,0,17,0" />
+      <scope id="5967765797429375677" at="20,0,25,0" />
+      <unit id="5967765797429375677" at="18,0,26,0" name="jetbrains.mps.editorTest.RemoveParensFromNullExprLeft_Test$TestBody" />
+      <unit id="5967765797429375677" at="10,0,27,0" name="jetbrains.mps.editorTest.RemoveParensFromNullExprLeft_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5967765797429377911">
+    <file name="RemoveParensFromNullExprRight_Test.java">
+      <node id="5967765797429377911" at="13,69,14,102" concept="3" />
+      <node id="5967765797429377911" at="14,102,15,105" concept="3" />
+      <node id="5967765797429377911" at="21,51,22,72" concept="3" />
+      <node id="5967765797429377916" at="22,72,23,72" concept="3" />
+      <node id="5967765797429377911" at="12,0,17,0" concept="6" trace="test_RemoveParensFromNullExprRight#()V" />
+      <node id="5967765797429377911" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5967765797429377911" at="13,69,15,105" />
+      <scope id="5967765797429377911" at="21,51,23,72" />
+      <scope id="5967765797429377911" at="12,0,17,0" />
+      <scope id="5967765797429377911" at="20,0,25,0" />
+      <unit id="5967765797429377911" at="18,0,26,0" name="jetbrains.mps.editorTest.RemoveParensFromNullExprRight_Test$TestBody" />
+      <unit id="5967765797429377911" at="10,0,27,0" name="jetbrains.mps.editorTest.RemoveParensFromNullExprRight_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5977189381408923229">
     <file name="TryToPasteMethodCall_Test.java">
       <node id="5977189381408923229" at="13,60,14,102" concept="3" />

@@ -8,7 +8,6 @@
   <imports>
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="lpry" ref="r:c5af9f55-6095-48ca-b66b-70da9c3f57fb(jetbrains.mps.samples.Shapes.structure)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -214,14 +213,14 @@
         <node concept="3cpWs8" id="1Os2kBLurrd" role="3cqZAp">
           <node concept="3cpWsn" id="1Os2kBLurre" role="3cpWs9">
             <property role="TrG5h" value="color" />
-            <node concept="3Tqbb2" id="1Os2kBLurrb" role="1tU5fm">
-              <ref role="ehGHo" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
-            </node>
             <node concept="2OqwBi" id="1Os2kBLurrf" role="33vP2m">
               <node concept="13iPFW" id="1Os2kBLurrg" role="2Oq$k0" />
               <node concept="3TrEf2" id="1Os2kBLurrh" role="2OqNvi">
-                <ref role="3Tt5mk" to="lpry:3CF0obv8waq" />
+                <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="color" />
               </node>
+            </node>
+            <node concept="3Tqbb2" id="6ckZSPrZ1CP" role="1tU5fm">
+              <ref role="ehGHo" to="lpry:6ckZSPrYnm8" resolve="Color" />
             </node>
           </node>
         </node>
@@ -452,7 +451,7 @@
                 <node concept="2OqwBi" id="W6XMzE_w9d" role="2Oq$k0">
                   <node concept="13iPFW" id="W6XMzE_w4O" role="2Oq$k0" />
                   <node concept="3TrEf2" id="W6XMzE_wiR" role="2OqNvi">
-                    <ref role="3Tt5mk" to="lpry:3CF0obv99ac" />
+                    <ref role="3Tt5mk" to="lpry:3CF0obv99ac" resolve="colorRef" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="W6XMzE_wCK" role="2OqNvi">
@@ -487,7 +486,7 @@
                 <node concept="2OqwBi" id="3u6SZi0PP75" role="2Oq$k0">
                   <node concept="13iPFW" id="3u6SZi0PP76" role="2Oq$k0" />
                   <node concept="3TrEf2" id="3u6SZi0PP77" role="2OqNvi">
-                    <ref role="3Tt5mk" to="lpry:3CF0obv99ac" />
+                    <ref role="3Tt5mk" to="lpry:3CF0obv99ac" resolve="colorRef" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="3u6SZi0PP78" role="2OqNvi">
@@ -866,7 +865,7 @@
                                       <ref role="3cqZAo" node="3u6SZi0SeBI" resolve="thisCanvas" />
                                     </node>
                                     <node concept="3Tsc0h" id="3u6SZi0SXug" role="2OqNvi">
-                                      <ref role="3TtcxE" to="lpry:57sEyAnjZD7" />
+                                      <ref role="3TtcxE" to="lpry:57sEyAnjZD7" resolve="shapes" />
                                     </node>
                                   </node>
                                   <node concept="2es0OD" id="3u6SZi0SXuh" role="2OqNvi">

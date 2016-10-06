@@ -20,27 +20,26 @@ import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
 /**
- * General {@link TextUnit} implementation, intended for direct replacement of legacy TextGen.
- * At the moment, addresses compatibility with generated TextGen classes, except for pure BL
- * functionality like dependencies, which are handled in {@link RegularTextUnit2}.
+ * General {@link TextUnit} implementation for use both Java and non-Java source code, as well as binary (Base64-encoded) units.
  *
  * @author Artem Tikhomirov
  */
@@ -55,6 +54,7 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   private TextGenBuffer myLegacyBuffer;
   // CompatibilityTextUnit stuff
   private TraceInfoCollector myTraceCollector;
+  private List<Pair<String,Object>> myContextObjects;
 
   public RegularTextUnit(@NotNull SNode root, @NotNull String filename) {
     this(root, filename, null);
@@ -68,7 +68,40 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   }
 
   public void setBufferLayout(@NotNull BufferLayoutConfiguration cfg) {
+    checkNotYetGenerated();
     myLayoutBuilder = cfg;
+  }
+
+  public void addContextObject(@NotNull String identity, @NotNull Object contextObject) {
+    checkNotYetGenerated();
+    if (myContextObjects == null) {
+      // it's a single thread we configure TU from
+      myContextObjects = new ArrayList<>(2);
+    }
+    myContextObjects.add(new Pair<>(identity, contextObject));
+  }
+
+  /**
+   * XXX Perhaps, getAssociatedData(Class) would be better name?
+   *
+   * Access context object compatible with the supplied class.
+   * Return the instance supplied through {@link #addContextObject(String, Object)}, if any.
+   *
+   * At the moment, compatible means {@link Class#isInstance(Object)}, we might introduce a mechanism
+   * similar to IAdaptable in the future (i.e. each context object that is IAdaptable would get consulted IAdaptable.adapt()
+   * in addition to isInstance()).
+   */
+  @Nullable
+  public <T> T findContextObject(Class<T> kind) {
+    if (myContextObjects == null) {
+      return null;
+    }
+    for (Pair<String, Object> p : myContextObjects) {
+      if (kind.isInstance(p.o2)) {
+        return kind.cast(p.o2);
+      }
+    }
+    return null;
   }
 
   @NotNull
@@ -93,7 +126,13 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
     myTraceCollector = new TraceInfoCollector();
     TextBuffer trueBuffer = new TextBufferImpl();
     myLayoutBuilder.prepareBuffer(trueBuffer);
-    myLegacyBuffer = TextGen.newUserObjectHolder(getStartNode());
+    myLegacyBuffer = new TextGenBuffer();
+
+    if (myContextObjects != null) {
+      for (Pair<String, Object> p : myContextObjects) {
+        myLegacyBuffer.putUserObject(p.o1, p.o2);
+      }
+    }
 
     // if we got that far (tried to generate(), at least), do not consider state == undefined.
     // It's easy way to deal with uncaught exceptions from text generation and not to fail with assert state != Undefined in TextGen_Facet.
@@ -189,5 +228,9 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
       return (String) rv;
     }
     return null;
+  }
+
+  private void checkNotYetGenerated() {
+    assert myState == Status.Undefined : "Shall configure TU prior to generation";
   }
 }

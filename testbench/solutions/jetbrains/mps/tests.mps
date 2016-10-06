@@ -2962,6 +2962,12 @@
     <node concept="lpD6D" id="2TdQhrRPT6Q" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ZMT1Ubd_Fd" resolve="RemoveParensFromNotExpr" />
     </node>
+    <node concept="lpD6D" id="5bhKPZawfTO" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5bhKPZawfaX" resolve="RemoveParensFromNullExprLeft" />
+    </node>
+    <node concept="lpD6D" id="5bhKPZawg76" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5bhKPZawfHR" resolve="RemoveParensFromNullExprRight" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT5d" role="lpD6w">
       <ref role="lpD7u" to="ryl9:iYIY04PjOX" resolve="RemoveRightParen" />
     </node>

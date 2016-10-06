@@ -528,8 +528,8 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Model Checker" />
-    <property role="9BnSO" value="143.1" />
-    <property role="9BnSK" value="3.4" />
+    <property role="9BnSO" value="163.1" />
+    <property role="9BnSK" value="3.5" />
   </node>
   <node concept="Zd50a" id="1gEYwydCqV1">
     <property role="TrG5h" value="Default" />
@@ -3916,7 +3916,7 @@
                   <node concept="2OqwBi" id="1_LT7K4t7uB" role="2GsD0m">
                     <node concept="2OqwBi" id="1_LT7K4rnwS" role="2Oq$k0">
                       <node concept="3Tsc0h" id="1_LT7K4sYiK" role="2OqNvi">
-                        <ref role="3TtcxE" to="tpce:f_TKVDF" />
+                        <ref role="3TtcxE" to="tpce:f_TKVDF" resolve="linkDeclaration" />
                       </node>
                       <node concept="2GrUjf" id="1_LT7K4rz0n" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="1_LT7K4r5ra" resolve="concept" />
@@ -3962,7 +3962,7 @@
                         </node>
                         <node concept="2OqwBi" id="1_LT7K4tsGT" role="33vP2m">
                           <node concept="3TrEf2" id="1_LT7K4tsGU" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                            <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                           </node>
                           <node concept="2GrUjf" id="1_LT7K4tsGV" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="1_LT7K4rlWm" resolve="ref" />

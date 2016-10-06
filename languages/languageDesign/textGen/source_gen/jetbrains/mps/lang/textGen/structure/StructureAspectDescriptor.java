@@ -19,16 +19,18 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(35);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(41);
   /*package*/ final ConceptDescriptor myConceptAbstractAppendPart = createDescriptorForAbstractAppendPart();
   /*package*/ final ConceptDescriptor myConceptAbstractTextGenDeclaration = createDescriptorForAbstractTextGenDeclaration();
   /*package*/ final ConceptDescriptor myConceptAbstractTextGenParameter = createDescriptorForAbstractTextGenParameter();
   /*package*/ final ConceptDescriptor myConceptAppendOperation = createDescriptorForAppendOperation();
   /*package*/ final ConceptDescriptor myConceptAttributedNodePart = createDescriptorForAttributedNodePart();
   /*package*/ final ConceptDescriptor myConceptBufferParameter = createDescriptorForBufferParameter();
+  /*package*/ final ConceptDescriptor myConceptClassConceptUnitContext = createDescriptorForClassConceptUnitContext();
   /*package*/ final ConceptDescriptor myConceptCollectionAppendPart = createDescriptorForCollectionAppendPart();
   /*package*/ final ConceptDescriptor myConceptConceptTextGenDeclaration = createDescriptorForConceptTextGenDeclaration();
   /*package*/ final ConceptDescriptor myConceptConstantStringAppendPart = createDescriptorForConstantStringAppendPart();
+  /*package*/ final ConceptDescriptor myConceptContextInstanceSpecification = createDescriptorForContextInstanceSpecification();
   /*package*/ final ConceptDescriptor myConceptContextParameter = createDescriptorForContextParameter();
   /*package*/ final ConceptDescriptor myConceptDecreaseDepthOperation = createDescriptorForDecreaseDepthOperation();
   /*package*/ final ConceptDescriptor myConceptEncodingDeclaration = createDescriptorForEncodingDeclaration();
@@ -41,6 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIncreaseDepthOperation = createDescriptorForIncreaseDepthOperation();
   /*package*/ final ConceptDescriptor myConceptIndentBufferOperation = createDescriptorForIndentBufferOperation();
   /*package*/ final ConceptDescriptor myConceptIndentPart = createDescriptorForIndentPart();
+  /*package*/ final ConceptDescriptor myConceptInstancePerUnitContextObject = createDescriptorForInstancePerUnitContextObject();
   /*package*/ final ConceptDescriptor myConceptLanguageTextGenDeclaration = createDescriptorForLanguageTextGenDeclaration();
   /*package*/ final ConceptDescriptor myConceptLayoutPart = createDescriptorForLayoutPart();
   /*package*/ final ConceptDescriptor myConceptNewLineAppendPart = createDescriptorForNewLineAppendPart();
@@ -52,6 +55,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSimpleTextGenOperation = createDescriptorForSimpleTextGenOperation();
   /*package*/ final ConceptDescriptor myConceptStubOperationDeclaration = createDescriptorForStubOperationDeclaration();
   /*package*/ final ConceptDescriptor myConceptTextUnitLayout = createDescriptorForTextUnitLayout();
+  /*package*/ final ConceptDescriptor myConceptUnitContextDeclaration = createDescriptorForUnitContextDeclaration();
+  /*package*/ final ConceptDescriptor myConceptUnitContextObject = createDescriptorForUnitContextObject();
+  /*package*/ final ConceptDescriptor myConceptUnitContextReference = createDescriptorForUnitContextReference();
   /*package*/ final ConceptDescriptor myConceptUtilityMethodCall = createDescriptorForUtilityMethodCall();
   /*package*/ final ConceptDescriptor myConceptUtilityMethodDeclaration = createDescriptorForUtilityMethodDeclaration();
   /*package*/ final ConceptDescriptor myConceptWithIndentOperation = createDescriptorForWithIndentOperation();
@@ -63,40 +69,46 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptAppendOperation.getId(), 3);
     myIndexMap.put(myConceptAttributedNodePart.getId(), 4);
     myIndexMap.put(myConceptBufferParameter.getId(), 5);
-    myIndexMap.put(myConceptCollectionAppendPart.getId(), 6);
-    myIndexMap.put(myConceptConceptTextGenDeclaration.getId(), 7);
-    myIndexMap.put(myConceptConstantStringAppendPart.getId(), 8);
-    myIndexMap.put(myConceptContextParameter.getId(), 9);
-    myIndexMap.put(myConceptDecreaseDepthOperation.getId(), 10);
-    myIndexMap.put(myConceptEncodingDeclaration.getId(), 11);
-    myIndexMap.put(myConceptEncodingDeclarationBase.getId(), 12);
-    myIndexMap.put(myConceptEncodingLiteral.getId(), 13);
-    myIndexMap.put(myConceptExtensionDeclaration.getId(), 14);
-    myIndexMap.put(myConceptFilenameFunction.getId(), 15);
-    myIndexMap.put(myConceptFoundErrorOperation.getId(), 16);
-    myIndexMap.put(myConceptGenerateTextDeclaration.getId(), 17);
-    myIndexMap.put(myConceptIncreaseDepthOperation.getId(), 18);
-    myIndexMap.put(myConceptIndentBufferOperation.getId(), 19);
-    myIndexMap.put(myConceptIndentPart.getId(), 20);
-    myIndexMap.put(myConceptLanguageTextGenDeclaration.getId(), 21);
-    myIndexMap.put(myConceptLayoutPart.getId(), 22);
-    myIndexMap.put(myConceptNewLineAppendPart.getId(), 23);
-    myIndexMap.put(myConceptNodeAppendPart.getId(), 24);
-    myIndexMap.put(myConceptNodeParameter.getId(), 25);
-    myIndexMap.put(myConceptOperationCall.getId(), 26);
-    myIndexMap.put(myConceptOperationDeclaration.getId(), 27);
-    myIndexMap.put(myConceptReferenceAppendPart.getId(), 28);
-    myIndexMap.put(myConceptSimpleTextGenOperation.getId(), 29);
-    myIndexMap.put(myConceptStubOperationDeclaration.getId(), 30);
-    myIndexMap.put(myConceptTextUnitLayout.getId(), 31);
-    myIndexMap.put(myConceptUtilityMethodCall.getId(), 32);
-    myIndexMap.put(myConceptUtilityMethodDeclaration.getId(), 33);
-    myIndexMap.put(myConceptWithIndentOperation.getId(), 34);
+    myIndexMap.put(myConceptClassConceptUnitContext.getId(), 6);
+    myIndexMap.put(myConceptCollectionAppendPart.getId(), 7);
+    myIndexMap.put(myConceptConceptTextGenDeclaration.getId(), 8);
+    myIndexMap.put(myConceptConstantStringAppendPart.getId(), 9);
+    myIndexMap.put(myConceptContextInstanceSpecification.getId(), 10);
+    myIndexMap.put(myConceptContextParameter.getId(), 11);
+    myIndexMap.put(myConceptDecreaseDepthOperation.getId(), 12);
+    myIndexMap.put(myConceptEncodingDeclaration.getId(), 13);
+    myIndexMap.put(myConceptEncodingDeclarationBase.getId(), 14);
+    myIndexMap.put(myConceptEncodingLiteral.getId(), 15);
+    myIndexMap.put(myConceptExtensionDeclaration.getId(), 16);
+    myIndexMap.put(myConceptFilenameFunction.getId(), 17);
+    myIndexMap.put(myConceptFoundErrorOperation.getId(), 18);
+    myIndexMap.put(myConceptGenerateTextDeclaration.getId(), 19);
+    myIndexMap.put(myConceptIncreaseDepthOperation.getId(), 20);
+    myIndexMap.put(myConceptIndentBufferOperation.getId(), 21);
+    myIndexMap.put(myConceptIndentPart.getId(), 22);
+    myIndexMap.put(myConceptInstancePerUnitContextObject.getId(), 23);
+    myIndexMap.put(myConceptLanguageTextGenDeclaration.getId(), 24);
+    myIndexMap.put(myConceptLayoutPart.getId(), 25);
+    myIndexMap.put(myConceptNewLineAppendPart.getId(), 26);
+    myIndexMap.put(myConceptNodeAppendPart.getId(), 27);
+    myIndexMap.put(myConceptNodeParameter.getId(), 28);
+    myIndexMap.put(myConceptOperationCall.getId(), 29);
+    myIndexMap.put(myConceptOperationDeclaration.getId(), 30);
+    myIndexMap.put(myConceptReferenceAppendPart.getId(), 31);
+    myIndexMap.put(myConceptSimpleTextGenOperation.getId(), 32);
+    myIndexMap.put(myConceptStubOperationDeclaration.getId(), 33);
+    myIndexMap.put(myConceptTextUnitLayout.getId(), 34);
+    myIndexMap.put(myConceptUnitContextDeclaration.getId(), 35);
+    myIndexMap.put(myConceptUnitContextObject.getId(), 36);
+    myIndexMap.put(myConceptUnitContextReference.getId(), 37);
+    myIndexMap.put(myConceptUtilityMethodCall.getId(), 38);
+    myIndexMap.put(myConceptUtilityMethodDeclaration.getId(), 39);
+    myIndexMap.put(myConceptWithIndentOperation.getId(), 40);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptAttributedNodePart, myConceptBufferParameter, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextParameter, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptIndentPart, myConceptLanguageTextGenDeclaration, myConceptLayoutPart, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptReferenceAppendPart, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptTextUnitLayout, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
+    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptAttributedNodePart, myConceptBufferParameter, myConceptClassConceptUnitContext, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextInstanceSpecification, myConceptContextParameter, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptIndentPart, myConceptInstancePerUnitContextObject, myConceptLanguageTextGenDeclaration, myConceptLayoutPart, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptReferenceAppendPart, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptTextUnitLayout, myConceptUnitContextDeclaration, myConceptUnitContextObject, myConceptUnitContextReference, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
   }
 
   @Override
@@ -120,62 +132,74 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 5:
         return myConceptBufferParameter;
       case 6:
-        return myConceptCollectionAppendPart;
+        return myConceptClassConceptUnitContext;
       case 7:
-        return myConceptConceptTextGenDeclaration;
+        return myConceptCollectionAppendPart;
       case 8:
-        return myConceptConstantStringAppendPart;
+        return myConceptConceptTextGenDeclaration;
       case 9:
-        return myConceptContextParameter;
+        return myConceptConstantStringAppendPart;
       case 10:
-        return myConceptDecreaseDepthOperation;
+        return myConceptContextInstanceSpecification;
       case 11:
-        return myConceptEncodingDeclaration;
+        return myConceptContextParameter;
       case 12:
-        return myConceptEncodingDeclarationBase;
+        return myConceptDecreaseDepthOperation;
       case 13:
-        return myConceptEncodingLiteral;
+        return myConceptEncodingDeclaration;
       case 14:
-        return myConceptExtensionDeclaration;
+        return myConceptEncodingDeclarationBase;
       case 15:
-        return myConceptFilenameFunction;
+        return myConceptEncodingLiteral;
       case 16:
-        return myConceptFoundErrorOperation;
+        return myConceptExtensionDeclaration;
       case 17:
-        return myConceptGenerateTextDeclaration;
+        return myConceptFilenameFunction;
       case 18:
-        return myConceptIncreaseDepthOperation;
+        return myConceptFoundErrorOperation;
       case 19:
-        return myConceptIndentBufferOperation;
+        return myConceptGenerateTextDeclaration;
       case 20:
-        return myConceptIndentPart;
+        return myConceptIncreaseDepthOperation;
       case 21:
-        return myConceptLanguageTextGenDeclaration;
+        return myConceptIndentBufferOperation;
       case 22:
-        return myConceptLayoutPart;
+        return myConceptIndentPart;
       case 23:
-        return myConceptNewLineAppendPart;
+        return myConceptInstancePerUnitContextObject;
       case 24:
-        return myConceptNodeAppendPart;
+        return myConceptLanguageTextGenDeclaration;
       case 25:
-        return myConceptNodeParameter;
+        return myConceptLayoutPart;
       case 26:
-        return myConceptOperationCall;
+        return myConceptNewLineAppendPart;
       case 27:
-        return myConceptOperationDeclaration;
+        return myConceptNodeAppendPart;
       case 28:
-        return myConceptReferenceAppendPart;
+        return myConceptNodeParameter;
       case 29:
-        return myConceptSimpleTextGenOperation;
+        return myConceptOperationCall;
       case 30:
-        return myConceptStubOperationDeclaration;
+        return myConceptOperationDeclaration;
       case 31:
-        return myConceptTextUnitLayout;
+        return myConceptReferenceAppendPart;
       case 32:
-        return myConceptUtilityMethodCall;
+        return myConceptSimpleTextGenOperation;
       case 33:
-        return myConceptUtilityMethodDeclaration;
+        return myConceptStubOperationDeclaration;
       case 34:
+        return myConceptTextUnitLayout;
+      case 35:
+        return myConceptUnitContextDeclaration;
+      case 36:
+        return myConceptUnitContextObject;
+      case 37:
+        return myConceptUnitContextReference;
+      case 38:
+        return myConceptUtilityMethodCall;
+      case 39:
+        return myConceptUtilityMethodDeclaration;
+      case 40:
         return myConceptWithIndentOperation;
       default:
         throw new IllegalStateException();
@@ -210,14 +234,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForBufferParameter() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.BufferParameter", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f65197df2L)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL)).alias("buffer", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410")).create();
   }
+  private static ConceptDescriptor createDescriptorForClassConceptUnitContext() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ClassConceptUnitContext", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9073L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.ContextInstanceSpecification").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9072L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x377692d961ac9076L, "classifier", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682151542"))).references("classifier").alias("", "Instantiate a class as unit context object").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682151539")).create();
+  }
   private static ConceptDescriptor createDescriptorForCollectionAppendPart() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL)).super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x120152f5107L, "separator", new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237306003719")), new ConceptDescriptorBuilder.Prop(0x1203d98429fL, "withSeparator", new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237983969951"))).properties("separator", "withSeparator").childDescriptors(new ConceptDescriptorBuilder.Link(0x120152e6dcfL, "list", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237305945551"))).children(new String[]{"list"}, new boolean[]{false}).alias("$list{", "collection").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237305491868")).create();
   }
   private static ConceptDescriptor createDescriptorForConceptTextGenDeclaration() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x11f3c7a3d4dL, "conceptDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233670257997"))).references("conceptDeclaration").childDescriptors(new ConceptDescriptorBuilder.Link(0x6ee6b5c5ad5f7279L, "extension", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x7bf48616723f681dL), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "7991274449437422201")), new ConceptDescriptorBuilder.Link(0x10fd02ec599e8fbeL, "encoding", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8fbbL), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1224137887853744062")), new ConceptDescriptorBuilder.Link(0x11f41304578L, "textGenBlock", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233749296504")), new ConceptDescriptorBuilder.Link(0xa0f73089d631ccL, "filename", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "45307784116711884")), new ConceptDescriptorBuilder.Link(0x2bad879ac8f27decL, "layout", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dc9L), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893228"))).children(new String[]{"extension", "encoding", "textGenBlock", "filename", "layout"}, new boolean[]{false, false, false, false, false}).rootable().sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233670071145")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x11f3c7a3d4dL, "conceptDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233670257997"))).references("conceptDeclaration").childDescriptors(new ConceptDescriptorBuilder.Link(0x6ee6b5c5ad5f7279L, "extension", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x7bf48616723f681dL), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "7991274449437422201")), new ConceptDescriptorBuilder.Link(0x10fd02ec599e8fbeL, "encoding", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8fbbL), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1224137887853744062")), new ConceptDescriptorBuilder.Link(0x11f41304578L, "textGenBlock", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233749296504")), new ConceptDescriptorBuilder.Link(0xa0f73089d631ccL, "filename", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "45307784116711884")), new ConceptDescriptorBuilder.Link(0x2bad879ac8f27decL, "layout", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dc9L), true, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893228")), new ConceptDescriptorBuilder.Link(0x1dfcc3c672ea7620L, "contextObjects", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762cL), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "2160817178329904672"))).children(new String[]{"extension", "encoding", "textGenBlock", "filename", "layout", "contextObjects"}, new boolean[]{false, false, false, false, false, true}).rootable().sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233670071145")).create();
   }
   private static ConceptDescriptor createDescriptorForConstantStringAppendPart() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L)).super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x1201528caacL, "value", new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237305576108")), new ConceptDescriptorBuilder.Prop(0x1201534c74dL, "withIndent", new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237306361677"))).properties("value", "withIndent").alias("constant", "constant string").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1237305557638")).create();
+  }
+  private static ConceptDescriptor createDescriptorForContextInstanceSpecification() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ContextInstanceSpecification", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9072L)).version(1).interface_().sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682151538")).create();
   }
   private static ConceptDescriptor createDescriptorForContextParameter() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ContextParameter", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60cd534bL)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL)).alias("context", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234279682891")).create();
@@ -255,8 +285,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForIndentPart() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IndentPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x3c78adfd9bcaac6aL)).super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).alias("indent", "append indentation").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "4357423944233036906")).create();
   }
+  private static ConceptDescriptor createDescriptorForInstancePerUnitContextObject() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.InstancePerUnitContextObject", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762bL)).super_("jetbrains.mps.lang.textGen.structure.UnitContextObject").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762cL)).parents("jetbrains.mps.lang.textGen.structure.UnitContextObject").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762cL)).alias("", "Associate new instance of a context object with a text unit (one context object for each text unit)").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "2160817178329904683")).create();
+  }
   private static ConceptDescriptor createDescriptorForLanguageTextGenDeclaration() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x11f7eb142ecL, "baseTextGen", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL), true, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234781160172"))).references("baseTextGen").childDescriptors(new ConceptDescriptorBuilder.Link(0x11f4b821fc5L, "operation", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233922432965")), new ConceptDescriptorBuilder.Link(0x11f6f8860bdL, "function", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234526822589"))).children(new String[]{"operation", "function"}, new boolean[]{true, true}).rootable().sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233921373471")).create();
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").version(1).super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x11f7eb142ecL, "baseTextGen", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL), true, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234781160172"))).references("baseTextGen").childDescriptors(new ConceptDescriptorBuilder.Link(0x11f4b821fc5L, "operation", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233922432965")), new ConceptDescriptorBuilder.Link(0x11f6f8860bdL, "function", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234526822589")), new ConceptDescriptorBuilder.Link(0x377692d961abfe2aL, "contextObjects", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961aaee79L), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682114090"))).children(new String[]{"operation", "function", "contextObjects"}, new boolean[]{true, true, true}).rootable().sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233921373471")).create();
   }
   private static ConceptDescriptor createDescriptorForLayoutPart() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.LayoutPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dcaL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x2bad879ac8f27dd2L, "nested", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dcaL), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893202"))).children(new String[]{"nested"}, new boolean[]{true}).alias("text area", "area within text unit layout").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893194")).create();
@@ -287,6 +320,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForTextUnitLayout() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.TextUnitLayout", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dc9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x2bad879ac8f27dcdL, "active", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dcaL), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893197"))).references("active").childDescriptors(new ConceptDescriptorBuilder.Link(0x2bad879ac8f27dcbL, "parts", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dcaL), false, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893195"))).children(new String[]{"parts"}, new boolean[]{true}).alias("unit layout", "outline named text areas outcome unit consists of").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3147320813467893193")).create();
+  }
+  private static ConceptDescriptor createDescriptorForUnitContextDeclaration() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UnitContextDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961aaee79L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x377692d961aaee7eL, "type", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682044542")), new ConceptDescriptorBuilder.Link(0x377692d961ac9078L, "instance", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9072L), false, false, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682151544"))).children(new String[]{"type", "instance"}, new boolean[]{false, false}).alias("", "Define a context object for a text unit").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682044537")).create();
+  }
+  private static ConceptDescriptor createDescriptorForUnitContextObject() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UnitContextObject", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x1dfcc3c672ea762dL, "context", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961aaee79L), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "2160817178329904685"))).references("context").abstract_().alias("", "Tells text unit has a context object according to the given declaration").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "2160817178329904684")).create();
+  }
+  private static ConceptDescriptor createDescriptorForUnitContextReference() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UnitContextReference", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ab5a81L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x377692d961ab5a82L, "context", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961aaee79L), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682072194"))).references("context").alias("", "reference to unit context object").sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "3996543181682072193")).create();
   }
   private static ConceptDescriptor createDescriptorForUtilityMethodCall() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x11f6fac17ecL, "function", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L), false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234529163244"))).references("function").childDescriptors(new ConceptDescriptorBuilder.Link(0x11f6fac4585L, "parameter", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, true, false, new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234529174917"))).children(new String[]{"parameter"}, new boolean[]{true}).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234529062040")).create();

@@ -27,12 +27,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.util.InternUtil;
 
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final TextGenContext ctx) {
@@ -134,6 +128,7 @@ public abstract class BaseLanguageTextGen {
   }
   public static void fileHeader(SNode cls, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.getContextObject("ctx", ClassifierUnitContext.class).registerDependenciesOf(cls);
     boolean topClassifier = !((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(cls));
     if (topClassifier) {
       tgs.pushTextArea("HEADER");
@@ -147,12 +142,6 @@ public abstract class BaseLanguageTextGen {
       tgs.pushTextArea("SEPARATOR");
       tgs.newLine();
       tgs.popTextArea();
-    }
-    if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      BaseLanguageTextGen.registerExtendsRelation(SLinkOperations.getChildren(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")), topClassifier, ctx);
-    } else if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      BaseLanguageTextGen.registerExtendsRelation(SLinkOperations.getChildren(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")), topClassifier, ctx);
-      BaseLanguageTextGen.registerExtendsRelation(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")))).toListSequence(), topClassifier, ctx);
     }
   }
   public static void methodCall(SNode methodCall, final TextGenContext ctx) {
@@ -260,15 +249,6 @@ public abstract class BaseLanguageTextGen {
       return MultiTuple.<String,String>from(SModelOperations.getModelName(SNodeOperations.getModel(targetNode)), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
     }
   }
-  protected static Set<String> getUserObjects(String type, final TextGenContext ctx) {
-    final TextGenSupport tgs = new TextGenSupport(ctx);
-    Set<String> names = (Set<String>) tgs.getLegacyBuffer().getUserObject(type);
-    if (names == null) {
-      names = SetSequence.fromSet(new HashSet<String>());
-      tgs.getLegacyBuffer().putUserObject(type, names);
-    }
-    return names;
-  }
   protected static String getPackageName(SNode cls, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     return SModelOperations.getModelName(SNodeOperations.getModel(cls));
@@ -280,8 +260,7 @@ public abstract class BaseLanguageTextGen {
       return "???";
     }
 
-    BaseLanguageTextGen.addDependency(packageName, fqName, ctx);
-    ImportEntry importEntry = ImportsContext.getInstance(tgs.getLegacyBuffer()).getClassifierRefText(packageName, fqName, contextNode);
+    ImportEntry importEntry = tgs.getContextObject("ctx", ClassifierUnitContext.class).getClassifierRefText(packageName, fqName, contextNode);
     if (importEntry.needsImport()) {
       tgs.pushTextArea("IMPORTS");
       tgs.append("import ");
@@ -292,35 +271,11 @@ public abstract class BaseLanguageTextGen {
     }
     return importEntry.getName();
   }
-  protected static void addDependency(String packageName, String fqName, final TextGenContext ctx) {
-    final TextGenSupport tgs = new TextGenSupport(ctx);
-    // using only root classifiers as dependencies 
-    String nestedName = JavaNameUtil.nestedClassName(packageName, fqName);
-    int dotIndex = nestedName.indexOf(".");
-    String dependencyFqName;
-    if (dotIndex == -1) {
-      dependencyFqName = fqName;
-    } else {
-      dependencyFqName = packageName + "." + nestedName.substring(0, dotIndex);
-    }
-    BaseLanguageTextGen.addDependency(dependencyFqName, ctx);
-  }
-  protected static void addDependency(String fqName, final TextGenContext ctx) {
-    final TextGenSupport tgs = new TextGenSupport(ctx);
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGen.DEPENDENCY, ctx);
-    SetSequence.fromSet(dependencies).addElement(InternUtil.intern(fqName));
-  }
   protected static void appendClassName(String packageName, String fqName, SNode contextNode, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append(BaseLanguageTextGen.getClassName(packageName, fqName, contextNode, ctx));
   }
-  protected static void registerExtendsRelation(List<SNode> classifiers, boolean isTopClassifier, final TextGenContext ctx) {
-    final TextGenSupport tgs = new TextGenSupport(ctx);
-    // if an inner class extends/implements outer classifier, we shall not record this dependency as 'extends' of a 
-    // top-level unit (see sample in MPS-17604). Perhaps, we shall not record this dependency at all? 
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects((isTopClassifier ? TextGen.EXTENDS : TextGen.DEPENDENCY), ctx);
-    for (SNode c : classifiers) {
-      SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(SLinkOperations.getTarget(c, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
-    }
+  public static ClassifierUnitContext contextObjectInstance_ctx(SNode primaryInputNode) {
+    return new ClassifierUnitContext(primaryInputNode);
   }
 }
