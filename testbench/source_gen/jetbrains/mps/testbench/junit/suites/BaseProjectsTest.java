@@ -19,15 +19,6 @@ import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
 import org.junit.After;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseProjectsTest {
@@ -67,7 +58,7 @@ public class BaseProjectsTest {
         return true;
       }
     });
-    make(null);
+    TestMakeUtil.make(null);
 
     return projects;
   }
@@ -75,7 +66,7 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
-    make(myProject);
+    TestMakeUtil.make(myProject);
   }
 
   @After
@@ -83,22 +74,6 @@ public class BaseProjectsTest {
     myProject.dispose();
   }
 
-  protected static void make(Project p) {
-    final Wrappers._T<MPSCompilationResult> mpsCompilationResult = new Wrappers._T<MPSCompilationResult>();
-    (p == null ? MPSModuleRepository.getInstance() : p.getRepository()).getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        ModuleMaker maker = new ModuleMaker();
-        mpsCompilationResult.value = maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS);
-      }
-    });
-    if (mpsCompilationResult.value.isReloadingNeeded()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.value.getChangedModules());
-        }
-      });
-    }
-  }
 
   public Project getContextProject() {
     return myProject;

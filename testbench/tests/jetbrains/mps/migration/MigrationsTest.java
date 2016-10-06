@@ -22,6 +22,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.runners.BaseMpsRunner;
 import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
+import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
@@ -55,6 +56,7 @@ public class MigrationsTest {
   public void testMigrationAndLocalHistory() throws Exception {
     Project project = ourEnv.openProject(new File(PROJECT_PATH));
 
+    TestMakeUtil.make(project);
     LocalHistoryImpl.getInstanceImpl().cleanupForNextTest();
 
     MigrationsProgressWizardStep.runMigrationsInTests(ProjectHelper.toIdeaProject(project));
