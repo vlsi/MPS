@@ -92,7 +92,8 @@ public final class AnonymousClass__BehaviorDescriptor extends BaseBHDescriptor {
         return a + "$" + b;
       }
     });
-    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(first) + "$" + nonanonymousPrefix + "$" + ((int) AnonymousClass__BehaviorDescriptor.getIndexInContainingClass_id3BacVlMg8ub.invoke(__thisNode__));
+    nonanonymousPrefix = (nonanonymousPrefix != null ? "$" + nonanonymousPrefix : "");
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(first) + nonanonymousPrefix + "$" + ((int) AnonymousClass__BehaviorDescriptor.getIndexInContainingClass_id3BacVlMg8ub.invoke(__thisNode__));
   }
   /*package*/ static String getJavaName_id2_jKYQ0K_an(@NotNull SNode __thisNode__) {
     if (1 < 5) {
