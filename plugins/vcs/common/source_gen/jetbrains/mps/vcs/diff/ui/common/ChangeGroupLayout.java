@@ -38,6 +38,9 @@ public abstract class ChangeGroupLayout {
   public abstract EditorComponent getLeftComponent();
   @NotNull
   public abstract EditorComponent getRightComponent();
+  public boolean isValid() {
+    return !((getLeftComponent().isDisposed() || getRightComponent().isDisposed()));
+  }
   protected abstract List<ChangeEditorMessage> getLeftMessages(ModelChange change);
   protected abstract List<ChangeEditorMessage> getRightMessages(ModelChange change);
   @Nullable
@@ -45,7 +48,7 @@ public abstract class ChangeGroupLayout {
   private void calculateChangeGroups() {
     final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
     final Map<ModelChange, Bounds> right = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
-    for (ModelChange change : ListSequence.fromList(check_cuq72k_a2a11(getChangeSet(), this))) {
+    for (ModelChange change : ListSequence.fromList(check_cuq72k_a2a21(getChangeSet(), this))) {
       Bounds leftBounds = findBounds(getLeftMessages(change), getLeftComponent());
       Bounds rightBounds = findBounds(getRightMessages(change), getRightComponent());
 
@@ -150,7 +153,7 @@ public abstract class ChangeGroupLayout {
       });
     }
     if (bounds == null || bounds.length() <= 0) {
-      int y = check_cuq72k_a0a0c0r(check_cuq72k_a0a0a2a71(editorComponent));
+      int y = check_cuq72k_a0a0c0s(check_cuq72k_a0a0a2a81(editorComponent));
       return new Bounds(y, y);
     } else {
       return bounds;
@@ -160,19 +163,19 @@ public abstract class ChangeGroupLayout {
     int tolerance = (canBeAdjacent ? 0 : 1);
     return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
   }
-  private static List<ModelChange> check_cuq72k_a2a11(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
+  private static List<ModelChange> check_cuq72k_a2a21(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-  private static int check_cuq72k_a0a0c0r(EditorCell checkedDotOperand) {
+  private static int check_cuq72k_a0a0c0s(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getY();
     }
     return 0;
   }
-  private static EditorCell check_cuq72k_a0a0a2a71(EditorComponent checkedDotOperand) {
+  private static EditorCell check_cuq72k_a0a0a2a81(EditorComponent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRootCell();
     }
