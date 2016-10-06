@@ -159,6 +159,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SConceptOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SConceptType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SConceptTypeCastExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SConceptTypeLiteral = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SEnumMemberOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SEnumMemberType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SEnumOperation = new ConceptPresentationBuilder().create();
@@ -488,52 +489,54 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 148:
         return props_SConceptTypeCastExpression;
       case 149:
-        return props_SEnumMemberOperation;
+        return props_SConceptTypeLiteral;
       case 150:
-        return props_SEnumMemberType;
+        return props_SEnumMemberOperation;
       case 151:
-        return props_SEnumOperation;
+        return props_SEnumMemberType;
       case 152:
-        return props_SEnumOperationInvocation;
+        return props_SEnumOperation;
       case 153:
-        return props_SEnum_MemberForNameOperation;
+        return props_SEnumOperationInvocation;
       case 154:
-        return props_SEnum_MemberForValueOperation;
+        return props_SEnum_MemberForNameOperation;
       case 155:
-        return props_SEnum_MemberOperation;
+        return props_SEnum_MemberForValueOperation;
       case 156:
-        return props_SEnum_MembersOperation;
+        return props_SEnum_MemberOperation;
       case 157:
-        return props_SLinkAccess;
+        return props_SEnum_MembersOperation;
       case 158:
-        return props_SLinkImplicitSelect;
+        return props_SLinkAccess;
       case 159:
-        return props_SLinkListAccess;
+        return props_SLinkImplicitSelect;
       case 160:
-        return props_SModelType;
+        return props_SLinkListAccess;
       case 161:
-        return props_SNodeCreator;
+        return props_SModelType;
       case 162:
-        return props_SNodeListCreator;
+        return props_SNodeCreator;
       case 163:
-        return props_SNodeListType;
+        return props_SNodeListCreator;
       case 164:
-        return props_SNodeOperation;
+        return props_SNodeListType;
       case 165:
-        return props_SNodeType;
+        return props_SNodeOperation;
       case 166:
-        return props_SNodeTypeCastExpression;
+        return props_SNodeType;
       case 167:
-        return props_SPropertyAccess;
+        return props_SNodeTypeCastExpression;
       case 168:
-        return props_SReferenceType;
+        return props_SPropertyAccess;
       case 169:
-        return props_SearchScopeType;
+        return props_SReferenceType;
       case 170:
-        return props_SearchScope_ContainsOperation;
+        return props_SearchScopeType;
       case 171:
-        return props_SemanticDowncastExpression;
+        return props_SearchScope_ContainsOperation;
       case 172:
+        return props_SemanticDowncastExpression;
+      case 173:
         return props_SubconceptCase;
     }
     throw new IllegalStateException("Unknown concept " + c);

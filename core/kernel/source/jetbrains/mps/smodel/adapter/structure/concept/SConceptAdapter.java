@@ -94,7 +94,9 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     }
 
     if (d.isInterfaceConcept()) {
-      return Collections.singleton(MetaAdapterFactory.getInterfaceConcept(getConceptDescriptor().getId(), getConceptDescriptor().getConceptFqName()));
+      // handle the case when we've instantiated an interface and got instance's SConcept, aka 'instance concept'
+      // see MetaAdapterByDeclaration.asInstanceConcept
+      return Collections.singleton(MetaAdapterFactory.getInterfaceConcept(d.getId(), d.getConceptFqName()));
     }
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();

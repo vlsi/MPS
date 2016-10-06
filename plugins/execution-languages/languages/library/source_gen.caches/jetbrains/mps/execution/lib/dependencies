@@ -14,8 +14,7 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.NodeByConcept_Configuration" file="NodeByConcept_Configuration.java">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
@@ -113,10 +112,9 @@
   <dependency className="jetbrains.mps.execution.lib.NodesDescriptor" file="NodesDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.PointerUtils" file="PointerUtils.java">
     <classNode dependClassName="java.lang.Deprecated" />

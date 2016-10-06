@@ -462,6 +462,9 @@
     <file name="SConceptTypeCastExpression_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.SConceptTypeCastExpression_BehaviorDescriptor" />
     </file>
+    <file name="SConceptTypeLiteral_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.SConceptTypeLiteral_BehaviorDescriptor" />
+    </file>
     <file name="SConceptType_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.SConceptType_BehaviorDescriptor" />
     </file>

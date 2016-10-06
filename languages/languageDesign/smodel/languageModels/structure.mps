@@ -2742,5 +2742,18 @@
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="ConceptMemberIdentity" />
   </node>
+  <node concept="1TIwiD" id="4JM1Q3lfSBE">
+    <property role="EcuMT" value="5472444609684539882" />
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="SConceptTypeLiteral" />
+    <property role="R4oN_" value="literal of a concept type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="4JM1Q3lfSBF" role="1TKVEi">
+      <property role="20kJfa" value="conceptDeclaraton" />
+      <property role="IQ2ns" value="5472444609684539883" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
 </model>
 

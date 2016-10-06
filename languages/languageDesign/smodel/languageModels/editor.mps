@@ -140,6 +140,9 @@
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1186414949600" name="jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem" flags="ln" index="VPRnO" />
+      <concept id="1186415722038" name="jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem" flags="ln" index="VSNWy">
+        <property id="1221209241505" name="value" index="1lJzqX" />
+      </concept>
       <concept id="1630016958697718209" name="jetbrains.mps.lang.editor.structure.IMenuReference_Default" flags="ng" index="2Z_bC8">
         <reference id="1630016958698373342" name="concept" index="2ZyFGn" />
       </concept>
@@ -7955,7 +7958,7 @@
   </node>
   <node concept="24kQdi" id="2PiAZGev8wT">
     <property role="3GE5qa" value="identity" />
-    <ref role="1XX52x" to="tp25:7jb4LXp8VrG" resolve="ReferenceId" />
+    <ref role="1XX52x" to="tp25:7jb4LXp8VrG" resolve="ReferenceLinkId" />
     <node concept="3EZMnI" id="2PiAZGev8wU" role="2wV5jI">
       <node concept="2iRfu4" id="2PiAZGev8wV" role="2iSdaV" />
       <node concept="3F1sOY" id="2PiAZGev8wW" role="3EZMnx">
@@ -7986,7 +7989,7 @@
   </node>
   <node concept="24kQdi" id="2PiAZGev8xg">
     <property role="3GE5qa" value="identity" />
-    <ref role="1XX52x" to="tp25:7jb4LXp8VrB" resolve="LinkId" />
+    <ref role="1XX52x" to="tp25:7jb4LXp8VrB" resolve="ContainmentLinkId" />
     <node concept="3EZMnI" id="2PiAZGev8xh" role="2wV5jI">
       <node concept="2iRfu4" id="2PiAZGev8xi" role="2iSdaV" />
       <node concept="3F1sOY" id="2PiAZGev8xj" role="3EZMnx">
@@ -8014,6 +8017,58 @@
       </node>
       <node concept="2iRkQZ" id="2PiAZGev8xs" role="2iSdaV" />
     </node>
+  </node>
+  <node concept="24kQdi" id="4JM1Q3lgdjK">
+    <property role="3GE5qa" value="type" />
+    <ref role="1XX52x" to="tp25:4JM1Q3lfSBE" resolve="SConceptTypeLiteral" />
+    <node concept="3EZMnI" id="4JM1Q3lgdjM" role="2wV5jI">
+      <node concept="3F0ifn" id="4JM1Q3lgdjN" role="3EZMnx">
+        <property role="3F0ifm" value="concept" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0ifn" id="4JM1Q3lgdkG" role="3EZMnx">
+        <property role="3F0ifm" value="lit" />
+        <node concept="11L4FC" id="4JM1Q3lge29" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="VSNWy" id="4JM1Q3lge6t" role="3F10Kt">
+          <property role="1lJzqX" value="9" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4JM1Q3lgdjO" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+        <node concept="VPM3Z" id="4JM1Q3lgdjP" role="3F10Kt" />
+      </node>
+      <node concept="1iCGBv" id="4JM1Q3lgdjQ" role="3EZMnx">
+        <property role="39s7Ar" value="true" />
+        <ref role="1NtTu8" to="tp25:4JM1Q3lfSBF" resolve="conceptDeclaraton" />
+        <node concept="1sVBvm" id="4JM1Q3lgdjR" role="1sWHZn">
+          <node concept="3F0A7n" id="4JM1Q3lgdjS" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <property role="1$x2rV" value="&lt;no name&gt;" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="3$7jql" id="4JM1Q3lgdjT" role="3F10Kt">
+              <property role="3$6WeP" value="0.0" />
+            </node>
+            <node concept="VechU" id="4JM1Q3lgdjU" role="3F10Kt">
+              <property role="Vb096" value="DARK_MAGENTA" />
+            </node>
+          </node>
+        </node>
+        <node concept="3$7jql" id="4JM1Q3lgdjV" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4JM1Q3lgdjW" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="4JM1Q3lgdjX" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="3p36aQ" id="4OqeSTZp1fg">
+    <ref role="aqKnT" to="tp25:4JM1Q3lfSBE" resolve="SConceptTypeLiteral" />
   </node>
 </model>
 
