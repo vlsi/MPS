@@ -1207,6 +1207,29 @@
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4asrSzSFlSi" role="jymVt" />
+    <node concept="3clFb_" id="4asrSzSFl5Q" role="jymVt">
+      <property role="TrG5h" value="withMigrationPlugin" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4asrSzSFl5R" role="3clF47">
+        <node concept="3cpWs6" id="4asrSzSFl5S" role="3cqZAp">
+          <node concept="1rXfSq" id="4asrSzSFl5T" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="4asrSzSFl5U" role="37wK5m">
+              <property role="Xl_RC" value="migrationAssistant" />
+            </node>
+            <node concept="Xl_RD" id="4asrSzSFl5V" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.ide.migration.assistant" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4asrSzSFl5W" role="1B3o_S" />
+      <node concept="3uibUv" id="4asrSzSFl5X" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="MVJ1IE6A6O" role="jymVt" />
     <node concept="3clFb_" id="5mza6QqhjgL" role="jymVt">
       <property role="1EzhhJ" value="false" />

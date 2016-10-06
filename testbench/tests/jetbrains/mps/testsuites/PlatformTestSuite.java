@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.testsuites;
 
+import jetbrains.mps.migration.MigrationsTest;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
@@ -48,11 +49,12 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.generator.impl.plan.CheckpointModelTest.class,
     jetbrains.mps.workbench.ProjectPlatformTest.class,
     jetbrains.mps.ide.ModuleIDETests.class,
-    jetbrains.mps.ide.FSTests.class
+    jetbrains.mps.ide.FSTests.class,
+    MigrationsTest.class
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time
-  public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin());
+  public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin().withMigrationPlugin());
 
   public PlatformTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
     super(aClass, builder);
