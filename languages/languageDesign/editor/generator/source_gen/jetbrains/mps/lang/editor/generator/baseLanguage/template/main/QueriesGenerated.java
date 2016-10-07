@@ -1410,7 +1410,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_7317263714739269478(final ReferenceMacroContext _context) {
     return (SNode) IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu"), false, false));
   }
-  public static Object referenceMacro_GetReferent_825332792092137914(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_2603680661010961365(final ReferenceMacroContext _context) {
+    return ((SNode) _context.getVariable("concept"));
+  }
+  public static Object referenceMacro_GetReferent_2603680661010962071(final ReferenceMacroContext _context) {
     return ((SNode) _context.getVariable("concept"));
   }
   public static Object referenceMacro_GetReferent_2554559902524969362(final ReferenceMacroContext _context) {
@@ -3078,7 +3081,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object insertMacro_varValue_3495720260243953966(final TemplateVarContext _context) {
     return Sequence.fromIterable(MenuRoots.getDefaultTransformationMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a348(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a448(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -3089,7 +3092,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object insertMacro_varValue_5624877018229882334(final TemplateVarContext _context) {
     return Sequence.fromIterable(MenuRoots.getNamedTransformationMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a448(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a548(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -3100,7 +3103,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object insertMacro_varValue_3308396621974429322(final TemplateVarContext _context) {
     return Sequence.fromIterable(MenuRoots.getDefaultSubstituteMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a548(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a648(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -3111,7 +3114,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object insertMacro_varValue_3308396621974429172(final TemplateVarContext _context) {
     return Sequence.fromIterable(MenuRoots.getNamedSubstituteMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a648(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a748(IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -5647,8 +5650,9 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("8371900013785990531", new QueriesGenerated.RTQ(104, "ParameterizableMenuPart"));
     rtqMethods.put("7317263714739225248", new QueriesGenerated.RTQ(105, "BaseConcept"));
     rtqMethods.put("7317263714739269477", new QueriesGenerated.RTQ(106, "BaseConcept"));
-    rtqMethods.put("825332792092137913", new QueriesGenerated.RTQ(107, "BaseConcept"));
-    rtqMethods.put("2554559902524969361", new QueriesGenerated.RTQ(108, "_cell_factory_method_old"));
+    rtqMethods.put("2603680661010960230", new QueriesGenerated.RTQ(107, "BaseConcept"));
+    rtqMethods.put("2603680661010962070", new QueriesGenerated.RTQ(108, "BaseConcept"));
+    rtqMethods.put("2554559902524969361", new QueriesGenerated.RTQ(109, "_cell_factory_method_old"));
   }
   @NotNull
   @Override
@@ -5883,8 +5887,10 @@ public class QueriesGenerated extends QueryProviderBase {
         case 106:
           return QueriesGenerated.referenceMacro_GetReferent_7317263714739269478(ctx);
         case 107:
-          return QueriesGenerated.referenceMacro_GetReferent_825332792092137914(ctx);
+          return QueriesGenerated.referenceMacro_GetReferent_2603680661010961365(ctx);
         case 108:
+          return QueriesGenerated.referenceMacro_GetReferent_2603680661010962071(ctx);
+        case 109:
           return QueriesGenerated.referenceMacro_GetReferent_2554559902524969362(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -6279,9 +6285,6 @@ public class QueriesGenerated extends QueryProviderBase {
   private static boolean eq_x583g4_a0a0a0a0a0b0pl(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a348(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_x583g4_a0a0a0a0a0a0a448(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -6289,6 +6292,9 @@ public class QueriesGenerated extends QueryProviderBase {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_x583g4_a0a0a0a0a0a0a648(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0a0a0a0a0a748(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
