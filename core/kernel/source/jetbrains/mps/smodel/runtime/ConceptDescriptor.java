@@ -55,8 +55,18 @@ public interface ConceptDescriptor {
 
   boolean isInterfaceConcept(); // since 3.0
 
+  /**
+   * @deprecated Use {@link ConceptPresentation#getShortDescription()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   String getConceptShortDescription(); // since 3.0
 
+  /**
+   * @deprecated Use {@link ConceptPresentation#getHelpUrl()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   String getHelpUrl(); // since 3.0
 
   @Nullable
@@ -73,8 +83,12 @@ public interface ConceptDescriptor {
 
   Set<SConceptId> getAncestorsIds(); // since 3.2
 
+  /**
+   * @deprecated not in use
+   */
   @Deprecated
   @Nullable
+  @ToRemove(version = 3.5)
   String getSuperConcept(); // since 3.0
 
   //------------ props

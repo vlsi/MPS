@@ -103,9 +103,16 @@ public interface SAbstractConcept extends SNamedElement {
   @NotNull
   String getConceptAlias();
 
+  /*
+   * This value is available from {@code ConceptPresentation#getShortDescription()} which is not API and not quite discoverable. Perhaps,
+   * we shall keep this method as part of SConcept's OpenAPI? Implementation of the method delegates to {@code ConceptPresentation}, if any.
+   */
   @NotNull
   String getShortDescription();
 
+  /*
+   * Same as for {@link #getShortDescription()}, there's {@code ConceptPresentation#getHelpUrl()}
+   */
   @NotNull
   String getHelpUrl();
 

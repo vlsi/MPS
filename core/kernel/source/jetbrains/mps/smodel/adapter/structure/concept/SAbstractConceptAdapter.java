@@ -29,8 +29,10 @@ import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
@@ -317,6 +319,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @NotNull
   @Override
   public String getShortDescription() {
+    ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(this);
+    if (pres != null) {
+      return pres.getShortDescription();
+    }
+    // fallback for legacy code
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) {
       return "";
@@ -327,6 +334,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @NotNull
   @Override
   public String getHelpUrl() {
+    ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(this);
+    if (pres != null) {
+      return pres.getHelpUrl();
+    }
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) {
       return "";
