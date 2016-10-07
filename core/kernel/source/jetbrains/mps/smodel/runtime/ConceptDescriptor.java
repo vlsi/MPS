@@ -79,6 +79,10 @@ public interface ConceptDescriptor {
 
   boolean isAssignableTo(SConceptId conceptId); // since 3.2
 
+  /**
+   * Includes immediate extended/implemented interfaces and superconcept, for non-interface ConceptDescriptor.
+   * For BaseConcept, doesn't list itself as parent
+   */
   List<SConceptId> getParentsIds(); // since 3.2
 
   Set<SConceptId> getAncestorsIds(); // since 3.2

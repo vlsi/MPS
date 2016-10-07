@@ -31,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -49,21 +50,20 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final SConceptId mySuperConceptId;
   private final String mySuperConcept;
   private final boolean myInterfaceConcept;
-  private final SConceptId[] myParents;
+  private final List<SConceptId> myParents;
   private final PropertyDescriptor[] myOwnProperties;
   private final ReferenceDescriptor[] myOwnReferences;
   private final LinkDescriptor[] myOwnLinks;
   private final boolean myAbstract;
   private final boolean myFinal;
-  private boolean myIsRootable;
+  private final boolean myIsRootable;
   private final String myConceptAlias;
   private final String myConceptShortDescription;
   private final String myHelpUrl;
   private final StaticScope myStaticScope;
-  private SNodeReference mySourceNodeRef;
+  private final SNodeReference mySourceNodeRef;
   private final Object myLock = "";
   // to be initialized
-  private List<SConceptId> parents;
   private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> properties;
   private Map<SReferenceLinkId, ReferenceDescriptor> references;
@@ -100,7 +100,32 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     mySuperConceptId = superConceptId;
     mySuperConcept = superConcept;
     myInterfaceConcept = interfaceConcept;
-    myParents = parents;
+    if (!interfaceConcept && !SNodeUtil.conceptId_BaseConcept.equals(id)) {
+      // make sure parents include superconcept (e.g. ConceptDescendantsCache.loadConcept implicitly assumes BC in concept's hierarchy)
+      // we could have done this in ConceptDescriptorBuilder, but since we got two of them now, I decided to keep the code to enforce the invariant
+      // of #getParentIds() here.
+      if (superConceptId == null) {
+        // for a !interface concept, missing superconcept implies BaseConcept
+        superConceptId = SNodeUtil.conceptId_BaseConcept;
+      }
+      ArrayDeque<SConceptId> pp = new ArrayDeque<>(parents == null ? 2 : parents.length + 2);
+      boolean parentsContainSuper = false;
+      if (parents != null) {
+        for (SConceptId p : parents) {
+          pp.addLast(p);
+          if (!parentsContainSuper && superConceptId.equals(p)) {
+            parentsContainSuper = true;
+          }
+        }
+      }
+      if (!parentsContainSuper) {
+        pp.addFirst(superConceptId);
+      }
+      myParents = Arrays.asList(pp.toArray(new SConceptId[pp.size()]));
+    } else {
+      assert superConceptId == null;
+      myParents = parents == null || parents.length == 0 ? Collections.emptyList() : Arrays.asList(parents);
+    }
 
     myOwnProperties = ownProperties;
     myOwnReferences = ownReferences;
@@ -109,9 +134,10 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myAbstract = isAbstract;
     myFinal = isFinal;
     myIsRootable = isRootable;
-    myConceptAlias = conceptAlias;
-    myConceptShortDescription = shortDescription;
-    myHelpUrl = helpUrl;
+    myConceptAlias = conceptAlias == null ? "" : conceptAlias;
+    // short description and helpUrl are part of ConceptPresentation aspect, empty string is just to fulfil CD's contract
+    myConceptShortDescription = shortDescription == null ? "" : shortDescription;
+    myHelpUrl = helpUrl == null ? "" : helpUrl;
     myStaticScope = staticScope;
 
     // todo: common with StructureAspectInterpreted to new class!
@@ -126,13 +152,17 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       if (myInitialized) {
         return;
       }
-      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.length);
+      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.size());
       for (SConceptId parent : myParents) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         parentDescriptors.add(descriptor);
       }
 
-      if (isInterfaceConcept()){
+      if (isInterfaceConcept()) {
+        // for regular ConceptDescriptor, BaseConcept would come through superConcept hierarchy, either directly from myParents or
+        // indirectly as (grand-)parent of a superconcept.
+        // for interface ConceptDescriptor, we need to respect BaseConcept's features but don't need to expose it in parents (why, btw?)
+        // At least SInterfaceConceptAdapter.getSuperInterfaces doesn't expect anything but interface CDs from getParents()
         parentDescriptors.add(ConceptRegistry.getInstance().getConceptDescriptor(SNodeUtil.conceptId_BaseConcept));
       }
 
@@ -146,9 +176,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
   private void initAncestors(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
-    parents = Arrays.asList(myParents);
     ancestorsIds = new LinkedHashSet<SConceptId>();
-    Collections.addAll(ancestorsIds, myParents);
+    ancestorsIds.addAll(myParents);
     ancestorsIds.add(myId);
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
@@ -294,8 +323,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public List<SConceptId> getParentsIds() {
-    init();
-    return parents;
+    return myParents;
   }
 
   @Override
