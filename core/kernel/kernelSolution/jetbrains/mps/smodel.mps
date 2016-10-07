@@ -979,54 +979,6 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7BIvS$tLduj" role="jymVt" />
-    <node concept="Wx3nA" id="7BIvS$tLokT" role="jymVt">
-      <property role="TrG5h" value="conceptId_BaseConcept" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="7BIvS$tLokR" role="1B3o_S" />
-      <node concept="2OqwBi" id="7BIvS$tLapT" role="33vP2m">
-        <node concept="1eOMI4" id="7BIvS$tLapU" role="2Oq$k0">
-          <node concept="10QFUN" id="7BIvS$tLapV" role="1eOMHV">
-            <node concept="35c_gC" id="7BIvS$tLapW" role="10QFUP">
-              <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-            </node>
-            <node concept="3uibUv" id="7BIvS$tLapX" role="10QFUM">
-              <ref role="3uigEE" to="vxxo:~SConceptAdapterById" resolve="SConceptAdapterById" />
-            </node>
-          </node>
-        </node>
-        <node concept="liA8E" id="7BIvS$tLapY" role="2OqNvi">
-          <ref role="37wK5l" to="vxxo:~SConceptAdapterById.getId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getId" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="7BIvS$tM_QK" role="1tU5fm">
-        <ref role="3uigEE" to="e8bb:~SConceptId" resolve="SConceptId" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="5GEiEa2PP2q" role="jymVt">
-      <property role="TrG5h" value="propertyId_INamedConcept_name" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="5GEiEa2PP2r" role="1B3o_S" />
-      <node concept="2OqwBi" id="5GEiEa2PP2s" role="33vP2m">
-        <node concept="1eOMI4" id="5GEiEa2PP2t" role="2Oq$k0">
-          <node concept="10QFUN" id="5GEiEa2PP2u" role="1eOMHV">
-            <node concept="355D3s" id="5GEiEa2QL9m" role="10QFUP">
-              <ref role="355D3t" to="tpck:h0TrEE$" resolve="INamedConcept" />
-              <ref role="355D3u" to="tpck:h0TrG11" resolve="name" />
-            </node>
-            <node concept="3uibUv" id="5GEiEa2QKfl" role="10QFUM">
-              <ref role="3uigEE" to="pwx:~SPropertyAdapterById" resolve="SPropertyAdapterById" />
-            </node>
-          </node>
-        </node>
-        <node concept="liA8E" id="5GEiEa2PP2x" role="2OqNvi">
-          <ref role="37wK5l" to="pwx:~SPropertyAdapterById.getId():jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getId" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="5GEiEa2QGpd" role="1tU5fm">
-        <ref role="3uigEE" to="e8bb:~SPropertyId" resolve="SPropertyId" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="7BIvS$tLebb" role="jymVt" />
     <node concept="Wx3nA" id="4wG2MBHiEao" role="jymVt">
       <property role="TrG5h" value="concept_PropertyAttribute" />
@@ -1205,6 +1157,21 @@
       </node>
       <node concept="3uibUv" id="2qaFQahqHPq" role="1tU5fm">
         <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="7BIvS$tLokT" role="jymVt">
+      <property role="TrG5h" value="conceptId_BaseConcept" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="7BIvS$tLokR" role="1B3o_S" />
+      <node concept="2YIFZM" id="16iccDOMhd3" role="33vP2m">
+        <ref role="37wK5l" to="e8bb:~MetaIdHelper.getConcept(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConcept" />
+        <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+        <node concept="37vLTw" id="16iccDOMhjv" role="37wK5m">
+          <ref role="3cqZAo" node="2iMJRNxJZTq" resolve="concept_BaseConcept" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7BIvS$tM_QK" role="1tU5fm">
+        <ref role="3uigEE" to="e8bb:~SConceptId" resolve="SConceptId" />
       </node>
     </node>
     <node concept="Wx3nA" id="2iMJRNxJZTw" role="jymVt">
