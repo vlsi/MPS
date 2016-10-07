@@ -36,6 +36,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -191,7 +192,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -1676,13 +1676,15 @@
               </node>
             </node>
           </node>
-          <node concept="1Wc70l" id="1lOPnOXNOFw" role="3clFbw">
-            <node concept="3nyPlj" id="1lOPnOXNQhA" role="3uHU7w">
-              <ref role="37wK5l" to="ciba:3D_I_vuDE1X" resolve="canHandle" />
-            </node>
+          <node concept="22lmx$" id="7H1BvJpTgDs" role="3clFbw">
             <node concept="3fqX7Q" id="3D_I_vuEH2p" role="3uHU7B">
               <node concept="37vLTw" id="3D_I_vuEH3a" role="3fr31v">
                 <ref role="3cqZAo" node="3D_I_vuE01E" resolve="myCorrectRequest" />
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="7H1BvJpTgvM" role="3uHU7w">
+              <node concept="3nyPlj" id="7H1BvJpTgvO" role="3fr31v">
+                <ref role="37wK5l" to="ciba:3D_I_vuDE1X" resolve="canHandle" />
               </node>
             </node>
           </node>

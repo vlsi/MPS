@@ -16,9 +16,8 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.FileOpener_RequestHandler" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.FileOpener_RequestHandler" file="FileOpener_RequestHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -63,9 +62,8 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler" file="JavaFileOpener_RequestHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -111,9 +109,8 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeOpener_RequestHandler" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeOpener_RequestHandler" file="NodeOpener_RequestHandler.java">
     <classNode dependClassName="io.netty.buffer.Unpooled" />
