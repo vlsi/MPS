@@ -607,6 +607,70 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="3T8sbvT18tz" role="3acgRq">
+      <property role="2n97ot" value="Generally, SConceptTypeLiteral shall not appear as a type to generate code from. Though it's not possible to create it explicitly, it's still possible to get variables of this type e.g. with extract variable." />
+      <ref role="30HIoZ" to="tp25:4JM1Q3lfSBE" resolve="SConceptTypeLiteral" />
+      <node concept="14YyZ8" id="3T8sbvT1ME0" role="1lVwrX">
+        <node concept="14ZrTv" id="3T8sbvT1MGg" role="14ZwWg">
+          <node concept="30G5F_" id="3T8sbvT1MGh" role="150hEN">
+            <node concept="3clFbS" id="3T8sbvT1MGi" role="2VODD2">
+              <node concept="3clFbF" id="3T8sbvT1P$j" role="3cqZAp">
+                <node concept="2OqwBi" id="3T8sbvT1QuJ" role="3clFbG">
+                  <node concept="2OqwBi" id="3T8sbvT1PKQ" role="2Oq$k0">
+                    <node concept="30H73N" id="3T8sbvT1P$i" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="3T8sbvT1Q1P" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp25:4JM1Q3lfSBF" resolve="conceptDeclaraton" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="3T8sbvT1QYP" role="2OqNvi">
+                    <node concept="chp4Y" id="3T8sbvT1Rat" role="cj9EA">
+                      <ref role="cht4Q" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="gft3U" id="3T8sbvT1Rpb" role="150oIE">
+            <node concept="3uibUv" id="3T8sbvT1RBT" role="gfFT$">
+              <ref role="3uigEE" to="c17a:~SInterfaceConcept" resolve="SInterfaceConcept" />
+            </node>
+          </node>
+        </node>
+        <node concept="14ZrTv" id="3T8sbvT1RBX" role="14ZwWg">
+          <node concept="30G5F_" id="3T8sbvT1RBY" role="150hEN">
+            <node concept="3clFbS" id="3T8sbvT1RBZ" role="2VODD2">
+              <node concept="3clFbF" id="3T8sbvT1RUD" role="3cqZAp">
+                <node concept="2OqwBi" id="3T8sbvT1RUE" role="3clFbG">
+                  <node concept="2OqwBi" id="3T8sbvT1RUF" role="2Oq$k0">
+                    <node concept="30H73N" id="3T8sbvT1RUG" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="3T8sbvT1RUH" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp25:4JM1Q3lfSBF" resolve="conceptDeclaraton" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="3T8sbvT1RUI" role="2OqNvi">
+                    <node concept="chp4Y" id="3T8sbvT1Sd3" role="cj9EA">
+                      <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="gft3U" id="3T8sbvT1SrL" role="150oIE">
+            <node concept="3uibUv" id="3T8sbvT1SEs" role="gfFT$">
+              <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+            </node>
+          </node>
+        </node>
+        <node concept="j$LIH" id="3T8sbvT1SEy" role="14YRTM">
+          <node concept="1lLz0L" id="3T8sbvT1SX1" role="1lHHLF">
+            <property role="1lMjX7" value="error" />
+            <property role="1lLB17" value="Unexpected ConceptDeclaration kind in type literal" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="h3TO0vv" role="3acgRq">
       <ref role="30HIoZ" to="tp25:h3THzq0" resolve="ConceptNodeType" />
       <node concept="gft3U" id="h8hnZzF" role="1lVwrX">
