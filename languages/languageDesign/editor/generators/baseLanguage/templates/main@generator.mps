@@ -27255,6 +27255,7 @@
       <property role="TrG5h" value="_context_" />
       <node concept="312cEu" id="XrrhtvD5w1" role="jymVt">
         <property role="TrG5h" value="class_CellModel_RefNodeList_ListHandler" />
+        <property role="2bfB8j" value="true" />
         <node concept="3Tm6S6" id="XrrhtvD5w2" role="1B3o_S" />
         <node concept="17Uvod" id="XrrhtvD5w3" role="lGtFl">
           <property role="2qtEX9" value="name" />
