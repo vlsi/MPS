@@ -8771,13 +8771,13 @@
                     <node concept="1rXfSq" id="1Ajm0EJu69l" role="37wK5m">
                       <ref role="37wK5l" to="exr9:~InlineCellProvider.getRefNode():org.jetbrains.mps.openapi.model.SNode" resolve="getRefNode" />
                     </node>
+                    <node concept="37vLTw" id="308lJa6y7IE" role="37wK5m">
+                      <ref role="3cqZAo" node="heOdIzT" resolve="node" />
+                    </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="6XH1yoMoE8G" role="2OqNvi">
                   <ref role="37wK5l" node="6XH1yoMopBQ" resolve="createCell" />
-                  <node concept="37vLTw" id="6XH1yoMoEG4" role="37wK5m">
-                    <ref role="3cqZAo" node="heOdIzT" resolve="node" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -8792,8 +8792,34 @@
           <property role="eg7rD" value="false" />
           <property role="TrG5h" value="myNode" />
           <property role="3TUv4t" value="false" />
-          <node concept="3Tqbb2" id="1Ajm0EJu9P6" role="1tU5fm" />
+          <node concept="3Tqbb2" id="1Ajm0EJu9P6" role="1tU5fm">
+            <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
+            <node concept="1ZhdrF" id="308lJa6$LnU" role="lGtFl">
+              <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+              <property role="2qtEX8" value="concept" />
+              <node concept="3$xsQk" id="308lJa6$LnV" role="3$ytzL">
+                <node concept="3clFbS" id="308lJa6$LnW" role="2VODD2">
+                  <node concept="3clFbF" id="308lJa6$Lxy" role="3cqZAp">
+                    <node concept="2OqwBi" id="308lJa6$Lxz" role="3clFbG">
+                      <node concept="30H73N" id="308lJa6$Lx$" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="308lJa6$Lx_" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcb:67EYkym$wx3" resolve="getConceptDeclaration" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3Tm6S6" id="1Ajm0EJu9bc" role="1B3o_S" />
+        </node>
+        <node concept="312cEg" id="308lJa6ya4y" role="jymVt">
+          <property role="34CwA1" value="false" />
+          <property role="eg7rD" value="false" />
+          <property role="TrG5h" value="myReferencingNode" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3Tm6S6" id="308lJa6y9nB" role="1B3o_S" />
+          <node concept="3Tqbb2" id="308lJa6ya1$" role="1tU5fm" />
         </node>
         <node concept="2tJIrI" id="1Ajm0EJu8$D" role="jymVt" />
         <node concept="3clFbW" id="6XH1yoMootW" role="jymVt">
@@ -8806,9 +8832,31 @@
               <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
             </node>
           </node>
+          <node concept="37vLTG" id="308lJa6yaBT" role="3clF46">
+            <property role="TrG5h" value="referencingNode" />
+            <node concept="3Tqbb2" id="308lJa6ybcU" role="1tU5fm" />
+          </node>
           <node concept="37vLTG" id="1Ajm0EJu6$P" role="3clF46">
             <property role="TrG5h" value="node" />
-            <node concept="3Tqbb2" id="1Ajm0EJu78T" role="1tU5fm" />
+            <node concept="3Tqbb2" id="1Ajm0EJu78T" role="1tU5fm">
+              <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
+              <node concept="1ZhdrF" id="308lJa6$JXU" role="lGtFl">
+                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                <property role="2qtEX8" value="concept" />
+                <node concept="3$xsQk" id="308lJa6$JXV" role="3$ytzL">
+                  <node concept="3clFbS" id="308lJa6$JXW" role="2VODD2">
+                    <node concept="3clFbF" id="308lJa6$KMT" role="3cqZAp">
+                      <node concept="2OqwBi" id="308lJa6$KMU" role="3clFbG">
+                        <node concept="30H73N" id="308lJa6$KMV" role="2Oq$k0" />
+                        <node concept="2qgKlT" id="308lJa6$KMW" role="2OqNvi">
+                          <ref role="37wK5l" to="tpcb:67EYkym$wx3" resolve="getConceptDeclaration" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="3cqZAl" id="6XH1yoMootY" role="3clF45" />
           <node concept="3clFbS" id="6XH1yoMoou0" role="3clF47">
@@ -8816,6 +8864,16 @@
               <ref role="37wK5l" to="qvne:3IQYjJJTK4k" resolve="AbstractCellFactory" />
               <node concept="37vLTw" id="6XH1yoMop_r" role="37wK5m">
                 <ref role="3cqZAo" node="6XH1yoMoo$a" resolve="context" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="308lJa6ycZC" role="3cqZAp">
+              <node concept="37vLTI" id="308lJa6ydgu" role="3clFbG">
+                <node concept="37vLTw" id="308lJa6ydAI" role="37vLTx">
+                  <ref role="3cqZAo" node="308lJa6yaBT" resolve="referencingNode" />
+                </node>
+                <node concept="37vLTw" id="308lJa6ycZA" role="37vLTJ">
+                  <ref role="3cqZAo" node="308lJa6ya4y" resolve="myReferencingNode" />
+                </node>
               </node>
             </node>
             <node concept="3clFbF" id="1Ajm0EJuaOk" role="3cqZAp">
@@ -8832,31 +8890,6 @@
         </node>
         <node concept="3clFb_" id="6XH1yoMopBQ" role="jymVt">
           <property role="TrG5h" value="createCell" />
-          <node concept="37vLTG" id="6XH1yoMopBR" role="3clF46">
-            <property role="TrG5h" value="node" />
-            <node concept="3Tqbb2" id="6XH1yoMopBS" role="1tU5fm">
-              <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
-              <node concept="1ZhdrF" id="6XH1yoMopBT" role="lGtFl">
-                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
-                <property role="2qtEX8" value="concept" />
-                <node concept="3$xsQk" id="6XH1yoMopBU" role="3$ytzL">
-                  <node concept="3clFbS" id="6XH1yoMopBV" role="2VODD2">
-                    <node concept="3clFbF" id="6XH1yoMopBW" role="3cqZAp">
-                      <node concept="2OqwBi" id="6XH1yoMowaA" role="3clFbG">
-                        <node concept="30H73N" id="6XH1yoMovY7" role="2Oq$k0" />
-                        <node concept="2qgKlT" id="6XH1yoMowtj" role="2OqNvi">
-                          <ref role="37wK5l" to="tpcb:67EYkym$wx3" resolve="getConceptDeclaration" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2AHcQZ" id="6XH1yoMopBY" role="2AJF6D">
-              <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-            </node>
-          </node>
           <node concept="3uibUv" id="6XH1yoMopBZ" role="3clF45">
             <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
           </node>
@@ -17959,7 +17992,7 @@
       <node concept="312cEg" id="1Ajm0EJufRs" role="jymVt">
         <property role="34CwA1" value="false" />
         <property role="eg7rD" value="false" />
-        <property role="TrG5h" value="myNode" />
+        <property role="TrG5h" value="myReferencingNode" />
         <property role="3TUv4t" value="false" />
         <node concept="3Tm6S6" id="1Ajm0EJufsd" role="1B3o_S" />
         <node concept="3Tqbb2" id="1Ajm0EJufPJ" role="1tU5fm" />
@@ -17992,7 +18025,7 @@
                   <ref role="3cqZAo" node="yGThnK7toC" resolve="node" />
                 </node>
                 <node concept="37vLTw" id="1Ajm0EJughL" role="37wK5m">
-                  <ref role="3cqZAo" node="1Ajm0EJufRs" resolve="myNode" />
+                  <ref role="3cqZAo" node="1Ajm0EJufRs" resolve="myReferencingNode" />
                 </node>
                 <node concept="Xl_RD" id="2z6QN83v4SH" role="37wK5m">
                   <property role="Xl_RC" value="" />
