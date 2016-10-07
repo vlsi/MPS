@@ -13,9 +13,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(6);
@@ -76,21 +76,54 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForErrorType() {
-    return new ConceptDescriptorBuilder("testOverridingType.structure.ErrorType", MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a7f40L)).super_("testAnnotatedType.structure.PrimType").version(1).super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).parents("testAnnotatedType.structure.PrimType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).alias("error", "").sourceNode(new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "1870027727456337728")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testOverridingType", "ErrorType", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a7f40L);
+    b.class_(false, false, false);
+    b.super_("testAnnotatedType.structure.PrimType", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL);
+    b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/1870027727456337728");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    b.alias("error");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForOverrideAnnotation() {
-    return new ConceptDescriptorBuilder("testOverridingType.structure.OverrideAnnotation", MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x58e32a0782beb1baL, "substitute", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL), false, false, false, new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "6405009306797650362")), new ConceptDescriptorBuilder.Link(0x58e32a0782beb1c4L, "condition", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L), false, false, false, new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "6405009306797650372"))).children(new String[]{"substitute", "condition"}, new boolean[]{false, false}).sourceNode(new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "4113274076525496020")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testOverridingType", "OverrideAnnotation", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/4113274076525496020");
+    b.aggregate("substitute", 0x58e32a0782beb1baL).target(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL).optional(false).ordered(true).multiple(false).origin("6405009306797650362").done();
+    b.aggregate("condition", 0x58e32a0782beb1c4L).target(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L).optional(false).ordered(true).multiple(false).origin("6405009306797650372").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForOverridingPrimFloatType() {
-    return new ConceptDescriptorBuilder("testOverridingType.structure.OverridingPrimFloatType", MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4993604L)).super_("testAnnotatedType.structure.PrimFloatType").version(1).super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bdL)).parents("testAnnotatedType.structure.PrimFloatType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bdL)).alias("_float_overridden", "").sourceNode(new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "6572489169071322628")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testOverridingType", "OverridingPrimFloatType", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4993604L);
+    b.class_(false, false, false);
+    b.super_("testAnnotatedType.structure.PrimFloatType", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bdL);
+    b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071322628");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    b.alias("_float_overridden");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForOverridingPrimIntType() {
-    return new ConceptDescriptorBuilder("testOverridingType.structure.OverridingPrimIntType", MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a49935f1L)).super_("testAnnotatedType.structure.PrimIntType").version(1).super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be609eL)).parents("testAnnotatedType.structure.PrimIntType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be609eL)).alias("_int_overridden", "").sourceNode(new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "6572489169071322609")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testOverridingType", "OverridingPrimIntType", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a49935f1L);
+    b.class_(false, false, false);
+    b.super_("testAnnotatedType.structure.PrimIntType", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be609eL);
+    b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071322609");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    b.alias("_int_overridden");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForOverridingPrimNumConstant() {
-    return new ConceptDescriptorBuilder("testOverridingType.structure.OverridingPrimNumConstant", MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4988795L)).super_("testAnnotatedType.structure.PrimNumConstant").version(1).super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL)).parents("testAnnotatedType.structure.PrimNumConstant").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x5b362c13a498895bL, "isOverriding", new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "6572489169071278427"))).properties("isOverriding").sourceNode(new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "6572489169071277973")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testOverridingType", "OverridingPrimNumConstant", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4988795L);
+    b.class_(false, false, false);
+    b.super_("testAnnotatedType.structure.PrimNumConstant", 0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL);
+    b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/6572489169071277973");
+    b.prop("isOverriding", 0x5b362c13a498895bL, "6572489169071278427");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnconditionalOverrideAnnotation() {
-    return new ConceptDescriptorBuilder("testOverridingType.structure.UnconditionalOverrideAnnotation", MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a050aL)).super_("testOverridingType.structure.OverrideAnnotation").version(1).super_(MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L)).parents("testOverridingType.structure.OverrideAnnotation").parentIds(MetaIdFactory.conceptId(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L)).sourceNode(new SNodePointer("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)", "1870027727456306442")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testOverridingType", "UnconditionalOverrideAnnotation", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a050aL);
+    b.class_(false, false, false);
+    b.super_("testOverridingType.structure.OverrideAnnotation", 0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L);
+    b.origin("r:b840b070-fa0a-4e7f-8980-8fcd6f3fd146(testOverridingType.structure)/1870027727456306442");
+    return b.create();
   }
 }

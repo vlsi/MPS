@@ -5,7 +5,7 @@
       <unit at="11,0,52,0" name="org.jetbrains.mps.samples.Money.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="21,0,126,0" name="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
+      <unit at="20,0,184,0" name="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

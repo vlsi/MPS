@@ -13,9 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
@@ -61,9 +60,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForNList_CopyWithTraceOperation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", MetaIdFactory.conceptId(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x242191b44da0af0cL, "argument", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)", "2603522263179374348"))).children(new String[]{"argument"}, new boolean[]{false}).alias("copy list with trace", "copies a list of nodes with trace").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)", "2603522263179374343")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.traceable.operations", "NList_CopyWithTraceOperation", 0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)/2603522263179374343");
+    b.aggregate("argument", 0x242191b44da0af0cL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2603522263179374348").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("copy list with trace");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForNode_CopyWithTraceOperation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation", MetaIdFactory.conceptId(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x6058d1d9e79eef7bL)).super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").version(1).super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL)).parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL)).alias("copy with trace", "copy a node with trace").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)", "6942529559415680891")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.traceable.operations", "Node_CopyWithTraceOperation", 0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x6058d1d9e79eef7bL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.smodel.structure.SNodeOperation", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL);
+    b.origin("r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)/6942529559415680891");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("copy with trace");
+    return b.create();
   }
 }

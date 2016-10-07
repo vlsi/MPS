@@ -8,7 +8,7 @@
       <unit at="7,0,10,0" name="testPackagedLanguage.structure.IconContainer" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,62,0" name="testPackagedLanguage.structure.StructureAspectDescriptor" />
+      <unit at="18,0,63,0" name="testPackagedLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

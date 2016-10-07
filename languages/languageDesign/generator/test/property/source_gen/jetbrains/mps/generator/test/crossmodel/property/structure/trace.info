@@ -5,7 +5,7 @@
       <unit at="11,0,31,0" name="jetbrains.mps.generator.test.crossmodel.property.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,76,0" name="jetbrains.mps.generator.test.crossmodel.property.structure.StructureAspectDescriptor" />
+      <unit at="18,0,90,0" name="jetbrains.mps.generator.test.crossmodel.property.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

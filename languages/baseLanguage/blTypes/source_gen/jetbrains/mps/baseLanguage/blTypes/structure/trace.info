@@ -8,7 +8,7 @@
       <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.blTypes.structure.IconContainer" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,69,0" name="jetbrains.mps.baseLanguage.blTypes.structure.StructureAspectDescriptor" />
+      <unit at="20,0,80,0" name="jetbrains.mps.baseLanguage.blTypes.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

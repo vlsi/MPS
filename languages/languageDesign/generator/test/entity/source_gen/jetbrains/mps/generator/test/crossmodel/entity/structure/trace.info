@@ -14,7 +14,7 @@
       <unit at="11,0,31,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,76,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
+      <unit at="18,0,98,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/4355167635271953286">

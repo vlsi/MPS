@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(7);
@@ -80,24 +78,58 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForTransformationFeature_Optional() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Optional", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3dfc1dL)).super_("jetbrains.mps.lang.editor.structure.TransformationFeature").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).parents("jetbrains.mps.lang.editor.structure.TransformationFeature").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).alias("optional", "optional feature").sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "4740302442485120029")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationFeature_Optional", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3dfc1dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/4740302442485120029");
+    b.alias("optional");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationFeature_Required() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Required", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3e09d8L)).super_("jetbrains.mps.lang.editor.structure.TransformationFeature").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).parents("jetbrains.mps.lang.editor.structure.TransformationFeature").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).alias("required", "required feature").sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "4740302442485123544")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationFeature_Required", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3e09d8L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/4740302442485123544");
+    b.alias("required");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationFeature_Unavailable() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Unavailable", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f866f15L)).super_("jetbrains.mps.lang.editor.structure.TransformationFeature").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).parents("jetbrains.mps.lang.editor.structure.TransformationFeature").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L)).alias("unavailable", "unavailable feature").sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "3743352646564998933")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationFeature_Unavailable", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f866f15L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationFeature", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/3743352646564998933");
+    b.alias("unavailable");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationLocation_Test() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_Test", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x595469d6668817a2L)).super_("jetbrains.mps.lang.editor.structure.TransformationLocation").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).parents("jetbrains.mps.lang.editor.structure.TransformationLocation").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).alias("test location", "location for use in tests").sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "6436886136983394210")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationLocation_Test", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x595469d6668817a2L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/6436886136983394210");
+    b.alias("test location");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationLocation_WithFeatures() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithFeatures", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f7e88deL)).super_("jetbrains.mps.lang.editor.structure.TransformationLocation").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).parents("jetbrains.mps.lang.editor.structure.TransformationLocation").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).alias("location with a required and an optional feature", "").sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "3743352646564481246")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationLocation_WithFeatures", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f7e88deL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/3743352646564481246");
+    b.alias("location with a required and an optional feature");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationLocation_WithoutFeatures() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithoutFeatures", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3eb92bL)).super_("jetbrains.mps.lang.editor.structure.TransformationLocation").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).parents("jetbrains.mps.lang.editor.structure.TransformationLocation").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L)).alias("location with no available features", "").sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "4740302442485168427")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationLocation_WithoutFeatures", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3eb92bL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationLocation", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/4740302442485168427");
+    b.alias("location with no available features");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationMenu_Test() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationMenu_Test", MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL)).super_("jetbrains.mps.lang.editor.structure.TransformationMenu").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL)).parents("jetbrains.mps.lang.editor.structure.TransformationMenu").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL)).sourceNode(new SNodePointer("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)", "2710939522624389503")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testMetaLanguage", "TransformationMenu_Test", 0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.TransformationMenu", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL);
+    b.origin("r:72a1f653-d94c-4c5e-9b1c-92f598e4fc7c(jetbrains.mps.lang.editor.menus.testMetaLanguage.structure)/2710939522624389503");
+    return b.create();
   }
 }

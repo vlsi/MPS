@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
@@ -64,12 +62,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForScopeConcept() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.traceable", "ScopeConcept", 0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L);
+    b.interface_();
+    b.origin("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)/5067982036267369890");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTraceableConcept() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.traceable", "TraceableConcept", 0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L);
+    b.interface_();
+    b.origin("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)/5067982036267369891");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnitConcept() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept", MetaIdFactory.conceptId(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L)).version(1).interface_().sourceNode(new SNodePointer("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.traceable", "UnitConcept", 0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L);
+    b.interface_();
+    b.origin("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)/5067982036267369892");
+    return b.create();
   }
 }

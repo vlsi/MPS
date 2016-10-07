@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(4);
@@ -68,15 +66,36 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForContainer() {
-    return new ConceptDescriptorBuilder("MultiTarget.structure.Container", MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf1dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(0xbd2fe10cbfadf21L, "members", MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L), true, true, false, new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592865"))).children(new String[]{"members"}, new boolean[]{true}).rootable().alias("container", "").sourceNode(new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592861")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("MultiTarget", "Container", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf1dL);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)/852022627621592861");
+    b.aggregate("members", 0xbd2fe10cbfadf21L).target(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L).optional(true).ordered(true).multiple(true).origin("852022627621592865").done();
+    b.alias("container");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForMember() {
-    return new ConceptDescriptorBuilder("MultiTarget.structure.Member", MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592864")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("MultiTarget", "Member", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L);
+    b.class_(false, true, false);
+    b.origin("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)/852022627621592864");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForNumericValue() {
-    return new ConceptDescriptorBuilder("MultiTarget.structure.NumericValue", MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf8dL)).super_("MultiTarget.structure.Member").version(1).super_(MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L)).parents("MultiTarget.structure.Member").parentIds(MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0xbd2fe10cbfadf8eL, "value", new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592974"))).properties("value").alias("numeric value", "").sourceNode(new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592973")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("MultiTarget", "NumericValue", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf8dL);
+    b.class_(false, false, false);
+    b.super_("MultiTarget.structure.Member", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L);
+    b.origin("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)/852022627621592973");
+    b.prop("value", 0xbd2fe10cbfadf8eL, "852022627621592974");
+    b.alias("numeric value");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForStringValue() {
-    return new ConceptDescriptorBuilder("MultiTarget.structure.StringValue", MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf5fL)).super_("MultiTarget.structure.Member").version(1).super_(MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L)).parents("MultiTarget.structure.Member").parentIds(MetaIdFactory.conceptId(0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0xbd2fe10cbfadf60L, "value", new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592928"))).properties("value").alias("string value", "").sourceNode(new SNodePointer("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)", "852022627621592927")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("MultiTarget", "StringValue", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf5fL);
+    b.class_(false, false, false);
+    b.super_("MultiTarget.structure.Member", 0x42cb30372cd244e7L, 0x8fe7254f0c50f311L, 0xbd2fe10cbfadf20L);
+    b.origin("r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)/852022627621592927");
+    b.prop("value", 0xbd2fe10cbfadf60L, "852022627621592928");
+    b.alias("string value");
+    return b.create();
   }
 }

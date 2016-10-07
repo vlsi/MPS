@@ -14,7 +14,7 @@
       <unit at="11,0,97,0" name="jetbrains.mps.make.script.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="21,0,231,0" name="jetbrains.mps.make.script.structure.StructureAspectDescriptor" />
+      <unit at="20,0,395,0" name="jetbrains.mps.make.script.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)/2360002718792446682">

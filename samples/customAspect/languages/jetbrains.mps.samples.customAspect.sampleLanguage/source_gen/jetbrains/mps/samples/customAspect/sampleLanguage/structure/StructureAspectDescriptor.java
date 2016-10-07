@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
@@ -56,6 +54,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForDocumentedConcept() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.customAspect.sampleLanguage.structure.DocumentedConcept", MetaIdFactory.conceptId(0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).rootable().sourceNode(new SNodePointer("r:e3887d04-c32d-4905-bb3f-fee50cac51c9(jetbrains.mps.samples.customAspect.sampleLanguage.structure)", "2897519568668509945")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.customAspect.sampleLanguage", "DocumentedConcept", 0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:e3887d04-c32d-4905-bb3f-fee50cac51c9(jetbrains.mps.samples.customAspect.sampleLanguage.structure)/2897519568668509945");
+    return b.create();
   }
 }

@@ -5,7 +5,7 @@
       <unit at="11,0,25,0" name="jetbrains.mps.testCustomDataFlow.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,62,0" name="jetbrains.mps.testCustomDataFlow.structure.StructureAspectDescriptor" />
+      <unit at="18,0,65,0" name="jetbrains.mps.testCustomDataFlow.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
@@ -60,9 +58,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForCar() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.sampleLanguage.structure.Car", MetaIdFactory.conceptId(0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a618L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a61dL, "model"), new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a61fL, "year")).properties("model", "year").rootable().sourceNode(new SNodePointer("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)", "3778147542048941592")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.highlevel.sampleLanguage", "Car", 0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a618L);
+    b.class_(false, false, true);
+    b.prop("model", 0x346ead2c08d7a61dL);
+    b.prop("year", 0x346ead2c08d7a61fL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPerson() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.highlevel.sampleLanguage.structure.Person", MetaIdFactory.conceptId(0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a611L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a613L, "name"), new ConceptDescriptorBuilder.Prop(0x346ead2c08d7a615L, "age")).properties("name", "age").rootable().sourceNode(new SNodePointer("r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)", "3778147542048941585")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.highlevel.sampleLanguage", "Person", 0x99aa3e0fa1624dc1L, 0xbcff2def4d654205L, 0x346ead2c08d7a611L);
+    b.class_(false, false, true);
+    b.prop("name", 0x346ead2c08d7a613L);
+    b.prop("age", 0x346ead2c08d7a615L);
+    return b.create();
   }
 }

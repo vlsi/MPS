@@ -5,7 +5,7 @@
       <unit at="11,0,106,0" name="jetbrains.mps.build.workflow.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,251,0" name="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
+      <unit at="18,0,436,0" name="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

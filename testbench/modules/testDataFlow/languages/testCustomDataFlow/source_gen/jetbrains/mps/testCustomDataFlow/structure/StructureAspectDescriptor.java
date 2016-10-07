@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
@@ -56,6 +54,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForIntraProceduralSpecific_BuilderMode() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.testCustomDataFlow.structure.IntraProceduralSpecific_BuilderMode", MetaIdFactory.conceptId(0xf1af2340221247ddL, 0xa65b2d6ee9427e3eL, 0x623d57b403fec45eL)).super_("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode").version(1).super_(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L)).parents("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode").parentIds(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L)).alias("intra-procedural-specific", "").sourceNode(new SNodePointer("r:1663047b-d6b3-4d14-9e65-e64dc6f64cac(jetbrains.mps.testCustomDataFlow.structure)", "7078910619969045598")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.testCustomDataFlow", "IntraProceduralSpecific_BuilderMode", 0xf1af2340221247ddL, 0xa65b2d6ee9427e3eL, 0x623d57b403fec45eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.dataFlow.structure.IntraProcedural_BuilderMode", 0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x6e8db6877fc9fed5L);
+    b.origin("r:1663047b-d6b3-4d14-9e65-e64dc6f64cac(jetbrains.mps.testCustomDataFlow.structure)/7078910619969045598");
+    b.alias("intra-procedural-specific");
+    return b.create();
   }
 }

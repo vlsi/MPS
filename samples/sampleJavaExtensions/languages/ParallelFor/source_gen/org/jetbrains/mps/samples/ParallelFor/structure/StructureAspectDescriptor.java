@@ -13,9 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
@@ -73,18 +72,49 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForNonThreadSafeClass() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).sourceNode(new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "2975785153735230336")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.ParallelFor", "NonThreadSafeClass", 0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/2975785153735230336");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForParallelFor() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL)).super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL)).parents("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x74391c966b0f1304L, "nowait", new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "8374756414438970116"))).properties("nowait").childDescriptors(new ConceptDescriptorBuilder.Link(0x7bd8445d1e8810c2L, "loopVariable", MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL), false, false, false, new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "8923957828369518786")), new ConceptDescriptorBuilder.Link(0x7bd8445d1e888c7eL, "inputSequence", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "8923957828369550462")), new ConceptDescriptorBuilder.Link(0x40a8d217b6d881feL, "threadPool", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false, new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "4659204813808501246"))).children(new String[]{"loopVariable", "inputSequence", "threadPool"}, new boolean[]{false, false, false}).alias("parallelFor", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "8923957828369477802")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.ParallelFor", "ParallelFor", 0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L);
+    b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/8923957828369477802");
+    b.prop("nowait", 0x74391c966b0f1304L, "8374756414438970116");
+    b.aggregate("loopVariable", 0x7bd8445d1e8810c2L).target(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL).optional(false).ordered(true).multiple(false).origin("8923957828369518786").done();
+    b.aggregate("inputSequence", 0x7bd8445d1e888c7eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("8923957828369550462").done();
+    b.aggregate("threadPool", 0x40a8d217b6d881feL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("4659204813808501246").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("parallelFor");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForParallelLoopVariable() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL)).super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL)).parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL)).sourceNode(new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "8923957828369477803")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.ParallelFor", "ParallelLoopVariable", 0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL);
+    b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/8923957828369477803");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForThreadPool() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x8c9905a80efd045L, "numberOfThreads", new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "633195941006921797"))).properties("numberOfThreads").alias("thread pool", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "633195941006921788")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.ParallelFor", "ThreadPool", 0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/633195941006921788");
+    b.prop("numberOfThreads", 0x8c9905a80efd045L, "633195941006921797");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("thread pool");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForThreadSafe() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe", MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).sourceNode(new SNodePointer("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)", "2975785153735111398")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.ParallelFor", "ThreadSafe", 0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.origin("r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)/2975785153735111398");
+    return b.create();
   }
 }

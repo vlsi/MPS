@@ -13,9 +13,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
@@ -60,9 +60,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForTypeWithUnits() {
-    return new ConceptDescriptorBuilder("testWrappedType.structure.TypeWithUnits", MetaIdFactory.conceptId(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c532bL)).super_("testWrappedType.structure.WrapperType").version(1).super_(MetaIdFactory.conceptId(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL)).parents("testWrappedType.structure.WrapperType").parentIds(MetaIdFactory.conceptId(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x116157dc0d8c532cL, "unit", new SNodePointer("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)", "1252378774017430316"))).properties("unit").sourceNode(new SNodePointer("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)", "1252378774017430315")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testWrappedType", "TypeWithUnits", 0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c532bL);
+    b.class_(false, false, false);
+    b.super_("testWrappedType.structure.WrapperType", 0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL);
+    b.origin("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)/1252378774017430315");
+    b.prop("unit", 0x116157dc0d8c532cL, "1252378774017430316");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForWrapperType() {
-    return new ConceptDescriptorBuilder("testWrappedType.structure.WrapperType", MetaIdFactory.conceptId(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL)).super_("jetbrains.mps.baseLanguage.structure.Type").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x116157dc0d8c52bdL, "wrapped", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false, new SNodePointer("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)", "1252378774017430205"))).children(new String[]{"wrapped"}, new boolean[]{false}).abstract_().sourceNode(new SNodePointer("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)", "1252378774017430204")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testWrappedType", "WrapperType", 0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL);
+    b.class_(false, true, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Type", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL);
+    b.origin("r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)/1252378774017430204");
+    b.aggregate("wrapped", 0x116157dc0d8c52bdL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL).optional(false).ordered(true).multiple(false).origin("1252378774017430205").done();
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
 }

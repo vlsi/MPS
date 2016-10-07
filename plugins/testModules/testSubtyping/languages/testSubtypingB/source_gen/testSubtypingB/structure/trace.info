@@ -5,7 +5,7 @@
       <unit at="11,0,25,0" name="testSubtypingB.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,62,0" name="testSubtypingB.structure.StructureAspectDescriptor" />
+      <unit at="20,0,69,0" name="testSubtypingB.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

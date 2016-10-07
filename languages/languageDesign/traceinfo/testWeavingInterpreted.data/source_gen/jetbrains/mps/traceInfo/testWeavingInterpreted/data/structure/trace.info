@@ -5,7 +5,7 @@
       <unit at="11,0,37,0" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,90,0" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.StructureAspectDescriptor" />
+      <unit at="18,0,112,0" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

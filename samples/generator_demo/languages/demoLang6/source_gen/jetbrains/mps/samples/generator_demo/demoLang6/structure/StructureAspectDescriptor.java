@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
@@ -60,9 +58,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForButton() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", MetaIdFactory.conceptId(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d1283L)).super_("jetbrains.mps.sampleXML.structure.ElementPart").version(1).super_(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x37350ebbae8d12f3L, "text", new SNodePointer("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)", "3978102045101855475"))).properties("text").alias("button", "").sourceNode(new SNodePointer("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)", "3978102045101855363")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.generator_demo.demoLang6", "Button", 0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d1283L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.sampleXML.structure.ElementPart", 0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL);
+    b.origin("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)/3978102045101855363");
+    b.prop("text", 0x37350ebbae8d12f3L, "3978102045101855475");
+    b.alias("button");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForLabel() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", MetaIdFactory.conceptId(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d186cL)).super_("jetbrains.mps.sampleXML.structure.ElementPart").version(1).super_(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x37350ebbae8d1876L, "text", new SNodePointer("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)", "3978102045101856886"))).properties("text").alias("label", "").sourceNode(new SNodePointer("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)", "3978102045101856876")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.generator_demo.demoLang6", "Label", 0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d186cL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.sampleXML.structure.ElementPart", 0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL);
+    b.origin("r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)/3978102045101856876");
+    b.prop("text", 0x37350ebbae8d1876L, "3978102045101856886");
+    b.alias("label");
+    return b.create();
   }
 }

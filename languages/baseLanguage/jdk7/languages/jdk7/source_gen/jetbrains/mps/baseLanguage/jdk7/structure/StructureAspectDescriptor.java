@@ -13,10 +13,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
@@ -57,6 +56,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForStringSwitchStatement() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", MetaIdFactory.conceptId(0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L)).super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL)).parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL)).alias("switch", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:64af8966-9a33-4cc7-8f2a-fe243f26c38f(jetbrains.mps.baseLanguage.jdk7.structure)", "400642802549924137")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.baseLanguage.jdk7", "StringSwitchStatement", 0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.SwitchStatement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL);
+    b.origin("r:64af8966-9a33-4cc7-8f2a-fe243f26c38f(jetbrains.mps.baseLanguage.jdk7.structure)/400642802549924137");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("switch");
+    return b.create();
   }
 }

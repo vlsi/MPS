@@ -13,9 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
@@ -73,18 +72,51 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForFalseFlow() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L)).super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").version(1).super_(MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL)).parents("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").parentIds(MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL)).sourceNode(new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075998500")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.IfAndUnless", "FalseFlow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L);
+    b.class_(false, false, false);
+    b.super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL);
+    b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075998500");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForFlow() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL)).super_("jetbrains.mps.baseLanguage.structure.StatementList").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L)).parents("jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.lang.core.structure.InterfacePart").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L)).abstract_().sourceNode(new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075912399")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.IfAndUnless", "Flow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL);
+    b.class_(false, true, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.StatementList", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L);
+    b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075912399");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForMyIfStatement() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL)).super_("jetbrains.mps.baseLanguage.structure.Statement").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(0xd403d58ad448ccdL, "condition", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075912397")), new ConceptDescriptorBuilder.Link(0xd403d58ad448cceL, "body", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL), false, false, false, new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075912398")), new ConceptDescriptorBuilder.Link(0xd403d58ad457e4dL, "alternative", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L), false, false, false, new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075974221"))).children(new String[]{"condition", "body", "alternative"}, new boolean[]{false, false, false}).alias("my_if", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075912394")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.IfAndUnless", "MyIfStatement", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
+    b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075912394");
+    b.aggregate("condition", 0xd403d58ad448ccdL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("954830572075912397").done();
+    b.aggregate("body", 0xd403d58ad448cceL).target(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL).optional(false).ordered(true).multiple(false).origin("954830572075912398").done();
+    b.aggregate("alternative", 0xd403d58ad457e4dL).target(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L).optional(false).ordered(true).multiple(false).origin("954830572075974221").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("my_if");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForTrueFlow() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL)).super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").version(1).super_(MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL)).parents("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").parentIds(MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL)).sourceNode(new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "954830572075998495")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.IfAndUnless", "TrueFlow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL);
+    b.class_(false, false, false);
+    b.super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL);
+    b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/954830572075998495");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnlessStatement() {
-    return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement", MetaIdFactory.conceptId(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL)).super_("jetbrains.mps.baseLanguage.structure.Statement").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x57547b70f36dc0eL, "condition", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "393299394024627214")), new ConceptDescriptorBuilder.Link(0x57547b70f36dc1cL, "body", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false, new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "393299394024627228"))).children(new String[]{"condition", "body"}, new boolean[]{false, false}).alias("unless", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)", "393299394024627213")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("org.jetbrains.mps.samples.IfAndUnless", "UnlessStatement", 0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Statement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L);
+    b.origin("r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)/393299394024627213");
+    b.aggregate("condition", 0x57547b70f36dc0eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("393299394024627214").done();
+    b.aggregate("body", 0x57547b70f36dc1cL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("393299394024627228").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("unless");
+    return b.create();
   }
 }

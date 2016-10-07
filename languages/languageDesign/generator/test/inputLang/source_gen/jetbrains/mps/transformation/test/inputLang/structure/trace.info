@@ -14,7 +14,7 @@
       <unit at="11,0,61,0" name="jetbrains.mps.transformation.test.inputLang.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="21,0,147,0" name="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor" />
+      <unit at="20,0,214,0" name="jetbrains.mps.transformation.test.inputLang.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1195169251499">

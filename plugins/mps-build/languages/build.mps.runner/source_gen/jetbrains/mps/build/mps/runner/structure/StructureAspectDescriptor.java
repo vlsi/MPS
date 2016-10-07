@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
@@ -60,9 +58,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForBuildSolutionRunnerAspect() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerAspect", MetaIdFactory.conceptId(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL)).super_("jetbrains.mps.build.structure.BuildAspect").version(1).super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL)).parents("jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x54b085b5945c6691L, "solution", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L), false, new SNodePointer("r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)", "6102524510011680401"))).references("solution").alias("run code", "").sourceNode(new SNodePointer("r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)", "4173297143638950526")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps.runner", "BuildSolutionRunnerAspect", 0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildAspect", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL);
+    b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
+    b.origin("r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)/4173297143638950526");
+    b.associate("solution", 0x54b085b5945c6691L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L).optional(false).origin("6102524510011680401").done();
+    b.alias("run code");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildSolutionRunnerPlugin() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerPlugin", MetaIdFactory.conceptId(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cbeb5c6L)).super_("jetbrains.mps.build.structure.BuildPlugin").version(1).super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL)).parents("jetbrains.mps.build.structure.BuildPlugin").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL)).alias("mps-runner", "adds ability to run MPS code after build").sourceNode(new SNodePointer("r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)", "4173297143638832582")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build.mps.runner", "BuildSolutionRunnerPlugin", 0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cbeb5c6L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.build.structure.BuildPlugin", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL);
+    b.origin("r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)/4173297143638832582");
+    b.alias("mps-runner");
+    return b.create();
   }
 }

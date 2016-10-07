@@ -13,10 +13,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(4);
@@ -69,15 +68,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForPrivateFieldReferenceOperation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L)).super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL)).parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451043705")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.debugger.java.privateMembers", "PrivateFieldReferenceOperation", 0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL);
+    b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/6825241477451043705");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPrivateInstanceMethodCallOperation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L)).super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L)).parents("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451051014")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.debugger.java.privateMembers", "PrivateInstanceMethodCallOperation", 0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L);
+    b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/6825241477451051014");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPrivateStaticFieldReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L)).super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L)).parents("jetbrains.mps.baseLanguage.structure.StaticFieldReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "4107550939057698505")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.debugger.java.privateMembers", "PrivateStaticFieldReference", 0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L);
+    b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/4107550939057698505");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPrivateStaticMethodCall() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL)).super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "3374946611454212811")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.debugger.java.privateMembers", "PrivateStaticMethodCall", 0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L);
+    b.origin("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)/3374946611454212811");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
   }
 }

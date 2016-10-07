@@ -13,10 +13,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
@@ -57,6 +56,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForGeneratedForeach() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(0x140c4818bfbc4850L, 0xbf7ce3d80739a03cL, 0x6ec1506b5491b782L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").version(1).super_(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:9250e562-77b8-46ca-b96b-24ddc8274461(jetbrains.mps.traceInfo.tracemacro.testlang.structure)", "7980748436587788162")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.traceInfo.tracemacro.testlang", "GeneratedForeach", 0x140c4818bfbc4850L, 0xbf7ce3d80739a03cL, 0x6ec1506b5491b782L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", 0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L);
+    b.origin("r:9250e562-77b8-46ca-b96b-24ddc8274461(jetbrains.mps.traceInfo.tracemacro.testlang.structure)/7980748436587788162");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
   }
 }

@@ -11,7 +11,7 @@
       <unit at="11,0,88,0" name="jetbrains.mps.samples.formulaLanguage.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,209,0" name="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor" />
+      <unit at="18,0,319,0" name="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1113256863281">

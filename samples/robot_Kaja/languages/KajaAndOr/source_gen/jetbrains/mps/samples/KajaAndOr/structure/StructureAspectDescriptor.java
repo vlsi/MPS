@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(3);
@@ -64,12 +62,29 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForAnd() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.And", MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a460aL)).super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").version(1).super_(MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L)).parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parentIds(MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L)).alias("and", "").sourceNode(new SNodePointer("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)", "1904811872814253578")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaAndOr", "And", 0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a460aL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", 0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L);
+    b.origin("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)/1904811872814253578");
+    b.alias("and");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForLogicalOperator() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L)).super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").version(1).super_(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L)).parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x1a6f404e630a460cL, "left", MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L), false, false, false, new SNodePointer("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)", "1904811872814253580")), new ConceptDescriptorBuilder.Link(0x1a6f404e630a460dL, "right", MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L), false, false, false, new SNodePointer("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)", "1904811872814253581"))).children(new String[]{"left", "right"}, new boolean[]{false, false}).abstract_().sourceNode(new SNodePointer("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)", "1904811872814253785")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaAndOr", "LogicalOperator", 0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L);
+    b.class_(false, true, false);
+    b.super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
+    b.origin("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)/1904811872814253785");
+    b.aggregate("left", 0x1a6f404e630a460cL).target(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L).optional(false).ordered(true).multiple(false).origin("1904811872814253580").done();
+    b.aggregate("right", 0x1a6f404e630a460dL).target(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L).optional(false).ordered(true).multiple(false).origin("1904811872814253581").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForOr() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.Or", MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46bbL)).super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").version(1).super_(MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L)).parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parentIds(MetaIdFactory.conceptId(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L)).alias("or", "").sourceNode(new SNodePointer("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)", "1904811872814253755")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaAndOr", "Or", 0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46bbL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", 0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L);
+    b.origin("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)/1904811872814253755");
+    b.alias("or");
+    return b.create();
   }
 }

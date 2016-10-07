@@ -13,9 +13,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(41);
@@ -216,126 +216,352 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForAbstractArgument() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992213637294")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "AbstractArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL);
+    b.class_(false, true, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/285670992213637294");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForAbstractDiagramCreation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x120f760a0439bb31L, "concept", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), true, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1301388602726005553"))).references("concept").childDescriptors(new ConceptDescriptorBuilder.Link(0x120f760a0439bb2bL, "query", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1301388602726005547"))).children(new String[]{"query"}, new boolean[]{false}).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1301388602725986966")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "AbstractDiagramCreation", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L);
+    b.class_(false, true, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/1301388602725986966");
+    b.associate("concept", 0x120f760a0439bb31L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("1301388602726005553").done();
+    b.aggregate("query", 0x120f760a0439bb2bL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1301388602726005547").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForAbstractFigureReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463455190")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "AbstractFigureReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L);
+    b.class_(false, true, false);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/1094405431463455190");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForActionGroup() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionGroup", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d83L)).super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x74dc91e9e6e9967L, "elements", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L), true, true, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816466279"))).children(new String[]{"elements"}, new boolean[]{true}).alias("group", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816328067")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ActionGroup", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d83L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/526297864816328067");
+    b.aggregate("elements", 0x74dc91e9e6e9967L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L).optional(true).ordered(true).multiple(true).origin("526297864816466279").done();
+    b.alias("group");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForActionReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionReference", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L)).super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816328066")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ActionReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L);
+    b.class_(false, true, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/526297864816328066");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForAttributedFigureReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x4b412569a0e43041L, "figureAttribute", MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a095b5a4L), false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "5422656561931890753"))).references("figureAttribute").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "5422656561926747342")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "AttributedFigureReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/5422656561926747342");
+    b.associate("figureAttribute", 0x4b412569a0e43041L).target(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a095b5a4L).optional(false).origin("5422656561931890753").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForBLQueryArgument() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3f6e840fd86f8f8L, "query", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992213637368"))).children(new String[]{"query"}, new boolean[]{false}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992213637367")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "BLQueryArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/285670992213637367");
+    b.aggregate("query", 0x3f6e840fd86f8f8L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("285670992213637368").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_Diagram() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x4a53d4fb31a6b00cL, "diagramElements", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L), false, true, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "5355858557208539148")), new ConceptDescriptorBuilder.Link(0x76f1cb20ba7a1c35L, "elementsCreation", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL), true, true, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290721333")), new ConceptDescriptorBuilder.Link(0xd0b2f9de3717551L, "connectorCreation", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L), true, true, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409114961")), new ConceptDescriptorBuilder.Link(0x5bdb7aaec1476e7cL, "paletteDeclaration", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L), true, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6619018968336658044"))).children(new String[]{"diagramElements", "elementsCreation", "connectorCreation", "paletteDeclaration"}, new boolean[]{true, true, true, false}).alias("diagram", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6306886970791033847")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "CellModel_Diagram", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
+    b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/6306886970791033847");
+    b.aggregate("diagramElements", 0x4a53d4fb31a6b00cL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L).optional(false).ordered(true).multiple(true).origin("5355858557208539148").done();
+    b.aggregate("elementsCreation", 0x76f1cb20ba7a1c35L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL).optional(true).ordered(true).multiple(true).origin("8570854907290721333").done();
+    b.aggregate("connectorCreation", 0xd0b2f9de3717551L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L).optional(true).ordered(true).multiple(true).origin("939897302409114961").done();
+    b.aggregate("paletteDeclaration", 0x5bdb7aaec1476e7cL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L).optional(true).ordered(true).multiple(false).origin("6619018968336658044").done();
+    b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
+    b.alias("diagram");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_DiagramConnector() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x10efa534a50ae17fL, "input", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1220375669566529919")), new ConceptDescriptorBuilder.Link(0x10efa534a50ae185L, "output", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1220375669566529925"))).children(new String[]{"input", "output"}, new boolean[]{false, false}).alias("diagram connector", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6382742553261733065")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "CellModel_DiagramConnector", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
+    b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/6382742553261733065");
+    b.aggregate("input", 0x10efa534a50ae17fL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L).optional(false).ordered(true).multiple(false).origin("1220375669566529919").done();
+    b.aggregate("output", 0x10efa534a50ae185L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L).optional(false).ordered(true).multiple(false).origin("1220375669566529925").done();
+    b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
+    b.alias("diagram connector");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_DiagramNode() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L)).childDescriptors(new ConceptDescriptorBuilder.Link(0xf301bf106a329d9L, "figure", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463455193")), new ConceptDescriptorBuilder.Link(0xf301bf106a7d7b2L, "parameters", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L), true, true, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463761842")), new ConceptDescriptorBuilder.Link(0x1ceea85e3fc07f4bL, "inputPort", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL), true, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "2084788800269090635")), new ConceptDescriptorBuilder.Link(0x1ceea85e3fc07f76L, "outputPort", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL), true, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "2084788800269090678"))).children(new String[]{"figure", "parameters", "inputPort", "outputPort"}, new boolean[]{false, true, false, false}).alias("diagram node", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463454433")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "CellModel_DiagramNode", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
+    b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/1094405431463454433");
+    b.aggregate("figure", 0xf301bf106a329d9L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L).optional(false).ordered(true).multiple(false).origin("1094405431463455193").done();
+    b.aggregate("parameters", 0xf301bf106a7d7b2L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L).optional(true).ordered(true).multiple(true).origin("1094405431463761842").done();
+    b.aggregate("inputPort", 0x1ceea85e3fc07f4bL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL).optional(true).ordered(true).multiple(false).origin("2084788800269090635").done();
+    b.aggregate("outputPort", 0x1ceea85e3fc07f76L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL).optional(true).ordered(true).multiple(false).origin("2084788800269090678").done();
+    b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
+    b.alias("diagram node");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_DiagramPort() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.core.structure.ImplementationWithStubPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x3f6e840fd12753fL, "input", new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992206001471"))).properties("input").alias("diagram port", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992205972098")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "CellModel_DiagramPort", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
+    b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/285670992205972098");
+    b.prop("input", 0x3f6e840fd12753fL, "285670992206001471");
+    b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
+    b.alias("diagram port");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForConnectionEnd() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "2721249134706026944")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ConnectionEnd", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L);
+    b.class_(false, true, false);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/2721249134706026944");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForConnectionEndBLQuery() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL)).super_("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L)).parents("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x10efa534a5093964L, "pointID", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1220375669566421348")), new ConceptDescriptorBuilder.Link(0x287647ebcf77ee1aL, "targetNode", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "2915596886892604954"))).children(new String[]{"pointID", "targetNode"}, new boolean[]{false, false}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1220375669566347117")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ConnectionEndBLQuery", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/1220375669566347117");
+    b.aggregate("pointID", 0x10efa534a5093964L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("1220375669566421348").done();
+    b.aggregate("targetNode", 0x287647ebcf77ee1aL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2915596886892604954").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCreationActionReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L)).super_("jetbrains.mps.lang.editor.diagram.structure.ActionReference").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L)).parents("jetbrains.mps.lang.editor.diagram.structure.ActionReference").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x3cfdbd635b5afe8dL, "iconPath", new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "4394877045815574157"))).properties("iconPath").referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x5bdb7aaec13ef3f4L, "elementsCreation", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L), false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6619018968336102388"))).references("elementsCreation").alias("creation", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6619018968335599081")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "CreationActionReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.ActionReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/6619018968335599081");
+    b.prop("iconPath", 0x3cfdbd635b5afe8dL, "4394877045815574157");
+    b.associate("elementsCreation", 0x5bdb7aaec13ef3f4L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L).optional(false).origin("6619018968336102388").done();
+    b.alias("creation");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCustomElementReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e8L)).super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x5bdb7aaec13ef3eeL, "customElement", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6619018968336102382"))).references("customElement").alias("custom", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "6619018968335599080")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "CustomElementReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e8L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/6619018968335599080");
+    b.associate("customElement", 0x5bdb7aaec13ef3eeL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L).optional(false).origin("6619018968336102382").done();
+    b.alias("custom");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramConnectorCanCreateHandler() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371634eL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409110350")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramConnectorCanCreateHandler", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371634eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409110350");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramConnectorCreation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L)).childDescriptors(new ConceptDescriptorBuilder.Link(0xd0b2f9de3710047L, "canCreate", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371634eL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409084999")), new ConceptDescriptorBuilder.Link(0xd0b2f9de371754cL, "handler", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409114956"))).children(new String[]{"canCreate", "handler"}, new boolean[]{false, false}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409084996")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramConnectorCreation", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409084996");
+    b.aggregate("canCreate", 0xd0b2f9de3710047L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371634eL).optional(false).ordered(true).multiple(false).origin("939897302409084999").done();
+    b.aggregate("handler", 0xd0b2f9de371754cL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL).optional(false).ordered(true).multiple(false).origin("939897302409114956").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramConnectorCreationHandler() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409085052")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramConnectorCreationHandler", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409085052");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramElement() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElement", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "5355858557208538577")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L);
+    b.class_(false, true, false);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/5355858557208538577");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramElementBLQuery() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31aaee31L)).super_("jetbrains.mps.lang.editor.diagram.structure.DiagramElement").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L)).parents("jetbrains.mps.lang.editor.diagram.structure.DiagramElement").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x4a53d4fb31aaee59L, "query", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "5355858557208817241"))).children(new String[]{"query"}, new boolean[]{false}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "5355858557208817201")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramElementBLQuery", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31aaee31L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.DiagramElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/5355858557208817201");
+    b.aggregate("query", 0x4a53d4fb31aaee59L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("5355858557208817241").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramElementCreationHandler() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290527479")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramElementCreationHandler", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/8570854907290527479");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDiagramElementsCreation() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x76f1cb20ba7726e1L, "handler", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290527457"))).children(new String[]{"handler"}, new boolean[]{false}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290423690")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "DiagramElementsCreation", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/8570854907290423690");
+    b.aggregate("handler", 0x76f1cb20ba7726e1L).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L).optional(false).ordered(true).multiple(false).origin("8570854907290527457").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForExternalFigureReference() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0xf301bf106a65713L, "figure", MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L), false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463663379"))).references("figure").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463663051")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ExternalFigureReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/1094405431463663051");
+    b.associate("figure", 0xf301bf106a65713L).target(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L).optional(false).origin("1094405431463663379").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForFigureParameterMapping() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3f6e840fdd824ddL, "argument", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL), false, false, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992218957021"))).children(new String[]{"argument"}, new boolean[]{false}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "1094405431463761863")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "FigureParameterMapping", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/1094405431463761863");
+    b.aggregate("argument", 0x3f6e840fdd824ddL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL).optional(false).ordered(true).multiple(false).origin("285670992218957021").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForFromIdFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d63L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("fromId", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409170275")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "FromIdFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d63L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409170275");
+    b.alias("fromId");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForFromNodeFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d59L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("from", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409170265")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "FromNodeFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d59L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409170265");
+    b.alias("from");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForLinkArgument() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.LinkArgument", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x3f6e840fdc4a7a7L, "link", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL), false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992217679783"))).references("link").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992213637559")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "LinkArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/285670992213637559");
+    b.associate("link", 0x3f6e840fdc4a7a7L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("285670992217679783").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0edeL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("node", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290717918")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "NodeFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0edeL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/8570854907290717918");
+    b.alias("node");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPalette() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.Palette", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x74dc91e9e6e053aL, "elements", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L), true, true, false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816428346"))).children(new String[]{"elements"}, new boolean[]{true}).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816328068")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "Palette", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L);
+    b.class_(false, false, false);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/526297864816328068");
+    b.aggregate("elements", 0x74dc91e9e6e053aL).target(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L).optional(true).ordered(true).multiple(true).origin("526297864816428346").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPaletteElement() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.PaletteElement", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816328069")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "PaletteElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L);
+    b.class_(false, true, false);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/526297864816328069");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPropertyArgument() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L)).super_("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).parents("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x3f6e840fdc4ce94L, "property", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL), false, new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992217689748"))).references("property").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "285670992217672837")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "PropertyArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.AbstractArgument", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/285670992217672837");
+    b.associate("property", 0x3f6e840fdc4ce94L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL).optional(false).origin("285670992217689748").done();
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForSeparator() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.Separator", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d86L)).super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").version(1).super_(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parentIds(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x295f40c2822f9459L, "text", new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "2981172682494547033"))).properties("text").alias("separator", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "526297864816328070")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "Separator", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d86L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/526297864816328070");
+    b.prop("text", 0x295f40c2822f9459L, "2981172682494547033");
+    b.alias("separator");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForStubCellModel_Diagram() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.StubCellModel_Diagram", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc2d376L)).super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).parents("jetbrains.mps.lang.editor.structure.StubEditorCellModel").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "730538219795567478")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "StubCellModel_Diagram", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc2d376L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/730538219795567478");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForStubCellModel_DiagramConnector() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramConnector", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37a82L)).super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).parents("jetbrains.mps.lang.editor.structure.StubEditorCellModel").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "730538219795610242")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "StubCellModel_DiagramConnector", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37a82L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/730538219795610242");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForStubCellModel_DiagramNode() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramNode", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37aa7L)).super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).parents("jetbrains.mps.lang.editor.structure.StubEditorCellModel").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "730538219795610279")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "StubCellModel_DiagramNode", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37aa7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/730538219795610279");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForStubCellModel_DiagramPort() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramPort", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37accL)).super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).parents("jetbrains.mps.lang.editor.structure.StubEditorCellModel").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L)).sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "730538219795610316")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "StubCellModel_DiagramPort", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37accL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.StubEditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/730538219795610316");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForThisEditorNodeExpression() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL)).super_("jetbrains.mps.baseLanguage.structure.Expression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).alias("this", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "3229274890673749551")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ThisEditorNodeExpression", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/3229274890673749551");
+    b.alias("this");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForToIdFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d68L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("toId", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409170280")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ToIdFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d68L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409170280");
+    b.alias("toId");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForToNodeFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d5eL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("to", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "939897302409170270")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "ToNodeFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d5eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/939897302409170270");
+    b.alias("to");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForXFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ee2L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("x", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290717922")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "XFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ee2L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/8570854907290717922");
+    b.alias("x");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForYFunctionParameter() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter", MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ed7L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("y", "").sourceNode(new SNodePointer("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)", "8570854907290717911")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram", "YFunctionParameter", 0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ed7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)/8570854907290717911");
+    b.alias("y");
+    return b.create();
   }
 }

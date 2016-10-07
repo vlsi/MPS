@@ -5,7 +5,7 @@
       <unit at="11,0,43,0" name="BHL4.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,104,0" name="BHL4.structure.StructureAspectDescriptor" />
+      <unit at="18,0,135,0" name="BHL4.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

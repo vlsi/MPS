@@ -13,9 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
@@ -65,12 +64,33 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForCellModel_HierarchycalTable() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", MetaIdFactory.conceptId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x1f44bcab4ea5d7f6L, "myProp", new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "2253133157537011702"))).properties("myProp").referenceDescriptors(new ConceptDescriptorBuilder.Ref(0x5643e6bf317e9d11L, "headerRowLinkDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL), true, new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "6216065619544939793")), new ConceptDescriptorBuilder.Ref(0x5643e6bf317e9d12L, "rowsLinkDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL), false, new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "6216065619544939794")), new ConceptDescriptorBuilder.Ref(0x5643e6bf317e9d13L, "cellsInRowLinkDeclaration", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL), false, new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "6216065619544939795"))).references("headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration").alias("hierarchycal table", "").sourceNode(new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "2253133157536766818")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.table", "CellModel_HierarchycalTable", 0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
+    b.origin("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)/2253133157536766818");
+    b.prop("myProp", 0x1f44bcab4ea5d7f6L, "2253133157537011702");
+    b.associate("headerRowLinkDeclaration", 0x5643e6bf317e9d11L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(true).origin("6216065619544939793").done();
+    b.associate("rowsLinkDeclaration", 0x5643e6bf317e9d12L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("6216065619544939794").done();
+    b.associate("cellsInRowLinkDeclaration", 0x5643e6bf317e9d13L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("6216065619544939795").done();
+    b.alias("hierarchycal table");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForCellModel_Table() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_Table", MetaIdFactory.conceptId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x40e932ec28a2d18bL)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").version(1).super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L)).childDescriptors(new ConceptDescriptorBuilder.Link(0x3e51593e83e95ca3L, "tableModel", MetaIdFactory.conceptId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL), false, false, false, new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "4490468428501048483"))).children(new String[]{"tableModel"}, new boolean[]{false}).alias("table", "").sourceNode(new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "4677325677876400523")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.table", "CellModel_Table", 0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x40e932ec28a2d18bL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
+    b.origin("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)/4677325677876400523");
+    b.aggregate("tableModel", 0x3e51593e83e95ca3L).target(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL).optional(false).ordered(true).multiple(false).origin("4490468428501048483").done();
+    b.alias("table");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForQueryFunction_TableModel() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", MetaIdFactory.conceptId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("getTableModel", "").staticScope(StaticScope.NONE).sourceNode(new SNodePointer("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)", "4490468428501056077")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.table", "QueryFunction_TableModel", 0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
+    b.origin("r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)/4490468428501056077");
+    b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
+    b.alias("getTableModel");
+    return b.create();
   }
 }

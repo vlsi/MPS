@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(5);
@@ -72,18 +70,44 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForAbstractBuilderCommand() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").version(1).super_(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL)).parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parentIds(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0x2c8eb033a834fe40L, "row", new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273608256")), new ConceptDescriptorBuilder.Prop(0x2c8eb033a834fe41L, "col", new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273608257"))).properties("row", "col").abstract_().sourceNode(new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273608255")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaSceneConstruction", "AbstractBuilderCommand", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL);
+    b.class_(false, true, false);
+    b.super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL);
+    b.origin("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)/3210697320273608255");
+    b.prop("row", 0x2c8eb033a834fe40L, "3210697320273608256");
+    b.prop("col", 0x2c8eb033a834fe41L, "3210697320273608257");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForBuildWall() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").version(1).super_(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).alias("build wall", "").sourceNode(new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273550864")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaSceneConstruction", "BuildWall", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL);
+    b.origin("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)/3210697320273550864");
+    b.alias("build wall");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDestroyWall() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").version(1).super_(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).alias("destroy wall", "").sourceNode(new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273607253")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaSceneConstruction", "DestroyWall", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL);
+    b.origin("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)/3210697320273607253");
+    b.alias("destroy wall");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForDropMark() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").version(1).super_(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).alias("drop mark", "").sourceNode(new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273608254")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaSceneConstruction", "DropMark", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL);
+    b.origin("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)/3210697320273608254");
+    b.alias("drop mark");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForPickMark() {
-    return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark", MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").version(1).super_(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL)).alias("pick mark", "").sourceNode(new SNodePointer("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)", "3210697320273614431")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaSceneConstruction", "PickMark", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", 0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL);
+    b.origin("r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)/3210697320273614431");
+    b.alias("pick mark");
+    return b.create();
   }
 }

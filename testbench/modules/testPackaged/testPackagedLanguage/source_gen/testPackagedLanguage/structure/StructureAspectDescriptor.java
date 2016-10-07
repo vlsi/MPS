@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(1);
@@ -56,6 +54,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForTestConcept() {
-    return new ConceptDescriptorBuilder("testPackagedLanguage.structure.TestConcept", MetaIdFactory.conceptId(0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).sourceNode(new SNodePointer("r:ab99e75d-0184-4aec-b7b1-2939b54c2f7a(testPackagedLanguage.structure)", "6919151941181560079")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testPackagedLanguage", "TestConcept", 0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL);
+    b.class_(false, false, false);
+    b.origin("r:ab99e75d-0184-4aec-b7b1-2939b54c2f7a(testPackagedLanguage.structure)/6919151941181560079");
+    return b.create();
   }
 }

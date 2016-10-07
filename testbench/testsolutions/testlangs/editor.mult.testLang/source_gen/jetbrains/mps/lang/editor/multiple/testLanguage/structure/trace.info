@@ -14,7 +14,7 @@
       <unit at="11,0,49,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,118,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.StructureAspectDescriptor" />
+      <unit at="18,0,184,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)/7687090409437208772">

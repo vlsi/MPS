@@ -13,9 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(2);
@@ -60,9 +58,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   private static ConceptDescriptor createDescriptorForNullSafeDotExpression() {
-    return new ConceptDescriptorBuilder("testExtendingAnalyzer.structure.NullSafeDotExpression", MetaIdFactory.conceptId(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557dc29L)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).alias("safe", "").sourceNode(new SNodePointer("r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)", "1417601170173058089")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testExtendingAnalyzer", "NullSafeDotExpression", 0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557dc29L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.DotExpression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L);
+    b.origin("r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)/1417601170173058089");
+    b.alias("safe");
+    return b.create();
   }
   private static ConceptDescriptor createDescriptorForNullUnsafeDotExpression() {
-    return new ConceptDescriptorBuilder("testExtendingAnalyzer.structure.NullUnsafeDotExpression", MetaIdFactory.conceptId(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557da2eL)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").version(1).super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L)).alias("unsafe", "").sourceNode(new SNodePointer("r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)", "1417601170173057582")).create();
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testExtendingAnalyzer", "NullUnsafeDotExpression", 0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557da2eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.DotExpression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L);
+    b.origin("r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)/1417601170173057582");
+    b.alias("unsafe");
+    return b.create();
   }
 }

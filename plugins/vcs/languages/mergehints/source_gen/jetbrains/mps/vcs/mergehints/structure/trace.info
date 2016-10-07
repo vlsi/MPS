@@ -14,7 +14,7 @@
       <unit at="11,0,25,0" name="jetbrains.mps.vcs.mergehints.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,62,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
+      <unit at="18,0,65,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/8485200647808748945">
