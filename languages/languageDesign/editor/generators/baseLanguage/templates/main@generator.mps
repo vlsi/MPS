@@ -12619,7 +12619,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="3pyOeXQTLGU" role="jymVt" />
     <node concept="2tJIrI" id="3sdr6u8SH0a" role="jymVt" />
     <node concept="2YIFZL" id="2dv1ickCWKi" role="jymVt">
       <property role="TrG5h" value="styleClassItemQuery" />
