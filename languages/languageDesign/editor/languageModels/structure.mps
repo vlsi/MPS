@@ -2322,26 +2322,6 @@
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hgV5SWv">
-    <property role="TrG5h" value="StyleSheetClass" />
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="34LRSv" value="style" />
-    <property role="EcuMT" value="1186402373407" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="asaX9" id="7Ur4aGwhRSw" role="lGtFl" />
-    <node concept="PrWs8" id="2VNGR_E4AWt" role="PzmwI">
-      <ref role="PrY4T" node="2VNGR_E2Sa7" resolve="IStyleSheetMember" />
-    </node>
-    <node concept="PrWs8" id="2airAaS0rw7" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="1TJgyj" id="hrXq2lC" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="extendedClass" />
-      <property role="IQ2ns" value="1198252369256" />
-      <ref role="20lvS9" node="hrXp85t" resolve="StyleSheetClassReference" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hgV6hR6">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -2552,19 +2532,6 @@
     <node concept="M4N5e" id="hrC1ovA" role="M5hS2">
       <property role="1uS6qv" value="LAST" />
       <property role="1uS6qo" value="last" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="hrXp85t">
-    <property role="TrG5h" value="StyleSheetClassReference" />
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="EcuMT" value="1198252130653" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="asaX9" id="7Ur4aGwhRSy" role="lGtFl" />
-    <node concept="1TJgyj" id="hrXpFMu" role="1TKVEi">
-      <property role="20kJfa" value="styleSheetClass" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1198252276894" />
-      <ref role="20lvS9" node="hgV5SWv" resolve="StyleSheetClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="hrXFhuw">
@@ -3809,28 +3776,6 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3AsHGqcs7JR">
-    <property role="TrG5h" value="PreDefinedStyleClassItem" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="34LRSv" value="pre-defined-style" />
-    <property role="EcuMT" value="4151393920404716535" />
-    <ref role="1TJDcQ" node="hgV6hR6" resolve="StyleClassItem" />
-    <node concept="asaX9" id="7Ur4aGwhekO" role="lGtFl" />
-    <node concept="1TJgyj" id="7$EBLgJMZo3" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="query" />
-      <property role="IQ2ns" value="8730965736661186051" />
-      <ref role="20lvS9" node="hNnzxoQ" resolve="QueryFunction_Boolean" />
-    </node>
-    <node concept="1TJgyj" id="3AsHGqct7Fj" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="key" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="4151393920404978387" />
-      <ref role="20lvS9" node="3AsHGqaEqUE" resolve="StyleKey" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="3AsHGqaEqUE">
     <property role="TrG5h" value="StyleKey" />
     <property role="3GE5qa" value="Stylesheet" />
@@ -4174,8 +4119,8 @@
       <property role="IQ2ns" value="3383245079137422296" />
       <ref role="20lvS9" node="2airAaRP9mw" resolve="DominatesRecord" />
     </node>
-    <node concept="PrWs8" id="2VNGR_E4KJ9" role="PzmwI">
-      <ref role="PrY4T" node="2VNGR_E2Sa7" resolve="IStyleSheetMember" />
+    <node concept="PrWs8" id="VHPC7elSgS" role="PzmwI">
+      <ref role="PrY4T" node="7zL4upEo6oo" resolve="IStyleSheetItem" />
     </node>
     <node concept="PrWs8" id="7Ur4aGvErVN" role="PzmwI">
       <ref role="PrY4T" node="7Ur4aGvm4uS" resolve="IStyle" />
@@ -4206,24 +4151,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1950447826686049051" />
       <ref role="20lvS9" node="7Ur4aGuQXbV" resolve="StyleReference" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="2VNGR_E2Sa7">
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="TrG5h" value="IStyleSheetMember" />
-    <property role="EcuMT" value="3383245079136928391" />
-    <node concept="asaX9" id="7Ur4aGwhRSu" role="lGtFl" />
-    <node concept="PrWs8" id="1sy7YUab1e6" role="PrDN$">
-      <ref role="PrY4T" node="7Ur4aGvm4uS" resolve="IStyle" />
-    </node>
-    <node concept="PrWs8" id="2_EwsUMlnyE" role="PrDN$">
-      <ref role="PrY4T" node="hJF0Tl2" resolve="IStyleContainer" />
-    </node>
-    <node concept="PrWs8" id="7Ur4aGvCTgb" role="PrDN$">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="PrWs8" id="7zL4upEo8WI" role="PrDN$">
-      <ref role="PrY4T" node="7zL4upEo6oo" resolve="IStyleSheetItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="2VNGR_E4KKd">
@@ -4286,7 +4213,7 @@
     <node concept="1TJgyj" id="1cEk0X7fp1l" role="1TKVEi">
       <property role="20kJfa" value="parentStyleClass" />
       <property role="IQ2ns" value="1381004262292426837" />
-      <ref role="20lvS9" node="2VNGR_E2Sa7" resolve="IStyleSheetMember" />
+      <ref role="20lvS9" node="2VNGR_E4AW$" resolve="StyleClass" />
     </node>
     <node concept="PrWs8" id="1cEk0X7fnAq" role="PrDN$">
       <ref role="PrY4T" node="hJF0Tl2" resolve="IStyleContainer" />

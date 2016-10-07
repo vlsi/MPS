@@ -3786,40 +3786,6 @@
     </node>
     <node concept="3Tm1VV" id="i0vVbrm" role="1B3o_S" />
   </node>
-  <node concept="2S6QgY" id="i2A0qcN">
-    <property role="TrG5h" value="AddExtendsClause" />
-    <ref role="2ZfgGC" to="tpc2:hgV5SWv" resolve="StyleSheetClass" />
-    <node concept="2S6ZIM" id="i2A0qcO" role="2ZfVej">
-      <node concept="3clFbS" id="i2A0qcP" role="2VODD2">
-        <node concept="3clFbF" id="i2A1aYa" role="3cqZAp">
-          <node concept="Xl_RD" id="i2A1aYb" role="3clFbG">
-            <property role="Xl_RC" value="Add Extends Clause" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2Sbjvc" id="i2A0qcQ" role="2ZfgGD">
-      <node concept="3clFbS" id="i2A0qcR" role="2VODD2">
-        <node concept="3clFbF" id="i2A1azD" role="3cqZAp">
-          <node concept="37vLTI" id="i2A1azE" role="3clFbG">
-            <node concept="2ShNRf" id="i2A1azF" role="37vLTx">
-              <node concept="2fJWfE" id="5wUAOoBBfnS" role="2ShVmc">
-                <node concept="3Tqbb2" id="5wUAOoBBfnT" role="3zrR0E">
-                  <ref role="ehGHo" to="tpc2:hrXp85t" resolve="StyleSheetClassReference" />
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="i2A1azI" role="37vLTJ">
-              <node concept="2Sf5sV" id="i2A1azJ" role="2Oq$k0" />
-              <node concept="3TrEf2" id="i2A1azK" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:hrXq2lC" resolve="extendedClass" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="2S6QgY" id="1gfu09uBSBI">
     <property role="TrG5h" value="AddRemoveNewLineForChildren" />
     <property role="3GE5qa" value="CellModel.Indent" />
