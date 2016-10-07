@@ -338,7 +338,7 @@
   <node concept="Az7Fb" id="5fiBL1fFehh">
     <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="SegmentName" />
-    <property role="FLfZY" value="[a-zA-Z0-9$[_]:@&amp;=+$,]*" />
+    <property role="FLfZY" value="[a-zA-Z0-9.\\-_~:@!$&amp;'()*+,;=%]*" />
   </node>
   <node concept="PlHQZ" id="4rKp80ZJrfN">
     <property role="EcuMT" value="5111696079053501427" />

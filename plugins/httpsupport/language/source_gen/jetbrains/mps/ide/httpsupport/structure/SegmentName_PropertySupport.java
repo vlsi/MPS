@@ -12,6 +12,6 @@ public class SegmentName_PropertySupport extends PropertySupport {
     } else {
       testValue = value;
     }
-    return testValue.matches("[a-zA-Z0-9$[_]:@&=+$,]*");
+    return testValue.matches("[a-zA-Z0-9.\\-_~:@!$&'()*+,;=%]*");
   }
 }
