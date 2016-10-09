@@ -307,23 +307,6 @@
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestProcessHandler" file="UnitTestProcessHandler.java">
-    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
-    <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="java.lang.StackTraceElement" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuffer" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.nio.charset.Charset" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
-    <classNode extendsClassName="com.intellij.execution.process.DefaultJavaProcessHandler" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent" file="UnitTestViewComponent.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />

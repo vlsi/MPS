@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dataExtraction.runConfig;
 
+import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
@@ -73,17 +74,10 @@ public class LocationRule implements GetDataRule {
   private static MPSProject getProject(DataProvider dataProvider) {
     MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataProvider);
     if (mpsProject == null) {
-      Project ideaProject = MPSDataKeys.PROJECT.getData(dataProvider);
-      if (ideaProject == null) {
-        Frame frame = MPSDataKeys.FRAME.getData(dataProvider);
-        if (frame instanceof IdeFrame) {
-          ideaProject = ((IdeFrame) frame).getProject();
-        }
+      Frame frame = MPSDataKeys.FRAME.getData(dataProvider);
+      if (frame instanceof IdeFrame) {
+        return ProjectHelper.fromIdeaProject(((IdeFrame) frame).getProject());
       }
-      if (ideaProject == null) {
-        return null;
-      }
-      mpsProject = ProjectHelper.fromIdeaProject(ideaProject);
     }
     return mpsProject;
   }

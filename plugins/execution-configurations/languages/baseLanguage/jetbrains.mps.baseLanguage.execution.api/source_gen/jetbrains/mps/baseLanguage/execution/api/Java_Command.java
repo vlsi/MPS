@@ -11,8 +11,8 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
-import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
+import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -122,11 +122,12 @@ public class Java_Command {
     return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter_String))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter_String)), className, classPath);
   }
   public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
-    File java = Java_Command.getJavaCommand(myJrePath_String);
+    CommandPart classPathPart = new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator));
     if ((className == null || className.length() == 0)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0c0a2(programParameter) >= Java_Command.getMaxCommandLine()) {
+    File java = Java_Command.getJavaCommand(myJrePath_String);
+    if (check_yvpt_a0a0d0a2(programParameter) + check_yvpt_a0a0d0a2_0(myVirtualMachineParameter_ProcessBuilderCommandPart) + classPathPart.getLength() >= Java_Command.getMaxCommandLine()) {
       try {
         File parametersFile = Java_Command.writeToTmpFile(programParameter.getCommandList());
         File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPath).select(new ISelector<File, String>() {
@@ -141,11 +142,11 @@ public class Java_Command {
         }).distinct().toListSequence();
         return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
       } catch (FileNotFoundException e) {
-        throw new ExecutionException("Could not create temporal file for program parameters.", e);
+        throw new ExecutionException("Could not create temporary file for program parameters and class path.", e);
       }
 
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(classPathPart).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
@@ -332,7 +333,13 @@ public class Java_Command {
       }
     };
   }
-  private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
+  private static int check_yvpt_a0a0d0a2(CommandPart checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLength();
+    }
+    return 0;
+  }
+  private static int check_yvpt_a0a0d0a2_0(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLength();
     }

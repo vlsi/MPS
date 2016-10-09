@@ -21,15 +21,26 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.impl.IdeFrameImpl;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 
 public class FrameRule implements GetDataRule {
+  private static final Logger LOG = LogManager.getLogger(FrameRule.class);
+
   @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     Project project = CommonDataKeys.PROJECT.getData(dataProvider);
     if (project == null) {
       IdeFrame[] frames = WindowManager.getInstance().getAllProjectFrames();
+      for (IdeFrame frame : frames) {
+        if (((IdeFrameImpl) frame).isActive()) {
+          return frame;
+        }
+      }
+      LOG.warn("Active frames have not been found, falling back to the first one");
       return frames.length == 0 ? null : frames[0];
     }
     return WindowManager.getInstance().getFrame(project);

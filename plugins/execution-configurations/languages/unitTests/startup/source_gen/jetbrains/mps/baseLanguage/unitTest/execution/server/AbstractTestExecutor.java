@@ -14,14 +14,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractTestExecutor implements TestExecutor {
-  protected static final int EXIT_CODE_FOR_EXCEPTION = -12345;
-  protected IgnoringStoppableRunner myCurrentRunner = null;
-  protected Filter myFilter = new EmptyFilter();
+  /*package*/ static final int EXIT_CODE_FOR_EXCEPTION = -12345;
+
+  private IgnoringStoppableRunner myCurrentRunner = null;
+  /*package*/ Filter myFilter = new EmptyFilter();
   private RunListener myListener;
   private volatile boolean myStopping = false;
 
   @Nullable
-  public IgnoringStoppableRunner getCurrentRunner() {
+  private IgnoringStoppableRunner getCurrentRunner() {
     return myCurrentRunner;
   }
 
@@ -42,12 +43,12 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
   }
 
-  protected JUnitCore prepareJUnitCore(Iterable<Request> requests) {
+  private JUnitCore prepareJUnitCore(Iterable<Request> requests) {
     Iterable<Request> reqSeq = Sequence.fromIterable(requests);
     JUnitCore core = new JUnitCore();
     myListener = createListener(requests);
     core.addListener(myListener);
-    if (Sequence.fromIterable(reqSeq).count() > 0) {
+    if (!(Sequence.fromIterable(reqSeq).isEmpty())) {
       Request firstRequest = Sequence.fromIterable(reqSeq).first();
       updateRunner(firstRequest);
     }
@@ -83,5 +84,4 @@ public abstract class AbstractTestExecutor implements TestExecutor {
 
   @NotNull
   protected abstract RunListener createListener(Iterable<Request> requests);
-
 }

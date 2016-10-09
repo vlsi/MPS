@@ -9,26 +9,24 @@ import jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeP
 import com.intellij.util.WaitFor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.io.IOException;
-import org.apache.log4j.Level;
-import java.io.IOError;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
+import org.apache.log4j.Level;
 import jetbrains.mps.TestMode;
 import jetbrains.mps.RuntimeFlags;
 import org.junit.runner.notification.StoppedByUserException;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestInProcessExecutor extends AbstractTestExecutor {
-  private static final int TIME_TO_WAIT_FOR_START = 5 * 1000;
+  private static final int MSECS_TO_WAIT_FOR_START = 50 * 1000;
 
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestInProcessRunState myTestRunState;
   private final FakeProcess myFakeProcess = new FakeProcess();
+  private volatile DefaultRunListener myTestRunListener = null;
 
   public TestInProcessExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes, TestInProcessRunState testRunState) {
     myDispatcher = dispatcher;
@@ -38,7 +36,7 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
   }
 
   private void waitWhileNotReady() {
-    new WaitFor(TIME_TO_WAIT_FOR_START) {
+    new WaitFor(MSECS_TO_WAIT_FOR_START) {
       @Override
       protected boolean condition() {
         return myTestRunState.isReady();
@@ -56,14 +54,6 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
       LOG.debug("Initializing TestInProcessExecutor");
     }
     waitWhileNotReady();
-    try {
-      myFakeProcess.init();
-    } catch (IOException e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("IOException during process construction", e);
-      }
-      throw new IOError(e);
-    }
   }
 
   @Override
@@ -71,8 +61,8 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Disposing TestLightExecutor");
     }
-    myFakeProcess.destroy();
     myTestRunState.set(RunStateEnum.TERMINATED);
+    myFakeProcess.destroy();
   }
 
   public FakeProcess getProcess() {
@@ -90,14 +80,16 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
       LOG.warn("Be aware of the execution of your own test code and its consequences when running tests in-process. " + "The code is being executed within the current MPS environment and might do a lot of damage if written without caution.");
     }
     if (LOG.isInfoEnabled()) {
-      LOG.info("Executing tests in-process...");
+      LOG.info("Executing tests in-process");
     }
     myTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
     TestMode oldTestMode = RuntimeFlags.getTestMode();
     try {
       RuntimeFlags.setTestMode(TestMode.IN_PROCESS);
       super.doExecute(core, requests);
+      myFakeProcess.setExitCode(myTestRunListener.getFailureCount());
     } catch (StoppedByUserException exception) {
+      // will be thrown eventually when #terminateRun is called 
       terminateProcess(FakeProcess.TERMINATION_CODE);
     } finally {
       RuntimeFlags.setTestMode(oldTestMode);
@@ -105,10 +97,9 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
   }
 
   public void terminateRun() {
-    if (myTestRunState.isTerminated()) {
-      return;
+    if (!(myTestRunState.isTerminated())) {
+      stopRun();
     }
-    stopRun();
   }
 
   /*package*/ void terminateProcess(int code) {
@@ -130,11 +121,8 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> requests) {
-    return new TestInProcessRunListener(this, ListSequence.fromIterable(requests).size());
-  }
-
-  public TestEventsDispatcher getDispatcher() {
-    return myDispatcher;
+    myTestRunListener = new DefaultRunListener(new CommandOutputStream(System.out));
+    return myTestRunListener;
   }
 
   private static class IllegalProcessStateError extends Error {

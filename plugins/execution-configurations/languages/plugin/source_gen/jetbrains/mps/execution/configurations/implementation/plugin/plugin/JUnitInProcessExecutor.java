@@ -79,6 +79,7 @@ public class JUnitInProcessExecutor implements Executor {
     }
 
     protected void detachProcessImpl() {
+      myExecutor.terminateRun();
     }
 
     public boolean detachIsDefault() {
@@ -101,9 +102,7 @@ public class JUnitInProcessExecutor implements Executor {
       String terminateMessage = "Only one test instance is allowed to run in process.\n" + "To run in the outer process change the corresponding property in the junit run configuration.\n" + "Process finished with exit code " + -1 + ".\n";
       myDispatcher.onSimpleTextAvailable(terminateMessage, ProcessOutputTypes.STDERR);
       myDispatcher.onProcessTerminated(terminateMessage);
-
       this.notifyProcessTerminated(-1);
     }
   }
-
 }

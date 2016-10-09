@@ -164,23 +164,22 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" file="TestExecutor.java" />
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessExecutor" file="TestInProcessExecutor.java">
     <classNode dependClassName="com.intellij.util.WaitFor" />
-    <classNode dependClassName="java.io.IOError" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.TestMode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultRunListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.InProcessExecutionFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessRunListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.RunStateEnum" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.TestInProcessRunState" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -192,26 +191,6 @@
     <classNode dependClassName="org.junit.runner.notification.RunListener" />
     <classNode dependClassName="org.junit.runner.notification.StoppedByUserException" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessRunListener" file="TestInProcessRunListener.java">
-    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
-    <classNode dependClassName="java.io.PrintWriter" />
-    <classNode dependClassName="java.io.StringWriter" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runtime" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessExecutor" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.junit.internal.AssumptionViolatedException" />
-    <classNode dependClassName="org.junit.runner.Description" />
-    <classNode dependClassName="org.junit.runner.Result" />
-    <classNode dependClassName="org.junit.runner.notification.Failure" />
-    <classNode extendsClassName="org.junit.runner.notification.RunListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestNodeRequest" file="TestNodeRequest.java">
     <classNode dependClassName="java.lang.Override" />

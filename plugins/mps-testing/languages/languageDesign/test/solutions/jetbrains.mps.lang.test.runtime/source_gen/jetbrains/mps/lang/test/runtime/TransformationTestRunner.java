@@ -60,7 +60,7 @@ public class TransformationTestRunner implements TestRunner {
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
   protected void doInitTest(@NotNull final TransformationTest test, @NotNull final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     if (LOG.isInfoEnabled()) {
-      LOG.info("Initializing test...");
+      LOG.info("Initializing test");
     }
     test.setProject(testProject);
     TransformationTest cachedTest = TestModelSaver.getInstance().getTest();

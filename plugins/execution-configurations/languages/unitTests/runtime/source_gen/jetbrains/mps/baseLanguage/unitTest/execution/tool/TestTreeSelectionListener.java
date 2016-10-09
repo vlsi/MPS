@@ -11,11 +11,13 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
   private final TreeSelectionModel myFreeSelectionModel;
   private final StatisticsTableModel myStatisticsModel;
   private final TestOutputComponent myOutputComponent;
+
   public TestTreeSelectionListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
     myFreeSelectionModel = tree.getSelectionModel();
     myStatisticsModel = statistics;
     myOutputComponent = outputComponent;
   }
+
   @Override
   public void valueChanged(TreeSelectionEvent event) {
     if (event.getNewLeadSelectionPath() == null) {
