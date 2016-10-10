@@ -19,7 +19,12 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -28,7 +33,9 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -44,6 +51,8 @@ import java.util.Map;
  */
 public class PersistenceUtil {
   private final static String PER_ROOT_PERSISTENCE_FACTORY = "file-per-root";
+
+  protected static org.apache.log4j.Logger LOG = LogManager.getLogger(PersistenceUtil.class);
 
   private PersistenceUtil() {
   }
@@ -122,12 +131,26 @@ public class PersistenceUtil {
       InMemoryStreamDataSource source = new InMemoryStreamDataSource();
       factory.save(model, source);
       return source.getContent(FileUtil.DEFAULT_CHARSET_NAME);
-    } catch (ModelSaveException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (ModelSaveException | IOException e) {
+      LOG.error(e);
     }
     return null;
+  }
+
+  public static Element saveModelToXml(final SModel model) {
+    try {
+      SAXBuilder saxBuilder = new SAXBuilder();
+      Element rootElement = saxBuilder.build(modelContentAsStream(model, MPSExtentions.MODEL)).getRootElement();
+      rootElement.detach();
+      return rootElement;
+    } catch (IOException | JDOMException e) {
+      LOG.error(e);
+    }
+    return null;
+  }
+
+  public static SModel loadModelFromXml(final Element element) {
+    return loadModel(JDOMUtil.asString(new org.jdom.Document(element)), MPSExtentions.MODEL);
   }
 
   public static byte[] saveBinaryModel(final SModel model) {
@@ -136,10 +159,8 @@ public class PersistenceUtil {
       InMemoryStreamDataSource source = new InMemoryStreamDataSource();
       factory.save(model, source);
       return source.myStream.toByteArray();
-    } catch (ModelSaveException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (ModelSaveException | IOException e) {
+      LOG.error(e);
     }
     return null;
   }
@@ -155,11 +176,8 @@ public class PersistenceUtil {
         InMemoryStreamDataSource source = new InMemoryStreamDataSource();
         factory.save(model, source);
         return source.getContentAsStream();
-      } catch (ModelSaveException ex) {
-        ex.printStackTrace();
-        // fall-through
-      } catch (IOException ex) {
-        ex.printStackTrace();
+      } catch (ModelSaveException | IOException e) {
+        LOG.error(e);
         // fall-through
       }
     }
@@ -204,10 +222,8 @@ public class PersistenceUtil {
       InMemoryMultiStreamDataSource source = new InMemoryMultiStreamDataSource();
       factory.save(model, source);
       return source.getContent(name, FileUtil.DEFAULT_CHARSET_NAME);
-    } catch (ModelSaveException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (ModelSaveException | IOException e) {
+      LOG.error(e);
     }
     return null;
   }
@@ -228,10 +244,8 @@ public class PersistenceUtil {
           return source.getContent(name, FileUtil.DEFAULT_CHARSET_NAME);
         }
       }
-    } catch (ModelSaveException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (ModelSaveException | IOException e) {
+      LOG.error(e);
     }
     return null;
   }
@@ -296,7 +310,7 @@ public class PersistenceUtil {
       try {
         return myStream.toString(charsetName);
       } catch (UnsupportedEncodingException e) {
-        e.printStackTrace();
+        LOG.error(e);
         return null;
       }
     }
@@ -372,7 +386,7 @@ public class PersistenceUtil {
         }
         return stream.toString(charsetName);
       } catch (UnsupportedEncodingException e) {
-        e.printStackTrace();
+        LOG.error(e);
         return null;
       }
     }
