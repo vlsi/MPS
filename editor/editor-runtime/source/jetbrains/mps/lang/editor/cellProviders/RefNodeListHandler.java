@@ -143,4 +143,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected boolean filter(SNode childNode) {
     return true;
   }
+
+  protected SNode getNode() {
+    return getOwner();
+  }
 }
