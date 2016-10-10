@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/3966946038721923250">
+    <file name="AbstractStyleClass.java">
+      <node id="3966946038721923447" at="11,0,12,0" concept="2" trace="myEditorContext" />
+      <node id="3966946038721923488" at="12,0,13,0" concept="2" trace="myNode" />
+      <node id="3966946038721923585" at="14,64,15,30" concept="1" />
+      <node id="3966946038721925350" at="15,30,16,18" concept="1" />
+      <node id="3966946038722508624" at="19,0,20,0" concept="3" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="5090800358950997949" at="21,43,22,27" concept="4" />
+      <node id="3461111913279576826" at="25,26,26,18" concept="4" />
+      <node id="5090800358950997623" at="21,0,24,0" concept="3" trace="getEditorContext#()Ljetbrains/mps/openapi/editor/EditorContext;" />
+      <node id="3461111913279576087" at="25,0,28,0" concept="3" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3966946038721923302" at="14,0,18,0" concept="0" trace="AbstractStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3966946038722508624" at="19,0,20,0">
+        <var name="editorCell" id="1384401029876158287" />
+        <var name="toStyle" id="1384401029876132557" />
+      </scope>
+      <scope id="5090800358950997627" at="21,43,22,27" />
+      <scope id="3461111913279576091" at="25,26,26,18" />
+      <scope id="3966946038721923306" at="14,64,16,18" />
+      <scope id="5090800358950997623" at="21,0,24,0" />
+      <scope id="3461111913279576087" at="25,0,28,0" />
+      <scope id="3966946038721923302" at="14,0,18,0">
+        <var name="context" id="3966946038721923325" />
+        <var name="node" id="3966946038721923374" />
+      </scope>
+      <unit id="3966946038721923250" at="10,0,29,0" name="jetbrains.mps.editor.runtime.style.AbstractStyleClass" />
+    </file>
+  </root>
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181927252916">
     <file name="StyledTextPrinter.java">
-      <node id="6822392181927253279" at="7,0,8,0" concept="0" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
-      <node id="6822392181927254012" at="8,0,9,0" concept="0" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
+      <node id="6822392181927253279" at="7,0,8,0" concept="3" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
+      <node id="6822392181927254012" at="8,0,9,0" concept="3" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
       <scope id="6822392181927253279" at="7,0,8,0">
         <var name="bold" id="6822392181927253375" />
       </scope>
@@ -18,8 +49,8 @@
   </root>
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181928383378">
     <file name="SideTransformTagUtils.java">
-      <node id="6973815483245703196" at="7,53,8,32" concept="1" />
-      <node id="6822392181928397368" at="7,0,10,0" concept="2" trace="getDefaultSideTransformTag#()Ljava/lang/String;" />
+      <node id="6973815483245703196" at="7,53,8,32" concept="4" />
+      <node id="6822392181928397368" at="7,0,10,0" concept="5" trace="getDefaultSideTransformTag#()Ljava/lang/String;" />
       <scope id="6822392181928397371" at="7,53,8,32" />
       <scope id="6822392181928397368" at="7,0,10,0" />
       <unit id="6822392181928383378" at="6,0,11,0" name="jetbrains.mps.editor.runtime.style.SideTransformTagUtils" />
@@ -27,9 +58,9 @@
   </root>
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181928409958">
     <file name="ParametersInformation.java">
-      <node id="2092998546831358572" at="9,0,10,0" concept="0" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
-      <node id="2092998546831390297" at="10,0,11,0" concept="0" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;nullLjetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
-      <node id="2092998546831390809" at="11,0,12,0" concept="0" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;null)Z" />
+      <node id="2092998546831358572" at="9,0,10,0" concept="3" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="2092998546831390297" at="10,0,11,0" concept="3" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;nullLjetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
+      <node id="2092998546831390809" at="11,0,12,0" concept="3" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;null)Z" />
       <scope id="2092998546831358572" at="9,0,10,0">
         <var name="editorContext" id="2092998546831361737" />
         <var name="node" id="2092998546831361735" />

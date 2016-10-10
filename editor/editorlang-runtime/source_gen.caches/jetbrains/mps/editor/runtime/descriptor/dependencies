@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.editor.runtime.descriptor.AbstractCellFactory" file="AbstractCellFactory.java">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>
 

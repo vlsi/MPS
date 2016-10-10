@@ -4,6 +4,7 @@ package jetbrains.mps.editor.runtime.descriptor;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractCellFactory {
   @NotNull
@@ -14,7 +15,10 @@ public abstract class AbstractCellFactory {
   }
 
   @NotNull
-  public EditorContext getEditorContext() {
+  protected EditorContext getEditorContext() {
     return myEditorContext;
   }
+
+  @NotNull
+  protected abstract SNode getNode();
 }

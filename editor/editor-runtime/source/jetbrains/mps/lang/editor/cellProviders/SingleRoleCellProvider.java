@@ -75,7 +75,8 @@ public abstract class SingleRoleCellProvider {
     if (isRealChild) {
       editorCell.setAction(actionType, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
     } else {
-      editorCell.setAction(actionType, new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD: DeleteDirection.FORWARD));
+      editorCell.setAction(actionType,
+          new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD : DeleteDirection.FORWARD));
     }
   }
 
@@ -150,6 +151,14 @@ public abstract class SingleRoleCellProvider {
 
   protected Iterable<SNode> getNodesToPresent() {
     return AttributeOperations.getChildNodesAndAttributes(myOwnerNode, myContainmentLink);
+  }
+
+  protected SNode getNode() {
+    return myOwnerNode;
+  }
+
+  protected EditorContext getEditorContext() {
+    return myEditorContext;
   }
 }
 

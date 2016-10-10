@@ -60,6 +60,7 @@
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -241,6 +242,7 @@
     <ref role="3gUMe" to="ohyq:43DcIKCCH6b" resolve="CellModel_Table" />
     <node concept="312cEu" id="5n_5JDhcGZ2" role="13RCb5">
       <property role="TrG5h" value="_context_class_" />
+      <property role="1sVAO0" value="true" />
       <node concept="312cEg" id="2gy8sgG6XUr" role="jymVt">
         <property role="TrG5h" value="myNode" />
         <node concept="3Tm6S6" id="2gy8sgG6XUs" role="1B3o_S" />
