@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
@@ -252,7 +253,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private synchronized void postponeMigrationIfNeededOnModuleChange(Iterable<SModule> modules) {
     if (!(myMigrationQueued)) {
       Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-      if (MigrationManagerImpl.isMigrationRequired(myMpsProject, modules2Check)) {
+      if (myMigrationManager.isMigrationRequired(modules2Check)) {
         postponeMigration();
       }
     }
@@ -280,7 +281,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       }
     });
-    if (MigrationManagerImpl.isModuleMigrationRequired(modules2Check)) {
+    if (ListSequence.fromList(myMigrationManager.getModuleMigrationsToApply(modules2Check)).isNotEmpty()) {
       postponeMigration();
     }
   }

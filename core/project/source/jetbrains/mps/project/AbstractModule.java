@@ -191,7 +191,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   // fills collections with of imported languages and devkits.
   // Languages include directly imported and coming immediately through devkits; listed devkits are imported directly, without those they extend (why?).
-  private LangAndDevkits collectLanguagesAndDevkits() {
+  public LangAndDevkits collectLanguagesAndDevkits() {
     Set<SLanguage> usedLanguages = new LinkedHashSet<>();
     Set<SModuleReference> devkits = new LinkedHashSet<>();
 
@@ -217,7 +217,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return new LangAndDevkits(usedLanguages, devkits);
   }
 
-  private static class LangAndDevkits {
+  public static class LangAndDevkits {
     public final Set<SLanguage> languages;
     public final Set<SModuleReference> devkits;
 
