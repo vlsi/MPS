@@ -220,7 +220,6 @@ public class RequestHandler_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_7aan94_a0i0");
       Style style = new StyleImpl();
       BaseStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-      style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
