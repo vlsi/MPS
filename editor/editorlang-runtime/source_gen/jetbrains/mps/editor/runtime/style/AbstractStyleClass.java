@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 public abstract class AbstractStyleClass {
   private EditorContext myEditorContext;
-  protected SNode myNode;
+  private SNode myNode;
 
   public AbstractStyleClass(EditorContext context, SNode node) {
     myEditorContext = context;
@@ -18,11 +18,18 @@ public abstract class AbstractStyleClass {
 
   public abstract void apply(Style toStyle, EditorCell editorCell);
 
-  public EditorContext getEditorContext() {
+  public void upapply(Style toStyle, EditorCell editorCell) {
+    Style toRemove = new StyleImpl();
+    apply(toRemove, editorCell);
+    toStyle.removeAll(toRemove);
+  }
+
+  protected EditorContext getEditorContext() {
     return myEditorContext;
   }
 
-  public SNode getNode() {
+  protected SNode getNode() {
     return myNode;
   }
+
 }
