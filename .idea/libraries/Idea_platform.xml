@@ -22,7 +22,7 @@
       <root url="jar://$PROJECT_DIR$/lib/xpp3-1.1.4-min.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/picocontainer.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/proxy-vole_20131209.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/httpclient-4.4.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/httpcore-4.4.1.jar!/" />
@@ -44,7 +44,7 @@
       <root url="jar://$PROJECT_DIR$/lib/src/sanselan-0.98-snapshot-src.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/xpp3-1.1.4-min-src.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jhsrc.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3.1-src.jar!/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.5.1-src.jar!/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/test/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-client-4.4.1-src.zip!/httpcomponents-client-4.4.1/fluent-hc/src/examples" />
