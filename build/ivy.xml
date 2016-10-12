@@ -288,8 +288,8 @@
     <dependency org="lib.src" name="serviceMessages_279xxx_src.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages_279xxx_src.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="snappy-in-java-0.3.1-src.jar" rev="${idea.platform.version}">
-      <artifact name="snappy-in-java-0.3.1-src.jar" ext="jar"/>
+    <dependency org="lib.src" name="snappy-in-java-0.5.1-src.jar" rev="${idea.platform.version}">
+      <artifact name="snappy-in-java-0.5.1-src.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="trove4j_src.jar" rev="${idea.platform.version}">
       <artifact name="trove4j_src.jar" ext="jar"/>
@@ -438,7 +438,6 @@
     <dependency org="lib" name="platform-api.jar" rev="${idea.platform.version}">
       <artifact name="platform-api.jar" ext="jar"/>
     </dependency>
-    <!-- TODO: replace patched version ${idea.platform.version}.1 with default ${idea.platform.version} -->
     <dependency org="lib" name="platform.jar" rev="${idea.platform.version}">
       <artifact name="platform.jar" ext="jar"/>
     </dependency>
@@ -448,10 +447,10 @@
     <dependency org="lib" name="resolver.jar" rev="${idea.platform.version}">
       <artifact name="resolver.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}.1">
+    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}">
       <artifact name="resources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}.1">
+    <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}">
       <artifact name="resources_en.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="sanselan-0.98-snapshot.jar" rev="${idea.platform.version}">
@@ -460,8 +459,8 @@
     <dependency org="lib" name="serviceMessages.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="snappy-in-java-0.3.1.jar" rev="${idea.platform.version}">
-      <artifact name="snappy-in-java-0.3.1.jar" ext="jar"/>
+    <dependency org="lib" name="snappy-in-java-0.5.1.jar" rev="${idea.platform.version}">
+      <artifact name="snappy-in-java-0.5.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="swingx-core-1.6.2.jar" rev="${idea.platform.version}">
       <artifact name="swingx-core-1.6.2.jar" ext="jar"/>
