@@ -198,11 +198,8 @@
     <dependency org="lib.src" name="Xerces-J-src.2.11.0.zip" rev="${idea.platform.version}">
       <artifact name="Xerces-J-src.2.11.0.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="asm5-src.zip" rev="${idea.platform.version}">
-      <artifact name="asm5-src.zip" ext="zip"/>
-    </dependency>
-    <dependency org="lib.src" name="cglib-src-2.2.2.jar" rev="${idea.platform.version}">
-      <artifact name="cglib-src-2.2.2.jar" ext="jar"/>
+    <dependency org="lib.src" name="asm-src.zip" rev="${idea.platform.version}">
+      <artifact name="asm-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="commons-codec-1.9-sources.jar" rev="${idea.platform.version}">
       <artifact name="commons-codec-1.9-sources.jar" ext="jar"/>
@@ -219,17 +216,17 @@
     <dependency org="lib.src" name="gson-2.5-sources.jar" rev="${idea.platform.version}">
       <artifact name="gson-2.5-sources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="guava-17.0-sources.jar" rev="${idea.platform.version}">
-      <artifact name="guava-17.0-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="guava-19.0-sources.jar" rev="${idea.platform.version}">
+      <artifact name="guava-19.0-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="hamcrest-1.3-src.zip" rev="${idea.platform.version}">
       <artifact name="hamcrest-1.3-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="httpcomponents-client-4.4.1-src.zip" rev="${idea.platform.version}">
-      <artifact name="httpcomponents-client-4.4.1-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="httpcomponents-client-4.5.2-src.zip" rev="${idea.platform.version}">
+      <artifact name="httpcomponents-client-4.5.2-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="httpcomponents-core-4.4.1-src.zip" rev="${idea.platform.version}">
-      <artifact name="httpcomponents-core-4.4.1-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="httpcomponents-core-4.4.5-src.zip" rev="${idea.platform.version}">
+      <artifact name="httpcomponents-core-4.4.5-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="jaxen-1.1.3-src.zip" rev="${idea.platform.version}">
       <artifact name="jaxen-1.1.3-src.zip" ext="zip"/>
@@ -252,8 +249,8 @@
     <dependency org="lib.src" name="jna-platform.zip" rev="${idea.platform.version}">
       <artifact name="jna-platform.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="jsch-0.1.53.zip" rev="${idea.platform.version}">
-      <artifact name="jsch-0.1.53.zip" ext="zip"/>
+    <dependency org="lib.src" name="jsch-0.1.54.zip" rev="${idea.platform.version}">
+      <artifact name="jsch-0.1.54.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="jsch-agent-proxy.zip" rev="${idea.platform.version}">
       <artifact name="jsch-agent-proxy.zip" ext="zip"/>
@@ -267,14 +264,17 @@
     <dependency org="lib.src" name="microba-src.zip" rev="${idea.platform.version}">
       <artifact name="microba-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="miglayout-sources.jar" rev="${idea.platform.version}">
-      <artifact name="miglayout-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="miglayout-core-5.0-sources.jar" rev="${idea.platform.version}">
+      <artifact name="miglayout-core-5.0-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="miglayout-swing-5.0-sources.jar" rev="${idea.platform.version}">
+      <artifact name="miglayout-swing-5.0-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-4.1.1.Final-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.1.Final-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.5.Final-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.5.Final-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
@@ -290,6 +290,9 @@
     </dependency>
     <dependency org="lib.src" name="snappy-in-java-0.5.1-src.jar" rev="${idea.platform.version}">
       <artifact name="snappy-in-java-0.5.1-src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="streamex-0.6.2-sources.jar" rev="${idea.platform.version}">
+      <artifact name="streamex-0.6.2-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="trove4j_src.jar" rev="${idea.platform.version}">
       <artifact name="trove4j_src.jar" ext="jar"/>
@@ -313,6 +316,7 @@
       <artifact name="annotations.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="asm-all.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
       <artifact name="asm-all.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="automaton.jar" rev="${idea.platform.version}">
@@ -324,8 +328,8 @@
     <dependency org="lib" name="bootstrap.jar" rev="${idea.platform.version}">
       <artifact name="bootstrap.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="cglib-2.2.2.jar" rev="${idea.platform.version}">
-      <artifact name="cglib-2.2.2.jar" ext="jar"/>
+    <dependency org="lib" name="cglib-nodep-3.2.4.jar" rev="${idea.platform.version}">
+      <artifact name="cglib-nodep-3.2.4.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="commons-codec-1.9.jar" rev="${idea.platform.version}">
       <artifact name="commons-codec-1.9.jar" ext="jar"/>
@@ -340,13 +344,14 @@
       <artifact name="commons-net-3.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="ecj-4.5.2.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
       <artifact name="ecj-4.5.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
       <artifact name="extensions.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="fluent-hc-4.4.1.jar" rev="${idea.platform.version}">
-      <artifact name="fluent-hc-4.4.1.jar" ext="jar"/>
+    <dependency org="lib" name="fluent-hc-4.5.2.jar" rev="${idea.platform.version}">
+      <artifact name="fluent-hc-4.5.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="idea_rt.jar" rev="${idea.platform.version}">
       <artifact name="idea_rt.jar" ext="jar"/>
@@ -360,20 +365,21 @@
     <dependency org="lib" name="gson-2.5.jar" rev="${idea.platform.version}">
       <artifact name="gson-2.5.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="guava-17.0.jar" rev="${idea.platform.version}">
-      <artifact name="guava-17.0.jar" ext="jar"/>
+    <dependency org="lib" name="guava-19.0.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
+      <artifact name="guava-19.0.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="hamcrest-core-1.3.jar" rev="${idea.platform.version}">
       <artifact name="hamcrest-core-1.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="httpclient-4.4.1.jar" rev="${idea.platform.version}">
-      <artifact name="httpclient-4.4.1.jar" ext="jar"/>
+    <dependency org="lib" name="httpclient-4.5.2.jar" rev="${idea.platform.version}">
+      <artifact name="httpclient-4.5.2.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="httpcore-4.4.1.jar" rev="${idea.platform.version}">
-      <artifact name="httpcore-4.4.1.jar" ext="jar"/>
+    <dependency org="lib" name="httpcore-4.4.5.jar" rev="${idea.platform.version}">
+      <artifact name="httpcore-4.4.5.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="httpmime-4.4.1.jar" rev="${idea.platform.version}">
-      <artifact name="httpmime-4.4.1.jar" ext="jar"/>
+    <dependency org="lib" name="httpmime-4.5.2.jar" rev="${idea.platform.version}">
+      <artifact name="httpmime-4.5.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="icons.jar" rev="${idea.platform.version}">
       <artifact name="icons.jar" ext="jar"/>
@@ -405,13 +411,14 @@
     <dependency org="lib" name="jna.jar" rev="${idea.platform.version}">
       <artifact name="jna.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="jsch-0.1.53.jar" rev="${idea.platform.version}">
-      <artifact name="jsch-0.1.53.jar" ext="jar"/>
+    <dependency org="lib" name="jsch-0.1.54.jar" rev="${idea.platform.version}">
+      <artifact name="jsch-0.1.54.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="jsr173_1.0_api.jar" rev="${idea.platform.version}">
       <artifact name="jsr173_1.0_api.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="junit-4.12.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
       <artifact name="junit-4.12.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="log4j.jar" rev="${idea.platform.version}">
@@ -420,14 +427,18 @@
     <dependency org="lib" name="microba.jar" rev="${idea.platform.version}">
       <artifact name="microba.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="miglayout-swing.jar" rev="${idea.platform.version}">
-      <artifact name="miglayout-swing.jar" ext="jar"/>
+    <dependency org="lib" name="miglayout-core-5.0.jar" rev="${idea.platform.version}">
+      <artifact name="miglayout-core-5.0.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="miglayout-swing-5.0.jar" rev="${idea.platform.version}">
+      <artifact name="miglayout-swing-5.0.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-4.1.1.Final.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.1.Final.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.5.Final.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
+      <artifact name="netty-all-4.1.5.Final.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -454,6 +465,7 @@
       <artifact name="resources_en.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="sanselan-0.98-snapshot.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
       <artifact name="sanselan-0.98-snapshot.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="serviceMessages.jar" rev="${idea.platform.version}">
@@ -461,6 +473,9 @@
     </dependency>
     <dependency org="lib" name="snappy-in-java-0.5.1.jar" rev="${idea.platform.version}">
       <artifact name="snappy-in-java-0.5.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="streamex-0.6.2.jar" rev="${idea.platform.version}">
+      <artifact name="streamex-0.6.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="swingx-core-1.6.2.jar" rev="${idea.platform.version}">
       <artifact name="swingx-core-1.6.2.jar" ext="jar"/>
@@ -490,6 +505,7 @@
       <artifact name="xpp3-1.1.4-min.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="xstream-1.4.8.jar" rev="${idea.platform.version}">
+      <!-- TODO: also update version it in CommonPaths -->
       <artifact name="xstream-1.4.8.jar" ext="jar"/>
     </dependency>
     <!--Kotlin-->
@@ -710,26 +726,17 @@
     <dependency org="plugins.svn4idea.lib" name="sqljet.jar" rev="${idea.platform.version}">
       <artifact name="sqljet.jar" ext="jar"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="sqljetsrc.zip" rev="${idea.platform.version}">
-      <artifact name="sqljetsrc.zip" ext="zip"/>
-    </dependency>
     <dependency org="plugins.svn4idea.lib" name="svn4idea.jar" rev="${idea.platform.version}">
       <artifact name="svn4idea.jar" ext="jar"/>
     </dependency>
     <dependency org="plugins.svn4idea.lib" name="svnkit-javahl.jar" rev="${idea.platform.version}">
       <artifact name="svnkit-javahl.jar" ext="jar"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="svnkit-javahl16.zip" rev="${idea.platform.version}">
-      <artifact name="svnkit-javahl16.zip" ext="zip"/>
-    </dependency>
     <dependency org="plugins.svn4idea.lib" name="svnkit.jar" rev="${idea.platform.version}">
       <artifact name="svnkit.jar" ext="jar"/>
     </dependency>
     <dependency org="plugins.svn4idea.lib" name="trilead.jar" rev="${idea.platform.version}">
       <artifact name="trilead.jar" ext="jar"/>
-    </dependency>
-    <dependency org="plugins.svn4idea.lib" name="trileadsrc.zip" rev="${idea.platform.version}">
-      <artifact name="trileadsrc.zip" ext="zip"/>
     </dependency>
 
   </dependencies>

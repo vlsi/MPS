@@ -22,8 +22,6 @@
       <root url="jar://$PROJECT_DIR$/plugins/git4idea/lib/git4idea-rt.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/plugins/svn4idea/lib/svnkit-javahl16.zip!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
