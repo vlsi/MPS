@@ -5,7 +5,7 @@
   <description>Console in IDE to write and immediately execute DSL queries in IDE context</description>
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="145.1" until-build="171.1"/>
+  <idea-version since-build="163.1" until-build="171.1"/>
 
   <xi:include href="../classes/jetbrains/mps/console/actions/ConsoleActions.xml" xpointer="xpointer(/components/*)"/>
 
