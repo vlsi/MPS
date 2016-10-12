@@ -10,7 +10,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,44,0" name="jetbrains.mps.samples.notesOrganizer.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,34,0" name="jetbrains.mps.samples.notesOrganizer.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:31435044-ac3f-41ac-91b1-10c17ad3b966(jetbrains.mps.samples.notesOrganizer.constraints)/3892287256988699831">

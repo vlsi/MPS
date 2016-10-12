@@ -18,7 +18,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.AbstractNodeReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,99,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,89,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ClassifierMemberData_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ClassifierMemberData_BehaviorDescriptor" />

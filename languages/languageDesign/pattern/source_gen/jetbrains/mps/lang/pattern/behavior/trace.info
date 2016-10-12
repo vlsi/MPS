@@ -24,7 +24,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.AsPattern_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,63,0" name="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,53,0" name="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="GeneratorInternal_ChildDescriptor_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_ChildDescriptor_BehaviorDescriptor" />

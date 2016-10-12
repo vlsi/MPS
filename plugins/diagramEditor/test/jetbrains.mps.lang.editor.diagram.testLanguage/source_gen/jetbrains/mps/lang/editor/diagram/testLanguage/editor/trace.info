@@ -17,7 +17,7 @@
       <unit at="12,0,29,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.DefaultDiagramElementActionMap_0" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,71,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,61,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:38933db7-8021-49f1-94e7-c8fed36889bf(jetbrains.mps.lang.editor.diagram.testLanguage.editor)/2278461409091581692">

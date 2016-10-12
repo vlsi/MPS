@@ -5,7 +5,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.Bean_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.BehaviorAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Operation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.Operation_BehaviorDescriptor" />

@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="LanguageDependency_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.LanguageDependency_BehaviorDescriptor" />

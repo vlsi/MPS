@@ -9,7 +9,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="16,0,69,0" name="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.IntentionsDescriptor" />
+      <unit at="18,0,61,0" name="jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8d2a217a-f2d0-4d4a-b867-e2dd2ddb731c(jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions)/6820996345401611689">

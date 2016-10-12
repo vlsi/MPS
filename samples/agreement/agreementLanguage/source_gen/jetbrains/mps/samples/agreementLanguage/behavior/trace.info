@@ -8,7 +8,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.samples.agreementLanguage.behavior.AgreementDeclarations_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.samples.agreementLanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.samples.agreementLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Date_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Date_BehaviorDescriptor" />

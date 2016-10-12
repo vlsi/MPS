@@ -10,18 +10,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_xbvbvu_a0a.index(cncpt)) {
         case 0:
           return Collections.<ConceptEditor>singletonList(new AndOperation_Editor());
         case 1:
@@ -78,9 +76,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_xbvbvu_a0d.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_xbvbvu_a0d.index(cncpt)) {
         case 0:
           return Collections.<TransformationMenu>singletonList(new Expression_TransformationMenu());
         default:
@@ -93,9 +89,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_xbvbvu_a0e.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_xbvbvu_a0e.index(cncpt)) {
         case 0:
           return Collections.<SubstituteMenu>singletonList(new Expression_SubstituteMenu());
         case 1:
@@ -108,15 +102,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050a5816L, "jetbrains.mps.samples.formulaLanguage.structure.AndOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L, "jetbrains.mps.samples.formulaLanguage.structure.Constant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809c54870L, "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db80c054L, "jetbrains.mps.samples.formulaLanguage.structure.Formula"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8296fcL, "jetbrains.mps.samples.formulaLanguage.structure.Function"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x103009e5ee0L, "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, "jetbrains.mps.samples.formulaLanguage.structure.IfFunction"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a037c6c0bL, "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ea976b99L, "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba2244aL, "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ff4441ddL, "jetbrains.mps.samples.formulaLanguage.structure.MultOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a04135987L, "jetbrains.mps.samples.formulaLanguage.structure.NotOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a036c79c0L, "jetbrains.mps.samples.formulaLanguage.structure.NullConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050ab746L, "jetbrains.mps.samples.formulaLanguage.structure.OrOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809d032baL, "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba0a69dL, "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db83846eL, "jetbrains.mps.samples.formulaLanguage.structure.Reference"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10804f6f702L, "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"));
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050a5816L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809c54870L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db80c054L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8296fcL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x103009e5ee0L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a037c6c0bL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ea976b99L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba2244aL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ff4441ddL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a04135987L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a036c79c0L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050ab746L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809d032baL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba0a69dL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db83846eL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10804f6f702L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL), MetaIdFactory.conceptId(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L)).seal();
 }

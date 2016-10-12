@@ -24,8 +24,8 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import jetbrains.mps.editor.intentions.BaseNodeTransformer;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -91,9 +91,7 @@ public class ConvertIntention extends IntentionsFactory {
   public void resolveChildFilterRefernce(SNode root, SNode node) {
     {
       SAbstractConcept cncpt = SNodeOperations.getConcept(node);
-      Integer preIndex = indices_lf8yx8_a0cb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_lf8yx8_a0cb.index(cncpt)) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"))) {
             if (true) {
@@ -200,15 +198,7 @@ public class ConvertIntention extends IntentionsFactory {
     });
     return result;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lf8yx8_a0cb = buildConceptIndices();
+  private static final ConceptSwitchIndex index_lf8yx8_a0cb = new ConceptSwitchIndexBuilder().put().seal();
   private static SNode _quotation_createNode_lf8yx8_a0a0a2a51a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

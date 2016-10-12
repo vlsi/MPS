@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.httpsupport.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.HttpRequestOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.ParameterInitializer_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.QueryParameterReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.QueryParameter_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.RequestHandler_Constraints" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.constraints.SerializeFunction_Constraints" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

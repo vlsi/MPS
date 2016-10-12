@@ -17,7 +17,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,78,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,68,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildFilterBlock_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />

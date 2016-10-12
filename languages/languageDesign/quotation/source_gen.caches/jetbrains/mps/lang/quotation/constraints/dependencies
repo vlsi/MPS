@@ -12,10 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.AbstractAntiquotation_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilderExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilderInitLink_Constraints" />
@@ -25,7 +22,9 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilderRef_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.NodeBuilder_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.constraints.Quotation_Constraints" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

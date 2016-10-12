@@ -8,7 +8,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testLanguage.behavior.Base_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.lang.editor.menus.testLanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.lang.editor.menus.testLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildOfParentWithEmptyCell_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.testLanguage.behavior.ChildOfParentWithEmptyCell_BehaviorDescriptor" />

@@ -8,7 +8,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.samples.Expressions.behavior.ArithmeticSimpleMathExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.samples.Expressions.behavior.BehaviorAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.samples.Expressions.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinarySimpleMathExpression_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.Expressions.behavior.BinarySimpleMathExpression_BehaviorDescriptor" />

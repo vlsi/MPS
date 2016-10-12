@@ -12,7 +12,9 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import jetbrains.mps.editor.intentions.NodeTransformerFactoryToIntentionFactoryAdapter;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -30,9 +32,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     IntentionFactory[] intentions = EMPTY_ARRAY;
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_hphjzv_d0f.index(cncpt)) {
         case 0:
           if (true) {
             // Concept: INamedConcept 
@@ -55,13 +55,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[0] = new NodeTransformerFactoryToIntentionFactoryAdapter(new AddExportAsImageAttribute());
     return Arrays.asList(rv);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).seal();
 }

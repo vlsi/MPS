@@ -76,7 +76,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsUnmodifiableOperation_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,186,0" name="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,176,0" name="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinaryOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.collections.behavior.BinaryOperation_BehaviorDescriptor" />

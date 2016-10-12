@@ -18,7 +18,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,93,0" name="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,83,0" name="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CheckProperitesOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.execution.settings.behavior.CheckProperitesOperation_BehaviorDescriptor" />

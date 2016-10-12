@@ -17,7 +17,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.extensionMethods.behavior.BaseExtensionMethodContainer_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,57,0" name="jetbrains.mps.baseLanguage.extensionMethods.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,47,0" name="jetbrains.mps.baseLanguage.extensionMethods.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ExtensionMethodCall_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_BehaviorDescriptor" />

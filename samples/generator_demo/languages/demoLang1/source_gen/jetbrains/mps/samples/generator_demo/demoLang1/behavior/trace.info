@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.samples.generator_demo.demoLang1.behavior.BehaviorAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.samples.generator_demo.demoLang1.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

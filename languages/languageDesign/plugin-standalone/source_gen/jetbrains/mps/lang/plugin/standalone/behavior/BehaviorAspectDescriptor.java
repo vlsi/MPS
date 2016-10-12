@@ -7,9 +7,9 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myProjectPluginDisposeBlock__BehaviorDescriptor = new ProjectPluginDisposeBlock__BehaviorDescriptor();
@@ -28,9 +28,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_846f5o_a0l.index(cncpt)) {
         case 0:
           return myApplicationPluginDeclaration__BehaviorDescriptor;
         case 1:
@@ -53,13 +51,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f205eL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2063L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2052L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2043L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2049L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2068L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType"));
+  private static final ConceptSwitchIndex index_846f5o_a0l = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f205eL), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2063L), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2052L), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2043L), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2049L), MetaIdFactory.conceptId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2068L)).seal();
 }

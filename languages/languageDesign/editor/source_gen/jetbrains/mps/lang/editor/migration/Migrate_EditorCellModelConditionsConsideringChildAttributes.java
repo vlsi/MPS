@@ -22,8 +22,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 
 public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends MigrationScriptBase {
   public String getCaption() {
@@ -178,9 +178,7 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     }
     {
       SAbstractConcept cncpt = SNodeOperations.getConcept(grandParent);
-      Integer preIndex = indices_3lt69g_l0k.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_3lt69g_l0k.index(cncpt)) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
             return isLeft;
@@ -274,15 +272,7 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     SLinkOperations.setTarget(SNodeOperations.cast(operand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), newLinkAccess);
   }
 
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_3lt69g_l0k = buildConceptIndices();
+  private static final ConceptSwitchIndex index_3lt69g_l0k = new ConceptSwitchIndexBuilder().put().seal();
   private static boolean eq_3lt69g_a0a0a1a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

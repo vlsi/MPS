@@ -45,7 +45,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,63,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,53,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinaryAssert_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BinaryAssert_BehaviorDescriptor" />

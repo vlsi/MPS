@@ -16,7 +16,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.slanguage.behavior.AspectModelRefExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,45,0" name="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,35,0" name="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Model_IsAspectOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation_BehaviorDescriptor" />

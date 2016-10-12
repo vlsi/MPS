@@ -57,8 +57,8 @@ import org.apache.log4j.Level;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -377,9 +377,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
 
     {
       SAbstractConcept cncpt = SNodeOperations.asSConcept(kind);
-      Integer preIndex = indices_hx1769_i0yc.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_hx1769_i0yc.index(cncpt)) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
             if (true) {
@@ -679,15 +677,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hx1769_i0yc = buildConceptIndices();
+  private static final ConceptSwitchIndex index_hx1769_i0yc = new ConceptSwitchIndexBuilder().put().seal();
   private static String check_qw8l7c_a0a0d0s(SModelName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStereotype();

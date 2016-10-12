@@ -27,8 +27,8 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 
 public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule");
@@ -53,9 +53,7 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static Scope getArgumentsScope_id460OzqriLdX(@NotNull SNode __thisNode__, SNode kind) {
     {
       SAbstractConcept cncpt = SNodeOperations.asSConcept((kind));
-      Integer preIndex = indices_1olkhf_a0n.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
+      switch (index_1olkhf_a0n.index(cncpt)) {
         default:
           if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
             return new EmptyScope();
@@ -77,9 +75,7 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
     if (child == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x4180d2369beda765L, "condition"))) {
       {
         SAbstractConcept cncpt = SNodeOperations.asSConcept((kind));
-        Integer preIndex = indices_1olkhf_a0b0o.get(cncpt);
-        int switchIndex = (preIndex == null ? -1 : preIndex);
-        switch (switchIndex) {
+        switch (index_1olkhf_a0b0o.index(cncpt)) {
           default:
             if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
               return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2dcL, "rule")), MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2f4L, "attrs"));
@@ -151,16 +147,8 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_1olkhf_a0n = buildConceptIndices();
-  private static final Map<SAbstractConcept, Integer> indices_1olkhf_a0b0o = buildConceptIndices();
+  private static final ConceptSwitchIndex index_1olkhf_a0n = new ConceptSwitchIndexBuilder().put().seal();
+  private static final ConceptSwitchIndex index_1olkhf_a0b0o = new ConceptSwitchIndexBuilder().put().seal();
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

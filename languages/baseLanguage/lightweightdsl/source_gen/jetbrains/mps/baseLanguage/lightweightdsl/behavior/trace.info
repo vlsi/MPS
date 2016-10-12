@@ -20,7 +20,7 @@
       <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,96,0" name="jetbrains.mps.baseLanguage.lightweightdsl.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,86,0" name="jetbrains.mps.baseLanguage.lightweightdsl.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BooleanPropertyInstance_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.lightweightdsl.behavior.BooleanPropertyInstance_BehaviorDescriptor" />
