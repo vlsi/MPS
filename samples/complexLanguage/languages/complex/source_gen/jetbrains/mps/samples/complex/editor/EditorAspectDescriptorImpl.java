@@ -16,17 +16,15 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new DegreeComplexExpression_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ImaginaryUnit_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new SingleComplexExpression_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new DegreeComplexExpression_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ImaginaryUnit_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new SingleComplexExpression_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -35,13 +33,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new Complex_RightTransform_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new Complex_RightTransform_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }

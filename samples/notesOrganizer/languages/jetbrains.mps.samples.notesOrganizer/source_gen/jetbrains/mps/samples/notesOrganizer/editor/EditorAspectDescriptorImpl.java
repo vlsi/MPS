@@ -21,52 +21,48 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("compact", "", true, "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact"), new ConceptEditorHintImpl("inspected", "", true, "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.inspected"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Category_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
-        case 2:
-          return Arrays.asList(new ConceptEditor[]{new Note_Editor(), new Note_compact_Editor(), new Note_inspected_Editor()});
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new Notes_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new NotesConfiguration_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new Priority_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new Status_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new TextNotePart_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Category_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
+      case 2:
+        return Arrays.asList(new ConceptEditor[]{new Note_Editor(), new Note_compact_Editor(), new Note_inspected_Editor()});
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Notes_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new NotesConfiguration_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new Priority_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Status_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new TextNotePart_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new NoteMetaInformation());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new NoteMetaInformation());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.samples.notesOrganizer.editor.MetaInfo".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new MetaInfo());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.samples.notesOrganizer.editor.MetaInfo".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new MetaInfo());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }

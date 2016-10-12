@@ -17,51 +17,47 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new DefaultParameterConverter_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ParameterConverterDeclaration_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ParameterConverterReference_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ParameterInitializer_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new QueryParameterReference_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new QueryPath_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new QuerySegment_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new RequestHandler_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new RequestURIBuilderExpression_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new ResponseSendOperation_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new DefaultParameterConverter_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ParameterConverterDeclaration_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ParameterConverterReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ParameterInitializer_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new QueryParameterReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new QueryPath_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new QuerySegment_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new RequestHandler_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new RequestURIBuilderExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new ResponseSendOperation_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.ide.httpsupport.editor.RequestHandlerDescription".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new RequestHandlerDescription());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.ide.httpsupport.editor.RequestHandlerDescription".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new RequestHandlerDescription());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -69,15 +65,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new QueryParameter_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new QuerySegment_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new QueryParameter_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new QuerySegment_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }

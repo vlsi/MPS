@@ -39,54 +39,51 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0y.index(cncpt)) {
-        case 0:
-          return myBigMaxExpression__BehaviorDescriptor;
-        case 1:
-          return myBigMinExpression__BehaviorDescriptor;
-        case 2:
-          return myBigProdExpression__BehaviorDescriptor;
-        case 3:
-          return myBigSumExpression__BehaviorDescriptor;
-        case 4:
-          return myConjugateOperation__BehaviorDescriptor;
-        case 5:
-          return myDecimalBinaryOperation__BehaviorDescriptor;
-        case 6:
-          return myDecimalDivExpression__BehaviorDescriptor;
-        case 7:
-          return myDecimalMinusExpression__BehaviorDescriptor;
-        case 8:
-          return myDecimalMulExpression__BehaviorDescriptor;
-        case 9:
-          return myDecimalPlusExpression__BehaviorDescriptor;
-        case 10:
-          return myExponentialOperation__BehaviorDescriptor;
-        case 11:
-          return myInIntervalExpression__BehaviorDescriptor;
-        case 12:
-          return myIntervalContainsExpression__BehaviorDescriptor;
-        case 13:
-          return myMathContext__BehaviorDescriptor;
-        case 14:
-          return myMathSymbol__BehaviorDescriptor;
-        case 15:
-          return myMatrixConstructor__BehaviorDescriptor;
-        case 16:
-          return myMatrixElementAccessExpression__BehaviorDescriptor;
-        case 17:
-          return myMatrixExponentialOperation__BehaviorDescriptor;
-        case 18:
-          return myMatrixInverseOperation__BehaviorDescriptor;
-        case 19:
-          return myMatrixType__BehaviorDescriptor;
-        case 20:
-          return myTransposeOperation__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0y.index(cncpt)) {
+      case 0:
+        return myBigMaxExpression__BehaviorDescriptor;
+      case 1:
+        return myBigMinExpression__BehaviorDescriptor;
+      case 2:
+        return myBigProdExpression__BehaviorDescriptor;
+      case 3:
+        return myBigSumExpression__BehaviorDescriptor;
+      case 4:
+        return myConjugateOperation__BehaviorDescriptor;
+      case 5:
+        return myDecimalBinaryOperation__BehaviorDescriptor;
+      case 6:
+        return myDecimalDivExpression__BehaviorDescriptor;
+      case 7:
+        return myDecimalMinusExpression__BehaviorDescriptor;
+      case 8:
+        return myDecimalMulExpression__BehaviorDescriptor;
+      case 9:
+        return myDecimalPlusExpression__BehaviorDescriptor;
+      case 10:
+        return myExponentialOperation__BehaviorDescriptor;
+      case 11:
+        return myInIntervalExpression__BehaviorDescriptor;
+      case 12:
+        return myIntervalContainsExpression__BehaviorDescriptor;
+      case 13:
+        return myMathContext__BehaviorDescriptor;
+      case 14:
+        return myMathSymbol__BehaviorDescriptor;
+      case 15:
+        return myMatrixConstructor__BehaviorDescriptor;
+      case 16:
+        return myMatrixElementAccessExpression__BehaviorDescriptor;
+      case 17:
+        return myMatrixExponentialOperation__BehaviorDescriptor;
+      case 18:
+        return myMatrixInverseOperation__BehaviorDescriptor;
+      case 19:
+        return myMatrixType__BehaviorDescriptor;
+      case 20:
+        return myTransposeOperation__BehaviorDescriptor;
+      default:
     }
     return null;
   }

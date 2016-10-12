@@ -20,449 +20,445 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AbstractPaddingStyleClassItem_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AbstractStyledTextOperation_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ApplyStyleClass_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ApplyStyleClassCondition_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new AttributeStyleClassItem_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new BooleanStyleSheetItem_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new CaretPositionParameter_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new CellActionMapDeclaration_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new CellActionMapItem_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new CellIdReferenceSelector_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new CellKeyMapDeclaration_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new CellKeyMapItem_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new CellKeyMapKeystroke_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new CellLayout_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new CellMenuComponent_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Link_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Property_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new CellMenuDescriptor_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_Abstract_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ApplySideTransforms_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_CellMenuComponent_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Group_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Item_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyPostfixHints_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyValues_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReferentPrimary_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChildPrimary_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Group_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Item_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_Group_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Alternation_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new CellModel_AttributedLinkCell_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new CellModel_AttributedNodeCell_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new CellModel_AttributedPropertyCell_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Block_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new CellModel_BlockEnd_Editor());
-        case 39:
-          return Collections.<ConceptEditor>singletonList(new CellModel_BlockStart_Editor());
-        case 40:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Collection_Editor());
-        case 41:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Component_Editor());
-        case 42:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Constant_Editor());
-        case 43:
-          return Collections.<ConceptEditor>singletonList(new CellModel_ContextAssistant_Editor());
-        case 44:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Custom_Editor());
-        case 45:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Empty_Editor());
-        case 46:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Error_Editor());
-        case 47:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Image_Editor());
-        case 48:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Indent_Editor());
-        case 49:
-          return Collections.<ConceptEditor>singletonList(new CellModel_JComponent_Editor());
-        case 50:
-          return Collections.<ConceptEditor>singletonList(new CellModel_ModelAccess_Editor());
-        case 51:
-          return Collections.<ConceptEditor>singletonList(new CellModel_NextEditor_Editor());
-        case 52:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Property_Editor());
-        case 53:
-          return Collections.<ConceptEditor>singletonList(new CellModel_ReadOnlyModelAccessor_Editor());
-        case 54:
-          return Collections.<ConceptEditor>singletonList(new CellModel_RefCell_Editor());
-        case 55:
-          return Collections.<ConceptEditor>singletonList(new CellModel_RefNode_Editor());
-        case 56:
-          return Collections.<ConceptEditor>singletonList(new CellModel_RefNodeList_Editor());
-        case 57:
-          return Collections.<ConceptEditor>singletonList(new CellModel_ReferencePresentation_Editor());
-        case 58:
-          return Collections.<ConceptEditor>singletonList(new CellModel_TransactionalProperty_Editor());
-        case 59:
-          return Collections.<ConceptEditor>singletonList(new CellModel_URL_Editor());
-        case 60:
-          return Collections.<ConceptEditor>singletonList(new ColorStyleClassItem_Editor());
-        case 61:
-          return Collections.<ConceptEditor>singletonList(new ConceptEditorContextHints_Editor());
-        case 62:
-          return Collections.<ConceptEditor>singletonList(new ConceptEditorDeclaration_Editor());
-        case 63:
-          return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclaration_Editor());
-        case 64:
-          return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReference_Editor());
-        case 65:
-          return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReferenceExpression_Editor());
-        case 66:
-          return Collections.<ConceptEditor>singletonList(new ContextVariable_Editor());
-        case 67:
-          return Collections.<ConceptEditor>singletonList(new DefaultBaseLine_Editor());
-        case 68:
-          return Collections.<ConceptEditor>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
-        case 69:
-          return Collections.<ConceptEditor>singletonList(new DominatesRecord_Editor());
-        case 70:
-          return Collections.<ConceptEditor>singletonList(new EditorCellId_Editor());
-        case 71:
-          return Collections.<ConceptEditor>singletonList(new EditorCellModel_Editor());
-        case 72:
-          return Collections.<ConceptEditor>singletonList(new EditorComponentDeclaration_Editor());
-        case 73:
-          return Collections.<ConceptEditor>singletonList(new EditorComponentDeclarationReference_Editor());
-        case 74:
-          return Collections.<ConceptEditor>singletonList(new ExplicitHintsSpecification_Editor());
-        case 75:
-          return Collections.<ConceptEditor>singletonList(new FloatStyleClassItem_Editor());
-        case 76:
-          return Collections.<ConceptEditor>singletonList(new FontSizeStyleClassItem_Editor());
-        case 77:
-          return Collections.<ConceptEditor>singletonList(new FontStyleStyleClassItem_Editor());
-        case 78:
-          return Collections.<ConceptEditor>singletonList(new HorizontalAlign_Editor());
-        case 79:
-          return Collections.<ConceptEditor>singletonList(new IOutputConceptTransformationMenuPart_Editor());
-        case 80:
-          return Collections.<ConceptEditor>singletonList(new IdSelector_Editor());
-        case 81:
-          return Collections.<ConceptEditor>singletonList(new InlineEditorComponent_Editor());
-        case 82:
-          return Collections.<ConceptEditor>singletonList(new InlineStyleDeclaration_Editor());
-        case 83:
-          return Collections.<ConceptEditor>singletonList(new LayoutConstraintStyleClassItem_Editor());
-        case 84:
-          return Collections.<ConceptEditor>singletonList(new MatchingLabelStyleClassItem_Editor());
-        case 85:
-          return Collections.<ConceptEditor>singletonList(new MaxWidthStyleClassItem_Editor());
-        case 86:
-          return Collections.<ConceptEditor>singletonList(new MigrateManuallyAnnotation_Editor());
-        case 87:
-          return Collections.<ConceptEditor>singletonList(new MigratedSideTransformMenuAttribute_Editor());
-        case 88:
-          return Collections.<ConceptEditor>singletonList(new MigratedToAnnotation_Editor());
-        case 89:
-          return Collections.<ConceptEditor>singletonList(new ModelAccessor_Editor());
-        case 90:
-          return Collections.<ConceptEditor>singletonList(new NavigatableNodeStyleClassItem_Editor());
-        case 91:
-          return Collections.<ConceptEditor>singletonList(new NavigatableReferenceStyleClassItem_Editor());
-        case 92:
-          return Collections.<ConceptEditor>singletonList(new OptionalConceptReference_Editor());
-        case 93:
-          return Collections.<ConceptEditor>singletonList(new OrCellSelector_Editor());
-        case 94:
-          return Collections.<ConceptEditor>singletonList(new ParametersInformationQuery_Editor());
-        case 95:
-          return Collections.<ConceptEditor>singletonList(new ParametersInformationStyleClassItem_Editor());
-        case 96:
-          return Collections.<ConceptEditor>singletonList(new PositionChildrenStyleClassItem_Editor());
-        case 97:
-          return Collections.<ConceptEditor>singletonList(new PositionStyleClassItem_Editor());
-        case 98:
-          return Collections.<ConceptEditor>singletonList(new PreDefinedStyleClassItem_Editor());
-        case 99:
-          return Collections.<ConceptEditor>singletonList(new PredefinedSelector_Editor());
-        case 100:
-          return Collections.<ConceptEditor>singletonList(new PropertyDeclarationCellSelector_Editor());
-        case 101:
-          return Collections.<ConceptEditor>singletonList(new PropertyExpressionCellSelector_Editor());
-        case 102:
-          return Collections.<ConceptEditor>singletonList(new RGBColor_Editor());
-        case 103:
-          return Collections.<ConceptEditor>singletonList(new ReadOnlyModelAccessor_Editor());
-        case 104:
-          return Collections.<ConceptEditor>singletonList(new RightTransformAnchorTagWrapper_Editor());
-        case 105:
-          return Collections.<ConceptEditor>singletonList(new ScriptKindClassItem_Editor());
-        case 106:
-          return Collections.<ConceptEditor>singletonList(new SelectInEditorOperation_Editor());
-        case 107:
-          return Collections.<ConceptEditor>singletonList(new SelectPositionParameter_Editor());
-        case 108:
-          return Collections.<ConceptEditor>singletonList(new ShowBoundariesInStyleClassItem_Editor());
-        case 109:
-          return Collections.<ConceptEditor>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
-        case 110:
-          return Collections.<ConceptEditor>singletonList(new StubEditorCellModel_Editor());
-        case 111:
-          return Collections.<ConceptEditor>singletonList(new StyleAttributeDeclaration_Editor());
-        case 112:
-          return Collections.<ConceptEditor>singletonList(new StyleAttributeReferenceExpression_Editor());
-        case 113:
-          return Collections.<ConceptEditor>singletonList(new StyleClass_Editor());
-        case 114:
-          return Collections.<ConceptEditor>singletonList(new StyleClassReference_Editor());
-        case 115:
-          return Collections.<ConceptEditor>singletonList(new StyleClassReferenceList_Editor());
-        case 116:
-          return Collections.<ConceptEditor>singletonList(new StyleKey_Editor());
-        case 117:
-          return Collections.<ConceptEditor>singletonList(new StyleKeyPack_Editor());
-        case 118:
-          return Collections.<ConceptEditor>singletonList(new StyleReference_Editor());
-        case 119:
-          return Collections.<ConceptEditor>singletonList(new StyleSheet_Editor());
-        case 120:
-          return Collections.<ConceptEditor>singletonList(new StyleSheetClass_Editor());
-        case 121:
-          return Collections.<ConceptEditor>singletonList(new StyleSheetClassReference_Editor());
-        case 122:
-          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_ActionType_Editor());
-        case 123:
-          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_CanSubstitute_Editor());
-        case 124:
-          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_DescriptionText_Editor());
-        case 125:
-          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Icon_Editor());
-        case 126:
-          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_MatchingText_Editor());
-        case 127:
-          return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Selection_Editor());
-        case 128:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Action_Editor());
-        case 129:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_AddConcept_Editor());
-        case 130:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Concepts_Editor());
-        case 131:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Group_Editor());
-        case 132:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_IncludeMenu_Editor());
-        case 133:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Parameterized_Editor());
-        case 134:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Placeholder_Editor());
-        case 135:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Subconcepts_Editor());
-        case 136:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Wrapper_Editor());
-        case 137:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Default_Editor());
-        case 138:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_DefaultWithFunction_Editor());
-        case 139:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Named_Editor());
-        case 140:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenuVariableDeclaration_Editor());
-        case 141:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Contribution_Editor());
-        case 142:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Default_Editor());
-        case 143:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Named_Editor());
-        case 144:
-          return Collections.<ConceptEditor>singletonList(new SubstituteMenu_SimpleString_Editor());
-        case 145:
-          return Collections.<ConceptEditor>singletonList(new TableComponentStyleClassItem_Editor());
-        case 146:
-          return Collections.<ConceptEditor>singletonList(new TransformationFeature_ActionType_Editor());
-        case 147:
-          return Collections.<ConceptEditor>singletonList(new TransformationFeature_DescriptionText_Editor());
-        case 148:
-          return Collections.<ConceptEditor>singletonList(new TransformationFeature_Icon_Editor());
-        case 149:
-          return Collections.<ConceptEditor>singletonList(new TransformationLocation_Editor());
-        case 150:
-          return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_Editor());
-        case 151:
-          return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_PlaceInCellHolder_Editor());
-        case 152:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuContribution_Editor());
-        case 153:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Editor());
-        case 154:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Action_Editor());
-        case 155:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Group_Editor());
-        case 156:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeMenu_Editor());
-        case 157:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeSubstituteMenu_Editor());
-        case 158:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Parameterized_Editor());
-        case 159:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Placeholder_Editor());
-        case 160:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_SubMenu_Editor());
-        case 161:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Super_Editor());
-        case 162:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_WrapSubstituteMenu_Editor());
-        case 163:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Default_Editor());
-        case 164:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Named_Editor());
-        case 165:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuSection_Editor());
-        case 166:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenuVariableDeclaration_Editor());
-        case 167:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenu_Default_Editor());
-        case 168:
-          return Collections.<ConceptEditor>singletonList(new TransformationMenu_Named_Editor());
-        case 169:
-          return Collections.<ConceptEditor>singletonList(new UnapplyStyle_Editor());
-        case 170:
-          return Collections.<ConceptEditor>singletonList(new UnderlinedStyleClassItem_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractCellSelector_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AbstractPaddingStyleClassItem_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AbstractStyledTextOperation_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ApplyStyleClass_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ApplyStyleClassCondition_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new AttributeStyleClassItem_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new BooleanStyleSheetItem_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new CaretPositionParameter_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new CellActionMapDeclaration_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new CellActionMapItem_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new CellIdReferenceSelector_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new CellKeyMapDeclaration_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new CellKeyMapItem_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new CellKeyMapKeystroke_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new CellLayout_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new CellMenuComponent_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Link_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new CellMenuComponentFeature_Property_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new CellMenuDescriptor_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_Abstract_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ApplySideTransforms_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_CellMenuComponent_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Group_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_Generic_Item_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyPostfixHints_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_PropertyValues_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReferentPrimary_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChildPrimary_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Group_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceChild_Item_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new CellMenuPart_ReplaceNode_Group_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Alternation_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new CellModel_AttributedLinkCell_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new CellModel_AttributedNodeCell_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new CellModel_AttributedPropertyCell_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Block_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new CellModel_BlockEnd_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new CellModel_BlockStart_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Collection_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Component_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Constant_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new CellModel_ContextAssistant_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Custom_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Empty_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Error_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Image_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Indent_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new CellModel_JComponent_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new CellModel_ModelAccess_Editor());
+      case 51:
+        return Collections.<ConceptEditor>singletonList(new CellModel_NextEditor_Editor());
+      case 52:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Property_Editor());
+      case 53:
+        return Collections.<ConceptEditor>singletonList(new CellModel_ReadOnlyModelAccessor_Editor());
+      case 54:
+        return Collections.<ConceptEditor>singletonList(new CellModel_RefCell_Editor());
+      case 55:
+        return Collections.<ConceptEditor>singletonList(new CellModel_RefNode_Editor());
+      case 56:
+        return Collections.<ConceptEditor>singletonList(new CellModel_RefNodeList_Editor());
+      case 57:
+        return Collections.<ConceptEditor>singletonList(new CellModel_ReferencePresentation_Editor());
+      case 58:
+        return Collections.<ConceptEditor>singletonList(new CellModel_TransactionalProperty_Editor());
+      case 59:
+        return Collections.<ConceptEditor>singletonList(new CellModel_URL_Editor());
+      case 60:
+        return Collections.<ConceptEditor>singletonList(new ColorStyleClassItem_Editor());
+      case 61:
+        return Collections.<ConceptEditor>singletonList(new ConceptEditorContextHints_Editor());
+      case 62:
+        return Collections.<ConceptEditor>singletonList(new ConceptEditorDeclaration_Editor());
+      case 63:
+        return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclaration_Editor());
+      case 64:
+        return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReference_Editor());
+      case 65:
+        return Collections.<ConceptEditor>singletonList(new ConceptEditorHintDeclarationReferenceExpression_Editor());
+      case 66:
+        return Collections.<ConceptEditor>singletonList(new ContextVariable_Editor());
+      case 67:
+        return Collections.<ConceptEditor>singletonList(new DefaultBaseLine_Editor());
+      case 68:
+        return Collections.<ConceptEditor>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
+      case 69:
+        return Collections.<ConceptEditor>singletonList(new DominatesRecord_Editor());
+      case 70:
+        return Collections.<ConceptEditor>singletonList(new EditorCellId_Editor());
+      case 71:
+        return Collections.<ConceptEditor>singletonList(new EditorCellModel_Editor());
+      case 72:
+        return Collections.<ConceptEditor>singletonList(new EditorComponentDeclaration_Editor());
+      case 73:
+        return Collections.<ConceptEditor>singletonList(new EditorComponentDeclarationReference_Editor());
+      case 74:
+        return Collections.<ConceptEditor>singletonList(new ExplicitHintsSpecification_Editor());
+      case 75:
+        return Collections.<ConceptEditor>singletonList(new FloatStyleClassItem_Editor());
+      case 76:
+        return Collections.<ConceptEditor>singletonList(new FontSizeStyleClassItem_Editor());
+      case 77:
+        return Collections.<ConceptEditor>singletonList(new FontStyleStyleClassItem_Editor());
+      case 78:
+        return Collections.<ConceptEditor>singletonList(new HorizontalAlign_Editor());
+      case 79:
+        return Collections.<ConceptEditor>singletonList(new IOutputConceptTransformationMenuPart_Editor());
+      case 80:
+        return Collections.<ConceptEditor>singletonList(new IdSelector_Editor());
+      case 81:
+        return Collections.<ConceptEditor>singletonList(new InlineEditorComponent_Editor());
+      case 82:
+        return Collections.<ConceptEditor>singletonList(new InlineStyleDeclaration_Editor());
+      case 83:
+        return Collections.<ConceptEditor>singletonList(new LayoutConstraintStyleClassItem_Editor());
+      case 84:
+        return Collections.<ConceptEditor>singletonList(new MatchingLabelStyleClassItem_Editor());
+      case 85:
+        return Collections.<ConceptEditor>singletonList(new MaxWidthStyleClassItem_Editor());
+      case 86:
+        return Collections.<ConceptEditor>singletonList(new MigrateManuallyAnnotation_Editor());
+      case 87:
+        return Collections.<ConceptEditor>singletonList(new MigratedSideTransformMenuAttribute_Editor());
+      case 88:
+        return Collections.<ConceptEditor>singletonList(new MigratedToAnnotation_Editor());
+      case 89:
+        return Collections.<ConceptEditor>singletonList(new ModelAccessor_Editor());
+      case 90:
+        return Collections.<ConceptEditor>singletonList(new NavigatableNodeStyleClassItem_Editor());
+      case 91:
+        return Collections.<ConceptEditor>singletonList(new NavigatableReferenceStyleClassItem_Editor());
+      case 92:
+        return Collections.<ConceptEditor>singletonList(new OptionalConceptReference_Editor());
+      case 93:
+        return Collections.<ConceptEditor>singletonList(new OrCellSelector_Editor());
+      case 94:
+        return Collections.<ConceptEditor>singletonList(new ParametersInformationQuery_Editor());
+      case 95:
+        return Collections.<ConceptEditor>singletonList(new ParametersInformationStyleClassItem_Editor());
+      case 96:
+        return Collections.<ConceptEditor>singletonList(new PositionChildrenStyleClassItem_Editor());
+      case 97:
+        return Collections.<ConceptEditor>singletonList(new PositionStyleClassItem_Editor());
+      case 98:
+        return Collections.<ConceptEditor>singletonList(new PreDefinedStyleClassItem_Editor());
+      case 99:
+        return Collections.<ConceptEditor>singletonList(new PredefinedSelector_Editor());
+      case 100:
+        return Collections.<ConceptEditor>singletonList(new PropertyDeclarationCellSelector_Editor());
+      case 101:
+        return Collections.<ConceptEditor>singletonList(new PropertyExpressionCellSelector_Editor());
+      case 102:
+        return Collections.<ConceptEditor>singletonList(new RGBColor_Editor());
+      case 103:
+        return Collections.<ConceptEditor>singletonList(new ReadOnlyModelAccessor_Editor());
+      case 104:
+        return Collections.<ConceptEditor>singletonList(new RightTransformAnchorTagWrapper_Editor());
+      case 105:
+        return Collections.<ConceptEditor>singletonList(new ScriptKindClassItem_Editor());
+      case 106:
+        return Collections.<ConceptEditor>singletonList(new SelectInEditorOperation_Editor());
+      case 107:
+        return Collections.<ConceptEditor>singletonList(new SelectPositionParameter_Editor());
+      case 108:
+        return Collections.<ConceptEditor>singletonList(new ShowBoundariesInStyleClassItem_Editor());
+      case 109:
+        return Collections.<ConceptEditor>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
+      case 110:
+        return Collections.<ConceptEditor>singletonList(new StubEditorCellModel_Editor());
+      case 111:
+        return Collections.<ConceptEditor>singletonList(new StyleAttributeDeclaration_Editor());
+      case 112:
+        return Collections.<ConceptEditor>singletonList(new StyleAttributeReferenceExpression_Editor());
+      case 113:
+        return Collections.<ConceptEditor>singletonList(new StyleClass_Editor());
+      case 114:
+        return Collections.<ConceptEditor>singletonList(new StyleClassReference_Editor());
+      case 115:
+        return Collections.<ConceptEditor>singletonList(new StyleClassReferenceList_Editor());
+      case 116:
+        return Collections.<ConceptEditor>singletonList(new StyleKey_Editor());
+      case 117:
+        return Collections.<ConceptEditor>singletonList(new StyleKeyPack_Editor());
+      case 118:
+        return Collections.<ConceptEditor>singletonList(new StyleReference_Editor());
+      case 119:
+        return Collections.<ConceptEditor>singletonList(new StyleSheet_Editor());
+      case 120:
+        return Collections.<ConceptEditor>singletonList(new StyleSheetClass_Editor());
+      case 121:
+        return Collections.<ConceptEditor>singletonList(new StyleSheetClassReference_Editor());
+      case 122:
+        return Collections.<ConceptEditor>singletonList(new SubstituteFeature_ActionType_Editor());
+      case 123:
+        return Collections.<ConceptEditor>singletonList(new SubstituteFeature_CanSubstitute_Editor());
+      case 124:
+        return Collections.<ConceptEditor>singletonList(new SubstituteFeature_DescriptionText_Editor());
+      case 125:
+        return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Icon_Editor());
+      case 126:
+        return Collections.<ConceptEditor>singletonList(new SubstituteFeature_MatchingText_Editor());
+      case 127:
+        return Collections.<ConceptEditor>singletonList(new SubstituteFeature_Selection_Editor());
+      case 128:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Action_Editor());
+      case 129:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_AddConcept_Editor());
+      case 130:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Concepts_Editor());
+      case 131:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Group_Editor());
+      case 132:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_IncludeMenu_Editor());
+      case 133:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Parameterized_Editor());
+      case 134:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Placeholder_Editor());
+      case 135:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Subconcepts_Editor());
+      case 136:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuPart_Wrapper_Editor());
+      case 137:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Default_Editor());
+      case 138:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_DefaultWithFunction_Editor());
+      case 139:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuReference_Named_Editor());
+      case 140:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenuVariableDeclaration_Editor());
+      case 141:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Contribution_Editor());
+      case 142:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Default_Editor());
+      case 143:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenu_Named_Editor());
+      case 144:
+        return Collections.<ConceptEditor>singletonList(new SubstituteMenu_SimpleString_Editor());
+      case 145:
+        return Collections.<ConceptEditor>singletonList(new TableComponentStyleClassItem_Editor());
+      case 146:
+        return Collections.<ConceptEditor>singletonList(new TransformationFeature_ActionType_Editor());
+      case 147:
+        return Collections.<ConceptEditor>singletonList(new TransformationFeature_DescriptionText_Editor());
+      case 148:
+        return Collections.<ConceptEditor>singletonList(new TransformationFeature_Icon_Editor());
+      case 149:
+        return Collections.<ConceptEditor>singletonList(new TransformationLocation_Editor());
+      case 150:
+        return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_Editor());
+      case 151:
+        return Collections.<ConceptEditor>singletonList(new TransformationLocation_SideTransform_PlaceInCellHolder_Editor());
+      case 152:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuContribution_Editor());
+      case 153:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Editor());
+      case 154:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Action_Editor());
+      case 155:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Group_Editor());
+      case 156:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeMenu_Editor());
+      case 157:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_IncludeSubstituteMenu_Editor());
+      case 158:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Parameterized_Editor());
+      case 159:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Placeholder_Editor());
+      case 160:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_SubMenu_Editor());
+      case 161:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_Super_Editor());
+      case 162:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuPart_WrapSubstituteMenu_Editor());
+      case 163:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Default_Editor());
+      case 164:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuReference_Named_Editor());
+      case 165:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuSection_Editor());
+      case 166:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenuVariableDeclaration_Editor());
+      case 167:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenu_Default_Editor());
+      case 168:
+        return Collections.<ConceptEditor>singletonList(new TransformationMenu_Named_Editor());
+      case 169:
+        return Collections.<ConceptEditor>singletonList(new UnapplyStyle_Editor());
+      case 170:
+        return Collections.<ConceptEditor>singletonList(new UnderlinedStyleClassItem_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new CellModelCollection_FoldedCellComponent());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new CellModelListWithRole_FoldedCellComponent());
           }
-          break;
-        case 2:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a0a2, editorComponentId)) {
-              case 0:
-                return Collections.<ConceptEditorComponent>singletonList(new Common_Component());
-              case 1:
-                return Collections.<ConceptEditorComponent>singletonList(new Style_Component());
-              case 2:
-                return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component());
-              case 3:
-                return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common());
-              case 4:
-                return Collections.<ConceptEditorComponent>singletonList(new _CloseTag());
-              case 5:
-                return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable());
-              case 6:
-                return Collections.<ConceptEditorComponent>singletonList(new _OpenTag());
-              default:
-                return Collections.<ConceptEditorComponent>emptyList();
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a2, editorComponentId)) {
+            case 0:
+              return Collections.<ConceptEditorComponent>singletonList(new Common_Component());
+            case 1:
+              return Collections.<ConceptEditorComponent>singletonList(new Style_Component());
+            case 2:
+              return Collections.<ConceptEditorComponent>singletonList(new _CellKeyMapLnk_Component());
+            case 3:
+              return Collections.<ConceptEditorComponent>singletonList(new _CellModel_Common());
+            case 4:
+              return Collections.<ConceptEditorComponent>singletonList(new _CloseTag());
+            case 5:
+              return Collections.<ConceptEditorComponent>singletonList(new _FocusPolicy_Applicable());
+            case 6:
+              return Collections.<ConceptEditorComponent>singletonList(new _OpenTag());
+            default:
+              return Collections.<ConceptEditorComponent>emptyList();
           }
-          break;
-        case 3:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.CellStyle_Component".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new CellStyle_Component());
-            }
+        }
+        break;
+      case 3:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.CellStyle_Component".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new CellStyle_Component());
           }
-          break;
-        case 4:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.IOutputConcept_Component".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new IOutputConcept_Component());
-            }
+        }
+        break;
+      case 4:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.IOutputConcept_Component".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new IOutputConcept_Component());
           }
-          break;
-        case 5:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.TransformationMenu_Sections_Component".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new TransformationMenu_Sections_Component());
-            }
+        }
+        break;
+      case 5:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.TransformationMenu_Sections_Component".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new TransformationMenu_Sections_Component());
           }
-          break;
-        case 6:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.SubstituteFeatureAlias".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new SubstituteFeatureAlias());
-            }
+        }
+        break;
+      case 6:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.SubstituteFeatureAlias".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new SubstituteFeatureAlias());
           }
-          break;
-        case 7:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.SubstituteMenuPartAlias".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new SubstituteMenuPartAlias());
-            }
+        }
+        break;
+      case 7:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.SubstituteMenuPartAlias".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new SubstituteMenuPartAlias());
           }
-          break;
-        case 8:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.TransformationFeatureAlias".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new TransformationFeatureAlias());
-            }
+        }
+        break;
+      case 8:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.TransformationFeatureAlias".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new TransformationFeatureAlias());
           }
-          break;
-        case 9:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.editor.TransformationMenuPartAlias".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new TransformationMenuPartAlias());
-            }
+        }
+        break;
+      case 9:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.editor.TransformationMenuPartAlias".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new TransformationMenuPartAlias());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -470,55 +466,51 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new AbstractCellSelector_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new EditorCellModel_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new SelectInEditorOperationSideTransforms_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new AbstractCellSelector_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new EditorCellModel_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new SelectInEditorOperationSideTransforms_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new addCondition()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new addCondition()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new addExtendedClass_StyleClass()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new addExtendedClass_StyleClass()});
+            default:
           }
-          break;
-        case 2:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new addExtendedClass()});
-              default:
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new addExtendedClass()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -526,97 +518,95 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractCellSelector_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new AbstractStyledTextOperation_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new CellActionMapItem_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_AbstractGroup_parameterObject_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_editedNode_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyPostfixHints_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyValues_SubstituteMenu());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReferentPrimary_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChildPrimary_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_SubstituteMenu());
-        case 11:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Group_SubstituteMenu());
-        case 12:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Item_SubstituteMenu());
-        case 13:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_currentChild_SubstituteMenu());
-        case 14:
-          return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_defaultConceptOfChild_SubstituteMenu());
-        case 15:
-          return Collections.<SubstituteMenu>singletonList(new CellModel_NonEmptyProperty_SubstituteMenu());
-        case 16:
-          return Collections.<SubstituteMenu>singletonList(new CellModel_TransactionalProperty_SubstituteMenu());
-        case 17:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_StyledText_SubstituteMenu());
-        case 18:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_childNode_SubstituteMenu());
-        case 19:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
-        case 20:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
-        case 21:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_nextNode_SubstituteMenu());
-        case 22:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-        case 23:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_oldText_SubstituteMenu());
-        case 24:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_parameterObject_SubstituteMenu());
-        case 25:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_prevNode_SubstituteMenu());
-        case 26:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_selectedNode_SubstituteMenu());
-        case 27:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_text_SubstituteMenu());
-        case 28:
-          return Collections.<SubstituteMenu>singletonList(new ContextHintsSpecification_SubstituteMenu());
-        case 29:
-          return Collections.<SubstituteMenu>singletonList(new EditorCellId_SubstituteMenu());
-        case 30:
-          return Collections.<SubstituteMenu>singletonList(new EditorCellModel_SubstituteMenu());
-        case 31:
-          return Collections.<SubstituteMenu>singletonList(new SubstituteAbstractStyledTextOperation_Contribution());
-        case 32:
-          return Collections.<SubstituteMenu>singletonList(new StubEditorCellModel_SubstituteMenu());
-        case 33:
-          return Collections.<SubstituteMenu>singletonList(new StyleClassReferenceList_SubstituteMenu());
-        case 34:
-          return Collections.<SubstituteMenu>singletonList(new StyleSheetClass_SubstituteMenu());
-        case 35:
-          return Collections.<SubstituteMenu>singletonList(new SubstituteMenuPart_Placeholder_SubstituteMenu());
-        case 36:
-          return Collections.<SubstituteMenu>singletonList(new SubstituteMenuReference_DefaultWithFunction_SubstituteMenu());
-        case 37:
-          return Collections.<SubstituteMenu>singletonList(new SubstituteMenuVariableDeclaration_SubstituteMenu());
-        case 38:
-          return Collections.<SubstituteMenu>singletonList(new TransactionPropertyHandler_newValue_SubstituteMenu());
-        case 39:
-          return Collections.<SubstituteMenu>singletonList(new TransformationFeature_SubstituteMenu());
-        case 40:
-          return Collections.<SubstituteMenu>singletonList(new TransformationLocation_SubstituteMenu());
-        case 41:
-          return Collections.<SubstituteMenu>singletonList(new TransformationMenuPart_Placeholder_SubstituteMenu());
-        case 42:
-          return Collections.<SubstituteMenu>singletonList(new TransformationMenuVariableDeclaration_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractCellSelector_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new AbstractStyledTextOperation_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new CellActionMapItem_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_AbstractGroup_parameterObject_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_Abstract_editedNode_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyPostfixHints_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_PropertyValues_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReferentPrimary_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChildPrimary_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_CustomChildConcept_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Group_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_Item_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_currentChild_SubstituteMenu());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new CellMenuPart_ReplaceChild_defaultConceptOfChild_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new CellModel_NonEmptyProperty_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new CellModel_TransactionalProperty_SubstituteMenu());
+      case 17:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_StyledText_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_childNode_SubstituteMenu());
+      case 19:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
+      case 20:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
+      case 21:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_nextNode_SubstituteMenu());
+      case 22:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
+      case 23:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_oldText_SubstituteMenu());
+      case 24:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_parameterObject_SubstituteMenu());
+      case 25:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_prevNode_SubstituteMenu());
+      case 26:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_selectedNode_SubstituteMenu());
+      case 27:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_text_SubstituteMenu());
+      case 28:
+        return Collections.<SubstituteMenu>singletonList(new ContextHintsSpecification_SubstituteMenu());
+      case 29:
+        return Collections.<SubstituteMenu>singletonList(new EditorCellId_SubstituteMenu());
+      case 30:
+        return Collections.<SubstituteMenu>singletonList(new EditorCellModel_SubstituteMenu());
+      case 31:
+        return Collections.<SubstituteMenu>singletonList(new SubstituteAbstractStyledTextOperation_Contribution());
+      case 32:
+        return Collections.<SubstituteMenu>singletonList(new StubEditorCellModel_SubstituteMenu());
+      case 33:
+        return Collections.<SubstituteMenu>singletonList(new StyleClassReferenceList_SubstituteMenu());
+      case 34:
+        return Collections.<SubstituteMenu>singletonList(new StyleSheetClass_SubstituteMenu());
+      case 35:
+        return Collections.<SubstituteMenu>singletonList(new SubstituteMenuPart_Placeholder_SubstituteMenu());
+      case 36:
+        return Collections.<SubstituteMenu>singletonList(new SubstituteMenuReference_DefaultWithFunction_SubstituteMenu());
+      case 37:
+        return Collections.<SubstituteMenu>singletonList(new SubstituteMenuVariableDeclaration_SubstituteMenu());
+      case 38:
+        return Collections.<SubstituteMenu>singletonList(new TransactionPropertyHandler_newValue_SubstituteMenu());
+      case 39:
+        return Collections.<SubstituteMenu>singletonList(new TransformationFeature_SubstituteMenu());
+      case 40:
+        return Collections.<SubstituteMenu>singletonList(new TransformationLocation_SubstituteMenu());
+      case 41:
+        return Collections.<SubstituteMenu>singletonList(new TransformationMenuPart_Placeholder_SubstituteMenu());
+      case 42:
+        return Collections.<SubstituteMenu>singletonList(new TransformationMenuVariableDeclaration_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -626,8 +616,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab20495600L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecc5b3feL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecc9de0fL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e2300bcaL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f357f9ab7L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3f33baebL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1115d1a2839L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5021674eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f87862dL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a0aafeL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa3a3c68L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ed01d37608fe0afL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1134297c615L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69333c273254322aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a195cc7c5L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111faaffcc5L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3a54c53a29dbb0faL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d863e4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa2364a3edcb8ed2L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x25c7da75de4cff05L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f75b6dL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa5L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ed0e5fc004ba432L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11266742db0L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a0a2 = new String[]{"jetbrains.mps.lang.editor.editor.Common_Component", "jetbrains.mps.lang.editor.editor.Style_Component", "jetbrains.mps.lang.editor.editor._CellKeyMapLnk_Component", "jetbrains.mps.lang.editor.editor._CellModel_Common", "jetbrains.mps.lang.editor.editor._CloseTag", "jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable", "jetbrains.mps.lang.editor.editor._OpenTag"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a5 = new String[]{"jetbrains.mps.lang.editor.editor.addCondition"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a5 = new String[]{"jetbrains.mps.lang.editor.editor.addExtendedClass_StyleClass"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a0a5 = new String[]{"jetbrains.mps.lang.editor.editor.addExtendedClass"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a2 = new String[]{"jetbrains.mps.lang.editor.editor.Common_Component", "jetbrains.mps.lang.editor.editor.Style_Component", "jetbrains.mps.lang.editor.editor._CellKeyMapLnk_Component", "jetbrains.mps.lang.editor.editor._CellModel_Common", "jetbrains.mps.lang.editor.editor._CloseTag", "jetbrains.mps.lang.editor.editor._FocusPolicy_Applicable", "jetbrains.mps.lang.editor.editor._OpenTag"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.lang.editor.editor.addCondition"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.lang.editor.editor.addExtendedClass_StyleClass"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a5 = new String[]{"jetbrains.mps.lang.editor.editor.addExtendedClass"};
 }

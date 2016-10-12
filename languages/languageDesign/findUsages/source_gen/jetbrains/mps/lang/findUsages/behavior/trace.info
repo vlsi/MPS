@@ -16,7 +16,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.findUsages.behavior.AbstractFinderDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,65,0" name="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,62,0" name="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CategorizeBlock_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock_BehaviorDescriptor" />

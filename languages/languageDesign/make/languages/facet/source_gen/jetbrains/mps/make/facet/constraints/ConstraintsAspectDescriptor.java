@@ -16,34 +16,31 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new ExtendsFacetReference_Constraints();
-        case 1:
-          return new FacetDeclaration_Constraints();
-        case 2:
-          return new FacetReference_Constraints();
-        case 3:
-          return new ForeignParametersExpression_Constraints();
-        case 4:
-          return new NamedFacetReference_Constraints();
-        case 5:
-          return new RelatedFacetReference_Constraints();
-        case 6:
-          return new ResourceClassifierType_Constraints();
-        case 7:
-          return new ResourceTypeDeclaration_Constraints();
-        case 8:
-          return new TargetDeclaration_Constraints();
-        case 9:
-          return new TargetDependency_Constraints();
-        case 10:
-          return new TargetReferenceExpression_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new ExtendsFacetReference_Constraints();
+      case 1:
+        return new FacetDeclaration_Constraints();
+      case 2:
+        return new FacetReference_Constraints();
+      case 3:
+        return new ForeignParametersExpression_Constraints();
+      case 4:
+        return new NamedFacetReference_Constraints();
+      case 5:
+        return new RelatedFacetReference_Constraints();
+      case 6:
+        return new ResourceClassifierType_Constraints();
+      case 7:
+        return new ResourceTypeDeclaration_Constraints();
+      case 8:
+        return new TargetDeclaration_Constraints();
+      case 9:
+        return new TargetDependency_Constraints();
+      case 10:
+        return new TargetReferenceExpression_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

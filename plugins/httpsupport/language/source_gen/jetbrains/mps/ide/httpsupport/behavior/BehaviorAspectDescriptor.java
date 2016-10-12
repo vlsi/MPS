@@ -31,38 +31,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0q.index(cncpt)) {
-        case 0:
-          return myCanHandleRequestFunction__BehaviorDescriptor;
-        case 1:
-          return myDefaultParameterConverter__BehaviorDescriptor;
-        case 2:
-          return myDefaultValueFunction__BehaviorDescriptor;
-        case 3:
-          return myDeserializeFunction__BehaviorDescriptor;
-        case 4:
-          return myHandleRequestFunction__BehaviorDescriptor;
-        case 5:
-          return myIParameterConverter__BehaviorDescriptor;
-        case 6:
-          return myParameterConverterReference__BehaviorDescriptor;
-        case 7:
-          return myQueryParameterReference__BehaviorDescriptor;
-        case 8:
-          return myRequestHandler__BehaviorDescriptor;
-        case 9:
-          return myRequestURIBuilderExpression__BehaviorDescriptor;
-        case 10:
-          return mySerializeFunction__BehaviorDescriptor;
-        case 11:
-          return mySerializedValueParameter__BehaviorDescriptor;
-        case 12:
-          return myValueToSerializeParameter__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0q.index(cncpt)) {
+      case 0:
+        return myCanHandleRequestFunction__BehaviorDescriptor;
+      case 1:
+        return myDefaultParameterConverter__BehaviorDescriptor;
+      case 2:
+        return myDefaultValueFunction__BehaviorDescriptor;
+      case 3:
+        return myDeserializeFunction__BehaviorDescriptor;
+      case 4:
+        return myHandleRequestFunction__BehaviorDescriptor;
+      case 5:
+        return myIParameterConverter__BehaviorDescriptor;
+      case 6:
+        return myParameterConverterReference__BehaviorDescriptor;
+      case 7:
+        return myQueryParameterReference__BehaviorDescriptor;
+      case 8:
+        return myRequestHandler__BehaviorDescriptor;
+      case 9:
+        return myRequestURIBuilderExpression__BehaviorDescriptor;
+      case 10:
+        return mySerializeFunction__BehaviorDescriptor;
+      case 11:
+        return mySerializedValueParameter__BehaviorDescriptor;
+      case 12:
+        return myValueToSerializeParameter__BehaviorDescriptor;
+      default:
     }
     return null;
   }

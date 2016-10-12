@@ -17,13 +17,11 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new CheckedDotExpression_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CheckedDotExpression_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -32,28 +30,24 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new checkedDotExpression_Contribution());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new IOperation_LeftTransform_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new checkedDotExpression_Contribution());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new IOperation_LeftTransform_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new QuestionMarkAction_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new QuestionMarkAction_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

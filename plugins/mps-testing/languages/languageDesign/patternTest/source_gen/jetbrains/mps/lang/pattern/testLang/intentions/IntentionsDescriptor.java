@@ -11,8 +11,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -28,13 +26,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        default:
-          // default 
-      }
-    }
+    SAbstractConcept cncpt = concept;
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
   }
@@ -45,5 +37,4 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     IntentionFactory[] rv = new IntentionFactory[0];
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put().seal();
 }

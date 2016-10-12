@@ -7,8 +7,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
 
@@ -17,14 +15,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0d.index(cncpt)) {
-        default:
-          // default 
-      }
-    }
+    SAbstractConcept cncpt = concept;
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0d = new ConceptSwitchIndexBuilder().put().seal();
 }

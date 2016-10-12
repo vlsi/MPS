@@ -45,66 +45,63 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0eb.index(cncpt)) {
-        case 0:
-          return myAtLeastNTimesRegexp__BehaviorDescriptor;
-        case 1:
-          return myCharacterSymbolClassPart__BehaviorDescriptor;
-        case 2:
-          return myFromNToMTimesRegexp__BehaviorDescriptor;
-        case 3:
-          return myIntersectionSymbolClassPart__BehaviorDescriptor;
-        case 4:
-          return myIntervalSymbolClassPart__BehaviorDescriptor;
-        case 5:
-          return myLiteralReplacement__BehaviorDescriptor;
-        case 6:
-          return myLookRegexp__BehaviorDescriptor;
-        case 7:
-          return myMatchParensRegexp__BehaviorDescriptor;
-        case 8:
-          return myMatchVariableReferenceRegexp__BehaviorDescriptor;
-        case 9:
-          return myMatchVariableReferenceReplacement__BehaviorDescriptor;
-        case 10:
-          return myNTimesRegexp__BehaviorDescriptor;
-        case 11:
-          return myOrRegexp__BehaviorDescriptor;
-        case 12:
-          return myParensRegexp__BehaviorDescriptor;
-        case 13:
-          return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
-        case 14:
-          return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
-        case 15:
-          return myRegexp__BehaviorDescriptor;
-        case 16:
-          return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
-        case 17:
-          return myReplaceBlock__BehaviorDescriptor;
-        case 18:
-          return myReplaceRegexpOperation__BehaviorDescriptor;
-        case 19:
-          return myReplacement__BehaviorDescriptor;
-        case 20:
-          return mySeqRegexp__BehaviorDescriptor;
-        case 21:
-          return myStringLiteralRegexp__BehaviorDescriptor;
-        case 22:
-          return mySymbolClassPart__BehaviorDescriptor;
-        case 23:
-          return mySymbolClassRegexp__BehaviorDescriptor;
-        case 24:
-          return mySymbolClassRegexpAndPart__BehaviorDescriptor;
-        case 25:
-          return myUnaryRegexp__BehaviorDescriptor;
-        case 26:
-          return myUnicodeCharacterRegexp__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0eb.index(cncpt)) {
+      case 0:
+        return myAtLeastNTimesRegexp__BehaviorDescriptor;
+      case 1:
+        return myCharacterSymbolClassPart__BehaviorDescriptor;
+      case 2:
+        return myFromNToMTimesRegexp__BehaviorDescriptor;
+      case 3:
+        return myIntersectionSymbolClassPart__BehaviorDescriptor;
+      case 4:
+        return myIntervalSymbolClassPart__BehaviorDescriptor;
+      case 5:
+        return myLiteralReplacement__BehaviorDescriptor;
+      case 6:
+        return myLookRegexp__BehaviorDescriptor;
+      case 7:
+        return myMatchParensRegexp__BehaviorDescriptor;
+      case 8:
+        return myMatchVariableReferenceRegexp__BehaviorDescriptor;
+      case 9:
+        return myMatchVariableReferenceReplacement__BehaviorDescriptor;
+      case 10:
+        return myNTimesRegexp__BehaviorDescriptor;
+      case 11:
+        return myOrRegexp__BehaviorDescriptor;
+      case 12:
+        return myParensRegexp__BehaviorDescriptor;
+      case 13:
+        return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
+      case 14:
+        return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
+      case 15:
+        return myRegexp__BehaviorDescriptor;
+      case 16:
+        return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
+      case 17:
+        return myReplaceBlock__BehaviorDescriptor;
+      case 18:
+        return myReplaceRegexpOperation__BehaviorDescriptor;
+      case 19:
+        return myReplacement__BehaviorDescriptor;
+      case 20:
+        return mySeqRegexp__BehaviorDescriptor;
+      case 21:
+        return myStringLiteralRegexp__BehaviorDescriptor;
+      case 22:
+        return mySymbolClassPart__BehaviorDescriptor;
+      case 23:
+        return mySymbolClassRegexp__BehaviorDescriptor;
+      case 24:
+        return mySymbolClassRegexpAndPart__BehaviorDescriptor;
+      case 25:
+        return myUnaryRegexp__BehaviorDescriptor;
+      case 26:
+        return myUnicodeCharacterRegexp__BehaviorDescriptor;
+      default:
     }
     return null;
   }

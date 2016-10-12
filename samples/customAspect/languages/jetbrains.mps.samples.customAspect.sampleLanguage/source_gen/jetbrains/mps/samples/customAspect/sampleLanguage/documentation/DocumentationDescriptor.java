@@ -10,14 +10,11 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class DocumentationDescriptor implements DocumentationAspectDescriptor {
   public String getConceptDocumentation(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_kuvwlw_a0a.index(cncpt)) {
-        case 0:
-          return "Hello, documentation world!";
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_kuvwlw_a0a.index(cncpt)) {
+      case 0:
+        return "Hello, documentation world!";
+      default:
     }
     return null;
   }

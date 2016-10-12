@@ -5,7 +5,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.samples.Kaja.behavior.AbstractCommand_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.samples.Kaja.behavior.BehaviorAspectDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.samples.Kaja.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CommandList_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.Kaja.behavior.CommandList_BehaviorDescriptor" />

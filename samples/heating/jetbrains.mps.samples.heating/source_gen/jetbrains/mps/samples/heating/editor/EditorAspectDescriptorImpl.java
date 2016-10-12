@@ -18,29 +18,27 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Applicability_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ChangeEvent_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new DailyPlanReference_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new Slot_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new SpecificDay_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Applicability_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ChangeEvent_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new DailyPlan_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new DailyPlanReference_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new DayRange_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new HeatingPlan_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new NotSpecified_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new Slot_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new SpecificDay_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -49,22 +47,20 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a3, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new Customizes()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new DailyPlan_ApplySideTransforms()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a3, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new Customizes()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new DailyPlan_ApplySideTransforms()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -72,5 +68,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6bc56bL), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68b8b8L), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L), MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a3 = new String[]{"jetbrains.mps.samples.heating.editor.Customizes", "jetbrains.mps.samples.heating.editor.DailyPlan_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a3 = new String[]{"jetbrains.mps.samples.heating.editor.Customizes", "jetbrains.mps.samples.heating.editor.DailyPlan_ApplySideTransforms"};
 }

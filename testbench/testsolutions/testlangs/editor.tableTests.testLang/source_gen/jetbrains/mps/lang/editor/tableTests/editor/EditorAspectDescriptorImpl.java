@@ -15,41 +15,39 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ContentElement_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new DataCell_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Event_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new HierarchycalTable_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new LightWeightDecisionTable_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new Matrix_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new State_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new Table_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new Transition_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new UltimateContainer_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new XElement_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new YElement_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ContentElement_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new DataCell_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Event_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new HierarchycalTable_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new LightWeightDecisionTable_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Matrix_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new State_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new Table_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new Transition_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new UltimateContainer_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new XElement_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new YElement_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

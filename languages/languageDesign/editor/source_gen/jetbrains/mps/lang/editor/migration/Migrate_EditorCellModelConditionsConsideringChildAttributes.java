@@ -22,8 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 
 public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends MigrationScriptBase {
   public String getCaption() {
@@ -176,21 +174,15 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     if (!(isZero)) {
       return false;
     }
-    {
-      SAbstractConcept cncpt = SNodeOperations.getConcept(grandParent);
-      switch (index_3lt69g_l0k.index(cncpt)) {
-        default:
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
-            return isLeft;
-          }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
-            return !(isLeft);
-          }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
-            return true;
-          }
-          // default 
-      }
+    SAbstractConcept cncpt = SNodeOperations.getConcept(grandParent);
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
+      return isLeft;
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
+      return !(isLeft);
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+      return true;
     }
     return false;
   }
@@ -272,7 +264,6 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     SLinkOperations.setTarget(SNodeOperations.cast(operand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), newLinkAccess);
   }
 
-  private static final ConceptSwitchIndex index_3lt69g_l0k = new ConceptSwitchIndexBuilder().put().seal();
   private static boolean eq_3lt69g_a0a0a1a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

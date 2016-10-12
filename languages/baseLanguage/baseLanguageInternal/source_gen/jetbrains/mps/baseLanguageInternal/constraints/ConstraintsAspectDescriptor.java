@@ -16,32 +16,29 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new ConstantValue_Constraints();
-        case 1:
-          return new ExtractStatementListInnerExpression_Constraints();
-        case 2:
-          return new ExtractStaticInnerClassConcept_Constraints();
-        case 3:
-          return new ExtractStaticInnerClassCreator_Constraints();
-        case 4:
-          return new ExtractStaticMethod_CallExpression_Constraints();
-        case 5:
-          return new ExtractToConstantRefExpression_Constraints();
-        case 6:
-          return new InternalAnonymousClass_Constraints();
-        case 7:
-          return new InternalPartialInstanceMethodCall_Constraints();
-        case 8:
-          return new InternalSuperMethodCallOperation_Constraints();
-        case 9:
-          return new WeakClassReference_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new ConstantValue_Constraints();
+      case 1:
+        return new ExtractStatementListInnerExpression_Constraints();
+      case 2:
+        return new ExtractStaticInnerClassConcept_Constraints();
+      case 3:
+        return new ExtractStaticInnerClassCreator_Constraints();
+      case 4:
+        return new ExtractStaticMethod_CallExpression_Constraints();
+      case 5:
+        return new ExtractToConstantRefExpression_Constraints();
+      case 6:
+        return new InternalAnonymousClass_Constraints();
+      case 7:
+        return new InternalPartialInstanceMethodCall_Constraints();
+      case 8:
+        return new InternalSuperMethodCallOperation_Constraints();
+      case 9:
+        return new WeakClassReference_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

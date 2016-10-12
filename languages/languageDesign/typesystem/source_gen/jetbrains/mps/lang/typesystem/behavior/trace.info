@@ -53,7 +53,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.typesystem.behavior.AttributedNodeExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,203,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,200,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CaretPositionOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />

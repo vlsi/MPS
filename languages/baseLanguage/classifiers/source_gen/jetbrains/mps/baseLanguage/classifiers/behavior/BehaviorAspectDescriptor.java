@@ -29,34 +29,31 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0o.index(cncpt)) {
-        case 0:
-          return myBaseClassifierType__BehaviorDescriptor;
-        case 1:
-          return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
-        case 2:
-          return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
-        case 3:
-          return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
-        case 4:
-          return myDefaultClassifierType__BehaviorDescriptor;
-        case 5:
-          return myIClassifier__BehaviorDescriptor;
-        case 6:
-          return myIClassifierPart__BehaviorDescriptor;
-        case 7:
-          return myIMember__BehaviorDescriptor;
-        case 8:
-          return myIMemberOperation__BehaviorDescriptor;
-        case 9:
-          return mySuperClassifierExpresson__BehaviorDescriptor;
-        case 10:
-          return myThisClassifierExpression__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0o.index(cncpt)) {
+      case 0:
+        return myBaseClassifierType__BehaviorDescriptor;
+      case 1:
+        return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
+      case 2:
+        return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
+      case 3:
+        return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
+      case 4:
+        return myDefaultClassifierType__BehaviorDescriptor;
+      case 5:
+        return myIClassifier__BehaviorDescriptor;
+      case 6:
+        return myIClassifierPart__BehaviorDescriptor;
+      case 7:
+        return myIMember__BehaviorDescriptor;
+      case 8:
+        return myIMemberOperation__BehaviorDescriptor;
+      case 9:
+        return mySuperClassifierExpresson__BehaviorDescriptor;
+      case 10:
+        return myThisClassifierExpression__BehaviorDescriptor;
+      default:
     }
     return null;
   }

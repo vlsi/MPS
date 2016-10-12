@@ -16,47 +16,45 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -65,13 +63,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new CreateOrPattern_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new CreateOrPattern_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }

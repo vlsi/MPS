@@ -19,73 +19,71 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AuthorBlockDocTag_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BaseDocReference_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BaseInlineDocTag_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new BaseParameterReference_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new BaseVariableDocReference_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new ClassifierDocComment_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ClassifierDocReference_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new CodeInlineDocTag_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new CodeSnippet_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new DeprecatedBlockDocTag_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new DocMethodParameterReference_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new DocTypeParameterReference_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new EmptyBlockDocTag_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new VersionBlockDocTag_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AuthorBlockDocTag_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BaseDocReference_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BaseInlineDocTag_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new BaseParameterReference_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new BaseVariableDocReference_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new ClassifierDocComment_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ClassifierDocReference_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new CodeInlineDocTag_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new CodeSnippet_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new DeprecatedBlockDocTag_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new DocMethodParameterReference_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new DocTypeParameterReference_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new EmptyBlockDocTag_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new VersionBlockDocTag_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -94,33 +92,29 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new TextCommentLinePart_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new TextCommentLinePart_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new TextCommentLinePart_ApplySideTransforms()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new TextCommentLinePart_ApplySideTransforms()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -128,13 +122,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new EmptyBlockDocTag_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new EmptyBlockDocTag_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -143,5 +135,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x44ac82392ce5c6b0L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a4 = new String[]{"jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_ApplySideTransforms"};
 }

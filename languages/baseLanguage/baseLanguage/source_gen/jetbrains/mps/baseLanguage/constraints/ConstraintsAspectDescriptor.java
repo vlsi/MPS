@@ -16,124 +16,121 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new AdditionalForLoopVariable_Constraints();
-        case 1:
-          return new Annotation_Constraints();
-        case 2:
-          return new AnnotationInstance_Constraints();
-        case 3:
-          return new AnnotationInstanceValue_Constraints();
-        case 4:
-          return new AnnotationMethodDeclaration_Constraints();
-        case 5:
-          return new AnonymousClass_Constraints();
-        case 6:
-          return new ArrayCloneOperation_Constraints();
-        case 7:
-          return new ArrayLengthOperation_Constraints();
-        case 8:
-          return new ArrayLiteral_Constraints();
-        case 9:
-          return new BaseMethodDeclaration_Constraints();
-        case 10:
-          return new BaseStringOperation_Constraints();
-        case 11:
-          return new BaseVariableDeclaration_Constraints();
-        case 12:
-          return new ClassConcept_Constraints();
-        case 13:
-          return new ClassCreator_Constraints();
-        case 14:
-          return new Classifier_Constraints();
-        case 15:
-          return new ClassifierClassExpression_Constraints();
-        case 16:
-          return new ClassifierMember_Constraints();
-        case 17:
-          return new ClassifierType_Constraints();
-        case 18:
-          return new ClosureParameterReference_Constraints();
-        case 19:
-          return new ConstructorDeclaration_Constraints();
-        case 20:
-          return new DefaultClassCreator_Constraints();
-        case 21:
-          return new EnumConstantDeclaration_Constraints();
-        case 22:
-          return new EnumConstantReference_Constraints();
-        case 23:
-          return new EnumValueOfExpression_Constraints();
-        case 24:
-          return new EnumValuesExpression_Constraints();
-        case 25:
-          return new FieldReferenceOperation_Constraints();
-        case 26:
-          return new IOperation_Constraints();
-        case 27:
-          return new IValidIdentifier_Constraints();
-        case 28:
-          return new ImplicitAnnotationInstanceValue_Constraints();
-        case 29:
-          return new InstanceMethodCallOperation_Constraints();
-        case 30:
-          return new InstanceMethodDeclaration_Constraints();
-        case 31:
-          return new Interface_Constraints();
-        case 32:
-          return new LocalInstanceFieldReference_Constraints();
-        case 33:
-          return new LocalInstanceMethodCall_Constraints();
-        case 34:
-          return new LocalMethodCall_Constraints();
-        case 35:
-          return new LocalPropertyReference_Constraints();
-        case 36:
-          return new LocalStaticFieldReference_Constraints();
-        case 37:
-          return new LocalStaticMethodCall_Constraints();
-        case 38:
-          return new LocalVariableDeclaration_Constraints();
-        case 39:
-          return new LocalVariableReference_Constraints();
-        case 40:
-          return new LoopLabelReference_Constraints();
-        case 41:
-          return new NestedNewExpression_Constraints();
-        case 42:
-          return new ParameterReference_Constraints();
-        case 43:
-          return new Property_Constraints();
-        case 44:
-          return new PropertyReference_Constraints();
-        case 45:
-          return new PropertyValueReference_Constraints();
-        case 46:
-          return new QualifiedSuperMethodCall_Constraints();
-        case 47:
-          return new StaticFieldDeclaration_Constraints();
-        case 48:
-          return new StaticFieldReference_Constraints();
-        case 49:
-          return new StaticMethodCall_Constraints();
-        case 50:
-          return new SuperConstructorInvocation_Constraints();
-        case 51:
-          return new SuperMethodCall_Constraints();
-        case 52:
-          return new ThisConstructorInvocation_Constraints();
-        case 53:
-          return new ThisExpression_Constraints();
-        case 54:
-          return new TypeVariableReference_Constraints();
-        case 55:
-          return new VariableReference_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new AdditionalForLoopVariable_Constraints();
+      case 1:
+        return new Annotation_Constraints();
+      case 2:
+        return new AnnotationInstance_Constraints();
+      case 3:
+        return new AnnotationInstanceValue_Constraints();
+      case 4:
+        return new AnnotationMethodDeclaration_Constraints();
+      case 5:
+        return new AnonymousClass_Constraints();
+      case 6:
+        return new ArrayCloneOperation_Constraints();
+      case 7:
+        return new ArrayLengthOperation_Constraints();
+      case 8:
+        return new ArrayLiteral_Constraints();
+      case 9:
+        return new BaseMethodDeclaration_Constraints();
+      case 10:
+        return new BaseStringOperation_Constraints();
+      case 11:
+        return new BaseVariableDeclaration_Constraints();
+      case 12:
+        return new ClassConcept_Constraints();
+      case 13:
+        return new ClassCreator_Constraints();
+      case 14:
+        return new Classifier_Constraints();
+      case 15:
+        return new ClassifierClassExpression_Constraints();
+      case 16:
+        return new ClassifierMember_Constraints();
+      case 17:
+        return new ClassifierType_Constraints();
+      case 18:
+        return new ClosureParameterReference_Constraints();
+      case 19:
+        return new ConstructorDeclaration_Constraints();
+      case 20:
+        return new DefaultClassCreator_Constraints();
+      case 21:
+        return new EnumConstantDeclaration_Constraints();
+      case 22:
+        return new EnumConstantReference_Constraints();
+      case 23:
+        return new EnumValueOfExpression_Constraints();
+      case 24:
+        return new EnumValuesExpression_Constraints();
+      case 25:
+        return new FieldReferenceOperation_Constraints();
+      case 26:
+        return new IOperation_Constraints();
+      case 27:
+        return new IValidIdentifier_Constraints();
+      case 28:
+        return new ImplicitAnnotationInstanceValue_Constraints();
+      case 29:
+        return new InstanceMethodCallOperation_Constraints();
+      case 30:
+        return new InstanceMethodDeclaration_Constraints();
+      case 31:
+        return new Interface_Constraints();
+      case 32:
+        return new LocalInstanceFieldReference_Constraints();
+      case 33:
+        return new LocalInstanceMethodCall_Constraints();
+      case 34:
+        return new LocalMethodCall_Constraints();
+      case 35:
+        return new LocalPropertyReference_Constraints();
+      case 36:
+        return new LocalStaticFieldReference_Constraints();
+      case 37:
+        return new LocalStaticMethodCall_Constraints();
+      case 38:
+        return new LocalVariableDeclaration_Constraints();
+      case 39:
+        return new LocalVariableReference_Constraints();
+      case 40:
+        return new LoopLabelReference_Constraints();
+      case 41:
+        return new NestedNewExpression_Constraints();
+      case 42:
+        return new ParameterReference_Constraints();
+      case 43:
+        return new Property_Constraints();
+      case 44:
+        return new PropertyReference_Constraints();
+      case 45:
+        return new PropertyValueReference_Constraints();
+      case 46:
+        return new QualifiedSuperMethodCall_Constraints();
+      case 47:
+        return new StaticFieldDeclaration_Constraints();
+      case 48:
+        return new StaticFieldReference_Constraints();
+      case 49:
+        return new StaticMethodCall_Constraints();
+      case 50:
+        return new SuperConstructorInvocation_Constraints();
+      case 51:
+        return new SuperMethodCall_Constraints();
+      case 52:
+        return new ThisConstructorInvocation_Constraints();
+      case 53:
+        return new ThisExpression_Constraints();
+      case 54:
+        return new TypeVariableReference_Constraints();
+      case 55:
+        return new VariableReference_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

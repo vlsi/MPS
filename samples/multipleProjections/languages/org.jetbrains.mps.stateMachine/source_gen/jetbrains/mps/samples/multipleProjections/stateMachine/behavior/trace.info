@@ -16,7 +16,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,35,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,32,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="EventReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.EventReference_BehaviorDescriptor" />

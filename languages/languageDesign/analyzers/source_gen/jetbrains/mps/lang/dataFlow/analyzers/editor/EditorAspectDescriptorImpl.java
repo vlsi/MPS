@@ -15,51 +15,49 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AnalysisDirection_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new Analyzer_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameter_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameterReference_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerAnalyzeOperation_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerCreator_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ApplicableNodeReference_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new CustomInstructionsContainer_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new CustomInstructionsContainerReference_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new EmitInstruction_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new InsertPosition_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Instruction_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new InstructionParameter_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new InstructionReference_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new IsOperation_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new PatternCondition_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new ProgramParameter_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new Rule_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new RuleReference_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AnalysisDirection_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new Analyzer_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameter_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameterReference_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerAnalyzeOperation_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerCreator_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ApplicableNodeReference_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new CustomInstructionsContainer_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new CustomInstructionsContainerReference_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new EmitInstruction_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new InsertPosition_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Instruction_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new InstructionParameter_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new InstructionReference_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new IsOperation_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new PatternCondition_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new ProgramParameter_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new Rule_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new RuleReference_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

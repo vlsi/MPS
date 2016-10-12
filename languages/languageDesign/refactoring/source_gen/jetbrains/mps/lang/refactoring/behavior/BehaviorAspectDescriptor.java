@@ -42,60 +42,57 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0bb.index(cncpt)) {
-        case 0:
-          return myAbstractMoveExpression__BehaviorDescriptor;
-        case 1:
-          return myAffectedNodesClause__BehaviorDescriptor;
-        case 2:
-          return myConceptFunctionParameter_Model__BehaviorDescriptor;
-        case 3:
-          return myConceptFunctionParameter_SModel__BehaviorDescriptor;
-        case 4:
-          return myContextMemberOperation__BehaviorDescriptor;
-        case 5:
-          return myDoRefactorClause__BehaviorDescriptor;
-        case 6:
-          return myDoWhenDoneClause__BehaviorDescriptor;
-        case 7:
-          return myGetModelsToUpdateClause__BehaviorDescriptor;
-        case 8:
-          return myInitClause__BehaviorDescriptor;
-        case 9:
-          return myIsApplicableToModelClause__BehaviorDescriptor;
-        case 10:
-          return myIsApplicableToModuleClause__BehaviorDescriptor;
-        case 11:
-          return myIsApplicableToNodeClause__BehaviorDescriptor;
-        case 12:
-          return myMainProjectOperation__BehaviorDescriptor;
-        case 13:
-          return myModelDescriptorOperation__BehaviorDescriptor;
-        case 14:
-          return myModelsToGenerateClause__BehaviorDescriptor;
-        case 15:
-          return myModuleOperation__BehaviorDescriptor;
-        case 16:
-          return myNodeOperation__BehaviorDescriptor;
-        case 17:
-          return myNodesOperation__BehaviorDescriptor;
-        case 18:
-          return myOperationContextOperation__BehaviorDescriptor;
-        case 19:
-          return myProjectOperation__BehaviorDescriptor;
-        case 20:
-          return myRefactoring__BehaviorDescriptor;
-        case 21:
-          return myRefactoringFieldReference__BehaviorDescriptor;
-        case 22:
-          return myRepositoryOperation__BehaviorDescriptor;
-        case 23:
-          return myScopeOperation__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0bb.index(cncpt)) {
+      case 0:
+        return myAbstractMoveExpression__BehaviorDescriptor;
+      case 1:
+        return myAffectedNodesClause__BehaviorDescriptor;
+      case 2:
+        return myConceptFunctionParameter_Model__BehaviorDescriptor;
+      case 3:
+        return myConceptFunctionParameter_SModel__BehaviorDescriptor;
+      case 4:
+        return myContextMemberOperation__BehaviorDescriptor;
+      case 5:
+        return myDoRefactorClause__BehaviorDescriptor;
+      case 6:
+        return myDoWhenDoneClause__BehaviorDescriptor;
+      case 7:
+        return myGetModelsToUpdateClause__BehaviorDescriptor;
+      case 8:
+        return myInitClause__BehaviorDescriptor;
+      case 9:
+        return myIsApplicableToModelClause__BehaviorDescriptor;
+      case 10:
+        return myIsApplicableToModuleClause__BehaviorDescriptor;
+      case 11:
+        return myIsApplicableToNodeClause__BehaviorDescriptor;
+      case 12:
+        return myMainProjectOperation__BehaviorDescriptor;
+      case 13:
+        return myModelDescriptorOperation__BehaviorDescriptor;
+      case 14:
+        return myModelsToGenerateClause__BehaviorDescriptor;
+      case 15:
+        return myModuleOperation__BehaviorDescriptor;
+      case 16:
+        return myNodeOperation__BehaviorDescriptor;
+      case 17:
+        return myNodesOperation__BehaviorDescriptor;
+      case 18:
+        return myOperationContextOperation__BehaviorDescriptor;
+      case 19:
+        return myProjectOperation__BehaviorDescriptor;
+      case 20:
+        return myRefactoring__BehaviorDescriptor;
+      case 21:
+        return myRefactoringFieldReference__BehaviorDescriptor;
+      case 22:
+        return myRepositoryOperation__BehaviorDescriptor;
+      case 23:
+        return myScopeOperation__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -29,91 +29,88 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: AbstractContainerCreator 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new add_init_values_Intention();
-            intentions[1] = new add_copy_from_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: AddAllSetElementsOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddAllSetElementsOperation_replace_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: AddSetElementOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddSetElementOperation_replace_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: Expression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new IterateOverSequence_Intention();
-          }
-          break;
-        case 4:
-          if (true) {
-            // Concept: ForEachStatement 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ConvertForEachStatementToForeachStatement_Intention();
-            intentions[1] = new ConvertToMultiForeach_Intention();
-          }
-          break;
-        case 5:
-          if (true) {
-            // Concept: ForeachStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertForeachStatementToForEach_Intention();
-          }
-          break;
-        case 6:
-          if (true) {
-            // Concept: HashMapCreator 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new CreateInitializer_Intention();
-          }
-          break;
-        case 7:
-          if (true) {
-            // Concept: RemoveAllSetElementsOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new RemoveAllSetElementsOperation_replace_Intention();
-          }
-          break;
-        case 8:
-          if (true) {
-            // Concept: RemoveSetElementOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new RemoveSetElementOperation_replace_Intention();
-          }
-          break;
-        case 9:
-          if (true) {
-            // Concept: SequenceCreator 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new add_sequence_initializer_Intention();
-          }
-          break;
-        case 10:
-          if (true) {
-            // Concept: TreeSetCreator 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new Add_Comparator_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: AbstractContainerCreator 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new add_init_values_Intention();
+          intentions[1] = new add_copy_from_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: AddAllSetElementsOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddAllSetElementsOperation_replace_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: AddSetElementOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddSetElementOperation_replace_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: Expression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new IterateOverSequence_Intention();
+        }
+        break;
+      case 4:
+        if (true) {
+          // Concept: ForEachStatement 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ConvertForEachStatementToForeachStatement_Intention();
+          intentions[1] = new ConvertToMultiForeach_Intention();
+        }
+        break;
+      case 5:
+        if (true) {
+          // Concept: ForeachStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertForeachStatementToForEach_Intention();
+        }
+        break;
+      case 6:
+        if (true) {
+          // Concept: HashMapCreator 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new CreateInitializer_Intention();
+        }
+        break;
+      case 7:
+        if (true) {
+          // Concept: RemoveAllSetElementsOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new RemoveAllSetElementsOperation_replace_Intention();
+        }
+        break;
+      case 8:
+        if (true) {
+          // Concept: RemoveSetElementOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new RemoveSetElementOperation_replace_Intention();
+        }
+        break;
+      case 9:
+        if (true) {
+          // Concept: SequenceCreator 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new add_sequence_initializer_Intention();
+        }
+        break;
+      case 10:
+        if (true) {
+          // Concept: TreeSetCreator 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new Add_Comparator_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

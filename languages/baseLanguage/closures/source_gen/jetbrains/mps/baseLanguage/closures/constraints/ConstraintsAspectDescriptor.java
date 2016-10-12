@@ -16,28 +16,25 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new AbstractFunctionType_Constraints();
-        case 1:
-          return new CompactInvokeFunctionExpression_Constraints();
-        case 2:
-          return new ControlAbstractionContainer_Constraints();
-        case 3:
-          return new ControlAbstractionDeclaration_Constraints();
-        case 4:
-          return new FunctionMethodDeclaration_Constraints();
-        case 5:
-          return new FunctionType_Constraints();
-        case 6:
-          return new InvokeFunctionOperation_Constraints();
-        case 7:
-          return new UnboundClosureParameterDeclaration_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new AbstractFunctionType_Constraints();
+      case 1:
+        return new CompactInvokeFunctionExpression_Constraints();
+      case 2:
+        return new ControlAbstractionContainer_Constraints();
+      case 3:
+        return new ControlAbstractionDeclaration_Constraints();
+      case 4:
+        return new FunctionMethodDeclaration_Constraints();
+      case 5:
+        return new FunctionType_Constraints();
+      case 6:
+        return new InvokeFunctionOperation_Constraints();
+      case 7:
+        return new UnboundClosureParameterDeclaration_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

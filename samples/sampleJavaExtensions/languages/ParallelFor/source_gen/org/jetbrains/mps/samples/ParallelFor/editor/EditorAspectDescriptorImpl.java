@@ -18,21 +18,19 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new NonThreadSafeClass_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ParallelFor_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ParallelLoopVariable_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ThreadPool_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ThreadSafe_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new NonThreadSafeClass_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ParallelFor_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ParallelLoopVariable_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ThreadPool_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ThreadSafe_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -41,43 +39,39 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new NoWaitTransforms_Contribution());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new ParallelFor_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new NoWaitTransforms_Contribution());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new ParallelFor_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new NoWaitTransforms_ParallelFor()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new NoWaitTransforms_ParallelFor_ext_3()});
-              case 2:
-                return Arrays.asList(new TransformationMenu[]{new ParallelFor_ext_3_RTransform_Menu()});
-              case 3:
-                return Arrays.asList(new TransformationMenu[]{new ThreadPoolTransforms()});
-              case 4:
-                return Arrays.asList(new TransformationMenu[]{new ThreadPoolTransforms_ext_3()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new NoWaitTransforms_ParallelFor()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new NoWaitTransforms_ParallelFor_ext_3()});
+            case 2:
+              return Arrays.asList(new TransformationMenu[]{new ParallelFor_ext_3_RTransform_Menu()});
+            case 3:
+              return Arrays.asList(new TransformationMenu[]{new ThreadPoolTransforms()});
+            case 4:
+              return Arrays.asList(new TransformationMenu[]{new ThreadPoolTransforms_ext_3()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -86,5 +80,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L), MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL), MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL), MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL), MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a4 = new String[]{"org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor", "org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3", "org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu", "org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms", "org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor", "org.jetbrains.mps.samples.ParallelFor.editor.NoWaitTransforms_ParallelFor_ext_3", "org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_ext_3_RTransform_Menu", "org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms", "org.jetbrains.mps.samples.ParallelFor.editor.ThreadPoolTransforms_ext_3"};
 }

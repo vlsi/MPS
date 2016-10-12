@@ -16,24 +16,21 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CustomMemberDescriptor_Constraints();
-        case 1:
-          return new DSLDescriptor_Constraints();
-        case 2:
-          return new MemberModifier_Constraints();
-        case 3:
-          return new MethodInstance_Constraints();
-        case 4:
-          return new MultipleModifier_Constraints();
-        case 5:
-          return new RequiredModifier_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CustomMemberDescriptor_Constraints();
+      case 1:
+        return new DSLDescriptor_Constraints();
+      case 2:
+        return new MemberModifier_Constraints();
+      case 3:
+        return new MethodInstance_Constraints();
+      case 4:
+        return new MultipleModifier_Constraints();
+      case 5:
+        return new RequiredModifier_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

@@ -5,7 +5,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.sampleXML.behavior.Attribute_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.sampleXML.behavior.BehaviorAspectDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.sampleXML.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Document_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.sampleXML.behavior.Document_BehaviorDescriptor" />

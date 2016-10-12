@@ -19,61 +19,59 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new XmlAttribute_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new XmlBaseAttribute_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new XmlBaseElement_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new XmlCDATA_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new XmlCharRef_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new XmlCharRefValue_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new XmlComment_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new XmlCommentLine_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new XmlContent_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new XmlDeclaration_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new XmlDoctypeDeclaration_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new XmlDocument_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new XmlElement_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new XmlEntityRef_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new XmlEntityRefValue_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new XmlExternalId_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new XmlFile_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new XmlNoSpaceValue_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new XmlProcessingInstruction_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new XmlProlog_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new XmlPrologElement_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new XmlText_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new XmlTextValue_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new XmlValuePart_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new XmlWhitespace_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new XmlAttribute_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new XmlBaseAttribute_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new XmlBaseElement_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new XmlCDATA_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new XmlCharRef_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new XmlCharRefValue_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new XmlComment_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new XmlCommentLine_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new XmlContent_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new XmlDeclaration_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new XmlDoctypeDeclaration_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new XmlDocument_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new XmlElement_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new XmlEntityRef_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new XmlEntityRefValue_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new XmlExternalId_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new XmlFile_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new XmlNoSpaceValue_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new XmlProcessingInstruction_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new XmlProlog_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new XmlPrologElement_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new XmlText_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new XmlTextValue_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new XmlValuePart_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new XmlWhitespace_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -82,37 +80,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new XmlBaseAttribute_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new XmlContent_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new XmlValuePart_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new XmlBaseAttribute_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new XmlContent_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new XmlValuePart_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new transform_ElementAttributes_XmlElement_ext_1()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new transform_ElementAttributes_XmlElement_ext_1()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -120,33 +114,31 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new XmlAttribute_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new XmlBaseAttribute_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new XmlCharRefValue_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new XmlCommentLine_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new XmlElement_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new XmlEntityRefValue_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new XmlPrologElement_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new XmlText_SubstituteMenu());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new XmlTextValue_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new XmlValuePart_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new XmlWhitespace_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new XmlAttribute_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new XmlBaseAttribute_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new XmlCharRefValue_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new XmlCommentLine_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new XmlElement_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new XmlEntityRefValue_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new XmlPrologElement_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new XmlText_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new XmlTextValue_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new XmlValuePart_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new XmlWhitespace_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -155,5 +147,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffed7feL), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9bec5eL), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL), MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a4 = new String[]{"jetbrains.mps.core.xml.editor.transform_ElementAttributes_XmlElement_ext_1"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.core.xml.editor.transform_ElementAttributes_XmlElement_ext_1"};
 }

@@ -16,38 +16,35 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CreateRootRule_Constraints();
-        case 1:
-          return new GeneratorParameterReference_Constraints();
-        case 2:
-          return new Root_MappingRule_Constraints();
-        case 3:
-          return new TemplateArgumentLinkPatternRefExpression_Constraints();
-        case 4:
-          return new TemplateArgumentParameterExpression_Constraints();
-        case 5:
-          return new TemplateArgumentPatternVarRefExpression_Constraints();
-        case 6:
-          return new TemplateArgumentPropertyPatternRefExpression_Constraints();
-        case 7:
-          return new TemplateArgumentQueryExpression_Constraints();
-        case 8:
-          return new TemplateArgumentVariableRefExpression_Constraints();
-        case 9:
-          return new TemplateCallMacro_Constraints();
-        case 10:
-          return new TemplateDeclarationReference_Constraints();
-        case 11:
-          return new TemplateSwitch_Constraints();
-        case 12:
-          return new TemplateSwitchMacro_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CreateRootRule_Constraints();
+      case 1:
+        return new GeneratorParameterReference_Constraints();
+      case 2:
+        return new Root_MappingRule_Constraints();
+      case 3:
+        return new TemplateArgumentLinkPatternRefExpression_Constraints();
+      case 4:
+        return new TemplateArgumentParameterExpression_Constraints();
+      case 5:
+        return new TemplateArgumentPatternVarRefExpression_Constraints();
+      case 6:
+        return new TemplateArgumentPropertyPatternRefExpression_Constraints();
+      case 7:
+        return new TemplateArgumentQueryExpression_Constraints();
+      case 8:
+        return new TemplateArgumentVariableRefExpression_Constraints();
+      case 9:
+        return new TemplateCallMacro_Constraints();
+      case 10:
+        return new TemplateDeclarationReference_Constraints();
+      case 11:
+        return new TemplateSwitch_Constraints();
+      case 12:
+        return new TemplateSwitchMacro_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

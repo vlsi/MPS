@@ -16,28 +16,25 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new EditorExpression_Constraints();
-        case 1:
-          return new EditorOperationCall_Constraints();
-        case 2:
-          return new EditorOperationDeclaration_Constraints();
-        case 3:
-          return new EditorPropertyReference_Constraints();
-        case 4:
-          return new GetEditorOperation_Constraints();
-        case 5:
-          return new PersistentPropertyReferenceOperation_Constraints();
-        case 6:
-          return new SettingsEditor_Constraints();
-        case 7:
-          return new TemplateParameterReference_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new EditorExpression_Constraints();
+      case 1:
+        return new EditorOperationCall_Constraints();
+      case 2:
+        return new EditorOperationDeclaration_Constraints();
+      case 3:
+        return new EditorPropertyReference_Constraints();
+      case 4:
+        return new GetEditorOperation_Constraints();
+      case 5:
+        return new PersistentPropertyReferenceOperation_Constraints();
+      case 6:
+        return new SettingsEditor_Constraints();
+      case 7:
+        return new TemplateParameterReference_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

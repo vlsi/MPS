@@ -18,7 +18,7 @@
       <unit at="12,0,29,0" name="jetbrains.mps.samples.mindmaps.editor.DefaultDiagramElementActionMap_0" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,49,0" name="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,47,0" name="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5058522826399262891">

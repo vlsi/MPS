@@ -17,46 +17,43 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new AppendOperation_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new CollectionAppendPart_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new ConceptTextGenDeclaration_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new ConstantStringAppendPart_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new DecreaseDepthOperation_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new FoundErrorOperation_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new IncreaseDepthOperation_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new IndentBufferOperation_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new LanguageTextGenDeclaration_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new NewLineAppendPart_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new NodeAppendPart_DataFlow());
-        case 11:
-          return Collections.<IDataFlowBuilder>singletonList(new OperationCall_DataFlow());
-        case 12:
-          return Collections.<IDataFlowBuilder>singletonList(new OperationDeclaration_DataFlow());
-        case 13:
-          return Collections.<IDataFlowBuilder>singletonList(new ReferenceAppendPart_DataFlow());
-        case 14:
-          return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodCall_DataFlow());
-        case 15:
-          return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodDeclaration_DataFlow());
-        case 16:
-          return Collections.<IDataFlowBuilder>singletonList(new WithIndentOperation_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new AppendOperation_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new CollectionAppendPart_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new ConceptTextGenDeclaration_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new ConstantStringAppendPart_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new DecreaseDepthOperation_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new FoundErrorOperation_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new IncreaseDepthOperation_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new IndentBufferOperation_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new LanguageTextGenDeclaration_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new NewLineAppendPart_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new NodeAppendPart_DataFlow());
+      case 11:
+        return Collections.<IDataFlowBuilder>singletonList(new OperationCall_DataFlow());
+      case 12:
+        return Collections.<IDataFlowBuilder>singletonList(new OperationDeclaration_DataFlow());
+      case 13:
+        return Collections.<IDataFlowBuilder>singletonList(new ReferenceAppendPart_DataFlow());
+      case 14:
+        return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodCall_DataFlow());
+      case 15:
+        return Collections.<IDataFlowBuilder>singletonList(new UtilityMethodDeclaration_DataFlow());
+      case 16:
+        return Collections.<IDataFlowBuilder>singletonList(new WithIndentOperation_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

@@ -25,26 +25,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0k.index(cncpt)) {
-        case 0:
-          return myDailyPlan__BehaviorDescriptor;
-        case 1:
-          return myDayRange__BehaviorDescriptor;
-        case 2:
-          return myHeatingPlan__BehaviorDescriptor;
-        case 3:
-          return mySlot__BehaviorDescriptor;
-        case 4:
-          return mySpecificDay__BehaviorDescriptor;
-        case 5:
-          return myWeekDays__BehaviorDescriptor;
-        case 6:
-          return myWeekendDay__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0k.index(cncpt)) {
+      case 0:
+        return myDailyPlan__BehaviorDescriptor;
+      case 1:
+        return myDayRange__BehaviorDescriptor;
+      case 2:
+        return myHeatingPlan__BehaviorDescriptor;
+      case 3:
+        return mySlot__BehaviorDescriptor;
+      case 4:
+        return mySpecificDay__BehaviorDescriptor;
+      case 5:
+        return myWeekDays__BehaviorDescriptor;
+      case 6:
+        return myWeekendDay__BehaviorDescriptor;
+      default:
     }
     return null;
   }

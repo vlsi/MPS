@@ -16,34 +16,31 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CopyPasteHandlers_Constraints();
-        case 1:
-          return new NodeFactories_Constraints();
-        case 2:
-          return new NodeFactory_Constraints();
-        case 3:
-          return new NodeSubstituteActions_Constraints();
-        case 4:
-          return new PasteWrappers_Constraints();
-        case 5:
-          return new SideTransformHintSubstituteActions_Constraints();
-        case 6:
-          return new SideTransformMenuPart_Constraints();
-        case 7:
-          return new SideTransformVariableReference_Constraints();
-        case 8:
-          return new SmartActionParameterReference_Constraints();
-        case 9:
-          return new SubstituteMenuPart_Constraints();
-        case 10:
-          return new SubstituteNodeBuilderVariableReference_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CopyPasteHandlers_Constraints();
+      case 1:
+        return new NodeFactories_Constraints();
+      case 2:
+        return new NodeFactory_Constraints();
+      case 3:
+        return new NodeSubstituteActions_Constraints();
+      case 4:
+        return new PasteWrappers_Constraints();
+      case 5:
+        return new SideTransformHintSubstituteActions_Constraints();
+      case 6:
+        return new SideTransformMenuPart_Constraints();
+      case 7:
+        return new SideTransformVariableReference_Constraints();
+      case 8:
+        return new SmartActionParameterReference_Constraints();
+      case 9:
+        return new SubstituteMenuPart_Constraints();
+      case 10:
+        return new SubstituteNodeBuilderVariableReference_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

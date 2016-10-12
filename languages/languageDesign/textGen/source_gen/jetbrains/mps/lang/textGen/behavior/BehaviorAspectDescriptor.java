@@ -37,50 +37,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0w.index(cncpt)) {
-        case 0:
-          return myAbstractAppendPart__BehaviorDescriptor;
-        case 1:
-          return myAbstractTextGenDeclaration__BehaviorDescriptor;
-        case 2:
-          return myAbstractTextGenParameter__BehaviorDescriptor;
-        case 3:
-          return myBufferParameter__BehaviorDescriptor;
-        case 4:
-          return myCollectionAppendPart__BehaviorDescriptor;
-        case 5:
-          return myConceptTextGenDeclaration__BehaviorDescriptor;
-        case 6:
-          return myConstantStringAppendPart__BehaviorDescriptor;
-        case 7:
-          return myContextParameter__BehaviorDescriptor;
-        case 8:
-          return myEncodingDeclaration__BehaviorDescriptor;
-        case 9:
-          return myExtensionDeclaration__BehaviorDescriptor;
-        case 10:
-          return myFilenameFunction__BehaviorDescriptor;
-        case 11:
-          return myGenerateTextDeclaration__BehaviorDescriptor;
-        case 12:
-          return myLanguageTextGenDeclaration__BehaviorDescriptor;
-        case 13:
-          return myNodeAppendPart__BehaviorDescriptor;
-        case 14:
-          return myNodeParameter__BehaviorDescriptor;
-        case 15:
-          return myOperationDeclaration__BehaviorDescriptor;
-        case 16:
-          return myStubOperationDeclaration__BehaviorDescriptor;
-        case 17:
-          return myUtilityMethodCall__BehaviorDescriptor;
-        case 18:
-          return myWithIndentOperation__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0w.index(cncpt)) {
+      case 0:
+        return myAbstractAppendPart__BehaviorDescriptor;
+      case 1:
+        return myAbstractTextGenDeclaration__BehaviorDescriptor;
+      case 2:
+        return myAbstractTextGenParameter__BehaviorDescriptor;
+      case 3:
+        return myBufferParameter__BehaviorDescriptor;
+      case 4:
+        return myCollectionAppendPart__BehaviorDescriptor;
+      case 5:
+        return myConceptTextGenDeclaration__BehaviorDescriptor;
+      case 6:
+        return myConstantStringAppendPart__BehaviorDescriptor;
+      case 7:
+        return myContextParameter__BehaviorDescriptor;
+      case 8:
+        return myEncodingDeclaration__BehaviorDescriptor;
+      case 9:
+        return myExtensionDeclaration__BehaviorDescriptor;
+      case 10:
+        return myFilenameFunction__BehaviorDescriptor;
+      case 11:
+        return myGenerateTextDeclaration__BehaviorDescriptor;
+      case 12:
+        return myLanguageTextGenDeclaration__BehaviorDescriptor;
+      case 13:
+        return myNodeAppendPart__BehaviorDescriptor;
+      case 14:
+        return myNodeParameter__BehaviorDescriptor;
+      case 15:
+        return myOperationDeclaration__BehaviorDescriptor;
+      case 16:
+        return myStubOperationDeclaration__BehaviorDescriptor;
+      case 17:
+        return myUtilityMethodCall__BehaviorDescriptor;
+      case 18:
+        return myWithIndentOperation__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -18,27 +18,25 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -47,35 +45,31 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new InstanceMethodCallSubstitute()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new ThisExtensionMethodSubstitute()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new InstanceMethodCallSubstitute()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new ThisExtensionMethodSubstitute()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
@@ -84,5 +78,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bc0aff7L), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x2e076d2695911333L), MetaIdFactory.conceptId(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a4 = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute", "jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.editor.InstanceMethodCallSubstitute", "jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionMethodSubstitute"};
 }

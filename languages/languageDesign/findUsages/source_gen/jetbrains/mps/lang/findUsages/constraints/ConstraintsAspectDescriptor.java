@@ -16,22 +16,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CheckCancelledStatusStatement_Constraints();
-        case 1:
-          return new ExecuteFinderExpression_Constraints();
-        case 2:
-          return new FinderDeclaration_Constraints();
-        case 3:
-          return new NodeStatement_Constraints();
-        case 4:
-          return new ResultStatement_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CheckCancelledStatusStatement_Constraints();
+      case 1:
+        return new ExecuteFinderExpression_Constraints();
+      case 2:
+        return new FinderDeclaration_Constraints();
+      case 3:
+        return new NodeStatement_Constraints();
+      case 4:
+        return new ResultStatement_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

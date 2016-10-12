@@ -39,54 +39,51 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0y.index(cncpt)) {
-        case 0:
-          return myXmlAttribute__BehaviorDescriptor;
-        case 1:
-          return myXmlBaseAttribute__BehaviorDescriptor;
-        case 2:
-          return myXmlBaseElement__BehaviorDescriptor;
-        case 3:
-          return myXmlBasePrologElement__BehaviorDescriptor;
-        case 4:
-          return myXmlCDATA__BehaviorDescriptor;
-        case 5:
-          return myXmlCharRef__BehaviorDescriptor;
-        case 6:
-          return myXmlComment__BehaviorDescriptor;
-        case 7:
-          return myXmlContent__BehaviorDescriptor;
-        case 8:
-          return myXmlDeclaration__BehaviorDescriptor;
-        case 9:
-          return myXmlDoctypeDeclaration__BehaviorDescriptor;
-        case 10:
-          return myXmlElement__BehaviorDescriptor;
-        case 11:
-          return myXmlEntityRef__BehaviorDescriptor;
-        case 12:
-          return myXmlFile__BehaviorDescriptor;
-        case 13:
-          return myXmlPart__BehaviorDescriptor;
-        case 14:
-          return myXmlProcessingInstruction__BehaviorDescriptor;
-        case 15:
-          return myXmlProlog__BehaviorDescriptor;
-        case 16:
-          return myXmlPrologElement__BehaviorDescriptor;
-        case 17:
-          return myXmlText__BehaviorDescriptor;
-        case 18:
-          return myXmlTextValue__BehaviorDescriptor;
-        case 19:
-          return myXmlValuePart__BehaviorDescriptor;
-        case 20:
-          return myXmlWhitespace__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0y.index(cncpt)) {
+      case 0:
+        return myXmlAttribute__BehaviorDescriptor;
+      case 1:
+        return myXmlBaseAttribute__BehaviorDescriptor;
+      case 2:
+        return myXmlBaseElement__BehaviorDescriptor;
+      case 3:
+        return myXmlBasePrologElement__BehaviorDescriptor;
+      case 4:
+        return myXmlCDATA__BehaviorDescriptor;
+      case 5:
+        return myXmlCharRef__BehaviorDescriptor;
+      case 6:
+        return myXmlComment__BehaviorDescriptor;
+      case 7:
+        return myXmlContent__BehaviorDescriptor;
+      case 8:
+        return myXmlDeclaration__BehaviorDescriptor;
+      case 9:
+        return myXmlDoctypeDeclaration__BehaviorDescriptor;
+      case 10:
+        return myXmlElement__BehaviorDescriptor;
+      case 11:
+        return myXmlEntityRef__BehaviorDescriptor;
+      case 12:
+        return myXmlFile__BehaviorDescriptor;
+      case 13:
+        return myXmlPart__BehaviorDescriptor;
+      case 14:
+        return myXmlProcessingInstruction__BehaviorDescriptor;
+      case 15:
+        return myXmlProlog__BehaviorDescriptor;
+      case 16:
+        return myXmlPrologElement__BehaviorDescriptor;
+      case 17:
+        return myXmlText__BehaviorDescriptor;
+      case 18:
+        return myXmlTextValue__BehaviorDescriptor;
+      case 19:
+        return myXmlValuePart__BehaviorDescriptor;
+      case 20:
+        return myXmlWhitespace__BehaviorDescriptor;
+      default:
     }
     return null;
   }

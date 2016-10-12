@@ -23,56 +23,52 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("comment", "comment", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"), new ConceptEditorHintImpl("reflectiveEditor", "reflectiveEditor", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Attribute_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BaseCommentAttribute_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BaseConcept_comment_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ExportScopeModule_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new NodeAttribute_comment_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Attribute_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BaseCommentAttribute_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BaseConcept_comment_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ExportScopeModule_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new NodeAttribute_comment_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a3, editorComponentId)) {
-              case 0:
-                return Collections.<ConceptEditorComponent>singletonList(new ImplementationRemovedInStubMessage());
-              case 1:
-                return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent());
-              case 2:
-                return Collections.<ConceptEditorComponent>singletonList(new VirtualPackage());
-              case 3:
-                return Collections.<ConceptEditorComponent>singletonList(new alias());
-              default:
-                return Collections.<ConceptEditorComponent>emptyList();
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a3, editorComponentId)) {
+            case 0:
+              return Collections.<ConceptEditorComponent>singletonList(new ImplementationRemovedInStubMessage());
+            case 1:
+              return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent());
+            case 2:
+              return Collections.<ConceptEditorComponent>singletonList(new VirtualPackage());
+            case 3:
+              return Collections.<ConceptEditorComponent>singletonList(new alias());
+            default:
+              return Collections.<ConceptEditorComponent>emptyList();
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -83,28 +79,24 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new Attribute_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new BaseConcept_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new Attribute_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new BaseConcept_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0h.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new BaseConcept_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0h.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new BaseConcept_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -113,5 +105,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a3 = new String[]{"jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.VirtualPackage", "jetbrains.mps.lang.core.editor.alias"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a3 = new String[]{"jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.VirtualPackage", "jetbrains.mps.lang.core.editor.alias"};
 }

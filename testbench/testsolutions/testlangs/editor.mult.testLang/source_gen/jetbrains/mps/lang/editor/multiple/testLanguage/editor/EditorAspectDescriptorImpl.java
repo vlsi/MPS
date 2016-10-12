@@ -21,52 +21,48 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("rich", "Use colourful presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"), new ConceptEditorHintImpl("compact", "Use compact presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"), new ConceptEditorHintImpl("unsupported", "Use presentation which is not supported in testLanguage", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.unsupported"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentChild_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentRoot_Editor());
-        case 3:
-          return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestMostSpecificChild_Editor(), new MultipleEditorsTestMostSpecificChild_compact_Editor(), new MultipleEditorsTestMostSpecificChild_rich_Editor()});
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestMostSpecificRoot_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeListRoot_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeRoot_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRoot_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentChild_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestEditorComponentRoot_Editor());
+      case 3:
+        return Arrays.asList(new ConceptEditor[]{new MultipleEditorsTestMostSpecificChild_Editor(), new MultipleEditorsTestMostSpecificChild_compact_Editor(), new MultipleEditorsTestMostSpecificChild_rich_Editor()});
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestMostSpecificRoot_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeListRoot_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRefNodeRoot_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new MultipleEditorsTestRoot_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
-              return Arrays.asList(new ConceptEditorComponent[]{new MultipleEditorsTestEditorComponentChild_compact(), new MultipleEditorsTestEditorComponentChild_default(), new MultipleEditorsTestEditorComponentChild_rich()});
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
+            return Arrays.asList(new ConceptEditorComponent[]{new MultipleEditorsTestEditorComponentChild_compact(), new MultipleEditorsTestEditorComponentChild_default(), new MultipleEditorsTestEditorComponentChild_rich()});
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestEditorComponentChild_default".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }

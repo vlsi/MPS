@@ -89,7 +89,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,227,0" name="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,224,0" name="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BuildGroupBlock_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />

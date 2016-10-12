@@ -16,31 +16,29 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ConvertTo_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new CurrencyDefTable_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new CurrencyUnit_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CurrentStockPrice_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new GetAmount_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new GetCurrency_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new MoneyType_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new MovingAverage_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new StockSymbol_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ConvertTo_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new CurrencyDefTable_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new CurrencyUnit_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CurrentStockPrice_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new GetAmount_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new GetCurrency_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new MoneyType_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new MovingAverage_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new StockSymbol_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -49,13 +47,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new makeMoneyFromInteger_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new makeMoneyFromInteger_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }

@@ -21,14 +21,11 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_t8hmqt_a0c.index(cncpt)) {
-        case 0:
-          return new ErrorReportingRoot_TextGen();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_t8hmqt_a0c.index(cncpt)) {
+      case 0:
+        return new ErrorReportingRoot_TextGen();
+      default:
     }
     return null;
   }

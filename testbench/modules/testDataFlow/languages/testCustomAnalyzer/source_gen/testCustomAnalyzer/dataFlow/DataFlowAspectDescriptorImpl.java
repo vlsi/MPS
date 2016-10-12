@@ -31,22 +31,19 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0c.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new IDataFlowBuilder[]{new Child_IntraProceduralSpecific_BuilderMode_DataFlow(), new Child_IntraProcedural_BuilderMode_DataFlow()});
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new OtherChild_IntraProcedural_BuilderMode_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new OtherRoot_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new Root_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0c.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new IDataFlowBuilder[]{new Child_IntraProceduralSpecific_BuilderMode_DataFlow(), new Child_IntraProcedural_BuilderMode_DataFlow()});
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new OtherChild_IntraProcedural_BuilderMode_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new OtherRoot_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new Root_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

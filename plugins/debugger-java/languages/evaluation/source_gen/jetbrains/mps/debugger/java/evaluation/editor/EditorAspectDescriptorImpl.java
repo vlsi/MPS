@@ -17,31 +17,29 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new DebuggedType_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new DownCastToLowLevel_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Evaluator_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new EvaluatorConcept_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new EvaluatorsSuperMethodCall_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new EvaluatorsThisExpression_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new GenerationHelperAnnotation_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new LowLevelVariable_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new LowLevelVariableReference_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new UnitNode_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new DebuggedType_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new DownCastToLowLevel_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Evaluator_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new EvaluatorConcept_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new EvaluatorsSuperMethodCall_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new EvaluatorsThisExpression_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new GenerationHelperAnnotation_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new LowLevelVariable_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new LowLevelVariableReference_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new UnitNode_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -50,26 +48,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new dowcast_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new dowcast_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new DownCastToLowLevel_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new DownCastToLowLevel_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

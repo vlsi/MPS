@@ -29,42 +29,39 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: ClosureLiteral 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new convert_to_from_unrestricted_Intention();
-            intentions[1] = new ToggleMultiLine_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: FunctionType 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new add_throws_to_FunctionType_Intention();
-            intentions[1] = new convert_to_unrestricted_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: InvokeFunctionOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new replace_invokeOperation_with_compactInvoke_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: UnrestrictedFunctionType 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new convert_to_restricted_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: ClosureLiteral 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new convert_to_from_unrestricted_Intention();
+          intentions[1] = new ToggleMultiLine_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: FunctionType 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new add_throws_to_FunctionType_Intention();
+          intentions[1] = new convert_to_unrestricted_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: InvokeFunctionOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new replace_invokeOperation_with_compactInvoke_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: UnrestrictedFunctionType 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new convert_to_restricted_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

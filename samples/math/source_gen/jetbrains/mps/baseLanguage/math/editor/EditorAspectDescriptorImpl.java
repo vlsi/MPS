@@ -19,98 +19,94 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new IntervalType_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new LiteralI_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new MathSymbol_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new MatrixType_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new MatrixZero_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new PowExpression_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new IntervalType_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new LiteralI_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new MathSymbol_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new MatrixType_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new MatrixZero_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new PowExpression_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -118,36 +114,32 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new TransformationMenu[]{new ML_SideTransforms_Expression_Contribution(), new Math()});
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new ML_SideTransforms_LocalVariableDeclaration_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new TransformationMenu[]{new ML_SideTransforms_Expression_Contribution(), new Math()});
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new ML_SideTransforms_LocalVariableDeclaration_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new ComplexLiteral_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ExponentialOperation_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new ML_Actions_Contribution());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new MathTypeCast_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new MatrixElementAccessExpression_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ComplexLiteral_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ExponentialOperation_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new ML_Actions_Contribution());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new MathTypeCast_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new MatrixElementAccessExpression_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

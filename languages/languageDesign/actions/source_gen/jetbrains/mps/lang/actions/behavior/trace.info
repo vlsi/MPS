@@ -21,7 +21,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.AddMenuPart_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,245,0" name="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,242,0" name="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_EditorCell_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_EditorCell_BehaviorDescriptor" />

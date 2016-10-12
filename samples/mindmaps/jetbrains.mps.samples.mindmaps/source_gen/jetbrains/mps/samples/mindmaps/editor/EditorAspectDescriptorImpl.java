@@ -20,21 +20,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "", true, "jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new MindMap_diagram_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Relationship_diagram_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new Specializes_diagram_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new Thought_diagram_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new MindMap_diagram_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Relationship_diagram_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Specializes_diagram_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new Thought_diagram_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

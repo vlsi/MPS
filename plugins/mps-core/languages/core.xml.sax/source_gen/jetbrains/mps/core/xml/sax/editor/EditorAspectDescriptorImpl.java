@@ -16,37 +16,35 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeReference_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeRule_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXBreakStatement_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXChildRule_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXDefaultChildRule_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXFieldDeclaration_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXFieldReference_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXLocatorExpression_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRule_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParam_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParamRef_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXParser_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new XMLSAXTextRule_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeReference_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXAttributeRule_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXBreakStatement_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXChildRule_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXDefaultChildRule_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXFieldDeclaration_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXFieldReference_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXLocatorExpression_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRule_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParam_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXNodeRuleParamRef_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXParser_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new XMLSAXTextRule_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -55,13 +53,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new XMLSAXNodeRuleParam_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new XMLSAXNodeRuleParam_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

@@ -20,237 +20,233 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BuildAspect_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BuildCompositePath_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BuildCustomWorkflow_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new BuildDependency_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new BuildExternalLayout_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new BuildExternalLayoutDependency_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new BuildFileExcludeSelector_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new BuildFileIncludeSelector_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new BuildFileIncludesSelector_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new BuildFileSelector_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new BuildFolderMacro_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new BuildInputFiles_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new BuildInputFolders_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new BuildInputResourceSet_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new BuildInputSingleFile_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new BuildInputSingleFolder_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new BuildJavaPlugin_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_AbstractCopy_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Comment_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CompileOutputOf_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterFixCRLF_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceRegex_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceTokens_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFlattenMapper_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyGlobMapper_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyHandler_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyRegexMapper_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_CustomCopy_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoProperties_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoPropertyEntry_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoXml_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_ExportAsJavaLibrary_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_File_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_FileStub_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Filemode_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Files_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_FilesOf_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Import_Editor());
-        case 39:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_ImportContent_Editor());
-        case 40:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Editor());
-        case 41:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Attribute_Editor());
-        case 42:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Section_Editor());
-        case 43:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_NamedContainer_Editor());
-        case 44:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Node_Editor());
-        case 45:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_Tar_Editor());
-        case 46:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_TransparentContainer_Editor());
-        case 47:
-          return Collections.<ConceptEditor>singletonList(new BuildMacro_Editor());
-        case 48:
-          return Collections.<ConceptEditor>singletonList(new BuildNamedLayout_Editor());
-        case 49:
-          return Collections.<ConceptEditor>singletonList(new BuildPlugin_Editor());
-        case 50:
-          return Collections.<ConceptEditor>singletonList(new BuildProject_Editor());
-        case 51:
-          return Collections.<ConceptEditor>singletonList(new BuildProjectDependency_Editor());
-        case 52:
-          return Collections.<ConceptEditor>singletonList(new BuildProjectPart_Editor());
-        case 53:
-          return Collections.<ConceptEditor>singletonList(new BuildSourceArchiveRelativePath_Editor());
-        case 54:
-          return Collections.<ConceptEditor>singletonList(new BuildSourceMacroRelativePath_Editor());
-        case 55:
-          return Collections.<ConceptEditor>singletonList(new BuildSourcePath_Editor());
-        case 56:
-          return Collections.<ConceptEditor>singletonList(new BuildSourceProjectRelativePath_Editor());
-        case 57:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaCP_Editor());
-        case 58:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaClassFolder_Editor());
-        case 59:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentFolder_Editor());
-        case 60:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentRoot_Editor());
-        case 61:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependency_Editor());
-        case 62:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJar_Editor());
-        case 63:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_Editor());
-        case 64:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyFileset_Editor());
-        case 65:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyJar_Editor());
-        case 66:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyLibrary_Editor());
-        case 67:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyModule_Editor());
-        case 68:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarFolderRef_Editor());
-        case 69:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarRef_Editor());
-        case 70:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaFiles_Editor());
-        case 71:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJar_Editor());
-        case 72:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJars_Editor());
-        case 73:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibrary_Editor());
-        case 74:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryCP_Editor());
-        case 75:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryElement_Editor());
-        case 76:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJar_Editor());
-        case 77:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJarFolder_Editor());
-        case 78:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModule_Editor());
-        case 79:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModuleOptions_Editor());
-        case 80:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaOptions_Editor());
-        case 81:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaResources_Editor());
-        case 82:
-          return Collections.<ConceptEditor>singletonList(new BuildSource_JavaSources_Editor());
-        case 83:
-          return Collections.<ConceptEditor>singletonList(new BuildString_Editor());
-        case 84:
-          return Collections.<ConceptEditor>singletonList(new BuildStringNotEmpty_Editor());
-        case 85:
-          return Collections.<ConceptEditor>singletonList(new BuildStringPart_Editor());
-        case 86:
-          return Collections.<ConceptEditor>singletonList(new BuildTextStringPart_Editor());
-        case 87:
-          return Collections.<ConceptEditor>singletonList(new BuildVarRefStringPart_Editor());
-        case 88:
-          return Collections.<ConceptEditor>singletonList(new BuildVariableMacro_Editor());
-        case 89:
-          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitValue_Editor());
-        case 90:
-          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithDate_Editor());
-        case 91:
-          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithFileContent_Editor());
-        case 92:
-          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithString_Editor());
-        case 93:
-          return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithValueFromFile_Editor());
-        case 94:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_Folder_Editor());
-        case 95:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JarFolder_Editor());
-        case 96:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaJar_Editor());
-        case 97:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_Editor());
-        case 98:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaModule_Editor());
-        case 99:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_SingleFile_Editor());
-        case 100:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkflowParticipantReference_Editor());
-        case 101:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkfowParticipants_Editor());
-        case 102:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_LibraryArtifacts_Editor());
-        case 103:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ProjectDependency_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BuildAspect_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BuildCompositePath_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BuildCustomWorkflow_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new BuildDependency_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new BuildExternalLayout_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new BuildExternalLayoutDependency_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new BuildFileExcludeSelector_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new BuildFileIncludeSelector_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new BuildFileIncludesSelector_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new BuildFileSelector_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new BuildFolderMacro_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new BuildInputFiles_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new BuildInputFolders_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new BuildInputResourceSet_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new BuildInputSingleFile_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new BuildInputSingleFolder_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new BuildJavaPlugin_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_AbstractCopy_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Comment_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CompileOutputOf_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterFixCRLF_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceRegex_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceTokens_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFlattenMapper_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyGlobMapper_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyHandler_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyRegexMapper_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_CustomCopy_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoProperties_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoPropertyEntry_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoXml_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_ExportAsJavaLibrary_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_File_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_FileStub_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Filemode_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Files_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_FilesOf_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Import_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_ImportContent_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Attribute_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Section_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_NamedContainer_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Node_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_Tar_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_TransparentContainer_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new BuildMacro_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new BuildNamedLayout_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new BuildPlugin_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new BuildProject_Editor());
+      case 51:
+        return Collections.<ConceptEditor>singletonList(new BuildProjectDependency_Editor());
+      case 52:
+        return Collections.<ConceptEditor>singletonList(new BuildProjectPart_Editor());
+      case 53:
+        return Collections.<ConceptEditor>singletonList(new BuildSourceArchiveRelativePath_Editor());
+      case 54:
+        return Collections.<ConceptEditor>singletonList(new BuildSourceMacroRelativePath_Editor());
+      case 55:
+        return Collections.<ConceptEditor>singletonList(new BuildSourcePath_Editor());
+      case 56:
+        return Collections.<ConceptEditor>singletonList(new BuildSourceProjectRelativePath_Editor());
+      case 57:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaCP_Editor());
+      case 58:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaClassFolder_Editor());
+      case 59:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentFolder_Editor());
+      case 60:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentRoot_Editor());
+      case 61:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependency_Editor());
+      case 62:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJar_Editor());
+      case 63:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_Editor());
+      case 64:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyFileset_Editor());
+      case 65:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyJar_Editor());
+      case 66:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyLibrary_Editor());
+      case 67:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyModule_Editor());
+      case 68:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarFolderRef_Editor());
+      case 69:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarRef_Editor());
+      case 70:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaFiles_Editor());
+      case 71:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJar_Editor());
+      case 72:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJars_Editor());
+      case 73:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibrary_Editor());
+      case 74:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryCP_Editor());
+      case 75:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryElement_Editor());
+      case 76:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJar_Editor());
+      case 77:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJarFolder_Editor());
+      case 78:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModule_Editor());
+      case 79:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModuleOptions_Editor());
+      case 80:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaOptions_Editor());
+      case 81:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaResources_Editor());
+      case 82:
+        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaSources_Editor());
+      case 83:
+        return Collections.<ConceptEditor>singletonList(new BuildString_Editor());
+      case 84:
+        return Collections.<ConceptEditor>singletonList(new BuildStringNotEmpty_Editor());
+      case 85:
+        return Collections.<ConceptEditor>singletonList(new BuildStringPart_Editor());
+      case 86:
+        return Collections.<ConceptEditor>singletonList(new BuildTextStringPart_Editor());
+      case 87:
+        return Collections.<ConceptEditor>singletonList(new BuildVarRefStringPart_Editor());
+      case 88:
+        return Collections.<ConceptEditor>singletonList(new BuildVariableMacro_Editor());
+      case 89:
+        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitValue_Editor());
+      case 90:
+        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithDate_Editor());
+      case 91:
+        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithFileContent_Editor());
+      case 92:
+        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithString_Editor());
+      case 93:
+        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithValueFromFile_Editor());
+      case 94:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_Folder_Editor());
+      case 95:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JarFolder_Editor());
+      case 96:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaJar_Editor());
+      case 97:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_Editor());
+      case 98:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaModule_Editor());
+      case 99:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_SingleFile_Editor());
+      case 100:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkflowParticipantReference_Editor());
+      case 101:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkfowParticipants_Editor());
+      case 102:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_LibraryArtifacts_Editor());
+      case 103:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ProjectDependency_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.build.editor.BuildLayout_containerElements".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new BuildLayout_containerElements());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.build.editor.BuildLayout_containerElements".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new BuildLayout_containerElements());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -258,68 +254,64 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new BuildCompositePath_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new BuildInputFiles_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new BuildSourceMacroRelativePath_TransformationMenu());
-        case 3:
-          return Collections.<TransformationMenu>singletonList(new BuildSourcePath_TransformationMenu());
-        case 4:
-          return Collections.<TransformationMenu>singletonList(new BuildSourceProjectRelativePath_TransformationMenu());
-        case 5:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJar_TransformationMenu());
-        case 6:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_TransformationMenu());
-        case 7:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyJar_TransformationMenu());
-        case 8:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyLibrary_TransformationMenu());
-        case 9:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyModule_TransformationMenu());
-        case 10:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarFolderRef_TransformationMenu());
-        case 11:
-          return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarRef_TransformationMenu());
-        case 12:
-          return Collections.<TransformationMenu>singletonList(new BuildStringPart_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new BuildCompositePath_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new BuildInputFiles_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new BuildSourceMacroRelativePath_TransformationMenu());
+      case 3:
+        return Collections.<TransformationMenu>singletonList(new BuildSourcePath_TransformationMenu());
+      case 4:
+        return Collections.<TransformationMenu>singletonList(new BuildSourceProjectRelativePath_TransformationMenu());
+      case 5:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJar_TransformationMenu());
+      case 6:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_TransformationMenu());
+      case 7:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyJar_TransformationMenu());
+      case 8:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyLibrary_TransformationMenu());
+      case 9:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaDependencyModule_TransformationMenu());
+      case 10:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarFolderRef_TransformationMenu());
+      case 11:
+        return Collections.<TransformationMenu>singletonList(new BuildSource_JavaExternalJarRef_TransformationMenu());
+      case 12:
+        return Collections.<TransformationMenu>singletonList(new BuildStringPart_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_DependencyLocation()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_DependencyLocation()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_reexport_BuildSourcePath()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new transform_CompositePath_BuildSourcePath()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_reexport_BuildSourcePath()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new transform_CompositePath_BuildSourcePath()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -327,41 +319,39 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new BuildCompositePath_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new BuildLayout_Copy_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new BuildLayout_CustomCopy_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new BuildLayout_JarManifest_Part_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new BuildSourceArchiveRelativePath_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaContentFolder_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaDependencyJar_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaFiles_SubstituteMenu());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaLibraryCP_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new BuildString_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new BuildStringPart_SubstituteMenu());
-        case 11:
-          return Collections.<SubstituteMenu>singletonList(new BuildTextStringPart_SubstituteMenu());
-        case 12:
-          return Collections.<SubstituteMenu>singletonList(new BuildVarRefStringPart_SubstituteMenu());
-        case 13:
-          return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitValue_SubstituteMenu());
-        case 14:
-          return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitWithString_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new BuildCompositePath_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new BuildLayout_Copy_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new BuildLayout_CustomCopy_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new BuildLayout_JarManifest_Part_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new BuildSourceArchiveRelativePath_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaContentFolder_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaDependencyJar_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaFiles_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaLibraryCP_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new BuildString_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new BuildStringPart_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new BuildTextStringPart_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new BuildVarRefStringPart_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitValue_SubstituteMenu());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitWithString_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -371,6 +361,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x76d807f8dd95718eL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd26287L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a5 = new String[]{"jetbrains.mps.build.editor.add_DependencyLocation"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a5 = new String[]{"jetbrains.mps.build.editor.add_reexport_BuildSourcePath", "jetbrains.mps.build.editor.transform_CompositePath_BuildSourcePath"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.build.editor.add_DependencyLocation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.build.editor.add_reexport_BuildSourcePath", "jetbrains.mps.build.editor.transform_CompositePath_BuildSourcePath"};
 }

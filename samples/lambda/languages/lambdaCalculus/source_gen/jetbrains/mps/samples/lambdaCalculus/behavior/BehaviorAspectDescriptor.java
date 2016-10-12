@@ -26,28 +26,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0l.index(cncpt)) {
-        case 0:
-          return myAbstractionVarRef__BehaviorDescriptor;
-        case 1:
-          return myFunctionType__BehaviorDescriptor;
-        case 2:
-          return myLambdaAbstraction__BehaviorDescriptor;
-        case 3:
-          return myLambdaApplication__BehaviorDescriptor;
-        case 4:
-          return myLambdaExpression__BehaviorDescriptor;
-        case 5:
-          return myLetExpression__BehaviorDescriptor;
-        case 6:
-          return myLetRef__BehaviorDescriptor;
-        case 7:
-          return myVariableOwner__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0l.index(cncpt)) {
+      case 0:
+        return myAbstractionVarRef__BehaviorDescriptor;
+      case 1:
+        return myFunctionType__BehaviorDescriptor;
+      case 2:
+        return myLambdaAbstraction__BehaviorDescriptor;
+      case 3:
+        return myLambdaApplication__BehaviorDescriptor;
+      case 4:
+        return myLambdaExpression__BehaviorDescriptor;
+      case 5:
+        return myLetExpression__BehaviorDescriptor;
+      case 6:
+        return myLetRef__BehaviorDescriptor;
+      case 7:
+        return myVariableOwner__BehaviorDescriptor;
+      default:
     }
     return null;
   }

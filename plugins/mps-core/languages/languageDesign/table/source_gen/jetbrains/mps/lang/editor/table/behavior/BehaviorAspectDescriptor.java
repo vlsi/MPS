@@ -20,16 +20,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0f.index(cncpt)) {
-        case 0:
-          return myCellModel_HierarchycalTable__BehaviorDescriptor;
-        case 1:
-          return myQueryFunction_TableModel__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0f.index(cncpt)) {
+      case 0:
+        return myCellModel_HierarchycalTable__BehaviorDescriptor;
+      case 1:
+        return myQueryFunction_TableModel__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -28,32 +28,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0n.index(cncpt)) {
-        case 0:
-          return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
-        case 1:
-          return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
-        case 2:
-          return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
-        case 3:
-          return myGenerationContextOp_PatternRef__BehaviorDescriptor;
-        case 4:
-          return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
-        case 5:
-          return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
-        case 6:
-          return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
-        case 7:
-          return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
-        case 8:
-          return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
-        case 9:
-          return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0n.index(cncpt)) {
+      case 0:
+        return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
+      case 1:
+        return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
+      case 2:
+        return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
+      case 3:
+        return myGenerationContextOp_PatternRef__BehaviorDescriptor;
+      case 4:
+        return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
+      case 5:
+        return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
+      case 6:
+        return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
+      case 7:
+        return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
+      case 8:
+        return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
+      case 9:
+        return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
+      default:
     }
     return null;
   }

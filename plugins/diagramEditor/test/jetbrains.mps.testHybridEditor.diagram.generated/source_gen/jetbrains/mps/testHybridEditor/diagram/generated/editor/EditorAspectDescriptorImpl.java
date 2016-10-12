@@ -15,25 +15,23 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BlockInstance_diagram_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Connector_diagram_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagram_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new InputPort_diagram_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new OutputPort_diagram_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BlockInstance_diagram_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Connector_diagram_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagram_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new InputPort_diagram_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new OutputPort_diagram_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

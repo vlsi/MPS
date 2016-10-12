@@ -17,14 +17,11 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new UnlessStatement_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new UnlessStatement_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

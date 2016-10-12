@@ -20,7 +20,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,44,0" name="jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,41,0" name="jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="C_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" />

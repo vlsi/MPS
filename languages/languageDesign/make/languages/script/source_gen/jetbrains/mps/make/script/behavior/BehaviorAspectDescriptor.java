@@ -27,30 +27,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0m.index(cncpt)) {
-        case 0:
-          return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
-        case 1:
-          return myExpectedOption__BehaviorDescriptor;
-        case 2:
-          return myInputResourcesParameter__BehaviorDescriptor;
-        case 3:
-          return myJobDefinition__BehaviorDescriptor;
-        case 4:
-          return myOptionType__BehaviorDescriptor;
-        case 5:
-          return myQueryDefinition__BehaviorDescriptor;
-        case 6:
-          return myRelayQueryExpression__BehaviorDescriptor;
-        case 7:
-          return myResourceType__BehaviorDescriptor;
-        case 8:
-          return myResultStatement__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0m.index(cncpt)) {
+      case 0:
+        return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
+      case 1:
+        return myExpectedOption__BehaviorDescriptor;
+      case 2:
+        return myInputResourcesParameter__BehaviorDescriptor;
+      case 3:
+        return myJobDefinition__BehaviorDescriptor;
+      case 4:
+        return myOptionType__BehaviorDescriptor;
+      case 5:
+        return myQueryDefinition__BehaviorDescriptor;
+      case 6:
+        return myRelayQueryExpression__BehaviorDescriptor;
+      case 7:
+        return myResourceType__BehaviorDescriptor;
+      case 8:
+        return myResultStatement__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -16,34 +16,31 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CommandBuilderExpression_Constraints();
-        case 1:
-          return new CommandDebuggerOperation_Constraints();
-        case 2:
-          return new CommandParameterAssignment_Constraints();
-        case 3:
-          return new CommandParameterReference_Constraints();
-        case 4:
-          return new CommandPartLengthOperation_Constraints();
-        case 5:
-          return new CommandPartToListOperation_Constraints();
-        case 6:
-          return new CommandProcessType_Constraints();
-        case 7:
-          return new DebuggerSettingsCommandParameterDeclaration_Constraints();
-        case 8:
-          return new ExecuteCommandPart_Constraints();
-        case 9:
-          return new ProcessType_Constraints();
-        case 10:
-          return new StartAndWaitOperation_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CommandBuilderExpression_Constraints();
+      case 1:
+        return new CommandDebuggerOperation_Constraints();
+      case 2:
+        return new CommandParameterAssignment_Constraints();
+      case 3:
+        return new CommandParameterReference_Constraints();
+      case 4:
+        return new CommandPartLengthOperation_Constraints();
+      case 5:
+        return new CommandPartToListOperation_Constraints();
+      case 6:
+        return new CommandProcessType_Constraints();
+      case 7:
+        return new DebuggerSettingsCommandParameterDeclaration_Constraints();
+      case 8:
+        return new ExecuteCommandPart_Constraints();
+      case 9:
+        return new ProcessType_Constraints();
+      case 10:
+        return new StartAndWaitOperation_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

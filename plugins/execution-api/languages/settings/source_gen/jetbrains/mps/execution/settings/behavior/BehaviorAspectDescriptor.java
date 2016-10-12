@@ -35,46 +35,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0u.index(cncpt)) {
-        case 0:
-          return myApplyTo_Function__BehaviorDescriptor;
-        case 1:
-          return myCheckProperties_Function__BehaviorDescriptor;
-        case 2:
-          return myCreateEditor_Function__BehaviorDescriptor;
-        case 3:
-          return myDeprecatedAnnotation__BehaviorDescriptor;
-        case 4:
-          return myDispose_Function__BehaviorDescriptor;
-        case 5:
-          return myEditorOperationDeclaration__BehaviorDescriptor;
-        case 6:
-          return myEditorPropertyDeclaration__BehaviorDescriptor;
-        case 7:
-          return myEditorPropertyReference__BehaviorDescriptor;
-        case 8:
-          return myPersistentConfiguration__BehaviorDescriptor;
-        case 9:
-          return myPersistentConfigurationTemplate__BehaviorDescriptor;
-        case 10:
-          return myPersistentConfigurationType__BehaviorDescriptor;
-        case 11:
-          return myPersistentPropertyDeclaration__BehaviorDescriptor;
-        case 12:
-          return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
-        case 13:
-          return myReportConfigurationErrorStatement__BehaviorDescriptor;
-        case 14:
-          return myResetFrom_Function__BehaviorDescriptor;
-        case 15:
-          return mySettingsEditor__BehaviorDescriptor;
-        case 16:
-          return myTemplateParameterReference__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0u.index(cncpt)) {
+      case 0:
+        return myApplyTo_Function__BehaviorDescriptor;
+      case 1:
+        return myCheckProperties_Function__BehaviorDescriptor;
+      case 2:
+        return myCreateEditor_Function__BehaviorDescriptor;
+      case 3:
+        return myDeprecatedAnnotation__BehaviorDescriptor;
+      case 4:
+        return myDispose_Function__BehaviorDescriptor;
+      case 5:
+        return myEditorOperationDeclaration__BehaviorDescriptor;
+      case 6:
+        return myEditorPropertyDeclaration__BehaviorDescriptor;
+      case 7:
+        return myEditorPropertyReference__BehaviorDescriptor;
+      case 8:
+        return myPersistentConfiguration__BehaviorDescriptor;
+      case 9:
+        return myPersistentConfigurationTemplate__BehaviorDescriptor;
+      case 10:
+        return myPersistentConfigurationType__BehaviorDescriptor;
+      case 11:
+        return myPersistentPropertyDeclaration__BehaviorDescriptor;
+      case 12:
+        return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
+      case 13:
+        return myReportConfigurationErrorStatement__BehaviorDescriptor;
+      case 14:
+        return myResetFrom_Function__BehaviorDescriptor;
+      case 15:
+        return mySettingsEditor__BehaviorDescriptor;
+      case 16:
+        return myTemplateParameterReference__BehaviorDescriptor;
+      default:
     }
     return null;
   }

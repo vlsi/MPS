@@ -37,50 +37,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0w.index(cncpt)) {
-        case 0:
-          return myAttribute__BehaviorDescriptor;
-        case 1:
-          return myBaseCommentAttribute__BehaviorDescriptor;
-        case 2:
-          return myBaseConcept__BehaviorDescriptor;
-        case 3:
-          return myChildAttribute__BehaviorDescriptor;
-        case 4:
-          return myExportScope__BehaviorDescriptor;
-        case 5:
-          return myExportScopeModule__BehaviorDescriptor;
-        case 6:
-          return myExportScopeNamespace__BehaviorDescriptor;
-        case 7:
-          return myExportScopePublic__BehaviorDescriptor;
-        case 8:
-          return myIDeprecatable__BehaviorDescriptor;
-        case 9:
-          return myIMetaLevelChanger__BehaviorDescriptor;
-        case 10:
-          return myINamedConcept__BehaviorDescriptor;
-        case 11:
-          return myIOldCommentContainer__BehaviorDescriptor;
-        case 12:
-          return myIResolveInfo__BehaviorDescriptor;
-        case 13:
-          return myISuppressErrors__BehaviorDescriptor;
-        case 14:
-          return myImplementationContainer__BehaviorDescriptor;
-        case 15:
-          return myLinkAttribute__BehaviorDescriptor;
-        case 16:
-          return myPropertyAttribute__BehaviorDescriptor;
-        case 17:
-          return myScopeProvider__BehaviorDescriptor;
-        case 18:
-          return mySuppressErrorsAnnotation__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0w.index(cncpt)) {
+      case 0:
+        return myAttribute__BehaviorDescriptor;
+      case 1:
+        return myBaseCommentAttribute__BehaviorDescriptor;
+      case 2:
+        return myBaseConcept__BehaviorDescriptor;
+      case 3:
+        return myChildAttribute__BehaviorDescriptor;
+      case 4:
+        return myExportScope__BehaviorDescriptor;
+      case 5:
+        return myExportScopeModule__BehaviorDescriptor;
+      case 6:
+        return myExportScopeNamespace__BehaviorDescriptor;
+      case 7:
+        return myExportScopePublic__BehaviorDescriptor;
+      case 8:
+        return myIDeprecatable__BehaviorDescriptor;
+      case 9:
+        return myIMetaLevelChanger__BehaviorDescriptor;
+      case 10:
+        return myINamedConcept__BehaviorDescriptor;
+      case 11:
+        return myIOldCommentContainer__BehaviorDescriptor;
+      case 12:
+        return myIResolveInfo__BehaviorDescriptor;
+      case 13:
+        return myISuppressErrors__BehaviorDescriptor;
+      case 14:
+        return myImplementationContainer__BehaviorDescriptor;
+      case 15:
+        return myLinkAttribute__BehaviorDescriptor;
+      case 16:
+        return myPropertyAttribute__BehaviorDescriptor;
+      case 17:
+        return myScopeProvider__BehaviorDescriptor;
+      case 18:
+        return mySuppressErrorsAnnotation__BehaviorDescriptor;
+      default:
     }
     return null;
   }

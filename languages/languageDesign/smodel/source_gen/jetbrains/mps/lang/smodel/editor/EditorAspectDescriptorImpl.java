@@ -20,337 +20,333 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbstractOperationParameter_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AllAttributeQualifier_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AttributeAccess_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CheckedModuleQualifiedName_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new CheckedModuleReference_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new ChildAttributeQualifier_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ChildNodeRefExpression_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new ConceptFqNameRefExpression_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ConceptId_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new ConceptIdRefExpression_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new ConceptNodeType_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new ConceptRefExpression_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new ConceptReference_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new ConceptSwitchStatement_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new Concept_GetAllSubConcepts_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new Concept_GetAllSuperConcepts_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new Concept_GetDirectSuperConcepts_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new Concept_GetHierarchy_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new Concept_IsExactlyOperation_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new Concept_IsSubConceptOfOperation_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new Concept_IsSuperConceptOfOperation_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new Concept_NewInstance_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new ContainmentLinkId_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new EnumMemberReference_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new EnumMemberValueRefExpression_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new EnumMember_NameOperation_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new EnumMember_ValueOperation_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new EqualsStructurallyExpression_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new ExactConceptCase_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new GeneratorModulePointer_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new IfInstanceOfStatement_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new IfInstanceOfVariable_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new LanguageId_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new LanguageRefExpression_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new LinkAttributeQualifier_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new LinkIdRefExpression_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new LinkList_AddNewChildOperation_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new LinkNameRefExpression_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new LinkQualifier_Editor());
-        case 39:
-          return Collections.<ConceptEditor>singletonList(new LinkRefExpression_Editor());
-        case 40:
-          return Collections.<ConceptEditor>singletonList(new LinkRefQualifier_Editor());
-        case 41:
-          return Collections.<ConceptEditor>singletonList(new Link_SetNewChildOperation_Editor());
-        case 42:
-          return Collections.<ConceptEditor>singletonList(new Link_SetTargetOperation_Editor());
-        case 43:
-          return Collections.<ConceptEditor>singletonList(new ModelReferenceExpression_Editor());
-        case 44:
-          return Collections.<ConceptEditor>singletonList(new Model_AddRootOperation_Editor());
-        case 45:
-          return Collections.<ConceptEditor>singletonList(new Model_CreateNewNodeOperation_Editor());
-        case 46:
-          return Collections.<ConceptEditor>singletonList(new Model_CreateNewRootNodeOperation_Editor());
-        case 47:
-          return Collections.<ConceptEditor>singletonList(new Model_GetModule_Editor());
-        case 48:
-          return Collections.<ConceptEditor>singletonList(new Model_NodesIncludingImportedOperation_Editor());
-        case 49:
-          return Collections.<ConceptEditor>singletonList(new Model_NodesOperation_Editor());
-        case 50:
-          return Collections.<ConceptEditor>singletonList(new Model_RootsIncludingImportedOperation_Editor());
-        case 51:
-          return Collections.<ConceptEditor>singletonList(new Model_RootsOperation_Editor());
-        case 52:
-          return Collections.<ConceptEditor>singletonList(new ModulePointer_Editor());
-        case 53:
-          return Collections.<ConceptEditor>singletonList(new ModuleRefExpression_Editor());
-        case 54:
-          return Collections.<ConceptEditor>singletonList(new ModuleReferenceExpression_Editor());
-        case 55:
-          return Collections.<ConceptEditor>singletonList(new NodeAttributeQualifier_Editor());
-        case 56:
-          return Collections.<ConceptEditor>singletonList(new NodePointerExpression_Editor());
-        case 57:
-          return Collections.<ConceptEditor>singletonList(new NodeRefExpression_Editor());
-        case 58:
-          return Collections.<ConceptEditor>singletonList(new Node_ConceptMethodCall_Editor());
-        case 59:
-          return Collections.<ConceptEditor>singletonList(new Node_CopyOperation_Editor());
-        case 60:
-          return Collections.<ConceptEditor>singletonList(new Node_DeleteOperation_Editor());
-        case 61:
-          return Collections.<ConceptEditor>singletonList(new Node_DetachOperation_Editor());
-        case 62:
-          return Collections.<ConceptEditor>singletonList(new Node_GetAllSiblingsOperation_Editor());
-        case 63:
-          return Collections.<ConceptEditor>singletonList(new Node_GetAncestorOperation_Editor());
-        case 64:
-          return Collections.<ConceptEditor>singletonList(new Node_GetAncestorsOperation_Editor());
-        case 65:
-          return Collections.<ConceptEditor>singletonList(new Node_GetChildrenAndChildAttributesOperation_Editor());
-        case 66:
-          return Collections.<ConceptEditor>singletonList(new Node_GetChildrenOperation_Editor());
-        case 67:
-          return Collections.<ConceptEditor>singletonList(new Node_GetConceptOperation_Editor());
-        case 68:
-          return Collections.<ConceptEditor>singletonList(new Node_GetContainingLinkOperation_Editor());
-        case 69:
-          return Collections.<ConceptEditor>singletonList(new Node_GetContainingRoleOperation_Editor());
-        case 70:
-          return Collections.<ConceptEditor>singletonList(new Node_GetContainingRootOperation_Editor());
-        case 71:
-          return Collections.<ConceptEditor>singletonList(new Node_GetDescendantsOperation_Editor());
-        case 72:
-          return Collections.<ConceptEditor>singletonList(new Node_GetIndexInParentOperation_Editor());
-        case 73:
-          return Collections.<ConceptEditor>singletonList(new Node_GetModelOperation_Editor());
-        case 74:
-          return Collections.<ConceptEditor>singletonList(new Node_GetNextSiblingOperation_Editor());
-        case 75:
-          return Collections.<ConceptEditor>singletonList(new Node_GetNextSiblingsOperation_Editor());
-        case 76:
-          return Collections.<ConceptEditor>singletonList(new Node_GetParentOperation_Editor());
-        case 77:
-          return Collections.<ConceptEditor>singletonList(new Node_GetPrevSiblingOperation_Editor());
-        case 78:
-          return Collections.<ConceptEditor>singletonList(new Node_GetPrevSiblingsOperation_Editor());
-        case 79:
-          return Collections.<ConceptEditor>singletonList(new Node_GetReferenceOperation_Editor());
-        case 80:
-          return Collections.<ConceptEditor>singletonList(new Node_GetReferencesOperation_Editor());
-        case 81:
-          return Collections.<ConceptEditor>singletonList(new Node_GetReferentSearchScopeOperation_Editor());
-        case 82:
-          return Collections.<ConceptEditor>singletonList(new Node_GetSConceptOperation_Editor());
-        case 83:
-          return Collections.<ConceptEditor>singletonList(new Node_InsertNewNextSiblingOperation_Editor());
-        case 84:
-          return Collections.<ConceptEditor>singletonList(new Node_InsertNewPrevSiblingOperation_Editor());
-        case 85:
-          return Collections.<ConceptEditor>singletonList(new Node_InsertNextSiblingOperation_Editor());
-        case 86:
-          return Collections.<ConceptEditor>singletonList(new Node_InsertPrevSiblingOperation_Editor());
-        case 87:
-          return Collections.<ConceptEditor>singletonList(new Node_IsAttributeOperation_Editor());
-        case 88:
-          return Collections.<ConceptEditor>singletonList(new Node_IsInstanceOfOperation_Editor());
-        case 89:
-          return Collections.<ConceptEditor>singletonList(new Node_IsNotNullOperation_Editor());
-        case 90:
-          return Collections.<ConceptEditor>singletonList(new Node_IsNullOperation_Editor());
-        case 91:
-          return Collections.<ConceptEditor>singletonList(new Node_IsRoleOperation_Editor());
-        case 92:
-          return Collections.<ConceptEditor>singletonList(new Node_PointerOperation_Editor());
-        case 93:
-          return Collections.<ConceptEditor>singletonList(new Node_ReplaceWithAnotherOperation_Editor());
-        case 94:
-          return Collections.<ConceptEditor>singletonList(new Node_ReplaceWithNewOperation_Editor());
-        case 95:
-          return Collections.<ConceptEditor>singletonList(new OfConceptOperation_Editor());
-        case 96:
-          return Collections.<ConceptEditor>singletonList(new OperationParm_Concept_Editor());
-        case 97:
-          return Collections.<ConceptEditor>singletonList(new OperationParm_ConceptList_Editor());
-        case 98:
-          return Collections.<ConceptEditor>singletonList(new OperationParm_LinkQualifier_Editor());
-        case 99:
-          return Collections.<ConceptEditor>singletonList(new OperationParm_StopConceptList_Editor());
-        case 100:
-          return Collections.<ConceptEditor>singletonList(new PoundExpression_Editor());
-        case 101:
-          return Collections.<ConceptEditor>singletonList(new PropertyAttributeQualifier_Editor());
-        case 102:
-          return Collections.<ConceptEditor>singletonList(new PropertyId_Editor());
-        case 103:
-          return Collections.<ConceptEditor>singletonList(new PropertyIdRefExpression_Editor());
-        case 104:
-          return Collections.<ConceptEditor>singletonList(new PropertyNameRefExpression_Editor());
-        case 105:
-          return Collections.<ConceptEditor>singletonList(new PropertyQualifier_Editor());
-        case 106:
-          return Collections.<ConceptEditor>singletonList(new Property_HasValue_Enum_Editor());
-        case 107:
-          return Collections.<ConceptEditor>singletonList(new Property_HasValue_Simple_Editor());
-        case 108:
-          return Collections.<ConceptEditor>singletonList(new Property_SetOperation_Editor());
-        case 109:
-          return Collections.<ConceptEditor>singletonList(new RefConcept_Reference_Editor());
-        case 110:
-          return Collections.<ConceptEditor>singletonList(new ReferenceLinkId_Editor());
-        case 111:
-          return Collections.<ConceptEditor>singletonList(new Reference_GetLinkDeclarationOperation_Editor());
-        case 112:
-          return Collections.<ConceptEditor>singletonList(new Reference_GetResolveInfo_Editor());
-        case 113:
-          return Collections.<ConceptEditor>singletonList(new Reference_GetRoleOperation_Editor());
-        case 114:
-          return Collections.<ConceptEditor>singletonList(new Reference_GetTargetOperation_Editor());
-        case 115:
-          return Collections.<ConceptEditor>singletonList(new SConceptOperation_Editor());
-        case 116:
-          return Collections.<ConceptEditor>singletonList(new SConceptType_Editor());
-        case 117:
-          return Collections.<ConceptEditor>singletonList(new SConceptTypeCastExpression_Editor());
-        case 118:
-          return Collections.<ConceptEditor>singletonList(new SConceptTypeLiteral_Editor());
-        case 119:
-          return Collections.<ConceptEditor>singletonList(new SEnumMemberType_Editor());
-        case 120:
-          return Collections.<ConceptEditor>singletonList(new SEnumOperationInvocation_Editor());
-        case 121:
-          return Collections.<ConceptEditor>singletonList(new SEnum_MemberForNameOperation_Editor());
-        case 122:
-          return Collections.<ConceptEditor>singletonList(new SEnum_MemberForValueOperation_Editor());
-        case 123:
-          return Collections.<ConceptEditor>singletonList(new SEnum_MemberOperation_Editor());
-        case 124:
-          return Collections.<ConceptEditor>singletonList(new SEnum_MembersOperation_Editor());
-        case 125:
-          return Collections.<ConceptEditor>singletonList(new SLinkAccess_Editor());
-        case 126:
-          return Collections.<ConceptEditor>singletonList(new SLinkImplicitSelect_Editor());
-        case 127:
-          return Collections.<ConceptEditor>singletonList(new SLinkListAccess_Editor());
-        case 128:
-          return Collections.<ConceptEditor>singletonList(new SModelType_Editor());
-        case 129:
-          return Collections.<ConceptEditor>singletonList(new SNodeCreator_Editor());
-        case 130:
-          return Collections.<ConceptEditor>singletonList(new SNodeListCreator_Editor());
-        case 131:
-          return Collections.<ConceptEditor>singletonList(new SNodeListType_Editor());
-        case 132:
-          return Collections.<ConceptEditor>singletonList(new SNodeOperation_Editor());
-        case 133:
-          return Collections.<ConceptEditor>singletonList(new SNodeType_Editor());
-        case 134:
-          return Collections.<ConceptEditor>singletonList(new SNodeTypeCastExpression_Editor());
-        case 135:
-          return Collections.<ConceptEditor>singletonList(new SPropertyAccess_Editor());
-        case 136:
-          return Collections.<ConceptEditor>singletonList(new SReferenceType_Editor());
-        case 137:
-          return Collections.<ConceptEditor>singletonList(new SearchScopeType_Editor());
-        case 138:
-          return Collections.<ConceptEditor>singletonList(new SearchScope_ContainsOperation_Editor());
-        case 139:
-          return Collections.<ConceptEditor>singletonList(new SemanticDowncastExpression_Editor());
-        case 140:
-          return Collections.<ConceptEditor>singletonList(new SubconceptCase_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractOperationParameter_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AllAttributeQualifier_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AttributeAccess_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CheckedModuleQualifiedName_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new CheckedModuleReference_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new ChildAttributeQualifier_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ChildNodeRefExpression_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ConceptFqNameRefExpression_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ConceptId_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new ConceptIdRefExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new ConceptNodeType_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new ConceptRefExpression_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new ConceptReference_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new ConceptSwitchStatement_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new Concept_GetAllSubConcepts_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new Concept_GetAllSuperConcepts_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new Concept_GetDirectSuperConcepts_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new Concept_GetHierarchy_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new Concept_IsExactlyOperation_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new Concept_IsSubConceptOfOperation_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new Concept_IsSuperConceptOfOperation_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new Concept_NewInstance_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new ContainmentLinkId_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new EnumMemberReference_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new EnumMemberValueRefExpression_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new EnumMember_NameOperation_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new EnumMember_ValueOperation_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new EqualsStructurallyExpression_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new ExactConceptCase_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new GeneratorModulePointer_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new IfInstanceOfStatement_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new IfInstanceOfVariable_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new LanguageId_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new LanguageRefExpression_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new LinkAttributeQualifier_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new LinkIdRefExpression_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new LinkList_AddNewChildOperation_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new LinkNameRefExpression_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new LinkQualifier_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new LinkRefExpression_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new LinkRefQualifier_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new Link_SetNewChildOperation_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new Link_SetTargetOperation_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new ModelReferenceExpression_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new Model_AddRootOperation_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new Model_CreateNewNodeOperation_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new Model_CreateNewRootNodeOperation_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new Model_GetModule_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new Model_NodesIncludingImportedOperation_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new Model_NodesOperation_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new Model_RootsIncludingImportedOperation_Editor());
+      case 51:
+        return Collections.<ConceptEditor>singletonList(new Model_RootsOperation_Editor());
+      case 52:
+        return Collections.<ConceptEditor>singletonList(new ModulePointer_Editor());
+      case 53:
+        return Collections.<ConceptEditor>singletonList(new ModuleRefExpression_Editor());
+      case 54:
+        return Collections.<ConceptEditor>singletonList(new ModuleReferenceExpression_Editor());
+      case 55:
+        return Collections.<ConceptEditor>singletonList(new NodeAttributeQualifier_Editor());
+      case 56:
+        return Collections.<ConceptEditor>singletonList(new NodePointerExpression_Editor());
+      case 57:
+        return Collections.<ConceptEditor>singletonList(new NodeRefExpression_Editor());
+      case 58:
+        return Collections.<ConceptEditor>singletonList(new Node_ConceptMethodCall_Editor());
+      case 59:
+        return Collections.<ConceptEditor>singletonList(new Node_CopyOperation_Editor());
+      case 60:
+        return Collections.<ConceptEditor>singletonList(new Node_DeleteOperation_Editor());
+      case 61:
+        return Collections.<ConceptEditor>singletonList(new Node_DetachOperation_Editor());
+      case 62:
+        return Collections.<ConceptEditor>singletonList(new Node_GetAllSiblingsOperation_Editor());
+      case 63:
+        return Collections.<ConceptEditor>singletonList(new Node_GetAncestorOperation_Editor());
+      case 64:
+        return Collections.<ConceptEditor>singletonList(new Node_GetAncestorsOperation_Editor());
+      case 65:
+        return Collections.<ConceptEditor>singletonList(new Node_GetChildrenAndChildAttributesOperation_Editor());
+      case 66:
+        return Collections.<ConceptEditor>singletonList(new Node_GetChildrenOperation_Editor());
+      case 67:
+        return Collections.<ConceptEditor>singletonList(new Node_GetConceptOperation_Editor());
+      case 68:
+        return Collections.<ConceptEditor>singletonList(new Node_GetContainingLinkOperation_Editor());
+      case 69:
+        return Collections.<ConceptEditor>singletonList(new Node_GetContainingRoleOperation_Editor());
+      case 70:
+        return Collections.<ConceptEditor>singletonList(new Node_GetContainingRootOperation_Editor());
+      case 71:
+        return Collections.<ConceptEditor>singletonList(new Node_GetDescendantsOperation_Editor());
+      case 72:
+        return Collections.<ConceptEditor>singletonList(new Node_GetIndexInParentOperation_Editor());
+      case 73:
+        return Collections.<ConceptEditor>singletonList(new Node_GetModelOperation_Editor());
+      case 74:
+        return Collections.<ConceptEditor>singletonList(new Node_GetNextSiblingOperation_Editor());
+      case 75:
+        return Collections.<ConceptEditor>singletonList(new Node_GetNextSiblingsOperation_Editor());
+      case 76:
+        return Collections.<ConceptEditor>singletonList(new Node_GetParentOperation_Editor());
+      case 77:
+        return Collections.<ConceptEditor>singletonList(new Node_GetPrevSiblingOperation_Editor());
+      case 78:
+        return Collections.<ConceptEditor>singletonList(new Node_GetPrevSiblingsOperation_Editor());
+      case 79:
+        return Collections.<ConceptEditor>singletonList(new Node_GetReferenceOperation_Editor());
+      case 80:
+        return Collections.<ConceptEditor>singletonList(new Node_GetReferencesOperation_Editor());
+      case 81:
+        return Collections.<ConceptEditor>singletonList(new Node_GetReferentSearchScopeOperation_Editor());
+      case 82:
+        return Collections.<ConceptEditor>singletonList(new Node_GetSConceptOperation_Editor());
+      case 83:
+        return Collections.<ConceptEditor>singletonList(new Node_InsertNewNextSiblingOperation_Editor());
+      case 84:
+        return Collections.<ConceptEditor>singletonList(new Node_InsertNewPrevSiblingOperation_Editor());
+      case 85:
+        return Collections.<ConceptEditor>singletonList(new Node_InsertNextSiblingOperation_Editor());
+      case 86:
+        return Collections.<ConceptEditor>singletonList(new Node_InsertPrevSiblingOperation_Editor());
+      case 87:
+        return Collections.<ConceptEditor>singletonList(new Node_IsAttributeOperation_Editor());
+      case 88:
+        return Collections.<ConceptEditor>singletonList(new Node_IsInstanceOfOperation_Editor());
+      case 89:
+        return Collections.<ConceptEditor>singletonList(new Node_IsNotNullOperation_Editor());
+      case 90:
+        return Collections.<ConceptEditor>singletonList(new Node_IsNullOperation_Editor());
+      case 91:
+        return Collections.<ConceptEditor>singletonList(new Node_IsRoleOperation_Editor());
+      case 92:
+        return Collections.<ConceptEditor>singletonList(new Node_PointerOperation_Editor());
+      case 93:
+        return Collections.<ConceptEditor>singletonList(new Node_ReplaceWithAnotherOperation_Editor());
+      case 94:
+        return Collections.<ConceptEditor>singletonList(new Node_ReplaceWithNewOperation_Editor());
+      case 95:
+        return Collections.<ConceptEditor>singletonList(new OfConceptOperation_Editor());
+      case 96:
+        return Collections.<ConceptEditor>singletonList(new OperationParm_Concept_Editor());
+      case 97:
+        return Collections.<ConceptEditor>singletonList(new OperationParm_ConceptList_Editor());
+      case 98:
+        return Collections.<ConceptEditor>singletonList(new OperationParm_LinkQualifier_Editor());
+      case 99:
+        return Collections.<ConceptEditor>singletonList(new OperationParm_StopConceptList_Editor());
+      case 100:
+        return Collections.<ConceptEditor>singletonList(new PoundExpression_Editor());
+      case 101:
+        return Collections.<ConceptEditor>singletonList(new PropertyAttributeQualifier_Editor());
+      case 102:
+        return Collections.<ConceptEditor>singletonList(new PropertyId_Editor());
+      case 103:
+        return Collections.<ConceptEditor>singletonList(new PropertyIdRefExpression_Editor());
+      case 104:
+        return Collections.<ConceptEditor>singletonList(new PropertyNameRefExpression_Editor());
+      case 105:
+        return Collections.<ConceptEditor>singletonList(new PropertyQualifier_Editor());
+      case 106:
+        return Collections.<ConceptEditor>singletonList(new Property_HasValue_Enum_Editor());
+      case 107:
+        return Collections.<ConceptEditor>singletonList(new Property_HasValue_Simple_Editor());
+      case 108:
+        return Collections.<ConceptEditor>singletonList(new Property_SetOperation_Editor());
+      case 109:
+        return Collections.<ConceptEditor>singletonList(new RefConcept_Reference_Editor());
+      case 110:
+        return Collections.<ConceptEditor>singletonList(new ReferenceLinkId_Editor());
+      case 111:
+        return Collections.<ConceptEditor>singletonList(new Reference_GetLinkDeclarationOperation_Editor());
+      case 112:
+        return Collections.<ConceptEditor>singletonList(new Reference_GetResolveInfo_Editor());
+      case 113:
+        return Collections.<ConceptEditor>singletonList(new Reference_GetRoleOperation_Editor());
+      case 114:
+        return Collections.<ConceptEditor>singletonList(new Reference_GetTargetOperation_Editor());
+      case 115:
+        return Collections.<ConceptEditor>singletonList(new SConceptOperation_Editor());
+      case 116:
+        return Collections.<ConceptEditor>singletonList(new SConceptType_Editor());
+      case 117:
+        return Collections.<ConceptEditor>singletonList(new SConceptTypeCastExpression_Editor());
+      case 118:
+        return Collections.<ConceptEditor>singletonList(new SConceptTypeLiteral_Editor());
+      case 119:
+        return Collections.<ConceptEditor>singletonList(new SEnumMemberType_Editor());
+      case 120:
+        return Collections.<ConceptEditor>singletonList(new SEnumOperationInvocation_Editor());
+      case 121:
+        return Collections.<ConceptEditor>singletonList(new SEnum_MemberForNameOperation_Editor());
+      case 122:
+        return Collections.<ConceptEditor>singletonList(new SEnum_MemberForValueOperation_Editor());
+      case 123:
+        return Collections.<ConceptEditor>singletonList(new SEnum_MemberOperation_Editor());
+      case 124:
+        return Collections.<ConceptEditor>singletonList(new SEnum_MembersOperation_Editor());
+      case 125:
+        return Collections.<ConceptEditor>singletonList(new SLinkAccess_Editor());
+      case 126:
+        return Collections.<ConceptEditor>singletonList(new SLinkImplicitSelect_Editor());
+      case 127:
+        return Collections.<ConceptEditor>singletonList(new SLinkListAccess_Editor());
+      case 128:
+        return Collections.<ConceptEditor>singletonList(new SModelType_Editor());
+      case 129:
+        return Collections.<ConceptEditor>singletonList(new SNodeCreator_Editor());
+      case 130:
+        return Collections.<ConceptEditor>singletonList(new SNodeListCreator_Editor());
+      case 131:
+        return Collections.<ConceptEditor>singletonList(new SNodeListType_Editor());
+      case 132:
+        return Collections.<ConceptEditor>singletonList(new SNodeOperation_Editor());
+      case 133:
+        return Collections.<ConceptEditor>singletonList(new SNodeType_Editor());
+      case 134:
+        return Collections.<ConceptEditor>singletonList(new SNodeTypeCastExpression_Editor());
+      case 135:
+        return Collections.<ConceptEditor>singletonList(new SPropertyAccess_Editor());
+      case 136:
+        return Collections.<ConceptEditor>singletonList(new SReferenceType_Editor());
+      case 137:
+        return Collections.<ConceptEditor>singletonList(new SearchScopeType_Editor());
+      case 138:
+        return Collections.<ConceptEditor>singletonList(new SearchScope_ContainsOperation_Editor());
+      case 139:
+        return Collections.<ConceptEditor>singletonList(new SemanticDowncastExpression_Editor());
+      case 140:
+        return Collections.<ConceptEditor>singletonList(new SubconceptCase_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.lang.smodel.editor.AliasComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new AliasComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.lang.smodel.editor.AliasComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new AliasComponent());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.lang.smodel.editor.LanguageIdInspector".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new LanguageIdInspector());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.lang.smodel.editor.LanguageIdInspector".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new LanguageIdInspector());
           }
-          break;
-        case 2:
-          if (true) {
-            if ("jetbrains.mps.lang.smodel.editor.ModelReferenceFQName".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new ModelReferenceFQName());
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          if ("jetbrains.mps.lang.smodel.editor.ModelReferenceFQName".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new ModelReferenceFQName());
           }
-          break;
-        case 3:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a0a2, editorComponentId)) {
-              case 0:
-                return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAliasAndParms_Comp());
-              case 1:
-                return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAlias_Comp());
-              default:
-                return Collections.<ConceptEditorComponent>emptyList();
-            }
+        }
+        break;
+      case 3:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a2, editorComponentId)) {
+            case 0:
+              return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAliasAndParms_Comp());
+            case 1:
+              return Collections.<ConceptEditorComponent>singletonList(new ReplaceableAlias_Comp());
+            default:
+              return Collections.<ConceptEditorComponent>emptyList();
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -358,90 +354,84 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new AbstractNodeRefExpression_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new AttributeQualifier_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new BootstrapAwareMetaObject_TransformationMenu());
-        case 3:
-          return Collections.<TransformationMenu>singletonList(new expression_Contribution());
-        case 4:
-          return Collections.<TransformationMenu>singletonList(new SEnumOperation_TransformationMenu());
-        case 5:
-          return Collections.<TransformationMenu>singletonList(new SNodeOperation_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new AbstractNodeRefExpression_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new AttributeQualifier_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new BootstrapAwareMetaObject_TransformationMenu());
+      case 3:
+        return Collections.<TransformationMenu>singletonList(new expression_Contribution());
+      case 4:
+        return Collections.<TransformationMenu>singletonList(new SEnumOperation_TransformationMenu());
+      case 5:
+        return Collections.<TransformationMenu>singletonList(new SNodeOperation_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractOperationParameter_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ChildNodeRefExpression_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new Concept_GetHierarchy_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new OfConceptOperation_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_Concept_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_ConceptList_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_Inclusion_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_LinkQualifier_SubstituteMenu());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_Root_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_SameMetaLevel_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new OperationParm_StopConceptList_SubstituteMenu());
-        case 11:
-          return Collections.<SubstituteMenu>singletonList(new SConceptOperation_SubstituteMenu());
-        case 12:
-          return Collections.<SubstituteMenu>singletonList(new SConceptTypeCastExpression_SubstituteMenu());
-        case 13:
-          return Collections.<SubstituteMenu>singletonList(new SConceptTypeLiteral_SubstituteMenu());
-        case 14:
-          return Collections.<SubstituteMenu>singletonList(new SNodeOperation_SubstituteMenu());
-        case 15:
-          return Collections.<SubstituteMenu>singletonList(new SNodeTypeCastExpression_SubstituteMenu());
-        case 16:
-          return Collections.<SubstituteMenu>singletonList(new SemanticDowncastExpression_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractOperationParameter_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ChildNodeRefExpression_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new Concept_GetHierarchy_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new OfConceptOperation_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_Concept_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_ConceptList_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_Inclusion_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_LinkQualifier_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_Root_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_SameMetaLevel_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new OperationParm_StopConceptList_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new SConceptOperation_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new SConceptTypeCastExpression_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new SConceptTypeLiteral_SubstituteMenu());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new SNodeOperation_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new SNodeTypeCastExpression_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new SemanticDowncastExpression_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a6, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new SNodeOperation_SubstituteMenu_Additional()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new snodeOperation()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new SNodeOperation_SubstituteMenu_Additional()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new snodeOperation()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
@@ -452,6 +442,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2399a155048244c5L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61b7ea2aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8ce685dL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x412437525e297780L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05bec71L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61bacc13L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x47bb2de70d00ff8cL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61c4f312L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x155fb7143719d578L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x190735f308e2250bL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x4bf20760d53f89eaL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a0a2 = new String[]{"jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp", "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a6 = new String[]{"jetbrains.mps.lang.smodel.editor.SNodeOperation_SubstituteMenu_Additional", "jetbrains.mps.lang.smodel.editor.snodeOperation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a2 = new String[]{"jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp", "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a6 = new String[]{"jetbrains.mps.lang.smodel.editor.SNodeOperation_SubstituteMenu_Additional", "jetbrains.mps.lang.smodel.editor.snodeOperation"};
 }

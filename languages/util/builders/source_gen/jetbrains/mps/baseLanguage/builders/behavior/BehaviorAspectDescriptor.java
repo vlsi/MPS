@@ -32,40 +32,37 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0r.index(cncpt)) {
-        case 0:
-          return myAsBuilderStatement__BehaviorDescriptor;
-        case 1:
-          return myAsTypeBuilder__BehaviorDescriptor;
-        case 2:
-          return myBaseSimpleBuilderDeclaration__BehaviorDescriptor;
-        case 3:
-          return myBeanBuilder__BehaviorDescriptor;
-        case 4:
-          return myBeanPropertyBuilder__BehaviorDescriptor;
-        case 5:
-          return myBuilder__BehaviorDescriptor;
-        case 6:
-          return myBuilderContainer__BehaviorDescriptor;
-        case 7:
-          return myBuilderCreator__BehaviorDescriptor;
-        case 8:
-          return myBuilderStatement__BehaviorDescriptor;
-        case 9:
-          return mySimpleBuilder__BehaviorDescriptor;
-        case 10:
-          return mySimpleBuilderDeclaration__BehaviorDescriptor;
-        case 11:
-          return mySimpleBuilderExtensionDeclaration__BehaviorDescriptor;
-        case 12:
-          return mySimpleBuilderPropertyBuilder__BehaviorDescriptor;
-        case 13:
-          return mySimpleBuilders__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0r.index(cncpt)) {
+      case 0:
+        return myAsBuilderStatement__BehaviorDescriptor;
+      case 1:
+        return myAsTypeBuilder__BehaviorDescriptor;
+      case 2:
+        return myBaseSimpleBuilderDeclaration__BehaviorDescriptor;
+      case 3:
+        return myBeanBuilder__BehaviorDescriptor;
+      case 4:
+        return myBeanPropertyBuilder__BehaviorDescriptor;
+      case 5:
+        return myBuilder__BehaviorDescriptor;
+      case 6:
+        return myBuilderContainer__BehaviorDescriptor;
+      case 7:
+        return myBuilderCreator__BehaviorDescriptor;
+      case 8:
+        return myBuilderStatement__BehaviorDescriptor;
+      case 9:
+        return mySimpleBuilder__BehaviorDescriptor;
+      case 10:
+        return mySimpleBuilderDeclaration__BehaviorDescriptor;
+      case 11:
+        return mySimpleBuilderExtensionDeclaration__BehaviorDescriptor;
+      case 12:
+        return mySimpleBuilderPropertyBuilder__BehaviorDescriptor;
+      case 13:
+        return mySimpleBuilders__BehaviorDescriptor;
+      default:
     }
     return null;
   }

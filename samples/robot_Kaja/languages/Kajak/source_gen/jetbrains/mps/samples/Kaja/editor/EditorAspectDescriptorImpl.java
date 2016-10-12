@@ -19,63 +19,61 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new CommandList_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Drop_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new East_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new Heading_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new IfStatement_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new IsFull_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new IsMark_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new IsWall_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new LeftTurn_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new Library_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Looking_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new North_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new Not_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new Pick_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new Repeat_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new Require_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new RoutineCall_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new RoutineDefinition_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new Script_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new South_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new Step_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new TraceMessage_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new West_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new While_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CommandList_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new CommentLine_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Drop_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new East_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new Heading_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new IfStatement_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new IsFull_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new IsMark_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new IsWall_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new LeftTurn_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new Library_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Looking_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new North_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new Not_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new Pick_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new Repeat_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new Require_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new RoutineCall_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new RoutineDefinition_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new Script_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new South_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new Step_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new TraceMessage_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new West_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new While_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -84,64 +82,60 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new Direction_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new Direction_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new OtherCommands()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new OtherCommands()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new IfElse()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new IfElse_ext_1()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new IfElse()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new IfElse_ext_1()});
+            default:
           }
-          break;
-        case 2:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new NegateAndAlter()});
-              default:
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new NegateAndAlter()});
+            default:
           }
-          break;
-        case 3:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new While_to_if()});
-              default:
-            }
+        }
+        break;
+      case 3:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new While_to_if()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -149,15 +143,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new CommandList_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new EmptyLine_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new CommandList_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new EmptyLine_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -166,8 +158,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d39L), MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L), MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL), MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L), MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL), MetaIdFactory.conceptId(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.OtherCommands"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.IfElse", "jetbrains.mps.samples.Kaja.editor.IfElse_ext_1"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a0a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.NegateAndAlter"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a0a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.While_to_if"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.OtherCommands"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.IfElse", "jetbrains.mps.samples.Kaja.editor.IfElse_ext_1"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.NegateAndAlter"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a4 = new String[]{"jetbrains.mps.samples.Kaja.editor.While_to_if"};
 }

@@ -16,39 +16,37 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -57,17 +55,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_InternalReferenceHolder_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_PropertyDescriptor_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_ReferenceDescriptor_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_InternalReferenceHolder_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_PropertyDescriptor_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_ReferenceDescriptor_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

@@ -28,32 +28,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0n.index(cncpt)) {
-        case 0:
-          return myAuthorBlockDocTag__BehaviorDescriptor;
-        case 1:
-          return myBaseDocComment__BehaviorDescriptor;
-        case 2:
-          return myClassifierDocComment__BehaviorDescriptor;
-        case 3:
-          return myCommentLine__BehaviorDescriptor;
-        case 4:
-          return myCommentLinePart__BehaviorDescriptor;
-        case 5:
-          return myEmptyBlockDocTag__BehaviorDescriptor;
-        case 6:
-          return myFieldDocComment__BehaviorDescriptor;
-        case 7:
-          return myHTMLElement__BehaviorDescriptor;
-        case 8:
-          return myInlineTagCommentLinePart__BehaviorDescriptor;
-        case 9:
-          return myMethodDocComment__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0n.index(cncpt)) {
+      case 0:
+        return myAuthorBlockDocTag__BehaviorDescriptor;
+      case 1:
+        return myBaseDocComment__BehaviorDescriptor;
+      case 2:
+        return myClassifierDocComment__BehaviorDescriptor;
+      case 3:
+        return myCommentLine__BehaviorDescriptor;
+      case 4:
+        return myCommentLinePart__BehaviorDescriptor;
+      case 5:
+        return myEmptyBlockDocTag__BehaviorDescriptor;
+      case 6:
+        return myFieldDocComment__BehaviorDescriptor;
+      case 7:
+        return myHTMLElement__BehaviorDescriptor;
+      case 8:
+        return myInlineTagCommentLinePart__BehaviorDescriptor;
+      case 9:
+        return myMethodDocComment__BehaviorDescriptor;
+      default:
     }
     return null;
   }

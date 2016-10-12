@@ -30,36 +30,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0p.index(cncpt)) {
-        case 0:
-          return myExtractStatementListExpression__BehaviorDescriptor;
-        case 1:
-          return myExtractStaticInnerClassExpression__BehaviorDescriptor;
-        case 2:
-          return myExtractStaticMethodExpression__BehaviorDescriptor;
-        case 3:
-          return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
-        case 4:
-          return myInternalAnonymousClass__BehaviorDescriptor;
-        case 5:
-          return myInternalClassCreator__BehaviorDescriptor;
-        case 6:
-          return myInternalNewExpression__BehaviorDescriptor;
-        case 7:
-          return myInternalPartialFieldReference__BehaviorDescriptor;
-        case 8:
-          return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
-        case 9:
-          return myInternalStaticMethodCall__BehaviorDescriptor;
-        case 10:
-          return myInternalSuperMethodCallOperation__BehaviorDescriptor;
-        case 11:
-          return myInternalVariableReference__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0p.index(cncpt)) {
+      case 0:
+        return myExtractStatementListExpression__BehaviorDescriptor;
+      case 1:
+        return myExtractStaticInnerClassExpression__BehaviorDescriptor;
+      case 2:
+        return myExtractStaticMethodExpression__BehaviorDescriptor;
+      case 3:
+        return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
+      case 4:
+        return myInternalAnonymousClass__BehaviorDescriptor;
+      case 5:
+        return myInternalClassCreator__BehaviorDescriptor;
+      case 6:
+        return myInternalNewExpression__BehaviorDescriptor;
+      case 7:
+        return myInternalPartialFieldReference__BehaviorDescriptor;
+      case 8:
+        return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
+      case 9:
+        return myInternalStaticMethodCall__BehaviorDescriptor;
+      case 10:
+        return myInternalSuperMethodCallOperation__BehaviorDescriptor;
+      case 11:
+        return myInternalVariableReference__BehaviorDescriptor;
+      default:
     }
     return null;
   }

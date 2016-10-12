@@ -17,88 +17,84 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbstractDiagramCreation_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ActionGroup_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AttributedFigureReference_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new BLQueryArgument_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new CellModel_Diagram_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new CellModel_DiagramConnector_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new CellModel_DiagramNode_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new CellModel_DiagramPort_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ConnectionEndBLQuery_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new CreationActionReference_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new CustomElementReference_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new DiagramElementBLQuery_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new FigureParameterMapping_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new LinkArgument_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new Palette_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new PropertyArgument_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new Separator_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractDiagramCreation_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ActionGroup_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AttributedFigureReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new BLQueryArgument_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new CellModel_Diagram_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramConnector_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramNode_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramPort_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ConnectionEndBLQuery_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new CreationActionReference_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new CustomElementReference_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new DiagramElementBLQuery_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new FigureParameterMapping_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new LinkArgument_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new Palette_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new PropertyArgument_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new Separator_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new HandlersComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new HandlersComponent());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent());
           }
-          break;
-        case 2:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new ConnectorCreationHandlers_EditorComponent());
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new ConnectorCreationHandlers_EditorComponent());
           }
-          break;
-        case 3:
-          if (true) {
-            if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new DiagramElementCreationHandlers_EditoComponent());
-            }
+        }
+        break;
+      case 3:
+        if (true) {
+          if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new DiagramElementCreationHandlers_EditoComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -106,17 +102,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractArgument_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new DiagramspecificEditorCells_Contribution());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new FigureParameterMapping_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractArgument_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new DiagramspecificEditorCells_Contribution());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new FigureParameterMapping_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

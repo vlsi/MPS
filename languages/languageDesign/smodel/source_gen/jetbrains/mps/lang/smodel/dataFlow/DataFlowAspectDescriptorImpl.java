@@ -17,42 +17,39 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new ConceptSwitchStatement_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSubConceptOfOperation_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSuperConceptOfOperation_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new ExactConceptCase_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfStatement_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfVarReference_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new LinkAttributeQualifier_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new Node_IsInstanceOfOperation_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new PoundExpression_DataFlow());
-        case 11:
-          return Collections.<IDataFlowBuilder>singletonList(new PropertyAttributeQualifier_DataFlow());
-        case 12:
-          return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
-        case 13:
-          return Collections.<IDataFlowBuilder>singletonList(new SemanticDowncastExpression_DataFlow());
-        case 14:
-          return Collections.<IDataFlowBuilder>singletonList(new SubconceptCase_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new ConceptSwitchStatement_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSubConceptOfOperation_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new Concept_IsSuperConceptOfOperation_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new ExactConceptCase_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfStatement_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new IfInstanceOfVarReference_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new LinkAttributeQualifier_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new Node_IsInstanceOfOperation_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new PoundExpression_DataFlow());
+      case 11:
+        return Collections.<IDataFlowBuilder>singletonList(new PropertyAttributeQualifier_DataFlow());
+      case 12:
+        return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
+      case 13:
+        return Collections.<IDataFlowBuilder>singletonList(new SemanticDowncastExpression_DataFlow());
+      case 14:
+        return Collections.<IDataFlowBuilder>singletonList(new SubconceptCase_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

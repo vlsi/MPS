@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,31,0" name="updatedLanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="11,0,22,0" name="updatedLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="MigratingConcept_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="updatedLanguage.behavior.MigratingConcept_BehaviorDescriptor" />

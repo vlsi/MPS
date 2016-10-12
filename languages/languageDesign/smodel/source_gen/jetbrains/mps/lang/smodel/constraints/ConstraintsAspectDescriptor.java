@@ -16,82 +16,79 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CheckedModuleQualifiedName_Constraints();
-        case 1:
-          return new CheckedModuleReference_Constraints();
-        case 2:
-          return new ChildAttributeQualifier_Constraints();
-        case 3:
-          return new ChildNodeRefExpression_Constraints();
-        case 4:
-          return new EnumMemberReference_Constraints();
-        case 5:
-          return new EnumMemberValueRefExpression_Constraints();
-        case 6:
-          return new IReferenceOperation_Constraints();
-        case 7:
-          return new IfInstanceOfVarReference_Constraints();
-        case 8:
-          return new LinkAttributeQualifier_Constraints();
-        case 9:
-          return new LinkIdRefExpression_Constraints();
-        case 10:
-          return new LinkNameRefExpression_Constraints();
-        case 11:
-          return new LinkQualifier_Constraints();
-        case 12:
-          return new LinkRefExpression_Constraints();
-        case 13:
-          return new LinkRefQualifier_Constraints();
-        case 14:
-          return new ModelReferenceExpression_Constraints();
-        case 15:
-          return new ModuleReferenceExpression_Constraints();
-        case 16:
-          return new NodeAttributeQualifier_Constraints();
-        case 17:
-          return new NodePointerExpression_Constraints();
-        case 18:
-          return new NodeRefExpression_Constraints();
-        case 19:
-          return new Node_ConceptMethodCall_Constraints();
-        case 20:
-          return new Node_GetReferentSearchScopeOperation_Constraints();
-        case 21:
-          return new Node_IsRoleOperation_Constraints();
-        case 22:
-          return new PropertyAttributeQualifier_Constraints();
-        case 23:
-          return new PropertyIdRefExpression_Constraints();
-        case 24:
-          return new PropertyNameRefExpression_Constraints();
-        case 25:
-          return new PropertyQualifier_Constraints();
-        case 26:
-          return new SEnumMemberOperation_Constraints();
-        case 27:
-          return new SEnumOperation_Constraints();
-        case 28:
-          return new SEnumOperationInvocation_Constraints();
-        case 29:
-          return new SEnum_MemberOperation_Constraints();
-        case 30:
-          return new SLinkAccess_Constraints();
-        case 31:
-          return new SLinkImplicitSelect_Constraints();
-        case 32:
-          return new SLinkListAccess_Constraints();
-        case 33:
-          return new SPropertyAccess_Constraints();
-        case 34:
-          return new SearchScope_ContainsOperation_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CheckedModuleQualifiedName_Constraints();
+      case 1:
+        return new CheckedModuleReference_Constraints();
+      case 2:
+        return new ChildAttributeQualifier_Constraints();
+      case 3:
+        return new ChildNodeRefExpression_Constraints();
+      case 4:
+        return new EnumMemberReference_Constraints();
+      case 5:
+        return new EnumMemberValueRefExpression_Constraints();
+      case 6:
+        return new IReferenceOperation_Constraints();
+      case 7:
+        return new IfInstanceOfVarReference_Constraints();
+      case 8:
+        return new LinkAttributeQualifier_Constraints();
+      case 9:
+        return new LinkIdRefExpression_Constraints();
+      case 10:
+        return new LinkNameRefExpression_Constraints();
+      case 11:
+        return new LinkQualifier_Constraints();
+      case 12:
+        return new LinkRefExpression_Constraints();
+      case 13:
+        return new LinkRefQualifier_Constraints();
+      case 14:
+        return new ModelReferenceExpression_Constraints();
+      case 15:
+        return new ModuleReferenceExpression_Constraints();
+      case 16:
+        return new NodeAttributeQualifier_Constraints();
+      case 17:
+        return new NodePointerExpression_Constraints();
+      case 18:
+        return new NodeRefExpression_Constraints();
+      case 19:
+        return new Node_ConceptMethodCall_Constraints();
+      case 20:
+        return new Node_GetReferentSearchScopeOperation_Constraints();
+      case 21:
+        return new Node_IsRoleOperation_Constraints();
+      case 22:
+        return new PropertyAttributeQualifier_Constraints();
+      case 23:
+        return new PropertyIdRefExpression_Constraints();
+      case 24:
+        return new PropertyNameRefExpression_Constraints();
+      case 25:
+        return new PropertyQualifier_Constraints();
+      case 26:
+        return new SEnumMemberOperation_Constraints();
+      case 27:
+        return new SEnumOperation_Constraints();
+      case 28:
+        return new SEnumOperationInvocation_Constraints();
+      case 29:
+        return new SEnum_MemberOperation_Constraints();
+      case 30:
+        return new SLinkAccess_Constraints();
+      case 31:
+        return new SLinkImplicitSelect_Constraints();
+      case 32:
+        return new SLinkListAccess_Constraints();
+      case 33:
+        return new SPropertyAccess_Constraints();
+      case 34:
+        return new SearchScope_ContainsOperation_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

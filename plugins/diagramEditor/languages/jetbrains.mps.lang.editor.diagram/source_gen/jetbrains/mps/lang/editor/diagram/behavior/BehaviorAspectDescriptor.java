@@ -30,36 +30,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0p.index(cncpt)) {
-        case 0:
-          return myAbstractDiagramCreation__BehaviorDescriptor;
-        case 1:
-          return myAbstractFigureReference__BehaviorDescriptor;
-        case 2:
-          return myAttributedFigureReference__BehaviorDescriptor;
-        case 3:
-          return myCellModel_Diagram__BehaviorDescriptor;
-        case 4:
-          return myCellModel_DiagramConnector__BehaviorDescriptor;
-        case 5:
-          return myCellModel_DiagramNode__BehaviorDescriptor;
-        case 6:
-          return myCellModel_DiagramPort__BehaviorDescriptor;
-        case 7:
-          return myDiagramConnectorCanCreateHandler__BehaviorDescriptor;
-        case 8:
-          return myDiagramConnectorCreationHandler__BehaviorDescriptor;
-        case 9:
-          return myDiagramElementCreationHandler__BehaviorDescriptor;
-        case 10:
-          return myExternalFigureReference__BehaviorDescriptor;
-        case 11:
-          return myFigureParameterMapping__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0p.index(cncpt)) {
+      case 0:
+        return myAbstractDiagramCreation__BehaviorDescriptor;
+      case 1:
+        return myAbstractFigureReference__BehaviorDescriptor;
+      case 2:
+        return myAttributedFigureReference__BehaviorDescriptor;
+      case 3:
+        return myCellModel_Diagram__BehaviorDescriptor;
+      case 4:
+        return myCellModel_DiagramConnector__BehaviorDescriptor;
+      case 5:
+        return myCellModel_DiagramNode__BehaviorDescriptor;
+      case 6:
+        return myCellModel_DiagramPort__BehaviorDescriptor;
+      case 7:
+        return myDiagramConnectorCanCreateHandler__BehaviorDescriptor;
+      case 8:
+        return myDiagramConnectorCreationHandler__BehaviorDescriptor;
+      case 9:
+        return myDiagramElementCreationHandler__BehaviorDescriptor;
+      case 10:
+        return myExternalFigureReference__BehaviorDescriptor;
+      case 11:
+        return myFigureParameterMapping__BehaviorDescriptor;
+      default:
     }
     return null;
   }

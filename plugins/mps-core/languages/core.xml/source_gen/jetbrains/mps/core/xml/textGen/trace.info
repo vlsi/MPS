@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="17,0,93,0" name="jetbrains.mps.core.xml.textGen.TextGenAspectDescriptor" />
+      <unit at="17,0,90,0" name="jetbrains.mps.core.xml.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ea884767-f424-4c97-a82e-eccd57dbc217(jetbrains.mps.core.xml.textGen)/2133624044437737242">
@@ -467,7 +467,7 @@
   </root>
   <root nodeRef="r:ea884767-f424-4c97-a82e-eccd57dbc217(jetbrains.mps.core.xml.textGen)/3080189811177517661">
     <file name="TextGenAspectDescriptor.java">
-      <node id="3080189811177517668" at="88,62,89,17" concept="6" />
+      <node id="3080189811177517668" at="85,62,86,17" concept="6" />
     </file>
     <file name="XmlFile_TextGen.java">
       <node id="3080189811177517661" at="15,54,16,55" concept="5" />

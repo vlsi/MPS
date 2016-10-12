@@ -19,49 +19,47 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChild1_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChild1Child_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChild1SubConcept_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChild2_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap1_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap2_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ActionTestChildWrapper_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new ActionTestContainer_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild1_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild2_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAbstractChild_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptAbstractChild_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptChild_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherAbstractChild_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild1_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild2_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformChild1_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestAncestor_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestContainer_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChild1_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChild1Child_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChild1SubConcept_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChild2_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap1_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChildToWrap2_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ActionTestChildWrapper_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ActionTestContainer_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild1_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new ActionTestDefaultChild2_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAbstractChild_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptAbstractChild_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAddConceptChild_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherAbstractChild_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild1_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformAnotherChild2_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformChild1_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestAncestor_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new ActionTestSidetransformTestContainer_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -70,88 +68,82 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAbstractChild_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAbstractChild_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAddConceptAbstractChild_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new ActionTestSidetransformAnotherAbstractChild_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChild_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChildWrapper_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new ActionTestChild1SubConcept_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new ActionTestChildToWrap1_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new ActionTestDefaultAbstractChild_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChild_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ActionTestAbstractChildWrapper_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new ActionTestChild1SubConcept_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new ActionTestChildToWrap1_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new ActionTestDefaultAbstractChild_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_ConceptSubstitute()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_ParameterizedSubstitute()});
-              case 2:
-                return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_SimpleItemSubstitute()});
-              case 3:
-                return Arrays.asList(new SubstituteMenu[]{new ConceptSubstitutePartTest()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_ConceptSubstitute()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_ParameterizedSubstitute()});
+            case 2:
+              return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_SimpleItemSubstitute()});
+            case 3:
+              return Arrays.asList(new SubstituteMenu[]{new ConceptSubstitutePartTest()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_WrapperSubstitute()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_WrapperSubstituteDefaultSelection()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_WrapperSubstitute()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new AddMenuPart_WrapperSubstituteDefaultSelection()});
+            default:
           }
-          break;
-        case 2:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new RemoveByConditionPart()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new RemoveDefaultsPart()});
-              case 2:
-                return Arrays.asList(new SubstituteMenu[]{new RemovePart()});
-              default:
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new RemoveByConditionPart()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new RemoveDefaultsPart()});
+            case 2:
+              return Arrays.asList(new SubstituteMenu[]{new RemovePart()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
@@ -161,7 +153,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade471f3L), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x43d1b15d415e8d80L), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefca54d96L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec53f71L), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec53f71L), MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a5 = new String[]{"jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.ConceptSubstitutePartTest"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a5 = new String[]{"jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a0a5 = new String[]{"jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart", "jetbrains.mps.lang.actions.testLanguage.editor.RemoveDefaultsPart", "jetbrains.mps.lang.actions.testLanguage.editor.RemovePart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.ConceptSubstitutePartTest"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute", "jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a5 = new String[]{"jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart", "jetbrains.mps.lang.actions.testLanguage.editor.RemoveDefaultsPart", "jetbrains.mps.lang.actions.testLanguage.editor.RemovePart"};
 }

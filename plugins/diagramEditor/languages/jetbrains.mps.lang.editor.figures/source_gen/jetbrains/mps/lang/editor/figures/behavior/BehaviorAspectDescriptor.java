@@ -26,28 +26,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0l.index(cncpt)) {
-        case 0:
-          return myExternalViewFigure__BehaviorDescriptor;
-        case 1:
-          return myExternalViewFigureParameter__BehaviorDescriptor;
-        case 2:
-          return myFigureAttribute__BehaviorDescriptor;
-        case 3:
-          return myFigureParameter__BehaviorDescriptor;
-        case 4:
-          return myFigureParameterAttribute__BehaviorDescriptor;
-        case 5:
-          return myFigureParameterAttributeField__BehaviorDescriptor;
-        case 6:
-          return myFigureParameterAttributeMethod__BehaviorDescriptor;
-        case 7:
-          return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0l.index(cncpt)) {
+      case 0:
+        return myExternalViewFigure__BehaviorDescriptor;
+      case 1:
+        return myExternalViewFigureParameter__BehaviorDescriptor;
+      case 2:
+        return myFigureAttribute__BehaviorDescriptor;
+      case 3:
+        return myFigureParameter__BehaviorDescriptor;
+      case 4:
+        return myFigureParameterAttribute__BehaviorDescriptor;
+      case 5:
+        return myFigureParameterAttributeField__BehaviorDescriptor;
+      case 6:
+        return myFigureParameterAttributeMethod__BehaviorDescriptor;
+      case 7:
+        return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
+      default:
     }
     return null;
   }

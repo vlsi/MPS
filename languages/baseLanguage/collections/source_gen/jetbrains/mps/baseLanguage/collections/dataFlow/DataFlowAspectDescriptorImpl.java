@@ -17,132 +17,129 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new AbstractContainerCreator_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new AddAllElementsOperation_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new AddAllSetElementsOperation_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new AddElementOperation_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new AddFirstElementOperation_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new AddLastElementOperation_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new AddSetElementOperation_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new ChunkOperation_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new ComparatorSortOperation_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new ContainsAllOperation_DataFlow());
-        case 11:
-          return Collections.<IDataFlowBuilder>singletonList(new ContainsKeyOperation_DataFlow());
-        case 12:
-          return Collections.<IDataFlowBuilder>singletonList(new ContainsOperation_DataFlow());
-        case 13:
-          return Collections.<IDataFlowBuilder>singletonList(new ContainsValueOperation_DataFlow());
-        case 14:
-          return Collections.<IDataFlowBuilder>singletonList(new DowncastExpression_DataFlow());
-        case 15:
-          return Collections.<IDataFlowBuilder>singletonList(new FoldLeftOperation_DataFlow());
-        case 16:
-          return Collections.<IDataFlowBuilder>singletonList(new FoldRightOperation_DataFlow());
-        case 17:
-          return Collections.<IDataFlowBuilder>singletonList(new ForEachStatement_DataFlow());
-        case 18:
-          return Collections.<IDataFlowBuilder>singletonList(new ForEachVariable_DataFlow());
-        case 19:
-          return Collections.<IDataFlowBuilder>singletonList(new ForEachVariableReference_DataFlow());
-        case 20:
-          return Collections.<IDataFlowBuilder>singletonList(new GetElementOperation_DataFlow());
-        case 21:
-          return Collections.<IDataFlowBuilder>singletonList(new GetIndexOfOperation_DataFlow());
-        case 22:
-          return Collections.<IDataFlowBuilder>singletonList(new GetLastIndexOfOperation_DataFlow());
-        case 23:
-          return Collections.<IDataFlowBuilder>singletonList(new HashMapCreator_DataFlow());
-        case 24:
-          return Collections.<IDataFlowBuilder>singletonList(new HeadListOperation_DataFlow());
-        case 25:
-          return Collections.<IDataFlowBuilder>singletonList(new HeadMapOperation_DataFlow());
-        case 26:
-          return Collections.<IDataFlowBuilder>singletonList(new HeadSetOperation_DataFlow());
-        case 27:
-          return Collections.<IDataFlowBuilder>singletonList(new InsertElementOperation_DataFlow());
-        case 28:
-          return Collections.<IDataFlowBuilder>singletonList(new InternalSequenceOperation_DataFlow());
-        case 29:
-          return Collections.<IDataFlowBuilder>singletonList(new JoinOperation_DataFlow());
-        case 30:
-          return Collections.<IDataFlowBuilder>singletonList(new ListElementAccessExpression_DataFlow());
-        case 31:
-          return Collections.<IDataFlowBuilder>singletonList(new MapElement_DataFlow());
-        case 32:
-          return Collections.<IDataFlowBuilder>singletonList(new MapEntry_DataFlow());
-        case 33:
-          return Collections.<IDataFlowBuilder>singletonList(new MapInitializer_DataFlow());
-        case 34:
-          return Collections.<IDataFlowBuilder>singletonList(new MapOperationExpression_DataFlow());
-        case 35:
-          return Collections.<IDataFlowBuilder>singletonList(new MapRemoveOperation_DataFlow());
-        case 36:
-          return Collections.<IDataFlowBuilder>singletonList(new MultiForEachStatement_DataFlow());
-        case 37:
-          return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariable_DataFlow());
-        case 38:
-          return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariableReference_DataFlow());
-        case 39:
-          return Collections.<IDataFlowBuilder>singletonList(new PageOperation_DataFlow());
-        case 40:
-          return Collections.<IDataFlowBuilder>singletonList(new PushOperation_DataFlow());
-        case 41:
-          return Collections.<IDataFlowBuilder>singletonList(new PutAllOperation_DataFlow());
-        case 42:
-          return Collections.<IDataFlowBuilder>singletonList(new RemoveAllElementsOperation_DataFlow());
-        case 43:
-          return Collections.<IDataFlowBuilder>singletonList(new RemoveAllSetElementsOperation_DataFlow());
-        case 44:
-          return Collections.<IDataFlowBuilder>singletonList(new RemoveAtElementOperation_DataFlow());
-        case 45:
-          return Collections.<IDataFlowBuilder>singletonList(new RemoveElementOperation_DataFlow());
-        case 46:
-          return Collections.<IDataFlowBuilder>singletonList(new RemoveSetElementOperation_DataFlow());
-        case 47:
-          return Collections.<IDataFlowBuilder>singletonList(new SequenceCreator_DataFlow());
-        case 48:
-          return Collections.<IDataFlowBuilder>singletonList(new SetElementOperation_DataFlow());
-        case 49:
-          return Collections.<IDataFlowBuilder>singletonList(new SingleArgumentSequenceOperation_DataFlow());
-        case 50:
-          return Collections.<IDataFlowBuilder>singletonList(new SingletonSequenceCreator_DataFlow());
-        case 51:
-          return Collections.<IDataFlowBuilder>singletonList(new SkipOperation_DataFlow());
-        case 52:
-          return Collections.<IDataFlowBuilder>singletonList(new SortOperation_DataFlow());
-        case 53:
-          return Collections.<IDataFlowBuilder>singletonList(new SubListOperation_DataFlow());
-        case 54:
-          return Collections.<IDataFlowBuilder>singletonList(new SubMapOperation_DataFlow());
-        case 55:
-          return Collections.<IDataFlowBuilder>singletonList(new SubSetOperation_DataFlow());
-        case 56:
-          return Collections.<IDataFlowBuilder>singletonList(new TailListOperation_DataFlow());
-        case 57:
-          return Collections.<IDataFlowBuilder>singletonList(new TailMapOperation_DataFlow());
-        case 58:
-          return Collections.<IDataFlowBuilder>singletonList(new TailSetOperation_DataFlow());
-        case 59:
-          return Collections.<IDataFlowBuilder>singletonList(new TakeOperation_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractContainerCreator_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new AddAllElementsOperation_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new AddAllSetElementsOperation_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new AddElementOperation_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new AddFirstElementOperation_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new AddLastElementOperation_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new AddSetElementOperation_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new ChunkOperation_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new ComparatorSortOperation_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new ContainsAllOperation_DataFlow());
+      case 11:
+        return Collections.<IDataFlowBuilder>singletonList(new ContainsKeyOperation_DataFlow());
+      case 12:
+        return Collections.<IDataFlowBuilder>singletonList(new ContainsOperation_DataFlow());
+      case 13:
+        return Collections.<IDataFlowBuilder>singletonList(new ContainsValueOperation_DataFlow());
+      case 14:
+        return Collections.<IDataFlowBuilder>singletonList(new DowncastExpression_DataFlow());
+      case 15:
+        return Collections.<IDataFlowBuilder>singletonList(new FoldLeftOperation_DataFlow());
+      case 16:
+        return Collections.<IDataFlowBuilder>singletonList(new FoldRightOperation_DataFlow());
+      case 17:
+        return Collections.<IDataFlowBuilder>singletonList(new ForEachStatement_DataFlow());
+      case 18:
+        return Collections.<IDataFlowBuilder>singletonList(new ForEachVariable_DataFlow());
+      case 19:
+        return Collections.<IDataFlowBuilder>singletonList(new ForEachVariableReference_DataFlow());
+      case 20:
+        return Collections.<IDataFlowBuilder>singletonList(new GetElementOperation_DataFlow());
+      case 21:
+        return Collections.<IDataFlowBuilder>singletonList(new GetIndexOfOperation_DataFlow());
+      case 22:
+        return Collections.<IDataFlowBuilder>singletonList(new GetLastIndexOfOperation_DataFlow());
+      case 23:
+        return Collections.<IDataFlowBuilder>singletonList(new HashMapCreator_DataFlow());
+      case 24:
+        return Collections.<IDataFlowBuilder>singletonList(new HeadListOperation_DataFlow());
+      case 25:
+        return Collections.<IDataFlowBuilder>singletonList(new HeadMapOperation_DataFlow());
+      case 26:
+        return Collections.<IDataFlowBuilder>singletonList(new HeadSetOperation_DataFlow());
+      case 27:
+        return Collections.<IDataFlowBuilder>singletonList(new InsertElementOperation_DataFlow());
+      case 28:
+        return Collections.<IDataFlowBuilder>singletonList(new InternalSequenceOperation_DataFlow());
+      case 29:
+        return Collections.<IDataFlowBuilder>singletonList(new JoinOperation_DataFlow());
+      case 30:
+        return Collections.<IDataFlowBuilder>singletonList(new ListElementAccessExpression_DataFlow());
+      case 31:
+        return Collections.<IDataFlowBuilder>singletonList(new MapElement_DataFlow());
+      case 32:
+        return Collections.<IDataFlowBuilder>singletonList(new MapEntry_DataFlow());
+      case 33:
+        return Collections.<IDataFlowBuilder>singletonList(new MapInitializer_DataFlow());
+      case 34:
+        return Collections.<IDataFlowBuilder>singletonList(new MapOperationExpression_DataFlow());
+      case 35:
+        return Collections.<IDataFlowBuilder>singletonList(new MapRemoveOperation_DataFlow());
+      case 36:
+        return Collections.<IDataFlowBuilder>singletonList(new MultiForEachStatement_DataFlow());
+      case 37:
+        return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariable_DataFlow());
+      case 38:
+        return Collections.<IDataFlowBuilder>singletonList(new MultiForEachVariableReference_DataFlow());
+      case 39:
+        return Collections.<IDataFlowBuilder>singletonList(new PageOperation_DataFlow());
+      case 40:
+        return Collections.<IDataFlowBuilder>singletonList(new PushOperation_DataFlow());
+      case 41:
+        return Collections.<IDataFlowBuilder>singletonList(new PutAllOperation_DataFlow());
+      case 42:
+        return Collections.<IDataFlowBuilder>singletonList(new RemoveAllElementsOperation_DataFlow());
+      case 43:
+        return Collections.<IDataFlowBuilder>singletonList(new RemoveAllSetElementsOperation_DataFlow());
+      case 44:
+        return Collections.<IDataFlowBuilder>singletonList(new RemoveAtElementOperation_DataFlow());
+      case 45:
+        return Collections.<IDataFlowBuilder>singletonList(new RemoveElementOperation_DataFlow());
+      case 46:
+        return Collections.<IDataFlowBuilder>singletonList(new RemoveSetElementOperation_DataFlow());
+      case 47:
+        return Collections.<IDataFlowBuilder>singletonList(new SequenceCreator_DataFlow());
+      case 48:
+        return Collections.<IDataFlowBuilder>singletonList(new SetElementOperation_DataFlow());
+      case 49:
+        return Collections.<IDataFlowBuilder>singletonList(new SingleArgumentSequenceOperation_DataFlow());
+      case 50:
+        return Collections.<IDataFlowBuilder>singletonList(new SingletonSequenceCreator_DataFlow());
+      case 51:
+        return Collections.<IDataFlowBuilder>singletonList(new SkipOperation_DataFlow());
+      case 52:
+        return Collections.<IDataFlowBuilder>singletonList(new SortOperation_DataFlow());
+      case 53:
+        return Collections.<IDataFlowBuilder>singletonList(new SubListOperation_DataFlow());
+      case 54:
+        return Collections.<IDataFlowBuilder>singletonList(new SubMapOperation_DataFlow());
+      case 55:
+        return Collections.<IDataFlowBuilder>singletonList(new SubSetOperation_DataFlow());
+      case 56:
+        return Collections.<IDataFlowBuilder>singletonList(new TailListOperation_DataFlow());
+      case 57:
+        return Collections.<IDataFlowBuilder>singletonList(new TailMapOperation_DataFlow());
+      case 58:
+        return Collections.<IDataFlowBuilder>singletonList(new TailSetOperation_DataFlow());
+      case 59:
+        return Collections.<IDataFlowBuilder>singletonList(new TakeOperation_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

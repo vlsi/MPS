@@ -36,48 +36,45 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0v.index(cncpt)) {
-        case 0:
-          return myAutoInitDSLClass__BehaviorDescriptor;
-        case 1:
-          return myBooleanPropertyInstance__BehaviorDescriptor;
-        case 2:
-          return myCustomMemberDescriptor__BehaviorDescriptor;
-        case 3:
-          return myDSLClassMember__BehaviorDescriptor;
-        case 4:
-          return myDSLDescriptor__BehaviorDescriptor;
-        case 5:
-          return myDependentTypeDescriptor__BehaviorDescriptor;
-        case 6:
-          return myDependentTypeInstance__BehaviorDescriptor;
-        case 7:
-          return myEmptyMemberDescriptor__BehaviorDescriptor;
-        case 8:
-          return myIntegerPropertyInstance__BehaviorDescriptor;
-        case 9:
-          return myMemberInstance__BehaviorDescriptor;
-        case 10:
-          return myMemberPlaceholder__BehaviorDescriptor;
-        case 11:
-          return myMethodDescriptor__BehaviorDescriptor;
-        case 12:
-          return myMethodInstance__BehaviorDescriptor;
-        case 13:
-          return myParameterDescriptor__BehaviorDescriptor;
-        case 14:
-          return myPlaceholderModifier__BehaviorDescriptor;
-        case 15:
-          return myPropertyDescriptor__BehaviorDescriptor;
-        case 16:
-          return myPropertyInstance__BehaviorDescriptor;
-        case 17:
-          return myStringPropertyInstance__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0v.index(cncpt)) {
+      case 0:
+        return myAutoInitDSLClass__BehaviorDescriptor;
+      case 1:
+        return myBooleanPropertyInstance__BehaviorDescriptor;
+      case 2:
+        return myCustomMemberDescriptor__BehaviorDescriptor;
+      case 3:
+        return myDSLClassMember__BehaviorDescriptor;
+      case 4:
+        return myDSLDescriptor__BehaviorDescriptor;
+      case 5:
+        return myDependentTypeDescriptor__BehaviorDescriptor;
+      case 6:
+        return myDependentTypeInstance__BehaviorDescriptor;
+      case 7:
+        return myEmptyMemberDescriptor__BehaviorDescriptor;
+      case 8:
+        return myIntegerPropertyInstance__BehaviorDescriptor;
+      case 9:
+        return myMemberInstance__BehaviorDescriptor;
+      case 10:
+        return myMemberPlaceholder__BehaviorDescriptor;
+      case 11:
+        return myMethodDescriptor__BehaviorDescriptor;
+      case 12:
+        return myMethodInstance__BehaviorDescriptor;
+      case 13:
+        return myParameterDescriptor__BehaviorDescriptor;
+      case 14:
+        return myPlaceholderModifier__BehaviorDescriptor;
+      case 15:
+        return myPropertyDescriptor__BehaviorDescriptor;
+      case 16:
+        return myPropertyInstance__BehaviorDescriptor;
+      case 17:
+        return myStringPropertyInstance__BehaviorDescriptor;
+      default:
     }
     return null;
   }

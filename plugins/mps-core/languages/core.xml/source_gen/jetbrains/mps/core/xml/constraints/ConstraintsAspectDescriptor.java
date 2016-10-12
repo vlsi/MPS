@@ -16,46 +16,43 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new XmlAttribute_Constraints();
-        case 1:
-          return new XmlCDATA_Constraints();
-        case 2:
-          return new XmlCharRef_Constraints();
-        case 3:
-          return new XmlCharRefValue_Constraints();
-        case 4:
-          return new XmlCommentLine_Constraints();
-        case 5:
-          return new XmlContent_Constraints();
-        case 6:
-          return new XmlDeclaration_Constraints();
-        case 7:
-          return new XmlDoctypeDeclaration_Constraints();
-        case 8:
-          return new XmlElement_Constraints();
-        case 9:
-          return new XmlEntityRef_Constraints();
-        case 10:
-          return new XmlEntityRefValue_Constraints();
-        case 11:
-          return new XmlExternalId_Constraints();
-        case 12:
-          return new XmlProcessingInstruction_Constraints();
-        case 13:
-          return new XmlText_Constraints();
-        case 14:
-          return new XmlTextValue_Constraints();
-        case 15:
-          return new XmlValuePart_Constraints();
-        case 16:
-          return new XmlWhitespace_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new XmlAttribute_Constraints();
+      case 1:
+        return new XmlCDATA_Constraints();
+      case 2:
+        return new XmlCharRef_Constraints();
+      case 3:
+        return new XmlCharRefValue_Constraints();
+      case 4:
+        return new XmlCommentLine_Constraints();
+      case 5:
+        return new XmlContent_Constraints();
+      case 6:
+        return new XmlDeclaration_Constraints();
+      case 7:
+        return new XmlDoctypeDeclaration_Constraints();
+      case 8:
+        return new XmlElement_Constraints();
+      case 9:
+        return new XmlEntityRef_Constraints();
+      case 10:
+        return new XmlEntityRefValue_Constraints();
+      case 11:
+        return new XmlExternalId_Constraints();
+      case 12:
+        return new XmlProcessingInstruction_Constraints();
+      case 13:
+        return new XmlText_Constraints();
+      case 14:
+        return new XmlTextValue_Constraints();
+      case 15:
+        return new XmlValuePart_Constraints();
+      case 16:
+        return new XmlWhitespace_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

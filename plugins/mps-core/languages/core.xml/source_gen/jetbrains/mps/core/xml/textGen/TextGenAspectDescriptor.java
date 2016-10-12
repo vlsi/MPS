@@ -21,52 +21,49 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_t8hmqt_a0c.index(cncpt)) {
-        case 0:
-          return new XmlAttribute_TextGen();
-        case 1:
-          return new XmlCDATA_TextGen();
-        case 2:
-          return new XmlCharRef_TextGen();
-        case 3:
-          return new XmlCharRefValue_TextGen();
-        case 4:
-          return new XmlComment_TextGen();
-        case 5:
-          return new XmlCommentLine_TextGen();
-        case 6:
-          return new XmlDeclaration_TextGen();
-        case 7:
-          return new XmlDoctypeDeclaration_TextGen();
-        case 8:
-          return new XmlDocument_TextGen();
-        case 9:
-          return new XmlElement_TextGen();
-        case 10:
-          return new XmlEntityRef_TextGen();
-        case 11:
-          return new XmlEntityRefValue_TextGen();
-        case 12:
-          return new XmlExternalId_TextGen();
-        case 13:
-          return new XmlFile_TextGen();
-        case 14:
-          return new XmlNoSpaceValue_TextGen();
-        case 15:
-          return new XmlProcessingInstruction_TextGen();
-        case 16:
-          return new XmlProlog_TextGen();
-        case 17:
-          return new XmlText_TextGen();
-        case 18:
-          return new XmlTextValue_TextGen();
-        case 19:
-          return new XmlWhitespace_TextGen();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_t8hmqt_a0c.index(cncpt)) {
+      case 0:
+        return new XmlAttribute_TextGen();
+      case 1:
+        return new XmlCDATA_TextGen();
+      case 2:
+        return new XmlCharRef_TextGen();
+      case 3:
+        return new XmlCharRefValue_TextGen();
+      case 4:
+        return new XmlComment_TextGen();
+      case 5:
+        return new XmlCommentLine_TextGen();
+      case 6:
+        return new XmlDeclaration_TextGen();
+      case 7:
+        return new XmlDoctypeDeclaration_TextGen();
+      case 8:
+        return new XmlDocument_TextGen();
+      case 9:
+        return new XmlElement_TextGen();
+      case 10:
+        return new XmlEntityRef_TextGen();
+      case 11:
+        return new XmlEntityRefValue_TextGen();
+      case 12:
+        return new XmlExternalId_TextGen();
+      case 13:
+        return new XmlFile_TextGen();
+      case 14:
+        return new XmlNoSpaceValue_TextGen();
+      case 15:
+        return new XmlProcessingInstruction_TextGen();
+      case 16:
+        return new XmlProlog_TextGen();
+      case 17:
+        return new XmlText_TextGen();
+      case 18:
+        return new XmlTextValue_TextGen();
+      case 19:
+        return new XmlWhitespace_TextGen();
+      default:
     }
     return null;
   }

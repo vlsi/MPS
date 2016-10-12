@@ -43,62 +43,59 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0cb.index(cncpt)) {
-        case 0:
-          return myAbsractMake__BehaviorDescriptor;
-        case 1:
-          return myActionCallDeclaredParameter__BehaviorDescriptor;
-        case 2:
-          return myActionCallGlobalParameter__BehaviorDescriptor;
-        case 3:
-          return myActionCallParameter__BehaviorDescriptor;
-        case 4:
-          return myCallActionExpression__BehaviorDescriptor;
-        case 5:
-          return myClean__BehaviorDescriptor;
-        case 6:
-          return myClickableGenerator__BehaviorDescriptor;
-        case 7:
-          return myGlobalStatisticTarget__BehaviorDescriptor;
-        case 8:
-          return myINodeSetReference__BehaviorDescriptor;
-        case 9:
-          return myIStatisticsTarget__BehaviorDescriptor;
-        case 10:
-          return myMake__BehaviorDescriptor;
-        case 11:
-          return myModelProperties__BehaviorDescriptor;
-        case 12:
-          return myModelReference__BehaviorDescriptor;
-        case 13:
-          return myModelStatisticsTarget__BehaviorDescriptor;
-        case 14:
-          return myModuleProperties__BehaviorDescriptor;
-        case 15:
-          return myOfAspectOperation__BehaviorDescriptor;
-        case 16:
-          return myProjectStatisticsTarget__BehaviorDescriptor;
-        case 17:
-          return myRebuildProjectCommand__BehaviorDescriptor;
-        case 18:
-          return myRemoveGenSources__BehaviorDescriptor;
-        case 19:
-          return myShowBrokenReferences__BehaviorDescriptor;
-        case 20:
-          return myShowExpression__BehaviorDescriptor;
-        case 21:
-          return myShowGenPlan__BehaviorDescriptor;
-        case 22:
-          return myStatCommand__BehaviorDescriptor;
-        case 23:
-          return mySubtreeStatisticsTarget__BehaviorDescriptor;
-        case 24:
-          return myUnloadModelsCommand__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0cb.index(cncpt)) {
+      case 0:
+        return myAbsractMake__BehaviorDescriptor;
+      case 1:
+        return myActionCallDeclaredParameter__BehaviorDescriptor;
+      case 2:
+        return myActionCallGlobalParameter__BehaviorDescriptor;
+      case 3:
+        return myActionCallParameter__BehaviorDescriptor;
+      case 4:
+        return myCallActionExpression__BehaviorDescriptor;
+      case 5:
+        return myClean__BehaviorDescriptor;
+      case 6:
+        return myClickableGenerator__BehaviorDescriptor;
+      case 7:
+        return myGlobalStatisticTarget__BehaviorDescriptor;
+      case 8:
+        return myINodeSetReference__BehaviorDescriptor;
+      case 9:
+        return myIStatisticsTarget__BehaviorDescriptor;
+      case 10:
+        return myMake__BehaviorDescriptor;
+      case 11:
+        return myModelProperties__BehaviorDescriptor;
+      case 12:
+        return myModelReference__BehaviorDescriptor;
+      case 13:
+        return myModelStatisticsTarget__BehaviorDescriptor;
+      case 14:
+        return myModuleProperties__BehaviorDescriptor;
+      case 15:
+        return myOfAspectOperation__BehaviorDescriptor;
+      case 16:
+        return myProjectStatisticsTarget__BehaviorDescriptor;
+      case 17:
+        return myRebuildProjectCommand__BehaviorDescriptor;
+      case 18:
+        return myRemoveGenSources__BehaviorDescriptor;
+      case 19:
+        return myShowBrokenReferences__BehaviorDescriptor;
+      case 20:
+        return myShowExpression__BehaviorDescriptor;
+      case 21:
+        return myShowGenPlan__BehaviorDescriptor;
+      case 22:
+        return myStatCommand__BehaviorDescriptor;
+      case 23:
+        return mySubtreeStatisticsTarget__BehaviorDescriptor;
+      case 24:
+        return myUnloadModelsCommand__BehaviorDescriptor;
+      default:
     }
     return null;
   }

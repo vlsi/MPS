@@ -20,131 +20,127 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJarContent_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingCompany_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingKeymap_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingStats_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
-        case 39:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
-        case 40:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
-        case 41:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
-        case 42:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
-        case 43:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
-        case 44:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
-        case 45:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
-        case 46:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
-        case 47:
-          return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
-        case 48:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
-        case 49:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
-        case 50:
-          return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJarContent_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingCompany_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingKeymap_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingStats_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.build.mps.editor.SourcesKindComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new SourcesKindComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.build.mps.editor.SourcesKindComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new SourcesKindComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -152,82 +148,78 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginGroup_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginModule_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginGroup_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new BuildMps_IdeaPluginModule_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_moduleLocationAndFlags_BuildMps_AbstractModule_ext_3()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_moduleLocationAndFlags_BuildMps_AbstractModule_ext_3()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_fromPluginXml()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_fromPluginXml()});
+            default:
           }
-          break;
-        case 2:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_moduleLocationAndFlags_BuildMps_Module_ext_4()});
-              default:
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_moduleLocationAndFlags_BuildMps_Module_ext_4()});
+            default:
           }
-          break;
-        case 3:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_reexport_BuildMps_ModuleDependencyOnJavaModule()});
-              default:
-            }
+        }
+        break;
+      case 3:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_reexport_BuildMps_ModuleDependencyOnJavaModule()});
+            default:
           }
-          break;
-        case 4:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_reexport()});
-              default:
-            }
+        }
+        break;
+      case 4:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_reexport()});
+            default:
           }
-          break;
-        case 5:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new BuildMps_Solution_ApplySideTransforms()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new add_moduleLocationAndFlags()});
-              default:
-            }
+        }
+        break;
+      case 5:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new BuildMps_Solution_ApplySideTransforms()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new add_moduleLocationAndFlags()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -235,19 +227,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new BuildMps_Generator_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleJavaSource_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSource_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleTestSource_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_Generator_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleJavaSource_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSource_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleTestSource_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
@@ -257,10 +247,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a5 = new String[]{"jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags_BuildMps_AbstractModule_ext_3"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a5 = new String[]{"jetbrains.mps.build.mps.editor.add_fromPluginXml"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a0a5 = new String[]{"jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags_BuildMps_Module_ext_4"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a0a5 = new String[]{"jetbrains.mps.build.mps.editor.add_reexport_BuildMps_ModuleDependencyOnJavaModule"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a0a5 = new String[]{"jetbrains.mps.build.mps.editor.add_reexport"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a0a5 = new String[]{"jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms", "jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags_BuildMps_AbstractModule_ext_3"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_fromPluginXml"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags_BuildMps_Module_ext_4"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_reexport_BuildMps_ModuleDependencyOnJavaModule"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_reexport"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a5 = new String[]{"jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms", "jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags"};
 }

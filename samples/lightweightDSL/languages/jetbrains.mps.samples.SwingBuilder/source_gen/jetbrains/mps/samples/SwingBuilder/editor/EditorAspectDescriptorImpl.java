@@ -16,37 +16,35 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Button_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ElementReference_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new EmptyComponent_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new Filter_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new Frame_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new Label_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new Map_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new Panel_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new SourceDataType_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new SwingBuilderMember_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new TargetDataType_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new TextField_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Transformers_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Button_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ElementReference_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new EmptyComponent_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Filter_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new Frame_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new Label_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Map_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new Panel_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new SourceDataType_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new SwingBuilderMember_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new TargetDataType_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new TextField_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Transformers_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -55,13 +53,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new EmptyComponent_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new EmptyComponent_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

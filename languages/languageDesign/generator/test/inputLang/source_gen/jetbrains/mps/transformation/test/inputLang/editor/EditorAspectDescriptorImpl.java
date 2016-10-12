@@ -15,33 +15,31 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

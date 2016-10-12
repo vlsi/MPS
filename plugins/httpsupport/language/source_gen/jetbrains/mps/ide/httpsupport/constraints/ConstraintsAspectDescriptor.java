@@ -16,24 +16,21 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new HttpRequestOperation_Constraints();
-        case 1:
-          return new ParameterInitializer_Constraints();
-        case 2:
-          return new QueryParameter_Constraints();
-        case 3:
-          return new QueryParameterReference_Constraints();
-        case 4:
-          return new RequestHandler_Constraints();
-        case 5:
-          return new SerializeFunction_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new HttpRequestOperation_Constraints();
+      case 1:
+        return new ParameterInitializer_Constraints();
+      case 2:
+        return new QueryParameter_Constraints();
+      case 3:
+        return new QueryParameterReference_Constraints();
+      case 4:
+        return new RequestHandler_Constraints();
+      case 5:
+        return new SerializeFunction_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

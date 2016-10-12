@@ -18,103 +18,99 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Address_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AddressReference_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Apple_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new Car_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new CombinedPerformance_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new Component_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ComponentUsage_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new Concert_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new Container_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new DrawLine_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new DrawRect_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new FormDescription_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new FruitPlate_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new IncompleteCommand_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new Item_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new ItemReference_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new LineStyle_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new ListOfDrawCommands_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new OperationOnAddress_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new Orange_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new Participant_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new Performance_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new PerformanceWithTitle_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new RaceParticipant_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new Request_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new SimplifiedFormDescription_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new Singer_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new SomeForm_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new StringDescription_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Address_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AddressReference_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Apple_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Car_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new CombinedPerformance_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new Component_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ComponentUsage_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new Concert_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new Container_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new DrawLine_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new DrawRect_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new FormDescription_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new FruitPlate_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new IncompleteCommand_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new Item_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new ItemReference_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new LineStyle_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new ListOfDrawCommands_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new OperationOnAddress_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new Orange_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new Participant_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new Performance_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new PerformanceWithTitle_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new RaceParticipant_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new Request_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new SimplifiedFormDescription_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new Singer_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new SomeForm_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new StringDescription_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new CarProperties());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new CarProperties());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CommonFruitProperties".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new CommonFruitProperties());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CommonFruitProperties".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new CommonFruitProperties());
           }
-          break;
-        case 2:
-          if (true) {
-            if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new TruckProperties());
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new TruckProperties());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -122,34 +118,30 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new AbstractRequestDescription_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new DrawCommand_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new AbstractRequestDescription_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new DrawCommand_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new EmptyLine_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractRequestDescription_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new EmptyLine_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new IncompleteCommand_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractRequestDescription_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new EmptyLine_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new IncompleteCommand_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

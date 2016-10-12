@@ -19,39 +19,37 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new LambdaAbstraction_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new LambdaApplication_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new LetExpression_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new MultipleExpression_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new NumberType_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new NumericConstant_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ParenthesisExpression_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new Program_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new StringConstant_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new StringType_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Variable_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new VariableReference_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new LambdaAbstraction_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new LambdaApplication_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new LetExpression_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new MultipleExpression_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new NumberType_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new NumericConstant_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ParenthesisExpression_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new Program_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new StringConstant_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new StringType_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Variable_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new VariableReference_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -60,37 +58,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new LambdaExpression_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new LambdaExpression_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a4, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new BinaryOperations()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new SideTransformApplication()});
-              case 2:
-                return Arrays.asList(new TransformationMenu[]{new SideTransformMultiple()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new BinaryOperations()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new SideTransformApplication()});
+            case 2:
+              return Arrays.asList(new TransformationMenu[]{new SideTransformMultiple()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -98,39 +92,35 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new LambdaExpression_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new LambdaExpression_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a6, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new Lambda_Substitute()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new Let_Substitute()});
-              case 2:
-                return Arrays.asList(new SubstituteMenu[]{new Numeric_Substitute()});
-              case 3:
-                return Arrays.asList(new SubstituteMenu[]{new ParenthesisSubstitute()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new Lambda_Substitute()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new Let_Substitute()});
+            case 2:
+              return Arrays.asList(new SubstituteMenu[]{new Numeric_Substitute()});
+            case 3:
+              return Arrays.asList(new SubstituteMenu[]{new ParenthesisSubstitute()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
@@ -141,6 +131,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a4 = new String[]{"jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperations", "jetbrains.mps.samples.lambdaCalculus.editor.SideTransformApplication", "jetbrains.mps.samples.lambdaCalculus.editor.SideTransformMultiple"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a6 = new String[]{"jetbrains.mps.samples.lambdaCalculus.editor.Lambda_Substitute", "jetbrains.mps.samples.lambdaCalculus.editor.Let_Substitute", "jetbrains.mps.samples.lambdaCalculus.editor.Numeric_Substitute", "jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisSubstitute"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperations", "jetbrains.mps.samples.lambdaCalculus.editor.SideTransformApplication", "jetbrains.mps.samples.lambdaCalculus.editor.SideTransformMultiple"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a6 = new String[]{"jetbrains.mps.samples.lambdaCalculus.editor.Lambda_Substitute", "jetbrains.mps.samples.lambdaCalculus.editor.Let_Substitute", "jetbrains.mps.samples.lambdaCalculus.editor.Numeric_Substitute", "jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisSubstitute"};
 }

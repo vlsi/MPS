@@ -17,89 +17,87 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AttractsFocusBlock_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AttributeChild_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AttributeWithChildren_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new AttributedConcept_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new BinaryExpression_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new BracesBlock_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new BracesStubBlock_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new ClassReference_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new CollapsedByDefault_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new CollapsedConditionally_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new CollapsibleConcept_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new Composition_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new DelTestChildContainer_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new FoldingContainer_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AttractsFocusBlock_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AttributeChild_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AttributeWithChildren_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new AttributedConcept_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new BinaryExpression_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new BracesBlock_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new BracesStubBlock_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ClassReference_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new CollapsedByDefault_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new CollapsedConditionally_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new CollapsibleConcept_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new Composition_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new DelTestChildContainer_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new FoldingContainer_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -108,32 +106,28 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new IBaseTestBlock_TransformationMenu());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new SimplePropertyContainer_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new IBaseTestBlock_TransformationMenu());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new SimplePropertyContainer_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new SubstTestAbstractChild_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new SubstTestBooleanPropertyChild_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new SubstTestEnumPropertyChild_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new SubstTestAbstractChild_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new SubstTestBooleanPropertyChild_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new SubstTestEnumPropertyChild_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

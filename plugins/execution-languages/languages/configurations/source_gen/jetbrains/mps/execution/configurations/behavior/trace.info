@@ -29,7 +29,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.execution.configurations.behavior.BeforeTask_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,77,0" name="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,74,0" name="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConfigurationFromExecutorReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_BehaviorDescriptor" />

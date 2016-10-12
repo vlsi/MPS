@@ -57,8 +57,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -375,87 +373,73 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       return Scopes.forMethods(kind, new MethodsScope(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(__thisNode__), methods), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
 
-    {
-      SAbstractConcept cncpt = SNodeOperations.asSConcept(kind);
-      switch (index_hx1769_i0yc.index(cncpt)) {
-        default:
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
-            if (true) {
-              // add instance fields + static fields 
-              Iterable<SNode> staticMethods = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-              if (!(isStaticContext)) {
-                Iterable<SNode> instanceMethods = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-                Set<String> filteredNames = SetSequence.fromSet(new HashSet<String>());
-                SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(instanceMethods).select(new ISelector<SNode, String>() {
-                  public String select(SNode it) {
-                    return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                  }
-                }));
-                SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(staticMethods).select(new ISelector<SNode, String>() {
-                  public String select(SNode it) {
-                    return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                  }
-                }));
-
-                Scope methodScope = new ListScope((SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) ? staticMethods : instanceMethods)) {
-                  public String getName(SNode child) {
-                    return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                  }
-                };
-
-                return Scopes.forMethods(kind, methodScope, new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(__thisNode__, kind)));
-              } else {
-                return Scopes.forMethods(kind, new ListScope(staticMethods) {
-                  public String getName(SNode child) {
-                    return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-                  }
-                }, ScopeUtils.lazyParentScope(__thisNode__, kind));
-              }
-
-            }
-            break;
+    SAbstractConcept cncpt = SNodeOperations.asSConcept(kind);
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      // add instance fields + static fields 
+      Iterable<SNode> staticMethods = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+      if (!(isStaticContext)) {
+        Iterable<SNode> instanceMethods = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+        Set<String> filteredNames = SetSequence.fromSet(new HashSet<String>());
+        SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(instanceMethods).select(new ISelector<SNode, String>() {
+          public String select(SNode it) {
+            return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-            if (true) {
-              if (child == null) {
-                return ScopeUtils.lazyParentScope(__thisNode__, kind);
-              }
+        }));
+        SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(staticMethods).select(new ISelector<SNode, String>() {
+          public String select(SNode it) {
+            return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          }
+        }));
 
-              if (SNodeOperations.hasRole(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) || SNodeOperations.hasRole(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")) || SNodeOperations.hasRole(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
-                return ClassifierScopes.getVisibleClassifiersScope(child, false);
-              }
-              return ClassifierScopes.getVisibleClassifiersScope(child, true);
+        Scope methodScope = new ListScope((SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) ? staticMethods : instanceMethods)) {
+          public String getName(SNode child) {
+            return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          }
+        };
 
-            }
-            break;
+        return Scopes.forMethods(kind, methodScope, new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(__thisNode__, kind)));
+      } else {
+        return Scopes.forMethods(kind, new ListScope(staticMethods) {
+          public String getName(SNode child) {
+            return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-            // in other cases - hide everything by name... 
-            // todo: change! 
-            Scope addition = null;
-            if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x427c475b3d6201deL, "jetbrains.mps.baseLanguage.structure.StaticKind"))) {
-              Iterable<SNode> members = SNodeOperations.ofConcept(SNodeOperations.ofConcept(SNodeOperations.getChildren(__thisNode__), SNodeOperations.asSConcept(SNodeOperations.asSConcept(kind))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
-              addition = new NamedElementsScope(members);
-            } else {
-              if (!(isStaticContext) && child != null) {
-                addition = Classifier__BehaviorDescriptor.getVisibleMembers_id70J2WaK$Uj3.invoke(__thisNode__, child, kind);
-              }
-            }
-            return (addition != null ? Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(__thisNode__, kind)) : ScopeUtils.lazyParentScope(__thisNode__, kind));
-          }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32e8e5805c50376L, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind"))) {
-            return CompositeWithParentScope.from(__thisNode__, __thisNode__, kind);
-          }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
-            if (true) {
-              if (!(isStaticContext)) {
-                return Scopes.forTypeVariables(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration")), ScopeUtils.lazyParentScope(__thisNode__, kind));
-              } else {
-                return ScopeUtils.lazyParentScope(__thisNode__, kind);
-              }
-            }
-            break;
-          }
+        }, ScopeUtils.lazyParentScope(__thisNode__, kind));
+      }
+
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if (child == null) {
+        return ScopeUtils.lazyParentScope(__thisNode__, kind);
+      }
+
+      if (SNodeOperations.hasRole(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) || SNodeOperations.hasRole(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")) || SNodeOperations.hasRole(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))) {
+        return ClassifierScopes.getVisibleClassifiersScope(child, false);
+      }
+      return ClassifierScopes.getVisibleClassifiersScope(child, true);
+
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      // in other cases - hide everything by name... 
+      // todo: change! 
+      Scope addition = null;
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x427c475b3d6201deL, "jetbrains.mps.baseLanguage.structure.StaticKind"))) {
+        Iterable<SNode> members = SNodeOperations.ofConcept(SNodeOperations.ofConcept(SNodeOperations.getChildren(__thisNode__), SNodeOperations.asSConcept(SNodeOperations.asSConcept(kind))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
+        addition = new NamedElementsScope(members);
+      } else {
+        if (!(isStaticContext) && child != null) {
+          addition = Classifier__BehaviorDescriptor.getVisibleMembers_id70J2WaK$Uj3.invoke(__thisNode__, child, kind);
+        }
+      }
+      return (addition != null ? Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(__thisNode__, kind)) : ScopeUtils.lazyParentScope(__thisNode__, kind));
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32e8e5805c50376L, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind"))) {
+      return CompositeWithParentScope.from(__thisNode__, __thisNode__, kind);
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
+      if (!(isStaticContext)) {
+        return Scopes.forTypeVariables(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration")), ScopeUtils.lazyParentScope(__thisNode__, kind));
+      } else {
+        return ScopeUtils.lazyParentScope(__thisNode__, kind);
       }
     }
 
@@ -677,7 +661,6 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static final ConceptSwitchIndex index_hx1769_i0yc = new ConceptSwitchIndexBuilder().put().seal();
   private static String check_qw8l7c_a0a0d0s(SModelName checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStereotype();

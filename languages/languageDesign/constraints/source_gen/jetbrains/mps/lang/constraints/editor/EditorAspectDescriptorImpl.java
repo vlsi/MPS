@@ -16,23 +16,21 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -41,51 +39,49 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new ConceptParameter_ReferentSearchScope_enclosingNode_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_checkedNode_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConcept_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childNode_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_containingLink_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextNode_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextRole_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_exists_SubstituteMenu());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_inEditor_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_link_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkTarget_SubstituteMenu());
-        case 11:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_newReferentNode_SubstituteMenu());
-        case 12:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_oldReferentNode_SubstituteMenu());
-        case 13:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parameterNode_SubstituteMenu());
-        case 14:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parentNode_SubstituteMenu());
-        case 15:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_position_SubstituteMenu());
-        case 16:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_referenceNode_SubstituteMenu());
-        case 17:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_smartReference_SubstituteMenu());
-        case 18:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_visible_SubstituteMenu());
-        case 19:
-          return Collections.<SubstituteMenu>singletonList(new ConstraintsFunctionParameter_node_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ConceptParameter_ReferentSearchScope_enclosingNode_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_checkedNode_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConcept_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childNode_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_containingLink_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextNode_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextRole_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_exists_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_inEditor_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_link_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkTarget_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_newReferentNode_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_oldReferentNode_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parameterNode_SubstituteMenu());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parentNode_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_position_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_referenceNode_SubstituteMenu());
+      case 17:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_smartReference_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_visible_SubstituteMenu());
+      case 19:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintsFunctionParameter_node_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

@@ -29,34 +29,31 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0o.index(cncpt)) {
-        case 0:
-          return myCategorizeBlock__BehaviorDescriptor;
-        case 1:
-          return myCheckCancelledStatusStatement__BehaviorDescriptor;
-        case 2:
-          return myExecuteFinderExpression__BehaviorDescriptor;
-        case 3:
-          return myFindBlock__BehaviorDescriptor;
-        case 4:
-          return myFinderDeclaration__BehaviorDescriptor;
-        case 5:
-          return myIsApplicableBlock__BehaviorDescriptor;
-        case 6:
-          return myIsUsedByDefault__BehaviorDescriptor;
-        case 7:
-          return myIsVisibleBlock__BehaviorDescriptor;
-        case 8:
-          return myNodeStatement__BehaviorDescriptor;
-        case 9:
-          return myResultStatement__BehaviorDescriptor;
-        case 10:
-          return mySearchedNodesBlock__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0o.index(cncpt)) {
+      case 0:
+        return myCategorizeBlock__BehaviorDescriptor;
+      case 1:
+        return myCheckCancelledStatusStatement__BehaviorDescriptor;
+      case 2:
+        return myExecuteFinderExpression__BehaviorDescriptor;
+      case 3:
+        return myFindBlock__BehaviorDescriptor;
+      case 4:
+        return myFinderDeclaration__BehaviorDescriptor;
+      case 5:
+        return myIsApplicableBlock__BehaviorDescriptor;
+      case 6:
+        return myIsUsedByDefault__BehaviorDescriptor;
+      case 7:
+        return myIsVisibleBlock__BehaviorDescriptor;
+      case 8:
+        return myNodeStatement__BehaviorDescriptor;
+      case 9:
+        return myResultStatement__BehaviorDescriptor;
+      case 10:
+        return mySearchedNodesBlock__BehaviorDescriptor;
+      default:
     }
     return null;
   }

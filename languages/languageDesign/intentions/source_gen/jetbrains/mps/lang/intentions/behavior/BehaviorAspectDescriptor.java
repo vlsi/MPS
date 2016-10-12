@@ -30,36 +30,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0p.index(cncpt)) {
-        case 0:
-          return myBaseIntentionDeclaration__BehaviorDescriptor;
-        case 1:
-          return myChildFilterFunction__BehaviorDescriptor;
-        case 2:
-          return myDescriptionBlock__BehaviorDescriptor;
-        case 3:
-          return myExecuteBlock__BehaviorDescriptor;
-        case 4:
-          return myIntention__BehaviorDescriptor;
-        case 5:
-          return myIntentionDeclaration__BehaviorDescriptor;
-        case 6:
-          return myIsApplicableBlock__BehaviorDescriptor;
-        case 7:
-          return myParameter__BehaviorDescriptor;
-        case 8:
-          return myParameterizedDescriptionBlock__BehaviorDescriptor;
-        case 9:
-          return myParameterizedExecuteBlock__BehaviorDescriptor;
-        case 10:
-          return myParameterizedIntentionDeclaration__BehaviorDescriptor;
-        case 11:
-          return myQueryBlock__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0p.index(cncpt)) {
+      case 0:
+        return myBaseIntentionDeclaration__BehaviorDescriptor;
+      case 1:
+        return myChildFilterFunction__BehaviorDescriptor;
+      case 2:
+        return myDescriptionBlock__BehaviorDescriptor;
+      case 3:
+        return myExecuteBlock__BehaviorDescriptor;
+      case 4:
+        return myIntention__BehaviorDescriptor;
+      case 5:
+        return myIntentionDeclaration__BehaviorDescriptor;
+      case 6:
+        return myIsApplicableBlock__BehaviorDescriptor;
+      case 7:
+        return myParameter__BehaviorDescriptor;
+      case 8:
+        return myParameterizedDescriptionBlock__BehaviorDescriptor;
+      case 9:
+        return myParameterizedExecuteBlock__BehaviorDescriptor;
+      case 10:
+        return myParameterizedIntentionDeclaration__BehaviorDescriptor;
+      case 11:
+        return myQueryBlock__BehaviorDescriptor;
+      default:
     }
     return null;
   }

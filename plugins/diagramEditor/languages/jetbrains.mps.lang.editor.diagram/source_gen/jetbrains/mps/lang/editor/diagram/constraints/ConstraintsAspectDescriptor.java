@@ -16,26 +16,23 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new CellModel_Diagram_Constraints();
-        case 1:
-          return new CellModel_DiagramConnector_Constraints();
-        case 2:
-          return new CreationActionReference_Constraints();
-        case 3:
-          return new FigureParameterMapping_Constraints();
-        case 4:
-          return new LinkArgument_Constraints();
-        case 5:
-          return new PropertyArgument_Constraints();
-        case 6:
-          return new ThisEditorNodeExpression_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new CellModel_Diagram_Constraints();
+      case 1:
+        return new CellModel_DiagramConnector_Constraints();
+      case 2:
+        return new CreationActionReference_Constraints();
+      case 3:
+        return new FigureParameterMapping_Constraints();
+      case 4:
+        return new LinkArgument_Constraints();
+      case 5:
+        return new PropertyArgument_Constraints();
+      case 6:
+        return new ThisEditorNodeExpression_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

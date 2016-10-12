@@ -16,23 +16,21 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ITestRef_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new JUnit3TestCaseRef_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new JUnit4TestCaseRef_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ModuleSuite_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new SolutionRef_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new TestCaseRef_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ITestRef_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new JUnit3TestCaseRef_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new JUnit4TestCaseRef_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ModuleSuite_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new SolutionRef_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new TestCaseRef_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -41,19 +39,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new JUnit3TestCaseRef_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new JUnit4TestCaseRef_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new SolutionRef_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new TestCaseRef_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new JUnit3TestCaseRef_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new JUnit4TestCaseRef_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new SolutionRef_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new TestCaseRef_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

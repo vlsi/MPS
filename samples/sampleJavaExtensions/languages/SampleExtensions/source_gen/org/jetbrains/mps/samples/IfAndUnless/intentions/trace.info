@@ -15,7 +15,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="18,0,77,0" name="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor" />
+      <unit at="18,0,74,0" name="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)/393299394024647596">

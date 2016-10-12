@@ -16,22 +16,19 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new BaseInstructionOperation_Constraints();
-        case 1:
-          return new DataFlowBuilderDeclaration_Constraints();
-        case 2:
-          return new EmitStatement_Constraints();
-        case 3:
-          return new GetCodeForExpression_Constraints();
-        case 4:
-          return new LabelPosition_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new BaseInstructionOperation_Constraints();
+      case 1:
+        return new DataFlowBuilderDeclaration_Constraints();
+      case 2:
+        return new EmitStatement_Constraints();
+      case 3:
+        return new GetCodeForExpression_Constraints();
+      case 4:
+        return new LabelPosition_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

@@ -26,28 +26,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0l.index(cncpt)) {
-        case 0:
-          return myIndexedTupleLiteral__BehaviorDescriptor;
-        case 1:
-          return myIndexedTupleMemberAccessExpression__BehaviorDescriptor;
-        case 2:
-          return myIndexedTupleType__BehaviorDescriptor;
-        case 3:
-          return myNamedTupleComponentAccessOperation__BehaviorDescriptor;
-        case 4:
-          return myNamedTupleComponentDeclaration__BehaviorDescriptor;
-        case 5:
-          return myNamedTupleDeclaration__BehaviorDescriptor;
-        case 6:
-          return myNamedTupleLiteral__BehaviorDescriptor;
-        case 7:
-          return myNamedTupleType__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0l.index(cncpt)) {
+      case 0:
+        return myIndexedTupleLiteral__BehaviorDescriptor;
+      case 1:
+        return myIndexedTupleMemberAccessExpression__BehaviorDescriptor;
+      case 2:
+        return myIndexedTupleType__BehaviorDescriptor;
+      case 3:
+        return myNamedTupleComponentAccessOperation__BehaviorDescriptor;
+      case 4:
+        return myNamedTupleComponentDeclaration__BehaviorDescriptor;
+      case 5:
+        return myNamedTupleDeclaration__BehaviorDescriptor;
+      case 6:
+        return myNamedTupleLiteral__BehaviorDescriptor;
+      case 7:
+        return myNamedTupleType__BehaviorDescriptor;
+      default:
     }
     return null;
   }

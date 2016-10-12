@@ -32,40 +32,37 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0r.index(cncpt)) {
-        case 0:
-          return myAbstractConceptDeclaration__BehaviorDescriptor;
-        case 1:
-          return myAttributeInfo__BehaviorDescriptor;
-        case 2:
-          return myConceptDeclaration__BehaviorDescriptor;
-        case 3:
-          return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
-        case 4:
-          return myDataTypeDeclaration__BehaviorDescriptor;
-        case 5:
-          return myDeprecatedNodeAnnotation__BehaviorDescriptor;
-        case 6:
-          return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
-        case 7:
-          return myEnumerationMemberDeclaration__BehaviorDescriptor;
-        case 8:
-          return myIConceptAspect__BehaviorDescriptor;
-        case 9:
-          return myIStructureDeprecatable__BehaviorDescriptor;
-        case 10:
-          return myInterfaceConceptDeclaration__BehaviorDescriptor;
-        case 11:
-          return myLinkDeclaration__BehaviorDescriptor;
-        case 12:
-          return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
-        case 13:
-          return myPropertyDeclaration__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0r.index(cncpt)) {
+      case 0:
+        return myAbstractConceptDeclaration__BehaviorDescriptor;
+      case 1:
+        return myAttributeInfo__BehaviorDescriptor;
+      case 2:
+        return myConceptDeclaration__BehaviorDescriptor;
+      case 3:
+        return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
+      case 4:
+        return myDataTypeDeclaration__BehaviorDescriptor;
+      case 5:
+        return myDeprecatedNodeAnnotation__BehaviorDescriptor;
+      case 6:
+        return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
+      case 7:
+        return myEnumerationMemberDeclaration__BehaviorDescriptor;
+      case 8:
+        return myIConceptAspect__BehaviorDescriptor;
+      case 9:
+        return myIStructureDeprecatable__BehaviorDescriptor;
+      case 10:
+        return myInterfaceConceptDeclaration__BehaviorDescriptor;
+      case 11:
+        return myLinkDeclaration__BehaviorDescriptor;
+      case 12:
+        return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
+      case 13:
+        return myPropertyDeclaration__BehaviorDescriptor;
+      default:
     }
     return null;
   }

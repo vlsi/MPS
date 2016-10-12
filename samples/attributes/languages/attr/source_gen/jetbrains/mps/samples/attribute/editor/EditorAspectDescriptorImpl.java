@@ -15,23 +15,21 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new CommentAttribute_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new CommentAttribute2_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new HandlerAsChild_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new HandlerAsRoot_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new SubConceptToTransform_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new SubConceptToTransformNested_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CommentAttribute_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new CommentAttribute2_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new HandlerAsChild_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new HandlerAsRoot_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new SubConceptToTransform_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new SubConceptToTransformNested_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

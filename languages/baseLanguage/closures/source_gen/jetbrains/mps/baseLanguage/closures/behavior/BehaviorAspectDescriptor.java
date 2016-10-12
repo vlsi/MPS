@@ -35,46 +35,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0u.index(cncpt)) {
-        case 0:
-          return myAbstractFunctionType__BehaviorDescriptor;
-        case 1:
-          return myClosureControlStatement__BehaviorDescriptor;
-        case 2:
-          return myClosureLiteral__BehaviorDescriptor;
-        case 3:
-          return myClosureLiteralType__BehaviorDescriptor;
-        case 4:
-          return myCompactInvokeFunctionExpression__BehaviorDescriptor;
-        case 5:
-          return myControlAbstractionContainer__BehaviorDescriptor;
-        case 6:
-          return myControlAbstractionDeclaration__BehaviorDescriptor;
-        case 7:
-          return myFunctionMethodDeclaration__BehaviorDescriptor;
-        case 8:
-          return myFunctionType__BehaviorDescriptor;
-        case 9:
-          return myInvokeExpression__BehaviorDescriptor;
-        case 10:
-          return myInvokeFunctionExpression__BehaviorDescriptor;
-        case 11:
-          return myInvokeFunctionOperation__BehaviorDescriptor;
-        case 12:
-          return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
-        case 13:
-          return myUnrestrictedClosureLiteral__BehaviorDescriptor;
-        case 14:
-          return myUnrestrictedFunctionType__BehaviorDescriptor;
-        case 15:
-          return myYieldAllStatement__BehaviorDescriptor;
-        case 16:
-          return myYieldStatement__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0u.index(cncpt)) {
+      case 0:
+        return myAbstractFunctionType__BehaviorDescriptor;
+      case 1:
+        return myClosureControlStatement__BehaviorDescriptor;
+      case 2:
+        return myClosureLiteral__BehaviorDescriptor;
+      case 3:
+        return myClosureLiteralType__BehaviorDescriptor;
+      case 4:
+        return myCompactInvokeFunctionExpression__BehaviorDescriptor;
+      case 5:
+        return myControlAbstractionContainer__BehaviorDescriptor;
+      case 6:
+        return myControlAbstractionDeclaration__BehaviorDescriptor;
+      case 7:
+        return myFunctionMethodDeclaration__BehaviorDescriptor;
+      case 8:
+        return myFunctionType__BehaviorDescriptor;
+      case 9:
+        return myInvokeExpression__BehaviorDescriptor;
+      case 10:
+        return myInvokeFunctionExpression__BehaviorDescriptor;
+      case 11:
+        return myInvokeFunctionOperation__BehaviorDescriptor;
+      case 12:
+        return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
+      case 13:
+        return myUnrestrictedClosureLiteral__BehaviorDescriptor;
+      case 14:
+        return myUnrestrictedFunctionType__BehaviorDescriptor;
+      case 15:
+        return myYieldAllStatement__BehaviorDescriptor;
+      case 16:
+        return myYieldStatement__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -29,352 +29,349 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: AnonymousClass 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ConvertToClosure_Intention();
-            intentions[1] = new RemoveTVDInAnonymousClass_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: ArrayType 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new RemoveArrayType_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: AssertStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceAssertWithIf_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: BaseMethodDeclaration 
-            intentions = new IntentionFactory[5];
-            intentions[0] = new MakeGeneric_Intention();
-            intentions[1] = new AddThrows_Intention();
-            intentions[2] = new MakeMethodFinal_Intention();
-            intentions[3] = new MakeSynchronized_Intention();
-            intentions[4] = new AddModifiers_Intention();
-          }
-          break;
-        case 4:
-          if (true) {
-            // Concept: BinaryOperation 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new FlipBinaryOperation_Intention();
-            intentions[1] = new OrToAndAndBack_Intention();
-          }
-          break;
-        case 5:
-          if (true) {
-            // Concept: BlockStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceBlockWithItsContent_Intention();
-          }
-          break;
-        case 6:
-          if (true) {
-            // Concept: ClassConcept 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new MakeClassAbstract_Intention();
-            intentions[1] = new MakeClassFinal_Intention();
-          }
-          break;
-        case 7:
-          if (true) {
-            // Concept: ClassCreator 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertClassCreatorToAnonimous_Intention();
-          }
-          break;
-        case 8:
-          if (true) {
-            // Concept: Classifier 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ChangeStaticInInner_Intention();
-            intentions[1] = new AutoSpacing_Intention();
-          }
-          break;
-        case 9:
-          if (true) {
-            // Concept: ElsifClause 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ElsifSwapWithMain_Intention();
-            intentions[1] = new ConvertElsifToNewIfStatement_Intention();
-          }
-          break;
-        case 10:
-          if (true) {
-            // Concept: EqualsExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceEqualityWithEquals_Intention();
-          }
-          break;
-        case 11:
-          if (true) {
-            // Concept: Expression 
-            intentions = new IntentionFactory[8];
-            intentions[0] = new SurroundWithParenthesis_Intention();
-            intentions[1] = new SurroundWithTypeCast_Intention();
-            intentions[2] = new SurroundWithNegation_Intention();
-            intentions[3] = new SurroundWithIfClause_Intention();
-            intentions[4] = new SurroundWithIfElseClause_Intention();
-            intentions[5] = new CleanUnmatchedParentheses_Intention();
-            intentions[6] = new ComputeWholeExpressionValue_Intention();
-            intentions[7] = new ComputeExpressionValue_Intention();
-          }
-          break;
-        case 12:
-          if (true) {
-            // Concept: ExpressionStatement 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new IterateOverIterable_Intention();
-            intentions[1] = new ConvertToReturnStatement_Intention();
-          }
-          break;
-        case 13:
-          if (true) {
-            // Concept: FieldDeclaration 
-            intentions = new IntentionFactory[4];
-            intentions[0] = new MoveInitializerToConstructor_Intention();
-            intentions[1] = new MakeFieldVolatile_Intention();
-            intentions[2] = new MakeFieldTransient_Intention();
-            intentions[3] = new AddStaticFieldModifier_Intention();
-          }
-          break;
-        case 14:
-          if (true) {
-            // Concept: ForStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceForLoopWithWhileLoop_Intention();
-          }
-          break;
-        case 15:
-          if (true) {
-            // Concept: ForeachStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceForEachLoopWithIndexedLoop_Intention();
-          }
-          break;
-        case 16:
-          if (true) {
-            // Concept: GetAccessor 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new CreateSetAccessor_Intention();
-          }
-          break;
-        case 17:
-          if (true) {
-            // Concept: HasAnnotation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddAnnotation_Intention();
-          }
-          break;
-        case 18:
-          if (true) {
-            // Concept: IBLDeprecatable 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new MakeDeprecated_Intention();
-          }
-          break;
-        case 19:
-          if (true) {
-            // Concept: IContainsStatementList 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AlterStatementListContainer_Intention();
-          }
-          break;
-        case 20:
-          if (true) {
-            // Concept: IMethodCall 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddTypeParameters_Intention();
-          }
-          break;
-        case 21:
-          if (true) {
-            // Concept: ITryCatchStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new UnwrapTryCatch_Intention();
-          }
-          break;
-        case 22:
-          if (true) {
-            // Concept: IfStatement 
-            intentions = new IntentionFactory[12];
-            intentions[0] = new AddCastStatement_Intention();
-            intentions[1] = new InvertIfCondition_Intention();
-            intentions[2] = new AddElsifClause_Intention();
-            intentions[3] = new ElsifTransform_Intention();
-            intentions[4] = new ConvertElseToElseIf_Intention();
-            intentions[5] = new MakeOneLiner_Intention();
-            intentions[6] = new MakeMultiLiner_Intention();
-            intentions[7] = new UsedefaultLayout_Intention();
-            intentions[8] = new UnwrapIfThenBlock_Intention();
-            intentions[9] = new SplitIf_Intention();
-            intentions[10] = new ConvertIfConditionToTernaryOperator_Intention();
-            intentions[11] = new UnwrapUnnecessaryElse_Intention();
-          }
-          break;
-        case 23:
-          if (true) {
-            // Concept: InstanceMethodCallOperation 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ReplaceEqualsWithEquality_Intention();
-            intentions[1] = new FilpEqualsIntention_Intention();
-          }
-          break;
-        case 24:
-          if (true) {
-            // Concept: InstanceMethodDeclaration 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new MakeMethodAbstract_Intention();
-            intentions[1] = new MakeClassAbstractFromMethod_Intention();
-            intentions[2] = new AddOverrideAnnotation_Intention();
-          }
-          break;
-        case 25:
-          if (true) {
-            // Concept: LocalMethodCall 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new SpecifyClass_Intention();
-          }
-          break;
-        case 26:
-          if (true) {
-            // Concept: LocalVariableDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new SplitIntoDeclarationAndAssignment_Intention();
-          }
-          break;
-        case 27:
-          if (true) {
-            // Concept: MethodDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new MakeMethodStatic_Intention();
-          }
-          break;
-        case 28:
-          if (true) {
-            // Concept: ParameterDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddFieldForUnUsedParameter_Intention();
-          }
-          break;
-        case 29:
-          if (true) {
-            // Concept: PlusExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new MergeStringConcatenation_Intention();
-          }
-          break;
-        case 30:
-          if (true) {
-            // Concept: Property 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new SwitchToCustomPropertyImplementation_Intention();
-            intentions[1] = new SwitchToDefaultPropertyImplementation_Intention();
-            intentions[2] = new SwitchToCustomConstructorPropertyImplementation_Intention();
-          }
-          break;
-        case 31:
-          if (true) {
-            // Concept: Statement 
-            intentions = new IntentionFactory[13];
-            intentions[0] = new CreateInternalLabel_Intention();
-            intentions[1] = new SurroundWithIf_Intention();
-            intentions[2] = new SurroundWithIfElse_Intention();
-            intentions[3] = new SurroundWithWhile_Intention();
-            intentions[4] = new SurroundWithDoWhile_Intention();
-            intentions[5] = new SurroundWithFor_Intention();
-            intentions[6] = new SurroundStatementsWithForEach_Intention();
-            intentions[7] = new SuroundWithTryCatch_Intention();
-            intentions[8] = new SurroundWithTryFinally_Intention();
-            intentions[9] = new TryCatchFinally_Intention();
-            intentions[10] = new SurroundWithSynchronized_Intention();
-            intentions[11] = new SurroundWithBrackets_Intention();
-            intentions[12] = new JoinVariableDeclarationAndInitializer_Intention();
-          }
-          break;
-        case 32:
-          if (true) {
-            // Concept: StaticFieldDeclaration 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new RemoveStaticFieldModifier_Intention();
-            intentions[1] = new MakeStaticFieldVolatile_Intention();
-            intentions[2] = new MakeStaticFieldTransient_Intention();
-          }
-          break;
-        case 33:
-          if (true) {
-            // Concept: StringLiteral 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new SplitStringIntoConcatenation_Intention();
-          }
-          break;
-        case 34:
-          if (true) {
-            // Concept: TernaryOperatorExpression 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ReplaceConditionalWithIf_Intention();
-            intentions[1] = new SwapTernaryBranches_Intention();
-          }
-          break;
-        case 35:
-          if (true) {
-            // Concept: ThisExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new CreateReferenceOnClass_Intention();
-          }
-          break;
-        case 36:
-          if (true) {
-            // Concept: ThrowStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddRuntimeExceptionToMethodSignature_Intention();
-          }
-          break;
-        case 37:
-          if (true) {
-            // Concept: Type 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertToArrayType_Intention();
-          }
-          break;
-        case 38:
-          if (true) {
-            // Concept: VariableDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddFinalModifierToAny_Intention();
-          }
-          break;
-        case 39:
-          if (true) {
-            // Concept: VariableReference 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new ExpandBoolean_Intention();
-            intentions[1] = new ConvertAssignmentToVariableDeclaration_Intention();
-            intentions[2] = new MakeParameterFinal_Intention();
-          }
-          break;
-        case 40:
-          if (true) {
-            // Concept: WhileStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ExtractWhileConditionToInternalIfStatement_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: AnonymousClass 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ConvertToClosure_Intention();
+          intentions[1] = new RemoveTVDInAnonymousClass_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: ArrayType 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new RemoveArrayType_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: AssertStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceAssertWithIf_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: BaseMethodDeclaration 
+          intentions = new IntentionFactory[5];
+          intentions[0] = new MakeGeneric_Intention();
+          intentions[1] = new AddThrows_Intention();
+          intentions[2] = new MakeMethodFinal_Intention();
+          intentions[3] = new MakeSynchronized_Intention();
+          intentions[4] = new AddModifiers_Intention();
+        }
+        break;
+      case 4:
+        if (true) {
+          // Concept: BinaryOperation 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new FlipBinaryOperation_Intention();
+          intentions[1] = new OrToAndAndBack_Intention();
+        }
+        break;
+      case 5:
+        if (true) {
+          // Concept: BlockStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceBlockWithItsContent_Intention();
+        }
+        break;
+      case 6:
+        if (true) {
+          // Concept: ClassConcept 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new MakeClassAbstract_Intention();
+          intentions[1] = new MakeClassFinal_Intention();
+        }
+        break;
+      case 7:
+        if (true) {
+          // Concept: ClassCreator 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertClassCreatorToAnonimous_Intention();
+        }
+        break;
+      case 8:
+        if (true) {
+          // Concept: Classifier 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ChangeStaticInInner_Intention();
+          intentions[1] = new AutoSpacing_Intention();
+        }
+        break;
+      case 9:
+        if (true) {
+          // Concept: ElsifClause 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ElsifSwapWithMain_Intention();
+          intentions[1] = new ConvertElsifToNewIfStatement_Intention();
+        }
+        break;
+      case 10:
+        if (true) {
+          // Concept: EqualsExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceEqualityWithEquals_Intention();
+        }
+        break;
+      case 11:
+        if (true) {
+          // Concept: Expression 
+          intentions = new IntentionFactory[8];
+          intentions[0] = new SurroundWithParenthesis_Intention();
+          intentions[1] = new SurroundWithTypeCast_Intention();
+          intentions[2] = new SurroundWithNegation_Intention();
+          intentions[3] = new SurroundWithIfClause_Intention();
+          intentions[4] = new SurroundWithIfElseClause_Intention();
+          intentions[5] = new CleanUnmatchedParentheses_Intention();
+          intentions[6] = new ComputeWholeExpressionValue_Intention();
+          intentions[7] = new ComputeExpressionValue_Intention();
+        }
+        break;
+      case 12:
+        if (true) {
+          // Concept: ExpressionStatement 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new IterateOverIterable_Intention();
+          intentions[1] = new ConvertToReturnStatement_Intention();
+        }
+        break;
+      case 13:
+        if (true) {
+          // Concept: FieldDeclaration 
+          intentions = new IntentionFactory[4];
+          intentions[0] = new MoveInitializerToConstructor_Intention();
+          intentions[1] = new MakeFieldVolatile_Intention();
+          intentions[2] = new MakeFieldTransient_Intention();
+          intentions[3] = new AddStaticFieldModifier_Intention();
+        }
+        break;
+      case 14:
+        if (true) {
+          // Concept: ForStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceForLoopWithWhileLoop_Intention();
+        }
+        break;
+      case 15:
+        if (true) {
+          // Concept: ForeachStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceForEachLoopWithIndexedLoop_Intention();
+        }
+        break;
+      case 16:
+        if (true) {
+          // Concept: GetAccessor 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new CreateSetAccessor_Intention();
+        }
+        break;
+      case 17:
+        if (true) {
+          // Concept: HasAnnotation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddAnnotation_Intention();
+        }
+        break;
+      case 18:
+        if (true) {
+          // Concept: IBLDeprecatable 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new MakeDeprecated_Intention();
+        }
+        break;
+      case 19:
+        if (true) {
+          // Concept: IContainsStatementList 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AlterStatementListContainer_Intention();
+        }
+        break;
+      case 20:
+        if (true) {
+          // Concept: IMethodCall 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddTypeParameters_Intention();
+        }
+        break;
+      case 21:
+        if (true) {
+          // Concept: ITryCatchStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new UnwrapTryCatch_Intention();
+        }
+        break;
+      case 22:
+        if (true) {
+          // Concept: IfStatement 
+          intentions = new IntentionFactory[12];
+          intentions[0] = new AddCastStatement_Intention();
+          intentions[1] = new InvertIfCondition_Intention();
+          intentions[2] = new AddElsifClause_Intention();
+          intentions[3] = new ElsifTransform_Intention();
+          intentions[4] = new ConvertElseToElseIf_Intention();
+          intentions[5] = new MakeOneLiner_Intention();
+          intentions[6] = new MakeMultiLiner_Intention();
+          intentions[7] = new UsedefaultLayout_Intention();
+          intentions[8] = new UnwrapIfThenBlock_Intention();
+          intentions[9] = new SplitIf_Intention();
+          intentions[10] = new ConvertIfConditionToTernaryOperator_Intention();
+          intentions[11] = new UnwrapUnnecessaryElse_Intention();
+        }
+        break;
+      case 23:
+        if (true) {
+          // Concept: InstanceMethodCallOperation 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ReplaceEqualsWithEquality_Intention();
+          intentions[1] = new FilpEqualsIntention_Intention();
+        }
+        break;
+      case 24:
+        if (true) {
+          // Concept: InstanceMethodDeclaration 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new MakeMethodAbstract_Intention();
+          intentions[1] = new MakeClassAbstractFromMethod_Intention();
+          intentions[2] = new AddOverrideAnnotation_Intention();
+        }
+        break;
+      case 25:
+        if (true) {
+          // Concept: LocalMethodCall 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SpecifyClass_Intention();
+        }
+        break;
+      case 26:
+        if (true) {
+          // Concept: LocalVariableDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SplitIntoDeclarationAndAssignment_Intention();
+        }
+        break;
+      case 27:
+        if (true) {
+          // Concept: MethodDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new MakeMethodStatic_Intention();
+        }
+        break;
+      case 28:
+        if (true) {
+          // Concept: ParameterDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddFieldForUnUsedParameter_Intention();
+        }
+        break;
+      case 29:
+        if (true) {
+          // Concept: PlusExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new MergeStringConcatenation_Intention();
+        }
+        break;
+      case 30:
+        if (true) {
+          // Concept: Property 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new SwitchToCustomPropertyImplementation_Intention();
+          intentions[1] = new SwitchToDefaultPropertyImplementation_Intention();
+          intentions[2] = new SwitchToCustomConstructorPropertyImplementation_Intention();
+        }
+        break;
+      case 31:
+        if (true) {
+          // Concept: Statement 
+          intentions = new IntentionFactory[13];
+          intentions[0] = new CreateInternalLabel_Intention();
+          intentions[1] = new SurroundWithIf_Intention();
+          intentions[2] = new SurroundWithIfElse_Intention();
+          intentions[3] = new SurroundWithWhile_Intention();
+          intentions[4] = new SurroundWithDoWhile_Intention();
+          intentions[5] = new SurroundWithFor_Intention();
+          intentions[6] = new SurroundStatementsWithForEach_Intention();
+          intentions[7] = new SuroundWithTryCatch_Intention();
+          intentions[8] = new SurroundWithTryFinally_Intention();
+          intentions[9] = new TryCatchFinally_Intention();
+          intentions[10] = new SurroundWithSynchronized_Intention();
+          intentions[11] = new SurroundWithBrackets_Intention();
+          intentions[12] = new JoinVariableDeclarationAndInitializer_Intention();
+        }
+        break;
+      case 32:
+        if (true) {
+          // Concept: StaticFieldDeclaration 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new RemoveStaticFieldModifier_Intention();
+          intentions[1] = new MakeStaticFieldVolatile_Intention();
+          intentions[2] = new MakeStaticFieldTransient_Intention();
+        }
+        break;
+      case 33:
+        if (true) {
+          // Concept: StringLiteral 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SplitStringIntoConcatenation_Intention();
+        }
+        break;
+      case 34:
+        if (true) {
+          // Concept: TernaryOperatorExpression 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ReplaceConditionalWithIf_Intention();
+          intentions[1] = new SwapTernaryBranches_Intention();
+        }
+        break;
+      case 35:
+        if (true) {
+          // Concept: ThisExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new CreateReferenceOnClass_Intention();
+        }
+        break;
+      case 36:
+        if (true) {
+          // Concept: ThrowStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddRuntimeExceptionToMethodSignature_Intention();
+        }
+        break;
+      case 37:
+        if (true) {
+          // Concept: Type 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertToArrayType_Intention();
+        }
+        break;
+      case 38:
+        if (true) {
+          // Concept: VariableDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddFinalModifierToAny_Intention();
+        }
+        break;
+      case 39:
+        if (true) {
+          // Concept: VariableReference 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new ExpandBoolean_Intention();
+          intentions[1] = new ConvertAssignmentToVariableDeclaration_Intention();
+          intentions[2] = new MakeParameterFinal_Intention();
+        }
+        break;
+      case 40:
+        if (true) {
+          // Concept: WhileStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ExtractWhileConditionToInternalIfStatement_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

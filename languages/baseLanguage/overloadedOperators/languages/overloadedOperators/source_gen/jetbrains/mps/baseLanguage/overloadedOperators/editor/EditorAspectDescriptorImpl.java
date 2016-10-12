@@ -16,25 +16,23 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -43,13 +41,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new CustomOperatorUsageTransform_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new CustomOperatorUsageTransform_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }

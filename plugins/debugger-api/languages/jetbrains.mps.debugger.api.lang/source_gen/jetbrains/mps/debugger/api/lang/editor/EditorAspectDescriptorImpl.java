@@ -16,25 +16,23 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -43,15 +41,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new DebuggerReference_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ChooseBreakpoint_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new DebuggerReference_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ChooseBreakpoint_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

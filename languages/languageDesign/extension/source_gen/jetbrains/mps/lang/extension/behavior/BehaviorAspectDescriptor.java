@@ -27,30 +27,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0m.index(cncpt)) {
-        case 0:
-          return myExtension__BehaviorDescriptor;
-        case 1:
-          return myExtensionDeclaration__BehaviorDescriptor;
-        case 2:
-          return myExtensionFieldReference__BehaviorDescriptor;
-        case 3:
-          return myExtensionFunction__BehaviorDescriptor;
-        case 4:
-          return myExtensionObjectGetter__BehaviorDescriptor;
-        case 5:
-          return myExtensionPointDeclaration__BehaviorDescriptor;
-        case 6:
-          return myExtensionPointExpression__BehaviorDescriptor;
-        case 7:
-          return myExtensionPointType__BehaviorDescriptor;
-        case 8:
-          return myIRootWithUniqueName__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0m.index(cncpt)) {
+      case 0:
+        return myExtension__BehaviorDescriptor;
+      case 1:
+        return myExtensionDeclaration__BehaviorDescriptor;
+      case 2:
+        return myExtensionFieldReference__BehaviorDescriptor;
+      case 3:
+        return myExtensionFunction__BehaviorDescriptor;
+      case 4:
+        return myExtensionObjectGetter__BehaviorDescriptor;
+      case 5:
+        return myExtensionPointDeclaration__BehaviorDescriptor;
+      case 6:
+        return myExtensionPointExpression__BehaviorDescriptor;
+      case 7:
+        return myExtensionPointType__BehaviorDescriptor;
+      case 8:
+        return myIRootWithUniqueName__BehaviorDescriptor;
+      default:
     }
     return null;
   }

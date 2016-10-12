@@ -17,59 +17,57 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new DataDependency_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new IncludeMigrationPart_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new MoveConcept_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new MoveContainmentLink_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new MoveNodeMigrationPart_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new MoveProperty_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new MoveReferenceLink_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new OrderDependency_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new TransformStatement_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new DataDependency_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new IncludeMigrationPart_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new MoveConcept_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new MoveContainmentLink_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new MoveNodeMigrationPart_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new MoveProperty_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new MoveReferenceLink_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new OrderDependency_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new TransformStatement_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -78,28 +76,24 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new NonExactInstances());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new NonExactInstances());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new PureMigrationScript_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new RefactoringLog_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new PureMigrationScript_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new RefactoringLog_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

@@ -17,55 +17,51 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AssertEquals_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AssertFalse_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AssertInNotNull_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new AssertIsNull_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new AssertSame_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new AssertThrows_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new AssertTrue_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new BTestCase_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new Fail_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new Message_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new PrepareMethod_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new TestMethod_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new TestMethodList_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AssertEquals_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AssertFalse_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AssertInNotNull_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new AssertIsNull_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new AssertSame_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new AssertThrows_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new AssertTrue_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new BTestCase_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new Fail_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new Message_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new PrepareMethod_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new TestMethod_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new TestMethodList_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new MessageComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new MessageComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -73,13 +69,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new removeAssert_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new removeAssert_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

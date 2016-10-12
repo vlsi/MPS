@@ -53,82 +53,79 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0mb.index(cncpt)) {
-        case 0:
-          return myConceptConstraints__BehaviorDescriptor;
-        case 1:
-          return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
-        case 2:
-          return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
-        case 3:
-          return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
-        case 4:
-          return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
-        case 5:
-          return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
-        case 6:
-          return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
-        case 7:
-          return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
-        case 8:
-          return myConstraintFunctionParameter_exists__BehaviorDescriptor;
-        case 9:
-          return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
-        case 10:
-          return myConstraintFunctionParameter_link__BehaviorDescriptor;
-        case 11:
-          return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
-        case 12:
-          return myConstraintFunctionParameter_position__BehaviorDescriptor;
-        case 13:
-          return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
-        case 14:
-          return myConstraintFunctionParameter_visible__BehaviorDescriptor;
-        case 15:
-          return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
-        case 16:
-          return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
-        case 17:
-          return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
-        case 18:
-          return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
-        case 19:
-          return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
-        case 20:
-          return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
-        case 21:
-          return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
-        case 22:
-          return myConstraintFunction_PropertySetter__BehaviorDescriptor;
-        case 23:
-          return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
-        case 24:
-          return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
-        case 25:
-          return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
-        case 26:
-          return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
-        case 27:
-          return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
-        case 28:
-          return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
-        case 29:
-          return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
-        case 30:
-          return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
-        case 31:
-          return myConstraintsFunctionParameter_node__BehaviorDescriptor;
-        case 32:
-          return myNodeDefaultSearchScope__BehaviorDescriptor;
-        case 33:
-          return myNodePropertyConstraint__BehaviorDescriptor;
-        case 34:
-          return myNodeReferentConstraint__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0mb.index(cncpt)) {
+      case 0:
+        return myConceptConstraints__BehaviorDescriptor;
+      case 1:
+        return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
+      case 2:
+        return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
+      case 3:
+        return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
+      case 4:
+        return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
+      case 5:
+        return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
+      case 6:
+        return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
+      case 7:
+        return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
+      case 8:
+        return myConstraintFunctionParameter_exists__BehaviorDescriptor;
+      case 9:
+        return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
+      case 10:
+        return myConstraintFunctionParameter_link__BehaviorDescriptor;
+      case 11:
+        return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
+      case 12:
+        return myConstraintFunctionParameter_position__BehaviorDescriptor;
+      case 13:
+        return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
+      case 14:
+        return myConstraintFunctionParameter_visible__BehaviorDescriptor;
+      case 15:
+        return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
+      case 16:
+        return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
+      case 17:
+        return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
+      case 18:
+        return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
+      case 19:
+        return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
+      case 20:
+        return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
+      case 21:
+        return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
+      case 22:
+        return myConstraintFunction_PropertySetter__BehaviorDescriptor;
+      case 23:
+        return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
+      case 24:
+        return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
+      case 25:
+        return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
+      case 26:
+        return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
+      case 27:
+        return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
+      case 28:
+        return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
+      case 29:
+        return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
+      case 30:
+        return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
+      case 31:
+        return myConstraintsFunctionParameter_node__BehaviorDescriptor;
+      case 32:
+        return myNodeDefaultSearchScope__BehaviorDescriptor;
+      case 33:
+        return myNodePropertyConstraint__BehaviorDescriptor;
+      case 34:
+        return myNodeReferentConstraint__BehaviorDescriptor;
+      default:
     }
     return null;
   }

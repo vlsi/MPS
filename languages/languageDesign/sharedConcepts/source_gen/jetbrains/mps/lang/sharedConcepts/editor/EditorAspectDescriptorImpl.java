@@ -18,23 +18,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_operationContext_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_progressMonitor_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_scope_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_editorContext_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_model_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_operationContext_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_progressMonitor_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_scope_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

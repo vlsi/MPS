@@ -31,38 +31,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0q.index(cncpt)) {
-        case 0:
-          return myCircle__BehaviorDescriptor;
-        case 1:
-          return myColor__BehaviorDescriptor;
-        case 2:
-          return myColorLiteral__BehaviorDescriptor;
-        case 3:
-          return myFileIcon__BehaviorDescriptor;
-        case 4:
-          return myIcon__BehaviorDescriptor;
-        case 5:
-          return myIconLayerDescription__BehaviorDescriptor;
-        case 6:
-          return myImage__BehaviorDescriptor;
-        case 7:
-          return myOldIconBundle__BehaviorDescriptor;
-        case 8:
-          return myOldIconReference__BehaviorDescriptor;
-        case 9:
-          return myRect__BehaviorDescriptor;
-        case 10:
-          return myResource__BehaviorDescriptor;
-        case 11:
-          return myText__BehaviorDescriptor;
-        case 12:
-          return myTextIcon__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0q.index(cncpt)) {
+      case 0:
+        return myCircle__BehaviorDescriptor;
+      case 1:
+        return myColor__BehaviorDescriptor;
+      case 2:
+        return myColorLiteral__BehaviorDescriptor;
+      case 3:
+        return myFileIcon__BehaviorDescriptor;
+      case 4:
+        return myIcon__BehaviorDescriptor;
+      case 5:
+        return myIconLayerDescription__BehaviorDescriptor;
+      case 6:
+        return myImage__BehaviorDescriptor;
+      case 7:
+        return myOldIconBundle__BehaviorDescriptor;
+      case 8:
+        return myOldIconReference__BehaviorDescriptor;
+      case 9:
+        return myRect__BehaviorDescriptor;
+      case 10:
+        return myResource__BehaviorDescriptor;
+      case 11:
+        return myText__BehaviorDescriptor;
+      case 12:
+        return myTextIcon__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -16,104 +16,101 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new AbstractComponent_Constraints();
-        case 1:
-          return new AttributeStyleClassItem_Constraints();
-        case 2:
-          return new CellActionMapDeclaration_Constraints();
-        case 3:
-          return new CellIdReferenceSelector_Constraints();
-        case 4:
-          return new CellKeyMapDeclaration_Constraints();
-        case 5:
-          return new CellMenuComponent_Constraints();
-        case 6:
-          return new CellMenuComponentFeature_Link_Constraints();
-        case 7:
-          return new CellMenuComponentFeature_Property_Constraints();
-        case 8:
-          return new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints();
-        case 9:
-          return new CellModel_Component_Constraints();
-        case 10:
-          return new CellModel_NextEditor_Constraints();
-        case 11:
-          return new CellModel_Property_Constraints();
-        case 12:
-          return new CellModel_RefCell_Constraints();
-        case 13:
-          return new CellModel_RefNode_Constraints();
-        case 14:
-          return new CellModel_RefNodeList_Constraints();
-        case 15:
-          return new CellModel_ReferencePresentation_Constraints();
-        case 16:
-          return new CellModel_TransactionalProperty_Constraints();
-        case 17:
-          return new CellModel_WithRole_Constraints();
-        case 18:
-          return new ConceptEditorDeclaration_Constraints();
-        case 19:
-          return new ConceptEditorHintDeclaration_Constraints();
-        case 20:
-          return new ContextVariable_Constraints();
-        case 21:
-          return new EditorComponentDeclaration_Constraints();
-        case 22:
-          return new IMenuPartParameterized_Constraints();
-        case 23:
-          return new IMenuReference_Default_Constraints();
-        case 24:
-          return new IMenu_Default_Constraints();
-        case 25:
-          return new IMenu_Named_Constraints();
-        case 26:
-          return new IStyle_Constraints();
-        case 27:
-          return new NavigatableReferenceStyleClassItem_Constraints();
-        case 28:
-          return new PropertyDeclarationCellSelector_Constraints();
-        case 29:
-          return new RGBColor_Constraints();
-        case 30:
-          return new StyleClassItem_Constraints();
-        case 31:
-          return new StyleSheet_Constraints();
-        case 32:
-          return new SubstituteMenu_Constraints();
-        case 33:
-          return new SubstituteMenuReference_DefaultWithFunction_Constraints();
-        case 34:
-          return new SubstituteMenuReference_Named_Constraints();
-        case 35:
-          return new SubstituteMenuVariableReference_Constraints();
-        case 36:
-          return new SubstituteMenu_Contribution_Constraints();
-        case 37:
-          return new SubstituteMenu_Default_Constraints();
-        case 38:
-          return new SubstituteMenu_Named_Constraints();
-        case 39:
-          return new TransformationMenu_Constraints();
-        case 40:
-          return new TransformationMenuContribution_Constraints();
-        case 41:
-          return new TransformationMenuPart_IncludeSubstituteMenu_Constraints();
-        case 42:
-          return new TransformationMenuReference_Named_Constraints();
-        case 43:
-          return new TransformationMenuVariableReference_Constraints();
-        case 44:
-          return new TransformationMenu_Default_Constraints();
-        case 45:
-          return new TransformationMenu_Named_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new AbstractComponent_Constraints();
+      case 1:
+        return new AttributeStyleClassItem_Constraints();
+      case 2:
+        return new CellActionMapDeclaration_Constraints();
+      case 3:
+        return new CellIdReferenceSelector_Constraints();
+      case 4:
+        return new CellKeyMapDeclaration_Constraints();
+      case 5:
+        return new CellMenuComponent_Constraints();
+      case 6:
+        return new CellMenuComponentFeature_Link_Constraints();
+      case 7:
+        return new CellMenuComponentFeature_Property_Constraints();
+      case 8:
+        return new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints();
+      case 9:
+        return new CellModel_Component_Constraints();
+      case 10:
+        return new CellModel_NextEditor_Constraints();
+      case 11:
+        return new CellModel_Property_Constraints();
+      case 12:
+        return new CellModel_RefCell_Constraints();
+      case 13:
+        return new CellModel_RefNode_Constraints();
+      case 14:
+        return new CellModel_RefNodeList_Constraints();
+      case 15:
+        return new CellModel_ReferencePresentation_Constraints();
+      case 16:
+        return new CellModel_TransactionalProperty_Constraints();
+      case 17:
+        return new CellModel_WithRole_Constraints();
+      case 18:
+        return new ConceptEditorDeclaration_Constraints();
+      case 19:
+        return new ConceptEditorHintDeclaration_Constraints();
+      case 20:
+        return new ContextVariable_Constraints();
+      case 21:
+        return new EditorComponentDeclaration_Constraints();
+      case 22:
+        return new IMenuPartParameterized_Constraints();
+      case 23:
+        return new IMenuReference_Default_Constraints();
+      case 24:
+        return new IMenu_Default_Constraints();
+      case 25:
+        return new IMenu_Named_Constraints();
+      case 26:
+        return new IStyle_Constraints();
+      case 27:
+        return new NavigatableReferenceStyleClassItem_Constraints();
+      case 28:
+        return new PropertyDeclarationCellSelector_Constraints();
+      case 29:
+        return new RGBColor_Constraints();
+      case 30:
+        return new StyleClassItem_Constraints();
+      case 31:
+        return new StyleSheet_Constraints();
+      case 32:
+        return new SubstituteMenu_Constraints();
+      case 33:
+        return new SubstituteMenuReference_DefaultWithFunction_Constraints();
+      case 34:
+        return new SubstituteMenuReference_Named_Constraints();
+      case 35:
+        return new SubstituteMenuVariableReference_Constraints();
+      case 36:
+        return new SubstituteMenu_Contribution_Constraints();
+      case 37:
+        return new SubstituteMenu_Default_Constraints();
+      case 38:
+        return new SubstituteMenu_Named_Constraints();
+      case 39:
+        return new TransformationMenu_Constraints();
+      case 40:
+        return new TransformationMenuContribution_Constraints();
+      case 41:
+        return new TransformationMenuPart_IncludeSubstituteMenu_Constraints();
+      case 42:
+        return new TransformationMenuReference_Named_Constraints();
+      case 43:
+        return new TransformationMenuVariableReference_Constraints();
+      case 44:
+        return new TransformationMenu_Default_Constraints();
+      case 45:
+        return new TransformationMenu_Named_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

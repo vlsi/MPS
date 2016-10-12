@@ -20,209 +20,205 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbstractContainerCreator_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AbstractContainerType_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new AbstractEnumeratorOperation_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new AbstractIteratorOperation_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new AbstractMappingOperation_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new AddAllSetElementsOperation_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new AddSetElementOperation_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new AllConstant_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new AsSequenceOperation_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new ChunkOperation_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new ClearSetOperation_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new ComparatorSortOperation_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new ContainsKeyOperation_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new ContainsValueOperation_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new CustomContainerCreator_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new CustomContainerDeclaration_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new CustomContainers_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new CustomMapCreator_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new DowncastExpression_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new EnumeratorType_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new FoldLeftOperation_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new FoldRightOperation_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new ForEachStatement_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new ForEachVariable_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new ForEachVariableReference_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new GetKeysOperation_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new GetValuesOperation_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new HashMapCreator_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new HeadListOperation_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new HeadMapOperation_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new HeadSetOperation_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new InsertElementOperation_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new InternalSequenceOperation_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new IteratorType_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new JoinOperation_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new LinkedHashMapCreator_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new ListElementAccessExpression_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new ListType_Editor());
-        case 39:
-          return Collections.<ConceptEditor>singletonList(new MapAsSequenceVarRef_Editor());
-        case 40:
-          return Collections.<ConceptEditor>singletonList(new MapClearOperation_Editor());
-        case 41:
-          return Collections.<ConceptEditor>singletonList(new MapElement_Editor());
-        case 42:
-          return Collections.<ConceptEditor>singletonList(new MapEntry_Editor());
-        case 43:
-          return Collections.<ConceptEditor>singletonList(new MapInitializer_Editor());
-        case 44:
-          return Collections.<ConceptEditor>singletonList(new MapOperationExpression_Editor());
-        case 45:
-          return Collections.<ConceptEditor>singletonList(new MapRemoveOperation_Editor());
-        case 46:
-          return Collections.<ConceptEditor>singletonList(new MapType_Editor());
-        case 47:
-          return Collections.<ConceptEditor>singletonList(new MappingType_Editor());
-        case 48:
-          return Collections.<ConceptEditor>singletonList(new MappingsSetOperation_Editor());
-        case 49:
-          return Collections.<ConceptEditor>singletonList(new MultiForEachPair_Editor());
-        case 50:
-          return Collections.<ConceptEditor>singletonList(new MultiForEachStatement_Editor());
-        case 51:
-          return Collections.<ConceptEditor>singletonList(new MultiForEachVariable_Editor());
-        case 52:
-          return Collections.<ConceptEditor>singletonList(new MultiForEachVariableReference_Editor());
-        case 53:
-          return Collections.<ConceptEditor>singletonList(new NoArgumentsSequenceOperation_Editor());
-        case 54:
-          return Collections.<ConceptEditor>singletonList(new OfTypeOperation_Editor());
-        case 55:
-          return Collections.<ConceptEditor>singletonList(new PageOperation_Editor());
-        case 56:
-          return Collections.<ConceptEditor>singletonList(new PutAllOperation_Editor());
-        case 57:
-          return Collections.<ConceptEditor>singletonList(new RemoveAllSetElementsOperation_Editor());
-        case 58:
-          return Collections.<ConceptEditor>singletonList(new RemoveAtElementOperation_Editor());
-        case 59:
-          return Collections.<ConceptEditor>singletonList(new RemoveSetElementOperation_Editor());
-        case 60:
-          return Collections.<ConceptEditor>singletonList(new SequenceCreator_Editor());
-        case 61:
-          return Collections.<ConceptEditor>singletonList(new SequenceOperation_Editor());
-        case 62:
-          return Collections.<ConceptEditor>singletonList(new SequenceType_Editor());
-        case 63:
-          return Collections.<ConceptEditor>singletonList(new SetElementOperation_Editor());
-        case 64:
-          return Collections.<ConceptEditor>singletonList(new SetType_Editor());
-        case 65:
-          return Collections.<ConceptEditor>singletonList(new SingleArgumentSequenceOperation_Editor());
-        case 66:
-          return Collections.<ConceptEditor>singletonList(new SingletonSequenceCreator_Editor());
-        case 67:
-          return Collections.<ConceptEditor>singletonList(new SkipOperation_Editor());
-        case 68:
-          return Collections.<ConceptEditor>singletonList(new SkipStatement_Editor());
-        case 69:
-          return Collections.<ConceptEditor>singletonList(new SmartClosureParameterDeclaration_Editor());
-        case 70:
-          return Collections.<ConceptEditor>singletonList(new SortDirection_Editor());
-        case 71:
-          return Collections.<ConceptEditor>singletonList(new SortOperation_Editor());
-        case 72:
-          return Collections.<ConceptEditor>singletonList(new StopStatement_Editor());
-        case 73:
-          return Collections.<ConceptEditor>singletonList(new SubListOperation_Editor());
-        case 74:
-          return Collections.<ConceptEditor>singletonList(new SubMapOperation_Editor());
-        case 75:
-          return Collections.<ConceptEditor>singletonList(new SubSetOperation_Editor());
-        case 76:
-          return Collections.<ConceptEditor>singletonList(new TailListOperation_Editor());
-        case 77:
-          return Collections.<ConceptEditor>singletonList(new TailMapOperation_Editor());
-        case 78:
-          return Collections.<ConceptEditor>singletonList(new TailSetOperation_Editor());
-        case 79:
-          return Collections.<ConceptEditor>singletonList(new TakeOperation_Editor());
-        case 80:
-          return Collections.<ConceptEditor>singletonList(new ToIteratorOperation_Editor());
-        case 81:
-          return Collections.<ConceptEditor>singletonList(new ToListOperation_Editor());
-        case 82:
-          return Collections.<ConceptEditor>singletonList(new TreeSetCreator_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractContainerCreator_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AbstractContainerType_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new AbstractEnumeratorOperation_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new AbstractIteratorOperation_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new AbstractMappingOperation_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new AddAllSetElementsOperation_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new AddSetElementOperation_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new AllConstant_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new AsSequenceOperation_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new ChunkOperation_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new ClearSetOperation_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new ComparatorSortOperation_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new ContainsKeyOperation_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new ContainsValueOperation_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new CustomContainerCreator_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new CustomContainerDeclaration_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new CustomContainers_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new CustomMapCreator_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new DowncastExpression_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new EnumeratorType_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new FoldLeftOperation_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new FoldRightOperation_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new ForEachStatement_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new ForEachVariable_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new ForEachVariableReference_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new GetKeysOperation_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new GetValuesOperation_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new HashMapCreator_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new HeadListOperation_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new HeadMapOperation_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new HeadSetOperation_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new InsertElementOperation_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new InternalSequenceOperation_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new IteratorType_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new JoinOperation_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new LinkedHashMapCreator_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new ListElementAccessExpression_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new ListType_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new MapAsSequenceVarRef_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new MapClearOperation_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new MapElement_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new MapEntry_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new MapInitializer_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new MapOperationExpression_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new MapRemoveOperation_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new MapType_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new MappingType_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new MappingsSetOperation_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new MultiForEachPair_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new MultiForEachStatement_Editor());
+      case 51:
+        return Collections.<ConceptEditor>singletonList(new MultiForEachVariable_Editor());
+      case 52:
+        return Collections.<ConceptEditor>singletonList(new MultiForEachVariableReference_Editor());
+      case 53:
+        return Collections.<ConceptEditor>singletonList(new NoArgumentsSequenceOperation_Editor());
+      case 54:
+        return Collections.<ConceptEditor>singletonList(new OfTypeOperation_Editor());
+      case 55:
+        return Collections.<ConceptEditor>singletonList(new PageOperation_Editor());
+      case 56:
+        return Collections.<ConceptEditor>singletonList(new PutAllOperation_Editor());
+      case 57:
+        return Collections.<ConceptEditor>singletonList(new RemoveAllSetElementsOperation_Editor());
+      case 58:
+        return Collections.<ConceptEditor>singletonList(new RemoveAtElementOperation_Editor());
+      case 59:
+        return Collections.<ConceptEditor>singletonList(new RemoveSetElementOperation_Editor());
+      case 60:
+        return Collections.<ConceptEditor>singletonList(new SequenceCreator_Editor());
+      case 61:
+        return Collections.<ConceptEditor>singletonList(new SequenceOperation_Editor());
+      case 62:
+        return Collections.<ConceptEditor>singletonList(new SequenceType_Editor());
+      case 63:
+        return Collections.<ConceptEditor>singletonList(new SetElementOperation_Editor());
+      case 64:
+        return Collections.<ConceptEditor>singletonList(new SetType_Editor());
+      case 65:
+        return Collections.<ConceptEditor>singletonList(new SingleArgumentSequenceOperation_Editor());
+      case 66:
+        return Collections.<ConceptEditor>singletonList(new SingletonSequenceCreator_Editor());
+      case 67:
+        return Collections.<ConceptEditor>singletonList(new SkipOperation_Editor());
+      case 68:
+        return Collections.<ConceptEditor>singletonList(new SkipStatement_Editor());
+      case 69:
+        return Collections.<ConceptEditor>singletonList(new SmartClosureParameterDeclaration_Editor());
+      case 70:
+        return Collections.<ConceptEditor>singletonList(new SortDirection_Editor());
+      case 71:
+        return Collections.<ConceptEditor>singletonList(new SortOperation_Editor());
+      case 72:
+        return Collections.<ConceptEditor>singletonList(new StopStatement_Editor());
+      case 73:
+        return Collections.<ConceptEditor>singletonList(new SubListOperation_Editor());
+      case 74:
+        return Collections.<ConceptEditor>singletonList(new SubMapOperation_Editor());
+      case 75:
+        return Collections.<ConceptEditor>singletonList(new SubSetOperation_Editor());
+      case 76:
+        return Collections.<ConceptEditor>singletonList(new TailListOperation_Editor());
+      case 77:
+        return Collections.<ConceptEditor>singletonList(new TailMapOperation_Editor());
+      case 78:
+        return Collections.<ConceptEditor>singletonList(new TailSetOperation_Editor());
+      case 79:
+        return Collections.<ConceptEditor>singletonList(new TakeOperation_Editor());
+      case 80:
+        return Collections.<ConceptEditor>singletonList(new ToIteratorOperation_Editor());
+      case 81:
+        return Collections.<ConceptEditor>singletonList(new ToListOperation_Editor());
+      case 82:
+        return Collections.<ConceptEditor>singletonList(new TreeSetCreator_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new AbstractContainerCreator_Component());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new AbstractContainerCreator_Component());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.baseLanguage.collections.editor.CustomMapCreator_component".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new CustomMapCreator_component());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.baseLanguage.collections.editor.CustomMapCreator_component".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new CustomMapCreator_component());
           }
-          break;
-        case 2:
-          if (true) {
-            if ("jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new HashMapCreator_editorComponent());
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          if ("jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new HashMapCreator_editorComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -230,87 +226,83 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new Expression_default_RTransform_Contribution());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new HashMapCreator_TransformationMenu());
-        case 2:
-          return Collections.<TransformationMenu>singletonList(new JoinOperation_TransformationMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new Expression_default_RTransform_Contribution());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new HashMapCreator_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new JoinOperation_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new AbstractContainerCreator_add_elementType()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new AbstractContainerCreator_ext_1_RTransform_Menu()});
-              case 2:
-                return Arrays.asList(new TransformationMenu[]{new add_initSize_to_container_creator()});
-              case 3:
-                return Arrays.asList(new TransformationMenu[]{new add_parameters_to_container_creator()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new AbstractContainerCreator_add_elementType()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new AbstractContainerCreator_ext_1_RTransform_Menu()});
+            case 2:
+              return Arrays.asList(new TransformationMenu[]{new add_initSize_to_container_creator()});
+            case 3:
+              return Arrays.asList(new TransformationMenu[]{new add_parameters_to_container_creator()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new BLC_rtansform()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new downcast_expression()});
-              case 2:
-                return Arrays.asList(new TransformationMenu[]{new list_element_access_rtransform()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new BLC_rtansform()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new downcast_expression()});
+            case 2:
+              return Arrays.asList(new TransformationMenu[]{new list_element_access_rtransform()});
+            default:
           }
-          break;
-        case 2:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new HashMapCreator_add_keyType_valueType()});
-              case 1:
-                return Arrays.asList(new TransformationMenu[]{new add_initSize_to_hashmap_creator()});
-              case 2:
-                return Arrays.asList(new TransformationMenu[]{new map_creator_add_initializer()});
-              default:
-            }
+        }
+        break;
+      case 2:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new HashMapCreator_add_keyType_valueType()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new add_initSize_to_hashmap_creator()});
+            case 2:
+              return Arrays.asList(new TransformationMenu[]{new map_creator_add_initializer()});
+            default:
           }
-          break;
-        case 3:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new sequenceType_addElementType()});
-              default:
-            }
+        }
+        break;
+      case 3:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new sequenceType_addElementType()});
+            default:
           }
-          break;
-        case 4:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new add_comparator_to_treeset_creator()});
-              default:
-            }
+        }
+        break;
+      case 4:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new add_comparator_to_treeset_creator()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -318,100 +310,96 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0g.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractEnumeratorOperation_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new AbstractIteratorOperation_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new AbstractMappingOperation_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new AddAllSetElementsOperation_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new AddSetElementOperation_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new AsSequenceOperation_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new DowncastExpression_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new IApplicableToDeque_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new IApplicableToList_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new IApplicableToNothing_SubstituteMenu());
-        case 11:
-          return Collections.<SubstituteMenu>singletonList(new IContainerOperation_SubstituteMenu());
-        case 12:
-          return Collections.<SubstituteMenu>singletonList(new IListOperation_SubstituteMenu());
-        case 13:
-          return Collections.<SubstituteMenu>singletonList(new IOperation_Contribution());
-        case 14:
-          return Collections.<SubstituteMenu>singletonList(new LinkedListCreator_SubstituteMenu());
-        case 15:
-          return Collections.<SubstituteMenu>singletonList(new MapElement_SubstituteMenu());
-        case 16:
-          return Collections.<SubstituteMenu>singletonList(new MapOperation_SubstituteMenu());
-        case 17:
-          return Collections.<SubstituteMenu>singletonList(new MapOperationExpression_SubstituteMenu());
-        case 18:
-          return Collections.<SubstituteMenu>singletonList(new RemoveAllSetElementsOperation_SubstituteMenu());
-        case 19:
-          return Collections.<SubstituteMenu>singletonList(new RemoveOperation_SubstituteMenu());
-        case 20:
-          return Collections.<SubstituteMenu>singletonList(new RemoveSetElementOperation_SubstituteMenu());
-        case 21:
-          return Collections.<SubstituteMenu>singletonList(new SequenceOperation_SubstituteMenu());
-        case 22:
-          return Collections.<SubstituteMenu>singletonList(new SkipStatement_SubstituteMenu());
-        case 23:
-          return Collections.<SubstituteMenu>singletonList(new SortDirection_SubstituteMenu());
-        case 24:
-          return Collections.<SubstituteMenu>singletonList(new StopStatement_SubstituteMenu());
-        case 25:
-          return Collections.<SubstituteMenu>singletonList(new ToIteratorOperation_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractEnumeratorOperation_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new AbstractIteratorOperation_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new AbstractMappingOperation_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new AddAllSetElementsOperation_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new AddSetElementOperation_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new AsSequenceOperation_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new DowncastExpression_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new Expression_Contribution());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new IApplicableToDeque_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new IApplicableToList_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new IApplicableToNothing_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new IContainerOperation_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new IListOperation_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new IOperation_Contribution());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new LinkedListCreator_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new MapElement_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new MapOperation_SubstituteMenu());
+      case 17:
+        return Collections.<SubstituteMenu>singletonList(new MapOperationExpression_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new RemoveAllSetElementsOperation_SubstituteMenu());
+      case 19:
+        return Collections.<SubstituteMenu>singletonList(new RemoveOperation_SubstituteMenu());
+      case 20:
+        return Collections.<SubstituteMenu>singletonList(new RemoveSetElementOperation_SubstituteMenu());
+      case 21:
+        return Collections.<SubstituteMenu>singletonList(new SequenceOperation_SubstituteMenu());
+      case 22:
+        return Collections.<SubstituteMenu>singletonList(new SkipStatement_SubstituteMenu());
+      case 23:
+        return Collections.<SubstituteMenu>singletonList(new SortDirection_SubstituteMenu());
+      case 24:
+        return Collections.<SubstituteMenu>singletonList(new StopStatement_SubstituteMenu());
+      case 25:
+        return Collections.<SubstituteMenu>singletonList(new ToIteratorOperation_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      switch (index_xbvbvu_a0h.index(cncpt)) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a0a7, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new BLC_substitute()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new subs_AllConstant()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0h.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new BLC_substitute()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new subs_AllConstant()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a0a7, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_ArrayType()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_IteratorType()});
-              case 2:
-                return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_MappingType()});
-              case 3:
-                return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_SequenceType()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_ArrayType()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_IteratorType()});
+            case 2:
+              return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_MappingType()});
+            case 3:
+              return Arrays.asList(new SubstituteMenu[]{new substitute_IOperation_SequenceType()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
@@ -423,11 +411,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020925ee9L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f00ef75L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6ea9ddcL), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d969dca87L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9514ebd8L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c92e6703L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11df825e596L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eefbL), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eef8L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc4d808L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc7e7efL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11daf69a138L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117aea47a16L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117ae10e4d9L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d96b14ae4L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120becad360L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d968cae32L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d16b423daL), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d17046bf4L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11914e10330L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).seal();
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_add_elementType", "jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_ext_1_RTransform_Menu", "jetbrains.mps.baseLanguage.collections.editor.add_initSize_to_container_creator", "jetbrains.mps.baseLanguage.collections.editor.add_parameters_to_container_creator"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform", "jetbrains.mps.baseLanguage.collections.editor.downcast_expression", "jetbrains.mps.baseLanguage.collections.editor.list_element_access_rtransform"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a0a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_add_keyType_valueType", "jetbrains.mps.baseLanguage.collections.editor.add_initSize_to_hashmap_creator", "jetbrains.mps.baseLanguage.collections.editor.map_creator_add_initializer"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a0a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.sequenceType_addElementType"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a0a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.add_comparator_to_treeset_creator"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a0a7 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.BLC_substitute", "jetbrains.mps.baseLanguage.collections.editor.subs_AllConstant"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a0a7 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_ArrayType", "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType", "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType", "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_add_elementType", "jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_ext_1_RTransform_Menu", "jetbrains.mps.baseLanguage.collections.editor.add_initSize_to_container_creator", "jetbrains.mps.baseLanguage.collections.editor.add_parameters_to_container_creator"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform", "jetbrains.mps.baseLanguage.collections.editor.downcast_expression", "jetbrains.mps.baseLanguage.collections.editor.list_element_access_rtransform"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_add_keyType_valueType", "jetbrains.mps.baseLanguage.collections.editor.add_initSize_to_hashmap_creator", "jetbrains.mps.baseLanguage.collections.editor.map_creator_add_initializer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.sequenceType_addElementType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a5 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.add_comparator_to_treeset_creator"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a7 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.BLC_substitute", "jetbrains.mps.baseLanguage.collections.editor.subs_AllConstant"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a7 = new String[]{"jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_ArrayType", "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType", "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType", "jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType"};
 }

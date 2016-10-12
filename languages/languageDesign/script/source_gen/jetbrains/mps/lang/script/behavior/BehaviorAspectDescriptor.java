@@ -27,30 +27,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0m.index(cncpt)) {
-        case 0:
-          return myAbstractClassifierSpecification__BehaviorDescriptor;
-        case 1:
-          return myAbstractMethodSpecification__BehaviorDescriptor;
-        case 2:
-          return myDirectClassifierSpecification__BehaviorDescriptor;
-        case 3:
-          return myDirectMethodSpecification__BehaviorDescriptor;
-        case 4:
-          return myFQNameClassifierSpecification__BehaviorDescriptor;
-        case 5:
-          return myFQNameMethodSpecification__BehaviorDescriptor;
-        case 6:
-          return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
-        case 7:
-          return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
-        case 8:
-          return myPullUpMethod__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0m.index(cncpt)) {
+      case 0:
+        return myAbstractClassifierSpecification__BehaviorDescriptor;
+      case 1:
+        return myAbstractMethodSpecification__BehaviorDescriptor;
+      case 2:
+        return myDirectClassifierSpecification__BehaviorDescriptor;
+      case 3:
+        return myDirectMethodSpecification__BehaviorDescriptor;
+      case 4:
+        return myFQNameClassifierSpecification__BehaviorDescriptor;
+      case 5:
+        return myFQNameMethodSpecification__BehaviorDescriptor;
+      case 6:
+        return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
+      case 7:
+        return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
+      case 8:
+        return myPullUpMethod__BehaviorDescriptor;
+      default:
     }
     return null;
   }

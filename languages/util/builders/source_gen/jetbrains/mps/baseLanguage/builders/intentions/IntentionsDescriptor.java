@@ -29,28 +29,25 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: ClassCreator 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertToBeanBuilder_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: SimpleBuilderDeclaration 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new ChangeRoot_Intention();
-            intentions[1] = new ChangeLeaf_Intention();
-            intentions[2] = new ChangeAbstract_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: ClassCreator 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertToBeanBuilder_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: SimpleBuilderDeclaration 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new ChangeRoot_Intention();
+          intentions[1] = new ChangeLeaf_Intention();
+          intentions[2] = new ChangeAbstract_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

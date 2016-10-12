@@ -17,60 +17,57 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new BinaryRegexp_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new FindMatchExpression_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new FindMatchStatement_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new ForEachMatchStatement_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new InlineRegexpExpression_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new LookRegexp_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchParensRegexp_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpExpression_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpOperation_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpStatement_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReference_DataFlow());
-        case 11:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceRegexp_DataFlow());
-        case 12:
-          return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceReplacement_DataFlow());
-        case 13:
-          return Collections.<IDataFlowBuilder>singletonList(new ParensRegexp_DataFlow());
-        case 14:
-          return Collections.<IDataFlowBuilder>singletonList(new Regexp_DataFlow());
-        case 15:
-          return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclaration_DataFlow());
-        case 16:
-          return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclarationReferenceRegexp_DataFlow());
-        case 17:
-          return Collections.<IDataFlowBuilder>singletonList(new RegexpExpression_DataFlow());
-        case 18:
-          return Collections.<IDataFlowBuilder>singletonList(new Regexps_DataFlow());
-        case 19:
-          return Collections.<IDataFlowBuilder>singletonList(new ReplaceRegexpOperation_DataFlow());
-        case 20:
-          return Collections.<IDataFlowBuilder>singletonList(new ReplaceWithRegexpOperation_DataFlow());
-        case 21:
-          return Collections.<IDataFlowBuilder>singletonList(new SplitOperation_DataFlow());
-        case 22:
-          return Collections.<IDataFlowBuilder>singletonList(new SymbolClassRegexp_DataFlow());
-        case 23:
-          return Collections.<IDataFlowBuilder>singletonList(new UnaryRegexp_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new BinaryRegexp_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new FindMatchExpression_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new FindMatchStatement_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new ForEachMatchStatement_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new InlineRegexpExpression_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new LookRegexp_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchParensRegexp_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpExpression_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpOperation_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchRegexpStatement_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReference_DataFlow());
+      case 11:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceRegexp_DataFlow());
+      case 12:
+        return Collections.<IDataFlowBuilder>singletonList(new MatchVariableReferenceReplacement_DataFlow());
+      case 13:
+        return Collections.<IDataFlowBuilder>singletonList(new ParensRegexp_DataFlow());
+      case 14:
+        return Collections.<IDataFlowBuilder>singletonList(new Regexp_DataFlow());
+      case 15:
+        return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclaration_DataFlow());
+      case 16:
+        return Collections.<IDataFlowBuilder>singletonList(new RegexpDeclarationReferenceRegexp_DataFlow());
+      case 17:
+        return Collections.<IDataFlowBuilder>singletonList(new RegexpExpression_DataFlow());
+      case 18:
+        return Collections.<IDataFlowBuilder>singletonList(new Regexps_DataFlow());
+      case 19:
+        return Collections.<IDataFlowBuilder>singletonList(new ReplaceRegexpOperation_DataFlow());
+      case 20:
+        return Collections.<IDataFlowBuilder>singletonList(new ReplaceWithRegexpOperation_DataFlow());
+      case 21:
+        return Collections.<IDataFlowBuilder>singletonList(new SplitOperation_DataFlow());
+      case 22:
+        return Collections.<IDataFlowBuilder>singletonList(new SymbolClassRegexp_DataFlow());
+      case 23:
+        return Collections.<IDataFlowBuilder>singletonList(new UnaryRegexp_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

@@ -15,47 +15,45 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new ArithmeticSimpleMathExpression_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new LogicalSimpleMathExpression_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new NotSimpleMathExpression_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathAssignment_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanConstant_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanType_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathElementType_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathFloatConstant_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathFloatType_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerConstant_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerType_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathLongConstant_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathLongType_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathNumberType_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathTypedVarDeclaration_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathVarDeclaration_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathVarReference_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new SimpleMathWrapper_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ArithmeticSimpleMathExpression_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new LogicalSimpleMathExpression_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new NotSimpleMathExpression_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathAssignment_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanConstant_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathBooleanType_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathElementType_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathFloatConstant_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathFloatType_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerConstant_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathIntegerType_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathLongConstant_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathLongType_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathNumberType_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathTypedVarDeclaration_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathVarDeclaration_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathVarReference_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new SimpleMathWrapper_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

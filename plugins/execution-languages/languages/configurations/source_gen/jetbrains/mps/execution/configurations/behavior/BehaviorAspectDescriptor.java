@@ -33,42 +33,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0s.index(cncpt)) {
-        case 0:
-          return myAbstractRunConfigurationExecutor__BehaviorDescriptor;
-        case 1:
-          return myBeforeTask__BehaviorDescriptor;
-        case 2:
-          return myBeforeTaskParameter__BehaviorDescriptor;
-        case 3:
-          return myBeforeTaskParameterReference__BehaviorDescriptor;
-        case 4:
-          return myConfigurationFromExecutorReference__BehaviorDescriptor;
-        case 5:
-          return myConsoleType__BehaviorDescriptor;
-        case 6:
-          return myCreate_ConceptFunction__BehaviorDescriptor;
-        case 7:
-          return myExecuteBeforeTask_ConceptFunction__BehaviorDescriptor;
-        case 8:
-          return myExecuteConfiguration_Function__BehaviorDescriptor;
-        case 9:
-          return myRunConfiguration__BehaviorDescriptor;
-        case 10:
-          return myRunConfigurationExecutor__BehaviorDescriptor;
-        case 11:
-          return myRunConfigurationKind__BehaviorDescriptor;
-        case 12:
-          return myRunConfigurationProducer__BehaviorDescriptor;
-        case 13:
-          return myRunConfigurationProducerPart__BehaviorDescriptor;
-        case 14:
-          return myStartProcessHandlerStatement__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0s.index(cncpt)) {
+      case 0:
+        return myAbstractRunConfigurationExecutor__BehaviorDescriptor;
+      case 1:
+        return myBeforeTask__BehaviorDescriptor;
+      case 2:
+        return myBeforeTaskParameter__BehaviorDescriptor;
+      case 3:
+        return myBeforeTaskParameterReference__BehaviorDescriptor;
+      case 4:
+        return myConfigurationFromExecutorReference__BehaviorDescriptor;
+      case 5:
+        return myConsoleType__BehaviorDescriptor;
+      case 6:
+        return myCreate_ConceptFunction__BehaviorDescriptor;
+      case 7:
+        return myExecuteBeforeTask_ConceptFunction__BehaviorDescriptor;
+      case 8:
+        return myExecuteConfiguration_Function__BehaviorDescriptor;
+      case 9:
+        return myRunConfiguration__BehaviorDescriptor;
+      case 10:
+        return myRunConfigurationExecutor__BehaviorDescriptor;
+      case 11:
+        return myRunConfigurationKind__BehaviorDescriptor;
+      case 12:
+        return myRunConfigurationProducer__BehaviorDescriptor;
+      case 13:
+        return myRunConfigurationProducerPart__BehaviorDescriptor;
+      case 14:
+        return myStartProcessHandlerStatement__BehaviorDescriptor;
+      default:
     }
     return null;
   }

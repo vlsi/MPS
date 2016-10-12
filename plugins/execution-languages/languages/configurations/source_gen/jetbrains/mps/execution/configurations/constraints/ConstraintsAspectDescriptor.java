@@ -16,38 +16,35 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new AbstractRunConfigurationExecutor_Constraints();
-        case 1:
-          return new BeforeTaskParameterReference_Constraints();
-        case 2:
-          return new ConfigurationFromExecutorReference_Constraints();
-        case 3:
-          return new ContextExpression_Constraints();
-        case 4:
-          return new Create_ConceptFunction_Constraints();
-        case 5:
-          return new EnvironmentExpression_Constraints();
-        case 6:
-          return new GetProjectOperation_Constraints();
-        case 7:
-          return new RunConfigurationCreator_Constraints();
-        case 8:
-          return new RunConfigurationExecutor_Constraints();
-        case 9:
-          return new RunConfigurationProducer_Constraints();
-        case 10:
-          return new RunConfigurationProducerPart_Constraints();
-        case 11:
-          return new RunConfigurationSource_Constraints();
-        case 12:
-          return new StartProcessHandlerStatement_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new AbstractRunConfigurationExecutor_Constraints();
+      case 1:
+        return new BeforeTaskParameterReference_Constraints();
+      case 2:
+        return new ConfigurationFromExecutorReference_Constraints();
+      case 3:
+        return new ContextExpression_Constraints();
+      case 4:
+        return new Create_ConceptFunction_Constraints();
+      case 5:
+        return new EnvironmentExpression_Constraints();
+      case 6:
+        return new GetProjectOperation_Constraints();
+      case 7:
+        return new RunConfigurationCreator_Constraints();
+      case 8:
+        return new RunConfigurationExecutor_Constraints();
+      case 9:
+        return new RunConfigurationProducer_Constraints();
+      case 10:
+        return new RunConfigurationProducerPart_Constraints();
+      case 11:
+        return new RunConfigurationSource_Constraints();
+      case 12:
+        return new StartProcessHandlerStatement_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

@@ -33,42 +33,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0s.index(cncpt)) {
-        case 0:
-          return myXMLSAXAttributeHandler__BehaviorDescriptor;
-        case 1:
-          return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
-        case 2:
-          return myXMLSAXChildHandler__BehaviorDescriptor;
-        case 3:
-          return myXMLSAXChildRule__BehaviorDescriptor;
-        case 4:
-          return myXMLSAXChildRuleCondition__BehaviorDescriptor;
-        case 5:
-          return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
-        case 6:
-          return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
-        case 7:
-          return myXMLSAXFieldReference__BehaviorDescriptor;
-        case 8:
-          return myXMLSAXHandlerFunction__BehaviorDescriptor;
-        case 9:
-          return myXMLSAXNodeCreator__BehaviorDescriptor;
-        case 10:
-          return myXMLSAXNodeRule__BehaviorDescriptor;
-        case 11:
-          return myXMLSAXNodeValidator__BehaviorDescriptor;
-        case 12:
-          return myXMLSAXParser__BehaviorDescriptor;
-        case 13:
-          return myXMLSAXTextHandler__BehaviorDescriptor;
-        case 14:
-          return myXMLSAXTextHandler_value__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0s.index(cncpt)) {
+      case 0:
+        return myXMLSAXAttributeHandler__BehaviorDescriptor;
+      case 1:
+        return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
+      case 2:
+        return myXMLSAXChildHandler__BehaviorDescriptor;
+      case 3:
+        return myXMLSAXChildRule__BehaviorDescriptor;
+      case 4:
+        return myXMLSAXChildRuleCondition__BehaviorDescriptor;
+      case 5:
+        return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
+      case 6:
+        return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
+      case 7:
+        return myXMLSAXFieldReference__BehaviorDescriptor;
+      case 8:
+        return myXMLSAXHandlerFunction__BehaviorDescriptor;
+      case 9:
+        return myXMLSAXNodeCreator__BehaviorDescriptor;
+      case 10:
+        return myXMLSAXNodeRule__BehaviorDescriptor;
+      case 11:
+        return myXMLSAXNodeValidator__BehaviorDescriptor;
+      case 12:
+        return myXMLSAXParser__BehaviorDescriptor;
+      case 13:
+        return myXMLSAXTextHandler__BehaviorDescriptor;
+      case 14:
+        return myXMLSAXTextHandler_value__BehaviorDescriptor;
+      default:
     }
     return null;
   }

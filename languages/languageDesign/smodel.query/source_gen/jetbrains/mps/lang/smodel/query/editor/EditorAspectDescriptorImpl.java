@@ -17,51 +17,47 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new CustomScope_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ModelScope_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ModulesScope_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new QueryExpression_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new QueryParameterList_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new QueryParameterScope_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ScopeParameter_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new WithStatement_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CustomScope_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ModelScope_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ModulesScope_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new QueryExpression_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new QueryParameterList_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new QueryParameterScope_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ScopeParameter_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new WithStatement_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.lang.smodel.query.editor.QueryExpression_EditorComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new QueryExpression_EditorComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.lang.smodel.query.editor.QueryExpression_EditorComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new QueryExpression_EditorComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -69,35 +65,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractPrintExpression_old_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new BLCommand_old_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new BLExpression_old_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new GlobalScope_old_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new PrintExpression_old_SubstituteMenu());
-        case 5:
-          return Collections.<SubstituteMenu>singletonList(new PrintNodeExpression_old_SubstituteMenu());
-        case 6:
-          return Collections.<SubstituteMenu>singletonList(new PrintNodeReferenceExpression_old_SubstituteMenu());
-        case 7:
-          return Collections.<SubstituteMenu>singletonList(new PrintSequenceExpression_old_SubstituteMenu());
-        case 8:
-          return Collections.<SubstituteMenu>singletonList(new PrintTextExpression_old_SubstituteMenu());
-        case 9:
-          return Collections.<SubstituteMenu>singletonList(new ProjectExpression_old_SubstituteMenu());
-        case 10:
-          return Collections.<SubstituteMenu>singletonList(new ProjectScope_old_SubstituteMenu());
-        case 11:
-          return Collections.<SubstituteMenu>singletonList(new ShowExpression_old_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractPrintExpression_old_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new BLCommand_old_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new BLExpression_old_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new GlobalScope_old_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new PrintExpression_old_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new PrintNodeExpression_old_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new PrintNodeReferenceExpression_old_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new PrintSequenceExpression_old_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new PrintTextExpression_old_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new ProjectExpression_old_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new ProjectScope_old_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new ShowExpression_old_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

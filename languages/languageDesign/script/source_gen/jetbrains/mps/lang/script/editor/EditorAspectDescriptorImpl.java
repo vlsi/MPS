@@ -16,33 +16,31 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new CommentMigrationScriptPart_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new DirectClassifierSpecification_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new DirectMethodSpecification_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ExtractInterfaceMigration_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new FQNameClassifierSpecification_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new FQNameMethodSpecification_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new FactoryMigrationScriptPart_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new MigrationScriptPart_Instance_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new PullUpMethod_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new WhitespaceMigrationScriptPart_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CommentMigrationScriptPart_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new DirectClassifierSpecification_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new DirectMethodSpecification_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ExtractInterfaceMigration_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new FQNameClassifierSpecification_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new FQNameMethodSpecification_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new FactoryMigrationScriptPart_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new MigrationScriptPart_Instance_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new PullUpMethod_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new WhitespaceMigrationScriptPart_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -51,13 +49,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new MigrationScriptPart_node_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new MigrationScriptPart_node_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

@@ -17,29 +17,27 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new IndexedTupleLiteral_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new IndexedTupleMemberAccessExpression_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new IndexedTupleType_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new NamedTupleComponentAccessOperation_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new NamedTupleComponentDeclaration_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new NamedTupleComponentReference_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new NamedTupleDeclaration_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new NamedTupleLiteral_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new NamedTupleType_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new IndexedTupleLiteral_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new IndexedTupleMemberAccessExpression_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new IndexedTupleType_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new NamedTupleComponentAccessOperation_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new NamedTupleComponentDeclaration_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new NamedTupleComponentReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new NamedTupleDeclaration_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new NamedTupleLiteral_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new NamedTupleType_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -48,36 +46,32 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new tuple_member_access_Contribution());
-        case 1:
-          return Collections.<TransformationMenu>singletonList(new NTCD_add_final_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new tuple_member_access_Contribution());
+      case 1:
+        return Collections.<TransformationMenu>singletonList(new NTCD_add_final_Contribution());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new namedTupleDeclaration_extends_Contribution());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new NamedTupleLiteral_Contribution());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new IndexedTupleMemberAccessExpression_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new NamedTupleType_SubstituteMenu());
-        case 4:
-          return Collections.<SubstituteMenu>singletonList(new NamedTupleType_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new namedTupleDeclaration_extends_Contribution());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new NamedTupleLiteral_Contribution());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new IndexedTupleMemberAccessExpression_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new NamedTupleType_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new NamedTupleType_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

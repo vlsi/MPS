@@ -15,25 +15,23 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new HelpURL_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new HelpURL_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

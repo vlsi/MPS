@@ -16,61 +16,57 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.lang.refactoring.editor.RefactoringTarget".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.lang.refactoring.editor.RefactoringTarget".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }

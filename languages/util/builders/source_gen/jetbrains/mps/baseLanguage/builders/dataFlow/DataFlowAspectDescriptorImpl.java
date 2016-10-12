@@ -17,22 +17,19 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new AsBuilderStatement_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new BeanPropertyBuilder_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new BuilderCreator_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new BuilderStatement_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new SimpleBuilderPropertyBuilder_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new AsBuilderStatement_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new BeanPropertyBuilder_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new BuilderCreator_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new BuilderStatement_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new SimpleBuilderPropertyBuilder_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

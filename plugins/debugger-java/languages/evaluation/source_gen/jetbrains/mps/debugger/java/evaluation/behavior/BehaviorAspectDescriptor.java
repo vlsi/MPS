@@ -26,28 +26,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0l.index(cncpt)) {
-        case 0:
-          return myDebuggedType__BehaviorDescriptor;
-        case 1:
-          return myDoNotTransformAnnotation__BehaviorDescriptor;
-        case 2:
-          return myEvaluator__BehaviorDescriptor;
-        case 3:
-          return myEvaluatorConcept__BehaviorDescriptor;
-        case 4:
-          return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
-        case 5:
-          return myIEvaluatorConcept__BehaviorDescriptor;
-        case 6:
-          return myLowLevelVariable__BehaviorDescriptor;
-        case 7:
-          return myUnprocessedAnnotation__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0l.index(cncpt)) {
+      case 0:
+        return myDebuggedType__BehaviorDescriptor;
+      case 1:
+        return myDoNotTransformAnnotation__BehaviorDescriptor;
+      case 2:
+        return myEvaluator__BehaviorDescriptor;
+      case 3:
+        return myEvaluatorConcept__BehaviorDescriptor;
+      case 4:
+        return myEvaluatorsSuperMethodCall__BehaviorDescriptor;
+      case 5:
+        return myIEvaluatorConcept__BehaviorDescriptor;
+      case 6:
+        return myLowLevelVariable__BehaviorDescriptor;
+      case 7:
+        return myUnprocessedAnnotation__BehaviorDescriptor;
+      default:
     }
     return null;
   }

@@ -20,33 +20,31 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("DiagramTestTextual", "Textual presentation for diagram test language.", true, "jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new ConceptEditor[]{new Diagram1_DiagramTestTextual_Editor(), new Diagram1_Editor()});
-        case 1:
-          return Arrays.asList(new ConceptEditor[]{new Diagram2_DiagramTestTextual_Editor(), new Diagram2_Editor()});
-        case 2:
-          return Arrays.asList(new ConceptEditor[]{new InputPort_DiagramTestTextual_Editor(), new InputPort_Editor()});
-        case 3:
-          return Arrays.asList(new ConceptEditor[]{new Node_DiagramTestTextual_Editor(), new Node_Editor()});
-        case 4:
-          return Arrays.asList(new ConceptEditor[]{new NodeWithName_DiagramTestTextual_Editor(), new NodeWithName_Editor()});
-        case 5:
-          return Arrays.asList(new ConceptEditor[]{new NodeWithPortQueries_DiagramTestTextual_Editor(), new NodeWithPortQueries_Editor()});
-        case 6:
-          return Arrays.asList(new ConceptEditor[]{new NodeWithPorts_DiagramTestTextual_Editor(), new NodeWithPorts_Editor()});
-        case 7:
-          return Arrays.asList(new ConceptEditor[]{new NodeWithSize_DiagramTestTextual_Editor(), new NodeWithSize_Editor()});
-        case 8:
-          return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
-        case 9:
-          return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
-        case 10:
-          return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new ConceptEditor[]{new Diagram1_DiagramTestTextual_Editor(), new Diagram1_Editor()});
+      case 1:
+        return Arrays.asList(new ConceptEditor[]{new Diagram2_DiagramTestTextual_Editor(), new Diagram2_Editor()});
+      case 2:
+        return Arrays.asList(new ConceptEditor[]{new InputPort_DiagramTestTextual_Editor(), new InputPort_Editor()});
+      case 3:
+        return Arrays.asList(new ConceptEditor[]{new Node_DiagramTestTextual_Editor(), new Node_Editor()});
+      case 4:
+        return Arrays.asList(new ConceptEditor[]{new NodeWithName_DiagramTestTextual_Editor(), new NodeWithName_Editor()});
+      case 5:
+        return Arrays.asList(new ConceptEditor[]{new NodeWithPortQueries_DiagramTestTextual_Editor(), new NodeWithPortQueries_Editor()});
+      case 6:
+        return Arrays.asList(new ConceptEditor[]{new NodeWithPorts_DiagramTestTextual_Editor(), new NodeWithPorts_Editor()});
+      case 7:
+        return Arrays.asList(new ConceptEditor[]{new NodeWithSize_DiagramTestTextual_Editor(), new NodeWithSize_Editor()});
+      case 8:
+        return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
+      case 9:
+        return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
+      case 10:
+        return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

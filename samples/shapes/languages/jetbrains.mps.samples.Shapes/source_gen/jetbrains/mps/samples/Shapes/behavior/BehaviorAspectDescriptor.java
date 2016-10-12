@@ -23,22 +23,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0i.index(cncpt)) {
-        case 0:
-          return myCanvas__BehaviorDescriptor;
-        case 1:
-          return myCircle__BehaviorDescriptor;
-        case 2:
-          return myColorReference__BehaviorDescriptor;
-        case 3:
-          return myShape__BehaviorDescriptor;
-        case 4:
-          return mySquare__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0i.index(cncpt)) {
+      case 0:
+        return myCanvas__BehaviorDescriptor;
+      case 1:
+        return myCircle__BehaviorDescriptor;
+      case 2:
+        return myColorReference__BehaviorDescriptor;
+      case 3:
+        return myShape__BehaviorDescriptor;
+      case 4:
+        return mySquare__BehaviorDescriptor;
+      default:
     }
     return null;
   }

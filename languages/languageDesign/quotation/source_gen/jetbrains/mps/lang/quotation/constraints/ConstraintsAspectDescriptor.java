@@ -16,30 +16,27 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new AbstractAntiquotation_Constraints();
-        case 1:
-          return new NodeBuilder_Constraints();
-        case 2:
-          return new NodeBuilderExpression_Constraints();
-        case 3:
-          return new NodeBuilderInitLink_Constraints();
-        case 4:
-          return new NodeBuilderInitProperty_Constraints();
-        case 5:
-          return new NodeBuilderList_Constraints();
-        case 6:
-          return new NodeBuilderNode_Constraints();
-        case 7:
-          return new NodeBuilderRef_Constraints();
-        case 8:
-          return new Quotation_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new AbstractAntiquotation_Constraints();
+      case 1:
+        return new NodeBuilder_Constraints();
+      case 2:
+        return new NodeBuilderExpression_Constraints();
+      case 3:
+        return new NodeBuilderInitLink_Constraints();
+      case 4:
+        return new NodeBuilderInitProperty_Constraints();
+      case 5:
+        return new NodeBuilderList_Constraints();
+      case 6:
+        return new NodeBuilderNode_Constraints();
+      case 7:
+        return new NodeBuilderRef_Constraints();
+      case 8:
+        return new Quotation_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

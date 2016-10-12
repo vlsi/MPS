@@ -18,61 +18,59 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AppendOperation_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AttributedNodePart_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ClassConceptUnitContext_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CollectionAppendPart_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new ConceptTextGenDeclaration_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new ConstantStringAppendPart_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new EncodingLiteral_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new FoundErrorOperation_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new IndentPart_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new LanguageTextGenDeclaration_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new LayoutPart_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new NewLineAppendPart_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new NodeAppendPart_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new OperationCall_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new OperationDeclaration_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new ReferenceAppendPart_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new SimpleTextGenOperation_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new StubOperationDeclaration_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new TextUnitLayout_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new UnitContextDeclaration_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new UnitContextObject_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new UnitContextReference_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new UtilityMethodCall_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new UtilityMethodDeclaration_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new WithIndentOperation_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AppendOperation_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AttributedNodePart_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ClassConceptUnitContext_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CollectionAppendPart_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ConceptTextGenDeclaration_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new ConstantStringAppendPart_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new EncodingLiteral_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new FoundErrorOperation_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new IndentPart_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new LanguageTextGenDeclaration_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new LayoutPart_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new NewLineAppendPart_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new NodeAppendPart_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new OperationCall_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new OperationDeclaration_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new ReferenceAppendPart_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new SimpleTextGenOperation_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new StubOperationDeclaration_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new TextUnitLayout_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new UnitContextDeclaration_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new UnitContextObject_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new UnitContextReference_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new UtilityMethodCall_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new UtilityMethodDeclaration_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new WithIndentOperation_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -81,32 +79,28 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new TransformationMenu[]{new CollectionAppendPartWithSeparator(), new addSeparator_Contribution()});
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new TransformationMenu[]{new CollectionAppendPartWithSeparator(), new addSeparator_Contribution()});
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AbstractTextGenParameter_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new ConstantStringAppendPart_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new operationParameters_Contribution());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new StubOperationDeclaration_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AbstractTextGenParameter_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ConstantStringAppendPart_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new operationParameters_Contribution());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new StubOperationDeclaration_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

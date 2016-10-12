@@ -8,7 +8,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.Bean_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.BehaviorAspectDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="InitOp_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.generator.test.crossmodel.property.behavior.InitOp_BehaviorDescriptor" />

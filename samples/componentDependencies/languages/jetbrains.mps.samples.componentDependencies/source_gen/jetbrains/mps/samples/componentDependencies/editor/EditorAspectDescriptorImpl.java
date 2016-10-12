@@ -20,21 +20,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "Diagram View", true, "jetbrains.mps.samples.componentDependencies.editor.views.diagram"), new ConceptEditorHintImpl("table", "Table View", true, "jetbrains.mps.samples.componentDependencies.editor.views.table"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
-        case 1:
-          return Arrays.asList(new ConceptEditor[]{new ComponentSet_Editor(), new ComponentSet_diagram_Editor(), new ComponentSet_table_Editor()});
-        case 2:
-          return Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()});
-        case 3:
-          return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()});
-        case 4:
-          return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()});
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
+      case 1:
+        return Arrays.asList(new ConceptEditor[]{new ComponentSet_Editor(), new ComponentSet_diagram_Editor(), new ComponentSet_table_Editor()});
+      case 2:
+        return Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()});
+      case 3:
+        return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()});
+      case 4:
+        return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()});
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

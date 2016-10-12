@@ -16,32 +16,29 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new LiteralReplacement_Constraints();
-        case 1:
-          return new MatchRegexpOperation_Constraints();
-        case 2:
-          return new MatchVariableReference_Constraints();
-        case 3:
-          return new MatchVariableReferenceRegexp_Constraints();
-        case 4:
-          return new MatchVariableReferenceReplacement_Constraints();
-        case 5:
-          return new PredefinedSymbolClassDeclaration_Constraints();
-        case 6:
-          return new RegexpDeclaration_Constraints();
-        case 7:
-          return new ReplaceRegexpOperation_Constraints();
-        case 8:
-          return new ReplaceWithRegexpOperation_Constraints();
-        case 9:
-          return new StringLiteralRegexp_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new LiteralReplacement_Constraints();
+      case 1:
+        return new MatchRegexpOperation_Constraints();
+      case 2:
+        return new MatchVariableReference_Constraints();
+      case 3:
+        return new MatchVariableReferenceRegexp_Constraints();
+      case 4:
+        return new MatchVariableReferenceReplacement_Constraints();
+      case 5:
+        return new PredefinedSymbolClassDeclaration_Constraints();
+      case 6:
+        return new RegexpDeclaration_Constraints();
+      case 7:
+        return new ReplaceRegexpOperation_Constraints();
+      case 8:
+        return new ReplaceWithRegexpOperation_Constraints();
+      case 9:
+        return new StringLiteralRegexp_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

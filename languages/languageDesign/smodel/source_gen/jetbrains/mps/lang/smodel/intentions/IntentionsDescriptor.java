@@ -29,125 +29,122 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: CastExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertCastToNodeCast_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: CheckedModuleReference 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceWithUncheckedRef_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: ConceptFqNameRefExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConceptName2Concept_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: ConceptNodeType 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConceptNodeType2SConceptType_Intention();
-          }
-          break;
-        case 4:
-          if (true) {
-            // Concept: ConceptRefExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConceptRef2Concept_Intention();
-          }
-          break;
-        case 5:
-          if (true) {
-            // Concept: IfStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddSNodeCastStatement_Intention();
-          }
-          break;
-        case 6:
-          if (true) {
-            // Concept: InstanceOfExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertInstanceofToNodeInstanceof_Intention();
-          }
-          break;
-        case 7:
-          if (true) {
-            // Concept: LinkNameRefExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new LinkName2Link_Intention();
-          }
-          break;
-        case 8:
-          if (true) {
-            // Concept: LinkRefExpression 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new LinkRef2Link_Intention();
-          }
-          break;
-        case 9:
-          if (true) {
-            // Concept: Link_SetTargetOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertLinkSetToAssignment_Intention();
-          }
-          break;
-        case 10:
-          if (true) {
-            // Concept: ListType 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new Replace_ListType_withNodeListType_Intention();
-          }
-          break;
-        case 11:
-          if (true) {
-            // Concept: Node_GetConceptOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertConceptNodeToSCOncept_Intention();
-          }
-          break;
-        case 12:
-          if (true) {
-            // Concept: OperationParm_Concept 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceConceptIsWithConceptEquals_Intention();
-          }
-          break;
-        case 13:
-          if (true) {
-            // Concept: Property_SetOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertPropertySetToAssignment_Intention();
-          }
-          break;
-        case 14:
-          if (true) {
-            // Concept: SNodeOperation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddOperationParameter_Intention();
-          }
-          break;
-        case 15:
-          if (true) {
-            // Concept: SNodeTypeCastExpression 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ChangeAsCast_Intention();
-            intentions[1] = new ConvertCastToSConceptType_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: CastExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertCastToNodeCast_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: CheckedModuleReference 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceWithUncheckedRef_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: ConceptFqNameRefExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConceptName2Concept_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: ConceptNodeType 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConceptNodeType2SConceptType_Intention();
+        }
+        break;
+      case 4:
+        if (true) {
+          // Concept: ConceptRefExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConceptRef2Concept_Intention();
+        }
+        break;
+      case 5:
+        if (true) {
+          // Concept: IfStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddSNodeCastStatement_Intention();
+        }
+        break;
+      case 6:
+        if (true) {
+          // Concept: InstanceOfExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertInstanceofToNodeInstanceof_Intention();
+        }
+        break;
+      case 7:
+        if (true) {
+          // Concept: LinkNameRefExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new LinkName2Link_Intention();
+        }
+        break;
+      case 8:
+        if (true) {
+          // Concept: LinkRefExpression 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new LinkRef2Link_Intention();
+        }
+        break;
+      case 9:
+        if (true) {
+          // Concept: Link_SetTargetOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertLinkSetToAssignment_Intention();
+        }
+        break;
+      case 10:
+        if (true) {
+          // Concept: ListType 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new Replace_ListType_withNodeListType_Intention();
+        }
+        break;
+      case 11:
+        if (true) {
+          // Concept: Node_GetConceptOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertConceptNodeToSCOncept_Intention();
+        }
+        break;
+      case 12:
+        if (true) {
+          // Concept: OperationParm_Concept 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceConceptIsWithConceptEquals_Intention();
+        }
+        break;
+      case 13:
+        if (true) {
+          // Concept: Property_SetOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertPropertySetToAssignment_Intention();
+        }
+        break;
+      case 14:
+        if (true) {
+          // Concept: SNodeOperation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddOperationParameter_Intention();
+        }
+        break;
+      case 15:
+        if (true) {
+          // Concept: SNodeTypeCastExpression 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ChangeAsCast_Intention();
+          intentions[1] = new ConvertCastToSConceptType_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

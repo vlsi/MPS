@@ -16,39 +16,37 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Circle_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new ColorLiteral_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new ConceptIconResourceExpression_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new FileIcon_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new IconExpression_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new IconResourceExpression_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new Image_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new NodeIconResourceExpression_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new OldIconBundle_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new OldIconDeclaration_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new OldIconReference_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new Rect_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new Text_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new TextIcon_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Circle_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ColorLiteral_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ConceptIconResourceExpression_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new FileIcon_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new IconExpression_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new IconResourceExpression_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Image_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new NodeIconResourceExpression_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new OldIconBundle_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new OldIconDeclaration_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new OldIconReference_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new Rect_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new Text_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new TextIcon_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -57,13 +55,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new IconResourceReference_subs_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new IconResourceReference_subs_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

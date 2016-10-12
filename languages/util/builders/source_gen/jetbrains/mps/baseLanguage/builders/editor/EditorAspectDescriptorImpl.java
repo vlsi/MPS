@@ -16,49 +16,47 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AsTypeBuilder_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BeanBuilder_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new BeanPropertyBuilder_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new Builder_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new BuilderCreator_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new BuilderStatement_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new ResultExpression_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilder_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderChild_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderDeclaration_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderExpression_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderExtensionDeclaration_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameter_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameterReference_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderProperty_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyBuilder_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyExpression_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new SimpleBuilders_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AsTypeBuilder_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BeanBuilder_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new BeanPropertyBuilder_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new Builder_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new BuilderCreator_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new BuilderStatement_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ResultExpression_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilder_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderChild_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderDeclaration_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderExpression_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderExtensionDeclaration_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameter_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameterReference_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderProperty_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyBuilder_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyExpression_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new SimpleBuilders_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -67,19 +65,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new AsTypeBuilder_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new Builder_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new BuilderCreator_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new wrappers_Contribution());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new AsTypeBuilder_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new Builder_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new BuilderCreator_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new wrappers_Contribution());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

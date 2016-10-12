@@ -19,64 +19,61 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_t8hmqt_a0c.index(cncpt)) {
-        case 0:
-          return new AuthorBlockDocTag_TextGen();
-        case 1:
-          return new BaseParameterReference_TextGen();
-        case 2:
-          return new ClassifierDocComment_TextGen();
-        case 3:
-          return new ClassifierDocReference_TextGen();
-        case 4:
-          return new CodeInlineDocTag_TextGen();
-        case 5:
-          return new CodeSnippet_TextGen();
-        case 6:
-          return new CommentLine_TextGen();
-        case 7:
-          return new DeprecatedBlockDocTag_TextGen();
-        case 8:
-          return new DocTypeParameterReference_TextGen();
-        case 9:
-          return new FieldDocComment_TextGen();
-        case 10:
-          return new FieldDocReference_TextGen();
-        case 11:
-          return new HTMLElement_TextGen();
-        case 12:
-          return new InheritDocInlineDocTag_TextGen();
-        case 13:
-          return new InlineTagCommentLinePart_TextGen();
-        case 14:
-          return new LinkInlineDocTag_TextGen();
-        case 15:
-          return new MethodDocComment_TextGen();
-        case 16:
-          return new MethodDocReference_TextGen();
-        case 17:
-          return new ParameterBlockDocTag_TextGen();
-        case 18:
-          return new ReturnBlockDocTag_TextGen();
-        case 19:
-          return new SeeBlockDocTag_TextGen();
-        case 20:
-          return new SinceBlockDocTag_TextGen();
-        case 21:
-          return new StaticFieldDocReference_TextGen();
-        case 22:
-          return new TextCommentLinePart_TextGen();
-        case 23:
-          return new ThrowsBlockDocTag_TextGen();
-        case 24:
-          return new ValueInlineDocTag_TextGen();
-        case 25:
-          return new VersionBlockDocTag_TextGen();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_t8hmqt_a0c.index(cncpt)) {
+      case 0:
+        return new AuthorBlockDocTag_TextGen();
+      case 1:
+        return new BaseParameterReference_TextGen();
+      case 2:
+        return new ClassifierDocComment_TextGen();
+      case 3:
+        return new ClassifierDocReference_TextGen();
+      case 4:
+        return new CodeInlineDocTag_TextGen();
+      case 5:
+        return new CodeSnippet_TextGen();
+      case 6:
+        return new CommentLine_TextGen();
+      case 7:
+        return new DeprecatedBlockDocTag_TextGen();
+      case 8:
+        return new DocTypeParameterReference_TextGen();
+      case 9:
+        return new FieldDocComment_TextGen();
+      case 10:
+        return new FieldDocReference_TextGen();
+      case 11:
+        return new HTMLElement_TextGen();
+      case 12:
+        return new InheritDocInlineDocTag_TextGen();
+      case 13:
+        return new InlineTagCommentLinePart_TextGen();
+      case 14:
+        return new LinkInlineDocTag_TextGen();
+      case 15:
+        return new MethodDocComment_TextGen();
+      case 16:
+        return new MethodDocReference_TextGen();
+      case 17:
+        return new ParameterBlockDocTag_TextGen();
+      case 18:
+        return new ReturnBlockDocTag_TextGen();
+      case 19:
+        return new SeeBlockDocTag_TextGen();
+      case 20:
+        return new SinceBlockDocTag_TextGen();
+      case 21:
+        return new StaticFieldDocReference_TextGen();
+      case 22:
+        return new TextCommentLinePart_TextGen();
+      case 23:
+        return new ThrowsBlockDocTag_TextGen();
+      case 24:
+        return new ValueInlineDocTag_TextGen();
+      case 25:
+        return new VersionBlockDocTag_TextGen();
+      default:
     }
     return null;
   }

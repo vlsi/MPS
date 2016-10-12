@@ -15,45 +15,43 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new DevKit_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new Generator_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Language_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new MappingConfigExternalRef_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new MappingConfigNormalRef_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllGlobal_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllLocal_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new MappingConfigRefSet_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new MappingPriorityRule_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new ModelRoot_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new ModuleDependency_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new Solution_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new SourcePath_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new StubEntry_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new StubSolution_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new DevKit_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new Generator_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Language_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new MappingConfigExternalRef_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new MappingConfigNormalRef_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllGlobal_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new MappingConfigRefAllLocal_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new MappingConfigRefSet_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new MappingPriorityRule_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new ModelRoot_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new ModuleDependency_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new Solution_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new SourcePath_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new StubEntry_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new StubSolution_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

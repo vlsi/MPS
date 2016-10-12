@@ -24,24 +24,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0j.index(cncpt)) {
-        case 0:
-          return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
-        case 1:
-          return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
-        case 2:
-          return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
-        case 3:
-          return myHighLevelCustomViewer__BehaviorDescriptor;
-        case 4:
-          return myToProcessMethod__BehaviorDescriptor;
-        case 5:
-          return myWatchableListType__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0j.index(cncpt)) {
+      case 0:
+        return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
+      case 1:
+        return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
+      case 2:
+        return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
+      case 3:
+        return myHighLevelCustomViewer__BehaviorDescriptor;
+      case 4:
+        return myToProcessMethod__BehaviorDescriptor;
+      case 5:
+        return myWatchableListType__BehaviorDescriptor;
+      default:
     }
     return null;
   }

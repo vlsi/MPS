@@ -37,50 +37,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0w.index(cncpt)) {
-        case 0:
-          return myAbstractNodeReference__BehaviorDescriptor;
-        case 1:
-          return myDataDependency__BehaviorDescriptor;
-        case 2:
-          return myDataDependencyReference__BehaviorDescriptor;
-        case 3:
-          return myDirectNodeReference__BehaviorDescriptor;
-        case 4:
-          return myExecuteAfterDeclaration__BehaviorDescriptor;
-        case 5:
-          return myIMigrationUnit__BehaviorDescriptor;
-        case 6:
-          return myMigrationScript__BehaviorDescriptor;
-        case 7:
-          return myMoveConcept__BehaviorDescriptor;
-        case 8:
-          return myMoveConceptMember__BehaviorDescriptor;
-        case 9:
-          return myMoveContainmentLink__BehaviorDescriptor;
-        case 10:
-          return myMoveNodeSpecialization__BehaviorDescriptor;
-        case 11:
-          return myMoveProperty__BehaviorDescriptor;
-        case 12:
-          return myMoveReferenceLink__BehaviorDescriptor;
-        case 13:
-          return myProducedDataDeclaration__BehaviorDescriptor;
-        case 14:
-          return myPureMigrationScript__BehaviorDescriptor;
-        case 15:
-          return myRefactoringLog__BehaviorDescriptor;
-        case 16:
-          return myReflectionNodeReference__BehaviorDescriptor;
-        case 17:
-          return myRequiredDataDeclaration__BehaviorDescriptor;
-        case 18:
-          return myTransformStatement__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0w.index(cncpt)) {
+      case 0:
+        return myAbstractNodeReference__BehaviorDescriptor;
+      case 1:
+        return myDataDependency__BehaviorDescriptor;
+      case 2:
+        return myDataDependencyReference__BehaviorDescriptor;
+      case 3:
+        return myDirectNodeReference__BehaviorDescriptor;
+      case 4:
+        return myExecuteAfterDeclaration__BehaviorDescriptor;
+      case 5:
+        return myIMigrationUnit__BehaviorDescriptor;
+      case 6:
+        return myMigrationScript__BehaviorDescriptor;
+      case 7:
+        return myMoveConcept__BehaviorDescriptor;
+      case 8:
+        return myMoveConceptMember__BehaviorDescriptor;
+      case 9:
+        return myMoveContainmentLink__BehaviorDescriptor;
+      case 10:
+        return myMoveNodeSpecialization__BehaviorDescriptor;
+      case 11:
+        return myMoveProperty__BehaviorDescriptor;
+      case 12:
+        return myMoveReferenceLink__BehaviorDescriptor;
+      case 13:
+        return myProducedDataDeclaration__BehaviorDescriptor;
+      case 14:
+        return myPureMigrationScript__BehaviorDescriptor;
+      case 15:
+        return myRefactoringLog__BehaviorDescriptor;
+      case 16:
+        return myReflectionNodeReference__BehaviorDescriptor;
+      case 17:
+        return myRequiredDataDeclaration__BehaviorDescriptor;
+      case 18:
+        return myTransformStatement__BehaviorDescriptor;
+      default:
     }
     return null;
   }

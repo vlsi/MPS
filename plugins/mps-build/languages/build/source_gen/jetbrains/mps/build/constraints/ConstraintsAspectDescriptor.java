@@ -16,76 +16,73 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new BuildAspect_Constraints();
-        case 1:
-          return new BuildExternalLayout_Constraints();
-        case 2:
-          return new BuildExternalLayoutDependency_Constraints();
-        case 3:
-          return new BuildLayout_Constraints();
-        case 4:
-          return new BuildLayout_CompileOutputOf_Constraints();
-        case 5:
-          return new BuildLayout_File_Constraints();
-        case 6:
-          return new BuildLayout_FileStub_Constraints();
-        case 7:
-          return new BuildLayout_Filemode_Constraints();
-        case 8:
-          return new BuildLayout_FilesOf_Constraints();
-        case 9:
-          return new BuildLayout_Import_Constraints();
-        case 10:
-          return new BuildLayout_ImportContent_Constraints();
-        case 11:
-          return new BuildLayout_JarManifest_Constraints();
-        case 12:
-          return new BuildLayout_JarManifest_Section_Constraints();
-        case 13:
-          return new BuildLayout_NamedContainer_Constraints();
-        case 14:
-          return new BuildProjectDependency_Constraints();
-        case 15:
-          return new BuildSourceMacroRelativePath_Constraints();
-        case 16:
-          return new BuildSourcePath_Constraints();
-        case 17:
-          return new BuildSource_JavaClassFolder_Constraints();
-        case 18:
-          return new BuildSource_JavaDependencyLibrary_Constraints();
-        case 19:
-          return new BuildSource_JavaExternalJarFolderRef_Constraints();
-        case 20:
-          return new BuildSource_JavaExternalJarRef_Constraints();
-        case 21:
-          return new BuildSource_JavaLibrary_Constraints();
-        case 22:
-          return new BuildSource_JavaModule_Constraints();
-        case 23:
-          return new BuildSource_JavaModuleOptions_Constraints();
-        case 24:
-          return new BuildSource_JavaOptions_Constraints();
-        case 25:
-          return new BuildSource_JavaSources_Constraints();
-        case 26:
-          return new BuildStringPart_Constraints();
-        case 27:
-          return new BuildTextStringPart_Constraints();
-        case 28:
-          return new BuildVarRefStringPart_Constraints();
-        case 29:
-          return new BuildVariableMacro_Constraints();
-        case 30:
-          return new BuildVariableMacroInitValue_Constraints();
-        case 31:
-          return new BuildVariableMacroInitWithDate_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new BuildAspect_Constraints();
+      case 1:
+        return new BuildExternalLayout_Constraints();
+      case 2:
+        return new BuildExternalLayoutDependency_Constraints();
+      case 3:
+        return new BuildLayout_Constraints();
+      case 4:
+        return new BuildLayout_CompileOutputOf_Constraints();
+      case 5:
+        return new BuildLayout_File_Constraints();
+      case 6:
+        return new BuildLayout_FileStub_Constraints();
+      case 7:
+        return new BuildLayout_Filemode_Constraints();
+      case 8:
+        return new BuildLayout_FilesOf_Constraints();
+      case 9:
+        return new BuildLayout_Import_Constraints();
+      case 10:
+        return new BuildLayout_ImportContent_Constraints();
+      case 11:
+        return new BuildLayout_JarManifest_Constraints();
+      case 12:
+        return new BuildLayout_JarManifest_Section_Constraints();
+      case 13:
+        return new BuildLayout_NamedContainer_Constraints();
+      case 14:
+        return new BuildProjectDependency_Constraints();
+      case 15:
+        return new BuildSourceMacroRelativePath_Constraints();
+      case 16:
+        return new BuildSourcePath_Constraints();
+      case 17:
+        return new BuildSource_JavaClassFolder_Constraints();
+      case 18:
+        return new BuildSource_JavaDependencyLibrary_Constraints();
+      case 19:
+        return new BuildSource_JavaExternalJarFolderRef_Constraints();
+      case 20:
+        return new BuildSource_JavaExternalJarRef_Constraints();
+      case 21:
+        return new BuildSource_JavaLibrary_Constraints();
+      case 22:
+        return new BuildSource_JavaModule_Constraints();
+      case 23:
+        return new BuildSource_JavaModuleOptions_Constraints();
+      case 24:
+        return new BuildSource_JavaOptions_Constraints();
+      case 25:
+        return new BuildSource_JavaSources_Constraints();
+      case 26:
+        return new BuildStringPart_Constraints();
+      case 27:
+        return new BuildTextStringPart_Constraints();
+      case 28:
+        return new BuildVarRefStringPart_Constraints();
+      case 29:
+        return new BuildVariableMacro_Constraints();
+      case 30:
+        return new BuildVariableMacroInitValue_Constraints();
+      case 31:
+        return new BuildVariableMacroInitWithDate_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

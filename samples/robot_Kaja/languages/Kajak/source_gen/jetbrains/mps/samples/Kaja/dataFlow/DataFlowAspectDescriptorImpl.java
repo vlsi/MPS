@@ -17,34 +17,31 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new AbstractCommand_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new CommandList_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new LogicalExpression_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new Not_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new Repeat_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new RoutineCall_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new RoutineDefinition_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new Script_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new Step_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new While_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractCommand_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new CommandList_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new LogicalExpression_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new Not_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new Repeat_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new RoutineCall_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new RoutineDefinition_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new Script_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new Step_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new While_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

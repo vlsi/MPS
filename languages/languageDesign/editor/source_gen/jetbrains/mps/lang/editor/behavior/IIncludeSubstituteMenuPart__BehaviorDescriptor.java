@@ -26,8 +26,6 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
-import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 
 public final class IIncludeSubstituteMenuPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cd0d956L, "jetbrains.mps.lang.editor.structure.IIncludeSubstituteMenuPart");
@@ -43,19 +41,14 @@ public final class IIncludeSubstituteMenuPart__BehaviorDescriptor extends BaseBH
 
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (child == IIncludeSubstituteMenuPart__BehaviorDescriptor.getReference_id3rSzFHWOe4u.invoke(__thisNode__)) {
-      {
-        SAbstractConcept cncpt = SNodeOperations.asSConcept(kind);
-        switch (index_lfwy2u_a0a0k.index(cncpt)) {
-          default:
-            if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-              // Default scope of AbstractConceptDeclaration 
-              return new FilteringScope(Scopes.forConcepts(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
-            }
-            if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"))) {
-              // Default scope of SubstituteMenu_Named - more or less 
-              return new ModelPlusImportedScope(SNodeOperations.getModel(__thisNode__), true, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"));
-            }
-        }
+      SAbstractConcept cncpt = SNodeOperations.asSConcept(kind);
+      if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+        // Default scope of AbstractConceptDeclaration 
+        return new FilteringScope(Scopes.forConcepts(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
+      }
+      if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"))) {
+        // Default scope of SubstituteMenu_Named - more or less 
+        return new ModelPlusImportedScope(SNodeOperations.getModel(__thisNode__), true, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"));
       }
     }
     return ScopeUtils.lazyParentScope(__thisNode__, kind);
@@ -107,5 +100,4 @@ public final class IIncludeSubstituteMenuPart__BehaviorDescriptor extends BaseBH
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static final ConceptSwitchIndex index_lfwy2u_a0a0k = new ConceptSwitchIndexBuilder().put().seal();
 }

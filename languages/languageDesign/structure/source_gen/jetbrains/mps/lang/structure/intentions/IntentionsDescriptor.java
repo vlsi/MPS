@@ -29,36 +29,33 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: AbstractConceptDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ForbidIncomingReferencesInSubconcepts_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: ConceptDeclaration 
-            intentions = new IntentionFactory[4];
-            intentions[0] = new MakeRootable_Intention();
-            intentions[1] = new MakeFinal_Intention();
-            intentions[2] = new MakeAbstract_Intention();
-            intentions[3] = new CreateConceptIcon_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: IStructureDeprecatable 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddDeprecatedAnnotation_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: AbstractConceptDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ForbidIncomingReferencesInSubconcepts_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: ConceptDeclaration 
+          intentions = new IntentionFactory[4];
+          intentions[0] = new MakeRootable_Intention();
+          intentions[1] = new MakeFinal_Intention();
+          intentions[2] = new MakeAbstract_Intention();
+          intentions[3] = new CreateConceptIcon_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: IStructureDeprecatable 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddDeprecatedAnnotation_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

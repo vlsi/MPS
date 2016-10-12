@@ -29,40 +29,37 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: BaseConcept 
-            intentions = new IntentionFactory[8];
-            intentions[0] = new AddTestAnnotation_Intention();
-            intentions[1] = new AddOperationsAnnotation_Intention();
-            intentions[2] = new AddCellAnnotation_Intention();
-            intentions[3] = new AddMockAnnotation_Intention();
-            intentions[4] = new AddNodeHasErrorAnnotation_Intention();
-            intentions[5] = new AddScopeTestAnnotation_Intention();
-            intentions[6] = new AddNodeHasWarningAnnotation_Intention();
-            intentions[7] = new SpecifyRuleReferences_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: MessageStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddMessageAnnotation_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: ScopesTest 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddScopeExpectedNodes_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: BaseConcept 
+          intentions = new IntentionFactory[8];
+          intentions[0] = new AddTestAnnotation_Intention();
+          intentions[1] = new AddOperationsAnnotation_Intention();
+          intentions[2] = new AddCellAnnotation_Intention();
+          intentions[3] = new AddMockAnnotation_Intention();
+          intentions[4] = new AddNodeHasErrorAnnotation_Intention();
+          intentions[5] = new AddScopeTestAnnotation_Intention();
+          intentions[6] = new AddNodeHasWarningAnnotation_Intention();
+          intentions[7] = new SpecifyRuleReferences_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: MessageStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddMessageAnnotation_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: ScopesTest 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddScopeExpectedNodes_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

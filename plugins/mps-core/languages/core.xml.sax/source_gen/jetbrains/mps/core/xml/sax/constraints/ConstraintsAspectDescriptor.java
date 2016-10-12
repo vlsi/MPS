@@ -16,24 +16,21 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new XMLSAXAttributeReference_Constraints();
-        case 1:
-          return new XMLSAXBreakStatement_Constraints();
-        case 2:
-          return new XMLSAXChildRule_Constraints();
-        case 3:
-          return new XMLSAXFieldReference_Constraints();
-        case 4:
-          return new XMLSAXLocatorExpression_Constraints();
-        case 5:
-          return new XMLSAXNodeRuleParamRef_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new XMLSAXAttributeReference_Constraints();
+      case 1:
+        return new XMLSAXBreakStatement_Constraints();
+      case 2:
+        return new XMLSAXChildRule_Constraints();
+      case 3:
+        return new XMLSAXFieldReference_Constraints();
+      case 4:
+        return new XMLSAXLocatorExpression_Constraints();
+      case 5:
+        return new XMLSAXNodeRuleParamRef_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

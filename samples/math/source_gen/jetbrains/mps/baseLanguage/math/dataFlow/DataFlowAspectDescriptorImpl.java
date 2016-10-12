@@ -17,44 +17,41 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new Determinant_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new DivExpressionFraction_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new ExponentialOperation_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new LinearSolveOperation_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new MathFuncExpression_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new MathSymbol_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new MathSymbolFromToIndex_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndex_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndexReference_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new MatrixConstructor_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new MatrixElementAccessExpression_DataFlow());
-        case 11:
-          return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializer_DataFlow());
-        case 12:
-          return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializerIndexReference_DataFlow());
-        case 13:
-          return Collections.<IDataFlowBuilder>singletonList(new MatrixNorm_DataFlow());
-        case 14:
-          return Collections.<IDataFlowBuilder>singletonList(new MatrixZero_DataFlow());
-        case 15:
-          return Collections.<IDataFlowBuilder>singletonList(new VectorInitializer_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new Determinant_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new DivExpressionFraction_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new ExponentialOperation_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new LinearSolveOperation_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new MathFuncExpression_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new MathSymbol_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new MathSymbolFromToIndex_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndex_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndexReference_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new MatrixConstructor_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new MatrixElementAccessExpression_DataFlow());
+      case 11:
+        return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializer_DataFlow());
+      case 12:
+        return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializerIndexReference_DataFlow());
+      case 13:
+        return Collections.<IDataFlowBuilder>singletonList(new MatrixNorm_DataFlow());
+      case 14:
+        return Collections.<IDataFlowBuilder>singletonList(new MatrixZero_DataFlow());
+      case 15:
+        return Collections.<IDataFlowBuilder>singletonList(new VectorInitializer_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

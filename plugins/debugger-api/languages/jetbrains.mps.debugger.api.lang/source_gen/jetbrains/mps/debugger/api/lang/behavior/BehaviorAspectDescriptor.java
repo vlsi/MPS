@@ -25,26 +25,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0k.index(cncpt)) {
-        case 0:
-          return myConceptFunctionParameter_Concept__BehaviorDescriptor;
-        case 1:
-          return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
-        case 2:
-          return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
-        case 3:
-          return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
-        case 4:
-          return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
-        case 5:
-          return myDebuggerReference__BehaviorDescriptor;
-        case 6:
-          return myGetDebuggerSettings_Function__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0k.index(cncpt)) {
+      case 0:
+        return myConceptFunctionParameter_Concept__BehaviorDescriptor;
+      case 1:
+        return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
+      case 2:
+        return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
+      case 3:
+        return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
+      case 4:
+        return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
+      case 5:
+        return myDebuggerReference__BehaviorDescriptor;
+      case 6:
+        return myGetDebuggerSettings_Function__BehaviorDescriptor;
+      default:
     }
     return null;
   }

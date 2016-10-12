@@ -23,7 +23,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.math.behavior.ArithmSymbol_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,95,0" name="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,92,0" name="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BigComplexType_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.math.behavior.BigComplexType_BehaviorDescriptor" />

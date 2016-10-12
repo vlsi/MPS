@@ -17,37 +17,33 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BuildWall_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new DestroyWall_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new DropMark_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new PickMark_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BuildWall_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new DestroyWall_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new DropMark_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new PickMark_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0c.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.samples.KajaSceneConstruction.editor.Position".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new Position());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.samples.KajaSceneConstruction.editor.Position".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new Position());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -55,13 +51,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0e.index(cncpt)) {
-        case 0:
-          return Collections.<TransformationMenu>singletonList(new SceneBuildingCommands());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new SceneBuildingCommands());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }

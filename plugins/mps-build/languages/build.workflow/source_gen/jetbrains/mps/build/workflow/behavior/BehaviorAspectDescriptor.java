@@ -32,40 +32,37 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0r.index(cncpt)) {
-        case 0:
-          return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
-        case 1:
-          return myBwfAntTaskDeclaration__BehaviorDescriptor;
-        case 2:
-          return myBwfCustomMacro__BehaviorDescriptor;
-        case 3:
-          return myBwfJavaDependency__BehaviorDescriptor;
-        case 4:
-          return myBwfJavaModule__BehaviorDescriptor;
-        case 5:
-          return myBwfJavaModuleReference__BehaviorDescriptor;
-        case 6:
-          return myBwfMacro__BehaviorDescriptor;
-        case 7:
-          return myBwfMacroListImport__BehaviorDescriptor;
-        case 8:
-          return myBwfPathDeclaration__BehaviorDescriptor;
-        case 9:
-          return myBwfProject__BehaviorDescriptor;
-        case 10:
-          return myBwfProjectPart__BehaviorDescriptor;
-        case 11:
-          return myBwfSubTask__BehaviorDescriptor;
-        case 12:
-          return myBwfTask__BehaviorDescriptor;
-        case 13:
-          return myBwfTaskPart__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0r.index(cncpt)) {
+      case 0:
+        return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
+      case 1:
+        return myBwfAntTaskDeclaration__BehaviorDescriptor;
+      case 2:
+        return myBwfCustomMacro__BehaviorDescriptor;
+      case 3:
+        return myBwfJavaDependency__BehaviorDescriptor;
+      case 4:
+        return myBwfJavaModule__BehaviorDescriptor;
+      case 5:
+        return myBwfJavaModuleReference__BehaviorDescriptor;
+      case 6:
+        return myBwfMacro__BehaviorDescriptor;
+      case 7:
+        return myBwfMacroListImport__BehaviorDescriptor;
+      case 8:
+        return myBwfPathDeclaration__BehaviorDescriptor;
+      case 9:
+        return myBwfProject__BehaviorDescriptor;
+      case 10:
+        return myBwfProjectPart__BehaviorDescriptor;
+      case 11:
+        return myBwfSubTask__BehaviorDescriptor;
+      case 12:
+        return myBwfTask__BehaviorDescriptor;
+      case 13:
+        return myBwfTaskPart__BehaviorDescriptor;
+      default:
     }
     return null;
   }

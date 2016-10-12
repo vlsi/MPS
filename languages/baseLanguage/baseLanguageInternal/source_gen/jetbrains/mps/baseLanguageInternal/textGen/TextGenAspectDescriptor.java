@@ -19,40 +19,37 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_t8hmqt_a0c.index(cncpt)) {
-        case 0:
-          return new InternalAnonymousClass_TextGen();
-        case 1:
-          return new InternalAnonymousClassCreator_TextGen();
-        case 2:
-          return new InternalClassCreator_TextGen();
-        case 3:
-          return new InternalClassExpression_TextGen();
-        case 4:
-          return new InternalClassifierType_TextGen();
-        case 5:
-          return new InternalNewExpression_TextGen();
-        case 6:
-          return new InternalPartialFieldReference_TextGen();
-        case 7:
-          return new InternalPartialInstanceMethodCall_TextGen();
-        case 8:
-          return new InternalStaticFieldReference_TextGen();
-        case 9:
-          return new InternalStaticMethodCall_TextGen();
-        case 10:
-          return new InternalSuperMethodCallOperation_TextGen();
-        case 11:
-          return new InternalThisExpression_TextGen();
-        case 12:
-          return new InternalVariableReference_TextGen();
-        case 13:
-          return new TypeHintExpression_TextGen();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_t8hmqt_a0c.index(cncpt)) {
+      case 0:
+        return new InternalAnonymousClass_TextGen();
+      case 1:
+        return new InternalAnonymousClassCreator_TextGen();
+      case 2:
+        return new InternalClassCreator_TextGen();
+      case 3:
+        return new InternalClassExpression_TextGen();
+      case 4:
+        return new InternalClassifierType_TextGen();
+      case 5:
+        return new InternalNewExpression_TextGen();
+      case 6:
+        return new InternalPartialFieldReference_TextGen();
+      case 7:
+        return new InternalPartialInstanceMethodCall_TextGen();
+      case 8:
+        return new InternalStaticFieldReference_TextGen();
+      case 9:
+        return new InternalStaticMethodCall_TextGen();
+      case 10:
+        return new InternalSuperMethodCallOperation_TextGen();
+      case 11:
+        return new InternalThisExpression_TextGen();
+      case 12:
+        return new InternalVariableReference_TextGen();
+      case 13:
+        return new TypeHintExpression_TextGen();
+      default:
     }
     return null;
   }

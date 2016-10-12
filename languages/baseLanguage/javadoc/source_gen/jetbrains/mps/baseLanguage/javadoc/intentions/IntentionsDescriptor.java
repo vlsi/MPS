@@ -29,68 +29,65 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: BaseDocComment 
-            intentions = new IntentionFactory[6];
-            intentions[0] = new AddAuthorBlockDocTag_Intention();
-            intentions[1] = new AddSinceBlockDocTag_Intention();
-            intentions[2] = new AddVersionBlockTagDoc_Intention();
-            intentions[3] = new AddSeeBlockTag_Intention();
-            intentions[4] = new AddDeprecatedBlockDocTag_Intention();
-            intentions[5] = new OrganizeTags_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: BaseMethodDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddMethodDocComment_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: Classifier 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddClassifierDocComment_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: FieldDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddFieldDocComment_Intention();
-          }
-          break;
-        case 4:
-          if (true) {
-            // Concept: HTMLElement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new FoldHTMLElement_Intention();
-          }
-          break;
-        case 5:
-          if (true) {
-            // Concept: MethodDocComment 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new AddParameterBlockDocTag_Intention();
-            intentions[1] = new AddReturnBlockTag_Intention();
-            intentions[2] = new AddThrowBlockDocTag_Intention();
-          }
-          break;
-        case 6:
-          if (true) {
-            // Concept: StaticFieldDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddStaticFieldDocComment_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: BaseDocComment 
+          intentions = new IntentionFactory[6];
+          intentions[0] = new AddAuthorBlockDocTag_Intention();
+          intentions[1] = new AddSinceBlockDocTag_Intention();
+          intentions[2] = new AddVersionBlockTagDoc_Intention();
+          intentions[3] = new AddSeeBlockTag_Intention();
+          intentions[4] = new AddDeprecatedBlockDocTag_Intention();
+          intentions[5] = new OrganizeTags_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: BaseMethodDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddMethodDocComment_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: Classifier 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddClassifierDocComment_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: FieldDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddFieldDocComment_Intention();
+        }
+        break;
+      case 4:
+        if (true) {
+          // Concept: HTMLElement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new FoldHTMLElement_Intention();
+        }
+        break;
+      case 5:
+        if (true) {
+          // Concept: MethodDocComment 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new AddParameterBlockDocTag_Intention();
+          intentions[1] = new AddReturnBlockTag_Intention();
+          intentions[2] = new AddThrowBlockDocTag_Intention();
+        }
+        break;
+      case 6:
+        if (true) {
+          // Concept: StaticFieldDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddStaticFieldDocComment_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

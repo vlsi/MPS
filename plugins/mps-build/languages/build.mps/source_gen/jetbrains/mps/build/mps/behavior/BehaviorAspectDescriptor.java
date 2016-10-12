@@ -35,46 +35,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0u.index(cncpt)) {
-        case 0:
-          return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
-        case 1:
-          return myBuildMPSPlugin__BehaviorDescriptor;
-        case 2:
-          return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
-        case 3:
-          return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
-        case 4:
-          return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
-        case 5:
-          return myBuildMpsLayout_Plugin__BehaviorDescriptor;
-        case 6:
-          return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
-        case 7:
-          return myBuildMps_AbstractModule__BehaviorDescriptor;
-        case 8:
-          return myBuildMps_DevKit__BehaviorDescriptor;
-        case 9:
-          return myBuildMps_Generator__BehaviorDescriptor;
-        case 10:
-          return myBuildMps_IdeaPlugin__BehaviorDescriptor;
-        case 11:
-          return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
-        case 12:
-          return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
-        case 13:
-          return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
-        case 14:
-          return myBuildMps_Language__BehaviorDescriptor;
-        case 15:
-          return myBuildMps_Module__BehaviorDescriptor;
-        case 16:
-          return myBuildMps_Solution__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0u.index(cncpt)) {
+      case 0:
+        return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
+      case 1:
+        return myBuildMPSPlugin__BehaviorDescriptor;
+      case 2:
+        return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
+      case 3:
+        return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
+      case 4:
+        return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
+      case 5:
+        return myBuildMpsLayout_Plugin__BehaviorDescriptor;
+      case 6:
+        return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
+      case 7:
+        return myBuildMps_AbstractModule__BehaviorDescriptor;
+      case 8:
+        return myBuildMps_DevKit__BehaviorDescriptor;
+      case 9:
+        return myBuildMps_Generator__BehaviorDescriptor;
+      case 10:
+        return myBuildMps_IdeaPlugin__BehaviorDescriptor;
+      case 11:
+        return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
+      case 12:
+        return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
+      case 13:
+        return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
+      case 14:
+        return myBuildMps_Language__BehaviorDescriptor;
+      case 15:
+        return myBuildMps_Module__BehaviorDescriptor;
+      case 16:
+        return myBuildMps_Solution__BehaviorDescriptor;
+      default:
     }
     return null;
   }

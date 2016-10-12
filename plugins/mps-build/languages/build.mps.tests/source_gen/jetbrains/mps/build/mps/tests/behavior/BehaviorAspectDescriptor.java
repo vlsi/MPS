@@ -23,22 +23,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0i.index(cncpt)) {
-        case 0:
-          return myBuildModuleTestsPlugin__BehaviorDescriptor;
-        case 1:
-          return myBuildMpsLayout_TestModule__BehaviorDescriptor;
-        case 2:
-          return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
-        case 3:
-          return myBuildMpsLayout_TestModules__BehaviorDescriptor;
-        case 4:
-          return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0i.index(cncpt)) {
+      case 0:
+        return myBuildModuleTestsPlugin__BehaviorDescriptor;
+      case 1:
+        return myBuildMpsLayout_TestModule__BehaviorDescriptor;
+      case 2:
+        return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
+      case 3:
+        return myBuildMpsLayout_TestModules__BehaviorDescriptor;
+      case 4:
+        return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
+      default:
     }
     return null;
   }

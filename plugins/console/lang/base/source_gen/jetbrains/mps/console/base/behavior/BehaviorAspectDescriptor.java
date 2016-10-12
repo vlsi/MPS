@@ -36,48 +36,45 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0v.index(cncpt)) {
-        case 0:
-          return myAbstractPrintExpression__BehaviorDescriptor;
-        case 1:
-          return myBLCommand__BehaviorDescriptor;
-        case 2:
-          return myBLExpression__BehaviorDescriptor;
-        case 3:
-          return myCommand__BehaviorDescriptor;
-        case 4:
-          return myCommandHolder__BehaviorDescriptor;
-        case 5:
-          return myExceptionHolder__BehaviorDescriptor;
-        case 6:
-          return myGeneratedCommand__BehaviorDescriptor;
-        case 7:
-          return myHelpCommand__BehaviorDescriptor;
-        case 8:
-          return myIActionHolder__BehaviorDescriptor;
-        case 9:
-          return myINodeWithReference__BehaviorDescriptor;
-        case 10:
-          return myInterpretedCommand__BehaviorDescriptor;
-        case 11:
-          return myModifiedCommandHistoryItem__BehaviorDescriptor;
-        case 12:
-          return myNodeReferencePresentation__BehaviorDescriptor;
-        case 13:
-          return myNodeReferenceString__BehaviorDescriptor;
-        case 14:
-          return myNodeWithClosure__BehaviorDescriptor;
-        case 15:
-          return myPastedNodeReference__BehaviorDescriptor;
-        case 16:
-          return myPrintExpression__BehaviorDescriptor;
-        case 17:
-          return myProjectExpression__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0v.index(cncpt)) {
+      case 0:
+        return myAbstractPrintExpression__BehaviorDescriptor;
+      case 1:
+        return myBLCommand__BehaviorDescriptor;
+      case 2:
+        return myBLExpression__BehaviorDescriptor;
+      case 3:
+        return myCommand__BehaviorDescriptor;
+      case 4:
+        return myCommandHolder__BehaviorDescriptor;
+      case 5:
+        return myExceptionHolder__BehaviorDescriptor;
+      case 6:
+        return myGeneratedCommand__BehaviorDescriptor;
+      case 7:
+        return myHelpCommand__BehaviorDescriptor;
+      case 8:
+        return myIActionHolder__BehaviorDescriptor;
+      case 9:
+        return myINodeWithReference__BehaviorDescriptor;
+      case 10:
+        return myInterpretedCommand__BehaviorDescriptor;
+      case 11:
+        return myModifiedCommandHistoryItem__BehaviorDescriptor;
+      case 12:
+        return myNodeReferencePresentation__BehaviorDescriptor;
+      case 13:
+        return myNodeReferenceString__BehaviorDescriptor;
+      case 14:
+        return myNodeWithClosure__BehaviorDescriptor;
+      case 15:
+        return myPastedNodeReference__BehaviorDescriptor;
+      case 16:
+        return myPrintExpression__BehaviorDescriptor;
+      case 17:
+        return myProjectExpression__BehaviorDescriptor;
+      default:
     }
     return null;
   }

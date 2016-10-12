@@ -41,7 +41,7 @@
       <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.AssertMatch_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,170,0" name="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,167,0" name="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BootstrapActionReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.BootstrapActionReference_BehaviorDescriptor" />

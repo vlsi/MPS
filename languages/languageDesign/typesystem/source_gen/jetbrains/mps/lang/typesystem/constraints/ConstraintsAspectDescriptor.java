@@ -16,58 +16,55 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new ApplicableNodeReference_Constraints();
-        case 1:
-          return new CaretPositionOperation_Constraints();
-        case 2:
-          return new ComparisonRule_Constraints();
-        case 3:
-          return new ConceptReference_Constraints();
-        case 4:
-          return new InequationReference_Constraints();
-        case 5:
-          return new InequationReplacementRule_Constraints();
-        case 6:
-          return new InferenceRule_Constraints();
-        case 7:
-          return new LinkPatternVariableReference_Constraints();
-        case 8:
-          return new MessageStatement_Constraints();
-        case 9:
-          return new NonTypesystemRule_Constraints();
-        case 10:
-          return new PatternVariableReference_Constraints();
-        case 11:
-          return new PropertyMessageTarget_Constraints();
-        case 12:
-          return new PropertyPatternVariableReference_Constraints();
-        case 13:
-          return new QuickFixArgumentReference_Constraints();
-        case 14:
-          return new QuickFixFieldReference_Constraints();
-        case 15:
-          return new ReferenceMessageTarget_Constraints();
-        case 16:
-          return new SubstituteTypeRule_Constraints();
-        case 17:
-          return new SubtypingRule_Constraints();
-        case 18:
-          return new TypeVarReference_Constraints();
-        case 19:
-          return new TypesystemIntentionArgument_Constraints();
-        case 20:
-          return new TypesystemQuickFix_Constraints();
-        case 21:
-          return new WasSelectedNodeOperation_Constraints();
-        case 22:
-          return new WhenConcreteVariableReference_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new ApplicableNodeReference_Constraints();
+      case 1:
+        return new CaretPositionOperation_Constraints();
+      case 2:
+        return new ComparisonRule_Constraints();
+      case 3:
+        return new ConceptReference_Constraints();
+      case 4:
+        return new InequationReference_Constraints();
+      case 5:
+        return new InequationReplacementRule_Constraints();
+      case 6:
+        return new InferenceRule_Constraints();
+      case 7:
+        return new LinkPatternVariableReference_Constraints();
+      case 8:
+        return new MessageStatement_Constraints();
+      case 9:
+        return new NonTypesystemRule_Constraints();
+      case 10:
+        return new PatternVariableReference_Constraints();
+      case 11:
+        return new PropertyMessageTarget_Constraints();
+      case 12:
+        return new PropertyPatternVariableReference_Constraints();
+      case 13:
+        return new QuickFixArgumentReference_Constraints();
+      case 14:
+        return new QuickFixFieldReference_Constraints();
+      case 15:
+        return new ReferenceMessageTarget_Constraints();
+      case 16:
+        return new SubstituteTypeRule_Constraints();
+      case 17:
+        return new SubtypingRule_Constraints();
+      case 18:
+        return new TypeVarReference_Constraints();
+      case 19:
+        return new TypesystemIntentionArgument_Constraints();
+      case 20:
+        return new TypesystemQuickFix_Constraints();
+      case 21:
+        return new WasSelectedNodeOperation_Constraints();
+      case 22:
+        return new WhenConcreteVariableReference_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

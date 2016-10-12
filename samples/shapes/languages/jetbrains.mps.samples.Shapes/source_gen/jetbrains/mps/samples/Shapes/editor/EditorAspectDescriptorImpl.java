@@ -21,39 +21,35 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("ScenePreview", "With Scene Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"), new ConceptEditorHintImpl("ShapePreview", "With Shape Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
-        case 1:
-          return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new Color_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
-        case 4:
-          return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
+      case 1:
+        return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new Color_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
+      case 4:
+        return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.samples.Shapes.editor.ShapeColor".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.samples.Shapes.editor.ShapeColor".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }

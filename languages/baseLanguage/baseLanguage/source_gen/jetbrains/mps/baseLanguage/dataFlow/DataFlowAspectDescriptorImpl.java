@@ -29,144 +29,141 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_vhxjlb_a0c.index(cncpt)) {
-        case 0:
-          return Collections.<IDataFlowBuilder>singletonList(new AbstractUnaryNumberOperation_DataFlow());
-        case 1:
-          return Collections.<IDataFlowBuilder>singletonList(new AndExpression_DataFlow());
-        case 2:
-          return Collections.<IDataFlowBuilder>singletonList(new AnonymousClassCreator_DataFlow());
-        case 3:
-          return Collections.<IDataFlowBuilder>singletonList(new ArrayAccessExpression_DataFlow());
-        case 4:
-          return Collections.<IDataFlowBuilder>singletonList(new ArrayCreator_DataFlow());
-        case 5:
-          return Collections.<IDataFlowBuilder>singletonList(new ArrayCreatorWithInitializer_DataFlow());
-        case 6:
-          return Collections.<IDataFlowBuilder>singletonList(new ArrayLiteral_DataFlow());
-        case 7:
-          return Collections.<IDataFlowBuilder>singletonList(new AsExpression_DataFlow());
-        case 8:
-          return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
-        case 9:
-          return Collections.<IDataFlowBuilder>singletonList(new AssignmentExpression_DataFlow());
-        case 10:
-          return Collections.<IDataFlowBuilder>singletonList(new BaseAssignmentExpression_DataFlow());
-        case 11:
-          return Collections.<IDataFlowBuilder>singletonList(new BaseMethodCall_DataFlow());
-        case 12:
-          return Collections.<IDataFlowBuilder>singletonList(new BaseMethodDeclaration_DataFlow());
-        case 13:
-          return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
-        case 14:
-          return Collections.<IDataFlowBuilder>singletonList(new BitwiseNotExpression_DataFlow());
-        case 15:
-          return Collections.<IDataFlowBuilder>singletonList(new BlockStatement_DataFlow());
-        case 16:
-          return Collections.<IDataFlowBuilder>singletonList(new BreakStatement_DataFlow());
-        case 17:
-          return Collections.<IDataFlowBuilder>singletonList(new CastExpression_DataFlow());
-        case 18:
-          return Collections.<IDataFlowBuilder>singletonList(new CatchClause_DataFlow());
-        case 19:
-          return Collections.<IDataFlowBuilder>singletonList(new Closure_DataFlow());
-        case 20:
-          return Collections.<IDataFlowBuilder>singletonList(new CommentedStatementsBlock_DataFlow());
-        case 21:
-          return Collections.<IDataFlowBuilder>singletonList(new ConceptFunction_DataFlow());
-        case 22:
-          return Collections.<IDataFlowBuilder>singletonList(new ContinueStatement_DataFlow());
-        case 23:
-          return Collections.<IDataFlowBuilder>singletonList(new DimensionExpression_DataFlow());
-        case 24:
-          return Collections.<IDataFlowBuilder>singletonList(new DoWhileStatement_DataFlow());
-        case 25:
-          return Collections.<IDataFlowBuilder>singletonList(new DotExpression_DataFlow());
-        case 26:
-          return Collections.<IDataFlowBuilder>singletonList(new ElsifClause_DataFlow());
-        case 27:
-          return Collections.<IDataFlowBuilder>singletonList(new Expression_DataFlow());
-        case 28:
-          return Collections.<IDataFlowBuilder>singletonList(new ExpressionStatement_DataFlow());
-        case 29:
-          return Collections.<IDataFlowBuilder>singletonList(new FieldReferenceOperation_DataFlow());
-        case 30:
-          return Collections.<IDataFlowBuilder>singletonList(new ForStatement_DataFlow());
-        case 31:
-          return Collections.<IDataFlowBuilder>singletonList(new ForeachStatement_DataFlow());
-        case 32:
-          return Collections.<IDataFlowBuilder>singletonList(new GenericNewExpression_DataFlow());
-        case 33:
-          return Collections.<IDataFlowBuilder>singletonList(new IMethodCall_DataFlow());
-        case 34:
-          return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
-        case 35:
-          return Collections.<IDataFlowBuilder>singletonList(new InstanceInitializer_DataFlow());
-        case 36:
-          return Collections.<IDataFlowBuilder>singletonList(new InstanceMethodCallOperation_DataFlow());
-        case 37:
-          return Collections.<IDataFlowBuilder>singletonList(new InstanceOfExpression_DataFlow());
-        case 38:
-          return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclaration_DataFlow());
-        case 39:
-          return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclarationStatement_DataFlow());
-        case 40:
-          return Collections.<IDataFlowBuilder>singletonList(new NestedNewExpression_DataFlow());
-        case 41:
-          return Collections.<IDataFlowBuilder>singletonList(new NotExpression_DataFlow());
-        case 42:
-          return Collections.<IDataFlowBuilder>singletonList(new OrExpression_DataFlow());
-        case 43:
-          return Collections.<IDataFlowBuilder>singletonList(new ParameterDeclaration_DataFlow());
-        case 44:
-          return Collections.<IDataFlowBuilder>singletonList(new ParenthesizedExpression_DataFlow());
-        case 45:
-          return Collections.<IDataFlowBuilder>singletonList(new PostfixDecrementExpression_DataFlow());
-        case 46:
-          return Collections.<IDataFlowBuilder>singletonList(new PostfixIncrementExpression_DataFlow());
-        case 47:
-          return Collections.<IDataFlowBuilder>singletonList(new PrefixDecrementExpression_DataFlow());
-        case 48:
-          return Collections.<IDataFlowBuilder>singletonList(new PrefixIncrementExpression_DataFlow());
-        case 49:
-          return Collections.<IDataFlowBuilder>singletonList(new RemarkStatement_DataFlow());
-        case 50:
-          return Collections.<IDataFlowBuilder>singletonList(new ReturnStatement_DataFlow());
-        case 51:
-          return Collections.<IDataFlowBuilder>singletonList(new StatementList_DataFlow());
-        case 52:
-          return Collections.<IDataFlowBuilder>singletonList(new StaticInitializer_DataFlow());
-        case 53:
-          return Collections.<IDataFlowBuilder>singletonList(new StaticMethodCall_DataFlow());
-        case 54:
-          return Collections.<IDataFlowBuilder>singletonList(new StubStatementList_DataFlow());
-        case 55:
-          return Collections.<IDataFlowBuilder>singletonList(new SubstringExpression_DataFlow());
-        case 56:
-          return Collections.<IDataFlowBuilder>singletonList(new SwitchCase_DataFlow());
-        case 57:
-          return Collections.<IDataFlowBuilder>singletonList(new SwitchStatement_DataFlow());
-        case 58:
-          return Collections.<IDataFlowBuilder>singletonList(new SynchronizedStatement_DataFlow());
-        case 59:
-          return Collections.<IDataFlowBuilder>singletonList(new TernaryOperatorExpression_DataFlow());
-        case 60:
-          return Collections.<IDataFlowBuilder>singletonList(new ThrowStatement_DataFlow());
-        case 61:
-          return Collections.<IDataFlowBuilder>singletonList(new TryCatchStatement_DataFlow());
-        case 62:
-          return Collections.<IDataFlowBuilder>singletonList(new TryStatement_DataFlow());
-        case 63:
-          return Collections.<IDataFlowBuilder>singletonList(new VariableDeclaration_DataFlow());
-        case 64:
-          return Collections.<IDataFlowBuilder>singletonList(new VariableReference_DataFlow());
-        case 65:
-          return Collections.<IDataFlowBuilder>singletonList(new WhileStatement_DataFlow());
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_vhxjlb_a0c.index(cncpt)) {
+      case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractUnaryNumberOperation_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new AndExpression_DataFlow());
+      case 2:
+        return Collections.<IDataFlowBuilder>singletonList(new AnonymousClassCreator_DataFlow());
+      case 3:
+        return Collections.<IDataFlowBuilder>singletonList(new ArrayAccessExpression_DataFlow());
+      case 4:
+        return Collections.<IDataFlowBuilder>singletonList(new ArrayCreator_DataFlow());
+      case 5:
+        return Collections.<IDataFlowBuilder>singletonList(new ArrayCreatorWithInitializer_DataFlow());
+      case 6:
+        return Collections.<IDataFlowBuilder>singletonList(new ArrayLiteral_DataFlow());
+      case 7:
+        return Collections.<IDataFlowBuilder>singletonList(new AsExpression_DataFlow());
+      case 8:
+        return Collections.<IDataFlowBuilder>singletonList(new AssertStatement_DataFlow());
+      case 9:
+        return Collections.<IDataFlowBuilder>singletonList(new AssignmentExpression_DataFlow());
+      case 10:
+        return Collections.<IDataFlowBuilder>singletonList(new BaseAssignmentExpression_DataFlow());
+      case 11:
+        return Collections.<IDataFlowBuilder>singletonList(new BaseMethodCall_DataFlow());
+      case 12:
+        return Collections.<IDataFlowBuilder>singletonList(new BaseMethodDeclaration_DataFlow());
+      case 13:
+        return Collections.<IDataFlowBuilder>singletonList(new BinaryOperation_DataFlow());
+      case 14:
+        return Collections.<IDataFlowBuilder>singletonList(new BitwiseNotExpression_DataFlow());
+      case 15:
+        return Collections.<IDataFlowBuilder>singletonList(new BlockStatement_DataFlow());
+      case 16:
+        return Collections.<IDataFlowBuilder>singletonList(new BreakStatement_DataFlow());
+      case 17:
+        return Collections.<IDataFlowBuilder>singletonList(new CastExpression_DataFlow());
+      case 18:
+        return Collections.<IDataFlowBuilder>singletonList(new CatchClause_DataFlow());
+      case 19:
+        return Collections.<IDataFlowBuilder>singletonList(new Closure_DataFlow());
+      case 20:
+        return Collections.<IDataFlowBuilder>singletonList(new CommentedStatementsBlock_DataFlow());
+      case 21:
+        return Collections.<IDataFlowBuilder>singletonList(new ConceptFunction_DataFlow());
+      case 22:
+        return Collections.<IDataFlowBuilder>singletonList(new ContinueStatement_DataFlow());
+      case 23:
+        return Collections.<IDataFlowBuilder>singletonList(new DimensionExpression_DataFlow());
+      case 24:
+        return Collections.<IDataFlowBuilder>singletonList(new DoWhileStatement_DataFlow());
+      case 25:
+        return Collections.<IDataFlowBuilder>singletonList(new DotExpression_DataFlow());
+      case 26:
+        return Collections.<IDataFlowBuilder>singletonList(new ElsifClause_DataFlow());
+      case 27:
+        return Collections.<IDataFlowBuilder>singletonList(new Expression_DataFlow());
+      case 28:
+        return Collections.<IDataFlowBuilder>singletonList(new ExpressionStatement_DataFlow());
+      case 29:
+        return Collections.<IDataFlowBuilder>singletonList(new FieldReferenceOperation_DataFlow());
+      case 30:
+        return Collections.<IDataFlowBuilder>singletonList(new ForStatement_DataFlow());
+      case 31:
+        return Collections.<IDataFlowBuilder>singletonList(new ForeachStatement_DataFlow());
+      case 32:
+        return Collections.<IDataFlowBuilder>singletonList(new GenericNewExpression_DataFlow());
+      case 33:
+        return Collections.<IDataFlowBuilder>singletonList(new IMethodCall_DataFlow());
+      case 34:
+        return Collections.<IDataFlowBuilder>singletonList(new IfStatement_DataFlow());
+      case 35:
+        return Collections.<IDataFlowBuilder>singletonList(new InstanceInitializer_DataFlow());
+      case 36:
+        return Collections.<IDataFlowBuilder>singletonList(new InstanceMethodCallOperation_DataFlow());
+      case 37:
+        return Collections.<IDataFlowBuilder>singletonList(new InstanceOfExpression_DataFlow());
+      case 38:
+        return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclaration_DataFlow());
+      case 39:
+        return Collections.<IDataFlowBuilder>singletonList(new LocalVariableDeclarationStatement_DataFlow());
+      case 40:
+        return Collections.<IDataFlowBuilder>singletonList(new NestedNewExpression_DataFlow());
+      case 41:
+        return Collections.<IDataFlowBuilder>singletonList(new NotExpression_DataFlow());
+      case 42:
+        return Collections.<IDataFlowBuilder>singletonList(new OrExpression_DataFlow());
+      case 43:
+        return Collections.<IDataFlowBuilder>singletonList(new ParameterDeclaration_DataFlow());
+      case 44:
+        return Collections.<IDataFlowBuilder>singletonList(new ParenthesizedExpression_DataFlow());
+      case 45:
+        return Collections.<IDataFlowBuilder>singletonList(new PostfixDecrementExpression_DataFlow());
+      case 46:
+        return Collections.<IDataFlowBuilder>singletonList(new PostfixIncrementExpression_DataFlow());
+      case 47:
+        return Collections.<IDataFlowBuilder>singletonList(new PrefixDecrementExpression_DataFlow());
+      case 48:
+        return Collections.<IDataFlowBuilder>singletonList(new PrefixIncrementExpression_DataFlow());
+      case 49:
+        return Collections.<IDataFlowBuilder>singletonList(new RemarkStatement_DataFlow());
+      case 50:
+        return Collections.<IDataFlowBuilder>singletonList(new ReturnStatement_DataFlow());
+      case 51:
+        return Collections.<IDataFlowBuilder>singletonList(new StatementList_DataFlow());
+      case 52:
+        return Collections.<IDataFlowBuilder>singletonList(new StaticInitializer_DataFlow());
+      case 53:
+        return Collections.<IDataFlowBuilder>singletonList(new StaticMethodCall_DataFlow());
+      case 54:
+        return Collections.<IDataFlowBuilder>singletonList(new StubStatementList_DataFlow());
+      case 55:
+        return Collections.<IDataFlowBuilder>singletonList(new SubstringExpression_DataFlow());
+      case 56:
+        return Collections.<IDataFlowBuilder>singletonList(new SwitchCase_DataFlow());
+      case 57:
+        return Collections.<IDataFlowBuilder>singletonList(new SwitchStatement_DataFlow());
+      case 58:
+        return Collections.<IDataFlowBuilder>singletonList(new SynchronizedStatement_DataFlow());
+      case 59:
+        return Collections.<IDataFlowBuilder>singletonList(new TernaryOperatorExpression_DataFlow());
+      case 60:
+        return Collections.<IDataFlowBuilder>singletonList(new ThrowStatement_DataFlow());
+      case 61:
+        return Collections.<IDataFlowBuilder>singletonList(new TryCatchStatement_DataFlow());
+      case 62:
+        return Collections.<IDataFlowBuilder>singletonList(new TryStatement_DataFlow());
+      case 63:
+        return Collections.<IDataFlowBuilder>singletonList(new VariableDeclaration_DataFlow());
+      case 64:
+        return Collections.<IDataFlowBuilder>singletonList(new VariableReference_DataFlow());
+      case 65:
+        return Collections.<IDataFlowBuilder>singletonList(new WhileStatement_DataFlow());
+      default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }

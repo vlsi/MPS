@@ -16,34 +16,31 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new ClassifierDocReference_Constraints();
-        case 1:
-          return new DeprecatedBlockDocTag_Constraints();
-        case 2:
-          return new DocMethodParameterReference_Constraints();
-        case 3:
-          return new DocTypeParameterReference_Constraints();
-        case 4:
-          return new FieldDocReference_Constraints();
-        case 5:
-          return new MethodDocReference_Constraints();
-        case 6:
-          return new ParameterBlockDocTag_Constraints();
-        case 7:
-          return new ReturnBlockDocTag_Constraints();
-        case 8:
-          return new StaticFieldDocReference_Constraints();
-        case 9:
-          return new ThrowsBlockDocTag_Constraints();
-        case 10:
-          return new ValueInlineDocTag_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new ClassifierDocReference_Constraints();
+      case 1:
+        return new DeprecatedBlockDocTag_Constraints();
+      case 2:
+        return new DocMethodParameterReference_Constraints();
+      case 3:
+        return new DocTypeParameterReference_Constraints();
+      case 4:
+        return new FieldDocReference_Constraints();
+      case 5:
+        return new MethodDocReference_Constraints();
+      case 6:
+        return new ParameterBlockDocTag_Constraints();
+      case 7:
+        return new ReturnBlockDocTag_Constraints();
+      case 8:
+        return new StaticFieldDocReference_Constraints();
+      case 9:
+        return new ThrowsBlockDocTag_Constraints();
+      case 10:
+        return new ValueInlineDocTag_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

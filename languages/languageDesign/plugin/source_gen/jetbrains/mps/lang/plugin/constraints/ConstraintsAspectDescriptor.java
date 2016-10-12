@@ -16,56 +16,53 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_2qnle6_a0c.index(cncpt)) {
-        case 0:
-          return new ActionConstructionParameterDeclaration_Constraints();
-        case 1:
-          return new ActionDataParameterDeclaration_Constraints();
-        case 2:
-          return new ActionDeclaration_Constraints();
-        case 3:
-          return new ActionGroupDeclaration_Constraints();
-        case 4:
-          return new ActionInstance_Constraints();
-        case 5:
-          return new ActionParameterDeclaration_Constraints();
-        case 6:
-          return new ActionParameterReference_Constraints();
-        case 7:
-          return new AddElementStatement_Constraints();
-        case 8:
-          return new AddStatement_Constraints();
-        case 9:
-          return new BaseProjectOperation_Constraints();
-        case 10:
-          return new ConceptCondition_Constraints();
-        case 11:
-          return new EditableModel_Constraints();
-        case 12:
-          return new GroupAnchor_Constraints();
-        case 13:
-          return new IdeaInitializerDescriptor_Constraints();
-        case 14:
-          return new InterfaceExtentionPoint_Constraints();
-        case 15:
-          return new ModificationStatement_Constraints();
-        case 16:
-          return new Separator_Constraints();
-        case 17:
-          return new ShortcutChange_Constraints();
-        case 18:
-          return new SmartDisposeClosureParameterDeclaration_Constraints();
-        case 19:
-          return new TabbedToolOperation_Constraints();
-        case 20:
-          return new ToolInstanceExpression_Constraints();
-        case 21:
-          return new UpdateBlock_Constraints();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new ActionConstructionParameterDeclaration_Constraints();
+      case 1:
+        return new ActionDataParameterDeclaration_Constraints();
+      case 2:
+        return new ActionDeclaration_Constraints();
+      case 3:
+        return new ActionGroupDeclaration_Constraints();
+      case 4:
+        return new ActionInstance_Constraints();
+      case 5:
+        return new ActionParameterDeclaration_Constraints();
+      case 6:
+        return new ActionParameterReference_Constraints();
+      case 7:
+        return new AddElementStatement_Constraints();
+      case 8:
+        return new AddStatement_Constraints();
+      case 9:
+        return new BaseProjectOperation_Constraints();
+      case 10:
+        return new ConceptCondition_Constraints();
+      case 11:
+        return new EditableModel_Constraints();
+      case 12:
+        return new GroupAnchor_Constraints();
+      case 13:
+        return new IdeaInitializerDescriptor_Constraints();
+      case 14:
+        return new InterfaceExtentionPoint_Constraints();
+      case 15:
+        return new ModificationStatement_Constraints();
+      case 16:
+        return new Separator_Constraints();
+      case 17:
+        return new ShortcutChange_Constraints();
+      case 18:
+        return new SmartDisposeClosureParameterDeclaration_Constraints();
+      case 19:
+        return new TabbedToolOperation_Constraints();
+      case 20:
+        return new ToolInstanceExpression_Constraints();
+      case 21:
+        return new UpdateBlock_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }

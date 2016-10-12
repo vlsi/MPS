@@ -29,34 +29,31 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0o.index(cncpt)) {
-        case 0:
-          return myAnalyzer__BehaviorDescriptor;
-        case 1:
-          return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
-        case 2:
-          return myAnalyzerFunFunction__BehaviorDescriptor;
-        case 3:
-          return myAnalyzerInitialFunction__BehaviorDescriptor;
-        case 4:
-          return myAnalyzerMergeFunction__BehaviorDescriptor;
-        case 5:
-          return myApplicableCondition__BehaviorDescriptor;
-        case 6:
-          return myConceptCondition__BehaviorDescriptor;
-        case 7:
-          return myInstruction__BehaviorDescriptor;
-        case 8:
-          return myInstructionReference__BehaviorDescriptor;
-        case 9:
-          return myPatternCondition__BehaviorDescriptor;
-        case 10:
-          return myRule__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0o.index(cncpt)) {
+      case 0:
+        return myAnalyzer__BehaviorDescriptor;
+      case 1:
+        return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
+      case 2:
+        return myAnalyzerFunFunction__BehaviorDescriptor;
+      case 3:
+        return myAnalyzerInitialFunction__BehaviorDescriptor;
+      case 4:
+        return myAnalyzerMergeFunction__BehaviorDescriptor;
+      case 5:
+        return myApplicableCondition__BehaviorDescriptor;
+      case 6:
+        return myConceptCondition__BehaviorDescriptor;
+      case 7:
+        return myInstruction__BehaviorDescriptor;
+      case 8:
+        return myInstructionReference__BehaviorDescriptor;
+      case 9:
+        return myPatternCondition__BehaviorDescriptor;
+      case 10:
+        return myRule__BehaviorDescriptor;
+      default:
     }
     return null;
   }

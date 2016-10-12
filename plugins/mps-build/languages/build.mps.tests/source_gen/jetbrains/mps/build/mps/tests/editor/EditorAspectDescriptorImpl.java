@@ -15,19 +15,17 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new BuildModuleTestsPlugin_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModule_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModuleGroup_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModules_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BuildModuleTestsPlugin_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModule_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModuleGroup_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModules_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

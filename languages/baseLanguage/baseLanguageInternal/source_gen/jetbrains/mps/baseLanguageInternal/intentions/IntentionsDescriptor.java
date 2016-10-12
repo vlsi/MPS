@@ -29,33 +29,30 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_hphjzv_d0f.index(cncpt)) {
-        case 0:
-          if (true) {
-            // Concept: ConstantValue 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceWithFieldReference_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: InternalClassifierType 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new add_parameter_to_InternalClassifierType_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: StaticFieldReference 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReplaceWithConstantValue_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: ConstantValue 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceWithFieldReference_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: InternalClassifierType 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new add_parameter_to_InternalClassifierType_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: StaticFieldReference 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReplaceWithConstantValue_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);

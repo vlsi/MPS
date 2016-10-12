@@ -16,119 +16,117 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0a.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new BootstrapActionReference_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new CheckDataFlowOperation_Editor());
-        case 4:
-          return Collections.<ConceptEditor>singletonList(new CheckNodeDataflow_Editor());
-        case 5:
-          return Collections.<ConceptEditor>singletonList(new CheckNodeForErrorMessagesOperation_Editor());
-        case 6:
-          return Collections.<ConceptEditor>singletonList(new CheckNodeForErrors_Editor());
-        case 7:
-          return Collections.<ConceptEditor>singletonList(new DragMouseStatement_Editor());
-        case 8:
-          return Collections.<ConceptEditor>singletonList(new EditorComponentExpression_Editor());
-        case 9:
-          return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
-        case 10:
-          return Collections.<ConceptEditor>singletonList(new EditorTestCase_Editor());
-        case 11:
-          return Collections.<ConceptEditor>singletonList(new ExpressionContainer_Editor());
-        case 12:
-          return Collections.<ConceptEditor>singletonList(new IRuleReference_Editor());
-        case 13:
-          return Collections.<ConceptEditor>singletonList(new InvokeActionStatement_Editor());
-        case 14:
-          return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
-        case 15:
-          return Collections.<ConceptEditor>singletonList(new IsIntentionApplicableExpression_Editor());
-        case 16:
-          return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
-        case 17:
-          return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
-        case 18:
-          return Collections.<ConceptEditor>singletonList(new MockAnnotation_Editor());
-        case 19:
-          return Collections.<ConceptEditor>singletonList(new MockScopeProvider_Editor());
-        case 20:
-          return Collections.<ConceptEditor>singletonList(new ModelExpression_Editor());
-        case 21:
-          return Collections.<ConceptEditor>singletonList(new NamedNodeReference_Editor());
-        case 22:
-          return Collections.<ConceptEditor>singletonList(new NodeConstraintsErrorCheckOperation_Editor());
-        case 23:
-          return Collections.<ConceptEditor>singletonList(new NodeConstraintsWarningCheckOperation_Editor());
-        case 24:
-          return Collections.<ConceptEditor>singletonList(new NodeErrorCheckOperation_Editor());
-        case 25:
-          return Collections.<ConceptEditor>singletonList(new NodeInfoCheckOperation_Editor());
-        case 26:
-          return Collections.<ConceptEditor>singletonList(new NodeOperationsContainer_Editor());
-        case 27:
-          return Collections.<ConceptEditor>singletonList(new NodePropertiesContainer_Editor());
-        case 28:
-          return Collections.<ConceptEditor>singletonList(new NodeReachable_Editor());
-        case 29:
-          return Collections.<ConceptEditor>singletonList(new NodeTypeCheckOperation_Editor());
-        case 30:
-          return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
-        case 31:
-          return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
-        case 32:
-          return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
-        case 33:
-          return Collections.<ConceptEditor>singletonList(new NodeUnknownErrorCheckOperation_Editor());
-        case 34:
-          return Collections.<ConceptEditor>singletonList(new NodeUnknownWarningCheckOperation_Editor());
-        case 35:
-          return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
-        case 36:
-          return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
-        case 37:
-          return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
-        case 38:
-          return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
-        case 39:
-          return Collections.<ConceptEditor>singletonList(new PressMouseStatement_Editor());
-        case 40:
-          return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
-        case 41:
-          return Collections.<ConceptEditor>singletonList(new ScopeEntry_Editor());
-        case 42:
-          return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
-        case 43:
-          return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
-        case 44:
-          return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
-        case 45:
-          return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
-        case 46:
-          return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
-        case 47:
-          return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
-        case 48:
-          return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
-        case 49:
-          return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
-        case 50:
-          return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
-        case 51:
-          return Collections.<ConceptEditor>singletonList(new UntypedExpression_Editor());
-        case 52:
-          return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
-        case 53:
-          return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BootstrapActionReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CheckDataFlowOperation_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new CheckNodeDataflow_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new CheckNodeForErrorMessagesOperation_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new CheckNodeForErrors_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new DragMouseStatement_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new EditorComponentExpression_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new EditorTestCase_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new ExpressionContainer_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new IRuleReference_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new InvokeActionStatement_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new IsIntentionApplicableExpression_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new MockAnnotation_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new MockScopeProvider_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new ModelExpression_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new NamedNodeReference_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new NodeConstraintsErrorCheckOperation_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new NodeConstraintsWarningCheckOperation_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new NodeErrorCheckOperation_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new NodeInfoCheckOperation_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new NodeOperationsContainer_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new NodePropertiesContainer_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new NodeReachable_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeCheckOperation_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new NodeUnknownErrorCheckOperation_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new NodeUnknownWarningCheckOperation_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new PressMouseStatement_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new ScopeEntry_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
+      case 51:
+        return Collections.<ConceptEditor>singletonList(new UntypedExpression_Editor());
+      case 52:
+        return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
+      case 53:
+        return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -137,19 +135,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_xbvbvu_a0d.index(cncpt)) {
-        case 0:
-          return Collections.<SubstituteMenu>singletonList(new NodeConstraintsErrorCheckOperation_SubstituteMenu());
-        case 1:
-          return Collections.<SubstituteMenu>singletonList(new NodeConstraintsWarningCheckOperation_SubstituteMenu());
-        case 2:
-          return Collections.<SubstituteMenu>singletonList(new NodeUnknownErrorCheckOperation_SubstituteMenu());
-        case 3:
-          return Collections.<SubstituteMenu>singletonList(new NodeUnknownWarningCheckOperation_SubstituteMenu());
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new NodeConstraintsErrorCheckOperation_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new NodeConstraintsWarningCheckOperation_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new NodeUnknownErrorCheckOperation_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new NodeUnknownWarningCheckOperation_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }

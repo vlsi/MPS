@@ -24,294 +24,291 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_t8hmqt_a0c.index(cncpt)) {
-        case 0:
-          return new AdditionalForLoopVariable_TextGen();
-        case 1:
-          return new AndExpression_TextGen();
-        case 2:
-          return new Annotation_TextGen();
-        case 3:
-          return new AnnotationInstance_TextGen();
-        case 4:
-          return new AnnotationInstanceExpression_TextGen();
-        case 5:
-          return new AnnotationInstanceValue_TextGen();
-        case 6:
-          return new AnnotationMethodDeclaration_TextGen();
-        case 7:
-          return new AnonymousClass_TextGen();
-        case 8:
-          return new AnonymousClassCreator_TextGen();
-        case 9:
-          return new ArrayAccessExpression_TextGen();
-        case 10:
-          return new ArrayClassExpression_TextGen();
-        case 11:
-          return new ArrayCloneOperation_TextGen();
-        case 12:
-          return new ArrayCreator_TextGen();
-        case 13:
-          return new ArrayCreatorWithInitializer_TextGen();
-        case 14:
-          return new ArrayLengthOperation_TextGen();
-        case 15:
-          return new ArrayLiteral_TextGen();
-        case 16:
-          return new ArrayType_TextGen();
-        case 17:
-          return new AssertStatement_TextGen();
-        case 18:
-          return new BaseAssignmentExpression_TextGen();
-        case 19:
-          return new BitwiseAndExpression_TextGen();
-        case 20:
-          return new BitwiseNotExpression_TextGen();
-        case 21:
-          return new BitwiseOrExpression_TextGen();
-        case 22:
-          return new BitwiseXorExpression_TextGen();
-        case 23:
-          return new BlockStatement_TextGen();
-        case 24:
-          return new BooleanConstant_TextGen();
-        case 25:
-          return new BooleanType_TextGen();
-        case 26:
-          return new BreakStatement_TextGen();
-        case 27:
-          return new ByteType_TextGen();
-        case 28:
-          return new CastExpression_TextGen();
-        case 29:
-          return new CatchClause_TextGen();
-        case 30:
-          return new CharConstant_TextGen();
-        case 31:
-          return new CharType_TextGen();
-        case 32:
-          return new ClassConcept_TextGen();
-        case 33:
-          return new ClassCreator_TextGen();
-        case 34:
-          return new ClassifierClassExpression_TextGen();
-        case 35:
-          return new ClassifierType_TextGen();
-        case 36:
-          return new CommentedStatement_TextGen();
-        case 37:
-          return new CommentedStatementsBlock_TextGen();
-        case 38:
-          return new ConceptFunctionParameter_TextGen();
-        case 39:
-          return new ConstructorDeclaration_TextGen();
-        case 40:
-          return new ContinueStatement_TextGen();
-        case 41:
-          return new DefaultClassCreator_TextGen();
-        case 42:
-          return new DimensionExpression_TextGen();
-        case 43:
-          return new DivExpression_TextGen();
-        case 44:
-          return new DoWhileStatement_TextGen();
-        case 45:
-          return new DotExpression_TextGen();
-        case 46:
-          return new DoubleType_TextGen();
-        case 47:
-          return new ElsifClause_TextGen();
-        case 48:
-          return new EnumClass_TextGen();
-        case 49:
-          return new EnumConstantDeclaration_TextGen();
-        case 50:
-          return new EnumConstantReference_TextGen();
-        case 51:
-          return new EnumValueOfExpression_TextGen();
-        case 52:
-          return new EnumValuesExpression_TextGen();
-        case 53:
-          return new EqualsExpression_TextGen();
-        case 54:
-          return new ExpressionStatement_TextGen();
-        case 55:
-          return new FieldDeclaration_TextGen();
-        case 56:
-          return new FieldReferenceOperation_TextGen();
-        case 57:
-          return new FloatType_TextGen();
-        case 58:
-          return new FloatingPointConstant_TextGen();
-        case 59:
-          return new FloatingPointFloatConstant_TextGen();
-        case 60:
-          return new ForStatement_TextGen();
-        case 61:
-          return new ForeachStatement_TextGen();
-        case 62:
-          return new GenericNewExpression_TextGen();
-        case 63:
-          return new GreaterThanExpression_TextGen();
-        case 64:
-          return new GreaterThanOrEqualsExpression_TextGen();
-        case 65:
-          return new HexIntegerLiteral_TextGen();
-        case 66:
-          return new IfStatement_TextGen();
-        case 67:
-          return new ImplicitAnnotationInstanceValue_TextGen();
-        case 68:
-          return new InstanceInitializer_TextGen();
-        case 69:
-          return new InstanceMethodCallOperation_TextGen();
-        case 70:
-          return new InstanceMethodDeclaration_TextGen();
-        case 71:
-          return new InstanceOfExpression_TextGen();
-        case 72:
-          return new IntegerConstant_TextGen();
-        case 73:
-          return new IntegerType_TextGen();
-        case 74:
-          return new Interface_TextGen();
-        case 75:
-          return new LessThanExpression_TextGen();
-        case 76:
-          return new LessThanOrEqualsExpression_TextGen();
-        case 77:
-          return new LocalMethodCall_TextGen();
-        case 78:
-          return new LocalVariableDeclaration_TextGen();
-        case 79:
-          return new LocalVariableDeclarationStatement_TextGen();
-        case 80:
-          return new LongLiteral_TextGen();
-        case 81:
-          return new LongType_TextGen();
-        case 82:
-          return new LowerBoundType_TextGen();
-        case 83:
-          return new MinusExpression_TextGen();
-        case 84:
-          return new MulExpression_TextGen();
-        case 85:
-          return new NestedNewExpression_TextGen();
-        case 86:
-          return new NotEqualsExpression_TextGen();
-        case 87:
-          return new NotExpression_TextGen();
-        case 88:
-          return new NullLiteral_TextGen();
-        case 89:
-          return new OrExpression_TextGen();
-        case 90:
-          return new ParameterDeclaration_TextGen();
-        case 91:
-          return new ParenthesizedExpression_TextGen();
-        case 92:
-          return new PlaceholderMember_TextGen();
-        case 93:
-          return new PlusExpression_TextGen();
-        case 94:
-          return new PostfixDecrementExpression_TextGen();
-        case 95:
-          return new PostfixIncrementExpression_TextGen();
-        case 96:
-          return new PrefixDecrementExpression_TextGen();
-        case 97:
-          return new PrefixIncrementExpression_TextGen();
-        case 98:
-          return new PrimitiveClassExpression_TextGen();
-        case 99:
-          return new QualifiedSuperMethodCall_TextGen();
-        case 100:
-          return new RemExpression_TextGen();
-        case 101:
-          return new RemarkStatement_TextGen();
-        case 102:
-          return new ReturnStatement_TextGen();
-        case 103:
-          return new ShiftLeftExpression_TextGen();
-        case 104:
-          return new ShiftRightExpression_TextGen();
-        case 105:
-          return new ShiftRightUnsignedExpression_TextGen();
-        case 106:
-          return new ShortType_TextGen();
-        case 107:
-          return new SingleLineComment_TextGen();
-        case 108:
-          return new Statement_TextGen();
-        case 109:
-          return new StatementCommentPart_TextGen();
-        case 110:
-          return new StatementList_TextGen();
-        case 111:
-          return new StaticFieldDeclaration_TextGen();
-        case 112:
-          return new StaticFieldReference_TextGen();
-        case 113:
-          return new StaticInitializer_TextGen();
-        case 114:
-          return new StaticMethodCall_TextGen();
-        case 115:
-          return new StaticMethodDeclaration_TextGen();
-        case 116:
-          return new StringLiteral_TextGen();
-        case 117:
-          return new StringType_TextGen();
-        case 118:
-          return new SuperConstructorInvocation_TextGen();
-        case 119:
-          return new SuperMethodCall_TextGen();
-        case 120:
-          return new SwitchStatement_TextGen();
-        case 121:
-          return new SynchronizedStatement_TextGen();
-        case 122:
-          return new TernaryOperatorExpression_TextGen();
-        case 123:
-          return new TextCommentPart_TextGen();
-        case 124:
-          return new ThisConstructorInvocation_TextGen();
-        case 125:
-          return new ThisExpression_TextGen();
-        case 126:
-          return new ThrowStatement_TextGen();
-        case 127:
-          return new TryCatchStatement_TextGen();
-        case 128:
-          return new TryStatement_TextGen();
-        case 129:
-          return new TypeVariableDeclaration_TextGen();
-        case 130:
-          return new TypeVariableReference_TextGen();
-        case 131:
-          return new UnaryMinus_TextGen();
-        case 132:
-          return new UpperBoundType_TextGen();
-        case 133:
-          return new VarType_TextGen();
-        case 134:
-          return new VariableArityType_TextGen();
-        case 135:
-          return new VariableDeclaration_TextGen();
-        case 136:
-          return new VariableReference_TextGen();
-        case 137:
-          return new Visibility_TextGen();
-        case 138:
-          return new VoidType_TextGen();
-        case 139:
-          return new WhileStatement_TextGen();
-        case 140:
-          return new WildCardType_TextGen();
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_t8hmqt_a0c.index(cncpt)) {
+      case 0:
+        return new AdditionalForLoopVariable_TextGen();
+      case 1:
+        return new AndExpression_TextGen();
+      case 2:
+        return new Annotation_TextGen();
+      case 3:
+        return new AnnotationInstance_TextGen();
+      case 4:
+        return new AnnotationInstanceExpression_TextGen();
+      case 5:
+        return new AnnotationInstanceValue_TextGen();
+      case 6:
+        return new AnnotationMethodDeclaration_TextGen();
+      case 7:
+        return new AnonymousClass_TextGen();
+      case 8:
+        return new AnonymousClassCreator_TextGen();
+      case 9:
+        return new ArrayAccessExpression_TextGen();
+      case 10:
+        return new ArrayClassExpression_TextGen();
+      case 11:
+        return new ArrayCloneOperation_TextGen();
+      case 12:
+        return new ArrayCreator_TextGen();
+      case 13:
+        return new ArrayCreatorWithInitializer_TextGen();
+      case 14:
+        return new ArrayLengthOperation_TextGen();
+      case 15:
+        return new ArrayLiteral_TextGen();
+      case 16:
+        return new ArrayType_TextGen();
+      case 17:
+        return new AssertStatement_TextGen();
+      case 18:
+        return new BaseAssignmentExpression_TextGen();
+      case 19:
+        return new BitwiseAndExpression_TextGen();
+      case 20:
+        return new BitwiseNotExpression_TextGen();
+      case 21:
+        return new BitwiseOrExpression_TextGen();
+      case 22:
+        return new BitwiseXorExpression_TextGen();
+      case 23:
+        return new BlockStatement_TextGen();
+      case 24:
+        return new BooleanConstant_TextGen();
+      case 25:
+        return new BooleanType_TextGen();
+      case 26:
+        return new BreakStatement_TextGen();
+      case 27:
+        return new ByteType_TextGen();
+      case 28:
+        return new CastExpression_TextGen();
+      case 29:
+        return new CatchClause_TextGen();
+      case 30:
+        return new CharConstant_TextGen();
+      case 31:
+        return new CharType_TextGen();
+      case 32:
+        return new ClassConcept_TextGen();
+      case 33:
+        return new ClassCreator_TextGen();
+      case 34:
+        return new ClassifierClassExpression_TextGen();
+      case 35:
+        return new ClassifierType_TextGen();
+      case 36:
+        return new CommentedStatement_TextGen();
+      case 37:
+        return new CommentedStatementsBlock_TextGen();
+      case 38:
+        return new ConceptFunctionParameter_TextGen();
+      case 39:
+        return new ConstructorDeclaration_TextGen();
+      case 40:
+        return new ContinueStatement_TextGen();
+      case 41:
+        return new DefaultClassCreator_TextGen();
+      case 42:
+        return new DimensionExpression_TextGen();
+      case 43:
+        return new DivExpression_TextGen();
+      case 44:
+        return new DoWhileStatement_TextGen();
+      case 45:
+        return new DotExpression_TextGen();
+      case 46:
+        return new DoubleType_TextGen();
+      case 47:
+        return new ElsifClause_TextGen();
+      case 48:
+        return new EnumClass_TextGen();
+      case 49:
+        return new EnumConstantDeclaration_TextGen();
+      case 50:
+        return new EnumConstantReference_TextGen();
+      case 51:
+        return new EnumValueOfExpression_TextGen();
+      case 52:
+        return new EnumValuesExpression_TextGen();
+      case 53:
+        return new EqualsExpression_TextGen();
+      case 54:
+        return new ExpressionStatement_TextGen();
+      case 55:
+        return new FieldDeclaration_TextGen();
+      case 56:
+        return new FieldReferenceOperation_TextGen();
+      case 57:
+        return new FloatType_TextGen();
+      case 58:
+        return new FloatingPointConstant_TextGen();
+      case 59:
+        return new FloatingPointFloatConstant_TextGen();
+      case 60:
+        return new ForStatement_TextGen();
+      case 61:
+        return new ForeachStatement_TextGen();
+      case 62:
+        return new GenericNewExpression_TextGen();
+      case 63:
+        return new GreaterThanExpression_TextGen();
+      case 64:
+        return new GreaterThanOrEqualsExpression_TextGen();
+      case 65:
+        return new HexIntegerLiteral_TextGen();
+      case 66:
+        return new IfStatement_TextGen();
+      case 67:
+        return new ImplicitAnnotationInstanceValue_TextGen();
+      case 68:
+        return new InstanceInitializer_TextGen();
+      case 69:
+        return new InstanceMethodCallOperation_TextGen();
+      case 70:
+        return new InstanceMethodDeclaration_TextGen();
+      case 71:
+        return new InstanceOfExpression_TextGen();
+      case 72:
+        return new IntegerConstant_TextGen();
+      case 73:
+        return new IntegerType_TextGen();
+      case 74:
+        return new Interface_TextGen();
+      case 75:
+        return new LessThanExpression_TextGen();
+      case 76:
+        return new LessThanOrEqualsExpression_TextGen();
+      case 77:
+        return new LocalMethodCall_TextGen();
+      case 78:
+        return new LocalVariableDeclaration_TextGen();
+      case 79:
+        return new LocalVariableDeclarationStatement_TextGen();
+      case 80:
+        return new LongLiteral_TextGen();
+      case 81:
+        return new LongType_TextGen();
+      case 82:
+        return new LowerBoundType_TextGen();
+      case 83:
+        return new MinusExpression_TextGen();
+      case 84:
+        return new MulExpression_TextGen();
+      case 85:
+        return new NestedNewExpression_TextGen();
+      case 86:
+        return new NotEqualsExpression_TextGen();
+      case 87:
+        return new NotExpression_TextGen();
+      case 88:
+        return new NullLiteral_TextGen();
+      case 89:
+        return new OrExpression_TextGen();
+      case 90:
+        return new ParameterDeclaration_TextGen();
+      case 91:
+        return new ParenthesizedExpression_TextGen();
+      case 92:
+        return new PlaceholderMember_TextGen();
+      case 93:
+        return new PlusExpression_TextGen();
+      case 94:
+        return new PostfixDecrementExpression_TextGen();
+      case 95:
+        return new PostfixIncrementExpression_TextGen();
+      case 96:
+        return new PrefixDecrementExpression_TextGen();
+      case 97:
+        return new PrefixIncrementExpression_TextGen();
+      case 98:
+        return new PrimitiveClassExpression_TextGen();
+      case 99:
+        return new QualifiedSuperMethodCall_TextGen();
+      case 100:
+        return new RemExpression_TextGen();
+      case 101:
+        return new RemarkStatement_TextGen();
+      case 102:
+        return new ReturnStatement_TextGen();
+      case 103:
+        return new ShiftLeftExpression_TextGen();
+      case 104:
+        return new ShiftRightExpression_TextGen();
+      case 105:
+        return new ShiftRightUnsignedExpression_TextGen();
+      case 106:
+        return new ShortType_TextGen();
+      case 107:
+        return new SingleLineComment_TextGen();
+      case 108:
+        return new Statement_TextGen();
+      case 109:
+        return new StatementCommentPart_TextGen();
+      case 110:
+        return new StatementList_TextGen();
+      case 111:
+        return new StaticFieldDeclaration_TextGen();
+      case 112:
+        return new StaticFieldReference_TextGen();
+      case 113:
+        return new StaticInitializer_TextGen();
+      case 114:
+        return new StaticMethodCall_TextGen();
+      case 115:
+        return new StaticMethodDeclaration_TextGen();
+      case 116:
+        return new StringLiteral_TextGen();
+      case 117:
+        return new StringType_TextGen();
+      case 118:
+        return new SuperConstructorInvocation_TextGen();
+      case 119:
+        return new SuperMethodCall_TextGen();
+      case 120:
+        return new SwitchStatement_TextGen();
+      case 121:
+        return new SynchronizedStatement_TextGen();
+      case 122:
+        return new TernaryOperatorExpression_TextGen();
+      case 123:
+        return new TextCommentPart_TextGen();
+      case 124:
+        return new ThisConstructorInvocation_TextGen();
+      case 125:
+        return new ThisExpression_TextGen();
+      case 126:
+        return new ThrowStatement_TextGen();
+      case 127:
+        return new TryCatchStatement_TextGen();
+      case 128:
+        return new TryStatement_TextGen();
+      case 129:
+        return new TypeVariableDeclaration_TextGen();
+      case 130:
+        return new TypeVariableReference_TextGen();
+      case 131:
+        return new UnaryMinus_TextGen();
+      case 132:
+        return new UpperBoundType_TextGen();
+      case 133:
+        return new VarType_TextGen();
+      case 134:
+        return new VariableArityType_TextGen();
+      case 135:
+        return new VariableDeclaration_TextGen();
+      case 136:
+        return new VariableReference_TextGen();
+      case 137:
+        return new Visibility_TextGen();
+      case 138:
+        return new VoidType_TextGen();
+      case 139:
+        return new WhileStatement_TextGen();
+      case 140:
+        return new WildCardType_TextGen();
+      default:
     }
     return null;
   }

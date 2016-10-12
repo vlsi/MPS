@@ -20,19 +20,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("hidden", "Temporarily hidden", false, "jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.TabularSM_internal_hints.hidden"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      switch (index_xbvbvu_a0b.index(cncpt)) {
-        case 0:
-          return Collections.<ConceptEditor>singletonList(new Event_hidden_Editor());
-        case 1:
-          return Collections.<ConceptEditor>singletonList(new State_hidden_Editor());
-        case 2:
-          return Collections.<ConceptEditor>singletonList(new StateMachine_tabular_Editor());
-        case 3:
-          return Collections.<ConceptEditor>singletonList(new Transition_tabular_Editor());
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0b.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Event_hidden_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new State_hidden_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new StateMachine_tabular_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new Transition_tabular_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }

@@ -34,44 +34,41 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      switch (index_846f5o_a0t.index(cncpt)) {
-        case 0:
-          return myBuilderBlockStatement__BehaviorDescriptor;
-        case 1:
-          return myBuilderParameter__BehaviorDescriptor;
-        case 2:
-          return myCommandBuilderExpression__BehaviorDescriptor;
-        case 3:
-          return myCommandDeclaration__BehaviorDescriptor;
-        case 4:
-          return myCommandMethod__BehaviorDescriptor;
-        case 5:
-          return myCommandParameterDeclaration__BehaviorDescriptor;
-        case 6:
-          return myCommandPartLengthOperation__BehaviorDescriptor;
-        case 7:
-          return myCommandPartToListOperation__BehaviorDescriptor;
-        case 8:
-          return myCommandType__BehaviorDescriptor;
-        case 9:
-          return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
-        case 10:
-          return myExecuteCommandPart__BehaviorDescriptor;
-        case 11:
-          return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
-        case 12:
-          return myNewProcessBuilderExpression__BehaviorDescriptor;
-        case 13:
-          return myRedirectOutputExpression__BehaviorDescriptor;
-        case 14:
-          return myReportErrorStatement__BehaviorDescriptor;
-        case 15:
-          return myReportExecutionError__BehaviorDescriptor;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0t.index(cncpt)) {
+      case 0:
+        return myBuilderBlockStatement__BehaviorDescriptor;
+      case 1:
+        return myBuilderParameter__BehaviorDescriptor;
+      case 2:
+        return myCommandBuilderExpression__BehaviorDescriptor;
+      case 3:
+        return myCommandDeclaration__BehaviorDescriptor;
+      case 4:
+        return myCommandMethod__BehaviorDescriptor;
+      case 5:
+        return myCommandParameterDeclaration__BehaviorDescriptor;
+      case 6:
+        return myCommandPartLengthOperation__BehaviorDescriptor;
+      case 7:
+        return myCommandPartToListOperation__BehaviorDescriptor;
+      case 8:
+        return myCommandType__BehaviorDescriptor;
+      case 9:
+        return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
+      case 10:
+        return myExecuteCommandPart__BehaviorDescriptor;
+      case 11:
+        return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
+      case 12:
+        return myNewProcessBuilderExpression__BehaviorDescriptor;
+      case 13:
+        return myRedirectOutputExpression__BehaviorDescriptor;
+      case 14:
+        return myReportErrorStatement__BehaviorDescriptor;
+      case 15:
+        return myReportExecutionError__BehaviorDescriptor;
+      default:
     }
     return null;
   }
