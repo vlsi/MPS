@@ -30,7 +30,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_RequestURIBuilderExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_RequestURLBuilderExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

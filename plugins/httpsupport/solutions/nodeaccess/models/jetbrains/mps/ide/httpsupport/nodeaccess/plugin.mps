@@ -305,12 +305,14 @@
         <property id="6886330673564897341" name="type" index="1W9R_Y" />
         <child id="6886330673564897343" name="buffer" index="1W9R_W" />
       </concept>
+      <concept id="8009469105144442267" name="jetbrains.mps.ide.httpsupport.structure.MPSPortProvider" flags="ng" index="1WJJgG" />
       <concept id="4622937352052264727" name="jetbrains.mps.ide.httpsupport.structure.ParameterInitializer" flags="ng" index="1ZOzog">
         <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
         <child id="4622937352052264730" name="value" index="1ZOzot" />
       </concept>
-      <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression" flags="ng" index="1ZOzuk">
+      <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURLBuilderExpression" flags="ng" index="1ZOzuk">
         <reference id="4622937352052264638" name="requestHandler" index="1ZOzuT" />
+        <child id="8009469105144444496" name="port" index="1WJIZB" />
         <child id="4622937352052298487" name="initializer" index="1ZOqJK" />
       </concept>
     </language>
@@ -991,6 +993,7 @@
                 <node concept="2OqwBi" id="5YhakczIfdY" role="3clFbG">
                   <node concept="pFkrN" id="5YhakczIeZa" role="2Oq$k0" />
                   <node concept="1W9Qq2" id="5YhakczIfrk" role="2OqNvi">
+                    <property role="1W9R_Y" value="image/gif" />
                     <node concept="10M0yZ" id="6dOBq74S6Iv" role="1W9R_W">
                       <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
                       <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
@@ -1710,8 +1713,8 @@
     <node concept="3Tm1VV" id="2lt1tUBuCdL" role="1B3o_S" />
   </node>
   <node concept="sE7Ow" id="3ApdfstLXw">
-    <property role="TrG5h" value="NodeReferenceURI" />
-    <property role="2uzpH1" value="Copy Node Reference as URI" />
+    <property role="TrG5h" value="NodeReferenceURL" />
+    <property role="2uzpH1" value="Copy Node Reference as URL" />
     <property role="fJN8o" value="true" />
     <node concept="2S4$dB" id="3Apdfsu3Gq" role="1NuT2Z">
       <property role="TrG5h" value="node" />
@@ -1756,6 +1759,7 @@
                   </node>
                 </node>
               </node>
+              <node concept="1WJJgG" id="6WBmrsjBEYc" role="1WJIZB" />
             </node>
           </node>
         </node>
@@ -1766,7 +1770,7 @@
     <property role="TrG5h" value="NodeAsUriActions" />
     <node concept="ftmFs" id="3Apdfsu18E" role="ftER_">
       <node concept="tCFHf" id="3Apdfsu18H" role="ftvYc">
-        <ref role="tCJdB" node="3ApdfstLXw" resolve="NodeReferenceURI" />
+        <ref role="tCJdB" node="3ApdfstLXw" resolve="NodeReferenceURL" />
       </node>
     </node>
     <node concept="tT9cl" id="3Apdfsu2kH" role="2f5YQi">

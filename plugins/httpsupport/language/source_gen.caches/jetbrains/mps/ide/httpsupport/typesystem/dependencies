@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_ParameterInitializer_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_QueryParameterReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_QueryParameter_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_RequestURIBuilderExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_RequestURLBuilderExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.typesystem.typeof_ResponseSendOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
@@ -88,7 +88,7 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestHandler__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -174,7 +174,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.typesystem.typeof_RequestURIBuilderExpression_InferenceRule" file="typeof_RequestURIBuilderExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.typesystem.typeof_RequestURLBuilderExpression_InferenceRule" file="typeof_RequestURLBuilderExpression_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

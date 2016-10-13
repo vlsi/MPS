@@ -19,9 +19,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class QueryParameter_TransformationMenu extends TransformationMenuBase {
+public class IParameterConverter_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -33,15 +34,15 @@ public class QueryParameter_TransformationMenu extends TransformationMenuBase {
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new QueryParameter_TransformationMenu.TransformationMenuPart_Action_c9o5gj_a0());
+      result.add(new IParameterConverter_TransformationMenu.TransformationMenuPart_Action_643sk3_a0());
     }
     return result;
   }
 
-  private class TransformationMenuPart_Action_c9o5gj_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TransformationMenuPart_Action_643sk3_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new QueryParameter_TransformationMenu.TransformationMenuPart_Action_c9o5gj_a0.Item(context);
+      return new IParameterConverter_TransformationMenu.TransformationMenuPart_Action_643sk3_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -54,17 +55,17 @@ public class QueryParameter_TransformationMenu extends TransformationMenuBase {
       @Nullable
       @Override
       public String getLabelText(String pattern) {
-        return "require";
+        return "required";
       }
 
       @Override
       public void execute(@NotNull String pattern) {
-        SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (true));
+        SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required"), "" + (true));
       }
 
       @Override
       public boolean canExecute(@NotNull String pattern) {
-        return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required")));
+        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")) && !(SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter")), MetaAdapterFactory.getProperty(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, 0x205f4376c585b43dL, "required")));
       }
 
     }

@@ -50,6 +50,11 @@
       <unit id="5973657458022229901" at="1,0,481,10" name="jetbrains.mps.ide.build.tests.mpsPackaged" />
     </file>
   </root>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/6147098677962246363">
+    <file name="mpsHttpSupport.xml">
+      <unit id="6147098677962246363" at="1,0,460,10" name="jetbrains.mps.ide.build.tests.mpsHttpSupport" />
+    </file>
+  </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/617882099353312053">
     <file name="mpsGenerator.xml">
       <unit id="617882099353312053" at="1,0,916,10" name="jetbrains.mps.ide.build.tests.mpsGenerator" />

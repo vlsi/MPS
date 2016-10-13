@@ -18,6 +18,8 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
+    <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
+    <import index="4h87" ref="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -58,6 +60,7 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -1242,6 +1245,97 @@
     </node>
     <node concept="13hLZK" id="2QtnklMNaYk" role="13h7CW">
       <node concept="3clFbS" id="2QtnklMNaYl" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6WBmrsjA4KT">
+    <property role="3GE5qa" value="request" />
+    <ref role="13h7C2" to="ndib:6WBmrsjA0m6" resolve="PortProvider" />
+    <node concept="13i0hz" id="6WBmrsjA4L4" role="13h7CS">
+      <property role="TrG5h" value="getPort" />
+      <property role="13i0it" value="true" />
+      <property role="13i0iv" value="true" />
+      <node concept="3Tm1VV" id="6WBmrsjA4L5" role="1B3o_S" />
+      <node concept="10Oyi0" id="6WBmrsjA4Lk" role="3clF45" />
+      <node concept="3clFbS" id="6WBmrsjA4L7" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="6WBmrsjA4KU" role="13h7CW">
+      <node concept="3clFbS" id="6WBmrsjA4KV" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6WBmrsjAk1F">
+    <property role="3GE5qa" value="request" />
+    <ref role="13h7C2" to="ndib:6WBmrsjA0oK" resolve="IDEAPlatformPortProvider" />
+    <node concept="13hLZK" id="6WBmrsjAk1G" role="13h7CW">
+      <node concept="3clFbS" id="6WBmrsjAk1H" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6WBmrsjAk26" role="13h7CS">
+      <property role="TrG5h" value="getPort" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6WBmrsjA4L4" resolve="getPort" />
+      <node concept="3Tm1VV" id="6WBmrsjAk27" role="1B3o_S" />
+      <node concept="3clFbS" id="6WBmrsjAk2a" role="3clF47">
+        <node concept="3clFbF" id="6WBmrsjAkdU" role="3cqZAp">
+          <node concept="2OqwBi" id="6WBmrsjAkun" role="3clFbG">
+            <node concept="2YIFZM" id="6WBmrsjAkef" role="2Oq$k0">
+              <ref role="37wK5l" to="e5vs:~BuiltInServerManager.getInstance():org.jetbrains.ide.BuiltInServerManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="e5vs:~BuiltInServerManager" resolve="BuiltInServerManager" />
+            </node>
+            <node concept="liA8E" id="6WBmrsjAkHh" role="2OqNvi">
+              <ref role="37wK5l" to="e5vs:~BuiltInServerManager.getPort():int" resolve="getPort" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="6WBmrsjAk2b" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6WBmrsjArnv">
+    <property role="3GE5qa" value="request" />
+    <ref role="13h7C2" to="ndib:6WBmrsjAqQr" resolve="MPSPortProvider" />
+    <node concept="13hLZK" id="6WBmrsjArnw" role="13h7CW">
+      <node concept="3clFbS" id="6WBmrsjArnx" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6WBmrsjArnU" role="13h7CS">
+      <property role="TrG5h" value="getPort" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6WBmrsjA4L4" resolve="getPort" />
+      <node concept="3Tm1VV" id="6WBmrsjArnV" role="1B3o_S" />
+      <node concept="3clFbS" id="6WBmrsjArnY" role="3clF47">
+        <node concept="3clFbF" id="6WBmrsjArod" role="3cqZAp">
+          <node concept="2YIFZM" id="6WBmrsjAroN" role="3clFbG">
+            <ref role="37wK5l" to="4h87:3Apdfsuj$9" resolve="getCurrentPort" />
+            <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="6WBmrsjArnZ" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6WBmrsjB3bw">
+    <property role="3GE5qa" value="request" />
+    <ref role="13h7C2" to="ndib:6WBmrsjB3b2" resolve="Port" />
+    <node concept="13hLZK" id="6WBmrsjB3bx" role="13h7CW">
+      <node concept="3clFbS" id="6WBmrsjB3by" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6WBmrsjB3bF" role="13h7CS">
+      <property role="TrG5h" value="getPort" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6WBmrsjA4L4" resolve="getPort" />
+      <node concept="3Tm1VV" id="6WBmrsjB3bG" role="1B3o_S" />
+      <node concept="3clFbS" id="6WBmrsjB3bJ" role="3clF47">
+        <node concept="3clFbF" id="6WBmrsjB3bY" role="3cqZAp">
+          <node concept="2OqwBi" id="6WBmrsjB3jA" role="3clFbG">
+            <node concept="13iPFW" id="6WBmrsjB3bX" role="2Oq$k0" />
+            <node concept="3TrcHB" id="6WBmrsjB3Ha" role="2OqNvi">
+              <ref role="3TsBF5" to="ndib:6WBmrsjB3b3" resolve="portNumber" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="6WBmrsjB3bK" role="3clF45" />
     </node>
   </node>
 </model>

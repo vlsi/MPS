@@ -25,8 +25,9 @@ public class MPSRequestPortManager extends CustomPortServerManagerBase {
   public void cannotBind(Exception e, int port) {
     if (port >= PORT_LAST) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Cannot bind to any port from " + PORT_FIRST + ".." + PORT_LAST + ". HTTP Support Plugin disabled.");
+        LOG.error("Cannot bind to any port in range " + PORT_FIRST + ".." + (PORT_LAST - 1) + ". Integration with YouTrack/TeamCity is disabled ");
       }
+      this.port = -1;
       return;
     }
     this.port = port + 1;

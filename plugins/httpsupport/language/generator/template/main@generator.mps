@@ -29,6 +29,7 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
@@ -36,6 +37,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -191,7 +193,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -1173,9 +1174,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="40BYgt06tNY" role="3acgRq">
-      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
       <node concept="j$656" id="40BYgt06v2s" role="1lVwrX">
-        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURIBuilderExpression" />
+        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURLBuilderExpression" />
       </node>
     </node>
     <node concept="3lhOvk" id="7rr3ESJDe6G" role="3lj3bC">
@@ -1676,13 +1677,15 @@
               </node>
             </node>
           </node>
-          <node concept="1Wc70l" id="1lOPnOXNOFw" role="3clFbw">
-            <node concept="3nyPlj" id="1lOPnOXNQhA" role="3uHU7w">
-              <ref role="37wK5l" to="ciba:3D_I_vuDE1X" resolve="canHandle" />
-            </node>
+          <node concept="22lmx$" id="7H1BvJpTgDs" role="3clFbw">
             <node concept="3fqX7Q" id="3D_I_vuEH2p" role="3uHU7B">
               <node concept="37vLTw" id="3D_I_vuEH3a" role="3fr31v">
                 <ref role="3cqZAo" node="3D_I_vuE01E" resolve="myCorrectRequest" />
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="7H1BvJpTgvM" role="3uHU7w">
+              <node concept="3nyPlj" id="7H1BvJpTgvO" role="3fr31v">
+                <ref role="37wK5l" to="ciba:3D_I_vuDE1X" resolve="canHandle" />
               </node>
             </node>
           </node>
@@ -3996,9 +3999,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="40BYgt06v2q">
-    <property role="TrG5h" value="reduce_RequestURIBuilderExpression" />
+    <property role="TrG5h" value="reduce_RequestURLBuilderExpression" />
     <property role="3GE5qa" value="request" />
-    <ref role="3gUMe" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+    <ref role="3gUMe" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     <node concept="2Tav94" id="40BYgt06vlK" role="13RCb5">
       <property role="1YR72k" value="true" />
       <node concept="2YIFZL" id="40BYgt06vlN" role="2Tav96">
@@ -4107,9 +4110,23 @@
                       <node concept="Xl_RD" id="32YxhLfg7Xx" role="3uHU7B">
                         <property role="Xl_RC" value="http://127.0.0.1:" />
                       </node>
-                      <node concept="2YIFZM" id="32YxhLfg7Xy" role="3uHU7w">
-                        <ref role="37wK5l" to="4h87:3Apdfsuj$9" resolve="getCurrentPort" />
-                        <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+                      <node concept="3cmrfG" id="6WBmrsjBWue" role="3uHU7w">
+                        <property role="3cmrfH" value="0" />
+                        <node concept="1sPUBX" id="6WBmrsjC1hv" role="lGtFl">
+                          <ref role="v9R2y" node="6WBmrsjBXF3" resolve="switch_portProvider" />
+                          <node concept="3NFfHV" id="6WBmrsjC2uk" role="1sPUBK">
+                            <node concept="3clFbS" id="6WBmrsjC2ul" role="2VODD2">
+                              <node concept="3clFbF" id="6WBmrsjC3Fx" role="3cqZAp">
+                                <node concept="2OqwBi" id="6WBmrsjC3Tg" role="3clFbG">
+                                  <node concept="30H73N" id="6WBmrsjC3Fw" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="6WBmrsjC4lL" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="ndib:6WBmrsjArpg" resolve="port" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -4400,9 +4417,9 @@
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     </node>
     <node concept="3aamgX" id="40BYgt0bTFL" role="3acgRq">
-      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
       <node concept="j$656" id="40BYgt0bTFV" role="1lVwrX">
-        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURIBuilderExpression" />
+        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURLBuilderExpression" />
       </node>
     </node>
     <node concept="avzCv" id="40BYgt0bNJZ" role="avys_">
@@ -4417,7 +4434,7 @@
                 </node>
                 <node concept="2SmgA7" id="40BYgt0bPfF" role="2OqNvi">
                   <node concept="chp4Y" id="40BYgt0bPBV" role="1dBWTz">
-                    <ref role="cht4Q" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+                    <ref role="cht4Q" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
                   </node>
                 </node>
               </node>
@@ -4772,6 +4789,63 @@
     </node>
     <node concept="gft3U" id="2QtnklMNstJ" role="jxRDz">
       <node concept="10Nm6u" id="2QtnklMNsAU" role="gfFT$" />
+    </node>
+  </node>
+  <node concept="jVnub" id="6WBmrsjBXF3">
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="switch_portProvider" />
+    <node concept="3aamgX" id="6WBmrsjBXF4" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="ndib:6WBmrsjB3b2" resolve="Port" />
+      <node concept="gft3U" id="6WBmrsjBXFg" role="1lVwrX">
+        <node concept="Xl_RD" id="6WBmrsjBXFm" role="gfFT$">
+          <node concept="17Uvod" id="6WBmrsjBXFr" role="lGtFl">
+            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+            <property role="2qtEX9" value="value" />
+            <node concept="3zFVjK" id="6WBmrsjBXFs" role="3zH0cK">
+              <node concept="3clFbS" id="6WBmrsjBXFt" role="2VODD2">
+                <node concept="3clFbF" id="6WBmrsjBXNX" role="3cqZAp">
+                  <node concept="2YIFZM" id="6WBmrsjBZuB" role="3clFbG">
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(int):java.lang.String" resolve="valueOf" />
+                    <node concept="2OqwBi" id="6WBmrsjBY45" role="37wK5m">
+                      <node concept="30H73N" id="6WBmrsjBXNW" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6WBmrsjBYn8" role="2OqNvi">
+                        <ref role="37wK5l" to="zfj2:6WBmrsjA4L4" resolve="getPort" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="6WBmrsjBZWu" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="ndib:6WBmrsjA0oK" resolve="IDEAPlatformPortProvider" />
+      <node concept="gft3U" id="6WBmrsjBZWN" role="1lVwrX">
+        <node concept="2OqwBi" id="6WBmrsjC0a_" role="gfFT$">
+          <node concept="2YIFZM" id="6WBmrsjBZYr" role="2Oq$k0">
+            <ref role="37wK5l" to="e5vs:~BuiltInServerManager.getInstance():org.jetbrains.ide.BuiltInServerManager" resolve="getInstance" />
+            <ref role="1Pybhc" to="e5vs:~BuiltInServerManager" resolve="BuiltInServerManager" />
+          </node>
+          <node concept="liA8E" id="6WBmrsjC11r" role="2OqNvi">
+            <ref role="37wK5l" to="e5vs:~BuiltInServerManager.getPort():int" resolve="getPort" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="6WBmrsjC11Z" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="ndib:6WBmrsjAqQr" resolve="MPSPortProvider" />
+      <node concept="gft3U" id="6WBmrsjC12Z" role="1lVwrX">
+        <node concept="2YIFZM" id="6WBmrsjC16t" role="gfFT$">
+          <ref role="37wK5l" to="4h87:3Apdfsuj$9" resolve="getCurrentPort" />
+          <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

@@ -10,6 +10,6 @@ public class NodeAsUriActions_ActionGroup extends GeneratedActionGroup {
     super("NodeAsUriActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
-    NodeAsUriActions_ActionGroup.this.addAction("jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeReferenceURI_Action");
+    NodeAsUriActions_ActionGroup.this.addAction("jetbrains.mps.ide.httpsupport.nodeaccess.plugin.NodeReferenceURL_Action");
   }
 }

@@ -17,6 +17,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -264,8 +265,8 @@
   </node>
   <node concept="1TIwiD" id="40BYgsZXsUj">
     <property role="EcuMT" value="4622937352052264595" />
-    <property role="TrG5h" value="RequestURIBuilderExpression" />
-    <property role="34LRSv" value="request URI" />
+    <property role="TrG5h" value="RequestURLBuilderExpression" />
+    <property role="34LRSv" value="request URL" />
     <property role="3GE5qa" value="request" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="40BYgsZXsUY" role="1TKVEi">
@@ -281,6 +282,13 @@
       <property role="20kJfa" value="initializer" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="40BYgsZXsWn" resolve="ParameterInitializer" />
+    </node>
+    <node concept="1TJgyj" id="6WBmrsjArpg" role="1TKVEi">
+      <property role="IQ2ns" value="8009469105144444496" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="port" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6WBmrsjA0m6" resolve="PortProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="40BYgsZXsWn">
@@ -338,7 +346,7 @@
   <node concept="Az7Fb" id="5fiBL1fFehh">
     <property role="3GE5qa" value="handler" />
     <property role="TrG5h" value="SegmentName" />
-    <property role="FLfZY" value="[a-zA-Z0-9$[_]:@&amp;=+$,]*" />
+    <property role="FLfZY" value="[a-zA-Z0-9.\\-_~:@!$&amp;'()*+,;=%]*" />
   </node>
   <node concept="PlHQZ" id="4rKp80ZJrfN">
     <property role="EcuMT" value="5111696079053501427" />
@@ -385,6 +393,43 @@
     <property role="TrG5h" value="DefaultValueFunction" />
     <property role="34LRSv" value="default" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="6WBmrsjA0m6">
+    <property role="EcuMT" value="8009469105144333702" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="PortProvider" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6WBmrsjA0oK">
+    <property role="EcuMT" value="8009469105144333872" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="IDEAPlatformPortProvider" />
+    <property role="34LRSv" value="IDEA Platform port" />
+    <property role="R4oN_" value="current bound port by IDEA Platform" />
+    <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
+  </node>
+  <node concept="1TIwiD" id="6WBmrsjAqQr">
+    <property role="EcuMT" value="8009469105144442267" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="MPSPortProvider" />
+    <property role="34LRSv" value="MPS port" />
+    <property role="R4oN_" value="current bound port by MPS" />
+    <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
+  </node>
+  <node concept="1TIwiD" id="6WBmrsjB3b2">
+    <property role="EcuMT" value="8009469105144607426" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="Port" />
+    <property role="34LRSv" value="custom port" />
+    <property role="R4oN_" value="port defined by user" />
+    <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
+    <node concept="1TJgyi" id="6WBmrsjB3b3" role="1TKVEl">
+      <property role="IQ2nx" value="8009469105144607427" />
+      <property role="TrG5h" value="portNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
 </model>
 

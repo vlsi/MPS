@@ -15,7 +15,7 @@ public class Nodeaccess_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new NodeReferenceURI_Action());
+    addAction(new NodeReferenceURL_Action());
     // groups 
     addGroup(new NodeAsUriActions_ActionGroup());
   }

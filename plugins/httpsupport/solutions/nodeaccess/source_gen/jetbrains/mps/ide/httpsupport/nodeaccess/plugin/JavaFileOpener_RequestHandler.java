@@ -76,7 +76,7 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
 
   @Override
   public boolean canHandle() {
-    if (!(myCorrectRequest) && super.canHandle()) {
+    if (!(myCorrectRequest) || !(super.canHandle())) {
       return false;
     }
 
