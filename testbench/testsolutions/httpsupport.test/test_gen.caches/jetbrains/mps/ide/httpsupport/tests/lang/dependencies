@@ -43,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.testConverter_Converter" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.ide.BuiltInServerManager" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

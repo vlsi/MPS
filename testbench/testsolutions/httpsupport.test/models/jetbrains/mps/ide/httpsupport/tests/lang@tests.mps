@@ -22,6 +22,7 @@
     <import index="ovbn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.apache.sanselan.util(MPS.IDEA/)" />
     <import index="4h87" ref="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)" />
     <import index="i7mp" ref="r:539fc94d-6594-4105-bb3c-60718c110a18(jetbrains.mps.ide.httpsupport.tests.plugin)" />
+    <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -669,9 +670,14 @@
               <node concept="Xl_RD" id="49_GDO7AfCD" role="3uHU7B">
                 <property role="Xl_RC" value="http://localhost:" />
               </node>
-              <node concept="2YIFZM" id="49_GDO7Ahvu" role="3uHU7w">
-                <ref role="37wK5l" to="4h87:3Apdfsuj$9" resolve="getCurrentPort" />
-                <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+              <node concept="2OqwBi" id="6WBmrsj_TTb" role="3uHU7w">
+                <node concept="2YIFZM" id="6WBmrsj_TBF" role="2Oq$k0">
+                  <ref role="37wK5l" to="e5vs:~BuiltInServerManager.getInstance():org.jetbrains.ide.BuiltInServerManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="e5vs:~BuiltInServerManager" resolve="BuiltInServerManager" />
+                </node>
+                <node concept="liA8E" id="6WBmrsj_UYg" role="2OqNvi">
+                  <ref role="37wK5l" to="e5vs:~BuiltInServerManager.getPort():int" resolve="getPort" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="49_GDO7Ak0O" role="3uHU7w">

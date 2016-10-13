@@ -13,8 +13,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import com.intellij.util.ExceptionUtil;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
+import org.jetbrains.ide.BuiltInServerManager;
 import io.netty.handler.codec.http.QueryStringEncoder;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
 import jetbrains.mps.ide.httpsupport.tests.plugin.testConverter_Converter;
 
 @MPSLaunch
@@ -124,7 +125,7 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
       }
     }
     public String buildRequest(String path) {
-      return "http://localhost:" + MPSRequestPortManager.getCurrentPort() + path;
+      return "http://localhost:" + BuiltInServerManager.getInstance().getPort() + path;
     }
     private static String buildRequest_17tcaj_a0a1a6j(String param) {
       QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/handlerTest/turnBack1");
