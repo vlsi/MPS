@@ -15,37 +15,42 @@
  */
 package jetbrains.mps.lang.smodel;
 
-import gnu.trove.TObjectIntHashMap;
+import gnu.trove.TLongIntHashMap;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * Effective translation from {@link org.jetbrains.mps.openapi.language.SAbstractConcept SConcept} to integer value, intended for use in
- * concept switch (i.e. runtime component for lang.smodel language construct).
- * Use {@link ConceptSwitchIndexBuilder} to create an index
- *
+ * Index for concepts from the same language.
+ * @see LanguageConceptIndexBuilder
  * @author Artem Tikhomirov
  * @since 3.5
  */
-public final class ConceptSwitchIndex implements ConceptIndex {
-  private final TObjectIntHashMap<SConceptId> myConcepts;
+public final class LanguageConceptIndex implements ConceptIndex {
+  private final TLongIntHashMap myIndex;
 
-  /*package*/ ConceptSwitchIndex(TObjectIntHashMap<SConceptId> map) {
-    myConcepts = map;
+  /*package*/ LanguageConceptIndex(TLongIntHashMap index) {
+    myIndex = index;
+  }
+
+  /**
+   * Internal API, intended for use from StructureAspectDescriptor.
+   */
+  public int index(SConceptId cid) {
+    long key = cid.getIdValue();
+    return myIndex.containsKey(key) ? myIndex.get(key) : -1;
   }
 
   @Override
-  public int index(@Nullable SAbstractConcept c, int missingValue) {
+  public int index(SAbstractConcept c, int missingValue) {
     if (c == null) {
       return missingValue;
     }
-    SConceptId key = MetaIdHelper.getConcept(c);
-    // note, contains/get pair is vital, as 0 is legitimate index value, while TObjectIntHashMap.get returns 0 for missing keys
-    if (myConcepts.containsKey(key)) {
-      return myConcepts.get(key);
+    long key = MetaIdHelper.getConcept(c).getIdValue();
+    if (myIndex.containsKey(key)) {
+      return myIndex.get(key);
     }
     return missingValue;
+
   }
 }

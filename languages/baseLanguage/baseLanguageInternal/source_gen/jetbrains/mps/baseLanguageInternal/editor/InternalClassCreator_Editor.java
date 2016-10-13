@@ -287,102 +287,11 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_xdoz7h_a_0");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xdoz7h_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_c0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_e0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_g0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_i0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_j0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_m0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xdoz7h_n0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_xdoz7h_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Package");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Either '.' or '!' may split package name from short class name");
     editorCell.setCellId("Constant_xdoz7h_a0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
-    editorCell.setCellId("Constant_xdoz7h_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "may");
-    editorCell.setCellId("Constant_xdoz7h_c0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "be");
-    editorCell.setCellId("Constant_xdoz7h_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_e0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "splitted");
-    editorCell.setCellId("Constant_xdoz7h_e0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
-    editorCell.setCellId("Constant_xdoz7h_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_g0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "short");
-    editorCell.setCellId("Constant_xdoz7h_g0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
-    editorCell.setCellId("Constant_xdoz7h_h0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
-    editorCell.setCellId("Constant_xdoz7h_i0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_xdoz7h_j0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "either");
-    editorCell.setCellId("Constant_xdoz7h_k0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'.'");
-    editorCell.setCellId("Constant_xdoz7h_l0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_m0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "or");
-    editorCell.setCellId("Constant_xdoz7h_m0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_xdoz7h_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'!'");
-    editorCell.setCellId("Constant_xdoz7h_n0");
     editorCell.setDefaultText("");
     return editorCell;
   }

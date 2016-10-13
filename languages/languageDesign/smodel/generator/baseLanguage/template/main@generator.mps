@@ -19789,7 +19789,7 @@
             </node>
             <node concept="2OqwBi" id="3RiBxsm06AJ" role="3KbGdf">
               <node concept="liA8E" id="3RiBxsm06AK" role="2OqNvi">
-                <ref role="37wK5l" to="ksn4:~ConceptSwitchIndex.index(org.jetbrains.mps.openapi.language.SAbstractConcept):int" resolve="index" />
+                <ref role="37wK5l" to="ksn4:~ConceptIndex.index(org.jetbrains.mps.openapi.language.SAbstractConcept):int" resolve="index" />
                 <node concept="37vLTw" id="3RiBxsm06AL" role="37wK5m">
                   <ref role="3cqZAo" node="5ffMBkazIMt" resolve="cncpt" />
                 </node>

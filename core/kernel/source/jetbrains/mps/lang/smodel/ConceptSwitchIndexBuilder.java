@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * @author Artem Tikhomirov
  * @since 3.5
  */
-public class ConceptSwitchIndexBuilder {
+public final class ConceptSwitchIndexBuilder {
   private final TObjectIntHashMap<SConceptId> myConcepts = new TObjectIntHashMap<>();
   private int myNextAvailableIndex = 0;
   // prevent from modification of exposed map instance (don't want to copy map on seal())
@@ -69,7 +69,8 @@ public class ConceptSwitchIndexBuilder {
   }
 
   /**
-   * Use of the builder is not expected once this method has been invoked
+   * Use of the builder is not expected once this method has been invoked.
+   * XXX perhaps, ConceptIndex return value would be better, jsut need to regenerate a lot.
    */
   public ConceptSwitchIndex seal() {
     assert !myIsSealed;

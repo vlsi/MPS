@@ -1843,46 +1843,7 @@
     <node concept="3EZMnI" id="X6WsgITg_k" role="6VMZX">
       <node concept="2iR$Sn" id="X6WsgITg_l" role="2iSdaV" />
       <node concept="3F0ifn" id="X6WsgITg_m" role="3EZMnx">
-        <property role="3F0ifm" value="Package" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_n" role="3EZMnx">
-        <property role="3F0ifm" value="name" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_o" role="3EZMnx">
-        <property role="3F0ifm" value="may" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_p" role="3EZMnx">
-        <property role="3F0ifm" value="be" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_q" role="3EZMnx">
-        <property role="3F0ifm" value="splitted" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_r" role="3EZMnx">
-        <property role="3F0ifm" value="from" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_s" role="3EZMnx">
-        <property role="3F0ifm" value="short" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_t" role="3EZMnx">
-        <property role="3F0ifm" value="class" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_u" role="3EZMnx">
-        <property role="3F0ifm" value="name" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_v" role="3EZMnx">
-        <property role="3F0ifm" value="with" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_w" role="3EZMnx">
-        <property role="3F0ifm" value="either" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_x" role="3EZMnx">
-        <property role="3F0ifm" value="'.'" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_y" role="3EZMnx">
-        <property role="3F0ifm" value="or" />
-      </node>
-      <node concept="3F0ifn" id="X6WsgITg_z" role="3EZMnx">
-        <property role="3F0ifm" value="'!'" />
+        <property role="3F0ifm" value="Either '.' or '!' may split package name from short class name" />
       </node>
     </node>
   </node>
