@@ -40,7 +40,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptQuerySegment = createDescriptorForQuerySegment();
   /*package*/ final ConceptDescriptor myConceptRequestHandler = createDescriptorForRequestHandler();
   /*package*/ final ConceptDescriptor myConceptRequestType = createDescriptorForRequestType();
-  /*package*/ final ConceptDescriptor myConceptRequestURIBuilderExpression = createDescriptorForRequestURIBuilderExpression();
+  /*package*/ final ConceptDescriptor myConceptRequestURLBuilderExpression = createDescriptorForRequestURLBuilderExpression();
   /*package*/ final ConceptDescriptor myConceptResponseSendOperation = createDescriptorForResponseSendOperation();
   /*package*/ final ConceptDescriptor myConceptSerializeFunction = createDescriptorForSerializeFunction();
   /*package*/ final ConceptDescriptor myConceptSerializedValueParameter = createDescriptorForSerializedValueParameter();
@@ -68,7 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptQuerySegment.getId(), 18);
     myIndexMap.put(myConceptRequestHandler.getId(), 19);
     myIndexMap.put(myConceptRequestType.getId(), 20);
-    myIndexMap.put(myConceptRequestURIBuilderExpression.getId(), 21);
+    myIndexMap.put(myConceptRequestURLBuilderExpression.getId(), 21);
     myIndexMap.put(myConceptResponseSendOperation.getId(), 22);
     myIndexMap.put(myConceptSerializeFunction.getId(), 23);
     myIndexMap.put(myConceptSerializedValueParameter.getId(), 24);
@@ -77,7 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDefaultValueFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIDEAPlatformPortProvider, myConceptIParameterConverter, myConceptMPSPortProvider, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptPort, myConceptPortProvider, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURIBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
+    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDefaultValueFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIDEAPlatformPortProvider, myConceptIParameterConverter, myConceptMPSPortProvider, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptPort, myConceptPortProvider, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURLBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
   }
 
   @Override
@@ -131,7 +131,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 20:
         return myConceptRequestType;
       case 21:
-        return myConceptRequestURIBuilderExpression;
+        return myConceptRequestURLBuilderExpression;
       case 22:
         return myConceptResponseSendOperation;
       case 23:
@@ -338,15 +338,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("request");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForRequestURIBuilderExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "RequestURIBuilderExpression", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L);
+  private static ConceptDescriptor createDescriptorForRequestURLBuilderExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "RequestURLBuilderExpression", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/4622937352052264595");
     b.associate("requestHandler", 0x4027f9073ff5cebeL).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L).optional(false).origin("4622937352052264638").done();
     b.aggregate("initializer", 0x4027f9073ff652f7L).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L).optional(true).ordered(true).multiple(true).origin("4622937352052298487").done();
     b.aggregate("port", 0x6f2759b71399b650L).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L).optional(false).ordered(true).multiple(false).origin("8009469105144444496").done();
-    b.alias("request URI");
+    b.alias("request URL");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForResponseSendOperation() {

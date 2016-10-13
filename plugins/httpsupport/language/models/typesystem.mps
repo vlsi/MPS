@@ -336,7 +336,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="40BYgsZXIYT">
-    <property role="TrG5h" value="typeof_RequestURIBuilderExpression" />
+    <property role="TrG5h" value="typeof_RequestURLBuilderExpression" />
     <property role="3GE5qa" value="request" />
     <node concept="3clFbS" id="40BYgsZXIYU" role="18ibNy">
       <node concept="1Z5TYs" id="40BYgsZXJrO" role="3cqZAp">
@@ -348,15 +348,15 @@
         <node concept="mw_s8" id="40BYgsZXJrR" role="1ZfhK$">
           <node concept="1Z2H0r" id="40BYgsZXIZ6" role="mwGJk">
             <node concept="1YBJjd" id="40BYgsZXJ0Q" role="1Z2MuG">
-              <ref role="1YBMHb" node="40BYgsZXIYW" resolve="requestURIBuilderExpression" />
+              <ref role="1YBMHb" node="40BYgsZXIYW" resolve="requestURLBuilderExpression" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="40BYgsZXIYW" role="1YuTPh">
-      <property role="TrG5h" value="requestURIBuilderExpression" />
-      <ref role="1YaFvo" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+      <property role="TrG5h" value="requestURLBuilderExpression" />
+      <ref role="1YaFvo" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     </node>
   </node>
   <node concept="18kY7G" id="40BYgsZXPvm">
@@ -454,7 +454,7 @@
     </node>
     <node concept="1YaCAy" id="40BYgsZXPvp" role="1YuTPh">
       <property role="TrG5h" value="requestURIBuilderExpression" />
-      <ref role="1YaFvo" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+      <ref role="1YaFvo" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     </node>
   </node>
   <node concept="18kY7G" id="40BYgsZYnvC">

@@ -265,8 +265,8 @@
   </node>
   <node concept="1TIwiD" id="40BYgsZXsUj">
     <property role="EcuMT" value="4622937352052264595" />
-    <property role="TrG5h" value="RequestURIBuilderExpression" />
-    <property role="34LRSv" value="request URI" />
+    <property role="TrG5h" value="RequestURLBuilderExpression" />
+    <property role="34LRSv" value="request URL" />
     <property role="3GE5qa" value="request" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="40BYgsZXsUY" role="1TKVEi">

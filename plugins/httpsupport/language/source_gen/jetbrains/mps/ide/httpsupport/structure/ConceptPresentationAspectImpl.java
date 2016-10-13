@@ -30,7 +30,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_QuerySegment = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestHandler = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RequestURIBuilderExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_RequestURLBuilderExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ResponseSendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SerializeFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SerializedValueParameter = new ConceptPresentationBuilder().create();
@@ -84,7 +84,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 20:
         return props_RequestType;
       case 21:
-        return props_RequestURIBuilderExpression;
+        return props_RequestURLBuilderExpression;
       case 22:
         return props_ResponseSendOperation;
       case 23:

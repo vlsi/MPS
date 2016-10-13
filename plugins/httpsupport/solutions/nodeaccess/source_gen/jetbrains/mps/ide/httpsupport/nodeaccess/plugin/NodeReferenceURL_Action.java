@@ -17,11 +17,11 @@ import io.netty.handler.codec.http.QueryStringEncoder;
 import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class NodeReferenceURI_Action extends BaseAction {
+public class NodeReferenceURL_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public NodeReferenceURI_Action() {
-    super("Copy Node Reference as URI", "", ICON);
+  public NodeReferenceURL_Action() {
+    super("Copy Node Reference as URL", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -47,9 +47,9 @@ public class NodeReferenceURI_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    CopyPasteUtil.copyTextToClipboard(buildRequest_ftht21_a0a0a5(event.getData(MPSCommonDataKeys.NODE).getReference(), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+    CopyPasteUtil.copyTextToClipboard(buildRequest_njdhnr_a0a0a5(event.getData(MPSCommonDataKeys.NODE).getReference(), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
   }
-  private static String buildRequest_ftht21_a0a0a5(SNodeReference ref, Project project) {
+  private static String buildRequest_njdhnr_a0a0a5(SNodeReference ref, Project project) {
     QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node_ref");
 
     encoder.addParam("ref", PersistenceFacade.getInstance().asString(ref));

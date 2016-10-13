@@ -1174,9 +1174,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="40BYgt06tNY" role="3acgRq">
-      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
       <node concept="j$656" id="40BYgt06v2s" role="1lVwrX">
-        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURIBuilderExpression" />
+        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURLBuilderExpression" />
       </node>
     </node>
     <node concept="3lhOvk" id="7rr3ESJDe6G" role="3lj3bC">
@@ -3999,9 +3999,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="40BYgt06v2q">
-    <property role="TrG5h" value="reduce_RequestURIBuilderExpression" />
+    <property role="TrG5h" value="reduce_RequestURLBuilderExpression" />
     <property role="3GE5qa" value="request" />
-    <ref role="3gUMe" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+    <ref role="3gUMe" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     <node concept="2Tav94" id="40BYgt06vlK" role="13RCb5">
       <property role="1YR72k" value="true" />
       <node concept="2YIFZL" id="40BYgt06vlN" role="2Tav96">
@@ -4417,9 +4417,9 @@
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     </node>
     <node concept="3aamgX" id="40BYgt0bTFL" role="3acgRq">
-      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+      <ref role="30HIoZ" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
       <node concept="j$656" id="40BYgt0bTFV" role="1lVwrX">
-        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURIBuilderExpression" />
+        <ref role="v9R2y" node="40BYgt06v2q" resolve="reduce_RequestURLBuilderExpression" />
       </node>
     </node>
     <node concept="avzCv" id="40BYgt0bNJZ" role="avys_">
@@ -4434,7 +4434,7 @@
                 </node>
                 <node concept="2SmgA7" id="40BYgt0bPfF" role="2OqNvi">
                   <node concept="chp4Y" id="40BYgt0bPBV" role="1dBWTz">
-                    <ref role="cht4Q" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+                    <ref role="cht4Q" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
                   </node>
                 </node>
               </node>

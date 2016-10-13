@@ -79,8 +79,8 @@
     <file name="RequestType_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestType_BehaviorDescriptor" />
     </file>
-    <file name="RequestURIBuilderExpression_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression_BehaviorDescriptor" />
+    <file name="RequestURLBuilderExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression_BehaviorDescriptor" />
     </file>
     <file name="ResponseSendOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.ide.httpsupport.behavior.ResponseSendOperation_BehaviorDescriptor" />
@@ -540,7 +540,7 @@
     </file>
   </root>
   <root nodeRef="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)/4622937352055444660">
-    <file name="RequestURIBuilderExpression__BehaviorDescriptor.java">
+    <file name="RequestURLBuilderExpression__BehaviorDescriptor.java">
       <node id="4622937352055444660" at="34,0,35,0" concept="7" trace="CONCEPT" />
       <node id="4622937352055444660" at="35,0,36,0" concept="7" trace="REGISTRY" />
       <node id="4622937352055444660" at="37,0,38,0" concept="7" trace="getInitializedParameters_id40BYgt09_iZ" />
@@ -576,7 +576,7 @@
       <node id="4697831301626073845" at="58,0,61,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4622937352057858275" at="70,0,73,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="7195437419422917954" at="79,0,82,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4622937352055444660" at="89,0,92,0" concept="0" trace="RequestURIBuilderExpression__BehaviorDescriptor#()V" />
+      <node id="4622937352055444660" at="89,0,92,0" concept="0" trace="RequestURLBuilderExpression__BehaviorDescriptor#()V" />
       <node id="4622937352055444660" at="100,49,103,5" concept="3" />
       <node id="4622937352055444660" at="118,49,121,5" concept="3" />
       <node id="4622937352055444660" at="93,0,97,0" concept="4" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -677,12 +677,12 @@
       <scope id="4622937352055444660" at="66,0,88,0">
         <var name="__thisNode__" id="4622937352055444660" />
       </scope>
-      <unit id="4622937352055460952" at="47,225,51,5" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor$1" />
-      <unit id="4697831301626073845" at="57,273,61,5" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor$2" />
-      <unit id="4622937352057858275" at="69,446,73,9" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor$4" />
-      <unit id="7195437419422917954" at="78,54,82,7" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor$4" />
-      <unit id="4622937352056187455" at="67,262,75,5" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor$3" />
-      <unit id="4622937352055444660" at="33,0,140,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor" />
+      <unit id="4622937352055460952" at="47,225,51,5" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor$1" />
+      <unit id="4697831301626073845" at="57,273,61,5" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor$2" />
+      <unit id="4622937352057858275" at="69,446,73,9" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor$4" />
+      <unit id="7195437419422917954" at="78,54,82,7" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor$4" />
+      <unit id="4622937352056187455" at="67,262,75,5" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor$3" />
+      <unit id="4622937352055444660" at="33,0,140,0" name="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)/5111696079053501455">

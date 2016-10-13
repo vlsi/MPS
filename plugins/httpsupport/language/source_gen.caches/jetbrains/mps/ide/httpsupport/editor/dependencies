@@ -43,7 +43,7 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.editor.QuerySegment_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.editor.RequestHandlerDescription" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.editor.RequestHandler_Editor" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.editor.RequestURIBuilderExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.editor.RequestURLBuilderExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.editor.ResponseSendOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
@@ -338,7 +338,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.editor.RequestURIBuilderExpression_Editor" file="RequestURIBuilderExpression_Editor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.editor.RequestURLBuilderExpression_Editor" file="RequestURLBuilderExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

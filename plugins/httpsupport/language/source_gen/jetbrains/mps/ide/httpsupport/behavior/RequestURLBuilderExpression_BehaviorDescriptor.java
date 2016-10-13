@@ -9,7 +9,7 @@ package jetbrains.mps.ide.httpsupport.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class RequestURIBuilderExpression_BehaviorDescriptor {
+public class RequestURLBuilderExpression_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

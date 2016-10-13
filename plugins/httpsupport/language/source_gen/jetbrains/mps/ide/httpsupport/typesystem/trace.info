@@ -118,7 +118,7 @@
     </file>
   </root>
   <root nodeRef="r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)/4622937352052338617">
-    <file name="typeof_RequestURIBuilderExpression_InferenceRule.java">
+    <file name="typeof_RequestURLBuilderExpression_InferenceRule.java">
       <node id="4622937352052340468" at="20,5,21,69" concept="5" />
       <node id="4622937352052340468" at="21,69,22,206" concept="5" />
       <node id="4622937352052340468" at="22,206,23,283" concept="2" />
@@ -129,12 +129,12 @@
       <node id="4622937352052340595" at="36,63,37,30" concept="5" />
       <node id="4622937352052340595" at="37,30,38,223" concept="2" />
       <node id="4622937352052340595" at="38,223,39,24" concept="6" />
-      <node id="4622937352052338617" at="17,0,19,0" concept="1" trace="typeof_RequestURIBuilderExpression_InferenceRule#()V" />
+      <node id="4622937352052338617" at="17,0,19,0" concept="1" trace="typeof_RequestURLBuilderExpression_InferenceRule#()V" />
       <node id="4622937352052338617" at="26,0,29,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4622937352052338617" at="29,0,32,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4622937352052338617" at="32,0,35,0" concept="4" trace="overrides#()Z" />
       <node id="4622937352052340468" at="19,140,24,5" concept="0" />
-      <node id="4622937352052340595" at="35,0,41,0" concept="8" trace="_quotation_createNode_bo99rz_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4622937352052340595" at="35,0,41,0" concept="8" trace="_quotation_createNode_wu82od_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4622937352052338617" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4622937352052338617" at="17,61,17,61" />
       <scope id="4622937352052338617" at="26,50,27,175" />
@@ -157,11 +157,11 @@
       <scope id="4622937352052338618" at="19,140,24,5" />
       <scope id="4622937352052340595" at="35,0,41,0" />
       <scope id="4622937352052338617" at="19,0,26,0">
-        <var name="requestURIBuilderExpression" id="4622937352052338617" />
+        <var name="requestURLBuilderExpression" id="4622937352052338617" />
         <var name="status" id="4622937352052338617" />
         <var name="typeCheckingContext" id="4622937352052338617" />
       </scope>
-      <unit id="4622937352052338617" at="16,0,42,0" name="jetbrains.mps.ide.httpsupport.typesystem.typeof_RequestURIBuilderExpression_InferenceRule" />
+      <unit id="4622937352052338617" at="16,0,42,0" name="jetbrains.mps.ide.httpsupport.typesystem.typeof_RequestURLBuilderExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:c79f1d68-0099-426e-a3a4-72db4a9f1693(jetbrains.mps.ide.httpsupport.typesystem)/4622937352052365270">

@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.Port__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.QueryParameterReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestHandler__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.SerializeFunction__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.SerializedValueParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.behavior.ValueToSerializeParameter__BehaviorDescriptor" />
@@ -436,11 +436,11 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression_BehaviorDescriptor" file="RequestURIBuilderExpression_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression_BehaviorDescriptor" file="RequestURLBuilderExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestURIBuilderExpression__BehaviorDescriptor" file="RequestURIBuilderExpression__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.ide.httpsupport.behavior.RequestURLBuilderExpression__BehaviorDescriptor" file="RequestURLBuilderExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
