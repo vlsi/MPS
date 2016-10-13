@@ -39,7 +39,6 @@
     <classNode dependClassName="java.net.HttpURLConnection" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.testConverter_Converter" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode dependClassName="junit.framework.Assert" />

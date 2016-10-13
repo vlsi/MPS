@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(22);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(26);
   /*package*/ final ConceptDescriptor myConceptCanHandleRequestFunction = createDescriptorForCanHandleRequestFunction();
   /*package*/ final ConceptDescriptor myConceptDefaultParameterConverter = createDescriptorForDefaultParameterConverter();
   /*package*/ final ConceptDescriptor myConceptDefaultValueFunction = createDescriptorForDefaultValueFunction();
@@ -26,10 +26,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptHandleRequestFunction = createDescriptorForHandleRequestFunction();
   /*package*/ final ConceptDescriptor myConceptHttpRequestOperation = createDescriptorForHttpRequestOperation();
   /*package*/ final ConceptDescriptor myConceptHttpRequestParameter = createDescriptorForHttpRequestParameter();
+  /*package*/ final ConceptDescriptor myConceptIDEAPlatformPortProvider = createDescriptorForIDEAPlatformPortProvider();
   /*package*/ final ConceptDescriptor myConceptIParameterConverter = createDescriptorForIParameterConverter();
+  /*package*/ final ConceptDescriptor myConceptMPSPortProvider = createDescriptorForMPSPortProvider();
   /*package*/ final ConceptDescriptor myConceptParameterConverterDeclaration = createDescriptorForParameterConverterDeclaration();
   /*package*/ final ConceptDescriptor myConceptParameterConverterReference = createDescriptorForParameterConverterReference();
   /*package*/ final ConceptDescriptor myConceptParameterInitializer = createDescriptorForParameterInitializer();
+  /*package*/ final ConceptDescriptor myConceptPort = createDescriptorForPort();
+  /*package*/ final ConceptDescriptor myConceptPortProvider = createDescriptorForPortProvider();
   /*package*/ final ConceptDescriptor myConceptQueryParameter = createDescriptorForQueryParameter();
   /*package*/ final ConceptDescriptor myConceptQueryParameterReference = createDescriptorForQueryParameterReference();
   /*package*/ final ConceptDescriptor myConceptQueryPath = createDescriptorForQueryPath();
@@ -50,26 +54,30 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptHandleRequestFunction.getId(), 4);
     myIndexMap.put(myConceptHttpRequestOperation.getId(), 5);
     myIndexMap.put(myConceptHttpRequestParameter.getId(), 6);
-    myIndexMap.put(myConceptIParameterConverter.getId(), 7);
-    myIndexMap.put(myConceptParameterConverterDeclaration.getId(), 8);
-    myIndexMap.put(myConceptParameterConverterReference.getId(), 9);
-    myIndexMap.put(myConceptParameterInitializer.getId(), 10);
-    myIndexMap.put(myConceptQueryParameter.getId(), 11);
-    myIndexMap.put(myConceptQueryParameterReference.getId(), 12);
-    myIndexMap.put(myConceptQueryPath.getId(), 13);
-    myIndexMap.put(myConceptQuerySegment.getId(), 14);
-    myIndexMap.put(myConceptRequestHandler.getId(), 15);
-    myIndexMap.put(myConceptRequestType.getId(), 16);
-    myIndexMap.put(myConceptRequestURIBuilderExpression.getId(), 17);
-    myIndexMap.put(myConceptResponseSendOperation.getId(), 18);
-    myIndexMap.put(myConceptSerializeFunction.getId(), 19);
-    myIndexMap.put(myConceptSerializedValueParameter.getId(), 20);
-    myIndexMap.put(myConceptValueToSerializeParameter.getId(), 21);
+    myIndexMap.put(myConceptIDEAPlatformPortProvider.getId(), 7);
+    myIndexMap.put(myConceptIParameterConverter.getId(), 8);
+    myIndexMap.put(myConceptMPSPortProvider.getId(), 9);
+    myIndexMap.put(myConceptParameterConverterDeclaration.getId(), 10);
+    myIndexMap.put(myConceptParameterConverterReference.getId(), 11);
+    myIndexMap.put(myConceptParameterInitializer.getId(), 12);
+    myIndexMap.put(myConceptPort.getId(), 13);
+    myIndexMap.put(myConceptPortProvider.getId(), 14);
+    myIndexMap.put(myConceptQueryParameter.getId(), 15);
+    myIndexMap.put(myConceptQueryParameterReference.getId(), 16);
+    myIndexMap.put(myConceptQueryPath.getId(), 17);
+    myIndexMap.put(myConceptQuerySegment.getId(), 18);
+    myIndexMap.put(myConceptRequestHandler.getId(), 19);
+    myIndexMap.put(myConceptRequestType.getId(), 20);
+    myIndexMap.put(myConceptRequestURIBuilderExpression.getId(), 21);
+    myIndexMap.put(myConceptResponseSendOperation.getId(), 22);
+    myIndexMap.put(myConceptSerializeFunction.getId(), 23);
+    myIndexMap.put(myConceptSerializedValueParameter.getId(), 24);
+    myIndexMap.put(myConceptValueToSerializeParameter.getId(), 25);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDefaultValueFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIParameterConverter, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURIBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
+    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDefaultValueFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIDEAPlatformPortProvider, myConceptIParameterConverter, myConceptMPSPortProvider, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptPort, myConceptPortProvider, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURIBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
   }
 
   @Override
@@ -95,34 +103,42 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 6:
         return myConceptHttpRequestParameter;
       case 7:
-        return myConceptIParameterConverter;
+        return myConceptIDEAPlatformPortProvider;
       case 8:
-        return myConceptParameterConverterDeclaration;
+        return myConceptIParameterConverter;
       case 9:
-        return myConceptParameterConverterReference;
+        return myConceptMPSPortProvider;
       case 10:
-        return myConceptParameterInitializer;
+        return myConceptParameterConverterDeclaration;
       case 11:
-        return myConceptQueryParameter;
+        return myConceptParameterConverterReference;
       case 12:
-        return myConceptQueryParameterReference;
+        return myConceptParameterInitializer;
       case 13:
-        return myConceptQueryPath;
+        return myConceptPort;
       case 14:
-        return myConceptQuerySegment;
+        return myConceptPortProvider;
       case 15:
-        return myConceptRequestHandler;
+        return myConceptQueryParameter;
       case 16:
-        return myConceptRequestType;
+        return myConceptQueryParameterReference;
       case 17:
-        return myConceptRequestURIBuilderExpression;
+        return myConceptQueryPath;
       case 18:
-        return myConceptResponseSendOperation;
+        return myConceptQuerySegment;
       case 19:
-        return myConceptSerializeFunction;
+        return myConceptRequestHandler;
       case 20:
-        return myConceptSerializedValueParameter;
+        return myConceptRequestType;
       case 21:
+        return myConceptRequestURIBuilderExpression;
+      case 22:
+        return myConceptResponseSendOperation;
+      case 23:
+        return myConceptSerializeFunction;
+      case 24:
+        return myConceptSerializedValueParameter;
+      case 25:
         return myConceptValueToSerializeParameter;
       default:
         throw new IllegalStateException();
@@ -199,10 +215,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("request");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForIDEAPlatformPortProvider() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "IDEAPlatformPortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980630L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.ide.httpsupport.structure.PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
+    b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/8009469105144333872");
+    b.alias("IDEA Platform port");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIParameterConverter() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "IParameterConverter", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L);
     b.interface_();
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/5111696079053501427");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMPSPortProvider() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "MPSPortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b71399ad9bL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.ide.httpsupport.structure.PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
+    b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/8009469105144442267");
+    b.alias("MPS port");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameterConverterDeclaration() {
@@ -232,6 +264,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/4622937352052264727");
     b.associate("parameter", 0x4027f9073ff5cf18L).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L).optional(false).origin("4622937352052264728").done();
     b.aggregate("value", 0x4027f9073ff5cf1aL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("4622937352052264730").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPort() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "Port", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b7139c32c2L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.ide.httpsupport.structure.PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
+    b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/8009469105144607426");
+    b.prop("portNumber", 0x6f2759b7139c32c3L, "8009469105144607427");
+    b.alias("custom port");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPortProvider() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
+    b.class_(false, true, false);
+    b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/8009469105144333702");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForQueryParameter() {
@@ -298,6 +345,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/4622937352052264595");
     b.associate("requestHandler", 0x4027f9073ff5cebeL).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L).optional(false).origin("4622937352052264638").done();
     b.aggregate("initializer", 0x4027f9073ff652f7L).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L).optional(true).ordered(true).multiple(true).origin("4622937352052298487").done();
+    b.aggregate("port", 0x6f2759b71399b650L).target(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L).optional(false).ordered(true).multiple(false).origin("8009469105144444496").done();
     b.alias("request URI");
     return b.create();
   }

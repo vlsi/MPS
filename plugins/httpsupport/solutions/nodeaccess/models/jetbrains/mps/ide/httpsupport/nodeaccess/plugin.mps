@@ -305,12 +305,14 @@
         <property id="6886330673564897341" name="type" index="1W9R_Y" />
         <child id="6886330673564897343" name="buffer" index="1W9R_W" />
       </concept>
+      <concept id="8009469105144442267" name="jetbrains.mps.ide.httpsupport.structure.MPSPortProvider" flags="ng" index="1WJJgG" />
       <concept id="4622937352052264727" name="jetbrains.mps.ide.httpsupport.structure.ParameterInitializer" flags="ng" index="1ZOzog">
         <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
         <child id="4622937352052264730" name="value" index="1ZOzot" />
       </concept>
       <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression" flags="ng" index="1ZOzuk">
         <reference id="4622937352052264638" name="requestHandler" index="1ZOzuT" />
+        <child id="8009469105144444496" name="port" index="1WJIZB" />
         <child id="4622937352052298487" name="initializer" index="1ZOqJK" />
       </concept>
     </language>
@@ -1756,6 +1758,7 @@
                   </node>
                 </node>
               </node>
+              <node concept="1WJJgG" id="6WBmrsjBEYc" role="1WJIZB" />
             </node>
           </node>
         </node>

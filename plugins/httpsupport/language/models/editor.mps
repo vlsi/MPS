@@ -10,6 +10,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="ndib" ref="r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -116,6 +117,12 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" flags="ng" index="1HfYo3">
+        <child id="1225898971709" name="getter" index="1Hhtcw" />
+      </concept>
+      <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
+        <child id="1225900141900" name="modelAccessor" index="1HlULh" />
+      </concept>
       <concept id="7985135009827365938" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Placeholder" flags="ng" index="1IAO7e" />
       <concept id="5624877018228267058" name="jetbrains.mps.lang.editor.structure.ITransformationMenu" flags="ng" index="3INCJE">
         <child id="1638911550608572412" name="sections" index="IW6Ez" />
@@ -130,6 +137,7 @@
         <child id="7980428675268276159" name="parts" index="1Qtc8A" />
       </concept>
       <concept id="625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" flags="sg" stub="730538219795961225" index="3SHvHV" />
+      <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -163,8 +171,12 @@
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -176,6 +188,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -596,6 +609,19 @@
         <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
       </node>
     </node>
+    <node concept="3EZMnI" id="6WBmrsjArp9" role="6VMZX">
+      <node concept="3F0ifn" id="6WBmrsjArpk" role="3EZMnx">
+        <property role="3F0ifm" value="port" />
+      </node>
+      <node concept="3F0ifn" id="6WBmrsjArpy" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <ref role="1k5W1q" to="tpen:hFDgi_W" resolve="Semicolon" />
+      </node>
+      <node concept="3F1sOY" id="6WBmrsjArpq" role="3EZMnx">
+        <ref role="1NtTu8" to="ndib:6WBmrsjArpg" resolve="port" />
+      </node>
+      <node concept="l2Vlx" id="6WBmrsjArpc" role="2iSdaV" />
+    </node>
   </node>
   <node concept="24kQdi" id="40BYgsZXsWt">
     <property role="3GE5qa" value="request" />
@@ -815,6 +841,59 @@
         </node>
       </node>
       <node concept="1IAO7e" id="4gmiY0rrxaZ" role="1Qtc8A" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="6WBmrsjA4fx">
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="PortProvider_currentPort" />
+    <ref role="1XX52x" to="ndib:6WBmrsjA0m6" resolve="PortProvider" />
+    <node concept="1HlG4h" id="6WBmrsjA4fE" role="2wV5jI">
+      <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+      <node concept="1HfYo3" id="6WBmrsjA4fG" role="1HlULh">
+        <node concept="3TQlhw" id="6WBmrsjA4fI" role="1Hhtcw">
+          <node concept="3clFbS" id="6WBmrsjA4fK" role="2VODD2">
+            <node concept="3clFbF" id="6WBmrsjAfqF" role="3cqZAp">
+              <node concept="3cpWs3" id="6WBmrsjAq5o" role="3clFbG">
+                <node concept="Xl_RD" id="6WBmrsjAqlM" role="3uHU7w">
+                  <property role="Xl_RC" value=")" />
+                </node>
+                <node concept="3cpWs3" id="6WBmrsjAmbk" role="3uHU7B">
+                  <node concept="Xl_RD" id="6WBmrsjAms_" role="3uHU7B">
+                    <property role="Xl_RC" value="(" />
+                  </node>
+                  <node concept="2OqwBi" id="6WBmrsjAg2O" role="3uHU7w">
+                    <node concept="pncrf" id="6WBmrsjAfO5" role="2Oq$k0" />
+                    <node concept="2qgKlT" id="6WBmrsjAgzv" role="2OqNvi">
+                      <ref role="37wK5l" to="zfj2:6WBmrsjA4L4" resolve="getPort" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6WBmrsjAk0O">
+    <property role="3GE5qa" value="request" />
+    <ref role="1XX52x" to="ndib:6WBmrsjA0m6" resolve="PortProvider" />
+    <node concept="3EZMnI" id="6WBmrsjAk0Q" role="2wV5jI">
+      <node concept="PMmxH" id="6WBmrsjAk14" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="PMmxH" id="6WBmrsjAk1d" role="3EZMnx">
+        <ref role="PMmxG" node="6WBmrsjA4fx" resolve="PortProvider_currentPort" />
+      </node>
+      <node concept="l2Vlx" id="6WBmrsjAk0T" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6WBmrsjB3Wq">
+    <property role="3GE5qa" value="request" />
+    <ref role="1XX52x" to="ndib:6WBmrsjB3b2" resolve="Port" />
+    <node concept="3F0A7n" id="6WBmrsjB3WC" role="2wV5jI">
+      <property role="39s7Ar" value="true" />
+      <ref role="1NtTu8" to="ndib:6WBmrsjB3b3" resolve="portNumber" />
     </node>
   </node>
 </model>

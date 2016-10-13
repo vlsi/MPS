@@ -16,10 +16,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IDEAPlatformPortProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IParameterConverter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MPSPortProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterConverterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterConverterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Port = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PortProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryPath = new ConceptPresentationBuilder().create();
@@ -52,34 +56,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 6:
         return props_HttpRequestParameter;
       case 7:
-        return props_IParameterConverter;
+        return props_IDEAPlatformPortProvider;
       case 8:
-        return props_ParameterConverterDeclaration;
+        return props_IParameterConverter;
       case 9:
-        return props_ParameterConverterReference;
+        return props_MPSPortProvider;
       case 10:
-        return props_ParameterInitializer;
+        return props_ParameterConverterDeclaration;
       case 11:
-        return props_QueryParameter;
+        return props_ParameterConverterReference;
       case 12:
-        return props_QueryParameterReference;
+        return props_ParameterInitializer;
       case 13:
-        return props_QueryPath;
+        return props_Port;
       case 14:
-        return props_QuerySegment;
+        return props_PortProvider;
       case 15:
-        return props_RequestHandler;
+        return props_QueryParameter;
       case 16:
-        return props_RequestType;
+        return props_QueryParameterReference;
       case 17:
-        return props_RequestURIBuilderExpression;
+        return props_QueryPath;
       case 18:
-        return props_ResponseSendOperation;
+        return props_QuerySegment;
       case 19:
-        return props_SerializeFunction;
+        return props_RequestHandler;
       case 20:
-        return props_SerializedValueParameter;
+        return props_RequestType;
       case 21:
+        return props_RequestURIBuilderExpression;
+      case 22:
+        return props_ResponseSendOperation;
+      case 23:
+        return props_SerializeFunction;
+      case 24:
+        return props_SerializedValueParameter;
+      case 25:
         return props_ValueToSerializeParameter;
     }
     throw new IllegalStateException("Unknown concept " + c);

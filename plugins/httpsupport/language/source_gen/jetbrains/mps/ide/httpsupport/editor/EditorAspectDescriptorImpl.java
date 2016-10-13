@@ -31,18 +31,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         case 3:
           return Collections.<ConceptEditor>singletonList(new ParameterInitializer_Editor());
         case 4:
-          return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
+          return Collections.<ConceptEditor>singletonList(new Port_Editor());
         case 5:
-          return Collections.<ConceptEditor>singletonList(new QueryParameterReference_Editor());
+          return Collections.<ConceptEditor>singletonList(new PortProvider_Editor());
         case 6:
-          return Collections.<ConceptEditor>singletonList(new QueryPath_Editor());
+          return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
         case 7:
-          return Collections.<ConceptEditor>singletonList(new QuerySegment_Editor());
+          return Collections.<ConceptEditor>singletonList(new QueryParameterReference_Editor());
         case 8:
-          return Collections.<ConceptEditor>singletonList(new RequestHandler_Editor());
+          return Collections.<ConceptEditor>singletonList(new QueryPath_Editor());
         case 9:
-          return Collections.<ConceptEditor>singletonList(new RequestURIBuilderExpression_Editor());
+          return Collections.<ConceptEditor>singletonList(new QuerySegment_Editor());
         case 10:
+          return Collections.<ConceptEditor>singletonList(new RequestHandler_Editor());
+        case 11:
+          return Collections.<ConceptEditor>singletonList(new RequestURIBuilderExpression_Editor());
+        case 12:
           return Collections.<ConceptEditor>singletonList(new ResponseSendOperation_Editor());
         default:
       }
@@ -58,6 +62,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
+          if (true) {
+            if ("jetbrains.mps.ide.httpsupport.editor.PortProvider_currentPort".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new PortProvider_currentPort());
+            }
+          }
+          break;
+        case 1:
           if (true) {
             if ("jetbrains.mps.ide.httpsupport.editor.RequestHandlerDescription".equals(editorComponentId)) {
               return Collections.<ConceptEditorComponent>singletonList(new RequestHandlerDescription());
@@ -96,7 +107,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdcb2eL, "jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterDeclaration"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb465L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, "jetbrains.mps.ide.httpsupport.structure.ParameterInitializer"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104fa64ed7L, "jetbrains.mps.ide.httpsupport.structure.QueryPath"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104fa64ed8L, "jetbrains.mps.ide.httpsupport.structure.QuerySegment"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, "jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5f91294323b64fc1L, "jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdcb2eL, "jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d1bb14fe8385046L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterDeclaration"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb465L, "jetbrains.mps.ide.httpsupport.structure.ParameterConverterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, "jetbrains.mps.ide.httpsupport.structure.ParameterInitializer"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b7139c32c2L, "jetbrains.mps.ide.httpsupport.structure.Port"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L, "jetbrains.mps.ide.httpsupport.structure.PortProvider"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c585b439L, "jetbrains.mps.ide.httpsupport.structure.QueryParameter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104fa64ed7L, "jetbrains.mps.ide.httpsupport.structure.QueryPath"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104fa64ed8L, "jetbrains.mps.ide.httpsupport.structure.QuerySegment"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, "jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5f91294323b64fc1L, "jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L, "jetbrains.mps.ide.httpsupport.structure.PortProvider"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4d5ac72154f4d780L, "jetbrains.mps.ide.httpsupport.structure.RequestHandler"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb3f3L, "jetbrains.mps.ide.httpsupport.structure.IParameterConverter"), MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x53d29f104fa64ed8L, "jetbrains.mps.ide.httpsupport.structure.QuerySegment"));
 }

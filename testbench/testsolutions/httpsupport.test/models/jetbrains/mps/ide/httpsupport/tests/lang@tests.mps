@@ -191,12 +191,14 @@
       <concept id="5111696079053507374" name="jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter" flags="ng" index="1TjqYI">
         <child id="5111696079053507400" name="parameterType" index="1TjqZ8" />
       </concept>
+      <concept id="8009469105144333872" name="jetbrains.mps.ide.httpsupport.structure.IDEAPlatformPortProvider" flags="ng" index="1WJPY7" />
       <concept id="4622937352052264727" name="jetbrains.mps.ide.httpsupport.structure.ParameterInitializer" flags="ng" index="1ZOzog">
         <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
         <child id="4622937352052264730" name="value" index="1ZOzot" />
       </concept>
       <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression" flags="ng" index="1ZOzuk">
         <reference id="4622937352052264638" name="requestHandler" index="1ZOzuT" />
+        <child id="8009469105144444496" name="port" index="1WJIZB" />
         <child id="4622937352052298487" name="initializer" index="1ZOqJK" />
       </concept>
     </language>
@@ -973,6 +975,7 @@
                   <ref role="3cqZAo" node="49_GDO7ASRK" resolve="test" />
                 </node>
               </node>
+              <node concept="1WJPY7" id="6WBmrsjCyiu" role="1WJIZB" />
             </node>
           </node>
         </node>
@@ -1020,6 +1023,7 @@
                   <ref role="3cqZAo" node="49_GDO7AO_U" resolve="test" />
                 </node>
               </node>
+              <node concept="1WJPY7" id="6WBmrsjCwYv" role="1WJIZB" />
             </node>
           </node>
         </node>
