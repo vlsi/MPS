@@ -425,5 +425,137 @@
       <unit id="529363524336355560" at="6,0,20,0" name="jetbrains.mps.ide.httpsupport.tests.plugin.testConverter_Converter" />
     </file>
   </root>
+  <root nodeRef="r:539fc94d-6594-4105-bb3c-60718c110a18(jetbrains.mps.ide.httpsupport.tests.plugin)/8009469105145348209">
+    <file name="PingStorage.java">
+      <node id="8009469105145349863" at="9,0,10,0" concept="10" trace="PINGS" />
+      <node id="8009469105145350432" at="11,30,12,17" concept="3" />
+      <node id="8009469105145351236" at="15,29,16,28" concept="3" />
+      <node id="8009469105145352810" at="19,33,20,23" concept="8" />
+      <node id="8009469105145350385" at="11,0,14,0" concept="11" trace="reset#()V" />
+      <node id="8009469105145351234" at="15,0,18,0" concept="11" trace="ping#()V" />
+      <node id="8009469105145352808" at="19,0,22,0" concept="11" trace="pingCount#()I" />
+      <scope id="8009469105145350388" at="11,30,12,17" />
+      <scope id="8009469105145351235" at="15,29,16,28" />
+      <scope id="8009469105145352809" at="19,33,20,23" />
+      <scope id="8009469105145350385" at="11,0,14,0" />
+      <scope id="8009469105145351234" at="15,0,18,0" />
+      <scope id="8009469105145352808" at="19,0,22,0" />
+      <unit id="8009469105145348209" at="7,0,23,0" name="jetbrains.mps.ide.httpsupport.tests.plugin.PingStorage" />
+    </file>
+  </root>
+  <root nodeRef="r:539fc94d-6594-4105-bb3c-60718c110a18(jetbrains.mps.ide.httpsupport.tests.plugin)/8009469105145355130">
+    <file name="RH_conflicting2_Extension.java">
+      <node id="8009469105145355130" at="12,38,13,64" concept="12" />
+      <node id="8009469105145355130" at="18,36,19,31" concept="8" />
+      <node id="8009469105145355130" at="22,69,23,57" concept="8" />
+      <node id="8009469105145355130" at="28,43,29,19" concept="8" />
+      <node id="8009469105145355130" at="12,0,15,0" concept="2" trace="RH_conflicting2_Extension#()V" />
+      <node id="8009469105145355130" at="28,0,31,0" concept="0" trace="get#()Ljetbrains/mps/ide/httpsupport/manager/plugin/IHttpRequestHandlerFactory;" />
+      <node id="8009469105145355130" at="17,0,21,0" concept="6" trace="getHandlerName#()Ljava/lang/String;" />
+      <node id="8009469105145355130" at="21,0,25,0" concept="6" trace="create#(Ljetbrains/mps/ide/httpsupport/manager/plugin/HttpRequest;)Ljetbrains/mps/ide/httpsupport/manager/plugin/IHttpRequestHandler;" />
+      <node id="8009469105145355130" at="16,0,26,0" concept="4" trace="factory" />
+      <scope id="8009469105145355130" at="12,38,13,64" />
+      <scope id="8009469105145355130" at="18,36,19,31" />
+      <scope id="8009469105145355130" at="22,69,23,57" />
+      <scope id="8009469105145355130" at="28,43,29,19" />
+      <scope id="8009469105145355130" at="12,0,15,0" />
+      <scope id="8009469105145355130" at="28,0,31,0" />
+      <scope id="8009469105145355130" at="17,0,21,0" />
+      <scope id="8009469105145355130" at="21,0,25,0">
+        <var name="request" id="8009469105145355130" />
+      </scope>
+      <unit id="8009469105145355130" at="16,50,25,3" name="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_Extension$1" />
+      <unit id="8009469105145355130" at="11,0,32,0" name="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_Extension" />
+    </file>
+    <file name="RH_conflicting2_RequestHandler.java">
+      <node id="8009469105145355130" at="16,0,17,0" concept="10" trace="QUERY_PREFIX" />
+      <node id="8009469105145355130" at="18,0,19,0" concept="4" trace="myCorrectRequest" />
+      <node id="8009469105145355130" at="20,62,21,19" concept="12" />
+      <node id="8009469105145355130" at="21,19,22,34" concept="7" />
+      <node id="8009469105145355130" at="22,34,23,38" concept="3" />
+      <node id="8009469105145355130" at="28,43,29,24" concept="8" />
+      <node id="8009469105145355130" at="35,54,36,19" concept="8" />
+      <node id="8009469105145355130" at="37,5,38,0" concept="9" />
+      <node id="8009469105145355130" at="38,0,39,16" concept="8" />
+      <node id="8009469105145357187" at="43,41,44,23" concept="3" />
+      <node id="8009469105145357379" at="44,23,45,120" concept="3" />
+      <node id="8009469105145355130" at="34,30,37,5" concept="5" />
+      <node id="8009469105145355130" at="27,0,31,0" concept="6" trace="getQueryPrefix#()Ljava/util/List;" />
+      <node id="8009469105145355130" at="20,0,25,0" concept="2" trace="RH_conflicting2_RequestHandler#(Ljetbrains/mps/ide/httpsupport/manager/plugin/HttpRequest;)V" />
+      <node id="8009469105145355130" at="42,0,47,0" concept="6" trace="handle#()V" />
+      <node id="8009469105145355130" at="33,0,41,0" concept="6" trace="canHandle#()Z" />
+      <scope id="8009469105145355130" at="28,43,29,24" />
+      <scope id="8009469105145355130" at="35,54,36,19" />
+      <scope id="8009469105145355130" at="43,41,45,120" />
+      <scope id="8009469105145355130" at="20,62,23,38">
+        <var name="correctRequest" id="8009469105145355130" />
+      </scope>
+      <scope id="8009469105145355130" at="27,0,31,0" />
+      <scope id="8009469105145355130" at="20,0,25,0">
+        <var name="request" id="8009469105145355130" />
+      </scope>
+      <scope id="8009469105145355130" at="34,30,39,16" />
+      <scope id="8009469105145355130" at="42,0,47,0" />
+      <scope id="8009469105145355130" at="33,0,41,0" />
+      <unit id="8009469105145355130" at="14,0,48,0" name="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_RequestHandler" />
+    </file>
+  </root>
+  <root nodeRef="r:539fc94d-6594-4105-bb3c-60718c110a18(jetbrains.mps.ide.httpsupport.tests.plugin)/8009469105145358787">
+    <file name="RH_conflicting1_Extension.java">
+      <node id="8009469105145358787" at="12,38,13,64" concept="12" />
+      <node id="8009469105145358787" at="18,36,19,31" concept="8" />
+      <node id="8009469105145358787" at="22,69,23,57" concept="8" />
+      <node id="8009469105145358787" at="28,43,29,19" concept="8" />
+      <node id="8009469105145358787" at="12,0,15,0" concept="2" trace="RH_conflicting1_Extension#()V" />
+      <node id="8009469105145358787" at="28,0,31,0" concept="0" trace="get#()Ljetbrains/mps/ide/httpsupport/manager/plugin/IHttpRequestHandlerFactory;" />
+      <node id="8009469105145358787" at="17,0,21,0" concept="6" trace="getHandlerName#()Ljava/lang/String;" />
+      <node id="8009469105145358787" at="21,0,25,0" concept="6" trace="create#(Ljetbrains/mps/ide/httpsupport/manager/plugin/HttpRequest;)Ljetbrains/mps/ide/httpsupport/manager/plugin/IHttpRequestHandler;" />
+      <node id="8009469105145358787" at="16,0,26,0" concept="4" trace="factory" />
+      <scope id="8009469105145358787" at="12,38,13,64" />
+      <scope id="8009469105145358787" at="18,36,19,31" />
+      <scope id="8009469105145358787" at="22,69,23,57" />
+      <scope id="8009469105145358787" at="28,43,29,19" />
+      <scope id="8009469105145358787" at="12,0,15,0" />
+      <scope id="8009469105145358787" at="28,0,31,0" />
+      <scope id="8009469105145358787" at="17,0,21,0" />
+      <scope id="8009469105145358787" at="21,0,25,0">
+        <var name="request" id="8009469105145358787" />
+      </scope>
+      <unit id="8009469105145358787" at="16,50,25,3" name="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_Extension$1" />
+      <unit id="8009469105145358787" at="11,0,32,0" name="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_Extension" />
+    </file>
+    <file name="RH_conflicting1_RequestHandler.java">
+      <node id="8009469105145358787" at="16,0,17,0" concept="10" trace="QUERY_PREFIX" />
+      <node id="8009469105145358787" at="18,0,19,0" concept="4" trace="myCorrectRequest" />
+      <node id="8009469105145358787" at="20,62,21,19" concept="12" />
+      <node id="8009469105145358787" at="21,19,22,34" concept="7" />
+      <node id="8009469105145358787" at="22,34,23,38" concept="3" />
+      <node id="8009469105145358787" at="28,43,29,24" concept="8" />
+      <node id="8009469105145358787" at="35,54,36,19" concept="8" />
+      <node id="8009469105145358787" at="37,5,38,0" concept="9" />
+      <node id="8009469105145358787" at="38,0,39,16" concept="8" />
+      <node id="8009469105145358793" at="43,41,44,23" concept="3" />
+      <node id="8009469105145358795" at="44,23,45,120" concept="3" />
+      <node id="8009469105145358787" at="34,30,37,5" concept="5" />
+      <node id="8009469105145358787" at="27,0,31,0" concept="6" trace="getQueryPrefix#()Ljava/util/List;" />
+      <node id="8009469105145358787" at="20,0,25,0" concept="2" trace="RH_conflicting1_RequestHandler#(Ljetbrains/mps/ide/httpsupport/manager/plugin/HttpRequest;)V" />
+      <node id="8009469105145358787" at="42,0,47,0" concept="6" trace="handle#()V" />
+      <node id="8009469105145358787" at="33,0,41,0" concept="6" trace="canHandle#()Z" />
+      <scope id="8009469105145358787" at="28,43,29,24" />
+      <scope id="8009469105145358787" at="35,54,36,19" />
+      <scope id="8009469105145358787" at="43,41,45,120" />
+      <scope id="8009469105145358787" at="20,62,23,38">
+        <var name="correctRequest" id="8009469105145358787" />
+      </scope>
+      <scope id="8009469105145358787" at="27,0,31,0" />
+      <scope id="8009469105145358787" at="20,0,25,0">
+        <var name="request" id="8009469105145358787" />
+      </scope>
+      <scope id="8009469105145358787" at="34,30,39,16" />
+      <scope id="8009469105145358787" at="42,0,47,0" />
+      <scope id="8009469105145358787" at="33,0,41,0" />
+      <unit id="8009469105145358787" at="14,0,48,0" name="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_RequestHandler" />
+    </file>
+  </root>
 </debug-info>
 

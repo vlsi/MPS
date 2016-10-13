@@ -148,6 +148,12 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
@@ -196,7 +202,7 @@
         <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
         <child id="4622937352052264730" name="value" index="1ZOzot" />
       </concept>
-      <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURIBuilderExpression" flags="ng" index="1ZOzuk">
+      <concept id="4622937352052264595" name="jetbrains.mps.ide.httpsupport.structure.RequestURLBuilderExpression" flags="ng" index="1ZOzuk">
         <reference id="4622937352052264638" name="requestHandler" index="1ZOzuT" />
         <child id="8009469105144444496" name="port" index="1WJIZB" />
         <child id="4622937352052298487" name="initializer" index="1ZOqJK" />
@@ -1047,6 +1053,65 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="6WBmrsjDVCp" role="1SL9yI">
+      <property role="TrG5h" value="testRHConflicts" />
+      <node concept="3cqZAl" id="6WBmrsjDVCq" role="3clF45" />
+      <node concept="3clFbS" id="6WBmrsjDVCu" role="3clF47">
+        <node concept="3clFbF" id="6WBmrsjE29e" role="3cqZAp">
+          <node concept="2YIFZM" id="6WBmrsjE2aM" role="3clFbG">
+            <ref role="37wK5l" to="i7mp:6WBmrsjDSzL" resolve="reset" />
+            <ref role="1Pybhc" to="i7mp:6WBmrsjDS1L" resolve="PingStorage" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6WBmrsjDWxS" role="3cqZAp">
+          <node concept="3cpWsn" id="6WBmrsjDWxV" role="3cpWs9">
+            <property role="TrG5h" value="url" />
+            <node concept="17QB3L" id="6WBmrsjDWxR" role="1tU5fm" />
+            <node concept="2OqwBi" id="6WBmrsjDXdo" role="33vP2m">
+              <node concept="2WthIp" id="6WBmrsjDXd8" role="2Oq$k0" />
+              <node concept="2XshWL" id="6WBmrsjDXSn" role="2OqNvi">
+                <ref role="2WH_rO" node="49_GDO7Af6L" resolve="buildRequest" />
+                <node concept="Xl_RD" id="6WBmrsjDXSP" role="2XxRq1">
+                  <property role="Xl_RC" value="/handlerTest/conflict" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6WBmrsjDYCl" role="3cqZAp">
+          <node concept="2OqwBi" id="6WBmrsjDZjt" role="3clFbG">
+            <node concept="2WthIp" id="6WBmrsjDYCj" role="2Oq$k0" />
+            <node concept="2XshWL" id="6WBmrsjDZk0" role="2OqNvi">
+              <ref role="2WH_rO" node="toFl8p7_Cw" resolve="testRequestResponse" />
+              <node concept="37vLTw" id="6WBmrsjDZnO" role="2XxRq1">
+                <ref role="3cqZAo" node="6WBmrsjDWxV" resolve="url" />
+              </node>
+              <node concept="3cmrfG" id="6WBmrsjDZo$" role="2XxRq1">
+                <property role="3cmrfH" value="200" />
+              </node>
+              <node concept="Xl_RD" id="6WBmrsjE03W" role="2XxRq1">
+                <property role="Xl_RC" value="handled" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6WBmrsjE2by" role="3cqZAp" />
+        <node concept="3SKdUt" id="6WBmrsjE2d0" role="3cqZAp">
+          <node concept="3SKdUq" id="6WBmrsjE2d2" role="3SKWNk">
+            <property role="3SKdUp" value="If request handlers conflict with each other, only one of them should handle incoming request" />
+          </node>
+        </node>
+        <node concept="3vlDli" id="6WBmrsjE0KE" role="3cqZAp">
+          <node concept="2YIFZM" id="6WBmrsjE1sV" role="3tpDZB">
+            <ref role="37wK5l" to="i7mp:6WBmrsjDT9C" resolve="pingCount" />
+            <ref role="1Pybhc" to="i7mp:6WBmrsjDS1L" resolve="PingStorage" />
+          </node>
+          <node concept="3cmrfG" id="6WBmrsjE2b9" role="3tpDZA">
+            <property role="3cmrfH" value="1" />
           </node>
         </node>
       </node>

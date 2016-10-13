@@ -6,9 +6,10 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.ide.httpsupport.tests.plugin.PingStorage;
+import junit.framework.Assert;
 import java.net.URL;
 import java.net.HttpURLConnection;
-import junit.framework.Assert;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -59,6 +60,11 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
     initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
     runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestRHBehavior_Test$TestBody", "test_testURlBuilder2", true);
   }
+  @Test
+  public void test_testRHConflicts() throws Throwable {
+    initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
+    runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestRHBehavior_Test$TestBody", "test_testRHConflicts", true);
+  }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
@@ -90,20 +96,28 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
     }
     public void test_testURlBuilder1() throws Exception {
       String test = "testString";
-      String url = buildRequest_17tcaj_a0a1a6j(test);
+      String url = buildRequest_17tcaj_a0a1a6k(test);
       this.testRequestResponse(url, 200, test);
     }
     public void test_testURlBuilder2() throws Exception {
       String test = "testString";
-      String url = buildRequest_17tcaj_a0a1a7j(test);
+      String url = buildRequest_17tcaj_a0a1a7k(test);
       this.testRequestResponse(url, 200, test + " serialized deserialized");
+    }
+    public void test_testRHConflicts() throws Exception {
+      PingStorage.reset();
+      String url = this.buildRequest("/handlerTest/conflict");
+      this.testRequestResponse(url, 200, "handled");
+
+      // If request handlers conflict with each other, only one of them should handle incoming request 
+      Assert.assertEquals(PingStorage.pingCount(), 1);
     }
 
 
     public void testRequestResponse(String requestUrl, int exectedRetCode, String expectedResponse) {
       try {
         URL obj = new URL(requestUrl);
-        HttpURLConnection con = as_17tcaj_a0a1a0a01j(obj.openConnection(), HttpURLConnection.class);
+        HttpURLConnection con = as_17tcaj_a0a1a0a11k(obj.openConnection(), HttpURLConnection.class);
         con.connect();
 
         Assert.assertEquals(exectedRetCode, con.getResponseCode());
@@ -126,21 +140,21 @@ public class TestRHBehavior_Test extends BaseTransformationTest {
     public String buildRequest(String path) {
       return "http://localhost:" + BuiltInServerManager.getInstance().getPort() + path;
     }
-    private static String buildRequest_17tcaj_a0a1a6j(String param) {
+    private static String buildRequest_17tcaj_a0a1a6k(String param) {
       QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + BuiltInServerManager.getInstance().getPort() + "/handlerTest/turnBack1");
 
       encoder.addParam("param", param);
 
       return encoder.toString();
     }
-    private static String buildRequest_17tcaj_a0a1a7j(String param) {
+    private static String buildRequest_17tcaj_a0a1a7k(String param) {
       QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + BuiltInServerManager.getInstance().getPort() + "/handlerTest/turnBack2");
 
       encoder.addParam("param", testConverter_Converter.serialize(param));
 
       return encoder.toString();
     }
-    private static <T> T as_17tcaj_a0a1a0a01j(Object o, Class<T> type) {
+    private static <T> T as_17tcaj_a0a1a0a11k(Object o, Class<T> type) {
       return (type.isInstance(o) ? (T) o : null);
     }
   }

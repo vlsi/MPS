@@ -5,6 +5,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conditional_Extension" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_Extension" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_Extension" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_exception_Extension" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_requiredParams_Extension" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_simple_Extension" />
@@ -12,6 +14,9 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_turnBack2_Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.tests.plugin.PingStorage" file="PingStorage.java">
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conditional_Extension" file="RH_conditional_Extension.java">
     <classNode dependClassName="java.lang.String" />
@@ -32,6 +37,52 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_Extension" file="RH_conflicting1_Extension.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_RequestHandler" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting1_RequestHandler" file="RH_conflicting1_RequestHandler.java">
+    <classNode dependClassName="io.netty.buffer.Unpooled" />
+    <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
+    <classNode dependClassName="io.netty.util.CharsetUtil" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.PingStorage" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_Extension" file="RH_conflicting2_Extension.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandlerFactory" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_RequestHandler" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.tests.plugin.RH_conflicting2_RequestHandler" file="RH_conflicting2_RequestHandler.java">
+    <classNode dependClassName="io.netty.buffer.Unpooled" />
+    <classNode dependClassName="io.netty.handler.codec.http.HttpResponseStatus" />
+    <classNode dependClassName="io.netty.util.CharsetUtil" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.tests.plugin.PingStorage" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.ide.httpsupport.runtime.base.HttpRequestHandlerBase" />
   </dependency>
