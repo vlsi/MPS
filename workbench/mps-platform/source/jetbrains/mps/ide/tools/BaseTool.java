@@ -274,7 +274,7 @@ public abstract class BaseTool {
       for (Entry<String, KeyStroke> keymapItem : myShortcutsByKeymap.entrySet()) {
         Keymap keymap = KeymapManager.getInstance().getKeymap(keymapItem.getKey());
         if (keymap == null) {
-          LOG.error("Keymap " + keymapItem.getKey() + " cannot be found");
+          LOG.warn("Keymap " + keymapItem.getKey() + " cannot be found");
           return;
         }
         keymaps.add(keymap);
