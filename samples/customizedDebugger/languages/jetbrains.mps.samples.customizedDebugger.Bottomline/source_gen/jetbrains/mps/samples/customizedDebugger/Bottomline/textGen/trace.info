@@ -7,7 +7,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="17,0,54,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.TextGenAspectDescriptor" />
+      <unit at="15,0,51,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:bc09622b-9ebb-4585-9e9c-b69fb2294562(jetbrains.mps.samples.customizedDebugger.Bottomline.textGen)/567241428659644018">
@@ -60,7 +60,7 @@
       <unit id="567241428659644018" at="18,0,56,0" name="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.MessageSequence_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="567241428659701633" at="49,70,50,18" concept="4" />
+      <node id="567241428659701633" at="47,70,48,18" concept="4" />
     </file>
   </root>
   <root nodeRef="r:bc09622b-9ebb-4585-9e9c-b69fb2294562(jetbrains.mps.samples.customizedDebugger.Bottomline.textGen)/567241428659759377">

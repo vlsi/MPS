@@ -165,6 +165,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClassCreator_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClass_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassCreator_TextGen" />
@@ -179,11 +180,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalThisExpression_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalVariableReference_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.TypeHintExpression_TextGen" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
-    <classNode dependClassName="jetbrains.mps.text.rt.TextGenModelOutline" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

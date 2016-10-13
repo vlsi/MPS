@@ -29,11 +29,9 @@
   <dependency className="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.samples.customizedDebugger.Bottomline.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.MessageSequence_TextGen" />
     <classNode dependClassName="jetbrains.mps.samples.customizedDebugger.Bottomline.textGen.OutputMessage_TextGen" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenModelOutline" />

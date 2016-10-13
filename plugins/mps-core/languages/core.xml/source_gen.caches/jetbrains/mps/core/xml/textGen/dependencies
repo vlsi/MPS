@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.core.xml.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.xml.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlAttribute_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlCDATA_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlCharRefValue_TextGen" />
@@ -23,9 +24,6 @@
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlTextValue_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlText_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.xml.textGen.XmlWhitespace_TextGen" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenModelOutline" />

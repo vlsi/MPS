@@ -13,7 +13,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="15,0,86,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" />
+      <unit at="12,0,79,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/2099616960330110596">

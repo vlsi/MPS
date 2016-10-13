@@ -39,13 +39,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.nio.charset.Charset" />
+    <classNode dependClassName="jetbrains.mps.core.properties.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.core.properties.textGen.PropertiesComment_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.properties.textGen.PropertiesDeclaration_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.properties.textGen.PropertiesFile_TextGen" />
     <classNode dependClassName="jetbrains.mps.core.properties.textGen.PropertiesLine_TextGen" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenModelOutline" />
