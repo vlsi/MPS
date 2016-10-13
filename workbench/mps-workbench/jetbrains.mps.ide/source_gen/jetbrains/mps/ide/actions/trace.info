@@ -9686,7 +9686,7 @@
     <file name="TodoViewer_Tool.java">
       <node id="5426495936043631345" at="15,0,16,0" concept="16" trace="ICON" />
       <node id="5426495936043631352" at="16,0,17,0" concept="7" trace="myComponent" />
-      <node id="5426495936043631345" at="17,43,18,69" concept="18" />
+      <node id="5426495936043631345" at="17,43,18,71" concept="18" />
       <node id="5426495936043631345" at="20,37,21,24" concept="6" />
       <node id="5426495936043631357" at="21,24,22,116" concept="6" />
       <node id="5426495936043631371" at="24,25,25,71" concept="12" />
@@ -9700,7 +9700,7 @@
       <node id="5426495936043631345" at="33,0,36,0" concept="11" trace="getComponent#()Ljavax/swing/JComponent;" />
       <node id="5426495936043631345" at="20,0,24,0" concept="11" trace="init#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="5426495936043631345" at="24,0,33,0" concept="11" trace="dispose#()V" />
-      <scope id="5426495936043631345" at="17,43,18,69" />
+      <scope id="5426495936043631345" at="17,43,18,71" />
       <scope id="5426495936043631380" at="26,28,27,57" />
       <scope id="5426495936043631347" at="33,36,34,44" />
       <scope id="5426495936043631345" at="20,37,22,116" />
@@ -9908,7 +9908,7 @@
     <file name="ModuleDependenies_Tool.java">
       <node id="5476509602181674192" at="15,0,16,0" concept="16" trace="ICON" />
       <node id="5476509602181674199" at="16,0,17,0" concept="7" trace="myComponent" />
-      <node id="5476509602181674192" at="17,50,18,84" concept="18" />
+      <node id="5476509602181674192" at="17,50,18,86" concept="18" />
       <node id="5476509602181674192" at="20,37,21,24" concept="6" />
       <node id="6059554334738584747" at="21,24,22,111" concept="6" />
       <node id="6059554334738584765" at="24,47,25,63" concept="6" />
@@ -9919,7 +9919,7 @@
       <node id="7742015873499457238" at="27,0,30,0" concept="11" trace="resetAll#()V" />
       <node id="5476509602181674192" at="30,0,33,0" concept="11" trace="getComponent#()Ljavax/swing/JComponent;" />
       <node id="5476509602181674192" at="20,0,24,0" concept="11" trace="init#(Lcom/intellij/openapi/project/Project;)V" />
-      <scope id="5476509602181674192" at="17,50,18,84" />
+      <scope id="5476509602181674192" at="17,50,18,86" />
       <scope id="4584053716645516272" at="24,47,25,63" />
       <scope id="7742015873499457240" at="27,26,28,55" />
       <scope id="5476509602181674194" at="30,36,31,51" />

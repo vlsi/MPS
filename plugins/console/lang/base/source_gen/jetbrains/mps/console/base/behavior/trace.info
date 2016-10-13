@@ -29,6 +29,9 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,150,0" name="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="CommandHolderRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.base.behavior.CommandHolderRef_BehaviorDescriptor" />
+    </file>
     <file name="CommandHolder_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
     </file>

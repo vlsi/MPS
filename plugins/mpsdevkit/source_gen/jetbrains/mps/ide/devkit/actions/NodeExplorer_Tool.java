@@ -24,7 +24,7 @@ public class NodeExplorer_Tool extends GeneratedTool {
   private NodeExplorerComponent myNodeExplorer;
   private JPanel myPanel;
   public NodeExplorer_Tool(Project project) {
-    super(project, "Node Explorer", -1, ICON, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Node Explorer", null, ICON, ToolWindowAnchor.BOTTOM, false);
   }
   public void init(Project project) {
     super.init(project);

@@ -15,7 +15,7 @@ public class TodoViewer_Tool extends GeneratedTool {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowTodo;
   private TodoViewer myComponent;
   public TodoViewer_Tool(Project project) {
-    super(project, "TODO", -1, ICON, ToolWindowAnchor.BOTTOM, false);
+    super(project, "TODO", null, ICON, ToolWindowAnchor.BOTTOM, false);
   }
   public void init(Project project) {
     super.init(project);

@@ -9,6 +9,7 @@ import jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.tools.BaseTool;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.impl.ToolWindowImpl;
 import java.beans.PropertyChangeListener;
@@ -27,7 +28,7 @@ public class TraceTool_Tool extends GeneratedTool {
   private MessageBusConnection myBusConnection;
   private EditorComponent myEditorComponent;
   public TraceTool_Tool(Project project) {
-    super(project, "Typesystem Trace", 5, ICON, ToolWindowAnchor.RIGHT, false);
+    super(project, "Typesystem Trace", BaseTool.shortcutsFromNumber(5), ICON, ToolWindowAnchor.RIGHT, false);
   }
   public void init(Project project) {
     super.init(project);
