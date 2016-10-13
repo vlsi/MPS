@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.ide.make" uuid="8f6725be-608d-433b-98fd-844f816eb05f" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="make" />
     </modelRoot>
   </models>
   <facets>
