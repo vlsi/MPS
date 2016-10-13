@@ -993,6 +993,7 @@
                 <node concept="2OqwBi" id="5YhakczIfdY" role="3clFbG">
                   <node concept="pFkrN" id="5YhakczIeZa" role="2Oq$k0" />
                   <node concept="1W9Qq2" id="5YhakczIfrk" role="2OqNvi">
+                    <property role="1W9R_Y" value="image/gif" />
                     <node concept="10M0yZ" id="6dOBq74S6Iv" role="1W9R_W">
                       <ref role="3cqZAo" node="6dOBq74R6h8" resolve="FAILURE_STREAM" />
                       <ref role="1PxDUh" node="2lt1tUBuCdK" resolve="HandlerUtil" />
