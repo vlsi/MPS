@@ -4,8 +4,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,31,0" name="testMoveElements.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,32,0" name="testMoveElements.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,92,0" name="testMoveElements.structure.StructureAspectDescriptor" />
+      <unit at="14,0,76,0" name="testMoveElements.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -45,67 +45,67 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ApplyTo_Function:
         return props_ApplyTo_Function;
-      case 1:
+      case LanguageConceptSwitch.CheckProperitesOperation:
         return props_CheckProperitesOperation;
-      case 2:
+      case LanguageConceptSwitch.CheckProperties_Function:
         return props_CheckProperties_Function;
-      case 3:
+      case LanguageConceptSwitch.Configuration_Parameter:
         return props_Configuration_Parameter;
-      case 4:
+      case LanguageConceptSwitch.CreateEditor_Function:
         return props_CreateEditor_Function;
-      case 5:
+      case LanguageConceptSwitch.DeprecatedAnnotation:
         return props_DeprecatedAnnotation;
-      case 6:
+      case LanguageConceptSwitch.Dispose_Function:
         return props_Dispose_Function;
-      case 7:
+      case LanguageConceptSwitch.EditorExpression:
         return props_EditorExpression;
-      case 8:
+      case LanguageConceptSwitch.EditorOperationCall:
         return props_EditorOperationCall;
-      case 9:
+      case LanguageConceptSwitch.EditorOperationDeclaration:
         return props_EditorOperationDeclaration;
-      case 10:
+      case LanguageConceptSwitch.EditorPropertyDeclaration:
         return props_EditorPropertyDeclaration;
-      case 11:
+      case LanguageConceptSwitch.EditorPropertyReference:
         return props_EditorPropertyReference;
-      case 12:
+      case LanguageConceptSwitch.GetEditorOperation:
         return props_GetEditorOperation;
-      case 13:
+      case LanguageConceptSwitch.GridBagConstraints:
         return props_GridBagConstraints;
-      case 14:
+      case LanguageConceptSwitch.IPersistentPropertyHolder:
         return props_IPersistentPropertyHolder;
-      case 15:
+      case LanguageConceptSwitch.PersistentConfiguration:
         return props_PersistentConfiguration;
-      case 16:
+      case LanguageConceptSwitch.PersistentConfigurationAssistent:
         return props_PersistentConfigurationAssistent;
-      case 17:
+      case LanguageConceptSwitch.PersistentConfigurationMethod:
         return props_PersistentConfigurationMethod;
-      case 18:
+      case LanguageConceptSwitch.PersistentConfigurationTemplate:
         return props_PersistentConfigurationTemplate;
-      case 19:
+      case LanguageConceptSwitch.PersistentConfigurationTemplateInitializer:
         return props_PersistentConfigurationTemplateInitializer;
-      case 20:
+      case LanguageConceptSwitch.PersistentConfigurationType:
         return props_PersistentConfigurationType;
-      case 21:
+      case LanguageConceptSwitch.PersistentPropertyDeclaration:
         return props_PersistentPropertyDeclaration;
-      case 22:
+      case LanguageConceptSwitch.PersistentPropertyReferenceOperation:
         return props_PersistentPropertyReferenceOperation;
-      case 23:
+      case LanguageConceptSwitch.ReportConfigurationErrorStatement:
         return props_ReportConfigurationErrorStatement;
-      case 24:
+      case LanguageConceptSwitch.ResetFrom_Function:
         return props_ResetFrom_Function;
-      case 25:
+      case LanguageConceptSwitch.SettingsEditor:
         return props_SettingsEditor;
-      case 26:
+      case LanguageConceptSwitch.SettingsEditorType:
         return props_SettingsEditorType;
-      case 27:
+      case LanguageConceptSwitch.TemplateParameter:
         return props_TemplateParameter;
-      case 28:
+      case LanguageConceptSwitch.TemplateParameterReference:
         return props_TemplateParameterReference;
-      case 29:
+      case LanguageConceptSwitch.TemplatePersistentConfigurationType:
         return props_TemplatePersistentConfigurationType;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

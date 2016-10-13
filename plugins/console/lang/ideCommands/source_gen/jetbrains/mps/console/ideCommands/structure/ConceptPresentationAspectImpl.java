@@ -44,63 +44,63 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbsractMake:
         return props_AbsractMake;
-      case 1:
+      case LanguageConceptSwitch.ActionCallDeclaredParameter:
         return props_ActionCallDeclaredParameter;
-      case 2:
+      case LanguageConceptSwitch.ActionCallGlobalParameter:
         return props_ActionCallGlobalParameter;
-      case 3:
+      case LanguageConceptSwitch.ActionCallParameter:
         return props_ActionCallParameter;
-      case 4:
+      case LanguageConceptSwitch.CallActionExpression:
         return props_CallActionExpression;
-      case 5:
+      case LanguageConceptSwitch.Clean:
         return props_Clean;
-      case 6:
+      case LanguageConceptSwitch.ClickableGenerator:
         return props_ClickableGenerator;
-      case 7:
+      case LanguageConceptSwitch.GlobalScope:
         return props_GlobalScope;
-      case 8:
+      case LanguageConceptSwitch.GlobalStatisticTarget:
         return props_GlobalStatisticTarget;
-      case 9:
+      case LanguageConceptSwitch.INodeSetReference:
         return props_INodeSetReference;
-      case 10:
+      case LanguageConceptSwitch.IStatisticsTarget:
         return props_IStatisticsTarget;
-      case 11:
+      case LanguageConceptSwitch.Make:
         return props_Make;
-      case 12:
+      case LanguageConceptSwitch.ModelProperties:
         return props_ModelProperties;
-      case 13:
+      case LanguageConceptSwitch.ModelReference:
         return props_ModelReference;
-      case 14:
+      case LanguageConceptSwitch.ModelStatisticsTarget:
         return props_ModelStatisticsTarget;
-      case 15:
+      case LanguageConceptSwitch.ModuleProperties:
         return props_ModuleProperties;
-      case 16:
+      case LanguageConceptSwitch.NodeReference:
         return props_NodeReference;
-      case 17:
+      case LanguageConceptSwitch.OfAspectOperation:
         return props_OfAspectOperation;
-      case 18:
+      case LanguageConceptSwitch.ProjectStatisticsTarget:
         return props_ProjectStatisticsTarget;
-      case 19:
+      case LanguageConceptSwitch.RebuildProjectCommand:
         return props_RebuildProjectCommand;
-      case 20:
+      case LanguageConceptSwitch.RemoveGenSources:
         return props_RemoveGenSources;
-      case 21:
+      case LanguageConceptSwitch.ShowBrokenReferences:
         return props_ShowBrokenReferences;
-      case 22:
+      case LanguageConceptSwitch.ShowExpression:
         return props_ShowExpression;
-      case 23:
+      case LanguageConceptSwitch.ShowGenPlan:
         return props_ShowGenPlan;
-      case 24:
+      case LanguageConceptSwitch.StatCommand:
         return props_StatCommand;
-      case 25:
+      case LanguageConceptSwitch.SubtreeStatisticsTarget:
         return props_SubtreeStatisticsTarget;
-      case 26:
+      case LanguageConceptSwitch.UnloadModelsCommand:
         return props_UnloadModelsCommand;
-      case 27:
+      case LanguageConceptSwitch.WithDependencies:
         return props_WithDependencies;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

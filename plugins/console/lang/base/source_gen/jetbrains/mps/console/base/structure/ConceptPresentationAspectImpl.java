@@ -49,75 +49,75 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractPrintExpression:
         return props_AbstractPrintExpression;
-      case 1:
+      case LanguageConceptSwitch.BLCommand:
         return props_BLCommand;
-      case 2:
+      case LanguageConceptSwitch.BLExpression:
         return props_BLExpression;
-      case 3:
+      case LanguageConceptSwitch.Command:
         return props_Command;
-      case 4:
+      case LanguageConceptSwitch.CommandHolder:
         return props_CommandHolder;
-      case 5:
+      case LanguageConceptSwitch.ConsoleRoot:
         return props_ConsoleRoot;
-      case 6:
+      case LanguageConceptSwitch.ExceptionHolder:
         return props_ExceptionHolder;
-      case 7:
+      case LanguageConceptSwitch.GeneratedCommand:
         return props_GeneratedCommand;
-      case 8:
+      case LanguageConceptSwitch.HelpCommand:
         return props_HelpCommand;
-      case 9:
+      case LanguageConceptSwitch.HelpConceptReference:
         return props_HelpConceptReference;
-      case 10:
+      case LanguageConceptSwitch.History:
         return props_History;
-      case 11:
+      case LanguageConceptSwitch.HistoryItem:
         return props_HistoryItem;
-      case 12:
+      case LanguageConceptSwitch.IActionHolder:
         return props_IActionHolder;
-      case 13:
+      case LanguageConceptSwitch.IClickable:
         return props_IClickable;
-      case 14:
+      case LanguageConceptSwitch.INodeWithReference:
         return props_INodeWithReference;
-      case 15:
+      case LanguageConceptSwitch.InterpretedCommand:
         return props_InterpretedCommand;
-      case 16:
+      case LanguageConceptSwitch.ModifiedCommandHistoryItem:
         return props_ModifiedCommandHistoryItem;
-      case 17:
+      case LanguageConceptSwitch.NewLineResponseItem:
         return props_NewLineResponseItem;
-      case 18:
+      case LanguageConceptSwitch.NodeReferencePresentation:
         return props_NodeReferencePresentation;
-      case 19:
+      case LanguageConceptSwitch.NodeReferenceString:
         return props_NodeReferenceString;
-      case 20:
+      case LanguageConceptSwitch.NodeResponseItem:
         return props_NodeResponseItem;
-      case 21:
+      case LanguageConceptSwitch.NodeWithClosure:
         return props_NodeWithClosure;
-      case 22:
+      case LanguageConceptSwitch.OutputConsoleRoot:
         return props_OutputConsoleRoot;
-      case 23:
+      case LanguageConceptSwitch.PastedNodeReference:
         return props_PastedNodeReference;
-      case 24:
+      case LanguageConceptSwitch.PrintExpression:
         return props_PrintExpression;
-      case 25:
+      case LanguageConceptSwitch.PrintNodeExpression:
         return props_PrintNodeExpression;
-      case 26:
+      case LanguageConceptSwitch.PrintNodeReferenceExpression:
         return props_PrintNodeReferenceExpression;
-      case 27:
+      case LanguageConceptSwitch.PrintSequenceExpression:
         return props_PrintSequenceExpression;
-      case 28:
+      case LanguageConceptSwitch.PrintTextExpression:
         return props_PrintTextExpression;
-      case 29:
+      case LanguageConceptSwitch.ProjectExpression:
         return props_ProjectExpression;
-      case 30:
+      case LanguageConceptSwitch.ProjectScope:
         return props_ProjectScope;
-      case 31:
+      case LanguageConceptSwitch.Response:
         return props_Response;
-      case 32:
+      case LanguageConceptSwitch.ResponseItem:
         return props_ResponseItem;
-      case 33:
+      case LanguageConceptSwitch.TextResponseItem:
         return props_TextResponseItem;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

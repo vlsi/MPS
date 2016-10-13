@@ -52,81 +52,81 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractNodeReference:
         return props_AbstractNodeReference;
-      case 1:
+      case LanguageConceptSwitch.ClassifierMemberData:
         return props_ClassifierMemberData;
-      case 2:
+      case LanguageConceptSwitch.ConceptMigrationReference:
         return props_ConceptMigrationReference;
-      case 3:
+      case LanguageConceptSwitch.ConsequenceFunction:
         return props_ConsequenceFunction;
-      case 4:
+      case LanguageConceptSwitch.DataDependency:
         return props_DataDependency;
-      case 5:
+      case LanguageConceptSwitch.DataDependencyReference:
         return props_DataDependencyReference;
-      case 6:
+      case LanguageConceptSwitch.DirectNodeReference:
         return props_DirectNodeReference;
-      case 7:
+      case LanguageConceptSwitch.ExecuteAfterDeclaration:
         return props_ExecuteAfterDeclaration;
-      case 8:
+      case LanguageConceptSwitch.IMigrationUnit:
         return props_IMigrationUnit;
-      case 9:
+      case LanguageConceptSwitch.IncludeMigrationPart:
         return props_IncludeMigrationPart;
-      case 10:
+      case LanguageConceptSwitch.LinkPatternVariableReference:
         return props_LinkPatternVariableReference;
-      case 11:
+      case LanguageConceptSwitch.ListPatternVariableReference:
         return props_ListPatternVariableReference;
-      case 12:
+      case LanguageConceptSwitch.MigrationScript:
         return props_MigrationScript;
-      case 13:
+      case LanguageConceptSwitch.MigrationScriptReference:
         return props_MigrationScriptReference;
-      case 14:
+      case LanguageConceptSwitch.MoveConcept:
         return props_MoveConcept;
-      case 15:
+      case LanguageConceptSwitch.MoveConceptMember:
         return props_MoveConceptMember;
-      case 16:
+      case LanguageConceptSwitch.MoveContainmentLink:
         return props_MoveContainmentLink;
-      case 17:
+      case LanguageConceptSwitch.MoveNodeMigrationPart:
         return props_MoveNodeMigrationPart;
-      case 18:
+      case LanguageConceptSwitch.MoveNodeSpecialization:
         return props_MoveNodeSpecialization;
-      case 19:
+      case LanguageConceptSwitch.MoveProperty:
         return props_MoveProperty;
-      case 20:
+      case LanguageConceptSwitch.MoveReferenceLink:
         return props_MoveReferenceLink;
-      case 21:
+      case LanguageConceptSwitch.NodePatternVariableReference:
         return props_NodePatternVariableReference;
-      case 22:
+      case LanguageConceptSwitch.OrderDependency:
         return props_OrderDependency;
-      case 23:
+      case LanguageConceptSwitch.ProducedDataDeclaration:
         return props_ProducedDataDeclaration;
-      case 24:
+      case LanguageConceptSwitch.PropertyPatternVariableReference:
         return props_PropertyPatternVariableReference;
-      case 25:
+      case LanguageConceptSwitch.PureMigrationPart:
         return props_PureMigrationPart;
-      case 26:
+      case LanguageConceptSwitch.PureMigrationScript:
         return props_PureMigrationScript;
-      case 27:
+      case LanguageConceptSwitch.QuotationConsequence:
         return props_QuotationConsequence;
-      case 28:
+      case LanguageConceptSwitch.RefactoringLog:
         return props_RefactoringLog;
-      case 29:
+      case LanguageConceptSwitch.RefactoringOption:
         return props_RefactoringOption;
-      case 30:
+      case LanguageConceptSwitch.RefactoringOptions:
         return props_RefactoringOptions;
-      case 31:
+      case LanguageConceptSwitch.RefactoringOrderDependency:
         return props_RefactoringOrderDependency;
-      case 32:
+      case LanguageConceptSwitch.RefactoringPart:
         return props_RefactoringPart;
-      case 33:
+      case LanguageConceptSwitch.ReflectionNodeReference:
         return props_ReflectionNodeReference;
-      case 34:
+      case LanguageConceptSwitch.RequiredDataDeclaration:
         return props_RequiredDataDeclaration;
-      case 35:
+      case LanguageConceptSwitch.TransformConsequence:
         return props_TransformConsequence;
-      case 36:
+      case LanguageConceptSwitch.TransformStatement:
         return props_TransformStatement;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

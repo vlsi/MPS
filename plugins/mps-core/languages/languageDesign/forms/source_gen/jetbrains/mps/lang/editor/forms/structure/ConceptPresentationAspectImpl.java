@@ -20,17 +20,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractCheckboxUI:
         return props_AbstractCheckboxUI;
-      case 1:
+      case LanguageConceptSwitch.CellModel_Checkbox:
         return props_CellModel_Checkbox;
-      case 2:
+      case LanguageConceptSwitch.CheckboxUI_Platform:
         return props_CheckboxUI_Platform;
-      case 3:
+      case LanguageConceptSwitch.CheckboxUI_Text:
         return props_CheckboxUI_Text;
-      case 4:
+      case LanguageConceptSwitch.StubCellModel_Checkbox:
         return props_StubCellModel_Checkbox;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

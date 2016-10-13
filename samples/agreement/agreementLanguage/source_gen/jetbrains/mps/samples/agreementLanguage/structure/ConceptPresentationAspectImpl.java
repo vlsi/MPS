@@ -32,41 +32,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AccountType:
         return props_AccountType;
-      case 1:
+      case LanguageConceptSwitch.AgreementDeclarations:
         return props_AgreementDeclarations;
-      case 2:
+      case LanguageConceptSwitch.Date:
         return props_Date;
-      case 3:
+      case LanguageConceptSwitch.Date_Future:
         return props_Date_Future;
-      case 4:
+      case LanguageConceptSwitch.Date_Past:
         return props_Date_Past;
-      case 5:
+      case LanguageConceptSwitch.Event:
         return props_Event;
-      case 6:
+      case LanguageConceptSwitch.EventType:
         return props_EventType;
-      case 7:
+      case LanguageConceptSwitch.EventVariable:
         return props_EventVariable;
-      case 8:
+      case LanguageConceptSwitch.EventVariableReference:
         return props_EventVariableReference;
-      case 9:
+      case LanguageConceptSwitch.Plan:
         return props_Plan;
-      case 10:
+      case LanguageConceptSwitch.PostingRule:
         return props_PostingRule;
-      case 11:
+      case LanguageConceptSwitch.PostingRuleTemporalProperty:
         return props_PostingRuleTemporalProperty;
-      case 12:
+      case LanguageConceptSwitch.Quantity:
         return props_Quantity;
-      case 13:
+      case LanguageConceptSwitch.QuantityTemporalProperty:
         return props_QuantityTemporalProperty;
-      case 14:
+      case LanguageConceptSwitch.TemporalProperty:
         return props_TemporalProperty;
-      case 15:
+      case LanguageConceptSwitch.Value:
         return props_Value;
-      case 16:
+      case LanguageConceptSwitch.ValueReference:
         return props_ValueReference;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

@@ -88,153 +88,153 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractNodeAssert:
         return props_AbstractNodeAssert;
-      case 1:
+      case LanguageConceptSwitch.AbstractNodeErrorCheckOperation:
         return props_AbstractNodeErrorCheckOperation;
-      case 2:
+      case LanguageConceptSwitch.AbstractNodeRuleCheckOperation:
         return props_AbstractNodeRuleCheckOperation;
-      case 3:
+      case LanguageConceptSwitch.AbstractNodeWarningCheckOperation:
         return props_AbstractNodeWarningCheckOperation;
-      case 4:
+      case LanguageConceptSwitch.ActionReference:
         return props_ActionReference;
-      case 5:
+      case LanguageConceptSwitch.AnonymousCellAnnotation:
         return props_AnonymousCellAnnotation;
-      case 6:
+      case LanguageConceptSwitch.AssertMatch:
         return props_AssertMatch;
-      case 7:
+      case LanguageConceptSwitch.BootstrapActionReference:
         return props_BootstrapActionReference;
-      case 8:
+      case LanguageConceptSwitch.CheckDataFlowOperation:
         return props_CheckDataFlowOperation;
-      case 9:
+      case LanguageConceptSwitch.CheckNodeDataflow:
         return props_CheckNodeDataflow;
-      case 10:
+      case LanguageConceptSwitch.CheckNodeForErrorMessagesOperation:
         return props_CheckNodeForErrorMessagesOperation;
-      case 11:
+      case LanguageConceptSwitch.CheckNodeForErrors:
         return props_CheckNodeForErrors;
-      case 12:
+      case LanguageConceptSwitch.DragMouseStatement:
         return props_DragMouseStatement;
-      case 13:
+      case LanguageConceptSwitch.EditorComponentExpression:
         return props_EditorComponentExpression;
-      case 14:
+      case LanguageConceptSwitch.EditorExpression:
         return props_EditorExpression;
-      case 15:
+      case LanguageConceptSwitch.EditorOperation:
         return props_EditorOperation;
-      case 16:
+      case LanguageConceptSwitch.EditorTestCase:
         return props_EditorTestCase;
-      case 17:
+      case LanguageConceptSwitch.ExpressionContainer:
         return props_ExpressionContainer;
-      case 18:
+      case LanguageConceptSwitch.IChecksRules:
         return props_IChecksRules;
-      case 19:
+      case LanguageConceptSwitch.INodeAnnotation:
         return props_INodeAnnotation;
-      case 20:
+      case LanguageConceptSwitch.INodesTestMethod:
         return props_INodesTestMethod;
-      case 21:
+      case LanguageConceptSwitch.IReferenceAttachable:
         return props_IReferenceAttachable;
-      case 22:
+      case LanguageConceptSwitch.IRuleReference:
         return props_IRuleReference;
-      case 23:
+      case LanguageConceptSwitch.InfoStatementReference:
         return props_InfoStatementReference;
-      case 24:
+      case LanguageConceptSwitch.InvokeActionStatement:
         return props_InvokeActionStatement;
-      case 25:
+      case LanguageConceptSwitch.InvokeIntentionStatement:
         return props_InvokeIntentionStatement;
-      case 26:
+      case LanguageConceptSwitch.IsIntentionApplicableExpression:
         return props_IsIntentionApplicableExpression;
-      case 27:
+      case LanguageConceptSwitch.LogEvent:
         return props_LogEvent;
-      case 28:
+      case LanguageConceptSwitch.MPSActionReference:
         return props_MPSActionReference;
-      case 29:
+      case LanguageConceptSwitch.MockAnnotation:
         return props_MockAnnotation;
-      case 30:
+      case LanguageConceptSwitch.MockScopeProvider:
         return props_MockScopeProvider;
-      case 31:
+      case LanguageConceptSwitch.ModelExpression:
         return props_ModelExpression;
-      case 32:
+      case LanguageConceptSwitch.NamedNodeReference:
         return props_NamedNodeReference;
-      case 33:
+      case LanguageConceptSwitch.NodeCheckOperation:
         return props_NodeCheckOperation;
-      case 34:
+      case LanguageConceptSwitch.NodeConstraintsErrorCheckOperation:
         return props_NodeConstraintsErrorCheckOperation;
-      case 35:
+      case LanguageConceptSwitch.NodeConstraintsWarningCheckOperation:
         return props_NodeConstraintsWarningCheckOperation;
-      case 36:
+      case LanguageConceptSwitch.NodeErrorCheckOperation:
         return props_NodeErrorCheckOperation;
-      case 37:
+      case LanguageConceptSwitch.NodeExpectedTypeCheckOperation:
         return props_NodeExpectedTypeCheckOperation;
-      case 38:
+      case LanguageConceptSwitch.NodeInfoCheckOperation:
         return props_NodeInfoCheckOperation;
-      case 39:
+      case LanguageConceptSwitch.NodeOperationsContainer:
         return props_NodeOperationsContainer;
-      case 40:
+      case LanguageConceptSwitch.NodePropertiesContainer:
         return props_NodePropertiesContainer;
-      case 41:
+      case LanguageConceptSwitch.NodeReachable:
         return props_NodeReachable;
-      case 42:
+      case LanguageConceptSwitch.NodeRuleCheckOperation:
         return props_NodeRuleCheckOperation;
-      case 43:
+      case LanguageConceptSwitch.NodeTypeCheckOperation:
         return props_NodeTypeCheckOperation;
-      case 44:
+      case LanguageConceptSwitch.NodeTypeSetCheckOperation:
         return props_NodeTypeSetCheckOperation;
-      case 45:
+      case LanguageConceptSwitch.NodeTypeSystemErrorCheckOperation:
         return props_NodeTypeSystemErrorCheckOperation;
-      case 46:
+      case LanguageConceptSwitch.NodeTypeSystemRuleCheckOperation:
         return props_NodeTypeSystemRuleCheckOperation;
-      case 47:
+      case LanguageConceptSwitch.NodeTypeSystemWarningCheckOperation:
         return props_NodeTypeSystemWarningCheckOperation;
-      case 48:
+      case LanguageConceptSwitch.NodeUnknownErrorCheckOperation:
         return props_NodeUnknownErrorCheckOperation;
-      case 49:
+      case LanguageConceptSwitch.NodeUnknownWarningCheckOperation:
         return props_NodeUnknownWarningCheckOperation;
-      case 50:
+      case LanguageConceptSwitch.NodeUnreachable:
         return props_NodeUnreachable;
-      case 51:
+      case LanguageConceptSwitch.NodeWarningCheckOperation:
         return props_NodeWarningCheckOperation;
-      case 52:
+      case LanguageConceptSwitch.NodesTestCase:
         return props_NodesTestCase;
-      case 53:
+      case LanguageConceptSwitch.NodesTestMethod:
         return props_NodesTestMethod;
-      case 54:
+      case LanguageConceptSwitch.PressKeyStatement:
         return props_PressKeyStatement;
-      case 55:
+      case LanguageConceptSwitch.PressMouseStatement:
         return props_PressMouseStatement;
-      case 56:
+      case LanguageConceptSwitch.ProjectExpression:
         return props_ProjectExpression;
-      case 57:
+      case LanguageConceptSwitch.ReportErrorStatementReference:
         return props_ReportErrorStatementReference;
-      case 58:
+      case LanguageConceptSwitch.ScopeEntry:
         return props_ScopeEntry;
-      case 59:
+      case LanguageConceptSwitch.ScopesExpectedNode:
         return props_ScopesExpectedNode;
-      case 60:
+      case LanguageConceptSwitch.ScopesTest:
         return props_ScopesTest;
-      case 61:
+      case LanguageConceptSwitch.SimpleNodeTest:
         return props_SimpleNodeTest;
-      case 62:
+      case LanguageConceptSwitch.SwitchToInspector:
         return props_SwitchToInspector;
-      case 63:
+      case LanguageConceptSwitch.TestInfo:
         return props_TestInfo;
-      case 64:
+      case LanguageConceptSwitch.TestNode:
         return props_TestNode;
-      case 65:
+      case LanguageConceptSwitch.TestNodeAnnotation:
         return props_TestNodeAnnotation;
-      case 66:
+      case LanguageConceptSwitch.TestNodeReference:
         return props_TestNodeReference;
-      case 67:
+      case LanguageConceptSwitch.TypeKeyStatement:
         return props_TypeKeyStatement;
-      case 68:
+      case LanguageConceptSwitch.UnknownRuleReference:
         return props_UnknownRuleReference;
-      case 69:
+      case LanguageConceptSwitch.UntypedExpression:
         return props_UntypedExpression;
-      case 70:
+      case LanguageConceptSwitch.VariableAlive:
         return props_VariableAlive;
-      case 71:
+      case LanguageConceptSwitch.VariableInitialized:
         return props_VariableInitialized;
-      case 72:
+      case LanguageConceptSwitch.WarningStatementReference:
         return props_WarningStatementReference;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

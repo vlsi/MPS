@@ -35,47 +35,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BaseIntentionDeclaration:
         return props_BaseIntentionDeclaration;
-      case 1:
+      case LanguageConceptSwitch.ChildFilterBlock:
         return props_ChildFilterBlock;
-      case 2:
+      case LanguageConceptSwitch.ChildFilterFunction:
         return props_ChildFilterFunction;
-      case 3:
+      case LanguageConceptSwitch.ConceptFunctionParameter_childNode:
         return props_ConceptFunctionParameter_childNode;
-      case 4:
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
         return props_ConceptFunctionParameter_node;
-      case 5:
+      case LanguageConceptSwitch.DescriptionBlock:
         return props_DescriptionBlock;
-      case 6:
+      case LanguageConceptSwitch.ErrorIntentionPriority:
         return props_ErrorIntentionPriority;
-      case 7:
+      case LanguageConceptSwitch.ExecuteBlock:
         return props_ExecuteBlock;
-      case 8:
+      case LanguageConceptSwitch.ForConceptMethodParameter:
         return props_ForConceptMethodParameter;
-      case 9:
+      case LanguageConceptSwitch.Intention:
         return props_Intention;
-      case 10:
+      case LanguageConceptSwitch.IntentionDeclaration:
         return props_IntentionDeclaration;
-      case 11:
+      case LanguageConceptSwitch.IntentionParameter:
         return props_IntentionParameter;
-      case 12:
+      case LanguageConceptSwitch.IntentionPriority:
         return props_IntentionPriority;
-      case 13:
+      case LanguageConceptSwitch.IsApplicableBlock:
         return props_IsApplicableBlock;
-      case 14:
+      case LanguageConceptSwitch.Parameter:
         return props_Parameter;
-      case 15:
+      case LanguageConceptSwitch.ParameterizedDescriptionBlock:
         return props_ParameterizedDescriptionBlock;
-      case 16:
+      case LanguageConceptSwitch.ParameterizedExecuteBlock:
         return props_ParameterizedExecuteBlock;
-      case 17:
+      case LanguageConceptSwitch.ParameterizedIntentionDeclaration:
         return props_ParameterizedIntentionDeclaration;
-      case 18:
+      case LanguageConceptSwitch.QueryBlock:
         return props_QueryBlock;
-      case 19:
+      case LanguageConceptSwitch.SurroundWithIntentionDeclaration:
         return props_SurroundWithIntentionDeclaration;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

@@ -66,109 +66,109 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AttractsFocusBlock:
         return props_AttractsFocusBlock;
-      case 1:
+      case LanguageConceptSwitch.AttributeChild:
         return props_AttributeChild;
-      case 2:
+      case LanguageConceptSwitch.AttributeWithChildren:
         return props_AttributeWithChildren;
-      case 3:
+      case LanguageConceptSwitch.AttributedConcept:
         return props_AttributedConcept;
-      case 4:
+      case LanguageConceptSwitch.BinaryExpression:
         return props_BinaryExpression;
-      case 5:
+      case LanguageConceptSwitch.BracesBlock:
         return props_BracesBlock;
-      case 6:
+      case LanguageConceptSwitch.BracesStubBlock:
         return props_BracesStubBlock;
-      case 7:
+      case LanguageConceptSwitch.ClassReference:
         return props_ClassReference;
-      case 8:
+      case LanguageConceptSwitch.CollapsedByDefault:
         return props_CollapsedByDefault;
-      case 9:
+      case LanguageConceptSwitch.CollapsedConditionally:
         return props_CollapsedConditionally;
-      case 10:
+      case LanguageConceptSwitch.CollapsibleConcept:
         return props_CollapsibleConcept;
-      case 11:
+      case LanguageConceptSwitch.Composition:
         return props_Composition;
-      case 12:
+      case LanguageConceptSwitch.DelTestAbstractChild:
         return props_DelTestAbstractChild;
-      case 13:
+      case LanguageConceptSwitch.DelTestChild1:
         return props_DelTestChild1;
-      case 14:
+      case LanguageConceptSwitch.DelTestChildContainer:
         return props_DelTestChildContainer;
-      case 15:
+      case LanguageConceptSwitch.DelTestRoot:
         return props_DelTestRoot;
-      case 16:
+      case LanguageConceptSwitch.FoldingContainer:
         return props_FoldingContainer;
-      case 17:
+      case LanguageConceptSwitch.IBaseTestBlock:
         return props_IBaseTestBlock;
-      case 18:
+      case LanguageConceptSwitch.InitAbstractChild:
         return props_InitAbstractChild;
-      case 19:
+      case LanguageConceptSwitch.InitChildWithDirectCycle_card1:
         return props_InitChildWithDirectCycle_card1;
-      case 20:
+      case LanguageConceptSwitch.InitChildWithDirectCycle_card1n:
         return props_InitChildWithDirectCycle_card1n;
-      case 21:
+      case LanguageConceptSwitch.InitChildWithIndirectCycle_card1:
         return props_InitChildWithIndirectCycle_card1;
-      case 22:
+      case LanguageConceptSwitch.InitChildWithIndirectCycle_card1n:
         return props_InitChildWithIndirectCycle_card1n;
-      case 23:
+      case LanguageConceptSwitch.InitChildWithTwoSameConceptChildren:
         return props_InitChildWithTwoSameConceptChildren;
-      case 24:
+      case LanguageConceptSwitch.InitContainer:
         return props_InitContainer;
-      case 25:
+      case LanguageConceptSwitch.InitGrandChild:
         return props_InitGrandChild;
-      case 26:
+      case LanguageConceptSwitch.InitGrandChildWithIndirectCycle_card1:
         return props_InitGrandChildWithIndirectCycle_card1;
-      case 27:
+      case LanguageConceptSwitch.InitGrandChildWithIndirectCycle_card1n:
         return props_InitGrandChildWithIndirectCycle_card1n;
-      case 28:
+      case LanguageConceptSwitch.InspectorBlock:
         return props_InspectorBlock;
-      case 29:
+      case LanguageConceptSwitch.IntegerLiteral:
         return props_IntegerLiteral;
-      case 30:
+      case LanguageConceptSwitch.NonEmptyProperty:
         return props_NonEmptyProperty;
-      case 31:
+      case LanguageConceptSwitch.NotEditableVaraileReference:
         return props_NotEditableVaraileReference;
-      case 32:
+      case LanguageConceptSwitch.PlusExpression:
         return props_PlusExpression;
-      case 33:
+      case LanguageConceptSwitch.ReferenceAnnotataion:
         return props_ReferenceAnnotataion;
-      case 34:
+      case LanguageConceptSwitch.SelectionChild:
         return props_SelectionChild;
-      case 35:
+      case LanguageConceptSwitch.SelectionContainer:
         return props_SelectionContainer;
-      case 36:
+      case LanguageConceptSwitch.SideTranformWrapper:
         return props_SideTranformWrapper;
-      case 37:
+      case LanguageConceptSwitch.SimplePropertyAttribute:
         return props_SimplePropertyAttribute;
-      case 38:
+      case LanguageConceptSwitch.SimplePropertyContainer:
         return props_SimplePropertyContainer;
-      case 39:
+      case LanguageConceptSwitch.StubBlock:
         return props_StubBlock;
-      case 40:
+      case LanguageConceptSwitch.StyleChild:
         return props_StyleChild;
-      case 41:
+      case LanguageConceptSwitch.StyleParent:
         return props_StyleParent;
-      case 42:
+      case LanguageConceptSwitch.SubstMiddlewareChild:
         return props_SubstMiddlewareChild;
-      case 43:
+      case LanguageConceptSwitch.SubstTestAbstractChild:
         return props_SubstTestAbstractChild;
-      case 44:
+      case LanguageConceptSwitch.SubstTestBooleanPropertyChild:
         return props_SubstTestBooleanPropertyChild;
-      case 45:
+      case LanguageConceptSwitch.SubstTestEnumPropertyChild:
         return props_SubstTestEnumPropertyChild;
-      case 46:
+      case LanguageConceptSwitch.SubstTestRoot:
         return props_SubstTestRoot;
-      case 47:
+      case LanguageConceptSwitch.TestBlockList:
         return props_TestBlockList;
-      case 48:
+      case LanguageConceptSwitch.VariableDeclarationBlock:
         return props_VariableDeclarationBlock;
-      case 49:
+      case LanguageConceptSwitch.VariableDeclarationReference:
         return props_VariableDeclarationReference;
-      case 50:
+      case LanguageConceptSwitch.VerticalLayoutBlockList:
         return props_VerticalLayoutBlockList;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

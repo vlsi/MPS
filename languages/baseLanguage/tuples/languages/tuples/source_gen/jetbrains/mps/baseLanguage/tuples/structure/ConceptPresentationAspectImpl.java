@@ -24,25 +24,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.IndexedTupleLiteral:
         return props_IndexedTupleLiteral;
-      case 1:
+      case LanguageConceptSwitch.IndexedTupleMemberAccessExpression:
         return props_IndexedTupleMemberAccessExpression;
-      case 2:
+      case LanguageConceptSwitch.IndexedTupleType:
         return props_IndexedTupleType;
-      case 3:
+      case LanguageConceptSwitch.NamedTupleComponentAccessOperation:
         return props_NamedTupleComponentAccessOperation;
-      case 4:
+      case LanguageConceptSwitch.NamedTupleComponentDeclaration:
         return props_NamedTupleComponentDeclaration;
-      case 5:
+      case LanguageConceptSwitch.NamedTupleComponentReference:
         return props_NamedTupleComponentReference;
-      case 6:
+      case LanguageConceptSwitch.NamedTupleDeclaration:
         return props_NamedTupleDeclaration;
-      case 7:
+      case LanguageConceptSwitch.NamedTupleLiteral:
         return props_NamedTupleLiteral;
-      case 8:
+      case LanguageConceptSwitch.NamedTupleType:
         return props_NamedTupleType;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

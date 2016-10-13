@@ -49,75 +49,75 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AfterPosition:
         return props_AfterPosition;
-      case 1:
+      case LanguageConceptSwitch.BaseEmitJumpStatement:
         return props_BaseEmitJumpStatement;
-      case 2:
+      case LanguageConceptSwitch.BaseEmitVariableStatement:
         return props_BaseEmitVariableStatement;
-      case 3:
+      case LanguageConceptSwitch.BaseInstructionOperation:
         return props_BaseInstructionOperation;
-      case 4:
+      case LanguageConceptSwitch.BeforePosition:
         return props_BeforePosition;
-      case 5:
+      case LanguageConceptSwitch.BooleanInstructionOperation:
         return props_BooleanInstructionOperation;
-      case 6:
+      case LanguageConceptSwitch.BuilderBlock:
         return props_BuilderBlock;
-      case 7:
+      case LanguageConceptSwitch.DataFlowBuilderDeclaration:
         return props_DataFlowBuilderDeclaration;
-      case 8:
+      case LanguageConceptSwitch.EmitCodeForStatement:
         return props_EmitCodeForStatement;
-      case 9:
+      case LanguageConceptSwitch.EmitIfJumpStatement:
         return props_EmitIfJumpStatement;
-      case 10:
+      case LanguageConceptSwitch.EmitJumpStatement:
         return props_EmitJumpStatement;
-      case 11:
+      case LanguageConceptSwitch.EmitLabelStatement:
         return props_EmitLabelStatement;
-      case 12:
+      case LanguageConceptSwitch.EmitMayBeUnreachable:
         return props_EmitMayBeUnreachable;
-      case 13:
+      case LanguageConceptSwitch.EmitNopStatement:
         return props_EmitNopStatement;
-      case 14:
+      case LanguageConceptSwitch.EmitReadStatement:
         return props_EmitReadStatement;
-      case 15:
+      case LanguageConceptSwitch.EmitRetStatement:
         return props_EmitRetStatement;
-      case 16:
+      case LanguageConceptSwitch.EmitStatement:
         return props_EmitStatement;
-      case 17:
+      case LanguageConceptSwitch.EmitTryFinallyStatement:
         return props_EmitTryFinallyStatement;
-      case 18:
+      case LanguageConceptSwitch.EmitWriteStatement:
         return props_EmitWriteStatement;
-      case 19:
+      case LanguageConceptSwitch.GetCodeForExpression:
         return props_GetCodeForExpression;
-      case 20:
+      case LanguageConceptSwitch.IBuilderMode:
         return props_IBuilderMode;
-      case 21:
+      case LanguageConceptSwitch.InsertAfter:
         return props_InsertAfter;
-      case 22:
+      case LanguageConceptSwitch.InsertBefore:
         return props_InsertBefore;
-      case 23:
+      case LanguageConceptSwitch.InsertPosition:
         return props_InsertPosition;
-      case 24:
+      case LanguageConceptSwitch.InstructionGetSourceOperation:
         return props_InstructionGetSourceOperation;
-      case 25:
+      case LanguageConceptSwitch.InstructionIsJump:
         return props_InstructionIsJump;
-      case 26:
+      case LanguageConceptSwitch.InstructionIsNop:
         return props_InstructionIsNop;
-      case 27:
+      case LanguageConceptSwitch.InstructionIsRet:
         return props_InstructionIsRet;
-      case 28:
+      case LanguageConceptSwitch.InstructionType:
         return props_InstructionType;
-      case 29:
+      case LanguageConceptSwitch.IntraProcedural_BuilderMode:
         return props_IntraProcedural_BuilderMode;
-      case 30:
+      case LanguageConceptSwitch.LabelPosition:
         return props_LabelPosition;
-      case 31:
+      case LanguageConceptSwitch.NodeParameter:
         return props_NodeParameter;
-      case 32:
+      case LanguageConceptSwitch.Position:
         return props_Position;
-      case 33:
+      case LanguageConceptSwitch.RelativePosition:
         return props_RelativePosition;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

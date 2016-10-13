@@ -37,51 +37,51 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AndOperation:
         return props_AndOperation;
-      case 1:
+      case LanguageConceptSwitch.Constant:
         return props_Constant;
-      case 2:
+      case LanguageConceptSwitch.EqualsOperation:
         return props_EqualsOperation;
-      case 3:
+      case LanguageConceptSwitch.Expression:
         return props_Expression;
-      case 4:
+      case LanguageConceptSwitch.FloatingPointConstant:
         return props_FloatingPointConstant;
-      case 5:
+      case LanguageConceptSwitch.Formula:
         return props_Formula;
-      case 6:
+      case LanguageConceptSwitch.Function:
         return props_Function;
-      case 7:
+      case LanguageConceptSwitch.GreaterThanOperation:
         return props_GreaterThanOperation;
-      case 8:
+      case LanguageConceptSwitch.IfFunction:
         return props_IfFunction;
-      case 9:
+      case LanguageConceptSwitch.IntegerConstant:
         return props_IntegerConstant;
-      case 10:
+      case LanguageConceptSwitch.IsNullOperation:
         return props_IsNullOperation;
-      case 11:
+      case LanguageConceptSwitch.LessThanOperation:
         return props_LessThanOperation;
-      case 12:
+      case LanguageConceptSwitch.MinusOperation:
         return props_MinusOperation;
-      case 13:
+      case LanguageConceptSwitch.MultOperation:
         return props_MultOperation;
-      case 14:
+      case LanguageConceptSwitch.NotOperation:
         return props_NotOperation;
-      case 15:
+      case LanguageConceptSwitch.NullConstant:
         return props_NullConstant;
-      case 16:
+      case LanguageConceptSwitch.Operation:
         return props_Operation;
-      case 17:
+      case LanguageConceptSwitch.OrOperation:
         return props_OrOperation;
-      case 18:
+      case LanguageConceptSwitch.ParenthisizedExpression:
         return props_ParenthisizedExpression;
-      case 19:
+      case LanguageConceptSwitch.PlusOperation:
         return props_PlusOperation;
-      case 20:
+      case LanguageConceptSwitch.Reference:
         return props_Reference;
-      case 21:
+      case LanguageConceptSwitch.StringConstant:
         return props_StringConstant;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

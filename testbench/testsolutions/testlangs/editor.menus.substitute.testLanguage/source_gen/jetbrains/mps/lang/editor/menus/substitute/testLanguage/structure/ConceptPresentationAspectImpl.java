@@ -27,31 +27,31 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.TestConceptForMenuParameterizedByPrimitiveType:
         return props_TestConceptForMenuParameterizedByPrimitiveType;
-      case 1:
+      case LanguageConceptSwitch.TestSubstituteChild:
         return props_TestSubstituteChild;
-      case 2:
+      case LanguageConceptSwitch.TestSubstituteChildBrother:
         return props_TestSubstituteChildBrother;
-      case 3:
+      case LanguageConceptSwitch.TestSubstituteChildSuper:
         return props_TestSubstituteChildSuper;
-      case 4:
+      case LanguageConceptSwitch.TestSubstituteConceptChildToReference:
         return props_TestSubstituteConceptChildToReference;
-      case 5:
+      case LanguageConceptSwitch.TestSubstituteConceptToWrap:
         return props_TestSubstituteConceptToWrap;
-      case 6:
+      case LanguageConceptSwitch.TestSubstituteParent:
         return props_TestSubstituteParent;
-      case 7:
+      case LanguageConceptSwitch.TestSubstituteParentToReference:
         return props_TestSubstituteParentToReference;
-      case 8:
+      case LanguageConceptSwitch.TestSubstituteSubChild1:
         return props_TestSubstituteSubChild1;
-      case 9:
+      case LanguageConceptSwitch.TestSubstituteSubChild2:
         return props_TestSubstituteSubChild2;
-      case 10:
+      case LanguageConceptSwitch.TestSubstituteSubChildSmartReference:
         return props_TestSubstituteSubChildSmartReference;
-      case 11:
+      case LanguageConceptSwitch.TestSubstituteSubConceptToWrap:
         return props_TestSubstituteSubConceptToWrap;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

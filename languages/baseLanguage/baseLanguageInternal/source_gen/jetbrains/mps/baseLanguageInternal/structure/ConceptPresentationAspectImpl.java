@@ -41,59 +41,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ConstantValue:
         return props_ConstantValue;
-      case 1:
+      case LanguageConceptSwitch.ExtractStatementListExpression:
         return props_ExtractStatementListExpression;
-      case 2:
+      case LanguageConceptSwitch.ExtractStatementListInnerExpression:
         return props_ExtractStatementListInnerExpression;
-      case 3:
+      case LanguageConceptSwitch.ExtractStaticInnerClassConcept:
         return props_ExtractStaticInnerClassConcept;
-      case 4:
+      case LanguageConceptSwitch.ExtractStaticInnerClassCreator:
         return props_ExtractStaticInnerClassCreator;
-      case 5:
+      case LanguageConceptSwitch.ExtractStaticInnerClassExpression:
         return props_ExtractStaticInnerClassExpression;
-      case 6:
+      case LanguageConceptSwitch.ExtractStaticMethodExpression:
         return props_ExtractStaticMethodExpression;
-      case 7:
+      case LanguageConceptSwitch.ExtractStaticMethod_CallExpression:
         return props_ExtractStaticMethod_CallExpression;
-      case 8:
+      case LanguageConceptSwitch.ExtractToConstantExpression:
         return props_ExtractToConstantExpression;
-      case 9:
+      case LanguageConceptSwitch.ExtractToConstantRefExpression:
         return props_ExtractToConstantRefExpression;
-      case 10:
+      case LanguageConceptSwitch.InternalAnonymousClass:
         return props_InternalAnonymousClass;
-      case 11:
+      case LanguageConceptSwitch.InternalAnonymousClassCreator:
         return props_InternalAnonymousClassCreator;
-      case 12:
+      case LanguageConceptSwitch.InternalClassCreator:
         return props_InternalClassCreator;
-      case 13:
+      case LanguageConceptSwitch.InternalClassExpression:
         return props_InternalClassExpression;
-      case 14:
+      case LanguageConceptSwitch.InternalClassifierType:
         return props_InternalClassifierType;
-      case 15:
+      case LanguageConceptSwitch.InternalNewExpression:
         return props_InternalNewExpression;
-      case 16:
+      case LanguageConceptSwitch.InternalPartialFieldReference:
         return props_InternalPartialFieldReference;
-      case 17:
+      case LanguageConceptSwitch.InternalPartialInstanceMethodCall:
         return props_InternalPartialInstanceMethodCall;
-      case 18:
+      case LanguageConceptSwitch.InternalStaticFieldReference:
         return props_InternalStaticFieldReference;
-      case 19:
+      case LanguageConceptSwitch.InternalStaticMethodCall:
         return props_InternalStaticMethodCall;
-      case 20:
+      case LanguageConceptSwitch.InternalSuperMethodCallOperation:
         return props_InternalSuperMethodCallOperation;
-      case 21:
+      case LanguageConceptSwitch.InternalThisExpression:
         return props_InternalThisExpression;
-      case 22:
+      case LanguageConceptSwitch.InternalTypedStaticFieldReference:
         return props_InternalTypedStaticFieldReference;
-      case 23:
+      case LanguageConceptSwitch.InternalVariableReference:
         return props_InternalVariableReference;
-      case 24:
+      case LanguageConceptSwitch.TypeHintExpression:
         return props_TypeHintExpression;
-      case 25:
+      case LanguageConceptSwitch.WeakClassReference:
         return props_WeakClassReference;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

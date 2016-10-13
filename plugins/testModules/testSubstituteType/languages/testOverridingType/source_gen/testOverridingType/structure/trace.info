@@ -4,8 +4,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,40,0" name="testOverridingType.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,38,0" name="testOverridingType.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,130,0" name="testOverridingType.structure.StructureAspectDescriptor" />
+      <unit at="16,0,111,0" name="testOverridingType.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

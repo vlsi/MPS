@@ -122,221 +122,221 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbandonInput_RuleConsequence:
         return props_AbandonInput_RuleConsequence;
-      case 1:
+      case LanguageConceptSwitch.AbstractMacro:
         return props_AbstractMacro;
-      case 2:
+      case LanguageConceptSwitch.BaseMappingRule:
         return props_BaseMappingRule;
-      case 3:
+      case LanguageConceptSwitch.BaseMappingRule_Condition:
         return props_BaseMappingRule_Condition;
-      case 4:
+      case LanguageConceptSwitch.ContextVariableDeclaration:
         return props_ContextVariableDeclaration;
-      case 5:
+      case LanguageConceptSwitch.ContextVariableProvider:
         return props_ContextVariableProvider;
-      case 6:
+      case LanguageConceptSwitch.CopySrcListMacro:
         return props_CopySrcListMacro;
-      case 7:
+      case LanguageConceptSwitch.CopySrcNodeMacro:
         return props_CopySrcNodeMacro;
-      case 8:
+      case LanguageConceptSwitch.CreateRootRule:
         return props_CreateRootRule;
-      case 9:
+      case LanguageConceptSwitch.CreateRootRule_Condition:
         return props_CreateRootRule_Condition;
-      case 10:
+      case LanguageConceptSwitch.DismissTopMappingRule:
         return props_DismissTopMappingRule;
-      case 11:
+      case LanguageConceptSwitch.DropAttributeRule:
         return props_DropAttributeRule;
-      case 12:
+      case LanguageConceptSwitch.DropAttributeRule_Condition:
         return props_DropAttributeRule_Condition;
-      case 13:
+      case LanguageConceptSwitch.DropRootRule:
         return props_DropRootRule;
-      case 14:
+      case LanguageConceptSwitch.DropRootRule_Condition:
         return props_DropRootRule_Condition;
-      case 15:
+      case LanguageConceptSwitch.ExportEntry:
         return props_ExportEntry;
-      case 16:
+      case LanguageConceptSwitch.ExportLabel:
         return props_ExportLabel;
-      case 17:
+      case LanguageConceptSwitch.ExportLabelParameter_inputNode:
         return props_ExportLabelParameter_inputNode;
-      case 18:
+      case LanguageConceptSwitch.ExportLabelParameter_keeper:
         return props_ExportLabelParameter_keeper;
-      case 19:
+      case LanguageConceptSwitch.ExportLabelParameter_outputNode:
         return props_ExportLabelParameter_outputNode;
-      case 20:
+      case LanguageConceptSwitch.ExportMacro:
         return props_ExportMacro;
-      case 21:
+      case LanguageConceptSwitch.GeneratorDebug_InputNode:
         return props_GeneratorDebug_InputNode;
-      case 22:
+      case LanguageConceptSwitch.GeneratorDebug_LabelEntry:
         return props_GeneratorDebug_LabelEntry;
-      case 23:
+      case LanguageConceptSwitch.GeneratorDebug_Mappings:
         return props_GeneratorDebug_Mappings;
-      case 24:
+      case LanguageConceptSwitch.GeneratorDebug_NodeMapEntry:
         return props_GeneratorDebug_NodeMapEntry;
-      case 25:
+      case LanguageConceptSwitch.GeneratorDebug_NodeRef:
         return props_GeneratorDebug_NodeRef;
-      case 26:
+      case LanguageConceptSwitch.GeneratorInternal_AbstractReferenceDescriptor:
         return props_GeneratorInternal_AbstractReferenceDescriptor;
-      case 27:
+      case LanguageConceptSwitch.GeneratorInternal_InternalReferenceDescriptor:
         return props_GeneratorInternal_InternalReferenceDescriptor;
-      case 28:
+      case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
         return props_GeneratorInternal_PropertyDescriptor;
-      case 29:
+      case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
         return props_GeneratorInternal_ReferenceDescriptor;
-      case 30:
+      case LanguageConceptSwitch.GeneratorMessage:
         return props_GeneratorMessage;
-      case 31:
+      case LanguageConceptSwitch.GeneratorParameterReference:
         return props_GeneratorParameterReference;
-      case 32:
+      case LanguageConceptSwitch.IGeneratorParameter:
         return props_IGeneratorParameter;
-      case 33:
+      case LanguageConceptSwitch.IParameterizedTemplate:
         return props_IParameterizedTemplate;
-      case 34:
+      case LanguageConceptSwitch.ITemplateCall:
         return props_ITemplateCall;
-      case 35:
+      case LanguageConceptSwitch.IfMacro:
         return props_IfMacro;
-      case 36:
+      case LanguageConceptSwitch.IfMacro_Condition:
         return props_IfMacro_Condition;
-      case 37:
+      case LanguageConceptSwitch.IncludeMacro:
         return props_IncludeMacro;
-      case 38:
+      case LanguageConceptSwitch.InlineSwitch_Case:
         return props_InlineSwitch_Case;
-      case 39:
+      case LanguageConceptSwitch.InlineSwitch_RuleConsequence:
         return props_InlineSwitch_RuleConsequence;
-      case 40:
+      case LanguageConceptSwitch.InlineTemplateWithContext_RuleConsequence:
         return props_InlineTemplateWithContext_RuleConsequence;
-      case 41:
+      case LanguageConceptSwitch.InlineTemplate_RuleConsequence:
         return props_InlineTemplate_RuleConsequence;
-      case 42:
+      case LanguageConceptSwitch.InsertMacro:
         return props_InsertMacro;
-      case 43:
+      case LanguageConceptSwitch.InsertMacro_CreateNodeQuery:
         return props_InsertMacro_CreateNodeQuery;
-      case 44:
+      case LanguageConceptSwitch.LabelMacro:
         return props_LabelMacro;
-      case 45:
+      case LanguageConceptSwitch.LoopMacro:
         return props_LoopMacro;
-      case 46:
+      case LanguageConceptSwitch.MapSrcListMacro:
         return props_MapSrcListMacro;
-      case 47:
+      case LanguageConceptSwitch.MapSrcMacro_MapperFunction:
         return props_MapSrcMacro_MapperFunction;
-      case 48:
+      case LanguageConceptSwitch.MapSrcMacro_PostMapperFunction:
         return props_MapSrcMacro_PostMapperFunction;
-      case 49:
+      case LanguageConceptSwitch.MapSrcNodeMacro:
         return props_MapSrcNodeMacro;
-      case 50:
+      case LanguageConceptSwitch.MappingConfiguration:
         return props_MappingConfiguration;
-      case 51:
+      case LanguageConceptSwitch.MappingConfiguration_Condition:
         return props_MappingConfiguration_Condition;
-      case 52:
+      case LanguageConceptSwitch.MappingLabelDeclaration:
         return props_MappingLabelDeclaration;
-      case 53:
+      case LanguageConceptSwitch.MappingScript:
         return props_MappingScript;
-      case 54:
+      case LanguageConceptSwitch.MappingScriptReference:
         return props_MappingScriptReference;
-      case 55:
+      case LanguageConceptSwitch.MappingScript_CodeBlock:
         return props_MappingScript_CodeBlock;
-      case 56:
+      case LanguageConceptSwitch.MarshalFunction:
         return props_MarshalFunction;
-      case 57:
+      case LanguageConceptSwitch.ModelIdentity:
         return props_ModelIdentity;
-      case 58:
+      case LanguageConceptSwitch.NodeIdentity:
         return props_NodeIdentity;
-      case 59:
+      case LanguageConceptSwitch.NodeMacro:
         return props_NodeMacro;
-      case 60:
+      case LanguageConceptSwitch.PatternReduction_MappingRule:
         return props_PatternReduction_MappingRule;
-      case 61:
+      case LanguageConceptSwitch.PropertyMacro:
         return props_PropertyMacro;
-      case 62:
+      case LanguageConceptSwitch.PropertyMacro_GetPropertyValue:
         return props_PropertyMacro_GetPropertyValue;
-      case 63:
+      case LanguageConceptSwitch.ReductionRule:
         return props_ReductionRule;
-      case 64:
+      case LanguageConceptSwitch.Reduction_MappingRule:
         return props_Reduction_MappingRule;
-      case 65:
+      case LanguageConceptSwitch.ReferenceMacro:
         return props_ReferenceMacro;
-      case 66:
+      case LanguageConceptSwitch.ReferenceMacro_GetReferent:
         return props_ReferenceMacro_GetReferent;
-      case 67:
+      case LanguageConceptSwitch.RootTemplateAnnotation:
         return props_RootTemplateAnnotation;
-      case 68:
+      case LanguageConceptSwitch.Root_MappingRule:
         return props_Root_MappingRule;
-      case 69:
+      case LanguageConceptSwitch.RuleConsequence:
         return props_RuleConsequence;
-      case 70:
+      case LanguageConceptSwitch.SourceSubstituteMacro:
         return props_SourceSubstituteMacro;
-      case 71:
+      case LanguageConceptSwitch.SourceSubstituteMacro_SourceNodeQuery:
         return props_SourceSubstituteMacro_SourceNodeQuery;
-      case 72:
+      case LanguageConceptSwitch.SourceSubstituteMacro_SourceNodesQuery:
         return props_SourceSubstituteMacro_SourceNodesQuery;
-      case 73:
+      case LanguageConceptSwitch.TemplateArgumentLinkPatternRefExpression:
         return props_TemplateArgumentLinkPatternRefExpression;
-      case 74:
+      case LanguageConceptSwitch.TemplateArgumentParameterExpression:
         return props_TemplateArgumentParameterExpression;
-      case 75:
+      case LanguageConceptSwitch.TemplateArgumentPatternRef:
         return props_TemplateArgumentPatternRef;
-      case 76:
+      case LanguageConceptSwitch.TemplateArgumentPatternVarRefExpression:
         return props_TemplateArgumentPatternVarRefExpression;
-      case 77:
+      case LanguageConceptSwitch.TemplateArgumentPropertyPatternRefExpression:
         return props_TemplateArgumentPropertyPatternRefExpression;
-      case 78:
+      case LanguageConceptSwitch.TemplateArgumentQuery:
         return props_TemplateArgumentQuery;
-      case 79:
+      case LanguageConceptSwitch.TemplateArgumentQueryExpression:
         return props_TemplateArgumentQueryExpression;
-      case 80:
+      case LanguageConceptSwitch.TemplateArgumentVariableRefExpression:
         return props_TemplateArgumentVariableRefExpression;
-      case 81:
+      case LanguageConceptSwitch.TemplateCallMacro:
         return props_TemplateCallMacro;
-      case 82:
+      case LanguageConceptSwitch.TemplateDeclaration:
         return props_TemplateDeclaration;
-      case 83:
+      case LanguageConceptSwitch.TemplateDeclarationReference:
         return props_TemplateDeclarationReference;
-      case 84:
+      case LanguageConceptSwitch.TemplateFragment:
         return props_TemplateFragment;
-      case 85:
+      case LanguageConceptSwitch.TemplateFunctionParameter_mainContextNode:
         return props_TemplateFunctionParameter_mainContextNode;
-      case 86:
+      case LanguageConceptSwitch.TemplateFunctionParameter_outputNode:
         return props_TemplateFunctionParameter_outputNode;
-      case 87:
+      case LanguageConceptSwitch.TemplateFunctionParameter_parentOutputNode:
         return props_TemplateFunctionParameter_parentOutputNode;
-      case 88:
+      case LanguageConceptSwitch.TemplateFunctionParameter_sourceNode:
         return props_TemplateFunctionParameter_sourceNode;
-      case 89:
+      case LanguageConceptSwitch.TemplateFunctionParameter_templatePropertyValue:
         return props_TemplateFunctionParameter_templatePropertyValue;
-      case 90:
+      case LanguageConceptSwitch.TemplateFunctionParameter_templateReferent:
         return props_TemplateFunctionParameter_templateReferent;
-      case 91:
+      case LanguageConceptSwitch.TemplateParameterDeclaration:
         return props_TemplateParameterDeclaration;
-      case 92:
+      case LanguageConceptSwitch.TemplateQueryBase:
         return props_TemplateQueryBase;
-      case 93:
+      case LanguageConceptSwitch.TemplateSwitch:
         return props_TemplateSwitch;
-      case 94:
+      case LanguageConceptSwitch.TemplateSwitchMacro:
         return props_TemplateSwitchMacro;
-      case 95:
+      case LanguageConceptSwitch.TemplateSwitchReference:
         return props_TemplateSwitchReference;
-      case 96:
+      case LanguageConceptSwitch.TraceMacro:
         return props_TraceMacro;
-      case 97:
+      case LanguageConceptSwitch.TrivialModelId:
         return props_TrivialModelId;
-      case 98:
+      case LanguageConceptSwitch.TrivialNodeId:
         return props_TrivialNodeId;
-      case 99:
+      case LanguageConceptSwitch.UnmarshalFunction:
         return props_UnmarshalFunction;
-      case 100:
+      case LanguageConceptSwitch.VarMacro:
         return props_VarMacro;
-      case 101:
+      case LanguageConceptSwitch.VarMacro_ValueQuery:
         return props_VarMacro_ValueQuery;
-      case 102:
+      case LanguageConceptSwitch.WeaveEach_RuleConsequence:
         return props_WeaveEach_RuleConsequence;
-      case 103:
+      case LanguageConceptSwitch.WeaveMacro:
         return props_WeaveMacro;
-      case 104:
+      case LanguageConceptSwitch.WeavingAnchorQuery:
         return props_WeavingAnchorQuery;
-      case 105:
+      case LanguageConceptSwitch.Weaving_MappingRule:
         return props_Weaving_MappingRule;
-      case 106:
+      case LanguageConceptSwitch.Weaving_MappingRule_ContextNodeQuery:
         return props_Weaving_MappingRule_ContextNodeQuery;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

@@ -32,41 +32,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractStateMachineElement:
         return props_AbstractStateMachineElement;
-      case 1:
+      case LanguageConceptSwitch.ContentElement:
         return props_ContentElement;
-      case 2:
+      case LanguageConceptSwitch.DataCell:
         return props_DataCell;
-      case 3:
+      case LanguageConceptSwitch.Event:
         return props_Event;
-      case 4:
+      case LanguageConceptSwitch.EventReference:
         return props_EventReference;
-      case 5:
+      case LanguageConceptSwitch.HierarchycalTable:
         return props_HierarchycalTable;
-      case 6:
+      case LanguageConceptSwitch.LightWeightDecisionTable:
         return props_LightWeightDecisionTable;
-      case 7:
+      case LanguageConceptSwitch.Matrix:
         return props_Matrix;
-      case 8:
+      case LanguageConceptSwitch.Row:
         return props_Row;
-      case 9:
+      case LanguageConceptSwitch.State:
         return props_State;
-      case 10:
+      case LanguageConceptSwitch.StateMachine:
         return props_StateMachine;
-      case 11:
+      case LanguageConceptSwitch.StateReference:
         return props_StateReference;
-      case 12:
+      case LanguageConceptSwitch.Table:
         return props_Table;
-      case 13:
+      case LanguageConceptSwitch.Transition:
         return props_Transition;
-      case 14:
+      case LanguageConceptSwitch.UltimateContainer:
         return props_UltimateContainer;
-      case 15:
+      case LanguageConceptSwitch.XElement:
         return props_XElement;
-      case 16:
+      case LanguageConceptSwitch.YElement:
         return props_YElement;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

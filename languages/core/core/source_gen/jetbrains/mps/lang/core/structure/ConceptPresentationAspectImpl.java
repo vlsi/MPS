@@ -51,77 +51,77 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.Attribute:
         return props_Attribute;
-      case 1:
+      case LanguageConceptSwitch.BaseCommentAttribute:
         return props_BaseCommentAttribute;
-      case 2:
+      case LanguageConceptSwitch.BaseConcept:
         return props_BaseConcept;
-      case 3:
+      case LanguageConceptSwitch.ChildAttribute:
         return props_ChildAttribute;
-      case 4:
+      case LanguageConceptSwitch.ExportScope:
         return props_ExportScope;
-      case 5:
+      case LanguageConceptSwitch.ExportScopeModule:
         return props_ExportScopeModule;
-      case 6:
+      case LanguageConceptSwitch.ExportScopeNamespace:
         return props_ExportScopeNamespace;
-      case 7:
+      case LanguageConceptSwitch.ExportScopePublic:
         return props_ExportScopePublic;
-      case 8:
+      case LanguageConceptSwitch.IAntisuppressErrors:
         return props_IAntisuppressErrors;
-      case 9:
+      case LanguageConceptSwitch.ICanSuppressErrors:
         return props_ICanSuppressErrors;
-      case 10:
+      case LanguageConceptSwitch.IContainer:
         return props_IContainer;
-      case 11:
+      case LanguageConceptSwitch.IDeprecatable:
         return props_IDeprecatable;
-      case 12:
+      case LanguageConceptSwitch.IDontApplyTypesystemRules:
         return props_IDontApplyTypesystemRules;
-      case 13:
+      case LanguageConceptSwitch.IDontSubstituteByDefault:
         return props_IDontSubstituteByDefault;
-      case 14:
+      case LanguageConceptSwitch.IMetaLevelChanger:
         return props_IMetaLevelChanger;
-      case 15:
+      case LanguageConceptSwitch.INamedConcept:
         return props_INamedConcept;
-      case 16:
+      case LanguageConceptSwitch.IOldCommentAnnotation:
         return props_IOldCommentAnnotation;
-      case 17:
+      case LanguageConceptSwitch.IOldCommentContainer:
         return props_IOldCommentContainer;
-      case 18:
+      case LanguageConceptSwitch.IResolveInfo:
         return props_IResolveInfo;
-      case 19:
+      case LanguageConceptSwitch.ISkipConstraintsChecking:
         return props_ISkipConstraintsChecking;
-      case 20:
+      case LanguageConceptSwitch.IStubForAnotherConcept:
         return props_IStubForAnotherConcept;
-      case 21:
+      case LanguageConceptSwitch.ISuppressErrors:
         return props_ISuppressErrors;
-      case 22:
+      case LanguageConceptSwitch.IType:
         return props_IType;
-      case 23:
+      case LanguageConceptSwitch.IWrapper:
         return props_IWrapper;
-      case 24:
+      case LanguageConceptSwitch.ImplementationContainer:
         return props_ImplementationContainer;
-      case 25:
+      case LanguageConceptSwitch.ImplementationPart:
         return props_ImplementationPart;
-      case 26:
+      case LanguageConceptSwitch.ImplementationWithStubPart:
         return props_ImplementationWithStubPart;
-      case 27:
+      case LanguageConceptSwitch.InterfacePart:
         return props_InterfacePart;
-      case 28:
+      case LanguageConceptSwitch.LinkAttribute:
         return props_LinkAttribute;
-      case 29:
+      case LanguageConceptSwitch.NodeAttribute:
         return props_NodeAttribute;
-      case 30:
+      case LanguageConceptSwitch.PropertyAttribute:
         return props_PropertyAttribute;
-      case 31:
+      case LanguageConceptSwitch.ScopeFacade:
         return props_ScopeFacade;
-      case 32:
+      case LanguageConceptSwitch.ScopeProvider:
         return props_ScopeProvider;
-      case 33:
+      case LanguageConceptSwitch.SideTransformInfo:
         return props_SideTransformInfo;
-      case 34:
+      case LanguageConceptSwitch.SuppressErrorsAnnotation:
         return props_SuppressErrorsAnnotation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

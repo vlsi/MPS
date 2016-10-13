@@ -10,8 +10,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,100,0" name="jetbrains.mps.ide.httpsupport.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,78,0" name="jetbrains.mps.ide.httpsupport.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,388,0" name="jetbrains.mps.ide.httpsupport.structure.StructureAspectDescriptor" />
+      <unit at="16,0,349,0" name="jetbrains.mps.ide.httpsupport.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/6040064942662280273">

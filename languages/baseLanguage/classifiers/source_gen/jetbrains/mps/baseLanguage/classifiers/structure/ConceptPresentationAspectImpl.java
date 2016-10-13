@@ -28,33 +28,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BaseClassifierType:
         return props_BaseClassifierType;
-      case 1:
+      case LanguageConceptSwitch.DefaultClassifier:
         return props_DefaultClassifier;
-      case 2:
+      case LanguageConceptSwitch.DefaultClassifierFieldAccessOperation:
         return props_DefaultClassifierFieldAccessOperation;
-      case 3:
+      case LanguageConceptSwitch.DefaultClassifierFieldDeclaration:
         return props_DefaultClassifierFieldDeclaration;
-      case 4:
+      case LanguageConceptSwitch.DefaultClassifierMethodCallOperation:
         return props_DefaultClassifierMethodCallOperation;
-      case 5:
+      case LanguageConceptSwitch.DefaultClassifierMethodDeclaration:
         return props_DefaultClassifierMethodDeclaration;
-      case 6:
+      case LanguageConceptSwitch.DefaultClassifierType:
         return props_DefaultClassifierType;
-      case 7:
+      case LanguageConceptSwitch.IClassifier:
         return props_IClassifier;
-      case 8:
+      case LanguageConceptSwitch.IClassifierPart:
         return props_IClassifierPart;
-      case 9:
+      case LanguageConceptSwitch.IMember:
         return props_IMember;
-      case 10:
+      case LanguageConceptSwitch.IMemberOperation:
         return props_IMemberOperation;
-      case 11:
+      case LanguageConceptSwitch.SuperClassifierExpresson:
         return props_SuperClassifierExpresson;
-      case 12:
+      case LanguageConceptSwitch.ThisClassifierExpression:
         return props_ThisClassifierExpression;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

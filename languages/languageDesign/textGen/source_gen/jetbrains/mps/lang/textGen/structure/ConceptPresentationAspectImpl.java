@@ -56,89 +56,89 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractAppendPart:
         return props_AbstractAppendPart;
-      case 1:
+      case LanguageConceptSwitch.AbstractTextGenDeclaration:
         return props_AbstractTextGenDeclaration;
-      case 2:
+      case LanguageConceptSwitch.AbstractTextGenParameter:
         return props_AbstractTextGenParameter;
-      case 3:
+      case LanguageConceptSwitch.AppendOperation:
         return props_AppendOperation;
-      case 4:
+      case LanguageConceptSwitch.AttributedNodePart:
         return props_AttributedNodePart;
-      case 5:
+      case LanguageConceptSwitch.BufferParameter:
         return props_BufferParameter;
-      case 6:
+      case LanguageConceptSwitch.ClassConceptUnitContext:
         return props_ClassConceptUnitContext;
-      case 7:
+      case LanguageConceptSwitch.CollectionAppendPart:
         return props_CollectionAppendPart;
-      case 8:
+      case LanguageConceptSwitch.ConceptTextGenDeclaration:
         return props_ConceptTextGenDeclaration;
-      case 9:
+      case LanguageConceptSwitch.ConstantStringAppendPart:
         return props_ConstantStringAppendPart;
-      case 10:
+      case LanguageConceptSwitch.ContextInstanceSpecification:
         return props_ContextInstanceSpecification;
-      case 11:
+      case LanguageConceptSwitch.ContextParameter:
         return props_ContextParameter;
-      case 12:
+      case LanguageConceptSwitch.DecreaseDepthOperation:
         return props_DecreaseDepthOperation;
-      case 13:
+      case LanguageConceptSwitch.EncodingDeclaration:
         return props_EncodingDeclaration;
-      case 14:
+      case LanguageConceptSwitch.EncodingDeclarationBase:
         return props_EncodingDeclarationBase;
-      case 15:
+      case LanguageConceptSwitch.EncodingLiteral:
         return props_EncodingLiteral;
-      case 16:
+      case LanguageConceptSwitch.ExtensionDeclaration:
         return props_ExtensionDeclaration;
-      case 17:
+      case LanguageConceptSwitch.FilenameFunction:
         return props_FilenameFunction;
-      case 18:
+      case LanguageConceptSwitch.FoundErrorOperation:
         return props_FoundErrorOperation;
-      case 19:
+      case LanguageConceptSwitch.GenerateTextDeclaration:
         return props_GenerateTextDeclaration;
-      case 20:
+      case LanguageConceptSwitch.IncreaseDepthOperation:
         return props_IncreaseDepthOperation;
-      case 21:
+      case LanguageConceptSwitch.IndentBufferOperation:
         return props_IndentBufferOperation;
-      case 22:
+      case LanguageConceptSwitch.IndentPart:
         return props_IndentPart;
-      case 23:
+      case LanguageConceptSwitch.InstancePerUnitContextObject:
         return props_InstancePerUnitContextObject;
-      case 24:
+      case LanguageConceptSwitch.LanguageTextGenDeclaration:
         return props_LanguageTextGenDeclaration;
-      case 25:
+      case LanguageConceptSwitch.LayoutPart:
         return props_LayoutPart;
-      case 26:
+      case LanguageConceptSwitch.NewLineAppendPart:
         return props_NewLineAppendPart;
-      case 27:
+      case LanguageConceptSwitch.NodeAppendPart:
         return props_NodeAppendPart;
-      case 28:
+      case LanguageConceptSwitch.NodeParameter:
         return props_NodeParameter;
-      case 29:
+      case LanguageConceptSwitch.OperationCall:
         return props_OperationCall;
-      case 30:
+      case LanguageConceptSwitch.OperationDeclaration:
         return props_OperationDeclaration;
-      case 31:
+      case LanguageConceptSwitch.ReferenceAppendPart:
         return props_ReferenceAppendPart;
-      case 32:
+      case LanguageConceptSwitch.SimpleTextGenOperation:
         return props_SimpleTextGenOperation;
-      case 33:
+      case LanguageConceptSwitch.StubOperationDeclaration:
         return props_StubOperationDeclaration;
-      case 34:
+      case LanguageConceptSwitch.TextUnitLayout:
         return props_TextUnitLayout;
-      case 35:
+      case LanguageConceptSwitch.UnitContextDeclaration:
         return props_UnitContextDeclaration;
-      case 36:
+      case LanguageConceptSwitch.UnitContextObject:
         return props_UnitContextObject;
-      case 37:
+      case LanguageConceptSwitch.UnitContextReference:
         return props_UnitContextReference;
-      case 38:
+      case LanguageConceptSwitch.UtilityMethodCall:
         return props_UtilityMethodCall;
-      case 39:
+      case LanguageConceptSwitch.UtilityMethodDeclaration:
         return props_UtilityMethodDeclaration;
-      case 40:
+      case LanguageConceptSwitch.WithIndentOperation:
         return props_WithIndentOperation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

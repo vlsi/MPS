@@ -35,47 +35,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ExtendsFacetReference:
         return props_ExtendsFacetReference;
-      case 1:
+      case LanguageConceptSwitch.FacetDeclaration:
         return props_FacetDeclaration;
-      case 2:
+      case LanguageConceptSwitch.FacetJavaClassExpression:
         return props_FacetJavaClassExpression;
-      case 3:
+      case LanguageConceptSwitch.FacetReference:
         return props_FacetReference;
-      case 4:
+      case LanguageConceptSwitch.FacetReferenceExpression:
         return props_FacetReferenceExpression;
-      case 5:
+      case LanguageConceptSwitch.ForeignParametersComponentExpression:
         return props_ForeignParametersComponentExpression;
-      case 6:
+      case LanguageConceptSwitch.ForeignParametersExpression:
         return props_ForeignParametersExpression;
-      case 7:
+      case LanguageConceptSwitch.IFacet:
         return props_IFacet;
-      case 8:
+      case LanguageConceptSwitch.IPropertyExpression:
         return props_IPropertyExpression;
-      case 9:
+      case LanguageConceptSwitch.LocalParametersComponentExpression:
         return props_LocalParametersComponentExpression;
-      case 10:
+      case LanguageConceptSwitch.LocalParametersExpression:
         return props_LocalParametersExpression;
-      case 11:
+      case LanguageConceptSwitch.NamedFacetReference:
         return props_NamedFacetReference;
-      case 12:
+      case LanguageConceptSwitch.ParametersDeclaration:
         return props_ParametersDeclaration;
-      case 13:
+      case LanguageConceptSwitch.RelatedFacetReference:
         return props_RelatedFacetReference;
-      case 14:
+      case LanguageConceptSwitch.ResourceClassifierType:
         return props_ResourceClassifierType;
-      case 15:
+      case LanguageConceptSwitch.ResourceSpecificPropertiesExpression:
         return props_ResourceSpecificPropertiesExpression;
-      case 16:
+      case LanguageConceptSwitch.ResourceTypeDeclaration:
         return props_ResourceTypeDeclaration;
-      case 17:
+      case LanguageConceptSwitch.TargetDeclaration:
         return props_TargetDeclaration;
-      case 18:
+      case LanguageConceptSwitch.TargetDependency:
         return props_TargetDependency;
-      case 19:
+      case LanguageConceptSwitch.TargetReferenceExpression:
         return props_TargetReferenceExpression;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

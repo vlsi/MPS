@@ -35,45 +35,45 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.DevKit:
         return props_DevKit;
-      case 1:
+      case LanguageConceptSwitch.Generator:
         return props_Generator;
-      case 2:
+      case LanguageConceptSwitch.Language:
         return props_Language;
-      case 3:
+      case LanguageConceptSwitch.MappingConfigExternalRef:
         return props_MappingConfigExternalRef;
-      case 4:
+      case LanguageConceptSwitch.MappingConfigNormalRef:
         return props_MappingConfigNormalRef;
-      case 5:
+      case LanguageConceptSwitch.MappingConfigRefAllGlobal:
         return props_MappingConfigRefAllGlobal;
-      case 6:
+      case LanguageConceptSwitch.MappingConfigRefAllLocal:
         return props_MappingConfigRefAllLocal;
-      case 7:
+      case LanguageConceptSwitch.MappingConfigRefBase:
         return props_MappingConfigRefBase;
-      case 8:
+      case LanguageConceptSwitch.MappingConfigRefSet:
         return props_MappingConfigRefSet;
-      case 9:
+      case LanguageConceptSwitch.MappingPriorityRule:
         return props_MappingPriorityRule;
-      case 10:
+      case LanguageConceptSwitch.ModelReference:
         return props_ModelReference;
-      case 11:
+      case LanguageConceptSwitch.ModelRoot:
         return props_ModelRoot;
-      case 12:
+      case LanguageConceptSwitch.Module:
         return props_Module;
-      case 13:
+      case LanguageConceptSwitch.ModuleDependency:
         return props_ModuleDependency;
-      case 14:
+      case LanguageConceptSwitch.ModuleReference:
         return props_ModuleReference;
-      case 15:
+      case LanguageConceptSwitch.Solution:
         return props_Solution;
-      case 16:
+      case LanguageConceptSwitch.SourcePath:
         return props_SourcePath;
-      case 17:
+      case LanguageConceptSwitch.StubEntry:
         return props_StubEntry;
-      case 18:
+      case LanguageConceptSwitch.StubSolution:
         return props_StubSolution;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

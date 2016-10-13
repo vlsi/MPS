@@ -137,249 +137,249 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ActionAccessOperation:
         return props_ActionAccessOperation;
-      case 1:
+      case LanguageConceptSwitch.ActionConstructionParameterDeclaration:
         return props_ActionConstructionParameterDeclaration;
-      case 2:
+      case LanguageConceptSwitch.ActionConstructorParameterReferenceOperation:
         return props_ActionConstructorParameterReferenceOperation;
-      case 3:
+      case LanguageConceptSwitch.ActionDataParameterDeclaration:
         return props_ActionDataParameterDeclaration;
-      case 4:
+      case LanguageConceptSwitch.ActionDataParameterReferenceOperation:
         return props_ActionDataParameterReferenceOperation;
-      case 5:
+      case LanguageConceptSwitch.ActionDeclaration:
         return props_ActionDeclaration;
-      case 6:
+      case LanguageConceptSwitch.ActionGroupDeclaration:
         return props_ActionGroupDeclaration;
-      case 7:
+      case LanguageConceptSwitch.ActionGroupMember:
         return props_ActionGroupMember;
-      case 8:
+      case LanguageConceptSwitch.ActionGroupRef:
         return props_ActionGroupRef;
-      case 9:
+      case LanguageConceptSwitch.ActionInstance:
         return props_ActionInstance;
-      case 10:
+      case LanguageConceptSwitch.ActionParameter:
         return props_ActionParameter;
-      case 11:
+      case LanguageConceptSwitch.ActionParameterCondition:
         return props_ActionParameterCondition;
-      case 12:
+      case LanguageConceptSwitch.ActionParameterDeclaration:
         return props_ActionParameterDeclaration;
-      case 13:
+      case LanguageConceptSwitch.ActionParameterReference:
         return props_ActionParameterReference;
-      case 14:
+      case LanguageConceptSwitch.ActionParameterReferenceOperation:
         return props_ActionParameterReferenceOperation;
-      case 15:
+      case LanguageConceptSwitch.ActionPlaceSpecification:
         return props_ActionPlaceSpecification;
-      case 16:
+      case LanguageConceptSwitch.ActionReference:
         return props_ActionReference;
-      case 17:
+      case LanguageConceptSwitch.ActionType:
         return props_ActionType;
-      case 18:
+      case LanguageConceptSwitch.AddElementStatement:
         return props_AddElementStatement;
-      case 19:
+      case LanguageConceptSwitch.AddKeystrokeStatement:
         return props_AddKeystrokeStatement;
-      case 20:
+      case LanguageConceptSwitch.AddStatement:
         return props_AddStatement;
-      case 21:
+      case LanguageConceptSwitch.AddTabOperation:
         return props_AddTabOperation;
-      case 22:
+      case LanguageConceptSwitch.BaseNodeBlock:
         return props_BaseNodeBlock;
-      case 23:
+      case LanguageConceptSwitch.BaseProjectOperation:
         return props_BaseProjectOperation;
-      case 24:
+      case LanguageConceptSwitch.BaseToolDeclaration:
         return props_BaseToolDeclaration;
-      case 25:
+      case LanguageConceptSwitch.BuildGroupBlock:
         return props_BuildGroupBlock;
-      case 26:
+      case LanguageConceptSwitch.ButtonCreator:
         return props_ButtonCreator;
-      case 27:
+      case LanguageConceptSwitch.CloseTabOperation:
         return props_CloseTabOperation;
-      case 28:
+      case LanguageConceptSwitch.ConceptCondition:
         return props_ConceptCondition;
-      case 29:
+      case LanguageConceptSwitch.ConceptFunctionParameter_AnActionEvent:
         return props_ConceptFunctionParameter_AnActionEvent;
-      case 30:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
         return props_ConceptFunctionParameter_Concept;
-      case 31:
+      case LanguageConceptSwitch.ConceptFunctionParameter_CreatorType:
         return props_ConceptFunctionParameter_CreatorType;
-      case 32:
+      case LanguageConceptSwitch.ConceptFunctionParameter_IModule:
         return props_ConceptFunctionParameter_IModule;
-      case 33:
+      case LanguageConceptSwitch.ConceptFunctionParameter_MPSProject:
         return props_ConceptFunctionParameter_MPSProject;
-      case 34:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Model:
         return props_ConceptFunctionParameter_Model;
-      case 35:
+      case LanguageConceptSwitch.ConceptFunctionParameter_OperationContext:
         return props_ConceptFunctionParameter_OperationContext;
-      case 36:
+      case LanguageConceptSwitch.ConceptFunctionParameter_PreferencePage_component:
         return props_ConceptFunctionParameter_PreferencePage_component;
-      case 37:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Project:
         return props_ConceptFunctionParameter_Project;
-      case 38:
+      case LanguageConceptSwitch.ConceptFunctionParameter_SConceptClass:
         return props_ConceptFunctionParameter_SConceptClass;
-      case 39:
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
         return props_ConceptFunctionParameter_node;
-      case 40:
+      case LanguageConceptSwitch.ConceptsBlock:
         return props_ConceptsBlock;
-      case 41:
+      case LanguageConceptSwitch.CreateBlock:
         return props_CreateBlock;
-      case 42:
+      case LanguageConceptSwitch.CreateNodeAspectBlock:
         return props_CreateNodeAspectBlock;
-      case 43:
+      case LanguageConceptSwitch.CreateTabBlock:
         return props_CreateTabBlock;
-      case 44:
+      case LanguageConceptSwitch.CustomCondition:
         return props_CustomCondition;
-      case 45:
+      case LanguageConceptSwitch.DisposeBlock:
         return props_DisposeBlock;
-      case 46:
+      case LanguageConceptSwitch.DoUpdateBlock:
         return props_DoUpdateBlock;
-      case 47:
+      case LanguageConceptSwitch.EditableModel:
         return props_EditableModel;
-      case 48:
+      case LanguageConceptSwitch.EditorTab:
         return props_EditorTab;
-      case 49:
+      case LanguageConceptSwitch.EditorTabReference:
         return props_EditorTabReference;
-      case 50:
+      case LanguageConceptSwitch.ElementListContents:
         return props_ElementListContents;
-      case 51:
+      case LanguageConceptSwitch.EnumerateChildrenFunction:
         return props_EnumerateChildrenFunction;
-      case 52:
+      case LanguageConceptSwitch.EverywhereActionPlace:
         return props_EverywhereActionPlace;
-      case 53:
+      case LanguageConceptSwitch.ExecuteBlock:
         return props_ExecuteBlock;
-      case 54:
+      case LanguageConceptSwitch.GetComponentBlock:
         return props_GetComponentBlock;
-      case 55:
+      case LanguageConceptSwitch.GetGroupOperation:
         return props_GetGroupOperation;
-      case 56:
+      case LanguageConceptSwitch.GetNodeBlock:
         return props_GetNodeBlock;
-      case 57:
+      case LanguageConceptSwitch.GetNodesBlock:
         return props_GetNodesBlock;
-      case 58:
+      case LanguageConceptSwitch.GetSelectedTabOperation:
         return props_GetSelectedTabOperation;
-      case 59:
+      case LanguageConceptSwitch.GroupAccessOperation:
         return props_GroupAccessOperation;
-      case 60:
+      case LanguageConceptSwitch.GroupAnchor:
         return props_GroupAnchor;
-      case 61:
+      case LanguageConceptSwitch.GroupContents:
         return props_GroupContents;
-      case 62:
+      case LanguageConceptSwitch.GroupType:
         return props_GroupType;
-      case 63:
+      case LanguageConceptSwitch.IdeaActionsDescriptor:
         return props_IdeaActionsDescriptor;
-      case 64:
+      case LanguageConceptSwitch.IdeaConfigurationXml:
         return props_IdeaConfigurationXml;
-      case 65:
+      case LanguageConceptSwitch.IdeaInitializerDescriptor:
         return props_IdeaInitializerDescriptor;
-      case 66:
+      case LanguageConceptSwitch.IdeaPluginDependency:
         return props_IdeaPluginDependency;
-      case 67:
+      case LanguageConceptSwitch.InitBlock:
         return props_InitBlock;
-      case 68:
+      case LanguageConceptSwitch.InterfaceExtentionPoint:
         return props_InterfaceExtentionPoint;
-      case 69:
+      case LanguageConceptSwitch.InterfaceGroup:
         return props_InterfaceGroup;
-      case 70:
+      case LanguageConceptSwitch.IsApplicableBlock:
         return props_IsApplicableBlock;
-      case 71:
+      case LanguageConceptSwitch.IsApplicableTabBlock:
         return props_IsApplicableTabBlock;
-      case 72:
+      case LanguageConceptSwitch.KeyMapKeystroke:
         return props_KeyMapKeystroke;
-      case 73:
+      case LanguageConceptSwitch.KeyStrokeType:
         return props_KeyStrokeType;
-      case 74:
+      case LanguageConceptSwitch.KeymapChangesDeclaration:
         return props_KeymapChangesDeclaration;
-      case 75:
+      case LanguageConceptSwitch.KeymapRef:
         return props_KeymapRef;
-      case 76:
+      case LanguageConceptSwitch.ListenBlock:
         return props_ListenBlock;
-      case 77:
+      case LanguageConceptSwitch.MPSPluginDependency:
         return props_MPSPluginDependency;
-      case 78:
+      case LanguageConceptSwitch.ModificationStatement:
         return props_ModificationStatement;
-      case 79:
+      case LanguageConceptSwitch.NodesBlock:
         return props_NodesBlock;
-      case 80:
+      case LanguageConceptSwitch.NonDumbAwareActions:
         return props_NonDumbAwareActions;
-      case 81:
+      case LanguageConceptSwitch.OldConceptsBlock:
         return props_OldConceptsBlock;
-      case 82:
+      case LanguageConceptSwitch.OldCreateBlock:
         return props_OldCreateBlock;
-      case 83:
+      case LanguageConceptSwitch.OnAfterReadBlock:
         return props_OnAfterReadBlock;
-      case 84:
+      case LanguageConceptSwitch.OnBeforeWriteBlock:
         return props_OnBeforeWriteBlock;
-      case 85:
+      case LanguageConceptSwitch.Order:
         return props_Order;
-      case 86:
+      case LanguageConceptSwitch.OrderConstraints:
         return props_OrderConstraints;
-      case 87:
+      case LanguageConceptSwitch.OrderReference:
         return props_OrderReference;
-      case 88:
+      case LanguageConceptSwitch.ParameterCondition_ConceptFunctionParameter:
         return props_ParameterCondition_ConceptFunctionParameter;
-      case 89:
+      case LanguageConceptSwitch.ParameterizedShortcutChange:
         return props_ParameterizedShortcutChange;
-      case 90:
+      case LanguageConceptSwitch.PersistentPropertyDeclaration:
         return props_PersistentPropertyDeclaration;
-      case 91:
+      case LanguageConceptSwitch.PersistentPropertyReference:
         return props_PersistentPropertyReference;
-      case 92:
+      case LanguageConceptSwitch.PinTabOperation:
         return props_PinTabOperation;
-      case 93:
+      case LanguageConceptSwitch.PluginDependency:
         return props_PluginDependency;
-      case 94:
+      case LanguageConceptSwitch.PopupCreator:
         return props_PopupCreator;
-      case 95:
+      case LanguageConceptSwitch.PreferencePage:
         return props_PreferencePage;
-      case 96:
+      case LanguageConceptSwitch.PreferencePageCommitBlock:
         return props_PreferencePageCommitBlock;
-      case 97:
+      case LanguageConceptSwitch.PreferencePageIsModifiedBlock:
         return props_PreferencePageIsModifiedBlock;
-      case 98:
+      case LanguageConceptSwitch.PreferencePageResetBlock:
         return props_PreferencePageResetBlock;
-      case 99:
+      case LanguageConceptSwitch.PreferencesComponentDeclaration:
         return props_PreferencesComponentDeclaration;
-      case 100:
+      case LanguageConceptSwitch.PreferencesComponentType:
         return props_PreferencesComponentType;
-      case 101:
+      case LanguageConceptSwitch.RequiredCondition:
         return props_RequiredCondition;
-      case 102:
+      case LanguageConceptSwitch.Separator:
         return props_Separator;
-      case 103:
+      case LanguageConceptSwitch.ShortcutChange:
         return props_ShortcutChange;
-      case 104:
+      case LanguageConceptSwitch.SimpleActionPlace:
         return props_SimpleActionPlace;
-      case 105:
+      case LanguageConceptSwitch.SimpleShortcutChange:
         return props_SimpleShortcutChange;
-      case 106:
+      case LanguageConceptSwitch.SmartDisposeClosureParameterDeclaration:
         return props_SmartDisposeClosureParameterDeclaration;
-      case 107:
+      case LanguageConceptSwitch.TabbedToolDeclaration:
         return props_TabbedToolDeclaration;
-      case 108:
+      case LanguageConceptSwitch.TabbedToolOperation:
         return props_TabbedToolOperation;
-      case 109:
+      case LanguageConceptSwitch.ToStringConceptFunction:
         return props_ToStringConceptFunction;
-      case 110:
+      case LanguageConceptSwitch.ToStringParameter:
         return props_ToStringParameter;
-      case 111:
+      case LanguageConceptSwitch.ToolActionPlace:
         return props_ToolActionPlace;
-      case 112:
+      case LanguageConceptSwitch.ToolDeclaration:
         return props_ToolDeclaration;
-      case 113:
+      case LanguageConceptSwitch.ToolInstanceExpression:
         return props_ToolInstanceExpression;
-      case 114:
+      case LanguageConceptSwitch.ToolTab:
         return props_ToolTab;
-      case 115:
+      case LanguageConceptSwitch.ToolType:
         return props_ToolType;
-      case 116:
+      case LanguageConceptSwitch.ToolbarCreator:
         return props_ToolbarCreator;
-      case 117:
+      case LanguageConceptSwitch.UnpinTabOperation:
         return props_UnpinTabOperation;
-      case 118:
+      case LanguageConceptSwitch.UpdateBlock:
         return props_UpdateBlock;
-      case 119:
+      case LanguageConceptSwitch.UpdateGroupBlock:
         return props_UpdateGroupBlock;
-      case 120:
+      case LanguageConceptSwitch.UpdateGroupFunction:
         return props_UpdateGroupFunction;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

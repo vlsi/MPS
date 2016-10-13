@@ -7,8 +7,11 @@
     <file name="IconContainer.java">
       <unit at="7,0,12,0" name="jetbrains.mps.testHybridEditor.structure.IconContainer" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,48,0" name="jetbrains.mps.testHybridEditor.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,199,0" name="jetbrains.mps.testHybridEditor.structure.StructureAspectDescriptor" />
+      <unit at="14,0,175,0" name="jetbrains.mps.testHybridEditor.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

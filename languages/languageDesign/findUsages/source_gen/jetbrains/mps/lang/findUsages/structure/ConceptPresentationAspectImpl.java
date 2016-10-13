@@ -31,39 +31,39 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractFinderDeclaration:
         return props_AbstractFinderDeclaration;
-      case 1:
+      case LanguageConceptSwitch.CategorizeBlock:
         return props_CategorizeBlock;
-      case 2:
+      case LanguageConceptSwitch.CheckCancelledStatusStatement:
         return props_CheckCancelledStatusStatement;
-      case 3:
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
         return props_ConceptFunctionParameter_node;
-      case 4:
+      case LanguageConceptSwitch.ExecuteFinderExpression:
         return props_ExecuteFinderExpression;
-      case 5:
+      case LanguageConceptSwitch.ExecuteFindersGetSearchResults:
         return props_ExecuteFindersGetSearchResults;
-      case 6:
+      case LanguageConceptSwitch.FindBlock:
         return props_FindBlock;
-      case 7:
+      case LanguageConceptSwitch.FinderDeclaration:
         return props_FinderDeclaration;
-      case 8:
+      case LanguageConceptSwitch.FinderReference:
         return props_FinderReference;
-      case 9:
+      case LanguageConceptSwitch.IsApplicableBlock:
         return props_IsApplicableBlock;
-      case 10:
+      case LanguageConceptSwitch.IsUsedByDefault:
         return props_IsUsedByDefault;
-      case 11:
+      case LanguageConceptSwitch.IsVisibleBlock:
         return props_IsVisibleBlock;
-      case 12:
+      case LanguageConceptSwitch.MakeResultProvider:
         return props_MakeResultProvider;
-      case 13:
+      case LanguageConceptSwitch.NodeStatement:
         return props_NodeStatement;
-      case 14:
+      case LanguageConceptSwitch.ResultStatement:
         return props_ResultStatement;
-      case 15:
+      case LanguageConceptSwitch.SearchedNodesBlock:
         return props_SearchedNodesBlock;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

@@ -41,59 +41,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.CanHandleRequestFunction:
         return props_CanHandleRequestFunction;
-      case 1:
+      case LanguageConceptSwitch.DefaultParameterConverter:
         return props_DefaultParameterConverter;
-      case 2:
+      case LanguageConceptSwitch.DefaultValueFunction:
         return props_DefaultValueFunction;
-      case 3:
+      case LanguageConceptSwitch.DeserializeFunction:
         return props_DeserializeFunction;
-      case 4:
+      case LanguageConceptSwitch.HandleRequestFunction:
         return props_HandleRequestFunction;
-      case 5:
+      case LanguageConceptSwitch.HttpRequestOperation:
         return props_HttpRequestOperation;
-      case 6:
+      case LanguageConceptSwitch.HttpRequestParameter:
         return props_HttpRequestParameter;
-      case 7:
+      case LanguageConceptSwitch.IDEAPlatformPortProvider:
         return props_IDEAPlatformPortProvider;
-      case 8:
+      case LanguageConceptSwitch.IParameterConverter:
         return props_IParameterConverter;
-      case 9:
+      case LanguageConceptSwitch.MPSPortProvider:
         return props_MPSPortProvider;
-      case 10:
+      case LanguageConceptSwitch.ParameterConverterDeclaration:
         return props_ParameterConverterDeclaration;
-      case 11:
+      case LanguageConceptSwitch.ParameterConverterReference:
         return props_ParameterConverterReference;
-      case 12:
+      case LanguageConceptSwitch.ParameterInitializer:
         return props_ParameterInitializer;
-      case 13:
+      case LanguageConceptSwitch.Port:
         return props_Port;
-      case 14:
+      case LanguageConceptSwitch.PortProvider:
         return props_PortProvider;
-      case 15:
+      case LanguageConceptSwitch.QueryParameter:
         return props_QueryParameter;
-      case 16:
+      case LanguageConceptSwitch.QueryParameterReference:
         return props_QueryParameterReference;
-      case 17:
+      case LanguageConceptSwitch.QueryPath:
         return props_QueryPath;
-      case 18:
+      case LanguageConceptSwitch.QuerySegment:
         return props_QuerySegment;
-      case 19:
+      case LanguageConceptSwitch.RequestHandler:
         return props_RequestHandler;
-      case 20:
+      case LanguageConceptSwitch.RequestType:
         return props_RequestType;
-      case 21:
+      case LanguageConceptSwitch.RequestURLBuilderExpression:
         return props_RequestURLBuilderExpression;
-      case 22:
+      case LanguageConceptSwitch.ResponseSendOperation:
         return props_ResponseSendOperation;
-      case 23:
+      case LanguageConceptSwitch.SerializeFunction:
         return props_SerializeFunction;
-      case 24:
+      case LanguageConceptSwitch.SerializedValueParameter:
         return props_SerializedValueParameter;
-      case 25:
+      case LanguageConceptSwitch.ValueToSerializeParameter:
         return props_ValueToSerializeParameter;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

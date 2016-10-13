@@ -39,55 +39,55 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AutoInitDSLClass:
         return props_AutoInitDSLClass;
-      case 1:
+      case LanguageConceptSwitch.BooleanPropertyInstance:
         return props_BooleanPropertyInstance;
-      case 2:
+      case LanguageConceptSwitch.CustomMemberDescriptor:
         return props_CustomMemberDescriptor;
-      case 3:
+      case LanguageConceptSwitch.DSLAnnotation:
         return props_DSLAnnotation;
-      case 4:
+      case LanguageConceptSwitch.DSLClassMember:
         return props_DSLClassMember;
-      case 5:
+      case LanguageConceptSwitch.DSLDescriptor:
         return props_DSLDescriptor;
-      case 6:
+      case LanguageConceptSwitch.DependentTypeDescriptor:
         return props_DependentTypeDescriptor;
-      case 7:
+      case LanguageConceptSwitch.DependentTypeInstance:
         return props_DependentTypeInstance;
-      case 8:
+      case LanguageConceptSwitch.EmptyMemberDescriptor:
         return props_EmptyMemberDescriptor;
-      case 9:
+      case LanguageConceptSwitch.GenerateModifier:
         return props_GenerateModifier;
-      case 10:
+      case LanguageConceptSwitch.IntegerPropertyInstance:
         return props_IntegerPropertyInstance;
-      case 11:
+      case LanguageConceptSwitch.MemberInstance:
         return props_MemberInstance;
-      case 12:
+      case LanguageConceptSwitch.MemberModifier:
         return props_MemberModifier;
-      case 13:
+      case LanguageConceptSwitch.MemberPlaceholder:
         return props_MemberPlaceholder;
-      case 14:
+      case LanguageConceptSwitch.MethodDescriptor:
         return props_MethodDescriptor;
-      case 15:
+      case LanguageConceptSwitch.MethodInstance:
         return props_MethodInstance;
-      case 16:
+      case LanguageConceptSwitch.MethodParameterInstance:
         return props_MethodParameterInstance;
-      case 17:
+      case LanguageConceptSwitch.MultipleModifier:
         return props_MultipleModifier;
-      case 18:
+      case LanguageConceptSwitch.ParameterDescriptor:
         return props_ParameterDescriptor;
-      case 19:
+      case LanguageConceptSwitch.PlaceholderModifier:
         return props_PlaceholderModifier;
-      case 20:
+      case LanguageConceptSwitch.PropertyDescriptor:
         return props_PropertyDescriptor;
-      case 21:
+      case LanguageConceptSwitch.PropertyInstance:
         return props_PropertyInstance;
-      case 22:
+      case LanguageConceptSwitch.RequiredModifier:
         return props_RequiredModifier;
-      case 23:
+      case LanguageConceptSwitch.StringPropertyInstance:
         return props_StringPropertyInstance;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

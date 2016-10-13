@@ -59,93 +59,93 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ConceptConstraints:
         return props_ConceptConstraints;
-      case 1:
+      case LanguageConceptSwitch.ConceptParameter_ReferentSearchScope_enclosingNode:
         return props_ConceptParameter_ReferentSearchScope_enclosingNode;
-      case 2:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_checkedNode:
         return props_ConstraintFunctionParameter_checkedNode;
-      case 3:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_childConcept:
         return props_ConstraintFunctionParameter_childConcept;
-      case 4:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_childNode:
         return props_ConstraintFunctionParameter_childNode;
-      case 5:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_containingLink:
         return props_ConstraintFunctionParameter_containingLink;
-      case 6:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_contextNode:
         return props_ConstraintFunctionParameter_contextNode;
-      case 7:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_contextRole:
         return props_ConstraintFunctionParameter_contextRole;
-      case 8:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_exists:
         return props_ConstraintFunctionParameter_exists;
-      case 9:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_inEditor:
         return props_ConstraintFunctionParameter_inEditor;
-      case 10:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_link:
         return props_ConstraintFunctionParameter_link;
-      case 11:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_linkTarget:
         return props_ConstraintFunctionParameter_linkTarget;
-      case 12:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_newReferentNode:
         return props_ConstraintFunctionParameter_newReferentNode;
-      case 13:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_oldReferentNode:
         return props_ConstraintFunctionParameter_oldReferentNode;
-      case 14:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_parameterNode:
         return props_ConstraintFunctionParameter_parameterNode;
-      case 15:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_parentNode:
         return props_ConstraintFunctionParameter_parentNode;
-      case 16:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_position:
         return props_ConstraintFunctionParameter_position;
-      case 17:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_referenceNode:
         return props_ConstraintFunctionParameter_referenceNode;
-      case 18:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_smartReference:
         return props_ConstraintFunctionParameter_smartReference;
-      case 19:
+      case LanguageConceptSwitch.ConstraintFunctionParameter_visible:
         return props_ConstraintFunctionParameter_visible;
-      case 20:
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAChild:
         return props_ConstraintFunction_CanBeAChild;
-      case 21:
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAParent:
         return props_ConstraintFunction_CanBeAParent;
-      case 22:
+      case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
         return props_ConstraintFunction_CanBeARoot;
-      case 23:
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor:
         return props_ConstraintFunction_CanBeAnAncestor;
-      case 24:
+      case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
         return props_ConstraintFunction_GetAlternativeIcon;
-      case 25:
+      case LanguageConceptSwitch.ConstraintFunction_GetInstanceIcon:
         return props_ConstraintFunction_GetInstanceIcon;
-      case 26:
+      case LanguageConceptSwitch.ConstraintFunction_PropertyGetter:
         return props_ConstraintFunction_PropertyGetter;
-      case 27:
+      case LanguageConceptSwitch.ConstraintFunction_PropertySetter:
         return props_ConstraintFunction_PropertySetter;
-      case 28:
+      case LanguageConceptSwitch.ConstraintFunction_PropertyValidator:
         return props_ConstraintFunction_PropertyValidator;
-      case 29:
+      case LanguageConceptSwitch.ConstraintFunction_RefSetHandlerKeepsReference:
         return props_ConstraintFunction_RefSetHandlerKeepsReference;
-      case 30:
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_AbstractBase:
         return props_ConstraintFunction_ReferentSearchScope_AbstractBase;
-      case 31:
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Factory:
         return props_ConstraintFunction_ReferentSearchScope_Factory;
-      case 32:
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Presentation:
         return props_ConstraintFunction_ReferentSearchScope_Presentation;
-      case 33:
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope:
         return props_ConstraintFunction_ReferentSearchScope_Scope;
-      case 34:
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Validator:
         return props_ConstraintFunction_ReferentSearchScope_Validator;
-      case 35:
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSetHandler:
         return props_ConstraintFunction_ReferentSetHandler;
-      case 36:
+      case LanguageConceptSwitch.ConstraintsFunctionParameter_node:
         return props_ConstraintsFunctionParameter_node;
-      case 37:
+      case LanguageConceptSwitch.ConstraintsFunctionParameter_propertyValue:
         return props_ConstraintsFunctionParameter_propertyValue;
-      case 38:
+      case LanguageConceptSwitch.InheritedNodeScopeFactory:
         return props_InheritedNodeScopeFactory;
-      case 39:
+      case LanguageConceptSwitch.NodeDefaultSearchScope:
         return props_NodeDefaultSearchScope;
-      case 40:
+      case LanguageConceptSwitch.NodePropertyConstraint:
         return props_NodePropertyConstraint;
-      case 41:
+      case LanguageConceptSwitch.NodeReferentConstraint:
         return props_NodeReferentConstraint;
-      case 42:
+      case LanguageConceptSwitch.NodeScopeFactory:
         return props_NodeScopeFactory;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

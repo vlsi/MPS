@@ -48,73 +48,73 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractRunConfigurationExecutor:
         return props_AbstractRunConfigurationExecutor;
-      case 1:
+      case LanguageConceptSwitch.BeforeTask:
         return props_BeforeTask;
-      case 2:
+      case LanguageConceptSwitch.BeforeTaskCall:
         return props_BeforeTaskCall;
-      case 3:
+      case LanguageConceptSwitch.BeforeTaskParameter:
         return props_BeforeTaskParameter;
-      case 4:
+      case LanguageConceptSwitch.BeforeTaskParameterReference:
         return props_BeforeTaskParameterReference;
-      case 5:
+      case LanguageConceptSwitch.ConfigurationFromExecutorReference:
         return props_ConfigurationFromExecutorReference;
-      case 6:
+      case LanguageConceptSwitch.ConsoleCreator:
         return props_ConsoleCreator;
-      case 7:
+      case LanguageConceptSwitch.ConsoleType:
         return props_ConsoleType;
-      case 8:
+      case LanguageConceptSwitch.ContextExpression:
         return props_ContextExpression;
-      case 9:
+      case LanguageConceptSwitch.Create_ConceptFunction:
         return props_Create_ConceptFunction;
-      case 10:
+      case LanguageConceptSwitch.DebuggerSettings_Parameter:
         return props_DebuggerSettings_Parameter;
-      case 11:
+      case LanguageConceptSwitch.EnvironmentExpression:
         return props_EnvironmentExpression;
-      case 12:
+      case LanguageConceptSwitch.ExecuteBeforeTask_ConceptFunction:
         return props_ExecuteBeforeTask_ConceptFunction;
-      case 13:
+      case LanguageConceptSwitch.ExecuteConfiguration_Function:
         return props_ExecuteConfiguration_Function;
-      case 14:
+      case LanguageConceptSwitch.Executor_Parameter:
         return props_Executor_Parameter;
-      case 15:
+      case LanguageConceptSwitch.GetProjectOperation:
         return props_GetProjectOperation;
-      case 16:
+      case LanguageConceptSwitch.ModelSource:
         return props_ModelSource;
-      case 17:
+      case LanguageConceptSwitch.ModuleSource:
         return props_ModuleSource;
-      case 18:
+      case LanguageConceptSwitch.NodeListSource:
         return props_NodeListSource;
-      case 19:
+      case LanguageConceptSwitch.NodeSource:
         return props_NodeSource;
-      case 20:
+      case LanguageConceptSwitch.ProjectSource:
         return props_ProjectSource;
-      case 21:
+      case LanguageConceptSwitch.Project_Parameter:
         return props_Project_Parameter;
-      case 22:
+      case LanguageConceptSwitch.RunConfiguration:
         return props_RunConfiguration;
-      case 23:
+      case LanguageConceptSwitch.RunConfigurationCreator:
         return props_RunConfigurationCreator;
-      case 24:
+      case LanguageConceptSwitch.RunConfigurationExecutor:
         return props_RunConfigurationExecutor;
-      case 25:
+      case LanguageConceptSwitch.RunConfigurationKind:
         return props_RunConfigurationKind;
-      case 26:
+      case LanguageConceptSwitch.RunConfigurationProducer:
         return props_RunConfigurationProducer;
-      case 27:
+      case LanguageConceptSwitch.RunConfigurationProducerPart:
         return props_RunConfigurationProducerPart;
-      case 28:
+      case LanguageConceptSwitch.RunConfigurationSource:
         return props_RunConfigurationSource;
-      case 29:
+      case LanguageConceptSwitch.SModelSource:
         return props_SModelSource;
-      case 30:
+      case LanguageConceptSwitch.SModuleSource:
         return props_SModuleSource;
-      case 31:
+      case LanguageConceptSwitch.Source_ConceptFunctionParameter:
         return props_Source_ConceptFunctionParameter;
-      case 32:
+      case LanguageConceptSwitch.StartProcessHandlerStatement:
         return props_StartProcessHandlerStatement;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

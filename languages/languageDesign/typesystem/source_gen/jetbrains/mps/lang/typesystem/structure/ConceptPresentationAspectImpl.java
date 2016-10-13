@@ -136,249 +136,249 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractCheckingRule:
         return props_AbstractCheckingRule;
-      case 1:
+      case LanguageConceptSwitch.AbstractComparableStatement:
         return props_AbstractComparableStatement;
-      case 2:
+      case LanguageConceptSwitch.AbstractEquationStatement:
         return props_AbstractEquationStatement;
-      case 3:
+      case LanguageConceptSwitch.AbstractInequationStatement:
         return props_AbstractInequationStatement;
-      case 4:
+      case LanguageConceptSwitch.AbstractOverloadedOpsTypeRule:
         return props_AbstractOverloadedOpsTypeRule;
-      case 5:
+      case LanguageConceptSwitch.AbstractRule:
         return props_AbstractRule;
-      case 6:
+      case LanguageConceptSwitch.AbstractSubtypingRule:
         return props_AbstractSubtypingRule;
-      case 7:
+      case LanguageConceptSwitch.AddDependencyStatement:
         return props_AddDependencyStatement;
-      case 8:
+      case LanguageConceptSwitch.ApplicableNodeCondition:
         return props_ApplicableNodeCondition;
-      case 9:
+      case LanguageConceptSwitch.ApplicableNodeReference:
         return props_ApplicableNodeReference;
-      case 10:
+      case LanguageConceptSwitch.AssertStatement:
         return props_AssertStatement;
-      case 11:
+      case LanguageConceptSwitch.AttributedNodeExpression:
         return props_AttributedNodeExpression;
-      case 12:
+      case LanguageConceptSwitch.CaretPositionOperation:
         return props_CaretPositionOperation;
-      case 13:
+      case LanguageConceptSwitch.CoerceExpression:
         return props_CoerceExpression;
-      case 14:
+      case LanguageConceptSwitch.CoerceStatement:
         return props_CoerceStatement;
-      case 15:
+      case LanguageConceptSwitch.CoerceStrongExpression:
         return props_CoerceStrongExpression;
-      case 16:
+      case LanguageConceptSwitch.ComparisonRule:
         return props_ComparisonRule;
-      case 17:
+      case LanguageConceptSwitch.ConceptClauseLinkInfo:
         return props_ConceptClauseLinkInfo;
-      case 18:
+      case LanguageConceptSwitch.ConceptFunctionParameter_ContextNode:
         return props_ConceptFunctionParameter_ContextNode;
-      case 19:
+      case LanguageConceptSwitch.ConceptFunctionParameter_EditorContext:
         return props_ConceptFunctionParameter_EditorContext;
-      case 20:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Role:
         return props_ConceptFunctionParameter_Role;
-      case 21:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Selection:
         return props_ConceptFunctionParameter_Selection;
-      case 22:
+      case LanguageConceptSwitch.ConceptFunctionParameter_isAggregation:
         return props_ConceptFunctionParameter_isAggregation;
-      case 23:
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
         return props_ConceptFunctionParameter_node;
-      case 24:
+      case LanguageConceptSwitch.ConceptFunctionParameter_var:
         return props_ConceptFunctionParameter_var;
-      case 25:
+      case LanguageConceptSwitch.ConceptReference:
         return props_ConceptReference;
-      case 26:
+      case LanguageConceptSwitch.CreateComparableEquationStatement:
         return props_CreateComparableEquationStatement;
-      case 27:
+      case LanguageConceptSwitch.CreateComparableEquationStatementStrong:
         return props_CreateComparableEquationStatementStrong;
-      case 28:
+      case LanguageConceptSwitch.CreateEquationStatement:
         return props_CreateEquationStatement;
-      case 29:
+      case LanguageConceptSwitch.CreateGreaterThanInequationStatement:
         return props_CreateGreaterThanInequationStatement;
-      case 30:
+      case LanguageConceptSwitch.CreateLessThanInequationStatement:
         return props_CreateLessThanInequationStatement;
-      case 31:
+      case LanguageConceptSwitch.CreateStrongGreaterThanInequationStatement:
         return props_CreateStrongGreaterThanInequationStatement;
-      case 32:
+      case LanguageConceptSwitch.CreateStrongLessThanInequationStatement:
         return props_CreateStrongLessThanInequationStatement;
-      case 33:
+      case LanguageConceptSwitch.DefaultGroupReference:
         return props_DefaultGroupReference;
-      case 34:
+      case LanguageConceptSwitch.ErrorInfoExpression:
         return props_ErrorInfoExpression;
-      case 35:
+      case LanguageConceptSwitch.GetOperationType:
         return props_GetOperationType;
-      case 36:
+      case LanguageConceptSwitch.IRuleWithOneNode:
         return props_IRuleWithOneNode;
-      case 37:
+      case LanguageConceptSwitch.IRuleWithTwoNodes:
         return props_IRuleWithTwoNodes;
-      case 38:
+      case LanguageConceptSwitch.ImmediateSupertypesExpression:
         return props_ImmediateSupertypesExpression;
-      case 39:
+      case LanguageConceptSwitch.InequationReference:
         return props_InequationReference;
-      case 40:
+      case LanguageConceptSwitch.InequationReplacementRule:
         return props_InequationReplacementRule;
-      case 41:
+      case LanguageConceptSwitch.InferenceRule:
         return props_InferenceRule;
-      case 42:
+      case LanguageConceptSwitch.InfoStatement:
         return props_InfoStatement;
-      case 43:
+      case LanguageConceptSwitch.InfoStatementAnnotation:
         return props_InfoStatementAnnotation;
-      case 44:
+      case LanguageConceptSwitch.IsApplicableConceptFunction:
         return props_IsApplicableConceptFunction;
-      case 45:
+      case LanguageConceptSwitch.IsReplacementRuleApplicable_ConceptFunction:
         return props_IsReplacementRuleApplicable_ConceptFunction;
-      case 46:
+      case LanguageConceptSwitch.IsStrongSubtypeExpression:
         return props_IsStrongSubtypeExpression;
-      case 47:
+      case LanguageConceptSwitch.IsSubtypeExpression:
         return props_IsSubtypeExpression;
-      case 48:
+      case LanguageConceptSwitch.JoinContainer:
         return props_JoinContainer;
-      case 49:
+      case LanguageConceptSwitch.JoinType:
         return props_JoinType;
-      case 50:
+      case LanguageConceptSwitch.LeftOperandType_parameter:
         return props_LeftOperandType_parameter;
-      case 51:
+      case LanguageConceptSwitch.LinkPatternVariableReference:
         return props_LinkPatternVariableReference;
-      case 52:
+      case LanguageConceptSwitch.MatchStatement:
         return props_MatchStatement;
-      case 53:
+      case LanguageConceptSwitch.MatchStatementItem:
         return props_MatchStatementItem;
-      case 54:
+      case LanguageConceptSwitch.MeetContainer:
         return props_MeetContainer;
-      case 55:
+      case LanguageConceptSwitch.MeetType:
         return props_MeetType;
-      case 56:
+      case LanguageConceptSwitch.MessageStatement:
         return props_MessageStatement;
-      case 57:
+      case LanguageConceptSwitch.MessageStatementAnnotation:
         return props_MessageStatementAnnotation;
-      case 58:
+      case LanguageConceptSwitch.MessageTarget:
         return props_MessageTarget;
-      case 59:
+      case LanguageConceptSwitch.MultipleForeachLoop:
         return props_MultipleForeachLoop;
-      case 60:
+      case LanguageConceptSwitch.MultipleForeachLoopVariable:
         return props_MultipleForeachLoopVariable;
-      case 61:
+      case LanguageConceptSwitch.NodeInfo:
         return props_NodeInfo;
-      case 62:
+      case LanguageConceptSwitch.Node_InferTypeOperation:
         return props_Node_InferTypeOperation;
-      case 63:
+      case LanguageConceptSwitch.Node_TypeOperation:
         return props_Node_TypeOperation;
-      case 64:
+      case LanguageConceptSwitch.NonTypesystemRule:
         return props_NonTypesystemRule;
-      case 65:
+      case LanguageConceptSwitch.NormalTypeClause:
         return props_NormalTypeClause;
-      case 66:
+      case LanguageConceptSwitch.Operation_parameter:
         return props_Operation_parameter;
-      case 67:
+      case LanguageConceptSwitch.OrStatement:
         return props_OrStatement;
-      case 68:
+      case LanguageConceptSwitch.OriginalNodeId:
         return props_OriginalNodeId;
-      case 69:
+      case LanguageConceptSwitch.OverloadedOpIsApplicableFunction:
         return props_OverloadedOpIsApplicableFunction;
-      case 70:
+      case LanguageConceptSwitch.OverloadedOpRulesContainer:
         return props_OverloadedOpRulesContainer;
-      case 71:
+      case LanguageConceptSwitch.OverloadedOpTypeRule_OneTypeSpecified:
         return props_OverloadedOpTypeRule_OneTypeSpecified;
-      case 72:
+      case LanguageConceptSwitch.OverloadedOperatorTypeFunction:
         return props_OverloadedOperatorTypeFunction;
-      case 73:
+      case LanguageConceptSwitch.OverloadedOperatorTypeRule:
         return props_OverloadedOperatorTypeRule;
-      case 74:
+      case LanguageConceptSwitch.OverridesConceptFunction:
         return props_OverridesConceptFunction;
-      case 75:
+      case LanguageConceptSwitch.PatternCondition:
         return props_PatternCondition;
-      case 76:
+      case LanguageConceptSwitch.PatternVariableReference:
         return props_PatternVariableReference;
-      case 77:
+      case LanguageConceptSwitch.PrintToTrace:
         return props_PrintToTrace;
-      case 78:
+      case LanguageConceptSwitch.Processed:
         return props_Processed;
-      case 79:
+      case LanguageConceptSwitch.PropertyMessageTarget:
         return props_PropertyMessageTarget;
-      case 80:
+      case LanguageConceptSwitch.PropertyNameTarget:
         return props_PropertyNameTarget;
-      case 81:
+      case LanguageConceptSwitch.PropertyPatternVariableReference:
         return props_PropertyPatternVariableReference;
-      case 82:
+      case LanguageConceptSwitch.QuickFixArgument:
         return props_QuickFixArgument;
-      case 83:
+      case LanguageConceptSwitch.QuickFixArgumentReference:
         return props_QuickFixArgumentReference;
-      case 84:
+      case LanguageConceptSwitch.QuickFixDescriptionBlock:
         return props_QuickFixDescriptionBlock;
-      case 85:
+      case LanguageConceptSwitch.QuickFixExecuteBlock:
         return props_QuickFixExecuteBlock;
-      case 86:
+      case LanguageConceptSwitch.QuickFixField:
         return props_QuickFixField;
-      case 87:
+      case LanguageConceptSwitch.QuickFixFieldReference:
         return props_QuickFixFieldReference;
-      case 88:
+      case LanguageConceptSwitch.QuickFixSetSelectionBlock:
         return props_QuickFixSetSelectionBlock;
-      case 89:
+      case LanguageConceptSwitch.ReferenceMessageTarget:
         return props_ReferenceMessageTarget;
-      case 90:
+      case LanguageConceptSwitch.ReferenceRoleTarget:
         return props_ReferenceRoleTarget;
-      case 91:
+      case LanguageConceptSwitch.ReplacementRuleReference:
         return props_ReplacementRuleReference;
-      case 92:
+      case LanguageConceptSwitch.ReportErrorStatement:
         return props_ReportErrorStatement;
-      case 93:
+      case LanguageConceptSwitch.ReportErrorStatementAnnotation:
         return props_ReportErrorStatementAnnotation;
-      case 94:
+      case LanguageConceptSwitch.RightOperandType_parameter:
         return props_RightOperandType_parameter;
-      case 95:
+      case LanguageConceptSwitch.RuntimeErrorType:
         return props_RuntimeErrorType;
-      case 96:
+      case LanguageConceptSwitch.RuntimeHoleType:
         return props_RuntimeHoleType;
-      case 97:
+      case LanguageConceptSwitch.RuntimeListVariable:
         return props_RuntimeListVariable;
-      case 98:
+      case LanguageConceptSwitch.RuntimeTypeVariable:
         return props_RuntimeTypeVariable;
-      case 99:
+      case LanguageConceptSwitch.SelectionType:
         return props_SelectionType;
-      case 100:
+      case LanguageConceptSwitch.SubstituteTypeRule:
         return props_SubstituteTypeRule;
-      case 101:
+      case LanguageConceptSwitch.SubtypingRule:
         return props_SubtypingRule;
-      case 102:
+      case LanguageConceptSwitch.SupersedeConceptFunction:
         return props_SupersedeConceptFunction;
-      case 103:
+      case LanguageConceptSwitch.TypeCheckerAccessExpression:
         return props_TypeCheckerAccessExpression;
-      case 104:
+      case LanguageConceptSwitch.TypeClause:
         return props_TypeClause;
-      case 105:
+      case LanguageConceptSwitch.TypeOfExpression:
         return props_TypeOfExpression;
-      case 106:
+      case LanguageConceptSwitch.TypeVarDeclaration:
         return props_TypeVarDeclaration;
-      case 107:
+      case LanguageConceptSwitch.TypeVarReference:
         return props_TypeVarReference;
-      case 108:
+      case LanguageConceptSwitch.TypesystemIntention:
         return props_TypesystemIntention;
-      case 109:
+      case LanguageConceptSwitch.TypesystemIntentionArgument:
         return props_TypesystemIntentionArgument;
-      case 110:
+      case LanguageConceptSwitch.TypesystemQuickFix:
         return props_TypesystemQuickFix;
-      case 111:
+      case LanguageConceptSwitch.VariableConverterItem:
         return props_VariableConverterItem;
-      case 112:
+      case LanguageConceptSwitch.VariableConverterItem_ApplicableBlock:
         return props_VariableConverterItem_ApplicableBlock;
-      case 113:
+      case LanguageConceptSwitch.VariableConverterItem_ConvertBlock:
         return props_VariableConverterItem_ConvertBlock;
-      case 114:
+      case LanguageConceptSwitch.VariableConvertersContainer:
         return props_VariableConvertersContainer;
-      case 115:
+      case LanguageConceptSwitch.WarningStatement:
         return props_WarningStatement;
-      case 116:
+      case LanguageConceptSwitch.WarningStatementAnnotation:
         return props_WarningStatementAnnotation;
-      case 117:
+      case LanguageConceptSwitch.WasSelectedNodeOperation:
         return props_WasSelectedNodeOperation;
-      case 118:
+      case LanguageConceptSwitch.WhenConcreteStatement:
         return props_WhenConcreteStatement;
-      case 119:
+      case LanguageConceptSwitch.WhenConcreteVariableDeclaration:
         return props_WhenConcreteVariableDeclaration;
-      case 120:
+      case LanguageConceptSwitch.WhenConcreteVariableReference:
         return props_WhenConcreteVariableReference;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

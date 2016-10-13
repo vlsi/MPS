@@ -43,63 +43,63 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractionVarRef:
         return props_AbstractionVarRef;
-      case 1:
+      case LanguageConceptSwitch.AbstractionVariable:
         return props_AbstractionVariable;
-      case 2:
+      case LanguageConceptSwitch.AddOperation:
         return props_AddOperation;
-      case 3:
+      case LanguageConceptSwitch.BinaryNumericOperation:
         return props_BinaryNumericOperation;
-      case 4:
+      case LanguageConceptSwitch.BinaryOperation:
         return props_BinaryOperation;
-      case 5:
+      case LanguageConceptSwitch.BinaryStringOperation:
         return props_BinaryStringOperation;
-      case 6:
+      case LanguageConceptSwitch.ConcatenateOperation:
         return props_ConcatenateOperation;
-      case 7:
+      case LanguageConceptSwitch.DivideOperation:
         return props_DivideOperation;
-      case 8:
+      case LanguageConceptSwitch.FunctionType:
         return props_FunctionType;
-      case 9:
+      case LanguageConceptSwitch.LambdaAbstraction:
         return props_LambdaAbstraction;
-      case 10:
+      case LanguageConceptSwitch.LambdaApplication:
         return props_LambdaApplication;
-      case 11:
+      case LanguageConceptSwitch.LambdaExpression:
         return props_LambdaExpression;
-      case 12:
+      case LanguageConceptSwitch.LambdaType:
         return props_LambdaType;
-      case 13:
+      case LanguageConceptSwitch.LetExpression:
         return props_LetExpression;
-      case 14:
+      case LanguageConceptSwitch.LetRef:
         return props_LetRef;
-      case 15:
+      case LanguageConceptSwitch.LetVariable:
         return props_LetVariable;
-      case 16:
+      case LanguageConceptSwitch.MultipleExpression:
         return props_MultipleExpression;
-      case 17:
+      case LanguageConceptSwitch.MultiplyOperation:
         return props_MultiplyOperation;
-      case 18:
+      case LanguageConceptSwitch.NumberType:
         return props_NumberType;
-      case 19:
+      case LanguageConceptSwitch.NumericConstant:
         return props_NumericConstant;
-      case 20:
+      case LanguageConceptSwitch.ParenthesisExpression:
         return props_ParenthesisExpression;
-      case 21:
+      case LanguageConceptSwitch.Program:
         return props_Program;
-      case 22:
+      case LanguageConceptSwitch.StringConstant:
         return props_StringConstant;
-      case 23:
+      case LanguageConceptSwitch.StringType:
         return props_StringType;
-      case 24:
+      case LanguageConceptSwitch.SubtractOperation:
         return props_SubtractOperation;
-      case 25:
+      case LanguageConceptSwitch.Variable:
         return props_Variable;
-      case 26:
+      case LanguageConceptSwitch.VariableOwner:
         return props_VariableOwner;
-      case 27:
+      case LanguageConceptSwitch.VariableReference:
         return props_VariableReference;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

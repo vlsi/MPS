@@ -52,81 +52,81 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AnalysisDirection:
         return props_AnalysisDirection;
-      case 1:
+      case LanguageConceptSwitch.Analyzer:
         return props_Analyzer;
-      case 2:
+      case LanguageConceptSwitch.AnalyzerConstructorParameter:
         return props_AnalyzerConstructorParameter;
-      case 3:
+      case LanguageConceptSwitch.AnalyzerConstructorParameterReference:
         return props_AnalyzerConstructorParameterReference;
-      case 4:
+      case LanguageConceptSwitch.AnalyzerFunFunction:
         return props_AnalyzerFunFunction;
-      case 5:
+      case LanguageConceptSwitch.AnalyzerFunParameterInput:
         return props_AnalyzerFunParameterInput;
-      case 6:
+      case LanguageConceptSwitch.AnalyzerFunParameterProgramState:
         return props_AnalyzerFunParameterProgramState;
-      case 7:
+      case LanguageConceptSwitch.AnalyzerFunParameterStateValues:
         return props_AnalyzerFunParameterStateValues;
-      case 8:
+      case LanguageConceptSwitch.AnalyzerFunctionResultType:
         return props_AnalyzerFunctionResultType;
-      case 9:
+      case LanguageConceptSwitch.AnalyzerInitialFunction:
         return props_AnalyzerInitialFunction;
-      case 10:
+      case LanguageConceptSwitch.AnalyzerMergeFunction:
         return props_AnalyzerMergeFunction;
-      case 11:
+      case LanguageConceptSwitch.AnalyzerMergeParameterInput:
         return props_AnalyzerMergeParameterInput;
-      case 12:
+      case LanguageConceptSwitch.AnalyzerParameterProgram:
         return props_AnalyzerParameterProgram;
-      case 13:
+      case LanguageConceptSwitch.AnalyzerRunnerAnalyzeOperation:
         return props_AnalyzerRunnerAnalyzeOperation;
-      case 14:
+      case LanguageConceptSwitch.AnalyzerRunnerClassKeeper:
         return props_AnalyzerRunnerClassKeeper;
-      case 15:
+      case LanguageConceptSwitch.AnalyzerRunnerCreator:
         return props_AnalyzerRunnerCreator;
-      case 16:
+      case LanguageConceptSwitch.AnalyzerRunnerType:
         return props_AnalyzerRunnerType;
-      case 17:
+      case LanguageConceptSwitch.ApplicableCondition:
         return props_ApplicableCondition;
-      case 18:
+      case LanguageConceptSwitch.ApplicableNodeReference:
         return props_ApplicableNodeReference;
-      case 19:
+      case LanguageConceptSwitch.BackwardDirection:
         return props_BackwardDirection;
-      case 20:
+      case LanguageConceptSwitch.ConceptCondition:
         return props_ConceptCondition;
-      case 21:
+      case LanguageConceptSwitch.CustomInstructionsContainer:
         return props_CustomInstructionsContainer;
-      case 22:
+      case LanguageConceptSwitch.CustomInstructionsContainerReference:
         return props_CustomInstructionsContainerReference;
-      case 23:
+      case LanguageConceptSwitch.EmitInstruction:
         return props_EmitInstruction;
-      case 24:
+      case LanguageConceptSwitch.ForwardDirection:
         return props_ForwardDirection;
-      case 25:
+      case LanguageConceptSwitch.InsertAfterPosition:
         return props_InsertAfterPosition;
-      case 26:
+      case LanguageConceptSwitch.InsertBeforePosition:
         return props_InsertBeforePosition;
-      case 27:
+      case LanguageConceptSwitch.InsertPosition:
         return props_InsertPosition;
-      case 28:
+      case LanguageConceptSwitch.Instruction:
         return props_Instruction;
-      case 29:
+      case LanguageConceptSwitch.InstructionClassKeeper:
         return props_InstructionClassKeeper;
-      case 30:
+      case LanguageConceptSwitch.InstructionParameter:
         return props_InstructionParameter;
-      case 31:
+      case LanguageConceptSwitch.InstructionReference:
         return props_InstructionReference;
-      case 32:
+      case LanguageConceptSwitch.IsOperation:
         return props_IsOperation;
-      case 33:
+      case LanguageConceptSwitch.PatternCondition:
         return props_PatternCondition;
-      case 34:
+      case LanguageConceptSwitch.ProgramParameter:
         return props_ProgramParameter;
-      case 35:
+      case LanguageConceptSwitch.Rule:
         return props_Rule;
-      case 36:
+      case LanguageConceptSwitch.RuleReference:
         return props_RuleReference;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

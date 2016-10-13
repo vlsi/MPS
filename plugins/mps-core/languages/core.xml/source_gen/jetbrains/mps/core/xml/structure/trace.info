@@ -10,8 +10,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,103,0" name="jetbrains.mps.core.xml.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,80,0" name="jetbrains.mps.core.xml.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,409,0" name="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
+      <unit at="16,0,369,0" name="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/3374336260035925079">

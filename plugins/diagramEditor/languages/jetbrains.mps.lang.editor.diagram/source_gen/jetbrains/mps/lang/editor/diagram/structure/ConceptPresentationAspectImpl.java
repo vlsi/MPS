@@ -56,89 +56,89 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractArgument:
         return props_AbstractArgument;
-      case 1:
+      case LanguageConceptSwitch.AbstractDiagramCreation:
         return props_AbstractDiagramCreation;
-      case 2:
+      case LanguageConceptSwitch.AbstractFigureReference:
         return props_AbstractFigureReference;
-      case 3:
+      case LanguageConceptSwitch.ActionGroup:
         return props_ActionGroup;
-      case 4:
+      case LanguageConceptSwitch.ActionReference:
         return props_ActionReference;
-      case 5:
+      case LanguageConceptSwitch.AttributedFigureReference:
         return props_AttributedFigureReference;
-      case 6:
+      case LanguageConceptSwitch.BLQueryArgument:
         return props_BLQueryArgument;
-      case 7:
+      case LanguageConceptSwitch.CellModel_Diagram:
         return props_CellModel_Diagram;
-      case 8:
+      case LanguageConceptSwitch.CellModel_DiagramConnector:
         return props_CellModel_DiagramConnector;
-      case 9:
+      case LanguageConceptSwitch.CellModel_DiagramNode:
         return props_CellModel_DiagramNode;
-      case 10:
+      case LanguageConceptSwitch.CellModel_DiagramPort:
         return props_CellModel_DiagramPort;
-      case 11:
+      case LanguageConceptSwitch.ConnectionEnd:
         return props_ConnectionEnd;
-      case 12:
+      case LanguageConceptSwitch.ConnectionEndBLQuery:
         return props_ConnectionEndBLQuery;
-      case 13:
+      case LanguageConceptSwitch.CreationActionReference:
         return props_CreationActionReference;
-      case 14:
+      case LanguageConceptSwitch.CustomElementReference:
         return props_CustomElementReference;
-      case 15:
+      case LanguageConceptSwitch.DiagramConnectorCanCreateHandler:
         return props_DiagramConnectorCanCreateHandler;
-      case 16:
+      case LanguageConceptSwitch.DiagramConnectorCreation:
         return props_DiagramConnectorCreation;
-      case 17:
+      case LanguageConceptSwitch.DiagramConnectorCreationHandler:
         return props_DiagramConnectorCreationHandler;
-      case 18:
+      case LanguageConceptSwitch.DiagramElement:
         return props_DiagramElement;
-      case 19:
+      case LanguageConceptSwitch.DiagramElementBLQuery:
         return props_DiagramElementBLQuery;
-      case 20:
+      case LanguageConceptSwitch.DiagramElementCreationHandler:
         return props_DiagramElementCreationHandler;
-      case 21:
+      case LanguageConceptSwitch.DiagramElementsCreation:
         return props_DiagramElementsCreation;
-      case 22:
+      case LanguageConceptSwitch.ExternalFigureReference:
         return props_ExternalFigureReference;
-      case 23:
+      case LanguageConceptSwitch.FigureParameterMapping:
         return props_FigureParameterMapping;
-      case 24:
+      case LanguageConceptSwitch.FromIdFunctionParameter:
         return props_FromIdFunctionParameter;
-      case 25:
+      case LanguageConceptSwitch.FromNodeFunctionParameter:
         return props_FromNodeFunctionParameter;
-      case 26:
+      case LanguageConceptSwitch.LinkArgument:
         return props_LinkArgument;
-      case 27:
+      case LanguageConceptSwitch.NodeFunctionParameter:
         return props_NodeFunctionParameter;
-      case 28:
+      case LanguageConceptSwitch.Palette:
         return props_Palette;
-      case 29:
+      case LanguageConceptSwitch.PaletteElement:
         return props_PaletteElement;
-      case 30:
+      case LanguageConceptSwitch.PropertyArgument:
         return props_PropertyArgument;
-      case 31:
+      case LanguageConceptSwitch.Separator:
         return props_Separator;
-      case 32:
+      case LanguageConceptSwitch.StubCellModel_Diagram:
         return props_StubCellModel_Diagram;
-      case 33:
+      case LanguageConceptSwitch.StubCellModel_DiagramConnector:
         return props_StubCellModel_DiagramConnector;
-      case 34:
+      case LanguageConceptSwitch.StubCellModel_DiagramNode:
         return props_StubCellModel_DiagramNode;
-      case 35:
+      case LanguageConceptSwitch.StubCellModel_DiagramPort:
         return props_StubCellModel_DiagramPort;
-      case 36:
+      case LanguageConceptSwitch.ThisEditorNodeExpression:
         return props_ThisEditorNodeExpression;
-      case 37:
+      case LanguageConceptSwitch.ToIdFunctionParameter:
         return props_ToIdFunctionParameter;
-      case 38:
+      case LanguageConceptSwitch.ToNodeFunctionParameter:
         return props_ToNodeFunctionParameter;
-      case 39:
+      case LanguageConceptSwitch.XFunctionParameter:
         return props_XFunctionParameter;
-      case 40:
+      case LanguageConceptSwitch.YFunctionParameter:
         return props_YFunctionParameter;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

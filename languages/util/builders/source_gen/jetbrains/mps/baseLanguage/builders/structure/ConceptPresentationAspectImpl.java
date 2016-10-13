@@ -40,57 +40,57 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AsBuilderStatement:
         return props_AsBuilderStatement;
-      case 1:
+      case LanguageConceptSwitch.AsTypeBuilder:
         return props_AsTypeBuilder;
-      case 2:
+      case LanguageConceptSwitch.BaseSimpleBuilderDeclaration:
         return props_BaseSimpleBuilderDeclaration;
-      case 3:
+      case LanguageConceptSwitch.BeanBuilder:
         return props_BeanBuilder;
-      case 4:
+      case LanguageConceptSwitch.BeanPropertyBuilder:
         return props_BeanPropertyBuilder;
-      case 5:
+      case LanguageConceptSwitch.Builder:
         return props_Builder;
-      case 6:
+      case LanguageConceptSwitch.BuilderContainer:
         return props_BuilderContainer;
-      case 7:
+      case LanguageConceptSwitch.BuilderCreator:
         return props_BuilderCreator;
-      case 8:
+      case LanguageConceptSwitch.BuilderStatement:
         return props_BuilderStatement;
-      case 9:
+      case LanguageConceptSwitch.ResultExpression:
         return props_ResultExpression;
-      case 10:
+      case LanguageConceptSwitch.SimpleBuilder:
         return props_SimpleBuilder;
-      case 11:
+      case LanguageConceptSwitch.SimpleBuilderChild:
         return props_SimpleBuilderChild;
-      case 12:
+      case LanguageConceptSwitch.SimpleBuilderChildExpression:
         return props_SimpleBuilderChildExpression;
-      case 13:
+      case LanguageConceptSwitch.SimpleBuilderDeclaration:
         return props_SimpleBuilderDeclaration;
-      case 14:
+      case LanguageConceptSwitch.SimpleBuilderExpression:
         return props_SimpleBuilderExpression;
-      case 15:
+      case LanguageConceptSwitch.SimpleBuilderExtensionDeclaration:
         return props_SimpleBuilderExtensionDeclaration;
-      case 16:
+      case LanguageConceptSwitch.SimpleBuilderParameter:
         return props_SimpleBuilderParameter;
-      case 17:
+      case LanguageConceptSwitch.SimpleBuilderParameterReference:
         return props_SimpleBuilderParameterReference;
-      case 18:
+      case LanguageConceptSwitch.SimpleBuilderParentExpression:
         return props_SimpleBuilderParentExpression;
-      case 19:
+      case LanguageConceptSwitch.SimpleBuilderProperty:
         return props_SimpleBuilderProperty;
-      case 20:
+      case LanguageConceptSwitch.SimpleBuilderPropertyBuilder:
         return props_SimpleBuilderPropertyBuilder;
-      case 21:
+      case LanguageConceptSwitch.SimpleBuilderPropertyExpression:
         return props_SimpleBuilderPropertyExpression;
-      case 22:
+      case LanguageConceptSwitch.SimpleBuilderPropertyParent:
         return props_SimpleBuilderPropertyParent;
-      case 23:
+      case LanguageConceptSwitch.SimpleBuilderPropertyValue:
         return props_SimpleBuilderPropertyValue;
-      case 24:
+      case LanguageConceptSwitch.SimpleBuilders:
         return props_SimpleBuilders;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

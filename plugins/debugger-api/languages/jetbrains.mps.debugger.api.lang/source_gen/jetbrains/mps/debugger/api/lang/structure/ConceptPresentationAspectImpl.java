@@ -28,33 +28,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BreakpointCreator:
         return props_BreakpointCreator;
-      case 1:
+      case LanguageConceptSwitch.BreakpointableNodeItem:
         return props_BreakpointableNodeItem;
-      case 2:
+      case LanguageConceptSwitch.ConceptDeclarationReference:
         return props_ConceptDeclarationReference;
-      case 3:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
         return props_ConceptFunctionParameter_Concept;
-      case 4:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Debug_Project:
         return props_ConceptFunctionParameter_Debug_Project;
-      case 5:
+      case LanguageConceptSwitch.ConceptFunctionParameter_DebuggableNode:
         return props_ConceptFunctionParameter_DebuggableNode;
-      case 6:
+      case LanguageConceptSwitch.ConceptFunction_CreateBreakpoint:
         return props_ConceptFunction_CreateBreakpoint;
-      case 7:
+      case LanguageConceptSwitch.ConceptFunction_IsApplicableBreakpoint:
         return props_ConceptFunction_IsApplicableBreakpoint;
-      case 8:
+      case LanguageConceptSwitch.CreateBreakpointOperation:
         return props_CreateBreakpointOperation;
-      case 9:
+      case LanguageConceptSwitch.DebuggerConfiguration:
         return props_DebuggerConfiguration;
-      case 10:
+      case LanguageConceptSwitch.DebuggerReference:
         return props_DebuggerReference;
-      case 11:
+      case LanguageConceptSwitch.DebuggerType:
         return props_DebuggerType;
-      case 12:
+      case LanguageConceptSwitch.GetDebuggerSettings_Function:
         return props_GetDebuggerSettings_Function;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

@@ -10,8 +10,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,43,0" name="jetbrains.mps.baseLanguage.money.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,40,0" name="jetbrains.mps.baseLanguage.money.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,149,0" name="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor" />
+      <unit at="16,0,129,0" name="jetbrains.mps.baseLanguage.money.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)/1186668138191">

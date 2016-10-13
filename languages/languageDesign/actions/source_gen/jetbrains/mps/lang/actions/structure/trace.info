@@ -16,8 +16,11 @@
     <file name="IconContainer.java">
       <unit at="7,0,14,0" name="jetbrains.mps.lang.actions.structure.IconContainer" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,260,0" name="jetbrains.mps.lang.actions.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,1609,0" name="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
+      <unit at="16,0,1479,0" name="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1140829206022">

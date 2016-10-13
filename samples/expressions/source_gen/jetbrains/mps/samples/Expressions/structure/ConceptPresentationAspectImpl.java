@@ -39,55 +39,55 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AndSimpleMathExpression:
         return props_AndSimpleMathExpression;
-      case 1:
+      case LanguageConceptSwitch.ArithmeticSimpleMathExpression:
         return props_ArithmeticSimpleMathExpression;
-      case 2:
+      case LanguageConceptSwitch.BinarySimpleMathExpression:
         return props_BinarySimpleMathExpression;
-      case 3:
+      case LanguageConceptSwitch.LogicalSimpleMathExpression:
         return props_LogicalSimpleMathExpression;
-      case 4:
+      case LanguageConceptSwitch.NotSimpleMathExpression:
         return props_NotSimpleMathExpression;
-      case 5:
+      case LanguageConceptSwitch.OrSimpleMathExpression:
         return props_OrSimpleMathExpression;
-      case 6:
+      case LanguageConceptSwitch.SimpleMathAssignment:
         return props_SimpleMathAssignment;
-      case 7:
+      case LanguageConceptSwitch.SimpleMathBooleanConstant:
         return props_SimpleMathBooleanConstant;
-      case 8:
+      case LanguageConceptSwitch.SimpleMathBooleanType:
         return props_SimpleMathBooleanType;
-      case 9:
+      case LanguageConceptSwitch.SimpleMathElementType:
         return props_SimpleMathElementType;
-      case 10:
+      case LanguageConceptSwitch.SimpleMathExpression:
         return props_SimpleMathExpression;
-      case 11:
+      case LanguageConceptSwitch.SimpleMathFloatConstant:
         return props_SimpleMathFloatConstant;
-      case 12:
+      case LanguageConceptSwitch.SimpleMathFloatType:
         return props_SimpleMathFloatType;
-      case 13:
+      case LanguageConceptSwitch.SimpleMathIntegerConstant:
         return props_SimpleMathIntegerConstant;
-      case 14:
+      case LanguageConceptSwitch.SimpleMathIntegerType:
         return props_SimpleMathIntegerType;
-      case 15:
+      case LanguageConceptSwitch.SimpleMathLongConstant:
         return props_SimpleMathLongConstant;
-      case 16:
+      case LanguageConceptSwitch.SimpleMathLongType:
         return props_SimpleMathLongType;
-      case 17:
+      case LanguageConceptSwitch.SimpleMathNumberType:
         return props_SimpleMathNumberType;
-      case 18:
+      case LanguageConceptSwitch.SimpleMathType:
         return props_SimpleMathType;
-      case 19:
+      case LanguageConceptSwitch.SimpleMathTypedVarDeclaration:
         return props_SimpleMathTypedVarDeclaration;
-      case 20:
+      case LanguageConceptSwitch.SimpleMathVarDeclaration:
         return props_SimpleMathVarDeclaration;
-      case 21:
+      case LanguageConceptSwitch.SimpleMathVarReference:
         return props_SimpleMathVarReference;
-      case 22:
+      case LanguageConceptSwitch.SimpleMathWrapper:
         return props_SimpleMathWrapper;
-      case 23:
+      case LanguageConceptSwitch.UnarySimpleMathExpression:
         return props_UnarySimpleMathExpression;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

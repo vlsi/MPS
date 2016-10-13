@@ -36,49 +36,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractFunctionType:
         return props_AbstractFunctionType;
-      case 1:
+      case LanguageConceptSwitch.ClosureArgReference:
         return props_ClosureArgReference;
-      case 2:
+      case LanguageConceptSwitch.ClosureControlStatement:
         return props_ClosureControlStatement;
-      case 3:
+      case LanguageConceptSwitch.ClosureLiteral:
         return props_ClosureLiteral;
-      case 4:
+      case LanguageConceptSwitch.ClosureLiteralType:
         return props_ClosureLiteralType;
-      case 5:
+      case LanguageConceptSwitch.CompactInvokeFunctionExpression:
         return props_CompactInvokeFunctionExpression;
-      case 6:
+      case LanguageConceptSwitch.ControlAbstractionContainer:
         return props_ControlAbstractionContainer;
-      case 7:
+      case LanguageConceptSwitch.ControlAbstractionDeclaration:
         return props_ControlAbstractionDeclaration;
-      case 8:
+      case LanguageConceptSwitch.ControlClosureLiteral:
         return props_ControlClosureLiteral;
-      case 9:
+      case LanguageConceptSwitch.FunctionMethodDeclaration:
         return props_FunctionMethodDeclaration;
-      case 10:
+      case LanguageConceptSwitch.FunctionType:
         return props_FunctionType;
-      case 11:
+      case LanguageConceptSwitch.InvokeExpression:
         return props_InvokeExpression;
-      case 12:
+      case LanguageConceptSwitch.InvokeFunctionExpression:
         return props_InvokeFunctionExpression;
-      case 13:
+      case LanguageConceptSwitch.InvokeFunctionOperation:
         return props_InvokeFunctionOperation;
-      case 14:
+      case LanguageConceptSwitch.PairOfInts:
         return props_PairOfInts;
-      case 15:
+      case LanguageConceptSwitch.StringPropertyHolder:
         return props_StringPropertyHolder;
-      case 16:
+      case LanguageConceptSwitch.UnboundClosureParameterDeclaration:
         return props_UnboundClosureParameterDeclaration;
-      case 17:
+      case LanguageConceptSwitch.UnrestrictedClosureLiteral:
         return props_UnrestrictedClosureLiteral;
-      case 18:
+      case LanguageConceptSwitch.UnrestrictedFunctionType:
         return props_UnrestrictedFunctionType;
-      case 19:
+      case LanguageConceptSwitch.YieldAllStatement:
         return props_YieldAllStatement;
-      case 20:
+      case LanguageConceptSwitch.YieldStatement:
         return props_YieldStatement;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

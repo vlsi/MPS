@@ -31,39 +31,39 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.Button:
         return props_Button;
-      case 1:
+      case LanguageConceptSwitch.Component:
         return props_Component;
-      case 2:
+      case LanguageConceptSwitch.Converter:
         return props_Converter;
-      case 3:
+      case LanguageConceptSwitch.ElementReference:
         return props_ElementReference;
-      case 4:
+      case LanguageConceptSwitch.EmptyComponent:
         return props_EmptyComponent;
-      case 5:
+      case LanguageConceptSwitch.Filter:
         return props_Filter;
-      case 6:
+      case LanguageConceptSwitch.Frame:
         return props_Frame;
-      case 7:
+      case LanguageConceptSwitch.Label:
         return props_Label;
-      case 8:
+      case LanguageConceptSwitch.Map:
         return props_Map;
-      case 9:
+      case LanguageConceptSwitch.Panel:
         return props_Panel;
-      case 10:
+      case LanguageConceptSwitch.Pipeline:
         return props_Pipeline;
-      case 11:
+      case LanguageConceptSwitch.SourceDataType:
         return props_SourceDataType;
-      case 12:
+      case LanguageConceptSwitch.SwingBuilderMember:
         return props_SwingBuilderMember;
-      case 13:
+      case LanguageConceptSwitch.TargetDataType:
         return props_TargetDataType;
-      case 14:
+      case LanguageConceptSwitch.TextField:
         return props_TextField;
-      case 15:
+      case LanguageConceptSwitch.Transformers:
         return props_Transformers;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

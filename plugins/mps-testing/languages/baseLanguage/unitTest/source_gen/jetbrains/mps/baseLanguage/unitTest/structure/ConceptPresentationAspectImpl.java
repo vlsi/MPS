@@ -35,47 +35,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AfterTest:
         return props_AfterTest;
-      case 1:
+      case LanguageConceptSwitch.AssertEquals:
         return props_AssertEquals;
-      case 2:
+      case LanguageConceptSwitch.AssertFalse:
         return props_AssertFalse;
-      case 3:
+      case LanguageConceptSwitch.AssertInNotNull:
         return props_AssertInNotNull;
-      case 4:
+      case LanguageConceptSwitch.AssertIsNull:
         return props_AssertIsNull;
-      case 5:
+      case LanguageConceptSwitch.AssertSame:
         return props_AssertSame;
-      case 6:
+      case LanguageConceptSwitch.AssertThrows:
         return props_AssertThrows;
-      case 7:
+      case LanguageConceptSwitch.AssertTrue:
         return props_AssertTrue;
-      case 8:
+      case LanguageConceptSwitch.BTestCase:
         return props_BTestCase;
-      case 9:
+      case LanguageConceptSwitch.BeforeTest:
         return props_BeforeTest;
-      case 10:
+      case LanguageConceptSwitch.BinaryAssert:
         return props_BinaryAssert;
-      case 11:
+      case LanguageConceptSwitch.Fail:
         return props_Fail;
-      case 12:
+      case LanguageConceptSwitch.ITestCase:
         return props_ITestCase;
-      case 13:
+      case LanguageConceptSwitch.ITestMethod:
         return props_ITestMethod;
-      case 14:
+      case LanguageConceptSwitch.ITestable:
         return props_ITestable;
-      case 15:
+      case LanguageConceptSwitch.Message:
         return props_Message;
-      case 16:
+      case LanguageConceptSwitch.MessageHolder:
         return props_MessageHolder;
-      case 17:
+      case LanguageConceptSwitch.PrepareMethod:
         return props_PrepareMethod;
-      case 18:
+      case LanguageConceptSwitch.TestMethod:
         return props_TestMethod;
-      case 19:
+      case LanguageConceptSwitch.TestMethodList:
         return props_TestMethodList;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

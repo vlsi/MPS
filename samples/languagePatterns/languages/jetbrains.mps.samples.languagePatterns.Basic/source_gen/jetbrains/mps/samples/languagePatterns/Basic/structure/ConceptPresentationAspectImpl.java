@@ -54,85 +54,85 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractRequestDescription:
         return props_AbstractRequestDescription;
-      case 1:
+      case LanguageConceptSwitch.Address:
         return props_Address;
-      case 2:
+      case LanguageConceptSwitch.AddressReference:
         return props_AddressReference;
-      case 3:
+      case LanguageConceptSwitch.AgendaItem:
         return props_AgendaItem;
-      case 4:
+      case LanguageConceptSwitch.Apple:
         return props_Apple;
-      case 5:
+      case LanguageConceptSwitch.Car:
         return props_Car;
-      case 6:
+      case LanguageConceptSwitch.CombinedPerformance:
         return props_CombinedPerformance;
-      case 7:
+      case LanguageConceptSwitch.Component:
         return props_Component;
-      case 8:
+      case LanguageConceptSwitch.ComponentUsage:
         return props_ComponentUsage;
-      case 9:
+      case LanguageConceptSwitch.Concert:
         return props_Concert;
-      case 10:
+      case LanguageConceptSwitch.Container:
         return props_Container;
-      case 11:
+      case LanguageConceptSwitch.DottedLine:
         return props_DottedLine;
-      case 12:
+      case LanguageConceptSwitch.DrawCommand:
         return props_DrawCommand;
-      case 13:
+      case LanguageConceptSwitch.DrawLine:
         return props_DrawLine;
-      case 14:
+      case LanguageConceptSwitch.DrawRect:
         return props_DrawRect;
-      case 15:
+      case LanguageConceptSwitch.EmptyLine:
         return props_EmptyLine;
-      case 16:
+      case LanguageConceptSwitch.FormDescription:
         return props_FormDescription;
-      case 17:
+      case LanguageConceptSwitch.Fruit:
         return props_Fruit;
-      case 18:
+      case LanguageConceptSwitch.FruitPlate:
         return props_FruitPlate;
-      case 19:
+      case LanguageConceptSwitch.IncompleteCommand:
         return props_IncompleteCommand;
-      case 20:
+      case LanguageConceptSwitch.Item:
         return props_Item;
-      case 21:
+      case LanguageConceptSwitch.ItemReference:
         return props_ItemReference;
-      case 22:
+      case LanguageConceptSwitch.LineStyle:
         return props_LineStyle;
-      case 23:
+      case LanguageConceptSwitch.ListOfDrawCommands:
         return props_ListOfDrawCommands;
-      case 24:
+      case LanguageConceptSwitch.OperationOnAddress:
         return props_OperationOnAddress;
-      case 25:
+      case LanguageConceptSwitch.Orange:
         return props_Orange;
-      case 26:
+      case LanguageConceptSwitch.Participant:
         return props_Participant;
-      case 27:
+      case LanguageConceptSwitch.Performance:
         return props_Performance;
-      case 28:
+      case LanguageConceptSwitch.PerformanceWithTitle:
         return props_PerformanceWithTitle;
-      case 29:
+      case LanguageConceptSwitch.RaceParticipant:
         return props_RaceParticipant;
-      case 30:
+      case LanguageConceptSwitch.Request:
         return props_Request;
-      case 31:
+      case LanguageConceptSwitch.SimplifiedFormDescription:
         return props_SimplifiedFormDescription;
-      case 32:
+      case LanguageConceptSwitch.Singer:
         return props_Singer;
-      case 33:
+      case LanguageConceptSwitch.SolidLine:
         return props_SolidLine;
-      case 34:
+      case LanguageConceptSwitch.SomeForm:
         return props_SomeForm;
-      case 35:
+      case LanguageConceptSwitch.StreetOperation:
         return props_StreetOperation;
-      case 36:
+      case LanguageConceptSwitch.StringDescription:
         return props_StringDescription;
-      case 37:
+      case LanguageConceptSwitch.Truck:
         return props_Truck;
-      case 38:
+      case LanguageConceptSwitch.ZipOperation:
         return props_ZipOperation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

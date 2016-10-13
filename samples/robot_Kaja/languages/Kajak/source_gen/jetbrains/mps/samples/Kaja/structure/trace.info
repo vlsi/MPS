@@ -16,8 +16,11 @@
     <file name="IconContainer.java">
       <unit at="7,0,11,0" name="jetbrains.mps.samples.Kaja.structure.IconContainer" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,84,0" name="jetbrains.mps.samples.Kaja.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,414,0" name="jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor" />
+      <unit at="14,0,372,0" name="jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/7060824959893064709">

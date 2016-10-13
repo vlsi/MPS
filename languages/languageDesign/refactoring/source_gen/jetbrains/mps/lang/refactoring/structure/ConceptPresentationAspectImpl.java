@@ -64,105 +64,105 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractMoveExpression:
         return props_AbstractMoveExpression;
-      case 1:
+      case LanguageConceptSwitch.AbstractMoveNodeExpression:
         return props_AbstractMoveNodeExpression;
-      case 2:
+      case LanguageConceptSwitch.AbstractMoveNodesExpression:
         return props_AbstractMoveNodesExpression;
-      case 3:
+      case LanguageConceptSwitch.AffectedNodesClause:
         return props_AffectedNodesClause;
-      case 4:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Model:
         return props_ConceptFunctionParameter_Model;
-      case 5:
+      case LanguageConceptSwitch.ConceptFunctionParameter_Module:
         return props_ConceptFunctionParameter_Module;
-      case 6:
+      case LanguageConceptSwitch.ConceptFunctionParameter_SModel:
         return props_ConceptFunctionParameter_SModel;
-      case 7:
+      case LanguageConceptSwitch.ConceptFunctionParameter_SNode:
         return props_ConceptFunctionParameter_SNode;
-      case 8:
+      case LanguageConceptSwitch.ContextMemberOperation:
         return props_ContextMemberOperation;
-      case 9:
+      case LanguageConceptSwitch.ContextType:
         return props_ContextType;
-      case 10:
+      case LanguageConceptSwitch.CreateRefactoringContext:
         return props_CreateRefactoringContext;
-      case 11:
+      case LanguageConceptSwitch.DoRefactorClause:
         return props_DoRefactorClause;
-      case 12:
+      case LanguageConceptSwitch.DoWhenDoneClause:
         return props_DoWhenDoneClause;
-      case 13:
+      case LanguageConceptSwitch.ExecuteRefactoringStatement:
         return props_ExecuteRefactoringStatement;
-      case 14:
+      case LanguageConceptSwitch.GetModelsToUpdateClause:
         return props_GetModelsToUpdateClause;
-      case 15:
+      case LanguageConceptSwitch.InitClause:
         return props_InitClause;
-      case 16:
+      case LanguageConceptSwitch.IsApplicableToModelClause:
         return props_IsApplicableToModelClause;
-      case 17:
+      case LanguageConceptSwitch.IsApplicableToModuleClause:
         return props_IsApplicableToModuleClause;
-      case 18:
+      case LanguageConceptSwitch.IsApplicableToNodeClause:
         return props_IsApplicableToNodeClause;
-      case 19:
+      case LanguageConceptSwitch.IsRefactoringApplicable:
         return props_IsRefactoringApplicable;
-      case 20:
+      case LanguageConceptSwitch.MainProjectOperation:
         return props_MainProjectOperation;
-      case 21:
+      case LanguageConceptSwitch.ModelDescriptorOperation:
         return props_ModelDescriptorOperation;
-      case 22:
+      case LanguageConceptSwitch.ModelTarget:
         return props_ModelTarget;
-      case 23:
+      case LanguageConceptSwitch.ModelsToGenerateByDefault:
         return props_ModelsToGenerateByDefault;
-      case 24:
+      case LanguageConceptSwitch.ModelsToGenerateClause:
         return props_ModelsToGenerateClause;
-      case 25:
+      case LanguageConceptSwitch.ModuleOperation:
         return props_ModuleOperation;
-      case 26:
+      case LanguageConceptSwitch.ModuleTarget:
         return props_ModuleTarget;
-      case 27:
+      case LanguageConceptSwitch.MoveNodeToModelExpression:
         return props_MoveNodeToModelExpression;
-      case 28:
+      case LanguageConceptSwitch.MoveNodeToNodeExpression:
         return props_MoveNodeToNodeExpression;
-      case 29:
+      case LanguageConceptSwitch.MoveNodesToModelExpression:
         return props_MoveNodesToModelExpression;
-      case 30:
+      case LanguageConceptSwitch.MoveNodesToNodeExpression:
         return props_MoveNodesToNodeExpression;
-      case 31:
+      case LanguageConceptSwitch.NodeOperation:
         return props_NodeOperation;
-      case 32:
+      case LanguageConceptSwitch.NodeTarget:
         return props_NodeTarget;
-      case 33:
+      case LanguageConceptSwitch.NodesOperation:
         return props_NodesOperation;
-      case 34:
+      case LanguageConceptSwitch.OperationContextOperation:
         return props_OperationContextOperation;
-      case 35:
+      case LanguageConceptSwitch.ProjectOperation:
         return props_ProjectOperation;
-      case 36:
+      case LanguageConceptSwitch.Refactoring:
         return props_Refactoring;
-      case 37:
+      case LanguageConceptSwitch.RefactoringAction:
         return props_RefactoringAction;
-      case 38:
+      case LanguageConceptSwitch.RefactoringArgument:
         return props_RefactoringArgument;
-      case 39:
+      case LanguageConceptSwitch.RefactoringArgumentReference:
         return props_RefactoringArgumentReference;
-      case 40:
+      case LanguageConceptSwitch.RefactoringContext_ConceptFunctionParameter:
         return props_RefactoringContext_ConceptFunctionParameter;
-      case 41:
+      case LanguageConceptSwitch.RefactoringField:
         return props_RefactoringField;
-      case 42:
+      case LanguageConceptSwitch.RefactoringFieldReference:
         return props_RefactoringFieldReference;
-      case 43:
+      case LanguageConceptSwitch.RefactoringParameter:
         return props_RefactoringParameter;
-      case 44:
+      case LanguageConceptSwitch.RefactoringParameterReference:
         return props_RefactoringParameterReference;
-      case 45:
+      case LanguageConceptSwitch.RefactoringTarget:
         return props_RefactoringTarget;
-      case 46:
+      case LanguageConceptSwitch.RepositoryOperation:
         return props_RepositoryOperation;
-      case 47:
+      case LanguageConceptSwitch.ScopeOperation:
         return props_ScopeOperation;
-      case 48:
+      case LanguageConceptSwitch.UpdateModelProcedure:
         return props_UpdateModelProcedure;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

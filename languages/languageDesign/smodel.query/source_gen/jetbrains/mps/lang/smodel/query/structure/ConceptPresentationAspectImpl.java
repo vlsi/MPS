@@ -47,71 +47,71 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractPrintExpression_old:
         return props_AbstractPrintExpression_old;
-      case 1:
+      case LanguageConceptSwitch.BLCommand_old:
         return props_BLCommand_old;
-      case 2:
+      case LanguageConceptSwitch.BLExpression_old:
         return props_BLExpression_old;
-      case 3:
+      case LanguageConceptSwitch.CustomScope:
         return props_CustomScope;
-      case 4:
+      case LanguageConceptSwitch.ExpressionHelpProvider:
         return props_ExpressionHelpProvider;
-      case 5:
+      case LanguageConceptSwitch.GlobalScope_old:
         return props_GlobalScope_old;
-      case 6:
+      case LanguageConceptSwitch.HelpProvider:
         return props_HelpProvider;
-      case 7:
+      case LanguageConceptSwitch.InstancesExpression:
         return props_InstancesExpression;
-      case 8:
+      case LanguageConceptSwitch.ModelScope:
         return props_ModelScope;
-      case 9:
+      case LanguageConceptSwitch.ModelsExpression:
         return props_ModelsExpression;
-      case 10:
+      case LanguageConceptSwitch.ModulesExpression:
         return props_ModulesExpression;
-      case 11:
+      case LanguageConceptSwitch.ModulesScope:
         return props_ModulesScope;
-      case 12:
+      case LanguageConceptSwitch.NodesExpression:
         return props_NodesExpression;
-      case 13:
+      case LanguageConceptSwitch.OperationHelpProvider:
         return props_OperationHelpProvider;
-      case 14:
+      case LanguageConceptSwitch.PrintExpression_old:
         return props_PrintExpression_old;
-      case 15:
+      case LanguageConceptSwitch.PrintNodeExpression_old:
         return props_PrintNodeExpression_old;
-      case 16:
+      case LanguageConceptSwitch.PrintNodeReferenceExpression_old:
         return props_PrintNodeReferenceExpression_old;
-      case 17:
+      case LanguageConceptSwitch.PrintSequenceExpression_old:
         return props_PrintSequenceExpression_old;
-      case 18:
+      case LanguageConceptSwitch.PrintTextExpression_old:
         return props_PrintTextExpression_old;
-      case 19:
+      case LanguageConceptSwitch.ProjectExpression_old:
         return props_ProjectExpression_old;
-      case 20:
+      case LanguageConceptSwitch.ProjectScope_old:
         return props_ProjectScope_old;
-      case 21:
+      case LanguageConceptSwitch.QueryExpression:
         return props_QueryExpression;
-      case 22:
+      case LanguageConceptSwitch.QueryParameter:
         return props_QueryParameter;
-      case 23:
+      case LanguageConceptSwitch.QueryParameterExact:
         return props_QueryParameterExact;
-      case 24:
+      case LanguageConceptSwitch.QueryParameterIncludeReadOnly:
         return props_QueryParameterIncludeReadOnly;
-      case 25:
+      case LanguageConceptSwitch.QueryParameterList:
         return props_QueryParameterList;
-      case 26:
+      case LanguageConceptSwitch.QueryParameterScope:
         return props_QueryParameterScope;
-      case 27:
+      case LanguageConceptSwitch.ReferencesExpression:
         return props_ReferencesExpression;
-      case 28:
+      case LanguageConceptSwitch.ScopeParameter:
         return props_ScopeParameter;
-      case 29:
+      case LanguageConceptSwitch.ShowExpression_old:
         return props_ShowExpression_old;
-      case 30:
+      case LanguageConceptSwitch.UsagesExpression:
         return props_UsagesExpression;
-      case 31:
+      case LanguageConceptSwitch.WithStatement:
         return props_WithStatement;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

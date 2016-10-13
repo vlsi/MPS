@@ -35,45 +35,45 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractConceptDeclaration:
         return props_AbstractConceptDeclaration;
-      case 1:
+      case LanguageConceptSwitch.AggregationLinkDeclarationScopeKind:
         return props_AggregationLinkDeclarationScopeKind;
-      case 2:
+      case LanguageConceptSwitch.AttributeInfo:
         return props_AttributeInfo;
-      case 3:
+      case LanguageConceptSwitch.AttributeInfo_AttributedConcept:
         return props_AttributeInfo_AttributedConcept;
-      case 4:
+      case LanguageConceptSwitch.AttributeInfo_IsMultiple:
         return props_AttributeInfo_IsMultiple;
-      case 5:
+      case LanguageConceptSwitch.ConceptDeclaration:
         return props_ConceptDeclaration;
-      case 6:
+      case LanguageConceptSwitch.ConstrainedDataTypeDeclaration:
         return props_ConstrainedDataTypeDeclaration;
-      case 7:
+      case LanguageConceptSwitch.DataTypeDeclaration:
         return props_DataTypeDeclaration;
-      case 8:
+      case LanguageConceptSwitch.DeprecatedNodeAnnotation:
         return props_DeprecatedNodeAnnotation;
-      case 9:
+      case LanguageConceptSwitch.EnumerationDataTypeDeclaration:
         return props_EnumerationDataTypeDeclaration;
-      case 10:
+      case LanguageConceptSwitch.EnumerationMemberDeclaration:
         return props_EnumerationMemberDeclaration;
-      case 11:
+      case LanguageConceptSwitch.IConceptAspect:
         return props_IConceptAspect;
-      case 12:
+      case LanguageConceptSwitch.IStructureDeprecatable:
         return props_IStructureDeprecatable;
-      case 13:
+      case LanguageConceptSwitch.InterfaceConceptDeclaration:
         return props_InterfaceConceptDeclaration;
-      case 14:
+      case LanguageConceptSwitch.InterfaceConceptReference:
         return props_InterfaceConceptReference;
-      case 15:
+      case LanguageConceptSwitch.LinkDeclaration:
         return props_LinkDeclaration;
-      case 16:
+      case LanguageConceptSwitch.PrimitiveDataTypeDeclaration:
         return props_PrimitiveDataTypeDeclaration;
-      case 17:
+      case LanguageConceptSwitch.PropertyDeclaration:
         return props_PropertyDeclaration;
-      case 18:
+      case LanguageConceptSwitch.ReferenceLinkDeclartionScopeKind:
         return props_ReferenceLinkDeclartionScopeKind;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

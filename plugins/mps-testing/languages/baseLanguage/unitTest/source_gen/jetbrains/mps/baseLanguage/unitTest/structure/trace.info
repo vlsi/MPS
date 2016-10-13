@@ -7,8 +7,11 @@
     <file name="IconContainer.java">
       <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.unitTest.structure.IconContainer" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,66,0" name="jetbrains.mps.baseLanguage.unitTest.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="20,0,324,0" name="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
+      <unit at="16,0,291,0" name="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

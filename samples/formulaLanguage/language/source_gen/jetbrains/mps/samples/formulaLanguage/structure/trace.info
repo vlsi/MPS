@@ -10,8 +10,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,88,0" name="jetbrains.mps.samples.formulaLanguage.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,70,0" name="jetbrains.mps.samples.formulaLanguage.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,319,0" name="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor" />
+      <unit at="14,0,284,0" name="jetbrains.mps.samples.formulaLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1113256863281">

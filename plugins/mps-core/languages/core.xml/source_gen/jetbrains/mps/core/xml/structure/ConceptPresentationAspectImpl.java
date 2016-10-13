@@ -42,61 +42,61 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.XmlAttribute:
         return props_XmlAttribute;
-      case 1:
+      case LanguageConceptSwitch.XmlBaseAttribute:
         return props_XmlBaseAttribute;
-      case 2:
+      case LanguageConceptSwitch.XmlBaseElement:
         return props_XmlBaseElement;
-      case 3:
+      case LanguageConceptSwitch.XmlBasePrologElement:
         return props_XmlBasePrologElement;
-      case 4:
+      case LanguageConceptSwitch.XmlCDATA:
         return props_XmlCDATA;
-      case 5:
+      case LanguageConceptSwitch.XmlCharRef:
         return props_XmlCharRef;
-      case 6:
+      case LanguageConceptSwitch.XmlCharRefValue:
         return props_XmlCharRefValue;
-      case 7:
+      case LanguageConceptSwitch.XmlComment:
         return props_XmlComment;
-      case 8:
+      case LanguageConceptSwitch.XmlCommentLine:
         return props_XmlCommentLine;
-      case 9:
+      case LanguageConceptSwitch.XmlContent:
         return props_XmlContent;
-      case 10:
+      case LanguageConceptSwitch.XmlDeclaration:
         return props_XmlDeclaration;
-      case 11:
+      case LanguageConceptSwitch.XmlDoctypeDeclaration:
         return props_XmlDoctypeDeclaration;
-      case 12:
+      case LanguageConceptSwitch.XmlDocument:
         return props_XmlDocument;
-      case 13:
+      case LanguageConceptSwitch.XmlElement:
         return props_XmlElement;
-      case 14:
+      case LanguageConceptSwitch.XmlEntityRef:
         return props_XmlEntityRef;
-      case 15:
+      case LanguageConceptSwitch.XmlEntityRefValue:
         return props_XmlEntityRefValue;
-      case 16:
+      case LanguageConceptSwitch.XmlExternalId:
         return props_XmlExternalId;
-      case 17:
+      case LanguageConceptSwitch.XmlFile:
         return props_XmlFile;
-      case 18:
+      case LanguageConceptSwitch.XmlNoSpaceValue:
         return props_XmlNoSpaceValue;
-      case 19:
+      case LanguageConceptSwitch.XmlPart:
         return props_XmlPart;
-      case 20:
+      case LanguageConceptSwitch.XmlProcessingInstruction:
         return props_XmlProcessingInstruction;
-      case 21:
+      case LanguageConceptSwitch.XmlProlog:
         return props_XmlProlog;
-      case 22:
+      case LanguageConceptSwitch.XmlPrologElement:
         return props_XmlPrologElement;
-      case 23:
+      case LanguageConceptSwitch.XmlText:
         return props_XmlText;
-      case 24:
+      case LanguageConceptSwitch.XmlTextValue:
         return props_XmlTextValue;
-      case 25:
+      case LanguageConceptSwitch.XmlValuePart:
         return props_XmlValuePart;
-      case 26:
+      case LanguageConceptSwitch.XmlWhitespace:
         return props_XmlWhitespace;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

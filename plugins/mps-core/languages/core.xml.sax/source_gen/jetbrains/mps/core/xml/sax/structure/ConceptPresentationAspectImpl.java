@@ -41,59 +41,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.XMLSAXAttributeHandler:
         return props_XMLSAXAttributeHandler;
-      case 1:
+      case LanguageConceptSwitch.XMLSAXAttributeHandler_value:
         return props_XMLSAXAttributeHandler_value;
-      case 2:
+      case LanguageConceptSwitch.XMLSAXAttributeReference:
         return props_XMLSAXAttributeReference;
-      case 3:
+      case LanguageConceptSwitch.XMLSAXAttributeRule:
         return props_XMLSAXAttributeRule;
-      case 4:
+      case LanguageConceptSwitch.XMLSAXBreakStatement:
         return props_XMLSAXBreakStatement;
-      case 5:
+      case LanguageConceptSwitch.XMLSAXChildHandler:
         return props_XMLSAXChildHandler;
-      case 6:
+      case LanguageConceptSwitch.XMLSAXChildHandler_childObject:
         return props_XMLSAXChildHandler_childObject;
-      case 7:
+      case LanguageConceptSwitch.XMLSAXChildRule:
         return props_XMLSAXChildRule;
-      case 8:
+      case LanguageConceptSwitch.XMLSAXChildRuleCondition:
         return props_XMLSAXChildRuleCondition;
-      case 9:
+      case LanguageConceptSwitch.XMLSAXDefaultChildHandler:
         return props_XMLSAXDefaultChildHandler;
-      case 10:
+      case LanguageConceptSwitch.XMLSAXDefaultChildHandler_tagName:
         return props_XMLSAXDefaultChildHandler_tagName;
-      case 11:
+      case LanguageConceptSwitch.XMLSAXDefaultChildRule:
         return props_XMLSAXDefaultChildRule;
-      case 12:
+      case LanguageConceptSwitch.XMLSAXFieldDeclaration:
         return props_XMLSAXFieldDeclaration;
-      case 13:
+      case LanguageConceptSwitch.XMLSAXFieldReference:
         return props_XMLSAXFieldReference;
-      case 14:
+      case LanguageConceptSwitch.XMLSAXHandlerFunction:
         return props_XMLSAXHandlerFunction;
-      case 15:
+      case LanguageConceptSwitch.XMLSAXHandler_resultObject:
         return props_XMLSAXHandler_resultObject;
-      case 16:
+      case LanguageConceptSwitch.XMLSAXLocatorExpression:
         return props_XMLSAXLocatorExpression;
-      case 17:
+      case LanguageConceptSwitch.XMLSAXNodeCreator:
         return props_XMLSAXNodeCreator;
-      case 18:
+      case LanguageConceptSwitch.XMLSAXNodeRule:
         return props_XMLSAXNodeRule;
-      case 19:
+      case LanguageConceptSwitch.XMLSAXNodeRuleParam:
         return props_XMLSAXNodeRuleParam;
-      case 20:
+      case LanguageConceptSwitch.XMLSAXNodeRuleParamRef:
         return props_XMLSAXNodeRuleParamRef;
-      case 21:
+      case LanguageConceptSwitch.XMLSAXNodeValidator:
         return props_XMLSAXNodeValidator;
-      case 22:
+      case LanguageConceptSwitch.XMLSAXParser:
         return props_XMLSAXParser;
-      case 23:
+      case LanguageConceptSwitch.XMLSAXTextHandler:
         return props_XMLSAXTextHandler;
-      case 24:
+      case LanguageConceptSwitch.XMLSAXTextHandler_value:
         return props_XMLSAXTextHandler_value;
-      case 25:
+      case LanguageConceptSwitch.XMLSAXTextRule:
         return props_XMLSAXTextRule;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

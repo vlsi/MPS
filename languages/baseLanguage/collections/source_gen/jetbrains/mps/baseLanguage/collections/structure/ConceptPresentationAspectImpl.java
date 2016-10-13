@@ -185,347 +185,347 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractContainerCreator:
         return props_AbstractContainerCreator;
-      case 1:
+      case LanguageConceptSwitch.AbstractContainerType:
         return props_AbstractContainerType;
-      case 2:
+      case LanguageConceptSwitch.AbstractEnumeratorOperation:
         return props_AbstractEnumeratorOperation;
-      case 3:
+      case LanguageConceptSwitch.AbstractIteratorOperation:
         return props_AbstractIteratorOperation;
-      case 4:
+      case LanguageConceptSwitch.AbstractMappingOperation:
         return props_AbstractMappingOperation;
-      case 5:
+      case LanguageConceptSwitch.AbstractSetOperation:
         return props_AbstractSetOperation;
-      case 6:
+      case LanguageConceptSwitch.AddAllElementsOperation:
         return props_AddAllElementsOperation;
-      case 7:
+      case LanguageConceptSwitch.AddAllSetElementsOperation:
         return props_AddAllSetElementsOperation;
-      case 8:
+      case LanguageConceptSwitch.AddElementOperation:
         return props_AddElementOperation;
-      case 9:
+      case LanguageConceptSwitch.AddFirstElementOperation:
         return props_AddFirstElementOperation;
-      case 10:
+      case LanguageConceptSwitch.AddLastElementOperation:
         return props_AddLastElementOperation;
-      case 11:
+      case LanguageConceptSwitch.AddSetElementOperation:
         return props_AddSetElementOperation;
-      case 12:
+      case LanguageConceptSwitch.AllConstant:
         return props_AllConstant;
-      case 13:
+      case LanguageConceptSwitch.AllOperation:
         return props_AllOperation;
-      case 14:
+      case LanguageConceptSwitch.AlsoSortOperation:
         return props_AlsoSortOperation;
-      case 15:
+      case LanguageConceptSwitch.AnyOperation:
         return props_AnyOperation;
-      case 16:
+      case LanguageConceptSwitch.AsSequenceOperation:
         return props_AsSequenceOperation;
-      case 17:
+      case LanguageConceptSwitch.AsSynchronizedOperation:
         return props_AsSynchronizedOperation;
-      case 18:
+      case LanguageConceptSwitch.AsUnmodifiableOperation:
         return props_AsUnmodifiableOperation;
-      case 19:
+      case LanguageConceptSwitch.BinaryOperation:
         return props_BinaryOperation;
-      case 20:
+      case LanguageConceptSwitch.ChunkOperation:
         return props_ChunkOperation;
-      case 21:
+      case LanguageConceptSwitch.ClearAllElementsOperation:
         return props_ClearAllElementsOperation;
-      case 22:
+      case LanguageConceptSwitch.ClearSetOperation:
         return props_ClearSetOperation;
-      case 23:
+      case LanguageConceptSwitch.CollectionType:
         return props_CollectionType;
-      case 24:
+      case LanguageConceptSwitch.ComparatorSortOperation:
         return props_ComparatorSortOperation;
-      case 25:
+      case LanguageConceptSwitch.ConcatOperation:
         return props_ConcatOperation;
-      case 26:
+      case LanguageConceptSwitch.ContainerIteratorType:
         return props_ContainerIteratorType;
-      case 27:
+      case LanguageConceptSwitch.ContainsAllOperation:
         return props_ContainsAllOperation;
-      case 28:
+      case LanguageConceptSwitch.ContainsKeyOperation:
         return props_ContainsKeyOperation;
-      case 29:
+      case LanguageConceptSwitch.ContainsOperation:
         return props_ContainsOperation;
-      case 30:
+      case LanguageConceptSwitch.ContainsValueOperation:
         return props_ContainsValueOperation;
-      case 31:
+      case LanguageConceptSwitch.CustomContainerCreator:
         return props_CustomContainerCreator;
-      case 32:
+      case LanguageConceptSwitch.CustomContainerDeclaration:
         return props_CustomContainerDeclaration;
-      case 33:
+      case LanguageConceptSwitch.CustomContainers:
         return props_CustomContainers;
-      case 34:
+      case LanguageConceptSwitch.CustomMapCreator:
         return props_CustomMapCreator;
-      case 35:
+      case LanguageConceptSwitch.CutOperation:
         return props_CutOperation;
-      case 36:
+      case LanguageConceptSwitch.DequeType:
         return props_DequeType;
-      case 37:
+      case LanguageConceptSwitch.DisjunctOperation:
         return props_DisjunctOperation;
-      case 38:
+      case LanguageConceptSwitch.DistinctOperation:
         return props_DistinctOperation;
-      case 39:
+      case LanguageConceptSwitch.DowncastExpression:
         return props_DowncastExpression;
-      case 40:
+      case LanguageConceptSwitch.EnumeratorType:
         return props_EnumeratorType;
-      case 41:
+      case LanguageConceptSwitch.ExcludeOperation:
         return props_ExcludeOperation;
-      case 42:
+      case LanguageConceptSwitch.FindFirstOperation:
         return props_FindFirstOperation;
-      case 43:
+      case LanguageConceptSwitch.FindLastOperation:
         return props_FindLastOperation;
-      case 44:
+      case LanguageConceptSwitch.FoldLeftOperation:
         return props_FoldLeftOperation;
-      case 45:
+      case LanguageConceptSwitch.FoldRightOperation:
         return props_FoldRightOperation;
-      case 46:
+      case LanguageConceptSwitch.ForEachStatement:
         return props_ForEachStatement;
-      case 47:
+      case LanguageConceptSwitch.ForEachVariable:
         return props_ForEachVariable;
-      case 48:
+      case LanguageConceptSwitch.ForEachVariableReference:
         return props_ForEachVariableReference;
-      case 49:
+      case LanguageConceptSwitch.GetCurrentOperation:
         return props_GetCurrentOperation;
-      case 50:
+      case LanguageConceptSwitch.GetElementOperation:
         return props_GetElementOperation;
-      case 51:
+      case LanguageConceptSwitch.GetEnumeratorOperation:
         return props_GetEnumeratorOperation;
-      case 52:
+      case LanguageConceptSwitch.GetFirstOperation:
         return props_GetFirstOperation;
-      case 53:
+      case LanguageConceptSwitch.GetIndexOfOperation:
         return props_GetIndexOfOperation;
-      case 54:
+      case LanguageConceptSwitch.GetIteratorOperation:
         return props_GetIteratorOperation;
-      case 55:
+      case LanguageConceptSwitch.GetKeysOperation:
         return props_GetKeysOperation;
-      case 56:
+      case LanguageConceptSwitch.GetLastIndexOfOperation:
         return props_GetLastIndexOfOperation;
-      case 57:
+      case LanguageConceptSwitch.GetLastOperation:
         return props_GetLastOperation;
-      case 58:
+      case LanguageConceptSwitch.GetNextOperation:
         return props_GetNextOperation;
-      case 59:
+      case LanguageConceptSwitch.GetSizeOperation:
         return props_GetSizeOperation;
-      case 60:
+      case LanguageConceptSwitch.GetValuesOperation:
         return props_GetValuesOperation;
-      case 61:
+      case LanguageConceptSwitch.HasNextOperation:
         return props_HasNextOperation;
-      case 62:
+      case LanguageConceptSwitch.HashMapCreator:
         return props_HashMapCreator;
-      case 63:
+      case LanguageConceptSwitch.HashSetCreator:
         return props_HashSetCreator;
-      case 64:
+      case LanguageConceptSwitch.HeadListOperation:
         return props_HeadListOperation;
-      case 65:
+      case LanguageConceptSwitch.HeadMapOperation:
         return props_HeadMapOperation;
-      case 66:
+      case LanguageConceptSwitch.HeadSetOperation:
         return props_HeadSetOperation;
-      case 67:
+      case LanguageConceptSwitch.IApplicableToCollection:
         return props_IApplicableToCollection;
-      case 68:
+      case LanguageConceptSwitch.IApplicableToDeque:
         return props_IApplicableToDeque;
-      case 69:
+      case LanguageConceptSwitch.IApplicableToList:
         return props_IApplicableToList;
-      case 70:
+      case LanguageConceptSwitch.IApplicableToNothing:
         return props_IApplicableToNothing;
-      case 71:
+      case LanguageConceptSwitch.IApplicableToQueue:
         return props_IApplicableToQueue;
-      case 72:
+      case LanguageConceptSwitch.IApplicableToStack:
         return props_IApplicableToStack;
-      case 73:
+      case LanguageConceptSwitch.ICollectionOperation:
         return props_ICollectionOperation;
-      case 74:
+      case LanguageConceptSwitch.IContainerOperation:
         return props_IContainerOperation;
-      case 75:
+      case LanguageConceptSwitch.IDequeOperation:
         return props_IDequeOperation;
-      case 76:
+      case LanguageConceptSwitch.IListOperation:
         return props_IListOperation;
-      case 77:
+      case LanguageConceptSwitch.IQueueOperation:
         return props_IQueueOperation;
-      case 78:
+      case LanguageConceptSwitch.IStackOperation:
         return props_IStackOperation;
-      case 79:
+      case LanguageConceptSwitch.InsertElementOperation:
         return props_InsertElementOperation;
-      case 80:
+      case LanguageConceptSwitch.InternalSequenceOperation:
         return props_InternalSequenceOperation;
-      case 81:
+      case LanguageConceptSwitch.IntersectOperation:
         return props_IntersectOperation;
-      case 82:
+      case LanguageConceptSwitch.IsEmptyOperation:
         return props_IsEmptyOperation;
-      case 83:
+      case LanguageConceptSwitch.IsNotEmptyOperation:
         return props_IsNotEmptyOperation;
-      case 84:
+      case LanguageConceptSwitch.IteratorType:
         return props_IteratorType;
-      case 85:
+      case LanguageConceptSwitch.JoinOperation:
         return props_JoinOperation;
-      case 86:
+      case LanguageConceptSwitch.KeyAccessOperation:
         return props_KeyAccessOperation;
-      case 87:
+      case LanguageConceptSwitch.LinkedHashMapCreator:
         return props_LinkedHashMapCreator;
-      case 88:
+      case LanguageConceptSwitch.LinkedHashSetCreator:
         return props_LinkedHashSetCreator;
-      case 89:
+      case LanguageConceptSwitch.LinkedListCreator:
         return props_LinkedListCreator;
-      case 90:
+      case LanguageConceptSwitch.LinkedListType:
         return props_LinkedListType;
-      case 91:
+      case LanguageConceptSwitch.ListCreatorWithInit:
         return props_ListCreatorWithInit;
-      case 92:
+      case LanguageConceptSwitch.ListElementAccessExpression:
         return props_ListElementAccessExpression;
-      case 93:
+      case LanguageConceptSwitch.ListType:
         return props_ListType;
-      case 94:
+      case LanguageConceptSwitch.MapAsSequenceVarRef:
         return props_MapAsSequenceVarRef;
-      case 95:
+      case LanguageConceptSwitch.MapClearOperation:
         return props_MapClearOperation;
-      case 96:
+      case LanguageConceptSwitch.MapElement:
         return props_MapElement;
-      case 97:
+      case LanguageConceptSwitch.MapEntry:
         return props_MapEntry;
-      case 98:
+      case LanguageConceptSwitch.MapInitializer:
         return props_MapInitializer;
-      case 99:
+      case LanguageConceptSwitch.MapOperation:
         return props_MapOperation;
-      case 100:
+      case LanguageConceptSwitch.MapOperationExpression:
         return props_MapOperationExpression;
-      case 101:
+      case LanguageConceptSwitch.MapRemoveOperation:
         return props_MapRemoveOperation;
-      case 102:
+      case LanguageConceptSwitch.MapType:
         return props_MapType;
-      case 103:
+      case LanguageConceptSwitch.MappingType:
         return props_MappingType;
-      case 104:
+      case LanguageConceptSwitch.MappingsSetOperation:
         return props_MappingsSetOperation;
-      case 105:
+      case LanguageConceptSwitch.MoveNextOperation:
         return props_MoveNextOperation;
-      case 106:
+      case LanguageConceptSwitch.MultiForEachPair:
         return props_MultiForEachPair;
-      case 107:
+      case LanguageConceptSwitch.MultiForEachStatement:
         return props_MultiForEachStatement;
-      case 108:
+      case LanguageConceptSwitch.MultiForEachVariable:
         return props_MultiForEachVariable;
-      case 109:
+      case LanguageConceptSwitch.MultiForEachVariableReference:
         return props_MultiForEachVariableReference;
-      case 110:
+      case LanguageConceptSwitch.NoArgumentsSequenceOperation:
         return props_NoArgumentsSequenceOperation;
-      case 111:
+      case LanguageConceptSwitch.OfTypeOperation:
         return props_OfTypeOperation;
-      case 112:
+      case LanguageConceptSwitch.PageOperation:
         return props_PageOperation;
-      case 113:
+      case LanguageConceptSwitch.PeekOperation:
         return props_PeekOperation;
-      case 114:
+      case LanguageConceptSwitch.PopOperation:
         return props_PopOperation;
-      case 115:
+      case LanguageConceptSwitch.PriorityQueueCreator:
         return props_PriorityQueueCreator;
-      case 116:
+      case LanguageConceptSwitch.PushOperation:
         return props_PushOperation;
-      case 117:
+      case LanguageConceptSwitch.PutAllOperation:
         return props_PutAllOperation;
-      case 118:
+      case LanguageConceptSwitch.QueueType:
         return props_QueueType;
-      case 119:
+      case LanguageConceptSwitch.ReduceLeftOperation:
         return props_ReduceLeftOperation;
-      case 120:
+      case LanguageConceptSwitch.ReduceRightOperation:
         return props_ReduceRightOperation;
-      case 121:
+      case LanguageConceptSwitch.RemoveAllElementsOperation:
         return props_RemoveAllElementsOperation;
-      case 122:
+      case LanguageConceptSwitch.RemoveAllSetElementsOperation:
         return props_RemoveAllSetElementsOperation;
-      case 123:
+      case LanguageConceptSwitch.RemoveAtElementOperation:
         return props_RemoveAtElementOperation;
-      case 124:
+      case LanguageConceptSwitch.RemoveElementOperation:
         return props_RemoveElementOperation;
-      case 125:
+      case LanguageConceptSwitch.RemoveFirstElementOperation:
         return props_RemoveFirstElementOperation;
-      case 126:
+      case LanguageConceptSwitch.RemoveLastElementOperation:
         return props_RemoveLastElementOperation;
-      case 127:
+      case LanguageConceptSwitch.RemoveOperation:
         return props_RemoveOperation;
-      case 128:
+      case LanguageConceptSwitch.RemoveSetElementOperation:
         return props_RemoveSetElementOperation;
-      case 129:
+      case LanguageConceptSwitch.RemoveWhereOperation:
         return props_RemoveWhereOperation;
-      case 130:
+      case LanguageConceptSwitch.ReverseOperation:
         return props_ReverseOperation;
-      case 131:
+      case LanguageConceptSwitch.SelectOperation:
         return props_SelectOperation;
-      case 132:
+      case LanguageConceptSwitch.SequenceCreator:
         return props_SequenceCreator;
-      case 133:
+      case LanguageConceptSwitch.SequenceOperation:
         return props_SequenceOperation;
-      case 134:
+      case LanguageConceptSwitch.SequenceType:
         return props_SequenceType;
-      case 135:
+      case LanguageConceptSwitch.SetElementOperation:
         return props_SetElementOperation;
-      case 136:
+      case LanguageConceptSwitch.SetType:
         return props_SetType;
-      case 137:
+      case LanguageConceptSwitch.SingleArgumentSequenceOperation:
         return props_SingleArgumentSequenceOperation;
-      case 138:
+      case LanguageConceptSwitch.SingletonSequenceCreator:
         return props_SingletonSequenceCreator;
-      case 139:
+      case LanguageConceptSwitch.SkipOperation:
         return props_SkipOperation;
-      case 140:
+      case LanguageConceptSwitch.SkipStatement:
         return props_SkipStatement;
-      case 141:
+      case LanguageConceptSwitch.SmartClosureParameterDeclaration:
         return props_SmartClosureParameterDeclaration;
-      case 142:
+      case LanguageConceptSwitch.SortDirection:
         return props_SortDirection;
-      case 143:
+      case LanguageConceptSwitch.SortOperation:
         return props_SortOperation;
-      case 144:
+      case LanguageConceptSwitch.SortedMapOperation:
         return props_SortedMapOperation;
-      case 145:
+      case LanguageConceptSwitch.SortedMapType:
         return props_SortedMapType;
-      case 146:
+      case LanguageConceptSwitch.SortedSetOperation:
         return props_SortedSetOperation;
-      case 147:
+      case LanguageConceptSwitch.SortedSetType:
         return props_SortedSetType;
-      case 148:
+      case LanguageConceptSwitch.StackType:
         return props_StackType;
-      case 149:
+      case LanguageConceptSwitch.StopStatement:
         return props_StopStatement;
-      case 150:
+      case LanguageConceptSwitch.SubListOperation:
         return props_SubListOperation;
-      case 151:
+      case LanguageConceptSwitch.SubMapOperation:
         return props_SubMapOperation;
-      case 152:
+      case LanguageConceptSwitch.SubSetOperation:
         return props_SubSetOperation;
-      case 153:
+      case LanguageConceptSwitch.TailListOperation:
         return props_TailListOperation;
-      case 154:
+      case LanguageConceptSwitch.TailMapOperation:
         return props_TailMapOperation;
-      case 155:
+      case LanguageConceptSwitch.TailOperation:
         return props_TailOperation;
-      case 156:
+      case LanguageConceptSwitch.TailSetOperation:
         return props_TailSetOperation;
-      case 157:
+      case LanguageConceptSwitch.TakeOperation:
         return props_TakeOperation;
-      case 158:
+      case LanguageConceptSwitch.TestAddElementOperation:
         return props_TestAddElementOperation;
-      case 159:
+      case LanguageConceptSwitch.TestRemoveElementOperation:
         return props_TestRemoveElementOperation;
-      case 160:
+      case LanguageConceptSwitch.ToArrayOperation:
         return props_ToArrayOperation;
-      case 161:
+      case LanguageConceptSwitch.ToIteratorOperation:
         return props_ToIteratorOperation;
-      case 162:
+      case LanguageConceptSwitch.ToListOperation:
         return props_ToListOperation;
-      case 163:
+      case LanguageConceptSwitch.TranslateOperation:
         return props_TranslateOperation;
-      case 164:
+      case LanguageConceptSwitch.TreeMapCreator:
         return props_TreeMapCreator;
-      case 165:
+      case LanguageConceptSwitch.TreeSetCreator:
         return props_TreeSetCreator;
-      case 166:
+      case LanguageConceptSwitch.UnionOperation:
         return props_UnionOperation;
-      case 167:
+      case LanguageConceptSwitch.ValueAccessOperation:
         return props_ValueAccessOperation;
-      case 168:
+      case LanguageConceptSwitch.VisitAllOperation:
         return props_VisitAllOperation;
-      case 169:
+      case LanguageConceptSwitch.WhereOperation:
         return props_WhereOperation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

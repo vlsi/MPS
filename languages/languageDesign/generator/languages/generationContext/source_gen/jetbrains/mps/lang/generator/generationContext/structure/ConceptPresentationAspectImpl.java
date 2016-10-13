@@ -51,79 +51,79 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.GenerationContextOp_Base:
         return props_GenerationContextOp_Base;
-      case 1:
+      case LanguageConceptSwitch.GenerationContextOp_ContextVarRef:
         return props_GenerationContextOp_ContextVarRef;
-      case 2:
+      case LanguageConceptSwitch.GenerationContextOp_CopyWithTrace:
         return props_GenerationContextOp_CopyWithTrace;
-      case 3:
+      case LanguageConceptSwitch.GenerationContextOp_CreateUniqueName:
         return props_GenerationContextOp_CreateUniqueName;
-      case 4:
+      case LanguageConceptSwitch.GenerationContextOp_DirtyNode:
         return props_GenerationContextOp_DirtyNode;
-      case 5:
+      case LanguageConceptSwitch.GenerationContextOp_GenParameterRef:
         return props_GenerationContextOp_GenParameterRef;
-      case 6:
+      case LanguageConceptSwitch.GenerationContextOp_GetCopiedOutputByInput:
         return props_GenerationContextOp_GetCopiedOutputByInput;
-      case 7:
+      case LanguageConceptSwitch.GenerationContextOp_GetExport:
         return props_GenerationContextOp_GetExport;
-      case 8:
+      case LanguageConceptSwitch.GenerationContextOp_GetInputModel:
         return props_GenerationContextOp_GetInputModel;
-      case 9:
+      case LanguageConceptSwitch.GenerationContextOp_GetInvocationContext:
         return props_GenerationContextOp_GetInvocationContext;
-      case 10:
+      case LanguageConceptSwitch.GenerationContextOp_GetOriginalCopiedInputByOutput:
         return props_GenerationContextOp_GetOriginalCopiedInputByOutput;
-      case 11:
+      case LanguageConceptSwitch.GenerationContextOp_GetOriginalInputModel:
         return props_GenerationContextOp_GetOriginalInputModel;
-      case 12:
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabel:
         return props_GenerationContextOp_GetOutputByLabel;
-      case 13:
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabelAndInput:
         return props_GenerationContextOp_GetOutputByLabelAndInput;
-      case 14:
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope:
         return props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
-      case 15:
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputListByLabelAndInput:
         return props_GenerationContextOp_GetOutputListByLabelAndInput;
-      case 16:
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputModel:
         return props_GenerationContextOp_GetOutputModel;
-      case 17:
+      case LanguageConceptSwitch.GenerationContextOp_GetPrevInputByLabel:
         return props_GenerationContextOp_GetPrevInputByLabel;
-      case 18:
+      case LanguageConceptSwitch.GenerationContextOp_GetTemplateNode:
         return props_GenerationContextOp_GetTemplateNode;
-      case 19:
+      case LanguageConceptSwitch.GenerationContextOp_LinkPatternRef:
         return props_GenerationContextOp_LinkPatternRef;
-      case 20:
+      case LanguageConceptSwitch.GenerationContextOp_NodePatternRef:
         return props_GenerationContextOp_NodePatternRef;
-      case 21:
+      case LanguageConceptSwitch.GenerationContextOp_ParameterRef:
         return props_GenerationContextOp_ParameterRef;
-      case 22:
+      case LanguageConceptSwitch.GenerationContextOp_PatternRef:
         return props_GenerationContextOp_PatternRef;
-      case 23:
+      case LanguageConceptSwitch.GenerationContextOp_PropertyPatternRef:
         return props_GenerationContextOp_PropertyPatternRef;
-      case 24:
+      case LanguageConceptSwitch.GenerationContextOp_RegisterLabel:
         return props_GenerationContextOp_RegisterLabel;
-      case 25:
+      case LanguageConceptSwitch.GenerationContextOp_SessionObjectAccess:
         return props_GenerationContextOp_SessionObjectAccess;
-      case 26:
+      case LanguageConceptSwitch.GenerationContextOp_ShowErrorMessage:
         return props_GenerationContextOp_ShowErrorMessage;
-      case 27:
+      case LanguageConceptSwitch.GenerationContextOp_ShowInfoMessage:
         return props_GenerationContextOp_ShowInfoMessage;
-      case 28:
+      case LanguageConceptSwitch.GenerationContextOp_ShowMessageBase:
         return props_GenerationContextOp_ShowMessageBase;
-      case 29:
+      case LanguageConceptSwitch.GenerationContextOp_ShowWarningMessage:
         return props_GenerationContextOp_ShowWarningMessage;
-      case 30:
+      case LanguageConceptSwitch.GenerationContextOp_StepObjectAccess:
         return props_GenerationContextOp_StepObjectAccess;
-      case 31:
+      case LanguageConceptSwitch.GenerationContextOp_TransientObjectAccess:
         return props_GenerationContextOp_TransientObjectAccess;
-      case 32:
+      case LanguageConceptSwitch.GenerationContextOp_UserObjectAccessBase:
         return props_GenerationContextOp_UserObjectAccessBase;
-      case 33:
+      case LanguageConceptSwitch.GenerationContextOp_VarRef:
         return props_GenerationContextOp_VarRef;
-      case 34:
+      case LanguageConceptSwitch.GenerationContextType:
         return props_GenerationContextType;
-      case 35:
+      case LanguageConceptSwitch.TemplateFunctionParameter_generationContext:
         return props_TemplateFunctionParameter_generationContext;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

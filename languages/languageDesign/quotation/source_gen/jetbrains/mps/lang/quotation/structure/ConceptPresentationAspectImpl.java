@@ -32,41 +32,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractAntiquotation:
         return props_AbstractAntiquotation;
-      case 1:
+      case LanguageConceptSwitch.Antiquotation:
         return props_Antiquotation;
-      case 2:
+      case LanguageConceptSwitch.GeneratorInternal_InternalReferenceHolder:
         return props_GeneratorInternal_InternalReferenceHolder;
-      case 3:
+      case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
         return props_GeneratorInternal_PropertyDescriptor;
-      case 4:
+      case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
         return props_GeneratorInternal_ReferenceDescriptor;
-      case 5:
+      case LanguageConceptSwitch.ListAntiquotation:
         return props_ListAntiquotation;
-      case 6:
+      case LanguageConceptSwitch.NodeBuilder:
         return props_NodeBuilder;
-      case 7:
+      case LanguageConceptSwitch.NodeBuilderExpression:
         return props_NodeBuilderExpression;
-      case 8:
+      case LanguageConceptSwitch.NodeBuilderInitLink:
         return props_NodeBuilderInitLink;
-      case 9:
+      case LanguageConceptSwitch.NodeBuilderInitPart:
         return props_NodeBuilderInitPart;
-      case 10:
+      case LanguageConceptSwitch.NodeBuilderInitProperty:
         return props_NodeBuilderInitProperty;
-      case 11:
+      case LanguageConceptSwitch.NodeBuilderList:
         return props_NodeBuilderList;
-      case 12:
+      case LanguageConceptSwitch.NodeBuilderNode:
         return props_NodeBuilderNode;
-      case 13:
+      case LanguageConceptSwitch.NodeBuilderRef:
         return props_NodeBuilderRef;
-      case 14:
+      case LanguageConceptSwitch.PropertyAntiquotation:
         return props_PropertyAntiquotation;
-      case 15:
+      case LanguageConceptSwitch.Quotation:
         return props_Quotation;
-      case 16:
+      case LanguageConceptSwitch.ReferenceAntiquotation:
         return props_ReferenceAntiquotation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

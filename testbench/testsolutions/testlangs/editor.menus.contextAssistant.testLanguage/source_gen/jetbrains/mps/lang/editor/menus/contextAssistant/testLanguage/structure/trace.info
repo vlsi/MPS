@@ -4,8 +4,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="11,0,34,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,34,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,101,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.StructureAspectDescriptor" />
+      <unit at="14,0,84,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

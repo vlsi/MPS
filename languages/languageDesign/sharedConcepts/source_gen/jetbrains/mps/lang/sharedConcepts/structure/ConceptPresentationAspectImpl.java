@@ -21,19 +21,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ConceptFunctionParameter_editorContext:
         return props_ConceptFunctionParameter_editorContext;
-      case 1:
+      case LanguageConceptSwitch.ConceptFunctionParameter_model:
         return props_ConceptFunctionParameter_model;
-      case 2:
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
         return props_ConceptFunctionParameter_node;
-      case 3:
+      case LanguageConceptSwitch.ConceptFunctionParameter_operationContext:
         return props_ConceptFunctionParameter_operationContext;
-      case 4:
+      case LanguageConceptSwitch.ConceptFunctionParameter_progressMonitor:
         return props_ConceptFunctionParameter_progressMonitor;
-      case 5:
+      case LanguageConceptSwitch.ConceptFunctionParameter_scope:
         return props_ConceptFunctionParameter_scope;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

@@ -43,63 +43,63 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BwfAntStatement:
         return props_BwfAntStatement;
-      case 1:
+      case LanguageConceptSwitch.BwfAntTaskBundleDeclaration:
         return props_BwfAntTaskBundleDeclaration;
-      case 2:
+      case LanguageConceptSwitch.BwfAntTaskDeclaration:
         return props_BwfAntTaskDeclaration;
-      case 3:
+      case LanguageConceptSwitch.BwfCustomMacro:
         return props_BwfCustomMacro;
-      case 4:
+      case LanguageConceptSwitch.BwfDependency:
         return props_BwfDependency;
-      case 5:
+      case LanguageConceptSwitch.BwfFileSet:
         return props_BwfFileSet;
-      case 6:
+      case LanguageConceptSwitch.BwfJavaClassPath:
         return props_BwfJavaClassPath;
-      case 7:
+      case LanguageConceptSwitch.BwfJavaDependency:
         return props_BwfJavaDependency;
-      case 8:
+      case LanguageConceptSwitch.BwfJavaDescriptor:
         return props_BwfJavaDescriptor;
-      case 9:
+      case LanguageConceptSwitch.BwfJavaLibrary:
         return props_BwfJavaLibrary;
-      case 10:
+      case LanguageConceptSwitch.BwfJavaLibraryReference:
         return props_BwfJavaLibraryReference;
-      case 11:
+      case LanguageConceptSwitch.BwfJavaModule:
         return props_BwfJavaModule;
-      case 12:
+      case LanguageConceptSwitch.BwfJavaModuleReference:
         return props_BwfJavaModuleReference;
-      case 13:
+      case LanguageConceptSwitch.BwfMacro:
         return props_BwfMacro;
-      case 14:
+      case LanguageConceptSwitch.BwfMacroListImport:
         return props_BwfMacroListImport;
-      case 15:
+      case LanguageConceptSwitch.BwfPathDeclaration:
         return props_BwfPathDeclaration;
-      case 16:
+      case LanguageConceptSwitch.BwfPathReference:
         return props_BwfPathReference;
-      case 17:
+      case LanguageConceptSwitch.BwfProject:
         return props_BwfProject;
-      case 18:
+      case LanguageConceptSwitch.BwfProjectPart:
         return props_BwfProjectPart;
-      case 19:
+      case LanguageConceptSwitch.BwfProjectPartStatement:
         return props_BwfProjectPartStatement;
-      case 20:
+      case LanguageConceptSwitch.BwfStatement:
         return props_BwfStatement;
-      case 21:
+      case LanguageConceptSwitch.BwfSubTask:
         return props_BwfSubTask;
-      case 22:
+      case LanguageConceptSwitch.BwfSubTaskDependency:
         return props_BwfSubTaskDependency;
-      case 23:
+      case LanguageConceptSwitch.BwfTask:
         return props_BwfTask;
-      case 24:
+      case LanguageConceptSwitch.BwfTaskDependency:
         return props_BwfTaskDependency;
-      case 25:
+      case LanguageConceptSwitch.BwfTaskLibrary:
         return props_BwfTaskLibrary;
-      case 26:
+      case LanguageConceptSwitch.BwfTaskLibraryDependency:
         return props_BwfTaskLibraryDependency;
-      case 27:
+      case LanguageConceptSwitch.BwfTaskPart:
         return props_BwfTaskPart;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

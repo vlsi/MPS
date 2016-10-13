@@ -13,8 +13,11 @@
     <file name="ConceptPresentationAspectImpl.java">
       <unit at="12,0,80,0" name="jetbrains.mps.lang.project.structure.ConceptPresentationAspectImpl" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,64,0" name="jetbrains.mps.lang.project.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,312,0" name="jetbrains.mps.lang.project.structure.StructureAspectDescriptor" />
+      <unit at="14,0,280,0" name="jetbrains.mps.lang.project.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)/6370754048397540921">

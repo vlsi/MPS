@@ -49,75 +49,75 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AuthorBlockDocTag:
         return props_AuthorBlockDocTag;
-      case 1:
+      case LanguageConceptSwitch.BaseBlockDocTag:
         return props_BaseBlockDocTag;
-      case 2:
+      case LanguageConceptSwitch.BaseDocComment:
         return props_BaseDocComment;
-      case 3:
+      case LanguageConceptSwitch.BaseDocReference:
         return props_BaseDocReference;
-      case 4:
+      case LanguageConceptSwitch.BaseInlineDocTag:
         return props_BaseInlineDocTag;
-      case 5:
+      case LanguageConceptSwitch.BaseParameterReference:
         return props_BaseParameterReference;
-      case 6:
+      case LanguageConceptSwitch.BaseVariableDocReference:
         return props_BaseVariableDocReference;
-      case 7:
+      case LanguageConceptSwitch.ClassifierDocComment:
         return props_ClassifierDocComment;
-      case 8:
+      case LanguageConceptSwitch.ClassifierDocReference:
         return props_ClassifierDocReference;
-      case 9:
+      case LanguageConceptSwitch.CodeInlineDocTag:
         return props_CodeInlineDocTag;
-      case 10:
+      case LanguageConceptSwitch.CodeSnippet:
         return props_CodeSnippet;
-      case 11:
+      case LanguageConceptSwitch.CommentLine:
         return props_CommentLine;
-      case 12:
+      case LanguageConceptSwitch.CommentLinePart:
         return props_CommentLinePart;
-      case 13:
+      case LanguageConceptSwitch.DeprecatedBlockDocTag:
         return props_DeprecatedBlockDocTag;
-      case 14:
+      case LanguageConceptSwitch.DocMethodParameterReference:
         return props_DocMethodParameterReference;
-      case 15:
+      case LanguageConceptSwitch.DocTypeParameterReference:
         return props_DocTypeParameterReference;
-      case 16:
+      case LanguageConceptSwitch.EmptyBlockDocTag:
         return props_EmptyBlockDocTag;
-      case 17:
+      case LanguageConceptSwitch.FieldDocComment:
         return props_FieldDocComment;
-      case 18:
+      case LanguageConceptSwitch.FieldDocReference:
         return props_FieldDocReference;
-      case 19:
+      case LanguageConceptSwitch.HTMLElement:
         return props_HTMLElement;
-      case 20:
+      case LanguageConceptSwitch.InheritDocInlineDocTag:
         return props_InheritDocInlineDocTag;
-      case 21:
+      case LanguageConceptSwitch.InlineTagCommentLinePart:
         return props_InlineTagCommentLinePart;
-      case 22:
+      case LanguageConceptSwitch.LinkInlineDocTag:
         return props_LinkInlineDocTag;
-      case 23:
+      case LanguageConceptSwitch.MethodDocComment:
         return props_MethodDocComment;
-      case 24:
+      case LanguageConceptSwitch.MethodDocReference:
         return props_MethodDocReference;
-      case 25:
+      case LanguageConceptSwitch.ParameterBlockDocTag:
         return props_ParameterBlockDocTag;
-      case 26:
+      case LanguageConceptSwitch.ReturnBlockDocTag:
         return props_ReturnBlockDocTag;
-      case 27:
+      case LanguageConceptSwitch.SeeBlockDocTag:
         return props_SeeBlockDocTag;
-      case 28:
+      case LanguageConceptSwitch.SinceBlockDocTag:
         return props_SinceBlockDocTag;
-      case 29:
+      case LanguageConceptSwitch.StaticFieldDocReference:
         return props_StaticFieldDocReference;
-      case 30:
+      case LanguageConceptSwitch.TextCommentLinePart:
         return props_TextCommentLinePart;
-      case 31:
+      case LanguageConceptSwitch.ThrowsBlockDocTag:
         return props_ThrowsBlockDocTag;
-      case 32:
+      case LanguageConceptSwitch.ValueInlineDocTag:
         return props_ValueInlineDocTag;
-      case 33:
+      case LanguageConceptSwitch.VersionBlockDocTag:
         return props_VersionBlockDocTag;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

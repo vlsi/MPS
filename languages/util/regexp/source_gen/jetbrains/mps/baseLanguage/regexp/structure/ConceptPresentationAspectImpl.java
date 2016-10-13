@@ -76,129 +76,129 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AtLeastNTimesRegexp:
         return props_AtLeastNTimesRegexp;
-      case 1:
+      case LanguageConceptSwitch.BinaryRegexp:
         return props_BinaryRegexp;
-      case 2:
+      case LanguageConceptSwitch.CharacterSymbolClassPart:
         return props_CharacterSymbolClassPart;
-      case 3:
+      case LanguageConceptSwitch.DotRegexp:
         return props_DotRegexp;
-      case 4:
+      case LanguageConceptSwitch.FindMatchExpression:
         return props_FindMatchExpression;
-      case 5:
+      case LanguageConceptSwitch.FindMatchStatement:
         return props_FindMatchStatement;
-      case 6:
+      case LanguageConceptSwitch.ForEachMatchStatement:
         return props_ForEachMatchStatement;
-      case 7:
+      case LanguageConceptSwitch.FromNToMTimesRegexp:
         return props_FromNToMTimesRegexp;
-      case 8:
+      case LanguageConceptSwitch.InlineRegexpExpression:
         return props_InlineRegexpExpression;
-      case 9:
+      case LanguageConceptSwitch.IntersectionSymbolClassPart:
         return props_IntersectionSymbolClassPart;
-      case 10:
+      case LanguageConceptSwitch.IntervalSymbolClassPart:
         return props_IntervalSymbolClassPart;
-      case 11:
+      case LanguageConceptSwitch.LazyPlusRegexp:
         return props_LazyPlusRegexp;
-      case 12:
+      case LanguageConceptSwitch.LazyQuestionRegexp:
         return props_LazyQuestionRegexp;
-      case 13:
+      case LanguageConceptSwitch.LazyStarRegexp:
         return props_LazyStarRegexp;
-      case 14:
+      case LanguageConceptSwitch.LineEndRegexp:
         return props_LineEndRegexp;
-      case 15:
+      case LanguageConceptSwitch.LineStartRegexp:
         return props_LineStartRegexp;
-      case 16:
+      case LanguageConceptSwitch.LiteralReplacement:
         return props_LiteralReplacement;
-      case 17:
+      case LanguageConceptSwitch.LookRegexp:
         return props_LookRegexp;
-      case 18:
+      case LanguageConceptSwitch.MatchParensRegexp:
         return props_MatchParensRegexp;
-      case 19:
+      case LanguageConceptSwitch.MatchRegexpExpression:
         return props_MatchRegexpExpression;
-      case 20:
+      case LanguageConceptSwitch.MatchRegexpOperation:
         return props_MatchRegexpOperation;
-      case 21:
+      case LanguageConceptSwitch.MatchRegexpStatement:
         return props_MatchRegexpStatement;
-      case 22:
+      case LanguageConceptSwitch.MatchVariableReference:
         return props_MatchVariableReference;
-      case 23:
+      case LanguageConceptSwitch.MatchVariableReferenceRegexp:
         return props_MatchVariableReferenceRegexp;
-      case 24:
+      case LanguageConceptSwitch.MatchVariableReferenceReplacement:
         return props_MatchVariableReferenceReplacement;
-      case 25:
+      case LanguageConceptSwitch.NTimesRegexp:
         return props_NTimesRegexp;
-      case 26:
+      case LanguageConceptSwitch.NegativeLookAheadRegexp:
         return props_NegativeLookAheadRegexp;
-      case 27:
+      case LanguageConceptSwitch.NegativeLookBehindRegexp:
         return props_NegativeLookBehindRegexp;
-      case 28:
+      case LanguageConceptSwitch.NegativeSymbolClassRegexp:
         return props_NegativeSymbolClassRegexp;
-      case 29:
+      case LanguageConceptSwitch.OrRegexp:
         return props_OrRegexp;
-      case 30:
+      case LanguageConceptSwitch.ParensRegexp:
         return props_ParensRegexp;
-      case 31:
+      case LanguageConceptSwitch.PlusRegexp:
         return props_PlusRegexp;
-      case 32:
+      case LanguageConceptSwitch.PositiveLookAheadRegexp:
         return props_PositiveLookAheadRegexp;
-      case 33:
+      case LanguageConceptSwitch.PositiveLookBehindRegexp:
         return props_PositiveLookBehindRegexp;
-      case 34:
+      case LanguageConceptSwitch.PositiveSymbolClassRegexp:
         return props_PositiveSymbolClassRegexp;
-      case 35:
+      case LanguageConceptSwitch.PredefinedSymbolClassDeclaration:
         return props_PredefinedSymbolClassDeclaration;
-      case 36:
+      case LanguageConceptSwitch.PredefinedSymbolClassRegexp:
         return props_PredefinedSymbolClassRegexp;
-      case 37:
+      case LanguageConceptSwitch.PredefinedSymbolClassSymbolClassPart:
         return props_PredefinedSymbolClassSymbolClassPart;
-      case 38:
+      case LanguageConceptSwitch.PredefinedSymbolClasses:
         return props_PredefinedSymbolClasses;
-      case 39:
+      case LanguageConceptSwitch.QuestionRegexp:
         return props_QuestionRegexp;
-      case 40:
+      case LanguageConceptSwitch.Regexp:
         return props_Regexp;
-      case 41:
+      case LanguageConceptSwitch.RegexpDeclaration:
         return props_RegexpDeclaration;
-      case 42:
+      case LanguageConceptSwitch.RegexpDeclarationReferenceRegexp:
         return props_RegexpDeclarationReferenceRegexp;
-      case 43:
+      case LanguageConceptSwitch.RegexpExpression:
         return props_RegexpExpression;
-      case 44:
+      case LanguageConceptSwitch.RegexpUsingConstruction:
         return props_RegexpUsingConstruction;
-      case 45:
+      case LanguageConceptSwitch.Regexps:
         return props_Regexps;
-      case 46:
+      case LanguageConceptSwitch.ReplaceBlock:
         return props_ReplaceBlock;
-      case 47:
+      case LanguageConceptSwitch.ReplaceRegexpOperation:
         return props_ReplaceRegexpOperation;
-      case 48:
+      case LanguageConceptSwitch.ReplaceWithRegexpExpression:
         return props_ReplaceWithRegexpExpression;
-      case 49:
+      case LanguageConceptSwitch.ReplaceWithRegexpOperation:
         return props_ReplaceWithRegexpOperation;
-      case 50:
+      case LanguageConceptSwitch.Replacement:
         return props_Replacement;
-      case 51:
+      case LanguageConceptSwitch.SeqRegexp:
         return props_SeqRegexp;
-      case 52:
+      case LanguageConceptSwitch.SplitExpression:
         return props_SplitExpression;
-      case 53:
+      case LanguageConceptSwitch.SplitOperation:
         return props_SplitOperation;
-      case 54:
+      case LanguageConceptSwitch.StarRegexp:
         return props_StarRegexp;
-      case 55:
+      case LanguageConceptSwitch.StringLiteralRegexp:
         return props_StringLiteralRegexp;
-      case 56:
+      case LanguageConceptSwitch.SymbolClassPart:
         return props_SymbolClassPart;
-      case 57:
+      case LanguageConceptSwitch.SymbolClassRegexp:
         return props_SymbolClassRegexp;
-      case 58:
+      case LanguageConceptSwitch.SymbolClassRegexpAndPart:
         return props_SymbolClassRegexpAndPart;
-      case 59:
+      case LanguageConceptSwitch.UnaryRegexp:
         return props_UnaryRegexp;
-      case 60:
+      case LanguageConceptSwitch.UnicodeCharacterRegexp:
         return props_UnicodeCharacterRegexp;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

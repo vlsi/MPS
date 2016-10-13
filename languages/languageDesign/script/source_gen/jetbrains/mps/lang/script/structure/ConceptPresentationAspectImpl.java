@@ -33,41 +33,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractClassifierSpecification:
         return props_AbstractClassifierSpecification;
-      case 1:
+      case LanguageConceptSwitch.AbstractMethodSpecification:
         return props_AbstractMethodSpecification;
-      case 2:
+      case LanguageConceptSwitch.CommentMigrationScriptPart:
         return props_CommentMigrationScriptPart;
-      case 3:
+      case LanguageConceptSwitch.DirectClassifierSpecification:
         return props_DirectClassifierSpecification;
-      case 4:
+      case LanguageConceptSwitch.DirectMethodSpecification:
         return props_DirectMethodSpecification;
-      case 5:
+      case LanguageConceptSwitch.ExtractInterfaceMigration:
         return props_ExtractInterfaceMigration;
-      case 6:
+      case LanguageConceptSwitch.FQNameClassifierSpecification:
         return props_FQNameClassifierSpecification;
-      case 7:
+      case LanguageConceptSwitch.FQNameMethodSpecification:
         return props_FQNameMethodSpecification;
-      case 8:
+      case LanguageConceptSwitch.FactoryMigrationScriptPart:
         return props_FactoryMigrationScriptPart;
-      case 9:
+      case LanguageConceptSwitch.MigrationScript:
         return props_MigrationScript;
-      case 10:
+      case LanguageConceptSwitch.MigrationScriptPart:
         return props_MigrationScriptPart;
-      case 11:
+      case LanguageConceptSwitch.MigrationScriptPart_Instance:
         return props_MigrationScriptPart_Instance;
-      case 12:
+      case LanguageConceptSwitch.MigrationScriptPart_Instance_Predicate:
         return props_MigrationScriptPart_Instance_Predicate;
-      case 13:
+      case LanguageConceptSwitch.MigrationScriptPart_Instance_Updater:
         return props_MigrationScriptPart_Instance_Updater;
-      case 14:
+      case LanguageConceptSwitch.MigrationScriptPart_node:
         return props_MigrationScriptPart_node;
-      case 15:
+      case LanguageConceptSwitch.PullUpMethod:
         return props_PullUpMethod;
-      case 16:
+      case LanguageConceptSwitch.WhitespaceMigrationScriptPart:
         return props_WhitespaceMigrationScriptPart;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

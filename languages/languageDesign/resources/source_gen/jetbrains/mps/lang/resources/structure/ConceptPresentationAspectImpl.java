@@ -35,45 +35,45 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.Circle:
         return props_Circle;
-      case 1:
+      case LanguageConceptSwitch.Color:
         return props_Color;
-      case 2:
+      case LanguageConceptSwitch.ColorLiteral:
         return props_ColorLiteral;
-      case 3:
+      case LanguageConceptSwitch.ConceptIconResourceExpression:
         return props_ConceptIconResourceExpression;
-      case 4:
+      case LanguageConceptSwitch.FileIcon:
         return props_FileIcon;
-      case 5:
+      case LanguageConceptSwitch.Icon:
         return props_Icon;
-      case 6:
+      case LanguageConceptSwitch.IconExpression:
         return props_IconExpression;
-      case 7:
+      case LanguageConceptSwitch.IconLayerDescription:
         return props_IconLayerDescription;
-      case 8:
+      case LanguageConceptSwitch.IconResourceExpression:
         return props_IconResourceExpression;
-      case 9:
+      case LanguageConceptSwitch.Image:
         return props_Image;
-      case 10:
+      case LanguageConceptSwitch.NodeIconResourceExpression:
         return props_NodeIconResourceExpression;
-      case 11:
+      case LanguageConceptSwitch.OldIconBundle:
         return props_OldIconBundle;
-      case 12:
+      case LanguageConceptSwitch.OldIconDeclaration:
         return props_OldIconDeclaration;
-      case 13:
+      case LanguageConceptSwitch.OldIconReference:
         return props_OldIconReference;
-      case 14:
+      case LanguageConceptSwitch.Primitive:
         return props_Primitive;
-      case 15:
+      case LanguageConceptSwitch.Rect:
         return props_Rect;
-      case 16:
+      case LanguageConceptSwitch.Resource:
         return props_Resource;
-      case 17:
+      case LanguageConceptSwitch.Text:
         return props_Text;
-      case 18:
+      case LanguageConceptSwitch.TextIcon:
         return props_TextIcon;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

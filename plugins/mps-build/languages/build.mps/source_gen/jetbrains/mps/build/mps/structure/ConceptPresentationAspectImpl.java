@@ -69,113 +69,113 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BuildLayout_ToBinaryCopyProcessor:
         return props_BuildLayout_ToBinaryCopyProcessor;
-      case 1:
+      case LanguageConceptSwitch.BuildMPSPlugin:
         return props_BuildMPSPlugin;
-      case 2:
+      case LanguageConceptSwitch.BuildMpsAspect:
         return props_BuildMpsAspect;
-      case 3:
+      case LanguageConceptSwitch.BuildMpsLayout_FolderWithSources:
         return props_BuildMpsLayout_FolderWithSources;
-      case 4:
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleJarContent:
         return props_BuildMpsLayout_ModuleJarContent;
-      case 5:
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleJars:
         return props_BuildMpsLayout_ModuleJars;
-      case 6:
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleSources:
         return props_BuildMpsLayout_ModuleSources;
-      case 7:
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleXml:
         return props_BuildMpsLayout_ModuleXml;
-      case 8:
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleXml_CustomJarLocation:
         return props_BuildMpsLayout_ModuleXml_CustomJarLocation;
-      case 9:
+      case LanguageConceptSwitch.BuildMpsLayout_Plugin:
         return props_BuildMpsLayout_Plugin;
-      case 10:
+      case LanguageConceptSwitch.BuildMpsLayout_PluginDescriptor:
         return props_BuildMpsLayout_PluginDescriptor;
-      case 11:
+      case LanguageConceptSwitch.BuildMps_AbstractModule:
         return props_BuildMps_AbstractModule;
-      case 12:
+      case LanguageConceptSwitch.BuildMps_Branding:
         return props_BuildMps_Branding;
-      case 13:
+      case LanguageConceptSwitch.BuildMps_BrandingCompany:
         return props_BuildMps_BrandingCompany;
-      case 14:
+      case LanguageConceptSwitch.BuildMps_BrandingHelp:
         return props_BuildMps_BrandingHelp;
-      case 15:
+      case LanguageConceptSwitch.BuildMps_BrandingKeymap:
         return props_BuildMps_BrandingKeymap;
-      case 16:
+      case LanguageConceptSwitch.BuildMps_BrandingStats:
         return props_BuildMps_BrandingStats;
-      case 17:
+      case LanguageConceptSwitch.BuildMps_BrandingUpdateSite:
         return props_BuildMps_BrandingUpdateSite;
-      case 18:
+      case LanguageConceptSwitch.BuildMps_DevKit:
         return props_BuildMps_DevKit;
-      case 19:
+      case LanguageConceptSwitch.BuildMps_DevKitExport:
         return props_BuildMps_DevKitExport;
-      case 20:
+      case LanguageConceptSwitch.BuildMps_DevKitExportLanguage:
         return props_BuildMps_DevKitExportLanguage;
-      case 21:
+      case LanguageConceptSwitch.BuildMps_DevKitExportSolution:
         return props_BuildMps_DevKitExportSolution;
-      case 22:
+      case LanguageConceptSwitch.BuildMps_DevKitRef:
         return props_BuildMps_DevKitRef;
-      case 23:
+      case LanguageConceptSwitch.BuildMps_ExtractedModuleDependency:
         return props_BuildMps_ExtractedModuleDependency;
-      case 24:
+      case LanguageConceptSwitch.BuildMps_Generator:
         return props_BuildMps_Generator;
-      case 25:
+      case LanguageConceptSwitch.BuildMps_GeneratorOptions:
         return props_BuildMps_GeneratorOptions;
-      case 26:
+      case LanguageConceptSwitch.BuildMps_Group:
         return props_BuildMps_Group;
-      case 27:
+      case LanguageConceptSwitch.BuildMps_IdeaPlugin:
         return props_BuildMps_IdeaPlugin;
-      case 28:
+      case LanguageConceptSwitch.BuildMps_IdeaPluginContent:
         return props_BuildMps_IdeaPluginContent;
-      case 29:
+      case LanguageConceptSwitch.BuildMps_IdeaPluginDependency:
         return props_BuildMps_IdeaPluginDependency;
-      case 30:
+      case LanguageConceptSwitch.BuildMps_IdeaPluginGroup:
         return props_BuildMps_IdeaPluginGroup;
-      case 31:
+      case LanguageConceptSwitch.BuildMps_IdeaPluginGroupCustomModule:
         return props_BuildMps_IdeaPluginGroupCustomModule;
-      case 32:
+      case LanguageConceptSwitch.BuildMps_IdeaPluginModule:
         return props_BuildMps_IdeaPluginModule;
-      case 33:
+      case LanguageConceptSwitch.BuildMps_IdeaPluginVendor:
         return props_BuildMps_IdeaPluginVendor;
-      case 34:
+      case LanguageConceptSwitch.BuildMps_Language:
         return props_BuildMps_Language;
-      case 35:
+      case LanguageConceptSwitch.BuildMps_Module:
         return props_BuildMps_Module;
-      case 36:
+      case LanguageConceptSwitch.BuildMps_ModuleDependency:
         return props_BuildMps_ModuleDependency;
-      case 37:
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyExtendLanguage:
         return props_BuildMps_ModuleDependencyExtendLanguage;
-      case 38:
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyJar:
         return props_BuildMps_ModuleDependencyJar;
-      case 39:
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyOnDevKit:
         return props_BuildMps_ModuleDependencyOnDevKit;
-      case 40:
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyOnJavaModule:
         return props_BuildMps_ModuleDependencyOnJavaModule;
-      case 41:
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyOnModule:
         return props_BuildMps_ModuleDependencyOnModule;
-      case 42:
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyUseLanguage:
         return props_BuildMps_ModuleDependencyUseLanguage;
-      case 43:
+      case LanguageConceptSwitch.BuildMps_ModuleJavaSource:
         return props_BuildMps_ModuleJavaSource;
-      case 44:
+      case LanguageConceptSwitch.BuildMps_ModuleModelRoot:
         return props_BuildMps_ModuleModelRoot;
-      case 45:
+      case LanguageConceptSwitch.BuildMps_ModuleRuntime:
         return props_BuildMps_ModuleRuntime;
-      case 46:
+      case LanguageConceptSwitch.BuildMps_ModuleSolutionRuntime:
         return props_BuildMps_ModuleSolutionRuntime;
-      case 47:
+      case LanguageConceptSwitch.BuildMps_ModuleSource:
         return props_BuildMps_ModuleSource;
-      case 48:
+      case LanguageConceptSwitch.BuildMps_ModuleTestSource:
         return props_BuildMps_ModuleTestSource;
-      case 49:
+      case LanguageConceptSwitch.BuildMps_Solution:
         return props_BuildMps_Solution;
-      case 50:
+      case LanguageConceptSwitch.GeneratorInternal_BuildMps_Module:
         return props_GeneratorInternal_BuildMps_Module;
-      case 51:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSourcePath:
         return props_GeneratorInternal_BuildSourcePath;
-      case 52:
+      case LanguageConceptSwitch.GeneratorInternal_String:
         return props_GeneratorInternal_String;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

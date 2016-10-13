@@ -408,791 +408,791 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractCellSelector:
         return props_AbstractCellSelector;
-      case 1:
+      case LanguageConceptSwitch.AbstractComponent:
         return props_AbstractComponent;
-      case 2:
+      case LanguageConceptSwitch.AbstractPaddingStyleClassItem:
         return props_AbstractPaddingStyleClassItem;
-      case 3:
+      case LanguageConceptSwitch.AbstractStyledTextOperation:
         return props_AbstractStyledTextOperation;
-      case 4:
+      case LanguageConceptSwitch.AppendTextOperation:
         return props_AppendTextOperation;
-      case 5:
+      case LanguageConceptSwitch.ApplyStyleClass:
         return props_ApplyStyleClass;
-      case 6:
+      case LanguageConceptSwitch.ApplyStyleClassCondition:
         return props_ApplyStyleClassCondition;
-      case 7:
+      case LanguageConceptSwitch.AttributeStyleClassItem:
         return props_AttributeStyleClassItem;
-      case 8:
+      case LanguageConceptSwitch.AutoDeletableStyleClassItem:
         return props_AutoDeletableStyleClassItem;
-      case 9:
+      case LanguageConceptSwitch.BackgroundColorStyleClassItem:
         return props_BackgroundColorStyleClassItem;
-      case 10:
+      case LanguageConceptSwitch.BaseEditorComponent:
         return props_BaseEditorComponent;
-      case 11:
+      case LanguageConceptSwitch.BaseLineCell:
         return props_BaseLineCell;
-      case 12:
+      case LanguageConceptSwitch.BooleanStyleSheetItem:
         return props_BooleanStyleSheetItem;
-      case 13:
+      case LanguageConceptSwitch.BracketColorStyleClassItem:
         return props_BracketColorStyleClassItem;
-      case 14:
+      case LanguageConceptSwitch.CaretPositionParameter:
         return props_CaretPositionParameter;
-      case 15:
+      case LanguageConceptSwitch.CellActionMapDeclaration:
         return props_CellActionMapDeclaration;
-      case 16:
+      case LanguageConceptSwitch.CellActionMapItem:
         return props_CellActionMapItem;
-      case 17:
+      case LanguageConceptSwitch.CellActionMap_CanExecuteFunction:
         return props_CellActionMap_CanExecuteFunction;
-      case 18:
+      case LanguageConceptSwitch.CellActionMap_ExecuteFunction:
         return props_CellActionMap_ExecuteFunction;
-      case 19:
+      case LanguageConceptSwitch.CellActionMap_FunctionParm_selectedNode:
         return props_CellActionMap_FunctionParm_selectedNode;
-      case 20:
+      case LanguageConceptSwitch.CellIdReferenceSelector:
         return props_CellIdReferenceSelector;
-      case 21:
+      case LanguageConceptSwitch.CellKeyMapDeclaration:
         return props_CellKeyMapDeclaration;
-      case 22:
+      case LanguageConceptSwitch.CellKeyMapItem:
         return props_CellKeyMapItem;
-      case 23:
+      case LanguageConceptSwitch.CellKeyMapKeystroke:
         return props_CellKeyMapKeystroke;
-      case 24:
+      case LanguageConceptSwitch.CellKeyMap_AbstractFunction:
         return props_CellKeyMap_AbstractFunction;
-      case 25:
+      case LanguageConceptSwitch.CellKeyMap_ExecuteFunction:
         return props_CellKeyMap_ExecuteFunction;
-      case 26:
+      case LanguageConceptSwitch.CellKeyMap_FunctionParm_selectedNode:
         return props_CellKeyMap_FunctionParm_selectedNode;
-      case 27:
+      case LanguageConceptSwitch.CellKeyMap_FunctionParm_selectedNodes:
         return props_CellKeyMap_FunctionParm_selectedNodes;
-      case 28:
+      case LanguageConceptSwitch.CellKeyMap_IsApplicableFunction:
         return props_CellKeyMap_IsApplicableFunction;
-      case 29:
+      case LanguageConceptSwitch.CellLayout:
         return props_CellLayout;
-      case 30:
+      case LanguageConceptSwitch.CellLayout_Flow:
         return props_CellLayout_Flow;
-      case 31:
+      case LanguageConceptSwitch.CellLayout_Horizontal:
         return props_CellLayout_Horizontal;
-      case 32:
+      case LanguageConceptSwitch.CellLayout_Indent:
         return props_CellLayout_Indent;
-      case 33:
+      case LanguageConceptSwitch.CellLayout_Indent_Old:
         return props_CellLayout_Indent_Old;
-      case 34:
+      case LanguageConceptSwitch.CellLayout_Superscript:
         return props_CellLayout_Superscript;
-      case 35:
+      case LanguageConceptSwitch.CellLayout_Table:
         return props_CellLayout_Table;
-      case 36:
+      case LanguageConceptSwitch.CellLayout_Vertical:
         return props_CellLayout_Vertical;
-      case 37:
+      case LanguageConceptSwitch.CellLayout_VerticalGrid:
         return props_CellLayout_VerticalGrid;
-      case 38:
+      case LanguageConceptSwitch.CellMenuComponent:
         return props_CellMenuComponent;
-      case 39:
+      case LanguageConceptSwitch.CellMenuComponentFeature:
         return props_CellMenuComponentFeature;
-      case 40:
+      case LanguageConceptSwitch.CellMenuComponentFeature_Link:
         return props_CellMenuComponentFeature_Link;
-      case 41:
+      case LanguageConceptSwitch.CellMenuComponentFeature_Property:
         return props_CellMenuComponentFeature_Property;
-      case 42:
+      case LanguageConceptSwitch.CellMenuDescriptor:
         return props_CellMenuDescriptor;
-      case 43:
+      case LanguageConceptSwitch.CellMenuPart_Abstract:
         return props_CellMenuPart_Abstract;
-      case 44:
+      case LanguageConceptSwitch.CellMenuPart_AbstractGroup:
         return props_CellMenuPart_AbstractGroup;
-      case 45:
+      case LanguageConceptSwitch.CellMenuPart_AbstractGroup_DescriptionText:
         return props_CellMenuPart_AbstractGroup_DescriptionText;
-      case 46:
+      case LanguageConceptSwitch.CellMenuPart_AbstractGroup_MatchingText:
         return props_CellMenuPart_AbstractGroup_MatchingText;
-      case 47:
+      case LanguageConceptSwitch.CellMenuPart_AbstractGroup_Query:
         return props_CellMenuPart_AbstractGroup_Query;
-      case 48:
+      case LanguageConceptSwitch.CellMenuPart_AbstractGroup_parameterObject:
         return props_CellMenuPart_AbstractGroup_parameterObject;
-      case 49:
+      case LanguageConceptSwitch.CellMenuPart_Abstract_editedNode:
         return props_CellMenuPart_Abstract_editedNode;
-      case 50:
+      case LanguageConceptSwitch.CellMenuPart_ApplySideTransforms:
         return props_CellMenuPart_ApplySideTransforms;
-      case 51:
+      case LanguageConceptSwitch.CellMenuPart_CellMenuComponent:
         return props_CellMenuPart_CellMenuComponent;
-      case 52:
+      case LanguageConceptSwitch.CellMenuPart_Generic_Group:
         return props_CellMenuPart_Generic_Group;
-      case 53:
+      case LanguageConceptSwitch.CellMenuPart_Generic_Group_Handler:
         return props_CellMenuPart_Generic_Group_Handler;
-      case 54:
+      case LanguageConceptSwitch.CellMenuPart_Generic_Item:
         return props_CellMenuPart_Generic_Item;
-      case 55:
+      case LanguageConceptSwitch.CellMenuPart_Generic_Item_Handler:
         return props_CellMenuPart_Generic_Item_Handler;
-      case 56:
+      case LanguageConceptSwitch.CellMenuPart_PropertyPostfixHints:
         return props_CellMenuPart_PropertyPostfixHints;
-      case 57:
+      case LanguageConceptSwitch.CellMenuPart_PropertyPostfixHints_GetPostfixes:
         return props_CellMenuPart_PropertyPostfixHints_GetPostfixes;
-      case 58:
+      case LanguageConceptSwitch.CellMenuPart_PropertyValues:
         return props_CellMenuPart_PropertyValues;
-      case 59:
+      case LanguageConceptSwitch.CellMenuPart_PropertyValues_GetValues:
         return props_CellMenuPart_PropertyValues_GetValues;
-      case 60:
+      case LanguageConceptSwitch.CellMenuPart_ReferentPrimary:
         return props_CellMenuPart_ReferentPrimary;
-      case 61:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChildPrimary:
         return props_CellMenuPart_ReplaceChildPrimary;
-      case 62:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_CustomChildConcept:
         return props_CellMenuPart_ReplaceChild_CustomChildConcept;
-      case 63:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_CustomChildConcept_Query:
         return props_CellMenuPart_ReplaceChild_CustomChildConcept_Query;
-      case 64:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_Group:
         return props_CellMenuPart_ReplaceChild_Group;
-      case 65:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_Group_Create:
         return props_CellMenuPart_ReplaceChild_Group_Create;
-      case 66:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_Group_Query:
         return props_CellMenuPart_ReplaceChild_Group_Query;
-      case 67:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_Item:
         return props_CellMenuPart_ReplaceChild_Item;
-      case 68:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_Item_Create:
         return props_CellMenuPart_ReplaceChild_Item_Create;
-      case 69:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_currentChild:
         return props_CellMenuPart_ReplaceChild_currentChild;
-      case 70:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceChild_defaultConceptOfChild:
         return props_CellMenuPart_ReplaceChild_defaultConceptOfChild;
-      case 71:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceNode_CustomNodeConcept:
         return props_CellMenuPart_ReplaceNode_CustomNodeConcept;
-      case 72:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceNode_Group:
         return props_CellMenuPart_ReplaceNode_Group;
-      case 73:
+      case LanguageConceptSwitch.CellMenuPart_ReplaceNode_Group_Create:
         return props_CellMenuPart_ReplaceNode_Group_Create;
-      case 74:
+      case LanguageConceptSwitch.CellModel_AbstractLabel:
         return props_CellModel_AbstractLabel;
-      case 75:
+      case LanguageConceptSwitch.CellModel_Alternation:
         return props_CellModel_Alternation;
-      case 76:
+      case LanguageConceptSwitch.CellModel_AttributedLinkCell:
         return props_CellModel_AttributedLinkCell;
-      case 77:
+      case LanguageConceptSwitch.CellModel_AttributedNodeCell:
         return props_CellModel_AttributedNodeCell;
-      case 78:
+      case LanguageConceptSwitch.CellModel_AttributedPropertyCell:
         return props_CellModel_AttributedPropertyCell;
-      case 79:
+      case LanguageConceptSwitch.CellModel_Block:
         return props_CellModel_Block;
-      case 80:
+      case LanguageConceptSwitch.CellModel_BlockEnd:
         return props_CellModel_BlockEnd;
-      case 81:
+      case LanguageConceptSwitch.CellModel_BlockStart:
         return props_CellModel_BlockStart;
-      case 82:
+      case LanguageConceptSwitch.CellModel_Collection:
         return props_CellModel_Collection;
-      case 83:
+      case LanguageConceptSwitch.CellModel_Component:
         return props_CellModel_Component;
-      case 84:
+      case LanguageConceptSwitch.CellModel_Constant:
         return props_CellModel_Constant;
-      case 85:
+      case LanguageConceptSwitch.CellModel_ContextAssistant:
         return props_CellModel_ContextAssistant;
-      case 86:
+      case LanguageConceptSwitch.CellModel_Custom:
         return props_CellModel_Custom;
-      case 87:
+      case LanguageConceptSwitch.CellModel_Empty:
         return props_CellModel_Empty;
-      case 88:
+      case LanguageConceptSwitch.CellModel_Error:
         return props_CellModel_Error;
-      case 89:
+      case LanguageConceptSwitch.CellModel_Image:
         return props_CellModel_Image;
-      case 90:
+      case LanguageConceptSwitch.CellModel_Indent:
         return props_CellModel_Indent;
-      case 91:
+      case LanguageConceptSwitch.CellModel_JComponent:
         return props_CellModel_JComponent;
-      case 92:
+      case LanguageConceptSwitch.CellModel_ListWithRole:
         return props_CellModel_ListWithRole;
-      case 93:
+      case LanguageConceptSwitch.CellModel_ModelAccess:
         return props_CellModel_ModelAccess;
-      case 94:
+      case LanguageConceptSwitch.CellModel_NextEditor:
         return props_CellModel_NextEditor;
-      case 95:
+      case LanguageConceptSwitch.CellModel_NonEmptyProperty:
         return props_CellModel_NonEmptyProperty;
-      case 96:
+      case LanguageConceptSwitch.CellModel_Property:
         return props_CellModel_Property;
-      case 97:
+      case LanguageConceptSwitch.CellModel_ReadOnlyModelAccessor:
         return props_CellModel_ReadOnlyModelAccessor;
-      case 98:
+      case LanguageConceptSwitch.CellModel_RefCell:
         return props_CellModel_RefCell;
-      case 99:
+      case LanguageConceptSwitch.CellModel_RefNode:
         return props_CellModel_RefNode;
-      case 100:
+      case LanguageConceptSwitch.CellModel_RefNodeList:
         return props_CellModel_RefNodeList;
-      case 101:
+      case LanguageConceptSwitch.CellModel_ReferencePresentation:
         return props_CellModel_ReferencePresentation;
-      case 102:
+      case LanguageConceptSwitch.CellModel_TransactionalProperty:
         return props_CellModel_TransactionalProperty;
-      case 103:
+      case LanguageConceptSwitch.CellModel_URL:
         return props_CellModel_URL;
-      case 104:
+      case LanguageConceptSwitch.CellModel_WithRole:
         return props_CellModel_WithRole;
-      case 105:
+      case LanguageConceptSwitch.ColorStyleClassItem:
         return props_ColorStyleClassItem;
-      case 106:
+      case LanguageConceptSwitch.ConceptEditorContextHints:
         return props_ConceptEditorContextHints;
-      case 107:
+      case LanguageConceptSwitch.ConceptEditorDeclaration:
         return props_ConceptEditorDeclaration;
-      case 108:
+      case LanguageConceptSwitch.ConceptEditorHintDeclaration:
         return props_ConceptEditorHintDeclaration;
-      case 109:
+      case LanguageConceptSwitch.ConceptEditorHintDeclarationReference:
         return props_ConceptEditorHintDeclarationReference;
-      case 110:
+      case LanguageConceptSwitch.ConceptEditorHintDeclarationReferenceExpression:
         return props_ConceptEditorHintDeclarationReferenceExpression;
-      case 111:
+      case LanguageConceptSwitch.ConceptFunctionParameter_StyledText:
         return props_ConceptFunctionParameter_StyledText;
-      case 112:
+      case LanguageConceptSwitch.ConceptFunctionParameter_childNode:
         return props_ConceptFunctionParameter_childNode;
-      case 113:
+      case LanguageConceptSwitch.ConceptFunctionParameter_editorContext:
         return props_ConceptFunctionParameter_editorContext;
-      case 114:
+      case LanguageConceptSwitch.ConceptFunctionParameter_model:
         return props_ConceptFunctionParameter_model;
-      case 115:
+      case LanguageConceptSwitch.ConceptFunctionParameter_nextNode:
         return props_ConceptFunctionParameter_nextNode;
-      case 116:
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
         return props_ConceptFunctionParameter_node;
-      case 117:
+      case LanguageConceptSwitch.ConceptFunctionParameter_oldText:
         return props_ConceptFunctionParameter_oldText;
-      case 118:
+      case LanguageConceptSwitch.ConceptFunctionParameter_parameterObject:
         return props_ConceptFunctionParameter_parameterObject;
-      case 119:
+      case LanguageConceptSwitch.ConceptFunctionParameter_prevNode:
         return props_ConceptFunctionParameter_prevNode;
-      case 120:
+      case LanguageConceptSwitch.ConceptFunctionParameter_selectedNode:
         return props_ConceptFunctionParameter_selectedNode;
-      case 121:
+      case LanguageConceptSwitch.ConceptFunctionParameter_text:
         return props_ConceptFunctionParameter_text;
-      case 122:
+      case LanguageConceptSwitch.ContextHintsSpecification:
         return props_ContextHintsSpecification;
-      case 123:
+      case LanguageConceptSwitch.ContextVariable:
         return props_ContextVariable;
-      case 124:
+      case LanguageConceptSwitch.ContextVariable_EditorContext:
         return props_ContextVariable_EditorContext;
-      case 125:
+      case LanguageConceptSwitch.ContextVariable_Node:
         return props_ContextVariable_Node;
-      case 126:
+      case LanguageConceptSwitch.DefaultBaseLine:
         return props_DefaultBaseLine;
-      case 127:
+      case LanguageConceptSwitch.DefaultCaretPositionStyleClassItem:
         return props_DefaultCaretPositionStyleClassItem;
-      case 128:
+      case LanguageConceptSwitch.DominatesRecord:
         return props_DominatesRecord;
-      case 129:
+      case LanguageConceptSwitch.DrawBorderStyleClassItem:
         return props_DrawBorderStyleClassItem;
-      case 130:
+      case LanguageConceptSwitch.DrawBracketsStyleClassItem:
         return props_DrawBracketsStyleClassItem;
-      case 131:
+      case LanguageConceptSwitch.EditableStyleClassItem:
         return props_EditableStyleClassItem;
-      case 132:
+      case LanguageConceptSwitch.EditorCellId:
         return props_EditorCellId;
-      case 133:
+      case LanguageConceptSwitch.EditorCellModel:
         return props_EditorCellModel;
-      case 134:
+      case LanguageConceptSwitch.EditorComponentDeclaration:
         return props_EditorComponentDeclaration;
-      case 135:
+      case LanguageConceptSwitch.EditorComponentDeclarationReference:
         return props_EditorComponentDeclarationReference;
-      case 136:
+      case LanguageConceptSwitch.ExplicitHintsSpecification:
         return props_ExplicitHintsSpecification;
-      case 137:
+      case LanguageConceptSwitch.FirstPositionAllowedStyleClassItem:
         return props_FirstPositionAllowedStyleClassItem;
-      case 138:
+      case LanguageConceptSwitch.FloatStyleClassItem:
         return props_FloatStyleClassItem;
-      case 139:
+      case LanguageConceptSwitch.FontSizeStyleClassItem:
         return props_FontSizeStyleClassItem;
-      case 140:
+      case LanguageConceptSwitch.FontStyleStyleClassItem:
         return props_FontStyleStyleClassItem;
-      case 141:
+      case LanguageConceptSwitch.ForegroundColorStyleClassItem:
         return props_ForegroundColorStyleClassItem;
-      case 142:
+      case LanguageConceptSwitch.ForegroundNullColorStyleClassItem:
         return props_ForegroundNullColorStyleClassItem;
-      case 143:
+      case LanguageConceptSwitch.HorizontalAlign:
         return props_HorizontalAlign;
-      case 144:
+      case LanguageConceptSwitch.HorizontalGapStyleClassItem:
         return props_HorizontalGapStyleClassItem;
-      case 145:
+      case LanguageConceptSwitch.ICellStyle:
         return props_ICellStyle;
-      case 146:
+      case LanguageConceptSwitch.IContextProvider:
         return props_IContextProvider;
-      case 147:
+      case LanguageConceptSwitch.IContextVariableProvider:
         return props_IContextVariableProvider;
-      case 148:
+      case LanguageConceptSwitch.IEditorContextProvider:
         return props_IEditorContextProvider;
-      case 149:
+      case LanguageConceptSwitch.IExtensibleSubstituteMenuPart:
         return props_IExtensibleSubstituteMenuPart;
-      case 150:
+      case LanguageConceptSwitch.IExtensibleTransformationMenuPart:
         return props_IExtensibleTransformationMenuPart;
-      case 151:
+      case LanguageConceptSwitch.IIncludeSubstituteMenuPart:
         return props_IIncludeSubstituteMenuPart;
-      case 152:
+      case LanguageConceptSwitch.IMenu:
         return props_IMenu;
-      case 153:
+      case LanguageConceptSwitch.IMenuPartParameterized:
         return props_IMenuPartParameterized;
-      case 154:
+      case LanguageConceptSwitch.IMenuReference:
         return props_IMenuReference;
-      case 155:
+      case LanguageConceptSwitch.IMenuReference_Default:
         return props_IMenuReference_Default;
-      case 156:
+      case LanguageConceptSwitch.IMenuReference_Named:
         return props_IMenuReference_Named;
-      case 157:
+      case LanguageConceptSwitch.IMenu_Concept:
         return props_IMenu_Concept;
-      case 158:
+      case LanguageConceptSwitch.IMenu_Contribution:
         return props_IMenu_Contribution;
-      case 159:
+      case LanguageConceptSwitch.IMenu_Default:
         return props_IMenu_Default;
-      case 160:
+      case LanguageConceptSwitch.IMenu_Named:
         return props_IMenu_Named;
-      case 161:
+      case LanguageConceptSwitch.INodeProvider:
         return props_INodeProvider;
-      case 162:
+      case LanguageConceptSwitch.IOutputConceptSubstituteMenuPart:
         return props_IOutputConceptSubstituteMenuPart;
-      case 163:
+      case LanguageConceptSwitch.IOutputConceptTransformationMenuPart:
         return props_IOutputConceptTransformationMenuPart;
-      case 164:
+      case LanguageConceptSwitch.IParameterizableMenuPart:
         return props_IParameterizableMenuPart;
-      case 165:
+      case LanguageConceptSwitch.IQueryFunction_Color:
         return props_IQueryFunction_Color;
-      case 166:
+      case LanguageConceptSwitch.IStyle:
         return props_IStyle;
-      case 167:
+      case LanguageConceptSwitch.IStyleContainer:
         return props_IStyleContainer;
-      case 168:
+      case LanguageConceptSwitch.IStyleSheetItem:
         return props_IStyleSheetItem;
-      case 169:
+      case LanguageConceptSwitch.IStyleSheetMember:
         return props_IStyleSheetMember;
-      case 170:
+      case LanguageConceptSwitch.ISubstituteMenu:
         return props_ISubstituteMenu;
-      case 171:
+      case LanguageConceptSwitch.ISubstituteMenuReference:
         return props_ISubstituteMenuReference;
-      case 172:
+      case LanguageConceptSwitch.ISubstituteMenu_String:
         return props_ISubstituteMenu_String;
-      case 173:
+      case LanguageConceptSwitch.ITransformationMenu:
         return props_ITransformationMenu;
-      case 174:
+      case LanguageConceptSwitch.ITransformationMenuReference:
         return props_ITransformationMenuReference;
-      case 175:
+      case LanguageConceptSwitch.IdSelector:
         return props_IdSelector;
-      case 176:
+      case LanguageConceptSwitch.ImagePathProvider:
         return props_ImagePathProvider;
-      case 177:
+      case LanguageConceptSwitch.IndentLayoutIndentAnchorStyleClassItem:
         return props_IndentLayoutIndentAnchorStyleClassItem;
-      case 178:
+      case LanguageConceptSwitch.IndentLayoutIndentStyleClassItem:
         return props_IndentLayoutIndentStyleClassItem;
-      case 179:
+      case LanguageConceptSwitch.IndentLayoutNewLineChildrenStyleClassItem:
         return props_IndentLayoutNewLineChildrenStyleClassItem;
-      case 180:
+      case LanguageConceptSwitch.IndentLayoutNewLineStyleClassItem:
         return props_IndentLayoutNewLineStyleClassItem;
-      case 181:
+      case LanguageConceptSwitch.IndentLayoutNoWrapClassItem:
         return props_IndentLayoutNoWrapClassItem;
-      case 182:
+      case LanguageConceptSwitch.IndentLayoutOnNewLineStyleClassItem:
         return props_IndentLayoutOnNewLineStyleClassItem;
-      case 183:
+      case LanguageConceptSwitch.IndentLayoutWrapAnchorStyleClassItem:
         return props_IndentLayoutWrapAnchorStyleClassItem;
-      case 184:
+      case LanguageConceptSwitch.InlineEditorComponent:
         return props_InlineEditorComponent;
-      case 185:
+      case LanguageConceptSwitch.InlineStyleDeclaration:
         return props_InlineStyleDeclaration;
-      case 186:
+      case LanguageConceptSwitch.LastPositionAllowedStyleClassItem:
         return props_LastPositionAllowedStyleClassItem;
-      case 187:
+      case LanguageConceptSwitch.LayoutConstraintStyleClassItem:
         return props_LayoutConstraintStyleClassItem;
-      case 188:
+      case LanguageConceptSwitch.MatchingLabelStyleClassItem:
         return props_MatchingLabelStyleClassItem;
-      case 189:
+      case LanguageConceptSwitch.MaxWidthStyleClassItem:
         return props_MaxWidthStyleClassItem;
-      case 190:
+      case LanguageConceptSwitch.MigrateManuallyAnnotation:
         return props_MigrateManuallyAnnotation;
-      case 191:
+      case LanguageConceptSwitch.MigratedSideTransformMenuAttribute:
         return props_MigratedSideTransformMenuAttribute;
-      case 192:
+      case LanguageConceptSwitch.MigratedToAnnotation:
         return props_MigratedToAnnotation;
-      case 193:
+      case LanguageConceptSwitch.ModelAccessor:
         return props_ModelAccessor;
-      case 194:
+      case LanguageConceptSwitch.NavigatableNodeStyleClassItem:
         return props_NavigatableNodeStyleClassItem;
-      case 195:
+      case LanguageConceptSwitch.NavigatableReferenceStyleClassItem:
         return props_NavigatableReferenceStyleClassItem;
-      case 196:
+      case LanguageConceptSwitch.OptionalConceptReference:
         return props_OptionalConceptReference;
-      case 197:
+      case LanguageConceptSwitch.OrCellSelector:
         return props_OrCellSelector;
-      case 198:
+      case LanguageConceptSwitch.PaddingBottomStyleClassItem:
         return props_PaddingBottomStyleClassItem;
-      case 199:
+      case LanguageConceptSwitch.PaddingLeftStyleClassItem:
         return props_PaddingLeftStyleClassItem;
-      case 200:
+      case LanguageConceptSwitch.PaddingRightStyleClassItem:
         return props_PaddingRightStyleClassItem;
-      case 201:
+      case LanguageConceptSwitch.PaddingTopStyleClassItem:
         return props_PaddingTopStyleClassItem;
-      case 202:
+      case LanguageConceptSwitch.ParametersInformationQuery:
         return props_ParametersInformationQuery;
-      case 203:
+      case LanguageConceptSwitch.ParametersInformationStyleClassItem:
         return props_ParametersInformationStyleClassItem;
-      case 204:
+      case LanguageConceptSwitch.PositionChildrenStyleClassItem:
         return props_PositionChildrenStyleClassItem;
-      case 205:
+      case LanguageConceptSwitch.PositionStyleClassItem:
         return props_PositionStyleClassItem;
-      case 206:
+      case LanguageConceptSwitch.PreDefinedStyleClassItem:
         return props_PreDefinedStyleClassItem;
-      case 207:
+      case LanguageConceptSwitch.PredefinedSelector:
         return props_PredefinedSelector;
-      case 208:
+      case LanguageConceptSwitch.PropertyDeclarationCellSelector:
         return props_PropertyDeclarationCellSelector;
-      case 209:
+      case LanguageConceptSwitch.PropertyExpressionCellSelector:
         return props_PropertyExpressionCellSelector;
-      case 210:
+      case LanguageConceptSwitch.PunctuationLeftStyleClassItem:
         return props_PunctuationLeftStyleClassItem;
-      case 211:
+      case LanguageConceptSwitch.PunctuationRightStyleClassItem:
         return props_PunctuationRightStyleClassItem;
-      case 212:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_Concept:
         return props_QueryFunctionParameter_SubstituteMenu_Concept;
-      case 213:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_CreatedNode:
         return props_QueryFunctionParameter_SubstituteMenu_CreatedNode;
-      case 214:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode:
         return props_QueryFunctionParameter_SubstituteMenu_CurrentTargetNode;
-      case 215:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_Link:
         return props_QueryFunctionParameter_SubstituteMenu_Link;
-      case 216:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_NodeToWrap:
         return props_QueryFunctionParameter_SubstituteMenu_NodeToWrap;
-      case 217:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_ParentNode:
         return props_QueryFunctionParameter_SubstituteMenu_ParentNode;
-      case 218:
+      case LanguageConceptSwitch.QueryFunctionParameter_SubstituteMenu_Strictly:
         return props_QueryFunctionParameter_SubstituteMenu_Strictly;
-      case 219:
+      case LanguageConceptSwitch.QueryFunctionParameter_TransformationMenu_CreatedNode:
         return props_QueryFunctionParameter_TransformationMenu_CreatedNode;
-      case 220:
+      case LanguageConceptSwitch.QueryFunctionParameter_TransformationMenu_node:
         return props_QueryFunctionParameter_TransformationMenu_node;
-      case 221:
+      case LanguageConceptSwitch.QueryFunctionParameter_TransformationMenu_targetNode:
         return props_QueryFunctionParameter_TransformationMenu_targetNode;
-      case 222:
+      case LanguageConceptSwitch.QueryFunctionParameter_parameterObject:
         return props_QueryFunctionParameter_parameterObject;
-      case 223:
+      case LanguageConceptSwitch.QueryFunctionParameter_pattern:
         return props_QueryFunctionParameter_pattern;
-      case 224:
+      case LanguageConceptSwitch.QueryFunction_AttributeStyleParameter:
         return props_QueryFunction_AttributeStyleParameter;
-      case 225:
+      case LanguageConceptSwitch.QueryFunction_Boolean:
         return props_QueryFunction_Boolean;
-      case 226:
+      case LanguageConceptSwitch.QueryFunction_CellProvider:
         return props_QueryFunction_CellProvider;
-      case 227:
+      case LanguageConceptSwitch.QueryFunction_Color:
         return props_QueryFunction_Color;
-      case 228:
+      case LanguageConceptSwitch.QueryFunction_ColorComposit:
         return props_QueryFunction_ColorComposit;
-      case 229:
+      case LanguageConceptSwitch.QueryFunction_FontStyle:
         return props_QueryFunction_FontStyle;
-      case 230:
+      case LanguageConceptSwitch.QueryFunction_ImagePath:
         return props_QueryFunction_ImagePath;
-      case 231:
+      case LanguageConceptSwitch.QueryFunction_Integer:
         return props_QueryFunction_Integer;
-      case 232:
+      case LanguageConceptSwitch.QueryFunction_IsMethodCurrent:
         return props_QueryFunction_IsMethodCurrent;
-      case 233:
+      case LanguageConceptSwitch.QueryFunction_JComponent:
         return props_QueryFunction_JComponent;
-      case 234:
+      case LanguageConceptSwitch.QueryFunction_Menu:
         return props_QueryFunction_Menu;
-      case 235:
+      case LanguageConceptSwitch.QueryFunction_MethodPresentation:
         return props_QueryFunction_MethodPresentation;
-      case 236:
+      case LanguageConceptSwitch.QueryFunction_ModelAccess_Getter:
         return props_QueryFunction_ModelAccess_Getter;
-      case 237:
+      case LanguageConceptSwitch.QueryFunction_ModelAccess_Setter:
         return props_QueryFunction_ModelAccess_Setter;
-      case 238:
+      case LanguageConceptSwitch.QueryFunction_ModelAccess_Validator:
         return props_QueryFunction_ModelAccess_Validator;
-      case 239:
+      case LanguageConceptSwitch.QueryFunction_ModuleAndPath:
         return props_QueryFunction_ModuleAndPath;
-      case 240:
+      case LanguageConceptSwitch.QueryFunction_NodeCondition:
         return props_QueryFunction_NodeCondition;
-      case 241:
+      case LanguageConceptSwitch.QueryFunction_NodeFactory:
         return props_QueryFunction_NodeFactory;
-      case 242:
+      case LanguageConceptSwitch.QueryFunction_NodeListFilter:
         return props_QueryFunction_NodeListFilter;
-      case 243:
+      case LanguageConceptSwitch.QueryFunction_ParametersList:
         return props_QueryFunction_ParametersList;
-      case 244:
+      case LanguageConceptSwitch.QueryFunction_SNode:
         return props_QueryFunction_SNode;
-      case 245:
+      case LanguageConceptSwitch.QueryFunction_SeparatorText:
         return props_QueryFunction_SeparatorText;
-      case 246:
+      case LanguageConceptSwitch.QueryFunction_String:
         return props_QueryFunction_String;
-      case 247:
+      case LanguageConceptSwitch.QueryFunction_Style:
         return props_QueryFunction_Style;
-      case 248:
+      case LanguageConceptSwitch.QueryFunction_StyleParameter:
         return props_QueryFunction_StyleParameter;
-      case 249:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu:
         return props_QueryFunction_SubstituteMenu;
-      case 250:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenuPart:
         return props_QueryFunction_SubstituteMenuPart;
-      case 251:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenuVariable_Initializer:
         return props_QueryFunction_SubstituteMenuVariable_Initializer;
-      case 252:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_ActionType:
         return props_QueryFunction_SubstituteMenu_ActionType;
-      case 253:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_CanSubstitute:
         return props_QueryFunction_SubstituteMenu_CanSubstitute;
-      case 254:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Concept:
         return props_QueryFunction_SubstituteMenu_Concept;
-      case 255:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Concepts:
         return props_QueryFunction_SubstituteMenu_Concepts;
-      case 256:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Condition:
         return props_QueryFunction_SubstituteMenu_Condition;
-      case 257:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_FilterConcepts:
         return props_QueryFunction_SubstituteMenu_FilterConcepts;
-      case 258:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Icon:
         return props_QueryFunction_SubstituteMenu_Icon;
-      case 259:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Parameter:
         return props_QueryFunction_SubstituteMenu_Parameter;
-      case 260:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Select:
         return props_QueryFunction_SubstituteMenu_Select;
-      case 261:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_Substitute:
         return props_QueryFunction_SubstituteMenu_Substitute;
-      case 262:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_SubstituteString:
         return props_QueryFunction_SubstituteMenu_SubstituteString;
-      case 263:
+      case LanguageConceptSwitch.QueryFunction_SubstituteMenu_WrapperHandler:
         return props_QueryFunction_SubstituteMenu_WrapperHandler;
-      case 264:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu:
         return props_QueryFunction_TransformationMenu;
-      case 265:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenuVariable_Initializer:
         return props_QueryFunction_TransformationMenuVariable_Initializer;
-      case 266:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_ActionLabelText:
         return props_QueryFunction_TransformationMenu_ActionLabelText;
-      case 267:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Condition:
         return props_QueryFunction_TransformationMenu_Condition;
-      case 268:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_DescriptionText:
         return props_QueryFunction_TransformationMenu_DescriptionText;
-      case 269:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Execute:
         return props_QueryFunction_TransformationMenu_Execute;
-      case 270:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Extensible:
         return props_QueryFunction_TransformationMenu_Extensible;
-      case 271:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Icon:
         return props_QueryFunction_TransformationMenu_Icon;
-      case 272:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Node:
         return props_QueryFunction_TransformationMenu_Node;
-      case 273:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Parameter:
         return props_QueryFunction_TransformationMenu_Parameter;
-      case 274:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_TargetNode:
         return props_QueryFunction_TransformationMenu_TargetNode;
-      case 275:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Text:
         return props_QueryFunction_TransformationMenu_Text;
-      case 276:
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_WrapperHandler:
         return props_QueryFunction_TransformationMenu_WrapperHandler;
-      case 277:
+      case LanguageConceptSwitch.QueryFunction_Underlined:
         return props_QueryFunction_Underlined;
-      case 278:
+      case LanguageConceptSwitch.QueryHintsSpecification:
         return props_QueryHintsSpecification;
-      case 279:
+      case LanguageConceptSwitch.RGBColor:
         return props_RGBColor;
-      case 280:
+      case LanguageConceptSwitch.ReadOnlyModelAccessor:
         return props_ReadOnlyModelAccessor;
-      case 281:
+      case LanguageConceptSwitch.ReadOnlyStyleClassItem:
         return props_ReadOnlyStyleClassItem;
-      case 282:
+      case LanguageConceptSwitch.RightTransformAnchorTagWrapper:
         return props_RightTransformAnchorTagWrapper;
-      case 283:
+      case LanguageConceptSwitch.ScriptKindClassItem:
         return props_ScriptKindClassItem;
-      case 284:
+      case LanguageConceptSwitch.SelectInEditorOperation:
         return props_SelectInEditorOperation;
-      case 285:
+      case LanguageConceptSwitch.SelectParameter:
         return props_SelectParameter;
-      case 286:
+      case LanguageConceptSwitch.SelectPositionParameter:
         return props_SelectPositionParameter;
-      case 287:
+      case LanguageConceptSwitch.SelectableStyleSheetItem:
         return props_SelectableStyleSheetItem;
-      case 288:
+      case LanguageConceptSwitch.SetBoldOperation:
         return props_SetBoldOperation;
-      case 289:
+      case LanguageConceptSwitch.ShowBoundariesInStyleClassItem:
         return props_ShowBoundariesInStyleClassItem;
-      case 290:
+      case LanguageConceptSwitch.SideTransformAnchorTagStyleClassItem:
         return props_SideTransformAnchorTagStyleClassItem;
-      case 291:
+      case LanguageConceptSwitch.StrikeOutStyleSheet:
         return props_StrikeOutStyleSheet;
-      case 292:
+      case LanguageConceptSwitch.StubCellModel_Alternation:
         return props_StubCellModel_Alternation;
-      case 293:
+      case LanguageConceptSwitch.StubCellModel_Block:
         return props_StubCellModel_Block;
-      case 294:
+      case LanguageConceptSwitch.StubCellModel_Collection:
         return props_StubCellModel_Collection;
-      case 295:
+      case LanguageConceptSwitch.StubCellModel_Component:
         return props_StubCellModel_Component;
-      case 296:
+      case LanguageConceptSwitch.StubCellModel_Constant:
         return props_StubCellModel_Constant;
-      case 297:
+      case LanguageConceptSwitch.StubCellModel_ContextAssistant:
         return props_StubCellModel_ContextAssistant;
-      case 298:
+      case LanguageConceptSwitch.StubCellModel_Custom:
         return props_StubCellModel_Custom;
-      case 299:
+      case LanguageConceptSwitch.StubCellModel_Error:
         return props_StubCellModel_Error;
-      case 300:
+      case LanguageConceptSwitch.StubCellModel_Image:
         return props_StubCellModel_Image;
-      case 301:
+      case LanguageConceptSwitch.StubCellModel_JComponent:
         return props_StubCellModel_JComponent;
-      case 302:
+      case LanguageConceptSwitch.StubCellModel_ModelAccess:
         return props_StubCellModel_ModelAccess;
-      case 303:
+      case LanguageConceptSwitch.StubCellModel_NonEmptyProperty:
         return props_StubCellModel_NonEmptyProperty;
-      case 304:
+      case LanguageConceptSwitch.StubCellModel_Property:
         return props_StubCellModel_Property;
-      case 305:
+      case LanguageConceptSwitch.StubCellModel_ReadOnlyModelAccessor:
         return props_StubCellModel_ReadOnlyModelAccessor;
-      case 306:
+      case LanguageConceptSwitch.StubCellModel_RefCell:
         return props_StubCellModel_RefCell;
-      case 307:
+      case LanguageConceptSwitch.StubCellModel_RefNode:
         return props_StubCellModel_RefNode;
-      case 308:
+      case LanguageConceptSwitch.StubCellModel_RefNodeList:
         return props_StubCellModel_RefNodeList;
-      case 309:
+      case LanguageConceptSwitch.StubCellModel_ReferencePresentation:
         return props_StubCellModel_ReferencePresentation;
-      case 310:
+      case LanguageConceptSwitch.StubCellModel_Table:
         return props_StubCellModel_Table;
-      case 311:
+      case LanguageConceptSwitch.StubCellModel_TransactionalProperty:
         return props_StubCellModel_TransactionalProperty;
-      case 312:
+      case LanguageConceptSwitch.StubCellModel_URL:
         return props_StubCellModel_URL;
-      case 313:
+      case LanguageConceptSwitch.StubEditorCellModel:
         return props_StubEditorCellModel;
-      case 314:
+      case LanguageConceptSwitch.StyleAttributeDeclaration:
         return props_StyleAttributeDeclaration;
-      case 315:
+      case LanguageConceptSwitch.StyleAttributeReferenceExpression:
         return props_StyleAttributeReferenceExpression;
-      case 316:
+      case LanguageConceptSwitch.StyleClass:
         return props_StyleClass;
-      case 317:
+      case LanguageConceptSwitch.StyleClassItem:
         return props_StyleClassItem;
-      case 318:
+      case LanguageConceptSwitch.StyleClassReference:
         return props_StyleClassReference;
-      case 319:
+      case LanguageConceptSwitch.StyleClassReferenceList:
         return props_StyleClassReferenceList;
-      case 320:
+      case LanguageConceptSwitch.StyleKey:
         return props_StyleKey;
-      case 321:
+      case LanguageConceptSwitch.StyleKeyPack:
         return props_StyleKeyPack;
-      case 322:
+      case LanguageConceptSwitch.StyleReference:
         return props_StyleReference;
-      case 323:
+      case LanguageConceptSwitch.StyleSheet:
         return props_StyleSheet;
-      case 324:
+      case LanguageConceptSwitch.StyleSheetClass:
         return props_StyleSheetClass;
-      case 325:
+      case LanguageConceptSwitch.StyleSheetClassReference:
         return props_StyleSheetClassReference;
-      case 326:
+      case LanguageConceptSwitch.StyledTextType:
         return props_StyledTextType;
-      case 327:
+      case LanguageConceptSwitch.SubstituteFeature:
         return props_SubstituteFeature;
-      case 328:
+      case LanguageConceptSwitch.SubstituteFeature_ActionType:
         return props_SubstituteFeature_ActionType;
-      case 329:
+      case LanguageConceptSwitch.SubstituteFeature_CanSubstitute:
         return props_SubstituteFeature_CanSubstitute;
-      case 330:
+      case LanguageConceptSwitch.SubstituteFeature_DescriptionText:
         return props_SubstituteFeature_DescriptionText;
-      case 331:
+      case LanguageConceptSwitch.SubstituteFeature_Icon:
         return props_SubstituteFeature_Icon;
-      case 332:
+      case LanguageConceptSwitch.SubstituteFeature_MatchingText:
         return props_SubstituteFeature_MatchingText;
-      case 333:
+      case LanguageConceptSwitch.SubstituteFeature_Selection:
         return props_SubstituteFeature_Selection;
-      case 334:
+      case LanguageConceptSwitch.SubstituteMenu:
         return props_SubstituteMenu;
-      case 335:
+      case LanguageConceptSwitch.SubstituteMenuPart:
         return props_SubstituteMenuPart;
-      case 336:
+      case LanguageConceptSwitch.SubstituteMenuPart_Action:
         return props_SubstituteMenuPart_Action;
-      case 337:
+      case LanguageConceptSwitch.SubstituteMenuPart_AddConcept:
         return props_SubstituteMenuPart_AddConcept;
-      case 338:
+      case LanguageConceptSwitch.SubstituteMenuPart_Concepts:
         return props_SubstituteMenuPart_Concepts;
-      case 339:
+      case LanguageConceptSwitch.SubstituteMenuPart_Group:
         return props_SubstituteMenuPart_Group;
-      case 340:
+      case LanguageConceptSwitch.SubstituteMenuPart_IncludeMenu:
         return props_SubstituteMenuPart_IncludeMenu;
-      case 341:
+      case LanguageConceptSwitch.SubstituteMenuPart_Parameterized:
         return props_SubstituteMenuPart_Parameterized;
-      case 342:
+      case LanguageConceptSwitch.SubstituteMenuPart_Placeholder:
         return props_SubstituteMenuPart_Placeholder;
-      case 343:
+      case LanguageConceptSwitch.SubstituteMenuPart_Subconcepts:
         return props_SubstituteMenuPart_Subconcepts;
-      case 344:
+      case LanguageConceptSwitch.SubstituteMenuPart_Wrapper:
         return props_SubstituteMenuPart_Wrapper;
-      case 345:
+      case LanguageConceptSwitch.SubstituteMenuReference:
         return props_SubstituteMenuReference;
-      case 346:
+      case LanguageConceptSwitch.SubstituteMenuReference_Default:
         return props_SubstituteMenuReference_Default;
-      case 347:
+      case LanguageConceptSwitch.SubstituteMenuReference_DefaultWithFunction:
         return props_SubstituteMenuReference_DefaultWithFunction;
-      case 348:
+      case LanguageConceptSwitch.SubstituteMenuReference_Named:
         return props_SubstituteMenuReference_Named;
-      case 349:
+      case LanguageConceptSwitch.SubstituteMenuVariableDeclaration:
         return props_SubstituteMenuVariableDeclaration;
-      case 350:
+      case LanguageConceptSwitch.SubstituteMenuVariableReference:
         return props_SubstituteMenuVariableReference;
-      case 351:
+      case LanguageConceptSwitch.SubstituteMenu_Contribution:
         return props_SubstituteMenu_Contribution;
-      case 352:
+      case LanguageConceptSwitch.SubstituteMenu_Default:
         return props_SubstituteMenu_Default;
-      case 353:
+      case LanguageConceptSwitch.SubstituteMenu_Named:
         return props_SubstituteMenu_Named;
-      case 354:
+      case LanguageConceptSwitch.SubstituteMenu_SimpleString:
         return props_SubstituteMenu_SimpleString;
-      case 355:
+      case LanguageConceptSwitch.Synchronizeable:
         return props_Synchronizeable;
-      case 356:
+      case LanguageConceptSwitch.TableComponentStyleClassItem:
         return props_TableComponentStyleClassItem;
-      case 357:
+      case LanguageConceptSwitch.TextBackgroundColorSelectedStyleClassItem:
         return props_TextBackgroundColorSelectedStyleClassItem;
-      case 358:
+      case LanguageConceptSwitch.TextBackgroundColorStyleClassItem:
         return props_TextBackgroundColorStyleClassItem;
-      case 359:
+      case LanguageConceptSwitch.TransactionPropertyHandler_newValue:
         return props_TransactionPropertyHandler_newValue;
-      case 360:
+      case LanguageConceptSwitch.TransactionPropertyHandler_oldValue:
         return props_TransactionPropertyHandler_oldValue;
-      case 361:
+      case LanguageConceptSwitch.TransactionalPropertyHandler:
         return props_TransactionalPropertyHandler;
-      case 362:
+      case LanguageConceptSwitch.TransformationFeature:
         return props_TransformationFeature;
-      case 363:
+      case LanguageConceptSwitch.TransformationFeature_ActionType:
         return props_TransformationFeature_ActionType;
-      case 364:
+      case LanguageConceptSwitch.TransformationFeature_DescriptionText:
         return props_TransformationFeature_DescriptionText;
-      case 365:
+      case LanguageConceptSwitch.TransformationFeature_Icon:
         return props_TransformationFeature_Icon;
-      case 366:
+      case LanguageConceptSwitch.TransformationLocation:
         return props_TransformationLocation;
-      case 367:
+      case LanguageConceptSwitch.TransformationLocation_Completion:
         return props_TransformationLocation_Completion;
-      case 368:
+      case LanguageConceptSwitch.TransformationLocation_ContextAssistant:
         return props_TransformationLocation_ContextAssistant;
-      case 369:
+      case LanguageConceptSwitch.TransformationLocation_SideTransform:
         return props_TransformationLocation_SideTransform;
-      case 370:
+      case LanguageConceptSwitch.TransformationLocation_SideTransform_PlaceInCellHolder:
         return props_TransformationLocation_SideTransform_PlaceInCellHolder;
-      case 371:
+      case LanguageConceptSwitch.TransformationMenu:
         return props_TransformationMenu;
-      case 372:
+      case LanguageConceptSwitch.TransformationMenuContribution:
         return props_TransformationMenuContribution;
-      case 373:
+      case LanguageConceptSwitch.TransformationMenuPart:
         return props_TransformationMenuPart;
-      case 374:
+      case LanguageConceptSwitch.TransformationMenuPart_Action:
         return props_TransformationMenuPart_Action;
-      case 375:
+      case LanguageConceptSwitch.TransformationMenuPart_Group:
         return props_TransformationMenuPart_Group;
-      case 376:
+      case LanguageConceptSwitch.TransformationMenuPart_IncludeMenu:
         return props_TransformationMenuPart_IncludeMenu;
-      case 377:
+      case LanguageConceptSwitch.TransformationMenuPart_IncludeSubstituteMenu:
         return props_TransformationMenuPart_IncludeSubstituteMenu;
-      case 378:
+      case LanguageConceptSwitch.TransformationMenuPart_Parameterized:
         return props_TransformationMenuPart_Parameterized;
-      case 379:
+      case LanguageConceptSwitch.TransformationMenuPart_Placeholder:
         return props_TransformationMenuPart_Placeholder;
-      case 380:
+      case LanguageConceptSwitch.TransformationMenuPart_SubMenu:
         return props_TransformationMenuPart_SubMenu;
-      case 381:
+      case LanguageConceptSwitch.TransformationMenuPart_Super:
         return props_TransformationMenuPart_Super;
-      case 382:
+      case LanguageConceptSwitch.TransformationMenuPart_WrapSubstituteMenu:
         return props_TransformationMenuPart_WrapSubstituteMenu;
-      case 383:
+      case LanguageConceptSwitch.TransformationMenuReference_Default:
         return props_TransformationMenuReference_Default;
-      case 384:
+      case LanguageConceptSwitch.TransformationMenuReference_Named:
         return props_TransformationMenuReference_Named;
-      case 385:
+      case LanguageConceptSwitch.TransformationMenuSection:
         return props_TransformationMenuSection;
-      case 386:
+      case LanguageConceptSwitch.TransformationMenuVariableDeclaration:
         return props_TransformationMenuVariableDeclaration;
-      case 387:
+      case LanguageConceptSwitch.TransformationMenuVariableReference:
         return props_TransformationMenuVariableReference;
-      case 388:
+      case LanguageConceptSwitch.TransformationMenu_Default:
         return props_TransformationMenu_Default;
-      case 389:
+      case LanguageConceptSwitch.TransformationMenu_Named:
         return props_TransformationMenu_Named;
-      case 390:
+      case LanguageConceptSwitch.UnapplyStyle:
         return props_UnapplyStyle;
-      case 391:
+      case LanguageConceptSwitch.UnderlinedStyleClassItem:
         return props_UnderlinedStyleClassItem;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

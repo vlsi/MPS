@@ -40,57 +40,57 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AdvanceWorkStatement:
         return props_AdvanceWorkStatement;
-      case 1:
+      case LanguageConceptSwitch.AllWorkLeftExpression:
         return props_AllWorkLeftExpression;
-      case 2:
+      case LanguageConceptSwitch.BeginWorkStatement:
         return props_BeginWorkStatement;
-      case 3:
+      case LanguageConceptSwitch.ConceptFunctionParameter_progressMonitor:
         return props_ConceptFunctionParameter_progressMonitor;
-      case 4:
+      case LanguageConceptSwitch.ConfigDefinition:
         return props_ConfigDefinition;
-      case 5:
+      case LanguageConceptSwitch.Expected:
         return props_Expected;
-      case 6:
+      case LanguageConceptSwitch.ExpectedInput:
         return props_ExpectedInput;
-      case 7:
+      case LanguageConceptSwitch.ExpectedOption:
         return props_ExpectedOption;
-      case 8:
+      case LanguageConceptSwitch.FinishWorkStatement:
         return props_FinishWorkStatement;
-      case 9:
+      case LanguageConceptSwitch.IExpected:
         return props_IExpected;
-      case 10:
+      case LanguageConceptSwitch.InputResourcesParameter:
         return props_InputResourcesParameter;
-      case 11:
+      case LanguageConceptSwitch.JobDeclaration:
         return props_JobDeclaration;
-      case 12:
+      case LanguageConceptSwitch.JobDefinition:
         return props_JobDefinition;
-      case 13:
+      case LanguageConceptSwitch.Option:
         return props_Option;
-      case 14:
+      case LanguageConceptSwitch.OptionExpression:
         return props_OptionExpression;
-      case 15:
+      case LanguageConceptSwitch.OptionType:
         return props_OptionType;
-      case 16:
+      case LanguageConceptSwitch.OutputResources:
         return props_OutputResources;
-      case 17:
+      case LanguageConceptSwitch.PropertiesAccessorParameter:
         return props_PropertiesAccessorParameter;
-      case 18:
+      case LanguageConceptSwitch.QueryDefinition:
         return props_QueryDefinition;
-      case 19:
+      case LanguageConceptSwitch.QueryParameterDeclaration:
         return props_QueryParameterDeclaration;
-      case 20:
+      case LanguageConceptSwitch.RelayQueryExpression:
         return props_RelayQueryExpression;
-      case 21:
+      case LanguageConceptSwitch.ReportFeedbackStatement:
         return props_ReportFeedbackStatement;
-      case 22:
+      case LanguageConceptSwitch.ResourceType:
         return props_ResourceType;
-      case 23:
+      case LanguageConceptSwitch.ResultStatement:
         return props_ResultStatement;
-      case 24:
+      case LanguageConceptSwitch.Text:
         return props_Text;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

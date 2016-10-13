@@ -190,355 +190,355 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractNodeRefExpression:
         return props_AbstractNodeRefExpression;
-      case 1:
+      case LanguageConceptSwitch.AbstractOperationParameter:
         return props_AbstractOperationParameter;
-      case 2:
+      case LanguageConceptSwitch.AbstractTypeCastExpression:
         return props_AbstractTypeCastExpression;
-      case 3:
+      case LanguageConceptSwitch.AggregationIdentity:
         return props_AggregationIdentity;
-      case 4:
+      case LanguageConceptSwitch.AllAttributeQualifier:
         return props_AllAttributeQualifier;
-      case 5:
+      case LanguageConceptSwitch.AsNodeOperation:
         return props_AsNodeOperation;
-      case 6:
+      case LanguageConceptSwitch.AsSConcept:
         return props_AsSConcept;
-      case 7:
+      case LanguageConceptSwitch.AssociationIdentity:
         return props_AssociationIdentity;
-      case 8:
+      case LanguageConceptSwitch.AttributeAccess:
         return props_AttributeAccess;
-      case 9:
+      case LanguageConceptSwitch.AttributeQualifier:
         return props_AttributeQualifier;
-      case 10:
+      case LanguageConceptSwitch.BootstrapAwareMetaObject:
         return props_BootstrapAwareMetaObject;
-      case 11:
+      case LanguageConceptSwitch.CheckedModuleQualifiedName:
         return props_CheckedModuleQualifiedName;
-      case 12:
+      case LanguageConceptSwitch.CheckedModuleReference:
         return props_CheckedModuleReference;
-      case 13:
+      case LanguageConceptSwitch.ChildAttributeQualifier:
         return props_ChildAttributeQualifier;
-      case 14:
+      case LanguageConceptSwitch.ChildNodeRefExpression:
         return props_ChildNodeRefExpression;
-      case 15:
+      case LanguageConceptSwitch.ConceptAliasOperation:
         return props_ConceptAliasOperation;
-      case 16:
+      case LanguageConceptSwitch.ConceptFqNameRefExpression:
         return props_ConceptFqNameRefExpression;
-      case 17:
+      case LanguageConceptSwitch.ConceptId:
         return props_ConceptId;
-      case 18:
+      case LanguageConceptSwitch.ConceptIdRefExpression:
         return props_ConceptIdRefExpression;
-      case 19:
+      case LanguageConceptSwitch.ConceptIdentity:
         return props_ConceptIdentity;
-      case 20:
+      case LanguageConceptSwitch.ConceptMemberIdentity:
         return props_ConceptMemberIdentity;
-      case 21:
+      case LanguageConceptSwitch.ConceptNodeType:
         return props_ConceptNodeType;
-      case 22:
+      case LanguageConceptSwitch.ConceptRefExpression:
         return props_ConceptRefExpression;
-      case 23:
+      case LanguageConceptSwitch.ConceptReference:
         return props_ConceptReference;
-      case 24:
+      case LanguageConceptSwitch.ConceptShortDescriptionOperation:
         return props_ConceptShortDescriptionOperation;
-      case 25:
+      case LanguageConceptSwitch.ConceptSwitchStatement:
         return props_ConceptSwitchStatement;
-      case 26:
+      case LanguageConceptSwitch.Concept_GetAllSubConcepts:
         return props_Concept_GetAllSubConcepts;
-      case 27:
+      case LanguageConceptSwitch.Concept_GetAllSuperConcepts:
         return props_Concept_GetAllSuperConcepts;
-      case 28:
+      case LanguageConceptSwitch.Concept_GetDirectSuperConcepts:
         return props_Concept_GetDirectSuperConcepts;
-      case 29:
+      case LanguageConceptSwitch.Concept_GetHierarchy:
         return props_Concept_GetHierarchy;
-      case 30:
+      case LanguageConceptSwitch.Concept_IsExactlyOperation:
         return props_Concept_IsExactlyOperation;
-      case 31:
+      case LanguageConceptSwitch.Concept_IsSubConceptOfOperation:
         return props_Concept_IsSubConceptOfOperation;
-      case 32:
+      case LanguageConceptSwitch.Concept_IsSuperConceptOfOperation:
         return props_Concept_IsSuperConceptOfOperation;
-      case 33:
+      case LanguageConceptSwitch.Concept_NewInstance:
         return props_Concept_NewInstance;
-      case 34:
+      case LanguageConceptSwitch.ContainmentLinkId:
         return props_ContainmentLinkId;
-      case 35:
+      case LanguageConceptSwitch.EnumMemberReference:
         return props_EnumMemberReference;
-      case 36:
+      case LanguageConceptSwitch.EnumMemberValueRefExpression:
         return props_EnumMemberValueRefExpression;
-      case 37:
+      case LanguageConceptSwitch.EnumMember_NameOperation:
         return props_EnumMember_NameOperation;
-      case 38:
+      case LanguageConceptSwitch.EnumMember_ValueOperation:
         return props_EnumMember_ValueOperation;
-      case 39:
+      case LanguageConceptSwitch.EqualsStructurallyExpression:
         return props_EqualsStructurallyExpression;
-      case 40:
+      case LanguageConceptSwitch.ExactConceptCase:
         return props_ExactConceptCase;
-      case 41:
+      case LanguageConceptSwitch.GeneratorIdentity:
         return props_GeneratorIdentity;
-      case 42:
+      case LanguageConceptSwitch.GeneratorModulePointer:
         return props_GeneratorModulePointer;
-      case 43:
+      case LanguageConceptSwitch.IConceptSwitchCase:
         return props_IConceptSwitchCase;
-      case 44:
+      case LanguageConceptSwitch.ILinkAccess:
         return props_ILinkAccess;
-      case 45:
+      case LanguageConceptSwitch.ILinkAccessQualifier:
         return props_ILinkAccessQualifier;
-      case 46:
+      case LanguageConceptSwitch.ILinkAccessQualifierContainer:
         return props_ILinkAccessQualifierContainer;
-      case 47:
+      case LanguageConceptSwitch.ILinkQualifier:
         return props_ILinkQualifier;
-      case 48:
+      case LanguageConceptSwitch.IPropertyQualifier:
         return props_IPropertyQualifier;
-      case 49:
+      case LanguageConceptSwitch.IRefConceptArg:
         return props_IRefConceptArg;
-      case 50:
+      case LanguageConceptSwitch.IReferenceOperation:
         return props_IReferenceOperation;
-      case 51:
+      case LanguageConceptSwitch.IfInstanceOfStatement:
         return props_IfInstanceOfStatement;
-      case 52:
+      case LanguageConceptSwitch.IfInstanceOfVarReference:
         return props_IfInstanceOfVarReference;
-      case 53:
+      case LanguageConceptSwitch.IfInstanceOfVariable:
         return props_IfInstanceOfVariable;
-      case 54:
+      case LanguageConceptSwitch.LanguageId:
         return props_LanguageId;
-      case 55:
+      case LanguageConceptSwitch.LanguageIdentity:
         return props_LanguageIdentity;
-      case 56:
+      case LanguageConceptSwitch.LanguageRefExpression:
         return props_LanguageRefExpression;
-      case 57:
+      case LanguageConceptSwitch.LanguageReferenceExpression:
         return props_LanguageReferenceExpression;
-      case 58:
+      case LanguageConceptSwitch.LinkAttributeQualifier:
         return props_LinkAttributeQualifier;
-      case 59:
+      case LanguageConceptSwitch.LinkIdRefExpression:
         return props_LinkIdRefExpression;
-      case 60:
+      case LanguageConceptSwitch.LinkList_AddNewChildOperation:
         return props_LinkList_AddNewChildOperation;
-      case 61:
+      case LanguageConceptSwitch.LinkNameRefExpression:
         return props_LinkNameRefExpression;
-      case 62:
+      case LanguageConceptSwitch.LinkQualifier:
         return props_LinkQualifier;
-      case 63:
+      case LanguageConceptSwitch.LinkRefExpression:
         return props_LinkRefExpression;
-      case 64:
+      case LanguageConceptSwitch.LinkRefQualifier:
         return props_LinkRefQualifier;
-      case 65:
+      case LanguageConceptSwitch.Link_SetNewChildOperation:
         return props_Link_SetNewChildOperation;
-      case 66:
+      case LanguageConceptSwitch.Link_SetTargetOperation:
         return props_Link_SetTargetOperation;
-      case 67:
+      case LanguageConceptSwitch.ModelReferenceExpression:
         return props_ModelReferenceExpression;
-      case 68:
+      case LanguageConceptSwitch.Model_AddRootOperation:
         return props_Model_AddRootOperation;
-      case 69:
+      case LanguageConceptSwitch.Model_CreateNewNodeOperation:
         return props_Model_CreateNewNodeOperation;
-      case 70:
+      case LanguageConceptSwitch.Model_CreateNewRootNodeOperation:
         return props_Model_CreateNewRootNodeOperation;
-      case 71:
+      case LanguageConceptSwitch.Model_GetLongNameOperation:
         return props_Model_GetLongNameOperation;
-      case 72:
+      case LanguageConceptSwitch.Model_GetModule:
         return props_Model_GetModule;
-      case 73:
+      case LanguageConceptSwitch.Model_NodesIncludingImportedOperation:
         return props_Model_NodesIncludingImportedOperation;
-      case 74:
+      case LanguageConceptSwitch.Model_NodesOperation:
         return props_Model_NodesOperation;
-      case 75:
+      case LanguageConceptSwitch.Model_RootsIncludingImportedOperation:
         return props_Model_RootsIncludingImportedOperation;
-      case 76:
+      case LanguageConceptSwitch.Model_RootsOperation:
         return props_Model_RootsOperation;
-      case 77:
+      case LanguageConceptSwitch.ModuleIdentity:
         return props_ModuleIdentity;
-      case 78:
+      case LanguageConceptSwitch.ModulePointer:
         return props_ModulePointer;
-      case 79:
+      case LanguageConceptSwitch.ModuleRefExpression:
         return props_ModuleRefExpression;
-      case 80:
+      case LanguageConceptSwitch.ModuleReferenceExpression:
         return props_ModuleReferenceExpression;
-      case 81:
+      case LanguageConceptSwitch.NodeAttributeQualifier:
         return props_NodeAttributeQualifier;
-      case 82:
+      case LanguageConceptSwitch.NodePointerExpression:
         return props_NodePointerExpression;
-      case 83:
+      case LanguageConceptSwitch.NodeRefExpression:
         return props_NodeRefExpression;
-      case 84:
+      case LanguageConceptSwitch.Node_ConceptMethodCall:
         return props_Node_ConceptMethodCall;
-      case 85:
+      case LanguageConceptSwitch.Node_CopyOperation:
         return props_Node_CopyOperation;
-      case 86:
+      case LanguageConceptSwitch.Node_DeleteOperation:
         return props_Node_DeleteOperation;
-      case 87:
+      case LanguageConceptSwitch.Node_DetachOperation:
         return props_Node_DetachOperation;
-      case 88:
+      case LanguageConceptSwitch.Node_GetAllSiblingsOperation:
         return props_Node_GetAllSiblingsOperation;
-      case 89:
+      case LanguageConceptSwitch.Node_GetAncestorOperation:
         return props_Node_GetAncestorOperation;
-      case 90:
+      case LanguageConceptSwitch.Node_GetAncestorsOperation:
         return props_Node_GetAncestorsOperation;
-      case 91:
+      case LanguageConceptSwitch.Node_GetChildrenAndChildAttributesOperation:
         return props_Node_GetChildrenAndChildAttributesOperation;
-      case 92:
+      case LanguageConceptSwitch.Node_GetChildrenOperation:
         return props_Node_GetChildrenOperation;
-      case 93:
+      case LanguageConceptSwitch.Node_GetConceptOperation:
         return props_Node_GetConceptOperation;
-      case 94:
+      case LanguageConceptSwitch.Node_GetContainingLinkOperation:
         return props_Node_GetContainingLinkOperation;
-      case 95:
+      case LanguageConceptSwitch.Node_GetContainingRoleOperation:
         return props_Node_GetContainingRoleOperation;
-      case 96:
+      case LanguageConceptSwitch.Node_GetContainingRootOperation:
         return props_Node_GetContainingRootOperation;
-      case 97:
+      case LanguageConceptSwitch.Node_GetDescendantsOperation:
         return props_Node_GetDescendantsOperation;
-      case 98:
+      case LanguageConceptSwitch.Node_GetIndexInParentOperation:
         return props_Node_GetIndexInParentOperation;
-      case 99:
+      case LanguageConceptSwitch.Node_GetModelOperation:
         return props_Node_GetModelOperation;
-      case 100:
+      case LanguageConceptSwitch.Node_GetNextSiblingOperation:
         return props_Node_GetNextSiblingOperation;
-      case 101:
+      case LanguageConceptSwitch.Node_GetNextSiblingsOperation:
         return props_Node_GetNextSiblingsOperation;
-      case 102:
+      case LanguageConceptSwitch.Node_GetParentOperation:
         return props_Node_GetParentOperation;
-      case 103:
+      case LanguageConceptSwitch.Node_GetPrevSiblingOperation:
         return props_Node_GetPrevSiblingOperation;
-      case 104:
+      case LanguageConceptSwitch.Node_GetPrevSiblingsOperation:
         return props_Node_GetPrevSiblingsOperation;
-      case 105:
+      case LanguageConceptSwitch.Node_GetReferenceOperation:
         return props_Node_GetReferenceOperation;
-      case 106:
+      case LanguageConceptSwitch.Node_GetReferencesOperation:
         return props_Node_GetReferencesOperation;
-      case 107:
+      case LanguageConceptSwitch.Node_GetReferentSearchScopeOperation:
         return props_Node_GetReferentSearchScopeOperation;
-      case 108:
+      case LanguageConceptSwitch.Node_GetSConceptOperation:
         return props_Node_GetSConceptOperation;
-      case 109:
+      case LanguageConceptSwitch.Node_InsertNewNextSiblingOperation:
         return props_Node_InsertNewNextSiblingOperation;
-      case 110:
+      case LanguageConceptSwitch.Node_InsertNewPrevSiblingOperation:
         return props_Node_InsertNewPrevSiblingOperation;
-      case 111:
+      case LanguageConceptSwitch.Node_InsertNextSiblingOperation:
         return props_Node_InsertNextSiblingOperation;
-      case 112:
+      case LanguageConceptSwitch.Node_InsertPrevSiblingOperation:
         return props_Node_InsertPrevSiblingOperation;
-      case 113:
+      case LanguageConceptSwitch.Node_IsAttributeOperation:
         return props_Node_IsAttributeOperation;
-      case 114:
+      case LanguageConceptSwitch.Node_IsInstanceOfOperation:
         return props_Node_IsInstanceOfOperation;
-      case 115:
+      case LanguageConceptSwitch.Node_IsNotNullOperation:
         return props_Node_IsNotNullOperation;
-      case 116:
+      case LanguageConceptSwitch.Node_IsNullOperation:
         return props_Node_IsNullOperation;
-      case 117:
+      case LanguageConceptSwitch.Node_IsRoleOperation:
         return props_Node_IsRoleOperation;
-      case 118:
+      case LanguageConceptSwitch.Node_PointerOperation:
         return props_Node_PointerOperation;
-      case 119:
+      case LanguageConceptSwitch.Node_ReplaceWithAnotherOperation:
         return props_Node_ReplaceWithAnotherOperation;
-      case 120:
+      case LanguageConceptSwitch.Node_ReplaceWithNewOperation:
         return props_Node_ReplaceWithNewOperation;
-      case 121:
+      case LanguageConceptSwitch.OfConceptOperation:
         return props_OfConceptOperation;
-      case 122:
+      case LanguageConceptSwitch.OperationParm_Concept:
         return props_OperationParm_Concept;
-      case 123:
+      case LanguageConceptSwitch.OperationParm_ConceptList:
         return props_OperationParm_ConceptList;
-      case 124:
+      case LanguageConceptSwitch.OperationParm_Inclusion:
         return props_OperationParm_Inclusion;
-      case 125:
+      case LanguageConceptSwitch.OperationParm_LinkQualifier:
         return props_OperationParm_LinkQualifier;
-      case 126:
+      case LanguageConceptSwitch.OperationParm_Root:
         return props_OperationParm_Root;
-      case 127:
+      case LanguageConceptSwitch.OperationParm_SameMetaLevel:
         return props_OperationParm_SameMetaLevel;
-      case 128:
+      case LanguageConceptSwitch.OperationParm_StopConceptList:
         return props_OperationParm_StopConceptList;
-      case 129:
+      case LanguageConceptSwitch.PoundExpression:
         return props_PoundExpression;
-      case 130:
+      case LanguageConceptSwitch.PropertyAttributeQualifier:
         return props_PropertyAttributeQualifier;
-      case 131:
+      case LanguageConceptSwitch.PropertyId:
         return props_PropertyId;
-      case 132:
+      case LanguageConceptSwitch.PropertyIdRefExpression:
         return props_PropertyIdRefExpression;
-      case 133:
+      case LanguageConceptSwitch.PropertyIdentity:
         return props_PropertyIdentity;
-      case 134:
+      case LanguageConceptSwitch.PropertyNameRefExpression:
         return props_PropertyNameRefExpression;
-      case 135:
+      case LanguageConceptSwitch.PropertyQualifier:
         return props_PropertyQualifier;
-      case 136:
+      case LanguageConceptSwitch.Property_HasValue_Enum:
         return props_Property_HasValue_Enum;
-      case 137:
+      case LanguageConceptSwitch.Property_HasValue_Simple:
         return props_Property_HasValue_Simple;
-      case 138:
+      case LanguageConceptSwitch.Property_RemoveOperation:
         return props_Property_RemoveOperation;
-      case 139:
+      case LanguageConceptSwitch.Property_SetOperation:
         return props_Property_SetOperation;
-      case 140:
+      case LanguageConceptSwitch.RefConcept_Reference:
         return props_RefConcept_Reference;
-      case 141:
+      case LanguageConceptSwitch.ReferenceLinkId:
         return props_ReferenceLinkId;
-      case 142:
+      case LanguageConceptSwitch.Reference_GetLinkDeclarationOperation:
         return props_Reference_GetLinkDeclarationOperation;
-      case 143:
+      case LanguageConceptSwitch.Reference_GetResolveInfo:
         return props_Reference_GetResolveInfo;
-      case 144:
+      case LanguageConceptSwitch.Reference_GetRoleOperation:
         return props_Reference_GetRoleOperation;
-      case 145:
+      case LanguageConceptSwitch.Reference_GetTargetOperation:
         return props_Reference_GetTargetOperation;
-      case 146:
+      case LanguageConceptSwitch.SConceptOperation:
         return props_SConceptOperation;
-      case 147:
+      case LanguageConceptSwitch.SConceptType:
         return props_SConceptType;
-      case 148:
+      case LanguageConceptSwitch.SConceptTypeCastExpression:
         return props_SConceptTypeCastExpression;
-      case 149:
+      case LanguageConceptSwitch.SConceptTypeLiteral:
         return props_SConceptTypeLiteral;
-      case 150:
+      case LanguageConceptSwitch.SEnumMemberOperation:
         return props_SEnumMemberOperation;
-      case 151:
+      case LanguageConceptSwitch.SEnumMemberType:
         return props_SEnumMemberType;
-      case 152:
+      case LanguageConceptSwitch.SEnumOperation:
         return props_SEnumOperation;
-      case 153:
+      case LanguageConceptSwitch.SEnumOperationInvocation:
         return props_SEnumOperationInvocation;
-      case 154:
+      case LanguageConceptSwitch.SEnum_MemberForNameOperation:
         return props_SEnum_MemberForNameOperation;
-      case 155:
+      case LanguageConceptSwitch.SEnum_MemberForValueOperation:
         return props_SEnum_MemberForValueOperation;
-      case 156:
+      case LanguageConceptSwitch.SEnum_MemberOperation:
         return props_SEnum_MemberOperation;
-      case 157:
+      case LanguageConceptSwitch.SEnum_MembersOperation:
         return props_SEnum_MembersOperation;
-      case 158:
+      case LanguageConceptSwitch.SLinkAccess:
         return props_SLinkAccess;
-      case 159:
+      case LanguageConceptSwitch.SLinkImplicitSelect:
         return props_SLinkImplicitSelect;
-      case 160:
+      case LanguageConceptSwitch.SLinkListAccess:
         return props_SLinkListAccess;
-      case 161:
+      case LanguageConceptSwitch.SModelType:
         return props_SModelType;
-      case 162:
+      case LanguageConceptSwitch.SNodeCreator:
         return props_SNodeCreator;
-      case 163:
+      case LanguageConceptSwitch.SNodeListCreator:
         return props_SNodeListCreator;
-      case 164:
+      case LanguageConceptSwitch.SNodeListType:
         return props_SNodeListType;
-      case 165:
+      case LanguageConceptSwitch.SNodeOperation:
         return props_SNodeOperation;
-      case 166:
+      case LanguageConceptSwitch.SNodeType:
         return props_SNodeType;
-      case 167:
+      case LanguageConceptSwitch.SNodeTypeCastExpression:
         return props_SNodeTypeCastExpression;
-      case 168:
+      case LanguageConceptSwitch.SPropertyAccess:
         return props_SPropertyAccess;
-      case 169:
+      case LanguageConceptSwitch.SReferenceType:
         return props_SReferenceType;
-      case 170:
+      case LanguageConceptSwitch.SearchScopeType:
         return props_SearchScopeType;
-      case 171:
+      case LanguageConceptSwitch.SearchScope_ContainsOperation:
         return props_SearchScope_ContainsOperation;
-      case 172:
+      case LanguageConceptSwitch.SemanticDowncastExpression:
         return props_SemanticDowncastExpression;
-      case 173:
+      case LanguageConceptSwitch.SubconceptCase:
         return props_SubconceptCase;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

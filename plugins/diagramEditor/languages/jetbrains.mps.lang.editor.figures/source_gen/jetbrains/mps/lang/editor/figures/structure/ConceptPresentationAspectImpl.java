@@ -24,25 +24,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ExternalViewFigure:
         return props_ExternalViewFigure;
-      case 1:
+      case LanguageConceptSwitch.ExternalViewFigureParameter:
         return props_ExternalViewFigureParameter;
-      case 2:
+      case LanguageConceptSwitch.Figure:
         return props_Figure;
-      case 3:
+      case LanguageConceptSwitch.FigureAttribute:
         return props_FigureAttribute;
-      case 4:
+      case LanguageConceptSwitch.FigureParameter:
         return props_FigureParameter;
-      case 5:
+      case LanguageConceptSwitch.FigureParameterAttribute:
         return props_FigureParameterAttribute;
-      case 6:
+      case LanguageConceptSwitch.FigureParameterAttributeField:
         return props_FigureParameterAttributeField;
-      case 7:
+      case LanguageConceptSwitch.FigureParameterAttributeMethod:
         return props_FigureParameterAttributeMethod;
-      case 8:
+      case LanguageConceptSwitch.FigureParameterAttributeViewProperty:
         return props_FigureParameterAttributeViewProperty;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

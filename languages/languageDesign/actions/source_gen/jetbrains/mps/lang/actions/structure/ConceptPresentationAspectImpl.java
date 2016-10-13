@@ -132,241 +132,241 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AddMenuPart:
         return props_AddMenuPart;
-      case 1:
+      case LanguageConceptSwitch.ConceptFunctionParameter_EditorCell:
         return props_ConceptFunctionParameter_EditorCell;
-      case 2:
+      case LanguageConceptSwitch.ConceptFunctionParameter_OperationContext:
         return props_ConceptFunctionParameter_OperationContext;
-      case 3:
+      case LanguageConceptSwitch.ConceptFunctionParameter_childConcept:
         return props_ConceptFunctionParameter_childConcept;
-      case 4:
+      case LanguageConceptSwitch.ConceptFunctionParameter_childSetter:
         return props_ConceptFunctionParameter_childSetter;
-      case 5:
+      case LanguageConceptSwitch.ConceptFunctionParameter_concept:
         return props_ConceptFunctionParameter_concept;
-      case 6:
+      case LanguageConceptSwitch.ConceptFunctionParameter_createdNode:
         return props_ConceptFunctionParameter_createdNode;
-      case 7:
+      case LanguageConceptSwitch.ConceptFunctionParameter_currentTargetNode:
         return props_ConceptFunctionParameter_currentTargetNode;
-      case 8:
+      case LanguageConceptSwitch.ConceptFunctionParameter_link:
         return props_ConceptFunctionParameter_link;
-      case 9:
+      case LanguageConceptSwitch.ConceptFunctionParameter_nodeToCopyPreProcess:
         return props_ConceptFunctionParameter_nodeToCopyPreProcess;
-      case 10:
+      case LanguageConceptSwitch.ConceptFunctionParameter_nodeToCopyPreProcessOriginal:
         return props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal;
-      case 11:
+      case LanguageConceptSwitch.ConceptFunctionParameter_nodeToPastePostProcess:
         return props_ConceptFunctionParameter_nodeToPastePostProcess;
-      case 12:
+      case LanguageConceptSwitch.ConceptFunctionParameter_nodeToPasteWrap:
         return props_ConceptFunctionParameter_nodeToPasteWrap;
-      case 13:
+      case LanguageConceptSwitch.ConceptFunctionParameter_nodeToWrap:
         return props_ConceptFunctionParameter_nodeToWrap;
-      case 14:
+      case LanguageConceptSwitch.ConceptFunctionParameter_parameterObject:
         return props_ConceptFunctionParameter_parameterObject;
-      case 15:
+      case LanguageConceptSwitch.ConceptFunctionParameter_parentNode:
         return props_ConceptFunctionParameter_parentNode;
-      case 16:
+      case LanguageConceptSwitch.ConceptFunctionParameter_pattern:
         return props_ConceptFunctionParameter_pattern;
-      case 17:
+      case LanguageConceptSwitch.ConceptFunctionParameter_result:
         return props_ConceptFunctionParameter_result;
-      case 18:
+      case LanguageConceptSwitch.ConceptFunctionParameter_sourceNode:
         return props_ConceptFunctionParameter_sourceNode;
-      case 19:
+      case LanguageConceptSwitch.ConceptFunctionParameter_strictly:
         return props_ConceptFunctionParameter_strictly;
-      case 20:
+      case LanguageConceptSwitch.ConceptFunctionParameter_targetNode:
         return props_ConceptFunctionParameter_targetNode;
-      case 21:
+      case LanguageConceptSwitch.ConceptFunctionParameter_wrapped:
         return props_ConceptFunctionParameter_wrapped;
-      case 22:
+      case LanguageConceptSwitch.ConceptPart:
         return props_ConceptPart;
-      case 23:
+      case LanguageConceptSwitch.ConceptRightTransformPart:
         return props_ConceptRightTransformPart;
-      case 24:
+      case LanguageConceptSwitch.ConceptSubstitutePart:
         return props_ConceptSubstitutePart;
-      case 25:
+      case LanguageConceptSwitch.ConceptsSubstituteMenuPart:
         return props_ConceptsSubstituteMenuPart;
-      case 26:
+      case LanguageConceptSwitch.CopyPasteHandlers:
         return props_CopyPasteHandlers;
-      case 27:
+      case LanguageConceptSwitch.CopyPreProcessFunction:
         return props_CopyPreProcessFunction;
-      case 28:
+      case LanguageConceptSwitch.CopyPreProcessor:
         return props_CopyPreProcessor;
-      case 29:
+      case LanguageConceptSwitch.ExecuteSmartActionFunction:
         return props_ExecuteSmartActionFunction;
-      case 30:
+      case LanguageConceptSwitch.GenerateCodeAction:
         return props_GenerateCodeAction;
-      case 31:
+      case LanguageConceptSwitch.GenericSubstituteMenuPart:
         return props_GenericSubstituteMenuPart;
-      case 32:
+      case LanguageConceptSwitch.GetActionUIFunction:
         return props_GetActionUIFunction;
-      case 33:
+      case LanguageConceptSwitch.ICouldBeAnnotatedWithMigrateManually:
         return props_ICouldBeAnnotatedWithMigrateManually;
-      case 34:
+      case LanguageConceptSwitch.ISideTransform_String:
         return props_ISideTransform_String;
-      case 35:
+      case LanguageConceptSwitch.ISubstitute_String:
         return props_ISubstitute_String;
-      case 36:
+      case LanguageConceptSwitch.IncludeRightTransformForNodePart:
         return props_IncludeRightTransformForNodePart;
-      case 37:
+      case LanguageConceptSwitch.IsSmartActionApplicableFunction:
         return props_IsSmartActionApplicableFunction;
-      case 38:
+      case LanguageConceptSwitch.MenuPart:
         return props_MenuPart;
-      case 39:
+      case LanguageConceptSwitch.MigrateManuallyAnnotation:
         return props_MigrateManuallyAnnotation;
-      case 40:
+      case LanguageConceptSwitch.MigratedToAnnotation:
         return props_MigratedToAnnotation;
-      case 41:
+      case LanguageConceptSwitch.NF_Concept_NewInstance:
         return props_NF_Concept_NewInstance;
-      case 42:
+      case LanguageConceptSwitch.NF_LinkList_AddNewChildOperation:
         return props_NF_LinkList_AddNewChildOperation;
-      case 43:
+      case LanguageConceptSwitch.NF_Link_SetNewChildOperation:
         return props_NF_Link_SetNewChildOperation;
-      case 44:
+      case LanguageConceptSwitch.NF_Model_CreateNewNodeOperation:
         return props_NF_Model_CreateNewNodeOperation;
-      case 45:
+      case LanguageConceptSwitch.NF_Model_CreateNewRootNodeOperation:
         return props_NF_Model_CreateNewRootNodeOperation;
-      case 46:
+      case LanguageConceptSwitch.NF_Node_InsertNewNextSiblingOperation:
         return props_NF_Node_InsertNewNextSiblingOperation;
-      case 47:
+      case LanguageConceptSwitch.NF_Node_InsertNewPrevSiblingOperation:
         return props_NF_Node_InsertNewPrevSiblingOperation;
-      case 48:
+      case LanguageConceptSwitch.NF_Node_ReplaceWithNewOperation:
         return props_NF_Node_ReplaceWithNewOperation;
-      case 49:
+      case LanguageConceptSwitch.NodeFactories:
         return props_NodeFactories;
-      case 50:
+      case LanguageConceptSwitch.NodeFactory:
         return props_NodeFactory;
-      case 51:
+      case LanguageConceptSwitch.NodeSetupFunction:
         return props_NodeSetupFunction;
-      case 52:
+      case LanguageConceptSwitch.NodeSetupFunction_EnclosingNode:
         return props_NodeSetupFunction_EnclosingNode;
-      case 53:
+      case LanguageConceptSwitch.NodeSetupFunction_NewNode:
         return props_NodeSetupFunction_NewNode;
-      case 54:
+      case LanguageConceptSwitch.NodeSetupFunction_SampleNode:
         return props_NodeSetupFunction_SampleNode;
-      case 55:
+      case LanguageConceptSwitch.NodeSubstituteActions:
         return props_NodeSubstituteActions;
-      case 56:
+      case LanguageConceptSwitch.NodeSubstituteActionsBuilder:
         return props_NodeSubstituteActionsBuilder;
-      case 57:
+      case LanguageConceptSwitch.NodeSubstituteMenuBuilderPart:
         return props_NodeSubstituteMenuBuilderPart;
-      case 58:
+      case LanguageConceptSwitch.NodeSubstitutePreconditionFunction:
         return props_NodeSubstitutePreconditionFunction;
-      case 59:
+      case LanguageConceptSwitch.ParameterizedSideTransformMenuPart:
         return props_ParameterizedSideTransformMenuPart;
-      case 60:
+      case LanguageConceptSwitch.ParameterizedSubstituteMenuPart:
         return props_ParameterizedSubstituteMenuPart;
-      case 61:
+      case LanguageConceptSwitch.PastePostProcessFunction:
         return props_PastePostProcessFunction;
-      case 62:
+      case LanguageConceptSwitch.PastePostProcessor:
         return props_PastePostProcessor;
-      case 63:
+      case LanguageConceptSwitch.PasteWrapper:
         return props_PasteWrapper;
-      case 64:
+      case LanguageConceptSwitch.PasteWrappers:
         return props_PasteWrappers;
-      case 65:
+      case LanguageConceptSwitch.QueryFunction_ActionType:
         return props_QueryFunction_ActionType;
-      case 66:
+      case LanguageConceptSwitch.QueryFunction_CanSubstitute:
         return props_QueryFunction_CanSubstitute;
-      case 67:
+      case LanguageConceptSwitch.QueryFunction_GenericSubstituteMenuPart:
         return props_QueryFunction_GenericSubstituteMenuPart;
-      case 68:
+      case LanguageConceptSwitch.QueryFunction_IconNode:
         return props_QueryFunction_IconNode;
-      case 69:
+      case LanguageConceptSwitch.QueryFunction_ParameterizedSideTransform_Handler:
         return props_QueryFunction_ParameterizedSideTransform_Handler;
-      case 70:
+      case LanguageConceptSwitch.QueryFunction_ParameterizedSideTransform_Query:
         return props_QueryFunction_ParameterizedSideTransform_Query;
-      case 71:
+      case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_Handler:
         return props_QueryFunction_ParameterizedSubstitute_Handler;
-      case 72:
+      case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_Icon:
         return props_QueryFunction_ParameterizedSubstitute_Icon;
-      case 73:
+      case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_Query:
         return props_QueryFunction_ParameterizedSubstitute_Query;
-      case 74:
+      case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_String:
         return props_QueryFunction_ParameterizedSubstitute_String;
-      case 75:
+      case LanguageConceptSwitch.QueryFunction_PasteWrapper:
         return props_QueryFunction_PasteWrapper;
-      case 76:
+      case LanguageConceptSwitch.QueryFunction_RemoveBy_Condition:
         return props_QueryFunction_RemoveBy_Condition;
-      case 77:
+      case LanguageConceptSwitch.QueryFunction_ReturnSmallPart:
         return props_QueryFunction_ReturnSmallPart;
-      case 78:
+      case LanguageConceptSwitch.QueryFunction_STVariableInitializer:
         return props_QueryFunction_STVariableInitializer;
-      case 79:
+      case LanguageConceptSwitch.QueryFunction_ST_CommonInitializer:
         return props_QueryFunction_ST_CommonInitializer;
-      case 80:
+      case LanguageConceptSwitch.QueryFunction_ST_RemoveBy_Condition:
         return props_QueryFunction_ST_RemoveBy_Condition;
-      case 81:
+      case LanguageConceptSwitch.QueryFunction_SideTransform_ConceptHandler:
         return props_QueryFunction_SideTransform_ConceptHandler;
-      case 82:
+      case LanguageConceptSwitch.QueryFunction_SideTransform_Handler:
         return props_QueryFunction_SideTransform_Handler;
-      case 83:
+      case LanguageConceptSwitch.QueryFunction_SideTransform_Icon:
         return props_QueryFunction_SideTransform_Icon;
-      case 84:
+      case LanguageConceptSwitch.QueryFunction_SideTransform_NodeQuery:
         return props_QueryFunction_SideTransform_NodeQuery;
-      case 85:
+      case LanguageConceptSwitch.QueryFunction_SideTransform_String:
         return props_QueryFunction_SideTransform_String;
-      case 86:
+      case LanguageConceptSwitch.QueryFunction_SubstituteIcon:
         return props_QueryFunction_SubstituteIcon;
-      case 87:
+      case LanguageConceptSwitch.QueryFunction_SubstituteString:
         return props_QueryFunction_SubstituteString;
-      case 88:
+      case LanguageConceptSwitch.QueryFunction_SubstituteVariableInitializer:
         return props_QueryFunction_SubstituteVariableInitializer;
-      case 89:
+      case LanguageConceptSwitch.QueryFunction_SubstituteWrapper:
         return props_QueryFunction_SubstituteWrapper;
-      case 90:
+      case LanguageConceptSwitch.QueryFunction_Substitute_CommonInitializer:
         return props_QueryFunction_Substitute_CommonInitializer;
-      case 91:
+      case LanguageConceptSwitch.QueryFunction_Substitute_Handler:
         return props_QueryFunction_Substitute_Handler;
-      case 92:
+      case LanguageConceptSwitch.QueryFunction_Substitute_SelectionHandler:
         return props_QueryFunction_Substitute_SelectionHandler;
-      case 93:
+      case LanguageConceptSwitch.RemoveByConditionPart:
         return props_RemoveByConditionPart;
-      case 94:
+      case LanguageConceptSwitch.RemoveDefaultsPart:
         return props_RemoveDefaultsPart;
-      case 95:
+      case LanguageConceptSwitch.RemovePart:
         return props_RemovePart;
-      case 96:
+      case LanguageConceptSwitch.RemoveSTByConditionPart:
         return props_RemoveSTByConditionPart;
-      case 97:
+      case LanguageConceptSwitch.SNodeCreatorAndInitializer:
         return props_SNodeCreatorAndInitializer;
-      case 98:
+      case LanguageConceptSwitch.SideTransformHintSubstituteActions:
         return props_SideTransformHintSubstituteActions;
-      case 99:
+      case LanguageConceptSwitch.SideTransformHintSubstituteActionsBuilder:
         return props_SideTransformHintSubstituteActionsBuilder;
-      case 100:
+      case LanguageConceptSwitch.SideTransformHintSubstitutePreconditionFunction:
         return props_SideTransformHintSubstitutePreconditionFunction;
-      case 101:
+      case LanguageConceptSwitch.SideTransformMenuBuilderPart:
         return props_SideTransformMenuBuilderPart;
-      case 102:
+      case LanguageConceptSwitch.SideTransformMenuPart:
         return props_SideTransformMenuPart;
-      case 103:
+      case LanguageConceptSwitch.SideTransformVariableDeclaration:
         return props_SideTransformVariableDeclaration;
-      case 104:
+      case LanguageConceptSwitch.SideTransformVariableReference:
         return props_SideTransformVariableReference;
-      case 105:
+      case LanguageConceptSwitch.SideTransform_SimpleString:
         return props_SideTransform_SimpleString;
-      case 106:
+      case LanguageConceptSwitch.SimpleItemSubstitutePart:
         return props_SimpleItemSubstitutePart;
-      case 107:
+      case LanguageConceptSwitch.SimpleSideTransformMenuPart:
         return props_SimpleSideTransformMenuPart;
-      case 108:
+      case LanguageConceptSwitch.SmartActionParameter:
         return props_SmartActionParameter;
-      case 109:
+      case LanguageConceptSwitch.SmartActionParameterReference:
         return props_SmartActionParameterReference;
-      case 110:
+      case LanguageConceptSwitch.SmartEditorActions:
         return props_SmartEditorActions;
-      case 111:
+      case LanguageConceptSwitch.SubstituteMenuPart:
         return props_SubstituteMenuPart;
-      case 112:
+      case LanguageConceptSwitch.SubstituteNodeBuilderVariableDeclaration:
         return props_SubstituteNodeBuilderVariableDeclaration;
-      case 113:
+      case LanguageConceptSwitch.SubstituteNodeBuilderVariableReference:
         return props_SubstituteNodeBuilderVariableReference;
-      case 114:
+      case LanguageConceptSwitch.Substitute_SimpleString:
         return props_Substitute_SimpleString;
-      case 115:
+      case LanguageConceptSwitch.SurroundWithAction:
         return props_SurroundWithAction;
-      case 116:
+      case LanguageConceptSwitch.WrapperSubstituteMenuPart:
         return props_WrapperSubstituteMenuPart;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

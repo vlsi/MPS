@@ -27,31 +27,31 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.CanWrapHighLevelValue_ConceptFunction:
         return props_CanWrapHighLevelValue_ConceptFunction;
-      case 1:
+      case LanguageConceptSwitch.CustomWatchable:
         return props_CustomWatchable;
-      case 2:
+      case LanguageConceptSwitch.CustomWatchablesContainer:
         return props_CustomWatchablesContainer;
-      case 3:
+      case LanguageConceptSwitch.GetHighLevelValuePresentation_ConceptFunction:
         return props_GetHighLevelValuePresentation_ConceptFunction;
-      case 4:
+      case LanguageConceptSwitch.GetHighLevelWatchablesBlock_ConceptFunction:
         return props_GetHighLevelWatchablesBlock_ConceptFunction;
-      case 5:
+      case LanguageConceptSwitch.HighLevelCustomViewer:
         return props_HighLevelCustomViewer;
-      case 6:
+      case LanguageConceptSwitch.HighLevelValue_ConceptFunctionParameter:
         return props_HighLevelValue_ConceptFunctionParameter;
-      case 7:
+      case LanguageConceptSwitch.HighLevelWatchableCreator:
         return props_HighLevelWatchableCreator;
-      case 8:
+      case LanguageConceptSwitch.ToProcessMethod:
         return props_ToProcessMethod;
-      case 9:
+      case LanguageConceptSwitch.WatchableListType:
         return props_WatchableListType;
-      case 10:
+      case LanguageConceptSwitch.WatchableType:
         return props_WatchableType;
-      case 11:
+      case LanguageConceptSwitch.WatchablesListCreator:
         return props_WatchablesListCreator;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

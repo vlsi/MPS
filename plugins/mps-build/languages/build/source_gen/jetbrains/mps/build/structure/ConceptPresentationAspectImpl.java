@@ -149,275 +149,275 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BuildAspect:
         return props_BuildAspect;
-      case 1:
+      case LanguageConceptSwitch.BuildCompositePath:
         return props_BuildCompositePath;
-      case 2:
+      case LanguageConceptSwitch.BuildCustomWorkflow:
         return props_BuildCustomWorkflow;
-      case 3:
+      case LanguageConceptSwitch.BuildDependency:
         return props_BuildDependency;
-      case 4:
+      case LanguageConceptSwitch.BuildExternalDependency:
         return props_BuildExternalDependency;
-      case 5:
+      case LanguageConceptSwitch.BuildExternalLayout:
         return props_BuildExternalLayout;
-      case 6:
+      case LanguageConceptSwitch.BuildExternalLayoutDependency:
         return props_BuildExternalLayoutDependency;
-      case 7:
+      case LanguageConceptSwitch.BuildFileExcludeSelector:
         return props_BuildFileExcludeSelector;
-      case 8:
+      case LanguageConceptSwitch.BuildFileIncludeSelector:
         return props_BuildFileIncludeSelector;
-      case 9:
+      case LanguageConceptSwitch.BuildFileIncludesSelector:
         return props_BuildFileIncludesSelector;
-      case 10:
+      case LanguageConceptSwitch.BuildFileSelector:
         return props_BuildFileSelector;
-      case 11:
+      case LanguageConceptSwitch.BuildFileSelectorInAttribute:
         return props_BuildFileSelectorInAttribute;
-      case 12:
+      case LanguageConceptSwitch.BuildFolderMacro:
         return props_BuildFolderMacro;
-      case 13:
+      case LanguageConceptSwitch.BuildInputFileSet:
         return props_BuildInputFileSet;
-      case 14:
+      case LanguageConceptSwitch.BuildInputFiles:
         return props_BuildInputFiles;
-      case 15:
+      case LanguageConceptSwitch.BuildInputFolderSet:
         return props_BuildInputFolderSet;
-      case 16:
+      case LanguageConceptSwitch.BuildInputFolders:
         return props_BuildInputFolders;
-      case 17:
+      case LanguageConceptSwitch.BuildInputResourceSet:
         return props_BuildInputResourceSet;
-      case 18:
+      case LanguageConceptSwitch.BuildInputSingleFile:
         return props_BuildInputSingleFile;
-      case 19:
+      case LanguageConceptSwitch.BuildInputSingleFolder:
         return props_BuildInputSingleFolder;
-      case 20:
+      case LanguageConceptSwitch.BuildJavaPlugin:
         return props_BuildJavaPlugin;
-      case 21:
+      case LanguageConceptSwitch.BuildLayout:
         return props_BuildLayout;
-      case 22:
+      case LanguageConceptSwitch.BuildLayout_AbstractContainer:
         return props_BuildLayout_AbstractContainer;
-      case 23:
+      case LanguageConceptSwitch.BuildLayout_AbstractCopy:
         return props_BuildLayout_AbstractCopy;
-      case 24:
+      case LanguageConceptSwitch.BuildLayout_Comment:
         return props_BuildLayout_Comment;
-      case 25:
+      case LanguageConceptSwitch.BuildLayout_CompileOutputOf:
         return props_BuildLayout_CompileOutputOf;
-      case 26:
+      case LanguageConceptSwitch.BuildLayout_Container:
         return props_BuildLayout_Container;
-      case 27:
+      case LanguageConceptSwitch.BuildLayout_ContainerAcceptingFileSet:
         return props_BuildLayout_ContainerAcceptingFileSet;
-      case 28:
+      case LanguageConceptSwitch.BuildLayout_Copy:
         return props_BuildLayout_Copy;
-      case 29:
+      case LanguageConceptSwitch.BuildLayout_CopyFilter:
         return props_BuildLayout_CopyFilter;
-      case 30:
+      case LanguageConceptSwitch.BuildLayout_CopyFilterFixCRLF:
         return props_BuildLayout_CopyFilterFixCRLF;
-      case 31:
+      case LanguageConceptSwitch.BuildLayout_CopyFilterReplaceRegex:
         return props_BuildLayout_CopyFilterReplaceRegex;
-      case 32:
+      case LanguageConceptSwitch.BuildLayout_CopyFilterReplaceTokens:
         return props_BuildLayout_CopyFilterReplaceTokens;
-      case 33:
+      case LanguageConceptSwitch.BuildLayout_CopyFlattenMapper:
         return props_BuildLayout_CopyFlattenMapper;
-      case 34:
+      case LanguageConceptSwitch.BuildLayout_CopyGlobMapper:
         return props_BuildLayout_CopyGlobMapper;
-      case 35:
+      case LanguageConceptSwitch.BuildLayout_CopyHandler:
         return props_BuildLayout_CopyHandler;
-      case 36:
+      case LanguageConceptSwitch.BuildLayout_CopyMapper:
         return props_BuildLayout_CopyMapper;
-      case 37:
+      case LanguageConceptSwitch.BuildLayout_CopyParameter:
         return props_BuildLayout_CopyParameter;
-      case 38:
+      case LanguageConceptSwitch.BuildLayout_CopyProcessor:
         return props_BuildLayout_CopyProcessor;
-      case 39:
+      case LanguageConceptSwitch.BuildLayout_CopyRegexMapper:
         return props_BuildLayout_CopyRegexMapper;
-      case 40:
+      case LanguageConceptSwitch.BuildLayout_CustomCopy:
         return props_BuildLayout_CustomCopy;
-      case 41:
+      case LanguageConceptSwitch.BuildLayout_EchoProperties:
         return props_BuildLayout_EchoProperties;
-      case 42:
+      case LanguageConceptSwitch.BuildLayout_EchoPropertyEntry:
         return props_BuildLayout_EchoPropertyEntry;
-      case 43:
+      case LanguageConceptSwitch.BuildLayout_EchoXml:
         return props_BuildLayout_EchoXml;
-      case 44:
+      case LanguageConceptSwitch.BuildLayout_ExportAsJavaLibrary:
         return props_BuildLayout_ExportAsJavaLibrary;
-      case 45:
+      case LanguageConceptSwitch.BuildLayout_File:
         return props_BuildLayout_File;
-      case 46:
+      case LanguageConceptSwitch.BuildLayout_FileSet:
         return props_BuildLayout_FileSet;
-      case 47:
+      case LanguageConceptSwitch.BuildLayout_FileStub:
         return props_BuildLayout_FileStub;
-      case 48:
+      case LanguageConceptSwitch.BuildLayout_Filemode:
         return props_BuildLayout_Filemode;
-      case 49:
+      case LanguageConceptSwitch.BuildLayout_Files:
         return props_BuildLayout_Files;
-      case 50:
+      case LanguageConceptSwitch.BuildLayout_FilesOf:
         return props_BuildLayout_FilesOf;
-      case 51:
+      case LanguageConceptSwitch.BuildLayout_Folder:
         return props_BuildLayout_Folder;
-      case 52:
+      case LanguageConceptSwitch.BuildLayout_Import:
         return props_BuildLayout_Import;
-      case 53:
+      case LanguageConceptSwitch.BuildLayout_ImportContent:
         return props_BuildLayout_ImportContent;
-      case 54:
+      case LanguageConceptSwitch.BuildLayout_InJarNode:
         return props_BuildLayout_InJarNode;
-      case 55:
+      case LanguageConceptSwitch.BuildLayout_Jar:
         return props_BuildLayout_Jar;
-      case 56:
+      case LanguageConceptSwitch.BuildLayout_JarManifest:
         return props_BuildLayout_JarManifest;
-      case 57:
+      case LanguageConceptSwitch.BuildLayout_JarManifest_Attribute:
         return props_BuildLayout_JarManifest_Attribute;
-      case 58:
+      case LanguageConceptSwitch.BuildLayout_JarManifest_Part:
         return props_BuildLayout_JarManifest_Part;
-      case 59:
+      case LanguageConceptSwitch.BuildLayout_JarManifest_Section:
         return props_BuildLayout_JarManifest_Section;
-      case 60:
+      case LanguageConceptSwitch.BuildLayout_NamedContainer:
         return props_BuildLayout_NamedContainer;
-      case 61:
+      case LanguageConceptSwitch.BuildLayout_Node:
         return props_BuildLayout_Node;
-      case 62:
+      case LanguageConceptSwitch.BuildLayout_PathElement:
         return props_BuildLayout_PathElement;
-      case 63:
+      case LanguageConceptSwitch.BuildLayout_PureNode:
         return props_BuildLayout_PureNode;
-      case 64:
+      case LanguageConceptSwitch.BuildLayout_Tar:
         return props_BuildLayout_Tar;
-      case 65:
+      case LanguageConceptSwitch.BuildLayout_TransparentContainer:
         return props_BuildLayout_TransparentContainer;
-      case 66:
+      case LanguageConceptSwitch.BuildLayout_War:
         return props_BuildLayout_War;
-      case 67:
+      case LanguageConceptSwitch.BuildLayout_Zip:
         return props_BuildLayout_Zip;
-      case 68:
+      case LanguageConceptSwitch.BuildMacro:
         return props_BuildMacro;
-      case 69:
+      case LanguageConceptSwitch.BuildNamedLayout:
         return props_BuildNamedLayout;
-      case 70:
+      case LanguageConceptSwitch.BuildPlugin:
         return props_BuildPlugin;
-      case 71:
+      case LanguageConceptSwitch.BuildProject:
         return props_BuildProject;
-      case 72:
+      case LanguageConceptSwitch.BuildProjectDependency:
         return props_BuildProjectDependency;
-      case 73:
+      case LanguageConceptSwitch.BuildProjectPart:
         return props_BuildProjectPart;
-      case 74:
+      case LanguageConceptSwitch.BuildRelativePath:
         return props_BuildRelativePath;
-      case 75:
+      case LanguageConceptSwitch.BuildSourceArchiveRelativePath:
         return props_BuildSourceArchiveRelativePath;
-      case 76:
+      case LanguageConceptSwitch.BuildSourceMacroRelativePath:
         return props_BuildSourceMacroRelativePath;
-      case 77:
+      case LanguageConceptSwitch.BuildSourcePath:
         return props_BuildSourcePath;
-      case 78:
+      case LanguageConceptSwitch.BuildSourceProjectRelativePath:
         return props_BuildSourceProjectRelativePath;
-      case 79:
+      case LanguageConceptSwitch.BuildSourceSetContainer:
         return props_BuildSourceSetContainer;
-      case 80:
+      case LanguageConceptSwitch.BuildSource_CompilablePart:
         return props_BuildSource_CompilablePart;
-      case 81:
+      case LanguageConceptSwitch.BuildSource_FilesetProjectPart:
         return props_BuildSource_FilesetProjectPart;
-      case 82:
+      case LanguageConceptSwitch.BuildSource_JavaCP:
         return props_BuildSource_JavaCP;
-      case 83:
+      case LanguageConceptSwitch.BuildSource_JavaClassFolder:
         return props_BuildSource_JavaClassFolder;
-      case 84:
+      case LanguageConceptSwitch.BuildSource_JavaContentFolder:
         return props_BuildSource_JavaContentFolder;
-      case 85:
+      case LanguageConceptSwitch.BuildSource_JavaContentRoot:
         return props_BuildSource_JavaContentRoot;
-      case 86:
+      case LanguageConceptSwitch.BuildSource_JavaDependency:
         return props_BuildSource_JavaDependency;
-      case 87:
+      case LanguageConceptSwitch.BuildSource_JavaDependencyExternalJar:
         return props_BuildSource_JavaDependencyExternalJar;
-      case 88:
+      case LanguageConceptSwitch.BuildSource_JavaDependencyExternalJarInFolder:
         return props_BuildSource_JavaDependencyExternalJarInFolder;
-      case 89:
+      case LanguageConceptSwitch.BuildSource_JavaDependencyFileset:
         return props_BuildSource_JavaDependencyFileset;
-      case 90:
+      case LanguageConceptSwitch.BuildSource_JavaDependencyJar:
         return props_BuildSource_JavaDependencyJar;
-      case 91:
+      case LanguageConceptSwitch.BuildSource_JavaDependencyLibrary:
         return props_BuildSource_JavaDependencyLibrary;
-      case 92:
+      case LanguageConceptSwitch.BuildSource_JavaDependencyModule:
         return props_BuildSource_JavaDependencyModule;
-      case 93:
+      case LanguageConceptSwitch.BuildSource_JavaExternalJarFolderRef:
         return props_BuildSource_JavaExternalJarFolderRef;
-      case 94:
+      case LanguageConceptSwitch.BuildSource_JavaExternalJarRef:
         return props_BuildSource_JavaExternalJarRef;
-      case 95:
+      case LanguageConceptSwitch.BuildSource_JavaFiles:
         return props_BuildSource_JavaFiles;
-      case 96:
+      case LanguageConceptSwitch.BuildSource_JavaJar:
         return props_BuildSource_JavaJar;
-      case 97:
+      case LanguageConceptSwitch.BuildSource_JavaJars:
         return props_BuildSource_JavaJars;
-      case 98:
+      case LanguageConceptSwitch.BuildSource_JavaLibrary:
         return props_BuildSource_JavaLibrary;
-      case 99:
+      case LanguageConceptSwitch.BuildSource_JavaLibraryCP:
         return props_BuildSource_JavaLibraryCP;
-      case 100:
+      case LanguageConceptSwitch.BuildSource_JavaLibraryElement:
         return props_BuildSource_JavaLibraryElement;
-      case 101:
+      case LanguageConceptSwitch.BuildSource_JavaLibraryExternalJar:
         return props_BuildSource_JavaLibraryExternalJar;
-      case 102:
+      case LanguageConceptSwitch.BuildSource_JavaLibraryExternalJarFolder:
         return props_BuildSource_JavaLibraryExternalJarFolder;
-      case 103:
+      case LanguageConceptSwitch.BuildSource_JavaModule:
         return props_BuildSource_JavaModule;
-      case 104:
+      case LanguageConceptSwitch.BuildSource_JavaModuleOptions:
         return props_BuildSource_JavaModuleOptions;
-      case 105:
+      case LanguageConceptSwitch.BuildSource_JavaOptions:
         return props_BuildSource_JavaOptions;
-      case 106:
+      case LanguageConceptSwitch.BuildSource_JavaResources:
         return props_BuildSource_JavaResources;
-      case 107:
+      case LanguageConceptSwitch.BuildSource_JavaSources:
         return props_BuildSource_JavaSources;
-      case 108:
+      case LanguageConceptSwitch.BuildSource_SingleFile:
         return props_BuildSource_SingleFile;
-      case 109:
+      case LanguageConceptSwitch.BuildSource_SingleFolder:
         return props_BuildSource_SingleFolder;
-      case 110:
+      case LanguageConceptSwitch.BuildString:
         return props_BuildString;
-      case 111:
+      case LanguageConceptSwitch.BuildStringContainer:
         return props_BuildStringContainer;
-      case 112:
+      case LanguageConceptSwitch.BuildStringNotEmpty:
         return props_BuildStringNotEmpty;
-      case 113:
+      case LanguageConceptSwitch.BuildStringPart:
         return props_BuildStringPart;
-      case 114:
+      case LanguageConceptSwitch.BuildTextStringPart:
         return props_BuildTextStringPart;
-      case 115:
+      case LanguageConceptSwitch.BuildVarRefStringPart:
         return props_BuildVarRefStringPart;
-      case 116:
+      case LanguageConceptSwitch.BuildVariableMacro:
         return props_BuildVariableMacro;
-      case 117:
+      case LanguageConceptSwitch.BuildVariableMacroInitValue:
         return props_BuildVariableMacroInitValue;
-      case 118:
+      case LanguageConceptSwitch.BuildVariableMacroInitWithDate:
         return props_BuildVariableMacroInitWithDate;
-      case 119:
+      case LanguageConceptSwitch.BuildVariableMacroInitWithFileContent:
         return props_BuildVariableMacroInitWithFileContent;
-      case 120:
+      case LanguageConceptSwitch.BuildVariableMacroInitWithString:
         return props_BuildVariableMacroInitWithString;
-      case 121:
+      case LanguageConceptSwitch.BuildVariableMacroInitWithValueFromFile:
         return props_BuildVariableMacroInitWithValueFromFile;
-      case 122:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_Folder:
         return props_GeneratorInternal_BuildSource_Folder;
-      case 123:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JarFolder:
         return props_GeneratorInternal_BuildSource_JarFolder;
-      case 124:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaJar:
         return props_GeneratorInternal_BuildSource_JavaJar;
-      case 125:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaLibrary:
         return props_GeneratorInternal_BuildSource_JavaLibrary;
-      case 126:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaModule:
         return props_GeneratorInternal_BuildSource_JavaModule;
-      case 127:
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_SingleFile:
         return props_GeneratorInternal_BuildSource_SingleFile;
-      case 128:
+      case LanguageConceptSwitch.GeneratorInternal_IWorkflowParticipantReference:
         return props_GeneratorInternal_IWorkflowParticipantReference;
-      case 129:
+      case LanguageConceptSwitch.GeneratorInternal_IWorkfowParticipants:
         return props_GeneratorInternal_IWorkfowParticipants;
-      case 130:
+      case LanguageConceptSwitch.GeneratorInternal_LibraryArtifacts:
         return props_GeneratorInternal_LibraryArtifacts;
-      case 131:
+      case LanguageConceptSwitch.GeneratorInternal_Mapping:
         return props_GeneratorInternal_Mapping;
-      case 132:
+      case LanguageConceptSwitch.GeneratorInternal_ProjectDependency:
         return props_GeneratorInternal_ProjectDependency;
-      case 133:
+      case LanguageConceptSwitch.IWorkflowParticipant:
         return props_IWorkflowParticipant;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

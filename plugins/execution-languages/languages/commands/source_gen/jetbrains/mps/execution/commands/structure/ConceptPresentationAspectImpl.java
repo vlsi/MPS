@@ -43,63 +43,63 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.BuilderBlockStatement:
         return props_BuilderBlockStatement;
-      case 1:
+      case LanguageConceptSwitch.BuilderParameter:
         return props_BuilderParameter;
-      case 2:
+      case LanguageConceptSwitch.CommandBuilderExpression:
         return props_CommandBuilderExpression;
-      case 3:
+      case LanguageConceptSwitch.CommandDebuggerOperation:
         return props_CommandDebuggerOperation;
-      case 4:
+      case LanguageConceptSwitch.CommandDeclaration:
         return props_CommandDeclaration;
-      case 5:
+      case LanguageConceptSwitch.CommandMethod:
         return props_CommandMethod;
-      case 6:
+      case LanguageConceptSwitch.CommandParameterAssignment:
         return props_CommandParameterAssignment;
-      case 7:
+      case LanguageConceptSwitch.CommandParameterDeclaration:
         return props_CommandParameterDeclaration;
-      case 8:
+      case LanguageConceptSwitch.CommandParameterReference:
         return props_CommandParameterReference;
-      case 9:
+      case LanguageConceptSwitch.CommandPartLengthOperation:
         return props_CommandPartLengthOperation;
-      case 10:
+      case LanguageConceptSwitch.CommandPartToListOperation:
         return props_CommandPartToListOperation;
-      case 11:
+      case LanguageConceptSwitch.CommandProcessType:
         return props_CommandProcessType;
-      case 12:
+      case LanguageConceptSwitch.CommandReferenceExpression:
         return props_CommandReferenceExpression;
-      case 13:
+      case LanguageConceptSwitch.CommandType:
         return props_CommandType;
-      case 14:
+      case LanguageConceptSwitch.DebuggerSettingsCommandParameterDeclaration:
         return props_DebuggerSettingsCommandParameterDeclaration;
-      case 15:
+      case LanguageConceptSwitch.ExecuteCommandPart:
         return props_ExecuteCommandPart;
-      case 16:
+      case LanguageConceptSwitch.ExplicitCommandParameterDeclaration:
         return props_ExplicitCommandParameterDeclaration;
-      case 17:
+      case LanguageConceptSwitch.KeyValueCommandPart:
         return props_KeyValueCommandPart;
-      case 18:
+      case LanguageConceptSwitch.ListCommandPart:
         return props_ListCommandPart;
-      case 19:
+      case LanguageConceptSwitch.NewProcessBuilderExpression:
         return props_NewProcessBuilderExpression;
-      case 20:
+      case LanguageConceptSwitch.ProcessBuilderCommandPart:
         return props_ProcessBuilderCommandPart;
-      case 21:
+      case LanguageConceptSwitch.ProcessBuilderCommandPartType:
         return props_ProcessBuilderCommandPartType;
-      case 22:
+      case LanguageConceptSwitch.ProcessType:
         return props_ProcessType;
-      case 23:
+      case LanguageConceptSwitch.PropertyCommandPart:
         return props_PropertyCommandPart;
-      case 24:
+      case LanguageConceptSwitch.RedirectOutputExpression:
         return props_RedirectOutputExpression;
-      case 25:
+      case LanguageConceptSwitch.ReportErrorStatement:
         return props_ReportErrorStatement;
-      case 26:
+      case LanguageConceptSwitch.ReportExecutionError:
         return props_ReportExecutionError;
-      case 27:
+      case LanguageConceptSwitch.StartAndWaitOperation:
         return props_StartAndWaitOperation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

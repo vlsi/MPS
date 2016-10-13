@@ -44,65 +44,65 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbstractCommand:
         return props_AbstractCommand;
-      case 1:
+      case LanguageConceptSwitch.CommandList:
         return props_CommandList;
-      case 2:
+      case LanguageConceptSwitch.CommentLine:
         return props_CommentLine;
-      case 3:
+      case LanguageConceptSwitch.Direction:
         return props_Direction;
-      case 4:
+      case LanguageConceptSwitch.Drop:
         return props_Drop;
-      case 5:
+      case LanguageConceptSwitch.East:
         return props_East;
-      case 6:
+      case LanguageConceptSwitch.EmptyLine:
         return props_EmptyLine;
-      case 7:
+      case LanguageConceptSwitch.Heading:
         return props_Heading;
-      case 8:
+      case LanguageConceptSwitch.IfStatement:
         return props_IfStatement;
-      case 9:
+      case LanguageConceptSwitch.IsFull:
         return props_IsFull;
-      case 10:
+      case LanguageConceptSwitch.IsMark:
         return props_IsMark;
-      case 11:
+      case LanguageConceptSwitch.IsWall:
         return props_IsWall;
-      case 12:
+      case LanguageConceptSwitch.LeftTurn:
         return props_LeftTurn;
-      case 13:
+      case LanguageConceptSwitch.Library:
         return props_Library;
-      case 14:
+      case LanguageConceptSwitch.LogicalExpression:
         return props_LogicalExpression;
-      case 15:
+      case LanguageConceptSwitch.Looking:
         return props_Looking;
-      case 16:
+      case LanguageConceptSwitch.North:
         return props_North;
-      case 17:
+      case LanguageConceptSwitch.Not:
         return props_Not;
-      case 18:
+      case LanguageConceptSwitch.Pick:
         return props_Pick;
-      case 19:
+      case LanguageConceptSwitch.Repeat:
         return props_Repeat;
-      case 20:
+      case LanguageConceptSwitch.Require:
         return props_Require;
-      case 21:
+      case LanguageConceptSwitch.RoutineCall:
         return props_RoutineCall;
-      case 22:
+      case LanguageConceptSwitch.RoutineDefinition:
         return props_RoutineDefinition;
-      case 23:
+      case LanguageConceptSwitch.Script:
         return props_Script;
-      case 24:
+      case LanguageConceptSwitch.South:
         return props_South;
-      case 25:
+      case LanguageConceptSwitch.Step:
         return props_Step;
-      case 26:
+      case LanguageConceptSwitch.TraceMessage:
         return props_TraceMessage;
-      case 27:
+      case LanguageConceptSwitch.West:
         return props_West;
-      case 28:
+      case LanguageConceptSwitch.While:
         return props_While;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

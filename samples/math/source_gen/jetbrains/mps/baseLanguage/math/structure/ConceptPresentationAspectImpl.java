@@ -74,125 +74,125 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.AbsExpression:
         return props_AbsExpression;
-      case 1:
+      case LanguageConceptSwitch.AbstractIndex:
         return props_AbstractIndex;
-      case 2:
+      case LanguageConceptSwitch.ArithmSymbol:
         return props_ArithmSymbol;
-      case 3:
+      case LanguageConceptSwitch.BigComplexType:
         return props_BigComplexType;
-      case 4:
+      case LanguageConceptSwitch.BigDecimalType:
         return props_BigDecimalType;
-      case 5:
+      case LanguageConceptSwitch.BigIntegerType:
         return props_BigIntegerType;
-      case 6:
+      case LanguageConceptSwitch.BigMaxExpression:
         return props_BigMaxExpression;
-      case 7:
+      case LanguageConceptSwitch.BigMinExpression:
         return props_BigMinExpression;
-      case 8:
+      case LanguageConceptSwitch.BigProdExpression:
         return props_BigProdExpression;
-      case 9:
+      case LanguageConceptSwitch.BigSumExpression:
         return props_BigSumExpression;
-      case 10:
+      case LanguageConceptSwitch.ComplexLiteral:
         return props_ComplexLiteral;
-      case 11:
+      case LanguageConceptSwitch.ComplexType:
         return props_ComplexType;
-      case 12:
+      case LanguageConceptSwitch.ConjugateOperation:
         return props_ConjugateOperation;
-      case 13:
+      case LanguageConceptSwitch.CosineExpression:
         return props_CosineExpression;
-      case 14:
+      case LanguageConceptSwitch.DecimalBinaryOperation:
         return props_DecimalBinaryOperation;
-      case 15:
+      case LanguageConceptSwitch.DecimalDivExpression:
         return props_DecimalDivExpression;
-      case 16:
+      case LanguageConceptSwitch.DecimalMinusExpression:
         return props_DecimalMinusExpression;
-      case 17:
+      case LanguageConceptSwitch.DecimalMulExpression:
         return props_DecimalMulExpression;
-      case 18:
+      case LanguageConceptSwitch.DecimalPlusExpression:
         return props_DecimalPlusExpression;
-      case 19:
+      case LanguageConceptSwitch.Determinant:
         return props_Determinant;
-      case 20:
+      case LanguageConceptSwitch.DivExpressionFraction:
         return props_DivExpressionFraction;
-      case 21:
+      case LanguageConceptSwitch.ExponentExpression:
         return props_ExponentExpression;
-      case 22:
+      case LanguageConceptSwitch.ExponentialOperation:
         return props_ExponentialOperation;
-      case 23:
+      case LanguageConceptSwitch.ExtrSymbol:
         return props_ExtrSymbol;
-      case 24:
+      case LanguageConceptSwitch.InIntervalExpression:
         return props_InIntervalExpression;
-      case 25:
+      case LanguageConceptSwitch.IntervalContainsExpression:
         return props_IntervalContainsExpression;
-      case 26:
+      case LanguageConceptSwitch.IntervalLiteral:
         return props_IntervalLiteral;
-      case 27:
+      case LanguageConceptSwitch.IntervalType:
         return props_IntervalType;
-      case 28:
+      case LanguageConceptSwitch.LinearSolveOperation:
         return props_LinearSolveOperation;
-      case 29:
+      case LanguageConceptSwitch.LiteralI:
         return props_LiteralI;
-      case 30:
+      case LanguageConceptSwitch.LogExpression:
         return props_LogExpression;
-      case 31:
+      case LanguageConceptSwitch.MathContext:
         return props_MathContext;
-      case 32:
+      case LanguageConceptSwitch.MathFuncExpression:
         return props_MathFuncExpression;
-      case 33:
+      case LanguageConceptSwitch.MathPrimitiveType:
         return props_MathPrimitiveType;
-      case 34:
+      case LanguageConceptSwitch.MathSymbol:
         return props_MathSymbol;
-      case 35:
+      case LanguageConceptSwitch.MathSymbolFromToIndex:
         return props_MathSymbolFromToIndex;
-      case 36:
+      case LanguageConceptSwitch.MathSymbolIndex:
         return props_MathSymbolIndex;
-      case 37:
+      case LanguageConceptSwitch.MathSymbolIndexReference:
         return props_MathSymbolIndexReference;
-      case 38:
+      case LanguageConceptSwitch.MathTypeCast:
         return props_MathTypeCast;
-      case 39:
+      case LanguageConceptSwitch.MatrixConstructor:
         return props_MatrixConstructor;
-      case 40:
+      case LanguageConceptSwitch.MatrixElementAccessExpression:
         return props_MatrixElementAccessExpression;
-      case 41:
+      case LanguageConceptSwitch.MatrixExponentialOperation:
         return props_MatrixExponentialOperation;
-      case 42:
+      case LanguageConceptSwitch.MatrixIndexWildcard:
         return props_MatrixIndexWildcard;
-      case 43:
+      case LanguageConceptSwitch.MatrixInitializer:
         return props_MatrixInitializer;
-      case 44:
+      case LanguageConceptSwitch.MatrixInitializerIndex:
         return props_MatrixInitializerIndex;
-      case 45:
+      case LanguageConceptSwitch.MatrixInitializerIndexReference:
         return props_MatrixInitializerIndexReference;
-      case 46:
+      case LanguageConceptSwitch.MatrixInverseOperation:
         return props_MatrixInverseOperation;
-      case 47:
+      case LanguageConceptSwitch.MatrixNorm:
         return props_MatrixNorm;
-      case 48:
+      case LanguageConceptSwitch.MatrixOrVectorInitializer:
         return props_MatrixOrVectorInitializer;
-      case 49:
+      case LanguageConceptSwitch.MatrixOrVectorType:
         return props_MatrixOrVectorType;
-      case 50:
+      case LanguageConceptSwitch.MatrixType:
         return props_MatrixType;
-      case 51:
+      case LanguageConceptSwitch.MatrixUnit:
         return props_MatrixUnit;
-      case 52:
+      case LanguageConceptSwitch.MatrixZero:
         return props_MatrixZero;
-      case 53:
+      case LanguageConceptSwitch.PowExpression:
         return props_PowExpression;
-      case 54:
+      case LanguageConceptSwitch.SineExpression:
         return props_SineExpression;
-      case 55:
+      case LanguageConceptSwitch.TangentExpression:
         return props_TangentExpression;
-      case 56:
+      case LanguageConceptSwitch.TransposeOperation:
         return props_TransposeOperation;
-      case 57:
+      case LanguageConceptSwitch.VectorInitializer:
         return props_VectorInitializer;
-      case 58:
+      case LanguageConceptSwitch.VectorType:
         return props_VectorType;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

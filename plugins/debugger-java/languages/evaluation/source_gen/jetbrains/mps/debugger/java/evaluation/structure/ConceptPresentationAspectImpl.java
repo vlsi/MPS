@@ -28,33 +28,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.DebuggedType:
         return props_DebuggedType;
-      case 1:
+      case LanguageConceptSwitch.DoNotTransformAnnotation:
         return props_DoNotTransformAnnotation;
-      case 2:
+      case LanguageConceptSwitch.DownCastToLowLevel:
         return props_DownCastToLowLevel;
-      case 3:
+      case LanguageConceptSwitch.Evaluator:
         return props_Evaluator;
-      case 4:
+      case LanguageConceptSwitch.EvaluatorConcept:
         return props_EvaluatorConcept;
-      case 5:
+      case LanguageConceptSwitch.EvaluatorsSuperMethodCall:
         return props_EvaluatorsSuperMethodCall;
-      case 6:
+      case LanguageConceptSwitch.EvaluatorsThisExpression:
         return props_EvaluatorsThisExpression;
-      case 7:
+      case LanguageConceptSwitch.GenerationHelperAnnotation:
         return props_GenerationHelperAnnotation;
-      case 8:
+      case LanguageConceptSwitch.IEvaluatorConcept:
         return props_IEvaluatorConcept;
-      case 9:
+      case LanguageConceptSwitch.LowLevelVariable:
         return props_LowLevelVariable;
-      case 10:
+      case LanguageConceptSwitch.LowLevelVariableReference:
         return props_LowLevelVariableReference;
-      case 11:
+      case LanguageConceptSwitch.UnitNode:
         return props_UnitNode;
-      case 12:
+      case LanguageConceptSwitch.UnprocessedAnnotation:
         return props_UnprocessedAnnotation;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

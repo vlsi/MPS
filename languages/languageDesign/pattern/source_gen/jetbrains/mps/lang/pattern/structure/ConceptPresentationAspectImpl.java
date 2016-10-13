@@ -35,47 +35,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ActionAsPattern:
         return props_ActionAsPattern;
-      case 1:
+      case LanguageConceptSwitch.ActionStatement:
         return props_ActionStatement;
-      case 2:
+      case LanguageConceptSwitch.AsPattern:
         return props_AsPattern;
-      case 3:
+      case LanguageConceptSwitch.GeneratorInternal_ChildDescriptor:
         return props_GeneratorInternal_ChildDescriptor;
-      case 4:
+      case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
         return props_GeneratorInternal_PropertyDescriptor;
-      case 5:
+      case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
         return props_GeneratorInternal_ReferenceDescriptor;
-      case 6:
+      case LanguageConceptSwitch.InsertAfterPosition:
         return props_InsertAfterPosition;
-      case 7:
+      case LanguageConceptSwitch.InsertBeforePosition:
         return props_InsertBeforePosition;
-      case 8:
+      case LanguageConceptSwitch.InsertPosition:
         return props_InsertPosition;
-      case 9:
+      case LanguageConceptSwitch.LinkPatternVariableDeclaration:
         return props_LinkPatternVariableDeclaration;
-      case 10:
+      case LanguageConceptSwitch.ListPattern:
         return props_ListPattern;
-      case 11:
+      case LanguageConceptSwitch.OrPattern:
         return props_OrPattern;
-      case 12:
+      case LanguageConceptSwitch.OrPatternClause:
         return props_OrPatternClause;
-      case 13:
+      case LanguageConceptSwitch.OrPatternVariableReference:
         return props_OrPatternVariableReference;
-      case 14:
+      case LanguageConceptSwitch.Pattern:
         return props_Pattern;
-      case 15:
+      case LanguageConceptSwitch.PatternExpression:
         return props_PatternExpression;
-      case 16:
+      case LanguageConceptSwitch.PatternVariableDeclaration:
         return props_PatternVariableDeclaration;
-      case 17:
+      case LanguageConceptSwitch.PatternVariableReference:
         return props_PatternVariableReference;
-      case 18:
+      case LanguageConceptSwitch.PropertyPatternVariableDeclaration:
         return props_PropertyPatternVariableDeclaration;
-      case 19:
+      case LanguageConceptSwitch.WildcardPattern:
         return props_WildcardPattern;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }

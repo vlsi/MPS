@@ -38,53 +38,53 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case 0:
+      case LanguageConceptSwitch.ActionTestAbstractChild:
         return props_ActionTestAbstractChild;
-      case 1:
+      case LanguageConceptSwitch.ActionTestAbstractChildWrapper:
         return props_ActionTestAbstractChildWrapper;
-      case 2:
+      case LanguageConceptSwitch.ActionTestChild1:
         return props_ActionTestChild1;
-      case 3:
+      case LanguageConceptSwitch.ActionTestChild1Child:
         return props_ActionTestChild1Child;
-      case 4:
+      case LanguageConceptSwitch.ActionTestChild1SubConcept:
         return props_ActionTestChild1SubConcept;
-      case 5:
+      case LanguageConceptSwitch.ActionTestChild2:
         return props_ActionTestChild2;
-      case 6:
+      case LanguageConceptSwitch.ActionTestChildToWrap1:
         return props_ActionTestChildToWrap1;
-      case 7:
+      case LanguageConceptSwitch.ActionTestChildToWrap2:
         return props_ActionTestChildToWrap2;
-      case 8:
+      case LanguageConceptSwitch.ActionTestChildWrapper:
         return props_ActionTestChildWrapper;
-      case 9:
+      case LanguageConceptSwitch.ActionTestContainer:
         return props_ActionTestContainer;
-      case 10:
+      case LanguageConceptSwitch.ActionTestDefaultAbstractChild:
         return props_ActionTestDefaultAbstractChild;
-      case 11:
+      case LanguageConceptSwitch.ActionTestDefaultChild1:
         return props_ActionTestDefaultChild1;
-      case 12:
+      case LanguageConceptSwitch.ActionTestDefaultChild2:
         return props_ActionTestDefaultChild2;
-      case 13:
+      case LanguageConceptSwitch.ActionTestSidetransformAbstractChild:
         return props_ActionTestSidetransformAbstractChild;
-      case 14:
+      case LanguageConceptSwitch.ActionTestSidetransformAddConceptAbstractChild:
         return props_ActionTestSidetransformAddConceptAbstractChild;
-      case 15:
+      case LanguageConceptSwitch.ActionTestSidetransformAddConceptChild:
         return props_ActionTestSidetransformAddConceptChild;
-      case 16:
+      case LanguageConceptSwitch.ActionTestSidetransformAnotherAbstractChild:
         return props_ActionTestSidetransformAnotherAbstractChild;
-      case 17:
+      case LanguageConceptSwitch.ActionTestSidetransformAnotherChild1:
         return props_ActionTestSidetransformAnotherChild1;
-      case 18:
+      case LanguageConceptSwitch.ActionTestSidetransformAnotherChild2:
         return props_ActionTestSidetransformAnotherChild2;
-      case 19:
+      case LanguageConceptSwitch.ActionTestSidetransformAnotherChildCommonSuperConcept:
         return props_ActionTestSidetransformAnotherChildCommonSuperConcept;
-      case 20:
+      case LanguageConceptSwitch.ActionTestSidetransformChild1:
         return props_ActionTestSidetransformChild1;
-      case 21:
+      case LanguageConceptSwitch.ActionTestSidetransformTestAncestor:
         return props_ActionTestSidetransformTestAncestor;
-      case 22:
+      case LanguageConceptSwitch.ActionTestSidetransformTestContainer:
         return props_ActionTestSidetransformTestContainer;
     }
-    throw new IllegalStateException("Unknown concept " + c);
+    return null;
   }
 }
