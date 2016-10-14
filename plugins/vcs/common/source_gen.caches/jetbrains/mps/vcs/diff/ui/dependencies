@@ -99,7 +99,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.GoToByTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

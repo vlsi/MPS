@@ -8,7 +8,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKey" />

@@ -73,7 +73,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_pigaxbzs4jn7" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CallArgumentQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />

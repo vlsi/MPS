@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.ide.make.MakeTask" file="MakeTask.java">
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
@@ -30,7 +29,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="com.intellij.openapi.progress.Backgroundable" />
+    <classNode extendsClassName="com.intellij.openapi.progress.Task" />
     <classNode extendsClassName="java.util.concurrent.Future" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">
@@ -138,7 +137,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
-    <classNode dependClassName="jetbrains.mps.make.script.Stub" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />

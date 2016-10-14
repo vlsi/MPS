@@ -178,8 +178,6 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.CompositeMessage" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.IMessage" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

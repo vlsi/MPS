@@ -132,7 +132,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem" />
-    <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.IItem" />
     <classNode dependClassName="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolComponent" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

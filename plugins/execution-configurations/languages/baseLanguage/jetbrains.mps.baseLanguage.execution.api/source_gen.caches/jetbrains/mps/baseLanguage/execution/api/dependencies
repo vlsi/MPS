@@ -17,10 +17,9 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="org.jetbrains.annotations.Nls" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._5" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" file="JavaRunParameters_Configuration.java">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />

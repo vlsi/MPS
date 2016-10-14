@@ -57,7 +57,6 @@
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IInstruction" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IProgram" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.Line" />
-    <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.LineCreator" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.LineDirection" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.FreeZone" file="FreeZone.java" />

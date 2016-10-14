@@ -1417,17 +1417,17 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/471625927509990254">
     <file name="QueriesGenerated.java">
-      <node id="471625927510000451" at="498,111,499,106" concept="7" />
-      <scope id="471625927509997779" at="498,111,499,106" />
+      <node id="471625927510000451" at="504,111,505,106" concept="7" />
+      <scope id="471625927509997779" at="504,111,505,106" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/471625927515064721">
     <file name="QueriesGenerated.java">
-      <node id="471625927516240795" at="501,111,502,112" concept="7" />
-      <node id="471625927515116290" at="504,111,505,115" concept="7" />
+      <node id="471625927516240795" at="498,111,499,112" concept="7" />
+      <node id="471625927515116290" at="501,111,502,115" concept="7" />
       <node id="471625927515100599" at="1423,119,1424,191" concept="7" />
-      <scope id="471625927516239687" at="501,111,502,112" />
-      <scope id="471625927515113286" at="504,111,505,115" />
+      <scope id="471625927516239687" at="498,111,499,112" />
+      <scope id="471625927515113286" at="501,111,502,115" />
       <scope id="471625927515097131" at="1423,119,1424,191" />
     </file>
   </root>

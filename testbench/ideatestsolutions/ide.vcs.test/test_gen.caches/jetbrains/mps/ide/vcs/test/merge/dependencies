@@ -302,8 +302,7 @@
   <dependency className="jetbrains.mps.ide.vcs.test.merge.RootStatusItem" file="RootStatusItem.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
   <dependency className="jetbrains.mps.ide.vcs.test.merge.RootStatusTest" file="RootStatusTest.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />

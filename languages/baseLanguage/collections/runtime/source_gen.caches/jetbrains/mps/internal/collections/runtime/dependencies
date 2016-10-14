@@ -223,8 +223,7 @@
     <classNode dependClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ILeftCombinator" file="ILeftCombinator.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P2_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ILinkedList" file="ILinkedList.java">
     <classNode extendsClassName="java.util.Deque" />
@@ -266,12 +265,10 @@
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IRightCombinator" file="IRightCombinator.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P2_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ISelector" file="ISelector.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P1_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ISequence" file="ISequence.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -287,8 +284,7 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ISequenceClosure" file="ISequenceClosure.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P0_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter" file="ISequenceIterableAdapter.java">
     <classNode dependClassName="java.lang.Override" />
@@ -312,23 +308,19 @@
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ITranslator" file="ITranslator.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P1_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ITranslator2" file="ITranslator2.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P1_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IVisitor" file="IVisitor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._void_P1_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IWhereFilter" file="IWhereFilter.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P1_E0" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IterableUtils" file="IterableUtils.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -456,7 +448,6 @@
     <classNode dependClassName="java.util.TreeMap" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequenceInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence" />
     <classNode extendsClassName="java.io.Serializable" />

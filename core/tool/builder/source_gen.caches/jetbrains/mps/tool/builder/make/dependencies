@@ -149,7 +149,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
-    <classNode dependClassName="jetbrains.mps.make.script.Stub" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />

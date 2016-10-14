@@ -14,6 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BLExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Command = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommandHolder = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CommandHolderRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExceptionHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratedCommand = new ConceptPresentationBuilder().create();
@@ -59,6 +60,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Command;
       case LanguageConceptSwitch.CommandHolder:
         return props_CommandHolder;
+      case LanguageConceptSwitch.CommandHolderRef:
+        return props_CommandHolderRef;
       case LanguageConceptSwitch.ConsoleRoot:
         return props_ConsoleRoot;
       case LanguageConceptSwitch.ExceptionHolder:

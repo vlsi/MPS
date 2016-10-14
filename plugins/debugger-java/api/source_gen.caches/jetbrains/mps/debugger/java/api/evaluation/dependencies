@@ -35,7 +35,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationRuntimeException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.Invocatable" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.JdiRuntimeExceptionEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.TargetVMEvaluationException" />

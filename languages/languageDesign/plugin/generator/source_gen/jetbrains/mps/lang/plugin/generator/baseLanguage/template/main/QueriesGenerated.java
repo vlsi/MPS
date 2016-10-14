@@ -33,8 +33,8 @@ import jetbrains.mps.lang.plugin.behavior.Order__BehaviorDescriptor;
 import jetbrains.mps.lang.plugin.behavior.PluginDependency__BehaviorDescriptor;
 import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
 import jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor__BehaviorDescriptor;
-import jetbrains.mps.lang.plugin.behavior.NumberToolShortcut__BehaviorDescriptor;
 import jetbrains.mps.lang.plugin.behavior.AbstractToolKeystroke__BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.NumberToolShortcut__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.plugin.behavior.OrderConstraints__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -495,14 +495,14 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4682856478249385008(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_471625927509997778(final PropertyMacroContext _context) {
-    return (int) NumberToolShortcut__BehaviorDescriptor.getNumber_idqbzkx46jl9.invoke(_context.getNode());
-  }
   public static Object propertyMacro_GetPropertyValue_471625927516239686(final PropertyMacroContext _context) {
     return (String) AbstractToolKeystroke__BehaviorDescriptor.getKeymap_idqbzkx4pM3M.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_471625927515113285(final PropertyMacroContext _context) {
     return (String) AbstractToolKeystroke__BehaviorDescriptor.getKeystroke_idqbzkx4pLZr.invoke(_context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_471625927509997778(final PropertyMacroContext _context) {
+    return (int) NumberToolShortcut__BehaviorDescriptor.getNumber_idqbzkx46jl9.invoke(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_1227015434861(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConstructorParameterParameter");

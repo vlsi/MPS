@@ -132,7 +132,6 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.wm.IconPresentation" />
     <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
   </dependency>
 </dependenciesRoot>

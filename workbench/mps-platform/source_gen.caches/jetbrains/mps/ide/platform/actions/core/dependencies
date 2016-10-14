@@ -70,7 +70,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.NodeProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
@@ -138,9 +137,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchTask" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSearchUI" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSearchUIImpl" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.SelectOptionsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />

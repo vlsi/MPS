@@ -192,7 +192,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.DefaultMakeTask" file="DefaultMakeTask.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -212,7 +211,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="com.intellij.openapi.progress.Modal" />
+    <classNode extendsClassName="com.intellij.openapi.progress.Task" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
@@ -823,8 +822,6 @@
     <classNode extendsClassName="com.intellij.ide.ui.UISettingsListener" />
     <classNode extendsClassName="com.intellij.openapi.wm.CustomStatusBarWidget" />
     <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
-    <classNode extendsClassName="com.intellij.openapi.wm.TextPresentation" />
-    <classNode extendsClassName="com.intellij.openapi.wm.WidgetPresentation" />
     <classNode extendsClassName="java.beans.PropertyChangeListener" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.TransientModels_CustomProjectPlugin" file="TransientModels_CustomProjectPlugin.java">

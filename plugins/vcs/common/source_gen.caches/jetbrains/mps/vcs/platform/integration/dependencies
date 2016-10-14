@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil" file="ConflictingModelsUtil.java">
-    <classNode dependClassName="com.intellij.openapi.progress.Modal" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -120,7 +119,6 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffViewer" file="ModelDiffViewer.java">
     <classNode dependClassName="com.intellij.diff.DiffContext" />
-    <classNode dependClassName="com.intellij.diff.FrameDiffTool" />
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
     <classNode dependClassName="com.intellij.diff.contents.DocumentContent" />
     <classNode dependClassName="com.intellij.diff.contents.EmptyContent" />
@@ -157,7 +155,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
-    <classNode extendsClassName="com.intellij.diff.DiffViewer" />
+    <classNode extendsClassName="com.intellij.diff.FrameDiffTool" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ModelMergeTool" file="ModelMergeTool.java">
     <classNode dependClassName="com.intellij.diff.contents.DiffContent" />
@@ -183,7 +181,6 @@
     <classNode dependClassName="com.intellij.diff.merge.MergeContext" />
     <classNode dependClassName="com.intellij.diff.merge.MergeRequest" />
     <classNode dependClassName="com.intellij.diff.merge.MergeResult" />
-    <classNode dependClassName="com.intellij.diff.merge.MergeTool" />
     <classNode dependClassName="com.intellij.diff.merge.MergeUtil" />
     <classNode dependClassName="com.intellij.diff.merge.TextMergeRequest" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffBundle" />
@@ -225,7 +222,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode extendsClassName="com.intellij.diff.merge.MergeViewer" />
+    <classNode extendsClassName="com.intellij.diff.merge.MergeTool" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" file="ModelStorageProblemsListener.java">
     <classNode dependClassName="com.intellij.diff.DiffDialogHints" />

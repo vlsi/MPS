@@ -10,27 +10,7 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._0" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._5" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._6" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._7" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._8" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._9" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" file="Tuples.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._0" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._5" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._6" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._7" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._8" />
-  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" file="Tuples.java" />
 </dependenciesRoot>
 
