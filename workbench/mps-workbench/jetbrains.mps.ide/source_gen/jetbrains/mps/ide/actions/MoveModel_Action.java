@@ -20,7 +20,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.refactoring.ChooseModuleDialog;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.refactoring.participant.MoveModelRefactoringParticipant;
@@ -107,14 +107,15 @@ public class MoveModel_Action extends BaseAction {
         }
       }
     });
-    final SModuleReference selectedModule = ChooseModuleDialog.getSelectedModule(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), modules);
+    String title = event.getPresentation().getText();
+    final SModuleReference selectedModule = CommonChoosers.showModuleChooser(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, modules);
     if (selectedModule == null) {
       return;
     }
 
     Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveModelParticipantEP").getObjects();
 
-    RefactoringProcessor.performRefactoringUserInteractive(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), "Move Model", participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<Map<SModel, SModel>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>>, RefactoringSession>() {
+    RefactoringProcessor.performRefactoringUserInteractive(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<Map<SModel, SModel>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>>, RefactoringSession>() {
       public Map<SModel, SModel> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SModel, SModel, SModel, SModel>> changes, RefactoringSession refactoringSession) {
 
         final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();

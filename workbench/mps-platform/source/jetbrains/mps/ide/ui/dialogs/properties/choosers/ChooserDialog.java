@@ -44,10 +44,11 @@ final class ChooserDialog<T> extends DialogWrapper {
     super(project);
     myProject = project;
     myData = data;
+    // I have no idea why we call addNotify() here
     getContentPane().addNotify();
     setModal(true);
 
-    myChooser = MpsPopupFactory.createPanelForPackage(myProject, data, hasExtraScope);
+    myChooser = MpsPopupFactory.createPanelForPackage(project, data, hasExtraScope);
     // Although it's odd to have invoke() in the cons, we shall invoke it prior to super.init() otherwise there's no panel in the dialog
     myChooser.invoke(new MultiElementsCallback() {
       @Override
@@ -64,7 +65,7 @@ final class ChooserDialog<T> extends DialogWrapper {
           ChooserDialog.this.close(OK_EXIT_CODE);
         }
       }
-    }, ModalityState.current(), multiSelection);
+    }, ModalityState.stateForComponent(getWindow()), multiSelection);
     Disposer.register(getDisposable(), myChooser);
     init();
   }
@@ -113,6 +114,7 @@ final class ChooserDialog<T> extends DialogWrapper {
 
   @Override
   protected void dispose() {
+    // I have no idea why we call dispose() here
     getContentPane().removeNotify();
     super.dispose();
   }

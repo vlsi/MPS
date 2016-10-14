@@ -190,6 +190,7 @@
     <import index="yha4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.choose(MPS.Platform/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
+    <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -41667,24 +41668,44 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2TaeM1ZTuzQ" role="3cqZAp">
+          <node concept="3cpWsn" id="2TaeM1ZTuzR" role="3cpWs9">
+            <property role="TrG5h" value="title" />
+            <node concept="17QB3L" id="2TaeM1ZTuyx" role="1tU5fm" />
+            <node concept="2OqwBi" id="2TaeM1ZTB79" role="33vP2m">
+              <node concept="2OqwBi" id="2TaeM1ZT_n2" role="2Oq$k0">
+                <node concept="tl45R" id="2TaeM1ZT$Bh" role="2Oq$k0" />
+                <node concept="liA8E" id="2TaeM1ZTAjk" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2TaeM1ZTBYM" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~Presentation.getText():java.lang.String" resolve="getText" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="6YK8y67q97h" role="3cqZAp">
           <node concept="3cpWsn" id="6YK8y67q97i" role="3cpWs9">
             <property role="TrG5h" value="selectedModule" />
-            <node concept="3uibUv" id="6YK8y67q971" role="1tU5fm">
-              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-            </node>
-            <node concept="2YIFZM" id="6YK8y67q97j" role="33vP2m">
-              <ref role="37wK5l" to="o2jy:6YK8y67pnrI" resolve="getSelectedModule" />
-              <ref role="1Pybhc" to="o2jy:6YK8y67pnoF" resolve="ChooseModuleDialog" />
+            <node concept="2YIFZM" id="2TaeM1ZTqv$" role="33vP2m">
+              <ref role="37wK5l" to="ljzk:~CommonChoosers.showModuleChooser(jetbrains.mps.project.Project,java.lang.String,java.util.List):org.jetbrains.mps.openapi.module.SModuleReference" resolve="showModuleChooser" />
+              <ref role="1Pybhc" to="ljzk:~CommonChoosers" resolve="CommonChoosers" />
               <node concept="2OqwBi" id="6YK8y67q97k" role="37wK5m">
                 <node concept="1DTwFV" id="fweninZigp" role="2OqNvi">
                   <ref role="2WH_rO" node="6YK8y67o2Z$" resolve="mpsProject" />
                 </node>
                 <node concept="2WthIp" id="6YK8y67q97l" role="2Oq$k0" />
               </node>
+              <node concept="37vLTw" id="2TaeM1ZTuzU" role="37wK5m">
+                <ref role="3cqZAo" node="2TaeM1ZTuzR" resolve="title" />
+              </node>
               <node concept="37vLTw" id="6YK8y67q97n" role="37wK5m">
                 <ref role="3cqZAo" node="6YK8y67q3S9" resolve="modules" />
               </node>
+            </node>
+            <node concept="3uibUv" id="6YK8y67q971" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
             </node>
           </node>
         </node>
@@ -41734,8 +41755,8 @@
                 <ref role="2WH_rO" node="6YK8y67o2Z$" resolve="mpsProject" />
               </node>
             </node>
-            <node concept="Xl_RD" id="43e76yOCruy" role="37wK5m">
-              <property role="Xl_RC" value="Move Model" />
+            <node concept="37vLTw" id="2TaeM1ZTuzT" role="37wK5m">
+              <ref role="3cqZAo" node="2TaeM1ZTuzR" resolve="title" />
             </node>
             <node concept="37vLTw" id="43e76yODVRP" role="37wK5m">
               <ref role="3cqZAo" node="43e76yODVRF" resolve="participants" />

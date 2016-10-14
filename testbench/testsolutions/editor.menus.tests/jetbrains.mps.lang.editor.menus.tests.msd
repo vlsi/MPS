@@ -33,7 +33,7 @@
     <language slang="l:9b3af7e0-9a52-4741-a75d-becf7e1d5117:jetbrains.mps.lang.editor.menus.testExtendingLanguage" version="0" />
     <language slang="l:4eb772b0-4df3-414a-b894-63abeb912f56:jetbrains.mps.lang.editor.menus.testLanguage" version="0" />
     <language slang="l:69068b7c-ba1f-47fb-a486-4981f42606e9:jetbrains.mps.lang.editor.menus.testMetaLanguage" version="0" />
-    <language slang="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" version="1" />
+    <language slang="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" version="2" />
     <language slang="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" version="0" />
     <language slang="l:13744753-c81f-424a-9c1b-cf8943bf4e86:jetbrains.mps.lang.sharedConcepts" version="0" />
     <language slang="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" version="4" />

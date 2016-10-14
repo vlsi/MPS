@@ -25,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.AbstractToolKeystroke__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration__BehaviorDescriptor" />
@@ -33,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.NumberToolShortcut__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Order__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PluginDependency__BehaviorDescriptor" />

@@ -814,7 +814,7 @@
       <node id="6294660000051114344" at="19,0,20,0" concept="13" trace="ICON" />
       <node id="6294660000051138132" at="20,0,21,0" concept="5" trace="myComponent" />
       <node id="8532164657612867886" at="21,0,22,0" concept="5" trace="myController" />
-      <node id="6294660000051114344" at="22,51,23,79" concept="15" />
+      <node id="6294660000051114344" at="22,51,23,81" concept="15" />
       <node id="6294660000051114344" at="25,37,26,24" concept="4" />
       <node id="8819548362878453213" at="26,24,27,67" concept="9" />
       <node id="8819548362878467651" at="28,29,29,74" concept="18" />
@@ -840,7 +840,7 @@
       <node id="979234276368085572" at="36,0,41,7" concept="4" />
       <node id="4103857878012134046" at="47,0,54,0" concept="8" trace="createGearActionGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
       <node id="6294660000051114344" at="25,0,43,0" concept="8" trace="init#(Lcom/intellij/openapi/project/Project;)V" />
-      <scope id="6294660000051114344" at="22,51,23,79" />
+      <scope id="6294660000051114344" at="22,51,23,81" />
       <scope id="8819548362878465131" at="28,29,29,74" />
       <scope id="979234276368085639" at="38,25,39,58" />
       <scope id="4103857878012134030" at="49,45,50,96" />

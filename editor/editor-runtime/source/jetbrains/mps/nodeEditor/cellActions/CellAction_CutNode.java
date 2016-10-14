@@ -32,7 +32,11 @@ public class CellAction_CutNode extends CellAction_CopyNode {
     if (!super.canExecute(context)) {
       return false;
     }
-    SNode node = context.getSelectionManager().getSelection().getSelectedNodes().get(0);
+    List<SNode> selectedNodes = context.getSelectionManager().getSelection().getSelectedNodes();
+    if (selectedNodes.isEmpty()) {
+      return false;
+    }
+    SNode node = selectedNodes.get(0);
     if (SNodeOperations.getParent(node) == null || context.getEditorComponent().getEditedNode() == node) {
       return false;
     }

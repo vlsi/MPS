@@ -68,7 +68,11 @@ public class CellAction_PasteNode extends AbstractCellAction {
   @Override
   public boolean canExecute(EditorContext context) {
     Selection selection = context.getSelectionManager().getSelection();
-    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selection.getSelectedNodes().get(0).getModel());
+    List<SNode> selectedNodes = selection.getSelectedNodes();
+    if (selectedNodes.isEmpty()) {
+      return false;
+    }
+    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNodes.get(0).getModel());
 
     if (pasteNodes == null || pasteNodes.isEmpty()) {
       // it used to be ok because conversion would be invoked in this case
@@ -76,14 +80,14 @@ public class CellAction_PasteNode extends AbstractCellAction {
     }
 
     boolean disposed = false;
-    for (SNode node : selection.getSelectedNodes()) {
+    for (SNode node : selectedNodes) {
       if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
         disposed = true;
         break;
       }
     }
 
-    boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
+    boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selectedNodes, pasteNodes);
     if (selection instanceof SingularSelection &&
         (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
             (selection instanceof EditorCellSelection && !canPasteWithRemove))) {

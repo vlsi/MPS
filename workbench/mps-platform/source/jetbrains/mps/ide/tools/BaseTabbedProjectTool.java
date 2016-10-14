@@ -22,13 +22,16 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Replaces {@link jetbrains.mps.plugins.tool.GeneratedTabbedTool}.
@@ -38,9 +41,16 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
   private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();
   private boolean myContentRemovedListenerAdded = false;
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected BaseTabbedProjectTool(Project project, String id, int number, Icon icon,
       ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
+  }
+
+  protected BaseTabbedProjectTool(Project project, String id, Map<String, KeyStroke> shortcutsByKeymap, Icon icon,
+      ToolWindowAnchor anchor, boolean canCloseContent) {
+    super(project, id, shortcutsByKeymap, icon, anchor, false, canCloseContent);
   }
 
   @Override

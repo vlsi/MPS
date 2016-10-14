@@ -13,6 +13,11 @@ import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import java.util.Map;
+import javax.swing.KeyStroke;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import com.intellij.openapi.keymap.KeymapManager;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
@@ -30,8 +35,12 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   private MPSProject myProject;
 
   public ConsoleTool(MPSProject project) {
-    super(project.getProject(), "Console", -1, MPSIcons.ToolWindows.OpenTerminal_13x13, ToolWindowAnchor.BOTTOM, true);
+    super(project.getProject(), "Console", getKeymap(), MPSIcons.ToolWindows.OpenTerminal_13x13, ToolWindowAnchor.BOTTOM, true);
     myProject = project;
+  }
+
+  private static Map<String, KeyStroke> getKeymap() {
+    return MapSequence.<String, KeyStroke>fromMapAndKeysArray(new HashMap<String, KeyStroke>(), KeymapManager.DEFAULT_IDEA_KEYMAP).withValues(KeyStroke.getKeyStroke("alt F11"));
   }
 
   @Override
@@ -60,8 +69,8 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   }
 
   public BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
-    String title = check_xg3v07_a0a0r(tabState);
-    String history = check_xg3v07_a0b0r(tabState);
+    String title = check_xg3v07_a0a0t(tabState);
+    String history = check_xg3v07_a0b0t(tabState);
     if (icon == null) {
       icon = MPSIcons.ToolWindows.OpenTerminal_13x13;
     }
@@ -69,7 +78,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       title = "Console";
     }
     BaseConsoleTab tab;
-    if (check_xg3v07_a5a71(tabState)) {
+    if (check_xg3v07_a5a91(tabState)) {
       tab = new OutputConsoleTab(myProject, this, title, history);
     } else {
       tab = new DialogConsoleTab(myProject, this, title, history);
@@ -100,7 +109,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       BaseConsoleTab tab = addConsoleTab(null, null, false);
       getContentManager().getContent(tab).setPinned(true);
     }
-    check_xg3v07_a2a12(getContentManager().getContent(0), this);
+    check_xg3v07_a2a32(getContentManager().getContent(0), this);
     getContentManager().setSelectedContent(getContentManager().getContent(0));
   }
 
@@ -121,7 +130,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   }
 
   public void loadState(ConsoleTool.MyState state) {
-    if (eq_xg3v07_a0a0db(state.version, ConsoleTool.MyState.VERSION)) {
+    if (eq_xg3v07_a0a0fb(state.version, ConsoleTool.MyState.VERSION)) {
       loadedState = state;
     }
   }
@@ -144,9 +153,9 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
   public DialogConsoleTab getCurrentEditableTab() {
     if (ListSequence.fromList(myTabs).getElement(this.getCurrentTabIndex()) instanceof DialogConsoleTab) {
-      return as_xg3v07_a0a0a0hb(ListSequence.fromList(myTabs).getElement(this.getCurrentTabIndex()), DialogConsoleTab.class);
+      return as_xg3v07_a0a0a0jb(ListSequence.fromList(myTabs).getElement(this.getCurrentTabIndex()), DialogConsoleTab.class);
     }
-    return as_xg3v07_a0b0hb(ListSequence.fromList(myTabs).getElement(0), DialogConsoleTab.class);
+    return as_xg3v07_a0b0jb(ListSequence.fromList(myTabs).getElement(0), DialogConsoleTab.class);
   }
 
   @Nullable
@@ -168,37 +177,37 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     return result;
   }
 
-  private static String check_xg3v07_a0a0r(ConsoleTool.TabState checkedDotOperand) {
+  private static String check_xg3v07_a0a0t(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.title;
     }
     return null;
   }
-  private static String check_xg3v07_a0b0r(ConsoleTool.TabState checkedDotOperand) {
+  private static String check_xg3v07_a0b0t(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.history;
     }
     return null;
   }
-  private static boolean check_xg3v07_a5a71(ConsoleTool.TabState checkedDotOperand) {
+  private static boolean check_xg3v07_a5a91(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isHistoryTab;
     }
     return false;
   }
-  private static void check_xg3v07_a2a12(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+  private static void check_xg3v07_a2a32(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setCloseable(false);
     }
 
   }
-  private static boolean eq_xg3v07_a0a0db(Object a, Object b) {
+  private static boolean eq_xg3v07_a0a0fb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static <T> T as_xg3v07_a0a0a0hb(Object o, Class<T> type) {
+  private static <T> T as_xg3v07_a0a0a0jb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xg3v07_a0b0hb(Object o, Class<T> type) {
+  private static <T> T as_xg3v07_a0b0jb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
