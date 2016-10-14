@@ -46,6 +46,7 @@
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
         <module reference="b2d9d19b-9a47-47a4-93f4-0c9390001bf2(jetbrains.mps.generator.test.xmodel.lang1)" version="0" />
         <module reference="b91edd51-b22d-4568-9ef0-89fad4f753d2(jetbrains.mps.generator.test.xmodel.lang1#7618674748894117488)" version="0" />
+        <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
