@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,10 @@ public class DelayedChanges {
     int i = 0;
     for (NodePostProcessor p : myPostProcessors) {
       SNode child = p.substitute();
+      if (child == null) {
+        generator.getLogger().error(p.getTemplateNode(), "Unexpected null value. Transform function of MAP-SRC didn't produce any result. Please check the function and make sure it always supplies a node");
+        continue;
+      }
       if (child != p.getOutputAnchor()) {
         ChildAdopter ca = new ChildAdopter(generator);
         ca.checkIsExpectedLanguage(Collections.singletonList(child), p.getTemplateNode(), p.getTemplateContext());
@@ -64,7 +68,9 @@ public class DelayedChanges {
     }
     i = 0;
     for (NodePostProcessor p : myPostProcessors) {
-      p.postProcess(newOutputNodes[i++]);
+      if (newOutputNodes[i] != null) {
+        p.postProcess(newOutputNodes[i++]);
+      }
     }
     myPostProcessors.clear();
   }
