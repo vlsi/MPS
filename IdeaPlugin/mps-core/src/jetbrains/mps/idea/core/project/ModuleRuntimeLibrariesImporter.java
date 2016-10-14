@@ -157,7 +157,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
         return;
       }
       result.add(module);
-      for (SModule usedModule : usedModulesCollector.directlyUsedModules0(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
+      for (SModule usedModule : usedModulesCollector.directlyUsedModules(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
         collectRuntimeDependencies(usedModule, result, usedModulesCollector);
       }
     }

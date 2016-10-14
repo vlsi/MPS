@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,6 +41,7 @@ import java.util.stream.StreamSupport;
  * @since 3.3
  */
 public class ModelCheckpoints {
+  // modifiable list (set, iterate+remove operations)
   private final List<CheckpointState> myStates;
   private final PlanIdentity myPlan;
 
@@ -50,7 +50,8 @@ public class ModelCheckpoints {
    */
   /*package*/ ModelCheckpoints(CheckpointState state) {
     myPlan = state.getCheckpoint().getPlan();
-    myStates = Collections.singletonList(state);
+    myStates = new ArrayList<>(2);
+    myStates.add(state);
   }
 
   /**

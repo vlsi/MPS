@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.samples.formulaLanguage.actions.ActionAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.formulaLanguage.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -18,7 +19,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.samples.formulaLanguage.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)";
+  public static final String MODULE_REF = "b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)";
   public Language() {
   }
   @Override
@@ -49,6 +50,11 @@ public class Language extends LanguageRuntime {
         return (T) new ActionAspectDescriptorImpl();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.formulaLanguage.behavior.BehaviorAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
       if (aspectClass == EditorAspectDescriptor.class) {
         return (T) new EditorAspectDescriptorImpl();
@@ -64,6 +70,6 @@ public class Language extends LanguageRuntime {
         return (T) new ConceptPresentationAspectImpl();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

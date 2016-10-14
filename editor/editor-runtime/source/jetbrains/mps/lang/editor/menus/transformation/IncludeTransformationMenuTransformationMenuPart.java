@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,20 +29,30 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    SNode newNode = getNode(context);
+    SNodeLocation newNodeLocation = toNodeLocation(getNode(context));
+    String newMenuLocation = getLocation(context);
 
-    TransformationMenuContext newContext = newNode == null ? context : context.withNode(newNode);
-
+    TransformationMenuContext newContext = context.with(newNodeLocation, newMenuLocation);
     return newContext.createItems(getMenuLookup(context));
   }
 
   @Nullable
-  protected MenuLookup<TransformationMenu> getMenuLookup(TransformationMenuContext context) {
+  private static SNodeLocation toNodeLocation(@Nullable SNode node) {
+    return node == null ? null : new SNodeLocation.FromNode(node);
+  }
+
+  @Nullable
+  protected TransformationMenuLookup getMenuLookup(TransformationMenuContext context) {
     return null;
   }
 
   @Nullable
   protected SNode getNode(TransformationMenuContext context) {
     return context.getNode();
+  }
+
+  @Nullable
+  protected String getLocation(TransformationMenuContext context) {
+    return context.getMenuLocation();
   }
 }

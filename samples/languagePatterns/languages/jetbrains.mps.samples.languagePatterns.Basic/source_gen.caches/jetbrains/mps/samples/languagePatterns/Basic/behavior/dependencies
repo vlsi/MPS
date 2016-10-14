@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" file="AbstractRequestDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.AddressReference_BehaviorDescriptor" file="AddressReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address_BehaviorDescriptor" file="Address_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address__BehaviorDescriptor" file="Address__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -23,19 +35,41 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.AgendaItem_BehaviorDescriptor" file="AgendaItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" file="Apple_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.Component__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Car_BehaviorDescriptor" file="Car_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.CombinedPerformance_BehaviorDescriptor" file="CombinedPerformance_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.ComponentUsage_BehaviorDescriptor" file="ComponentUsage_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Component_BehaviorDescriptor" file="Component_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Component__BehaviorDescriptor" file="Component__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -61,6 +95,54 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Concert_BehaviorDescriptor" file="Concert_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Container_BehaviorDescriptor" file="Container_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.DottedLine_BehaviorDescriptor" file="DottedLine_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawCommand_BehaviorDescriptor" file="DrawCommand_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawLine_BehaviorDescriptor" file="DrawLine_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.DrawRect_BehaviorDescriptor" file="DrawRect_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.EmptyLine_BehaviorDescriptor" file="EmptyLine_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.FormDescription_BehaviorDescriptor" file="FormDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" file="FruitPlate_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Fruit_BehaviorDescriptor" file="Fruit_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.IncompleteCommand_BehaviorDescriptor" file="IncompleteCommand_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference_BehaviorDescriptor" file="ItemReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference__BehaviorDescriptor" file="ItemReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -82,6 +164,78 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Item_BehaviorDescriptor" file="Item_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.LineStyle_BehaviorDescriptor" file="LineStyle_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.ListOfDrawCommands_BehaviorDescriptor" file="ListOfDrawCommands_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.OperationOnAddress_BehaviorDescriptor" file="OperationOnAddress_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Orange_BehaviorDescriptor" file="Orange_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Participant_BehaviorDescriptor" file="Participant_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.PerformanceWithTitle_BehaviorDescriptor" file="PerformanceWithTitle_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Performance_BehaviorDescriptor" file="Performance_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.RaceParticipant_BehaviorDescriptor" file="RaceParticipant_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Request_BehaviorDescriptor" file="Request_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.SimplifiedFormDescription_BehaviorDescriptor" file="SimplifiedFormDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" file="Singer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.SolidLine_BehaviorDescriptor" file="SolidLine_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.SomeForm_BehaviorDescriptor" file="SomeForm_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.StreetOperation_BehaviorDescriptor" file="StreetOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.StringDescription_BehaviorDescriptor" file="StringDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" file="Truck_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.languagePatterns.Basic.behavior.ZipOperation_BehaviorDescriptor" file="ZipOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

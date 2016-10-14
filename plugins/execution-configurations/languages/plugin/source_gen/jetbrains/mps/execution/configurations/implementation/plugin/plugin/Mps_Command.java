@@ -89,7 +89,7 @@ public class Mps_Command {
   }
 
   public static String getDefaultVirtualMachineParameters() {
-    return IterableUtils.join(ListSequence.fromList(new JvmArgs().getDefaultJvmArgs()), " ");
+    return IterableUtils.join(ListSequence.fromList(JvmArgs.getDefaultJvmArgs()), " ");
   }
   public static String getDefaultConfigurationPath() {
     return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug33/config";

@@ -6,8 +6,6 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
@@ -70,8 +68,5 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648479(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L, "row"));
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
 }

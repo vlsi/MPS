@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.FocusPolicyUtil;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -32,6 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -321,6 +324,9 @@ public class SelectionManagerImpl implements SelectionManager {
     if (nodeCell == null) {
       return null;
     }
+    if (FOCUS_POLICY_CELL.equals(cellId)) {
+      return FocusPolicyUtil.findFocusedCell(nodeCell);
+    }
     if (isSpecifiedById(nodeCell, cellId)) {
       return nodeCell;
     }
@@ -328,10 +334,8 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   private EditorCell findChildCell(EditorCell nodeCell, String cellId) {
-    boolean useForwardIterator = !SelectionManager.LAST_CELL.equals(cellId) && !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
-    boolean ignoreChildNodes =
-        !SelectionManager.FIRST_CELL.equals(cellId) && !SelectionManager.FIRST_EDITABLE_CELL.equals(cellId) && !SelectionManager.LAST_CELL.equals(cellId) &&
-            !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
+    boolean useForwardIterator = shouldUseForwardIterator(cellId);
+    boolean ignoreChildNodes = shouldIgnoreChildNodes(cellId);
     for (EditorCell cell : CellTraversalUtil.iterateTree(nodeCell, nodeCell, useForwardIterator).skipStart()) {
       if (ignoreChildNodes && cell.getSNode() != nodeCell.getSNode()) {
         continue;
@@ -341,6 +345,16 @@ public class SelectionManagerImpl implements SelectionManager {
       }
     }
     return null;
+  }
+
+  private boolean shouldUseForwardIterator(String cellId) {
+    String[] selectorsShouldUseBackwardIterator = new String[]{LAST_CELL, LAST_EDITABLE_CELL,LAST_ERROR_CELL};
+    return !Arrays.stream(selectorsShouldUseBackwardIterator).anyMatch(s -> s.equals(cellId));
+  }
+
+  private boolean shouldIgnoreChildNodes(String cellId) {
+    String[] selectorsShouldNotIgnoreChildNodes = new String[]{FIRST_CELL, LAST_CELL, FIRST_EDITABLE_CELL, LAST_EDITABLE_CELL, FIRST_ERROR_CELL, LAST_ERROR_CELL};
+    return !Arrays.stream(selectorsShouldNotIgnoreChildNodes).anyMatch(s -> s.equals(cellId));
   }
 
   private boolean isSpecifiedById(EditorCell cell, String requestedCellId) {
@@ -360,9 +374,18 @@ public class SelectionManagerImpl implements SelectionManager {
     // processing cell selector constants
     boolean selectable = SelectionManager.FIRST_CELL.equals(requestedCellId) || SelectionManager.LAST_CELL.equals(requestedCellId);
     boolean editable = SelectionManager.FIRST_EDITABLE_CELL.equals(requestedCellId) || SelectionManager.LAST_EDITABLE_CELL.equals(requestedCellId);
-    boolean isCellSelector = selectable || editable;
+    boolean error = SelectionManager.FIRST_ERROR_CELL.equals(requestedCellId) || SelectionManager.LAST_ERROR_CELL.equals(requestedCellId);
 
-    return isCellSelector && !(cell instanceof EditorCell_Collection) && cell.isSelectable() &&
-        (selectable || (cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable()));
+    if (cell instanceof EditorCell_Collection) {
+      return false;
+    }
+    if (selectable) {
+      return cell.isSelectable();
+    } else if (editable) {
+      return cell.isSelectable() && cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable();
+    } else if (error) {
+      return cell instanceof EditorCell_Error || cell.isErrorState();
+    }
+    return false;
   }
 }

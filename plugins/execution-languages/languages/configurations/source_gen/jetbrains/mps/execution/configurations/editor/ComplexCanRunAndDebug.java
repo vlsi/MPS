@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -32,6 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -91,7 +93,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static boolean renderingCondition_2konf7_a1b0(SNode node, EditorContext editorContext) {
@@ -114,7 +116,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static boolean renderingCondition_2konf7_a2b0(SNode node, EditorContext editorContext) {
@@ -169,7 +171,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0a1c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0a1c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0a1c0 extends AbstractCellMenuPart_Generic_Item {
@@ -196,7 +198,9 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
       return editorCell;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
+      }
       if (editorCell.getRole() == null) {
         editorCell.setRole("debuggerConfiguration");
       }
@@ -205,8 +209,8 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_debuggerConfiguration");
-      installCellInfo(null, editorCell);
 
+      installCellInfo(null, editorCell);
       return editorCell;
     }
     protected String getNoTargetText() {
@@ -220,7 +224,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static boolean renderingCondition_2konf7_a2c0(SNode node, EditorContext editorContext) {

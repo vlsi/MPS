@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_LanguageDependency = new ConceptPresentationBuilder().create();
@@ -20,43 +17,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_LanguageDependency;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Model;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ModelReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ModuleReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.LanguageDependency:
+        return props_LanguageDependency;
+      case LanguageConceptSwitch.Model:
+        return props_Model;
+      case LanguageConceptSwitch.ModelReference:
+        return props_ModelReference;
+      case LanguageConceptSwitch.ModuleReference:
+        return props_ModuleReference;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x660570953ee5d6b9L, "jetbrains.mps.ide.vcs.modelmetadata.structure.LanguageDependency"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference"));
 }

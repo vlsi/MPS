@@ -2,7 +2,7 @@
 <model ref="r:adc6b163-e3a1-4d17-80bf-c7e84b5a0628(jetbrains.mps.ide.vcs.modelmetadata.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="e4tq" ref="r:d1664c60-f6de-4b25-a874-54417df516ea(jetbrains.mps.ide.vcs.modelmetadata.structure)" />
@@ -123,7 +123,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="UHCFRHQMi0" role="3EZMnx">
-          <ref role="1NtTu8" to="e4tq:444ZSQ068oQ" />
+          <ref role="1NtTu8" to="e4tq:444ZSQ068oQ" resolve="language" />
           <node concept="l2Vlx" id="UHCFRHQMi1" role="2czzBx" />
           <node concept="pj6Ft" id="UHCFRHQMi2" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -154,7 +154,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="UHCFRHQMib" role="3EZMnx">
-          <ref role="1NtTu8" to="e4tq:444ZSQ068oS" />
+          <ref role="1NtTu8" to="e4tq:444ZSQ068oS" resolve="languageEngagedOnGeneration" />
           <node concept="l2Vlx" id="UHCFRHQMic" role="2czzBx" />
           <node concept="pj6Ft" id="UHCFRHQMid" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -185,7 +185,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="UHCFRHQMix" role="3EZMnx">
-          <ref role="1NtTu8" to="e4tq:444ZSQ068oV" />
+          <ref role="1NtTu8" to="e4tq:444ZSQ068oV" resolve="devkit" />
           <node concept="l2Vlx" id="UHCFRHQMiy" role="2czzBx" />
           <node concept="pj6Ft" id="UHCFRHQMiz" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -216,7 +216,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="UHCFRHQMiG" role="3EZMnx">
-          <ref role="1NtTu8" to="e4tq:444ZSQ068oZ" />
+          <ref role="1NtTu8" to="e4tq:444ZSQ068oZ" resolve="import" />
           <node concept="l2Vlx" id="UHCFRHQMiH" role="2czzBx" />
           <node concept="pj6Ft" id="UHCFRHQMiI" role="3F10Kt">
             <property role="VOm3f" value="true" />

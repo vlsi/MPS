@@ -16,6 +16,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import java.io.DataOutputStream;
@@ -26,8 +28,6 @@ import org.apache.log4j.Level;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TestOutputComponent implements TestView {
   private static final int MAX_SIZE = 10000;
@@ -37,11 +37,13 @@ public class TestOutputComponent implements TestView {
   private String myFilterClass;
   private String myFilterMethod;
   private final TestRunState myState;
+
   public TestOutputComponent(ConsoleView console, TestRunState state) {
     myConsoleView = console;
     myComponent = myConsoleView.getComponent();
     myState = state;
   }
+
   @Override
   public void update() {
     if (myState.getLostClass() != null && myState.getLostMethod() != null) {
@@ -66,39 +68,47 @@ public class TestOutputComponent implements TestView {
       });
     }
   }
+
   @Override
   public void init() {
     clear();
   }
+
   public JComponent getComponent() {
     return myComponent;
   }
+
   public void filter(String filterClass, String filterMethod) {
-    if (neq_r62oz9_a0a0a11_0(filterClass, myFilterClass) || neq_r62oz9_a0a0a11(filterMethod, myFilterMethod)) {
+    if (neq_r62oz9_a0a0a61_0(filterClass, myFilterClass) || neq_r62oz9_a0a0a61(filterMethod, myFilterMethod)) {
       myFilterClass = filterClass;
       myFilterMethod = filterMethod;
       myConsoleView.clear();
       myRootMessage.print();
     }
   }
+
   public void appendWithParameters(String testClass, String testMethod, String text, @NotNull Key type) {
     TestOutputComponent.IMessage message = myRootMessage.addMessage(testClass, testMethod, text, type);
-    if (((myFilterClass == null || myFilterClass.length() == 0) || eq_r62oz9_a0a0b0m(myFilterClass, testClass))) {
-      if (((myFilterMethod == null || myFilterMethod.length() == 0) || eq_r62oz9_a0a0a0b0m(myFilterMethod, testMethod))) {
+    if (((myFilterClass == null || myFilterClass.length() == 0) || eq_r62oz9_a0a0b0s(myFilterClass, testClass))) {
+      if (((myFilterMethod == null || myFilterMethod.length() == 0) || eq_r62oz9_a0a0a0b0s(myFilterMethod, testMethod))) {
         message.print();
       }
     }
   }
+
   public void clear() {
     myRootMessage.clear();
     myConsoleView.clear();
   }
+
   public void dispose() {
     Disposer.dispose(myConsoleView);
   }
+
   public ConsoleView getConsole() {
     return myConsoleView;
   }
+
   private static void print(ConsoleView console, Key key, String string) {
     if (ProcessOutputTypes.STDERR.equals(key)) {
       console.print(string, ConsoleViewContentType.ERROR_OUTPUT);
@@ -108,15 +118,19 @@ public class TestOutputComponent implements TestView {
       console.print(string, ConsoleViewContentType.NORMAL_OUTPUT);
     }
   }
+
   private interface IMessage {
     void print();
   }
+
   public abstract class CompositeMessage implements TestOutputComponent.IMessage {
     protected final List<TestOutputComponent.IMessage> myChildren = ListSequence.fromList(new ArrayList<TestOutputComponent.IMessage>());
     protected int myNextFlush = 0;
     private int myCachedSize = -1;
+
     public CompositeMessage() {
     }
+
     @Override
     public void print() {
       if (matches(myFilterClass, myFilterMethod)) {
@@ -125,6 +139,7 @@ public class TestOutputComponent implements TestView {
         }
       }
     }
+
     public TestOutputComponent.IMessage addMessage(String testClass, String testMethod, String text, Key key) {
       myCachedSize = -1;
       if (ListSequence.fromList(myChildren).isNotEmpty() && ListSequence.fromList(myChildren).last() instanceof TestOutputComponent.CompositeMessage) {
@@ -137,17 +152,22 @@ public class TestOutputComponent implements TestView {
       ListSequence.fromList(myChildren).addElement(message);
       return message;
     }
+
     public abstract TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key);
+
     public boolean matches(String testClass, String testMethod) {
       return true;
     }
+
     public boolean merges(String testClass, String testMethod) {
       return false;
     }
+
     public void clear() {
       ListSequence.fromList(myChildren).clear();
       myCachedSize = -1;
     }
+
     public void flush() {
       TestOutputComponent.CompositeMessage nextFlush = (TestOutputComponent.CompositeMessage) ListSequence.fromList(myChildren).getElement(myNextFlush);
       while (!(nextFlush.canFlush())) {
@@ -157,6 +177,7 @@ public class TestOutputComponent implements TestView {
       nextFlush.flush();
       myCachedSize = -1;
     }
+
     public boolean canFlush() {
       for (TestOutputComponent.IMessage child : ListSequence.fromList(myChildren)) {
         if (child instanceof TestOutputComponent.CompositeMessage) {
@@ -169,6 +190,7 @@ public class TestOutputComponent implements TestView {
       }
       return false;
     }
+
     public int size() {
       if (myCachedSize < 0) {
         myCachedSize = ListSequence.fromList(myChildren).foldLeft(0, new ILeftCombinator<TestOutputComponent.IMessage, Integer>() {
@@ -180,15 +202,18 @@ public class TestOutputComponent implements TestView {
       return myCachedSize;
     }
   }
+
   public class RootMessage extends TestOutputComponent.CompositeMessage {
     public RootMessage() {
     }
+
     @Override
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
       TestOutputComponent.ClassMessage message = new TestOutputComponent.ClassMessage(testClass);
       message.addMessage(testClass, testMethod, text, key);
       return message;
     }
+
     @Override
     public TestOutputComponent.IMessage addMessage(String testClass, String testMethod, String text, Key key) {
       TestOutputComponent.IMessage message = super.addMessage(testClass, testMethod, text, key);
@@ -198,48 +223,61 @@ public class TestOutputComponent implements TestView {
       return message;
     }
   }
+
   public class ClassMessage extends TestOutputComponent.CompositeMessage implements TestOutputComponent.IMessage {
     private final String myClassName;
+
     public ClassMessage(String className) {
       myClassName = className;
     }
+
     @Override
     public boolean matches(String testClass, String testMethod) {
       return (testClass == null || testClass.length() == 0) || merges(testClass, testMethod);
     }
+
     @Override
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
       TestOutputComponent.MethodMessage message = new TestOutputComponent.MethodMessage(testMethod);
       message.addMessage(testClass, testMethod, text, key);
       return message;
     }
+
     @Override
     public boolean merges(String testClass, String testMethod) {
-      return eq_r62oz9_a0a0e02(myClassName, testClass);
+      return eq_r62oz9_a0a0i43(myClassName, testClass);
     }
   }
+
+  protected static Logger LOG = LogManager.getLogger(TestOutputComponent.class);
   public class MethodMessage extends TestOutputComponent.CompositeMessage implements TestOutputComponent.IMessage {
     private final String myMethod;
     private File myFile = null;
+
     public MethodMessage(String method) {
       myMethod = method;
     }
+
     @Override
     public boolean matches(String testClass, String testMethod) {
       return (testMethod == null || testMethod.length() == 0) || merges(testClass, testMethod);
     }
+
     @Override
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
       return new TestOutputComponent.TestMessage(text, key);
     }
+
     @Override
     public boolean merges(String testClass, String testMethod) {
-      return eq_r62oz9_a0a0f12(testMethod, myMethod);
+      return eq_r62oz9_a0a0j73(testMethod, myMethod);
     }
+
     @Override
     public int size() {
       return ListSequence.fromList(myChildren).count();
     }
+
     @Override
     public void flush() {
       if (myFile == null) {
@@ -270,6 +308,7 @@ public class TestOutputComponent implements TestView {
         }
       }
     }
+
     @Override
     public void print() {
       if (matches(myFilterClass, myFilterMethod)) {
@@ -293,7 +332,6 @@ public class TestOutputComponent implements TestView {
                 TestOutputComponent.print(myConsoleView, ProcessOutputTypes.SYSTEM, "Could not parse line:\n" + line + "\n");
               }
             }
-
           } catch (IOException e) {
             if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Cant read messages for test " + myMethod, e);
@@ -312,35 +350,37 @@ public class TestOutputComponent implements TestView {
       }
     }
   }
+
   public class TestMessage implements TestOutputComponent.IMessage {
     private final String myText;
     private final Key myKey;
+
     public TestMessage(String text, @NotNull Key key) {
       myText = text;
       myKey = key;
     }
+
     @Override
     public void print() {
       TestOutputComponent.print(myConsoleView, myKey, myText);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TestOutputComponent.class);
-  private static boolean neq_r62oz9_a0a0a11(Object a, Object b) {
+  private static boolean neq_r62oz9_a0a0a61(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_r62oz9_a0a0a11_0(Object a, Object b) {
+  private static boolean neq_r62oz9_a0a0a61_0(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_r62oz9_a0a0a0b0m(Object a, Object b) {
+  private static boolean eq_r62oz9_a0a0a0b0s(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_r62oz9_a0a0b0m(Object a, Object b) {
+  private static boolean eq_r62oz9_a0a0b0s(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_r62oz9_a0a0e02(Object a, Object b) {
+  private static boolean eq_r62oz9_a0a0i43(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_r62oz9_a0a0f12(Object a, Object b) {
+  private static boolean eq_r62oz9_a0a0j73(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

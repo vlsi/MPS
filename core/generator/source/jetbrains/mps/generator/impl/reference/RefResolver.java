@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,16 +19,16 @@ import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
+ * Base implementation of resolver, used both for interpreted and compiled templates
  * @author Artem Tikhomirov
  */
-public abstract class RefResolver implements ReferenceResolver2 {
+public abstract class RefResolver implements ReferenceResolver, ReferenceResolver2 {
   private final SNode myOutputNode;
   private final SReferenceLink myRole;
   protected final TemplateContext myContext;
@@ -55,6 +55,7 @@ public abstract class RefResolver implements ReferenceResolver2 {
     return myRole;
   }
 
+  @NotNull
   @Override
   public SNodeReference getTemplateNode() {
     return myTemplate;
@@ -65,31 +66,7 @@ public abstract class RefResolver implements ReferenceResolver2 {
     return myDefaultResolveInfo;
   }
 
-  @Override
-  public final Object resolve(SNode outputNode, TemplateContext context) {
-    throw new IllegalStateException();
-  }
-
   protected final ReferenceMacroContext createQueryContext() {
     return new ReferenceMacroContext(myContext, myOutputNode, myTemplate, myRole);
-  }
-
-
-  /**
-   * Compatibility with legacy ReferenceResolver
-   */
-  @ToRemove(version = 3.3)
-  public static final class RefResolverAdapter extends RefResolver {
-    private final ReferenceResolver myLegacyResolver;
-
-    public RefResolverAdapter(@NotNull SNode outputNode, @NotNull SReferenceLink role, @NotNull TemplateContext context, @NotNull ReferenceResolver legacyResolver) {
-      super(outputNode, role, context, legacyResolver.getTemplateNode(), legacyResolver.getDefaultResolveInfo());
-      myLegacyResolver = legacyResolver;
-    }
-
-    @Override
-    public Object resolve() {
-      return myLegacyResolver.resolve(getOutputNode(), myContext);
-    }
   }
 }

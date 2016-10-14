@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_IndexedTupleLiteral = new ConceptPresentationBuilder().create();
@@ -25,68 +22,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0k.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_IndexedTupleLiteral;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_IndexedTupleMemberAccessExpression;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_IndexedTupleType;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_NamedTupleComponentAccessOperation;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_NamedTupleComponentDeclaration;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_NamedTupleComponentReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_NamedTupleDeclaration;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_NamedTupleLiteral;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_NamedTupleType;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.IndexedTupleLiteral:
+        return props_IndexedTupleLiteral;
+      case LanguageConceptSwitch.IndexedTupleMemberAccessExpression:
+        return props_IndexedTupleMemberAccessExpression;
+      case LanguageConceptSwitch.IndexedTupleType:
+        return props_IndexedTupleType;
+      case LanguageConceptSwitch.NamedTupleComponentAccessOperation:
+        return props_NamedTupleComponentAccessOperation;
+      case LanguageConceptSwitch.NamedTupleComponentDeclaration:
+        return props_NamedTupleComponentDeclaration;
+      case LanguageConceptSwitch.NamedTupleComponentReference:
+        return props_NamedTupleComponentReference;
+      case LanguageConceptSwitch.NamedTupleDeclaration:
+        return props_NamedTupleDeclaration;
+      case LanguageConceptSwitch.NamedTupleLiteral:
+        return props_NamedTupleLiteral;
+      case LanguageConceptSwitch.NamedTupleType:
+        return props_NamedTupleType;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"));
 }

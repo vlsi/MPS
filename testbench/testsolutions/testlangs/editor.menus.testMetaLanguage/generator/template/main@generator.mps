@@ -16,13 +16,9 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
-        <child id="1145553007750" name="creator" index="2ShVmc" />
-      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia" />
@@ -46,31 +42,19 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
-        <child id="1237721435808" name="initValue" index="HW$Y0" />
-        <child id="1237721435807" name="elementType" index="HW$YZ" />
-      </concept>
-      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
-    </language>
   </registry>
   <node concept="bUwia" id="2X_LC_COVVa">
     <property role="TrG5h" value="main" />
   </node>
   <node concept="jVnub" id="5_kqtpAy5$t">
-    <property role="TrG5h" value="switch_TransformationLocation_Test_asStringArray" />
-    <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asStringArray" />
+    <property role="TrG5h" value="switch_TransformationLocation_asExpressions" />
+    <ref role="phYkn" to="tpc3:3EZUZhmTWq7" resolve="switch_TransformationLocation_asExpressions" />
     <node concept="3aamgX" id="5_kqtpAy5E5" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="ue84:5_kqtpAy1uy" resolve="TransformationLocation_Test" />
       <node concept="gft3U" id="5_kqtpAy5E9" role="1lVwrX">
-        <node concept="2ShNRf" id="30NnNOoi5fA" role="gfFT$">
-          <node concept="Tc6Ow" id="30NnNOoi61A" role="2ShVmc">
-            <node concept="17QB3L" id="30NnNOoi6qT" role="HW$YZ" />
-            <node concept="Xl_RD" id="5_kqtpAy6xM" role="HW$Y0">
-              <property role="Xl_RC" value="test location" />
-            </node>
-          </node>
+        <node concept="Xl_RD" id="5_kqtpAy6xM" role="gfFT$">
+          <property role="Xl_RC" value="test location" />
         </node>
       </node>
     </node>

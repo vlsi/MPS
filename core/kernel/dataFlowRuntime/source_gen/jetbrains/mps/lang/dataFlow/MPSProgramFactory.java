@@ -27,4 +27,7 @@ public class MPSProgramFactory implements ProgramFactory<NamedAnalyzerId> {
   public void prepareProgram(Program program, SNode node, NamedAnalyzerId analyzerId) {
     new AnalyzerRules(analyzerId.getAnalyzerFqName(), Collections.singletonList(node), program, myContext).apply();
   }
+  protected ProgramBuilderContext getContext() {
+    return myContext;
+  }
 }

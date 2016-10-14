@@ -20,9 +20,11 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
+import jetbrains.mps.nodeEditor.commands.CommandContextListener;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.project.Project;
@@ -51,7 +53,7 @@ import java.util.WeakHashMap;
  * User: shatalin
  * Date: 03/09/14
  */
-public class UpdaterImpl implements Updater, CommandContext {
+public class UpdaterImpl implements Updater {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(UpdaterImpl.class));
 
   @NotNull
@@ -67,14 +69,15 @@ public class UpdaterImpl implements Updater, CommandContext {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells = new HashMap<>();
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells = new HashMap<>();
   private boolean myDisposed;
-  private int myCommandLevel = 0;
   private String[] myInitialHints;
   private Map<SNodeReference, Collection<String>> myEditorHintsForNodeMap = new HashMap<>();
   private UpdateInfoIndex myUpdateInfoIndex;
   private boolean myInProgress;
+  private boolean myProcessSelection;
 
-  public UpdaterImpl(@NotNull EditorComponent editorComponent) {
+  public UpdaterImpl(@NotNull EditorComponent editorComponent, CommandContextImpl commandContext) {
     myEditorComponent = editorComponent;
+    commandContext.addListener(new CommandContextListenerImpl());
     myModelListenersController = new UpdaterModelListenersController(this);
   }
 
@@ -106,9 +109,9 @@ public class UpdaterImpl implements Updater, CommandContext {
     if (editedNode == null || editedNode.getModel() == null) {
       myEditorComponent.setRootCell(myEditorComponent.createEmptyCell());
     } else {
-      Object memento = getEditorContext().createMemento();
+      EditorComponentState state = getEditorContext().getEditorComponentState();
       myEditorComponent.setRootCell(updateRootCell(editedNode, events));
-      getEditorContext().setMemento(memento);
+      getEditorContext().restoreEditorComponentState(state);
     }
   }
 
@@ -370,33 +373,8 @@ public class UpdaterImpl implements Updater, CommandContext {
     */
   }
 
-  @Override
-  public void commandStarted() {
-    assert !myDisposed;
-    myCommandLevel++;
-  }
-
-  @Override
-  public void commandFinished() {
-    assert !myDisposed;
-    try {
-      if (myCommandLevel == 1) {
-        myModelListenersController.flush();
-      }
-    } finally {
-      myCommandLevel--;
-    }
-  }
-
-  @NotNull
-  @Override
-  public SNode getContextNode() {
-    assert !myDisposed;
-    return myEditorComponent.getEditedNode();
-  }
-
   boolean isSelectionProcessingAllowed() {
-    return myCommandLevel != 0;
+    return myProcessSelection;
   }
 
   @NotNull
@@ -406,5 +384,21 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   UpdateInfoIndex getUpdateInfoIndex() {
     return myUpdateInfoIndex;
+  }
+
+  private class CommandContextListenerImpl extends CommandContextListener {
+    @Override
+    public void topLevelCommandStarted() {
+      myProcessSelection = true;
+    }
+
+    @Override
+    public void topLevelCommandFinished() {
+      try {
+        myModelListenersController.flush();
+      } finally {
+        myProcessSelection = false;
+      }
+    }
   }
 }

@@ -7,6 +7,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.ide.tools.BaseTool;
 import com.intellij.openapi.project.Project;
 import java.awt.BorderLayout;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.tools.CloseAction;
@@ -34,8 +35,9 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
   private DependencyPathTree myRightTree;
   public ModuleDependenciesView(BaseTool tool, Project project) {
     super(new BorderLayout());
-    myLeftTree = new DependencyTree(project);
-    myRightTree = new DependencyPathTree(project);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
+    myLeftTree = new DependencyTree(mpsProject);
+    myRightTree = new DependencyPathTree(mpsProject);
 
     ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", MPSIcons.General.Runtime, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {

@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractArgument = new ConceptPresentationBuilder().create();
@@ -57,228 +54,91 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0qb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractArgument;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractDiagramCreation;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractFigureReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ActionGroup;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ActionReference;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AttributedFigureReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BLQueryArgument;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_CellModel_Diagram;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_CellModel_DiagramConnector;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_CellModel_DiagramNode;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_CellModel_DiagramPort;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ConnectionEnd;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ConnectionEndBLQuery;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_CreationActionReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_CustomElementReference;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_DiagramConnectorCanCreateHandler;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_DiagramConnectorCreation;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_DiagramConnectorCreationHandler;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_DiagramElement;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_DiagramElementBLQuery;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_DiagramElementCreationHandler;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_DiagramElementsCreation;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ExternalFigureReference;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_FigureParameterMapping;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_FromIdFunctionParameter;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_FromNodeFunctionParameter;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_LinkArgument;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_NodeFunctionParameter;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_Palette;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_PaletteElement;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_PropertyArgument;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_Separator;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_StubCellModel_Diagram;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_StubCellModel_DiagramConnector;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_StubCellModel_DiagramNode;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_StubCellModel_DiagramPort;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_ThisEditorNodeExpression;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_ToIdFunctionParameter;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_ToNodeFunctionParameter;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_XFunctionParameter;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_YFunctionParameter;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractArgument:
+        return props_AbstractArgument;
+      case LanguageConceptSwitch.AbstractDiagramCreation:
+        return props_AbstractDiagramCreation;
+      case LanguageConceptSwitch.AbstractFigureReference:
+        return props_AbstractFigureReference;
+      case LanguageConceptSwitch.ActionGroup:
+        return props_ActionGroup;
+      case LanguageConceptSwitch.ActionReference:
+        return props_ActionReference;
+      case LanguageConceptSwitch.AttributedFigureReference:
+        return props_AttributedFigureReference;
+      case LanguageConceptSwitch.BLQueryArgument:
+        return props_BLQueryArgument;
+      case LanguageConceptSwitch.CellModel_Diagram:
+        return props_CellModel_Diagram;
+      case LanguageConceptSwitch.CellModel_DiagramConnector:
+        return props_CellModel_DiagramConnector;
+      case LanguageConceptSwitch.CellModel_DiagramNode:
+        return props_CellModel_DiagramNode;
+      case LanguageConceptSwitch.CellModel_DiagramPort:
+        return props_CellModel_DiagramPort;
+      case LanguageConceptSwitch.ConnectionEnd:
+        return props_ConnectionEnd;
+      case LanguageConceptSwitch.ConnectionEndBLQuery:
+        return props_ConnectionEndBLQuery;
+      case LanguageConceptSwitch.CreationActionReference:
+        return props_CreationActionReference;
+      case LanguageConceptSwitch.CustomElementReference:
+        return props_CustomElementReference;
+      case LanguageConceptSwitch.DiagramConnectorCanCreateHandler:
+        return props_DiagramConnectorCanCreateHandler;
+      case LanguageConceptSwitch.DiagramConnectorCreation:
+        return props_DiagramConnectorCreation;
+      case LanguageConceptSwitch.DiagramConnectorCreationHandler:
+        return props_DiagramConnectorCreationHandler;
+      case LanguageConceptSwitch.DiagramElement:
+        return props_DiagramElement;
+      case LanguageConceptSwitch.DiagramElementBLQuery:
+        return props_DiagramElementBLQuery;
+      case LanguageConceptSwitch.DiagramElementCreationHandler:
+        return props_DiagramElementCreationHandler;
+      case LanguageConceptSwitch.DiagramElementsCreation:
+        return props_DiagramElementsCreation;
+      case LanguageConceptSwitch.ExternalFigureReference:
+        return props_ExternalFigureReference;
+      case LanguageConceptSwitch.FigureParameterMapping:
+        return props_FigureParameterMapping;
+      case LanguageConceptSwitch.FromIdFunctionParameter:
+        return props_FromIdFunctionParameter;
+      case LanguageConceptSwitch.FromNodeFunctionParameter:
+        return props_FromNodeFunctionParameter;
+      case LanguageConceptSwitch.LinkArgument:
+        return props_LinkArgument;
+      case LanguageConceptSwitch.NodeFunctionParameter:
+        return props_NodeFunctionParameter;
+      case LanguageConceptSwitch.Palette:
+        return props_Palette;
+      case LanguageConceptSwitch.PaletteElement:
+        return props_PaletteElement;
+      case LanguageConceptSwitch.PropertyArgument:
+        return props_PropertyArgument;
+      case LanguageConceptSwitch.Separator:
+        return props_Separator;
+      case LanguageConceptSwitch.StubCellModel_Diagram:
+        return props_StubCellModel_Diagram;
+      case LanguageConceptSwitch.StubCellModel_DiagramConnector:
+        return props_StubCellModel_DiagramConnector;
+      case LanguageConceptSwitch.StubCellModel_DiagramNode:
+        return props_StubCellModel_DiagramNode;
+      case LanguageConceptSwitch.StubCellModel_DiagramPort:
+        return props_StubCellModel_DiagramPort;
+      case LanguageConceptSwitch.ThisEditorNodeExpression:
+        return props_ThisEditorNodeExpression;
+      case LanguageConceptSwitch.ToIdFunctionParameter:
+        return props_ToIdFunctionParameter;
+      case LanguageConceptSwitch.ToNodeFunctionParameter:
+        return props_ToNodeFunctionParameter;
+      case LanguageConceptSwitch.XFunctionParameter:
+        return props_XFunctionParameter;
+      case LanguageConceptSwitch.YFunctionParameter:
+        return props_YFunctionParameter;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0qb = buildConceptIndices(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L, "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d83L, "jetbrains.mps.lang.editor.diagram.structure.ActionGroup"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L, "jetbrains.mps.lang.editor.diagram.structure.ActionReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e8L, "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371634eL, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElement"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31aaee31L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL, "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d63L, "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d59L, "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0edeL, "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L, "jetbrains.mps.lang.editor.diagram.structure.Palette"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L, "jetbrains.mps.lang.editor.diagram.structure.PaletteElement"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d86L, "jetbrains.mps.lang.editor.diagram.structure.Separator"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc2d376L, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_Diagram"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37a82L, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramConnector"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37aa7L, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramNode"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37accL, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramPort"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL, "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d68L, "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d5eL, "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ee2L, "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ed7L, "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"));
 }

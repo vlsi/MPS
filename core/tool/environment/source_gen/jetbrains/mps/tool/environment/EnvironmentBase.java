@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.core.tool.environment.util.CanonicalPath;
+import org.apache.log4j.Logger;
 import java.util.List;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +26,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
 import java.util.Set;
 import jetbrains.mps.util.PathManager;
-import org.apache.log4j.Logger;
 
 /**
  * Base class for all environments, represents a caching environment.
@@ -91,6 +91,7 @@ public abstract class EnvironmentBase implements Environment {
     return new MapPathMacrosProvider(realMacros);
   }
 
+  protected static Logger LOG = LogManager.getLogger(EnvironmentBase.class);
   private List<LibraryContributor> initLibraries() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing libraries");
@@ -236,7 +237,6 @@ public abstract class EnvironmentBase implements Environment {
       super("#init() method must be called before using an environment");
     }
   }
-  protected static Logger LOG = LogManager.getLogger(EnvironmentBase.class);
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

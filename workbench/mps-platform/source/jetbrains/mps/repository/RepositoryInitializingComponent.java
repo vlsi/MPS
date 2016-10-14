@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
@@ -80,11 +81,19 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
 
   @Override
   public void initComponent() {
-    improveLoadingOnSources();
     final Application application = ApplicationManager.getApplication();
     application.invokeAndWait(new Runnable() {
       @Override
       public void run() {
+        if (InternalFlag.isInternalMode()) {
+          improveLoadingOnSources();
+          ClassLoaderManager.getInstance().runNonReloadableTransaction(this::load);
+        } else {
+          load();
+        }
+      }
+
+      private void load() {
         application.runWriteAction(() -> {
           myLibraryInitializer.loadRefreshed(myContributors);
         });
@@ -96,9 +105,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
    * here idea is the same as in {@link ProjectRootListenerComponent}
    */
   private void improveLoadingOnSources() {
-    if (InternalFlag.isInternalMode()) {
-      myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});
-    }
+    myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});
   }
 
   @Override

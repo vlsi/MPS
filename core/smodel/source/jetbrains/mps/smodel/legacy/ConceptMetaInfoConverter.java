@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
  * such meta-object could be retrieved, implementation resorts to name-backed meta-objects.
  * <p>
  * This mechanism shall become history once we drop support for string meta-objects.
+ * Primary client is editor-related code where we still use String meta-objects.
  * @deprecated this is transition code, don't use unless for intended purpose
  * @author Artem Tikhomirov
  */

@@ -51,7 +51,7 @@ public final class GotoModuleDirectory extends FileChooserAction {
   private static VirtualFile getModulePath(AnActionEvent e) {
     SModule module = e.getData(MPSDataKeys.CONTEXT_MODULE);
     if (!(module instanceof AbstractModule)) return null;
-    final VirtualFile moduleDir = VirtualFileUtils.getVirtualFile(((AbstractModule) module).getModuleSourceDir());
+    final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(((AbstractModule) module).getModuleSourceDir());
     return (moduleDir != null) ? validated(moduleDir.getParent()) : null;
   }
 

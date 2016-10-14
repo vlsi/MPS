@@ -18,21 +18,20 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.IOException;
 import java.util.List;
 
 /**
  * @deprecated see {@link jetbrains.mps.generator.generationTypes.IGenerationHandler}
- *             There are 2 uses in mbeddr, remove once mbeddr switches to MPS 3.4 API
  * Evgeny Gryaznov, Jan 20, 2010
  */
 @Deprecated
@@ -78,7 +77,8 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor progressMonitor) throws
+      IOException, GenerationCanceledException {
     return true;
   }
 

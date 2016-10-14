@@ -58,7 +58,9 @@ public abstract class LazyLoadFacility {
   public String getModelHash() {
     // FIXME refactor DataSource to answer hash()/digest() queries itself (and move this code back to generatable model impl)
     String modelHash = ModelDigestHelper.getInstance().getModelHash((StreamDataSource) getSource());
-    if (modelHash != null) return modelHash;
+    if (modelHash != null) {
+      return modelHash;
+    }
 
     return ModelDigestUtil.hash((StreamDataSource) getSource(), !getModelFactory().isBinary());
   }

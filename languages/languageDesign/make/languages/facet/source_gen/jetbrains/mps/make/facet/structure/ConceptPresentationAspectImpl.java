@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ExtendsFacetReference = new ConceptPresentationBuilder().create();
@@ -36,123 +33,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0v.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ExtendsFacetReference;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_FacetDeclaration;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_FacetJavaClassExpression;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_FacetReference;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_FacetReferenceExpression;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ForeignParametersComponentExpression;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ForeignParametersExpression;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_IFacet;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_IPropertyExpression;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_LocalParametersComponentExpression;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_LocalParametersExpression;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_NamedFacetReference;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ParametersDeclaration;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_RelatedFacetReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ResourceClassifierType;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ResourceSpecificPropertiesExpression;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ResourceTypeDeclaration;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_TargetDeclaration;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_TargetDependency;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_TargetReferenceExpression;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ExtendsFacetReference:
+        return props_ExtendsFacetReference;
+      case LanguageConceptSwitch.FacetDeclaration:
+        return props_FacetDeclaration;
+      case LanguageConceptSwitch.FacetJavaClassExpression:
+        return props_FacetJavaClassExpression;
+      case LanguageConceptSwitch.FacetReference:
+        return props_FacetReference;
+      case LanguageConceptSwitch.FacetReferenceExpression:
+        return props_FacetReferenceExpression;
+      case LanguageConceptSwitch.ForeignParametersComponentExpression:
+        return props_ForeignParametersComponentExpression;
+      case LanguageConceptSwitch.ForeignParametersExpression:
+        return props_ForeignParametersExpression;
+      case LanguageConceptSwitch.IFacet:
+        return props_IFacet;
+      case LanguageConceptSwitch.IPropertyExpression:
+        return props_IPropertyExpression;
+      case LanguageConceptSwitch.LocalParametersComponentExpression:
+        return props_LocalParametersComponentExpression;
+      case LanguageConceptSwitch.LocalParametersExpression:
+        return props_LocalParametersExpression;
+      case LanguageConceptSwitch.NamedFacetReference:
+        return props_NamedFacetReference;
+      case LanguageConceptSwitch.ParametersDeclaration:
+        return props_ParametersDeclaration;
+      case LanguageConceptSwitch.RelatedFacetReference:
+        return props_RelatedFacetReference;
+      case LanguageConceptSwitch.ResourceClassifierType:
+        return props_ResourceClassifierType;
+      case LanguageConceptSwitch.ResourceSpecificPropertiesExpression:
+        return props_ResourceSpecificPropertiesExpression;
+      case LanguageConceptSwitch.ResourceTypeDeclaration:
+        return props_ResourceTypeDeclaration;
+      case LanguageConceptSwitch.TargetDeclaration:
+        return props_TargetDeclaration;
+      case LanguageConceptSwitch.TargetDependency:
+        return props_TargetDependency;
+      case LanguageConceptSwitch.TargetReferenceExpression:
+        return props_TargetReferenceExpression;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b23b819L, "jetbrains.mps.make.facet.structure.ExtendsFacetReference"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a4b910f856c1c94L, "jetbrains.mps.make.facet.structure.FacetJavaClassExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, "jetbrains.mps.make.facet.structure.FacetReference"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, "jetbrains.mps.make.facet.structure.FacetReferenceExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b1L, "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b0L, "jetbrains.mps.make.facet.structure.ForeignParametersExpression"), MetaAdapterFactory.getInterfaceConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c11L, "jetbrains.mps.make.facet.structure.IFacet"), MetaAdapterFactory.getInterfaceConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f8L, "jetbrains.mps.make.facet.structure.IPropertyExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f231cb3L, "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f231cb2L, "jetbrains.mps.make.facet.structure.LocalParametersExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1aa1f6c694329f95L, "jetbrains.mps.make.facet.structure.NamedFacetReference"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f22a97eL, "jetbrains.mps.make.facet.structure.ParametersDeclaration"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e312229L, "jetbrains.mps.make.facet.structure.RelatedFacetReference"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1e69fdb2a034c3f6L, "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aab1d4L, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, "jetbrains.mps.make.facet.structure.TargetDependency"), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, "jetbrains.mps.make.facet.structure.TargetReferenceExpression"));
 }

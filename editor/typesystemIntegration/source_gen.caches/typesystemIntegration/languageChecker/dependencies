@@ -16,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.EditorChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.UpdateResult" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponentState" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

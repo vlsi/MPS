@@ -5,6 +5,7 @@ package jetbrains.mps.console.tool;
 import com.intellij.openapi.fileEditor.DocumentsEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.fileEditor.FileEditorState;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
@@ -24,15 +25,15 @@ public class ConsoleFileEditor implements DocumentsEditor {
   private boolean myDisposed = false;
 
   private static class MyFileEditorState implements FileEditorState {
-    private Object memento;
-    public MyFileEditorState(Object memento) {
+    private EditorComponentState memento;
+    public MyFileEditorState(EditorComponentState memento) {
       this.memento = memento;
     }
     @Override
     public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
       return false;
     }
-    public Object getMemento() {
+    public EditorComponentState getMemento() {
       return memento;
     }
     @Override
@@ -73,10 +74,10 @@ public class ConsoleFileEditor implements DocumentsEditor {
   }
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    final Wrappers._T<Object> memento = new Wrappers._T<Object>(null);
+    final Wrappers._T<EditorComponentState> memento = new Wrappers._T<EditorComponentState>(null);
     myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        memento.value = myEditor.getEditorContext().createMemento();
+        memento.value = myEditor.getEditorContext().getEditorComponentState();
       }
     });
     return new ConsoleFileEditor.MyFileEditorState(memento.value);
@@ -85,7 +86,7 @@ public class ConsoleFileEditor implements DocumentsEditor {
     if (state instanceof ConsoleFileEditor.MyFileEditorState) {
       myEditor.getEditorContext().getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
-          myEditor.getEditorContext().setMemento(((ConsoleFileEditor.MyFileEditorState) state).getMemento());
+          myEditor.getEditorContext().restoreEditorComponentState(((ConsoleFileEditor.MyFileEditorState) state).getMemento());
           myEditor.rebuildEditorContent();
         }
       });

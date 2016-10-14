@@ -10,7 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
-import jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor;
+import jetbrains.mps.baseLanguage.logging.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.baseLanguage.logging.dataFlow.DataFlowAspectDescriptorImpl;
@@ -25,7 +25,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.logging.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)";
+  public static final String MODULE_REF = "760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)";
   public Language() {
   }
   @Override
@@ -53,7 +53,7 @@ public class Language extends LanguageRuntime {
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
       if (aspectClass == ActionAspectDescriptor.class) {
-        return (T) new BaseActionAspectDescriptor();
+        return (T) new ActionAspectDescriptorImpl();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
@@ -91,6 +91,6 @@ public class Language extends LanguageRuntime {
         return (T) new TypesystemDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

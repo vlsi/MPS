@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BreakpointCreator = new ConceptPresentationBuilder().create();
@@ -29,88 +26,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0o.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BreakpointCreator;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BreakpointableNodeItem;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConceptDeclarationReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConceptFunctionParameter_Concept;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConceptFunctionParameter_Debug_Project;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ConceptFunctionParameter_DebuggableNode;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ConceptFunction_CreateBreakpoint;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ConceptFunction_IsApplicableBreakpoint;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_CreateBreakpointOperation;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_DebuggerConfiguration;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_DebuggerReference;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_DebuggerType;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_GetDebuggerSettings_Function;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BreakpointCreator:
+        return props_BreakpointCreator;
+      case LanguageConceptSwitch.BreakpointableNodeItem:
+        return props_BreakpointableNodeItem;
+      case LanguageConceptSwitch.ConceptDeclarationReference:
+        return props_ConceptDeclarationReference;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
+        return props_ConceptFunctionParameter_Concept;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Debug_Project:
+        return props_ConceptFunctionParameter_Debug_Project;
+      case LanguageConceptSwitch.ConceptFunctionParameter_DebuggableNode:
+        return props_ConceptFunctionParameter_DebuggableNode;
+      case LanguageConceptSwitch.ConceptFunction_CreateBreakpoint:
+        return props_ConceptFunction_CreateBreakpoint;
+      case LanguageConceptSwitch.ConceptFunction_IsApplicableBreakpoint:
+        return props_ConceptFunction_IsApplicableBreakpoint;
+      case LanguageConceptSwitch.CreateBreakpointOperation:
+        return props_CreateBreakpointOperation;
+      case LanguageConceptSwitch.DebuggerConfiguration:
+        return props_DebuggerConfiguration;
+      case LanguageConceptSwitch.DebuggerReference:
+        return props_DebuggerReference;
+      case LanguageConceptSwitch.DebuggerType:
+        return props_DebuggerType;
+      case LanguageConceptSwitch.GetDebuggerSettings_Function:
+        return props_GetDebuggerSettings_Function;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb3a4L, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL, "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x79747203892d4ccdL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x11a2c8c0148e628cL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x11a2c8c0148e6290L, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb93aL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2b1681328a5d4b64L, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d16f5L, "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912bd83L, "jetbrains.mps.debugger.api.lang.structure.DebuggerType"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d18e2L, "jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function"));
 }

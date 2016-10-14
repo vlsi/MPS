@@ -18,8 +18,329 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AbandonInput_RuleConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.AbandonInput_RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="AbstractMacro_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.AbstractMacro_BehaviorDescriptor" />
+    </file>
+    <file name="BaseMappingRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_BehaviorDescriptor" />
+    </file>
+    <file name="BaseMappingRule_Condition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Condition_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,468,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,239,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ContextVariableDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ContextVariableDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ContextVariableProvider_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.ContextVariableProvider_BehaviorDescriptor" />
+    </file>
+    <file name="CopySrcListMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_BehaviorDescriptor" />
+    </file>
+    <file name="CopySrcNodeMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_BehaviorDescriptor" />
+    </file>
+    <file name="CreateRootRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" />
+    </file>
+    <file name="CreateRootRule_Condition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_BehaviorDescriptor" />
+    </file>
+    <file name="DismissTopMappingRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.DismissTopMappingRule_BehaviorDescriptor" />
+    </file>
+    <file name="DropAttributeRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.DropAttributeRule_BehaviorDescriptor" />
+    </file>
+    <file name="DropAttributeRule_Condition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.DropAttributeRule_Condition_BehaviorDescriptor" />
+    </file>
+    <file name="DropRootRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
+    </file>
+    <file name="DropRootRule_Condition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition_BehaviorDescriptor" />
+    </file>
+    <file name="ExportEntry_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ExportEntry_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_inputNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_inputNode_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_keeper_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_keeper_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_outputNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_outputNode_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabel_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ExportLabel_BehaviorDescriptor" />
+    </file>
+    <file name="ExportMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ExportMacro_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorDebug_InputNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_InputNode_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorDebug_LabelEntry_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_LabelEntry_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorDebug_Mappings_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_Mappings_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorDebug_NodeMapEntry_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeMapEntry_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorDebug_NodeRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorDebug_NodeRef_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_AbstractReferenceDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_InternalReferenceDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_InternalReferenceDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorMessage_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.GeneratorParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="IGeneratorParameter_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
+    </file>
+    <file name="IParameterizedTemplate_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.IParameterizedTemplate_BehaviorDescriptor" />
+    </file>
+    <file name="ITemplateCall_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.ITemplateCall_BehaviorDescriptor" />
+    </file>
+    <file name="IfMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_BehaviorDescriptor" />
+    </file>
+    <file name="IfMacro_Condition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_Condition_BehaviorDescriptor" />
+    </file>
+    <file name="IncludeMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.IncludeMacro_BehaviorDescriptor" />
+    </file>
+    <file name="InlineSwitch_Case_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_Case_BehaviorDescriptor" />
+    </file>
+    <file name="InlineSwitch_RuleConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="InlineTemplate_RuleConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="InsertMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.InsertMacro_BehaviorDescriptor" />
+    </file>
+    <file name="InsertMacro_CreateNodeQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.InsertMacro_CreateNodeQuery_BehaviorDescriptor" />
+    </file>
+    <file name="LabelMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.LabelMacro_BehaviorDescriptor" />
+    </file>
+    <file name="LoopMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.LoopMacro_BehaviorDescriptor" />
+    </file>
+    <file name="MapSrcListMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_BehaviorDescriptor" />
+    </file>
+    <file name="MapSrcMacro_MapperFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_MapperFunction_BehaviorDescriptor" />
+    </file>
+    <file name="MapSrcMacro_PostMapperFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction_BehaviorDescriptor" />
+    </file>
+    <file name="MapSrcNodeMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
+    </file>
+    <file name="MappingConfiguration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
+    </file>
+    <file name="MappingConfiguration_Condition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
+    </file>
+    <file name="MappingLabelDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="MappingScriptReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
+    </file>
+    <file name="MappingScript_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_BehaviorDescriptor" />
+    </file>
+    <file name="MappingScript_CodeBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_BehaviorDescriptor" />
+    </file>
+    <file name="MarshalFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" />
+    </file>
+    <file name="ModelIdentity_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_BehaviorDescriptor" />
+    </file>
+    <file name="NodeIdentity_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.NodeIdentity_BehaviorDescriptor" />
+    </file>
+    <file name="NodeMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.NodeMacro_BehaviorDescriptor" />
+    </file>
+    <file name="PatternReduction_MappingRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyMacro_GetPropertyValue_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_BehaviorDescriptor" />
+    </file>
+    <file name="ReductionRule_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.generator.behavior.ReductionRule_BehaviorDescriptor" />
+    </file>
+    <file name="Reduction_MappingRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.Reduction_MappingRule_BehaviorDescriptor" />
+    </file>
+    <file name="ReferenceMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_BehaviorDescriptor" />
+    </file>
+    <file name="ReferenceMacro_GetReferent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_BehaviorDescriptor" />
+    </file>
+    <file name="RootTemplateAnnotation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
+    </file>
+    <file name="Root_MappingRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.Root_MappingRule_BehaviorDescriptor" />
+    </file>
+    <file name="RuleConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="SourceSubstituteMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_BehaviorDescriptor" />
+    </file>
+    <file name="SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor" />
+    </file>
+    <file name="SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentParameterExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentParameterExpression_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentPatternRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentPatternVarRefExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentQueryExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQueryExpression_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateArgumentVariableRefExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentVariableRefExpression_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateCallMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateDeclarationReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFragment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFunctionParameter_mainContextNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFunctionParameter_outputNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_outputNode_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFunctionParameter_sourceNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateFunctionParameter_templateReferent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templateReferent_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateQueryBase_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateSwitchMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateSwitchReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" />
+    </file>
+    <file name="TemplateSwitch_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" />
+    </file>
+    <file name="TraceMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TraceMacro_BehaviorDescriptor" />
+    </file>
+    <file name="TrivialModelId_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_BehaviorDescriptor" />
+    </file>
+    <file name="TrivialNodeId_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_BehaviorDescriptor" />
+    </file>
+    <file name="UnmarshalFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_BehaviorDescriptor" />
+    </file>
+    <file name="VarMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_BehaviorDescriptor" />
+    </file>
+    <file name="VarMacro_ValueQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery_BehaviorDescriptor" />
+    </file>
+    <file name="WeaveEach_RuleConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.WeaveEach_RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="WeaveMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_BehaviorDescriptor" />
+    </file>
+    <file name="WeavingAnchorQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.WeavingAnchorQuery_BehaviorDescriptor" />
+    </file>
+    <file name="Weaving_MappingRule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
+    </file>
+    <file name="Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1021062414717341661">
@@ -141,13 +462,12 @@
       <node id="1213877219547" at="46,232,47,69" concept="8" />
       <node id="1213877219553" at="47,69,48,76" concept="8" />
       <node id="4969018317725521159" at="48,76,49,130" concept="10" />
-      <node id="1213877219561" at="49,130,50,152" concept="8" />
-      <node id="1213877219577" at="50,152,51,248" concept="8" />
-      <node id="1213877219584" at="51,248,52,216" concept="8" />
-      <node id="1213877219590" at="52,216,53,100" concept="8" />
-      <node id="7376433222636453131" at="53,100,54,46" concept="10" />
-      <node id="1213877219600" at="55,235,56,85" concept="9" />
-      <node id="1213877219611" at="57,5,58,28" concept="9" />
+      <node id="1213877219561" at="49,130,50,139" concept="8" />
+      <node id="1213877219577" at="50,139,51,248" concept="8" />
+      <node id="1097965587065031556" at="51,248,52,177" concept="8" />
+      <node id="7376433222636453131" at="52,177,53,46" concept="10" />
+      <node id="1213877219600" at="54,235,55,64" concept="9" />
+      <node id="1097965587065051721" at="56,12,57,65" concept="9" />
       <node id="3044950653914721962" at="60,129,61,144" concept="8" />
       <node id="3044950653914721977" at="61,144,62,169" concept="4" />
       <node id="3044950653914721982" at="62,169,63,187" concept="4" />
@@ -166,40 +486,42 @@
       <node id="1213877219536" at="101,14,102,58" concept="16" />
       <node id="1213877219536" at="108,48,109,22" concept="9" />
       <node id="1213877219536" at="114,40,115,19" concept="9" />
-      <node id="1213877219593" at="117,79,118,63" concept="8" />
-      <node id="1213877219593" at="118,63,119,30" concept="8" />
-      <node id="1213877219593" at="119,30,120,221" concept="4" />
-      <node id="1213877219593" at="120,221,121,196" concept="4" />
-      <node id="1213877219593" at="121,196,122,24" concept="9" />
-      <node id="1213877219601" at="124,80,125,63" concept="8" />
-      <node id="1213877219601" at="125,63,126,30" concept="8" />
-      <node id="1213877219601" at="126,30,127,30" concept="8" />
-      <node id="1213877219601" at="127,30,128,30" concept="8" />
-      <node id="1213877219601" at="128,30,129,224" concept="4" />
-      <node id="1213877219601" at="129,224,130,221" concept="4" />
-      <node id="1213877219601" at="130,221,131,196" concept="4" />
-      <node id="1213877219601" at="131,196,132,165" concept="4" />
-      <node id="1213877219601" at="132,165,133,223" concept="4" />
-      <node id="1213877219601" at="133,223,134,165" concept="4" />
-      <node id="1213877219601" at="134,165,135,24" concept="9" />
+      <node id="1213877219601" at="117,80,118,63" concept="8" />
+      <node id="1213877219601" at="118,63,119,30" concept="8" />
+      <node id="1213877219601" at="119,30,120,30" concept="8" />
+      <node id="1213877219601" at="120,30,121,30" concept="8" />
+      <node id="1213877219601" at="121,30,122,224" concept="4" />
+      <node id="1213877219601" at="122,224,123,221" concept="4" />
+      <node id="1213877219601" at="123,221,124,196" concept="4" />
+      <node id="1213877219601" at="124,196,125,165" concept="4" />
+      <node id="1213877219601" at="125,165,126,223" concept="4" />
+      <node id="1213877219601" at="126,223,127,165" concept="4" />
+      <node id="1213877219601" at="127,165,128,24" concept="9" />
+      <node id="1213877219593" at="130,81,131,63" concept="8" />
+      <node id="1213877219593" at="131,63,132,30" concept="8" />
+      <node id="1213877219593" at="132,30,133,221" concept="4" />
+      <node id="1213877219593" at="133,221,134,196" concept="4" />
+      <node id="1213877219593" at="134,196,135,24" concept="9" />
       <node id="1213877219536" at="42,0,44,0" concept="13" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877219598" at="54,46,57,5" concept="6" />
+      <node id="1097965587065051081" at="56,10,58,5" concept="0" />
       <node id="1213877219536" at="69,0,72,0" concept="2" trace="ReferenceMacro_GetReferent__BehaviorDescriptor#()V" />
       <node id="1213877219536" at="80,49,83,5" concept="6" />
       <node id="1213877219536" at="94,49,97,5" concept="6" />
       <node id="1213877219536" at="73,0,77,0" concept="7" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1213877219598" at="53,46,58,5" concept="6" />
       <node id="1213877219536" at="106,0,111,0" concept="7" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="1213877219536" at="112,0,117,0" concept="7" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1213877219536" at="83,5,89,5" concept="15" />
       <node id="1213877219536" at="97,5,103,5" concept="15" />
-      <node id="1213877219593" at="117,0,124,0" concept="13" trace="_quotation_createNode_mxwyp3_a0h0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877219593" at="130,0,137,0" concept="13" trace="_quotation_createNode_mxwyp3_a0a0i0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877219536" at="60,0,68,0" concept="13" trace="getApplicableConceptFunctionParameter_id2D1PBM_bxJg#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <node id="1213877219536" at="78,0,91,0" concept="7" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1213877219536" at="92,0,105,0" concept="7" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <node id="1213877219601" at="124,0,137,0" concept="13" trace="_quotation_createNode_mxwyp3_a0a9a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877219601" at="117,0,130,0" concept="13" trace="_quotation_createNode_mxwyp3_a0a8a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877219536" at="45,0,60,0" concept="13" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1213877219536" at="42,63,42,63" />
-      <scope id="1213877219599" at="55,235,56,85" />
+      <scope id="1213877219599" at="54,235,55,64" />
+      <scope id="1097965587065051082" at="56,12,57,65" />
       <scope id="1213877219536" at="69,64,70,20" />
       <scope id="1213877219536" at="74,114,75,21" />
       <scope id="1213877219536" at="81,26,82,56" />
@@ -221,14 +543,14 @@
       </scope>
       <scope id="1213877219536" at="106,0,111,0" />
       <scope id="1213877219536" at="112,0,117,0" />
-      <scope id="1213877219593" at="117,79,122,24">
+      <scope id="1213877219593" at="130,81,135,24">
         <var name="facade" id="1213877219593" />
         <var name="quotedNode_2" id="1213877219593" />
       </scope>
       <scope id="3044950653914721961" at="60,129,66,18">
         <var name="result" id="3044950653914721963" />
       </scope>
-      <scope id="1213877219593" at="117,0,124,0">
+      <scope id="1213877219593" at="130,0,137,0">
         <var name="parameter_1" id="1213877219593" />
       </scope>
       <scope id="1213877219536" at="60,0,68,0">
@@ -240,20 +562,19 @@
       <scope id="1213877219536" at="93,128,103,5">
         <var name="methodIndex" id="1213877219536" />
       </scope>
-      <scope id="1213877219601" at="124,80,135,24">
+      <scope id="1213877219601" at="117,80,128,24">
         <var name="facade" id="1213877219601" />
         <var name="quotedNode_2" id="1213877219601" />
         <var name="quotedNode_3" id="1213877219601" />
         <var name="quotedNode_4" id="1213877219601" />
       </scope>
-      <scope id="1213877219538" at="45,89,58,28">
+      <scope id="1213877219538" at="45,89,58,5">
         <var name="attributedNode" id="1213877219548" />
-        <var name="expectedNodeType" id="1213877219591" />
         <var name="link" id="1213877219578" />
         <var name="linkRole" id="1213877219554" />
         <var name="linkSearchScope" id="1213877219562" />
         <var name="referenceMacro" id="1213877219540" />
-        <var name="targetConcept" id="1213877219585" />
+        <var name="targetConcept" id="1097965587065031557" />
       </scope>
       <scope id="1213877219536" at="78,0,91,0">
         <var name="method" id="1213877219536" />
@@ -265,7 +586,7 @@
         <var name="method" id="1213877219536" />
         <var name="parameters" id="1213877219536" />
       </scope>
-      <scope id="1213877219601" at="124,0,137,0">
+      <scope id="1213877219601" at="117,0,130,0">
         <var name="parameter_1" id="1213877219601" />
       </scope>
       <scope id="1213877219536" at="45,0,60,0">
@@ -1669,106 +1990,6 @@
         <var name="parameters" id="1213877498462" />
       </scope>
       <unit id="1213877498462" at="26,0,120,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule__BehaviorDescriptor" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741520185">
-    <file name="TemplateFragment_ContextNodeQuery__BehaviorDescriptor.java">
-      <node id="1262430001741520185" at="29,0,30,0" concept="12" trace="CONCEPT" />
-      <node id="1262430001741520185" at="30,0,31,0" concept="12" trace="REGISTRY" />
-      <node id="1262430001741520185" at="32,0,33,0" concept="12" trace="getApplicableConceptFunctionParameter_id2D1PBM_bxJg" />
-      <node id="1262430001741520185" at="33,0,34,0" concept="12" trace="getExpectedReturnType_idhEwIGRD" />
-      <node id="1262430001741520185" at="35,0,36,0" concept="12" trace="BH_METHODS" />
-      <node id="3044950653914719261" at="40,129,41,144" concept="8" />
-      <node id="3044950653914719276" at="41,144,42,169" concept="4" />
-      <node id="3044950653914719281" at="42,169,43,174" concept="4" />
-      <node id="3044950653914719286" at="43,174,44,187" concept="4" />
-      <node id="3044950653914719291" at="44,187,45,169" concept="4" />
-      <node id="3044950653914719295" at="45,169,46,18" concept="9" />
-      <node id="658365993682020099" at="48,89,49,47" concept="9" />
-      <node id="1262430001741520185" at="52,71,53,20" concept="14" />
-      <node id="1262430001741520185" at="57,114,58,21" concept="4" />
-      <node id="1262430001741520185" at="62,114,63,49" concept="8" />
-      <node id="1262430001741520185" at="64,26,65,56" concept="16" />
-      <node id="1262430001741520185" at="68,13,69,67" concept="9" />
-      <node id="1262430001741520185" at="70,14,71,58" concept="16" />
-      <node id="1262430001741520185" at="76,128,77,49" concept="8" />
-      <node id="1262430001741520185" at="78,26,79,56" concept="16" />
-      <node id="1262430001741520185" at="82,13,83,96" concept="9" />
-      <node id="1262430001741520185" at="84,14,85,58" concept="16" />
-      <node id="1262430001741520185" at="91,48,92,22" concept="9" />
-      <node id="1262430001741520185" at="97,40,98,19" concept="9" />
-      <node id="658365993682020095" at="100,60,101,63" concept="8" />
-      <node id="658365993682020095" at="101,63,102,30" concept="8" />
-      <node id="658365993682020095" at="102,30,103,221" concept="4" />
-      <node id="658365993682020095" at="103,221,104,24" concept="9" />
-      <node id="1262430001741520185" at="37,0,39,0" concept="13" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741520185" at="48,0,51,0" concept="13" trace="getExpectedReturnType_idhEwIGRD#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1262430001741520185" at="52,0,55,0" concept="2" trace="TemplateFragment_ContextNodeQuery__BehaviorDescriptor#()V" />
-      <node id="1262430001741520185" at="63,49,66,5" concept="6" />
-      <node id="1262430001741520185" at="77,49,80,5" concept="6" />
-      <node id="1262430001741520185" at="56,0,60,0" concept="7" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
-      <node id="1262430001741520185" at="89,0,94,0" concept="7" trace="getDeclaredMethods#()Ljava/util/List;" />
-      <node id="1262430001741520185" at="95,0,100,0" concept="7" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1262430001741520185" at="66,5,72,5" concept="15" />
-      <node id="1262430001741520185" at="80,5,86,5" concept="15" />
-      <node id="658365993682020095" at="100,0,106,0" concept="13" trace="_quotation_createNode_pky3te_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1262430001741520185" at="40,0,48,0" concept="13" trace="getApplicableConceptFunctionParameter_id2D1PBM_bxJg#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <node id="1262430001741520185" at="61,0,74,0" concept="7" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <node id="1262430001741520185" at="75,0,88,0" concept="7" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <scope id="1262430001741520185" at="37,63,37,63" />
-      <scope id="658365993682020098" at="48,89,49,47" />
-      <scope id="1262430001741520185" at="52,71,53,20" />
-      <scope id="1262430001741520185" at="57,114,58,21" />
-      <scope id="1262430001741520185" at="64,26,65,56" />
-      <scope id="1262430001741520185" at="68,13,69,67" />
-      <scope id="1262430001741520185" at="70,14,71,58" />
-      <scope id="1262430001741520185" at="78,26,79,56" />
-      <scope id="1262430001741520185" at="82,13,83,96" />
-      <scope id="1262430001741520185" at="84,14,85,58" />
-      <scope id="1262430001741520185" at="91,48,92,22" />
-      <scope id="1262430001741520185" at="97,40,98,19" />
-      <scope id="1262430001741520185" at="37,0,39,0">
-        <var name="__thisNode__" id="1262430001741520185" />
-      </scope>
-      <scope id="1262430001741520185" at="48,0,51,0">
-        <var name="__thisNode__" id="1262430001741520185" />
-      </scope>
-      <scope id="1262430001741520185" at="52,0,55,0" />
-      <scope id="1262430001741520185" at="56,0,60,0">
-        <var name="constructor" id="1262430001741520185" />
-        <var name="node" id="1262430001741520185" />
-        <var name="parameters" id="1262430001741520185" />
-      </scope>
-      <scope id="658365993682020095" at="100,60,104,24">
-        <var name="facade" id="658365993682020095" />
-        <var name="quotedNode_1" id="658365993682020095" />
-      </scope>
-      <scope id="1262430001741520185" at="89,0,94,0" />
-      <scope id="1262430001741520185" at="95,0,100,0" />
-      <scope id="3044950653914719260" at="40,129,46,18">
-        <var name="result" id="3044950653914719262" />
-      </scope>
-      <scope id="658365993682020095" at="100,0,106,0" />
-      <scope id="1262430001741520185" at="40,0,48,0">
-        <var name="__thisConcept__" id="1262430001741520185" />
-      </scope>
-      <scope id="1262430001741520185" at="62,114,72,5">
-        <var name="methodIndex" id="1262430001741520185" />
-      </scope>
-      <scope id="1262430001741520185" at="76,128,86,5">
-        <var name="methodIndex" id="1262430001741520185" />
-      </scope>
-      <scope id="1262430001741520185" at="61,0,74,0">
-        <var name="method" id="1262430001741520185" />
-        <var name="node" id="1262430001741520185" />
-        <var name="parameters" id="1262430001741520185" />
-      </scope>
-      <scope id="1262430001741520185" at="75,0,88,0">
-        <var name="concept" id="1262430001741520185" />
-        <var name="method" id="1262430001741520185" />
-        <var name="parameters" id="1262430001741520185" />
-      </scope>
-      <unit id="1262430001741520185" at="28,0,107,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741641656">
@@ -4305,7 +4526,7 @@
       <node id="3864140621129718613" at="28,0,29,0" concept="12" trace="REGISTRY" />
       <node id="3864140621129718613" at="30,0,31,0" concept="12" trace="getPresentation_idhEwIMiw" />
       <node id="3864140621129718613" at="32,0,33,0" concept="12" trace="BH_METHODS" />
-      <node id="3864140621129718779" at="37,84,38,472" concept="9" />
+      <node id="3864140621129718779" at="37,84,38,474" concept="9" />
       <node id="3864140621129718613" at="41,65,42,20" concept="14" />
       <node id="3864140621129718613" at="46,114,47,21" concept="4" />
       <node id="3864140621129718613" at="51,114,52,49" concept="8" />
@@ -4330,7 +4551,7 @@
       <node id="3864140621129718613" at="64,0,75,0" concept="7" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="3864140621129718613" at="50,0,63,0" concept="7" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="3864140621129718613" at="34,63,34,63" />
-      <scope id="3864140621129718689" at="37,84,38,472" />
+      <scope id="3864140621129718689" at="37,84,38,474" />
       <scope id="3864140621129718613" at="41,65,42,20" />
       <scope id="3864140621129718613" at="46,114,47,21" />
       <scope id="3864140621129718613" at="53,26,54,56" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,10 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
 
   @Override
   protected void doInit() {
-    populate();
+    ModuleNodeChildrenProvider childrenProvider = getAncestor(ModuleNodeChildrenProvider.class);
+    if (childrenProvider == null || !childrenProvider.populate(this, getModule())) {
+      populate();
+    }
     myInitialized = true;
   }
 

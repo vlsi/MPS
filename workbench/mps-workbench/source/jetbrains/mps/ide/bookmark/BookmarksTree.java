@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -60,6 +61,10 @@ public class BookmarksTree extends MPSTree {
     });
   }
 
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+    super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), nodeInitRunnable));
+  }
 
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
@@ -71,7 +76,7 @@ public class BookmarksTree extends MPSTree {
         }
       };
       return ActionUtils.groupFromActions(action);
-    } else if(!(node instanceof MySNodeTreeNode)){
+    } else if(!(node instanceof SNodeTreeNode)){
       BaseAction hierarchyAction = new BaseAction("Remove All Bookmarks") {
         @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
@@ -95,7 +100,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.resolve(myProject.getRepository()), null, myProject));
+        textTreeNode.add(new SNodeTreeNode(nodePointer.resolve(myProject.getRepository())));
         root.add(textTreeNode);
       }
     }
@@ -105,7 +110,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.resolve(myProject.getRepository()), null, myProject));
+        textTreeNode.add(new SNodeTreeNode(nodePointer.resolve(myProject.getRepository())));
         root.add(textTreeNode);
       }
     }
@@ -196,25 +201,6 @@ public class BookmarksTree extends MPSTree {
     @Override
     public void navigateToBookmark() {
       new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(myNodePointer);
-    }
-  }
-
-  private static class MySNodeTreeNode extends SNodeTreeNode {
-    private final Project myProject;
-
-    public MySNodeTreeNode(SNode node, String role, Project mpsProject) {
-      super(node, role);
-      myProject = mpsProject;
-    }
-
-    @Override
-    public void doubleClick() {
-      new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(getSNode().getReference());
-    }
-
-    @Override
-    protected SNodeTreeNode createChildTreeNode(SNode childNode, String role) {
-      return new MySNodeTreeNode(childNode, role, myProject);
     }
   }
 }

@@ -43,6 +43,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
 import jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.java.JavaBuilderUtil;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
@@ -148,7 +149,7 @@ public class MPSMakeMediator {
 
   private class JpsMpsMessageHandler implements IMessageHandler {
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           processMessage(msg, Kind.ERROR);

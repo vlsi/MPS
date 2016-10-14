@@ -2,7 +2,7 @@
 <model ref="r:34874a5b-aeb7-40c7-a70f-cd58be43b014(testWrappedType.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -44,7 +44,7 @@
     <ref role="1XX52x" to="jwoj:15xlXKdz5cF" resolve="TypeWithUnits" />
     <node concept="3EZMnI" id="15xlXKdz5cP" role="2wV5jI">
       <node concept="3F1sOY" id="15xlXKdz5cW" role="3EZMnx">
-        <ref role="1NtTu8" to="jwoj:15xlXKdz5aX" />
+        <ref role="1NtTu8" to="jwoj:15xlXKdz5aX" resolve="wrapped" />
       </node>
       <node concept="l2Vlx" id="15xlXKdz5cS" role="2iSdaV" />
       <node concept="3F0ifn" id="15xlXKdzcwD" role="3EZMnx">

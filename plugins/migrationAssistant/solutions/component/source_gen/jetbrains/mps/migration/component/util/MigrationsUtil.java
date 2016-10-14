@@ -11,9 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.migration.RefactoringLogApplied;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import java.util.Set;
@@ -31,7 +31,7 @@ public class MigrationsUtil {
     List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
     for (SLanguage lang : SetSequence.fromSet(getUsedLanguages(module))) {
       int currentLangVersion = lang.getLanguageVersion();
-      int ver = module.getUsedLanguageVersion(lang);
+      int ver = ((AbstractModule) module).getUsedLanguageVersion(lang, false);
 
       ver = Math.max(ver, 0);
       currentLangVersion = Math.max(currentLangVersion, 0);
@@ -42,7 +42,7 @@ public class MigrationsUtil {
     }
     for (SModule dep : SetSequence.fromSet(getModuleDependencies(module))) {
       int currentDepVersion = ((AbstractModule) dep).getModuleVersion();
-      int ver = ((AbstractModule) module).getDependencyVersion(dep);
+      int ver = ((AbstractModule) module).getDependencyVersion(dep, false);
 
       ver = Math.max(ver, 0);
       currentDepVersion = Math.max(currentDepVersion, 0);
@@ -53,9 +53,11 @@ public class MigrationsUtil {
     }
     return result;
   }
+
   public static Set<SModule> getModuleDependencies(SModule module) {
     return MigrationModuleUtil.getModuleDependencies(module);
   }
+
   public static Set<SLanguage> getUsedLanguages(SModule module) {
     return MigrationModuleUtil.getUsedLanguages(module);
   }

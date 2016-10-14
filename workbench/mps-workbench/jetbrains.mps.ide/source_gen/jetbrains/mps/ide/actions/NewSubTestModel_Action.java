@@ -16,6 +16,8 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.tree.TreeNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.SModuleOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.ModelImports;
@@ -23,8 +25,6 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.ui.tree.SortUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewSubTestModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.TestModel;
@@ -80,6 +80,7 @@ public class NewSubTestModel_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(NewSubTestModel_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().executeCommand(new Runnable() {
@@ -124,5 +125,4 @@ public class NewSubTestModel_Action extends BaseAction {
     }
     return builder.toString();
   }
-  protected static Logger LOG = LogManager.getLogger(NewSubTestModel_Action.class);
 }

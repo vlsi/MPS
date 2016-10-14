@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +44,7 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   }
 
   @Override
-  protected <T extends jetbrains.mps.smodel.runtime.LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
+  protected <T extends ILanguageAspect> T createAspect(Class<T> descriptorInterface) {
     if (descriptorInterface == StructureAspectDescriptor.class) {
       return (T) new StructureAspectInterpreted(myLang);
     }

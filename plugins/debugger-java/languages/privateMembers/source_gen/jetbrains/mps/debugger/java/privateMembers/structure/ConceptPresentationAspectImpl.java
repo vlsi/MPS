@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_PrivateFieldReferenceOperation = new ConceptPresentationBuilder().create();
@@ -20,43 +17,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_PrivateFieldReferenceOperation;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_PrivateInstanceMethodCallOperation;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_PrivateStaticFieldReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_PrivateStaticMethodCall;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.PrivateFieldReferenceOperation:
+        return props_PrivateFieldReferenceOperation;
+      case LanguageConceptSwitch.PrivateInstanceMethodCallOperation:
+        return props_PrivateInstanceMethodCallOperation;
+      case LanguageConceptSwitch.PrivateStaticFieldReference:
+        return props_PrivateStaticFieldReference;
+      case LanguageConceptSwitch.PrivateStaticMethodCall:
+        return props_PrivateStaticMethodCall;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation"), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference"), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"));
 }

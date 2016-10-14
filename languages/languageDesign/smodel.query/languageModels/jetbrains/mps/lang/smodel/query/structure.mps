@@ -125,7 +125,7 @@
     <node concept="1TJgyj" id="3J6h25Q5Il8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parameter" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="4307205004132279624" />
       <ref role="20lvS9" node="3J6h25Q5HRT" resolve="QueryParameterList" />
     </node>
@@ -181,9 +181,6 @@
     <property role="34LRSv" value="global" />
     <property role="EcuMT" value="4307205004134636866" />
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
-    <node concept="PrWs8" id="7jPdBzQGXxl" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="asaX9" id="7jPdBzQFQ21" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.ideCommands&quot;" />
     </node>
@@ -322,9 +319,6 @@
     <node concept="asaX9" id="6sWCsGPXu3l" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
-    <node concept="PrWs8" id="7x0bSItOWci" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="DM6_$iqV$8">
     <property role="TrG5h" value="ProjectExpression_old" />
@@ -334,9 +328,6 @@
     <property role="EcuMT" value="752693057587755272" />
     <node concept="asaX9" id="6sWCsGPXu2H" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
-    </node>
-    <node concept="PrWs8" id="7x0bSItOWcr" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mV0m3L$tuv">
@@ -358,9 +349,6 @@
     </node>
     <node concept="asaX9" id="6sWCsGPY13b" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.ideCommands&quot;" />
-    </node>
-    <node concept="PrWs8" id="7x0bSItOWcp" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="5WpmwkrQrRs">
@@ -403,9 +391,6 @@
         <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.console.base.structure.BLExpression&quot;" />
       </node>
     </node>
-    <node concept="PrWs8" id="7x0bSItOWck" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
     <node concept="asaX9" id="6sWCsGPXu31" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
@@ -441,9 +426,6 @@
     <node concept="asaX9" id="6sWCsGPXu2M" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
-    <node concept="PrWs8" id="7x0bSItOWdm" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHQy">
     <property role="3GE5qa" value="bl.expression.query.parameter" />
@@ -454,9 +436,14 @@
     <node concept="asaX9" id="6sWCsGPXu2C" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
-    <node concept="PrWs8" id="2EI1hHj_goG" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
+  </node>
+  <node concept="1TIwiD" id="_BZ6vQW9PK">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="QueryParameterExact" />
+    <property role="R4oN_" value="exact instances" />
+    <property role="EcuMT" value="677787792397344112" />
+    <property role="34LRSv" value="exact" />
+    <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
   </node>
 </model>
 

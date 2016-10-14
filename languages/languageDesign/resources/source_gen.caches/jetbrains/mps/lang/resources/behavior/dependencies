@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.Circle__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.ColorLiteral__BehaviorDescriptor" />
@@ -18,11 +15,17 @@
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.Resource__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.TextIcon__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.Text__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Circle_BehaviorDescriptor" file="Circle_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Circle__BehaviorDescriptor" file="Circle__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Color" />
@@ -51,6 +54,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.ColorLiteral_BehaviorDescriptor" file="ColorLiteral_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.ColorLiteral__BehaviorDescriptor" file="ColorLiteral__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.NumberFormatException" />
@@ -78,6 +85,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Color_BehaviorDescriptor" file="Color_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Color__BehaviorDescriptor" file="Color__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -99,6 +109,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.ConceptIconResourceExpression_BehaviorDescriptor" file="ConceptIconResourceExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.FileIcon_BehaviorDescriptor" file="FileIcon_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.FileIcon__BehaviorDescriptor" file="FileIcon__BehaviorDescriptor.java">
     <classNode dependClassName="java.io.IOException" />
@@ -150,6 +168,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.IconExpression_BehaviorDescriptor" file="IconExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.IconLayerDescription_BehaviorDescriptor" file="IconLayerDescription_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.IconLayerDescription__BehaviorDescriptor" file="IconLayerDescription__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -170,6 +195,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.IconResourceExpression_BehaviorDescriptor" file="IconResourceExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Icon_BehaviorDescriptor" file="Icon_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor" file="Icon__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -192,6 +224,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Image_BehaviorDescriptor" file="Image_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Image__BehaviorDescriptor" file="Image__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -228,6 +264,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.NodeIconResourceExpression_BehaviorDescriptor" file="NodeIconResourceExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.OldIconBundle_BehaviorDescriptor" file="OldIconBundle_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.OldIconBundle__BehaviorDescriptor" file="OldIconBundle__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -251,6 +295,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.OldIconDeclaration_BehaviorDescriptor" file="OldIconDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.OldIconReference_BehaviorDescriptor" file="OldIconReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.OldIconReference__BehaviorDescriptor" file="OldIconReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -276,6 +328,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Primitive_BehaviorDescriptor" file="Primitive_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Rect_BehaviorDescriptor" file="Rect_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Rect__BehaviorDescriptor" file="Rect__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Color" />
@@ -304,6 +364,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" file="Resource_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Resource__BehaviorDescriptor" file="Resource__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -328,6 +391,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.TextIcon_BehaviorDescriptor" file="TextIcon_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.TextIcon__BehaviorDescriptor" file="TextIcon__BehaviorDescriptor.java">
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
     <classNode dependClassName="java.lang.Class" />
@@ -350,6 +417,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconLayerDescription__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -366,6 +434,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.resources.behavior.Text_BehaviorDescriptor" file="Text_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.behavior.Text__BehaviorDescriptor" file="Text__BehaviorDescriptor.java">
     <classNode dependClassName="java.awt.Color" />

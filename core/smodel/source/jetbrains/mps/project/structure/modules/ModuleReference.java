@@ -41,15 +41,6 @@ public final class ModuleReference implements SModuleReference {
     myModuleId = moduleId;
   }
 
-  /**
-   * @deprecated use {@link #ModuleReference(String, SModuleId)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public ModuleReference(String moduleName, String moduleId) {
-    this(moduleName, ModuleId.fromString(moduleId));
-  }
-
   @Override
   public SModuleId getModuleId() {
     return myModuleId;

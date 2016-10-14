@@ -2,7 +2,7 @@
 <model ref="r:e219e784-986b-4445-84f5-19e78ea5a924(jetbrains.mps.samples.Expressions.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -85,7 +85,7 @@
         <ref role="1k5W1q" node="1N6$leS7lBV" resolve="KeyWord" />
       </node>
       <node concept="3F1sOY" id="1N6$leS7lBR" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leS7lhW" />
+        <ref role="1NtTu8" to="vpmn:1N6$leS7lhW" resolve="original" />
       </node>
       <node concept="l2Vlx" id="1N6$leS7lBH" role="2iSdaV" />
     </node>
@@ -115,14 +115,14 @@
     <ref role="1XX52x" to="vpmn:1N6$leS7sI_" resolve="LogicalSimpleMathExpression" />
     <node concept="3EZMnI" id="1N6$leS7sIH" role="2wV5jI">
       <node concept="3F1sOY" id="1N6$leS7sIO" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leS7lhQ" />
+        <ref role="1NtTu8" to="vpmn:1N6$leS7lhQ" resolve="left" />
       </node>
       <node concept="PMmxH" id="1N6$leS95Rf" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" node="1N6$leS7lBV" resolve="KeyWord" />
       </node>
       <node concept="3F1sOY" id="1N6$leS7sJ1" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leS7lhS" />
+        <ref role="1NtTu8" to="vpmn:1N6$leS7lhS" resolve="right" />
       </node>
       <node concept="l2Vlx" id="1N6$leS7sIK" role="2iSdaV" />
     </node>
@@ -146,7 +146,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="1N6$leS8R91" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leS8R5R" />
+        <ref role="1NtTu8" to="vpmn:1N6$leS8R5R" resolve="expressions" />
         <node concept="2iRkQZ" id="1N6$leSbPak" role="2czzBx" />
         <node concept="lj46D" id="1N6$leSbXsD" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -180,14 +180,14 @@
     <ref role="1XX52x" to="vpmn:1N6$leSa9in" resolve="ArithmeticSimpleMathExpression" />
     <node concept="3EZMnI" id="1N6$leSa9kA" role="2wV5jI">
       <node concept="3F1sOY" id="1N6$leSa9kH" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leS7lhQ" />
+        <ref role="1NtTu8" to="vpmn:1N6$leS7lhQ" resolve="left" />
       </node>
       <node concept="3F0A7n" id="1N6$leSa9kM" role="3EZMnx">
         <ref role="1NtTu8" to="vpmn:1N6$leSa9jE" resolve="operator" />
         <ref role="1k5W1q" node="1N6$leS7lBV" resolve="KeyWord" />
       </node>
       <node concept="3F1sOY" id="1N6$leSa9kT" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leS7lhS" />
+        <ref role="1NtTu8" to="vpmn:1N6$leS7lhS" resolve="right" />
       </node>
       <node concept="l2Vlx" id="1N6$leSa9kD" role="2iSdaV" />
     </node>
@@ -206,7 +206,7 @@
         <property role="3F0ifm" value="=" />
       </node>
       <node concept="3F1sOY" id="1N6$leScGQo" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leScGOk" />
+        <ref role="1NtTu8" to="vpmn:1N6$leScGOk" resolve="initializer" />
       </node>
       <node concept="l2Vlx" id="1N6$leScGPX" role="2iSdaV" />
     </node>
@@ -214,7 +214,7 @@
   <node concept="24kQdi" id="1N6$leScIjD">
     <ref role="1XX52x" to="vpmn:1N6$leScIjx" resolve="SimpleMathVarReference" />
     <node concept="1iCGBv" id="1N6$leScIjF" role="2wV5jI">
-      <ref role="1NtTu8" to="vpmn:1N6$leScIjy" />
+      <ref role="1NtTu8" to="vpmn:1N6$leScIjy" resolve="declaration" />
       <node concept="1sVBvm" id="1N6$leScIjG" role="1sWHZn">
         <node concept="3F0A7n" id="1N6$leScIjL" role="2wV5jI">
           <property role="1Intyy" value="true" />
@@ -284,13 +284,13 @@
     <ref role="1XX52x" to="vpmn:NCDflAkgpc" resolve="SimpleMathAssignment" />
     <node concept="3EZMnI" id="NCDflAkk24" role="2wV5jI">
       <node concept="3F1sOY" id="NCDflAkk2b" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:NCDflAkhCK" />
+        <ref role="1NtTu8" to="vpmn:NCDflAkhCK" resolve="variable" />
       </node>
       <node concept="3F0ifn" id="NCDflAkk2o" role="3EZMnx">
         <property role="3F0ifm" value=":=" />
       </node>
       <node concept="3F1sOY" id="NCDflAkk2w" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:NCDflAkhCM" />
+        <ref role="1NtTu8" to="vpmn:NCDflAkhCM" resolve="expression" />
       </node>
       <node concept="l2Vlx" id="NCDflAkk27" role="2iSdaV" />
     </node>
@@ -299,7 +299,7 @@
     <ref role="1XX52x" to="vpmn:7ux8w678LhQ" resolve="SimpleMathTypedVarDeclaration" />
     <node concept="3EZMnI" id="7ux8w678W8E" role="2wV5jI">
       <node concept="3F1sOY" id="7ux8w678W8L" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:7ux8w678Mxt" />
+        <ref role="1NtTu8" to="vpmn:7ux8w678Mxt" resolve="type" />
       </node>
       <node concept="3F0A7n" id="7ux8w678W8Q" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -308,7 +308,7 @@
         <property role="3F0ifm" value="=" />
       </node>
       <node concept="3F1sOY" id="7ux8w678W97" role="3EZMnx">
-        <ref role="1NtTu8" to="vpmn:1N6$leScGOk" />
+        <ref role="1NtTu8" to="vpmn:1N6$leScGOk" resolve="initializer" />
       </node>
       <node concept="l2Vlx" id="7ux8w678W8H" role="2iSdaV" />
     </node>

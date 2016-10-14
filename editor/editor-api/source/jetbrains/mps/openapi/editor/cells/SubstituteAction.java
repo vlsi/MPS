@@ -51,5 +51,6 @@ public interface SubstituteAction {
 
   boolean canSubstitute(String pattern);
 
+  // May be called outside a command, should create its own command
   SNode substitute(@Nullable EditorContext context, String pattern);
 }

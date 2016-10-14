@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -48,7 +47,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @NotNull
       public Collection<SLanguage> getMainLanguages() {
-        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L), "jetbrains.mps.lang.structure"));
+        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure"));
       }
       @Nullable
       public LanguageAspectGenerator getGenerator() {
@@ -60,7 +59,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public String getHelpUrl() {
-        return "http://confluence.jetbrains.com/display/MPSD33/Structure";
+        return "http://confluence.jetbrains.com/display/MPSD34/Structure";
       }
 
 

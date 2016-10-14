@@ -16,14 +16,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import org.apache.log4j.Level;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationManagerImpl extends AbstractProjectComponent implements MigrationManager {
   private Project myMpsMproject;
@@ -109,7 +109,8 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
-  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup) {
+  protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
+  public MigrationManager.MigrationStep nextProjectStep(Map<ProjectMigrationWithOptions.Option, Object> options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 
     while (current != null && !(current.shouldBeExecuted(myMpsMproject))) {
@@ -130,13 +131,17 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       public String getDescription() {
         return cc.getDescription();
       }
+      @Override
+      public String getCommonDescription() {
+        return cc.getDescription();
+      }
+      @Override
+      public String getMergeId() {
+        return null;
+      }
       public boolean execute() {
         try {
-          myMpsMproject.getRepository().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              cc.execute(myMpsMproject);
-            }
-          });
+          cc.execute(myMpsMproject);
         } catch (Throwable e) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Could not execute script", e);
@@ -195,11 +200,11 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return result.value;
   }
 
-  public MigrationManager.MigrationStep nextModuleStep() {
+  public MigrationManager.MigrationStep nextModuleStep(@Nullable final String preferredId) {
     final Wrappers._T<MigrationManager.MigrationStep> result = new Wrappers._T<MigrationManager.MigrationStep>(null);
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<MigrationManager.MigrationStep>() {
-      public MigrationManager.MigrationStep invoke() {
-        return result.value = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
+    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<ScriptApplied> toApply = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
           public Iterable<ScriptApplied.ScriptAppliedReference> translate(SModule module) {
             return MigrationsUtil.getAllSteps(module);
           }
@@ -215,31 +220,44 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
               }
             }).isEmpty();
           }
-        }).select(new ISelector<ScriptApplied, MigrationManager.MigrationStep>() {
-          public MigrationManager.MigrationStep select(final ScriptApplied it) {
-            return new MigrationManager.MigrationStep() {
-              public String getDescription() {
-                return it.getDescription();
-              }
-              public boolean execute() {
-                final Wrappers._boolean res = new Wrappers._boolean();
-                myMpsMproject.getRepository().getModelAccess().executeCommand(new Runnable() {
-                  public void run() {
-                    res.value = it.execute(myMigrationComponent);
-                  }
-                });
-                return res.value;
-              }
-              public void forceExecutionNextTime() {
-                throw new UnsupportedOperationException("not supported for module migrations");
-              }
-            };
+        });
+
+        // try find preferred, otherwise any 
+        Iterable<ScriptApplied> preferred = (preferredId == null ? toApply : Sequence.fromIterable(toApply).where(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return preferredId == null || preferredId.equals(it.getId());
           }
-        }).first();
+        }));
+        if (Sequence.fromIterable(preferred).isEmpty()) {
+          preferred = toApply;
+        }
+        if (Sequence.fromIterable(preferred).isEmpty()) {
+          return;
+        }
+
+        ScriptApplied applied = Sequence.fromIterable(preferred).first();
+        result.value = new MigrationManager.MigrationStep() {
+          public String getDescription() {
+            return applied.getDescription() + ": " + applied.getModule().getModuleName();
+          }
+          @Override
+          public String getCommonDescription() {
+            return applied.getDescription();
+          }
+          @Override
+          public String getMergeId() {
+            return applied.getId();
+          }
+          public boolean execute() {
+            return applied.execute(myMigrationComponent);
+          }
+          public void forceExecutionNextTime() {
+            throw new UnsupportedOperationException("not supported for module migrations");
+          }
+        };
       }
-    }));
+    });
     return result.value;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
 }

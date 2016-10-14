@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import testAnnotatedType.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
@@ -18,7 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import testAnnotatedType.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "2f74e72e-3e3d-480e-bae1-cc709d588366(testAnnotatedType)";
+  public static final String MODULE_REF = "2f74e72e-3e3d-480e-bae1-cc709d588366(testAnnotatedType)";
   public Language() {
   }
   @Override
@@ -43,6 +44,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
       if (aspectClass == BehaviorAspectDescriptor.class) {
         return (T) new testAnnotatedType.behavior.BehaviorAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new testAnnotatedType.constraints.ConstraintsAspectDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
@@ -70,6 +76,6 @@ public class Language extends LanguageRuntime {
         return (T) new TypesystemDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

@@ -13,8 +13,119 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AnalysisDirection_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalysisDirection_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerConstructorParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerConstructorParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerConstructorParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerConstructorParameter_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerFunFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunFunction_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerFunParameterInput_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunParameterInput_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerFunParameterProgramState_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunParameterProgramState_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerFunParameterStateValues_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunParameterStateValues_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerFunctionResultType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunctionResultType_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerInitialFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerInitialFunction_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerMergeFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerMergeFunction_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerMergeParameterInput_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerMergeParameterInput_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerParameterProgram_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerParameterProgram_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerRunnerClassKeeper_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerClassKeeper_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerRunnerCreator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerCreator_BehaviorDescriptor" />
+    </file>
+    <file name="AnalyzerRunnerType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerType_BehaviorDescriptor" />
+    </file>
+    <file name="Analyzer_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.Analyzer_BehaviorDescriptor" />
+    </file>
+    <file name="ApplicableCondition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.ApplicableCondition_BehaviorDescriptor" />
+    </file>
+    <file name="ApplicableNodeReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.ApplicableNodeReference_BehaviorDescriptor" />
+    </file>
+    <file name="BackwardDirection_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.BackwardDirection_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,108,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,62,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ConceptCondition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.ConceptCondition_BehaviorDescriptor" />
+    </file>
+    <file name="CustomInstructionsContainerReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.CustomInstructionsContainerReference_BehaviorDescriptor" />
+    </file>
+    <file name="CustomInstructionsContainer_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.CustomInstructionsContainer_BehaviorDescriptor" />
+    </file>
+    <file name="EmitInstruction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.EmitInstruction_BehaviorDescriptor" />
+    </file>
+    <file name="ForwardDirection_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.ForwardDirection_BehaviorDescriptor" />
+    </file>
+    <file name="InsertAfterPosition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InsertAfterPosition_BehaviorDescriptor" />
+    </file>
+    <file name="InsertBeforePosition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InsertBeforePosition_BehaviorDescriptor" />
+    </file>
+    <file name="InsertPosition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InsertPosition_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionClassKeeper_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionClassKeeper_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.InstructionReference_BehaviorDescriptor" />
+    </file>
+    <file name="Instruction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.Instruction_BehaviorDescriptor" />
+    </file>
+    <file name="IsOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.IsOperation_BehaviorDescriptor" />
+    </file>
+    <file name="PatternCondition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.PatternCondition_BehaviorDescriptor" />
+    </file>
+    <file name="ProgramParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.ProgramParameter_BehaviorDescriptor" />
+    </file>
+    <file name="RuleReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.RuleReference_BehaviorDescriptor" />
+    </file>
+    <file name="Rule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.Rule_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/178770917832626022">

@@ -4,16 +4,18 @@ package jetbrains.mps.ide.platform.watching;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.make.MakeNotification;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import java.util.concurrent.atomic.AtomicInteger;
+import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
@@ -23,44 +25,34 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.make.MakeNotification;
 
 public class ReloadManagerComponent extends ReloadManager implements ApplicationComponent {
   private final ProjectManager myProjectManager;
-  private IMakeService myMakeService;
-  private IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
-    @Override
-    public void sessionOpened(MakeNotification notification) {
-      suspendReloads();
-    }
+  private final IMakeNotificationListener myMakeListener = new ReloadManagerComponent.NotReloadingOnMakeListener();
+  private final List<ReloadListener> myReloadListeners = ListSequence.fromList(new ArrayList<ReloadListener>());
+  private final ReloadManagerComponent.ReloadSessionBroker myReloadSessionBroker = new ReloadManagerComponent.ReloadSessionBroker();
+  private final MergingUpdateQueue myTaskQueue = new MergingUpdateQueue("Reload Manager Queue", 500, true, null, null, null, true);
+  private final Object myUpdateId = new Object();
+  private final AtomicInteger mySuspendCount = new AtomicInteger(0);
 
-    @Override
-    public void sessionClosed(MakeNotification notification) {
-      resumeReloads();
-    }
-  };
-  private List<ReloadListener> myReloadListeners = ListSequence.fromList(new ArrayList<ReloadListener>());
-  private ReloadManagerComponent.ReloadSessionBroker myReloadSessionBroker = new ReloadManagerComponent.ReloadSessionBroker();
-  private MergingUpdateQueue myQueue = new MergingUpdateQueue("Reload Manager Queue", 500, true, null, null, null, true);
-  private Object myUpdateId = new Object();
-  private AtomicInteger mySuspendCount = new AtomicInteger(0);
+  private IMakeService myMakeService;
 
   public ReloadManagerComponent(ProjectManager projectManager) {
     myProjectManager = projectManager;
-    myQueue.setRestartTimerOnAdd(true);
+    myTaskQueue.setRestartTimerOnAdd(true);
   }
 
   public void initComponent() {
-    ReloadManager.setInstance(this);
   }
 
   public void disposeComponent() {
-    ReloadManager.setInstance(null);
     if (myMakeService != null) {
       myMakeService.removeListener(myMakeListener);
       myMakeService = null;
@@ -73,6 +65,12 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     return "Reload Manager";
   }
 
+  /**
+   * 
+   * @deprecated the dependency between components must be the other way around
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
   public void setMakeService(IMakeService ms) {
     if (ms != null) {
       ms.addListener(myMakeListener);
@@ -87,17 +85,18 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   public void suspendReloads() {
     int count = mySuspendCount.incrementAndGet();
     assert count >= 0;
-    myQueue.suspend();
+    myTaskQueue.suspend();
   }
 
   public void resumeReloads() {
     int count = mySuspendCount.decrementAndGet();
     assert count >= 0;
     if (count == 0) {
-      myQueue.resume();
+      myTaskQueue.resume();
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(ReloadManagerComponent.class);
   @Override
   public <T extends ReloadParticipant> void runReload(Class<T> participantClass, ReloadAction<T> reloadAction) {
     ReloadSession rs;
@@ -163,7 +162,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       return;
     }
 
-    myQueue.queue(new Update(myUpdateId) {
+    myTaskQueue.queue(new Update(myUpdateId) {
       public void run() {
         for (Project project : myProjectManager.getOpenProjects()) {
           if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
@@ -182,28 +181,35 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           return;
         }
 
-        // see MPS-18743, 21760 
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
           public void run() {
-            assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
-            MPSModuleRepository.getInstance().saveAll();
+            // see MPS-18743, 21760 
+            // fixme the problem itself must be fixed (reloading module while there are changed models in it 
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                MPSModuleRepository.getInstance().saveAll();
+              }
+            });
+          }
+        }, ModalityState.NON_MODAL);
+
+        ProgressManager.getInstance().run(new Task.Backgroundable(null, "Reloading Files", false) {
+          @Override
+          public void run(@NotNull final ProgressIndicator progressIndicator) {
+            ProgressMonitor monitor = new ProgressMonitorAdapter(progressIndicator);
+            monitor.start("Reloading Files", 1);
+            try {
+              monitor.step("Reloading File System");
+              rs.doReload(monitor.subTask(1));
+            } finally {
+              monitor.done();
+            }
           }
         });
-
-        if (rs.wantsToShowProgress()) {
-          ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
-            @Override
-            public void run(@NotNull final ProgressIndicator progressIndicator) {
-              rs.doReload(new ProgressMonitorAdapter(progressIndicator));
-            }
-          });
-
-        } else {
-          rs.doReload(new EmptyProgressMonitor());
-        }
       }
     });
   }
+
   private class ReloadSessionBroker {
     private ReloadSession myReloadSession;
     /*package*/ synchronized ReloadSession employ() {
@@ -213,15 +219,18 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myReloadSession.incEmployCount();
       return myReloadSession;
     }
+
     /*package*/ synchronized void dismiss(ReloadSession rs) {
       assert myReloadSession == rs;
       rs.decEmployCount();
       notify();
     }
+
     /*package*/ boolean hasUnemployed() {
       ReloadSession rs = myReloadSession;
       return rs != null && !(rs.isBeingEmployed());
     }
+
     /*package*/ synchronized ReloadSession getUnemployed() {
       if (myReloadSession == null || myReloadSession.isBeingEmployed()) {
         return null;
@@ -230,6 +239,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myReloadSession = null;
       return rs;
     }
+
     /*package*/ synchronized ReloadSession waitForUnemployed() {
       if (myReloadSession == null) {
         return null;
@@ -246,5 +256,16 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       return rs;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ReloadManagerComponent.class);
+
+  private class NotReloadingOnMakeListener extends IMakeNotificationListener.Stub {
+    @Override
+    public void sessionOpened(MakeNotification notification) {
+      suspendReloads();
+    }
+
+    @Override
+    public void sessionClosed(MakeNotification notification) {
+      resumeReloads();
+    }
+  }
 }

@@ -1480,10 +1480,10 @@
                           <node concept="3uibUv" id="3DUvbXCgnwe" role="1tU5fm">
                             <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                           </node>
-                          <node concept="2YIFZM" id="3DUvbXCgnwf" role="33vP2m">
+                          <node concept="2YIFZM" id="6tLsn3mUnqk" role="33vP2m">
+                            <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getProjectVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getProjectVirtualFile" />
                             <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                            <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
-                            <node concept="37vLTw" id="3GM_nagTyrZ" role="37wK5m">
+                            <node concept="37vLTw" id="6tLsn3mUnql" role="37wK5m">
                               <ref role="3cqZAo" node="3DUvbXCgnvP" resolve="ifile" />
                             </node>
                           </node>

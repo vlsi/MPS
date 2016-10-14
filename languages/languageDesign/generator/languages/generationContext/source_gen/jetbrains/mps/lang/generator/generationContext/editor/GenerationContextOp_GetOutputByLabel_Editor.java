@@ -15,6 +15,13 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,6 +33,8 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3dlbxb_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3dlbxb_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3dlbxb_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3dlbxb_d0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_3dlbxb_a0(EditorContext editorContext, SNode node) {
@@ -86,6 +95,45 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
         return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+  private EditorCell createConstant_3dlbxb_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for model");
+    editorCell.setCellId("Constant_3dlbxb_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_3dlbxb_d0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new GenerationContextOp_GetOutputByLabel_Editor.forModelSingleRoleHandler_3dlbxb_d0(node, MetaAdapterFactory.getContainmentLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d6L, 0x5f171e4376fc8e82L, "forModel"), editorContext);
+    return provider.createCell();
+  }
+  private class forModelSingleRoleHandler_3dlbxb_d0 extends SingleRoleCellProvider {
+    public forModelSingleRoleHandler_3dlbxb_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d6L, 0x5f171e4376fc8e82L, "forModel"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
+      }
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("forModel");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_forModel");
+
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<current>";
     }
   }
 }

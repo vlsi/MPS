@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -31,32 +32,35 @@ import java.util.List;
  */
 public class DefaultEmptyCellMenu extends TransformationMenuBase {
 
-  private final SContainmentLink myLink;
-
-  public DefaultEmptyCellMenu(SContainmentLink link) {
-    myLink = link;
+  public DefaultEmptyCellMenu() {
   }
 
+  @NotNull
   @Override
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext context) {
     if (context.getMenuLocation().equals(MenuLocations.SUBSTITUTE)) {
       return Collections.singletonList(new IncludeSubstituteMenuTransformationMenuPart() {
         @Override
         protected SNode getParentNode(TransformationMenuContext context) {
-          return context.getNode();
+          return context.getNodeLocation().getParent();
         }
 
         @Override
         protected SContainmentLink getContainmentLink(TransformationMenuContext context) {
-          return myLink;
+          return context.getNodeLocation().getContainmentLink();
         }
 
         @Override
         protected SNode getCurrentChild(TransformationMenuContext context) {
-          return null;
+          return context.getNodeLocation().getChild();
         }
       });
     }
     return new ArrayList<>();
+  }
+
+  @Override
+  public boolean isApplicableToLocation(@NotNull String location) {
+    return location.equals(MenuLocations.SUBSTITUTE);
   }
 }

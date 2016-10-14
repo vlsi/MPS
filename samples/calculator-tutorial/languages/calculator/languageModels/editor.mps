@@ -2,7 +2,7 @@
 <model ref="r:fb9e85a1-15cf-45ea-8495-bd74b79ce90e(jetbrains.mps.calculator.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -66,12 +66,12 @@
         <node concept="2iRfu4" id="i46YrgY" role="2iSdaV" />
       </node>
       <node concept="3F2HdR" id="i46YS2z" role="3EZMnx">
-        <ref role="1NtTu8" to="64en:i46YMrC" />
+        <ref role="1NtTu8" to="64en:i46YMrC" resolve="inputField" />
         <node concept="2iRkQZ" id="i46YS2$" role="2czzBx" />
       </node>
       <node concept="3F0ifn" id="i47rQeR" role="3EZMnx" />
       <node concept="3F2HdR" id="i46ZA9e" role="3EZMnx">
-        <ref role="1NtTu8" to="64en:i46ZtXh" />
+        <ref role="1NtTu8" to="64en:i46ZtXh" resolve="outputField" />
         <node concept="2iRkQZ" id="i46ZA9f" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i46Yq_G" role="2iSdaV" />
@@ -95,7 +95,7 @@
         <property role="3F0ifm" value="output" />
       </node>
       <node concept="3F1sOY" id="i470jvI" role="3EZMnx">
-        <ref role="1NtTu8" to="64en:i470dVI" />
+        <ref role="1NtTu8" to="64en:i470dVI" resolve="expression" />
       </node>
       <node concept="2iRfu4" id="i46Zq$F" role="2iSdaV" />
     </node>
@@ -103,7 +103,7 @@
   <node concept="24kQdi" id="i470z4T">
     <ref role="1XX52x" to="64en:i470n16" resolve="InputFieldReference" />
     <node concept="1iCGBv" id="i470zF0" role="2wV5jI">
-      <ref role="1NtTu8" to="64en:i470soo" />
+      <ref role="1NtTu8" to="64en:i470soo" resolve="field" />
       <node concept="1sVBvm" id="i470zF1" role="1sWHZn">
         <node concept="3F0A7n" id="i470$XO" role="2wV5jI">
           <property role="1Intyy" value="true" />

@@ -7,7 +7,7 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/2085316548396374793">
     <file name="mpsImplementationStripping.xml">
-      <unit id="2085316548396374793" at="1,0,635,10" name="jetbrains.mps.ide.build.tests.mpsImplementationStripping" />
+      <unit id="2085316548396374793" at="1,0,639,10" name="jetbrains.mps.ide.build.tests.mpsImplementationStripping" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/3197190366568000187">
@@ -37,17 +37,22 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5624877018229105292">
     <file name="mpsEditorTransformationMenu.xml">
-      <unit id="5624877018229105292" at="1,0,1827,10" name="jetbrains.mps.ide.build.tests.mpsEditorTransformationMenu" />
+      <unit id="5624877018229105292" at="1,0,1833,10" name="jetbrains.mps.ide.build.tests.mpsEditorTransformationMenu" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5833628797344916224">
     <file name="mpsEditor.xml">
-      <unit id="5833628797344916224" at="1,0,1623,10" name="jetbrains.mps.ide.build.tests.mpsEditor" />
+      <unit id="5833628797344916224" at="1,0,1739,10" name="jetbrains.mps.ide.build.tests.mpsEditor" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5973657458022229901">
     <file name="mpsPackaged.xml">
       <unit id="5973657458022229901" at="1,0,481,10" name="jetbrains.mps.ide.build.tests.mpsPackaged" />
+    </file>
+  </root>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/6147098677962246363">
+    <file name="mpsHttpSupport.xml">
+      <unit id="6147098677962246363" at="1,0,460,10" name="jetbrains.mps.ide.build.tests.mpsHttpSupport" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/617882099353312053">

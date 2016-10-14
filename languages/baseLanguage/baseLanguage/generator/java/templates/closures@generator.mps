@@ -7,16 +7,15 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpea" ref="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template(MPS.Core/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
+    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -129,6 +128,17 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -147,18 +157,21 @@
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
-      <concept id="1170725621272" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" flags="in" index="2kFOW8" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
-      <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh" />
+      <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
+        <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
+        <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
+      </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="7898029224680692134" name="description" index="2n97ot" />
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1200917515464" name="labelDeclaration" index="2sgKRv" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
@@ -187,12 +200,15 @@
       </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
         <child id="1168281849769" name="sourceNodeQuery" index="31$UT" />
-        <child id="1170725844563" name="mapperFunction" index="2kGFt3" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
+      <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
+      <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
+        <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
+      </concept>
       <concept id="1118786554307" name="jetbrains.mps.lang.generator.structure.LoopMacro" flags="ln" index="1WS0z7">
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
       </concept>
@@ -218,13 +234,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
-        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
-      </concept>
-      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
-        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
-      </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
@@ -236,7 +246,9 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -268,9 +280,7 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
-        <child id="1151688676805" name="elementType" index="_ZDj9" />
-      </concept>
+      <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
     </language>
   </registry>
   <node concept="bUwia" id="gLpullH">
@@ -288,19 +298,7 @@
               <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
               <ref role="37wK5l" to="tpea:i1QD9Us" resolve="hasVariablesUsedInClosure" />
               <node concept="30H73N" id="h1Ui3zC" role="37wK5m" />
-              <node concept="2OqwBi" id="hRrq3eZ" role="37wK5m">
-                <node concept="1eOMI4" id="hRrq3f0" role="2Oq$k0">
-                  <node concept="10QFUN" id="hRrq3f1" role="1eOMHV">
-                    <node concept="1iwH7S" id="hRrq3f2" role="10QFUP" />
-                    <node concept="3uibUv" id="hRrq3f3" role="10QFUM">
-                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="hRrq3f4" role="2OqNvi">
-                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                </node>
-              </node>
+              <node concept="1iwH7S" id="7Zf0vhTVAz8" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -320,19 +318,7 @@
                   <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
                   <ref role="37wK5l" to="tpea:i1QD9Us" resolve="hasVariablesUsedInClosure" />
                   <node concept="30H73N" id="h1UjljJ" role="37wK5m" />
-                  <node concept="2OqwBi" id="hRrq335" role="37wK5m">
-                    <node concept="1eOMI4" id="hRrq336" role="2Oq$k0">
-                      <node concept="10QFUN" id="hRrq337" role="1eOMHV">
-                        <node concept="1iwH7S" id="hRrq338" role="10QFUP" />
-                        <node concept="3uibUv" id="hRrq339" role="10QFUM">
-                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="hRrq33a" role="2OqNvi">
-                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                    </node>
-                  </node>
+                  <node concept="1iwH7S" id="7Zf0vhTV_AE" role="37wK5m" />
                 </node>
               </node>
             </node>
@@ -355,6 +341,7 @@
     </node>
     <node concept="30QchW" id="h1Ue3ar" role="30SoJX">
       <property role="36QftV" value="true" />
+      <property role="2n97ot" value="As unbelievable as it might sound, it's untold responsibility of Closure subclass template author to mark a class it generates with own 'closure_adapterClass' label, and utlizie the fact names match" />
       <ref role="30HIoZ" to="tpee:gLzXffN" resolve="Closure" />
       <node concept="j$656" id="h1Ue8YT" role="1fOSGc">
         <ref role="v9R2y" node="gL$0QOU" resolve="weave_ClosureAdapter_members" />
@@ -419,19 +406,7 @@
                   <node concept="37vLTw" id="3GM_nagTtql" role="37wK5m">
                     <ref role="3cqZAo" node="h1PgiI_" resolve="parent" />
                   </node>
-                  <node concept="2OqwBi" id="hRrq3eE" role="37wK5m">
-                    <node concept="1eOMI4" id="hRrq3eF" role="2Oq$k0">
-                      <node concept="10QFUN" id="hRrq3eG" role="1eOMHV">
-                        <node concept="1iwH7S" id="hRrq3eH" role="10QFUP" />
-                        <node concept="3uibUv" id="hRrq3eI" role="10QFUM">
-                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="hRrq3eJ" role="2OqNvi">
-                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                    </node>
-                  </node>
+                  <node concept="1iwH7S" id="7Zf0vhTVA7O" role="37wK5m" />
                 </node>
               </node>
             </node>
@@ -484,7 +459,7 @@
               <node concept="2OqwBi" id="6Hcj66nt2lu" role="33vP2m">
                 <node concept="30H73N" id="6Hcj66nt2lv" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6Hcj66nt2lw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:fzcqZ_w" />
+                  <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                 </node>
               </node>
             </node>
@@ -555,19 +530,7 @@
                   <node concept="37vLTw" id="3GM_nagTAxy" role="37wK5m">
                     <ref role="3cqZAo" node="1AibU_CrXuS" resolve="var" />
                   </node>
-                  <node concept="2OqwBi" id="1AibU_CrXvb" role="37wK5m">
-                    <node concept="1eOMI4" id="1AibU_CrXvc" role="2Oq$k0">
-                      <node concept="10QFUN" id="1AibU_CrXvd" role="1eOMHV">
-                        <node concept="1iwH7S" id="1AibU_CrXve" role="10QFUP" />
-                        <node concept="3uibUv" id="1AibU_CrXvf" role="10QFUM">
-                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1AibU_CrXvg" role="2OqNvi">
-                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                    </node>
-                  </node>
+                  <node concept="1iwH7S" id="7Zf0vhTVyEx" role="37wK5m" />
                 </node>
               </node>
             </node>
@@ -594,7 +557,7 @@
               <node concept="2OqwBi" id="hxiHJ0s" role="33vP2m">
                 <node concept="30H73N" id="h1Pjp0x" role="2Oq$k0" />
                 <node concept="3TrEf2" id="h1PjpX6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:fzcpWvL" />
+                  <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
                 </node>
               </node>
             </node>
@@ -607,7 +570,7 @@
                   <ref role="3cqZAo" node="h1PjriO" resolve="var" />
                 </node>
                 <node concept="3TrEf2" id="h1PjuZ3" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+                  <ref role="3Tt5mk" to="tpee:fz3vP1I" resolve="initializer" />
                 </node>
               </node>
             </node>
@@ -643,19 +606,7 @@
                       <node concept="37vLTw" id="3GM_nagTuhl" role="37wK5m">
                         <ref role="3cqZAo" node="h1PjriO" resolve="var" />
                       </node>
-                      <node concept="2OqwBi" id="i1QTSNQ" role="37wK5m">
-                        <node concept="1eOMI4" id="i1QTSNR" role="2Oq$k0">
-                          <node concept="10QFUN" id="i1QTSNS" role="1eOMHV">
-                            <node concept="1iwH7S" id="i1QTSNT" role="10QFUP" />
-                            <node concept="3uibUv" id="i1QTSNU" role="10QFUM">
-                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="i1QTSNV" role="2OqNvi">
-                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                        </node>
-                      </node>
+                      <node concept="1iwH7S" id="7Zf0vhTVzrT" role="37wK5m" />
                     </node>
                   </node>
                 </node>
@@ -670,15 +621,21 @@
     </node>
     <node concept="2rT7sh" id="hG00tkv" role="2rTMjI">
       <property role="TrG5h" value="contextOwner_closureContext_class" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="2rT7sh" id="hG0dD4c" role="2rTMjI">
       <property role="TrG5h" value="contextOwner_closureContext_variable" />
+      <ref role="2rZz_L" to="tpee:fzcpWvK" resolve="LocalVariableDeclarationStatement" />
     </node>
     <node concept="2rT7sh" id="hG0dD5e" role="2rTMjI">
       <property role="TrG5h" value="variable_closureContext_classField" />
+      <ref role="2rTdP9" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
+      <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     </node>
     <node concept="2rT7sh" id="hHn6QFv" role="2rTMjI">
       <property role="TrG5h" value="closure_adapterClass" />
+      <ref role="2rTdP9" to="tpee:gLzXffN" resolve="Closure" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="avzCv" id="jFsXcbZXkX" role="avys_">
       <node concept="3clFbS" id="jFsXcbZXkY" role="2VODD2">
@@ -743,7 +700,7 @@
                 <node concept="2OqwBi" id="hxiHJ2s" role="3cqZAk">
                   <node concept="30H73N" id="h1Y95mc" role="2Oq$k0" />
                   <node concept="3TrEf2" id="h1Y9jmd" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
+                    <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" resolve="type" />
                   </node>
                 </node>
               </node>
@@ -755,40 +712,12 @@
         <ref role="2rW$FS" node="hG0dD5e" resolve="variable_closureContext_classField" />
         <node concept="3JmXsc" id="h1Y89nZ" role="3Jn$fo">
           <node concept="3clFbS" id="h1Y89o0" role="2VODD2">
-            <node concept="3cpWs8" id="hZVkgVb" role="3cqZAp">
-              <node concept="3cpWsn" id="hZVkgVc" role="3cpWs9">
-                <property role="TrG5h" value="list" />
-                <node concept="_YKpA" id="hZVkgVd" role="1tU5fm">
-                  <node concept="3Tqbb2" id="hZVkhwK" role="_ZDj9" />
-                </node>
-                <node concept="2YIFZM" id="hZVkknZ" role="33vP2m">
-                  <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                  <ref role="37wK5l" to="tpea:7jRpv62amtu" resolve="getList_ContextOwner_VariablesUsedInClosure" />
-                  <node concept="30H73N" id="hZVkko0" role="37wK5m" />
-                  <node concept="2OqwBi" id="hZVkko1" role="37wK5m">
-                    <node concept="1eOMI4" id="hZVkko2" role="2Oq$k0">
-                      <node concept="10QFUN" id="hZVkko3" role="1eOMHV">
-                        <node concept="1iwH7S" id="hZVkko4" role="10QFUP" />
-                        <node concept="3uibUv" id="hZVkko5" role="10QFUM">
-                          <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="hZVkko6" role="2OqNvi">
-                      <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="h1Y8a1L" role="3cqZAp">
-              <node concept="10QFUN" id="h1Y8NIB" role="3cqZAk">
-                <node concept="37vLTw" id="3GM_nagT_Ga" role="10QFUP">
-                  <ref role="3cqZAo" node="hZVkgVc" resolve="list" />
-                </node>
-                <node concept="2I9FWS" id="h1Y8PSn" role="10QFUM">
-                  <ref role="2I9WkF" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
-                </node>
+            <node concept="3clFbF" id="7Zf0vhTTNL3" role="3cqZAp">
+              <node concept="2YIFZM" id="7jRpv62amtC" role="3clFbG">
+                <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                <ref role="37wK5l" to="tpea:i1QC22q" resolve="getVariablesUsedInClosure" />
+                <node concept="30H73N" id="7Zf0vhTTPEt" role="37wK5m" />
+                <node concept="1iwH7S" id="7Zf0vhTVqpy" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -799,24 +728,31 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="h1Y9M0u" role="3zH0cK">
           <node concept="3clFbS" id="h1Y9M0v" role="2VODD2">
-            <node concept="3cpWs6" id="h1Y9MCC" role="3cqZAp">
-              <node concept="2YIFZM" id="h1Y9Ol$" role="3cqZAk">
-                <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                <ref role="37wK5l" to="tpea:7jRpv62amtF" resolve="getString_VariableDeclaration_nameInClosureContext" />
-                <node concept="30H73N" id="h1Y9OXR" role="37wK5m" />
-                <node concept="2OqwBi" id="hRrq44l" role="37wK5m">
-                  <node concept="1eOMI4" id="hRrq44m" role="2Oq$k0">
-                    <node concept="10QFUN" id="hRrq44n" role="1eOMHV">
-                      <node concept="1iwH7S" id="hRrq44o" role="10QFUP" />
-                      <node concept="3uibUv" id="hRrq44p" role="10QFUM">
-                        <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="hRrq44q" role="2OqNvi">
-                    <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                  </node>
+            <node concept="3SKdUt" id="7Zf0vhTTV3v" role="3cqZAp">
+              <node concept="3SKdUq" id="7Zf0vhTTV3x" role="3SKWNk">
+                <property role="3SKdUp" value="XXX in fact, template's input node is contextOwner" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="7jRpv62amtN" role="3cqZAp">
+              <node concept="3cpWsn" id="7jRpv62amtO" role="3cpWs9">
+                <property role="TrG5h" value="contextOwner" />
+                <node concept="3Tqbb2" id="2rqw8i0Jp58" role="1tU5fm" />
+                <node concept="2YIFZM" id="7jRpv62amtQ" role="33vP2m">
+                  <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                  <node concept="30H73N" id="7Zf0vhTTWcO" role="37wK5m" />
                 </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="7jRpv62amtS" role="3cqZAp">
+              <node concept="2YIFZM" id="7jRpv62amtT" role="3cqZAk">
+                <ref role="37wK5l" to="tpea:i1QCGNk" resolve="getVariableNameInClosureContext" />
+                <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                <node concept="37vLTw" id="7Zf0vhTTWCI" role="37wK5m">
+                  <ref role="3cqZAo" node="7jRpv62amtO" resolve="contextOwner" />
+                </node>
+                <node concept="30H73N" id="7Zf0vhTTYi$" role="37wK5m" />
+                <node concept="1iwH7S" id="7Zf0vhTVwgh" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -833,40 +769,12 @@
         <node concept="2b32R4" id="4D3RMlPNgh9" role="lGtFl">
           <node concept="3JmXsc" id="4D3RMlPNgha" role="2P8S$">
             <node concept="3clFbS" id="4D3RMlPNghb" role="2VODD2">
-              <node concept="3cpWs8" id="4D3RMlPNghc" role="3cqZAp">
-                <node concept="3cpWsn" id="4D3RMlPNghd" role="3cpWs9">
-                  <property role="TrG5h" value="list" />
-                  <node concept="_YKpA" id="4D3RMlPNghe" role="1tU5fm">
-                    <node concept="3Tqbb2" id="4D3RMlPNghf" role="_ZDj9" />
-                  </node>
-                  <node concept="2YIFZM" id="4D3RMlPNghg" role="33vP2m">
-                    <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
-                    <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                    <node concept="30H73N" id="4D3RMlPNghh" role="37wK5m" />
-                    <node concept="2OqwBi" id="4D3RMlPNghi" role="37wK5m">
-                      <node concept="1eOMI4" id="4D3RMlPNghj" role="2Oq$k0">
-                        <node concept="10QFUN" id="4D3RMlPNghk" role="1eOMHV">
-                          <node concept="1iwH7S" id="4D3RMlPNghl" role="10QFUP" />
-                          <node concept="3uibUv" id="4D3RMlPNghm" role="10QFUM">
-                            <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="4D3RMlPNghn" role="2OqNvi">
-                        <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs6" id="4D3RMlPNgho" role="3cqZAp">
-                <node concept="10QFUN" id="4D3RMlPNghp" role="3cqZAk">
-                  <node concept="37vLTw" id="3GM_nagTxYR" role="10QFUP">
-                    <ref role="3cqZAo" node="4D3RMlPNghd" resolve="list" />
-                  </node>
-                  <node concept="2I9FWS" id="4D3RMlPNghr" role="10QFUM">
-                    <ref role="2I9WkF" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-                  </node>
+              <node concept="3clFbF" id="7Zf0vhTU_kz" role="3cqZAp">
+                <node concept="2YIFZM" id="4D3RMlPNghg" role="3clFbG">
+                  <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                  <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
+                  <node concept="30H73N" id="4D3RMlPNghh" role="37wK5m" />
+                  <node concept="1iwH7S" id="7Zf0vhTVssZ" role="37wK5m" />
                 </node>
               </node>
             </node>
@@ -891,40 +799,12 @@
           <node concept="1WS0z7" id="4D3RMlPNghy" role="lGtFl">
             <node concept="3JmXsc" id="4D3RMlPNghz" role="3Jn$fo">
               <node concept="3clFbS" id="4D3RMlPNgh$" role="2VODD2">
-                <node concept="3cpWs8" id="4D3RMlPNgh_" role="3cqZAp">
-                  <node concept="3cpWsn" id="4D3RMlPNghA" role="3cpWs9">
-                    <property role="TrG5h" value="list" />
-                    <node concept="_YKpA" id="4D3RMlPNghB" role="1tU5fm">
-                      <node concept="3Tqbb2" id="4D3RMlPNghC" role="_ZDj9" />
-                    </node>
-                    <node concept="2YIFZM" id="4D3RMlPNghD" role="33vP2m">
-                      <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                      <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
-                      <node concept="30H73N" id="4D3RMlPNghE" role="37wK5m" />
-                      <node concept="2OqwBi" id="4D3RMlPNghF" role="37wK5m">
-                        <node concept="1eOMI4" id="4D3RMlPNghG" role="2Oq$k0">
-                          <node concept="10QFUN" id="4D3RMlPNghH" role="1eOMHV">
-                            <node concept="1iwH7S" id="4D3RMlPNghI" role="10QFUP" />
-                            <node concept="3uibUv" id="4D3RMlPNghJ" role="10QFUM">
-                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="4D3RMlPNghK" role="2OqNvi">
-                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs6" id="4D3RMlPNghL" role="3cqZAp">
-                  <node concept="10QFUN" id="4D3RMlPNghM" role="3cqZAk">
-                    <node concept="37vLTw" id="3GM_nagT_yl" role="10QFUP">
-                      <ref role="3cqZAo" node="4D3RMlPNghA" resolve="list" />
-                    </node>
-                    <node concept="2I9FWS" id="4D3RMlPNghO" role="10QFUM">
-                      <ref role="2I9WkF" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-                    </node>
+                <node concept="3clFbF" id="7Zf0vhTUAfT" role="3cqZAp">
+                  <node concept="2YIFZM" id="4D3RMlPNghD" role="3clFbG">
+                    <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
+                    <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                    <node concept="30H73N" id="4D3RMlPNghE" role="37wK5m" />
+                    <node concept="1iwH7S" id="7Zf0vhTVt58" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -955,37 +835,6 @@
               <property role="3TUv4t" value="true" />
               <node concept="3uibUv" id="gLzrIO$" role="1tU5fm">
                 <ref role="3uigEE" node="gLpvtDS" resolve="class_ClosureContext" />
-                <node concept="1ZhdrF" id="gLzrIO_" role="lGtFl">
-                  <property role="2qtEX8" value="classifier" />
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
-                  <node concept="3$xsQk" id="h1UZ6Gq" role="3$ytzL">
-                    <node concept="3clFbS" id="h1UZ6Gr" role="2VODD2">
-                      <node concept="3cpWs6" id="h1UZ7Bo" role="3cqZAp">
-                        <node concept="1PxgMI" id="4D3RMlPNgfL" role="3cqZAk">
-                          <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
-                          <node concept="2YIFZM" id="h1UZago" role="1m5AlR">
-                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                            <ref role="37wK5l" to="tpea:7jRpv62amqk" resolve="find_ContextOwner_ClosureContext_generatedClass" />
-                            <node concept="30H73N" id="h1UZbdU" role="37wK5m" />
-                            <node concept="2OqwBi" id="hRrq3Ap" role="37wK5m">
-                              <node concept="1eOMI4" id="hRrq3Aq" role="2Oq$k0">
-                                <node concept="10QFUN" id="hRrq3Ar" role="1eOMHV">
-                                  <node concept="1iwH7S" id="hRrq3As" role="10QFUP" />
-                                  <node concept="3uibUv" id="hRrq3At" role="10QFUM">
-                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="hRrq3Au" role="2OqNvi">
-                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
               <node concept="2ShNRf" id="hDIyEVJ" role="33vP2m">
                 <node concept="1pGfFk" id="hDIyEVS" role="2ShVmc">
@@ -995,40 +844,12 @@
                     <node concept="1WS0z7" id="gLzrIOC" role="lGtFl">
                       <node concept="3JmXsc" id="h1V285k" role="3Jn$fo">
                         <node concept="3clFbS" id="h1V285l" role="2VODD2">
-                          <node concept="3cpWs8" id="h1V2_ek" role="3cqZAp">
-                            <node concept="3cpWsn" id="h1V2_el" role="3cpWs9">
-                              <property role="TrG5h" value="list" />
-                              <node concept="_YKpA" id="hZV1w_s" role="1tU5fm">
-                                <node concept="3Tqbb2" id="i2sqiq0" role="_ZDj9" />
-                              </node>
-                              <node concept="2YIFZM" id="h1V2jnA" role="33vP2m">
-                                <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                                <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
-                                <node concept="30H73N" id="h1V2jnB" role="37wK5m" />
-                                <node concept="2OqwBi" id="hRrq3BE" role="37wK5m">
-                                  <node concept="1eOMI4" id="hRrq3BF" role="2Oq$k0">
-                                    <node concept="10QFUN" id="hRrq3BG" role="1eOMHV">
-                                      <node concept="1iwH7S" id="hRrq3BH" role="10QFUP" />
-                                      <node concept="3uibUv" id="hRrq3BI" role="10QFUM">
-                                        <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="liA8E" id="hRrq3BJ" role="2OqNvi">
-                                    <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3cpWs6" id="h1V28Gy" role="3cqZAp">
-                            <node concept="10QFUN" id="h1V2jn_" role="3cqZAk">
-                              <node concept="37vLTw" id="3GM_nagT$Jw" role="10QFUP">
-                                <ref role="3cqZAo" node="h1V2_el" resolve="list" />
-                              </node>
-                              <node concept="2I9FWS" id="h1V2CcS" role="10QFUM">
-                                <ref role="2I9WkF" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-                              </node>
+                          <node concept="3clFbF" id="7Zf0vhTUFOx" role="3cqZAp">
+                            <node concept="2YIFZM" id="h1V2jnA" role="3clFbG">
+                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                              <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
+                              <node concept="30H73N" id="h1V2jnB" role="37wK5m" />
+                              <node concept="1iwH7S" id="7Zf0vhTVtFB" role="37wK5m" />
                             </node>
                           </node>
                         </node>
@@ -1044,37 +865,6 @@
                               <node concept="30H73N" id="hrYHB0k" role="2Oq$k0" />
                               <node concept="3TrcHB" id="hrYHW8W" role="2OqNvi">
                                 <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="1ZhdrF" id="gLzrIOE" role="lGtFl">
-                    <property role="2qtEX8" value="baseMethodDeclaration" />
-                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
-                    <node concept="3$xsQk" id="h1V1kUK" role="3$ytzL">
-                      <node concept="3clFbS" id="h1V1kUL" role="2VODD2">
-                        <node concept="3cpWs6" id="h1V1lCk" role="3cqZAp">
-                          <node concept="1PxgMI" id="4D3RMlPNgfz" role="3cqZAk">
-                            <ref role="1m5ApE" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-                            <node concept="2YIFZM" id="h1V1pz6" role="1m5AlR">
-                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                              <ref role="37wK5l" to="tpea:7jRpv62amqy" resolve="find_ContextOwner_ClosureContext_generatedClass_constructor" />
-                              <node concept="30H73N" id="h1V1qkb" role="37wK5m" />
-                              <node concept="2OqwBi" id="hRrq3j6" role="37wK5m">
-                                <node concept="1eOMI4" id="hRrq3j7" role="2Oq$k0">
-                                  <node concept="10QFUN" id="hRrq3j8" role="1eOMHV">
-                                    <node concept="1iwH7S" id="hRrq3j9" role="10QFUP" />
-                                    <node concept="3uibUv" id="hRrq3ja" role="10QFUM">
-                                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="hRrq3jb" role="2OqNvi">
-                                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                                </node>
                               </node>
                             </node>
                           </node>
@@ -1134,7 +924,7 @@
                     <node concept="2OqwBi" id="hxiHJ0W" role="3cqZAk">
                       <node concept="30H73N" id="h1UXZbg" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="hzHoYsO" role="2OqNvi">
-                        <ref role="3TtcxE" to="tpee:fzcqZ_x" />
+                        <ref role="3TtcxE" to="tpee:fzcqZ_x" resolve="statement" />
                       </node>
                     </node>
                   </node>
@@ -1198,25 +988,19 @@
         <property role="TrG5h" value="_enclosingClass" />
         <node concept="3uibUv" id="gL$1EHo" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          <node concept="29HgVG" id="hgueH1r" role="lGtFl">
-            <node concept="3NFfHV" id="hgueH1s" role="3NFExx">
-              <node concept="3clFbS" id="hgueH1t" role="2VODD2">
-                <node concept="3cpWs6" id="hgueHX2" role="3cqZAp">
-                  <node concept="2YIFZM" id="hgueHX3" role="3cqZAk">
-                    <ref role="1Pybhc" to="tpea:h2kXeud" resolve="QueriesUtil" />
-                    <ref role="37wK5l" to="tpea:h2kXeue" resolve="createClassType_forClosure_enclosingClass" />
-                    <node concept="30H73N" id="hgueHX4" role="37wK5m" />
-                    <node concept="2OqwBi" id="hRrq2Gj" role="37wK5m">
-                      <node concept="1eOMI4" id="hRrq2Gk" role="2Oq$k0">
-                        <node concept="10QFUN" id="hRrq2Gl" role="1eOMHV">
-                          <node concept="1iwH7S" id="hRrq2Gm" role="10QFUP" />
-                          <node concept="3uibUv" id="hRrq2Gn" role="10QFUM">
-                            <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                          </node>
+          <node concept="1ZhdrF" id="7Zf0vhTVCJg" role="lGtFl">
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
+            <property role="2qtEX8" value="classifier" />
+            <node concept="3$xsQk" id="7Zf0vhTVCJh" role="3$ytzL">
+              <node concept="3clFbS" id="7Zf0vhTVCJi" role="2VODD2">
+                <node concept="3clFbF" id="7Zf0vhTVDeU" role="3cqZAp">
+                  <node concept="2OqwBi" id="7Zf0vhTVDTm" role="3clFbG">
+                    <node concept="30H73N" id="7Zf0vhTVDeT" role="2Oq$k0" />
+                    <node concept="2Xjw5R" id="7Zf0vhTVEEW" role="2OqNvi">
+                      <node concept="1xMEDy" id="7Zf0vhTVEEY" role="1xVPHs">
+                        <node concept="chp4Y" id="7Zf0vhTVFkV" role="ri$Ld">
+                          <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                         </node>
-                      </node>
-                      <node concept="liA8E" id="hRrq2Go" role="2OqNvi">
-                        <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                       </node>
                     </node>
                   </node>
@@ -1236,25 +1020,42 @@
             <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
             <node concept="3$xsQk" id="h1UAfjD" role="3$ytzL">
               <node concept="3clFbS" id="h1UAfjE" role="2VODD2">
-                <node concept="3cpWs6" id="h1UAfJ7" role="3cqZAp">
-                  <node concept="1PxgMI" id="4D3RMlPNfXF" role="3cqZAk">
-                    <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
-                    <node concept="2YIFZM" id="h1UBjcC" role="1m5AlR">
-                      <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                      <ref role="37wK5l" to="tpea:7jRpv62ampH" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
-                      <node concept="30H73N" id="h1UBraU" role="37wK5m" />
-                      <node concept="2OqwBi" id="hRrq2NK" role="37wK5m">
-                        <node concept="1eOMI4" id="hRrq2NL" role="2Oq$k0">
-                          <node concept="10QFUN" id="hRrq2NM" role="1eOMHV">
-                            <node concept="1iwH7S" id="hRrq2NN" role="10QFUP" />
-                            <node concept="3uibUv" id="hRrq2NO" role="10QFUM">
-                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                            </node>
-                          </node>
+                <node concept="3SKdUt" id="7Zf0vhTSyoV" role="3cqZAp">
+                  <node concept="3SKdUq" id="7Zf0vhTSyoX" role="3SKWNk">
+                    <property role="3SKdUp" value=" alternatively, could have used MAP-SRC to findEnclosingClosureContextOwner and template reference" />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="7Zf0vhTSvag" role="3cqZAp">
+                  <node concept="3cpWsn" id="7Zf0vhTSvah" role="3cpWs9">
+                    <property role="TrG5h" value="generatedClass" />
+                    <node concept="3Tqbb2" id="7Zf0vhTSvad" role="1tU5fm">
+                      <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    </node>
+                    <node concept="2OqwBi" id="7Zf0vhTSvai" role="33vP2m">
+                      <node concept="1iwH7S" id="7Zf0vhTSvaj" role="2Oq$k0" />
+                      <node concept="1iwH70" id="7Zf0vhTSvak" role="2OqNvi">
+                        <ref role="1iwH77" node="hG00tkv" resolve="contextOwner_closureContext_class" />
+                        <node concept="2YIFZM" id="7Zf0vhTSval" role="1iwH7V">
+                          <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                          <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                          <node concept="30H73N" id="7Zf0vhTSvam" role="37wK5m" />
                         </node>
-                        <node concept="liA8E" id="hRrq2NP" role="2OqNvi">
-                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="7Zf0vhTSTLP" role="3cqZAp">
+                  <node concept="3K4zz7" id="7Zf0vhTT0rO" role="3cqZAk">
+                    <node concept="37vLTw" id="7Zf0vhTT1rp" role="3K4E3e">
+                      <ref role="3cqZAo" node="7Zf0vhTSvah" resolve="generatedClass" />
+                    </node>
+                    <node concept="3B5_sB" id="7Zf0vhTT4HW" role="3K4GZi">
+                      <ref role="3B5MYn" to="wyt6:~Object" resolve="Object" />
+                    </node>
+                    <node concept="3y3z36" id="7Zf0vhTSXp5" role="3K4Cdx">
+                      <node concept="10Nm6u" id="7Zf0vhTSYU6" role="3uHU7w" />
+                      <node concept="37vLTw" id="7Zf0vhTSVtv" role="3uHU7B">
+                        <ref role="3cqZAo" node="7Zf0vhTSvah" resolve="generatedClass" />
                       </node>
                     </node>
                   </node>
@@ -1270,25 +1071,19 @@
           <property role="TrG5h" value="enclosingClass" />
           <node concept="3uibUv" id="4D3RMlPNfL4" role="1tU5fm">
             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-            <node concept="29HgVG" id="4D3RMlPNfL5" role="lGtFl">
-              <node concept="3NFfHV" id="4D3RMlPNfL6" role="3NFExx">
-                <node concept="3clFbS" id="4D3RMlPNfL7" role="2VODD2">
-                  <node concept="3cpWs6" id="4D3RMlPNfL8" role="3cqZAp">
-                    <node concept="2YIFZM" id="4D3RMlPNfL9" role="3cqZAk">
-                      <ref role="1Pybhc" to="tpea:h2kXeud" resolve="QueriesUtil" />
-                      <ref role="37wK5l" to="tpea:h2kXeue" resolve="createClassType_forClosure_enclosingClass" />
-                      <node concept="30H73N" id="4D3RMlPNfLa" role="37wK5m" />
-                      <node concept="2OqwBi" id="4D3RMlPNfLb" role="37wK5m">
-                        <node concept="1eOMI4" id="4D3RMlPNfLc" role="2Oq$k0">
-                          <node concept="10QFUN" id="4D3RMlPNfLd" role="1eOMHV">
-                            <node concept="1iwH7S" id="4D3RMlPNfLe" role="10QFUP" />
-                            <node concept="3uibUv" id="4D3RMlPNfLf" role="10QFUM">
-                              <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                            </node>
+            <node concept="1ZhdrF" id="7Zf0vhTVJh0" role="lGtFl">
+              <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
+              <property role="2qtEX8" value="classifier" />
+              <node concept="3$xsQk" id="7Zf0vhTVJh1" role="3$ytzL">
+                <node concept="3clFbS" id="7Zf0vhTVJh2" role="2VODD2">
+                  <node concept="3clFbF" id="7Zf0vhTVJDu" role="3cqZAp">
+                    <node concept="2OqwBi" id="7Zf0vhTVJDv" role="3clFbG">
+                      <node concept="30H73N" id="7Zf0vhTVJDw" role="2Oq$k0" />
+                      <node concept="2Xjw5R" id="7Zf0vhTVJDx" role="2OqNvi">
+                        <node concept="1xMEDy" id="7Zf0vhTVJDy" role="1xVPHs">
+                          <node concept="chp4Y" id="7Zf0vhTVJDz" role="ri$Ld">
+                            <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                           </node>
-                        </node>
-                        <node concept="liA8E" id="4D3RMlPNfLg" role="2OqNvi">
-                          <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -1336,25 +1131,42 @@
                     <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                     <node concept="3$xsQk" id="4D3RMlPNfKR" role="3$ytzL">
                       <node concept="3clFbS" id="4D3RMlPNfKS" role="2VODD2">
-                        <node concept="3cpWs6" id="4D3RMlPNfKT" role="3cqZAp">
-                          <node concept="1PxgMI" id="4D3RMlPNfXH" role="3cqZAk">
-                            <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
-                            <node concept="2YIFZM" id="4D3RMlPNfKU" role="1m5AlR">
-                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                              <ref role="37wK5l" to="tpea:7jRpv62ampH" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
-                              <node concept="30H73N" id="4D3RMlPNfKV" role="37wK5m" />
-                              <node concept="2OqwBi" id="4D3RMlPNfKW" role="37wK5m">
-                                <node concept="1eOMI4" id="4D3RMlPNfKX" role="2Oq$k0">
-                                  <node concept="10QFUN" id="4D3RMlPNfKY" role="1eOMHV">
-                                    <node concept="1iwH7S" id="4D3RMlPNfKZ" role="10QFUP" />
-                                    <node concept="3uibUv" id="4D3RMlPNfL0" role="10QFUM">
-                                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                    </node>
-                                  </node>
+                        <node concept="3SKdUt" id="7Zf0vhTTccX" role="3cqZAp">
+                          <node concept="3SKdUq" id="7Zf0vhTTccZ" role="3SKWNk">
+                            <property role="3SKdUp" value="XXX Why not type of argument but cast?" />
+                          </node>
+                        </node>
+                        <node concept="3cpWs8" id="7Zf0vhTT9g3" role="3cqZAp">
+                          <node concept="3cpWsn" id="7Zf0vhTT9g4" role="3cpWs9">
+                            <property role="TrG5h" value="generatedClass" />
+                            <node concept="3Tqbb2" id="7Zf0vhTT9g5" role="1tU5fm">
+                              <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                            </node>
+                            <node concept="2OqwBi" id="7Zf0vhTT9g6" role="33vP2m">
+                              <node concept="1iwH7S" id="7Zf0vhTT9g7" role="2Oq$k0" />
+                              <node concept="1iwH70" id="7Zf0vhTT9g8" role="2OqNvi">
+                                <ref role="1iwH77" node="hG00tkv" resolve="contextOwner_closureContext_class" />
+                                <node concept="2YIFZM" id="7Zf0vhTT9g9" role="1iwH7V">
+                                  <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                                  <node concept="30H73N" id="7Zf0vhTT9ga" role="37wK5m" />
                                 </node>
-                                <node concept="liA8E" id="4D3RMlPNfL1" role="2OqNvi">
-                                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3cpWs6" id="7Zf0vhTT9gb" role="3cqZAp">
+                          <node concept="3K4zz7" id="7Zf0vhTT9gc" role="3cqZAk">
+                            <node concept="37vLTw" id="7Zf0vhTT9gd" role="3K4E3e">
+                              <ref role="3cqZAo" node="7Zf0vhTT9g4" resolve="generatedClass" />
+                            </node>
+                            <node concept="3B5_sB" id="7Zf0vhTT9ge" role="3K4GZi">
+                              <ref role="3B5MYn" to="wyt6:~Object" resolve="Object" />
+                            </node>
+                            <node concept="3y3z36" id="7Zf0vhTT9gf" role="3K4Cdx">
+                              <node concept="10Nm6u" id="7Zf0vhTT9gg" role="3uHU7w" />
+                              <node concept="37vLTw" id="7Zf0vhTT9gh" role="3uHU7B">
+                                <ref role="3cqZAo" node="7Zf0vhTT9g4" resolve="generatedClass" />
                               </node>
                             </node>
                           </node>
@@ -1371,6 +1183,63 @@
           </node>
         </node>
         <node concept="raruj" id="4D3RMlPNfLl" role="lGtFl" />
+      </node>
+      <node concept="3clFbW" id="7Zf0vhU7Dr0" role="jymVt">
+        <node concept="37vLTG" id="7Zf0vhU7Dr1" role="3clF46">
+          <property role="TrG5h" value="enclosingClass" />
+          <node concept="3uibUv" id="7Zf0vhU7Dr2" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            <node concept="1ZhdrF" id="7Zf0vhU7Dr3" role="lGtFl">
+              <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
+              <property role="2qtEX8" value="classifier" />
+              <node concept="3$xsQk" id="7Zf0vhU7Dr4" role="3$ytzL">
+                <node concept="3clFbS" id="7Zf0vhU7Dr5" role="2VODD2">
+                  <node concept="3clFbF" id="7Zf0vhU7Dr6" role="3cqZAp">
+                    <node concept="2OqwBi" id="7Zf0vhU7Dr7" role="3clFbG">
+                      <node concept="30H73N" id="7Zf0vhU7Dr8" role="2Oq$k0" />
+                      <node concept="2Xjw5R" id="7Zf0vhU7Dr9" role="2OqNvi">
+                        <node concept="1xMEDy" id="7Zf0vhU7Dra" role="1xVPHs">
+                          <node concept="chp4Y" id="7Zf0vhU7Drb" role="ri$Ld">
+                            <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cqZAl" id="7Zf0vhU7Dre" role="3clF45" />
+        <node concept="3Tm1VV" id="7Zf0vhU7Drf" role="1B3o_S" />
+        <node concept="3clFbS" id="7Zf0vhU7Drg" role="3clF47">
+          <node concept="3clFbF" id="7Zf0vhU7Drh" role="3cqZAp">
+            <node concept="37vLTI" id="7Zf0vhU7Dri" role="3clFbG">
+              <node concept="2OqwBi" id="7Zf0vhU7Drj" role="37vLTJ">
+                <node concept="Xjq3P" id="7Zf0vhU7Drk" role="2Oq$k0" />
+                <node concept="2OwXpG" id="7Zf0vhU7Drl" role="2OqNvi">
+                  <ref role="2Oxat5" node="gL$1EHn" resolve="_enclosingClass" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="7Zf0vhU7Drm" role="37vLTx">
+                <ref role="3cqZAo" node="7Zf0vhU7Dr1" resolve="enclosingClass" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7Zf0vhU7Drn" role="3cqZAp">
+            <node concept="37vLTI" id="7Zf0vhU7Dro" role="3clFbG">
+              <node concept="2OqwBi" id="7Zf0vhU7Drp" role="37vLTJ">
+                <node concept="Xjq3P" id="7Zf0vhU7Drq" role="2Oq$k0" />
+                <node concept="2OwXpG" id="7Zf0vhU7Drr" role="2OqNvi">
+                  <ref role="2Oxat5" node="gLDnJ3$" resolve="_closureContext" />
+                </node>
+              </node>
+              <node concept="10Nm6u" id="7Zf0vhU7GK5" role="37vLTx" />
+            </node>
+          </node>
+        </node>
+        <node concept="raruj" id="7Zf0vhU7DrN" role="lGtFl" />
       </node>
     </node>
   </node>
@@ -1469,26 +1338,26 @@
               <node concept="2OqwBi" id="hxBfJ8m" role="37vLTJ">
                 <node concept="37vLTw" id="3GM_nagTxFS" role="2Oq$k0">
                   <ref role="3cqZAo" node="gL$NpBT" resolve="_closure_context_" />
-                  <node concept="1pdMLZ" id="gL$NU95" role="lGtFl">
-                    <node concept="2kFOW8" id="h2uY2VS" role="2kGFt3">
-                      <node concept="3clFbS" id="h2uY2VT" role="2VODD2">
-                        <node concept="3cpWs6" id="h2uYhte" role="3cqZAp">
-                          <node concept="2YIFZM" id="h2uYjnP" role="3cqZAk">
-                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                            <ref role="37wK5l" to="tpea:7jRpv62amtX" resolve="create_closureContextObject" />
-                            <node concept="30H73N" id="h2uYmtn" role="37wK5m" />
-                            <node concept="2OqwBi" id="hRrq3rf" role="37wK5m">
-                              <node concept="1eOMI4" id="hRrq3rg" role="2Oq$k0">
-                                <node concept="10QFUN" id="hRrq3rh" role="1eOMHV">
-                                  <node concept="1iwH7S" id="hRrq3ri" role="10QFUP" />
-                                  <node concept="3uibUv" id="hRrq3rj" role="10QFUM">
-                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                  </node>
+                  <node concept="1ZhdrF" id="7Zf0vhTUOqP" role="lGtFl">
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                    <property role="2qtEX8" value="variableDeclaration" />
+                    <node concept="3$xsQk" id="7Zf0vhTUOqQ" role="3$ytzL">
+                      <node concept="3clFbS" id="7Zf0vhTUOqR" role="2VODD2">
+                        <node concept="3clFbF" id="7Zf0vhTUT$$" role="3cqZAp">
+                          <node concept="2OqwBi" id="7Zf0vhTUTZc" role="3clFbG">
+                            <node concept="2OqwBi" id="7Zf0vhTUPhU" role="2Oq$k0">
+                              <node concept="1iwH7S" id="7Zf0vhTUP6j" role="2Oq$k0" />
+                              <node concept="1iwH70" id="7Zf0vhTUPs3" role="2OqNvi">
+                                <ref role="1iwH77" node="hG0dD4c" resolve="contextOwner_closureContext_variable" />
+                                <node concept="2YIFZM" id="7Zf0vhTURPT" role="1iwH7V">
+                                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                                  <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                                  <node concept="30H73N" id="7Zf0vhTURPU" role="37wK5m" />
                                 </node>
                               </node>
-                              <node concept="liA8E" id="hRrq3rk" role="2OqNvi">
-                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="7Zf0vhTUUgy" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
                             </node>
                           </node>
                         </node>
@@ -1503,22 +1372,16 @@
                     <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546/1197029500499" />
                     <node concept="3$xsQk" id="h1Ylqf$" role="3$ytzL">
                       <node concept="3clFbS" id="h1Ylqf_" role="2VODD2">
-                        <node concept="3cpWs6" id="h1Ylv89" role="3cqZAp">
-                          <node concept="2YIFZM" id="h1YlxAD" role="3cqZAk">
-                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                            <ref role="37wK5l" to="tpea:7jRpv62ams3" resolve="resolve_VariableReference_Variable_ClosureContext_generatedField" />
-                            <node concept="30H73N" id="h1Yly6D" role="37wK5m" />
-                            <node concept="2OqwBi" id="hRrq3nt" role="37wK5m">
-                              <node concept="1eOMI4" id="hRrq3nu" role="2Oq$k0">
-                                <node concept="10QFUN" id="hRrq3nv" role="1eOMHV">
-                                  <node concept="1iwH7S" id="hRrq3nw" role="10QFUP" />
-                                  <node concept="3uibUv" id="hRrq3nx" role="10QFUM">
-                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                  </node>
+                        <node concept="3clFbF" id="7Zf0vhTU1Fq" role="3cqZAp">
+                          <node concept="2OqwBi" id="7Zf0vhTU1ML" role="3clFbG">
+                            <node concept="1iwH7S" id="7Zf0vhTU1Fo" role="2Oq$k0" />
+                            <node concept="1iwH70" id="7Zf0vhTU1S$" role="2OqNvi">
+                              <ref role="1iwH77" node="hG0dD5e" resolve="variable_closureContext_classField" />
+                              <node concept="2OqwBi" id="7Zf0vhTU2aS" role="1iwH7V">
+                                <node concept="30H73N" id="7Zf0vhTU1ZP" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="7Zf0vhTU2nE" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                                 </node>
-                              </node>
-                              <node concept="liA8E" id="hRrq3ny" role="2OqNvi">
-                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1585,26 +1448,26 @@
               <node concept="2OqwBi" id="hxB4$Af" role="37vLTJ">
                 <node concept="37vLTw" id="3GM_nagTv0t" role="2Oq$k0">
                   <ref role="3cqZAo" node="gL_jhIA" resolve="_closure_context_" />
-                  <node concept="1pdMLZ" id="gL_jhIG" role="lGtFl">
-                    <node concept="2kFOW8" id="h2v2FVt" role="2kGFt3">
-                      <node concept="3clFbS" id="h2v2FVu" role="2VODD2">
-                        <node concept="3cpWs6" id="h2v2FVv" role="3cqZAp">
-                          <node concept="2YIFZM" id="h2v2FVw" role="3cqZAk">
-                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                            <ref role="37wK5l" to="tpea:7jRpv62amtX" resolve="create_closureContextObject" />
-                            <node concept="30H73N" id="h2v2FVx" role="37wK5m" />
-                            <node concept="2OqwBi" id="hRrq3rU" role="37wK5m">
-                              <node concept="1eOMI4" id="hRrq3rV" role="2Oq$k0">
-                                <node concept="10QFUN" id="hRrq3rW" role="1eOMHV">
-                                  <node concept="1iwH7S" id="hRrq3rX" role="10QFUP" />
-                                  <node concept="3uibUv" id="hRrq3rY" role="10QFUM">
-                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                  </node>
+                  <node concept="1ZhdrF" id="7Zf0vhTUVg_" role="lGtFl">
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                    <property role="2qtEX8" value="variableDeclaration" />
+                    <node concept="3$xsQk" id="7Zf0vhTUVgA" role="3$ytzL">
+                      <node concept="3clFbS" id="7Zf0vhTUVgB" role="2VODD2">
+                        <node concept="3clFbF" id="7Zf0vhTUVuv" role="3cqZAp">
+                          <node concept="2OqwBi" id="7Zf0vhTUVux" role="3clFbG">
+                            <node concept="2OqwBi" id="7Zf0vhTUVuy" role="2Oq$k0">
+                              <node concept="1iwH7S" id="7Zf0vhTUVuz" role="2Oq$k0" />
+                              <node concept="1iwH70" id="7Zf0vhTUVu$" role="2OqNvi">
+                                <ref role="1iwH77" node="hG0dD4c" resolve="contextOwner_closureContext_variable" />
+                                <node concept="2YIFZM" id="7Zf0vhTUVu_" role="1iwH7V">
+                                  <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                                  <node concept="30H73N" id="7Zf0vhTUVuA" role="37wK5m" />
                                 </node>
                               </node>
-                              <node concept="liA8E" id="hRrq3rZ" role="2OqNvi">
-                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="7Zf0vhTUVuB" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
                             </node>
                           </node>
                         </node>
@@ -1619,24 +1482,15 @@
                     <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546/1197029500499" />
                     <node concept="3$xsQk" id="h1YdtQn" role="3$ytzL">
                       <node concept="3clFbS" id="h1YdtQo" role="2VODD2">
-                        <node concept="3cpWs6" id="h1Ydykp" role="3cqZAp">
-                          <node concept="1PxgMI" id="4D3RMlPNgf4" role="3cqZAk">
-                            <ref role="1m5ApE" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-                            <node concept="2YIFZM" id="h1Yd$hF" role="1m5AlR">
-                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                              <ref role="37wK5l" to="tpea:7jRpv62amrx" resolve="resolve_VariableDeclStmt_Variable_ClosureContext_generatedField" />
-                              <node concept="30H73N" id="h1Yd$Qk" role="37wK5m" />
-                              <node concept="2OqwBi" id="hRrq3lB" role="37wK5m">
-                                <node concept="liA8E" id="hRrq3lG" role="2OqNvi">
-                                  <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                                </node>
-                                <node concept="1eOMI4" id="4D3RMlPNhkA" role="2Oq$k0">
-                                  <node concept="10QFUN" id="4D3RMlPNhkD" role="1eOMHV">
-                                    <node concept="3uibUv" id="4D3RMlPNhkG" role="10QFUM">
-                                      <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                    </node>
-                                    <node concept="1iwH7S" id="4D3RMlPNhkC" role="10QFUP" />
-                                  </node>
+                        <node concept="3clFbF" id="7Zf0vhTU3FK" role="3cqZAp">
+                          <node concept="2OqwBi" id="7Zf0vhTU3OH" role="3clFbG">
+                            <node concept="1iwH7S" id="7Zf0vhTU3FI" role="2Oq$k0" />
+                            <node concept="1iwH70" id="7Zf0vhTU3W5" role="2OqNvi">
+                              <ref role="1iwH77" node="hG0dD5e" resolve="variable_closureContext_classField" />
+                              <node concept="2OqwBi" id="7Zf0vhTU4J8" role="1iwH7V">
+                                <node concept="30H73N" id="7Zf0vhTU4ox" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="7Zf0vhTU4YK" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
                                 </node>
                               </node>
                             </node>
@@ -1656,11 +1510,11 @@
                           <node concept="2OqwBi" id="hxiHJ1d" role="2Oq$k0">
                             <node concept="30H73N" id="h1YdHnP" role="2Oq$k0" />
                             <node concept="3TrEf2" id="h1YdIbS" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:fzcpWvL" />
+                              <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="h1Yhjh2" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+                            <ref role="3Tt5mk" to="tpee:fz3vP1I" resolve="initializer" />
                           </node>
                         </node>
                       </node>
@@ -1727,27 +1581,45 @@
                 </node>
                 <node concept="37vLTw" id="3GM_nagTutV" role="37wK5m">
                   <ref role="3cqZAo" node="gLDDrZ3" resolve="_closureContext" />
-                  <node concept="1pdMLZ" id="hpY8F$A" role="lGtFl">
-                    <node concept="2kFOW8" id="hpY8HvE" role="2kGFt3">
-                      <node concept="3clFbS" id="hpY8HvF" role="2VODD2">
-                        <node concept="3clFbF" id="hpY8JnC" role="3cqZAp">
-                          <node concept="2YIFZM" id="hpY8ItH" role="3clFbG">
-                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                            <ref role="37wK5l" to="tpea:7jRpv62amtX" resolve="create_closureContextObject" />
-                            <node concept="30H73N" id="hpY8ItI" role="37wK5m" />
-                            <node concept="2OqwBi" id="hRrq34V" role="37wK5m">
-                              <node concept="1eOMI4" id="hRrq34W" role="2Oq$k0">
-                                <node concept="10QFUN" id="hRrq34X" role="1eOMHV">
-                                  <node concept="1iwH7S" id="hRrq34Y" role="10QFUP" />
-                                  <node concept="3uibUv" id="hRrq34Z" role="10QFUM">
-                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                  </node>
+                  <node concept="1ZhdrF" id="7Zf0vhTUWiB" role="lGtFl">
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                    <property role="2qtEX8" value="variableDeclaration" />
+                    <node concept="3$xsQk" id="7Zf0vhTUWiC" role="3$ytzL">
+                      <node concept="3clFbS" id="7Zf0vhTUWiD" role="2VODD2">
+                        <node concept="3clFbF" id="7Zf0vhTUWz1" role="3cqZAp">
+                          <node concept="2OqwBi" id="7Zf0vhTUWz3" role="3clFbG">
+                            <node concept="2OqwBi" id="7Zf0vhTUWz4" role="2Oq$k0">
+                              <node concept="1iwH7S" id="7Zf0vhTUWz5" role="2Oq$k0" />
+                              <node concept="1iwH70" id="7Zf0vhTUWz6" role="2OqNvi">
+                                <ref role="1iwH77" node="hG0dD4c" resolve="contextOwner_closureContext_variable" />
+                                <node concept="2YIFZM" id="7Zf0vhTUWz7" role="1iwH7V">
+                                  <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                                  <node concept="30H73N" id="7Zf0vhTUWz8" role="37wK5m" />
                                 </node>
                               </node>
-                              <node concept="liA8E" id="hRrq350" role="2OqNvi">
-                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
-                              </node>
                             </node>
+                            <node concept="3TrEf2" id="7Zf0vhTUWz9" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:fzcpWvL" resolve="localVariableDeclaration" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="1W57fq" id="7Zf0vhU7HL6" role="lGtFl">
+                    <node concept="3IZrLx" id="7Zf0vhU7HL8" role="3IZSJc">
+                      <node concept="3clFbS" id="7Zf0vhU7HLa" role="2VODD2">
+                        <node concept="3clFbF" id="7Zf0vhU7ITP" role="3cqZAp">
+                          <node concept="2YIFZM" id="7Zf0vhU7ITR" role="3clFbG">
+                            <ref role="37wK5l" to="tpea:i1QD9Us" resolve="hasVariablesUsedInClosure" />
+                            <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                            <node concept="2YIFZM" id="7Zf0vhU7JzC" role="37wK5m">
+                              <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                              <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                              <node concept="30H73N" id="7Zf0vhU7JIt" role="37wK5m" />
+                            </node>
+                            <node concept="1iwH7S" id="7Zf0vhU7ITT" role="37wK5m" />
                           </node>
                         </node>
                       </node>
@@ -1759,27 +1631,21 @@
                   <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
                   <node concept="3$xsQk" id="h1UD0NT" role="3$ytzL">
                     <node concept="3clFbS" id="h1UD0NU" role="2VODD2">
-                      <node concept="3cpWs6" id="h1UD1IS" role="3cqZAp">
-                        <node concept="1PxgMI" id="4D3RMlPNgeU" role="3cqZAk">
-                          <ref role="1m5ApE" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-                          <node concept="2YIFZM" id="h1UD4sg" role="1m5AlR">
-                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
-                            <ref role="37wK5l" to="tpea:7jRpv62amr4" resolve="find_Closure_generatedClosureAdapter_constructor" />
-                            <node concept="30H73N" id="h1UD5I4" role="37wK5m" />
-                            <node concept="2OqwBi" id="hRrq3fU" role="37wK5m">
-                              <node concept="1eOMI4" id="hRrq3fV" role="2Oq$k0">
-                                <node concept="10QFUN" id="hRrq3fW" role="1eOMHV">
-                                  <node concept="1iwH7S" id="hRrq3fX" role="10QFUP" />
-                                  <node concept="3uibUv" id="hRrq3fY" role="10QFUM">
-                                    <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="hRrq3fZ" role="2OqNvi">
-                                <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
+                      <node concept="3cpWs6" id="7Zf0vhTRgA7" role="3cqZAp">
+                        <node concept="2OqwBi" id="7Zf0vhTRAnT" role="3cqZAk">
+                          <node concept="2OqwBi" id="7Zf0vhTR$mY" role="2Oq$k0">
+                            <node concept="2OqwBi" id="7Zf0vhTRh31" role="2Oq$k0">
+                              <node concept="1iwH7S" id="7Zf0vhTRgFj" role="2Oq$k0" />
+                              <node concept="1iwH70" id="7Zf0vhTRh9$" role="2OqNvi">
+                                <ref role="1iwH77" node="hHn6QFv" resolve="closure_adapterClass" />
+                                <node concept="30H73N" id="7Zf0vhTRxp2" role="1iwH7V" />
                               </node>
                             </node>
+                            <node concept="2qgKlT" id="7Zf0vhTR_1$" role="2OqNvi">
+                              <ref role="37wK5l" to="tpek:4_LVZ3pCvsd" resolve="constructors" />
+                            </node>
                           </node>
+                          <node concept="1uHKPH" id="7Zf0vhTRANG" role="2OqNvi" />
                         </node>
                       </node>
                     </node>
@@ -1825,7 +1691,7 @@
                           <node concept="2OqwBi" id="hxiHIYM" role="2Oq$k0">
                             <node concept="30H73N" id="hrYAA7D" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hrYACMQ" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:gLYR86$" />
+                              <ref role="3Tt5mk" to="tpee:gLYR86$" resolve="closureParameter" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="hrYADz1" role="2OqNvi">

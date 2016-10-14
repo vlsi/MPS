@@ -16,12 +16,11 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.Collection;
 
@@ -30,7 +29,7 @@ import java.util.Collection;
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public interface IntentionAspectDescriptor extends LanguageAspectDescriptor {
+public interface IntentionAspectDescriptor extends ILanguageAspect {
   /**
    * WORK IN PROGRESS. PROVISIONAL API.
    * Whether we use SConceptId ir SAbstractConcept is yet uncertain, present approach is to stick to id not to expose ways to obtain it (MetaIdHelper) in generated code

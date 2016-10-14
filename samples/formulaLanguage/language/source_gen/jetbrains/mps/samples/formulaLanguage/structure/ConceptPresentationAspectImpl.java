@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AndOperation = new ConceptPresentationBuilder().create();
@@ -38,133 +35,53 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0x.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AndOperation;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Constant;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_EqualsOperation;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Expression;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_FloatingPointConstant;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_Formula;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_Function;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_GreaterThanOperation;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_IfFunction;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IntegerConstant;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IsNullOperation;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_LessThanOperation;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_MinusOperation;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_MultOperation;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_NotOperation;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_NullConstant;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_Operation;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_OrOperation;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ParenthisizedExpression;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_PlusOperation;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_Reference;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_StringConstant;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AndOperation:
+        return props_AndOperation;
+      case LanguageConceptSwitch.Constant:
+        return props_Constant;
+      case LanguageConceptSwitch.EqualsOperation:
+        return props_EqualsOperation;
+      case LanguageConceptSwitch.Expression:
+        return props_Expression;
+      case LanguageConceptSwitch.FloatingPointConstant:
+        return props_FloatingPointConstant;
+      case LanguageConceptSwitch.Formula:
+        return props_Formula;
+      case LanguageConceptSwitch.Function:
+        return props_Function;
+      case LanguageConceptSwitch.GreaterThanOperation:
+        return props_GreaterThanOperation;
+      case LanguageConceptSwitch.IfFunction:
+        return props_IfFunction;
+      case LanguageConceptSwitch.IntegerConstant:
+        return props_IntegerConstant;
+      case LanguageConceptSwitch.IsNullOperation:
+        return props_IsNullOperation;
+      case LanguageConceptSwitch.LessThanOperation:
+        return props_LessThanOperation;
+      case LanguageConceptSwitch.MinusOperation:
+        return props_MinusOperation;
+      case LanguageConceptSwitch.MultOperation:
+        return props_MultOperation;
+      case LanguageConceptSwitch.NotOperation:
+        return props_NotOperation;
+      case LanguageConceptSwitch.NullConstant:
+        return props_NullConstant;
+      case LanguageConceptSwitch.Operation:
+        return props_Operation;
+      case LanguageConceptSwitch.OrOperation:
+        return props_OrOperation;
+      case LanguageConceptSwitch.ParenthisizedExpression:
+        return props_ParenthisizedExpression;
+      case LanguageConceptSwitch.PlusOperation:
+        return props_PlusOperation;
+      case LanguageConceptSwitch.Reference:
+        return props_Reference;
+      case LanguageConceptSwitch.StringConstant:
+        return props_StringConstant;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0x = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050a5816L, "jetbrains.mps.samples.formulaLanguage.structure.AndOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L, "jetbrains.mps.samples.formulaLanguage.structure.Constant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809c54870L, "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db80c054L, "jetbrains.mps.samples.formulaLanguage.structure.Formula"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8296fcL, "jetbrains.mps.samples.formulaLanguage.structure.Function"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x103009e5ee0L, "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, "jetbrains.mps.samples.formulaLanguage.structure.IfFunction"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a037c6c0bL, "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ea976b99L, "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba2244aL, "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ff4441ddL, "jetbrains.mps.samples.formulaLanguage.structure.MultOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a04135987L, "jetbrains.mps.samples.formulaLanguage.structure.NotOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a036c79c0L, "jetbrains.mps.samples.formulaLanguage.structure.NullConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050ab746L, "jetbrains.mps.samples.formulaLanguage.structure.OrOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809d032baL, "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba0a69dL, "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db83846eL, "jetbrains.mps.samples.formulaLanguage.structure.Reference"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10804f6f702L, "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"));
 }

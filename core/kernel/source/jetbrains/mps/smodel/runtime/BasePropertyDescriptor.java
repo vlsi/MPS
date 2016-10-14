@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BasePropertyDescriptor implements PropertyDescriptor {
@@ -41,11 +38,6 @@ public class BasePropertyDescriptor implements PropertyDescriptor {
   @Override
   public SPropertyId getId() {
     return myId;
-  }
-
-  @Override
-  public SProperty getProperty() {
-    return MetaAdapterFactory.getProperty(myId, myName);
   }
 
   @Override

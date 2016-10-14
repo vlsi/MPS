@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.navigation;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -81,5 +82,12 @@ public class ProjectPaneNavigator {
         }
       }
     });
+  }
+
+  public void select(@NotNull SLanguage language) {
+    SModuleReference smr = language.getSourceModuleReference();
+    if (smr != null) {
+      select(smr);
+    }
   }
 }

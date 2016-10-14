@@ -8,73 +8,50 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor());
-          }
-          break;
-        case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeStatement_Editor());
-          }
-          break;
-        case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new NodeStatement_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
+      default:
     }
-    return res;
+    return Collections.<SubstituteMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L, "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L, "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, "jetbrains.mps.lang.findUsages.structure.FinderReference"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x585a05e7f40a28d1L, "jetbrains.mps.lang.findUsages.structure.MakeResultProvider"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL, "jetbrains.mps.lang.findUsages.structure.NodeStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L, "jetbrains.mps.lang.findUsages.structure.ResultStatement"));
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x585a05e7f40a28d1L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116c9c51f82L)).seal();
 }

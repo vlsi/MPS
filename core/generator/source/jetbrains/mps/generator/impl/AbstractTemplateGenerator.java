@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,17 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider.Source;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.List;
@@ -40,13 +44,15 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private final RoleValidation myValidation;
   private final GeneratorMappings myMappings;
+  private final Source myQuerySource;
 
-  protected AbstractTemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, GeneratorMappings mappings) {
+  protected AbstractTemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, GeneratorMappings mappings, GeneratorQueryProvider.Source gqps) {
     myOperationContext = operationContext;
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myValidation = operationContext.getRoleValidationFacility();
     myMappings = mappings;
+    myQuerySource = gqps;
   }
 
   @Override
@@ -78,9 +84,19 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myMappings;
   }
 
+  @NotNull
+  @Override
+  public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNodeRef) {
+    return myQuerySource.getQueryProvider(templateNodeRef);
+  }
+
   @Override
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
-    myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    if (inputNode != null) {
+      myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    } else {
+      myMappings.addNewOutputNode(mappingName, outputNode);
+    }
   }
 
   public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
@@ -89,7 +105,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   @Override
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
-    return myMappings.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    if (inputNode != null) {
+      return myMappings.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    } else {
+      return myMappings.findNewOutputNode(mappingName);
+    }
   }
 
   @Override

@@ -48,6 +48,7 @@ import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import java.util.HashSet;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
@@ -271,6 +272,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       // 
                       // Serialize outcome 
                       GenerationDependencies genDeps = inputResource.status().getDependencies();
+                      HashSet<String> seenFileNames = new HashSet<String>();
                       for (TextUnit tu : tgr.getUnits()) {
                         TextUnit.Status tgState = tu.getState();
                         assert tgState != TextUnit.Status.Undefined;
@@ -281,6 +283,9 @@ public class TextGen_Facet extends IFacet.Stub {
                         if (tgState == TextUnit.Status.Failed) {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.format("Text outcome for %s has been generated with errors", tu.getFileName()))));
                           // fall through 
+                        }
+                        if (!(seenFileNames.add(tu.getFileName()))) {
+                          monitor.reportFeedback(new IFeedback.WARNING(String.valueOf(String.format("Duplicate unit name %s in model %s, output likely corrupt", tu.getFileName(), tgr.getModel().getName()))));
                         }
                         javaSourcesLoc.saveStream(tu.getFileName(), tu.getBytes());
                       }

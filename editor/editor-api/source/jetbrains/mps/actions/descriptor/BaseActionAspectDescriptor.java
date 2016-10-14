@@ -31,4 +31,10 @@ public class BaseActionAspectDescriptor implements ActionAspectDescriptor {
   public Collection<NodeFactory> getFactories(SAbstractConcept concept) {
     return Collections.emptyList();
   }
+
+  @Override
+  public boolean hasBuilders() {
+    // Treat all subclasses of this class as having builders by default.
+    return getClass() != BaseActionAspectDescriptor.class;
+  }
 }

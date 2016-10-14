@@ -26,6 +26,7 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,18 +50,8 @@ public interface QueryExecutionContext extends QueryExecutor {
    */
   boolean isMultithreaded();
 
-  SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException;
-
-  void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
-
-  Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
-
-  Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
-
-  SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
-
-  SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);
-
+  @Deprecated
+  @ToRemove(version = 0)
   Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context);
 
   Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException;

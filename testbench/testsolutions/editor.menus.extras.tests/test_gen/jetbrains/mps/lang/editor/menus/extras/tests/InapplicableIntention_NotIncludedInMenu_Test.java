@@ -8,7 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
 import jetbrains.mps.smodel.SNodePointer;
@@ -34,7 +33,7 @@ public class InapplicableIntention_NotIncludedInMenu_Test extends BaseTransforma
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("6820996345401622145", "");
-      UsedLanguagesUtils.assertLanguageUsed(getEditorComponent(), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf015c5f872054441L, 0x9cc7dc7ef28ea903L), "jetbrains.mps.lang.editor.menus.extras.testLanguage"));
+      UsedLanguagesUtils.assertLanguageUsed(getEditorComponent(), MetaAdapterFactory.getLanguage(0xf015c5f872054441L, 0x9cc7dc7ef28ea903L, "jetbrains.mps.lang.editor.menus.extras.testLanguage"));
 
       final SRepository repository = getEditorComponent().getEditorContext().getRepository();
       repository.getModelAccess().runReadAction(new Runnable() {

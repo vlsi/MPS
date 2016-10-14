@@ -12,13 +12,16 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,2295,0" name="jetbrains.mps.lang.editor.structure.ConceptPresentationAspectImpl" />
+      <unit at="12,0,1199,0" name="jetbrains.mps.lang.editor.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="IconContainer.java">
       <unit at="7,0,26,0" name="jetbrains.mps.lang.editor.structure.IconContainer" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,810,0" name="jetbrains.mps.lang.editor.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,2675,0" name="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
+      <unit at="16,0,4798,0" name="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1083928804390">
@@ -2119,65 +2122,81 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/2162403111523060375">
     <file name="PredefinedCellID.java">
-      <node id="2162403111523060375" at="15,0,16,0" concept="3" trace="myName" />
-      <node id="2162403111523060375" at="16,27,17,18" concept="7" />
-      <node id="2162403111523060375" at="19,0,20,0" concept="3" trace="myValue" />
-      <node id="2162403111523060375" at="20,55,21,18" concept="2" />
-      <node id="2162403111523060375" at="21,18,22,20" concept="2" />
-      <node id="2162403111523060375" at="24,28,25,19" concept="7" />
-      <node id="2162403111523060375" at="27,36,28,19" concept="7" />
-      <node id="2162403111523060375" at="30,55,31,92" concept="6" />
-      <node id="2162403111523060375" at="31,92,32,67" concept="2" />
-      <node id="2162403111523060375" at="32,67,33,66" concept="2" />
-      <node id="2162403111523060375" at="33,66,34,76" concept="2" />
-      <node id="2162403111523060375" at="34,76,35,75" concept="2" />
-      <node id="2162403111523060375" at="35,75,36,16" concept="7" />
-      <node id="2162403111523060375" at="38,47,39,34" concept="7" />
-      <node id="2162403111523060375" at="42,24,43,43" concept="7" />
-      <node id="2162403111523060375" at="45,66,46,36" concept="7" />
-      <node id="2162403111523060375" at="48,65,49,35" concept="7" />
-      <node id="2162403111523060375" at="51,75,52,45" concept="7" />
-      <node id="2162403111523060375" at="54,74,55,44" concept="7" />
-      <node id="2162403111523060375" at="56,5,57,41" concept="7" />
-      <node id="2162403111523060375" at="16,0,19,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="2162403111523060375" at="24,0,27,0" concept="5" trace="getValue#()Ljava/lang/String;" />
-      <node id="2162403111523060375" at="27,0,30,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="2162403111523060375" at="38,0,41,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/editor/structure/PredefinedCellID;" />
-      <node id="2162403111523060375" at="41,59,44,5" concept="4" />
-      <node id="2162403111523060375" at="44,5,47,5" concept="4" />
-      <node id="2162403111523060375" at="47,5,50,5" concept="4" />
-      <node id="2162403111523060375" at="50,5,53,5" concept="4" />
-      <node id="2162403111523060375" at="53,5,56,5" concept="4" />
-      <node id="2162403111523060375" at="20,0,24,0" concept="1" trace="PredefinedCellID#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="2162403111523060375" at="30,0,38,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="2162403111523060375" at="41,0,59,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/structure/PredefinedCellID;" />
-      <scope id="2162403111523060375" at="16,27,17,18" />
-      <scope id="2162403111523060375" at="24,28,25,19" />
-      <scope id="2162403111523060375" at="27,36,28,19" />
-      <scope id="2162403111523060375" at="38,47,39,34" />
-      <scope id="2162403111523060375" at="42,24,43,43" />
-      <scope id="2162403111523060375" at="45,66,46,36" />
-      <scope id="2162403111523060375" at="48,65,49,35" />
-      <scope id="2162403111523060375" at="51,75,52,45" />
-      <scope id="2162403111523060375" at="54,74,55,44" />
-      <scope id="2162403111523060375" at="20,55,22,20" />
-      <scope id="2162403111523060375" at="16,0,19,0" />
-      <scope id="2162403111523060375" at="24,0,27,0" />
-      <scope id="2162403111523060375" at="27,0,30,0" />
-      <scope id="2162403111523060375" at="38,0,41,0" />
-      <scope id="2162403111523060375" at="20,0,24,0">
+      <node id="2162403111523060375" at="19,0,20,0" concept="3" trace="myName" />
+      <node id="2162403111523060375" at="20,27,21,18" concept="7" />
+      <node id="2162403111523060375" at="23,0,24,0" concept="3" trace="myValue" />
+      <node id="2162403111523060375" at="24,55,25,18" concept="2" />
+      <node id="2162403111523060375" at="25,18,26,20" concept="2" />
+      <node id="2162403111523060375" at="28,28,29,19" concept="7" />
+      <node id="2162403111523060375" at="31,36,32,19" concept="7" />
+      <node id="2162403111523060375" at="34,55,35,92" concept="6" />
+      <node id="2162403111523060375" at="35,92,36,67" concept="2" />
+      <node id="2162403111523060375" at="36,67,37,66" concept="2" />
+      <node id="2162403111523060375" at="37,66,38,76" concept="2" />
+      <node id="2162403111523060375" at="38,76,39,75" concept="2" />
+      <node id="2162403111523060375" at="39,75,40,73" concept="2" />
+      <node id="2162403111523060375" at="40,73,41,72" concept="2" />
+      <node id="2162403111523060375" at="41,72,42,74" concept="2" />
+      <node id="2162403111523060375" at="42,74,43,75" concept="2" />
+      <node id="2162403111523060375" at="43,75,44,16" concept="7" />
+      <node id="2162403111523060375" at="46,47,47,34" concept="7" />
+      <node id="2162403111523060375" at="50,24,51,43" concept="7" />
+      <node id="2162403111523060375" at="53,66,54,36" concept="7" />
+      <node id="2162403111523060375" at="56,65,57,35" concept="7" />
+      <node id="2162403111523060375" at="59,75,60,45" concept="7" />
+      <node id="2162403111523060375" at="62,74,63,44" concept="7" />
+      <node id="2162403111523060375" at="65,72,66,42" concept="7" />
+      <node id="2162403111523060375" at="68,71,69,41" concept="7" />
+      <node id="2162403111523060375" at="71,73,72,43" concept="7" />
+      <node id="2162403111523060375" at="74,74,75,44" concept="7" />
+      <node id="2162403111523060375" at="76,5,77,41" concept="7" />
+      <node id="2162403111523060375" at="20,0,23,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="2162403111523060375" at="28,0,31,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="2162403111523060375" at="31,0,34,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="2162403111523060375" at="46,0,49,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/editor/structure/PredefinedCellID;" />
+      <node id="2162403111523060375" at="49,59,52,5" concept="4" />
+      <node id="2162403111523060375" at="52,5,55,5" concept="4" />
+      <node id="2162403111523060375" at="55,5,58,5" concept="4" />
+      <node id="2162403111523060375" at="58,5,61,5" concept="4" />
+      <node id="2162403111523060375" at="61,5,64,5" concept="4" />
+      <node id="2162403111523060375" at="64,5,67,5" concept="4" />
+      <node id="2162403111523060375" at="67,5,70,5" concept="4" />
+      <node id="2162403111523060375" at="70,5,73,5" concept="4" />
+      <node id="2162403111523060375" at="73,5,76,5" concept="4" />
+      <node id="2162403111523060375" at="24,0,28,0" concept="1" trace="PredefinedCellID#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="2162403111523060375" at="34,0,46,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="2162403111523060375" at="49,0,79,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/structure/PredefinedCellID;" />
+      <scope id="2162403111523060375" at="20,27,21,18" />
+      <scope id="2162403111523060375" at="28,28,29,19" />
+      <scope id="2162403111523060375" at="31,36,32,19" />
+      <scope id="2162403111523060375" at="46,47,47,34" />
+      <scope id="2162403111523060375" at="50,24,51,43" />
+      <scope id="2162403111523060375" at="53,66,54,36" />
+      <scope id="2162403111523060375" at="56,65,57,35" />
+      <scope id="2162403111523060375" at="59,75,60,45" />
+      <scope id="2162403111523060375" at="62,74,63,44" />
+      <scope id="2162403111523060375" at="65,72,66,42" />
+      <scope id="2162403111523060375" at="68,71,69,41" />
+      <scope id="2162403111523060375" at="71,73,72,43" />
+      <scope id="2162403111523060375" at="74,74,75,44" />
+      <scope id="2162403111523060375" at="24,55,26,20" />
+      <scope id="2162403111523060375" at="20,0,23,0" />
+      <scope id="2162403111523060375" at="28,0,31,0" />
+      <scope id="2162403111523060375" at="31,0,34,0" />
+      <scope id="2162403111523060375" at="46,0,49,0" />
+      <scope id="2162403111523060375" at="24,0,28,0">
         <var name="name" id="2162403111523060375" />
         <var name="value" id="2162403111523060375" />
       </scope>
-      <scope id="2162403111523060375" at="30,55,36,16">
+      <scope id="2162403111523060375" at="34,55,44,16">
         <var name="list" id="2162403111523060375" />
       </scope>
-      <scope id="2162403111523060375" at="30,0,38,0" />
-      <scope id="2162403111523060375" at="41,59,57,41" />
-      <scope id="2162403111523060375" at="41,0,59,0">
+      <scope id="2162403111523060375" at="34,0,46,0" />
+      <scope id="2162403111523060375" at="49,59,77,41" />
+      <scope id="2162403111523060375" at="49,0,79,0">
         <var name="value" id="2162403111523060375" />
       </scope>
-      <unit id="2162403111523060375" at="9,0,60,0" name="jetbrains.mps.lang.editor.structure.PredefinedCellID" />
+      <unit id="2162403111523060375" at="9,0,80,0" name="jetbrains.mps.lang.editor.structure.PredefinedCellID" />
     </file>
     <file name="PredefinedCellID_PropertySupport.java">
       <node id="2162403111523060375" at="11,24,12,18" concept="7" />
@@ -2343,6 +2362,116 @@
         <var name="value" id="3473224453637651887" />
       </scope>
       <unit id="3473224453637651887" at="9,0,44,0" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform_PlaceInCell_PropertySupport" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/5266818545798429658">
+    <file name="ShowBoundariesAreaEnum.java">
+      <node id="5266818545798429658" at="13,0,14,0" concept="3" trace="myName" />
+      <node id="5266818545798429658" at="14,27,15,18" concept="7" />
+      <node id="5266818545798429658" at="17,0,18,0" concept="3" trace="myValue" />
+      <node id="5266818545798429658" at="18,61,19,18" concept="2" />
+      <node id="5266818545798429658" at="19,18,20,20" concept="2" />
+      <node id="5266818545798429658" at="22,28,23,19" concept="7" />
+      <node id="5266818545798429658" at="25,36,26,19" concept="7" />
+      <node id="5266818545798429658" at="28,61,29,104" concept="6" />
+      <node id="5266818545798429658" at="29,104,30,74" concept="2" />
+      <node id="5266818545798429658" at="30,74,31,85" concept="2" />
+      <node id="5266818545798429658" at="31,85,32,16" concept="7" />
+      <node id="5266818545798429658" at="34,53,35,41" concept="7" />
+      <node id="5266818545798429658" at="38,24,39,49" concept="7" />
+      <node id="5266818545798429658" at="41,73,42,43" concept="7" />
+      <node id="5266818545798429658" at="44,84,45,54" concept="7" />
+      <node id="5266818545798429658" at="46,5,47,47" concept="7" />
+      <node id="5266818545798429658" at="14,0,17,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="5266818545798429658" at="22,0,25,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="5266818545798429658" at="25,0,28,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="5266818545798429658" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/editor/structure/ShowBoundariesAreaEnum;" />
+      <node id="5266818545798429658" at="37,65,40,5" concept="4" />
+      <node id="5266818545798429658" at="40,5,43,5" concept="4" />
+      <node id="5266818545798429658" at="43,5,46,5" concept="4" />
+      <node id="5266818545798429658" at="18,0,22,0" concept="1" trace="ShowBoundariesAreaEnum#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="5266818545798429658" at="28,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="5266818545798429658" at="37,0,49,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/structure/ShowBoundariesAreaEnum;" />
+      <scope id="5266818545798429658" at="14,27,15,18" />
+      <scope id="5266818545798429658" at="22,28,23,19" />
+      <scope id="5266818545798429658" at="25,36,26,19" />
+      <scope id="5266818545798429658" at="34,53,35,41" />
+      <scope id="5266818545798429658" at="38,24,39,49" />
+      <scope id="5266818545798429658" at="41,73,42,43" />
+      <scope id="5266818545798429658" at="44,84,45,54" />
+      <scope id="5266818545798429658" at="18,61,20,20" />
+      <scope id="5266818545798429658" at="14,0,17,0" />
+      <scope id="5266818545798429658" at="22,0,25,0" />
+      <scope id="5266818545798429658" at="25,0,28,0" />
+      <scope id="5266818545798429658" at="34,0,37,0" />
+      <scope id="5266818545798429658" at="18,0,22,0">
+        <var name="name" id="5266818545798429658" />
+        <var name="value" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="28,61,32,16">
+        <var name="list" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="28,0,34,0" />
+      <scope id="5266818545798429658" at="37,65,47,47" />
+      <scope id="5266818545798429658" at="37,0,49,0">
+        <var name="value" id="5266818545798429658" />
+      </scope>
+      <unit id="5266818545798429658" at="9,0,50,0" name="jetbrains.mps.lang.editor.structure.ShowBoundariesAreaEnum" />
+    </file>
+    <file name="ShowBoundariesAreaEnum_PropertySupport.java">
+      <node id="5266818545798429658" at="11,24,12,18" concept="7" />
+      <node id="5266818545798429658" at="13,5,14,121" concept="6" />
+      <node id="5266818545798429658" at="15,33,16,57" concept="6" />
+      <node id="5266818545798429658" at="17,45,18,20" concept="7" />
+      <node id="5266818545798429658" at="20,5,21,17" concept="7" />
+      <node id="5266818545798429658" at="24,24,25,18" concept="7" />
+      <node id="5266818545798429658" at="26,5,27,121" concept="6" />
+      <node id="5266818545798429658" at="28,33,29,57" concept="6" />
+      <node id="5266818545798429658" at="30,45,31,43" concept="7" />
+      <node id="5266818545798429658" at="33,5,34,16" concept="7" />
+      <node id="5266818545798429658" at="36,49,37,79" concept="6" />
+      <node id="5266818545798429658" at="38,27,39,32" concept="7" />
+      <node id="5266818545798429658" at="40,5,41,14" concept="7" />
+      <node id="5266818545798429658" at="10,44,13,5" concept="4" />
+      <node id="5266818545798429658" at="16,57,19,7" concept="4" />
+      <node id="5266818545798429658" at="23,47,26,5" concept="4" />
+      <node id="5266818545798429658" at="29,57,32,7" concept="4" />
+      <node id="5266818545798429658" at="37,79,40,5" concept="4" />
+      <node id="5266818545798429658" at="14,121,20,5" concept="9" />
+      <node id="5266818545798429658" at="27,121,33,5" concept="9" />
+      <node id="5266818545798429658" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="5266818545798429658" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="5266818545798429658" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="5266818545798429658" at="11,24,12,18" />
+      <scope id="5266818545798429658" at="17,45,18,20" />
+      <scope id="5266818545798429658" at="24,24,25,18" />
+      <scope id="5266818545798429658" at="30,45,31,43" />
+      <scope id="5266818545798429658" at="38,27,39,32" />
+      <scope id="5266818545798429658" at="15,33,19,7">
+        <var name="constant" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="28,33,32,7">
+        <var name="constant" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="36,49,41,14">
+        <var name="constant" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="36,0,43,0">
+        <var name="value" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="10,44,21,17">
+        <var name="constants" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="23,47,34,16">
+        <var name="constants" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="10,0,23,0">
+        <var name="value" id="5266818545798429658" />
+      </scope>
+      <scope id="5266818545798429658" at="23,0,36,0">
+        <var name="value" id="5266818545798429658" />
+      </scope>
+      <unit id="5266818545798429658" at="9,0,44,0" name="jetbrains.mps.lang.editor.structure.ShowBoundariesAreaEnum_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/6820251943131810951">

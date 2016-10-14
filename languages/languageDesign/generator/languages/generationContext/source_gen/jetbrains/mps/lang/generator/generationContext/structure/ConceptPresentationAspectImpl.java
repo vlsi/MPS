@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_GenerationContextOp_Base = new ConceptPresentationBuilder().create();
@@ -52,203 +49,81 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0lb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_GenerationContextOp_Base;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_GenerationContextOp_ContextVarRef;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_GenerationContextOp_CopyWithTrace;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_GenerationContextOp_CreateUniqueName;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_GenerationContextOp_DirtyNode;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_GenerationContextOp_GenParameterRef;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_GenerationContextOp_GetCopiedOutputByInput;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_GenerationContextOp_GetExport;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_GenerationContextOp_GetInputModel;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_GenerationContextOp_GetInvocationContext;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_GenerationContextOp_GetOriginalCopiedInputByOutput;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_GenerationContextOp_GetOriginalInputModel;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_GenerationContextOp_GetOutputByLabel;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_GenerationContextOp_GetOutputByLabelAndInput;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_GenerationContextOp_GetOutputListByLabelAndInput;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_GenerationContextOp_GetOutputModel;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_GenerationContextOp_GetPrevInputByLabel;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_GenerationContextOp_GetTemplateNode;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_GenerationContextOp_LinkPatternRef;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_GenerationContextOp_NodePatternRef;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_GenerationContextOp_ParameterRef;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_GenerationContextOp_PatternRef;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_GenerationContextOp_PropertyPatternRef;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_GenerationContextOp_RegisterLabel;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_GenerationContextOp_SessionObjectAccess;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_GenerationContextOp_ShowErrorMessage;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_GenerationContextOp_ShowInfoMessage;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_GenerationContextOp_ShowMessageBase;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_GenerationContextOp_ShowWarningMessage;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_GenerationContextOp_StepObjectAccess;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_GenerationContextOp_TransientObjectAccess;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_GenerationContextOp_UserObjectAccessBase;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_GenerationContextOp_VarRef;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_GenerationContextType;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_TemplateFunctionParameter_generationContext;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.GenerationContextOp_Base:
+        return props_GenerationContextOp_Base;
+      case LanguageConceptSwitch.GenerationContextOp_ContextVarRef:
+        return props_GenerationContextOp_ContextVarRef;
+      case LanguageConceptSwitch.GenerationContextOp_CopyWithTrace:
+        return props_GenerationContextOp_CopyWithTrace;
+      case LanguageConceptSwitch.GenerationContextOp_CreateUniqueName:
+        return props_GenerationContextOp_CreateUniqueName;
+      case LanguageConceptSwitch.GenerationContextOp_DirtyNode:
+        return props_GenerationContextOp_DirtyNode;
+      case LanguageConceptSwitch.GenerationContextOp_GenParameterRef:
+        return props_GenerationContextOp_GenParameterRef;
+      case LanguageConceptSwitch.GenerationContextOp_GetCopiedOutputByInput:
+        return props_GenerationContextOp_GetCopiedOutputByInput;
+      case LanguageConceptSwitch.GenerationContextOp_GetExport:
+        return props_GenerationContextOp_GetExport;
+      case LanguageConceptSwitch.GenerationContextOp_GetInputModel:
+        return props_GenerationContextOp_GetInputModel;
+      case LanguageConceptSwitch.GenerationContextOp_GetInvocationContext:
+        return props_GenerationContextOp_GetInvocationContext;
+      case LanguageConceptSwitch.GenerationContextOp_GetOriginalCopiedInputByOutput:
+        return props_GenerationContextOp_GetOriginalCopiedInputByOutput;
+      case LanguageConceptSwitch.GenerationContextOp_GetOriginalInputModel:
+        return props_GenerationContextOp_GetOriginalInputModel;
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabel:
+        return props_GenerationContextOp_GetOutputByLabel;
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabelAndInput:
+        return props_GenerationContextOp_GetOutputByLabelAndInput;
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope:
+        return props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputListByLabelAndInput:
+        return props_GenerationContextOp_GetOutputListByLabelAndInput;
+      case LanguageConceptSwitch.GenerationContextOp_GetOutputModel:
+        return props_GenerationContextOp_GetOutputModel;
+      case LanguageConceptSwitch.GenerationContextOp_GetPrevInputByLabel:
+        return props_GenerationContextOp_GetPrevInputByLabel;
+      case LanguageConceptSwitch.GenerationContextOp_GetTemplateNode:
+        return props_GenerationContextOp_GetTemplateNode;
+      case LanguageConceptSwitch.GenerationContextOp_LinkPatternRef:
+        return props_GenerationContextOp_LinkPatternRef;
+      case LanguageConceptSwitch.GenerationContextOp_NodePatternRef:
+        return props_GenerationContextOp_NodePatternRef;
+      case LanguageConceptSwitch.GenerationContextOp_ParameterRef:
+        return props_GenerationContextOp_ParameterRef;
+      case LanguageConceptSwitch.GenerationContextOp_PatternRef:
+        return props_GenerationContextOp_PatternRef;
+      case LanguageConceptSwitch.GenerationContextOp_PropertyPatternRef:
+        return props_GenerationContextOp_PropertyPatternRef;
+      case LanguageConceptSwitch.GenerationContextOp_RegisterLabel:
+        return props_GenerationContextOp_RegisterLabel;
+      case LanguageConceptSwitch.GenerationContextOp_SessionObjectAccess:
+        return props_GenerationContextOp_SessionObjectAccess;
+      case LanguageConceptSwitch.GenerationContextOp_ShowErrorMessage:
+        return props_GenerationContextOp_ShowErrorMessage;
+      case LanguageConceptSwitch.GenerationContextOp_ShowInfoMessage:
+        return props_GenerationContextOp_ShowInfoMessage;
+      case LanguageConceptSwitch.GenerationContextOp_ShowMessageBase:
+        return props_GenerationContextOp_ShowMessageBase;
+      case LanguageConceptSwitch.GenerationContextOp_ShowWarningMessage:
+        return props_GenerationContextOp_ShowWarningMessage;
+      case LanguageConceptSwitch.GenerationContextOp_StepObjectAccess:
+        return props_GenerationContextOp_StepObjectAccess;
+      case LanguageConceptSwitch.GenerationContextOp_TransientObjectAccess:
+        return props_GenerationContextOp_TransientObjectAccess;
+      case LanguageConceptSwitch.GenerationContextOp_UserObjectAccessBase:
+        return props_GenerationContextOp_UserObjectAccessBase;
+      case LanguageConceptSwitch.GenerationContextOp_VarRef:
+        return props_GenerationContextOp_VarRef;
+      case LanguageConceptSwitch.GenerationContextType:
+        return props_GenerationContextType;
+      case LanguageConceptSwitch.TemplateFunctionParameter_generationContext:
+        return props_TemplateFunctionParameter_generationContext;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0lb = buildConceptIndices(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x23358d5095e2d082L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CopyWithTrace"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b994bfa0fL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4afdb473461e8c79L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f9620cdL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x6db65d569fb2527L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetExport"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5b2220abL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11d0234f62cL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11e42912257L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5c7432dbL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d6L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0dbL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c5652e4d5L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c529a6c83L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b6bab413aL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f6c38c2L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b70e21972L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4806ea5d84d8a2caL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40edb6a16L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4def01254aef34cdL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_RegisterLabel"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe26de8L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b941578ffL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b94ac5a39L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b9417864bL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b94ab4014L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b9023d290L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b90242983L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe60348L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e1L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e3L, "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"));
 }

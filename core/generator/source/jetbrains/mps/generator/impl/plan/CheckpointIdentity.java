@@ -24,6 +24,11 @@ import org.jetbrains.annotations.NotNull;
  * FIXME Once I've got a better idea what I can use to identify CP, this class likely shall become
  * an interface with hashCode/equals, persistence and presentation contract, like {@link PlanIdentity}.
  * Or a final class if there's only 1 way to identify CP.
+ *
+ * It seems there's no difference in Checkpoint vs CheckpointIdentity (both are presentation and persistence strings).
+ * However, I keep them separate for few reasons:
+ *   (a) there's PlanIdentity as I can't persist ModelGenerationPlan, so would be strange to identify CP with (PlanIdentity,Checkpoint)
+ *   (b) I might want to expose MGP from Checkpoint (parent/child hierarchy), which would not be possible for persistent cp identity
  * @author Artem Tikhomirov
  * @since 3.4
  */
@@ -31,6 +36,10 @@ public final class CheckpointIdentity {
   private final PlanIdentity myPlan;
   private final String myName;
 
+  // FIXME CheckpointIdentity with Checkpoint argument uses human-friendly name, while
+  //       uses of this cons resort to persistent value. Hence equals for same checkpoint identities failed
+  //       (comparing myName) and I need to compare persistence values instead (see equals(), implying PV(PV()) is idempotent).
+  //       Need to keep name distinct from persistence value and use both correctly.
   public CheckpointIdentity(PlanIdentity plan, String cpName) {
     myPlan = plan;
     myName = cpName;
@@ -51,7 +60,7 @@ public final class CheckpointIdentity {
 
   @NotNull
   public String getPersistenceValue() {
-    return myName;
+    return PlanIdentity.toPersistenceValue(myName);
   }
 
   public PlanIdentity getPlan() {
@@ -67,7 +76,7 @@ public final class CheckpointIdentity {
   public boolean equals(Object o) {
     if (o instanceof CheckpointIdentity) {
       CheckpointIdentity other = (CheckpointIdentity) o;
-      return other.myPlan.equals(myPlan) && other.myName.equals(myName);
+      return other.myPlan.equals(myPlan) && other.getPersistenceValue().equals(getPersistenceValue());
     }
     return false;
   }

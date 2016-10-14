@@ -16,8 +16,7 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -53,10 +52,7 @@ public class QueriesGenerated {
       }
     }).isNotEmpty();
   }
-  public static Object insertMacro_varValue_6736062018948583815(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_6736062018948583815(final TemplateVarContext _context) {
     return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("element"))) + "- as VarMacro";
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
 }

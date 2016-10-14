@@ -179,17 +179,12 @@ public class DevKit extends AbstractModule {
   @Override
   public void save() {
     super.save();
-    DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
-  }
 
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.SModule#getModuleName()}
-   */
-  @ToRemove(version = 3.2)
-  @Deprecated
-  @Override
-  public String getName() {
-    return getModuleName();
+    if (myDescriptor.getLoadException() != null){
+      return;
+    }
+
+    DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
   public String toString() {

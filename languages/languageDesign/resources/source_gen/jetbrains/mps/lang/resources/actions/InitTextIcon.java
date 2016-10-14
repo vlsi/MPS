@@ -5,28 +5,13 @@ package jetbrains.mps.lang.resources.actions;
 import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class InitTextIcon {
   public static class NodeFactory_1860120738943413796 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      Set<String> usedIds = SetSequence.fromSet(new HashSet<String>());
-      for (SNode ti : ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon")))) {
-        SetSequence.fromSet(usedIds).addElement(SPropertyOperations.getString(ti, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId")));
-      }
-
-      String newId = "1";
-      while (SetSequence.fromSet(usedIds).contains(newId)) {
-        newId = ((int) (Math.random() * Integer.MAX_VALUE)) + "";
-      }
-
-      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId"), newId);
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId"), IconHelper.createId(model));
     }
   }
 }

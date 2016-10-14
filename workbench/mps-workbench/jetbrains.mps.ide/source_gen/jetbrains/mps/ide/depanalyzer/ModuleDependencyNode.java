@@ -10,11 +10,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.icons.IconManager;
 import java.util.Iterator;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
+import jetbrains.mps.project.Project;
 
 public class ModuleDependencyNode extends MPSTreeNode {
   private boolean myInitialized;
@@ -81,17 +78,10 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
   @Override
   public void doubleClick() {
-    Project project = getProject();
-    final SRepository r = ProjectHelper.getProjectRepository(project);
-    SModule m = (r == null ? null : new ModelAccessHelper(r).runReadAction(new Computable<SModule>() {
-      public SModule compute() {
-        return myModule.resolve(r);
-      }
-    }));
-    if (m == null) {
+    if (getProject() == null) {
       return;
     }
-    ProjectPane.getInstance(project).selectModule(m, false);
+    new ProjectPaneNavigator(getProject()).select(myModule);
   }
   private Project getProject() {
     return (getTree() == null ? null : ((DependencyTree) getTree()).getProject());

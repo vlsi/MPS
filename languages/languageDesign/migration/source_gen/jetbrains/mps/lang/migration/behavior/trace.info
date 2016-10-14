@@ -14,8 +14,119 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
+    <file name="AbstractNodeReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.AbstractNodeReference_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,156,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,86,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ClassifierMemberData_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ClassifierMemberData_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptMigrationReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ConceptMigrationReference_BehaviorDescriptor" />
+    </file>
+    <file name="ConsequenceFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ConsequenceFunction_BehaviorDescriptor" />
+    </file>
+    <file name="DataDependencyReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.DataDependencyReference_BehaviorDescriptor" />
+    </file>
+    <file name="DataDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.DataDependency_BehaviorDescriptor" />
+    </file>
+    <file name="DirectNodeReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.DirectNodeReference_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteAfterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ExecuteAfterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="IMigrationUnit_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.migration.behavior.IMigrationUnit_BehaviorDescriptor" />
+    </file>
+    <file name="IncludeMigrationPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.IncludeMigrationPart_BehaviorDescriptor" />
+    </file>
+    <file name="LinkPatternVariableReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="ListPatternVariableReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ListPatternVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MigrationScriptReference_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScript_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor" />
+    </file>
+    <file name="MoveConceptMember_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveConceptMember_BehaviorDescriptor" />
+    </file>
+    <file name="MoveConcept_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveConcept_BehaviorDescriptor" />
+    </file>
+    <file name="MoveContainmentLink_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveContainmentLink_BehaviorDescriptor" />
+    </file>
+    <file name="MoveNodeMigrationPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveNodeMigrationPart_BehaviorDescriptor" />
+    </file>
+    <file name="MoveNodeSpecialization_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveNodeSpecialization_BehaviorDescriptor" />
+    </file>
+    <file name="MoveProperty_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveProperty_BehaviorDescriptor" />
+    </file>
+    <file name="MoveReferenceLink_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.MoveReferenceLink_BehaviorDescriptor" />
+    </file>
+    <file name="NodePatternVariableReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.NodePatternVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="OrderDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.OrderDependency_BehaviorDescriptor" />
+    </file>
+    <file name="ProducedDataDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ProducedDataDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyPatternVariableReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.PropertyPatternVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="PureMigrationPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.PureMigrationPart_BehaviorDescriptor" />
+    </file>
+    <file name="PureMigrationScript_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.PureMigrationScript_BehaviorDescriptor" />
+    </file>
+    <file name="QuotationConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.QuotationConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringLog_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.RefactoringLog_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringOption_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.RefactoringOption_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringOptions_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.RefactoringOptions_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringOrderDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.RefactoringOrderDependency_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.RefactoringPart_BehaviorDescriptor" />
+    </file>
+    <file name="ReflectionNodeReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.ReflectionNodeReference_BehaviorDescriptor" />
+    </file>
+    <file name="RequiredDataDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TransformConsequence_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.migration.behavior.TransformConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="TransformStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.migration.behavior.TransformStatement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)/2015900981881819858">

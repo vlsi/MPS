@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -606,7 +606,7 @@
               <node concept="2OqwBi" id="hXZExNq" role="2Oq$k0">
                 <node concept="_YI3z" id="hXZExAx" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="hXZE$QI" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpc2:hJF10O6" />
+                  <ref role="3TtcxE" to="tpc2:hJF10O6" resolve="styleItem" />
                 </node>
               </node>
               <node concept="TSZUe" id="1$wX9nnL0KR" role="2OqNvi">
@@ -683,11 +683,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="hXZE9ee" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpc2:fPsWHWE" />
+                              <ref role="3Tt5mk" to="tpc2:fPsWHWE" resolve="editorComponent" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hXZE9X3" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpc2:fIwV5gl" />
+                            <ref role="3Tt5mk" to="tpc2:fIwV5gl" resolve="cellModel" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="hXZEdyi" role="2OqNvi">
@@ -757,7 +757,7 @@
                   <node concept="2OqwBi" id="i0IAMDK" role="2Oq$k0">
                     <node concept="_YI3z" id="i0IAMDL" role="2Oq$k0" />
                     <node concept="3TrEf2" id="i0IAMDM" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:g6iSdeU" />
+                      <ref role="3Tt5mk" to="tpc2:g6iSdeU" resolve="cellLayout" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="i0IAMDN" role="2OqNvi">
@@ -802,7 +802,7 @@
               <node concept="2OqwBi" id="i0NJpZz" role="37vLTJ">
                 <node concept="_YI3z" id="i0NJpOL" role="2Oq$k0" />
                 <node concept="3TrEf2" id="i0NJqvn" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:gAczzzC" />
+                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
                 </node>
               </node>
             </node>
@@ -857,7 +857,7 @@
                   <node concept="2OqwBi" id="i0NImCz" role="2Oq$k0">
                     <node concept="_YI3z" id="i0NImvS" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="i0NInII" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpc2:hJF10O6" />
+                      <ref role="3TtcxE" to="tpc2:hJF10O6" resolve="styleItem" />
                     </node>
                   </node>
                   <node concept="TSZUe" id="1$wX9nnL0Ld" role="2OqNvi">
@@ -885,7 +885,7 @@
               <node concept="2OqwBi" id="i0NGV6R" role="3uHU7B">
                 <node concept="_YI3z" id="i0NGUVW" role="2Oq$k0" />
                 <node concept="3TrEf2" id="i0NH1nk" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:gAczzzC" />
+                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
                 </node>
               </node>
             </node>

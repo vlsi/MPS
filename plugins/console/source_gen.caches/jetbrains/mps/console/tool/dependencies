@@ -17,7 +17,6 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.wm.IdeFocusManager" />
     <classNode dependClassName="com.intellij.util.Base64Converter" />
-    <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.datatransfer.Transferable" />
     <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
@@ -40,6 +39,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
@@ -79,12 +79,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -104,7 +104,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
-    <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="com.intellij.openapi.ui.SimpleToolWindowPanel" />
   </dependency>
   <dependency className="jetbrains.mps.console.tool.ConsoleContext" file="ConsoleContext.java">
     <classNode dependClassName="jetbrains.mps.console.tool.BaseConsoleTab" />
@@ -128,6 +128,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.undo.MPSUndoUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponentState" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

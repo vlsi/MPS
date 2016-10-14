@@ -15,10 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
@@ -50,12 +48,9 @@ public class QueriesGenerated {
   public static boolean mappingConfiguration_Condition_2507865635201605483(final TemplateQueryContext _context) {
     return (((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) == null ? true : ((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) < 2);
   }
-  public static SNode insertMacro_Query_7612440128092282150(final TemplateQueryContextWithMacro _context) {
+  public static SNode insertMacro_Query_7612440128092282150(final InsertMacroContext _context) {
     SNode inode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
     SPropertyOperations.set(inode, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), "Inserted node for input=" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return inode;
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
 }

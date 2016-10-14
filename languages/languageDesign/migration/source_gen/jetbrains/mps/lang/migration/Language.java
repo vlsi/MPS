@@ -26,7 +26,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.lang.migration)";
+  public static final String MODULE_REF = "90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.lang.migration)";
   public Language() {
   }
   @Override
@@ -44,7 +44,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.lang.smodel", "jetbrains.mps.lang.quotation", "jetbrains.mps.lang.core", "jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.baseLanguage.lightweightdsl"};
+    return new String[]{"jetbrains.mps.lang.smodel.query", "jetbrains.mps.lang.smodel", "jetbrains.mps.lang.quotation", "jetbrains.mps.lang.core", "jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.baseLanguage.lightweightdsl"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
@@ -97,6 +97,6 @@ public class Language extends LanguageRuntime {
         return (T) new TypesystemDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

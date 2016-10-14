@@ -3856,6 +3856,42 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3RkWhWCOV0g" role="jymVt" />
+    <node concept="3clFb_" id="3RkWhWCOXmb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createMacroHelper" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3RkWhWCOXme" role="3clF47">
+        <node concept="3cpWs6" id="3RkWhWCOXp5" role="3cqZAp">
+          <node concept="2YIFZM" id="3RkWhWCOXrR" role="3cqZAk">
+            <ref role="37wK5l" to="18ew:~MacrosFactory.forProjectFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forProjectFile" />
+            <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
+            <node concept="2ShNRf" id="3RkWhWCOXsP" role="37wK5m">
+              <node concept="1pGfFk" id="3RkWhWCOZ7Q" role="2ShVmc">
+                <ref role="37wK5l" to="amo1:~IoFile.&lt;init&gt;(java.lang.String)" resolve="IoFile" />
+                <node concept="2OqwBi" id="3RkWhWCOZGm" role="37wK5m">
+                  <node concept="1rXfSq" id="3RkWhWCOZ9D" role="2Oq$k0">
+                    <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
+                  </node>
+                  <node concept="liA8E" id="3RkWhWCOZO$" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="3RkWhWCOXgB" role="1B3o_S" />
+      <node concept="3uibUv" id="3RkWhWCOXix" role="3clF45">
+        <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+      </node>
+      <node concept="2AHcQZ" id="3RkWhWCOXo5" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="1RTSjGsuc$S" role="jymVt" />
     <node concept="3clFb_" id="2doG_VG59H$" role="jymVt">
       <property role="IEkAT" value="false" />
@@ -3892,7 +3928,40 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="15VbAzMFkQj" role="3clF47" />
+      <node concept="3clFbS" id="15VbAzMFkQj" role="3clF47">
+        <node concept="3cpWs8" id="3RkWhWCOZPE" role="3cqZAp">
+          <node concept="3cpWsn" id="3RkWhWCOZPF" role="3cpWs9">
+            <property role="TrG5h" value="helper" />
+            <node concept="3uibUv" id="3RkWhWCOZPG" role="1tU5fm">
+              <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+            </node>
+            <node concept="1rXfSq" id="3RkWhWCOZR_" role="33vP2m">
+              <ref role="37wK5l" node="3RkWhWCOXmb" resolve="createMacroHelper" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3RkWhWCOZSK" role="3cqZAp">
+          <node concept="2OqwBi" id="3RkWhWCP0xm" role="3clFbG">
+            <node concept="2ShNRf" id="3RkWhWCOZSG" role="2Oq$k0">
+              <node concept="1pGfFk" id="3RkWhWCP0pI" role="2ShVmc">
+                <ref role="37wK5l" to="gn4j:4F07P_yBO_t" resolve="ProjectDescriptorPersistence" />
+                <node concept="1rXfSq" id="3RkWhWCP0rx" role="37wK5m">
+                  <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
+                </node>
+                <node concept="37vLTw" id="3RkWhWCP0u8" role="37wK5m">
+                  <ref role="3cqZAo" node="3RkWhWCOZPF" resolve="helper" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="3RkWhWCP0$l" role="2OqNvi">
+              <ref role="37wK5l" to="gn4j:3v_OXaS41F3" resolve="save" />
+              <node concept="37vLTw" id="3RkWhWCP0AH" role="37wK5m">
+                <ref role="3cqZAo" to="z1c3:~ProjectBase.myProjectDescriptor" resolve="myProjectDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3Tm1VV" id="15VbAzMFkdk" role="1B3o_S" />
       <node concept="3cqZAl" id="15VbAzMFkOH" role="3clF45" />
       <node concept="2AHcQZ" id="15VbAzMFluL" role="2AJF6D">
@@ -3954,6 +4023,9 @@
                 <node concept="1rXfSq" id="15VbAzMFqWx" role="37wK5m">
                   <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
                 </node>
+                <node concept="1rXfSq" id="3RkWhWCP0Q7" role="37wK5m">
+                  <ref role="37wK5l" node="3RkWhWCOXmb" resolve="createMacroHelper" />
+                </node>
               </node>
             </node>
             <node concept="liA8E" id="15VbAzMFrtd" role="2OqNvi">
@@ -3983,20 +4055,9 @@
       <node concept="3Tm6S6" id="15VbAzMFOvC" role="1B3o_S" />
       <node concept="3cqZAl" id="2doG_VG59Lc" role="3clF45" />
       <node concept="3clFbS" id="2doG_VG59Ld" role="3clF47">
-        <node concept="3clFbF" id="15VbAzMFtBY" role="3cqZAp">
-          <node concept="1rXfSq" id="15VbAzMFtBX" role="3clFbG">
-            <ref role="37wK5l" to="z1c3:~ProjectBase.loadDescriptor(jetbrains.mps.project.ProjectDataSource):void" resolve="loadDescriptor" />
-            <node concept="2ShNRf" id="15VbAzMFtEp" role="37wK5m">
-              <node concept="1pGfFk" id="15VbAzMFu6p" role="2ShVmc">
-                <ref role="37wK5l" to="z1c3:~ElementProjectDataSource.&lt;init&gt;(org.jdom.Element,java.io.File)" resolve="ElementProjectDataSource" />
-                <node concept="1rXfSq" id="15VbAzMFu7O" role="37wK5m">
-                  <ref role="37wK5l" node="15VbAzMFpdv" resolve="getElement" />
-                </node>
-                <node concept="1rXfSq" id="15VbAzMFubI" role="37wK5m">
-                  <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
-                </node>
-              </node>
-            </node>
+        <node concept="3clFbF" id="3RkWhWCP0Xi" role="3cqZAp">
+          <node concept="1rXfSq" id="3RkWhWCP0Xh" role="3clFbG">
+            <ref role="37wK5l" node="3RkWhWCP0Xe" resolve="loadProjectDescriptorWithMacros" />
           </node>
         </node>
         <node concept="3clFbF" id="7tyinJya3wk" role="3cqZAp">
@@ -4011,6 +4072,148 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3RkWhWCP1e9" role="jymVt" />
+    <node concept="3clFb_" id="3RkWhWCP0Xe" role="jymVt">
+      <property role="TrG5h" value="loadProjectDescriptorWithMacros" />
+      <node concept="3Tm6S6" id="3RkWhWCP0Xf" role="1B3o_S" />
+      <node concept="3cqZAl" id="3RkWhWCP0Xg" role="3clF45" />
+      <node concept="3clFbS" id="3RkWhWCP0X5" role="3clF47">
+        <node concept="3clFbF" id="3RkWhWCP0X6" role="3cqZAp">
+          <node concept="1rXfSq" id="3RkWhWCP0X7" role="3clFbG">
+            <ref role="37wK5l" to="z1c3:~ProjectBase.loadDescriptor(jetbrains.mps.project.ProjectDataSource):void" resolve="loadDescriptor" />
+            <node concept="2ShNRf" id="3RkWhWCP0X8" role="37wK5m">
+              <node concept="1pGfFk" id="3RkWhWCP0X9" role="2ShVmc">
+                <ref role="37wK5l" to="z1c3:~ElementProjectDataSource.&lt;init&gt;(org.jdom.Element,java.io.File,jetbrains.mps.util.MacroHelper)" resolve="ElementProjectDataSource" />
+                <node concept="1rXfSq" id="3RkWhWCP0Xa" role="37wK5m">
+                  <ref role="37wK5l" node="15VbAzMFpdv" resolve="getElement" />
+                </node>
+                <node concept="1rXfSq" id="3RkWhWCP0Xb" role="37wK5m">
+                  <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
+                </node>
+                <node concept="1rXfSq" id="3RkWhWCP1zO" role="37wK5m">
+                  <ref role="37wK5l" node="3RkWhWCOXmb" resolve="createMacroHelper" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6qMd1Cr3Bx$" role="jymVt" />
+    <node concept="2YIFZL" id="6qMd1Cr3F0q" role="jymVt">
+      <property role="TrG5h" value="open" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6qMd1Cr3F0t" role="3clF47">
+        <node concept="3cpWs6" id="6qMd1Cr3FWp" role="3cqZAp">
+          <node concept="2ShNRf" id="6qMd1Cr3G9H" role="3cqZAk">
+            <node concept="1pGfFk" id="6qMd1Cr3O1A" role="2ShVmc">
+              <ref role="37wK5l" node="2doG_VG59Hq" resolve="FileMPSProject" />
+              <node concept="2ShNRf" id="6qMd1Cr3OeY" role="37wK5m">
+                <node concept="1pGfFk" id="6qMd1Cr3OTJ" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="37vLTw" id="6qMd1Cr3P7Z" role="37wK5m">
+                    <ref role="3cqZAo" node="6qMd1Cr3FuS" resolve="projectPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6qMd1Cr3E8y" role="1B3o_S" />
+      <node concept="3uibUv" id="6qMd1Cr3EMX" role="3clF45">
+        <ref role="3uigEE" node="2doG_VG59Hc" resolve="FileMPSProject" />
+      </node>
+      <node concept="37vLTG" id="6qMd1Cr3FuS" role="3clF46">
+        <property role="TrG5h" value="projectPath" />
+        <node concept="3uibUv" id="6qMd1Cr3FuR" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+        <node concept="2AHcQZ" id="6qMd1Cr3FH0" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6qMd1Cr3PkH" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6qMd1Cr3PJU" role="jymVt" />
+    <node concept="3clFb_" id="6qMd1Cr3QHN" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="close" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6qMd1Cr3QHQ" role="3clF47">
+        <node concept="3cpWs8" id="6qMd1Cr4cQz" role="3cqZAp">
+          <node concept="3cpWsn" id="6qMd1Cr4cQ$" role="3cpWs9">
+            <property role="TrG5h" value="projectModules" />
+            <node concept="3uibUv" id="6qMd1Cr4cQv" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="6qMd1Cr4cQy" role="11_B2D">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="6qMd1Cr4dxm" role="33vP2m">
+              <node concept="1pGfFk" id="6qMd1Cr4e0a" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                <node concept="1rXfSq" id="6qMd1Cr4cQ_" role="37wK5m">
+                  <ref role="37wK5l" to="z1c3:~ProjectBase.getProjectModules():java.util.List" resolve="getProjectModules" />
+                </node>
+                <node concept="3uibUv" id="6qMd1Cr4eLo" role="1pMfVU">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="6qMd1Cr4eSS" role="3cqZAp">
+          <node concept="3clFbS" id="6qMd1Cr4eSU" role="2LFqv$">
+            <node concept="3clFbF" id="6qMd1Cr4fDQ" role="3cqZAp">
+              <node concept="1rXfSq" id="6qMd1Cr4fDO" role="3clFbG">
+                <ref role="37wK5l" to="z1c3:~ProjectBase.removeModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="removeModule" />
+                <node concept="37vLTw" id="6qMd1Cr4fTG" role="37wK5m">
+                  <ref role="3cqZAo" node="6qMd1Cr4eSV" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="6qMd1Cr4eSV" role="1Duv9x">
+            <property role="TrG5h" value="module" />
+            <node concept="3uibUv" id="6qMd1Cr4f6F" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+            </node>
+          </node>
+          <node concept="37vLTw" id="6qMd1Cr4fnw" role="1DdaDG">
+            <ref role="3cqZAo" node="6qMd1Cr4cQ$" resolve="projectModules" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6qMd1Cr4gfQ" role="3cqZAp">
+          <node concept="1rXfSq" id="6qMd1Cr4gfO" role="3clFbG">
+            <ref role="37wK5l" to="z1c3:~ProjectBase.projectClosed():void" resolve="projectClosed" />
+          </node>
+        </node>
+        <node concept="1gVbGN" id="6qMd1Cr4h3W" role="3cqZAp">
+          <node concept="2OqwBi" id="6qMd1Cr4hPd" role="1gVkn0">
+            <node concept="1rXfSq" id="6qMd1Cr4hmH" role="2Oq$k0">
+              <ref role="37wK5l" to="z1c3:~ProjectBase.getProjectModules():java.util.List" resolve="getProjectModules" />
+            </node>
+            <node concept="liA8E" id="6qMd1Cr4iJY" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6qMd1Cr4j6$" role="3cqZAp">
+          <node concept="3clFbT" id="6qMd1Cr4j7S" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="6qMd1Cr3Q2K" role="1B3o_S" />
+      <node concept="10P_77" id="6qMd1Cr3QxN" role="3clF45" />
+    </node>
     <node concept="2tJIrI" id="15VbAzMFvW9" role="jymVt" />
     <node concept="3clFb_" id="15VbAzMFwbF" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -4019,9 +4222,9 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="15VbAzMFwbI" role="3clF47">
-        <node concept="3clFbF" id="15VbAzMFwqq" role="3cqZAp">
-          <node concept="1rXfSq" id="15VbAzMFwqp" role="3clFbG">
-            <ref role="37wK5l" to="z1c3:~ProjectBase.projectClosed():void" resolve="projectClosed" />
+        <node concept="3clFbF" id="6qMd1Cr4jFp" role="3cqZAp">
+          <node concept="1rXfSq" id="6qMd1Cr4jFn" role="3clFbG">
+            <ref role="37wK5l" node="6qMd1Cr3QHN" resolve="close" />
           </node>
         </node>
         <node concept="3clFbF" id="15VbAzMFwtl" role="3cqZAp">

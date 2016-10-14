@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import junit.framework.TestCase;
@@ -28,7 +29,10 @@ public enum TestNodeWrapperFactory {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")) && SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
         return null;
       }
-      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).count() == 0) {
+      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).isEmpty()) {
+        return null;
+      }
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return null;
       }
       return new LanguageTestWrapper(node);
@@ -46,6 +50,9 @@ public enum TestNodeWrapperFactory {
   LanguageTestMethodNodeWrapperFactory() {
     @Nullable
     public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+        return null;
+      }
       return new LanguageTestWrapper(node);
     }
     @Override
@@ -65,6 +72,9 @@ public enum TestNodeWrapperFactory {
     }
     @Override
     public boolean canWrap(@NotNull SNode node) {
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+        return false;
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
           return false;
@@ -74,7 +84,7 @@ public enum TestNodeWrapperFactory {
           return false;
         }
         while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(((String) BHReflection.invoke(ancestor, SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))).equals(TestCase.class.getCanonicalName()))) {
-          ancestor = check_kl7j79_a0a0d0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")));
+          ancestor = check_kl7j79_a0a0d0b0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")));
         }
         return ancestor != null;
       }
@@ -97,6 +107,9 @@ public enum TestNodeWrapperFactory {
     }
     @Override
     public boolean canWrap(@NotNull SNode node) {
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+        return false;
+      }
       return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit3MethodWrapper.isTestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
     }
     @Override
@@ -116,6 +129,9 @@ public enum TestNodeWrapperFactory {
     }
     @Override
     public boolean canWrap(@NotNull SNode node) {
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+        return false;
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         return JUnit4TestWrapper.isJUnit4TestCase(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       }
@@ -138,6 +154,9 @@ public enum TestNodeWrapperFactory {
     }
     @Override
     public boolean canWrap(@NotNull SNode node) {
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+        return false;
+      }
       return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit4MethodWrapper.isJUnit4TestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
     }
     @Override
@@ -187,6 +206,7 @@ public enum TestNodeWrapperFactory {
       }
     }).distinct();
   }
+
   public static Iterable<SAbstractConcept> getWrappedRootConcepts() {
     return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
       public Boolean invoke(TestNodeWrapperFactory factory) {
@@ -207,7 +227,7 @@ public enum TestNodeWrapperFactory {
     Iterable<SAbstractConcept> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).toGenericArray(SAbstractConcept.class), true, isRoot);
   }
-  private static SNode check_kl7j79_a0a0d0a0b2(SNode checkedDotOperand) {
+  private static SNode check_kl7j79_a0a0d0b0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     }

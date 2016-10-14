@@ -76,7 +76,7 @@
           <node concept="2OqwBi" id="3V$8ZKEOiGY" role="2GsD0m">
             <node concept="3__QtB" id="3V$8ZKEOiGW" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V$8ZKEOiH3" role="2OqNvi">
-              <ref role="3TtcxE" to="tpc2:3V$8ZKEOgVg" />
+              <ref role="3TtcxE" to="tpc2:3V$8ZKEOgVg" resolve="actualArgument" />
             </node>
           </node>
           <node concept="3clFbS" id="3V$8ZKEOiGU" role="2LFqv$">

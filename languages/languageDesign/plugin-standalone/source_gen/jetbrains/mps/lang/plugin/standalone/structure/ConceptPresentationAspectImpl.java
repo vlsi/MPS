@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ApplicationPluginDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
@@ -27,78 +24,31 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0m.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ApplicationPluginDeclaration;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ApplicationPluginDisposeBlock;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ApplicationPluginInitBlock;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ApplicationPluginType;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_GetPreferencesComponentInProjectOperation;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_GetToolInProjectOperation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ProjectPluginDeclaration;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ProjectPluginDisposeBlock;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ProjectPluginInitBlock;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ProjectPluginType;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_StandalonePluginDescriptor;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ApplicationPluginDeclaration:
+        return props_ApplicationPluginDeclaration;
+      case LanguageConceptSwitch.ApplicationPluginDisposeBlock:
+        return props_ApplicationPluginDisposeBlock;
+      case LanguageConceptSwitch.ApplicationPluginInitBlock:
+        return props_ApplicationPluginInitBlock;
+      case LanguageConceptSwitch.ApplicationPluginType:
+        return props_ApplicationPluginType;
+      case LanguageConceptSwitch.GetPreferencesComponentInProjectOperation:
+        return props_GetPreferencesComponentInProjectOperation;
+      case LanguageConceptSwitch.GetToolInProjectOperation:
+        return props_GetToolInProjectOperation;
+      case LanguageConceptSwitch.ProjectPluginDeclaration:
+        return props_ProjectPluginDeclaration;
+      case LanguageConceptSwitch.ProjectPluginDisposeBlock:
+        return props_ProjectPluginDisposeBlock;
+      case LanguageConceptSwitch.ProjectPluginInitBlock:
+        return props_ProjectPluginInitBlock;
+      case LanguageConceptSwitch.ProjectPluginType:
+        return props_ProjectPluginType;
+      case LanguageConceptSwitch.StandalonePluginDescriptor:
+        return props_StandalonePluginDescriptor;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0m = buildConceptIndices(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f205eL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2063L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2118L, "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2115L, "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2052L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2043L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2049L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2068L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"));
 }

@@ -142,6 +142,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -535,7 +538,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1xyr94TevAl" role="2OqNvi">
-                    <ref role="37wK5l" to="k3nr:~BaseNodeEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolve="getCurrentEditorComponent" />
+                    <ref role="37wK5l" to="k3nr:~BaseNodeEditor.getCurrentEditorComponent():jetbrains.mps.nodeEditor.NodeEditorComponent" resolve="getCurrentEditorComponent" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1xyr94TevAm" role="2OqNvi">
@@ -831,6 +834,30 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2tJIrI" id="6NL21$NrxZd" role="jymVt" />
+    <node concept="3clFb_" id="6NL21$Nrzm8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPreferredFocusedComponent" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6NL21$Nrzmb" role="3clF47">
+        <node concept="3clFbF" id="6NL21$Nr_$g" role="3cqZAp">
+          <node concept="2OqwBi" id="6NL21$NrAdT" role="3clFbG">
+            <node concept="37vLTw" id="6NL21$Nr_$f" role="2Oq$k0">
+              <ref role="3cqZAo" node="1xyr94TevzG" resolve="nodeEditor" />
+            </node>
+            <node concept="liA8E" id="6NL21$NrFh8" role="2OqNvi">
+              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.getPreferredFocusedComponent():javax.swing.JComponent" resolve="getPreferredFocusedComponent" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="6NL21$NryKU" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+      </node>
+      <node concept="3Tm1VV" id="6NL21$NrzU7" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="1xyr94TevzF" role="1B3o_S" />
   </node>

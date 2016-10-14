@@ -2,7 +2,7 @@
 <model ref="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -124,7 +124,7 @@
         <node concept="3XFhqQ" id="3nFPImNgRsR" role="3EZMnx" />
         <node concept="2iRfu4" id="3nFPImNgRsP" role="2iSdaV" />
         <node concept="3F2HdR" id="3nFPImNgRsE" role="3EZMnx">
-          <ref role="1NtTu8" to="s7om:3nFPImNgRsC" />
+          <ref role="1NtTu8" to="s7om:3nFPImNgRsC" resolve="bootClasspath" />
           <node concept="2iRkQZ" id="3nFPImNgRsF" role="2czzBx" />
         </node>
       </node>
@@ -142,7 +142,7 @@
         </node>
         <node concept="3XFhqQ" id="2lwFGYOQF3g" role="3EZMnx" />
         <node concept="3F2HdR" id="2lwFGYOQF3h" role="3EZMnx">
-          <ref role="1NtTu8" to="s7om:2lwFGYOQzXr" />
+          <ref role="1NtTu8" to="s7om:2lwFGYOQzXr" resolve="vmOptions64" />
           <node concept="2iRkQZ" id="2lwFGYOQF3i" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="2lwFGYOQF3j" role="2iSdaV" />
@@ -161,7 +161,7 @@
         </node>
         <node concept="3XFhqQ" id="3nFPImNgRsX" role="3EZMnx" />
         <node concept="3F2HdR" id="3nFPImNh2pA" role="3EZMnx">
-          <ref role="1NtTu8" to="s7om:3nFPImNh2p$" />
+          <ref role="1NtTu8" to="s7om:3nFPImNh2p$" resolve="vmOptions" />
           <node concept="2iRkQZ" id="3nFPImNh2pC" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="3nFPImNgRsW" role="2iSdaV" />
@@ -227,7 +227,7 @@
       </node>
       <node concept="l2Vlx" id="1w81suLQXcs" role="2iSdaV" />
       <node concept="3F2HdR" id="1w81suLPC1K" role="3EZMnx">
-        <ref role="1NtTu8" to="s7om:1w81suLPAyL" />
+        <ref role="1NtTu8" to="s7om:1w81suLPAyL" resolve="lines" />
         <node concept="pj6Ft" id="1w81suLPJLI" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

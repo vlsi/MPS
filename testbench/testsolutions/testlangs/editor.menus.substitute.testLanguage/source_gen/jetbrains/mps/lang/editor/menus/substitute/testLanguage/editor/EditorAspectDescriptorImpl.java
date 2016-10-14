@@ -12,50 +12,28 @@ import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import java.util.Arrays;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSubstituteChild_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSubstituteParent_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSubstituteParentToReference_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChild1_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChild2_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChildSmartReference_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteChild_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteParent_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteParentToReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChild1_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChild2_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChildSmartReference_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
@@ -63,32 +41,41 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   @NotNull
   @Override
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new TestSubstituteChild_TransformationMenu());
+      default:
+    }
+    return Collections.<TransformationMenu>emptyList();
+  }
+  @NotNull
+  @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      Integer preIndex = indices_xbvbvu_a0d.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a3, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new NamedTransformationMenu()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new NamedTransformationMenu()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a3, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new NamedTransformationMenu_EmptyCell()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new NamedTransformationMenu_EmptyCell()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new WrapSubstitute()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
@@ -96,72 +83,54 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_xbvbvu_a0e.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<SubstituteMenu>singletonList(new TestSubstituteChild_SubstituteMenu());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new TestSubstituteChild_SubstituteMenu());
+      default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      Integer preIndex = indices_xbvbvu_a0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new ParameterizedByPrimitiveType()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new ParameterizedByPrimitiveType()});
+            default:
           }
-          break;
-        case 1:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b3a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenu()});
-              case 1:
-                return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenuForContribution()});
-              case 2:
-                return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenu_EmptyCell()});
-              default:
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenu()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenuForContribution()});
+            case 2:
+              return Arrays.asList(new SubstituteMenu[]{new NamedSubstituteMenu_EmptyCell()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3aa7c75fL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentToReference"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"));
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a3 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a3 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu_EmptyCell"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a5 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.ParameterizedByPrimitiveType"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b3a0a5 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu_EmptyCell"};
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3aa7c75fL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL)).seal();
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu_EmptyCell", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.WrapSubstitute"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.ParameterizedByPrimitiveType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu_EmptyCell"};
 }

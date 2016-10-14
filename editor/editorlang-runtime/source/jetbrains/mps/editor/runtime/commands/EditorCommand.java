@@ -32,6 +32,7 @@ import java.util.List;
  */
 public abstract class EditorCommand implements Runnable, UndoContext {
   private final CommandContext myCommandContext;
+  private final SNode myContextNode;
 
   public EditorCommand(EditorContext editorContext) {
     this(editorContext.getEditorComponent().getCommandContext());
@@ -43,6 +44,7 @@ public abstract class EditorCommand implements Runnable, UndoContext {
 
   public EditorCommand(CommandContext commandContext) {
     myCommandContext = commandContext;
+    myContextNode = myCommandContext.getContextNode();
   }
 
   @Override
@@ -57,7 +59,7 @@ public abstract class EditorCommand implements Runnable, UndoContext {
 
   @Override
   public Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> wrapped) {
-    return Collections.singleton(myCommandContext.getContextNode());
+    return myContextNode == null ? Collections.emptyList() : Collections.singleton(myContextNode);
   }
 
   protected abstract void doExecute();

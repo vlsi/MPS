@@ -23,12 +23,11 @@ import java.util.Map;
  * evgeny, 2/14/13
  */
 public interface GeneratableSModel extends SModel {
-
-  static final String HEADER = "header";
-  static final String FILE = "model";
+  String HEADER = "header";
+  String FILE = "model";
 
   /**
-   * Generally, {@link #isDoNotGenerate() doNotGeneate} is a primary reason to generate (or not) the model.
+   * Generally, {@link #isDoNotGenerate() doNotGenerate} is a primary reason to generate (or not) the model.
    * However, if there's more than a simple option, this method gives a chance to control "to generate, or not to generate".
    *
    * @return <code>true</code> if the model can serve as generator input

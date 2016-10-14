@@ -24,8 +24,11 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleListenerBase;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +43,8 @@ import java.util.Map;
 public abstract class ProjectBase extends Project {
   private static final Logger LOG = LogManager.getLogger(ProjectBase.class);
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
+
+  private final Map<SModule, SModuleListenerBase> myModulesListeners = new HashMap<>();
 
   // AP fixme must be final, however standalone mps project exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
@@ -65,24 +70,35 @@ public abstract class ProjectBase extends Project {
 
   @Override
   public final void addModule(@NotNull SModule module) {
+    if (myModuleToPathMap.containsKey(module)) {
+//      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
+      LOG.warn(module + " is already in " + this);
+      return;
+    }
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
       ModulePath path = new ModulePath(descriptorFile.toPath().toString());
       myModuleToPathMap.put(module, path);
       myProjectDescriptor.addModulePath(path);
+      addRenameListener(module);
     }
+  }
+
+  private void addRenameListener(@NotNull SModule module) {
+    ModuleRenameListener listener = new ModuleRenameListener();
+    myModulesListeners.put(module, listener);
+    module.addModuleListener(listener);
   }
 
   @Override
   public final void removeModule(@NotNull SModule module) {
     if (!myModuleToPathMap.containsKey(module)) {
       LOG.warn("Module has not been registered in the project: " + module);
+      return;
     }
-    IFile descriptorFile = getDescriptorFileChecked(module);
-    if (descriptorFile != null) {
-      final ModulePath modulePath = myModuleToPathMap.remove(module);
-      myProjectDescriptor.removeModulePath(modulePath);
-    }
+    final ModulePath modulePath = myModuleToPathMap.remove(module);
+    module.removeModuleListener(myModulesListeners.remove(module));
+    myProjectDescriptor.removeModulePath(modulePath);
   }
 
   @Nullable
@@ -139,14 +155,23 @@ public abstract class ProjectBase extends Project {
    * in the other case they are triggered at the init/dispose methods
    */
   public void projectOpened() {
+    LOG.info("Project '" + getName() + "' is opened");
     myProjectManager.projectOpened(this);
   }
 
   public void projectClosed() {
     checkNotDisposed();
+    LOG.info("Project '" + getName() + "' is closing");
     myProjectManager.projectClosed(this);
     getModelAccess().runWriteAction(() -> new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this));
+    getProjectModules().forEach(this::removeModule);
   }
+
+  @Override
+  public boolean isOpened() {
+    return ProjectManager.getInstance().getOpenedProjects().contains(this);
+  }
+
 
   @NotNull
   public String toString() {
@@ -169,5 +194,20 @@ public abstract class ProjectBase extends Project {
 
   public final void removeListener(@NotNull ProjectModuleLoadingListener listener) {
     myModuleLoader.removeListener(listener);
+  }
+
+  private class ModuleRenameListener extends SModuleListenerBase {
+    @Override
+    public void moduleRenamed(@NotNull SModule module, @NotNull SModuleReference oldRef) {
+      ModulePath oldModulePath = myModuleToPathMap.remove(module);
+      String virtualFolder = myProjectDescriptor.removeModulePath(oldModulePath);
+      assert module instanceof AbstractModule;
+      IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+      assert descriptorFile != null;
+      String path = descriptorFile.toPath().toString();
+      ModulePath modulePath = new ModulePath(path, virtualFolder);
+      myProjectDescriptor.addModulePath(modulePath);
+      myModuleToPathMap.put(module, modulePath);
+    }
   }
 }

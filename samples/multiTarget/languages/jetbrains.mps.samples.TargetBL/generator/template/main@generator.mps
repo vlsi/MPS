@@ -7,6 +7,7 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="2be98ea6-ab10-4fb3-8aad-ddec015f4320" name="jetbrains.mps.samples.TargetBL" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="ldfj" ref="r:9f12744a-a702-440b-b5fb-61597de1c627(MultiTarget.structure)" />
@@ -251,7 +252,7 @@
             <node concept="3clFbF" id="6TK9YNcRI53" role="3cqZAp">
               <node concept="2OqwBi" id="6TK9YNcRI4Y" role="3clFbG">
                 <node concept="3Tsc0h" id="6TK9YNcRI51" role="2OqNvi">
-                  <ref role="3TtcxE" to="ldfj:JiZx3bYHWx" />
+                  <ref role="3TtcxE" to="ldfj:JiZx3bYHWx" resolve="members" />
                 </node>
                 <node concept="30H73N" id="6TK9YNcRI52" role="2Oq$k0" />
               </node>

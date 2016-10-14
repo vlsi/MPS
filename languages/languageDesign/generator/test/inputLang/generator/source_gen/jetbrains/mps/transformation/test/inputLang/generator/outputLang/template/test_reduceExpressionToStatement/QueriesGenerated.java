@@ -10,8 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
@@ -23,8 +21,5 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1209150187921(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11986ebf992L, 0x11986ec6379L, "statementList"));
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
 }

@@ -4,6 +4,8 @@ package jetbrains.mps.execution.api.configurations;
 
 import com.intellij.execution.BeforeRunTaskProvider;
 import com.intellij.execution.configurations.RunConfiguration;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -16,8 +18,6 @@ import com.intellij.execution.BeforeRunTask;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTaskProvider<T> {
   private final String myName;
@@ -54,6 +54,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     }
     return false;
   }
+  protected static Logger LOG = LogManager.getLogger(BaseMpsBeforeTaskProvider.class);
   @Override
   public boolean executeTask(DataContext context, RunConfiguration configuration, ExecutionEnvironment env, T task) {
     if (!(configure(configuration, task))) {
@@ -77,7 +78,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       Object[] parameters = (Object[]) method.invoke(runConfiguration);
       Method configureMethod = Sequence.fromIterable(Sequence.fromArray(task.getClass().getMethods())).findFirst(new IWhereFilter<Method>() {
         public boolean accept(Method it) {
-          return eq_xh6sei_a0a0a0a0a0a3a0a01(it.getName(), getConfigureMethodName());
+          return eq_xh6sei_a0a0a0a0a0a3a0a11(it.getName(), getConfigureMethodName());
         }
       });
       return (Boolean) configureMethod.invoke(task, parameters);
@@ -125,8 +126,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     }
     public abstract boolean execute(Project project, ExecutionEnvironment environment);
   }
-  protected static Logger LOG = LogManager.getLogger(BaseMpsBeforeTaskProvider.class);
-  private static boolean eq_xh6sei_a0a0a0a0a0a3a0a01(Object a, Object b) {
+  private static boolean eq_xh6sei_a0a0a0a0a0a3a0a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

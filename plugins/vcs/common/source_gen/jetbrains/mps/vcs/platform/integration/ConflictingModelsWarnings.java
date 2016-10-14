@@ -9,13 +9,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
@@ -23,12 +24,21 @@ import jetbrains.mps.smodel.Generator;
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
   public ConflictingModelsWarnings() {
   }
+
   @Nullable
   @Override
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
     SModel md = node.getModel();
+    if (md == null) {
+      return null;
+    }
+    SModule module = md.getModule();
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
+    if (mpsProject == null || !(mpsProject.getProjectModulesWithGenerators().contains(module))) {
+      return null;
+    }
     final List<VirtualFile> modelFiles = ConflictsUtil.getConflictingModelFiles(md, project);
-    final List<VirtualFile> moduleFiles = ConflictsUtil.getConflictingModuleFiles(check_bmsafs_a0a2a1(md), project);
+    final List<VirtualFile> moduleFiles = ConflictsUtil.getConflictingModuleFiles(check_bmsafs_a0a6a2(md), project);
     if (ListSequence.fromList(moduleFiles).isNotEmpty()) {
       String type = getModuleType(md.getModule());
       assert type != null;
@@ -60,6 +70,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
       }
     }
   }
+
   @Nullable
   private static String getModuleType(@NotNull SModule module) {
     if (module instanceof Language) {
@@ -71,7 +82,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     }
     return null;
   }
-  private static SModule check_bmsafs_a0a2a1(SModel checkedDotOperand) {
+  private static SModule check_bmsafs_a0a6a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

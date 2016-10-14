@@ -9,7 +9,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.MacroHelper;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
-import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -17,6 +16,7 @@ import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.xml.XmlUtil;
+import jetbrains.mps.vfs.path.Path;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -32,45 +32,46 @@ public class ProjectDescriptorPersistence {
   private static final String FOLDER_TAG = "folder";
   private static final String PROJECT_MODULES_TAG = "projectModules";
   private static final String PATH_TAG = "path";
-  private static final String PROJECT_DIR_MACRO = "$PROJECT_DIR$";
   private static final FileSystem FS = FileSystem.getInstance();
 
   private final IFile myBaseDir;
   private final MacroHelper myMacroHelper;
 
-  public ProjectDescriptorPersistence(@NotNull File baseDir) {
-    myBaseDir = FS.getFileByPath(baseDir.getAbsolutePath());
-    myMacroHelper = MacrosFactory.forProjectFile(myBaseDir);
+  public ProjectDescriptorPersistence(@NotNull File baseDir, @NotNull MacroHelper macroHelper) {
+    myBaseDir = FS.getFile(baseDir.getAbsolutePath());
+    myMacroHelper = macroHelper;
   }
 
   @Nullable
-  public Element saveProjectDescriptor(@NotNull ProjectDescriptor descriptor) {
+  public Element save(@NotNull ProjectDescriptor descriptor) {
     Element project = new Element("project");
     Element projectModules = new Element(PROJECT_MODULES_TAG);
-    if (descriptor.getModulePaths().isEmpty()) {
-      return null;
-    }
     for (ModulePath path : Sequence.fromIterable(((Iterable<ModulePath>) descriptor.getModulePaths())).sort(new ISelector<ModulePath, String>() {
       public String select(ModulePath p) {
-        return myMacroHelper.shrinkPath(p.getPath());
+        return shrinkPath(p);
       }
     }, true)) {
       // TODO: move from MacrosFactory to PathMacroUtil 
-      String shrinkedPath = myMacroHelper.shrinkPath(path.getPath());
-      XmlUtil.tagWithAttributes(projectModules, MODULE_PATH_TAG, PATH_TAG, shrinkedPath.replace(MacrosFactory.PROJECT, PROJECT_DIR_MACRO), FOLDER_TAG, (path.getVirtualFolder() != null ? path.getVirtualFolder() : ""));
+      XmlUtil.tagWithAttributes(projectModules, MODULE_PATH_TAG, PATH_TAG, shrinkPath(path), FOLDER_TAG, path.getVirtualFolder());
     }
     project.addContent(projectModules);
     return project;
   }
 
+  private String shrinkPath(@NotNull ModulePath p) {
+    String shrinkedPath = myMacroHelper.shrinkPath(p.getPath());
+    // fixme such filepath convertation is not supported by Path (IDEA stores windows paths as C:/smth !) 
+    return shrinkedPath.replace(Path.WIN_SEPARATOR, Path.UNIX_SEPARATOR);
+  }
+
   @NotNull
-  public ProjectDescriptor loadProjectDescriptor(@Nullable Element root) {
+  public ProjectDescriptor load(@Nullable Element root) {
     final String name = myBaseDir.getName();
     ProjectDescriptor descriptor = new ProjectDescriptor(name);
     if (root == null) {
       return descriptor;
     }
-    ProjectDescriptor result_jnk9az_a3a71 = descriptor;
+    ProjectDescriptor result_jnk9az_a3a81 = descriptor;
     List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
     // AP : these are deprecated, aren't they? 
     ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
@@ -78,10 +79,10 @@ public class ProjectDescriptorPersistence {
     ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectDevkits"), "devkitPath")));
     ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, PROJECT_MODULES_TAG), MODULE_PATH_TAG)));
     for (Element moduleElement : ListSequence.fromList(moduleList)) {
-      String expandedPath = myMacroHelper.expandPath(moduleElement.getAttributeValue(PATH_TAG).replace(PROJECT_DIR_MACRO, MacrosFactory.PROJECT));
+      String path = myMacroHelper.expandPath(moduleElement.getAttributeValue(PATH_TAG));
       String virtualFolder = moduleElement.getAttributeValue(FOLDER_TAG);
-      ModulePath modulePath = new ModulePath(expandedPath, virtualFolder);
-      result_jnk9az_a3a71.addModulePath(modulePath);
+      ModulePath modulePath = new ModulePath(path, virtualFolder);
+      result_jnk9az_a3a81.addModulePath(modulePath);
     }
     return descriptor;
   }
@@ -89,7 +90,7 @@ public class ProjectDescriptorPersistence {
   @Nullable
   public Element loadProjectElement() {
     try {
-      IFile projectFile = findProjectFile(myBaseDir.getPath());
+      IFile projectFile = findProjectFile(myBaseDir.toPath().toString());
       if (!(projectFile.exists())) {
         return null;
       }
@@ -104,13 +105,17 @@ public class ProjectDescriptorPersistence {
       throw new RuntimeException(e);
     }
   }
+
   @NotNull
   private static IFile findProjectFile(String path) {
-    IFile projectFile = FS.getFileByPath(path);
+    IFile projectFile = FS.getFile(path);
+    if (!(projectFile.exists())) {
+      throw new IllegalArgumentException("Path " + path + " does not exist");
+    }
     if (projectFile.isDirectory()) {
       projectFile = projectFile.getDescendant(MPS_DOT_FOLDER).getDescendant(MODULES_XML_LOCATION);
     }
-    if (!(projectFile.getPath().endsWith(MODULES_XML_LOCATION))) {
+    if (!(projectFile.toPath().endsWith(MODULES_XML_LOCATION))) {
       LOG.warn("Supposed to be the 'modules.xml' file: '" + projectFile + "'");
     }
     return projectFile;

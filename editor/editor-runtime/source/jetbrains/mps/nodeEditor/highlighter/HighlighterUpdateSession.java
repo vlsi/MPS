@@ -46,12 +46,12 @@ import java.util.Set;
 
 public class HighlighterUpdateSession {
   private final IHighlighter myHighlighter;
-  private final Collection<EditorChecker> myCheckers;
+  private final Collection<EditorCheckerWrapper> myCheckers;
   private final List<EditorComponent> myAllEditorComponents;
   @Nullable
   private final EditorComponent myInspector;
 
-  public HighlighterUpdateSession(IHighlighter highlighter, Collection<EditorChecker> checkers,
+  public HighlighterUpdateSession(IHighlighter highlighter, Collection<EditorCheckerWrapper> checkers,
       List<EditorComponent> allEditorComponents, @Nullable EditorComponent inspector) {
     myHighlighter = highlighter;
     myCheckers = checkers;
@@ -82,7 +82,7 @@ public class HighlighterUpdateSession {
     return result;
   }
 
-  public void doUpdate() {
+  private void doUpdate() {
     if (myCheckers.isEmpty()) {
       return;
     }
@@ -139,7 +139,7 @@ public class HighlighterUpdateSession {
     });
     if (!needsUpdate) return false;
 
-    final Set<EditorChecker> checkersToRecheck = new LinkedHashSet<EditorChecker>();
+    final Set<EditorCheckerWrapper> checkersToRecheck = new LinkedHashSet<>();
     boolean rootWasCheckedOnce = editorTracker.wasCheckedOnce(component);
     if (!rootWasCheckedOnce) {
       checkersToRecheck.addAll(myCheckers);
@@ -149,7 +149,7 @@ public class HighlighterUpdateSession {
         public void run() {
           if (myHighlighter.isPausedOrStopping()) return;
 
-          for (EditorChecker checker : myCheckers) {
+          for (EditorCheckerWrapper checker : myCheckers) {
             if (checker.needsUpdate(component)) {
               checkersToRecheck.add(checker);
             }
@@ -160,8 +160,8 @@ public class HighlighterUpdateSession {
 
     if (checkersToRecheck.isEmpty() || myHighlighter.isPausedOrStopping()) return false;
 
-    List<EditorChecker> checkersToRecheckList = new ArrayList<EditorChecker>(checkersToRecheck);
-    Collections.sort(checkersToRecheckList, new PriorityComparator());
+    List<EditorCheckerWrapper> checkersToRecheckList = new ArrayList<>(checkersToRecheck);
+    checkersToRecheckList.sort(new PriorityComparator());
 
     boolean recreateInspectorMessages = mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated();
     editorTracker.markCheckedOnce(component);
@@ -170,12 +170,12 @@ public class HighlighterUpdateSession {
   }
 
   private boolean updateEditor(final EditorComponent editor, final boolean wasCheckedOnce,
-      List<EditorChecker> checkersToRecheck, boolean recreateInspectorMessages, final boolean applyQuickFixes) {
+      List<EditorCheckerWrapper> checkersToRecheck, boolean recreateInspectorMessages, final boolean applyQuickFixes) {
     if (editor == null || editor.getRootCell() == null) return false;
 
     final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
-    for (final EditorChecker checker : checkersToRecheck) {
+    for (final EditorCheckerWrapper checker : checkersToRecheck) {
       UpdateResult checkResult = runLoPrioRead(new Computable<UpdateResult>() {
         @Override
         public UpdateResult compute() {
@@ -191,15 +191,15 @@ public class HighlighterUpdateSession {
             return null;
           }
 
-          boolean recreateMessages = myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages;
-
-          try {
-            return checker.update(editor, wasCheckedOnce, applyQuickFixes,
-                new HighlighterUpdateSessionCancellable(myHighlighter, checker.toString(), editor));
-          } catch (IndexNotReadyException ex) {
-            highlightManager.clearForOwner(checker.getEditorMessageOwner(), true);
-            throw ex;
-          }
+          return checker.withChecker(checker -> {
+            try {
+              return checker.update(editor, wasCheckedOnce, applyQuickFixes,
+                  new HighlighterUpdateSessionCancellable(myHighlighter, checker.toString(), editor));
+            } catch (IndexNotReadyException ex) {
+              highlightManager.clearForOwner(checker.getEditorMessageOwner(), true);
+              throw ex;
+            }
+          }, UpdateResult.CANCELLED);
         }
       });
       if (myHighlighter.isStopping()) return false;
@@ -225,9 +225,14 @@ public class HighlighterUpdateSession {
     return anyMessageChanged;
   }
 
-  public void doneUpdating() {
-    for (EditorChecker checker : myCheckers) {
+  private void doneUpdating() {
+    for (EditorCheckerWrapper checker : myCheckers) {
       checker.doneUpdating();
     }
+  }
+
+  public void update() {
+    doUpdate();
+    doneUpdating();
   }
 }

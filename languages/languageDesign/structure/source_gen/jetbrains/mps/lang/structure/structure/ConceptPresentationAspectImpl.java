@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractConceptDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "intConceptId"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")).create();
@@ -35,118 +33,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0u.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractConceptDeclaration;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AggregationLinkDeclarationScopeKind;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AttributeInfo;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AttributeInfo_AttributedConcept;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AttributeInfo_IsMultiple;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ConceptDeclaration;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ConstrainedDataTypeDeclaration;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_DataTypeDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_DeprecatedNodeAnnotation;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_EnumerationDataTypeDeclaration;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_EnumerationMemberDeclaration;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_IConceptAspect;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_IStructureDeprecatable;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_InterfaceConceptDeclaration;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_InterfaceConceptReference;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_LinkDeclaration;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_PrimitiveDataTypeDeclaration;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_PropertyDeclaration;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ReferenceLinkDeclartionScopeKind;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractConceptDeclaration:
+        return props_AbstractConceptDeclaration;
+      case LanguageConceptSwitch.AggregationLinkDeclarationScopeKind:
+        return props_AggregationLinkDeclarationScopeKind;
+      case LanguageConceptSwitch.AttributeInfo:
+        return props_AttributeInfo;
+      case LanguageConceptSwitch.AttributeInfo_AttributedConcept:
+        return props_AttributeInfo_AttributedConcept;
+      case LanguageConceptSwitch.AttributeInfo_IsMultiple:
+        return props_AttributeInfo_IsMultiple;
+      case LanguageConceptSwitch.ConceptDeclaration:
+        return props_ConceptDeclaration;
+      case LanguageConceptSwitch.ConstrainedDataTypeDeclaration:
+        return props_ConstrainedDataTypeDeclaration;
+      case LanguageConceptSwitch.DataTypeDeclaration:
+        return props_DataTypeDeclaration;
+      case LanguageConceptSwitch.DeprecatedNodeAnnotation:
+        return props_DeprecatedNodeAnnotation;
+      case LanguageConceptSwitch.EnumerationDataTypeDeclaration:
+        return props_EnumerationDataTypeDeclaration;
+      case LanguageConceptSwitch.EnumerationMemberDeclaration:
+        return props_EnumerationMemberDeclaration;
+      case LanguageConceptSwitch.IConceptAspect:
+        return props_IConceptAspect;
+      case LanguageConceptSwitch.IStructureDeprecatable:
+        return props_IStructureDeprecatable;
+      case LanguageConceptSwitch.InterfaceConceptDeclaration:
+        return props_InterfaceConceptDeclaration;
+      case LanguageConceptSwitch.InterfaceConceptReference:
+        return props_InterfaceConceptReference;
+      case LanguageConceptSwitch.LinkDeclaration:
+        return props_LinkDeclaration;
+      case LanguageConceptSwitch.PrimitiveDataTypeDeclaration:
+        return props_PrimitiveDataTypeDeclaration;
+      case LanguageConceptSwitch.PropertyDeclaration:
+        return props_PropertyDeclaration;
+      case LanguageConceptSwitch.ReferenceLinkDeclartionScopeKind:
+        return props_ReferenceLinkDeclartionScopeKind;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x4f57884e07c08a31L, "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L, "jetbrains.mps.lang.structure.structure.AttributeInfo"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x5405fd03496acb49L, "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x5405fd034959f7dcL, "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, "jetbrains.mps.lang.structure.structure.InterfaceConceptReference"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x4f57884e07c08838L, "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"));
 }

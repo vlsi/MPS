@@ -344,18 +344,31 @@ public class ModuleDescriptor {
     if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
   }
 
+  /**
+   * @deprecated needed it for migration (3.1->3.2)
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
   public void setHasLanguageVersions(boolean hasLanguageVersions) {
     myHasLanguageVersions = hasLanguageVersions;
   }
 
+  /**
+   * @deprecated needed it for migration (3.2->3.3)
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
   public void setHasDependencyVersions(boolean hasDependencyVersions) {
     myHasDependencyVersions = hasDependencyVersions;
   }
 
+  @Deprecated
   public boolean hasLanguageVersions() {
     return myHasLanguageVersions;
   }
 
+  @ToRemove(version = 3.4)
+  @Deprecated
   public boolean hasDependencyVersions() {
     return myHasDependencyVersions;
   }

@@ -57,7 +57,7 @@ public abstract class MetaIdFactory {
   }
 
   public static SPropertyId propId(long uuidHigh, long uuidLow, long concept, long prop) {
-    return new SPropertyId(conceptId(new UUID(uuidHigh, uuidLow), concept), prop);
+    return new SPropertyId(conceptId(uuidHigh, uuidLow, concept), prop);
   }
 
   public static SPropertyId propId(SConceptId concept, long prop) {
@@ -70,7 +70,11 @@ public abstract class MetaIdFactory {
   }
 
   public static SReferenceLinkId refId(long uuidHigh, long uuidLow, long concept, long ref) {
-    return new SReferenceLinkId(conceptId(new UUID(uuidHigh, uuidLow), concept), ref);
+    return new SReferenceLinkId(conceptId(uuidHigh, uuidLow, concept), ref);
+  }
+
+  public static SReferenceLinkId refId(SConceptId concept, long ref) {
+    return new SReferenceLinkId(concept, ref);
   }
 
   @Deprecated
@@ -79,6 +83,10 @@ public abstract class MetaIdFactory {
   }
 
   public static SContainmentLinkId linkId(long uuidHigh, long uuidLow, long concept, long link) {
-    return new SContainmentLinkId(conceptId(new UUID(uuidHigh, uuidLow), concept), link);
+    return new SContainmentLinkId(conceptId(uuidHigh, uuidLow, concept), link);
+  }
+
+  public static SContainmentLinkId linkId(SConceptId concept, long link) {
+    return new SContainmentLinkId(concept, link);
   }
 }

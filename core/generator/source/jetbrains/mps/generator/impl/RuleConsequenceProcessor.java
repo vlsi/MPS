@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,6 +231,11 @@ public abstract class RuleConsequenceProcessor {
       // limitation of the TemplateDeclarationInterpreted - the way arguments are supplied there is different
       // from the one we use here (latter evaluates, while former get actual values)
       final RuleConsequenceProcessor templateContainer = getTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
+      // XXX what if we invoked generated external template from non-generated generator? Shouldn't we use TEE.applyTemplate() here, which would load proper
+      //     TemplateDeclaration (either from model or generated code)?
+      // Besides, the fact we use TemplateContainer, not TemplateDeclarationInterpreted, forces us to duplicate invocation code
+      // and leads to errors like https://youtrack.jetbrains.com/issue/MPS-24406, when invocation of a template from generated code yields results
+      // different from that of invocation from interpreted code.
       myConsequence = new TemplateDeclarationReference(ruleConsequence, templateContainer);
     }
 

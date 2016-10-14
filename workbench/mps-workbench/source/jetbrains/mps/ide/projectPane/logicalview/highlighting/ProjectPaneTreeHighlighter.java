@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ModuleNodeListeners;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.SModelNodeListeners;
@@ -120,7 +119,6 @@ public class ProjectPaneTreeHighlighter {
    * Highlighter knows which visitor(s) shall run in dumb mode, while outer code controls dumb mode awareness
    */
   public void dumbUpdate() {
-    if (!ProjectPane.isShowGenStatus()) return;
     dispatchForHierarchy(myTree.getRootNode());
   }
 

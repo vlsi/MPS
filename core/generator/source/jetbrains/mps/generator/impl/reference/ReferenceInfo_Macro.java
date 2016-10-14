@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.runtime.ReferenceResolver2;
+import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
@@ -29,13 +29,13 @@ import org.jetbrains.mps.openapi.model.SReference;
  * Restore a reference using user-supplied {@link jetbrains.mps.generator.runtime.ReferenceResolver code}.
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
-  private final ReferenceResolver2 myResolver;
+  private final ReferenceResolver myResolver;
 
   // results of 'expandReferenceMacro'
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
 
-  public ReferenceInfo_Macro(@NotNull ReferenceResolver2 resolver) {
+  public ReferenceInfo_Macro(@NotNull ReferenceResolver resolver) {
     myResolver = resolver;
   }
 

@@ -41,7 +41,7 @@ public abstract class BaseNodeData implements IExternalizeable {
   private boolean myResultsSection;
   private boolean myIsExcluded;
   private boolean myIsExpanded;
-  private boolean myIsResultNode;
+  private boolean myIsPathTail;
 
   protected BaseNodeData() {
 
@@ -51,14 +51,14 @@ public abstract class BaseNodeData implements IExternalizeable {
     read(element, project);
   }
 
-  public BaseNodeData(PathItemRole role, @NotNull String caption, String additionalInfo, boolean isExpanded, boolean isResultNode, boolean resultsSection) {
+  public BaseNodeData(PathItemRole role, @NotNull String caption, String additionalInfo, boolean isExpanded, boolean isPathTail, boolean resultsSection) {
     myRole = role;
     myCaption = caption;
     myAdditionalInfo = additionalInfo;
     myResultsSection = resultsSection;
     myIsExcluded = false;
     myIsExpanded = isExpanded;
-    myIsResultNode = isResultNode;
+    myIsPathTail = isPathTail;
   }
 
   //----MAIN DATA STUFF----
@@ -106,12 +106,16 @@ public abstract class BaseNodeData implements IExternalizeable {
     return getIdObject() == null;
   }
 
-  public boolean isResultNode() {
-    return myIsResultNode;
+  public boolean isPathTail() {
+    return myIsPathTail;
   }
 
-  public void setIsResultNode_internal(boolean isResult) {
-    myIsResultNode = isResult;
+  public boolean isResultNode() {
+    return myIsPathTail && myResultsSection;
+  }
+
+  public void setIsPathTail_internal(boolean isResult) {
+    myIsPathTail = isResult;
   }
 
   //----SAVE/LOAD STUFF----
@@ -122,7 +126,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.setAttribute(INFO, myAdditionalInfo);
     element.setAttribute(EXCLUDED, Boolean.toString(myIsExcluded));
     element.setAttribute(EXPANDED, Boolean.toString(myIsExpanded));
-    element.setAttribute(ISRESULT, Boolean.toString(myIsResultNode));
+    element.setAttribute(ISRESULT, Boolean.toString(myIsPathTail));
     element.setAttribute(RESULTS_SECTION, Boolean.toString(myResultsSection));
 
     Element roleXML = new Element(ROLE);
@@ -136,7 +140,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     myAdditionalInfo = element.getAttributeValue(INFO);
     myIsExcluded = Boolean.parseBoolean(element.getAttributeValue(EXCLUDED));
     myIsExpanded = Boolean.parseBoolean(element.getAttributeValue(EXPANDED));
-    myIsResultNode = Boolean.parseBoolean(element.getAttributeValue(ISRESULT));
+    myIsPathTail = Boolean.parseBoolean(element.getAttributeValue(ISRESULT));
     myResultsSection = Boolean.parseBoolean(element.getAttributeValue(RESULTS_SECTION));
 
     Element roleXML = element.getChild(ROLE);

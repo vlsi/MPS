@@ -18,9 +18,11 @@ package jetbrains.mps.text.impl;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +55,11 @@ public final class ModelOutline implements TextGenModelOutline {
 //    final boolean needsJava = SModelOperations.getAllLanguageImports(model).contains(MetaAdapterFactory.getLanguage(BootstrapLanguages.baseLanguageRef()));
 //    registerTextUnit(needsJava ? new JavaTextUnit(root, name) : new RegularTextUnit(root, name));
     registerTextUnit(new RegularTextUnit(input[0], unitName));
+  }
+
+  @Override
+  public void registerTextUnit(@NotNull String unitName, @Nullable Charset encoding, SNode... input) {
+    registerTextUnit(new RegularTextUnit(input[0], unitName, encoding));
   }
 
   @NotNull

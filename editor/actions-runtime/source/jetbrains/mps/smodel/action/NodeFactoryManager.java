@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,14 +24,15 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -45,9 +46,19 @@ public class NodeFactoryManager {
   private static Logger LOG = LogManager.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
-    SAbstractLink linkDeclaration = enclosingNode.getConcept().getLink(linkRole);
+    SAbstractConcept linkTarget = null;
+    // this mimics deprecated SAbstractConcept.getLink(String), first aggregation, then association, albeit without NPE for non-existent ConceptDescriptor
+    for (SContainmentLink link : enclosingNode.getConcept().getContainmentLinks()) {
+      if (link.getName().equals(linkRole)) {
+        linkTarget = link.getTargetConcept();
+        break;
+      }
+    }
+    if (linkTarget == null) {
+      linkTarget = ((ConceptMetaInfoConverter) enclosingNode.getConcept()).convertAssociation(linkRole).getTargetConcept();
+    }
     SModel model = enclosingNode.getModel();
-    return createNode(linkDeclaration.getTargetConcept(), null, enclosingNode, model);
+    return createNode(linkTarget, null, enclosingNode, model);
   }
 
   /**
@@ -82,17 +93,16 @@ public class NodeFactoryManager {
 
   private static void createNodeStructure(SAbstractConcept nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model,
       Set<SAbstractConcept> visitedNonOptionalChildConcepts) {
-    for (SAbstractLink linkDeclaration : nodeConcept.getLinks()) {
-      if (linkDeclaration.isReference() || linkDeclaration.isOptional()) {
+    for (SContainmentLink linkDeclaration : nodeConcept.getContainmentLinks()) {
+      if (linkDeclaration.isOptional()) {
         continue;
       }
       SAbstractConcept targetConcept = linkDeclaration.getTargetConcept();
-      if (!newNode.getChildren(linkDeclaration.getRole()).iterator().hasNext()) {
-        if (!visitedNonOptionalChildConcepts.contains(targetConcept)) {
-          visitedNonOptionalChildConcepts.add(targetConcept);
+      if (!newNode.getChildren(linkDeclaration).iterator().hasNext()) {
+        if (visitedNonOptionalChildConcepts.add(targetConcept)) {
           try {
             SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, visitedNonOptionalChildConcepts);
-            newNode.addChild(linkDeclaration.getRole(), childNode);
+            newNode.addChild(linkDeclaration, childNode);
           } finally {
             visitedNonOptionalChildConcepts.remove(targetConcept);
           }

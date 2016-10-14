@@ -7,12 +7,12 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AttractsFocusBlock = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AttributeChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AttributeWithChildren = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AttributedConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BinaryExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BracesBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BracesStubBlock = new ConceptPresentationBuilder().create();
@@ -64,263 +64,111 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0xb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AttractsFocusBlock;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BinaryExpression;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BracesBlock;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BracesStubBlock;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ClassReference;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_CollapsedByDefault;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_CollapsedConditionally;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_CollapsibleConcept;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_Composition;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_DelTestAbstractChild;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_DelTestChild1;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_DelTestChildContainer;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_DelTestRoot;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_FoldingContainer;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_IBaseTestBlock;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_InitAbstractChild;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_InitChildWithDirectCycle_card1;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_InitChildWithDirectCycle_card1n;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_InitChildWithIndirectCycle_card1;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_InitChildWithIndirectCycle_card1n;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_InitChildWithTwoSameConceptChildren;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_InitContainer;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_InitGrandChild;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_InitGrandChildWithIndirectCycle_card1;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_InitGrandChildWithIndirectCycle_card1n;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_InspectorBlock;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_IntegerLiteral;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_NonEmptyProperty;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_NotEditableVaraileReference;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_PlusExpression;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_ReferenceAnnotataion;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_SelectionChild;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_SelectionContainer;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_SideTranformWrapper;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_SimplePropertyAttribute;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_SimplePropertyContainer;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_StubBlock;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_StyleChild;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_StyleParent;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_SubstMiddlewareChild;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_SubstTestAbstractChild;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_SubstTestBooleanPropertyChild;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_SubstTestEnumPropertyChild;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_SubstTestRoot;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_TestBlockList;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_VariableDeclarationBlock;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_VariableDeclarationReference;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_VerticalLayoutBlockList;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AttractsFocusBlock:
+        return props_AttractsFocusBlock;
+      case LanguageConceptSwitch.AttributeChild:
+        return props_AttributeChild;
+      case LanguageConceptSwitch.AttributeWithChildren:
+        return props_AttributeWithChildren;
+      case LanguageConceptSwitch.AttributedConcept:
+        return props_AttributedConcept;
+      case LanguageConceptSwitch.BinaryExpression:
+        return props_BinaryExpression;
+      case LanguageConceptSwitch.BracesBlock:
+        return props_BracesBlock;
+      case LanguageConceptSwitch.BracesStubBlock:
+        return props_BracesStubBlock;
+      case LanguageConceptSwitch.ClassReference:
+        return props_ClassReference;
+      case LanguageConceptSwitch.CollapsedByDefault:
+        return props_CollapsedByDefault;
+      case LanguageConceptSwitch.CollapsedConditionally:
+        return props_CollapsedConditionally;
+      case LanguageConceptSwitch.CollapsibleConcept:
+        return props_CollapsibleConcept;
+      case LanguageConceptSwitch.Composition:
+        return props_Composition;
+      case LanguageConceptSwitch.DelTestAbstractChild:
+        return props_DelTestAbstractChild;
+      case LanguageConceptSwitch.DelTestChild1:
+        return props_DelTestChild1;
+      case LanguageConceptSwitch.DelTestChildContainer:
+        return props_DelTestChildContainer;
+      case LanguageConceptSwitch.DelTestRoot:
+        return props_DelTestRoot;
+      case LanguageConceptSwitch.FoldingContainer:
+        return props_FoldingContainer;
+      case LanguageConceptSwitch.IBaseTestBlock:
+        return props_IBaseTestBlock;
+      case LanguageConceptSwitch.InitAbstractChild:
+        return props_InitAbstractChild;
+      case LanguageConceptSwitch.InitChildWithDirectCycle_card1:
+        return props_InitChildWithDirectCycle_card1;
+      case LanguageConceptSwitch.InitChildWithDirectCycle_card1n:
+        return props_InitChildWithDirectCycle_card1n;
+      case LanguageConceptSwitch.InitChildWithIndirectCycle_card1:
+        return props_InitChildWithIndirectCycle_card1;
+      case LanguageConceptSwitch.InitChildWithIndirectCycle_card1n:
+        return props_InitChildWithIndirectCycle_card1n;
+      case LanguageConceptSwitch.InitChildWithTwoSameConceptChildren:
+        return props_InitChildWithTwoSameConceptChildren;
+      case LanguageConceptSwitch.InitContainer:
+        return props_InitContainer;
+      case LanguageConceptSwitch.InitGrandChild:
+        return props_InitGrandChild;
+      case LanguageConceptSwitch.InitGrandChildWithIndirectCycle_card1:
+        return props_InitGrandChildWithIndirectCycle_card1;
+      case LanguageConceptSwitch.InitGrandChildWithIndirectCycle_card1n:
+        return props_InitGrandChildWithIndirectCycle_card1n;
+      case LanguageConceptSwitch.InspectorBlock:
+        return props_InspectorBlock;
+      case LanguageConceptSwitch.IntegerLiteral:
+        return props_IntegerLiteral;
+      case LanguageConceptSwitch.NonEmptyProperty:
+        return props_NonEmptyProperty;
+      case LanguageConceptSwitch.NotEditableVaraileReference:
+        return props_NotEditableVaraileReference;
+      case LanguageConceptSwitch.PlusExpression:
+        return props_PlusExpression;
+      case LanguageConceptSwitch.ReferenceAnnotataion:
+        return props_ReferenceAnnotataion;
+      case LanguageConceptSwitch.SelectionChild:
+        return props_SelectionChild;
+      case LanguageConceptSwitch.SelectionContainer:
+        return props_SelectionContainer;
+      case LanguageConceptSwitch.SideTranformWrapper:
+        return props_SideTranformWrapper;
+      case LanguageConceptSwitch.SimplePropertyAttribute:
+        return props_SimplePropertyAttribute;
+      case LanguageConceptSwitch.SimplePropertyContainer:
+        return props_SimplePropertyContainer;
+      case LanguageConceptSwitch.StubBlock:
+        return props_StubBlock;
+      case LanguageConceptSwitch.StyleChild:
+        return props_StyleChild;
+      case LanguageConceptSwitch.StyleParent:
+        return props_StyleParent;
+      case LanguageConceptSwitch.SubstMiddlewareChild:
+        return props_SubstMiddlewareChild;
+      case LanguageConceptSwitch.SubstTestAbstractChild:
+        return props_SubstTestAbstractChild;
+      case LanguageConceptSwitch.SubstTestBooleanPropertyChild:
+        return props_SubstTestBooleanPropertyChild;
+      case LanguageConceptSwitch.SubstTestEnumPropertyChild:
+        return props_SubstTestEnumPropertyChild;
+      case LanguageConceptSwitch.SubstTestRoot:
+        return props_SubstTestRoot;
+      case LanguageConceptSwitch.TestBlockList:
+        return props_TestBlockList;
+      case LanguageConceptSwitch.VariableDeclarationBlock:
+        return props_VariableDeclarationBlock;
+      case LanguageConceptSwitch.VariableDeclarationReference:
+        return props_VariableDeclarationReference;
+      case LanguageConceptSwitch.VerticalLayoutBlockList:
+        return props_VerticalLayoutBlockList;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0xb = buildConceptIndices(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, "jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f761daL, "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa8L, "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75ed75ef06861df4L, "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x214b16e1c73042cfL, "jetbrains.mps.lang.editor.editorTest.structure.ClassReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x671b139f12ae357fL, "jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L, "jetbrains.mps.lang.editor.editorTest.structure.Composition"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c480L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a8839faL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer"), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a8L, "jetbrains.mps.lang.editor.editorTest.structure.InitAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c2593aL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c41e6eL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithIndirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c48499L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithIndirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a4L, "jetbrains.mps.lang.editor.editorTest.structure.InitContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404cL, "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c41e70L, "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChildWithIndirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c4849dL, "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChildWithIndirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x31b7f1691792b1f4L, "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f68107L, "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4e2db2c9f6d76026L, "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L, "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12fa01d4L, "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc6674L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12ef5172L, "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f915adL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d9420cL, "jetbrains.mps.lang.editor.editorTest.structure.StubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efcL, "jetbrains.mps.lang.editor.editorTest.structure.StyleChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efbL, "jetbrains.mps.lang.editor.editorTest.structure.StyleParent"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7ebf3747d08cab96L, "jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5f322b2c7f2c2abaL, "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"));
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,28 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.QueryKey;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
@@ -39,22 +47,29 @@ import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.QueryMethodGenerated.QueryMethod;
+import jetbrains.mps.util.QueryMethods;
+import jetbrains.mps.util.QueryMethods.IllegalQueryMethodException;
+import jetbrains.mps.util.QueryMethods.QueryMethod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -62,6 +77,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -71,7 +87,11 @@ import java.util.Collections;
  * @author Artem Tikhomirov
  */
 public class ReflectiveQueryProvider extends QueryProviderBase {
-  public ReflectiveQueryProvider() {
+  private final QueryMethods myQueryMethods;
+
+  public ReflectiveQueryProvider(Class<?> generatedQueries) {
+    super(1);
+    myQueryMethods = new QueryMethods(generatedQueries);
   }
 
   @NotNull
@@ -80,7 +100,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(rule);
     String conditionMethod = conditionFunction == null ? null : TemplateFunctionMethodName.createRootRule_Condition(conditionFunction);
     if (conditionMethod != null) {
-      return new Impl(rule.getReference(), conditionMethod);
+      return new Impl(myQueryMethods, conditionMethod);
     }
     return super.getCreateRootRuleCondition(rule);
   }
@@ -90,7 +110,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule) {
     String conditionMethod = getBaseRuleConditionMethod(rule);
     if (conditionMethod != null) {
-      return new Impl(rule.getReference(), conditionMethod);
+      return new Impl(myQueryMethods, conditionMethod);
     }
     return super.getMapRootRuleCondition(rule);
   }
@@ -100,7 +120,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
     String conditionMethod = getBaseRuleConditionMethod(rule);
     if (conditionMethod != null) {
-      return new Impl(rule.getReference(), conditionMethod);
+      return new Impl(myQueryMethods, conditionMethod);
     }
     return super.getReductionRuleCondition(rule);
   }
@@ -110,7 +130,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule) {
     String methodName = TemplateFunctionMethodName.patternRule_Condition(rule);
     if (methodName != null) {
-      return new Impl(rule.getReference(), methodName);
+      return new Impl2<>(myQueryMethods, methodName, null);
     }
     return super.getPatternRuleCondition(rule);
   }
@@ -121,7 +141,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode condition = RuleUtil.getDropRuleCondition(rule);
     String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
     if (conditionMethod != null) {
-      return new Impl(rule.getReference(), conditionMethod, true);
+      return new Impl(myQueryMethods, conditionMethod, true);
     }
     return super.getDropRuleCondition(rule);
   }
@@ -132,7 +152,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode condition = RuleUtil.getDropAttributeRule_Condition(rule);
     String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropAttributeRule_Condition(condition);
     if (conditionMethod != null) {
-      return new Impl(rule.getReference(), conditionMethod, true);
+      return new Impl(myQueryMethods, conditionMethod, true);
     }
     return super.getDropAttributeRuleCondition(rule);
   }
@@ -142,7 +162,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   public WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule) {
     String conditionMethod = getBaseRuleConditionMethod(rule);
     if (conditionMethod != null) {
-      return new Impl(rule.getReference(), conditionMethod);
+      return new Impl(myQueryMethods, conditionMethod);
     }
     return super.getWeaveRuleCondition(rule);
   }
@@ -153,7 +173,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(rule);
     String contentNodeMethod = contextQuery == null ? null : TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(contextQuery);
     if (contentNodeMethod != null) {
-      return new Impl(rule.getReference(), contentNodeMethod);
+      return new Impl2<>(myQueryMethods, contentNodeMethod, null);
     }
     return super.getWeaveRuleQuery(rule);
   }
@@ -164,7 +184,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode anchorQuery = RuleUtil.isNodeMacro(ruleOrMacro) ? RuleUtil.getWeaveMacro_AnchorQuery(ruleOrMacro) : RuleUtil.getWeaveRule_AnchorQuery(ruleOrMacro);
     String anchorQueryMethod = anchorQuery == null ? null : TemplateFunctionMethodName.weaving_AnchorQuery(anchorQuery);
     if (anchorQueryMethod != null) {
-      return new Impl(ruleOrMacro.getReference(), anchorQueryMethod);
+      return new Impl2<>(myQueryMethods, anchorQueryMethod, null);
     }
     return super.getWeaveAnchorQuery(ruleOrMacro);
   }
@@ -175,7 +195,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(script);
     String codeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
     if (codeBlockMethod != null) {
-      return new Impl(script.getReference(), codeBlockMethod);
+      return new Impl2<>(myQueryMethods, codeBlockMethod, null /*script doesn't return anything, this is just to tell we need default no-op behavior*/);
     }
     return super.getScriptCodeBlock(script);
   }
@@ -186,7 +206,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(mapCfg);
     String conditionMethod = condition == null ? null : TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
     if (conditionMethod != null) {
-      return new Impl(mapCfg.getReference(), conditionMethod, true);
+      return new Impl(myQueryMethods, conditionMethod, true);
     }
     return super.getMapConfigurationCondition(mapCfg);
   }
@@ -195,14 +215,14 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   @Override
   public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query);
-    return new SourceNodes(query.getReference(), methodName);
+    return new Impl2<SNode>(myQueryMethods, methodName, null);
   }
 
   @NotNull
   @Override
   public SourceNodesQuery getSourceNodesQuery(@NotNull SNode query) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
-    return new SourceNodes(query.getReference(), methodName);
+    return new Impl2<Iterable<SNode>>(myQueryMethods, methodName, Collections.emptyList());
   }
 
   @NotNull
@@ -216,7 +236,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     SNode templateNode = propertyMacro.getParent();
     final Object templateValue = SNodeAccessUtil.getProperty(templateNode, property);
-    return new PropMacro(propertyMacro.getReference(), methodName, property, templateValue);
+    return new PropMacro(myQueryMethods, propertyMacro.getReference(), methodName, property, templateValue);
   }
 
   @NotNull
@@ -227,7 +247,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       return super.getIfMacroCondition(ifMacro);
     }
     String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
-    return new Impl(ifMacro.getReference(), methodName, false);
+    return new Impl(myQueryMethods, methodName, false);
   }
 
   @NotNull
@@ -238,7 +258,59 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       return super.getInlineSwitchCaseCondition(caseNode);
     }
     final String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
-    return new Impl(caseNode.getReference(), methodName, false);
+    return new Impl(myQueryMethods, methodName, false);
+  }
+
+  @NotNull
+  @Override
+  public ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity) {
+    // XXX in fact, RQP may keep template model and find actual references based on identity's information
+    // so that ReferenceTargetQuery can tell link + defaultResolveInfo (like PropertyValueQuery does)
+    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(myQueryMethods, methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.templateArgumentQuery(((QueryKeyImpl) identity).getQueryNodeId());
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // We need that to support bootstrap for generator templates (e.g. if I add an argument to a CALL inside QueriesGenerated template)
+    return new Impl2<>(myQueryMethods, methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.varValue_Query(((QueryKeyImpl) identity).getQueryNodeId());
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // We need that to support bootstrap for generator templates (e.g. if I add a new VAR into QueriesGenerated template)
+    return new Impl2<>(myQueryMethods, methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.insertMacro_Query(((QueryKeyImpl) identity).getQueryNodeId());
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // We need that to support bootstrap for generator templates (e.g. if I add a new INSERT into QueriesGenerated template of any
+    // language with bootstrap dependency to self (e.g. bl.collections))
+    return new Impl2<>(myQueryMethods, methodName, null);
+  }
+
+  @NotNull
+  @Override
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(((QueryKeyImpl) identity).getQueryNodeId());
+    // it's not expected for mapper function to return null
+    return new Impl2<>(myQueryMethods, methodName);
+  }
+
+  @NotNull
+  @Override
+  public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(((QueryKeyImpl) identity).getQueryNodeId());
+    return new Impl2<>(myQueryMethods, methodName);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -246,198 +318,120 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
   }
 
-  private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition,
-      InlineSwitchCaseCondition, WeaveAnchorQuery, DropAttributeRuleCondition {
+  /*package*/ static GenerationFailureException fromQueryAccessCode(IllegalQueryMethodException ex) {
+    // FIXME either shall not instantiate IQME with a message (otherwise thrown away) or shall use it in propagated GFE
+    // see also GFT(Throwable) cons for comment
+    return new GenerationFailureException(ex.getCause());
+  }
 
+  /*package*/ static GenerationFailureException fromUserCode(InvocationTargetException ex) {
+    // FIXME shall throw distinct subclass of GFE to indicate error in user code
+    return new GenerationFailureException(ex.getCause());
+  }
+
+  /*
+   * NOTE Methods intentionally have try/catch not refactored into single invokeAndReturnValue to keep stack slim
+   *      (2 extra arguments on the stack for each call).
+   */
+
+
+  // Boolean condition methods with default value
+  private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition,
+      DropRuleCondition, WeaveRuleCondition, MapConfigurationCondition, IfMacroCondition,
+      InlineSwitchCaseCondition, DropAttributeRuleCondition {
+
+    private final QueryMethods myQueryMethods;
     private final String myMethodName;
     private final boolean myDefValue;
-    private final SNodeReference myTemplateNode;
     private volatile QueryMethod<Boolean> myMethod;
 
-    Impl(@NotNull SNodeReference templateNode, @NotNull String methodName) {
-      this(templateNode, methodName, false);
+    Impl(QueryMethods queryMethods, @NotNull String methodName) {
+      this(queryMethods, methodName, false);
     }
 
-    Impl(@NotNull SNodeReference templateNode, @NotNull String methodName, boolean defValue) {
-      myTemplateNode = templateNode;
+    Impl(QueryMethods queryMethods, @NotNull String methodName, boolean defValue) {
+      myQueryMethods = queryMethods;
       myMethodName = methodName;
       myDefValue = defValue;
     }
 
-    private <T> QueryMethod<T> createMethod() throws ClassNotFoundException, NoSuchMethodException {
-      return QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
-    }
-
-    private QueryMethod<Boolean> getMethod(TemplateQueryContext ctx) {
+    private boolean invokeBoolean(TemplateQueryContext ctx) throws GenerationFailureException {
       // I don't care to synchronize method evaluation as there's no difference for me which QM instance I use,
       // provided initialization of any is complete (that's why field is volatile)
       QueryMethod<Boolean> m = myMethod;
       if (m == null) {
-        try {
-          m = createMethod();
-        } catch (ClassNotFoundException e) {
-          ctx.showWarningMessage(null,
-              String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
-        } catch (NoSuchMethodException e) {
-          ctx.showWarningMessage(null,
-              String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
-        }
-        if (m == null) {
-          m = new QueryMethod<Boolean>() {
-            @Override
-            public Boolean invoke(Object contextObject) {
-              return myDefValue;
-            }
-          };
+        if (myQueryMethods.hasMethod(myMethodName)) {
+          m = myQueryMethods.getMethod(myMethodName);
+        } else {
+          String fm = "cannot find condition method '%s' : evaluate to %s";
+          ctx.showWarningMessage(null, String.format(fm, myMethodName, String.valueOf(myDefValue).toUpperCase()));
+          m = contextObject -> myDefValue;
         }
         myMethod = m;
       }
-      return m;
-    }
-
-    @Override
-    public boolean check(@NotNull CreateRootRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Override
-    public boolean check(@NotNull DropRootRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Override
-    public boolean check(@NotNull DropAttributeRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Override
-    public boolean check(@NotNull MapRootRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Override
-    public GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx) {
       try {
-        return this.<GeneratedMatchingPattern>createMethod().invoke(ctx);
-      } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
-      } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
-      }
-      return null;
-    }
-
-    @Override
-    public boolean check(@NotNull ReductionRuleQueryContext ctx) {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Override
-    public boolean check(@NotNull WeavingMappingRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Override
-    public SNode contextNode(WeavingMappingRuleContext ctx) {
-      try {
-        return this.<SNode>createMethod().invoke(ctx);
-      } catch (NoSuchMethodException e) {
-        ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
-      } catch (ClassNotFoundException ex) {
-        ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
-      }
-      return null;
-    }
-
-    @Override
-    public void invoke(MappingScriptContext ctx) {
-      try {
-        createMethod().invoke(ctx);
-      } catch (ClassNotFoundException e) {
-        ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
-      } catch (NoSuchMethodException e) {
-        ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
+        return m.invoke(ctx);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
       }
     }
 
     @Override
-    public boolean check(@NotNull TemplateQueryContext ctx) {
-      return getMethod(ctx).invoke(ctx);
+    public boolean check(@NotNull CreateRootRuleContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull DropRootRuleContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull DropAttributeRuleContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull MapRootRuleContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull ReductionRuleQueryContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull WeavingMappingRuleContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull TemplateQueryContext ctx) throws GenerationFailureException {
+      return invokeBoolean(ctx);
     }
 
     @Override
     public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
-      return getMethod(ctx).invoke(ctx);
+      return invokeBoolean(ctx);
     }
 
     @Override
     public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
-      return getMethod(ctx).invoke(ctx);
-    }
-
-    @Nullable
-    @Override
-    public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
-      try {
-        return this.<SNode>createMethod().invoke(ctx);
-      } catch (ClassNotFoundException e) {
-        ctx.showWarningMessage(null, String.format("cannot find anchor node query '%s' : evaluate to null", myMethodName));
-      } catch (NoSuchMethodException e) {
-        ctx.showWarningMessage(null, String.format("cannot find anchor node query '%s' : evaluate to null", myMethodName));
-      }
-      return null;
-    }
-  }
-
-
-  private static final class SourceNodes implements SourceNodeQuery, SourceNodesQuery {
-    private final SNodeReference myQuery;
-    private final String myMethodName;
-
-    public SourceNodes(@NotNull SNodeReference query, @NotNull String methodName) {
-      myQuery = query;
-      myMethodName = methodName;
-    }
-
-    private <T> QueryMethod<T> createMethod() throws ClassNotFoundException, NoSuchMethodException {
-      return QueryMethodGenerated.getQueryMethod(myQuery.getModelReference(), myMethodName);
-    }
-
-    @Nullable
-    @Override
-    public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
-      try {
-        return this.<SNode>createMethod().invoke(context);
-      } catch (NoSuchMethodException e) {
-        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
-      } catch (ClassNotFoundException ex) {
-        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
-      }
-      return null;
-    }
-
-    @NotNull
-    @Override
-    public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
-      try {
-        Iterable<SNode> result = this.<Iterable<SNode>>createMethod().invoke(context);
-        return IterableUtil.asCollection(result);
-      } catch (NoSuchMethodException e) {
-        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
-      } catch (ClassNotFoundException e) {
-        context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
-      }
-      return Collections.emptyList();
+      return invokeBoolean(ctx);
     }
   }
 
   private static final class PropMacro extends PropertyValueQuery.Base {
+    private final QueryMethods myQueryMethods;
     private final String myMethodName;
     private QueryMethod<Object> myMethod;
 
-    public PropMacro(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull SProperty property, Object templateValue) {
+    public PropMacro(QueryMethods queryMethods, @NotNull SNodeReference macro, @NotNull String methodName, @NotNull SProperty property, Object templateValue) {
       super(macro, property, templateValue);
+      myQueryMethods = queryMethods;
       myMethodName = methodName;
     }
 
@@ -446,25 +440,235 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
       if (myMethod == null) {
         myMethod = getMethod(context);
-        // FIXME why do we treat missing method for a property macro as GFE, while check or sourceNode queries
-        //       got default implementation? We could have here null default value. Or shall report GFE/dedicated subclass
-        //       from any getMethod() in this class.
       }
-      return myMethod.invoke(context);
+      try {
+        return myMethod.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
     }
 
-    private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException{
-      try {
-        return QueryMethodGenerated.getQueryMethod(getMacro().getModelReference(), myMethodName);
-      } catch (NoSuchMethodException e) {
+    private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException {
+      // We used to treat missing method for a property macro as GFE, while check or sourceNode queries
+      // got default implementation, and now I've switched to null default value.
+      if (!myQueryMethods.hasMethod(myMethodName)) {
         final String m = String.format("cannot find method '%s' for property macro", myMethodName);
-        context.showErrorMessage(null, m);
-        throw new GenerationFailureException(m);
-      } catch (ClassNotFoundException e) {
-        final String m = String.format("cannot find method '%s' for property macro", myMethodName);
-        context.showErrorMessage(null, m);
-        throw new GenerationFailureException(m);
+        context.showWarningMessage(null, m);
+        return contextObject -> null;
       }
+      return myQueryMethods.getMethod(myMethodName);
+    }
+  }
+
+  // queries that evaluate to <T>. Another difference from Impl is that
+  // methods other than that with Boolean get cached in the field.
+  static final class Impl2<T> implements VariableValueQuery, CallArgumentQuery, InsertMacroQuery, MapNodeQuery, MapPostProcessor,
+      ReferenceTargetQuery, SourceNodeQuery, SourceNodesQuery, PatternRuleQuery, WeaveRuleQuery, ScriptCodeBlock, WeaveAnchorQuery {
+    private final QueryMethods myQueryMethods; // not null
+    private final String myMethodName; // not null
+    private final T myMissingMethodValue;
+    private final boolean myUseDefaultForMissing;
+    private QueryMethod<T> myMethod;
+
+    // arguments are not null
+    public Impl2(QueryMethods queryMethods, String methodName) {
+      myQueryMethods = queryMethods;
+      myMethodName = methodName;
+      myMissingMethodValue = null;
+      myUseDefaultForMissing = false;
+    }
+
+    // arguments are not null, except for missingMethodValue
+    public Impl2(QueryMethods queryMethods, String methodName, @Nullable T missingMethodValue) {
+      myQueryMethods = queryMethods;
+      myMethodName = methodName;
+      myMissingMethodValue = missingMethodValue;
+      myUseDefaultForMissing = true;
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateArgumentContext context) throws GenerationFailureException {
+      try {
+        return getMethod(context, "cannot find method '%s' for template call argument").invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
+      try {
+        return getMethod(context, "cannot find method '%s' for VAR macro").invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull InsertMacroContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find method '%s' for INSERT macro");
+      try {
+        return method.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull MapSrcMacroContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find method '%s' for MAP-SRC's mapping function");
+      try {
+        return method.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Override
+    public void invoke(@NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
+      try {
+        getMethod(context, "cannot find method '%s' for MAP-SRC's post-processor").invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull ReferenceMacroContext context) throws GenerationFailureException {
+      try {
+        return getMethod(context, "cannot find method '%s' for reference macro").invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find node query '%s' : evaluate to null");
+      try {
+        return method.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @NotNull
+    @Override
+    public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<Iterable<SNode>> method = (QueryMethod<Iterable<SNode>>) getMethod(context, "cannot find nodes query '%s' : evaluate to empty list");
+      try {
+        Iterable<SNode> result = method.invoke(context);
+        return IterableUtil.asCollection(result);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Override
+    public GeneratedMatchingPattern pattern(@NotNull PatternRuleContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<GeneratedMatchingPattern> method = (QueryMethod<GeneratedMatchingPattern>) getMethod(context, "cannot find pattern condition method '%s' : not applied");
+      try {
+        return method.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Override
+    public SNode contextNode(WeavingMappingRuleContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find context node query '%s' : evaluate to null");
+      try {
+        return method.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    @Nullable
+    @Override
+    public SNode anchorNode(WeavingAnchorContext context) throws GenerationFailureException {
+      @SuppressWarnings("unchecked")
+      QueryMethod<SNode> method = (QueryMethod<SNode>) getMethod(context, "cannot find anchor node query '%s' : evaluate to null");
+      try {
+        return method.invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+
+    @Override
+    public void invoke(MappingScriptContext context) throws GenerationFailureException {
+      try {
+        getMethod(context, "cannot run script '%s' : no generated code found").invoke(context);
+      } catch (IllegalQueryMethodException e) {
+        throw fromQueryAccessCode(e);
+      } catch (InvocationTargetException e) {
+        throw fromUserCode(e);
+      }
+    }
+
+    private QueryMethod<T> getMethod(TemplateQueryContext ctx, String messageFormat) throws GenerationFailureException {
+      // trick with local variable is to bring attention to the fact, that parallel evaluate() may
+      // initialize myMethod twice and that invoke may work with an instance other than getMethod() had returned here.
+      // Since QueryMethod is just a simple wrap around reflective call, I'm not too much concerned at the moment that
+      // myMethod.invoke() might run with an instance different that came from getMethod(). Nor there's too much duplicated
+      // effort when looking up a method (QueryMethodGenerated caches them). We've got extra QueryMethod wrappers and 'other this'
+      // for invoke only.
+      // Still, I don't want to bother with synchronization here, with stateless QM I'm unlikely to face any issues, and
+      // though I don't like the code, I'd rather move forward towards non-reflective queries as the only option than
+      // deal with synch of reflective calls.
+      QueryMethod<T> m = myMethod;
+      if (m == null) {
+        if (!myQueryMethods.hasMethod(myMethodName)) {
+          final String msg = String.format(messageFormat, myMethodName);
+          if (myUseDefaultForMissing) {
+            ctx.showWarningMessage(null, msg);
+            return contextObject -> myMissingMethodValue;
+          } else {
+            ctx.showErrorMessage(null, msg);
+            throw new GenerationFailureException(msg);
+          }
+        }
+        m = myMethod = myQueryMethods.getMethod(myMethodName);
+      }
+      return m;
     }
   }
 }

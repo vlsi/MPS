@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractCheckingRule = new ConceptPresentationBuilder().create();
@@ -137,628 +134,251 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0se.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractCheckingRule;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractComparableStatement;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractEquationStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AbstractInequationStatement;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AbstractOverloadedOpsTypeRule;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AbstractRule;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_AbstractSubtypingRule;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_AddDependencyStatement;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ApplicableNodeCondition;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ApplicableNodeReference;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_AssertStatement;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_AttributedNodeExpression;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_CaretPositionOperation;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_CoerceExpression;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_CoerceStatement;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_CoerceStrongExpression;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ComparisonRule;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ConceptClauseLinkInfo;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ConceptFunctionParameter_ContextNode;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ConceptFunctionParameter_EditorContext;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ConceptFunctionParameter_Role;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ConceptFunctionParameter_Selection;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ConceptFunctionParameter_isAggregation;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ConceptFunctionParameter_node;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ConceptFunctionParameter_var;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ConceptReference;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_CreateComparableEquationStatement;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_CreateComparableEquationStatementStrong;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_CreateEquationStatement;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_CreateGreaterThanInequationStatement;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_CreateLessThanInequationStatement;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_CreateStrongGreaterThanInequationStatement;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_CreateStrongLessThanInequationStatement;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_DefaultGroupReference;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_ErrorInfoExpression;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_GetOperationType;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_IRuleWithOneNode;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_IRuleWithTwoNodes;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_ImmediateSupertypesExpression;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_InequationReference;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_InequationReplacementRule;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_InferenceRule;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_InfoStatement;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_InfoStatementAnnotation;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_IsApplicableConceptFunction;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_IsReplacementRuleApplicable_ConceptFunction;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_IsStrongSubtypeExpression;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_IsSubtypeExpression;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_JoinContainer;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_JoinType;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_LeftOperandType_parameter;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_LinkPatternVariableReference;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_MatchStatement;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_MatchStatementItem;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_MeetContainer;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_MeetType;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_MessageStatement;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_MessageStatementAnnotation;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_MessageTarget;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_MultipleForeachLoop;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_MultipleForeachLoopVariable;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_NodeInfo;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_Node_InferTypeOperation;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_Node_TypeOperation;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_NonTypesystemRule;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_NormalTypeClause;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_Operation_parameter;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_OrStatement;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_OriginalNodeId;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_OverloadedOpIsApplicableFunction;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_OverloadedOpRulesContainer;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_OverloadedOpTypeRule_OneTypeSpecified;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_OverloadedOperatorTypeFunction;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_OverloadedOperatorTypeRule;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_OverridesConceptFunction;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_PatternCondition;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_PatternVariableReference;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_PrintToTrace;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_Processed;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_PropertyMessageTarget;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_PropertyNameTarget;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_PropertyPatternVariableReference;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_QuickFixArgument;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_QuickFixArgumentReference;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_QuickFixDescriptionBlock;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_QuickFixExecuteBlock;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_QuickFixField;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_QuickFixFieldReference;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_QuickFixSetSelectionBlock;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_ReferenceMessageTarget;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_ReferenceRoleTarget;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_ReplacementRuleReference;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_ReportErrorStatement;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_ReportErrorStatementAnnotation;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_RightOperandType_parameter;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_RuntimeErrorType;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_RuntimeHoleType;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_RuntimeListVariable;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_RuntimeTypeVariable;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_SelectionType;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_SubstituteTypeRule;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_SubtypingRule;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_SupersedeConceptFunction;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_TypeCheckerAccessExpression;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_TypeClause;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_TypeOfExpression;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_TypeVarDeclaration;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_TypeVarReference;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_TypesystemIntention;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_TypesystemIntentionArgument;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_TypesystemQuickFix;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_VariableConverterItem;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_VariableConverterItem_ApplicableBlock;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_VariableConverterItem_ConvertBlock;
-          }
-          break;
-        case 114:
-          if (true) {
-            return props_VariableConvertersContainer;
-          }
-          break;
-        case 115:
-          if (true) {
-            return props_WarningStatement;
-          }
-          break;
-        case 116:
-          if (true) {
-            return props_WarningStatementAnnotation;
-          }
-          break;
-        case 117:
-          if (true) {
-            return props_WasSelectedNodeOperation;
-          }
-          break;
-        case 118:
-          if (true) {
-            return props_WhenConcreteStatement;
-          }
-          break;
-        case 119:
-          if (true) {
-            return props_WhenConcreteVariableDeclaration;
-          }
-          break;
-        case 120:
-          if (true) {
-            return props_WhenConcreteVariableReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractCheckingRule:
+        return props_AbstractCheckingRule;
+      case LanguageConceptSwitch.AbstractComparableStatement:
+        return props_AbstractComparableStatement;
+      case LanguageConceptSwitch.AbstractEquationStatement:
+        return props_AbstractEquationStatement;
+      case LanguageConceptSwitch.AbstractInequationStatement:
+        return props_AbstractInequationStatement;
+      case LanguageConceptSwitch.AbstractOverloadedOpsTypeRule:
+        return props_AbstractOverloadedOpsTypeRule;
+      case LanguageConceptSwitch.AbstractRule:
+        return props_AbstractRule;
+      case LanguageConceptSwitch.AbstractSubtypingRule:
+        return props_AbstractSubtypingRule;
+      case LanguageConceptSwitch.AddDependencyStatement:
+        return props_AddDependencyStatement;
+      case LanguageConceptSwitch.ApplicableNodeCondition:
+        return props_ApplicableNodeCondition;
+      case LanguageConceptSwitch.ApplicableNodeReference:
+        return props_ApplicableNodeReference;
+      case LanguageConceptSwitch.AssertStatement:
+        return props_AssertStatement;
+      case LanguageConceptSwitch.AttributedNodeExpression:
+        return props_AttributedNodeExpression;
+      case LanguageConceptSwitch.CaretPositionOperation:
+        return props_CaretPositionOperation;
+      case LanguageConceptSwitch.CoerceExpression:
+        return props_CoerceExpression;
+      case LanguageConceptSwitch.CoerceStatement:
+        return props_CoerceStatement;
+      case LanguageConceptSwitch.CoerceStrongExpression:
+        return props_CoerceStrongExpression;
+      case LanguageConceptSwitch.ComparisonRule:
+        return props_ComparisonRule;
+      case LanguageConceptSwitch.ConceptClauseLinkInfo:
+        return props_ConceptClauseLinkInfo;
+      case LanguageConceptSwitch.ConceptFunctionParameter_ContextNode:
+        return props_ConceptFunctionParameter_ContextNode;
+      case LanguageConceptSwitch.ConceptFunctionParameter_EditorContext:
+        return props_ConceptFunctionParameter_EditorContext;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Role:
+        return props_ConceptFunctionParameter_Role;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Selection:
+        return props_ConceptFunctionParameter_Selection;
+      case LanguageConceptSwitch.ConceptFunctionParameter_isAggregation:
+        return props_ConceptFunctionParameter_isAggregation;
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
+        return props_ConceptFunctionParameter_node;
+      case LanguageConceptSwitch.ConceptFunctionParameter_var:
+        return props_ConceptFunctionParameter_var;
+      case LanguageConceptSwitch.ConceptReference:
+        return props_ConceptReference;
+      case LanguageConceptSwitch.CreateComparableEquationStatement:
+        return props_CreateComparableEquationStatement;
+      case LanguageConceptSwitch.CreateComparableEquationStatementStrong:
+        return props_CreateComparableEquationStatementStrong;
+      case LanguageConceptSwitch.CreateEquationStatement:
+        return props_CreateEquationStatement;
+      case LanguageConceptSwitch.CreateGreaterThanInequationStatement:
+        return props_CreateGreaterThanInequationStatement;
+      case LanguageConceptSwitch.CreateLessThanInequationStatement:
+        return props_CreateLessThanInequationStatement;
+      case LanguageConceptSwitch.CreateStrongGreaterThanInequationStatement:
+        return props_CreateStrongGreaterThanInequationStatement;
+      case LanguageConceptSwitch.CreateStrongLessThanInequationStatement:
+        return props_CreateStrongLessThanInequationStatement;
+      case LanguageConceptSwitch.DefaultGroupReference:
+        return props_DefaultGroupReference;
+      case LanguageConceptSwitch.ErrorInfoExpression:
+        return props_ErrorInfoExpression;
+      case LanguageConceptSwitch.GetOperationType:
+        return props_GetOperationType;
+      case LanguageConceptSwitch.IRuleWithOneNode:
+        return props_IRuleWithOneNode;
+      case LanguageConceptSwitch.IRuleWithTwoNodes:
+        return props_IRuleWithTwoNodes;
+      case LanguageConceptSwitch.ImmediateSupertypesExpression:
+        return props_ImmediateSupertypesExpression;
+      case LanguageConceptSwitch.InequationReference:
+        return props_InequationReference;
+      case LanguageConceptSwitch.InequationReplacementRule:
+        return props_InequationReplacementRule;
+      case LanguageConceptSwitch.InferenceRule:
+        return props_InferenceRule;
+      case LanguageConceptSwitch.InfoStatement:
+        return props_InfoStatement;
+      case LanguageConceptSwitch.InfoStatementAnnotation:
+        return props_InfoStatementAnnotation;
+      case LanguageConceptSwitch.IsApplicableConceptFunction:
+        return props_IsApplicableConceptFunction;
+      case LanguageConceptSwitch.IsReplacementRuleApplicable_ConceptFunction:
+        return props_IsReplacementRuleApplicable_ConceptFunction;
+      case LanguageConceptSwitch.IsStrongSubtypeExpression:
+        return props_IsStrongSubtypeExpression;
+      case LanguageConceptSwitch.IsSubtypeExpression:
+        return props_IsSubtypeExpression;
+      case LanguageConceptSwitch.JoinContainer:
+        return props_JoinContainer;
+      case LanguageConceptSwitch.JoinType:
+        return props_JoinType;
+      case LanguageConceptSwitch.LeftOperandType_parameter:
+        return props_LeftOperandType_parameter;
+      case LanguageConceptSwitch.LinkPatternVariableReference:
+        return props_LinkPatternVariableReference;
+      case LanguageConceptSwitch.MatchStatement:
+        return props_MatchStatement;
+      case LanguageConceptSwitch.MatchStatementItem:
+        return props_MatchStatementItem;
+      case LanguageConceptSwitch.MeetContainer:
+        return props_MeetContainer;
+      case LanguageConceptSwitch.MeetType:
+        return props_MeetType;
+      case LanguageConceptSwitch.MessageStatement:
+        return props_MessageStatement;
+      case LanguageConceptSwitch.MessageStatementAnnotation:
+        return props_MessageStatementAnnotation;
+      case LanguageConceptSwitch.MessageTarget:
+        return props_MessageTarget;
+      case LanguageConceptSwitch.MultipleForeachLoop:
+        return props_MultipleForeachLoop;
+      case LanguageConceptSwitch.MultipleForeachLoopVariable:
+        return props_MultipleForeachLoopVariable;
+      case LanguageConceptSwitch.NodeInfo:
+        return props_NodeInfo;
+      case LanguageConceptSwitch.Node_InferTypeOperation:
+        return props_Node_InferTypeOperation;
+      case LanguageConceptSwitch.Node_TypeOperation:
+        return props_Node_TypeOperation;
+      case LanguageConceptSwitch.NonTypesystemRule:
+        return props_NonTypesystemRule;
+      case LanguageConceptSwitch.NormalTypeClause:
+        return props_NormalTypeClause;
+      case LanguageConceptSwitch.Operation_parameter:
+        return props_Operation_parameter;
+      case LanguageConceptSwitch.OrStatement:
+        return props_OrStatement;
+      case LanguageConceptSwitch.OriginalNodeId:
+        return props_OriginalNodeId;
+      case LanguageConceptSwitch.OverloadedOpIsApplicableFunction:
+        return props_OverloadedOpIsApplicableFunction;
+      case LanguageConceptSwitch.OverloadedOpRulesContainer:
+        return props_OverloadedOpRulesContainer;
+      case LanguageConceptSwitch.OverloadedOpTypeRule_OneTypeSpecified:
+        return props_OverloadedOpTypeRule_OneTypeSpecified;
+      case LanguageConceptSwitch.OverloadedOperatorTypeFunction:
+        return props_OverloadedOperatorTypeFunction;
+      case LanguageConceptSwitch.OverloadedOperatorTypeRule:
+        return props_OverloadedOperatorTypeRule;
+      case LanguageConceptSwitch.OverridesConceptFunction:
+        return props_OverridesConceptFunction;
+      case LanguageConceptSwitch.PatternCondition:
+        return props_PatternCondition;
+      case LanguageConceptSwitch.PatternVariableReference:
+        return props_PatternVariableReference;
+      case LanguageConceptSwitch.PrintToTrace:
+        return props_PrintToTrace;
+      case LanguageConceptSwitch.Processed:
+        return props_Processed;
+      case LanguageConceptSwitch.PropertyMessageTarget:
+        return props_PropertyMessageTarget;
+      case LanguageConceptSwitch.PropertyNameTarget:
+        return props_PropertyNameTarget;
+      case LanguageConceptSwitch.PropertyPatternVariableReference:
+        return props_PropertyPatternVariableReference;
+      case LanguageConceptSwitch.QuickFixArgument:
+        return props_QuickFixArgument;
+      case LanguageConceptSwitch.QuickFixArgumentReference:
+        return props_QuickFixArgumentReference;
+      case LanguageConceptSwitch.QuickFixDescriptionBlock:
+        return props_QuickFixDescriptionBlock;
+      case LanguageConceptSwitch.QuickFixExecuteBlock:
+        return props_QuickFixExecuteBlock;
+      case LanguageConceptSwitch.QuickFixField:
+        return props_QuickFixField;
+      case LanguageConceptSwitch.QuickFixFieldReference:
+        return props_QuickFixFieldReference;
+      case LanguageConceptSwitch.QuickFixSetSelectionBlock:
+        return props_QuickFixSetSelectionBlock;
+      case LanguageConceptSwitch.ReferenceMessageTarget:
+        return props_ReferenceMessageTarget;
+      case LanguageConceptSwitch.ReferenceRoleTarget:
+        return props_ReferenceRoleTarget;
+      case LanguageConceptSwitch.ReplacementRuleReference:
+        return props_ReplacementRuleReference;
+      case LanguageConceptSwitch.ReportErrorStatement:
+        return props_ReportErrorStatement;
+      case LanguageConceptSwitch.ReportErrorStatementAnnotation:
+        return props_ReportErrorStatementAnnotation;
+      case LanguageConceptSwitch.RightOperandType_parameter:
+        return props_RightOperandType_parameter;
+      case LanguageConceptSwitch.RuntimeErrorType:
+        return props_RuntimeErrorType;
+      case LanguageConceptSwitch.RuntimeHoleType:
+        return props_RuntimeHoleType;
+      case LanguageConceptSwitch.RuntimeListVariable:
+        return props_RuntimeListVariable;
+      case LanguageConceptSwitch.RuntimeTypeVariable:
+        return props_RuntimeTypeVariable;
+      case LanguageConceptSwitch.SelectionType:
+        return props_SelectionType;
+      case LanguageConceptSwitch.SubstituteTypeRule:
+        return props_SubstituteTypeRule;
+      case LanguageConceptSwitch.SubtypingRule:
+        return props_SubtypingRule;
+      case LanguageConceptSwitch.SupersedeConceptFunction:
+        return props_SupersedeConceptFunction;
+      case LanguageConceptSwitch.TypeCheckerAccessExpression:
+        return props_TypeCheckerAccessExpression;
+      case LanguageConceptSwitch.TypeClause:
+        return props_TypeClause;
+      case LanguageConceptSwitch.TypeOfExpression:
+        return props_TypeOfExpression;
+      case LanguageConceptSwitch.TypeVarDeclaration:
+        return props_TypeVarDeclaration;
+      case LanguageConceptSwitch.TypeVarReference:
+        return props_TypeVarReference;
+      case LanguageConceptSwitch.TypesystemIntention:
+        return props_TypesystemIntention;
+      case LanguageConceptSwitch.TypesystemIntentionArgument:
+        return props_TypesystemIntentionArgument;
+      case LanguageConceptSwitch.TypesystemQuickFix:
+        return props_TypesystemQuickFix;
+      case LanguageConceptSwitch.VariableConverterItem:
+        return props_VariableConverterItem;
+      case LanguageConceptSwitch.VariableConverterItem_ApplicableBlock:
+        return props_VariableConverterItem_ApplicableBlock;
+      case LanguageConceptSwitch.VariableConverterItem_ConvertBlock:
+        return props_VariableConverterItem_ConvertBlock;
+      case LanguageConceptSwitch.VariableConvertersContainer:
+        return props_VariableConvertersContainer;
+      case LanguageConceptSwitch.WarningStatement:
+        return props_WarningStatement;
+      case LanguageConceptSwitch.WarningStatementAnnotation:
+        return props_WarningStatementAnnotation;
+      case LanguageConceptSwitch.WasSelectedNodeOperation:
+        return props_WasSelectedNodeOperation;
+      case LanguageConceptSwitch.WhenConcreteStatement:
+        return props_WhenConcreteStatement;
+      case LanguageConceptSwitch.WhenConcreteVariableDeclaration:
+        return props_WhenConcreteVariableDeclaration;
+      case LanguageConceptSwitch.WhenConcreteVariableReference:
+        return props_WhenConcreteVariableReference;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0se = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3be2294807013eb7L, "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70bfdafbb2c9449bL, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11c22f6c964L, "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L, "jetbrains.mps.lang.typesystem.structure.AssertStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2152354b0d500086L, "jetbrains.mps.lang.typesystem.structure.AttributedNodeExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc395068L, "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a2a14aeL, "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L, "jetbrains.mps.lang.typesystem.structure.CoerceStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a376a3dL, "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114caade477L, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x120c8f8641eL, "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ffb82L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x335fe1d0b7494cfcL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078e410eL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x611e7dc14a69a014L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ecdbdL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3618c300L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e07431ba7L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f63bc23L, "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112c36bc7ecL, "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f179e8dL, "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f62956cL, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31c3185c17a0f767L, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112b37f1b6eL, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x12541e5f229acee2L, "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c6082b85L, "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fd11186b7L, "jetbrains.mps.lang.typesystem.structure.GetOperationType"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3e3c1137fe6cb778L, "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3e3c1137fe6cb779L, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1120ebd8531L, "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, "jetbrains.mps.lang.typesystem.structure.InequationReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f31L, "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x669222c8f1941d7fL, "jetbrains.mps.lang.typesystem.structure.IsApplicableConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31d99a115038e5e8L, "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11222e251f1L, "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7b9fb7L, "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cda22fcL, "jetbrains.mps.lang.typesystem.structure.JoinContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4cf5b0L, "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1122952fb1dL, "jetbrains.mps.lang.typesystem.structure.MatchStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112295a8fecL, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cd802f8L, "jetbrains.mps.lang.typesystem.structure.MeetContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L, "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a65783L, "jetbrains.mps.lang.typesystem.structure.MessageTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x5dffc3ada5b76687L, "jetbrains.mps.lang.typesystem.structure.NodeInfo"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x584039bf75272c67L, "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7d5e03L, "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164853e0faL, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1141682561cL, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8298L, "jetbrains.mps.lang.typesystem.structure.Operation_parameter"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xba3b706cf9561ecL, "jetbrains.mps.lang.typesystem.structure.OrStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2980b78b2f03a40bL, "jetbrains.mps.lang.typesystem.structure.OriginalNodeId"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x5529dae3231347deL, "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fd137d047L, "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70bfdafbb2c80edcL, "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4bffaeL, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4a641fL, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1885777d1370d97bL, "jetbrains.mps.lang.typesystem.structure.OverridesConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d10036L, "jetbrains.mps.lang.typesystem.structure.PatternVariableReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x76b48f1c91e9de8L, "jetbrains.mps.lang.typesystem.structure.PrintToTrace"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11cd732687dL, "jetbrains.mps.lang.typesystem.structure.Processed"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a6a000L, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L, "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b361afb76L, "jetbrains.mps.lang.typesystem.structure.QuickFixArgument"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L, "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b368d7f20L, "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3617feddL, "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8478e93eL, "jetbrains.mps.lang.typesystem.structure.QuickFixField"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8479b55dL, "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x335fe1d0b7494a6dL, "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54de8fdL, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x4cffb708491a734cL, "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f2eL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8edaL, "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e68800741L, "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11831ae86e3L, "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x611e7dc14a6926c8L, "jetbrains.mps.lang.typesystem.structure.SelectionType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c426ccaL, "jetbrains.mps.lang.typesystem.structure.SubtypingRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x65684a1aee252403L, "jetbrains.mps.lang.typesystem.structure.SupersedeConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b6ea6b9bL, "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114168188c7L, "jetbrains.mps.lang.typesystem.structure.TypeClause"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f0ad10aL, "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f85df7bL, "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL, "jetbrains.mps.lang.typesystem.structure.TypeVarReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85f8628L, "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b36163865L, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e073a595aL, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e0740f5fbL, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e074487bbL, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e07487edcL, "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L, "jetbrains.mps.lang.typesystem.structure.WarningStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f34L, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc39506eL, "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd05a27aL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"));
 }

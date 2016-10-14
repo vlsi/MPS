@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -737,6 +738,11 @@ public class GenPlanTest {
     @Override
     public TemplateModule getModule() {
       return null;
+    }
+
+    @Override
+    public GeneratorQueryProvider getQueryProvider() {
+      throw new UnsupportedOperationException();
     }
 
     /*package*/ void registerMapConfig(@NotNull TemplateMappingConfiguration mc) {

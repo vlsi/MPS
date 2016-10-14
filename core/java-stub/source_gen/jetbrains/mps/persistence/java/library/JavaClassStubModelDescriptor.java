@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -112,7 +111,7 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
   }
 
   private Set<SLanguage> getLanguagesToImport() {
-    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
+    return Collections.singleton(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
   }
 
   @Override

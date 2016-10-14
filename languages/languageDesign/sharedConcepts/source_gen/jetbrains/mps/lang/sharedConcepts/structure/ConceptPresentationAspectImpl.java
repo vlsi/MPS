@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ConceptFunctionParameter_editorContext = new ConceptPresentationBuilder().create();
@@ -22,53 +19,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ConceptFunctionParameter_editorContext;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ConceptFunctionParameter_model;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConceptFunctionParameter_node;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConceptFunctionParameter_operationContext;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConceptFunctionParameter_progressMonitor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ConceptFunctionParameter_scope;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ConceptFunctionParameter_editorContext:
+        return props_ConceptFunctionParameter_editorContext;
+      case LanguageConceptSwitch.ConceptFunctionParameter_model:
+        return props_ConceptFunctionParameter_model;
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
+        return props_ConceptFunctionParameter_node;
+      case LanguageConceptSwitch.ConceptFunctionParameter_operationContext:
+        return props_ConceptFunctionParameter_operationContext;
+      case LanguageConceptSwitch.ConceptFunctionParameter_progressMonitor:
+        return props_ConceptFunctionParameter_progressMonitor;
+      case LanguageConceptSwitch.ConceptFunctionParameter_scope:
+        return props_ConceptFunctionParameter_scope;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761b3745L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x118e7145df4L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761c927aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x7be6ee9831c8594L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761e7965L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"));
 }

@@ -14,6 +14,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
@@ -40,8 +42,6 @@ import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RefreshTestProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -91,6 +91,7 @@ public class RefreshTestProject_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(RefreshTestProject_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     String action = "Refresh Test Project";
@@ -157,7 +158,7 @@ public class RefreshTestProject_Action extends BaseAction {
 
             SNode existing = ListSequence.fromList(SModelOperations.roots(target.value, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0i(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0j(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
             });
             if ((existing != null)) {
@@ -196,8 +197,7 @@ public class RefreshTestProject_Action extends BaseAction {
       frame.getStatusBar().setInfo(info);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(RefreshTestProject_Action.class);
-  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0i(Object a, Object b) {
+  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

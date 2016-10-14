@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -16,49 +16,21 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_2qnle6_a0c.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return new ActionCallDeclaredParameter_Constraints();
-          }
-          break;
-        case 1:
-          if (true) {
-            return new ModelReference_Constraints();
-          }
-          break;
-        case 2:
-          if (true) {
-            return new NodeReference_Constraints();
-          }
-          break;
-        case 3:
-          if (true) {
-            return new OfAspectOperation_Constraints();
-          }
-          break;
-        case 4:
-          if (true) {
-            return new SubtreeStatisticsTarget_Constraints();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_2qnle6_a0c.index(cncpt)) {
+      case 0:
+        return new ActionCallDeclaredParameter_Constraints();
+      case 1:
+        return new ModelReference_Constraints();
+      case 2:
+        return new NodeReference_Constraints();
+      case 3:
+        return new OfAspectOperation_Constraints();
+      case 4:
+        return new SubtreeStatisticsTarget_Constraints();
+      default:
     }
     return new BaseConstraintsDescriptor(concept);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_2qnle6_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f4699443afL, "jetbrains.mps.console.ideCommands.structure.NodeReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, "jetbrains.mps.console.ideCommands.structure.OfAspectOperation"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"));
+  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f4699443afL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL)).seal();
 }

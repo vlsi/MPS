@@ -44,9 +44,9 @@ import javax.swing.text.DefaultFormatter;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -79,12 +79,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
 
   private JLabel myStatusLabel;
-  private final ItemListener myStatusUpdater = new ItemListener() {
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-      updateStatus();
-    }
-  };
+  private final ItemListener myStatusUpdater = e -> updateStatus();
 
   private final IModifiableGenerationSettings myGenerationSettings;
   private final ButtonSelectStateTracker myButtonState = new ButtonSelectStateTracker();
@@ -184,6 +179,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
 
     mySaveTransientModelsCheckBox.addItemListener(myStatusUpdater);
     myInplaceTransform.addItemListener(myStatusUpdater);
+    myIncremental.addItemListener(myStatusUpdater);
     return optionsPanel;
   }
 
@@ -397,8 +393,15 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
 
   void updateStatus() {
     myStatusLabel.setVisible(false);
+    ArrayList<String> messages = new ArrayList<>();
     if (myInplaceTransform.isSelected() && mySaveTransientModelsCheckBox.isSelected()) {
-      myStatusLabel.setText("Warning: using in-place together with transient models may slow down generation process significantly");
+      messages.add("Warning: using in-place together with transient models may slow down generation process significantly");
+    }
+    if (myIncremental.isSelected()) {
+      messages.add("Warning: incremental generation is deprecated and hardly useful functionality");
+    }
+    if (!messages.isEmpty()) {
+      myStatusLabel.setText(String.format("<html>%s</html>", String.join("<br/>", messages)));
       myStatusLabel.setBackground(Color.yellow.brighter());
       myStatusLabel.setOpaque(true);
       myStatusLabel.setVisible(true);

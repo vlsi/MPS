@@ -17,10 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
@@ -46,10 +46,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   protected static ModelAccess ourInstance = new DefaultModelAccess();
 
   private final ReentrantReadWriteLockEx myReadWriteLock = new ReentrantReadWriteLockEx();
-
-  /* support of temporary downgrading write lock to shared read lock */
-  protected final ReentrantReadWriteLock mySharedReadInWriteLock = new ReentrantReadWriteLock();
-  protected volatile boolean mySharedReadInWriteMode = false;
 
   //ModelAccess is a singleton, so we can omit remove() here though the field is not static
   private ThreadLocal<Boolean> myReadEnabledFlag = new ThreadLocal<Boolean>() {
@@ -100,33 +96,19 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 
   @Override
   public boolean canRead() {
-    if (isReadEnabledFlag() || myReadWriteLock.getReadHoldCount() != 0) return true;
-    return myReadWriteLock.isWriteLockedByCurrentThread() ||
-      (mySharedReadInWriteMode && mySharedReadInWriteLock.getReadHoldCount() != 0);
+    return isReadEnabledFlag() || myReadWriteLock.getReadHoldCount() != 0 || myReadWriteLock.isWriteLockedByCurrentThread();
   }
 
   @Override
   public boolean canWrite() {
-    if (mySharedReadInWriteMode) {
-      return false;
-    }
     return myReadWriteLock.isWriteLockedByCurrentThread();
   }
 
+  @Deprecated
   @Override
   public <T> T runReadInWriteAction(final Computable<T> c) {
     checkWriteAccess();
-
-    mySharedReadInWriteLock.writeLock().lock();
-    mySharedReadInWriteMode = true;
-    mySharedReadInWriteLock.writeLock().unlock();
-    try {
-      return c.compute();
-    } finally {
-      mySharedReadInWriteLock.writeLock().lock();
-      mySharedReadInWriteMode = false;
-      mySharedReadInWriteLock.writeLock().unlock();
-    }
+    return c.compute();
   }
 
   @Override
@@ -195,6 +177,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
   }
 
   @Override
+  @Deprecated
   public boolean setReadEnabledFlag(boolean flag) {
     Boolean oldValue = myReadEnabledFlag.get();
     myReadEnabledFlag.set(flag);

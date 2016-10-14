@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
@@ -823,17 +823,17 @@
                       <ref role="3cqZAo" node="7cC8ee7w35t" resolve="orPattern" />
                     </node>
                     <node concept="3Tsc0h" id="7cC8ee7w35I" role="2OqNvi">
-                      <ref role="3TtcxE" to="tp3t:2vRmfyWqGFe" />
+                      <ref role="3TtcxE" to="tp3t:2vRmfyWqGFe" resolve="clause" />
                     </node>
                   </node>
                   <node concept="1uHKPH" id="7cC8ee7w35J" role="2OqNvi" />
                 </node>
                 <node concept="3TrEf2" id="4tPQHKlnM4v" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                  <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                 </node>
               </node>
               <node concept="3TrEf2" id="4tPQHKlnMpt" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp3r:hqc44pq" />
+                <ref role="3Tt5mk" to="tp3r:hqc44pq" resolve="quotedNode" />
               </node>
             </node>
           </node>
@@ -913,7 +913,7 @@
                     <ref role="3cqZAo" node="2lnc$wDYCTE" resolve="pe" />
                   </node>
                   <node concept="3TrEf2" id="6wyfy1abUex" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                    <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                   </node>
                 </node>
                 <node concept="zfrQC" id="6wyfy1abUs4" role="2OqNvi">
@@ -925,7 +925,7 @@
               <node concept="37vLTI" id="6wyfy1abVPM" role="3clFbG">
                 <node concept="2OqwBi" id="6wyfy1abVSZ" role="37vLTx">
                   <node concept="3TrEf2" id="6wyfy1abW5w" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+                    <ref role="3Tt5mk" to="tp3t:gyDMOui" resolve="patternNode" />
                   </node>
                   <node concept="37vLTw" id="2lnc$wDYJWo" role="2Oq$k0">
                     <ref role="3cqZAo" node="2lnc$wDYCTE" resolve="pe" />
@@ -937,11 +937,11 @@
                       <ref role="3cqZAo" node="2lnc$wDYCTE" resolve="pe" />
                     </node>
                     <node concept="3TrEf2" id="6wyfy1abVyX" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                      <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="6wyfy1abVJK" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp3r:hqc44pq" />
+                    <ref role="3Tt5mk" to="tp3r:hqc44pq" resolve="quotedNode" />
                   </node>
                 </node>
               </node>
@@ -977,7 +977,7 @@
               <node concept="2OqwBi" id="6wyfy1abT7A" role="3uHU7B">
                 <node concept="2Sf5sV" id="6wyfy1abT3U" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6wyfy1abTl5" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+                  <ref role="3Tt5mk" to="tp3t:gyDMOui" resolve="patternNode" />
                 </node>
               </node>
             </node>
@@ -985,7 +985,7 @@
               <node concept="2OqwBi" id="6wyfy1abSJS" role="3uHU7B">
                 <node concept="2Sf5sV" id="6wyfy1abSGx" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6wyfy1abSQF" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                  <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                 </node>
               </node>
               <node concept="10Nm6u" id="6wyfy1abT0F" role="3uHU7w" />

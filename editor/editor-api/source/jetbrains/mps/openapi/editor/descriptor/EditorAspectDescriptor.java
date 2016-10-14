@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.descriptor;
 
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -26,7 +26,7 @@ import java.util.Collection;
  * User: shatalin
  * Date: 4/8/13
  */
-public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
+public interface EditorAspectDescriptor extends ILanguageAspect {
   /**
    * Returns the editors defined for a concept together with any additions contributed by extending languages.
    * @param concept the concept

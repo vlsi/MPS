@@ -10,7 +10,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-public interface IInterfacedFinder extends IFinder {
+public interface IInterfacedFinder extends Finder {
   SAbstractConcept getSConcept();
   boolean isApplicable(SNode node);
   boolean isVisible(SNode node);

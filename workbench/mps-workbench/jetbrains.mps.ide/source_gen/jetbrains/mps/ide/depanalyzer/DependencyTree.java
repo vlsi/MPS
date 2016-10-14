@@ -4,7 +4,7 @@ package jetbrains.mps.ide.depanalyzer;
 
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -27,7 +27,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
@@ -174,6 +173,6 @@ public class DependencyTree extends MPSTree implements DataProvider {
   }
   @Override
   protected void doInit(MPSTreeNode node, Runnable runnable) {
-    super.doInit(node, new ModelReadRunnable(ProjectHelper.getProjectRepository(myProject).getModelAccess(), runnable));
+    super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), runnable));
   }
 }

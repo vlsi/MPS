@@ -8,9 +8,9 @@ import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ValueWrapperFactory> myFactories = ListSequence.fromList(new ArrayList<ValueWrapperFactory>());
@@ -51,6 +51,7 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
       }
     }
   }
+  protected static Logger LOG = LogManager.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
   public void doDispose() {
     CustomViewersManager manager = CustomViewersManager.getInstance();
     if (manager != null) {
@@ -64,5 +65,4 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
     }
     ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).clear();
   }
-  protected static Logger LOG = LogManager.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
 }

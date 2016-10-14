@@ -35,6 +35,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
@@ -78,18 +79,20 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----EXCLUSION/EXPANSION----
 
-  public void setExcluded(List<DataNode> nodes, boolean value) {
+  public void setExcluded(Set<DataNode> nodes, boolean value) {
     for (DataNode node : nodes) {
-      setExcludedRecursively(node, value);
+      setExcludedRecursively(nodes, node, value);
     }
     checkExcluded();
     notifyChangeListeners();
   }
 
-  private void setExcludedRecursively(DataNode node, boolean value) {
+  //doNotProcess is needed as there might be many pairs of nodes in the list, one of which is a child of another
+  private void setExcludedRecursively(Set<DataNode> doNotProcess, DataNode node, boolean value) {
     node.getData().setExcluded(value);
     for (DataNode child : node.getChildren()) {
-      setExcludedRecursively(child, value);
+      if (doNotProcess.contains(child)) continue;
+      setExcludedRecursively(doNotProcess, child, value);
     }
   }
 
@@ -227,7 +230,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
     for (PathItem currentPathItem : path) {
       Object currentIdObject = currentPathItem.getIdObject();
-      final boolean isResult = currentPathItem == pathTail;
+      final boolean isPathTail = currentPathItem == pathTail;
 
       DataNode next = myRebuildCache.get(new Pair<DataNode, Object>(parent, currentIdObject));
 
@@ -235,19 +238,19 @@ public class DataTree implements IExternalizeable, IChangeListener {
         PathItemRole creator = currentPathItem.getRole();
         BaseNodeData data = null;
 
-        final String caption = isResult ? tailCustomCaption : null;
+        final String caption = isPathTail ? tailCustomCaption : null;
 
         if (currentIdObject instanceof SModule) {
-          data = new ModuleNodeData(creator, caption, ((SModule) currentIdObject).getModuleReference(), isResult, results);
+          data = new ModuleNodeData(creator, caption, ((SModule) currentIdObject).getModuleReference(), isPathTail, results);
         } else if (currentIdObject instanceof SModuleReference) {
-          data = new ModuleNodeData(creator, caption, (SModuleReference) currentIdObject, isResult, results);
+          data = new ModuleNodeData(creator, caption, (SModuleReference) currentIdObject, isPathTail, results);
         } else if (currentIdObject instanceof SModelReference) {
-          data = new ModelNodeData(creator, caption, (SModelReference) currentIdObject, isResult, results);
+          data = new ModelNodeData(creator, caption, (SModelReference) currentIdObject, isPathTail, results);
         } else if (currentIdObject instanceof SNode) {
-          data = new NodeNodeData(creator, caption, (SNode) currentIdObject, isResult, results);
+          data = new NodeNodeData(creator, caption, (SNode) currentIdObject, isPathTail, results);
         } else if (currentIdObject instanceof SLanguage) {
           final SLanguage l = (SLanguage) currentIdObject;
-          data = new AbstractResultNodeData(creator, caption == null ? l.getQualifiedName() : caption, "", false, isResult, results) {
+          data = new AbstractResultNodeData(creator, caption == null ? l.getQualifiedName() : caption, "", false, isPathTail, results) {
             @Override
             protected String createIdObject() {
               return l.toString();
@@ -256,6 +259,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
             @Override
             public Icon getIcon() {
               return IdeIcons.LANGUAGE_ICON;
+            }
+
+            @Override
+            public void navigate(Project mpsProject, boolean useProjectTree, boolean focus) {
+              new ProjectPaneNavigator(mpsProject).shallFocus(focus).select(l);
             }
           };
         } else if (currentIdObject instanceof Pair) {
@@ -269,8 +277,8 @@ public class DataTree implements IExternalizeable, IChangeListener {
         parent.add(next);
         myRebuildCache.put(new Pair<DataNode, Object>(parent, data.getIdObject()), next);
       } else {
-        if (isResult) {
-          next.getData().setIsResultNode_internal(true);
+        if (isPathTail) {
+          next.getData().setIsPathTail_internal(true);
         }
       }
       parent = next;

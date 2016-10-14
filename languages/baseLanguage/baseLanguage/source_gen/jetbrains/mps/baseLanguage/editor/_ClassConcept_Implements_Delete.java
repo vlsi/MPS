@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class _ClassConcept_Implements_Delete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,6 +36,7 @@ public class _ClassConcept_Implements_Delete {
           SNodeOperations.deleteNode(it);
         }
       });
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "OpenBraceClassCell", 0);
     }
   }
   public static class _ClassConcept_Implements_Delete_BACKSPACE extends AbstractCellAction {
@@ -52,6 +54,7 @@ public class _ClassConcept_Implements_Delete {
           SNodeOperations.deleteNode(it);
         }
       });
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "OpenBraceClassCell", 0);
     }
   }
 }

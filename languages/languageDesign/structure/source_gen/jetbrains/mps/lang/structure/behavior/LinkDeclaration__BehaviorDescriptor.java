@@ -18,6 +18,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -31,8 +32,9 @@ public final class LinkDeclaration__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Boolean> isSingular_idhEwIfAt = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSingular").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIfAt").registry(REGISTRY).build();
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
   public static final SMethod<Boolean> isAtLeastOneCardinality_id2VYdUfnkjmB = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isAtLeastOneCardinality").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VYdUfnkjmB").registry(REGISTRY).build();
+  public static final SMethod<SNode> getConceptDeclaration_id7jb4LXpbWaP = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getConceptDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7jb4LXpbWaP").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGenuineLink_idhEwIf_V, getGenuineRole_idhEwIfAe, isSingular_idhEwIfAt, getPresentation_idhEwIMiw, isAtLeastOneCardinality_id2VYdUfnkjmB);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGenuineLink_idhEwIf_V, getGenuineRole_idhEwIfAe, isSingular_idhEwIfAt, getPresentation_idhEwIMiw, isAtLeastOneCardinality_id2VYdUfnkjmB, getConceptDeclaration_id7jb4LXpbWaP);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -59,6 +61,9 @@ public final class LinkDeclaration__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static boolean isAtLeastOneCardinality_id2VYdUfnkjmB(@NotNull SNode __thisNode__) {
     SNode genuineLink = LinkDeclaration__BehaviorDescriptor.getGenuineLink_idhEwIf_V.invoke(__thisNode__);
     return SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
+  }
+  /*package*/ static SNode getConceptDeclaration_id7jb4LXpbWaP(@NotNull SNode __thisNode__) {
+    return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
   }
 
   /*package*/ LinkDeclaration__BehaviorDescriptor() {
@@ -87,6 +92,8 @@ public final class LinkDeclaration__BehaviorDescriptor extends BaseBHDescriptor 
         return (T) ((String) getPresentation_idhEwIMiw(node));
       case 4:
         return (T) ((Boolean) isAtLeastOneCardinality_id2VYdUfnkjmB(node));
+      case 5:
+        return (T) ((SNode) getConceptDeclaration_id7jb4LXpbWaP(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

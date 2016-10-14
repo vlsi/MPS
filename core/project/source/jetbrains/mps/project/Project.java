@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -162,50 +163,25 @@ public abstract class Project implements MPSModuleOwner, IProject {
     return false;
   }
 
+  public abstract boolean isOpened();
+
   @NotNull
   public String toString() {
     return "MPS Project [" + myName + "] " + (myDisposed ? ", disposed]" : "]");
   }
 
+  /**
+   * closes and disposes the project
+   */
   public void dispose() {
     myRepository.dispose();
     myDisposed = true;
   }
 
-  protected final void checkNotDisposed() {
+  final void checkNotDisposed() {
     if (isDisposed()) {
       throw new IllegalStateException("Cannot proceed with disposed project " + this);
     }
-  }
-
-  /**
-   * @deprecated use {@link #addModule(SModule)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void addModule(final SModuleReference moduleReference) {
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModule module = moduleReference.resolve(myRepository);
-        addModule(module);
-      }
-    });
-  }
-
-  /**
-   * @deprecated use {@link #removeModule(SModule)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void removeModule(final SModuleReference moduleReference) {
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModule module = moduleReference.resolve(myRepository);
-        removeModule(module);
-      }
-    });
   }
 
   public boolean isDisposed() {

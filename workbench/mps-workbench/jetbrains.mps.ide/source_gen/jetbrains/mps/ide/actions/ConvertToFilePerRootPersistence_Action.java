@@ -18,6 +18,8 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vfs.IFile;
@@ -32,8 +34,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ConvertToFilePerRootPersistence_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -86,6 +86,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(ConvertToFilePerRootPersistence_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
@@ -152,5 +153,4 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(ConvertToFilePerRootPersistence_Action.class);
 }

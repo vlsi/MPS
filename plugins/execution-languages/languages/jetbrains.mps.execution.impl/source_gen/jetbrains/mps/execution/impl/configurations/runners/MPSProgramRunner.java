@@ -4,12 +4,12 @@ package jetbrains.mps.execution.impl.configurations.runners;
 
 import com.intellij.execution.runners.DefaultProgramRunner;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MPSProgramRunner extends DefaultProgramRunner {
   public MPSProgramRunner() {
@@ -19,6 +19,7 @@ public class MPSProgramRunner extends DefaultProgramRunner {
   public String getRunnerId() {
     return "Default Runner";
   }
+  protected static Logger LOG = LogManager.getLogger(MPSProgramRunner.class);
   @Override
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
     try {
@@ -30,5 +31,4 @@ public class MPSProgramRunner extends DefaultProgramRunner {
       return false;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MPSProgramRunner.class);
 }

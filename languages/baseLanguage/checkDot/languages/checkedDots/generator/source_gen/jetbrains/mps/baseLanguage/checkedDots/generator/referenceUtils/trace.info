@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:9fe3b5b8-3b82-4c46-a9a9-5eb7cd2665a4(jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils)/297042804014309596">
+    <file name="ReferenceConversionHelper.java">
+      <node id="297042804013972658" at="15,68,16,98" concept="1" />
+      <node id="297042804013957197" at="16,98,17,0" concept="3" />
+      <node id="297042804014182687" at="19,40,20,651" concept="2" />
+      <node id="297042804014928966" at="25,75,26,98" concept="1" />
+      <node id="297042804014923230" at="26,98,27,0" concept="3" />
+      <node id="297042804014930843" at="29,41,30,652" concept="2" />
+      <node id="297042804014907510" at="35,67,36,616" concept="2" />
+      <node id="297042804014182685" at="19,0,22,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="297042804014930841" at="29,0,32,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="297042804014908608" at="35,0,38,0" concept="4" trace="retrieveFlowInterruptors#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="297042804014125840" at="17,0,22,7" concept="2" />
+      <node id="297042804014930832" at="27,0,32,7" concept="2" />
+      <node id="297042804014310654" at="15,0,24,0" concept="4" trace="retrieveDescendentRefs#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="297042804014860528" at="25,0,34,0" concept="4" trace="retrieveDescendentMethodCalls#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <scope id="297042804014182686" at="19,40,20,651" />
+      <scope id="297042804014930842" at="29,41,30,652" />
+      <scope id="297042804014906423" at="35,67,36,616" />
+      <scope id="297042804014182685" at="19,0,22,0">
+        <var name="ref" id="297042804014182685" />
+      </scope>
+      <scope id="297042804014930841" at="29,0,32,0">
+        <var name="call" id="297042804014930841" />
+      </scope>
+      <scope id="297042804014908608" at="35,0,38,0">
+        <var name="node" id="297042804014907518" />
+      </scope>
+      <scope id="297042804014310657" at="15,68,22,7">
+        <var name="flowInterruptors" id="297042804013972659" />
+      </scope>
+      <scope id="297042804014860529" at="25,75,32,7">
+        <var name="flowInterruptors" id="297042804014928967" />
+      </scope>
+      <scope id="297042804014310654" at="15,0,24,0">
+        <var name="node" id="297042804014313503" />
+      </scope>
+      <scope id="297042804014860528" at="25,0,34,0">
+        <var name="node" id="297042804014860566" />
+      </scope>
+      <unit id="297042804014182685" at="18,279,22,5" name="jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils.ReferenceConversionHelper$1" />
+      <unit id="297042804014930841" at="28,267,32,5" name="jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils.ReferenceConversionHelper$2" />
+      <unit id="297042804014309596" at="13,0,39,0" name="jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils.ReferenceConversionHelper" />
+    </file>
+  </root>
+</debug-info>
+

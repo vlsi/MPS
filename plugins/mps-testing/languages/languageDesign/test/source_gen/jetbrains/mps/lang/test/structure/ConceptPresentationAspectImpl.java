@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractNodeAssert = new ConceptPresentationBuilder().create();
@@ -89,388 +86,155 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0wc.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractNodeAssert;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractNodeErrorCheckOperation;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractNodeRuleCheckOperation;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AbstractNodeWarningCheckOperation;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ActionReference;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AnonymousCellAnnotation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_AssertMatch;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_BootstrapActionReference;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_CheckDataFlowOperation;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_CheckNodeDataflow;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_CheckNodeForErrorMessagesOperation;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_CheckNodeForErrors;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_DragMouseStatement;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_EditorComponentExpression;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_EditorExpression;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_EditorOperation;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_EditorTestCase;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ExpressionContainer;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_IChecksRules;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_INodeAnnotation;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_INodesTestMethod;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_IReferenceAttachable;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_IRuleReference;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_InfoStatementReference;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_InvokeActionStatement;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_InvokeIntentionStatement;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_IsIntentionApplicableExpression;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_LogEvent;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_MPSActionReference;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_MockAnnotation;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_MockScopeProvider;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_ModelExpression;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_NamedNodeReference;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_NodeCheckOperation;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_NodeConstraintsErrorCheckOperation;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_NodeConstraintsWarningCheckOperation;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_NodeErrorCheckOperation;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_NodeExpectedTypeCheckOperation;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_NodeInfoCheckOperation;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_NodeOperationsContainer;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_NodePropertiesContainer;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_NodeReachable;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_NodeRuleCheckOperation;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_NodeTypeCheckOperation;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_NodeTypeSetCheckOperation;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_NodeTypeSystemErrorCheckOperation;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_NodeTypeSystemRuleCheckOperation;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_NodeTypeSystemWarningCheckOperation;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_NodeUnknownErrorCheckOperation;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_NodeUnknownWarningCheckOperation;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_NodeUnreachable;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_NodeWarningCheckOperation;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_NodesTestCase;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_NodesTestMethod;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_PressKeyStatement;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_PressMouseStatement;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_ProjectExpression;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_ReportErrorStatementReference;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_ScopeEntry;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_ScopesExpectedNode;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_ScopesTest;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_SimpleNodeTest;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_SwitchToInspector;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_TestInfo;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_TestNode;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_TestNodeAnnotation;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_TestNodeReference;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_TypeKeyStatement;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_UnknownRuleReference;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_UntypedExpression;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_VariableAlive;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_VariableInitialized;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_WarningStatementReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractNodeAssert:
+        return props_AbstractNodeAssert;
+      case LanguageConceptSwitch.AbstractNodeErrorCheckOperation:
+        return props_AbstractNodeErrorCheckOperation;
+      case LanguageConceptSwitch.AbstractNodeRuleCheckOperation:
+        return props_AbstractNodeRuleCheckOperation;
+      case LanguageConceptSwitch.AbstractNodeWarningCheckOperation:
+        return props_AbstractNodeWarningCheckOperation;
+      case LanguageConceptSwitch.ActionReference:
+        return props_ActionReference;
+      case LanguageConceptSwitch.AnonymousCellAnnotation:
+        return props_AnonymousCellAnnotation;
+      case LanguageConceptSwitch.AssertMatch:
+        return props_AssertMatch;
+      case LanguageConceptSwitch.BootstrapActionReference:
+        return props_BootstrapActionReference;
+      case LanguageConceptSwitch.CheckDataFlowOperation:
+        return props_CheckDataFlowOperation;
+      case LanguageConceptSwitch.CheckNodeDataflow:
+        return props_CheckNodeDataflow;
+      case LanguageConceptSwitch.CheckNodeForErrorMessagesOperation:
+        return props_CheckNodeForErrorMessagesOperation;
+      case LanguageConceptSwitch.CheckNodeForErrors:
+        return props_CheckNodeForErrors;
+      case LanguageConceptSwitch.DragMouseStatement:
+        return props_DragMouseStatement;
+      case LanguageConceptSwitch.EditorComponentExpression:
+        return props_EditorComponentExpression;
+      case LanguageConceptSwitch.EditorExpression:
+        return props_EditorExpression;
+      case LanguageConceptSwitch.EditorOperation:
+        return props_EditorOperation;
+      case LanguageConceptSwitch.EditorTestCase:
+        return props_EditorTestCase;
+      case LanguageConceptSwitch.ExpressionContainer:
+        return props_ExpressionContainer;
+      case LanguageConceptSwitch.IChecksRules:
+        return props_IChecksRules;
+      case LanguageConceptSwitch.INodeAnnotation:
+        return props_INodeAnnotation;
+      case LanguageConceptSwitch.INodesTestMethod:
+        return props_INodesTestMethod;
+      case LanguageConceptSwitch.IReferenceAttachable:
+        return props_IReferenceAttachable;
+      case LanguageConceptSwitch.IRuleReference:
+        return props_IRuleReference;
+      case LanguageConceptSwitch.InfoStatementReference:
+        return props_InfoStatementReference;
+      case LanguageConceptSwitch.InvokeActionStatement:
+        return props_InvokeActionStatement;
+      case LanguageConceptSwitch.InvokeIntentionStatement:
+        return props_InvokeIntentionStatement;
+      case LanguageConceptSwitch.IsIntentionApplicableExpression:
+        return props_IsIntentionApplicableExpression;
+      case LanguageConceptSwitch.LogEvent:
+        return props_LogEvent;
+      case LanguageConceptSwitch.MPSActionReference:
+        return props_MPSActionReference;
+      case LanguageConceptSwitch.MockAnnotation:
+        return props_MockAnnotation;
+      case LanguageConceptSwitch.MockScopeProvider:
+        return props_MockScopeProvider;
+      case LanguageConceptSwitch.ModelExpression:
+        return props_ModelExpression;
+      case LanguageConceptSwitch.NamedNodeReference:
+        return props_NamedNodeReference;
+      case LanguageConceptSwitch.NodeCheckOperation:
+        return props_NodeCheckOperation;
+      case LanguageConceptSwitch.NodeConstraintsErrorCheckOperation:
+        return props_NodeConstraintsErrorCheckOperation;
+      case LanguageConceptSwitch.NodeConstraintsWarningCheckOperation:
+        return props_NodeConstraintsWarningCheckOperation;
+      case LanguageConceptSwitch.NodeErrorCheckOperation:
+        return props_NodeErrorCheckOperation;
+      case LanguageConceptSwitch.NodeExpectedTypeCheckOperation:
+        return props_NodeExpectedTypeCheckOperation;
+      case LanguageConceptSwitch.NodeInfoCheckOperation:
+        return props_NodeInfoCheckOperation;
+      case LanguageConceptSwitch.NodeOperationsContainer:
+        return props_NodeOperationsContainer;
+      case LanguageConceptSwitch.NodePropertiesContainer:
+        return props_NodePropertiesContainer;
+      case LanguageConceptSwitch.NodeReachable:
+        return props_NodeReachable;
+      case LanguageConceptSwitch.NodeRuleCheckOperation:
+        return props_NodeRuleCheckOperation;
+      case LanguageConceptSwitch.NodeTypeCheckOperation:
+        return props_NodeTypeCheckOperation;
+      case LanguageConceptSwitch.NodeTypeSetCheckOperation:
+        return props_NodeTypeSetCheckOperation;
+      case LanguageConceptSwitch.NodeTypeSystemErrorCheckOperation:
+        return props_NodeTypeSystemErrorCheckOperation;
+      case LanguageConceptSwitch.NodeTypeSystemRuleCheckOperation:
+        return props_NodeTypeSystemRuleCheckOperation;
+      case LanguageConceptSwitch.NodeTypeSystemWarningCheckOperation:
+        return props_NodeTypeSystemWarningCheckOperation;
+      case LanguageConceptSwitch.NodeUnknownErrorCheckOperation:
+        return props_NodeUnknownErrorCheckOperation;
+      case LanguageConceptSwitch.NodeUnknownWarningCheckOperation:
+        return props_NodeUnknownWarningCheckOperation;
+      case LanguageConceptSwitch.NodeUnreachable:
+        return props_NodeUnreachable;
+      case LanguageConceptSwitch.NodeWarningCheckOperation:
+        return props_NodeWarningCheckOperation;
+      case LanguageConceptSwitch.NodesTestCase:
+        return props_NodesTestCase;
+      case LanguageConceptSwitch.NodesTestMethod:
+        return props_NodesTestMethod;
+      case LanguageConceptSwitch.PressKeyStatement:
+        return props_PressKeyStatement;
+      case LanguageConceptSwitch.PressMouseStatement:
+        return props_PressMouseStatement;
+      case LanguageConceptSwitch.ProjectExpression:
+        return props_ProjectExpression;
+      case LanguageConceptSwitch.ReportErrorStatementReference:
+        return props_ReportErrorStatementReference;
+      case LanguageConceptSwitch.ScopeEntry:
+        return props_ScopeEntry;
+      case LanguageConceptSwitch.ScopesExpectedNode:
+        return props_ScopesExpectedNode;
+      case LanguageConceptSwitch.ScopesTest:
+        return props_ScopesTest;
+      case LanguageConceptSwitch.SimpleNodeTest:
+        return props_SimpleNodeTest;
+      case LanguageConceptSwitch.SwitchToInspector:
+        return props_SwitchToInspector;
+      case LanguageConceptSwitch.TestInfo:
+        return props_TestInfo;
+      case LanguageConceptSwitch.TestNode:
+        return props_TestNode;
+      case LanguageConceptSwitch.TestNodeAnnotation:
+        return props_TestNodeAnnotation;
+      case LanguageConceptSwitch.TestNodeReference:
+        return props_TestNodeReference;
+      case LanguageConceptSwitch.TypeKeyStatement:
+        return props_TypeKeyStatement;
+      case LanguageConceptSwitch.UnknownRuleReference:
+        return props_UnknownRuleReference;
+      case LanguageConceptSwitch.UntypedExpression:
+        return props_UntypedExpression;
+      case LanguageConceptSwitch.VariableAlive:
+        return props_VariableAlive;
+      case LanguageConceptSwitch.VariableInitialized:
+        return props_VariableInitialized;
+      case LanguageConceptSwitch.WarningStatementReference:
+        return props_WarningStatementReference;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0wc = buildConceptIndices(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11ada7b9a44L, "jetbrains.mps.lang.test.structure.AbstractNodeAssert"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a195a9aL, "jetbrains.mps.lang.test.structure.AbstractNodeErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a42d28aL, "jetbrains.mps.lang.test.structure.AbstractNodeRuleCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf1ec9L, "jetbrains.mps.lang.test.structure.AbstractNodeWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899bf4L, "jetbrains.mps.lang.test.structure.ActionReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, "jetbrains.mps.lang.test.structure.AssertMatch"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899d06L, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b081c90baL, "jetbrains.mps.lang.test.structure.CheckDataFlowOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b743c0e8cL, "jetbrains.mps.lang.test.structure.CheckNodeDataflow"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11ae82817b8L, "jetbrains.mps.lang.test.structure.CheckNodeForErrors"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c55ca0a3L, "jetbrains.mps.lang.test.structure.DragMouseStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb2963ab0ffL, "jetbrains.mps.lang.test.structure.EditorComponentExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d7249a7dbL, "jetbrains.mps.lang.test.structure.EditorExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11daf16c21cL, "jetbrains.mps.lang.test.structure.EditorOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x254649f227ff5d72L, "jetbrains.mps.lang.test.structure.ExpressionContainer"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x770c2c9f6ef97f30L, "jetbrains.mps.lang.test.structure.IChecksRules"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e0d52da47L, "jetbrains.mps.lang.test.structure.INodeAnnotation"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2827acdc621ed3acL, "jetbrains.mps.lang.test.structure.IReferenceAttachable"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, "jetbrains.mps.lang.test.structure.IRuleReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe9cf9L, "jetbrains.mps.lang.test.structure.InfoStatementReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x614c5660cccba06bL, "jetbrains.mps.lang.test.structure.InvokeActionStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, "jetbrains.mps.lang.test.structure.InvokeIntentionStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x83a4b2183e44b99L, "jetbrains.mps.lang.test.structure.IsIntentionApplicableExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L, "jetbrains.mps.lang.test.structure.LogEvent"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, "jetbrains.mps.lang.test.structure.MPSActionReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e6f14cfccL, "jetbrains.mps.lang.test.structure.MockAnnotation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf63919L, "jetbrains.mps.lang.test.structure.MockScopeProvider"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d53b20b9cL, "jetbrains.mps.lang.test.structure.ModelExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf9c211L, "jetbrains.mps.lang.test.structure.NamedNodeReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf8aadL, "jetbrains.mps.lang.test.structure.NodeConstraintsWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3cff387beb174046L, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, "jetbrains.mps.lang.test.structure.NodeInfoCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e50b53L, "jetbrains.mps.lang.test.structure.NodePropertiesContainer"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b02f9eeb8L, "jetbrains.mps.lang.test.structure.NodeReachable"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3bc62fcd9b027d04L, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b03034484L, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x15404cb86444497L, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5f2a921acc5d63aL, "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4a391b6dc8e619d9L, "jetbrains.mps.lang.test.structure.NodeTypeSystemRuleCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x770c2c9f6f1bbfcaL, "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbc0b900L, "jetbrains.mps.lang.test.structure.NodeUnknownWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b082d1cb9L, "jetbrains.mps.lang.test.structure.NodeUnreachable"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0224b421L, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b54d88L, "jetbrains.mps.lang.test.structure.NodesTestMethod"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e223413eeL, "jetbrains.mps.lang.test.structure.PressKeyStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c5348f79L, "jetbrains.mps.lang.test.structure.PressMouseStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d5387d7a1L, "jetbrains.mps.lang.test.structure.ProjectExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b19b06dL, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf67ae2L, "jetbrains.mps.lang.test.structure.ScopeEntry"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x32ba5b0ec25fe9f3L, "jetbrains.mps.lang.test.structure.ScopesExpectedNode"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d71fcb191L, "jetbrains.mps.lang.test.structure.SimpleNodeTest"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb29636e491L, "jetbrains.mps.lang.test.structure.SwitchToInspector"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1c6609cL, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, "jetbrains.mps.lang.test.structure.TestNodeReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11db9c07f43L, "jetbrains.mps.lang.test.structure.TypeKeyStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4af0d67L, "jetbrains.mps.lang.test.structure.UnknownRuleReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x706cdc8a9fd69324L, "jetbrains.mps.lang.test.structure.UntypedExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b086b4872L, "jetbrains.mps.lang.test.structure.VariableAlive"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, "jetbrains.mps.lang.test.structure.VariableInitialized"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b386d76L, "jetbrains.mps.lang.test.structure.WarningStatementReference"));
 }

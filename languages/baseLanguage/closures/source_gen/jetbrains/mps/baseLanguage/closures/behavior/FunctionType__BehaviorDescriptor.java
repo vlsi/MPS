@@ -20,6 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.closures.util.RuntimeUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
@@ -33,8 +35,6 @@ import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -133,6 +133,7 @@ with_meet:
   /*package*/ static SNode getTerminateType_idhVqPOyZ(@NotNull SNode __thisNode__) {
     return null;
   }
+  protected static Logger LOG = LogManager.getLogger(FunctionType__BehaviorDescriptor.class);
   /*package*/ static SNode getDeclarationRuntimeType_idhTOKQzf(@NotNull SNode __thisNode__) {
     SNode ice = RuntimeUtil.functionClassifier(FunctionType__BehaviorDescriptor.getRuntimeClassName_idhTXTW9V.invoke(__thisNode__), FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
     if (ice == null) {
@@ -348,7 +349,6 @@ with_throws:
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(FunctionType__BehaviorDescriptor.class);
   private static SNode _quotation_createNode_ksvwin_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

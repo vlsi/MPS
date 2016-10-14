@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AdvanceWorkStatement = new ConceptPresentationBuilder().create();
@@ -41,148 +38,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0ab.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AdvanceWorkStatement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AllWorkLeftExpression;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BeginWorkStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConceptFunctionParameter_progressMonitor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConfigDefinition;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_Expected;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ExpectedInput;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ExpectedOption;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_FinishWorkStatement;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IExpected;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_InputResourcesParameter;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_JobDeclaration;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_JobDefinition;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_Option;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_OptionExpression;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_OptionType;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_OutputResources;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_PropertiesAccessorParameter;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_QueryDefinition;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_QueryParameterDeclaration;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_RelayQueryExpression;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ReportFeedbackStatement;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ResourceType;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ResultStatement;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_Text;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AdvanceWorkStatement:
+        return props_AdvanceWorkStatement;
+      case LanguageConceptSwitch.AllWorkLeftExpression:
+        return props_AllWorkLeftExpression;
+      case LanguageConceptSwitch.BeginWorkStatement:
+        return props_BeginWorkStatement;
+      case LanguageConceptSwitch.ConceptFunctionParameter_progressMonitor:
+        return props_ConceptFunctionParameter_progressMonitor;
+      case LanguageConceptSwitch.ConfigDefinition:
+        return props_ConfigDefinition;
+      case LanguageConceptSwitch.Expected:
+        return props_Expected;
+      case LanguageConceptSwitch.ExpectedInput:
+        return props_ExpectedInput;
+      case LanguageConceptSwitch.ExpectedOption:
+        return props_ExpectedOption;
+      case LanguageConceptSwitch.FinishWorkStatement:
+        return props_FinishWorkStatement;
+      case LanguageConceptSwitch.IExpected:
+        return props_IExpected;
+      case LanguageConceptSwitch.InputResourcesParameter:
+        return props_InputResourcesParameter;
+      case LanguageConceptSwitch.JobDeclaration:
+        return props_JobDeclaration;
+      case LanguageConceptSwitch.JobDefinition:
+        return props_JobDefinition;
+      case LanguageConceptSwitch.Option:
+        return props_Option;
+      case LanguageConceptSwitch.OptionExpression:
+        return props_OptionExpression;
+      case LanguageConceptSwitch.OptionType:
+        return props_OptionType;
+      case LanguageConceptSwitch.OutputResources:
+        return props_OutputResources;
+      case LanguageConceptSwitch.PropertiesAccessorParameter:
+        return props_PropertiesAccessorParameter;
+      case LanguageConceptSwitch.QueryDefinition:
+        return props_QueryDefinition;
+      case LanguageConceptSwitch.QueryParameterDeclaration:
+        return props_QueryParameterDeclaration;
+      case LanguageConceptSwitch.RelayQueryExpression:
+        return props_RelayQueryExpression;
+      case LanguageConceptSwitch.ReportFeedbackStatement:
+        return props_ReportFeedbackStatement;
+      case LanguageConceptSwitch.ResourceType:
+        return props_ResourceType;
+      case LanguageConceptSwitch.ResultStatement:
+        return props_ResultStatement;
+      case LanguageConceptSwitch.Text:
+        return props_Text;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0ab = buildConceptIndices(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L, "jetbrains.mps.make.script.structure.AdvanceWorkStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL, "jetbrains.mps.make.script.structure.AllWorkLeftExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, "jetbrains.mps.make.script.structure.BeginWorkStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x40d591ab6a24e48dL, "jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dcbee4L, "jetbrains.mps.make.script.structure.ConfigDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7c2L, "jetbrains.mps.make.script.structure.Expected"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7c6L, "jetbrains.mps.make.script.structure.ExpectedInput"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L, "jetbrains.mps.make.script.structure.FinishWorkStatement"), MetaAdapterFactory.getInterfaceConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc581e7L, "jetbrains.mps.make.script.structure.IExpected"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dacL, "jetbrains.mps.make.script.structure.InputResourcesParameter"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7edL, "jetbrains.mps.make.script.structure.JobDeclaration"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec9L, "jetbrains.mps.make.script.structure.Option"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L, "jetbrains.mps.make.script.structure.OptionExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b5L, "jetbrains.mps.make.script.structure.OptionType"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L, "jetbrains.mps.make.script.structure.OutputResources"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x716499a9068b35e9L, "jetbrains.mps.make.script.structure.PropertiesAccessorParameter"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49b2bL, "jetbrains.mps.make.script.structure.QueryDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec7L, "jetbrains.mps.make.script.structure.QueryParameterDeclaration"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL, "jetbrains.mps.make.script.structure.RelayQueryExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ecaL, "jetbrains.mps.make.script.structure.Text"));
 }

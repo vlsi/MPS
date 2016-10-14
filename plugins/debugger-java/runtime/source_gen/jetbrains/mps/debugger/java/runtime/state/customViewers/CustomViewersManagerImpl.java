@@ -16,6 +16,8 @@ import java.util.Set;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.sun.jdi.VirtualMachine;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.sun.jdi.Type;
@@ -37,8 +39,6 @@ import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 import com.intellij.openapi.project.ProjectManagerAdapter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CustomViewersManagerImpl extends CustomViewersManager {
   private final ProjectManager myProjectManager;
@@ -74,6 +74,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     return result;
   }
+  protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
   private ValueWrapperFactory getBestFactory(Set<ValueWrapperFactory> factories, DebugSession session) {
     VirtualMachine vm = session.getEventsProcessor().getVirtualMachine();
     Tuples._2<ValueWrapperFactory, Type> currentBest = MultiTuple.<ValueWrapperFactory,Type>from(null, null);
@@ -136,7 +137,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     String oldFactory = MapSequence.fromMap(objectIdToFactory).get(getValueId(value));
     String newFactory = factory.getClass().getName();
-    if (neq_2btpdq_a0e0n(oldFactory, newFactory)) {
+    if (neq_2btpdq_a0e0o(oldFactory, newFactory)) {
       MapSequence.fromMap(objectIdToFactory).put(getValueId(value), newFactory);
       session.refresh();
     }
@@ -185,8 +186,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
-  private static boolean neq_2btpdq_a0e0n(Object a, Object b) {
+  private static boolean neq_2btpdq_a0e0o(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

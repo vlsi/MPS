@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runner.Description;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.module.ModuleClassLoaderIsNullException;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,14 +21,13 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
+import org.junit.runner.notification.Failure;
 
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
-  private final TestsClassStorage myTestClassStorage;
 
-  public NodeWrappersTestsContributor(Iterable<? extends ITestNodeWrapper> testNodes, TestsClassStorage testClassStorage) {
+  public NodeWrappersTestsContributor(Iterable<? extends ITestNodeWrapper> testNodes) {
     myTestNodes = testNodes;
-    myTestClassStorage = testClassStorage;
   }
 
   @Override
@@ -35,25 +39,26 @@ public class NodeWrappersTestsContributor implements TestsContributor {
           String fqName = testNode.getFqName();
           final SModule module = getModuleByNode(testNode.getNode());
           if (testNode.isTestCase()) {
-            final Class<?> aClass = myTestClassStorage.loadTestClass(fqName, module);
             Request requestForClass;
-            if (aClass == null) {
-              requestForClass = new NodeWrappersTestsContributor.EmptyRequest(Description.createSuiteDescription(fqName));
-            } else {
+            try {
+              final Class<?> aClass = loadTestClass(fqName, module);
               requestForClass = Request.aClass(aClass);
+            } catch (ClassNotFoundException e) {
+              requestForClass = new NodeWrappersTestsContributor.EmptyRequest(Description.createSuiteDescription(fqName), e);
             }
             TestNodeRequest request = new TestNodeRequest(requestForClass, testNode);
             requestList.add(request);
+
           } else {
             int index = fqName.lastIndexOf('.');
             String testFqName = fqName.substring(0, index);
             String methodName = fqName.substring(index + 1);
-            final Class aClass = myTestClassStorage.loadTestClass(testFqName, module);
             Request requestForMethod;
-            if (aClass == null) {
-              requestForMethod = new NodeWrappersTestsContributor.EmptyRequest(Description.createTestDescription(testFqName, methodName));
-            } else {
+            try {
+              final Class aClass = loadTestClass(testFqName, module);
               requestForMethod = Request.method(aClass, methodName);
+            } catch (ClassNotFoundException e) {
+              requestForMethod = new NodeWrappersTestsContributor.EmptyRequest(Description.createTestDescription(testFqName, methodName), e);
             }
             TestNodeRequest request = new TestNodeRequest(requestForMethod, testNode);
             requestList.add(request);
@@ -64,38 +69,44 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     return requestList;
   }
 
+  @NotNull
+  private Class<?> loadTestClass(String fqName, SModule module) throws ClassNotFoundException, ModuleClassLoaderIsNullException {
+    if (module instanceof ReloadableModule && ClassLoaderManager.getInstance().isLoadedByMPS(((ReloadableModule) module))) {
+      return ((ReloadableModule) module).getOwnClass(fqName);
+    } else {
+      throw new ModuleIsNotLoadableException(module, "Module's " + module + " classes are managed by MPS (try setting compileInMPS flag to true)");
+    }
+  }
+
   private SModule getModuleByNode(SNode testNode) {
     final SModel model = SNodeOperations.getModel(testNode);
     final SModuleReference moduleReference = model.getModule().getModuleReference();
     return ModuleRepositoryFacade.getInstance().getModule(moduleReference);
   }
 
-
   private static class EmptyRequest extends Request {
     private final Description myDescription;
+    private final Exception myException;
 
-    public EmptyRequest(Description description) {
+    public EmptyRequest(Description description, Exception exception) {
       myDescription = description;
+      myException = exception;
     }
 
     public Runner getRunner() {
-      return new NodeWrappersTestsContributor.EmptyRequest.IgnoringRunner(myDescription);
+      return new NodeWrappersTestsContributor.EmptyRequest.IgnoringRunner();
     }
 
-    private static class IgnoringRunner extends Runner {
-      private final Description myDescription;
-
-      public IgnoringRunner(Description displayName) {
-        myDescription = displayName;
-      }
-
+    private class IgnoringRunner extends Runner {
+      @Override
       public Description getDescription() {
         return myDescription;
       }
 
+      @Override
       public void run(RunNotifier notifier) {
         notifier.fireTestStarted(myDescription);
-        notifier.fireTestIgnored(myDescription);
+        notifier.fireTestAssumptionFailed(new Failure(myDescription, myException));
         notifier.fireTestFinished(myDescription);
       }
     }

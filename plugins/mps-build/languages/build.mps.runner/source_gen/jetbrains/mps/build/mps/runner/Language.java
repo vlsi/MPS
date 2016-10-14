@@ -20,7 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.build.mps.runner.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "427a473d-5177-432c-9905-bcbceb71b996(jetbrains.mps.build.mps.runner)";
+  public static final String MODULE_REF = "427a473d-5177-432c-9905-bcbceb71b996(jetbrains.mps.build.mps.runner)";
   public Language() {
   }
   @Override
@@ -76,6 +76,6 @@ public class Language extends LanguageRuntime {
         return (T) new TypesystemDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

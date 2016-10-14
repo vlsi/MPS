@@ -84,11 +84,11 @@ public final class IGeneratedToClass__BehaviorDescriptor extends BaseBHDescripto
   }
   /*package*/ static String getValidClassName_id3gpm$NHlLi1(@NotNull SAbstractConcept __thisConcept__, @NonNls String name) {
     // in between 
-    name = RegexpOperations.replace(name, REGEXP_mgabp8_b0a1a62, new _Replacer_mgabp8_a0a0b0ab(null, null));
+    name = RegexpOperations.replace(name, REGEXP_mgabp8_b0a1a62, new _Replacer_mgabp8_a0a0b0ab(null));
     // in the end 
-    name = RegexpOperations.replace(name, REGEXP_mgabp8_b0a3a62, new _Replacer_mgabp8_a0a0d0ab(null, null));
+    name = RegexpOperations.replace(name, REGEXP_mgabp8_b0a3a62, new _Replacer_mgabp8_a0a0d0ab(null));
     // in the beggining 
-    name = RegexpOperations.replace(name, REGEXP_mgabp8_b0a5a62, new _Replacer_mgabp8_a0a0f0ab(null, null));
+    name = RegexpOperations.replace(name, REGEXP_mgabp8_b0a5a62, new _Replacer_mgabp8_a0a0f0ab(null));
     return (String) IGeneratedToClass__BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name, ((int) 0));
   }
 

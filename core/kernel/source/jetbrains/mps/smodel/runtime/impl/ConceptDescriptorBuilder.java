@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +44,6 @@ public class ConceptDescriptorBuilder {
   private SConceptId id;
   private String superConcept;
   private boolean isInterfaceConcept;
-  private String[] parents;
   private boolean isAbstract;
   private boolean isFinal;
   private boolean isRootable; //meaningless for interfaces
@@ -87,7 +85,7 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder parents(String... parents) {
-    this.parents = parents;
+    // intentionally no-op
     return this;
   }
 
@@ -188,7 +186,7 @@ public class ConceptDescriptorBuilder {
         superConcept,
         isInterfaceConcept,
         parentIds == null ? EMPTY_IDS : parentIds,
-        parents == null ? EMPTY_STRINGS : parents,
+        null,
         ownProperties.toArray(new PropertyDescriptor[ownProperties.size()]),
         ownReferences.toArray(new ReferenceDescriptor[ownReferences.size()]),
         ownLinks.toArray(new LinkDescriptor[ownLinks.size()]),

@@ -2,7 +2,7 @@
 <model ref="r:a5e67830-5e22-4e0a-a1be-c7135a49a7a5(testAnnotatedType.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -60,7 +60,7 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F1sOY" id="5zzawu2JF7L" role="3EZMnx">
-        <ref role="1NtTu8" to="tp5x:5zzawu2JF74" />
+        <ref role="1NtTu8" to="tp5x:5zzawu2JF74" resolve="condition" />
       </node>
       <node concept="3F0ifn" id="5zzawu2JF7Z" role="3EZMnx">
         <property role="3F0ifm" value=":" />
@@ -72,7 +72,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="5zzawu2JF6Y" role="3EZMnx">
-        <ref role="1NtTu8" to="tp5x:5zzawu2JF6U" />
+        <ref role="1NtTu8" to="tp5x:5zzawu2JF6U" resolve="substitute" />
       </node>
       <node concept="3F0ifn" id="5zzawu2JF6K" role="3EZMnx">
         <property role="3F0ifm" value="}" />

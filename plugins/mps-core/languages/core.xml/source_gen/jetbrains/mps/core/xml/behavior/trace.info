@@ -14,7 +14,88 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,168,0" name="jetbrains.mps.core.xml.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,92,0" name="jetbrains.mps.core.xml.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="XmlAttribute_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlAttribute_BehaviorDescriptor" />
+    </file>
+    <file name="XmlBaseAttribute_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_BehaviorDescriptor" />
+    </file>
+    <file name="XmlBaseElement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlBaseElement_BehaviorDescriptor" />
+    </file>
+    <file name="XmlBasePrologElement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlBasePrologElement_BehaviorDescriptor" />
+    </file>
+    <file name="XmlCDATA_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlCDATA_BehaviorDescriptor" />
+    </file>
+    <file name="XmlCharRefValue_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlCharRefValue_BehaviorDescriptor" />
+    </file>
+    <file name="XmlCharRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlCharRef_BehaviorDescriptor" />
+    </file>
+    <file name="XmlCommentLine_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlCommentLine_BehaviorDescriptor" />
+    </file>
+    <file name="XmlComment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlComment_BehaviorDescriptor" />
+    </file>
+    <file name="XmlContent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlContent_BehaviorDescriptor" />
+    </file>
+    <file name="XmlDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="XmlDoctypeDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlDoctypeDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="XmlDocument_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlDocument_BehaviorDescriptor" />
+    </file>
+    <file name="XmlElement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlElement_BehaviorDescriptor" />
+    </file>
+    <file name="XmlEntityRefValue_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlEntityRefValue_BehaviorDescriptor" />
+    </file>
+    <file name="XmlEntityRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlEntityRef_BehaviorDescriptor" />
+    </file>
+    <file name="XmlExternalId_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlExternalId_BehaviorDescriptor" />
+    </file>
+    <file name="XmlFile_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlFile_BehaviorDescriptor" />
+    </file>
+    <file name="XmlNoSpaceValue_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlNoSpaceValue_BehaviorDescriptor" />
+    </file>
+    <file name="XmlPart_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor" />
+    </file>
+    <file name="XmlProcessingInstruction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlProcessingInstruction_BehaviorDescriptor" />
+    </file>
+    <file name="XmlPrologElement_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.core.xml.behavior.XmlPrologElement_BehaviorDescriptor" />
+    </file>
+    <file name="XmlProlog_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlProlog_BehaviorDescriptor" />
+    </file>
+    <file name="XmlTextValue_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlTextValue_BehaviorDescriptor" />
+    </file>
+    <file name="XmlText_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlText_BehaviorDescriptor" />
+    </file>
+    <file name="XmlValuePart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlValuePart_BehaviorDescriptor" />
+    </file>
+    <file name="XmlWhitespace_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlWhitespace_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1262430001741498286">

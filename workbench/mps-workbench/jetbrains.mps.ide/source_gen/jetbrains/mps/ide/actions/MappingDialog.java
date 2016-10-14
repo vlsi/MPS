@@ -99,7 +99,7 @@ public class MappingDialog extends DialogWrapper {
     }
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : myLanguage.getGenerators()) {
-      MPSTreeNode generatorTreeNode = newTreeNode(MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getName());
+      MPSTreeNode generatorTreeNode = newTreeNode(MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getModuleName());
       root.add(generatorTreeNode);
       for (SModel md : generator.getOwnTemplateModels()) {
         MPSTreeNode modelTreeNode = newTreeNode(IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));

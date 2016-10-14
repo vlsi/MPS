@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
@@ -66,6 +67,20 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
 
   @Override
   protected void doInit() {
+    if (getModule() instanceof Solution) {
+      ModuleNodeChildrenProvider childrenProvider = getAncestor(ModuleNodeChildrenProvider.class);
+      if (childrenProvider == null || !childrenProvider.populate(this, (Solution) getModule())) {
+        populate();
+      }
+    } else {
+      // there are other module implementations beside Solution (namely, ProjectStructureModule, TempModule, EvaluationModule)
+      // that we don't care to control, and default implementation with all models is sufficient
+      populate();
+    }
+    myInitialized = true;
+  }
+
+  private void populate() {
     List<SModel> regularModels = new ArrayList<SModel>();
     List<SModel> tests = new ArrayList<SModel>();
     List<SModel> stubs = new ArrayList<SModel>();
@@ -94,7 +109,6 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
       new SModelsSubtree(stubsNode).create(stubs);
       add(stubsNode);
     }
-    myInitialized = true;
   }
 
 }

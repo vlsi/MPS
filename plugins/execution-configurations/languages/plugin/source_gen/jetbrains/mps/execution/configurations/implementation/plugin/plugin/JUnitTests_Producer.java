@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -52,7 +53,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(getMpsProject()));
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "All Tests in Project", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.PROJECT);
-      configuration.getJUnitSettings().setLightExec(false);
+      configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
     @Override
@@ -73,7 +74,7 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODULE);
       configuration.getJUnitSettings().setModule(source.getModuleName());
-      configuration.getJUnitSettings().setLightExec(false);
+      configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
     @Override
@@ -90,11 +91,11 @@ public class JUnitTests_Producer {
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SModel source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
-      String name = source.getModelName();
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      SModelName name = source.getName();
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name.getSimpleName() + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
       configuration.getJUnitSettings().setModel(source.getModelName());
-      configuration.getJUnitSettings().setLightExec(false);
+      configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
     @Override
@@ -142,7 +143,7 @@ public class JUnitTests_Producer {
       if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
         canRunInProcess = ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB")));
       }
-      configuration.getJUnitSettings().setLightExec(canRunInProcess);
+      configuration.getJUnitSettings().setInProcess(canRunInProcess);
       return configuration;
     }
     @Override
@@ -175,7 +176,7 @@ public class JUnitTests_Producer {
       SNode testNode = TestNodeWrapperFactory.findWrappableAncestor(source, true);
       if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
         boolean canRunInProcess = ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB")));
-        configuration.getJUnitSettings().setLightExec(canRunInProcess);
+        configuration.getJUnitSettings().setInProcess(canRunInProcess);
       }
       return configuration;
     }
@@ -218,7 +219,7 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.NODE);
       configuration.getJUnitSettings().setTestCases(PointerUtils.nodesToCloneableList(source));
-      configuration.getJUnitSettings().setLightExec(canRunInProcess);
+      configuration.getJUnitSettings().setInProcess(canRunInProcess);
       return configuration;
     }
     @Override
@@ -253,7 +254,7 @@ public class JUnitTests_Producer {
         }
       }
       configuration.getJUnitSettings().setTestMethods(PointerUtils.nodesToCloneableList(source));
-      configuration.getJUnitSettings().setLightExec(canRunInProcess);
+      configuration.getJUnitSettings().setInProcess(canRunInProcess);
       return configuration;
     }
     @Override

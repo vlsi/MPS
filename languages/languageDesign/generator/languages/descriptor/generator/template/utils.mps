@@ -322,10 +322,6 @@
       <property role="TrG5h" value="hasManualEditorAspectDescriptor" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="37vLTG" id="CgolD_uS1K" role="3clF46">
-        <property role="TrG5h" value="genContext" />
-        <node concept="1iwH7U" id="CgolD_uS1L" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="7IH442cXIUf" role="3clF46">
         <property role="TrG5h" value="editorModel" />
         <node concept="3uibUv" id="7IH442cXIZr" role="1tU5fm">
@@ -441,7 +437,7 @@
                           <ref role="3cqZAo" node="6798YLJ2huy" resolve="it" />
                         </node>
                         <node concept="3Tsc0h" id="6798YLJ297f" role="2OqNvi">
-                          <ref role="3TtcxE" to="tpc2:hgV6056" />
+                          <ref role="3TtcxE" to="tpc2:hgV6056" resolve="styleClass" />
                         </node>
                       </node>
                       <node concept="2HwmR7" id="6798YLJ2lfX" role="2OqNvi">

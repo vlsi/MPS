@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ActionAccessOperation = new ConceptPresentationBuilder().create();
@@ -17,7 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ActionConstructorParameterReferenceOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionDataParameterReferenceOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD33/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0f).create();
+  private final ConceptPresentation props_ActionDeclaration = new ConceptPresentationBuilder().helpUrl("http://confluence.jetbrains.com/display/MPSD34/Plugin#Plugin-actionsandactiongroups").icon(IconContainer.RESOURCE_a0a0f).create();
   private final ConceptPresentation props_ActionGroupDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_ActionGroupMember = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionGroupRef = new ConceptPresentationBuilder().create();
@@ -137,628 +135,251 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0se.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ActionAccessOperation;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ActionConstructionParameterDeclaration;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ActionConstructorParameterReferenceOperation;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ActionDataParameterDeclaration;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ActionDataParameterReferenceOperation;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ActionDeclaration;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ActionGroupDeclaration;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ActionGroupMember;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ActionGroupRef;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ActionInstance;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_ActionParameter;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ActionParameterCondition;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ActionParameterDeclaration;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ActionParameterReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ActionParameterReferenceOperation;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ActionPlaceSpecification;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ActionReference;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ActionType;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_AddElementStatement;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_AddKeystrokeStatement;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_AddStatement;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_AddTabOperation;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_BaseNodeBlock;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_BaseProjectOperation;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_BaseToolDeclaration;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_BuildGroupBlock;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ButtonCreator;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_CloseTabOperation;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_ConceptCondition;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_ConceptFunctionParameter_AnActionEvent;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_ConceptFunctionParameter_Concept;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_ConceptFunctionParameter_CreatorType;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_ConceptFunctionParameter_IModule;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_ConceptFunctionParameter_MPSProject;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_ConceptFunctionParameter_Model;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_ConceptFunctionParameter_OperationContext;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_ConceptFunctionParameter_PreferencePage_component;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_ConceptFunctionParameter_Project;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_ConceptFunctionParameter_SConceptClass;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_ConceptFunctionParameter_node;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_ConceptsBlock;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_CreateBlock;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_CreateNodeAspectBlock;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_CreateTabBlock;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_CustomCondition;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_DisposeBlock;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_DoUpdateBlock;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_EditableModel;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_EditorTab;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_EditorTabReference;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_ElementListContents;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_EnumerateChildrenFunction;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_EverywhereActionPlace;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_ExecuteBlock;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_GetComponentBlock;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_GetGroupOperation;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_GetNodeBlock;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_GetNodesBlock;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_GetSelectedTabOperation;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_GroupAccessOperation;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_GroupAnchor;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_GroupContents;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_GroupType;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_IdeaActionsDescriptor;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_IdeaConfigurationXml;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_IdeaInitializerDescriptor;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_IdeaPluginDependency;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_InitBlock;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_InterfaceExtentionPoint;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_InterfaceGroup;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_IsApplicableBlock;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_IsApplicableTabBlock;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_KeyMapKeystroke;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_KeyStrokeType;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_KeymapChangesDeclaration;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_KeymapRef;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_ListenBlock;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_MPSPluginDependency;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_ModificationStatement;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_NodesBlock;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_NonDumbAwareActions;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_OldConceptsBlock;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_OldCreateBlock;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_OnAfterReadBlock;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_OnBeforeWriteBlock;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_Order;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_OrderConstraints;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_OrderReference;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_ParameterCondition_ConceptFunctionParameter;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_ParameterizedShortcutChange;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_PersistentPropertyDeclaration;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_PersistentPropertyReference;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_PinTabOperation;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_PluginDependency;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_PopupCreator;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_PreferencePage;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_PreferencePageCommitBlock;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_PreferencePageIsModifiedBlock;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_PreferencePageResetBlock;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_PreferencesComponentDeclaration;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_PreferencesComponentType;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_RequiredCondition;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_Separator;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_ShortcutChange;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_SimpleActionPlace;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_SimpleShortcutChange;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_SmartDisposeClosureParameterDeclaration;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_TabbedToolDeclaration;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_TabbedToolOperation;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_ToStringConceptFunction;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_ToStringParameter;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_ToolActionPlace;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_ToolDeclaration;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_ToolInstanceExpression;
-          }
-          break;
-        case 114:
-          if (true) {
-            return props_ToolTab;
-          }
-          break;
-        case 115:
-          if (true) {
-            return props_ToolType;
-          }
-          break;
-        case 116:
-          if (true) {
-            return props_ToolbarCreator;
-          }
-          break;
-        case 117:
-          if (true) {
-            return props_UnpinTabOperation;
-          }
-          break;
-        case 118:
-          if (true) {
-            return props_UpdateBlock;
-          }
-          break;
-        case 119:
-          if (true) {
-            return props_UpdateGroupBlock;
-          }
-          break;
-        case 120:
-          if (true) {
-            return props_UpdateGroupFunction;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ActionAccessOperation:
+        return props_ActionAccessOperation;
+      case LanguageConceptSwitch.ActionConstructionParameterDeclaration:
+        return props_ActionConstructionParameterDeclaration;
+      case LanguageConceptSwitch.ActionConstructorParameterReferenceOperation:
+        return props_ActionConstructorParameterReferenceOperation;
+      case LanguageConceptSwitch.ActionDataParameterDeclaration:
+        return props_ActionDataParameterDeclaration;
+      case LanguageConceptSwitch.ActionDataParameterReferenceOperation:
+        return props_ActionDataParameterReferenceOperation;
+      case LanguageConceptSwitch.ActionDeclaration:
+        return props_ActionDeclaration;
+      case LanguageConceptSwitch.ActionGroupDeclaration:
+        return props_ActionGroupDeclaration;
+      case LanguageConceptSwitch.ActionGroupMember:
+        return props_ActionGroupMember;
+      case LanguageConceptSwitch.ActionGroupRef:
+        return props_ActionGroupRef;
+      case LanguageConceptSwitch.ActionInstance:
+        return props_ActionInstance;
+      case LanguageConceptSwitch.ActionParameter:
+        return props_ActionParameter;
+      case LanguageConceptSwitch.ActionParameterCondition:
+        return props_ActionParameterCondition;
+      case LanguageConceptSwitch.ActionParameterDeclaration:
+        return props_ActionParameterDeclaration;
+      case LanguageConceptSwitch.ActionParameterReference:
+        return props_ActionParameterReference;
+      case LanguageConceptSwitch.ActionParameterReferenceOperation:
+        return props_ActionParameterReferenceOperation;
+      case LanguageConceptSwitch.ActionPlaceSpecification:
+        return props_ActionPlaceSpecification;
+      case LanguageConceptSwitch.ActionReference:
+        return props_ActionReference;
+      case LanguageConceptSwitch.ActionType:
+        return props_ActionType;
+      case LanguageConceptSwitch.AddElementStatement:
+        return props_AddElementStatement;
+      case LanguageConceptSwitch.AddKeystrokeStatement:
+        return props_AddKeystrokeStatement;
+      case LanguageConceptSwitch.AddStatement:
+        return props_AddStatement;
+      case LanguageConceptSwitch.AddTabOperation:
+        return props_AddTabOperation;
+      case LanguageConceptSwitch.BaseNodeBlock:
+        return props_BaseNodeBlock;
+      case LanguageConceptSwitch.BaseProjectOperation:
+        return props_BaseProjectOperation;
+      case LanguageConceptSwitch.BaseToolDeclaration:
+        return props_BaseToolDeclaration;
+      case LanguageConceptSwitch.BuildGroupBlock:
+        return props_BuildGroupBlock;
+      case LanguageConceptSwitch.ButtonCreator:
+        return props_ButtonCreator;
+      case LanguageConceptSwitch.CloseTabOperation:
+        return props_CloseTabOperation;
+      case LanguageConceptSwitch.ConceptCondition:
+        return props_ConceptCondition;
+      case LanguageConceptSwitch.ConceptFunctionParameter_AnActionEvent:
+        return props_ConceptFunctionParameter_AnActionEvent;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
+        return props_ConceptFunctionParameter_Concept;
+      case LanguageConceptSwitch.ConceptFunctionParameter_CreatorType:
+        return props_ConceptFunctionParameter_CreatorType;
+      case LanguageConceptSwitch.ConceptFunctionParameter_IModule:
+        return props_ConceptFunctionParameter_IModule;
+      case LanguageConceptSwitch.ConceptFunctionParameter_MPSProject:
+        return props_ConceptFunctionParameter_MPSProject;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Model:
+        return props_ConceptFunctionParameter_Model;
+      case LanguageConceptSwitch.ConceptFunctionParameter_OperationContext:
+        return props_ConceptFunctionParameter_OperationContext;
+      case LanguageConceptSwitch.ConceptFunctionParameter_PreferencePage_component:
+        return props_ConceptFunctionParameter_PreferencePage_component;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Project:
+        return props_ConceptFunctionParameter_Project;
+      case LanguageConceptSwitch.ConceptFunctionParameter_SConceptClass:
+        return props_ConceptFunctionParameter_SConceptClass;
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
+        return props_ConceptFunctionParameter_node;
+      case LanguageConceptSwitch.ConceptsBlock:
+        return props_ConceptsBlock;
+      case LanguageConceptSwitch.CreateBlock:
+        return props_CreateBlock;
+      case LanguageConceptSwitch.CreateNodeAspectBlock:
+        return props_CreateNodeAspectBlock;
+      case LanguageConceptSwitch.CreateTabBlock:
+        return props_CreateTabBlock;
+      case LanguageConceptSwitch.CustomCondition:
+        return props_CustomCondition;
+      case LanguageConceptSwitch.DisposeBlock:
+        return props_DisposeBlock;
+      case LanguageConceptSwitch.DoUpdateBlock:
+        return props_DoUpdateBlock;
+      case LanguageConceptSwitch.EditableModel:
+        return props_EditableModel;
+      case LanguageConceptSwitch.EditorTab:
+        return props_EditorTab;
+      case LanguageConceptSwitch.EditorTabReference:
+        return props_EditorTabReference;
+      case LanguageConceptSwitch.ElementListContents:
+        return props_ElementListContents;
+      case LanguageConceptSwitch.EnumerateChildrenFunction:
+        return props_EnumerateChildrenFunction;
+      case LanguageConceptSwitch.EverywhereActionPlace:
+        return props_EverywhereActionPlace;
+      case LanguageConceptSwitch.ExecuteBlock:
+        return props_ExecuteBlock;
+      case LanguageConceptSwitch.GetComponentBlock:
+        return props_GetComponentBlock;
+      case LanguageConceptSwitch.GetGroupOperation:
+        return props_GetGroupOperation;
+      case LanguageConceptSwitch.GetNodeBlock:
+        return props_GetNodeBlock;
+      case LanguageConceptSwitch.GetNodesBlock:
+        return props_GetNodesBlock;
+      case LanguageConceptSwitch.GetSelectedTabOperation:
+        return props_GetSelectedTabOperation;
+      case LanguageConceptSwitch.GroupAccessOperation:
+        return props_GroupAccessOperation;
+      case LanguageConceptSwitch.GroupAnchor:
+        return props_GroupAnchor;
+      case LanguageConceptSwitch.GroupContents:
+        return props_GroupContents;
+      case LanguageConceptSwitch.GroupType:
+        return props_GroupType;
+      case LanguageConceptSwitch.IdeaActionsDescriptor:
+        return props_IdeaActionsDescriptor;
+      case LanguageConceptSwitch.IdeaConfigurationXml:
+        return props_IdeaConfigurationXml;
+      case LanguageConceptSwitch.IdeaInitializerDescriptor:
+        return props_IdeaInitializerDescriptor;
+      case LanguageConceptSwitch.IdeaPluginDependency:
+        return props_IdeaPluginDependency;
+      case LanguageConceptSwitch.InitBlock:
+        return props_InitBlock;
+      case LanguageConceptSwitch.InterfaceExtentionPoint:
+        return props_InterfaceExtentionPoint;
+      case LanguageConceptSwitch.InterfaceGroup:
+        return props_InterfaceGroup;
+      case LanguageConceptSwitch.IsApplicableBlock:
+        return props_IsApplicableBlock;
+      case LanguageConceptSwitch.IsApplicableTabBlock:
+        return props_IsApplicableTabBlock;
+      case LanguageConceptSwitch.KeyMapKeystroke:
+        return props_KeyMapKeystroke;
+      case LanguageConceptSwitch.KeyStrokeType:
+        return props_KeyStrokeType;
+      case LanguageConceptSwitch.KeymapChangesDeclaration:
+        return props_KeymapChangesDeclaration;
+      case LanguageConceptSwitch.KeymapRef:
+        return props_KeymapRef;
+      case LanguageConceptSwitch.ListenBlock:
+        return props_ListenBlock;
+      case LanguageConceptSwitch.MPSPluginDependency:
+        return props_MPSPluginDependency;
+      case LanguageConceptSwitch.ModificationStatement:
+        return props_ModificationStatement;
+      case LanguageConceptSwitch.NodesBlock:
+        return props_NodesBlock;
+      case LanguageConceptSwitch.NonDumbAwareActions:
+        return props_NonDumbAwareActions;
+      case LanguageConceptSwitch.OldConceptsBlock:
+        return props_OldConceptsBlock;
+      case LanguageConceptSwitch.OldCreateBlock:
+        return props_OldCreateBlock;
+      case LanguageConceptSwitch.OnAfterReadBlock:
+        return props_OnAfterReadBlock;
+      case LanguageConceptSwitch.OnBeforeWriteBlock:
+        return props_OnBeforeWriteBlock;
+      case LanguageConceptSwitch.Order:
+        return props_Order;
+      case LanguageConceptSwitch.OrderConstraints:
+        return props_OrderConstraints;
+      case LanguageConceptSwitch.OrderReference:
+        return props_OrderReference;
+      case LanguageConceptSwitch.ParameterCondition_ConceptFunctionParameter:
+        return props_ParameterCondition_ConceptFunctionParameter;
+      case LanguageConceptSwitch.ParameterizedShortcutChange:
+        return props_ParameterizedShortcutChange;
+      case LanguageConceptSwitch.PersistentPropertyDeclaration:
+        return props_PersistentPropertyDeclaration;
+      case LanguageConceptSwitch.PersistentPropertyReference:
+        return props_PersistentPropertyReference;
+      case LanguageConceptSwitch.PinTabOperation:
+        return props_PinTabOperation;
+      case LanguageConceptSwitch.PluginDependency:
+        return props_PluginDependency;
+      case LanguageConceptSwitch.PopupCreator:
+        return props_PopupCreator;
+      case LanguageConceptSwitch.PreferencePage:
+        return props_PreferencePage;
+      case LanguageConceptSwitch.PreferencePageCommitBlock:
+        return props_PreferencePageCommitBlock;
+      case LanguageConceptSwitch.PreferencePageIsModifiedBlock:
+        return props_PreferencePageIsModifiedBlock;
+      case LanguageConceptSwitch.PreferencePageResetBlock:
+        return props_PreferencePageResetBlock;
+      case LanguageConceptSwitch.PreferencesComponentDeclaration:
+        return props_PreferencesComponentDeclaration;
+      case LanguageConceptSwitch.PreferencesComponentType:
+        return props_PreferencesComponentType;
+      case LanguageConceptSwitch.RequiredCondition:
+        return props_RequiredCondition;
+      case LanguageConceptSwitch.Separator:
+        return props_Separator;
+      case LanguageConceptSwitch.ShortcutChange:
+        return props_ShortcutChange;
+      case LanguageConceptSwitch.SimpleActionPlace:
+        return props_SimpleActionPlace;
+      case LanguageConceptSwitch.SimpleShortcutChange:
+        return props_SimpleShortcutChange;
+      case LanguageConceptSwitch.SmartDisposeClosureParameterDeclaration:
+        return props_SmartDisposeClosureParameterDeclaration;
+      case LanguageConceptSwitch.TabbedToolDeclaration:
+        return props_TabbedToolDeclaration;
+      case LanguageConceptSwitch.TabbedToolOperation:
+        return props_TabbedToolOperation;
+      case LanguageConceptSwitch.ToStringConceptFunction:
+        return props_ToStringConceptFunction;
+      case LanguageConceptSwitch.ToStringParameter:
+        return props_ToStringParameter;
+      case LanguageConceptSwitch.ToolActionPlace:
+        return props_ToolActionPlace;
+      case LanguageConceptSwitch.ToolDeclaration:
+        return props_ToolDeclaration;
+      case LanguageConceptSwitch.ToolInstanceExpression:
+        return props_ToolInstanceExpression;
+      case LanguageConceptSwitch.ToolTab:
+        return props_ToolTab;
+      case LanguageConceptSwitch.ToolType:
+        return props_ToolType;
+      case LanguageConceptSwitch.ToolbarCreator:
+        return props_ToolbarCreator;
+      case LanguageConceptSwitch.UnpinTabOperation:
+        return props_UnpinTabOperation;
+      case LanguageConceptSwitch.UpdateBlock:
+        return props_UpdateBlock;
+      case LanguageConceptSwitch.UpdateGroupBlock:
+        return props_UpdateGroupBlock;
+      case LanguageConceptSwitch.UpdateGroupFunction:
+        return props_UpdateGroupFunction;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0se = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL, "jetbrains.mps.lang.plugin.structure.ActionAccessOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6d2bdcL, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6e60e3L, "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e60be0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186b4d6ddfL, "jetbrains.mps.lang.plugin.structure.ActionGroupMember"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71fL, "jetbrains.mps.lang.plugin.structure.ActionGroupRef"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, "jetbrains.mps.lang.plugin.structure.ActionInstance"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, "jetbrains.mps.lang.plugin.structure.ActionParameter"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52facL, "jetbrains.mps.lang.plugin.structure.ActionParameterCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b812427fL, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1947b3e0f0959deeL, "jetbrains.mps.lang.plugin.structure.ActionParameterReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118d0b7fab3L, "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f5134202ecL, "jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL, "jetbrains.mps.lang.plugin.structure.ActionReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118c26632a3L, "jetbrains.mps.lang.plugin.structure.ActionType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f7a2d1aL, "jetbrains.mps.lang.plugin.structure.AddElementStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x70d8274412a8919cL, "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11dafad4b27L, "jetbrains.mps.lang.plugin.structure.AddStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17237b8L, "jetbrains.mps.lang.plugin.structure.AddTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ffc088L, "jetbrains.mps.lang.plugin.structure.BaseNodeBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2e56fadb4d375f27L, "jetbrains.mps.lang.plugin.structure.BaseProjectOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f786becL, "jetbrains.mps.lang.plugin.structure.BuildGroupBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207afL, "jetbrains.mps.lang.plugin.structure.ButtonCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x50be5f478b3541f2L, "jetbrains.mps.lang.plugin.structure.CloseTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0xe9375051ff52781L, "jetbrains.mps.lang.plugin.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181d54406fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x513f22c4bae4fb1bL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870797a07L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118707cdfb8L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x513f22c4bae4fb15L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118565418cbL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e2cb827fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa1691a43L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6785022a196ed912L, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_SConceptClass"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b3b848fL, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6785022a196e8effL, "jetbrains.mps.lang.plugin.structure.ConceptsBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6785022a196e8f01L, "jetbrains.mps.lang.plugin.structure.CreateBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d26L, "jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, "jetbrains.mps.lang.plugin.structure.CreateTabBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f46cb3L, "jetbrains.mps.lang.plugin.structure.CustomCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa167474fL, "jetbrains.mps.lang.plugin.structure.DisposeBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181d51127eL, "jetbrains.mps.lang.plugin.structure.DoUpdateBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ecd9810833251a2L, "jetbrains.mps.lang.plugin.structure.EditableModel"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, "jetbrains.mps.lang.plugin.structure.EditorTab"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd7814bL, "jetbrains.mps.lang.plugin.structure.EditorTabReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f756bc5L, "jetbrains.mps.lang.plugin.structure.ElementListContents"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44d9194L, "jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f513474398L, "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181d5d8548L, "jetbrains.mps.lang.plugin.structure.ExecuteBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aba5b01c0L, "jetbrains.mps.lang.plugin.structure.GetComponentBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119b4514b56L, "jetbrains.mps.lang.plugin.structure.GetGroupOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b2b7acbL, "jetbrains.mps.lang.plugin.structure.GetNodeBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1184b2c2cdeL, "jetbrains.mps.lang.plugin.structure.GetNodesBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x19da07a14b82ef06L, "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d17d74L, "jetbrains.mps.lang.plugin.structure.GroupAccessOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11840f36089L, "jetbrains.mps.lang.plugin.structure.GroupAnchor"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1190f747b3dL, "jetbrains.mps.lang.plugin.structure.GroupContents"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa71eL, "jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x45b64b294c2b3514L, "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x516313f5e8537eecL, "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa166ea48L, "jetbrains.mps.lang.plugin.structure.InitBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186bb08443L, "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1186ae0bf01L, "jetbrains.mps.lang.plugin.structure.InterfaceGroup"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b833c6a5L, "jetbrains.mps.lang.plugin.structure.IsApplicableBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff128fL, "jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x7a5e2454bfcdad14L, "jetbrains.mps.lang.plugin.structure.KeyStrokeType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x498be7ea73fa87eL, "jetbrains.mps.lang.plugin.structure.KeymapRef"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ffc090L, "jetbrains.mps.lang.plugin.structure.ListenBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2d2ad2584076330L, "jetbrains.mps.lang.plugin.structure.MPSPluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181de4920dL, "jetbrains.mps.lang.plugin.structure.ModificationStatement"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff11e2L, "jetbrains.mps.lang.plugin.structure.NodesBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dcL, "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218aa1eL, "jetbrains.mps.lang.plugin.structure.OldConceptsBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7cL, "jetbrains.mps.lang.plugin.structure.OldCreateBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e1f720a6L, "jetbrains.mps.lang.plugin.structure.OnAfterReadBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e1f3f82bL, "jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd78147L, "jetbrains.mps.lang.plugin.structure.Order"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd78145L, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x22035699bdd79211L, "jetbrains.mps.lang.plugin.structure.OrderReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52fa7L, "jetbrains.mps.lang.plugin.structure.ParameterCondition_ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e096c3aL, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44cfd36L, "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c466b22aL, "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x3b9dce676f3861a1L, "jetbrains.mps.lang.plugin.structure.PinTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x516313f5e8537ee9L, "jetbrains.mps.lang.plugin.structure.PluginDependency"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207abL, "jetbrains.mps.lang.plugin.structure.PopupCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e291160cL, "jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e7219d37L, "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e28fc2f6L, "jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44c226fL, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c497fc64L, "jetbrains.mps.lang.plugin.structure.PreferencesComponentType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52faeL, "jetbrains.mps.lang.plugin.structure.RequiredCondition"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1188a1ecd8aL, "jetbrains.mps.lang.plugin.structure.Separator"), MetaAdapterFactory.getInterfaceConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e092278L, "jetbrains.mps.lang.plugin.structure.ShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f5134202ebL, "jetbrains.mps.lang.plugin.structure.SimpleActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb076L, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6bd88e2e00aae68L, "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17223c5L, "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x705d0a376e80e04cL, "jetbrains.mps.lang.plugin.structure.TabbedToolOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11db00924aaL, "jetbrains.mps.lang.plugin.structure.ToStringConceptFunction"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11db00cd5f8L, "jetbrains.mps.lang.plugin.structure.ToStringParameter"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x57ad0f513426286L, "jetbrains.mps.lang.plugin.structure.ToolActionPlace"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca8f3faL, "jetbrains.mps.lang.plugin.structure.ToolDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11870178843L, "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6048eaf0c78f324eL, "jetbrains.mps.lang.plugin.structure.ToolTab"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L, "jetbrains.mps.lang.plugin.structure.ToolType"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb01f6f6L, "jetbrains.mps.lang.plugin.structure.ToolbarCreator"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ac06ca1bf6e6788L, "jetbrains.mps.lang.plugin.structure.UnpinTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b8325461L, "jetbrains.mps.lang.plugin.structure.UpdateBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44a69d3L, "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44b9ee2L, "jetbrains.mps.lang.plugin.structure.UpdateGroupFunction"));
 }

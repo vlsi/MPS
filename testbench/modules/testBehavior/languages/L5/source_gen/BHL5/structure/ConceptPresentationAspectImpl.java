@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_C0 = new ConceptPresentationBuilder().create();
@@ -26,73 +23,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_C0;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_C1;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_C2;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_C3;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_C4;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_C5;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_C6;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_C7;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_I1;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_I2;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.C0:
+        return props_C0;
+      case LanguageConceptSwitch.C1:
+        return props_C1;
+      case LanguageConceptSwitch.C2:
+        return props_C2;
+      case LanguageConceptSwitch.C3:
+        return props_C3;
+      case LanguageConceptSwitch.C4:
+        return props_C4;
+      case LanguageConceptSwitch.C5:
+        return props_C5;
+      case LanguageConceptSwitch.C6:
+        return props_C6;
+      case LanguageConceptSwitch.C7:
+        return props_C7;
+      case LanguageConceptSwitch.I1:
+        return props_I1;
+      case LanguageConceptSwitch.I2:
+        return props_I2;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2c627L, "BHL5.structure.C0"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba23bc7L, "BHL5.structure.C1"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2f187L, "BHL5.structure.C2"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba2f82fL, "BHL5.structure.C3"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba30886L, "BHL5.structure.C4"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x3f852a67e9131504L, "BHL5.structure.C5"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1aaedL, "BHL5.structure.C6"), MetaAdapterFactory.getConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x23a893587ca1af93L, "BHL5.structure.C7"), MetaAdapterFactory.getInterfaceConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba114cbL, "BHL5.structure.I1"), MetaAdapterFactory.getInterfaceConcept(0xb4fa1e36714a4c77L, 0x8e953eae9632decbL, 0x355d469f0ba23ba9L, "BHL5.structure.I2"));
 }

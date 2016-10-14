@@ -163,6 +163,7 @@
         <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -226,6 +227,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -1130,6 +1134,29 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_ScZe" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="3nWps2JRoXc" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPreferredFocusedComponent" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3nWps2JRoXf" role="3clF47">
+        <node concept="3clFbF" id="6NL21$NrHJq" role="3cqZAp">
+          <node concept="2OqwBi" id="6NL21$NrIKz" role="3clFbG">
+            <node concept="37vLTw" id="6NL21$NrHJo" role="2Oq$k0">
+              <ref role="3cqZAo" node="N5Kj01sBBz" resolve="myEditor" />
+            </node>
+            <node concept="liA8E" id="6NL21$NrKGB" role="2OqNvi">
+              <ref role="37wK5l" to="tpru:6NL21$Nrzm8" resolve="getPreferredFocusedComponent" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3nWps2JRlod" role="1B3o_S" />
+      <node concept="3uibUv" id="3nWps2JRoRt" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
       </node>
     </node>
   </node>
@@ -5283,6 +5310,34 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3Y6CQ86$IzR" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="3nWps2JPKbf" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPreferredFocusedComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="3nWps2JPKbg" role="1B3o_S" />
+      <node concept="2AHcQZ" id="3nWps2JPKbi" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3uibUv" id="3nWps2JPKbj" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+      </node>
+      <node concept="3clFbS" id="3nWps2JPKbk" role="3clF47">
+        <node concept="3clFbF" id="3nWps2JPN7V" role="3cqZAp">
+          <node concept="2OqwBi" id="3nWps2JPNDp" role="3clFbG">
+            <node concept="37vLTw" id="3nWps2JPN7T" role="2Oq$k0">
+              <ref role="3cqZAo" node="3Y6CQ86$x3k" resolve="myEvaluationPanel" />
+            </node>
+            <node concept="liA8E" id="3nWps2JRPfG" role="2OqNvi">
+              <ref role="37wK5l" node="3nWps2JRoXc" resolve="getPreferredFocusedComponent" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3nWps2JPKbl" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

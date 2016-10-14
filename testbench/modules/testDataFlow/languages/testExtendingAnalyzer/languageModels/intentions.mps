@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -118,14 +118,14 @@
                 <ref role="3cqZAo" node="6CTCHh5oP_J" resolve="result" />
               </node>
               <node concept="3TrEf2" id="6CTCHh5oP_S" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
               </node>
             </node>
             <node concept="2oxUTD" id="6CTCHh5oP_T" role="2OqNvi">
               <node concept="2OqwBi" id="6CTCHh5oP_U" role="2oxUTC">
                 <node concept="2Sf5sV" id="6CTCHh5oP_V" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6CTCHh5oP_W" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                  <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                 </node>
               </node>
             </node>
@@ -138,14 +138,14 @@
                 <ref role="3cqZAo" node="6CTCHh5oP_J" resolve="result" />
               </node>
               <node concept="3TrEf2" id="6CTCHh5oPA1" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
               </node>
             </node>
             <node concept="2oxUTD" id="6CTCHh5oPA2" role="2OqNvi">
               <node concept="2OqwBi" id="6CTCHh5oPA3" role="2oxUTC">
                 <node concept="2Sf5sV" id="6CTCHh5oPA4" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6CTCHh5oPA5" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                 </node>
               </node>
             </node>
@@ -200,14 +200,14 @@
                 <ref role="3cqZAo" node="1eGlc3_mdQi" resolve="result" />
               </node>
               <node concept="3TrEf2" id="1eGlc3_mdQr" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
               </node>
             </node>
             <node concept="2oxUTD" id="1eGlc3_mdQs" role="2OqNvi">
               <node concept="2OqwBi" id="1eGlc3_mdQt" role="2oxUTC">
                 <node concept="2Sf5sV" id="1eGlc3_mdQu" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1eGlc3_mdQv" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                  <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                 </node>
               </node>
             </node>
@@ -220,14 +220,14 @@
                 <ref role="3cqZAo" node="1eGlc3_mdQi" resolve="result" />
               </node>
               <node concept="3TrEf2" id="1eGlc3_mdQ$" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
               </node>
             </node>
             <node concept="2oxUTD" id="1eGlc3_mdQ_" role="2OqNvi">
               <node concept="2OqwBi" id="1eGlc3_mdQA" role="2oxUTC">
                 <node concept="2Sf5sV" id="1eGlc3_mdQB" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1eGlc3_mdQC" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                 </node>
               </node>
             </node>

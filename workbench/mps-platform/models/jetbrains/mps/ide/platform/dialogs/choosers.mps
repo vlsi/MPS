@@ -174,6 +174,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
@@ -286,6 +287,16 @@
       </node>
       <node concept="3Tm6S6" id="m2MuEX6ppM" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="QFGVOaUzr9" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myChooseByNameModel" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="QFGVOaUz8x" role="1B3o_S" />
+      <node concept="3uibUv" id="QFGVOaUzr7" role="1tU5fm">
+        <ref role="3uigEE" to="r0an:~BaseNodePointerModel" resolve="BaseNodePointerModel" />
+      </node>
+    </node>
     <node concept="312cEg" id="fweninYtz_" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -332,6 +343,16 @@
           </node>
         </node>
         <node concept="3clFbH" id="_Qgg$$utwP" role="3cqZAp" />
+        <node concept="3clFbF" id="QFGVOaUzuP" role="3cqZAp">
+          <node concept="37vLTI" id="QFGVOaUzSl" role="3clFbG">
+            <node concept="37vLTw" id="QFGVOaU$5b" role="37vLTx">
+              <ref role="3cqZAo" node="_Qgg$$uSnO" resolve="chooseByNameModel" />
+            </node>
+            <node concept="37vLTw" id="QFGVOaUzuN" role="37vLTJ">
+              <ref role="3cqZAo" node="QFGVOaUzr9" resolve="myChooseByNameModel" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="_Qgg$$utxS" role="3cqZAp">
           <node concept="37vLTI" id="_Qgg$$utxT" role="3clFbG">
             <node concept="37vLTw" id="_Qgg$$utxU" role="37vLTJ">
@@ -380,27 +401,9 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="_Qgg$$utyb" role="3clF47">
-                        <node concept="3clFbF" id="fweninYtY4" role="3cqZAp">
-                          <node concept="37vLTI" id="fweninYu3K" role="3clFbG">
-                            <node concept="2OqwBi" id="fweninYumd" role="37vLTx">
-                              <node concept="37vLTw" id="fweninYufQ" role="2Oq$k0">
-                                <ref role="3cqZAo" node="_Qgg$$uSnO" resolve="chooseByNameModel" />
-                              </node>
-                              <node concept="liA8E" id="fweninYus5" role="2OqNvi">
-                                <ref role="37wK5l" to="r0an:~BaseNodePointerModel.getModelObject(java.lang.Object):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getModelObject" />
-                                <node concept="37vLTw" id="fweninYuDK" role="37wK5m">
-                                  <ref role="3cqZAo" node="_Qgg$$uty9" resolve="element" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="fweninYtY2" role="37vLTJ">
-                              <ref role="3cqZAo" node="fweninYtz_" resolve="myChosenElement" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="_Qgg$$utyc" role="3cqZAp">
-                          <node concept="1rXfSq" id="_Qgg$$utyd" role="3clFbG">
-                            <ref role="37wK5l" to="jkm4:~DialogWrapper.doOKAction():void" resolve="doOKAction" />
+                        <node concept="3clFbF" id="QFGVOaUz2I" role="3cqZAp">
+                          <node concept="1rXfSq" id="QFGVOaUz2H" role="3clFbG">
+                            <ref role="37wK5l" node="QFGVOaUoKu" resolve="doOKAction" />
                           </node>
                         </node>
                       </node>
@@ -432,6 +435,49 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="QFGVOaUkYF" role="jymVt" />
+    <node concept="3clFb_" id="QFGVOaUoKu" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="doOKAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="QFGVOaUoKv" role="1B3o_S" />
+      <node concept="3cqZAl" id="QFGVOaUoKx" role="3clF45" />
+      <node concept="3clFbS" id="QFGVOaUoKy" role="3clF47">
+        <node concept="3clFbF" id="QFGVOaUoQf" role="3cqZAp">
+          <node concept="37vLTI" id="QFGVOaUoQg" role="3clFbG">
+            <node concept="2OqwBi" id="QFGVOaUoQh" role="37vLTx">
+              <node concept="37vLTw" id="QFGVOaU$eI" role="2Oq$k0">
+                <ref role="3cqZAo" node="QFGVOaUzr9" resolve="myChooseByNameModel" />
+              </node>
+              <node concept="liA8E" id="QFGVOaUoQj" role="2OqNvi">
+                <ref role="37wK5l" to="r0an:~BaseNodePointerModel.getModelObject(java.lang.Object):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getModelObject" />
+                <node concept="2OqwBi" id="QFGVOaUyg$" role="37wK5m">
+                  <node concept="37vLTw" id="QFGVOaUy5N" role="2Oq$k0">
+                    <ref role="3cqZAo" node="m2MuEX6ppL" resolve="myChooser" />
+                  </node>
+                  <node concept="liA8E" id="QFGVOaUyKI" role="2OqNvi">
+                    <ref role="37wK5l" to="1l1f:~ChooseByNameBase.getChosenElement():java.lang.Object" resolve="getChosenElement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="QFGVOaUoQl" role="37vLTJ">
+              <ref role="3cqZAo" node="fweninYtz_" resolve="myChosenElement" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="QFGVOaUoK_" role="3cqZAp">
+          <node concept="3nyPlj" id="QFGVOaUoK$" role="3clFbG">
+            <ref role="37wK5l" to="jkm4:~DialogWrapper.doOKAction():void" resolve="doOKAction" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="QFGVOaUoKz" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="QFGVOaUenO" role="jymVt" />
     <node concept="3clFbW" id="m2MuEX6oc1" role="jymVt">
       <node concept="37vLTG" id="m2MuEX6ocd" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -534,6 +580,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="QFGVOaUenP" role="jymVt" />
     <node concept="3clFbW" id="L4W0vZ_00l" role="jymVt">
       <node concept="37vLTG" id="L4W0vZ_00m" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -582,6 +629,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="QFGVOaUenQ" role="jymVt" />
     <node concept="3clFb_" id="m2MuEX6oc6" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -636,6 +684,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="QFGVOaUenR" role="jymVt" />
     <node concept="3clFb_" id="L4W0vZ$xq2" role="jymVt">
       <property role="TrG5h" value="getResult" />
       <node concept="3Tm1VV" id="L4W0vZ$xq4" role="1B3o_S" />
@@ -669,6 +718,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="QFGVOaUenS" role="jymVt" />
     <node concept="3clFb_" id="29u3Sr2Sq1M" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />

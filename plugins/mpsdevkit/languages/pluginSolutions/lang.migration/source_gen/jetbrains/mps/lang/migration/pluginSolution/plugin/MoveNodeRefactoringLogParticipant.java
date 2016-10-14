@@ -11,6 +11,8 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -30,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
@@ -47,8 +48,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
 
@@ -120,6 +119,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     return myDataCollector;
   }
 
+  protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
   public static class LogBuilder {
     private static final String myId = "refactoringSession.logBuilder";
     public static MoveNodeRefactoringLogParticipant.LogBuilder getBuilder(RefactoringSession session, SearchScope searchScope, SModule module) {
@@ -157,7 +157,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
               sm.addModelImport(reference);
             }
           }
-          sm.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9882f4ad195546feL, 0x826994189e5dbbf2L), "jetbrains.mps.lang.migration.util"));
+          sm.addLanguage(MetaAdapterFactory.getLanguage(0x9882f4ad195546feL, 0x826994189e5dbbf2L, "jetbrains.mps.lang.migration.util"));
           jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.addRootNode(migrationModel, myRefactoringStep);
           module.setModuleVersion(moduleVersion + 1);
 
@@ -168,11 +168,11 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
             }
           }).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule m) {
-              return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(m)).contains(module) && MigrationModuleUtil.hasDepVersion(m, module.getModuleReference());
+              return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(m)).contains(module);
             }
           }).toListSequence();
           for (SModule m : ListSequence.fromList(modulesToIncrementDependencyVersion)) {
-            int depVersion = MigrationModuleUtil.getDepVersion(m, module.getModuleReference());
+            int depVersion = MigrationModuleUtil.getDependencyVersion(m, module);
             if (moduleVersion != depVersion) {
               if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("Module " + m + " depends on module " + module + " with version " + depVersion + ", but current version is " + moduleVersion);
@@ -297,32 +297,20 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
         return results;
       }
       public void confirm(SNodeReference finalState, SRepository repository, RefactoringSession refactoringSession) {
-        final SNode targetNode = finalState.resolve(repository);
+        SNode targetNode = finalState.resolve(repository);
         SModule targetModule = SNodeOperations.getModel(targetNode).getModule();
-        List<SNode> finalStates = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, SNode>() {
-          public SNode select(MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> it) {
-            return it.getSerializedFinal(targetNode);
-          }
-        }).toListSequence();
         MoveNodeRefactoringLogParticipant.LogBuilder logBuilder = MoveNodeRefactoringLogParticipant.LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule);
         logBuilder.addOptions(selectedOptions);
         {
-          Iterator<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>> participant_it = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>>() {
-            public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> select(MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> it) {
-              return it.getParticipant();
-            }
-          }).iterator();
+          Iterator<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> ps_it = ListSequence.fromList(participantStates).iterator();
           Iterator<SNode> i_it = ListSequence.fromList(initialStates).iterator();
-          Iterator<SNode> f_it = ListSequence.fromList(finalStates).iterator();
-          RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> participant_var;
+          MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> ps_var;
           SNode i_var;
-          SNode f_var;
-          while (participant_it.hasNext() && i_it.hasNext() && f_it.hasNext()) {
-            participant_var = participant_it.next();
+          while (ps_it.hasNext() && i_it.hasNext()) {
+            ps_var = ps_it.next();
             i_var = i_it.next();
-            f_var = f_it.next();
             if (i_var != null) {
-              logBuilder.addPart(participant_var, i_var, f_var);
+              logBuilder.addPart(ps_var.getParticipant(), i_var, ps_var.getSerializedFinal(targetNode));
             }
           }
         }
@@ -333,7 +321,6 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
 
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeRefactoringLog", "Write refactoring log");
 
-  protected static Logger LOG = LogManager.getLogger(MoveNodeRefactoringLogParticipant.class);
   private static SModule check_29rp6m_a0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuilderBlockStatement = new ConceptPresentationBuilder().create();
@@ -44,163 +41,65 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0db.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BuilderBlockStatement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BuilderParameter;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CommandBuilderExpression;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_CommandDebuggerOperation;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_CommandDeclaration;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_CommandMethod;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_CommandParameterAssignment;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_CommandParameterDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_CommandParameterReference;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_CommandPartLengthOperation;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_CommandPartToListOperation;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_CommandProcessType;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_CommandReferenceExpression;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_CommandType;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_DebuggerSettingsCommandParameterDeclaration;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ExecuteCommandPart;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ExplicitCommandParameterDeclaration;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_KeyValueCommandPart;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ListCommandPart;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_NewProcessBuilderExpression;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ProcessBuilderCommandPart;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ProcessBuilderCommandPartType;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ProcessType;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_PropertyCommandPart;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_RedirectOutputExpression;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ReportErrorStatement;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ReportExecutionError;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_StartAndWaitOperation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BuilderBlockStatement:
+        return props_BuilderBlockStatement;
+      case LanguageConceptSwitch.BuilderParameter:
+        return props_BuilderParameter;
+      case LanguageConceptSwitch.CommandBuilderExpression:
+        return props_CommandBuilderExpression;
+      case LanguageConceptSwitch.CommandDebuggerOperation:
+        return props_CommandDebuggerOperation;
+      case LanguageConceptSwitch.CommandDeclaration:
+        return props_CommandDeclaration;
+      case LanguageConceptSwitch.CommandMethod:
+        return props_CommandMethod;
+      case LanguageConceptSwitch.CommandParameterAssignment:
+        return props_CommandParameterAssignment;
+      case LanguageConceptSwitch.CommandParameterDeclaration:
+        return props_CommandParameterDeclaration;
+      case LanguageConceptSwitch.CommandParameterReference:
+        return props_CommandParameterReference;
+      case LanguageConceptSwitch.CommandPartLengthOperation:
+        return props_CommandPartLengthOperation;
+      case LanguageConceptSwitch.CommandPartToListOperation:
+        return props_CommandPartToListOperation;
+      case LanguageConceptSwitch.CommandProcessType:
+        return props_CommandProcessType;
+      case LanguageConceptSwitch.CommandReferenceExpression:
+        return props_CommandReferenceExpression;
+      case LanguageConceptSwitch.CommandType:
+        return props_CommandType;
+      case LanguageConceptSwitch.DebuggerSettingsCommandParameterDeclaration:
+        return props_DebuggerSettingsCommandParameterDeclaration;
+      case LanguageConceptSwitch.ExecuteCommandPart:
+        return props_ExecuteCommandPart;
+      case LanguageConceptSwitch.ExplicitCommandParameterDeclaration:
+        return props_ExplicitCommandParameterDeclaration;
+      case LanguageConceptSwitch.KeyValueCommandPart:
+        return props_KeyValueCommandPart;
+      case LanguageConceptSwitch.ListCommandPart:
+        return props_ListCommandPart;
+      case LanguageConceptSwitch.NewProcessBuilderExpression:
+        return props_NewProcessBuilderExpression;
+      case LanguageConceptSwitch.ProcessBuilderCommandPart:
+        return props_ProcessBuilderCommandPart;
+      case LanguageConceptSwitch.ProcessBuilderCommandPartType:
+        return props_ProcessBuilderCommandPartType;
+      case LanguageConceptSwitch.ProcessType:
+        return props_ProcessType;
+      case LanguageConceptSwitch.PropertyCommandPart:
+        return props_PropertyCommandPart;
+      case LanguageConceptSwitch.RedirectOutputExpression:
+        return props_RedirectOutputExpression;
+      case LanguageConceptSwitch.ReportErrorStatement:
+        return props_ReportErrorStatement;
+      case LanguageConceptSwitch.ReportExecutionError:
+        return props_ReportExecutionError;
+      case LanguageConceptSwitch.StartAndWaitOperation:
+        return props_StartAndWaitOperation;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0db = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf8L, "jetbrains.mps.execution.commands.structure.BuilderBlockStatement"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfbL, "jetbrains.mps.execution.commands.structure.BuilderParameter"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf1L, "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be7L, "jetbrains.mps.execution.commands.structure.CommandMethod"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, "jetbrains.mps.execution.commands.structure.CommandParameterAssignment"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bdcL, "jetbrains.mps.execution.commands.structure.CommandParameterReference"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x166dfef127134569L, "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x72450cdacb885c78L, "jetbrains.mps.execution.commands.structure.CommandPartToListOperation"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, "jetbrains.mps.execution.commands.structure.CommandProcessType"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd9L, "jetbrains.mps.execution.commands.structure.CommandReferenceExpression"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L, "jetbrains.mps.execution.commands.structure.CommandType"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x75aadb0d4e61a576L, "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be2L, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xc58d43a818a1f7fL, "jetbrains.mps.execution.commands.structure.KeyValueCommandPart"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x2085f2c5c8400c12L, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xc58d43a818a1f80L, "jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xc58d43a818ab5faL, "jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c12L, "jetbrains.mps.execution.commands.structure.ProcessType"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x72450cdacb8a706eL, "jetbrains.mps.execution.commands.structure.PropertyCommandPart"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c14L, "jetbrains.mps.execution.commands.structure.RedirectOutputExpression"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c00L, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfeL, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x2222cc72e62f7052L, "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"));
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,30 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -48,6 +56,31 @@ import java.util.Collections;
  * @author Artem Tikhomirov
  */
 public abstract class QueryProviderBase implements GeneratorQueryProvider {
+  private final int myVersion;
+  private ReflectiveQueryProvider myReflectiveFallback;
+
+  protected QueryProviderBase() {
+    // this cons is invoked from previous version of QueriesGenerated that implements GeneratorQueryProvider
+    myVersion = 0;
+  }
+
+  protected QueryProviderBase(int version) {
+    // this one is invoked from newly generated implementations to indicate new methods were generated
+    myVersion = version;
+  }
+
+  // INTERNAL API for QueryProviderCache, to support non-reflective providers generated with MPS 3.3
+  @ToRemove(version = 3.4)
+  public boolean needsReflectiveFallback() {
+    return myVersion == 0;
+  }
+
+  // INTERNAL API for QueryProviderCache, to support non-reflective providers generated with MPS 3.3
+  @ToRemove(version = 3.4)
+  public void useReflectiveFallback(ReflectiveQueryProvider rqp) {
+    myReflectiveFallback = rqp;
+  }
+
   @NotNull
   @Override
   public CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule) {
@@ -135,13 +168,78 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
-    return new Defaults();
+    return new Missing(ifMacro);
   }
 
   @NotNull
   @Override
   public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
-    return new Defaults();
+    return new Missing(caseNode);
+  }
+
+  @NotNull
+  @Override
+  public ReferenceTargetQuery getReferenceTargetQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return myReflectiveFallback.getReferenceTargetQuery(identity);
+    }
+    return new RefQuery(identity);
+  }
+
+  @NotNull
+  @Override
+  public CallArgumentQuery getTemplateCallArgumentQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return myReflectiveFallback.getTemplateCallArgumentQuery(identity);
+    }
+    // DefaultQueryExecutionContext used to evaluate to null if no method was found.
+    // It is reasonable for scenarios like bootstrap of the generator itself (e.g. to generate a new CALL inside QueriesGenerate)
+    // but for any other generator there's no reason to continue generation if QG is broken that's why we fail here with Missing.
+    // For lang.generator generator, we handle missing methods in ReflectiveQueryProvider, and unless we decide to switch to non-reflective
+    // QG in lang.generator itself, we shall not bother. QPB subclass delegates to super (i.e. this method) when it has been asked for non-existent query.
+    return new Missing(identity);
+  }
+
+  @NotNull
+  @Override
+  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return myReflectiveFallback.getVariableValueQuery(identity);
+    }
+    // Same as above, no reason to default to null.
+    return new Missing(identity);
+  }
+
+  @NotNull
+  @Override
+  public InsertMacroQuery getInsertMacroQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      // XXX provisional code to support generated providers prior to addition of the method
+      return myReflectiveFallback.getInsertMacroQuery(identity);
+    }
+    // used to evaluate to null if missing in DQEC. Why not do the same here?
+    return new Missing(identity);
+  }
+
+  @NotNull
+  @Override
+  public MapNodeQuery getMapNodeQuery(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      return myReflectiveFallback.getMapNodeQuery(identity);
+    }
+    return new Missing(identity);
+  }
+
+  @NotNull
+  @Override
+  public MapPostProcessor getMapPostProcessor(@NotNull QueryKey identity) {
+    if (myVersion == 0) {
+      return myReflectiveFallback.getMapPostProcessor(identity);
+    }
+    return new Missing(identity);
   }
 
   /**
@@ -151,7 +249,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
-      IfMacroCondition, InlineSwitchCaseCondition, WeaveAnchorQuery, DropAttributeRuleCondition {
+      WeaveAnchorQuery, DropAttributeRuleCondition {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -215,19 +313,6 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     }
 
     @Override
-    public boolean check(@NotNull IfMacroContext context) throws GenerationFailureException {
-      context.showErrorMessage(null, "cannot evaluate if-macro condition");
-      throw new GenerationFailureException("cannot evaluate if-macro condition");
-    }
-
-    @Override
-    public boolean check(@NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
-      // here comes the logic that used to live in DefaultQueryExecutionContext
-      context.showErrorMessage(null, "condition required for case in inline switch");
-      return false;
-    }
-
-    @Override
     @Nullable
     public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
       // null is legitimate value, indicates 'just append'
@@ -245,7 +330,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @NotNull
     @Override
     public SProperty getProperty() {
-      throw new IllegalStateException();
+      throw new IllegalStateException("evaluate() shall had failed with exception");
     }
 
     @Override
@@ -262,8 +347,97 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Nullable
     @Override
     public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
+      // XXX why not
+      // ctx.getGenerator().getLogger().error(myMacro,...); and some reasonable message?
       context.showErrorMessage(null, "cannot evaluate property macro");
       throw new GenerationFailureException("cannot evaluate property macro");
+    }
+  }
+
+  private static class RefQuery implements ReferenceTargetQuery {
+    private final QueryKey myIdentity;
+
+    RefQuery(QueryKey identity) {
+      myIdentity = identity;
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull ReferenceMacroContext ctx) throws GenerationFailureException {
+      ctx.getGenerator().getLogger().error(myIdentity.getTemplateNode(), "missing reference macro");
+      throw new GenerationFailureException("missing reference macro");
+    }
+  }
+
+  // unlike Defaults, complains about missing query
+  private static class Missing implements IfMacroCondition, InlineSwitchCaseCondition, CallArgumentQuery, VariableValueQuery, InsertMacroQuery, MapNodeQuery, MapPostProcessor {
+    private final SNodeReference myTemplate;
+
+    public Missing(QueryKey identity) {
+      myTemplate = identity.getTemplateNode();
+    }
+
+    // FIXME switch to QueryKey
+    public Missing(SNode identity) {
+      myTemplate = identity.getReference();
+    }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext context) throws GenerationFailureException {
+      String msg = "no required condition for IF macro";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+      // here comes the logic that used to live in DefaultQueryExecutionContext
+      String msg = "condition required for case in inline switch";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateArgumentContext context) throws GenerationFailureException {
+      String msg = "call argument query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public Object evaluate(@NotNull TemplateVarContext context) throws GenerationFailureException {
+      String msg = "variable value query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull InsertMacroContext context) throws GenerationFailureException {
+      String msg = "insert node query is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Nullable
+    @Override
+    public SNode evaluate(@NotNull MapSrcMacroContext context) throws GenerationFailureException {
+      String msg = "mapping function is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    @Override
+    public void invoke(@NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
+      String msg = "post-processing function is missing";
+      reportError(context, msg);
+      throw new GenerationFailureException(msg);
+    }
+
+    private void reportError(TemplateQueryContext context, String message) throws GenerationFailureException {
+      context.getGenerator().getLogger().error(myTemplate, message);
     }
   }
 }

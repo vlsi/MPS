@@ -34,7 +34,9 @@ public class ChangeGroupMessages {
       public void changeGroupsInvalidated() {
         myUpdateQueue.queue(new Update(myUpdateIdentity) {
           public void run() {
-            rebuildGutterMessages();
+            if (myLayout.isValid()) {
+              rebuildGutterMessages();
+            }
           }
         });
       }

@@ -2,7 +2,7 @@
 <model ref="r:7bfb891a-8e42-4611-8f45-4aa668f68d38(decl.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -47,7 +47,7 @@
     <ref role="1XX52x" to="3whe:6FZb119cmNq" resolve="OldComponent" />
     <node concept="b$f91" id="6FZb119cDOM" role="2wV5jI">
       <node concept="3F2HdR" id="6FZb119cDPq" role="b$wch">
-        <ref role="1NtTu8" to="3whe:6FZb119crGB" />
+        <ref role="1NtTu8" to="3whe:6FZb119crGB" resolve="member" />
       </node>
       <node concept="3EZMnI" id="6FZb119cBOe" role="b$u42">
         <node concept="3F0ifn" id="6FZb119cBOl" role="3EZMnx">
@@ -64,7 +64,7 @@
     <ref role="1XX52x" to="3whe:6FZb119cDPL" resolve="NewComponent" />
     <node concept="b$f91" id="6FZb119cEp5" role="2wV5jI">
       <node concept="3F2HdR" id="6FZb119cEp6" role="b$wch">
-        <ref role="1NtTu8" to="3whe:6FZb119cDPO" />
+        <ref role="1NtTu8" to="3whe:6FZb119cDPO" resolve="member" />
       </node>
       <node concept="3EZMnI" id="6FZb119cEp7" role="b$u42">
         <node concept="3F0ifn" id="6FZb119cEp8" role="3EZMnx">

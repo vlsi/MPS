@@ -16,10 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ReferencesFinder {
   private Map<SModel, List<SReference>> myModelsRefsCache = new HashMap<SModel, List<SReference>>();
@@ -108,23 +104,5 @@ public class ReferencesFinder {
       monitor.advance(1);
     }
     return results;
-  }
-
-  public Iterable<SNode> getNodes(DependencyViewerScope scope) {
-    Iterable<SModel> models = CollectionSequence.fromCollection(scope.getModules()).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }).concat(CollectionSequence.fromCollection(scope.getModels()));
-    Iterable<SNode> roots = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return it.getRootNodes();
-      }
-    }).concat(CollectionSequence.fromCollection(scope.getRoots()));
-    return Sequence.fromIterable(roots).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SNodeOperations.getNodeDescendants(((SNode) it), null, true, new SAbstractConcept[]{});
-      }
-    });
   }
 }

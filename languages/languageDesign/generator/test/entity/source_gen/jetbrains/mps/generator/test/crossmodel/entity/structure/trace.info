@@ -11,10 +11,13 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,57,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,31,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.ConceptPresentationAspectImpl" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,32,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,63,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
+      <unit at="14,0,82,0" name="jetbrains.mps.generator.test.crossmodel.entity.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/4355167635271953286">

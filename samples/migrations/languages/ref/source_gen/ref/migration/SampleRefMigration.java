@@ -36,6 +36,10 @@ public class SampleRefMigration extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     final Map<SModule, SNode> declData = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
     // the received data are of a map type - mapping modules to their respective migration information 
     final Map<SModule, SNode> requiredData = declData;
@@ -83,7 +87,6 @@ public class SampleRefMigration extends MigrationScriptBase {
     });
 
 
-    return null;
   }
   public Iterable<MigrationScriptReference> requiresData() {
     return ListSequence.fromListAndArray(new ArrayList<MigrationScriptReference>(), new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));

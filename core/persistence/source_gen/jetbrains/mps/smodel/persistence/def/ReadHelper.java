@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModel;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,8 +20,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ReadHelper {
   private static final char MODEL_SEPARATOR_CHAR = '.';
@@ -35,6 +35,7 @@ public class ReadHelper {
   public void addModelRef(String index, SModelReference modelRef) {
     MapSequence.fromMap(myModelByIx).put(index, modelRef);
   }
+  protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
   public void addImportToModel(SModel model, String index, String modelUID, int version, boolean implicit) {
     if (modelUID == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -164,5 +165,4 @@ public class ReadHelper {
   public static String decode(String s) {
     return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
   }
-  protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
 }

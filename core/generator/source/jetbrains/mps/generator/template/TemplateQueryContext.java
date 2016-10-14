@@ -32,6 +32,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * Context for operations of genContext parameter in generator's concept functions. This is what generated code of template queries (like input nodes query,
+ * property and reference macro, etc) have access to.
  * Igor Alshannikov
  * Jul 21, 2008
  */
@@ -105,11 +107,28 @@ public class TemplateQueryContext {
     return myGenerator;
   }
 
+  /**
+   * @deprecated replaced with more generic alternative, {@link #getOutputNodeByMappingLabel(String, SModel)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getOutputNodeByMappingLabel(String label) {
+    return getOutputNodeByMappingLabel(label, null);
+  }
+
+  /**
+   * Find out conditional root with a given ML, created from specified model
+   * @param label generally shall not be null, as it's required in GenerationContextOp_GetOutputByLabel
+   * @param inputModel can be null, which indicates current input model. Otherwise, a model root was created from
+   * @return a node in a transient/checkpoint model if generator has any recorded.
+   * @since 3.4
+   */
+  @Nullable
+  public SNode getOutputNodeByMappingLabel(String label, @Nullable SModel inputModel) {
     if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeRef(), "'get output by label' cannot be used here");
     }
-    return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
+    return myGenerator.findOutputNode(inputModel, label);
   }
 
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
@@ -242,12 +261,23 @@ public class TemplateQueryContext {
   /**
    * Node in template model most close to the query being evaluated. For macro nodes, however
    * shall point to macro's parent node (genContext.templateNode op contract)
-   * FIXME doesn't make sense for generated templates? Shall refactor/replace with templateNodeRef or drop altogether
+   * @deprecated  doesn't make sense for generated templates. Switch to {@link #getTemplateReference()}
+   *
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();
     SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
     return tnr == null ? null : tnr.resolve(repo);
+  }
+
+  /**
+   * @return context template node where the query is evaluated, if known.
+   */
+  @Nullable
+  public final SNodeReference getTemplateReference() {
+    return getTemplateNodeRef();
   }
 
   /**

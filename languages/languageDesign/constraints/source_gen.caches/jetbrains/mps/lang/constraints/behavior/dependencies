@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor" />
@@ -40,11 +37,17 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" file="ConceptConstraints_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConceptConstraints__BehaviorDescriptor" file="ConceptConstraints__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -77,6 +80,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor" file="ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor" file="ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -101,6 +108,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_BehaviorDescriptor" file="ConstraintFunctionParameter_checkedNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode__BehaviorDescriptor" file="ConstraintFunctionParameter_checkedNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -122,6 +133,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_BehaviorDescriptor" file="ConstraintFunctionParameter_childConcept_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept__BehaviorDescriptor" file="ConstraintFunctionParameter_childConcept__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -148,6 +163,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childNode_BehaviorDescriptor" file="ConstraintFunctionParameter_childNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childNode__BehaviorDescriptor" file="ConstraintFunctionParameter_childNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -172,6 +191,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_containingLink_BehaviorDescriptor" file="ConstraintFunctionParameter_containingLink_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_containingLink__BehaviorDescriptor" file="ConstraintFunctionParameter_containingLink__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -198,6 +221,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextNode_BehaviorDescriptor" file="ConstraintFunctionParameter_contextNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextNode__BehaviorDescriptor" file="ConstraintFunctionParameter_contextNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -221,6 +248,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextRole_BehaviorDescriptor" file="ConstraintFunctionParameter_contextRole_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_contextRole__BehaviorDescriptor" file="ConstraintFunctionParameter_contextRole__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -246,6 +277,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_exists_BehaviorDescriptor" file="ConstraintFunctionParameter_exists_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_exists__BehaviorDescriptor" file="ConstraintFunctionParameter_exists__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -270,6 +305,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor_BehaviorDescriptor" file="ConstraintFunctionParameter_inEditor_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_inEditor__BehaviorDescriptor" file="ConstraintFunctionParameter_inEditor__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -293,6 +332,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_linkTarget_BehaviorDescriptor" file="ConstraintFunctionParameter_linkTarget_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_BehaviorDescriptor" file="ConstraintFunctionParameter_link_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link__BehaviorDescriptor" file="ConstraintFunctionParameter_link__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -320,6 +367,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor" file="ConstraintFunctionParameter_newReferentNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor" file="ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parameterNode_BehaviorDescriptor" file="ConstraintFunctionParameter_parameterNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_BehaviorDescriptor" file="ConstraintFunctionParameter_parentNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode__BehaviorDescriptor" file="ConstraintFunctionParameter_parentNode__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -345,6 +408,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_position_BehaviorDescriptor" file="ConstraintFunctionParameter_position_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_position__BehaviorDescriptor" file="ConstraintFunctionParameter_position__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -368,6 +435,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_referenceNode_BehaviorDescriptor" file="ConstraintFunctionParameter_referenceNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference_BehaviorDescriptor" file="ConstraintFunctionParameter_smartReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_smartReference__BehaviorDescriptor" file="ConstraintFunctionParameter_smartReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -393,6 +468,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible_BehaviorDescriptor" file="ConstraintFunctionParameter_visible_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_visible__BehaviorDescriptor" file="ConstraintFunctionParameter_visible__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -416,6 +495,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild_BehaviorDescriptor" file="ConstraintFunction_CanBeAChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild__BehaviorDescriptor" file="ConstraintFunction_CanBeAChild__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -445,6 +528,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_BehaviorDescriptor" file="ConstraintFunction_CanBeAParent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent__BehaviorDescriptor" file="ConstraintFunction_CanBeAParent__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -472,6 +559,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_BehaviorDescriptor" file="ConstraintFunction_CanBeARoot_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot__BehaviorDescriptor" file="ConstraintFunction_CanBeARoot__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -501,6 +592,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor" file="ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor" file="ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -529,6 +624,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor" file="ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon__BehaviorDescriptor" file="ConstraintFunction_GetAlternativeIcon__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -555,6 +654,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetInstanceIcon_BehaviorDescriptor" file="ConstraintFunction_GetInstanceIcon_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetInstanceIcon__BehaviorDescriptor" file="ConstraintFunction_GetInstanceIcon__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -583,6 +686,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_BehaviorDescriptor" file="ConstraintFunction_PropertyGetter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter__BehaviorDescriptor" file="ConstraintFunction_PropertyGetter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -613,6 +720,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter_BehaviorDescriptor" file="ConstraintFunction_PropertySetter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter__BehaviorDescriptor" file="ConstraintFunction_PropertySetter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -639,6 +750,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator_BehaviorDescriptor" file="ConstraintFunction_PropertyValidator_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator__BehaviorDescriptor" file="ConstraintFunction_PropertyValidator__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -667,6 +782,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor" file="ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor" file="ConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -694,6 +813,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -719,6 +842,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -753,6 +880,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -780,6 +911,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -804,6 +939,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor" file="ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -833,6 +972,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_BehaviorDescriptor" file="ConstraintFunction_ReferentSetHandler_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler__BehaviorDescriptor" file="ConstraintFunction_ReferentSetHandler__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -858,6 +1001,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_BehaviorDescriptor" file="ConstraintsFunctionParameter_node_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node__BehaviorDescriptor" file="ConstraintsFunctionParameter_node__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -879,6 +1026,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor" file="ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.InheritedNodeScopeFactory_BehaviorDescriptor" file="InheritedNodeScopeFactory_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor" file="NodeDefaultSearchScope_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope__BehaviorDescriptor" file="NodeDefaultSearchScope__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -904,6 +1063,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_BehaviorDescriptor" file="NodePropertyConstraint_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint__BehaviorDescriptor" file="NodePropertyConstraint__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -928,6 +1091,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor" file="NodeReferentConstraint_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint__BehaviorDescriptor" file="NodeReferentConstraint__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -951,6 +1118,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" file="NodeScopeFactory_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
 </dependenciesRoot>
 

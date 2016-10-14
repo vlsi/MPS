@@ -35,7 +35,7 @@ public class NewLanguageSettings extends AbstractModuleCreationSettings {
     myRuntimeSolution.setSelected(needed);
   }
 
-  public boolean isSandboxSolutionNeeded() {
+  public boolean isSandBoxSolutionNeeded() {
     return mySandboxSolution.isSelected();
   }
 

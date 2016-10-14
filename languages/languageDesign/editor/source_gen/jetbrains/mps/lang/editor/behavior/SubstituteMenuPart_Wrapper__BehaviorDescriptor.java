@@ -26,14 +26,25 @@ public final class SubstituteMenuPart_Wrapper__BehaviorDescriptor extends BaseBH
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getReference_id3rSzFHWOe4u = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3rSzFHWOe4u").registry(REGISTRY).build();
+  public static final SMethod<SNode> getOutputConcept_id7mC_uHFK7Hn = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getOutputConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7mC_uHFK7Hn").registry(REGISTRY).build();
+  public static final SMethod<SNode> getCreatedConcept_id6e716hiEcRp = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getCreatedConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6e716hiEcRp").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getReference_id3rSzFHWOe4u);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getReference_id3rSzFHWOe4u, getOutputConcept_id7mC_uHFK7Hn, getCreatedConcept_id6e716hiEcRp);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode getReference_id3rSzFHWOe4u(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, 0x5480a271c0d515beL, "reference"));
+  }
+  /*package*/ static SNode getOutputConcept_id7mC_uHFK7Hn(@NotNull SNode __thisNode__) {
+    if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL, 0x6ee6ee2b84858889L, "outputConcept")) != null) {
+      return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL, 0x6ee6ee2b84858889L, "outputConcept"));
+    }
+    return ((SNode) SubstituteMenuPart__BehaviorDescriptor.getOutputConcept_id7mC_uHFK7Hn.invokeSpecial(__thisNode__));
+  }
+  /*package*/ static SNode getCreatedConcept_id6e716hiEcRp(@NotNull SNode __thisNode__) {
+    return IMenuReference__BehaviorDescriptor.getApplicableConcept_id1quYWAD4TFX.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, 0x5480a271c0d515beL, "reference")));
   }
 
   /*package*/ SubstituteMenuPart_Wrapper__BehaviorDescriptor() {
@@ -54,6 +65,10 @@ public final class SubstituteMenuPart_Wrapper__BehaviorDescriptor extends BaseBH
     switch (methodIndex) {
       case 0:
         return (T) ((SNode) getReference_id3rSzFHWOe4u(node));
+      case 1:
+        return (T) ((SNode) getOutputConcept_id7mC_uHFK7Hn(node));
+      case 2:
+        return (T) ((SNode) getCreatedConcept_id6e716hiEcRp(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

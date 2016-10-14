@@ -24,6 +24,6 @@ import java.util.List;
  */
 public interface Menu<ItemT, ContextT> {
   @NotNull
-  List<ItemT> createMenuItems(ContextT context);
+  List<ItemT> createMenuItems(@NotNull ContextT context);
   boolean isContribution();
 }

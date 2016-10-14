@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.generator.impl.template.MetaObjectGenerationHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,14 +28,77 @@ public class GenUtil {
     SNode real = (ListSequence.fromList(macros).count() <= skipMacro ? node : ListSequence.fromList(macros).getElement(skipMacro));
     return (String) context.getTransientObject(MultiTuple.<String,SNode>from(KEY, real));
   }
+  public static String saveListVar(TemplateQueryContext context, SNode node, int varIndex) {
+    // Don't want "tlist" and "tnode" scattered around 
+    return saveVar(context, node, "tlist" + varIndex);
+  }
+  public static String saveNodeVar(TemplateQueryContext context, SNode node, int varIndex, boolean canBeNull) {
+    // Don't want "tlist" and "tnode" scattered around 
+    String varName = saveVar(context, node, "tnode" + varIndex);
+    node.putUserObject("GenUtil:NotNull", Boolean.valueOf(!(canBeNull)));
+    return varName;
+  }
   public static String saveVar(TemplateQueryContext context, SNode node, String var) {
     SNode original = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro")) ? SNodeOperations.getParent(node) : node);
     if (context.getTransientObject(original) == null) {
+      // guess, it's a mechanism to access variable name without knowledge of skipMacro value 
       context.putTransientObject(original, var);
     }
     context.putTransientObject(MultiTuple.<String,SNode>from(KEY, node), var);
     return var;
   }
+  public static String getVarHack(TemplateQueryContext context, SNode node) {
+    // see saveVar above 
+    Object obj = context.getTransientObject(node);
+    return (obj instanceof String ? (String) obj : null);
+  }
+
+  public static boolean isCollectionVariable(TemplateQueryContext context, SNode node) {
+    // or !startsWith("tnode")? 
+    String n = getVarHack(context, node);
+    return n != null && n.startsWith("tlist");
+  }
+  public static boolean isNodeVariable(TemplateQueryContext context, SNode node) {
+    String n = getVarHack(context, node);
+    return n != null && n.startsWith("tnode");
+  }
+
+  public static boolean isNonNullNodeVariable(TemplateQueryContext context, SNode node) {
+    return isNodeVariable(context, node) && Boolean.TRUE.equals(node.getUserObject("GenUtil:NotNull"));
+  }
+
+  public static boolean isNullableNodeVariable(TemplateQueryContext context, SNode node) {
+    return isNodeVariable(context, node) && !(Boolean.TRUE.equals(node.getUserObject("GenUtil:NotNull")));
+  }
+
+  /**
+   * Record the fact template for given node has been extracted into distinct method
+   */
+  public static void markExtractedMethodForTemplate(TemplateQueryContext context, SNode node, String methodName) {
+    context.putTransientObject(MultiTuple.<String,SNode>from("meth", node), methodName);
+  }
+
+  /**
+   * Tell previously recorded name of the method extracted for the given template node.
+   */
+  public static String getExtractedMethodName(TemplateQueryContext context, SNode node) {
+    return (String) context.getTransientObject(MultiTuple.<String,SNode>from("meth", node));
+  }
+
+  public static boolean hasMetaObjectHelper(TemplateQueryContext context, SNode node) {
+    return getMetaObjectHelper(context, node) != null;
+  }
+
+  public static MetaObjectGenerationHelper getMetaObjectHelper(TemplateQueryContext context, SNode node) {
+    return (MetaObjectGenerationHelper) context.getTransientObject(MultiTuple.<String,SNode>from("meta-object-helper", node));
+  }
+
+  public static MetaObjectGenerationHelper createMetaObjectHelper(TemplateQueryContext context, SNode node) {
+    MetaObjectGenerationHelper rv = new MetaObjectGenerationHelper();
+    context.putTransientObject(MultiTuple.<String,SNode>from("meta-object-helper", node), rv);
+    return rv;
+  }
+
   public static boolean isGeneratable(SModel model) {
     SNode node = SModelOperations.getModuleStub(model);
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"))) {
@@ -58,5 +122,20 @@ public class GenUtil {
     }
 
     return sb.toString();
+  }
+
+  /**
+   * Record the fact template model node has incoming references from the same model (use it as a hint whether anyone can try
+   * to resolve output using this template node as identity)
+   */
+  public static void markHasIncomingRefs(SNode n) {
+    //  just care about the fact there are references, not their number nor nature 
+    n.putUserObject("hasIncomingRefs", Boolean.TRUE);
+  }
+  /**
+   * Tells if there were recorded incoming references to the given node (from the same template model only)
+   */
+  public static boolean hasIncomingRefs(SNode n) {
+    return n.getUserObject("hasIncomingRefs") == Boolean.TRUE;
   }
 }

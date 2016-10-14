@@ -9,6 +9,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.attribute.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
@@ -19,7 +20,7 @@ import jetbrains.mps.samples.attribute.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "e8e38af6-0cf3-4cc1-baa3-ba261722e8f3(jetbrains.mps.samples.attribute)";
+  public static final String MODULE_REF = "e8e38af6-0cf3-4cc1-baa3-ba261722e8f3(jetbrains.mps.samples.attribute)";
   public Language() {
   }
   @Override
@@ -45,6 +46,11 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.attribute.behavior.BehaviorAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
       if (aspectClass == EditorAspectDescriptor.class) {
         return (T) new EditorAspectDescriptorImpl();
@@ -70,6 +76,6 @@ public class Language extends LanguageRuntime {
         return (T) new jetbrains.mps.samples.attribute.textGen.TextGenAspectDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

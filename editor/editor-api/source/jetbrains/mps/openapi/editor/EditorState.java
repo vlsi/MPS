@@ -22,4 +22,11 @@ public interface EditorState {
   void save(Element e);
 
   void load(Element e);
+
+  /**
+   * Cleaning all editor session-specific state information from this editor state object.
+   * Session specific editor state should be saved/restored during one editing session and
+   * will be completely reset on reopening the editor (starting new editing session).
+   */
+  void clearSessionState();
 }

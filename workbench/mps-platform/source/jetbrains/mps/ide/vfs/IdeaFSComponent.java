@@ -2,6 +2,7 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.annotations.NotNull;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * danilla 8/7/13
  */
-public abstract class IdeaFSComponent implements ApplicationComponent, FileSystem {
+public abstract class IdeaFSComponent implements ApplicationComponent, FileSystem, CachingFileSystem {
   private FileSystem myOldFileSystem;
 
   // component stuff

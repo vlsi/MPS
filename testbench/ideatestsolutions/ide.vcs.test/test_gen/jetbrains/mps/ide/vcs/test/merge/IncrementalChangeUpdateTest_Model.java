@@ -120,7 +120,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     CurrentDifference newModelDiff = CurrentDifferenceRegistry.getInstance(myIdeaProject).getCurrentDifference(newModel.value);
     newModelDiff.setEnabled(true);
 
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) newModel.value.getSource()).getFile());
+    VirtualFile vf = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) newModel.value.getSource()).getFile());
     myWaitHelper.waitForFileStatusChange(vf, FileStatus.UNKNOWN);
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a01a4(newModelDiff.getChangeSet())).isEmpty());

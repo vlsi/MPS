@@ -164,7 +164,7 @@ public class ToolComponent extends JComponent {
 
     Icon itemIcon = item.getIcon();
     if (itemIcon != null) {
-      jlabel.setIcon(ScaledIcon.scaleIfNeeded((myViewType == ViewType.SYMBOLS ? 32 : 16), itemIcon));
+      jlabel.setIcon((myViewType == ViewType.SYMBOLS ? itemIcon : ScaledIcon.scaleIfNeeded(16, itemIcon)));
     }
     if (myViewType == ViewType.SYMBOLS) {
       jlabel.setHorizontalTextPosition(JLabel.CENTER);

@@ -29,51 +29,51 @@
     <file name="RemoveUITestPropertyFromTestInfo.java">
       <node id="3022023529957940386" at="26,30,27,72" concept="5" />
       <node id="3022023529957940386" at="30,33,31,17" concept="5" />
-      <node id="3022023529957961098" at="34,5,35,111" concept="4" />
-      <node id="3022023529957961098" at="37,53,38,94" concept="5" />
-      <node id="3022023529957961098" at="41,41,42,35" concept="5" />
-      <node id="3022023529957961098" at="45,41,46,45" concept="5" />
-      <node id="3022023529957961098" at="49,40,50,22" concept="5" />
-      <node id="3022023529957961098" at="53,41,54,98" concept="5" />
-      <node id="3022023529957961098" at="57,54,58,39" concept="2" />
-      <node id="3022023529957963321" at="62,49,63,51" concept="2" />
-      <node id="3022023529958213697" at="63,51,64,30" concept="5" />
-      <node id="3022023529957940386" at="71,5,72,16" concept="5" />
-      <node id="3022023529957940386" at="74,51,75,144" concept="5" />
-      <node id="8519118779653927008" at="78,62,79,63" concept="4" />
-      <node id="8519118779653927008" at="79,63,80,30" concept="4" />
-      <node id="8519118779653927008" at="80,30,81,223" concept="2" />
-      <node id="8519118779653927008" at="81,223,82,24" concept="5" />
+      <node id="3022023529957940386" at="33,41,34,17" concept="2" />
+      <node id="3022023529957940386" at="34,17,35,16" concept="5" />
+      <node id="3022023529957961098" at="38,5,39,111" concept="4" />
+      <node id="3022023529957961098" at="41,53,42,94" concept="5" />
+      <node id="3022023529957961098" at="45,41,46,35" concept="5" />
+      <node id="3022023529957961098" at="49,41,50,45" concept="5" />
+      <node id="3022023529957961098" at="53,40,54,22" concept="5" />
+      <node id="3022023529957961098" at="57,41,58,98" concept="5" />
+      <node id="3022023529957961098" at="61,54,62,39" concept="2" />
+      <node id="3022023529957963321" at="66,49,67,51" concept="2" />
+      <node id="3022023529958213697" at="67,51,68,30" concept="5" />
+      <node id="3022023529957940386" at="77,51,78,144" concept="5" />
+      <node id="8519118779653927008" at="81,62,82,63" concept="4" />
+      <node id="8519118779653927008" at="82,63,83,30" concept="4" />
+      <node id="8519118779653927008" at="83,30,84,223" concept="2" />
+      <node id="8519118779653927008" at="84,223,85,24" concept="5" />
       <node id="3022023529957940386" at="26,0,29,0" concept="3" trace="getCaption#()Ljava/lang/String;" />
-      <node id="3022023529957961098" at="37,0,40,0" concept="3" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-      <node id="3022023529957961098" at="41,0,44,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3022023529957961098" at="41,0,44,0" concept="3" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
       <node id="3022023529957961098" at="45,0,48,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3022023529957961098" at="49,0,52,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3022023529957961098" at="53,0,56,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
-      <node id="3022023529957940386" at="74,0,77,0" concept="3" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="3022023529957961098" at="53,0,56,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3022023529957961098" at="57,0,60,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
+      <node id="3022023529957940386" at="77,0,80,0" concept="3" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
       <node id="3022023529957940386" at="29,0,33,0" concept="3" trace="isRerunnable#()Z" />
-      <node id="3022023529957961284" at="62,0,66,0" concept="3" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3022023529957961098" at="60,36,66,38" concept="5" />
-      <node id="8519118779653927008" at="78,0,84,0" concept="7" trace="_quotation_createNode_vbjplg_a0a0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3022023529957961098" at="60,0,68,0" concept="3" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3022023529957961098" at="58,39,68,19" concept="2" />
-      <node id="3022023529957961098" at="57,0,70,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3022023529957961098" at="35,111,70,9" concept="2" />
-      <node id="3022023529957961098" at="33,41,71,5" concept="0" />
-      <node id="3022023529957940386" at="33,0,74,0" concept="3" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3022023529957940386" at="33,0,37,0" concept="3" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3022023529957961284" at="66,0,70,0" concept="3" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3022023529957961098" at="64,36,70,38" concept="5" />
+      <node id="8519118779653927008" at="81,0,87,0" concept="7" trace="_quotation_createNode_vbjplg_a0a0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3022023529957961098" at="64,0,72,0" concept="3" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3022023529957961098" at="62,39,72,19" concept="2" />
+      <node id="3022023529957961098" at="61,0,74,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3022023529957961098" at="39,111,74,9" concept="2" />
+      <node id="3022023529957961098" at="37,42,75,5" concept="0" />
+      <node id="3022023529957940386" at="37,0,77,0" concept="3" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <scope id="3022023529957940386" at="26,30,27,72" />
       <scope id="3022023529957940386" at="30,33,31,17" />
-      <scope id="3022023529957961098" at="37,53,38,94" />
-      <scope id="3022023529957961098" at="41,41,42,35" />
-      <scope id="3022023529957961098" at="45,41,46,45" />
-      <scope id="3022023529957961098" at="49,40,50,22" />
-      <scope id="3022023529957961098" at="53,41,54,98" />
-      <scope id="3022023529957940386" at="74,51,75,144" />
-      <scope id="3022023529957961288" at="62,49,64,30" />
+      <scope id="3022023529957961098" at="41,53,42,94" />
+      <scope id="3022023529957961098" at="45,41,46,35" />
+      <scope id="3022023529957961098" at="49,41,50,45" />
+      <scope id="3022023529957961098" at="53,40,54,22" />
+      <scope id="3022023529957961098" at="57,41,58,98" />
+      <scope id="3022023529957940386" at="77,51,78,144" />
+      <scope id="3022023529957940386" at="33,41,35,16" />
+      <scope id="3022023529957961288" at="66,49,68,30" />
       <scope id="3022023529957940386" at="26,0,29,0" />
-      <scope id="3022023529957961098" at="37,0,40,0">
-        <var name="it" id="3022023529957961098" />
-      </scope>
       <scope id="3022023529957961098" at="41,0,44,0">
         <var name="it" id="3022023529957961098" />
       </scope>
@@ -81,43 +81,49 @@
         <var name="it" id="3022023529957961098" />
       </scope>
       <scope id="3022023529957961098" at="49,0,52,0">
-        <var name="n" id="3022023529957961098" />
-      </scope>
-      <scope id="3022023529957961098" at="53,0,56,0">
         <var name="it" id="3022023529957961098" />
       </scope>
-      <scope id="3022023529957940386" at="74,0,77,0" />
+      <scope id="3022023529957961098" at="53,0,56,0">
+        <var name="n" id="3022023529957961098" />
+      </scope>
+      <scope id="3022023529957961098" at="57,0,60,0">
+        <var name="it" id="3022023529957961098" />
+      </scope>
+      <scope id="3022023529957940386" at="77,0,80,0" />
       <scope id="3022023529957940386" at="29,0,33,0" />
-      <scope id="3022023529957961284" at="62,0,66,0">
+      <scope id="3022023529957940386" at="33,0,37,0">
+        <var name="m" id="3022023529957940386" />
+      </scope>
+      <scope id="3022023529957961284" at="66,0,70,0">
         <var name="node" id="3022023529957961284" />
       </scope>
-      <scope id="8519118779653927008" at="78,62,82,24">
+      <scope id="8519118779653927008" at="81,62,85,24">
         <var name="facade" id="8519118779653927008" />
         <var name="quotedNode_1" id="8519118779653927008" />
       </scope>
-      <scope id="3022023529957961098" at="60,36,66,38" />
-      <scope id="8519118779653927008" at="78,0,84,0" />
-      <scope id="3022023529957961098" at="60,0,68,0" />
-      <scope id="3022023529957961098" at="57,54,68,19" />
-      <scope id="3022023529957961098" at="57,0,70,0">
+      <scope id="3022023529957961098" at="64,36,70,38" />
+      <scope id="8519118779653927008" at="81,0,87,0" />
+      <scope id="3022023529957961098" at="64,0,72,0" />
+      <scope id="3022023529957961098" at="61,54,72,19" />
+      <scope id="3022023529957961098" at="61,0,74,0">
         <var name="nodeToMigrate" id="3022023529957961098" />
       </scope>
-      <scope id="3022023529957961098" at="34,5,70,9">
+      <scope id="3022023529957961098" at="38,5,74,9">
         <var name="pattern" id="3022023529957961098" />
       </scope>
-      <scope id="3022023529957940386" at="33,41,72,16" />
-      <scope id="3022023529957940386" at="33,0,74,0">
+      <scope id="3022023529957940386" at="37,42,75,5" />
+      <scope id="3022023529957940386" at="37,0,77,0">
         <var name="m" id="3022023529957940386" />
       </scope>
-      <unit id="3022023529957961098" at="36,78,40,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$1" />
-      <unit id="3022023529957961098" at="40,19,44,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$2" />
-      <unit id="3022023529957961098" at="44,19,48,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$3" />
-      <unit id="3022023529957961098" at="48,19,52,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$4" />
-      <unit id="3022023529957961098" at="52,18,56,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$5" />
-      <unit id="3022023529957961284" at="61,25,66,15" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$8" />
-      <unit id="3022023529957961098" at="59,52,68,11" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$7" />
-      <unit id="3022023529957961098" at="56,29,70,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$6" />
-      <unit id="3022023529957940386" at="25,0,85,0" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo" />
+      <unit id="3022023529957961098" at="40,78,44,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$1" />
+      <unit id="3022023529957961098" at="44,19,48,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$2" />
+      <unit id="3022023529957961098" at="48,19,52,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$3" />
+      <unit id="3022023529957961098" at="52,19,56,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$4" />
+      <unit id="3022023529957961098" at="56,18,60,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$5" />
+      <unit id="3022023529957961284" at="65,25,70,15" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$8" />
+      <unit id="3022023529957961098" at="63,52,72,11" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$7" />
+      <unit id="3022023529957961098" at="60,29,74,7" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo$6" />
+      <unit id="3022023529957940386" at="25,0,88,0" name="jetbrains.mps.lang.test.migration.RemoveUITestPropertyFromTestInfo" />
     </file>
   </root>
 </debug-info>

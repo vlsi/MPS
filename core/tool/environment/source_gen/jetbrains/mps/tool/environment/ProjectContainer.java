@@ -12,11 +12,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import jetbrains.mps.project.FileBasedProject;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.EqualUtil;
 import java.io.IOException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /*package*/ class ProjectContainer implements ProjectManagerListener {
   private Set<Project> myProjects;
@@ -58,6 +58,7 @@ import org.apache.log4j.LogManager;
     return null;
   }
 
+  protected static Logger LOG = LogManager.getLogger(ProjectContainer.class);
   private void addProject(@NotNull Project project) {
     assert !(SetSequence.fromSet(myProjects).contains(project));
     if (size() > 100) {
@@ -99,5 +100,4 @@ import org.apache.log4j.LogManager;
   public void projectOpened(@NotNull Project project) {
     addProject(project);
   }
-  protected static Logger LOG = LogManager.getLogger(ProjectContainer.class);
 }

@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CDHolder_GeneratorInternal = new ConceptPresentationBuilder().create();
@@ -20,43 +17,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_CDHolder_GeneratorInternal;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_SimpleConceptDeclaration;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_SimplePropertyDeclaration;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_StructureAspectDeclaration;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.CDHolder_GeneratorInternal:
+        return props_CDHolder_GeneratorInternal;
+      case LanguageConceptSwitch.SimpleConceptDeclaration:
+        return props_SimpleConceptDeclaration;
+      case LanguageConceptSwitch.SimplePropertyDeclaration:
+        return props_SimplePropertyDeclaration;
+      case LanguageConceptSwitch.StructureAspectDeclaration:
+        return props_StructureAspectDeclaration;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cdebd8L, "jetbrains.mps.samples.highlevel.simpleStructure.structure.CDHolder_GeneratorInternal"), MetaAdapterFactory.getConcept(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x460f3ddb176b0a3cL, "jetbrains.mps.samples.highlevel.simpleStructure.structure.SimpleConceptDeclaration"), MetaAdapterFactory.getConcept(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cc7faeL, "jetbrains.mps.samples.highlevel.simpleStructure.structure.SimplePropertyDeclaration"), MetaAdapterFactory.getConcept(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cc7fc8L, "jetbrains.mps.samples.highlevel.simpleStructure.structure.StructureAspectDeclaration"));
 }

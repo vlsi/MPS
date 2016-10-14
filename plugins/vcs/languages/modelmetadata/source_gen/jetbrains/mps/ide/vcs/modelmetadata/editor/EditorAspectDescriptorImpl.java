@@ -8,48 +8,27 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Model_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new Model_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ModuleReference_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
 
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference"), MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference"));
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL), MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL), MetaIdFactory.conceptId(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L)).seal();
 }

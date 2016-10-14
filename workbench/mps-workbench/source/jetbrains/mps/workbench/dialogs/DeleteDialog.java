@@ -16,12 +16,14 @@
 package jetbrains.mps.workbench.dialogs;
 
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.ui.components.JBCheckBox;
+import com.intellij.ui.components.JBLabel;
+import com.intellij.ui.components.JBPanel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -45,7 +47,7 @@ public class DeleteDialog extends DialogWrapper {
 
   @Override
   protected JComponent createCenterPanel() {
-    final JPanel panel = new JPanel(new GridBagLayout());
+    final JPanel panel = new JBPanel(new GridBagLayout());
     final GridBagConstraints gbc = new GridBagConstraints();
 
     gbc.insets = new Insets(4, 8, 4, 8);
@@ -56,7 +58,7 @@ public class DeleteDialog extends DialogWrapper {
     gbc.gridwidth = 2;
     gbc.fill = GridBagConstraints.BOTH;
     gbc.anchor = GridBagConstraints.WEST;
-    panel.add(new JLabel(myMessage), gbc);
+    panel.add(new JBLabel(myMessage), gbc);
 
     myCheckBoxes = new JCheckBox[myOptions.length];
     for (int i = 0; i < myOptions.length; i++) {
@@ -67,7 +69,7 @@ public class DeleteDialog extends DialogWrapper {
       gbc.insets = new Insets(4, 8, 0, 8);
 
       DeleteOption option = myOptions[i];
-      myCheckBoxes[i] = new JCheckBox(option.caption, option.selected);
+      myCheckBoxes[i] = new JBCheckBox(option.caption, option.selected);
       myCheckBoxes[i].setEnabled(option.enabled);
       panel.add(myCheckBoxes[i], gbc);
     }

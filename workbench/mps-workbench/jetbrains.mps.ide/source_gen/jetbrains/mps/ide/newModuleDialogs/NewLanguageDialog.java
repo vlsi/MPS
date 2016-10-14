@@ -5,6 +5,8 @@ package jetbrains.mps.ide.newModuleDialogs;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
@@ -12,8 +14,6 @@ import jetbrains.mps.project.Solution;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.MPSExtentions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
 
@@ -24,6 +24,7 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
     init();
   }
 
+  protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
   @Override
   protected void runCreation() {
     // TODO: reuse runnable in DefaultLanguageProjectTemplate 
@@ -32,12 +33,12 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
     ((StandaloneMPSProject) myProject).setFolderFor(language, myVirtualFolder);
 
     try {
-      if (as_xpx6i8_a0a0a5a3(mySettings, NewLanguageSettings.class).isRuntimeSolutionNeeded()) {
+      if (as_xpx6i8_a0a0a5a4(mySettings, NewLanguageSettings.class).isRuntimeSolutionNeeded()) {
         Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, mySettings.getModuleLocation(), (MPSProject) myProject);
         ((StandaloneMPSProject) myProject).setFolderFor(runtimeSolution, myVirtualFolder);
         language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
       }
-      if (as_xpx6i8_a0a1a5a3(mySettings, NewLanguageSettings.class).isSandboxSolutionNeeded()) {
+      if (as_xpx6i8_a0a1a5a4(mySettings, NewLanguageSettings.class).isSandBoxSolutionNeeded()) {
         Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, mySettings.getModuleLocation(), (MPSProject) myProject);
         ((StandaloneMPSProject) myProject).setFolderFor(sandboxSolution, myVirtualFolder);
       }
@@ -59,11 +60,10 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
   protected NewLanguageSettings createSettingsInstance() {
     return new NewLanguageSettings(getProjectPath());
   }
-  protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
-  private static <T> T as_xpx6i8_a0a0a5a3(Object o, Class<T> type) {
+  private static <T> T as_xpx6i8_a0a0a5a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xpx6i8_a0a1a5a3(Object o, Class<T> type) {
+  private static <T> T as_xpx6i8_a0a1a5a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

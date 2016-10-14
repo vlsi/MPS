@@ -23,6 +23,8 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -34,8 +36,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.testbench.junit.runners.DelegatingRunner;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * Currently used for ant tests
@@ -120,6 +120,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
     return myChildren;
   }
 
+  protected static Logger LOG = LogManager.getLogger(MpsTestsSuite.class);
   private List<Runner> createChildRunners(Project project, final RunnerBuilder builder) {
     final List<Runner> result = new ArrayList<Runner>();
     project.getModelAccess().runReadAction(new Runnable() {
@@ -143,5 +144,4 @@ public class MpsTestsSuite extends BaseMpsSuite {
     });
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(MpsTestsSuite.class);
 }

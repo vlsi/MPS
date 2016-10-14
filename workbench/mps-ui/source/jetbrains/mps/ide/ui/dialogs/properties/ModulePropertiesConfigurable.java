@@ -264,6 +264,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JTextField myGenOut;
     private JSpinner myLanguageVersion;
     private JSpinner myModuleVersion;
+    private DefaultScope myPlanPickScope;
     private GenPlanPickPanel myPlanPanel;
 
     @Override
@@ -365,7 +366,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         return panel;
       } else if (myModule instanceof DevKit) {
-        myPlanPanel = new GenPlanPickPanel(myProject, new DefaultScope() {
+        myPlanPickScope = new DefaultScope() {
           @Override
           protected Set<SModule> getInitialModules() {
             return new HashSet<SModule>(((DevKit) myModule).getExportedSolutions());
@@ -375,7 +376,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           protected Collection<Language> getInitialUsedLanguages() {
             return ((DevKit) myModule).getExportedLanguages();
           }
-        }, "Generation plan for models using this devkit");
+        };
+        myPlanPanel = new GenPlanPickPanel(myProject, myPlanPickScope, "Generation plan for models using this devkit");
         myPlanPanel.setPlanModel(((DevkitDescriptor) myModuleDescriptor).getAssociatedGenPlan());
         return myPlanPanel;
       }
@@ -438,6 +440,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof DevKit) {
         myModuleDependenciesTab.apply();
         ((DevkitDescriptor) myModuleDescriptor).setAssociatedPlan(myPlanPanel.getPlanModel());
+        myPlanPickScope.invalidateCaches();
       } else {
         if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
           if (myModule instanceof Language) {

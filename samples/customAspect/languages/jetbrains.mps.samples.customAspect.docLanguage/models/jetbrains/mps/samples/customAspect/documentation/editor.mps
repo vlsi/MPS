@@ -2,7 +2,7 @@
 <model ref="r:e334d3cd-5673-450f-8ba2-6a08949884ac(jetbrains.mps.samples.customAspect.documentation.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -57,7 +57,7 @@
           <property role="3F0ifm" value="doc for concept" />
         </node>
         <node concept="1iCGBv" id="2wQ3F8GeHhp" role="3EZMnx">
-          <ref role="1NtTu8" to="j6e7:2wQ3F8GeHgQ" />
+          <ref role="1NtTu8" to="j6e7:2wQ3F8GeHgQ" resolve="cncpt" />
           <node concept="1sVBvm" id="2wQ3F8GeHhr" role="1sWHZn">
             <node concept="3F0A7n" id="2wQ3F8GeHhz" role="2wV5jI">
               <property role="1Intyy" value="true" />

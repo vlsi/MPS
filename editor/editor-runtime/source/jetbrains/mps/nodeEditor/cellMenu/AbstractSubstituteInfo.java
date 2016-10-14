@@ -15,18 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
-import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItemAsSubstituteAction;
-import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,34 +37,20 @@ public abstract class AbstractSubstituteInfo extends AbstractNodeSubstituteInfo 
     myEditorCell = editorCell;
     mySourceNode = editorCell.getSNode();
   }
+  public AbstractSubstituteInfo(EditorCell editorCell, SNode sourceNode) {
+    super(editorCell.getContext());
+    myEditorCell = editorCell;
+    mySourceNode = sourceNode;
+  }
 
   @Override
   protected List<SubstituteAction> createActions() {
-    DefaultTransformationMenuContext context = createTransformationContext();
-    List<TransformationMenuItem> items = context.createItems(myEditorCell.getTransformationMenuLookup());
-    List<SubstituteAction> completionItems = new ArrayList<>();
-    collectItems(items, completionItems);
-    return completionItems;
+    List<TransformationMenuItem> items = MenuUtil.createMenu(myEditorCell.getTransformationMenuLookup(), getMenuLocation(), myEditorCell);
+    return new SubstituteActionsCollector(mySourceNode, items, myEditorCell.getContext().getRepository()).collect();
   }
 
-  protected abstract DefaultTransformationMenuContext createTransformationContext();
-
-  private void collectItems(List<TransformationMenuItem> inItems, final List<SubstituteAction> outItems) {
-    inItems.forEach(menuItem -> menuItem.accept(new TransformationMenuItemVisitor<Void>() {
-      @Override
-      public Void visit(ActionItem actionItem) {
-        if (actionItem instanceof CompletionActionItem) {
-          outItems.add(new CompletionActionItemAsSubstituteAction(((CompletionActionItem) actionItem), mySourceNode));
-        }
-        return null;
-      }
-      @Override
-      public Void visit(SubMenu subMenu) {
-        collectItems(subMenu.getItems(), outItems);
-        return null;
-      }
-    }));
-  }
+  @NotNull
+  protected abstract String getMenuLocation();
 
   public EditorCell getEditorCell() {
     return myEditorCell;

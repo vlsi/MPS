@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_TransformationFeature_Optional = new ConceptPresentationBuilder().create();
@@ -23,58 +20,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_TransformationFeature_Optional;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_TransformationFeature_Required;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_TransformationFeature_Unavailable;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_TransformationLocation_Test;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_TransformationLocation_WithFeatures;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_TransformationLocation_WithoutFeatures;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_TransformationMenu_Test;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.TransformationFeature_Optional:
+        return props_TransformationFeature_Optional;
+      case LanguageConceptSwitch.TransformationFeature_Required:
+        return props_TransformationFeature_Required;
+      case LanguageConceptSwitch.TransformationFeature_Unavailable:
+        return props_TransformationFeature_Unavailable;
+      case LanguageConceptSwitch.TransformationLocation_Test:
+        return props_TransformationLocation_Test;
+      case LanguageConceptSwitch.TransformationLocation_WithFeatures:
+        return props_TransformationLocation_WithFeatures;
+      case LanguageConceptSwitch.TransformationLocation_WithoutFeatures:
+        return props_TransformationLocation_WithoutFeatures;
+      case LanguageConceptSwitch.TransformationMenu_Test:
+        return props_TransformationMenu_Test;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3dfc1dL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Optional"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3e09d8L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Required"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f866f15L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationFeature_Unavailable"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x595469d6668817a2L, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_Test"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f7e88deL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithFeatures"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3eb92bL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationLocation_WithoutFeatures"), MetaAdapterFactory.getConcept(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL, "jetbrains.mps.lang.editor.menus.testMetaLanguage.structure.TransformationMenu_Test"));
 }

@@ -12,118 +12,129 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/3316697760692356691">
     <file name="ModelFocusSynchronizer.java">
-      <node id="2449566706986343605" at="38,38,39,75" concept="8" />
-      <node id="2449566706986427946" at="40,80,41,120" concept="10" />
-      <node id="2449566706986422567" at="41,120,42,73" concept="8" />
-      <node id="2449566706986509968" at="43,35,44,21" concept="2" />
-      <node id="6823803505740362224" at="48,41,49,23" concept="9" />
-      <node id="3316697760692356719" at="50,15,51,78" concept="8" />
-      <node id="2449566706986810376" at="53,55,54,136" concept="10" />
-      <node id="3316697760692356734" at="54,136,55,69" concept="8" />
-      <node id="3316697760692356741" at="55,69,56,80" concept="8" />
-      <node id="3316697760692356749" at="57,37,58,41" concept="3" />
-      <node id="8124529816840220988" at="60,37,61,51" concept="8" />
-      <node id="3316697760692356760" at="62,40,63,68" concept="3" />
-      <node id="2449566706986512919" at="68,64,69,135" concept="3" />
-      <node id="2449566706986790791" at="73,9,74,102" concept="10" />
-      <node id="2449566706986794140" at="74,102,75,114" concept="10" />
-      <node id="2449566706986796031" at="75,114,76,127" concept="10" />
-      <node id="2449566706986798668" at="76,127,77,27" concept="10" />
-      <node id="3316697760692356781" at="79,29,80,96" concept="8" />
-      <node id="3316697760692356813" at="81,59,82,41" concept="8" />
-      <node id="3316697760692356823" at="83,49,84,58" concept="3" />
-      <node id="5128632992124313970" at="85,15,86,87" concept="8" />
-      <node id="3316697760692356829" at="87,40,88,45" concept="3" />
-      <node id="3316697760692356841" at="90,13,91,29" concept="3" />
-      <node id="3316697760692356854" at="100,36,101,32" concept="9" />
-      <node id="3316697760692356705" at="34,0,37,0" concept="7" trace="onFrameDeactivated#()V" />
-      <node id="2449566706986502098" at="42,73,45,11" concept="6" />
-      <node id="6823803505740347044" at="47,31,50,15" concept="6" />
-      <node id="3316697760692356747" at="56,80,59,19" concept="6" />
-      <node id="8124529816840221656" at="61,51,64,21" concept="6" />
-      <node id="2449566706986619807" at="67,15,70,15" concept="5" />
-      <node id="3316697760692356817" at="82,41,85,15" concept="12" />
-      <node id="5128632992124313978" at="86,87,89,15" concept="6" />
-      <node id="3316697760692356858" at="103,0,106,0" concept="7" trace="initComponent#()V" />
-      <node id="3316697760692356862" at="106,0,109,0" concept="7" trace="disposeComponent#()V" />
-      <node id="3316697760692356758" at="59,19,65,19" concept="6" />
-      <node id="3316697760692356848" at="97,0,103,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="2834132315319614606" at="80,96,90,13" concept="5" />
-      <node id="3316697760692356732" at="52,96,66,17" concept="6" />
-      <node id="3316697760692356717" at="79,0,93,0" concept="7" trace="run#()V" />
-      <node id="3316697760692356729" at="51,78,67,15" concept="5" />
-      <node id="2449566706986721185" at="77,27,93,11" concept="3" />
-      <node id="2449566706986685282" at="47,0,72,0" concept="7" trace="run#()V" />
-      <node id="2449566706986652272" at="45,11,72,13" concept="3" />
-      <node id="3316697760692356726" at="39,75,73,9" concept="5" />
-      <node id="3316697760692356709" at="37,0,95,0" concept="7" trace="onFrameActivated#()V" />
-      <node id="3316697760692356697" at="32,70,95,7" concept="3" />
-      <node id="3316697760692356693" at="32,0,97,0" concept="1" trace="ModelFocusSynchronizer#(Lcom/intellij/ide/FrameStateManager;)V" />
-      <scope id="3316697760692356708" at="35,40,35,40" />
-      <scope id="3316697760692356861" at="104,31,104,31" />
-      <scope id="3316697760692356865" at="107,34,107,34" />
-      <scope id="2449566706986502100" at="43,35,44,21" />
-      <scope id="6823803505740347046" at="48,41,49,23" />
-      <scope id="3316697760692356748" at="57,37,58,41" />
-      <scope id="8124529816840221659" at="62,40,63,68" />
-      <scope id="2449566706986619813" at="68,64,69,135" />
-      <scope id="3316697760692356822" at="83,49,84,58" />
-      <scope id="5128632992124313979" at="87,40,88,45" />
-      <scope id="3316697760692356853" at="100,36,101,32" />
-      <scope id="3316697760692356705" at="34,0,37,0" />
-      <scope id="2449566706986619807" at="67,15,70,15">
+      <node id="3316697760692356691" at="35,0,36,0" concept="12" trace="LOG" />
+      <node id="2449566706986343605" at="43,38,44,75" concept="8" />
+      <node id="2449566706986427946" at="45,80,46,120" concept="10" />
+      <node id="2449566706986422567" at="46,120,47,73" concept="8" />
+      <node id="2449566706986509968" at="48,35,49,21" concept="2" />
+      <node id="6823803505740362224" at="53,41,54,23" concept="9" />
+      <node id="3316697760692356719" at="55,15,56,78" concept="8" />
+      <node id="2449566706986810376" at="58,55,59,136" concept="10" />
+      <node id="3316697760692356734" at="59,136,60,69" concept="8" />
+      <node id="3316697760692356741" at="60,69,61,80" concept="8" />
+      <node id="3316697760692356749" at="62,37,63,41" concept="3" />
+      <node id="8124529816840220988" at="65,37,66,51" concept="8" />
+      <node id="3316697760692356760" at="67,40,68,68" concept="3" />
+      <node id="2449566706986512919" at="73,64,74,135" concept="3" />
+      <node id="2449566706986790791" at="78,9,79,102" concept="10" />
+      <node id="2449566706986794140" at="79,102,80,114" concept="10" />
+      <node id="2449566706986796031" at="80,114,81,126" concept="10" />
+      <node id="2449566706986798668" at="81,126,82,27" concept="10" />
+      <node id="3316697760692356781" at="85,58,86,98" concept="8" />
+      <node id="3316697760692356813" at="87,61,88,43" concept="8" />
+      <node id="3316697760692356823" at="89,51,90,60" concept="3" />
+      <node id="1252764808811504979" at="93,53,94,105" concept="3" />
+      <node id="1252764808812247901" at="95,19,96,27" concept="2" />
+      <node id="3193265634052260687" at="97,17,98,86" concept="8" />
+      <node id="1252764808812243036" at="98,86,99,0" concept="11" />
+      <node id="3316697760692356829" at="100,42,101,47" concept="3" />
+      <node id="3316697760692356841" at="103,15,104,31" concept="3" />
+      <node id="3316697760692356854" at="115,36,116,32" concept="9" />
+      <node id="3316697760692356705" at="38,0,41,0" concept="7" trace="onFrameDeactivated#()V" />
+      <node id="2449566706986502098" at="47,73,50,11" concept="6" />
+      <node id="6823803505740347044" at="52,31,55,15" concept="6" />
+      <node id="3316697760692356747" at="61,80,64,19" concept="6" />
+      <node id="8124529816840221656" at="66,51,69,21" concept="6" />
+      <node id="2449566706986619807" at="72,15,75,15" concept="5" />
+      <node id="3316697760692356817" at="88,43,91,17" concept="13" />
+      <node id="1252764808811504979" at="92,59,95,19" concept="6" />
+      <node id="5128632992124313978" at="99,0,102,17" concept="6" />
+      <node id="3316697760692356858" at="119,0,122,0" concept="7" trace="initComponent#()V" />
+      <node id="3316697760692356862" at="123,0,126,0" concept="7" trace="disposeComponent#()V" />
+      <node id="3316697760692356758" at="64,19,70,19" concept="6" />
+      <node id="1252764808811464252" at="91,17,97,17" concept="6" />
+      <node id="3316697760692356848" at="112,0,118,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="3316697760692356732" at="57,96,71,17" concept="6" />
+      <node id="3316697760692356729" at="56,78,72,15" concept="5" />
+      <node id="2834132315319614606" at="86,98,103,15" concept="5" />
+      <node id="2460012800764277997" at="84,29,105,13" concept="6" />
+      <node id="3316697760692356717" at="84,0,107,0" concept="7" trace="run#()V" />
+      <node id="2449566706986685282" at="52,0,77,0" concept="7" trace="run#()V" />
+      <node id="2449566706986721185" at="82,27,107,11" concept="3" />
+      <node id="2449566706986652272" at="50,11,77,13" concept="3" />
+      <node id="3316697760692356726" at="44,75,78,9" concept="5" />
+      <node id="3316697760692356709" at="42,0,109,0" concept="7" trace="onFrameActivated#()V" />
+      <node id="3316697760692356697" at="36,70,109,7" concept="3" />
+      <node id="3316697760692356693" at="36,0,111,0" concept="1" trace="ModelFocusSynchronizer#(Lcom/intellij/ide/FrameStateManager;)V" />
+      <scope id="3316697760692356708" at="39,40,39,40" />
+      <scope id="3316697760692356861" at="120,31,120,31" />
+      <scope id="3316697760692356865" at="124,34,124,34" />
+      <scope id="2449566706986502100" at="48,35,49,21" />
+      <scope id="6823803505740347046" at="53,41,54,23" />
+      <scope id="3316697760692356748" at="62,37,63,41" />
+      <scope id="8124529816840221659" at="67,40,68,68" />
+      <scope id="2449566706986619813" at="73,64,74,135" />
+      <scope id="3316697760692356822" at="89,51,90,60" />
+      <scope id="1252764808811504979" at="93,53,94,105" />
+      <scope id="5128632992124313979" at="100,42,101,47" />
+      <scope id="3316697760692356853" at="115,36,116,32" />
+      <scope id="3316697760692356705" at="38,0,41,0" />
+      <scope id="2449566706986619807" at="72,15,75,15">
         <var name="model" id="2449566706986619809" />
       </scope>
-      <scope id="3316697760692356858" at="103,0,106,0" />
-      <scope id="3316697760692356862" at="106,0,109,0" />
-      <scope id="3316697760692356759" at="60,37,64,21">
+      <scope id="3316697760692356858" at="119,0,122,0" />
+      <scope id="3316697760692356862" at="123,0,126,0" />
+      <scope id="3316697760692356759" at="65,37,69,21">
         <var name="model" id="8124529816840220989" />
       </scope>
-      <scope id="3316697760692356848" at="97,0,103,0" />
-      <scope id="2834132315319614609" at="81,59,89,15">
-        <var name="fileToRefresh" id="3316697760692356814" />
-        <var name="virtualFile" id="5128632992124313971" />
-      </scope>
-      <scope id="2834132315319614606" at="80,96,90,13">
-        <var name="file" id="2834132315319614607" />
-      </scope>
-      <scope id="3316697760692356733" at="53,55,65,19">
+      <scope id="1252764808811464254" at="92,59,96,27" />
+      <scope id="3316697760692356848" at="112,0,118,0" />
+      <scope id="3316697760692356733" at="58,55,70,19">
         <var name="node" id="3316697760692356742" />
         <var name="nvf" id="3316697760692356735" />
       </scope>
-      <scope id="3316697760692356718" at="79,29,91,29">
-        <var name="session" id="3316697760692356782" />
+      <scope id="3316697760692356731" at="57,96,71,17" />
+      <scope id="2834132315319614609" at="87,61,102,17">
+        <var name="fileToRefresh" id="3316697760692356814" />
+        <var name="virtualFile" id="3193265634052260688" />
       </scope>
-      <scope id="3316697760692356731" at="52,96,66,17" />
-      <scope id="3316697760692356717" at="79,0,93,0" />
-      <scope id="3316697760692356729" at="51,78,67,15">
+      <scope id="3316697760692356729" at="56,78,72,15">
         <var name="vf" id="3316697760692356730" />
       </scope>
-      <scope id="2449566706986685286" at="47,31,70,15">
+      <scope id="2834132315319614606" at="86,98,103,15">
+        <var name="file" id="2834132315319614607" />
+      </scope>
+      <scope id="2460012800764277999" at="85,58,104,31">
+        <var name="session" id="3316697760692356782" />
+      </scope>
+      <scope id="3316697760692356718" at="84,29,105,13" />
+      <scope id="2449566706986685286" at="52,31,75,15">
         <var name="models" id="3316697760692356720" />
       </scope>
-      <scope id="2449566706986685282" at="47,0,72,0" />
-      <scope id="3316697760692356728" at="40,80,72,13">
+      <scope id="3316697760692356717" at="84,0,107,0" />
+      <scope id="2449566706986685282" at="52,0,77,0" />
+      <scope id="3316697760692356728" at="45,80,77,13">
         <var name="mpsProject" id="2449566706986422568" />
       </scope>
-      <scope id="3316697760692356726" at="39,75,73,9">
+      <scope id="3316697760692356726" at="44,75,78,9">
         <var name="project" id="3316697760692356727" />
       </scope>
-      <scope id="3316697760692356712" at="38,38,93,11">
+      <scope id="3316697760692356712" at="43,38,107,11">
         <var name="files" id="2449566706986343608" />
       </scope>
-      <scope id="3316697760692356709" at="37,0,95,0" />
-      <scope id="3316697760692356696" at="32,70,95,7" />
-      <scope id="3316697760692356693" at="32,0,97,0">
+      <scope id="3316697760692356709" at="42,0,109,0" />
+      <scope id="3316697760692356696" at="36,70,109,7" />
+      <scope id="3316697760692356693" at="36,0,111,0">
         <var name="frameStateManager" id="3316697760692356845" />
       </scope>
-      <unit id="3316697760692356717" at="78,60,93,9" name="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
-      <unit id="2449566706986685280" at="46,55,72,11" name="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
-      <unit id="3316697760692356703" at="33,38,95,5" name="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
-      <unit id="3316697760692356691" at="31,0,110,0" name="jetbrains.mps.watching.ModelFocusSynchronizer" />
+      <unit id="3316697760692356717" at="83,60,107,9" name="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
+      <unit id="2449566706986685280" at="51,55,77,11" name="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
+      <unit id="3316697760692356703" at="37,38,109,5" name="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
+      <unit id="3316697760692356691" at="34,0,127,0" name="jetbrains.mps.watching.ModelFocusSynchronizer" />
     </file>
   </root>
   <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/6793838228148720923">

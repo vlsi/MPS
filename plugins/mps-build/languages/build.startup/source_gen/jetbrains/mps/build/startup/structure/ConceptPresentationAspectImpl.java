@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ClassPathItem = new ConceptPresentationBuilder().create();
@@ -22,53 +19,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ClassPathItem;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_MpsStartupScript;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_SimpleVmOptions;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_TextFile;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_TextLine;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_VmOptions;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ClassPathItem:
+        return props_ClassPathItem;
+      case LanguageConceptSwitch.MpsStartupScript:
+        return props_MpsStartupScript;
+      case LanguageConceptSwitch.SimpleVmOptions:
+        return props_SimpleVmOptions;
+      case LanguageConceptSwitch.TextFile:
+        return props_TextFile;
+      case LanguageConceptSwitch.TextLine:
+        return props_TextLine;
+      case LanguageConceptSwitch.VmOptions:
+        return props_VmOptions;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L, "jetbrains.mps.build.startup.structure.ClassPathItem"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, "jetbrains.mps.build.startup.structure.MpsStartupScript"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, "jetbrains.mps.build.startup.structure.TextFile"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, "jetbrains.mps.build.startup.structure.TextLine"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343750dL, "jetbrains.mps.build.startup.structure.VmOptions"));
 }

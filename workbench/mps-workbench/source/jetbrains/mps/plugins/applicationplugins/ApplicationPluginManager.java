@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.plugins.applicationplugins;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -144,19 +143,14 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   @Override
   public void initComponent() {
     LOG.debug("Running startup activity");
-    if (!ApplicationManager.getApplication().isDisposed()) {
-      register();
-      myInitialized = true;
-    }
+    register();
     LOG.debug("Finished running startup activity");
   }
 
   @Override
   public void disposeComponent() {
     LOG.debug("Running shutdown app activity");
-    if (myInitialized && !ApplicationManager.getApplication().isDisposed()) {
-      unregister();
-    }
+    unregister();
     LOG.debug("Finished running shutdown app activity");
   }
 

@@ -19,20 +19,23 @@ public class ModuleData implements NodeData {
   public ModuleData(SModule module) {
     this.myModule = module;
   }
+
   @Override
   public String getText() {
     return this.myModule.getModuleName();
   }
+
   @Override
   public List<NodeData> getChildren() {
     return ListSequence.fromList(new ArrayList<NodeData>());
   }
+
   @Override
   public Icon getIcon(boolean expanded) {
     if (this.myModule instanceof AbstractModule) {
       IFile file = ((AbstractModule) this.myModule).getDescriptorFile();
       if (file != null) {
-        VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(file);
+        VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(file);
         if (virtualFile != null) {
           return virtualFile.getFileType().getIcon();
         }
@@ -40,20 +43,25 @@ public class ModuleData implements NodeData {
     }
     return IdeIcons.LANGUAGE_ICON;
   }
+
   public SModule getModule() {
     return this.myModule;
   }
+
   @Override
   public boolean canHaveChildren() {
     return false;
   }
+
   @Override
   public void addChildren(NodeData nodeData) {
   }
+
   @Override
   public NodeData getParent() {
     return this.myParent;
   }
+
   @Override
   public void setParent(NodeData parent) {
     this.myParent = parent;

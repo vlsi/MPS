@@ -6,6 +6,8 @@ import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ThreadUtils;
@@ -31,8 +33,6 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.core.tool.environment.util.CanonicalPath;
 import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.project.PathMacros;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class TransformationTestRunner implements TestRunner {
@@ -57,9 +57,10 @@ public class TransformationTestRunner implements TestRunner {
     myEnvironment.flushAllEvents();
   }
 
+  protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
   protected void doInitTest(@NotNull final TransformationTest test, @NotNull final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     if (LOG.isInfoEnabled()) {
-      LOG.info("Initializing test...");
+      LOG.info("Initializing test");
     }
     test.setProject(testProject);
     TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
@@ -240,7 +241,6 @@ public class TransformationTestRunner implements TestRunner {
     }
     return exception;
   }
-  protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
   private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();

@@ -23,11 +23,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -113,6 +113,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       }
     }) != null;
   }
+  protected static Logger LOG = LogManager.getLogger(NodeBySeveralConcepts_Configuration.class);
   @Override
   public NodeBySeveralConcepts_Configuration clone() {
     NodeBySeveralConcepts_Configuration clone = null;
@@ -157,7 +158,6 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(NodeBySeveralConcepts_Configuration.class);
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

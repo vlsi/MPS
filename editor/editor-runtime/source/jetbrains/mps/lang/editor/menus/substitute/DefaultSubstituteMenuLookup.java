@@ -15,33 +15,81 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
-import jetbrains.mps.lang.editor.menus.transformation.DefaultMenuLookup;
+import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.Menu;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author simon
  */
-public class DefaultSubstituteMenuLookup extends DefaultMenuLookup<SubstituteMenu> {
+public class DefaultSubstituteMenuLookup implements SubstituteMenuLookup {
+  @NotNull
+  private final LanguageRegistry myLanguageRegistry;
+  @NotNull
+  private final SAbstractConcept myConcept;
+
   public DefaultSubstituteMenuLookup(@NotNull LanguageRegistry languageRegistry,
       @NotNull SAbstractConcept concept) {
-    super(languageRegistry, concept);
+    myLanguageRegistry = languageRegistry;
+    myConcept = concept;
+  }
+
+  @NotNull
+  private SubstituteMenu createImplicitMenu() {
+    return new ImplicitSubstituteMenu(myConcept);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    DefaultSubstituteMenuLookup that = (DefaultSubstituteMenuLookup) o;
+
+    return myLanguageRegistry.equals(that.myLanguageRegistry) && myConcept.equals(that.myConcept);
+
+  }
+
+  @Override
+  public int hashCode() {
+    return myConcept.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "default substitute menu for " + myConcept;
   }
 
   @NotNull
   @Override
-  protected SubstituteMenu createDefaultMenu() {
-    return new DefaultConceptSubstituteMenu(getConcept());
+  public Collection<SubstituteMenu> lookup(@NotNull Collection<SLanguage> usedLanguages) {
+    List<SubstituteMenu> conceptMenu = new ArrayList<>();
+    conceptMenu.addAll(getForConcept(usedLanguages));
+
+    if (usedLanguages.contains(myConcept.getLanguage()) && conceptMenu.stream().allMatch(Menu::isContribution)) {
+      conceptMenu.add(0, createImplicitMenu());
+    }
+
+    return conceptMenu;
   }
 
-  @Override
-  protected Collection<SubstituteMenu> getForAspectDescriptor(EditorAspectDescriptor aspectDescriptor, Collection<SLanguage> usedLanguages) {
-    return aspectDescriptor.getDefaultSubstituteMenus(getConcept(), usedLanguages);
+  @NotNull
+  private Collection<SubstituteMenu> getForConcept(Collection<SLanguage> usedLanguages) {
+    EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(myLanguageRegistry, myConcept.getLanguage());
+    if (aspectDescriptor == null) {
+      return Collections.emptyList();
+    }
+    return aspectDescriptor.getDefaultSubstituteMenus(myConcept, usedLanguages);
   }
 }

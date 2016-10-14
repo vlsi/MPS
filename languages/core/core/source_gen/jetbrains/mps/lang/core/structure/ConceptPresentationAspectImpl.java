@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Attribute = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
@@ -51,198 +49,79 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0kb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Attribute;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BaseCommentAttribute;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BaseConcept;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ChildAttribute;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ExportScope;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ExportScopeModule;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ExportScopeNamespace;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ExportScopePublic;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_IAntisuppressErrors;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ICanSuppressErrors;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IContainer;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_IDeprecatable;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_IDontApplyTypesystemRules;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_IDontSubstituteByDefault;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_IMetaLevelChanger;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_INamedConcept;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_IOldCommentAnnotation;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_IOldCommentContainer;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_IResolveInfo;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ISkipConstraintsChecking;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_IStubForAnotherConcept;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ISuppressErrors;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_IType;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_IWrapper;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ImplementationContainer;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ImplementationPart;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ImplementationWithStubPart;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_InterfacePart;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_LinkAttribute;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_NodeAttribute;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_PropertyAttribute;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_ScopeFacade;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_ScopeProvider;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_SideTransformInfo;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_SuppressErrorsAnnotation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Attribute:
+        return props_Attribute;
+      case LanguageConceptSwitch.BaseCommentAttribute:
+        return props_BaseCommentAttribute;
+      case LanguageConceptSwitch.BaseConcept:
+        return props_BaseConcept;
+      case LanguageConceptSwitch.ChildAttribute:
+        return props_ChildAttribute;
+      case LanguageConceptSwitch.ExportScope:
+        return props_ExportScope;
+      case LanguageConceptSwitch.ExportScopeModule:
+        return props_ExportScopeModule;
+      case LanguageConceptSwitch.ExportScopeNamespace:
+        return props_ExportScopeNamespace;
+      case LanguageConceptSwitch.ExportScopePublic:
+        return props_ExportScopePublic;
+      case LanguageConceptSwitch.IAntisuppressErrors:
+        return props_IAntisuppressErrors;
+      case LanguageConceptSwitch.ICanSuppressErrors:
+        return props_ICanSuppressErrors;
+      case LanguageConceptSwitch.IContainer:
+        return props_IContainer;
+      case LanguageConceptSwitch.IDeprecatable:
+        return props_IDeprecatable;
+      case LanguageConceptSwitch.IDontApplyTypesystemRules:
+        return props_IDontApplyTypesystemRules;
+      case LanguageConceptSwitch.IDontSubstituteByDefault:
+        return props_IDontSubstituteByDefault;
+      case LanguageConceptSwitch.IMetaLevelChanger:
+        return props_IMetaLevelChanger;
+      case LanguageConceptSwitch.INamedConcept:
+        return props_INamedConcept;
+      case LanguageConceptSwitch.IOldCommentAnnotation:
+        return props_IOldCommentAnnotation;
+      case LanguageConceptSwitch.IOldCommentContainer:
+        return props_IOldCommentContainer;
+      case LanguageConceptSwitch.IResolveInfo:
+        return props_IResolveInfo;
+      case LanguageConceptSwitch.ISkipConstraintsChecking:
+        return props_ISkipConstraintsChecking;
+      case LanguageConceptSwitch.IStubForAnotherConcept:
+        return props_IStubForAnotherConcept;
+      case LanguageConceptSwitch.ISuppressErrors:
+        return props_ISuppressErrors;
+      case LanguageConceptSwitch.IType:
+        return props_IType;
+      case LanguageConceptSwitch.IWrapper:
+        return props_IWrapper;
+      case LanguageConceptSwitch.ImplementationContainer:
+        return props_ImplementationContainer;
+      case LanguageConceptSwitch.ImplementationPart:
+        return props_ImplementationPart;
+      case LanguageConceptSwitch.ImplementationWithStubPart:
+        return props_ImplementationWithStubPart;
+      case LanguageConceptSwitch.InterfacePart:
+        return props_InterfacePart;
+      case LanguageConceptSwitch.LinkAttribute:
+        return props_LinkAttribute;
+      case LanguageConceptSwitch.NodeAttribute:
+        return props_NodeAttribute;
+      case LanguageConceptSwitch.PropertyAttribute:
+        return props_PropertyAttribute;
+      case LanguageConceptSwitch.ScopeFacade:
+        return props_ScopeFacade;
+      case LanguageConceptSwitch.ScopeProvider:
+        return props_ScopeProvider;
+      case LanguageConceptSwitch.SideTransformInfo:
+        return props_SideTransformInfo;
+      case LanguageConceptSwitch.SuppressErrorsAnnotation:
+        return props_SuppressErrorsAnnotation;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0kb = buildConceptIndices(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aebaL, "jetbrains.mps.lang.core.structure.ExportScopeModule"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, "jetbrains.mps.lang.core.structure.ExportScopeNamespace"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb6L, "jetbrains.mps.lang.core.structure.ExportScopePublic"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xe8924c64a55a26fL, "jetbrains.mps.lang.core.structure.IAntisuppressErrors"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f1e14d895L, "jetbrains.mps.lang.core.structure.IContainer"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL, "jetbrains.mps.lang.core.structure.IDeprecatable"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x1ec383e5b4bdca56L, "jetbrains.mps.lang.core.structure.IDontApplyTypesystemRules"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9b3ed4f3a4d01ecL, "jetbrains.mps.lang.core.structure.IOldCommentAnnotation"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L, "jetbrains.mps.lang.core.structure.IOldCommentContainer"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L, "jetbrains.mps.lang.core.structure.ISkipConstraintsChecking"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x226fb4c3ba26d45L, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f8a0774f2L, "jetbrains.mps.lang.core.structure.IType"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11c6fd75034L, "jetbrains.mps.lang.core.structure.IWrapper"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7d2577L, "jetbrains.mps.lang.core.structure.ImplementationContainer"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2ea65c0b397bd5beL, "jetbrains.mps.lang.core.structure.ScopeFacade"), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"));
 }

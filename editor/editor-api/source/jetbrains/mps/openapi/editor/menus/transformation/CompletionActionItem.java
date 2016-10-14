@@ -45,6 +45,12 @@ public interface CompletionActionItem extends ActionItem {
     return null;
   }
 
+  /**
+   * Returns the icon resource that corresponds to this action
+   *
+   * @param pattern the text that the user has typed so far
+   * @return the icon resource, null if not defined
+   */
   @Nullable
   default IconResource getIcon(String pattern) {
     return null;
@@ -60,4 +66,11 @@ public interface CompletionActionItem extends ActionItem {
   default String getShortDescriptionText(@NotNull String pattern) {
     return null;
   }
+
+  /**
+   * Indicates whether the action may be executed with the given pattern immediately, without showing the completion menu. Always called in a read action.
+   *
+   * @param pattern the text that the user has typed so far
+   */
+  boolean canExecuteStrictly(@NotNull String pattern);
 }

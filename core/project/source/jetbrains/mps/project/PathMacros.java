@@ -16,6 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -29,12 +31,16 @@ public class PathMacros implements CoreComponent {
   private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<PathMacrosProvider>();
   private Set<String> reported = new HashSet<String>();
 
+  /**
+   * @deprecated it is a CoreComponent, one can get it from MPSPlatform
+   */
+  @ToRemove(version = 3.4)
+  @Deprecated
   public static PathMacros getInstance() {
     return INSTANCE;
   }
 
   public PathMacros() {
-
   }
 
   @Override
@@ -108,12 +114,11 @@ public class PathMacros implements CoreComponent {
     }
   }
 
-  public void addMacrosProvider(PathMacrosProvider provider) {
-    if (provider == this) return;
+  public void addMacrosProvider(@NotNull PathMacrosProvider provider) {
     myMacrosProviders.add(provider);
   }
 
-  public void removeMacrosProvider(PathMacrosProvider provider) {
+  public void removeMacrosProvider(@NotNull PathMacrosProvider provider) {
     myMacrosProviders.remove(provider);
   }
 }

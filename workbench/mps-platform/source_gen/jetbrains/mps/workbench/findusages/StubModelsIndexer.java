@@ -5,6 +5,8 @@ package jetbrains.mps.workbench.findusages;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
@@ -16,8 +18,6 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class StubModelsIndexer implements ApplicationComponent {
   public StubModelsIndexer() {
@@ -34,6 +34,7 @@ public class StubModelsIndexer implements ApplicationComponent {
   public String getComponentName() {
     return StubModelsIndexer.class.getSimpleName();
   }
+  protected static Logger LOG = LogManager.getLogger(StubModelsIndexer.class);
   private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
     private MyFileTypeIdIndexer() {
     }
@@ -65,5 +66,4 @@ public class StubModelsIndexer implements ApplicationComponent {
       return updater.getResult();
     }
   }
-  protected static Logger LOG = LogManager.getLogger(StubModelsIndexer.class);
 }

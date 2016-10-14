@@ -40,7 +40,7 @@ public class FileGenerationUtil {
   }
 
   public static IFile getCachesDir(IFile outputRoot) {
-    return FileSystem.getInstance().getFileByPath(outputRoot.getPath() + CACHES_SUFFIX);
+    return outputRoot.getFileSystem().getFile(outputRoot.toPath() + CACHES_SUFFIX);
   }
 
   public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel model, @NotNull IFile outputRootDir) {
@@ -49,15 +49,11 @@ public class FileGenerationUtil {
 
   /**
    * Returns a (sub-)subdirectory of outputRootDir matching the reference model package.
-   *
-   * @param reference
-   * @param outputRootDir
-   * @return
    */
   public static IFile getDefaultOutputDir(SModelReference reference, @NotNull IFile outputRootDir) {
     String packageName = reference.getName().getLongName();
     String packagePath;
-    if (FileSystem.getInstance().isPackaged(outputRootDir)) {
+    if (outputRootDir.isInArchive()) {
       packagePath = packageName.replace('.', '/');
     } else {
       packagePath = packageName.replace('.', File.separatorChar);

@@ -1,85 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="QueriesGenerated.java">
-      <unit at="24,0,63,0" name="jetbrains.mps.baseLanguage.overloadedOperators.actions.QueriesGenerated" />
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.overloadedOperators.actions.ActionAspectDescriptorImpl" />
     </file>
-  </root>
-  <root nodeRef="r:15cfc9e9-1d77-4bc1-8471-5dcf3f20b1c9(jetbrains.mps.baseLanguage.overloadedOperators.actions)/1141736782992981495">
     <file name="QueriesGenerated.java">
-      <node id="1141736782992981496" at="25,193,26,93" concept="5" />
-      <node id="1141736782992986496" at="29,42,30,361" concept="6" />
-      <node id="1141736782992986571" at="36,100,37,287" concept="5" />
-      <node id="1141736782992986604" at="37,287,38,82" concept="1" />
-      <node id="1141736782992986580" at="38,82,39,188" concept="1" />
-      <node id="1141736782992986592" at="39,188,40,202" concept="1" />
-      <node id="1141736782992986614" at="40,202,41,27" concept="6" />
-      <node id="1141736782992984468" at="43,59,44,173" concept="6" />
-      <node id="1141736782992981496" at="46,66,47,46" concept="6" />
-      <node id="1141736782992981496" at="50,43,51,49" concept="5" />
-      <node id="1141736782992981496" at="51,49,52,67" concept="5" />
-      <node id="1141736782992981496" at="52,67,53,94" concept="5" />
-      <node id="1141736782992981496" at="53,94,54,576" concept="6" />
-      <node id="1141736782992981496" at="59,5,60,18" concept="6" />
-      <node id="1141736782992981496" at="29,0,32,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
-      <node id="1141736782992981496" at="43,0,46,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1141736782992981496" at="46,0,49,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1141736782992981496" at="27,5,32,18" concept="5" />
-      <node id="1141736782992981496" at="36,0,43,0" concept="4" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1141736782992981496" at="49,0,56,0" concept="4" trace="isEnabled#()Z" />
-      <node id="1141736782992981496" at="34,51,56,13" concept="1" />
-      <node id="1141736782992981496" at="33,37,57,9" concept="2" />
-      <node id="1141736782992981496" at="32,18,58,7" concept="3" />
-      <node id="1141736782992981496" at="26,93,59,5" concept="0" />
-      <node id="1141736782992981496" at="25,0,62,0" concept="7" trace="sideTransform_ActionsFactory_Expression_1141736782992981496#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
-      <scope id="1141736782992981496" at="29,42,30,361" />
-      <scope id="1141736782992984464" at="43,59,44,173" />
-      <scope id="1141736782992981496" at="46,66,47,46" />
-      <scope id="1141736782992981496" at="29,0,32,0" />
-      <scope id="1141736782992981496" at="43,0,46,0">
-        <var name="pattern" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981496" at="46,0,49,0">
-        <var name="pattern" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981496" at="50,43,54,576">
-        <var name="containingLink" id="1141736782992981496" />
-        <var name="parent" id="1141736782992981496" />
-        <var name="sourceNode" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981505" at="36,100,41,27">
-        <var name="usage" id="1141736782992986572" />
-      </scope>
-      <scope id="1141736782992981496" at="36,0,43,0">
-        <var name="editorContext" id="1141736782992981496" />
-        <var name="pattern" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981496" at="49,0,56,0" />
-      <scope id="1141736782992981496" at="34,51,56,13" />
-      <scope id="1141736782992981496" at="33,37,57,9" />
-      <scope id="1141736782992981496" at="33,37,57,9">
-        <var name="item" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981496" at="27,5,58,7">
-        <var name="parameterObjects" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981496" at="25,193,60,18">
-        <var name="result" id="1141736782992981496" />
-      </scope>
-      <scope id="1141736782992981496" at="25,0,62,0">
-        <var name="_context" id="1141736782992981496" />
-        <var name="operationContext" id="1141736782992981496" />
-      </scope>
-      <unit id="1141736782992981496" at="28,45,32,7" name="jetbrains.mps.baseLanguage.overloadedOperators.actions.QueriesGenerated$1" />
-      <unit id="1141736782992981496" at="35,55,56,11" name="jetbrains.mps.baseLanguage.overloadedOperators.actions.QueriesGenerated$2" />
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.overloadedOperators.actions.QueriesGenerated" />
     </file>
   </root>
 </debug-info>

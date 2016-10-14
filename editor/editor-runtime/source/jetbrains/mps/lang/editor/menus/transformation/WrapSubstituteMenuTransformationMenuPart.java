@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -34,26 +33,30 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    DefaultSubstituteMenuContext substituteMenuContext =
-        DefaultSubstituteMenuContext.createInitialContextForNode(null, context.getNode(), null, context.getEditorContext());
-    return substituteMenuContext.createItems(getSubstituteMenuLookup(context)).stream().
-        filter(new InUsedLanguagesPredicate(context.getNode().getModel())).
-        map(item -> createTransformationItem(context, item)).
-        collect(Collectors.toList());
+    final SNode targetNode = getTargetNode(context);
+    return new SubstituteItemsCollector(targetNode, null, null, context.getEditorContext(), getSubstituteMenuLookup(context)) {
+      @Override
+      protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext substituteMenuContext) {
+        return createTransformationItem(targetNode, item, context);
+      }
+    }.collect();
   }
 
-  private TransformationMenuItem createTransformationItem(TransformationMenuContext context, SubstituteMenuItem item) {
-    return new SubstituteMenuItemAsCompletionActionItem(item) {
+  private TransformationMenuItem createTransformationItem(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext context) {
+    return new SubstituteMenuItemAsActionItem(item) {
       @Override
       public void execute(@NotNull String pattern) {
-        WrapSubstituteMenuTransformationMenuPart.this.execute(context, item, pattern);
+        WrapSubstituteMenuTransformationMenuPart.this.execute(targetNode, item, context, pattern);
       }
     };
   }
 
-  protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
+  protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
     return null;
   }
 
-  protected abstract void execute(TransformationMenuContext context, SubstituteMenuItem item, String pattern);
+  protected SNode getTargetNode(TransformationMenuContext context) {
+    return context.getNode();
+  }
+  protected abstract void execute(SNode targetNode, SubstituteMenuItem item,TransformationMenuContext context, String pattern);
 }

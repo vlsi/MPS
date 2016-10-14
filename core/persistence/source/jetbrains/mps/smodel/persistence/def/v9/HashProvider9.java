@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
 import jetbrains.mps.smodel.persistence.def.v9.IdEncoder.EncodingException;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -64,6 +63,7 @@ public class HashProvider9 extends IHashProvider {
           nodeEnd = scanner.getOffset();
           // fall-through
         case XmlFastScanner.OPEN_TAG:
+          nodeEnd = -1; // just in case due to corrupt file (e.g. merge) closing tag comes first.
           nodeStart = scanner.getTokenOffset();
           if (nodeIdMatcher.reset(scanner.token()).find()) {
             rootId = nodeIdMatcher.group(1);
@@ -80,6 +80,7 @@ public class HashProvider9 extends IHashProvider {
           break;
       }
       if (rootId != null && nodeStart != -1 && nodeEnd != -1) {
+        assert nodeStart <= nodeEnd;
         String s = scanner.getText(nodeStart, nodeEnd);
         SNodeId nodeId = null;
         try {

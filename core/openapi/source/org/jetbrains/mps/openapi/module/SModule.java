@@ -74,7 +74,7 @@ public interface SModule {
   /**
    * Returns version of used language
    */
-  int getUsedLanguageVersion(SLanguage usedLanguage);
+  int getUsedLanguageVersion(@NotNull SLanguage usedLanguage);
 
   /**
    * FIXME document whether this method required model read

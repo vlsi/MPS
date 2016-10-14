@@ -13,9 +13,11 @@ import jetbrains.mps.samples.multipleProjections.stateMachine.editor.EditorAspec
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.samples.multipleProjections.stateMachine.structure.ConceptPresentationAspectImpl;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.samples.multipleProjections.stateMachine.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "530533ee-f789-4c1e-ba56-de1bbf3afda7(jetbrains.mps.samples.multipleProjections.stateMachine)";
+  public static final String MODULE_REF = "530533ee-f789-4c1e-ba56-de1bbf3afda7(jetbrains.mps.samples.multipleProjections.stateMachine)";
   public Language() {
   }
   @Override
@@ -62,6 +64,11 @@ public class Language extends LanguageRuntime {
         return (T) new ConceptPresentationAspectImpl();
       }
     }
-    return super.createAspect(aspectClass);
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
+      }
+    }
+    return null;
   }
 }

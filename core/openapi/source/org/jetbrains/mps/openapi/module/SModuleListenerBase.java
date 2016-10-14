@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -41,6 +42,12 @@ public class SModuleListenerBase implements SModuleListener {
 
   @Override
   public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
+  }
+
+  /**
+   * To be pulled up
+   */
+  public void moduleRenamed(@NotNull SModule module, @NotNull SModuleReference oldRef) {
   }
 
   @Override

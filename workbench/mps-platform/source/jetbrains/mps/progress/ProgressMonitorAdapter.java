@@ -16,16 +16,22 @@
 package jetbrains.mps.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.ex.StatusBarEx;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, 9/30/11
  */
 public class ProgressMonitorAdapter extends ProgressMonitorBase {
-
   private final ProgressIndicator myIndicator;
 
-  public ProgressMonitorAdapter(ProgressIndicator indicator) {
+  public ProgressMonitorAdapter(@NotNull ProgressIndicator indicator) {
     myIndicator = indicator;
   }
 
@@ -66,9 +72,21 @@ public class ProgressMonitorAdapter extends ProgressMonitorBase {
 
   }
 
+  public void pushState() {
+    myIndicator.pushState();
+  }
+
+  public void popState() {
+    myIndicator.popState();
+  }
+
   @Override
   public boolean isCanceled() {
     return myIndicator.isCanceled();
+  }
+
+  public ProgressIndicator getIndicator() {
+    return myIndicator;
   }
 
   @Override

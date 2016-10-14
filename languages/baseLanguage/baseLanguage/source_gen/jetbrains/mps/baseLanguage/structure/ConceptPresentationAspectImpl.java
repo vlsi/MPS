@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractClassifierReference = new ConceptPresentationBuilder().create();
@@ -301,1448 +299,579 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0al.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractClassifierReference;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractCreator;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractForStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AbstractLoopStatement;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AbstractOperation;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AbstractUnaryNumberOperation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_AdditionalForLoopVariable;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_AndAssignmentExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_AndExpression;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_Annotation;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_AnnotationInstance;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_AnnotationInstanceExpression;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_AnnotationInstanceValue;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_AnnotationMethodDeclaration;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_AnonymousClass;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_AnonymousClassCreator;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ArrayAccessExpression;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ArrayClassExpression;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ArrayCloneOperation;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ArrayCreator;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ArrayCreatorWithInitializer;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ArrayLengthOperation;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ArrayLiteral;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ArrayType;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_AsExpression;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_AssertStatement;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_AssignmentExpression;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_BLBottomType;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_BaseAssignmentExpression;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_BaseMethodCall;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_BaseMethodDeclaration;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_BaseStringOperation;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_BaseVariableDeclaration;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_BaseVariableReference;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_BinaryBitwiseOperation;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_BinaryCompareOperation;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_BinaryOperation;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_BitwiseAndExpression;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_BitwiseNotExpression;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_BitwiseOrExpression;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_BitwiseXorExpression;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_BlockStatement;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_BooleanConstant;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_BooleanType;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_BreakStatement;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_ByteType;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_CastExpression;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_CatchClause;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_CharConstant;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_CharType;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_ClassConcept;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_ClassCreator;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_Classifier;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_ClassifierClassExpression;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_ClassifierMember;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_ClassifierType;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_Closure;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_ClosureParameter;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_ClosureParameterReference;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_Closureoid;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_CommentPart;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_CommentedStatement;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_CommentedStatementsBlock;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_ConceptFunction;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_ConceptFunctionParameter;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_ConstructorDeclaration;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_ConstructorInvocationStatement;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_ContextClassifierKind;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_ContinueStatement;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_CustomPropertyImplementation;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_CustomSetterPropertyImplementation;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_DefaultClassCreator;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_DefaultGetAccessor;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_DefaultPropertyImplementation;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_DefaultSetAccessor;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_DimensionExpression;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_DivAssignmentExpression;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_DivExpression;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_DoWhileStatement;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_DotExpression;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_DoubleType;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_ElsifClause;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_EnumClass;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_EnumConstantDeclaration;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_EnumConstantReference;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_EnumValueOfExpression;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_EnumValuesExpression;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_EqualsExpression;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_EscapeOperation;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_Expression;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_ExpressionStatement;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_FieldDeclaration;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_FieldReferenceOperation;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_FloatType;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_FloatingPointConstant;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_FloatingPointFloatConstant;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_ForStatement;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_ForeachStatement;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_GenericDeclaration;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_GenericNewExpression;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_GetAccessor;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_GreaterThanExpression;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_GreaterThanOrEqualsExpression;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_HasAnnotation;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_HexIntegerLiteral;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_IAnonymousClass;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_IBLDeprecatable;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_IBinaryLike;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_IClassifier;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_IClassifierMember;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_IClassifierType;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_IConditional;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_IContainsStatementList;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_IControlFlowInterrupter;
-          }
-          break;
-        case 114:
-          if (true) {
-            return props_IExtractMethodAvailable;
-          }
-          break;
-        case 115:
-          if (true) {
-            return props_IFinalWrapper;
-          }
-          break;
-        case 116:
-          if (true) {
-            return props_IGenericType;
-          }
-          break;
-        case 117:
-          if (true) {
-            return props_IHasModifiers;
-          }
-          break;
-        case 118:
-          if (true) {
-            return props_IIncompleteParen;
-          }
-          break;
-        case 119:
-          if (true) {
-            return props_IInternalType;
-          }
-          break;
-        case 120:
-          if (true) {
-            return props_ILocalDeclaration;
-          }
-          break;
-        case 121:
-          if (true) {
-            return props_ILocalReference;
-          }
-          break;
-        case 122:
-          if (true) {
-            return props_ILocalVariableElement;
-          }
-          break;
-        case 123:
-          if (true) {
-            return props_ILocalVariableElementList;
-          }
-          break;
-        case 124:
-          if (true) {
-            return props_IMemberContainer;
-          }
-          break;
-        case 125:
-          if (true) {
-            return props_IMethodCall;
-          }
-          break;
-        case 126:
-          if (true) {
-            return props_IMethodLike;
-          }
-          break;
-        case 127:
-          if (true) {
-            return props_IOperation;
-          }
-          break;
-        case 128:
-          if (true) {
-            return props_IParameter;
-          }
-          break;
-        case 129:
-          if (true) {
-            return props_ISkipsReturn;
-          }
-          break;
-        case 130:
-          if (true) {
-            return props_IStatementListContainer;
-          }
-          break;
-        case 131:
-          if (true) {
-            return props_IStaticContainerForMethods;
-          }
-          break;
-        case 132:
-          if (true) {
-            return props_IThisExpression;
-          }
-          break;
-        case 133:
-          if (true) {
-            return props_ITryCatchStatement;
-          }
-          break;
-        case 134:
-          if (true) {
-            return props_ITypeApplicable;
-          }
-          break;
-        case 135:
-          if (true) {
-            return props_IValidIdentifier;
-          }
-          break;
-        case 136:
-          if (true) {
-            return props_IVariableAssignment;
-          }
-          break;
-        case 137:
-          if (true) {
-            return props_IVariableDeclaration;
-          }
-          break;
-        case 138:
-          if (true) {
-            return props_IVariableReference;
-          }
-          break;
-        case 139:
-          if (true) {
-            return props_IVisible;
-          }
-          break;
-        case 140:
-          if (true) {
-            return props_IWillBeClassifier;
-          }
-          break;
-        case 141:
-          if (true) {
-            return props_IYetUnresolved;
-          }
-          break;
-        case 142:
-          if (true) {
-            return props_IfStatement;
-          }
-          break;
-        case 143:
-          if (true) {
-            return props_ImplicitAnnotationInstanceValue;
-          }
-          break;
-        case 144:
-          if (true) {
-            return props_ImplicitAnnotationMethodKind;
-          }
-          break;
-        case 145:
-          if (true) {
-            return props_IncompleteLeftParen;
-          }
-          break;
-        case 146:
-          if (true) {
-            return props_IncompleteMemberDeclaration;
-          }
-          break;
-        case 147:
-          if (true) {
-            return props_IncompleteRightParen;
-          }
-          break;
-        case 148:
-          if (true) {
-            return props_InstanceInitializer;
-          }
-          break;
-        case 149:
-          if (true) {
-            return props_InstanceMethodCallOperation;
-          }
-          break;
-        case 150:
-          if (true) {
-            return props_InstanceMethodDeclaration;
-          }
-          break;
-        case 151:
-          if (true) {
-            return props_InstanceOfExpression;
-          }
-          break;
-        case 152:
-          if (true) {
-            return props_IntegerConstant;
-          }
-          break;
-        case 153:
-          if (true) {
-            return props_IntegerLiteral;
-          }
-          break;
-        case 154:
-          if (true) {
-            return props_IntegerType;
-          }
-          break;
-        case 155:
-          if (true) {
-            return props_Interface;
-          }
-          break;
-        case 156:
-          if (true) {
-            return props_IsEmptyOperation;
-          }
-          break;
-        case 157:
-          if (true) {
-            return props_IsNotEmptyOperation;
-          }
-          break;
-        case 158:
-          if (true) {
-            return props_JavaImport;
-          }
-          break;
-        case 159:
-          if (true) {
-            return props_JavaImports;
-          }
-          break;
-        case 160:
-          if (true) {
-            return props_LeftShiftAssignmentExpression;
-          }
-          break;
-        case 161:
-          if (true) {
-            return props_LessThanExpression;
-          }
-          break;
-        case 162:
-          if (true) {
-            return props_LessThanOrEqualsExpression;
-          }
-          break;
-        case 163:
-          if (true) {
-            return props_LocalInstanceFieldReference;
-          }
-          break;
-        case 164:
-          if (true) {
-            return props_LocalInstanceMethodCall;
-          }
-          break;
-        case 165:
-          if (true) {
-            return props_LocalMethodCall;
-          }
-          break;
-        case 166:
-          if (true) {
-            return props_LocalPropertyReference;
-          }
-          break;
-        case 167:
-          if (true) {
-            return props_LocalStaticFieldReference;
-          }
-          break;
-        case 168:
-          if (true) {
-            return props_LocalStaticMethodCall;
-          }
-          break;
-        case 169:
-          if (true) {
-            return props_LocalToMethodKind;
-          }
-          break;
-        case 170:
-          if (true) {
-            return props_LocalVariableDeclaration;
-          }
-          break;
-        case 171:
-          if (true) {
-            return props_LocalVariableDeclarationStatement;
-          }
-          break;
-        case 172:
-          if (true) {
-            return props_LocalVariableReference;
-          }
-          break;
-        case 173:
-          if (true) {
-            return props_LongLiteral;
-          }
-          break;
-        case 174:
-          if (true) {
-            return props_LongType;
-          }
-          break;
-        case 175:
-          if (true) {
-            return props_LoopLabel;
-          }
-          break;
-        case 176:
-          if (true) {
-            return props_LoopLabelReference;
-          }
-          break;
-        case 177:
-          if (true) {
-            return props_LowerBoundType;
-          }
-          break;
-        case 178:
-          if (true) {
-            return props_MethodDeclaration;
-          }
-          break;
-        case 179:
-          if (true) {
-            return props_MinusAssignmentExpression;
-          }
-          break;
-        case 180:
-          if (true) {
-            return props_MinusExpression;
-          }
-          break;
-        case 181:
-          if (true) {
-            return props_Modifier;
-          }
-          break;
-        case 182:
-          if (true) {
-            return props_MulAssignmentExpression;
-          }
-          break;
-        case 183:
-          if (true) {
-            return props_MulExpression;
-          }
-          break;
-        case 184:
-          if (true) {
-            return props_NPEEqualsExpression;
-          }
-          break;
-        case 185:
-          if (true) {
-            return props_NPENotEqualsExpression;
-          }
-          break;
-        case 186:
-          if (true) {
-            return props_NestedNewExpression;
-          }
-          break;
-        case 187:
-          if (true) {
-            return props_NotEqualsExpression;
-          }
-          break;
-        case 188:
-          if (true) {
-            return props_NotExpression;
-          }
-          break;
-        case 189:
-          if (true) {
-            return props_NullLiteral;
-          }
-          break;
-        case 190:
-          if (true) {
-            return props_NullType;
-          }
-          break;
-        case 191:
-          if (true) {
-            return props_Number;
-          }
-          break;
-        case 192:
-          if (true) {
-            return props_OperationAssignmentExpression;
-          }
-          break;
-        case 193:
-          if (true) {
-            return props_OrAssignmentExpression;
-          }
-          break;
-        case 194:
-          if (true) {
-            return props_OrExpression;
-          }
-          break;
-        case 195:
-          if (true) {
-            return props_ParameterDeclaration;
-          }
-          break;
-        case 196:
-          if (true) {
-            return props_ParameterReference;
-          }
-          break;
-        case 197:
-          if (true) {
-            return props_ParenthesizedExpression;
-          }
-          break;
-        case 198:
-          if (true) {
-            return props_PlaceholderMember;
-          }
-          break;
-        case 199:
-          if (true) {
-            return props_PlusAssignmentExpression;
-          }
-          break;
-        case 200:
-          if (true) {
-            return props_PlusExpression;
-          }
-          break;
-        case 201:
-          if (true) {
-            return props_PostfixDecrementExpression;
-          }
-          break;
-        case 202:
-          if (true) {
-            return props_PostfixIncrementExpression;
-          }
-          break;
-        case 203:
-          if (true) {
-            return props_PrefixDecrementExpression;
-          }
-          break;
-        case 204:
-          if (true) {
-            return props_PrefixIncrementExpression;
-          }
-          break;
-        case 205:
-          if (true) {
-            return props_PrimitiveClassExpression;
-          }
-          break;
-        case 206:
-          if (true) {
-            return props_PrimitiveType;
-          }
-          break;
-        case 207:
-          if (true) {
-            return props_PrivateVisibility;
-          }
-          break;
-        case 208:
-          if (true) {
-            return props_Property;
-          }
-          break;
-        case 209:
-          if (true) {
-            return props_PropertyImplementation;
-          }
-          break;
-        case 210:
-          if (true) {
-            return props_PropertyReference;
-          }
-          break;
-        case 211:
-          if (true) {
-            return props_PropertyValueReference;
-          }
-          break;
-        case 212:
-          if (true) {
-            return props_ProtectedVisibility;
-          }
-          break;
-        case 213:
-          if (true) {
-            return props_PublicVisibility;
-          }
-          break;
-        case 214:
-          if (true) {
-            return props_QualifiedSuperMethodCall;
-          }
-          break;
-        case 215:
-          if (true) {
-            return props_RemAssignmentExpression;
-          }
-          break;
-        case 216:
-          if (true) {
-            return props_RemExpression;
-          }
-          break;
-        case 217:
-          if (true) {
-            return props_RemarkStatement;
-          }
-          break;
-        case 218:
-          if (true) {
-            return props_ReturnStatement;
-          }
-          break;
-        case 219:
-          if (true) {
-            return props_RightShiftAssignmentExpression;
-          }
-          break;
-        case 220:
-          if (true) {
-            return props_SetAccessor;
-          }
-          break;
-        case 221:
-          if (true) {
-            return props_ShiftLeftExpression;
-          }
-          break;
-        case 222:
-          if (true) {
-            return props_ShiftRightExpression;
-          }
-          break;
-        case 223:
-          if (true) {
-            return props_ShiftRightUnsignedExpression;
-          }
-          break;
-        case 224:
-          if (true) {
-            return props_ShortType;
-          }
-          break;
-        case 225:
-          if (true) {
-            return props_SingleLineComment;
-          }
-          break;
-        case 226:
-          if (true) {
-            return props_Statement;
-          }
-          break;
-        case 227:
-          if (true) {
-            return props_StatementCommentPart;
-          }
-          break;
-        case 228:
-          if (true) {
-            return props_StatementList;
-          }
-          break;
-        case 229:
-          if (true) {
-            return props_StaticFieldDeclaration;
-          }
-          break;
-        case 230:
-          if (true) {
-            return props_StaticFieldReference;
-          }
-          break;
-        case 231:
-          if (true) {
-            return props_StaticInitializer;
-          }
-          break;
-        case 232:
-          if (true) {
-            return props_StaticKind;
-          }
-          break;
-        case 233:
-          if (true) {
-            return props_StaticMethodCall;
-          }
-          break;
-        case 234:
-          if (true) {
-            return props_StaticMethodDeclaration;
-          }
-          break;
-        case 235:
-          if (true) {
-            return props_StringBooleanOperation;
-          }
-          break;
-        case 236:
-          if (true) {
-            return props_StringLiteral;
-          }
-          break;
-        case 237:
-          if (true) {
-            return props_StringToken;
-          }
-          break;
-        case 238:
-          if (true) {
-            return props_StringType;
-          }
-          break;
-        case 239:
-          if (true) {
-            return props_StubStatementList;
-          }
-          break;
-        case 240:
-          if (true) {
-            return props_SubstringExpression;
-          }
-          break;
-        case 241:
-          if (true) {
-            return props_SuperConstructorInvocation;
-          }
-          break;
-        case 242:
-          if (true) {
-            return props_SuperConstructorKind;
-          }
-          break;
-        case 243:
-          if (true) {
-            return props_SuperInerfaceKind;
-          }
-          break;
-        case 244:
-          if (true) {
-            return props_SuperMethodCall;
-          }
-          break;
-        case 245:
-          if (true) {
-            return props_SuperMethodKind;
-          }
-          break;
-        case 246:
-          if (true) {
-            return props_SwitchCase;
-          }
-          break;
-        case 247:
-          if (true) {
-            return props_SwitchStatement;
-          }
-          break;
-        case 248:
-          if (true) {
-            return props_SynchronizedStatement;
-          }
-          break;
-        case 249:
-          if (true) {
-            return props_TernaryOperatorExpression;
-          }
-          break;
-        case 250:
-          if (true) {
-            return props_TextCommentPart;
-          }
-          break;
-        case 251:
-          if (true) {
-            return props_ThisConstructorInvocation;
-          }
-          break;
-        case 252:
-          if (true) {
-            return props_ThisConstructorKind;
-          }
-          break;
-        case 253:
-          if (true) {
-            return props_ThisExpression;
-          }
-          break;
-        case 254:
-          if (true) {
-            return props_ThrowStatement;
-          }
-          break;
-        case 255:
-          if (true) {
-            return props_Tokens;
-          }
-          break;
-        case 256:
-          if (true) {
-            return props_TrimOperation;
-          }
-          break;
-        case 257:
-          if (true) {
-            return props_TryCatchStatement;
-          }
-          break;
-        case 258:
-          if (true) {
-            return props_TryStatement;
-          }
-          break;
-        case 259:
-          if (true) {
-            return props_Type;
-          }
-          break;
-        case 260:
-          if (true) {
-            return props_TypeAnnotable;
-          }
-          break;
-        case 261:
-          if (true) {
-            return props_TypeDerivable;
-          }
-          break;
-        case 262:
-          if (true) {
-            return props_TypeVariableDeclaration;
-          }
-          break;
-        case 263:
-          if (true) {
-            return props_TypeVariableReference;
-          }
-          break;
-        case 264:
-          if (true) {
-            return props_UnaryMinus;
-          }
-          break;
-        case 265:
-          if (true) {
-            return props_UndefinedType;
-          }
-          break;
-        case 266:
-          if (true) {
-            return props_UnknownConsCall;
-          }
-          break;
-        case 267:
-          if (true) {
-            return props_UnknownDotCall;
-          }
-          break;
-        case 268:
-          if (true) {
-            return props_UnknownLocalCall;
-          }
-          break;
-        case 269:
-          if (true) {
-            return props_UnknownNameRef;
-          }
-          break;
-        case 270:
-          if (true) {
-            return props_UnknownNew;
-          }
-          break;
-        case 271:
-          if (true) {
-            return props_UnresolvedNameReference;
-          }
-          break;
-        case 272:
-          if (true) {
-            return props_UnsignedRightShiftAssignmentExpression;
-          }
-          break;
-        case 273:
-          if (true) {
-            return props_UpperBoundType;
-          }
-          break;
-        case 274:
-          if (true) {
-            return props_UsingStatement;
-          }
-          break;
-        case 275:
-          if (true) {
-            return props_ValueParameter;
-          }
-          break;
-        case 276:
-          if (true) {
-            return props_VarType;
-          }
-          break;
-        case 277:
-          if (true) {
-            return props_VariableArityType;
-          }
-          break;
-        case 278:
-          if (true) {
-            return props_VariableDeclaration;
-          }
-          break;
-        case 279:
-          if (true) {
-            return props_VariableReference;
-          }
-          break;
-        case 280:
-          if (true) {
-            return props_Visibility;
-          }
-          break;
-        case 281:
-          if (true) {
-            return props_VoidType;
-          }
-          break;
-        case 282:
-          if (true) {
-            return props_WhileStatement;
-          }
-          break;
-        case 283:
-          if (true) {
-            return props_WildCardType;
-          }
-          break;
-        case 284:
-          if (true) {
-            return props_XorAssignmentExpression;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractClassifierReference:
+        return props_AbstractClassifierReference;
+      case LanguageConceptSwitch.AbstractCreator:
+        return props_AbstractCreator;
+      case LanguageConceptSwitch.AbstractForStatement:
+        return props_AbstractForStatement;
+      case LanguageConceptSwitch.AbstractLoopStatement:
+        return props_AbstractLoopStatement;
+      case LanguageConceptSwitch.AbstractOperation:
+        return props_AbstractOperation;
+      case LanguageConceptSwitch.AbstractUnaryNumberOperation:
+        return props_AbstractUnaryNumberOperation;
+      case LanguageConceptSwitch.AdditionalForLoopVariable:
+        return props_AdditionalForLoopVariable;
+      case LanguageConceptSwitch.AndAssignmentExpression:
+        return props_AndAssignmentExpression;
+      case LanguageConceptSwitch.AndExpression:
+        return props_AndExpression;
+      case LanguageConceptSwitch.Annotation:
+        return props_Annotation;
+      case LanguageConceptSwitch.AnnotationInstance:
+        return props_AnnotationInstance;
+      case LanguageConceptSwitch.AnnotationInstanceExpression:
+        return props_AnnotationInstanceExpression;
+      case LanguageConceptSwitch.AnnotationInstanceValue:
+        return props_AnnotationInstanceValue;
+      case LanguageConceptSwitch.AnnotationMethodDeclaration:
+        return props_AnnotationMethodDeclaration;
+      case LanguageConceptSwitch.AnonymousClass:
+        return props_AnonymousClass;
+      case LanguageConceptSwitch.AnonymousClassCreator:
+        return props_AnonymousClassCreator;
+      case LanguageConceptSwitch.ArrayAccessExpression:
+        return props_ArrayAccessExpression;
+      case LanguageConceptSwitch.ArrayClassExpression:
+        return props_ArrayClassExpression;
+      case LanguageConceptSwitch.ArrayCloneOperation:
+        return props_ArrayCloneOperation;
+      case LanguageConceptSwitch.ArrayCreator:
+        return props_ArrayCreator;
+      case LanguageConceptSwitch.ArrayCreatorWithInitializer:
+        return props_ArrayCreatorWithInitializer;
+      case LanguageConceptSwitch.ArrayLengthOperation:
+        return props_ArrayLengthOperation;
+      case LanguageConceptSwitch.ArrayLiteral:
+        return props_ArrayLiteral;
+      case LanguageConceptSwitch.ArrayType:
+        return props_ArrayType;
+      case LanguageConceptSwitch.AsExpression:
+        return props_AsExpression;
+      case LanguageConceptSwitch.AssertStatement:
+        return props_AssertStatement;
+      case LanguageConceptSwitch.AssignmentExpression:
+        return props_AssignmentExpression;
+      case LanguageConceptSwitch.BLBottomType:
+        return props_BLBottomType;
+      case LanguageConceptSwitch.BaseAssignmentExpression:
+        return props_BaseAssignmentExpression;
+      case LanguageConceptSwitch.BaseMethodCall:
+        return props_BaseMethodCall;
+      case LanguageConceptSwitch.BaseMethodDeclaration:
+        return props_BaseMethodDeclaration;
+      case LanguageConceptSwitch.BaseStringOperation:
+        return props_BaseStringOperation;
+      case LanguageConceptSwitch.BaseVariableDeclaration:
+        return props_BaseVariableDeclaration;
+      case LanguageConceptSwitch.BaseVariableReference:
+        return props_BaseVariableReference;
+      case LanguageConceptSwitch.BinaryBitwiseOperation:
+        return props_BinaryBitwiseOperation;
+      case LanguageConceptSwitch.BinaryCompareOperation:
+        return props_BinaryCompareOperation;
+      case LanguageConceptSwitch.BinaryOperation:
+        return props_BinaryOperation;
+      case LanguageConceptSwitch.BitwiseAndExpression:
+        return props_BitwiseAndExpression;
+      case LanguageConceptSwitch.BitwiseNotExpression:
+        return props_BitwiseNotExpression;
+      case LanguageConceptSwitch.BitwiseOrExpression:
+        return props_BitwiseOrExpression;
+      case LanguageConceptSwitch.BitwiseXorExpression:
+        return props_BitwiseXorExpression;
+      case LanguageConceptSwitch.BlockStatement:
+        return props_BlockStatement;
+      case LanguageConceptSwitch.BooleanConstant:
+        return props_BooleanConstant;
+      case LanguageConceptSwitch.BooleanType:
+        return props_BooleanType;
+      case LanguageConceptSwitch.BreakStatement:
+        return props_BreakStatement;
+      case LanguageConceptSwitch.ByteType:
+        return props_ByteType;
+      case LanguageConceptSwitch.CastExpression:
+        return props_CastExpression;
+      case LanguageConceptSwitch.CatchClause:
+        return props_CatchClause;
+      case LanguageConceptSwitch.CharConstant:
+        return props_CharConstant;
+      case LanguageConceptSwitch.CharType:
+        return props_CharType;
+      case LanguageConceptSwitch.ClassConcept:
+        return props_ClassConcept;
+      case LanguageConceptSwitch.ClassCreator:
+        return props_ClassCreator;
+      case LanguageConceptSwitch.Classifier:
+        return props_Classifier;
+      case LanguageConceptSwitch.ClassifierClassExpression:
+        return props_ClassifierClassExpression;
+      case LanguageConceptSwitch.ClassifierMember:
+        return props_ClassifierMember;
+      case LanguageConceptSwitch.ClassifierType:
+        return props_ClassifierType;
+      case LanguageConceptSwitch.Closure:
+        return props_Closure;
+      case LanguageConceptSwitch.ClosureParameter:
+        return props_ClosureParameter;
+      case LanguageConceptSwitch.ClosureParameterReference:
+        return props_ClosureParameterReference;
+      case LanguageConceptSwitch.Closureoid:
+        return props_Closureoid;
+      case LanguageConceptSwitch.CommentPart:
+        return props_CommentPart;
+      case LanguageConceptSwitch.CommentedStatement:
+        return props_CommentedStatement;
+      case LanguageConceptSwitch.CommentedStatementsBlock:
+        return props_CommentedStatementsBlock;
+      case LanguageConceptSwitch.ConceptFunction:
+        return props_ConceptFunction;
+      case LanguageConceptSwitch.ConceptFunctionParameter:
+        return props_ConceptFunctionParameter;
+      case LanguageConceptSwitch.ConstructorDeclaration:
+        return props_ConstructorDeclaration;
+      case LanguageConceptSwitch.ConstructorInvocationStatement:
+        return props_ConstructorInvocationStatement;
+      case LanguageConceptSwitch.ContextClassifierKind:
+        return props_ContextClassifierKind;
+      case LanguageConceptSwitch.ContinueStatement:
+        return props_ContinueStatement;
+      case LanguageConceptSwitch.CustomPropertyImplementation:
+        return props_CustomPropertyImplementation;
+      case LanguageConceptSwitch.CustomSetterPropertyImplementation:
+        return props_CustomSetterPropertyImplementation;
+      case LanguageConceptSwitch.DefaultClassCreator:
+        return props_DefaultClassCreator;
+      case LanguageConceptSwitch.DefaultGetAccessor:
+        return props_DefaultGetAccessor;
+      case LanguageConceptSwitch.DefaultPropertyImplementation:
+        return props_DefaultPropertyImplementation;
+      case LanguageConceptSwitch.DefaultSetAccessor:
+        return props_DefaultSetAccessor;
+      case LanguageConceptSwitch.DimensionExpression:
+        return props_DimensionExpression;
+      case LanguageConceptSwitch.DivAssignmentExpression:
+        return props_DivAssignmentExpression;
+      case LanguageConceptSwitch.DivExpression:
+        return props_DivExpression;
+      case LanguageConceptSwitch.DoWhileStatement:
+        return props_DoWhileStatement;
+      case LanguageConceptSwitch.DotExpression:
+        return props_DotExpression;
+      case LanguageConceptSwitch.DoubleType:
+        return props_DoubleType;
+      case LanguageConceptSwitch.ElsifClause:
+        return props_ElsifClause;
+      case LanguageConceptSwitch.EnumClass:
+        return props_EnumClass;
+      case LanguageConceptSwitch.EnumConstantDeclaration:
+        return props_EnumConstantDeclaration;
+      case LanguageConceptSwitch.EnumConstantReference:
+        return props_EnumConstantReference;
+      case LanguageConceptSwitch.EnumValueOfExpression:
+        return props_EnumValueOfExpression;
+      case LanguageConceptSwitch.EnumValuesExpression:
+        return props_EnumValuesExpression;
+      case LanguageConceptSwitch.EqualsExpression:
+        return props_EqualsExpression;
+      case LanguageConceptSwitch.EscapeOperation:
+        return props_EscapeOperation;
+      case LanguageConceptSwitch.Expression:
+        return props_Expression;
+      case LanguageConceptSwitch.ExpressionStatement:
+        return props_ExpressionStatement;
+      case LanguageConceptSwitch.FieldDeclaration:
+        return props_FieldDeclaration;
+      case LanguageConceptSwitch.FieldReferenceOperation:
+        return props_FieldReferenceOperation;
+      case LanguageConceptSwitch.FloatType:
+        return props_FloatType;
+      case LanguageConceptSwitch.FloatingPointConstant:
+        return props_FloatingPointConstant;
+      case LanguageConceptSwitch.FloatingPointFloatConstant:
+        return props_FloatingPointFloatConstant;
+      case LanguageConceptSwitch.ForStatement:
+        return props_ForStatement;
+      case LanguageConceptSwitch.ForeachStatement:
+        return props_ForeachStatement;
+      case LanguageConceptSwitch.GenericDeclaration:
+        return props_GenericDeclaration;
+      case LanguageConceptSwitch.GenericNewExpression:
+        return props_GenericNewExpression;
+      case LanguageConceptSwitch.GetAccessor:
+        return props_GetAccessor;
+      case LanguageConceptSwitch.GreaterThanExpression:
+        return props_GreaterThanExpression;
+      case LanguageConceptSwitch.GreaterThanOrEqualsExpression:
+        return props_GreaterThanOrEqualsExpression;
+      case LanguageConceptSwitch.HasAnnotation:
+        return props_HasAnnotation;
+      case LanguageConceptSwitch.HexIntegerLiteral:
+        return props_HexIntegerLiteral;
+      case LanguageConceptSwitch.IAnonymousClass:
+        return props_IAnonymousClass;
+      case LanguageConceptSwitch.IBLDeprecatable:
+        return props_IBLDeprecatable;
+      case LanguageConceptSwitch.IBinaryLike:
+        return props_IBinaryLike;
+      case LanguageConceptSwitch.IClassifier:
+        return props_IClassifier;
+      case LanguageConceptSwitch.IClassifierMember:
+        return props_IClassifierMember;
+      case LanguageConceptSwitch.IClassifierType:
+        return props_IClassifierType;
+      case LanguageConceptSwitch.IConditional:
+        return props_IConditional;
+      case LanguageConceptSwitch.IContainsStatementList:
+        return props_IContainsStatementList;
+      case LanguageConceptSwitch.IControlFlowInterrupter:
+        return props_IControlFlowInterrupter;
+      case LanguageConceptSwitch.IExtractMethodAvailable:
+        return props_IExtractMethodAvailable;
+      case LanguageConceptSwitch.IFinalWrapper:
+        return props_IFinalWrapper;
+      case LanguageConceptSwitch.IGenericType:
+        return props_IGenericType;
+      case LanguageConceptSwitch.IHasModifiers:
+        return props_IHasModifiers;
+      case LanguageConceptSwitch.IIncompleteParen:
+        return props_IIncompleteParen;
+      case LanguageConceptSwitch.IInternalType:
+        return props_IInternalType;
+      case LanguageConceptSwitch.ILocalDeclaration:
+        return props_ILocalDeclaration;
+      case LanguageConceptSwitch.ILocalReference:
+        return props_ILocalReference;
+      case LanguageConceptSwitch.ILocalVariableElement:
+        return props_ILocalVariableElement;
+      case LanguageConceptSwitch.ILocalVariableElementList:
+        return props_ILocalVariableElementList;
+      case LanguageConceptSwitch.IMemberContainer:
+        return props_IMemberContainer;
+      case LanguageConceptSwitch.IMethodCall:
+        return props_IMethodCall;
+      case LanguageConceptSwitch.IMethodLike:
+        return props_IMethodLike;
+      case LanguageConceptSwitch.IOperation:
+        return props_IOperation;
+      case LanguageConceptSwitch.IParameter:
+        return props_IParameter;
+      case LanguageConceptSwitch.ISkipsReturn:
+        return props_ISkipsReturn;
+      case LanguageConceptSwitch.IStatementListContainer:
+        return props_IStatementListContainer;
+      case LanguageConceptSwitch.IStaticContainerForMethods:
+        return props_IStaticContainerForMethods;
+      case LanguageConceptSwitch.IThisExpression:
+        return props_IThisExpression;
+      case LanguageConceptSwitch.ITryCatchStatement:
+        return props_ITryCatchStatement;
+      case LanguageConceptSwitch.ITypeApplicable:
+        return props_ITypeApplicable;
+      case LanguageConceptSwitch.IValidIdentifier:
+        return props_IValidIdentifier;
+      case LanguageConceptSwitch.IVariableAssignment:
+        return props_IVariableAssignment;
+      case LanguageConceptSwitch.IVariableDeclaration:
+        return props_IVariableDeclaration;
+      case LanguageConceptSwitch.IVariableReference:
+        return props_IVariableReference;
+      case LanguageConceptSwitch.IVisible:
+        return props_IVisible;
+      case LanguageConceptSwitch.IWillBeClassifier:
+        return props_IWillBeClassifier;
+      case LanguageConceptSwitch.IYetUnresolved:
+        return props_IYetUnresolved;
+      case LanguageConceptSwitch.IfStatement:
+        return props_IfStatement;
+      case LanguageConceptSwitch.ImplicitAnnotationInstanceValue:
+        return props_ImplicitAnnotationInstanceValue;
+      case LanguageConceptSwitch.ImplicitAnnotationMethodKind:
+        return props_ImplicitAnnotationMethodKind;
+      case LanguageConceptSwitch.IncompleteLeftParen:
+        return props_IncompleteLeftParen;
+      case LanguageConceptSwitch.IncompleteMemberDeclaration:
+        return props_IncompleteMemberDeclaration;
+      case LanguageConceptSwitch.IncompleteRightParen:
+        return props_IncompleteRightParen;
+      case LanguageConceptSwitch.InstanceInitializer:
+        return props_InstanceInitializer;
+      case LanguageConceptSwitch.InstanceMethodCallOperation:
+        return props_InstanceMethodCallOperation;
+      case LanguageConceptSwitch.InstanceMethodDeclaration:
+        return props_InstanceMethodDeclaration;
+      case LanguageConceptSwitch.InstanceOfExpression:
+        return props_InstanceOfExpression;
+      case LanguageConceptSwitch.IntegerConstant:
+        return props_IntegerConstant;
+      case LanguageConceptSwitch.IntegerLiteral:
+        return props_IntegerLiteral;
+      case LanguageConceptSwitch.IntegerType:
+        return props_IntegerType;
+      case LanguageConceptSwitch.Interface:
+        return props_Interface;
+      case LanguageConceptSwitch.IsEmptyOperation:
+        return props_IsEmptyOperation;
+      case LanguageConceptSwitch.IsNotEmptyOperation:
+        return props_IsNotEmptyOperation;
+      case LanguageConceptSwitch.JavaImport:
+        return props_JavaImport;
+      case LanguageConceptSwitch.JavaImports:
+        return props_JavaImports;
+      case LanguageConceptSwitch.LeftShiftAssignmentExpression:
+        return props_LeftShiftAssignmentExpression;
+      case LanguageConceptSwitch.LessThanExpression:
+        return props_LessThanExpression;
+      case LanguageConceptSwitch.LessThanOrEqualsExpression:
+        return props_LessThanOrEqualsExpression;
+      case LanguageConceptSwitch.LocalInstanceFieldReference:
+        return props_LocalInstanceFieldReference;
+      case LanguageConceptSwitch.LocalInstanceMethodCall:
+        return props_LocalInstanceMethodCall;
+      case LanguageConceptSwitch.LocalMethodCall:
+        return props_LocalMethodCall;
+      case LanguageConceptSwitch.LocalPropertyReference:
+        return props_LocalPropertyReference;
+      case LanguageConceptSwitch.LocalStaticFieldReference:
+        return props_LocalStaticFieldReference;
+      case LanguageConceptSwitch.LocalStaticMethodCall:
+        return props_LocalStaticMethodCall;
+      case LanguageConceptSwitch.LocalToMethodKind:
+        return props_LocalToMethodKind;
+      case LanguageConceptSwitch.LocalVariableDeclaration:
+        return props_LocalVariableDeclaration;
+      case LanguageConceptSwitch.LocalVariableDeclarationStatement:
+        return props_LocalVariableDeclarationStatement;
+      case LanguageConceptSwitch.LocalVariableReference:
+        return props_LocalVariableReference;
+      case LanguageConceptSwitch.LongLiteral:
+        return props_LongLiteral;
+      case LanguageConceptSwitch.LongType:
+        return props_LongType;
+      case LanguageConceptSwitch.LoopLabel:
+        return props_LoopLabel;
+      case LanguageConceptSwitch.LoopLabelReference:
+        return props_LoopLabelReference;
+      case LanguageConceptSwitch.LowerBoundType:
+        return props_LowerBoundType;
+      case LanguageConceptSwitch.MethodDeclaration:
+        return props_MethodDeclaration;
+      case LanguageConceptSwitch.MinusAssignmentExpression:
+        return props_MinusAssignmentExpression;
+      case LanguageConceptSwitch.MinusExpression:
+        return props_MinusExpression;
+      case LanguageConceptSwitch.Modifier:
+        return props_Modifier;
+      case LanguageConceptSwitch.MulAssignmentExpression:
+        return props_MulAssignmentExpression;
+      case LanguageConceptSwitch.MulExpression:
+        return props_MulExpression;
+      case LanguageConceptSwitch.NPEEqualsExpression:
+        return props_NPEEqualsExpression;
+      case LanguageConceptSwitch.NPENotEqualsExpression:
+        return props_NPENotEqualsExpression;
+      case LanguageConceptSwitch.NestedNewExpression:
+        return props_NestedNewExpression;
+      case LanguageConceptSwitch.NotEqualsExpression:
+        return props_NotEqualsExpression;
+      case LanguageConceptSwitch.NotExpression:
+        return props_NotExpression;
+      case LanguageConceptSwitch.NullLiteral:
+        return props_NullLiteral;
+      case LanguageConceptSwitch.NullType:
+        return props_NullType;
+      case LanguageConceptSwitch.Number:
+        return props_Number;
+      case LanguageConceptSwitch.OperationAssignmentExpression:
+        return props_OperationAssignmentExpression;
+      case LanguageConceptSwitch.OrAssignmentExpression:
+        return props_OrAssignmentExpression;
+      case LanguageConceptSwitch.OrExpression:
+        return props_OrExpression;
+      case LanguageConceptSwitch.ParameterDeclaration:
+        return props_ParameterDeclaration;
+      case LanguageConceptSwitch.ParameterReference:
+        return props_ParameterReference;
+      case LanguageConceptSwitch.ParenthesizedExpression:
+        return props_ParenthesizedExpression;
+      case LanguageConceptSwitch.PlaceholderMember:
+        return props_PlaceholderMember;
+      case LanguageConceptSwitch.PlusAssignmentExpression:
+        return props_PlusAssignmentExpression;
+      case LanguageConceptSwitch.PlusExpression:
+        return props_PlusExpression;
+      case LanguageConceptSwitch.PostfixDecrementExpression:
+        return props_PostfixDecrementExpression;
+      case LanguageConceptSwitch.PostfixIncrementExpression:
+        return props_PostfixIncrementExpression;
+      case LanguageConceptSwitch.PrefixDecrementExpression:
+        return props_PrefixDecrementExpression;
+      case LanguageConceptSwitch.PrefixIncrementExpression:
+        return props_PrefixIncrementExpression;
+      case LanguageConceptSwitch.PrimitiveClassExpression:
+        return props_PrimitiveClassExpression;
+      case LanguageConceptSwitch.PrimitiveType:
+        return props_PrimitiveType;
+      case LanguageConceptSwitch.PrivateVisibility:
+        return props_PrivateVisibility;
+      case LanguageConceptSwitch.Property:
+        return props_Property;
+      case LanguageConceptSwitch.PropertyImplementation:
+        return props_PropertyImplementation;
+      case LanguageConceptSwitch.PropertyReference:
+        return props_PropertyReference;
+      case LanguageConceptSwitch.PropertyValueReference:
+        return props_PropertyValueReference;
+      case LanguageConceptSwitch.ProtectedVisibility:
+        return props_ProtectedVisibility;
+      case LanguageConceptSwitch.PublicVisibility:
+        return props_PublicVisibility;
+      case LanguageConceptSwitch.QualifiedSuperMethodCall:
+        return props_QualifiedSuperMethodCall;
+      case LanguageConceptSwitch.RemAssignmentExpression:
+        return props_RemAssignmentExpression;
+      case LanguageConceptSwitch.RemExpression:
+        return props_RemExpression;
+      case LanguageConceptSwitch.RemarkStatement:
+        return props_RemarkStatement;
+      case LanguageConceptSwitch.ReturnStatement:
+        return props_ReturnStatement;
+      case LanguageConceptSwitch.RightShiftAssignmentExpression:
+        return props_RightShiftAssignmentExpression;
+      case LanguageConceptSwitch.SetAccessor:
+        return props_SetAccessor;
+      case LanguageConceptSwitch.ShiftLeftExpression:
+        return props_ShiftLeftExpression;
+      case LanguageConceptSwitch.ShiftRightExpression:
+        return props_ShiftRightExpression;
+      case LanguageConceptSwitch.ShiftRightUnsignedExpression:
+        return props_ShiftRightUnsignedExpression;
+      case LanguageConceptSwitch.ShortType:
+        return props_ShortType;
+      case LanguageConceptSwitch.SingleLineComment:
+        return props_SingleLineComment;
+      case LanguageConceptSwitch.Statement:
+        return props_Statement;
+      case LanguageConceptSwitch.StatementCommentPart:
+        return props_StatementCommentPart;
+      case LanguageConceptSwitch.StatementList:
+        return props_StatementList;
+      case LanguageConceptSwitch.StaticFieldDeclaration:
+        return props_StaticFieldDeclaration;
+      case LanguageConceptSwitch.StaticFieldReference:
+        return props_StaticFieldReference;
+      case LanguageConceptSwitch.StaticInitializer:
+        return props_StaticInitializer;
+      case LanguageConceptSwitch.StaticKind:
+        return props_StaticKind;
+      case LanguageConceptSwitch.StaticMethodCall:
+        return props_StaticMethodCall;
+      case LanguageConceptSwitch.StaticMethodDeclaration:
+        return props_StaticMethodDeclaration;
+      case LanguageConceptSwitch.StringBooleanOperation:
+        return props_StringBooleanOperation;
+      case LanguageConceptSwitch.StringLiteral:
+        return props_StringLiteral;
+      case LanguageConceptSwitch.StringToken:
+        return props_StringToken;
+      case LanguageConceptSwitch.StringType:
+        return props_StringType;
+      case LanguageConceptSwitch.StubStatementList:
+        return props_StubStatementList;
+      case LanguageConceptSwitch.SubstringExpression:
+        return props_SubstringExpression;
+      case LanguageConceptSwitch.SuperConstructorInvocation:
+        return props_SuperConstructorInvocation;
+      case LanguageConceptSwitch.SuperConstructorKind:
+        return props_SuperConstructorKind;
+      case LanguageConceptSwitch.SuperInerfaceKind:
+        return props_SuperInerfaceKind;
+      case LanguageConceptSwitch.SuperMethodCall:
+        return props_SuperMethodCall;
+      case LanguageConceptSwitch.SuperMethodKind:
+        return props_SuperMethodKind;
+      case LanguageConceptSwitch.SwitchCase:
+        return props_SwitchCase;
+      case LanguageConceptSwitch.SwitchStatement:
+        return props_SwitchStatement;
+      case LanguageConceptSwitch.SynchronizedStatement:
+        return props_SynchronizedStatement;
+      case LanguageConceptSwitch.TernaryOperatorExpression:
+        return props_TernaryOperatorExpression;
+      case LanguageConceptSwitch.TextCommentPart:
+        return props_TextCommentPart;
+      case LanguageConceptSwitch.ThisConstructorInvocation:
+        return props_ThisConstructorInvocation;
+      case LanguageConceptSwitch.ThisConstructorKind:
+        return props_ThisConstructorKind;
+      case LanguageConceptSwitch.ThisExpression:
+        return props_ThisExpression;
+      case LanguageConceptSwitch.ThrowStatement:
+        return props_ThrowStatement;
+      case LanguageConceptSwitch.Tokens:
+        return props_Tokens;
+      case LanguageConceptSwitch.TrimOperation:
+        return props_TrimOperation;
+      case LanguageConceptSwitch.TryCatchStatement:
+        return props_TryCatchStatement;
+      case LanguageConceptSwitch.TryStatement:
+        return props_TryStatement;
+      case LanguageConceptSwitch.Type:
+        return props_Type;
+      case LanguageConceptSwitch.TypeAnnotable:
+        return props_TypeAnnotable;
+      case LanguageConceptSwitch.TypeDerivable:
+        return props_TypeDerivable;
+      case LanguageConceptSwitch.TypeVariableDeclaration:
+        return props_TypeVariableDeclaration;
+      case LanguageConceptSwitch.TypeVariableReference:
+        return props_TypeVariableReference;
+      case LanguageConceptSwitch.UnaryMinus:
+        return props_UnaryMinus;
+      case LanguageConceptSwitch.UndefinedType:
+        return props_UndefinedType;
+      case LanguageConceptSwitch.UnknownConsCall:
+        return props_UnknownConsCall;
+      case LanguageConceptSwitch.UnknownDotCall:
+        return props_UnknownDotCall;
+      case LanguageConceptSwitch.UnknownLocalCall:
+        return props_UnknownLocalCall;
+      case LanguageConceptSwitch.UnknownNameRef:
+        return props_UnknownNameRef;
+      case LanguageConceptSwitch.UnknownNew:
+        return props_UnknownNew;
+      case LanguageConceptSwitch.UnresolvedNameReference:
+        return props_UnresolvedNameReference;
+      case LanguageConceptSwitch.UnsignedRightShiftAssignmentExpression:
+        return props_UnsignedRightShiftAssignmentExpression;
+      case LanguageConceptSwitch.UpperBoundType:
+        return props_UpperBoundType;
+      case LanguageConceptSwitch.UsingStatement:
+        return props_UsingStatement;
+      case LanguageConceptSwitch.ValueParameter:
+        return props_ValueParameter;
+      case LanguageConceptSwitch.VarType:
+        return props_VarType;
+      case LanguageConceptSwitch.VariableArityType:
+        return props_VariableArityType;
+      case LanguageConceptSwitch.VariableDeclaration:
+        return props_VariableDeclaration;
+      case LanguageConceptSwitch.VariableReference:
+        return props_VariableReference;
+      case LanguageConceptSwitch.Visibility:
+        return props_Visibility;
+      case LanguageConceptSwitch.VoidType:
+        return props_VoidType;
+      case LanguageConceptSwitch.WhileStatement:
+        return props_WhileStatement;
+      case LanguageConceptSwitch.WildCardType:
+        return props_WildCardType;
+      case LanguageConceptSwitch.XorAssignmentExpression:
+        return props_XorAssignmentExpression;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0al = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab844af9bL, "jetbrains.mps.baseLanguage.structure.AbstractCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, "jetbrains.mps.baseLanguage.structure.AbstractForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1196792d150L, "jetbrains.mps.baseLanguage.structure.AbstractOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x19659b074928781eL, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862eaaL, "jetbrains.mps.baseLanguage.structure.AndAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71a2770L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11126b40c25L, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x115f7830a32a65e7L, "jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x483ee9d7f09580d6L, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cd01b77ddL, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d00538bdfL, "jetbrains.mps.baseLanguage.structure.AsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1210c38a8adL, "jetbrains.mps.baseLanguage.structure.BLBottomType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c78301acL, "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47dc8da1L, "jetbrains.mps.baseLanguage.structure.BaseStringOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, "jetbrains.mps.baseLanguage.structure.BaseVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ec0c2fL, "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x12094ea9f7dL, "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19eede01L, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6d026f5fL, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef4652L, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef69abL, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d4f826L, "jetbrains.mps.baseLanguage.structure.CharType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edb2aa8L, "jetbrains.mps.baseLanguage.structure.ClosureParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1192e7dfdd1L, "jetbrains.mps.baseLanguage.structure.Closureoid"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3bL, "jetbrains.mps.baseLanguage.structure.CommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, "jetbrains.mps.baseLanguage.structure.CommentedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x121119ae5ffL, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32e8e5805c50376L, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b7a2005a14cfe5eL, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117e0abf7abL, "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b7633177L, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117e16a7273L, "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862ea4L, "jetbrains.mps.baseLanguage.structure.DivAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xff2bbc13daL, "jetbrains.mps.baseLanguage.structure.DivExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d451a6L, "jetbrains.mps.baseLanguage.structure.DoubleType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e5db156L, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e4bce56L, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x144805fc3e36da43L, "jetbrains.mps.baseLanguage.structure.EscapeOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d327fdL, "jetbrains.mps.baseLanguage.structure.FloatType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b9245fc5L, "jetbrains.mps.baseLanguage.structure.GetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d0fac2cL, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2f89e470eed6258eL, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113dL, "jetbrains.mps.baseLanguage.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb7f7eL, "jetbrains.mps.baseLanguage.structure.IClassifierType"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7c8556154508e980L, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c60bb0a14L, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4dfebb23d6d75dcaL, "jetbrains.mps.baseLanguage.structure.IFinalWrapper"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x203eeb62af522fa5L, "jetbrains.mps.baseLanguage.structure.IHasModifiers"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xede3fe8510255edL, "jetbrains.mps.baseLanguage.structure.IIncompleteParen"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118cd59904dL, "jetbrains.mps.baseLanguage.structure.IInternalType"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2d45f01afccba89cL, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2d45f01afccba89dL, "jetbrains.mps.baseLanguage.structure.ILocalReference"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e9046e6L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d486a1d9eL, "jetbrains.mps.baseLanguage.structure.IParameter"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x74bdb321e1ee0043L, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c8f444674L, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d206f8d91L, "jetbrains.mps.baseLanguage.structure.IThisExpression"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3399756d2c03d422L, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x72de18bba2dc2a73L, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11cfb3b82a4L, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L, "jetbrains.mps.baseLanguage.structure.IVariableReference"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ff8b7a0d94242e1L, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x23cf7b405b3b9761L, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5ce6f8ed8648519aL, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64a1ef64cd9b42ceL, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47dd5e7aL, "jetbrains.mps.baseLanguage.structure.IsEmptyOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47ddf763L, "jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, "jetbrains.mps.baseLanguage.structure.JavaImport"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862eaeL, "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d53a915L, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c0ba864df016178L, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2a8fe0cadfaa8af2L, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e12d8c7dL, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e4207559L, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6f3ee8ef1412df0L, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, "jetbrains.mps.baseLanguage.structure.LongLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f3L, "jetbrains.mps.baseLanguage.structure.LongType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9552f6aL, "jetbrains.mps.baseLanguage.structure.LoopLabel"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9555129L, "jetbrains.mps.baseLanguage.structure.LoopLabelReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d14a4eaL, "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L, "jetbrains.mps.baseLanguage.structure.Modifier"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be8616ecL, "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47dc0e3bL, "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47db1c91L, "jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x650f9fedfcb5b664L, "jetbrains.mps.baseLanguage.structure.NestedNewExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10d68c2ecd3L, "jetbrains.mps.baseLanguage.structure.Number"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x44cc327d2ca5cb08L, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862ea8L, "jetbrains.mps.baseLanguage.structure.OrAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL, "jetbrains.mps.baseLanguage.structure.ParameterReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d1476d2L, "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b75f36c8L, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, "jetbrains.mps.baseLanguage.structure.PropertyReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L, "jetbrains.mps.baseLanguage.structure.PropertyValueReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x37f722a7ce38076aL, "jetbrains.mps.baseLanguage.structure.QualifiedSuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862ea6L, "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d509af4L, "jetbrains.mps.baseLanguage.structure.RemExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862eb0L, "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117bd9ac3d9L, "jetbrains.mps.baseLanguage.structure.SetAccessor"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6cde9fb9L, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6ce051dfL, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x470fa5a7b03ac59L, "jetbrains.mps.baseLanguage.structure.ShiftRightUnsignedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x427c475b3d6201deL, "jetbrains.mps.baseLanguage.structure.StaticKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47de7e99L, "jetbrains.mps.baseLanguage.structure.StringBooleanOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5eb0cab441189a51L, "jetbrains.mps.baseLanguage.structure.StringToken"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47df21f3L, "jetbrains.mps.baseLanguage.structure.SubstringExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x216400b63b2e0f21L, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x73048d24d425f35eL, "jetbrains.mps.baseLanguage.structure.SuperInerfaceKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5bd477669f55a5a4L, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x216400b63b3173a4L, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47e0122aL, "jetbrains.mps.baseLanguage.structure.TrimOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11f4b6b2435L, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117ac2330f4L, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x431d52a5d09a4ea9L, "jetbrains.mps.baseLanguage.structure.UndefinedType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, "jetbrains.mps.baseLanguage.structure.UnknownConsCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, "jetbrains.mps.baseLanguage.structure.UnknownDotCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc5d6L, "jetbrains.mps.baseLanguage.structure.UnknownLocalCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x759937a5973279b7L, "jetbrains.mps.baseLanguage.structure.UnknownNameRef"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, "jetbrains.mps.baseLanguage.structure.UnknownNew"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x470fa5a7b0ad087L, "jetbrains.mps.baseLanguage.structure.UnsignedRightShiftAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d0053f19bL, "jetbrains.mps.baseLanguage.structure.UsingStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117dd047c70L, "jetbrains.mps.baseLanguage.structure.ValueParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112353ac52dL, "jetbrains.mps.baseLanguage.structure.VarType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x617aa860be862eacL, "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression"));
 }

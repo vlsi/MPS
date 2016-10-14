@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -66,15 +65,18 @@ public abstract class SingleRoleCellProvider {
   @NotNull
   private EditorCell createChildCell_internal(EditorContext editorContext, SNode child, boolean isRealChild) {
     EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
+    setDeleteActions(child, isRealChild, editorCell, CellActionType.DELETE);
+    setDeleteActions(child, isRealChild, editorCell, CellActionType.BACKSPACE);
+    return editorCell;
+  }
+
+  private void setDeleteActions(SNode child, boolean isRealChild, EditorCell editorCell, CellActionType actionType) {
     //todo get rid of getDeclarationNode
     if (isRealChild) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
+      editorCell.setAction(actionType, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
     } else {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSimple(child, DeleteDirection.FORWARD));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSimple(child, DeleteDirection.BACKWARD));
+      editorCell.setAction(actionType, new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD: DeleteDirection.FORWARD));
     }
-    return editorCell;
   }
 
   public EditorCell createCell() {
@@ -128,9 +130,8 @@ public abstract class SingleRoleCellProvider {
     collection.setSelectable(false);
     collection.addEditorCell(createEmptyCell());
 
-    //todo: get rid of getRole()
-    collection.setAction(CellActionType.INSERT, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
-    collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
+    collection.setAction(CellActionType.INSERT, new CellAction_Insert(myOwnerNode, myContainmentLink));
+    collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(myOwnerNode, myContainmentLink));
     return collection;
   }
 

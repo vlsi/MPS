@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.behavior.test.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "0a18fb83-1fb5-4541-97c9-a13312451954(jetbrains.mps.lang.behavior.test)";
+  public static final String MODULE_REF = "0a18fb83-1fb5-4541-97c9-a13312451954(jetbrains.mps.lang.behavior.test)";
   public Language() {
   }
   @Override
@@ -49,6 +49,6 @@ public class Language extends LanguageRuntime {
         return (T) new ConceptPresentationAspectImpl();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

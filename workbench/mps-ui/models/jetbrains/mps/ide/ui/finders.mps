@@ -21,6 +21,7 @@
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -86,7 +87,7 @@
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
-        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -317,8 +318,24 @@
       <node concept="3Tm1VV" id="3_o1C0wGpEZ" role="1B3o_S" />
       <node concept="3clFbS" id="3_o1C0wGpF0" role="3clF47" />
     </node>
-    <node concept="3uibUv" id="3_o1C0wGpF1" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
+    <node concept="3clFb_" id="1Fz6CCofzjS" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofzjT" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofzjU" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofzk2" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofzk3" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCof_ab" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCof_aa" role="3clFbG">
+            <property role="Xl_RC" value="Module Usages" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3_o1C0wGpF2" role="jymVt">
       <property role="IEkAT" value="false" />
@@ -2911,17 +2928,36 @@
       <node concept="3Tm6S6" id="7jXYo5$Ydq9" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="7jXYo5$YfZ8" role="jymVt" />
+    <node concept="3uibUv" id="1Fz6CCofxQJ" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="3_o1C0wGpM1">
     <property role="TrG5h" value="ModelUsagesFinder" />
     <node concept="3Tm1VV" id="3_o1C0wGpM2" role="1B3o_S" />
-    <node concept="3uibUv" id="3_o1C0wGpM3" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="3clFbW" id="3_o1C0wGpM4" role="jymVt">
       <node concept="3Tm1VV" id="3_o1C0wGpM5" role="1B3o_S" />
       <node concept="3cqZAl" id="3_o1C0wGpM6" role="3clF45" />
       <node concept="3clFbS" id="3_o1C0wGpM7" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofCb_" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofCbA" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofCbB" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofCbJ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofCbK" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofCqd" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofCqc" role="3clFbG">
+            <property role="Xl_RC" value="Model Usages" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3_o1C0wGpM8" role="jymVt">
       <property role="TrG5h" value="find" />
@@ -3279,13 +3315,13 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="1Fz6CCofC6b" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="3_o1C0wGpQy">
     <property role="TrG5h" value="LanguageUsagesFinder" />
     <node concept="3Tm1VV" id="3_o1C0wGpQz" role="1B3o_S" />
-    <node concept="3uibUv" id="3_o1C0wGpQ$" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="Wx3nA" id="3_o1C0wGpQT" role="jymVt">
       <property role="TrG5h" value="NODES_IN_LANGUAGE" />
       <property role="3TUv4t" value="true" />
@@ -3302,6 +3338,25 @@
       <node concept="3Tm1VV" id="3_o1C0wGpQZ" role="1B3o_S" />
       <node concept="3cqZAl" id="3_o1C0wGpR0" role="3clF45" />
       <node concept="3clFbS" id="3_o1C0wGpR1" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofpe6" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofpe7" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofpe8" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofpeg" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofpeh" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofpuk" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofpuj" role="3clFbG">
+            <property role="Xl_RC" value="Language Usages" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3_o1C0wGpR2" role="jymVt">
       <property role="TrG5h" value="find" />
@@ -3853,17 +3908,36 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="1Fz6CCofp8w" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="5wOcmpULBDi">
     <property role="TrG5h" value="ModelImportsUsagesFinder" />
     <node concept="3Tm1VV" id="5wOcmpULBDj" role="1B3o_S" />
-    <node concept="3uibUv" id="5wOcmpULBDk" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="3clFbW" id="5wOcmpULBDl" role="jymVt">
       <node concept="3Tm1VV" id="5wOcmpULBDm" role="1B3o_S" />
       <node concept="3cqZAl" id="5wOcmpULBDn" role="3clF45" />
       <node concept="3clFbS" id="5wOcmpULBDo" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofn_D" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofn_E" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofn_F" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofn_N" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofn_O" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofnTQ" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofnTP" role="3clFbG">
+            <property role="Xl_RC" value="Usages in Imports" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="5wOcmpULBDp" role="jymVt">
       <property role="TrG5h" value="find" />
@@ -4111,17 +4185,36 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="1Fz6CCofnwi" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="ZVS8OJmVFq">
     <property role="TrG5h" value="LanguageImportFinder" />
     <node concept="3Tm1VV" id="ZVS8OJmVFr" role="1B3o_S" />
-    <node concept="3uibUv" id="ZVS8OJmVFs" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="3clFbW" id="ZVS8OJmVFy" role="jymVt">
       <node concept="3Tm1VV" id="ZVS8OJmVFz" role="1B3o_S" />
       <node concept="3cqZAl" id="ZVS8OJmVF$" role="3clF45" />
       <node concept="3clFbS" id="ZVS8OJmVF_" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofGQJ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofGQK" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofGQL" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofGQT" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofGQU" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofHbn" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofHbm" role="3clFbG">
+            <property role="Xl_RC" value="Language Imports" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="ZVS8OJmVFA" role="jymVt">
       <property role="TrG5h" value="find" />
@@ -4429,7 +4522,53 @@
       </node>
       <node concept="TZ5HA" id="ZVS8OJnJum" role="TZ5H$">
         <node concept="1dT_AC" id="ZVS8OJnJun" role="1dT_Ay">
-          <property role="1dT_AB" value="SeearchResult include both modules and models." />
+          <property role="1dT_AB" value="SearchResult include both modules and models." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTbXU" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTbXV" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkfX" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkfY" role="1dT_Ay">
+          <property role="1dT_AB" value="Note, this finder looks up SLanguage, not a Language module uses, thus it shall not be used when" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkfd" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkfe" role="1dT_Ay">
+          <property role="1dT_AB" value="we care about module dependencies." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkf$" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkf_" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkgP" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkgQ" role="1dT_Ay">
+          <property role="1dT_AB" value="Unlike " />
+        </node>
+        <node concept="1dT_AA" id="376iOPjTkhl" role="1dT_Ay">
+          <node concept="92FcH" id="376iOPjTkhr" role="qph3F">
+            <node concept="TZ5HA" id="376iOPjTkht" role="2XjZqd" />
+            <node concept="VXe08" id="376iOPjToK2" role="92FcQ">
+              <ref role="VXe09" node="pogCqdRFxj" resolve="LanguageModelImportFinder" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="376iOPjTkhk" role="1dT_Ay">
+          <property role="1dT_AB" value=", this finder focuses on modules. I'm not confident we need" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTqjq" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTqjr" role="1dT_Ay">
+          <property role="1dT_AB" value="both finders, though." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="376iOPjTkgo" role="TZ5H$">
+        <node concept="1dT_AC" id="376iOPjTkgp" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
         </node>
       </node>
       <node concept="TZ5HA" id="ZVS8OJnH1e" role="TZ5H$">
@@ -4443,6 +4582,9 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="1Fz6CCofGLx" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="pogCqdRFxj">
     <property role="TrG5h" value="LanguageModelImportFinder" />
@@ -4452,6 +4594,26 @@
       <node concept="3clFbS" id="pogCqdRFPL" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="pogCqdRFSk" role="jymVt" />
+    <node concept="3clFb_" id="1Fz6CCoeD$$" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCoeD$_" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCoeD$A" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCoeD$I" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCoeD$J" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCoeE1O" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCoeE1N" role="3clFbG">
+            <property role="Xl_RC" value="Language Usages in Imports" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1Fz6CCoeDMb" role="jymVt" />
     <node concept="3clFb_" id="pogCqdRFSv" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="find" />
@@ -4729,9 +4891,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="pogCqdRFxk" role="1B3o_S" />
-    <node concept="3uibUv" id="pogCqdRFPl" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="3UR2Jj" id="pogCqdRG7H" role="lGtFl">
       <node concept="TZ5HA" id="pogCqdRG7I" role="TZ5H$">
         <node concept="1dT_AC" id="pogCqdRG7J" role="1dT_Ay">
@@ -4781,6 +4940,9 @@
           <property role="1dT_AB" value=" to look up few languages at once" />
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="1Fz6CCoeDvm" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
     </node>
   </node>
 </model>

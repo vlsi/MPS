@@ -13,7 +13,55 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,90,0" name="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,53,0" name="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="Button_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Button_BehaviorDescriptor" />
+    </file>
+    <file name="Component_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Component_BehaviorDescriptor" />
+    </file>
+    <file name="Converter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Converter_BehaviorDescriptor" />
+    </file>
+    <file name="ElementReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.ElementReference_BehaviorDescriptor" />
+    </file>
+    <file name="EmptyComponent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.EmptyComponent_BehaviorDescriptor" />
+    </file>
+    <file name="Filter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Filter_BehaviorDescriptor" />
+    </file>
+    <file name="Frame_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Frame_BehaviorDescriptor" />
+    </file>
+    <file name="Label_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Label_BehaviorDescriptor" />
+    </file>
+    <file name="Map_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Map_BehaviorDescriptor" />
+    </file>
+    <file name="Panel_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Panel_BehaviorDescriptor" />
+    </file>
+    <file name="Pipeline_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline_BehaviorDescriptor" />
+    </file>
+    <file name="SourceDataType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType_BehaviorDescriptor" />
+    </file>
+    <file name="SwingBuilderMember_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember_BehaviorDescriptor" />
+    </file>
+    <file name="TargetDataType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType_BehaviorDescriptor" />
+    </file>
+    <file name="TextField_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.TextField_BehaviorDescriptor" />
+    </file>
+    <file name="Transformers_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Transformers_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/5340361359451375119">

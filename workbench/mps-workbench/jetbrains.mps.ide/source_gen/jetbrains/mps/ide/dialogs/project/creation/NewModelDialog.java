@@ -99,6 +99,7 @@ public class NewModelDialog extends DialogWrapper {
     SModelName originalName = myClone.getName();
     setTitle(String.format("Clone Model %s", originalName.getValue()));
     myModelName.setText(new SModelName(originalName.getLongName() + "_clone").getValue());
+    check();
   }
   public NewModelDialog(Project project, AbstractModule module, SModel cloneModel) {
     this(project, module, null, cloneModel.getName().getStereotype(), false);
@@ -107,6 +108,7 @@ public class NewModelDialog extends DialogWrapper {
     SModelName originalName = myClone.getName();
     setTitle(String.format("Move Model %s", originalName.getValue()));
     myModelName.setText(originalName.getValue());
+    check();
   }
   public static String getNamespace(SModel model) {
     SModule module = model.getModule();
@@ -318,20 +320,16 @@ public class NewModelDialog extends DialogWrapper {
     assert myResult != null;
 
     super.doOKAction();
-  }
 
-  public void openSettings() {
-    if (myResult == null || myProject == null) {
-      return;
+    if (myResult != null && myProject != null) {
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
+      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          configurableEditor.show();
+        }
+      }, ModalityState.current());
     }
-    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
-    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        configurableEditor.show();
-      }
-    }, ModalityState.current());
   }
 
   private String getFqName() {

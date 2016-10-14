@@ -7,6 +7,7 @@
     <use id="e8e38af6-0cf3-4cc1-baa3-ba261722e8f3" name="jetbrains.mps.samples.attribute" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="t1gd" ref="r:e99786b4-cb81-48f5-ad96-d9e0d7c7aa3c(jetbrains.mps.samples.attribute.structure)" implicit="true" />
@@ -130,7 +131,7 @@
             <node concept="3clFbF" id="70B0YGk0G17" role="3cqZAp">
               <node concept="2OqwBi" id="70B0YGk0G12" role="3clFbG">
                 <node concept="3Tsc0h" id="70B0YGk0G15" role="2OqNvi">
-                  <ref role="3TtcxE" to="t1gd:70B0YGk0BJ7" />
+                  <ref role="3TtcxE" to="t1gd:70B0YGk0BJ7" resolve="nested" />
                 </node>
                 <node concept="30H73N" id="70B0YGk0G16" role="2Oq$k0" />
               </node>

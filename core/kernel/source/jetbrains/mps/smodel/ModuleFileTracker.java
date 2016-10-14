@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
@@ -39,8 +40,17 @@ public class ModuleFileTracker implements CoreComponent {
     myRepo = repo;
   }
 
+  /**
+   * @deprecated use {@link #getInstance(SRepository)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static ModuleFileTracker getInstance() {
     return INSTANCE;
+  }
+
+  public static ModuleFileTracker getInstance(SRepository repository) {
+    return INSTANCE; // FIXME track all requested repositories, not only the global one
   }
 
   @Override

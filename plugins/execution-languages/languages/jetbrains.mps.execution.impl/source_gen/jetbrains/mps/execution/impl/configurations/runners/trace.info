@@ -10,27 +10,27 @@
   <root nodeRef="r:8b4f0747-4cce-403c-a9ed-8700a357a916(jetbrains.mps.execution.impl.configurations.runners)/5145867626676113213">
     <file name="MPSProgramRunner.java">
       <node id="5145867626676113224" at="19,31,20,28" concept="4" />
-      <node id="5145867626676113237" at="24,9,25,178" concept="4" />
-      <node id="4089701389180409555" at="27,42,28,77" concept="1" />
-      <node id="4089701389180483037" at="29,7,30,19" concept="4" />
-      <node id="5145867626676113213" at="33,0,34,0" concept="5" trace="LOG" />
+      <node id="5145867626676113213" at="22,0,23,0" concept="5" trace="LOG" />
+      <node id="5145867626676113237" at="25,9,26,178" concept="4" />
+      <node id="4089701389180409555" at="28,42,29,77" concept="1" />
+      <node id="4089701389180483037" at="30,7,31,19" concept="4" />
       <node id="5145867626676113216" at="15,0,17,0" concept="0" trace="MPSProgramRunner#()V" />
-      <node id="4089701389180409555" at="26,35,29,7" concept="2" />
+      <node id="4089701389180409555" at="27,35,30,7" concept="2" />
       <node id="5145867626676113220" at="17,0,22,0" concept="3" trace="getRunnerId#()Ljava/lang/String;" />
-      <node id="4089701389180409547" at="23,82,31,5" concept="6" />
-      <node id="5145867626676113227" at="22,0,33,0" concept="3" trace="canRun#(Ljava/lang/String;Lcom/intellij/execution/configurations/RunProfile;)Z" />
+      <node id="4089701389180409547" at="24,82,32,5" concept="6" />
+      <node id="5145867626676113227" at="23,0,34,0" concept="3" trace="canRun#(Ljava/lang/String;Lcom/intellij/execution/configurations/RunProfile;)Z" />
       <scope id="5145867626676113219" at="15,29,15,29" />
       <scope id="5145867626676113223" at="19,31,20,28" />
-      <scope id="4089701389180409548" at="24,9,25,178" />
-      <scope id="4089701389180409555" at="27,42,28,77" />
+      <scope id="4089701389180409548" at="25,9,26,178" />
+      <scope id="4089701389180409555" at="28,42,29,77" />
       <scope id="5145867626676113216" at="15,0,17,0" />
-      <scope id="4089701389180409550" at="26,0,30,19">
+      <scope id="4089701389180409550" at="27,0,31,19">
         <var name="throwable" id="4089701389180409551" />
       </scope>
-      <scope id="4089701389180409553" at="26,35,30,19" />
+      <scope id="4089701389180409553" at="27,35,31,19" />
       <scope id="5145867626676113220" at="17,0,22,0" />
-      <scope id="5145867626676113236" at="23,82,31,5" />
-      <scope id="5145867626676113227" at="22,0,33,0">
+      <scope id="5145867626676113236" at="24,82,32,5" />
+      <scope id="5145867626676113227" at="23,0,34,0">
         <var name="executorId" id="5145867626676113230" />
         <var name="profile" id="5145867626676113233" />
       </scope>

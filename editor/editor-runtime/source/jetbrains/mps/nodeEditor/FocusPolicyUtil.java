@@ -36,7 +36,7 @@ public class FocusPolicyUtil {
     return selectedCell;
   }
 
-  private static EditorCell findFocusedCell(EditorCell selectedCell) {
+  public static EditorCell findFocusedCell(EditorCell selectedCell) {
     EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true, true);
     if (focusedCell == null) {
       focusedCell = selectedCell;
@@ -51,6 +51,9 @@ public class FocusPolicyUtil {
     }
     while (focusedCell instanceof EditorCell_Collection && ((EditorCell_Collection) focusedCell).isTransparentCollection()) {
       focusedCell = ((EditorCell_Collection) focusedCell).firstCell();
+    }
+    if (!hasFocusPolicy(focusedCell)) {
+      return null;
     }
     return focusedCell;
   }

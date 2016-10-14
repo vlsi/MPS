@@ -107,7 +107,6 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       if (QueriesGenerated.ifMacro_Condition_4929591503636643306(new IfMacroContext(context, ifMacroRef_ief6mt_b0a0c0c9))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         try {
-          environment.nodeCopied(context, tnode2, "tpl/r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37/4929591503636640410");
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
@@ -133,7 +132,6 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(new BaseMappingRuleContext(context, rule_ief6mt_b0a0c0c01))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         try {
-          environment.nodeCopied(context, tnode2, "tpl/r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37/4929591503636678172");
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode2);

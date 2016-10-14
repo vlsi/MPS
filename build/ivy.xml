@@ -252,6 +252,9 @@
     <dependency org="lib.src" name="jna-platform.zip" rev="${idea.platform.version}">
       <artifact name="jna-platform.zip" ext="zip"/>
     </dependency>
+    <dependency org="lib.src" name="jsch-0.1.53.zip" rev="${idea.platform.version}">
+      <artifact name="jsch-0.1.53.zip" ext="zip"/>
+    </dependency>
     <dependency org="lib.src" name="jsch-agent-proxy.zip" rev="${idea.platform.version}">
       <artifact name="jsch-agent-proxy.zip" ext="zip"/>
     </dependency>
@@ -270,8 +273,8 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-4.1.0.CR7-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.CR7-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.1.Final-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.1.Final-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
@@ -285,8 +288,8 @@
     <dependency org="lib.src" name="serviceMessages_279xxx_src.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages_279xxx_src.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="snappy-in-java-0.3.1-src.jar" rev="${idea.platform.version}">
-      <artifact name="snappy-in-java-0.3.1-src.jar" ext="jar"/>
+    <dependency org="lib.src" name="snappy-in-java-0.5.1-src.jar" rev="${idea.platform.version}">
+      <artifact name="snappy-in-java-0.5.1-src.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="trove4j_src.jar" rev="${idea.platform.version}">
       <artifact name="trove4j_src.jar" ext="jar"/>
@@ -402,8 +405,8 @@
     <dependency org="lib" name="jna.jar" rev="${idea.platform.version}">
       <artifact name="jna.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="jsch-0.1.52.jar" rev="${idea.platform.version}">
-      <artifact name="jsch-0.1.52.jar" ext="jar"/>
+    <dependency org="lib" name="jsch-0.1.53.jar" rev="${idea.platform.version}">
+      <artifact name="jsch-0.1.53.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="jsr173_1.0_api.jar" rev="${idea.platform.version}">
       <artifact name="jsr173_1.0_api.jar" ext="jar"/>
@@ -423,8 +426,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-4.1.0.CR7.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.CR7.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.1.Final.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.1.Final.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -435,7 +438,6 @@
     <dependency org="lib" name="platform-api.jar" rev="${idea.platform.version}">
       <artifact name="platform-api.jar" ext="jar"/>
     </dependency>
-    <!-- TODO: replace patched version ${idea.platform.version}.1 with default ${idea.platform.version} -->
     <dependency org="lib" name="platform.jar" rev="${idea.platform.version}">
       <artifact name="platform.jar" ext="jar"/>
     </dependency>
@@ -457,8 +459,8 @@
     <dependency org="lib" name="serviceMessages.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="snappy-in-java-0.3.1.jar" rev="${idea.platform.version}">
-      <artifact name="snappy-in-java-0.3.1.jar" ext="jar"/>
+    <dependency org="lib" name="snappy-in-java-0.5.1.jar" rev="${idea.platform.version}">
+      <artifact name="snappy-in-java-0.5.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="swingx-core-1.6.2.jar" rev="${idea.platform.version}">
       <artifact name="swingx-core-1.6.2.jar" ext="jar"/>

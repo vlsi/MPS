@@ -25,6 +25,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
@@ -41,8 +43,6 @@ import jetbrains.mps.baseLanguage.behavior.AnnotationUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -101,6 +101,7 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x21a3c1a0d8708ce4L, "implements"))));
     return result;
   }
+  protected static Logger LOG = LogManager.getLogger(NamedTupleDeclaration__BehaviorDescriptor.class);
   /*package*/ static boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, final SNode nodeToCompare, Set<SNode> visited) {
     if ((boolean) Classifier__BehaviorDescriptor.isSame_id4dzXPK1BpyE.invoke(nodeToCompare, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"))) {
       return true;
@@ -260,7 +261,6 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  protected static Logger LOG = LogManager.getLogger(NamedTupleDeclaration__BehaviorDescriptor.class);
   private static SNode _quotation_createNode_ds5lpv_a0a0a0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

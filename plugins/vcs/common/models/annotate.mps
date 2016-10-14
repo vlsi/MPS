@@ -6660,6 +6660,23 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="13$TqNLIgwV" role="3cqZAp">
+          <node concept="3cpWsn" id="13$TqNLIgwW" role="3cpWs9">
+            <property role="TrG5h" value="ideaProject" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="13$TqNLIgwX" role="1tU5fm">
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+            </node>
+            <node concept="2OqwBi" id="13$TqNLIi38" role="33vP2m">
+              <node concept="37vLTw" id="13$TqNLIhLU" role="2Oq$k0">
+                <ref role="3cqZAo" node="13$TqNLIdCI" resolve="myProject" />
+              </node>
+              <node concept="liA8E" id="13$TqNLIiq4" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="13$TqNLIgwI" role="3cqZAp">
           <node concept="3cpWsn" id="13$TqNLIgwJ" role="3cpWs9">
             <property role="TrG5h" value="file" />
@@ -6676,20 +6693,18 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="13$TqNLIgwV" role="3cqZAp">
-          <node concept="3cpWsn" id="13$TqNLIgwW" role="3cpWs9">
-            <property role="TrG5h" value="ideaProject" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="13$TqNLIgwX" role="1tU5fm">
-              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        <node concept="3clFbJ" id="6tLsn3mSJ0$" role="3cqZAp">
+          <node concept="3clFbS" id="6tLsn3mSJ0A" role="3clFbx">
+            <node concept="3cpWs6" id="6tLsn3mSLSv" role="3cqZAp">
+              <node concept="3clFbT" id="6tLsn3mSMM0" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
             </node>
-            <node concept="2OqwBi" id="13$TqNLIi38" role="33vP2m">
-              <node concept="37vLTw" id="13$TqNLIhLU" role="2Oq$k0">
-                <ref role="3cqZAo" node="13$TqNLIdCI" resolve="myProject" />
-              </node>
-              <node concept="liA8E" id="13$TqNLIiq4" role="2OqNvi">
-                <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-              </node>
+          </node>
+          <node concept="3clFbC" id="6tLsn3mSKWf" role="3clFbw">
+            <node concept="10Nm6u" id="6tLsn3mSLFg" role="3uHU7w" />
+            <node concept="37vLTw" id="6tLsn3mSJXw" role="3uHU7B">
+              <ref role="3cqZAo" node="13$TqNLIgwJ" resolve="file" />
             </node>
           </node>
         </node>

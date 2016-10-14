@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,14 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -97,8 +94,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
   public String currentHash(SModel md) {
     if (md instanceof EditableSModel && ((EditableSModel)md).isChanged()) return null;
     if (!(md instanceof GeneratableSModel)) return null;
-    GeneratableSModel sm = (GeneratableSModel) md;
-    return sm.getModelHash();
+    return ((GeneratableSModel) md).getModelHash();
   }
 
   public boolean generationRequired(SModel md) {
@@ -120,6 +116,10 @@ public class ModelGenerationStatusManager implements CoreComponent {
     return getLastGenerationHash(sm);
   }
 
+  /*
+   * REVISIT XXX whether SModelReference or SModel shall be in the API. Respect scenario when a file get changed
+   * and we have to update all model instances in all repositories (i.e. if the same model is loaded into few).
+   */
   public void invalidateData(Iterable<? extends SModel> models) {
     ModelGenerationStatusListener[] copy;
     synchronized (myListeners) {
@@ -128,29 +128,6 @@ public class ModelGenerationStatusManager implements CoreComponent {
     for (SModel model : models) {
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);
-      }
-    }
-  }
-
-  /*
-   * PROVISIONAL: when a file get changed, we have to update all model instances in all repositories (i.e. if the same model is loaded
-   * into few). Hence, we can't rely on SModel. Either we shall make MGSM per-project (and use SModel then), or keep it application-wide
-   * and then track all repositories and reload given model in every repository. However, the only ModelGenerationStatusListener we've got so far
-   * is project-specific (project pane), and it might be reasonable to pass SModelReference right up to listener so it can decide what to do
-   */
-  public void invalidate(Collection<SModelReference> models) {
-    ModelGenerationStatusListener[] copy;
-    synchronized (myListeners) {
-      copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
-    }
-    for (SModelReference mr : models) {
-      // XXX temp solution until I decide whether to iterate over all SRepositories or pass SModelReference to the listener
-      SModel m = SModelRepository.getInstance().getModelDescriptor(mr);
-      if (m == null) {
-        continue;
-      }
-      for (ModelGenerationStatusListener l : copy) {
-        l.generatedFilesChanged(m);
       }
     }
   }

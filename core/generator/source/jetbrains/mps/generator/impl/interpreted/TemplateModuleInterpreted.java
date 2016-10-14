@@ -155,6 +155,11 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
     return myTargetLanguages;
   }
 
+  @Override
+  public Class<?> loadClass(String qualifiedName) throws ClassNotFoundException {
+    return generator.getOwnClass(qualifiedName);
+  }
+
   private Collection<Pair<SDependencyScope, TemplateModule>> getReferencedGenerators() {
     List<Pair<SDependencyScope, TemplateModule>> result = new ArrayList<Pair<SDependencyScope, TemplateModule>>(5);
     for (SDependency dep : generator.getDeclaredDependencies()) {

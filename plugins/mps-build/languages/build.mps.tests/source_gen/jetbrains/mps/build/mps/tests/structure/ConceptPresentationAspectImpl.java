@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuildModuleTestsPlugin = new ConceptPresentationBuilder().create();
@@ -21,48 +18,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BuildModuleTestsPlugin;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BuildMpsLayout_TestModule;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BuildMpsLayout_TestModuleGroup;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BuildMpsLayout_TestModules;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BuildMpsLayout_TestModules_Content;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BuildModuleTestsPlugin:
+        return props_BuildModuleTestsPlugin;
+      case LanguageConceptSwitch.BuildMpsLayout_TestModule:
+        return props_BuildMpsLayout_TestModule;
+      case LanguageConceptSwitch.BuildMpsLayout_TestModuleGroup:
+        return props_BuildMpsLayout_TestModuleGroup;
+      case LanguageConceptSwitch.BuildMpsLayout_TestModules:
+        return props_BuildMpsLayout_TestModules;
+      case LanguageConceptSwitch.BuildMpsLayout_TestModules_Content:
+        return props_BuildMpsLayout_TestModules_Content;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x37967cbe67d9eca4L, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef372L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef371L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"));
 }

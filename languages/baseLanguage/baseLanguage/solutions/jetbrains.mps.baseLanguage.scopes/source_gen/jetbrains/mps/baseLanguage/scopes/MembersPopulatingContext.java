@@ -6,8 +6,6 @@ import java.util.Stack;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
@@ -26,17 +24,23 @@ public class MembersPopulatingContext {
   private Stack<SNode> classifiers = new Stack<SNode>();
   private boolean isPackageProtectedAvailable = true;
   private final List<SNode> members = new ArrayList<SNode>();
-  private final Set<Signature> hidedSignatures = new HashSet<Signature>();
+  private final Map<Signature, SNode> addedSignatures = new HashMap<Signature, SNode>();
   private Map<SNode, SNode> typeByTypeVariable = new HashMap<SNode, SNode>();
   private Map<Object, Object> userObjects = new HashMap<Object, Object>();
   public MembersPopulatingContext() {
     // java collections for speed 
   }
   public void hideMembers(Signature signature) {
-    hidedSignatures.add(signature);
+    if (!(addedSignatures.containsKey(signature))) {
+      addedSignatures.put(signature, getCurrentClassifier());
+    }
   }
   public void addMember(SNode member, Signature signature) {
-    if (!(hidedSignatures.contains(signature))) {
+    SNode contextClassifier = addedSignatures.get(signature);
+    if (contextClassifier == null || contextClassifier == getCurrentClassifier()) {
+      // exposing all members using following condition: 
+      // 1. member was not "masked" by a member from sub-classifier 
+      // 2. showing all members with same signatures if they are defined in the same classifier 
       members.add(member);
     }
   }
@@ -93,6 +97,9 @@ public class MembersPopulatingContext {
   }
   public void exitClassifierInternal(SNode classifier) {
     assert classifiers.pop() == IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(classifier);
+  }
+  private SNode getCurrentClassifier() {
+    return classifiers.lastElement();
   }
   public boolean isPackageProtectedVisible() {
     return isPackageProtectedAvailable;

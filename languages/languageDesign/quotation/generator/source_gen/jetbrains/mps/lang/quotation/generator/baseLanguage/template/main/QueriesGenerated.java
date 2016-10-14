@@ -28,7 +28,7 @@ import jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -41,10 +41,10 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 @Generated
@@ -406,10 +406,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_5756354288101684824(final SourceSubstituteMacroNodeContext _context) {
     return SModelUtil.getGenuineLinkDeclaration(SLinkOperations.getTarget(((SNode) _context.getVariable("link")), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, 0x4bb51009d20c8e1cL, "link")));
   }
-  public static Object templateArgumentQuery_7091594365016949043(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_7091594365016949043(final TemplateArgumentContext _context) {
     return SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"));
   }
-  public static Object templateArgumentQuery_5756354288102620692(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5756354288102620692(final TemplateArgumentContext _context) {
     return _context.getNode();
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886802(final SourceSubstituteMacroNodesContext _context) {
@@ -608,13 +608,13 @@ public class QueriesGenerated {
   public static boolean mappingConfiguration_Condition_6450631649356501163(final TemplateQueryContext _context) {
     return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression")).isEmpty());
   }
-  public static Object insertMacro_varValue_5625022412249398387(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_5625022412249398387(final TemplateVarContext _context) {
     return _context.getNode();
   }
-  public static Object insertMacro_varValue_6911370362348301908(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_6911370362348301908(final TemplateVarContext _context) {
     return _context.getNode();
   }
-  public static Object insertMacro_varValue_429601079676845415(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_429601079676845415(final TemplateVarContext _context) {
     SNode builder = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, "jetbrains.mps.lang.quotation.structure.NodeBuilder"), false, false);
     int index = 1;
     ConcurrentMap<String, Integer> builderMap = QuotationUtil.getBuilderMap(_context, builder, "index");
@@ -624,11 +624,8 @@ public class QueriesGenerated {
     builderMap.put("index", index);
     return MultiTuple.<SNode,Integer>from(builder, index);
   }
-  public static Object insertMacro_varValue_5756354288101553887(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_5756354288101553887(final TemplateVarContext _context) {
     return _context.getNode();
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
   private static SNode _quotation_createNode_x583g4_a0a0b0b0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -555,6 +555,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
+  @Override
+  public boolean isInitiallyCollapsed() {
+    return myInitiallyCollapsed;
+  }
+
   private boolean isDefaultCollapsedValueChanged() {
     return myCollapsed != null;
   }
@@ -1070,7 +1075,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public void setSubstituteInfo(SubstituteInfo substitueInfo) {
     super.setSubstituteInfo(substitueInfo);
     if (isTransparentCollection()) {
-      for (EditorCell child : getEditorCells()) {
+      for (EditorCell child : this) {
         if (child.getSNode() == getSNode()) {
           child.setSubstituteInfo(substitueInfo);
         }
@@ -1082,7 +1087,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public void setAction(CellActionType type, CellAction action) {
     super.setAction(type, action);
     if (isTransparentCollection()) {
-      for (EditorCell child : getEditorCells()) {
+      for (EditorCell child : this) {
         if (child.getSNode() == getSNode()) {
           child.setAction(type, action);
         }

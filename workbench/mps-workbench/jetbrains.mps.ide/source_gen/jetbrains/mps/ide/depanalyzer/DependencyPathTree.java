@@ -7,7 +7,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;

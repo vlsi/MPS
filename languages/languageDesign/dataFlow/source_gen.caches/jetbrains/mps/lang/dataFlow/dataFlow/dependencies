@@ -15,19 +15,18 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.dataFlow.BaseEmitJumpStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.dataFlow.BaseEmitVariableStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.dataFlow.EmitCodeForStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.dataFlow.EmitMayBeUnreachable_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.dataFlow.RelativePosition_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />

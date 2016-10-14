@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
-import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -40,30 +37,25 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
     SNode parent = getParentNode(context);
     SContainmentLink containmentLink = getContainmentLink(context);
     if (parent != null && containmentLink != null) {
-      DefaultSubstituteMenuContext substituteMenuContext = DefaultSubstituteMenuContext.createInitialContextForNode(containmentLink, parent, currentChild, context.getEditorContext());
-      MenuLookup<SubstituteMenu> substituteMenuLookup = getSubstituteMenuLookup(context);
-      return substituteMenuContext.createItems(substituteMenuLookup).stream().
-          filter(new InUsedLanguagesPredicate(parent.getModel())).
-          filter(new SuitableForConstraintsPredicate(parent, containmentLink, context.getEditorContext().getRepository())).
-          map(item -> new DefaultSubstituteMenuItemAsCompletionActionItem(item, substituteMenuContext)).
-          collect(Collectors.toList());
+      SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
+      return new SubstituteItemsCollector(parent, currentChild, containmentLink, context.getEditorContext(), substituteMenuLookup).collect();
     }
     return Collections.emptyList();
   }
 
   protected SNode getParentNode(TransformationMenuContext context) {
-    return context.getNode().getParent();
+    return context.getNodeLocation().getParent();
   }
 
   protected SNode getCurrentChild(TransformationMenuContext context) {
-    return context.getNode();
+    return context.getNodeLocation().getChild();
   }
 
   protected SContainmentLink getContainmentLink(TransformationMenuContext context) {
-    return context.getNode().getContainmentLink();
+    return context.getNodeLocation().getContainmentLink();
   }
 
-  protected MenuLookup<SubstituteMenu> getSubstituteMenuLookup(TransformationMenuContext context) {
+  protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
     return null;
   }
 }

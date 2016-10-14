@@ -8,6 +8,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
@@ -21,8 +23,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ForcedSaveAll_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,6 +50,7 @@ public class ForcedSaveAll_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(ForcedSaveAll_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     Iterable<SModule> modules = (Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModulesWithGenerators();
@@ -90,5 +91,4 @@ public class ForcedSaveAll_Action extends BaseAction {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ForcedSaveAll_Action.class);
 }

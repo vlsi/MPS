@@ -158,6 +158,11 @@ public class Solution extends ReloadableModuleBase {
     if (isBootstrapSolution(ref)) return;
     // in StubSolutions myDescriptorFile is null, so preventing NPE here (MPS-16793)
     if (myDescriptorFile == null || isReadOnly()) return;
+
+    if (mySolutionDescriptor.getLoadException() != null){
+      return;
+    }
+
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModule(this));
   }
 

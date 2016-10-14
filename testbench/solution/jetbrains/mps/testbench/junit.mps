@@ -1811,9 +1811,10 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="E17o3M5PFp" role="3cqZAp" />
         <node concept="3cpWs8" id="4_TMdeLkPub" role="3cqZAp">
           <node concept="3cpWsn" id="4_TMdeLkPua" role="3cpWs9">
-            <property role="TrG5h" value="ignoreEvent" />
+            <property role="TrG5h" value="expectEvent" />
             <property role="3TUv4t" value="false" />
             <node concept="2OqwBi" id="4_TMdeLliXf" role="33vP2m">
               <node concept="37vLTw" id="4_TMdeLliXe" role="2Oq$k0">
@@ -1834,7 +1835,7 @@
         <node concept="3clFbJ" id="4_TMdeLkPuh" role="3cqZAp">
           <node concept="3y3z36" id="4_TMdeLkPui" role="3clFbw">
             <node concept="37vLTw" id="4_TMdeLkPuj" role="3uHU7B">
-              <ref role="3cqZAo" node="4_TMdeLkPua" resolve="ignoreEvent" />
+              <ref role="3cqZAo" node="4_TMdeLkPua" resolve="expectEvent" />
             </node>
             <node concept="10Nm6u" id="4_TMdeLkPuk" role="3uHU7w" />
           </node>
@@ -1842,7 +1843,7 @@
             <node concept="1DcWWT" id="4_TMdeLkPun" role="3cqZAp">
               <node concept="2OqwBi" id="4_TMdeLliXj" role="1DdaDG">
                 <node concept="37vLTw" id="4_TMdeLliXi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4_TMdeLkPua" resolve="ignoreEvent" />
+                  <ref role="3cqZAo" node="4_TMdeLkPua" resolve="expectEvent" />
                 </node>
                 <node concept="liA8E" id="4_TMdeLliXk" role="2OqNvi">
                   <ref role="37wK5l" node="3SJmozgIImc" resolve="text" />
@@ -1863,7 +1864,7 @@
                       <ref role="37wK5l" to="ot0m:4_TMdeLkP1L" resolve="expectEvent" />
                       <node concept="2OqwBi" id="4_TMdeLliXr" role="37wK5m">
                         <node concept="37vLTw" id="4_TMdeLliXq" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4_TMdeLkPua" resolve="ignoreEvent" />
+                          <ref role="3cqZAo" node="4_TMdeLkPua" resolve="expectEvent" />
                         </node>
                         <node concept="liA8E" id="4_TMdeLliXs" role="2OqNvi">
                           <ref role="37wK5l" node="3SJmozgIHwS" resolve="level" />
@@ -1879,6 +1880,54 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="E17o3M5PVl" role="3cqZAp" />
+        <node concept="3cpWs8" id="E17o3M5QNI" role="3cqZAp">
+          <node concept="3cpWsn" id="E17o3M5QNJ" role="3cpWs9">
+            <property role="TrG5h" value="ignoreEvents" />
+            <node concept="3uibUv" id="E17o3M5QNK" role="1tU5fm">
+              <ref role="3uigEE" node="E17o3M5HgB" resolve="IgnoreLogEvents" />
+            </node>
+            <node concept="2OqwBi" id="E17o3M5R9g" role="33vP2m">
+              <node concept="37vLTw" id="E17o3M5R6W" role="2Oq$k0">
+                <ref role="3cqZAo" node="4_TMdeLkPtE" resolve="desc" />
+              </node>
+              <node concept="liA8E" id="E17o3M5RdP" role="2OqNvi">
+                <ref role="37wK5l" to="cvlm:~Description.getAnnotation(java.lang.Class):java.lang.annotation.Annotation" resolve="getAnnotation" />
+                <node concept="3VsKOn" id="E17o3M5RgQ" role="37wK5m">
+                  <ref role="3VsUkX" node="E17o3M5HgB" resolve="IgnoreLogEvents" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="E17o3M5RBY" role="3cqZAp">
+          <node concept="3clFbS" id="E17o3M5RC0" role="3clFbx">
+            <node concept="3clFbF" id="E17o3M5Shq" role="3cqZAp">
+              <node concept="2OqwBi" id="E17o3M5Stz" role="3clFbG">
+                <node concept="37vLTw" id="E17o3M5Sho" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
+                </node>
+                <node concept="liA8E" id="E17o3M5SOx" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                  <node concept="37vLTw" id="E17o3M5SXw" role="37wK5m">
+                    <ref role="3cqZAo" node="4_TMdeLkPtE" resolve="desc" />
+                  </node>
+                  <node concept="10M0yZ" id="E17o3M5TsO" role="37wK5m">
+                    <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+                    <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="E17o3M5S8e" role="3clFbw">
+            <node concept="10Nm6u" id="E17o3M5SgS" role="3uHU7w" />
+            <node concept="37vLTw" id="E17o3M5RRf" role="3uHU7B">
+              <ref role="3cqZAo" node="E17o3M5QNJ" resolve="ignoreEvents" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="E17o3M5Q9n" role="3cqZAp" />
         <node concept="3clFbF" id="4_TMdeLkPuM" role="3cqZAp">
           <node concept="37vLTI" id="4_TMdeLkPuN" role="3clFbG">
             <node concept="2ShNRf" id="4_TMdeLliXz" role="37vLTx">
@@ -2932,6 +2981,32 @@
             <node concept="liA8E" id="72HFhk0LunG" role="2OqNvi">
               <ref role="37wK5l" to="ni5j:~Matcher.matches():boolean" resolve="matches" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2ABs$o" id="E17o3M5HgB">
+    <property role="TrG5h" value="IgnoreLogEvents" />
+    <node concept="3Tm1VV" id="E17o3M5HgC" role="1B3o_S" />
+    <node concept="2AHcQZ" id="E17o3M5HgD" role="2AJF6D">
+      <ref role="2AI5Lk" to="ouhv:~Retention" resolve="Retention" />
+      <node concept="2B6LJw" id="E17o3M5HgE" role="2B76xF">
+        <ref role="2B6OnR" to="ouhv:~Retention.value()" resolve="value" />
+        <node concept="Rm8GO" id="E17o3M5HgF" role="2B70Vg">
+          <ref role="Rm8GQ" to="ouhv:~RetentionPolicy.RUNTIME" resolve="RUNTIME" />
+          <ref role="1Px2BO" to="ouhv:~RetentionPolicy" resolve="RetentionPolicy" />
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="E17o3M5HgG" role="2AJF6D">
+      <ref role="2AI5Lk" to="ouhv:~Target" resolve="Target" />
+      <node concept="2B6LJw" id="E17o3M5HgH" role="2B76xF">
+        <ref role="2B6OnR" to="ouhv:~Target.value()" resolve="value" />
+        <node concept="2BsdOp" id="E17o3M5HgI" role="2B70Vg">
+          <node concept="Rm8GO" id="E17o3M5HgJ" role="2BsfMF">
+            <ref role="Rm8GQ" to="ouhv:~ElementType.METHOD" resolve="METHOD" />
+            <ref role="1Px2BO" to="ouhv:~ElementType" resolve="ElementType" />
           </node>
         </node>
       </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,13 +29,16 @@ import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -117,8 +120,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
-    for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(MetaAdapterFactory.getReferenceLink(rid, d.getRefDescriptor(rid).getName()));
+    for (ReferenceDescriptor rd : d.getReferenceDescriptors()) {
+      result.add(MetaAdapterFactory.getReferenceLink(rd.getId(), rd.getName()));
     }
     return result;
   }
@@ -140,8 +143,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
-    for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(MetaAdapterFactory.getContainmentLink(rid, d.getLinkDescriptor(rid).getName()));
+    for (LinkDescriptor ld : d.getLinkDescriptors()) {
+      result.add(MetaAdapterFactory.getContainmentLink(ld.getId(), ld.getName()));
     }
     return result;
   }
@@ -159,6 +162,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   @Deprecated
   public SAbstractLink getLink(String role) {
+    // INTENTIONALLY DISTURBING
+    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
     ConceptDescriptor nodeConcept = getConceptDescriptor();
     if (nodeConcept == null) {
       return null;
@@ -181,15 +186,16 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Override
   public Iterable<SAbstractLink> getLinks() {
+    // INTENTIONALLY DISTURBING
+    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
     ArrayList<SAbstractLink> result = new ArrayList<SAbstractLink>();
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
       return Collections.emptyList();
     }
 
-    for (SContainmentLinkId lid : cd.getLinkIds()) {
-      LinkDescriptor ld = cd.getLinkDescriptor(lid);
-      result.add(MetaAdapterFactory.getContainmentLink(lid, ld.getName()));
+    for (LinkDescriptor ld : cd.getLinkDescriptors()) {
+      result.add(MetaAdapterFactory.getContainmentLink(ld.getId(), ld.getName()));
     }
     return result;
   }
@@ -197,6 +203,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @Override
   @Deprecated
   public SProperty getProperty(String name) {
+    // INTENTIONALLY DISTURBING
+    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
       return null;
@@ -230,8 +238,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     }
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
-    for (SPropertyId pid : descriptor.getPropertyIds()) {
-      result.add(MetaAdapterFactory.getProperty(pid, descriptor.getPropertyDescriptor(pid).getName()));
+    for (PropertyDescriptor pd : descriptor.getPropertyDescriptors()) {
+      result.add(MetaAdapterFactory.getProperty(pd.getId(), pd.getName()));
     }
     return result;
   }
@@ -311,6 +319,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @NotNull
   @Override
   public String getShortDescription() {
+    ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(this);
+    if (pres != null) {
+      return pres.getShortDescription();
+    }
+    // fallback for legacy code
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) {
       return "";
@@ -321,6 +334,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @NotNull
   @Override
   public String getHelpUrl() {
+    ConceptPresentation pres = ConceptRegistry.getInstance().getConceptProperties(this);
+    if (pres != null) {
+      return pres.getHelpUrl();
+    }
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) {
       return "";

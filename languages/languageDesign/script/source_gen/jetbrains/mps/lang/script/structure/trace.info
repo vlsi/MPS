@@ -11,13 +11,16 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,141,0" name="jetbrains.mps.lang.script.structure.ConceptPresentationAspectImpl" />
+      <unit at="12,0,74,0" name="jetbrains.mps.lang.script.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="IconContainer.java">
       <unit at="7,0,10,0" name="jetbrains.mps.lang.script.structure.IconContainer" />
     </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,60,0" name="jetbrains.mps.lang.script.structure.LanguageConceptSwitch" />
+    </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,162,0" name="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
+      <unit at="16,0,256,0" name="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)/5299416737274925392">

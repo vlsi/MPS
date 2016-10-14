@@ -27,7 +27,6 @@ import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -41,11 +40,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
  * Internal consistency check of module dependencies between different layers of MPS hierarchy:
  * core, workbench and plugin
+ *
+ *
+ * TODO rewrite using the standard way to collect multiple errors
  */
 public class ProjectMPSDependenciesTest extends CoreMpsTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
@@ -74,12 +77,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
 
   private int getModulesCount() {
     final SRepository repository = getRepository();
-    return new ModelAccessHelper(repository).runReadAction(new Computable<Integer>() {
-      @Override
-      public Integer compute() {
-        return IterableUtil.asCollection(repository.getModules()).size();
-      }
-    });
+    return new ModelAccessHelper(repository).runReadAction(() -> IterableUtil.asCollection(repository.getModules()).size());
   }
 
   private Collection<String> getCorePaths() {
@@ -103,15 +101,12 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   private void checkDeps(final String levelIndicator) {
     final ModulesWatcher modulesWatcher = getModulesWatcher();
     final SRepository repository = getRepository();
-    repository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        Collection<SModuleReference> invalidModules = modulesWatcher.findInvalidModulesAndReport();
+    repository.getModelAccess().runWriteAction(() -> {
+      Map<SModuleReference, String> invalidModules2Problems = modulesWatcher.findInvalidModulesProblems();
 
-        for (SModuleReference mRef : invalidModules) {
-          final String msg = String.format("Invalid dependencies (%s) for module %s", levelIndicator, mRef.getModuleName());
-          myErrors.addError(new AssertionError(msg));
-        }
+      for (SModuleReference mRef : invalidModules2Problems.keySet()) {
+        final String msg = String.format("Invalid dependencies (%s) for module %s: %s", levelIndicator, mRef.getModuleName(), invalidModules2Problems.get(mRef));
+        myErrors.addError(new AssertionError(msg));
       }
     });
   }

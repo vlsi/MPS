@@ -1,104 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,28,0" name="org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,34,0" name="org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
-      <unit at="145,126,149,5" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated$5" />
-      <unit at="93,49,111,5" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated$3" />
-      <unit at="119,49,137,5" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated$4" />
-      <unit at="29,49,53,5" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated$1" />
-      <unit at="61,49,85,5" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated$2" />
-      <unit at="26,0,156,0" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated" />
-    </file>
-  </root>
-  <root nodeRef="r:d37d8304-386b-47d4-9fb0-209be430470a(org.jetbrains.mps.samples.ParallelFor.actions)/7704855178158936235">
-    <file name="QueriesGenerated.java">
-      <node id="7704855178166878241" at="30,94,31,125" concept="4" />
-      <node id="7704855178166878252" at="32,32,33,372" concept="1" />
-      <node id="7704855178166878262" at="34,16,35,379" concept="1" />
-      <node id="7704855178166878270" at="35,379,36,537" concept="1" />
-      <node id="7704855178166878279" at="37,9,38,204" concept="5" />
-      <node id="7704855178158936753" at="56,203,57,208" concept="5" />
-      <node id="7704855178166683009" at="62,94,63,125" concept="4" />
-      <node id="7704855178158993534" at="64,32,65,372" concept="1" />
-      <node id="7704855178166705019" at="66,16,67,379" concept="1" />
-      <node id="7704855178166732637" at="67,379,68,537" concept="1" />
-      <node id="7704855178166784481" at="69,9,70,204" concept="5" />
-      <node id="7704855178158993524" at="88,203,89,208" concept="5" />
-      <node id="7704855178166878260" at="34,14,37,9" concept="0" />
-      <node id="7704855178158936539" at="56,0,59,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178158936539#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <node id="7704855178166704712" at="66,14,69,9" concept="0" />
-      <node id="7704855178158993522" at="88,0,91,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178158993522#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <node id="7704855178166878247" at="31,125,37,9" concept="2" />
-      <node id="7704855178166699602" at="63,125,69,9" concept="2" />
-      <scope id="7704855178166878251" at="32,32,33,372" />
-      <scope id="7704855178158936540" at="56,203,57,208" />
-      <scope id="7704855178166699604" at="64,32,65,372" />
-      <scope id="7704855178158993523" at="88,203,89,208" />
-      <scope id="7704855178166878261" at="34,16,36,537" />
-      <scope id="7704855178166704713" at="66,16,68,537" />
-      <scope id="7704855178158936539" at="56,0,59,0">
-        <var name="_context" id="7704855178158936539" />
-        <var name="operationContext" id="7704855178158936539" />
-      </scope>
-      <scope id="7704855178158993522" at="88,0,91,0">
-        <var name="_context" id="7704855178158993522" />
-        <var name="operationContext" id="7704855178158993522" />
-      </scope>
-      <scope id="7704855178158965009" at="30,94,38,204">
-        <var name="candidate" id="7704855178166878242" />
-      </scope>
-      <scope id="7704855178158993533" at="62,94,70,204">
-        <var name="candidate" id="7704855178166683010" />
-      </scope>
-    </file>
-  </root>
-  <root nodeRef="r:d37d8304-386b-47d4-9fb0-209be430470a(org.jetbrains.mps.samples.ParallelFor.actions)/7704855178159055087">
-    <file name="QueriesGenerated.java">
-      <node id="7704855178159076032" at="94,94,95,197" concept="1" />
-      <node id="7704855178159103327" at="95,197,96,20" concept="5" />
-      <node id="7704855178159055303" at="114,203,115,197" concept="5" />
-      <node id="7704855178159108192" at="120,94,121,197" concept="1" />
-      <node id="7704855178161273129" at="121,197,122,20" concept="5" />
-      <node id="7704855178159108183" at="140,203,141,197" concept="5" />
-      <node id="7704855178164641878" at="146,30,147,67" concept="5" />
-      <node id="7704855178159597785" at="152,202,153,440" concept="5" />
-      <node id="7704855178159055089" at="114,0,117,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178159055089#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <node id="7704855178159108181" at="140,0,143,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178159108181#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <node id="7704855178159597571" at="152,0,155,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7704855178159597571#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="7704855178159055090" at="114,203,115,197" />
-      <scope id="7704855178159108182" at="140,203,141,197" />
-      <scope id="7704855178159597572" at="152,202,153,440" />
-      <scope id="7704855178159074123" at="94,94,96,20" />
-      <scope id="7704855178159108191" at="120,94,122,20" />
-      <scope id="7704855178159055089" at="114,0,117,0">
-        <var name="_context" id="7704855178159055089" />
-        <var name="operationContext" id="7704855178159055089" />
-      </scope>
-      <scope id="7704855178159108181" at="140,0,143,0">
-        <var name="_context" id="7704855178159108181" />
-        <var name="operationContext" id="7704855178159108181" />
-      </scope>
-      <scope id="7704855178159597571" at="152,0,155,0">
-        <var name="_context" id="7704855178159597571" />
-        <var name="operationContext" id="7704855178159597571" />
-      </scope>
+      <unit at="6,0,8,0" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:d37d8304-386b-47d4-9fb0-209be430470a(org.jetbrains.mps.samples.ParallelFor.actions)/8923957828369569660">
     <file name="ParallelLoopVariable_Factory.java">
-      <node id="8923957828369582242" at="13,91,14,168" concept="1" />
-      <node id="7793246093816046408" at="14,168,15,158" concept="1" />
-      <node id="8923957828369569661" at="13,0,17,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="8923957828369582242" at="13,91,14,168" concept="0" />
+      <node id="7793246093816046408" at="14,168,15,158" concept="0" />
+      <node id="8923957828369569661" at="13,0,17,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="8923957828369569661" at="13,91,15,158" />
       <scope id="8923957828369569661" at="13,0,17,0">
         <var name="enclosingNode" id="8923957828369569661" />

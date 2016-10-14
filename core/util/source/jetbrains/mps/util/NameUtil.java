@@ -364,7 +364,7 @@ public class NameUtil {
     SModel model = node.getModel();
     if (model == null) return name;
 
-    return getModelLongName(model) + "." + name;
+    return getModelLongName(model) + '.' + name;
   }
 
   public static String compactNodeFQName(SNode node) {
@@ -376,7 +376,7 @@ public class NameUtil {
     if (model == null) {
       return name;
     }
-    return compactNamespace(getModelLongName(model)) + "." + name;
+    return compactNamespace(getModelLongName(model)) + '.' + name;
   }
 
   /**
@@ -545,7 +545,7 @@ public class NameUtil {
 
       for (int i = 0; i < parts.length; i++) {
         if (i != 0) {
-          result.append(".");
+          result.append('.');
         }
 
         if (i < parts.length - 2) {

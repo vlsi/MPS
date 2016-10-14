@@ -10,6 +10,8 @@ import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
@@ -24,8 +26,6 @@ import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MergeBackupUtil {
   public MergeBackupUtil() {
@@ -41,6 +41,7 @@ public class MergeBackupUtil {
     FileUtil.delete(tmpDir);
     return zipfile;
   }
+  protected static Logger LOG = LogManager.getLogger(MergeBackupUtil.class);
   public static void packMergeResult(File file, String fileName, String resultContent) {
     try {
       File tmp = FileUtil.createTmpDir();
@@ -127,5 +128,4 @@ public class MergeBackupUtil {
       }
     }, false);
   }
-  protected static Logger LOG = LogManager.getLogger(MergeBackupUtil.class);
 }

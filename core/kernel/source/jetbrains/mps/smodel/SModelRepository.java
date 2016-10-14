@@ -17,8 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
@@ -110,20 +108,6 @@ public class SModelRepository implements CoreComponent {
     myRepository.removeRepositoryListener(myRepositoriesListener);
     INSTANCE = null;
   }
-
-  /**
-   * @deprecated it's our implementation method, and there are no uses in MPS now, drop as a distinct step to see if mbeddr fails
-   */
-  @Deprecated
-  @ToRemove(version = 0)
-  public void deleteModel(SModel d) {
-    ModelAccess.assertLegalWrite();
-
-    ModelDeleteHelper h = new ModelDeleteHelper(d);
-    h.detachFromModule();
-    h.deleteDataSource();
-  }
-
 
   //----------------------------get-----------------------------
 
@@ -283,8 +267,9 @@ public class SModelRepository implements CoreComponent {
 
     for (EditableSModel emd : modelsToRefresh) {
       DataSource source = emd.getSource();
-      if (!(source instanceof DataSourceBase)) continue;
-      ((DataSourceBase) source).refresh();
+      if (source instanceof DataSourceBase) {
+        ((DataSourceBase) source).refresh();
+      }
     }
 
     synchronized (myModelsLock) {

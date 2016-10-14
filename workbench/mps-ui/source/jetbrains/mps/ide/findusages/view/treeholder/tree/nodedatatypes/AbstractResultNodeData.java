@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,8 @@ public abstract class AbstractResultNodeData extends BaseNodeData {
   }
 
   public AbstractResultNodeData(PathItemRole role, @NotNull String caption,
-      @NotNull String additionalInfo, boolean isExpanded, boolean isResultNode, boolean resultsSection) {
-    super(role, caption, additionalInfo, isExpanded, isResultNode, resultsSection);
+      @NotNull String additionalInfo, boolean isExpanded, boolean isPathTail, boolean resultsSection) {
+    super(role, caption, additionalInfo, isExpanded, isPathTail, resultsSection);
   }
 
   @Override
@@ -45,4 +45,6 @@ public abstract class AbstractResultNodeData extends BaseNodeData {
   }
 
   protected abstract String createIdObject();
+
+  public abstract void navigate(Project mpsProject, boolean useProjectTree, boolean focus);
 }

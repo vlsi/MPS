@@ -48,7 +48,11 @@ class CanExecuteFilter implements Function<List<TransformationMenuItem>, List<Tr
       }
 
       private boolean canExecuteActionItem(ActionItem actionItem) {
-        return actionItem.canExecute("");
+        try {
+          return actionItem.canExecute("");
+        } catch (RuntimeException e) {
+          return false;
+        }
       }
 
       @Override

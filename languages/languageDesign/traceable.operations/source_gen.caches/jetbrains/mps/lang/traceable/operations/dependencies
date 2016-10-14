@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.operations.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.operations.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.operations.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.operations.structure.ConceptPresentationAspectImpl" />
@@ -20,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

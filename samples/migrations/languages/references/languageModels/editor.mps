@@ -2,7 +2,7 @@
 <model ref="r:39488800-d4e9-4c65-9ed9-8d5066a6f0c6(references.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -45,7 +45,7 @@
         <property role="3F0ifm" value="depends on" />
       </node>
       <node concept="1iCGBv" id="6FZb119dSqg" role="3EZMnx">
-        <ref role="1NtTu8" to="gdil:6FZb119cEra" />
+        <ref role="1NtTu8" to="gdil:6FZb119cEra" resolve="target" />
         <node concept="1sVBvm" id="6FZb119dSqh" role="1sWHZn">
           <node concept="3F0A7n" id="6FZb119dSqi" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -63,7 +63,7 @@
         <property role="3F0ifm" value="depends on" />
       </node>
       <node concept="1iCGBv" id="6FZb119cEqT" role="3EZMnx">
-        <ref role="1NtTu8" to="gdil:6FZb119cEqq" />
+        <ref role="1NtTu8" to="gdil:6FZb119cEqq" resolve="target" />
         <node concept="1sVBvm" id="6FZb119cEqV" role="1sWHZn">
           <node concept="3F0A7n" id="6FZb119cEr6" role="2wV5jI">
             <property role="1Intyy" value="true" />

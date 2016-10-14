@@ -37,9 +37,9 @@ public class GeneratorsRunner {
     System.out.println("Analyzing MPS modules...");
     f.prepare();
     System.out.println("Building gensources module 1/2...");
-    f.updateGenSourcesIml(Utils.files("core", "languages", "samples"));
+    f.updateGenSourcesIml(Utils.files("core", "languages", "samples", "workbench"));
     System.out.println("Building gensources module 2/2...");
-    f.updateGenSourcesImlNoIntersections(Utils.files("plugins", "testbench"));
+    f.updateGenSourcesImlNoIntersections(Utils.files("workbench", "plugins", "testbench"));
     System.out.println("Saving...");
     f.serializeResult();
     System.out.println("Done.");
@@ -47,7 +47,7 @@ public class GeneratorsRunner {
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {
     CompilerXml.updateCompilerExcludes(COMPILER_XML_FILE,
-        Utils.files("languages", "samples", "core", "plugins", "testbench"),
+        Utils.files("languages", "samples", "core", "plugins", "workbench", "testbench"),
         new File[]{new File("IdeaPlugin")});
   }
 

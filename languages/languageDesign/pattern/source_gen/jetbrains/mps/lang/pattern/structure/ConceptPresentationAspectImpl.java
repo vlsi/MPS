@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ActionAsPattern = new ConceptPresentationBuilder().create();
@@ -36,123 +33,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0v.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ActionAsPattern;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ActionStatement;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AsPattern;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_GeneratorInternal_ChildDescriptor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_GeneratorInternal_PropertyDescriptor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_GeneratorInternal_ReferenceDescriptor;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_InsertAfterPosition;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_InsertBeforePosition;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_InsertPosition;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_LinkPatternVariableDeclaration;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_ListPattern;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_OrPattern;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_OrPatternClause;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_OrPatternVariableReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_Pattern;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_PatternExpression;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_PatternVariableDeclaration;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_PatternVariableReference;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_PropertyPatternVariableDeclaration;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_WildcardPattern;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ActionAsPattern:
+        return props_ActionAsPattern;
+      case LanguageConceptSwitch.ActionStatement:
+        return props_ActionStatement;
+      case LanguageConceptSwitch.AsPattern:
+        return props_AsPattern;
+      case LanguageConceptSwitch.GeneratorInternal_ChildDescriptor:
+        return props_GeneratorInternal_ChildDescriptor;
+      case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
+        return props_GeneratorInternal_PropertyDescriptor;
+      case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
+        return props_GeneratorInternal_ReferenceDescriptor;
+      case LanguageConceptSwitch.InsertAfterPosition:
+        return props_InsertAfterPosition;
+      case LanguageConceptSwitch.InsertBeforePosition:
+        return props_InsertBeforePosition;
+      case LanguageConceptSwitch.InsertPosition:
+        return props_InsertPosition;
+      case LanguageConceptSwitch.LinkPatternVariableDeclaration:
+        return props_LinkPatternVariableDeclaration;
+      case LanguageConceptSwitch.ListPattern:
+        return props_ListPattern;
+      case LanguageConceptSwitch.OrPattern:
+        return props_OrPattern;
+      case LanguageConceptSwitch.OrPatternClause:
+        return props_OrPatternClause;
+      case LanguageConceptSwitch.OrPatternVariableReference:
+        return props_OrPatternVariableReference;
+      case LanguageConceptSwitch.Pattern:
+        return props_Pattern;
+      case LanguageConceptSwitch.PatternExpression:
+        return props_PatternExpression;
+      case LanguageConceptSwitch.PatternVariableDeclaration:
+        return props_PatternVariableDeclaration;
+      case LanguageConceptSwitch.PatternVariableReference:
+        return props_PatternVariableReference;
+      case LanguageConceptSwitch.PropertyPatternVariableDeclaration:
+        return props_PropertyPatternVariableDeclaration;
+      case LanguageConceptSwitch.WildcardPattern:
+        return props_WildcardPattern;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1815d960L, "jetbrains.mps.lang.pattern.structure.ActionStatement"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd38L, "jetbrains.mps.lang.pattern.structure.InsertAfterPosition"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd3aL, "jetbrains.mps.lang.pattern.structure.InsertBeforePosition"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd3cL, "jetbrains.mps.lang.pattern.structure.InsertPosition"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108aa36731aL, "jetbrains.mps.lang.pattern.structure.ListPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x2b7df577ffbb6a85L, "jetbrains.mps.lang.pattern.structure.PatternVariableReference"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4797L, "jetbrains.mps.lang.pattern.structure.WildcardPattern"));
 }

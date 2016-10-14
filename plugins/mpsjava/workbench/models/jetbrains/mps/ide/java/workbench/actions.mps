@@ -132,6 +132,7 @@
       </concept>
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="7282214966977214052" name="jetbrains.mps.baseLanguage.structure.NestedNewExpression" flags="ng" index="2pIyA9" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
@@ -1064,7 +1065,7 @@
                           <ref role="3cqZAo" node="5U9rQri5Gf7" resolve="baseMethodDeclaration" />
                         </node>
                         <node concept="3TrEf2" id="5U9rQri5Gfi" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:fzclF7Z" />
+                          <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
                         </node>
                       </node>
                       <node concept="2ShNRf" id="5U9rQri5Gfj" role="37vLTx">
@@ -1481,6 +1482,20 @@
                                       <node concept="2YIFZM" id="5U9rQri5Gj_" role="37vLTx">
                                         <ref role="1Pybhc" to="89o2:7nrhK3uHecP" resolve="MethodRefactoringUtils" />
                                         <ref role="37wK5l" to="89o2:7nrhK3uHedz" resolve="findOverridingMethods" />
+                                        <node concept="2OqwBi" id="6o1U_cwyP_d" role="37wK5m">
+                                          <node concept="2YIFZM" id="6o1U_cwyJaO" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                            <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                            <node concept="37vLTw" id="6o1U_cwyJaP" role="37wK5m">
+                                              <ref role="3cqZAo" to="xygl:~Task.myProject" resolve="myProject" />
+                                            </node>
+                                          </node>
+                                          <node concept="2pIyA9" id="6o1U_cwyQ35" role="2OqNvi">
+                                            <node concept="1pGfFk" id="6o1U_cwyQVp" role="2ShVmc">
+                                              <ref role="37wK5l" to="z1c3:~Project$ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="Project.ProjectScope" />
+                                            </node>
+                                          </node>
+                                        </node>
                                         <node concept="2OqwBi" id="5U9rQri5GjA" role="37wK5m">
                                           <node concept="2OwXpG" id="5U9rQri5GjB" role="2OqNvi">
                                             <ref role="2Oxat5" node="5U9rQri5Gh1" resolve="myDeclaration" />

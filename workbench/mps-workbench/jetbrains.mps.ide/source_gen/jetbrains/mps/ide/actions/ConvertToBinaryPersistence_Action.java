@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -29,8 +31,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ConvertToBinaryPersistence_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -78,6 +78,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(ConvertToBinaryPersistence_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
@@ -140,5 +141,4 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(ConvertToBinaryPersistence_Action.class);
 }

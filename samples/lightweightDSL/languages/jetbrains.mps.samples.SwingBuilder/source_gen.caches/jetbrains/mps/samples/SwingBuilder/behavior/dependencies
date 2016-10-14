@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Converter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Filter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Map__BehaviorDescriptor" />
@@ -13,11 +12,23 @@
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.behavior.Transformers__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Button_BehaviorDescriptor" file="Button_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Component_BehaviorDescriptor" file="Component_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Converter_BehaviorDescriptor" file="Converter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Converter__BehaviorDescriptor" file="Converter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -45,6 +56,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.ElementReference_BehaviorDescriptor" file="ElementReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.EmptyComponent_BehaviorDescriptor" file="EmptyComponent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Filter_BehaviorDescriptor" file="Filter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Filter__BehaviorDescriptor" file="Filter__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -67,6 +90,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Frame_BehaviorDescriptor" file="Frame_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Label_BehaviorDescriptor" file="Label_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Map_BehaviorDescriptor" file="Map_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Map__BehaviorDescriptor" file="Map__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -91,6 +126,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Panel_BehaviorDescriptor" file="Panel_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline_BehaviorDescriptor" file="Pipeline_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline__BehaviorDescriptor" file="Pipeline__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -113,6 +156,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType_BehaviorDescriptor" file="SourceDataType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType__BehaviorDescriptor" file="SourceDataType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -137,6 +184,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember_BehaviorDescriptor" file="SwingBuilderMember_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember__BehaviorDescriptor" file="SwingBuilderMember__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -160,6 +211,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType_BehaviorDescriptor" file="TargetDataType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType__BehaviorDescriptor" file="TargetDataType__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -182,6 +237,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.TextField_BehaviorDescriptor" file="TextField_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Transformers_BehaviorDescriptor" file="Transformers_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.behavior.Transformers__BehaviorDescriptor" file="Transformers__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />

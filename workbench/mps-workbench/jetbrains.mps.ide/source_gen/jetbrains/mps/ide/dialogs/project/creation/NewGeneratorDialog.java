@@ -21,6 +21,8 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.io.File;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -43,8 +45,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewGeneratorDialog extends DialogWrapper {
   private JPanel myContenetPane;
@@ -111,6 +111,7 @@ public class NewGeneratorDialog extends DialogWrapper {
   public Generator getResult() {
     return myResult;
   }
+  protected static Logger LOG = LogManager.getLogger(NewGeneratorDialog.class);
   @Override
   protected void doOKAction() {
     final String templateModelsPath = myTemplateModelsDir.getText();
@@ -193,5 +194,4 @@ public class NewGeneratorDialog extends DialogWrapper {
     SModelOperations.addRootNode(((SModel) templateModel), mappingConfiguration);
     templateModel.save();
   }
-  protected static Logger LOG = LogManager.getLogger(NewGeneratorDialog.class);
 }

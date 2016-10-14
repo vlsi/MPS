@@ -53,7 +53,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -749,6 +748,11 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="QAhkh$B7OM" role="3cqZAp">
+          <node concept="1rXfSq" id="QAhkh$B7OK" role="3clFbG">
+            <ref role="37wK5l" node="2R7pax8jqvQ" resolve="check" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3clFbW" id="7qWBDQoBqki" role="jymVt">
@@ -871,6 +875,11 @@
             <node concept="37vLTw" id="7qWBDQoBqkR" role="2Oq$k0">
               <ref role="3cqZAo" node="1pyYjDPRa08" resolve="myModelName" />
             </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="QAhkh$B8kr" role="3cqZAp">
+          <node concept="1rXfSq" id="QAhkh$B8kp" role="3clFbG">
+            <ref role="37wK5l" node="2R7pax8jqvQ" resolve="check" />
           </node>
         </node>
       </node>
@@ -3264,130 +3273,103 @@
             <ref role="37wK5l" to="jkm4:~DialogWrapper.doOKAction():void" resolve="doOKAction" />
           </node>
         </node>
-      </node>
-      <node concept="2AHcQZ" id="4tQ0$v36jMD" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4tC7IH_Y6gs" role="jymVt" />
-    <node concept="3clFb_" id="4tC7IH_YMF5" role="jymVt">
-      <property role="TrG5h" value="openSettings" />
-      <node concept="3cqZAl" id="4tC7IH_YMF7" role="3clF45" />
-      <node concept="3Tm1VV" id="4tC7IH_YMF8" role="1B3o_S" />
-      <node concept="3clFbS" id="4tC7IH_YMF9" role="3clF47">
+        <node concept="3clFbH" id="45TH7vNIK_q" role="3cqZAp" />
         <node concept="3clFbJ" id="4tC7IH_ZtKh" role="3cqZAp">
           <node concept="3clFbS" id="4tC7IH_ZtKk" role="3clFbx">
-            <node concept="3cpWs6" id="4tC7IH_ZuUg" role="3cqZAp" />
-          </node>
-          <node concept="22lmx$" id="4tC7IH_Zuz9" role="3clFbw">
-            <node concept="3clFbC" id="4tC7IH_ZuOc" role="3uHU7w">
-              <node concept="10Nm6u" id="4tC7IH_ZuQk" role="3uHU7w" />
-              <node concept="37vLTw" id="4tC7IH_ZuFo" role="3uHU7B">
-                <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
+            <node concept="3cpWs8" id="1kPkRp81JoN" role="3cqZAp">
+              <node concept="3cpWsn" id="1kPkRp81JoO" role="3cpWs9">
+                <property role="TrG5h" value="configurable" />
+                <node concept="3uibUv" id="18UX1JGc0o8" role="1tU5fm">
+                  <ref role="3uigEE" to="gsnq:~MPSPropertiesConfigurable" resolve="MPSPropertiesConfigurable" />
+                </node>
+                <node concept="2ShNRf" id="1kPkRp81JoQ" role="33vP2m">
+                  <node concept="1pGfFk" id="1kPkRp81JoR" role="2ShVmc">
+                    <ref role="37wK5l" to="gsnq:~ModelPropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.project.Project)" resolve="ModelPropertiesConfigurable" />
+                    <node concept="37vLTw" id="7v4sgDc94PB" role="37wK5m">
+                      <ref role="3cqZAo" node="1pyYjDPRa0n" resolve="myResult" />
+                    </node>
+                    <node concept="37vLTw" id="4oi2Bf2r7Uj" role="37wK5m">
+                      <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="3clFbC" id="4tC7IH_Zuqu" role="3uHU7B">
+            <node concept="3cpWs8" id="1kPkRp81JoV" role="3cqZAp">
+              <node concept="3cpWsn" id="1kPkRp81JoW" role="3cpWs9">
+                <property role="TrG5h" value="configurableEditor" />
+                <property role="3TUv4t" value="true" />
+                <node concept="3uibUv" id="1kPkRp81JoX" role="1tU5fm">
+                  <ref role="3uigEE" to="qxsb:~SingleConfigurableEditor" resolve="SingleConfigurableEditor" />
+                </node>
+                <node concept="2ShNRf" id="1kPkRp81JoY" role="33vP2m">
+                  <node concept="1pGfFk" id="1kPkRp81JoZ" role="2ShVmc">
+                    <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.options.Configurable,java.lang.String)" resolve="SingleConfigurableEditor" />
+                    <node concept="2YIFZM" id="1kPkRp81Jp0" role="37wK5m">
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                      <node concept="37vLTw" id="4oi2Bf2rhZH" role="37wK5m">
+                        <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="1kPkRp81Jp6" role="37wK5m">
+                      <ref role="3cqZAo" node="1kPkRp81JoO" resolve="configurable" />
+                    </node>
+                    <node concept="Xl_RD" id="5EjpQu2450s" role="37wK5m">
+                      <property role="Xl_RC" value="#MPSPropertiesConfigurable" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1$BfoDW4Wgm" role="3cqZAp">
+              <node concept="2OqwBi" id="1$BfoDW4WDJ" role="3clFbG">
+                <node concept="2YIFZM" id="1$BfoDW4Wv7" role="2Oq$k0">
+                  <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                </node>
+                <node concept="liA8E" id="1$BfoDW51vD" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+                  <node concept="1bVj0M" id="45TH7vNFThI" role="37wK5m">
+                    <node concept="3clFbS" id="45TH7vNFThK" role="1bW5cS">
+                      <node concept="3clFbF" id="1kPkRp81Jph" role="3cqZAp">
+                        <node concept="2OqwBi" id="1kPkRp81Jpi" role="3clFbG">
+                          <node concept="37vLTw" id="1kPkRp81Jpj" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
+                          </node>
+                          <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
+                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="1$BfoDW52n3" role="37wK5m">
+                    <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+                    <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="45TH7vNFGLC" role="3clFbw">
+            <node concept="3y3z36" id="45TH7vNFGFW" role="3uHU7B">
               <node concept="37vLTw" id="4tC7IH_ZtRG" role="3uHU7B">
                 <ref role="3cqZAo" node="1pyYjDPRa0n" resolve="myResult" />
               </node>
               <node concept="10Nm6u" id="4tC7IH_Zuxq" role="3uHU7w" />
             </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1kPkRp81JoN" role="3cqZAp">
-          <node concept="3cpWsn" id="1kPkRp81JoO" role="3cpWs9">
-            <property role="TrG5h" value="configurable" />
-            <node concept="3uibUv" id="18UX1JGc0o8" role="1tU5fm">
-              <ref role="3uigEE" to="gsnq:~MPSPropertiesConfigurable" resolve="MPSPropertiesConfigurable" />
-            </node>
-            <node concept="2ShNRf" id="1kPkRp81JoQ" role="33vP2m">
-              <node concept="1pGfFk" id="1kPkRp81JoR" role="2ShVmc">
-                <ref role="37wK5l" to="gsnq:~ModelPropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.project.Project)" resolve="ModelPropertiesConfigurable" />
-                <node concept="37vLTw" id="7v4sgDc94PB" role="37wK5m">
-                  <ref role="3cqZAo" node="1pyYjDPRa0n" resolve="myResult" />
-                </node>
-                <node concept="37vLTw" id="4oi2Bf2r7Uj" role="37wK5m">
-                  <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
-                </node>
+            <node concept="3y3z36" id="45TH7vNFH_j" role="3uHU7w">
+              <node concept="37vLTw" id="4tC7IH_ZuFo" role="3uHU7B">
+                <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
               </node>
+              <node concept="10Nm6u" id="4tC7IH_ZuQk" role="3uHU7w" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1kPkRp81JoV" role="3cqZAp">
-          <node concept="3cpWsn" id="1kPkRp81JoW" role="3cpWs9">
-            <property role="TrG5h" value="configurableEditor" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="1kPkRp81JoX" role="1tU5fm">
-              <ref role="3uigEE" to="qxsb:~SingleConfigurableEditor" resolve="SingleConfigurableEditor" />
-            </node>
-            <node concept="2ShNRf" id="1kPkRp81JoY" role="33vP2m">
-              <node concept="1pGfFk" id="1kPkRp81JoZ" role="2ShVmc">
-                <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.options.Configurable,java.lang.String)" resolve="SingleConfigurableEditor" />
-                <node concept="2YIFZM" id="1kPkRp81Jp0" role="37wK5m">
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <node concept="37vLTw" id="4oi2Bf2rhZH" role="37wK5m">
-                    <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="1kPkRp81Jp6" role="37wK5m">
-                  <ref role="3cqZAo" node="1kPkRp81JoO" resolve="configurable" />
-                </node>
-                <node concept="Xl_RD" id="5EjpQu2450s" role="37wK5m">
-                  <property role="Xl_RC" value="#MPSPropertiesConfigurable" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1$BfoDW4Wgm" role="3cqZAp">
-          <node concept="2OqwBi" id="1$BfoDW4WDJ" role="3clFbG">
-            <node concept="2YIFZM" id="1$BfoDW4Wv7" role="2Oq$k0">
-              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-            </node>
-            <node concept="liA8E" id="1$BfoDW51vD" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
-              <node concept="2ShNRf" id="1kPkRp81Jp9" role="37wK5m">
-                <node concept="YeOm9" id="1kPkRp81Jpa" role="2ShVmc">
-                  <node concept="1Y3b0j" id="1kPkRp81Jpb" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                    <node concept="3Tm1VV" id="1kPkRp81Jpc" role="1B3o_S" />
-                    <node concept="3clFb_" id="1kPkRp81Jpd" role="jymVt">
-                      <property role="IEkAT" value="false" />
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="run" />
-                      <property role="DiZV1" value="false" />
-                      <node concept="3Tm1VV" id="1kPkRp81Jpe" role="1B3o_S" />
-                      <node concept="3cqZAl" id="1kPkRp81Jpf" role="3clF45" />
-                      <node concept="3clFbS" id="1kPkRp81Jpg" role="3clF47">
-                        <node concept="3clFbF" id="1kPkRp81Jph" role="3cqZAp">
-                          <node concept="2OqwBi" id="1kPkRp81Jpi" role="3clFbG">
-                            <node concept="37vLTw" id="1kPkRp81Jpj" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
-                            </node>
-                            <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
-                              <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2AHcQZ" id="3tYsUK_RVJp" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="2YIFZM" id="1$BfoDW52n3" role="37wK5m">
-                <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
-                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
-              </node>
-            </node>
-          </node>
-        </node>
+      </node>
+      <node concept="2AHcQZ" id="4tQ0$v36jMD" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="4tC7IH_Y8wO" role="jymVt" />

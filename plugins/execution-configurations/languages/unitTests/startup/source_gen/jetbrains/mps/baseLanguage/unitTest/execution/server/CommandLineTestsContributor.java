@@ -5,17 +5,23 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import java.io.IOException;
 import java.util.List;
 import java.util.LinkedList;
+import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.LineNumberReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import org.junit.runner.Request;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 public class CommandLineTestsContributor implements TestsContributor {
-  private String[] myArgs;
+  private final String[] myArgs;
+
   public CommandLineTestsContributor(String[] args) throws IOException {
     myArgs = inlineFilesContents(args);
   }
+
   private String[] inlineFilesContents(String[] args) throws IOException {
     List<String> newArgs = new LinkedList<String>();
     for (int num = 0; num < args.length; ++num) {
@@ -28,9 +34,10 @@ public class CommandLineTestsContributor implements TestsContributor {
         newArgs.add(curArg);
       }
     }
-    return newArgs.toArray(new String[1]);
+    return newArgs.toArray(new String[newArgs.size()]);
   }
-  private List<String> parseRequestFromFile(String filename) throws IOException {
+
+  private List<String> parseRequestFromFile(@NotNull String filename) throws IOException {
     new File(filename).deleteOnExit();
     LineNumberReader reader = new LineNumberReader(new FileReader(filename));
     List<String> fileContents = new ArrayList<String>();
@@ -39,40 +46,66 @@ public class CommandLineTestsContributor implements TestsContributor {
       if (line == null) {
         break;
       }
-      if (line.length() == 0) {
-        continue;
+      if (!(line.isEmpty())) {
+        fileContents.add(line);
       }
-      fileContents.add(line);
     }
     return fileContents;
   }
+
   @Override
-  public Iterable<Request> gatherTests() throws IOException, ClassNotFoundException {
+  public Iterable<Request> gatherTests() throws IOException {
     List<Request> requests = new LinkedList<Request>();
     int i = 0;
     while (i < myArgs.length) {
       if ("-c".equals(myArgs[i])) {
         i++;
-        requests.add(parseRequestFromClass(myArgs[i]));
+        Request classRequest = parseRequestFromClass(myArgs[i]);
+        if (classRequest != null) {
+          requests.add(classRequest);
+        }
       } else
       if ("-m".equals(myArgs[i])) {
         i++;
-        parseRequestFromMethod(requests, myArgs[i]);
+        Request methodRequest = parseRequestFromMethod(myArgs[i]);
+        if (methodRequest != null) {
+          requests.add(methodRequest);
+        }
       }
       i++;
     }
     return requests;
   }
 
-  private void parseRequestFromMethod(List<Request> requests, String s) throws ClassNotFoundException {
-    int index = s.lastIndexOf('.');
-    String testCase = s.substring(0, index);
-    String method = s.substring(index + 1);
-    requests.add(Request.method(Class.forName(testCase), method));
+  private Request parseRequestFromMethod(@NotNull String methodString) {
+    int index = methodString.lastIndexOf('.');
+    String testClassName = methodString.substring(0, index);
+    String testMethod = methodString.substring(index + 1);
+    Class<?> testClass = getTestClass(testClassName);
+    if (testClass != null) {
+      return Request.method(testClass, testMethod);
+    }
+    return null;
   }
 
-  private Request parseRequestFromClass(String className) throws ClassNotFoundException {
-    return Request.aClass(Class.forName(className));
+  private Request parseRequestFromClass(@NotNull String classString) {
+    Class<?> testClass = getTestClass(classString);
+    if (testClass != null) {
+      return Request.aClass(testClass);
+    }
+    return null;
   }
 
+  protected static Logger LOG = LogManager.getLogger(CommandLineTestsContributor.class);
+  private Class<?> getTestClass(String className) {
+    Class<?> testClass = null;
+    try {
+      testClass = Class.forName(className);
+    } catch (ClassNotFoundException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Test class " + className + " has not been found: it will be skipped", e);
+      }
+    }
+    return testClass;
+  }
 }

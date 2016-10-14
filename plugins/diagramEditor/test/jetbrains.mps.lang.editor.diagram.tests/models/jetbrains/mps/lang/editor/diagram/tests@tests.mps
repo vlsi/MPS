@@ -8,7 +8,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="050560c9-658e-49c5-b8e7-9e4db4c7e97f" name="jetbrains.mps.lang.editor.diagram.testLanguage" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
@@ -2145,7 +2145,7 @@
                         <ref role="3xOPvv" node="1YuI9hFtlyQ" resolve="node" />
                       </node>
                       <node concept="3Tsc0h" id="1YuI9hFtUPa" role="2OqNvi">
-                        <ref role="3TtcxE" to="g85x:4N$3GFO7R9i" />
+                        <ref role="3TtcxE" to="g85x:4N$3GFO7R9i" resolve="outputs" />
                       </node>
                     </node>
                     <node concept="2DeJg1" id="1YuI9hFuZra" role="2OqNvi" />

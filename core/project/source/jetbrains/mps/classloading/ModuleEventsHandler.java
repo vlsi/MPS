@@ -117,6 +117,14 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
     if (modulesToUpdate.size() > 0) updateModules(modulesToUpdate);
   }
 
+  public void pause() {
+    myDispatcher.pause();
+  }
+
+  public void proceed() {
+    myDispatcher.proceed();
+  }
+
   private class MyModuleEventVisitor implements SModuleEventVisitor {
     private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<ReloadableModuleBase>();
     private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<ReloadableModuleBase>();
@@ -155,12 +163,12 @@ class ModuleEventsHandler implements SRepositoryBatchListener {
     private void removeUnloaded(SModuleReference mRef) {
       for (Iterator<ReloadableModuleBase> iterator = myModulesToLoad.iterator(); iterator.hasNext();) {
         ReloadableModule module = iterator.next();
-        SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
+        SModuleReference ref = module.getModuleReference();
         if (mRef.equals(ref)) iterator.remove();
       }
       for (Iterator<ReloadableModuleBase> iterator = myModulesToUpdate.iterator(); iterator.hasNext();) {
         ReloadableModule module = iterator.next();
-        SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
+        SModuleReference ref = module.getModuleReference();
         if (mRef.equals(ref)) iterator.remove();
       }
     }

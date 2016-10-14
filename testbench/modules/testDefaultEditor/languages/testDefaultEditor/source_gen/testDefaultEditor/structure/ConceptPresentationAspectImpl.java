@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractDeveloper = new ConceptPresentationBuilder().create();
@@ -28,83 +25,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0n.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractDeveloper;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Canvas;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_Company;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_DefaultNodeAttribute;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_DefaultPropertyAttribute;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_DefaultReferenceAttribute;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_Developer;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_DummyMethod;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_Friend;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_NotSubstitutableDeveloper;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_Shape;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_Team;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractDeveloper:
+        return props_AbstractDeveloper;
+      case LanguageConceptSwitch.Canvas:
+        return props_Canvas;
+      case LanguageConceptSwitch.Company:
+        return props_Company;
+      case LanguageConceptSwitch.DefaultNodeAttribute:
+        return props_DefaultNodeAttribute;
+      case LanguageConceptSwitch.DefaultPropertyAttribute:
+        return props_DefaultPropertyAttribute;
+      case LanguageConceptSwitch.DefaultReferenceAttribute:
+        return props_DefaultReferenceAttribute;
+      case LanguageConceptSwitch.Developer:
+        return props_Developer;
+      case LanguageConceptSwitch.DummyMethod:
+        return props_DummyMethod;
+      case LanguageConceptSwitch.Friend:
+        return props_Friend;
+      case LanguageConceptSwitch.NotSubstitutableDeveloper:
+        return props_NotSubstitutableDeveloper;
+      case LanguageConceptSwitch.Shape:
+        return props_Shape;
+      case LanguageConceptSwitch.Team:
+        return props_Team;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L, "testDefaultEditor.structure.AbstractDeveloper"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5daL, "testDefaultEditor.structure.Canvas"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f723L, "testDefaultEditor.structure.Company"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8aee1L, "testDefaultEditor.structure.DefaultNodeAttribute"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8ae64L, "testDefaultEditor.structure.DefaultPropertyAttribute"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8aeb7L, "testDefaultEditor.structure.DefaultReferenceAttribute"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, "testDefaultEditor.structure.Developer"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x535e489f8b62af67L, "testDefaultEditor.structure.DummyMethod"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf13be7aL, "testDefaultEditor.structure.Friend"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9853b871L, "testDefaultEditor.structure.NotSubstitutableDeveloper"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5dbL, "testDefaultEditor.structure.Shape"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L, "testDefaultEditor.structure.Team"));
 }

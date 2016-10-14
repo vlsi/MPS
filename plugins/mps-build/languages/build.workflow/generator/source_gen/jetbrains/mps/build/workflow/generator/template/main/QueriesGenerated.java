@@ -31,7 +31,7 @@ import jetbrains.mps.build.workflow.generator.util.CycleHelper;
 import jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.generator.template.PatternRuleContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -440,7 +440,7 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-  public static Object insertMacro_varValue_3961775458390375615(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3961775458390375615(final TemplateVarContext _context) {
     StringBuilder res = new StringBuilder();
     Set<String> used = new HashSet<String>();
     Iterable<SNode> dependencies = SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, 0x2670d5989d5ace5eL, "dependencies"));
@@ -458,7 +458,7 @@ public class QueriesGenerated {
     }
     return res.toString();
   }
-  public static Object insertMacro_varValue_3961775458390373890(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3961775458390373890(final TemplateVarContext _context) {
     List<SNode> parts = new ArrayList<SNode>();
     for (SNode sibl : SNodeOperations.getAllSiblings(_context.getNode(), false)) {
       if (SNodeOperations.isInstanceOf(sibl, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart")) && _context.getNode() == SLinkOperations.getTarget(SNodeOperations.cast(sibl, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart")), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1b9L, "task"))) {

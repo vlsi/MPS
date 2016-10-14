@@ -6,11 +6,15 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.tool.gentest.plugin.FacetAspectDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.tool.gentest.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.tool.gentest)";
+  public static final String MODULE_REF = "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.tool.gentest)";
   public Language() {
   }
   @Override
@@ -32,11 +36,26 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new jetbrains.mps.tool.gentest.behavior.BehaviorAspectDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.MakeAspectDescriptor")) {
       if (aspectClass == MakeAspectDescriptor.class) {
         return (T) new FacetAspectDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.tool.gentest.structure.StructureAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConceptPresentationAspect")) {
+      if (aspectClass == ConceptPresentationAspect.class) {
+        return (T) new ConceptPresentationAspectImpl();
+      }
+    }
+    return null;
   }
 }

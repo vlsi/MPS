@@ -7,9 +7,8 @@ import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
-import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -18,40 +17,38 @@ import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
+import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.util.Reference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Level;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (this.getRunType() < 0 || this.getRunType() > JUnitRunTypes.values().length) {
-      throw new RuntimeConfigurationError("Type of test not selected.");
-    } else {
+    {
+      if (this.getRunType() < 0 || this.getRunType() > JUnitRunTypes.values().length) {
+        throw new RuntimeConfigurationError("Type of test not selected.");
+      }
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      if (eq_jtq3ac_a0c0a0a1(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())) {
-        return;
+      MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+      checkCachesDirIsFreeToLock();
+      checkInProcessRunIsSingle();
+      if (!((eq_jtq3ac_a0a0g0a0b(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
+        check(mpsProject);
       }
-      if (!(hasTests(ProjectHelper.toMPSProject(myProject)))) {
-        throw new RuntimeConfigurationError("Could not find tests to run.");
-      }
-    }
-
-    if (this.getLightExec() && JUnitLightExecutor.getRunState().get() != RunStateEnum.IDLE) {
-      throw new RuntimeConfigurationError("There is already another instance running tests in-process. Only one instance is allowed to run in-process.");
-    }
-    if (!(this.getLightExec()) && this.getReuseCaches() && !(canSaveCachesPath())) {
-      throw new RuntimeConfigurationError("The chosen caches directory is already locked by another run. Please choose another one.");
     }
   }
   @Override
@@ -71,8 +68,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public String getModule() {
     return myState.myModule;
   }
-  public boolean getLightExec() {
-    return myState.myLightExec;
+  public boolean getInProcess() {
+    return myState.myInProcess;
   }
   public boolean getReuseCaches() {
     return myState.myReuseCaches;
@@ -98,8 +95,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setModule(String value) {
     myState.myModule = value;
   }
-  public void setLightExec(boolean value) {
-    myState.myLightExec = value;
+  public void setInProcess(boolean value) {
+    myState.myInProcess = value;
   }
   public void setReuseCaches(boolean value) {
     myState.myReuseCaches = value;
@@ -131,42 +128,54 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean canSaveCachesPath() {
     return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
   }
-  public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
-    return this.getLightExec() && !(this.getDebug());
+  public boolean canExecuteInProcess(Iterable<ITestNodeWrapper> testNodes) {
+    return this.getInProcess() && !(this.getDebug());
   }
-  public List<ITestNodeWrapper> getTests(final Project project) {
-    return Sequence.fromIterable(collectTests(project)).toListSequence();
+  public List<ITestNodeWrapper> getTests(final MPSProject project) {
+    return ListSequence.fromList(collectTests(project)).toListSequence();
   }
-  public boolean hasTests(final Project project) {
-    final boolean[] hasTests = {true};
+  private void check(final MPSProject project) throws RuntimeConfigurationException {
     final JUnitSettings_Configuration settings = this;
-    project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        hasTests[0] = getJUnitRunType().hasTests(settings, project);
+    String errorMsg = new ModelAccessHelper(project.getRepository()).runReadAction(new Computable<String>() {
+      public String compute() {
+        JUnitRunTypes chosenType = getJUnitRunType();
+        return chosenType.check(settings, project);
       }
     });
-    return hasTests[0];
+    if ((errorMsg != null && errorMsg.length() > 0)) {
+      throw new RuntimeConfigurationError(errorMsg);
+    }
   }
-  public List<ITestNodeWrapper> getTestsUnderProgress(final Project project) {
-    return Sequence.fromIterable(collectTests(project)).toListSequence();
+  private void checkInProcessRunIsSingle() throws RuntimeConfigurationException {
+    if (this.getInProcess() && JUnitInProcessExecutor.getRunState().get() != RunStateEnum.IDLE) {
+      throw new RuntimeConfigurationError("There is already another instance running tests in-process. Only one instance is allowed to run in-process.");
+    }
   }
-  public List<SNodeReference> getTestsToMake(final Project project) {
-    final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
+  private void checkCachesDirIsFreeToLock() throws RuntimeConfigurationException {
+    if (!(this.getInProcess()) && this.getReuseCaches() && !(canSaveCachesPath())) {
+      throw new RuntimeConfigurationError("The chosen caches directory is already locked by another run. Please choose another one.");
+    }
+  }
+  public List<ITestNodeWrapper> getTestsUnderProgress(final MPSProject project) {
+    return ListSequence.fromList(collectTests(project)).toListSequence();
+  }
+  public List<SNodeReference> getTestsToMake(final MPSProject project) {
+    final Reference<List<ITestNodeWrapper>> toTest = new Reference<List<ITestNodeWrapper>>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
       public void run() {
-        stuffToTest[0] = getTestsUnderProgress(project);
+        toTest.set(getTestsUnderProgress(project));
       }
     }, ModalityState.NON_MODAL);
-    return ListSequence.fromList(stuffToTest[0]).select(new ISelector<ITestNodeWrapper, SNodeReference>() {
+    return ListSequence.fromList(toTest.get()).select(new ISelector<ITestNodeWrapper, SNodeReference>() {
       public SNodeReference select(ITestNodeWrapper it) {
         return it.getNodePointer();
       }
     }).toListSequence();
   }
-  private Iterable<ITestNodeWrapper> collectTests(final Project project) {
+  private List<ITestNodeWrapper> collectTests(final MPSProject project) {
     return getJUnitRunType().collect(this, project);
   }
+  protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
   @Override
   public JUnitSettings_Configuration clone() {
     JUnitSettings_Configuration clone = null;
@@ -184,7 +193,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public class MyState {
     public String myModel;
     public String myModule;
-    public boolean myLightExec = true;
+    public boolean myInProcess = true;
     public boolean myReuseCaches = true;
     public boolean myDebug = false;
     public String myCachesPath = getDefaultPath();
@@ -198,7 +207,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       JUnitSettings_Configuration.MyState state = new JUnitSettings_Configuration.MyState();
       state.myModel = myModel;
       state.myModule = myModule;
-      state.myLightExec = myLightExec;
+      state.myInProcess = myInProcess;
       state.myReuseCaches = myReuseCaches;
       state.myDebug = myDebug;
       state.myCachesPath = myCachesPath;
@@ -212,10 +221,10 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       return state;
     }
   }
-  public JUnitSettings_Configuration(com.intellij.openapi.project.Project project) {
+  public JUnitSettings_Configuration(Project project) {
     myProject = project;
   }
-  private final com.intellij.openapi.project.Project myProject;
+  private final Project myProject;
   private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;
   public JUnitSettings_Configuration createCloneTemplate() {
     return new JUnitSettings_Configuration(myProject);
@@ -229,8 +238,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
-  private static boolean eq_jtq3ac_a0c0a0a1(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0a0g0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -357,7 +357,7 @@
                 </node>
                 <node concept="2ShNRf" id="5vTxdEzyTYT" role="37vLTx">
                   <node concept="1pGfFk" id="5vTxdEzyTYU" role="2ShVmc">
-                    <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitLightExecutor" />
+                    <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="37vLTw" id="5vTxdEzyTYV" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzyTYt" resolve="testNodes" />
                     </node>
@@ -465,7 +465,7 @@
             </node>
             <node concept="3cpWs8" id="5vTxdEzyTZw" role="3cqZAp">
               <node concept="3cpWsn" id="5vTxdEzyTZx" role="3cpWs9">
-                <property role="TrG5h" value="exitcode" />
+                <property role="TrG5h" value="exitCode" />
                 <node concept="10Oyi0" id="5vTxdEzyTZy" role="1tU5fm" />
                 <node concept="2YIFZM" id="5vTxdEzyTZz" role="33vP2m">
                   <ref role="1Pybhc" to="lk2n:3oW7HLfqDlu" resolve="ProcessHandlerBuilder" />
@@ -484,17 +484,29 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="5vTxdEzyTZC" role="3cqZAp">
-              <node concept="3clFbS" id="5vTxdEzyTZD" role="3clFbx">
-                <node concept="3xETmq" id="5vTxdEzyTZE" role="3cqZAp">
-                  <node concept="3_1$Yv" id="5vTxdEzyTZF" role="3_9lra">
-                    <node concept="3cpWs3" id="5vTxdEzyTZG" role="3_1BAH">
-                      <node concept="37vLTw" id="5vTxdEzyTZH" role="3uHU7w">
-                        <ref role="3cqZAo" node="5vTxdEzyTZx" resolve="exitcode" />
+            <node concept="3cpWs8" id="2SyXq5NjyAi" role="3cqZAp">
+              <node concept="3cpWsn" id="2SyXq5NjyAj" role="3cpWs9">
+                <property role="TrG5h" value="failedMustBe" />
+                <node concept="10Oyi0" id="2SyXq5NjxDg" role="1tU5fm" />
+                <node concept="2OqwBi" id="2SyXq5NjyAk" role="33vP2m">
+                  <node concept="37vLTw" id="2SyXq5NjyAl" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5vTxdEzyU0s" resolve="failure" />
+                  </node>
+                  <node concept="34oBXx" id="2SyXq5NjyAm" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2SyXq5Nk0cD" role="3cqZAp">
+              <node concept="3clFbS" id="2SyXq5Nk0cE" role="3clFbx">
+                <node concept="3xETmq" id="2SyXq5Nk0cF" role="3cqZAp">
+                  <node concept="3_1$Yv" id="2SyXq5Nk0cG" role="3_9lra">
+                    <node concept="3cpWs3" id="2SyXq5Nk0cH" role="3_1BAH">
+                      <node concept="37vLTw" id="2SyXq5Nk2OX" role="3uHU7w">
+                        <ref role="3cqZAo" node="5vTxdEzyTZx" resolve="exitCode" />
                       </node>
-                      <node concept="3cpWs3" id="5vTxdEzyTZI" role="3uHU7B">
-                        <node concept="3cpWs3" id="5vTxdEzyTZJ" role="3uHU7B">
-                          <node concept="Xl_RD" id="5vTxdEzyTZK" role="3uHU7B">
+                      <node concept="3cpWs3" id="2SyXq5Nk0cI" role="3uHU7B">
+                        <node concept="3cpWs3" id="2SyXq5Nk0cJ" role="3uHU7B">
+                          <node concept="Xl_RD" id="2SyXq5Nk0cK" role="3uHU7B">
                             <property role="Xl_RC" value="Exit code must be equal to " />
                           </node>
                           <node concept="2OqwBi" id="5vTxdEzyTZL" role="3uHU7w">
@@ -502,6 +514,64 @@
                               <ref role="3cqZAo" node="5vTxdEzyU0s" resolve="failure" />
                             </node>
                             <node concept="34oBXx" id="5vTxdEzyTZN" role="2OqNvi" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="2SyXq5Nk0cL" role="3uHU7w">
+                          <property role="Xl_RC" value=", but " />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="2SyXq5Nk0cM" role="3clFbw">
+                <node concept="37vLTw" id="2SyXq5Nk2K$" role="3uHU7B">
+                  <ref role="3cqZAo" node="5vTxdEzyTZx" resolve="exitCode" />
+                </node>
+                <node concept="37vLTw" id="2SyXq5Nk2dY" role="3uHU7w">
+                  <ref role="3cqZAo" node="2SyXq5NjyAj" resolve="failedMustBe" />
+                </node>
+              </node>
+              <node concept="3eNFk2" id="5vTxdEzyTZU" role="3eNLev">
+                <node concept="3eOVzh" id="5vTxdEzyTZV" role="3eO9$A">
+                  <node concept="3cmrfG" id="5vTxdEzyTZW" role="3uHU7w">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="37vLTw" id="2SyXq5Nk2YK" role="3uHU7B">
+                    <ref role="3cqZAo" node="5vTxdEzyTZx" resolve="exitCode" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="5vTxdEzyTZY" role="3eOfB_">
+                  <node concept="3xETmq" id="5vTxdEzyTZZ" role="3cqZAp">
+                    <node concept="3_1$Yv" id="5vTxdEzyU00" role="3_9lra">
+                      <node concept="Xl_RD" id="5vTxdEzyU01" role="3_1BAH">
+                        <property role="Xl_RC" value="Process is running for too long" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="5vTxdEzyTZC" role="3cqZAp">
+              <node concept="3clFbS" id="5vTxdEzyTZD" role="3clFbx">
+                <node concept="3xETmq" id="5vTxdEzyTZE" role="3cqZAp">
+                  <node concept="3_1$Yv" id="5vTxdEzyTZF" role="3_9lra">
+                    <node concept="3cpWs3" id="5vTxdEzyTZG" role="3_1BAH">
+                      <node concept="2OqwBi" id="2SyXq5Nj35h" role="3uHU7w">
+                        <node concept="37vLTw" id="2SyXq5Nj2WF" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
+                        </node>
+                        <node concept="liA8E" id="2SyXq5Nj49Z" role="2OqNvi">
+                          <ref role="37wK5l" to="sfqd:56tRMpP_ffy" resolve="getFailedTests" />
+                        </node>
+                      </node>
+                      <node concept="3cpWs3" id="5vTxdEzyTZI" role="3uHU7B">
+                        <node concept="3cpWs3" id="5vTxdEzyTZJ" role="3uHU7B">
+                          <node concept="Xl_RD" id="5vTxdEzyTZK" role="3uHU7B">
+                            <property role="Xl_RC" value="The number of failed tests be equal to " />
+                          </node>
+                          <node concept="37vLTw" id="2SyXq5Nj$ga" role="3uHU7w">
+                            <ref role="3cqZAo" node="2SyXq5NjyAj" resolve="failedMustBe" />
                           </node>
                         </node>
                         <node concept="Xl_RD" id="5vTxdEzyTZO" role="3uHU7w">
@@ -513,32 +583,82 @@
                 </node>
               </node>
               <node concept="3y3z36" id="5vTxdEzyTZP" role="3clFbw">
-                <node concept="37vLTw" id="5vTxdEzyTZQ" role="3uHU7B">
-                  <ref role="3cqZAo" node="5vTxdEzyTZx" resolve="exitcode" />
+                <node concept="37vLTw" id="2SyXq5NjyAn" role="3uHU7w">
+                  <ref role="3cqZAo" node="2SyXq5NjyAj" resolve="failedMustBe" />
                 </node>
-                <node concept="2OqwBi" id="5vTxdEzyTZR" role="3uHU7w">
-                  <node concept="37vLTw" id="5vTxdEzyTZS" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5vTxdEzyU0s" resolve="failure" />
+                <node concept="2OqwBi" id="2SyXq5NiR7z" role="3uHU7B">
+                  <node concept="37vLTw" id="2SyXq5NiQ$W" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
                   </node>
-                  <node concept="34oBXx" id="5vTxdEzyTZT" role="2OqNvi" />
+                  <node concept="liA8E" id="2SyXq5NiRZR" role="2OqNvi">
+                    <ref role="37wK5l" to="sfqd:56tRMpP_ffy" resolve="getFailedTests" />
+                  </node>
                 </node>
               </node>
-              <node concept="3eNFk2" id="5vTxdEzyTZU" role="3eNLev">
-                <node concept="3eOVzh" id="5vTxdEzyTZV" role="3eO9$A">
-                  <node concept="3cmrfG" id="5vTxdEzyTZW" role="3uHU7w">
-                    <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="3cpWs8" id="2SyXq5NjwJO" role="3cqZAp">
+              <node concept="3cpWsn" id="2SyXq5NjwJP" role="3cpWs9">
+                <property role="TrG5h" value="completedMustBe" />
+                <node concept="10Oyi0" id="2SyXq5NjwJD" role="1tU5fm" />
+                <node concept="3cpWs3" id="2SyXq5NjwJQ" role="33vP2m">
+                  <node concept="2OqwBi" id="2SyXq5NjwJR" role="3uHU7w">
+                    <node concept="37vLTw" id="2SyXq5NjwJS" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5vTxdEzyU0p" resolve="success" />
+                    </node>
+                    <node concept="34oBXx" id="2SyXq5NjwJT" role="2OqNvi" />
                   </node>
-                  <node concept="37vLTw" id="5vTxdEzyTZX" role="3uHU7B">
-                    <ref role="3cqZAo" node="5vTxdEzyTZx" resolve="exitcode" />
+                  <node concept="2OqwBi" id="2SyXq5NjwJU" role="3uHU7B">
+                    <node concept="37vLTw" id="2SyXq5NjwJV" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5vTxdEzyU0s" resolve="failure" />
+                    </node>
+                    <node concept="34oBXx" id="2SyXq5NjwJW" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="3clFbS" id="5vTxdEzyTZY" role="3eOfB_">
-                  <node concept="3xETmq" id="5vTxdEzyTZZ" role="3cqZAp">
-                    <node concept="3_1$Yv" id="5vTxdEzyU00" role="3_9lra">
-                      <node concept="Xl_RD" id="5vTxdEzyU01" role="3_1BAH">
-                        <property role="Xl_RC" value="Process is running for too long" />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2SyXq5NjpGo" role="3cqZAp">
+              <node concept="3clFbS" id="2SyXq5NjpGp" role="3clFbx">
+                <node concept="3xETmq" id="2SyXq5NjpGq" role="3cqZAp">
+                  <node concept="3_1$Yv" id="2SyXq5NjpGr" role="3_9lra">
+                    <node concept="3cpWs3" id="2SyXq5NjpGs" role="3_1BAH">
+                      <node concept="2OqwBi" id="2SyXq5NjpGt" role="3uHU7w">
+                        <node concept="37vLTw" id="2SyXq5NjpGu" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
+                        </node>
+                        <node concept="liA8E" id="2SyXq5NjpGv" role="2OqNvi">
+                          <ref role="37wK5l" to="sfqd:56tRMpP_ffy" resolve="getFailedTests" />
+                        </node>
+                      </node>
+                      <node concept="3cpWs3" id="2SyXq5NjpGw" role="3uHU7B">
+                        <node concept="3cpWs3" id="2SyXq5NjpGx" role="3uHU7B">
+                          <node concept="Xl_RD" id="2SyXq5NjpGy" role="3uHU7B">
+                            <property role="Xl_RC" value="The number of completed tests be equal to " />
+                          </node>
+                          <node concept="2OqwBi" id="2SyXq5NjpGz" role="3uHU7w">
+                            <node concept="37vLTw" id="2SyXq5NjpG$" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5vTxdEzyU0s" resolve="failure" />
+                            </node>
+                            <node concept="34oBXx" id="2SyXq5NjpG_" role="2OqNvi" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="2SyXq5NjpGA" role="3uHU7w">
+                          <property role="Xl_RC" value=", but " />
+                        </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="2SyXq5NjpGB" role="3clFbw">
+                <node concept="37vLTw" id="2SyXq5NjwJX" role="3uHU7w">
+                  <ref role="3cqZAo" node="2SyXq5NjwJP" resolve="completedMustBe" />
+                </node>
+                <node concept="2OqwBi" id="2SyXq5NjpGF" role="3uHU7B">
+                  <node concept="37vLTw" id="2SyXq5NjpGG" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
+                  </node>
+                  <node concept="liA8E" id="2SyXq5NjpGH" role="2OqNvi">
+                    <ref role="37wK5l" to="sfqd:56tRMpP_ffE" resolve="getCompletedTests" />
                   </node>
                 </node>
               </node>
@@ -684,7 +804,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2_AUN5Gsv_a" role="3cqZAp" />
       </node>
     </node>
     <node concept="1LZb2c" id="5vTxdEzyU1G" role="1SL9yI">
@@ -809,7 +928,7 @@
                 </node>
                 <node concept="2ShNRf" id="5vTxdEzz10y" role="33vP2m">
                   <node concept="1pGfFk" id="5vTxdEzz10z" role="2ShVmc">
-                    <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitLightExecutor" />
+                    <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="37vLTw" id="5vTxdEzz10$" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzz122" resolve="testNodes" />
                     </node>
@@ -825,11 +944,11 @@
                 <property role="TrG5h" value="lightState" />
                 <property role="3TUv4t" value="true" />
                 <node concept="3uibUv" id="5vTxdEzFcdk" role="1tU5fm">
-                  <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestLightRunState" />
+                  <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
                 </node>
                 <node concept="2YIFZM" id="5vTxdEzF5UE" role="33vP2m">
                   <ref role="37wK5l" to="ic9i:5vTxdEzDDpO" resolve="getRunState" />
-                  <ref role="1Pybhc" to="ic9i:5iYlssmVvC7" resolve="JUnitLightExecutor" />
+                  <ref role="1Pybhc" to="ic9i:5iYlssmVvC7" resolve="JUnitInProcessExecutor" />
                 </node>
               </node>
             </node>
@@ -1081,16 +1200,11 @@
                 </node>
                 <node concept="liA8E" id="5vTxdEzAzNk" role="2OqNvi">
                   <ref role="37wK5l" to="5zyv:~CountDownLatch.await(long,java.util.concurrent.TimeUnit):boolean" resolve="await" />
-                  <node concept="17qRlL" id="5vTxdEzA_0o" role="37wK5m">
-                    <node concept="3cmrfG" id="5vTxdEzA_0r" role="3uHU7w">
-                      <property role="3cmrfH" value="1000" />
-                    </node>
-                    <node concept="3cmrfG" id="5vTxdEzA$0w" role="3uHU7B">
-                      <property role="3cmrfH" value="30" />
-                    </node>
+                  <node concept="3cmrfG" id="5vTxdEzA$0w" role="37wK5m">
+                    <property role="3cmrfH" value="10" />
                   </node>
-                  <node concept="Rm8GO" id="5vTxdEzAA7i" role="37wK5m">
-                    <ref role="Rm8GQ" to="5zyv:~TimeUnit.MILLISECONDS" resolve="MILLISECONDS" />
+                  <node concept="Rm8GO" id="5d37arGBj4C" role="37wK5m">
+                    <ref role="Rm8GQ" to="5zyv:~TimeUnit.SECONDS" resolve="SECONDS" />
                     <ref role="1Px2BO" to="5zyv:~TimeUnit" resolve="TimeUnit" />
                   </node>
                 </node>
@@ -1264,7 +1378,7 @@
         <property role="TrG5h" value="lightState" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="7iQDiGjjSJz" role="1tU5fm">
-          <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestLightRunState" />
+          <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
         </node>
       </node>
       <node concept="3clFbS" id="7iQDiGjjSJh" role="3clF47">
@@ -1485,7 +1599,7 @@
                 </node>
                 <node concept="2ShNRf" id="5XEoQWrnLB" role="37vLTx">
                   <node concept="1pGfFk" id="5XEoQWrnLC" role="2ShVmc">
-                    <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitLightExecutor" />
+                    <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="37vLTw" id="5XEoQWrnLD" role="37wK5m">
                       <ref role="3cqZAo" node="5XEoQWrnLb" resolve="testNodes" />
                     </node>

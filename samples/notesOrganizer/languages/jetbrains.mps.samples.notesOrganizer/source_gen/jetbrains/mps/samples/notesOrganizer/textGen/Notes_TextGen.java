@@ -22,7 +22,4 @@ public class Notes_TextGen extends TextGenDescriptorBase {
       tgs.appendNode(item);
     }
   }
-  public String getExtension(SNode node) {
-    return "txt";
-  }
 }

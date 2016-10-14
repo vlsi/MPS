@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.openapi.editor.commands;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -28,10 +27,10 @@ public interface CommandContext {
   void commandFinished();
 
   /**
-   * This method can be used to access contextual node (opened in current editor) to associate undo context with it.
+   * Returning contextual node to associate undo context with it. Usually contextual node is a
+   * root node (of a node opened in an editor). Contextual node has VirtualFile associated with it.
    *
-   * @return contextual node
+   * @return contextual node or null if current editor has no node inside
    */
-  @NotNull
   SNode getContextNode();
 }

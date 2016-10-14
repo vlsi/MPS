@@ -11,6 +11,8 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -34,8 +36,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -59,6 +59,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       element.addContent(fieldElement);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -93,7 +94,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return myJavaRunParameters;
   }
   public List<SNodeReference> getTestsToMake() {
-    return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
+    return this.getJUnitSettings().getTestsToMake(ProjectHelper.fromIdeaProject(this.getProject()));
   }
   public UnitTestViewComponent createTestViewComponent(TestRunState runState, final ProcessHandler process) {
     ConsoleView console = ConsoleCreator.createConsoleView(this.getProject(), false);
@@ -161,5 +162,4 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   public Object[] createMakeNodePointersTask() {
     return new Object[]{this.getTestsToMake()};
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
 }

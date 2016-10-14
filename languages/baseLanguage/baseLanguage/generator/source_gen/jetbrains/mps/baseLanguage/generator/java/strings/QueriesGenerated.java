@@ -18,7 +18,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 
 @Generated
@@ -179,14 +179,14 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3505562578125797802(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(_context.getNode());
   }
-  public static Object insertMacro_varValue_6269300764715623918(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_6269300764715623918(final TemplateVarContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(it);
       }
     }).first(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".IsNotEmptyStringMethod";
   }
-  public static Object insertMacro_varValue_6269300764714539646(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_6269300764714539646(final TemplateVarContext _context) {
     // ExtractStaticMethodExpression looks for first non static class 
     // and as long as there's no alternative to ESME, this code shall 
     // respect the way ContextUtil.getContextForMethod works 

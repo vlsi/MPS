@@ -9,17 +9,17 @@ import jetbrains.mps.make.MakeNotification;
 import com.intellij.openapi.project.Project;
 
 public class MigrationMakeBlocker extends AbstractProjectComponent {
-  private IMakeService myMake;
-  private MigrationTrigger myMigationTrigger;
+  private final IMakeService myMake;
+  private final MigrationTrigger myMigrationTrigger;
 
   private IMakeNotificationListener.Stub myListener = new IMakeNotificationListener.Stub() {
     @Override
     public void sessionOpened(MakeNotification notification) {
-      myMigationTrigger.blockMigrationsCheck();
+      myMigrationTrigger.blockMigrationsCheck();
     }
     @Override
     public void sessionClosed(MakeNotification notification) {
-      myMigationTrigger.unblockMigrationsCheck();
+      myMigrationTrigger.unblockMigrationsCheck();
     }
   };
 
@@ -28,13 +28,15 @@ public class MigrationMakeBlocker extends AbstractProjectComponent {
     myMake = ms;
 
     if (migationTrigger instanceof MigrationTrigger) {
-      myMigationTrigger = ((MigrationTrigger) migationTrigger);
+      myMigrationTrigger = ((MigrationTrigger) migationTrigger);
+    } else {
+      myMigrationTrigger = null;
     }
   }
 
   @Override
   public void projectOpened() {
-    if (myMigationTrigger == null) {
+    if (myMigrationTrigger == null) {
       return;
     }
     myMake.addListener(this.myListener);
@@ -42,7 +44,7 @@ public class MigrationMakeBlocker extends AbstractProjectComponent {
 
   @Override
   public void projectClosed() {
-    if (myMigationTrigger == null) {
+    if (myMigrationTrigger == null) {
       return;
     }
     myMake.removeListener(myListener);

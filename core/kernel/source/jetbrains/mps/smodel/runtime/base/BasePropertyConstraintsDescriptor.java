@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -32,20 +27,11 @@ import jetbrains.mps.smodel.runtime.InheritanceIterable;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
   private final SProperty myProperty;
@@ -54,11 +40,6 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   private final PropertyConstraintsDescriptor getterDescriptor;
   private final PropertyConstraintsDescriptor setterDescriptor;
   private final PropertyConstraintsDescriptor validatorDescriptor;
-
-  @Deprecated
-  public BasePropertyConstraintsDescriptor(String propertyName, ConstraintsDescriptor container) {
-    this(ConceptRegistry.getInstance().getConceptDescriptor(container.getConceptId()).getPropertyDescriptor(propertyName).getId(), container);
-  }
 
   @Deprecated
   @ToRemove(version = 3.4)
@@ -109,10 +90,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   }
 
   private static boolean isBootstrapProperty(SAbstractConcept concept, SProperty property) {
-    SModuleReference strucLangRef = BootstrapLanguages.structureLanguageRef();
-    SLanguage strucLang = MetaAdapterFactory.getLanguage(MetaIdByDeclaration.ref2LangId(
-        strucLangRef), strucLangRef.getModuleName());
-    if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.getLanguage().equals(strucLang)) {
+    if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.equals(SNodeUtil.concept_INamedConcept)) {
       return true;
     }
     if (property.getOwner().equals(SNodeUtil.concept_RuntimeTypeVariable)) {
@@ -219,26 +197,20 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     return node.getProperty(myProperty);
   }
 
-  private ConceptDescriptor getConceptDescriptor() {
-    return ConceptRegistry.getInstance().getConceptDescriptor(getContainer().getConceptId());
-  }
-
   @Override
   public void setValue(SNode node, String value) {
     //this line is just to get old compiled code not to get into infinite recursion.
     //remove it after 3.1
     //ask Mihail Muhin or Timur Abishev for details
     if (setterDescriptor == this) {
-      String name = getConceptDescriptor().getPropertyDescriptor(getProperty()).getName();
-      node.setProperty(MetaAdapterFactory.getProperty(getProperty(), name), value);
+      node.setProperty(myProperty, value);
       return;
     }
 
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value);
     } else {
-      String name = getConceptDescriptor().getPropertyDescriptor(getProperty()).getName();
-      node.setProperty(MetaAdapterFactory.getProperty(getProperty(), name), value);
+      node.setProperty(myProperty, value);
     }
   }
 

@@ -18,9 +18,9 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -168,7 +168,18 @@ class EDTExecutor {
 
             /* start worker */
             workerStarted = true;
-            ApplicationManager.getApplication().invokeLater(myWorker, ModalityState.NON_MODAL);
+            /*
+             * Using ModalityState.any() here because there is one queue of model read/write tasks in MPS now (myTasks).
+             * myWorker runnable used to flush (a part of) this queue in AWT thread and, by design, we expect scheduled
+             * myWorker to be executed before we schedule next one.
+             *
+             * If current modality state was changed to more specific one (another modal dialog become visible) then scheduled
+             * myWorker will not be executed unless the state changed back, so task processing will be effectively frozen till
+             * the moment of modality state change.
+             *
+             * To avoid this situation, ModalityState.any() used here.
+             */
+            ApplicationManager.getApplication().invokeLater(myWorker, ModalityState.any());
           }
         }
       } catch (Exception e) {

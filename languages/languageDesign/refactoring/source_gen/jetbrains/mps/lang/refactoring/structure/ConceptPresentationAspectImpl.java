@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractMoveExpression = new ConceptPresentationBuilder().create();
@@ -65,268 +62,107 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0yb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractMoveExpression;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractMoveNodeExpression;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractMoveNodesExpression;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AffectedNodesClause;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConceptFunctionParameter_Model;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ConceptFunctionParameter_Module;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ConceptFunctionParameter_SModel;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ConceptFunctionParameter_SNode;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ContextMemberOperation;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ContextType;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_CreateRefactoringContext;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_DoRefactorClause;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_DoWhenDoneClause;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ExecuteRefactoringStatement;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_GetModelsToUpdateClause;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_InitClause;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_IsApplicableToModelClause;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_IsApplicableToModuleClause;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_IsApplicableToNodeClause;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_IsRefactoringApplicable;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_MainProjectOperation;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ModelDescriptorOperation;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ModelTarget;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ModelsToGenerateByDefault;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ModelsToGenerateClause;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ModuleOperation;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ModuleTarget;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_MoveNodeToModelExpression;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_MoveNodeToNodeExpression;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_MoveNodesToModelExpression;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_MoveNodesToNodeExpression;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_NodeOperation;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_NodeTarget;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_NodesOperation;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_OperationContextOperation;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_ProjectOperation;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_Refactoring;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_RefactoringAction;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_RefactoringArgument;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_RefactoringArgumentReference;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_RefactoringContext_ConceptFunctionParameter;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_RefactoringField;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_RefactoringFieldReference;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_RefactoringParameter;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_RefactoringParameterReference;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_RefactoringTarget;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_RepositoryOperation;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_ScopeOperation;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_UpdateModelProcedure;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractMoveExpression:
+        return props_AbstractMoveExpression;
+      case LanguageConceptSwitch.AbstractMoveNodeExpression:
+        return props_AbstractMoveNodeExpression;
+      case LanguageConceptSwitch.AbstractMoveNodesExpression:
+        return props_AbstractMoveNodesExpression;
+      case LanguageConceptSwitch.AffectedNodesClause:
+        return props_AffectedNodesClause;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Model:
+        return props_ConceptFunctionParameter_Model;
+      case LanguageConceptSwitch.ConceptFunctionParameter_Module:
+        return props_ConceptFunctionParameter_Module;
+      case LanguageConceptSwitch.ConceptFunctionParameter_SModel:
+        return props_ConceptFunctionParameter_SModel;
+      case LanguageConceptSwitch.ConceptFunctionParameter_SNode:
+        return props_ConceptFunctionParameter_SNode;
+      case LanguageConceptSwitch.ContextMemberOperation:
+        return props_ContextMemberOperation;
+      case LanguageConceptSwitch.ContextType:
+        return props_ContextType;
+      case LanguageConceptSwitch.CreateRefactoringContext:
+        return props_CreateRefactoringContext;
+      case LanguageConceptSwitch.DoRefactorClause:
+        return props_DoRefactorClause;
+      case LanguageConceptSwitch.DoWhenDoneClause:
+        return props_DoWhenDoneClause;
+      case LanguageConceptSwitch.ExecuteRefactoringStatement:
+        return props_ExecuteRefactoringStatement;
+      case LanguageConceptSwitch.GetModelsToUpdateClause:
+        return props_GetModelsToUpdateClause;
+      case LanguageConceptSwitch.InitClause:
+        return props_InitClause;
+      case LanguageConceptSwitch.IsApplicableToModelClause:
+        return props_IsApplicableToModelClause;
+      case LanguageConceptSwitch.IsApplicableToModuleClause:
+        return props_IsApplicableToModuleClause;
+      case LanguageConceptSwitch.IsApplicableToNodeClause:
+        return props_IsApplicableToNodeClause;
+      case LanguageConceptSwitch.IsRefactoringApplicable:
+        return props_IsRefactoringApplicable;
+      case LanguageConceptSwitch.MainProjectOperation:
+        return props_MainProjectOperation;
+      case LanguageConceptSwitch.ModelDescriptorOperation:
+        return props_ModelDescriptorOperation;
+      case LanguageConceptSwitch.ModelTarget:
+        return props_ModelTarget;
+      case LanguageConceptSwitch.ModelsToGenerateByDefault:
+        return props_ModelsToGenerateByDefault;
+      case LanguageConceptSwitch.ModelsToGenerateClause:
+        return props_ModelsToGenerateClause;
+      case LanguageConceptSwitch.ModuleOperation:
+        return props_ModuleOperation;
+      case LanguageConceptSwitch.ModuleTarget:
+        return props_ModuleTarget;
+      case LanguageConceptSwitch.MoveNodeToModelExpression:
+        return props_MoveNodeToModelExpression;
+      case LanguageConceptSwitch.MoveNodeToNodeExpression:
+        return props_MoveNodeToNodeExpression;
+      case LanguageConceptSwitch.MoveNodesToModelExpression:
+        return props_MoveNodesToModelExpression;
+      case LanguageConceptSwitch.MoveNodesToNodeExpression:
+        return props_MoveNodesToNodeExpression;
+      case LanguageConceptSwitch.NodeOperation:
+        return props_NodeOperation;
+      case LanguageConceptSwitch.NodeTarget:
+        return props_NodeTarget;
+      case LanguageConceptSwitch.NodesOperation:
+        return props_NodesOperation;
+      case LanguageConceptSwitch.OperationContextOperation:
+        return props_OperationContextOperation;
+      case LanguageConceptSwitch.ProjectOperation:
+        return props_ProjectOperation;
+      case LanguageConceptSwitch.Refactoring:
+        return props_Refactoring;
+      case LanguageConceptSwitch.RefactoringAction:
+        return props_RefactoringAction;
+      case LanguageConceptSwitch.RefactoringArgument:
+        return props_RefactoringArgument;
+      case LanguageConceptSwitch.RefactoringArgumentReference:
+        return props_RefactoringArgumentReference;
+      case LanguageConceptSwitch.RefactoringContext_ConceptFunctionParameter:
+        return props_RefactoringContext_ConceptFunctionParameter;
+      case LanguageConceptSwitch.RefactoringField:
+        return props_RefactoringField;
+      case LanguageConceptSwitch.RefactoringFieldReference:
+        return props_RefactoringFieldReference;
+      case LanguageConceptSwitch.RefactoringParameter:
+        return props_RefactoringParameter;
+      case LanguageConceptSwitch.RefactoringParameterReference:
+        return props_RefactoringParameterReference;
+      case LanguageConceptSwitch.RefactoringTarget:
+        return props_RefactoringTarget;
+      case LanguageConceptSwitch.RepositoryOperation:
+        return props_RepositoryOperation;
+      case LanguageConceptSwitch.ScopeOperation:
+        return props_ScopeOperation;
+      case LanguageConceptSwitch.UpdateModelProcedure:
+        return props_UpdateModelProcedure;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0yb = buildConceptIndices(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174eee67c1L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174eeedfb6L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1179d272ac6L, "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1199f5764daL, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0577L, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff551cd5L, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a059eL, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646dL, "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b65b84aL, "jetbrains.mps.lang.refactoring.structure.ContextType"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x335c206b02bc2de5L, "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff4a9da3L, "jetbrains.mps.lang.refactoring.structure.DoRefactorClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1c9210c7226dbbf4L, "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1fe4fcef62d0186cL, "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x119f1c05cbcL, "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e4d77d2L, "jetbrains.mps.lang.refactoring.structure.InitClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1199f56b378L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0571L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0598L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5b9318cd86fd917dL, "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x709995bad7715796L, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646fL, "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056aL, "jetbrains.mps.lang.refactoring.structure.ModelTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x3c55f2dab56d441dL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x175aa0f4225aa61fL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616471L, "jetbrains.mps.lang.refactoring.structure.ModuleOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056bL, "jetbrains.mps.lang.refactoring.structure.ModuleTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef1677bL, "jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef58749L, "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef7a718L, "jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174efa95a1L, "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616473L, "jetbrains.mps.lang.refactoring.structure.NodeOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616475L, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616477L, "jetbrains.mps.lang.refactoring.structure.OperationContextOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616479L, "jetbrains.mps.lang.refactoring.structure.ProjectOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"), MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x2cfffca8ff395f2fL, "jetbrains.mps.lang.refactoring.structure.RefactoringAction"), MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327d5dL, "jetbrains.mps.lang.refactoring.structure.RefactoringArgument"), MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327dc4L, "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61724aL, "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0662L, "jetbrains.mps.lang.refactoring.structure.RefactoringField"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL, "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameter"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77cda06L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0569L, "jetbrains.mps.lang.refactoring.structure.RefactoringTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x526920001de2794bL, "jetbrains.mps.lang.refactoring.structure.RepositoryOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61647bL, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x11710c75c77L, "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"));
 }

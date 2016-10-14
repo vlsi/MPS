@@ -103,7 +103,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
         referentNode = reference.getTargetNode();
-        if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(context.getModel(),referentNode.getModel())) {
+        if (referentNode == null || referentNode.getModel() == null) {
           String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
           myErrorText = rinfo != null ? rinfo : "?" + myRole + "?";
           return createErrorCell(myErrorText, node, context);

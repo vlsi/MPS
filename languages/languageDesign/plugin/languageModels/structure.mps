@@ -339,7 +339,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1207148993063" />
       <ref role="20lvS9" node="h$ftmJ5" resolve="ElementListContents" />
-      <ref role="20ksaX" node="h$ftENW" />
+      <ref role="20ksaX" node="h$ftENW" resolve="contents" />
     </node>
     <node concept="PrWs8" id="1653mnvB2t_" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -488,7 +488,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1206092795071" />
       <ref role="20lvS9" node="hyS4$9Z" resolve="ActionParameterDeclaration" />
-      <ref role="20ksaX" to="tp4f:hyWH_vG" />
+      <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
     </node>
   </node>
   <node concept="PlHQZ" id="h$ft7GX">
@@ -658,7 +658,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1210180958412" />
       <ref role="20lvS9" node="hB4jfOQ" resolve="PersistentPropertyDeclaration" />
-      <ref role="20ksaX" to="tp4f:hyWH_vG" />
+      <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
     </node>
     <node concept="PrWs8" id="hB4HXeh" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
@@ -885,7 +885,7 @@
       <property role="20kJfa" value="parameterDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1217252428771" />
-      <ref role="20ksaX" to="tp4f:hyWH_vG" />
+      <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
       <ref role="20lvS9" node="hHDS2nw" resolve="ActionDataParameterDeclaration" />
     </node>
   </node>
@@ -936,7 +936,7 @@
       <property role="20kJfa" value="declaration" />
       <property role="IQ2ns" value="1227008991854" />
       <ref role="20lvS9" node="hQJriJs" resolve="ActionConstructionParameterDeclaration" />
-      <ref role="20ksaX" to="tp4f:hyWH_vG" />
+      <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
     </node>
     <node concept="PrWs8" id="hQJtaXG" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
@@ -1560,7 +1560,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1821622352985038320" />
       <ref role="20lvS9" node="hQJriJs" resolve="ActionConstructionParameterDeclaration" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="73o9OgiE96s">
@@ -1780,7 +1780,7 @@
     <property role="TrG5h" value="ActionDeclaration" />
     <property role="3GE5qa" value="Actions.Action" />
     <property role="34LRSv" value="Action" />
-    <property role="2Bxbrw" value="http://confluence.jetbrains.com/display/MPSD33/Plugin#Plugin-actionsandactiongroups" />
+    <property role="2Bxbrw" value="http://confluence.jetbrains.com/display/MPSD34/Plugin#Plugin-actionsandactiongroups" />
     <property role="EcuMT" value="1203071646776" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hwtmbzj" role="1TKVEi">

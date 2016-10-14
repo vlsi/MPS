@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbsExpression = new ConceptPresentationBuilder().create();
@@ -75,318 +72,127 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0ic.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbsExpression;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractIndex;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ArithmSymbol;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BigComplexType;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BigDecimalType;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BigIntegerType;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BigMaxExpression;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_BigMinExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_BigProdExpression;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_BigSumExpression;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_ComplexLiteral;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ComplexType;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ConjugateOperation;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_CosineExpression;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_DecimalBinaryOperation;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_DecimalDivExpression;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_DecimalMinusExpression;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_DecimalMulExpression;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_DecimalPlusExpression;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_Determinant;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_DivExpressionFraction;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ExponentExpression;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ExponentialOperation;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ExtrSymbol;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_InIntervalExpression;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_IntervalContainsExpression;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_IntervalLiteral;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_IntervalType;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_LinearSolveOperation;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_LiteralI;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_LogExpression;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_MathContext;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_MathFuncExpression;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_MathPrimitiveType;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_MathSymbol;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_MathSymbolFromToIndex;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_MathSymbolIndex;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_MathSymbolIndexReference;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_MathTypeCast;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_MatrixConstructor;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_MatrixElementAccessExpression;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_MatrixExponentialOperation;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_MatrixIndexWildcard;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_MatrixInitializer;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_MatrixInitializerIndex;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_MatrixInitializerIndexReference;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_MatrixInverseOperation;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_MatrixNorm;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_MatrixOrVectorInitializer;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_MatrixOrVectorType;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_MatrixType;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_MatrixUnit;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_MatrixZero;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_PowExpression;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_SineExpression;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_TangentExpression;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_TransposeOperation;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_VectorInitializer;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_VectorType;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbsExpression:
+        return props_AbsExpression;
+      case LanguageConceptSwitch.AbstractIndex:
+        return props_AbstractIndex;
+      case LanguageConceptSwitch.ArithmSymbol:
+        return props_ArithmSymbol;
+      case LanguageConceptSwitch.BigComplexType:
+        return props_BigComplexType;
+      case LanguageConceptSwitch.BigDecimalType:
+        return props_BigDecimalType;
+      case LanguageConceptSwitch.BigIntegerType:
+        return props_BigIntegerType;
+      case LanguageConceptSwitch.BigMaxExpression:
+        return props_BigMaxExpression;
+      case LanguageConceptSwitch.BigMinExpression:
+        return props_BigMinExpression;
+      case LanguageConceptSwitch.BigProdExpression:
+        return props_BigProdExpression;
+      case LanguageConceptSwitch.BigSumExpression:
+        return props_BigSumExpression;
+      case LanguageConceptSwitch.ComplexLiteral:
+        return props_ComplexLiteral;
+      case LanguageConceptSwitch.ComplexType:
+        return props_ComplexType;
+      case LanguageConceptSwitch.ConjugateOperation:
+        return props_ConjugateOperation;
+      case LanguageConceptSwitch.CosineExpression:
+        return props_CosineExpression;
+      case LanguageConceptSwitch.DecimalBinaryOperation:
+        return props_DecimalBinaryOperation;
+      case LanguageConceptSwitch.DecimalDivExpression:
+        return props_DecimalDivExpression;
+      case LanguageConceptSwitch.DecimalMinusExpression:
+        return props_DecimalMinusExpression;
+      case LanguageConceptSwitch.DecimalMulExpression:
+        return props_DecimalMulExpression;
+      case LanguageConceptSwitch.DecimalPlusExpression:
+        return props_DecimalPlusExpression;
+      case LanguageConceptSwitch.Determinant:
+        return props_Determinant;
+      case LanguageConceptSwitch.DivExpressionFraction:
+        return props_DivExpressionFraction;
+      case LanguageConceptSwitch.ExponentExpression:
+        return props_ExponentExpression;
+      case LanguageConceptSwitch.ExponentialOperation:
+        return props_ExponentialOperation;
+      case LanguageConceptSwitch.ExtrSymbol:
+        return props_ExtrSymbol;
+      case LanguageConceptSwitch.InIntervalExpression:
+        return props_InIntervalExpression;
+      case LanguageConceptSwitch.IntervalContainsExpression:
+        return props_IntervalContainsExpression;
+      case LanguageConceptSwitch.IntervalLiteral:
+        return props_IntervalLiteral;
+      case LanguageConceptSwitch.IntervalType:
+        return props_IntervalType;
+      case LanguageConceptSwitch.LinearSolveOperation:
+        return props_LinearSolveOperation;
+      case LanguageConceptSwitch.LiteralI:
+        return props_LiteralI;
+      case LanguageConceptSwitch.LogExpression:
+        return props_LogExpression;
+      case LanguageConceptSwitch.MathContext:
+        return props_MathContext;
+      case LanguageConceptSwitch.MathFuncExpression:
+        return props_MathFuncExpression;
+      case LanguageConceptSwitch.MathPrimitiveType:
+        return props_MathPrimitiveType;
+      case LanguageConceptSwitch.MathSymbol:
+        return props_MathSymbol;
+      case LanguageConceptSwitch.MathSymbolFromToIndex:
+        return props_MathSymbolFromToIndex;
+      case LanguageConceptSwitch.MathSymbolIndex:
+        return props_MathSymbolIndex;
+      case LanguageConceptSwitch.MathSymbolIndexReference:
+        return props_MathSymbolIndexReference;
+      case LanguageConceptSwitch.MathTypeCast:
+        return props_MathTypeCast;
+      case LanguageConceptSwitch.MatrixConstructor:
+        return props_MatrixConstructor;
+      case LanguageConceptSwitch.MatrixElementAccessExpression:
+        return props_MatrixElementAccessExpression;
+      case LanguageConceptSwitch.MatrixExponentialOperation:
+        return props_MatrixExponentialOperation;
+      case LanguageConceptSwitch.MatrixIndexWildcard:
+        return props_MatrixIndexWildcard;
+      case LanguageConceptSwitch.MatrixInitializer:
+        return props_MatrixInitializer;
+      case LanguageConceptSwitch.MatrixInitializerIndex:
+        return props_MatrixInitializerIndex;
+      case LanguageConceptSwitch.MatrixInitializerIndexReference:
+        return props_MatrixInitializerIndexReference;
+      case LanguageConceptSwitch.MatrixInverseOperation:
+        return props_MatrixInverseOperation;
+      case LanguageConceptSwitch.MatrixNorm:
+        return props_MatrixNorm;
+      case LanguageConceptSwitch.MatrixOrVectorInitializer:
+        return props_MatrixOrVectorInitializer;
+      case LanguageConceptSwitch.MatrixOrVectorType:
+        return props_MatrixOrVectorType;
+      case LanguageConceptSwitch.MatrixType:
+        return props_MatrixType;
+      case LanguageConceptSwitch.MatrixUnit:
+        return props_MatrixUnit;
+      case LanguageConceptSwitch.MatrixZero:
+        return props_MatrixZero;
+      case LanguageConceptSwitch.PowExpression:
+        return props_PowExpression;
+      case LanguageConceptSwitch.SineExpression:
+        return props_SineExpression;
+      case LanguageConceptSwitch.TangentExpression:
+        return props_TangentExpression;
+      case LanguageConceptSwitch.TransposeOperation:
+        return props_TransposeOperation;
+      case LanguageConceptSwitch.VectorInitializer:
+        return props_VectorInitializer;
+      case LanguageConceptSwitch.VectorType:
+        return props_VectorType;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0ic = buildConceptIndices(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12051ecbe19L, "jetbrains.mps.baseLanguage.math.structure.AbsExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea76c7e0L, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e7ac42L, "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120096f8e4cL, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12009449465L, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e16047L, "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e1674dL, "jetbrains.mps.baseLanguage.math.structure.BigMinExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e12aa0L, "jetbrains.mps.baseLanguage.math.structure.BigProdExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe188eafbL, "jetbrains.mps.baseLanguage.math.structure.BigSumExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120095d7138L, "jetbrains.mps.baseLanguage.math.structure.ComplexType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e64afe53L, "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12053114b76L, "jetbrains.mps.baseLanguage.math.structure.CosineExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697107bL, "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12076988136L, "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120769754c8L, "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697a328L, "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x3a6682eeb060fd5L, "jetbrains.mps.baseLanguage.math.structure.Determinant"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120531e6b2fL, "jetbrains.mps.baseLanguage.math.structure.ExponentExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e1ca4eL, "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483964L, "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483968L, "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483972L, "jetbrains.mps.baseLanguage.math.structure.IntervalType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205202c5edL, "jetbrains.mps.baseLanguage.math.structure.LiteralI"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205311f8ffL, "jetbrains.mps.baseLanguage.math.structure.LogExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, "jetbrains.mps.baseLanguage.math.structure.MathContext"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205307b067L, "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea765cf0L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca6da8L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200fb8bcedL, "jetbrains.mps.baseLanguage.math.structure.MathTypeCast"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e647ad7dL, "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f4339L, "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f255L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, "jetbrains.mps.baseLanguage.math.structure.MatrixNorm"), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x513c04200c187a63L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af3c3bdfL, "jetbrains.mps.baseLanguage.math.structure.MatrixUnit"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, "jetbrains.mps.baseLanguage.math.structure.MatrixZero"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052b2cdd3L, "jetbrains.mps.baseLanguage.math.structure.PowExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205311204eL, "jetbrains.mps.baseLanguage.math.structure.SineExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205311cb56L, "jetbrains.mps.baseLanguage.math.structure.TangentExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x7418107bdc9576d4L, "jetbrains.mps.baseLanguage.math.structure.TransposeOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"));
 }

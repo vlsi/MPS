@@ -2,7 +2,7 @@
 <model ref="r:a6f63b9a-5cc8-4eb8-8222-686d3dfeb45e(jetbrains.mps.samples.Shapes.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -250,7 +250,7 @@
         <property role="3F0ifm" value="color:" />
       </node>
       <node concept="3F1sOY" id="3CF0obv99ai" role="3EZMnx">
-        <ref role="1NtTu8" to="lpry:3CF0obv99ac" />
+        <ref role="1NtTu8" to="lpry:3CF0obv99ac" resolve="color" />
       </node>
       <node concept="l2Vlx" id="57sEyAnjX6N" role="2iSdaV" />
     </node>
@@ -299,7 +299,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="57sEyAnjZE5" role="3EZMnx">
-        <ref role="1NtTu8" to="lpry:57sEyAnjZD7" />
+        <ref role="1NtTu8" to="lpry:57sEyAnjZD7" resolve="shapes" />
         <node concept="2iRkQZ" id="57sEyAnk97w" role="2czzBx" />
       </node>
       <node concept="l2Vlx" id="57sEyAnjZD_" role="2iSdaV" />
@@ -308,7 +308,7 @@
   <node concept="24kQdi" id="3CF0obv98wp">
     <ref role="1XX52x" to="lpry:3CF0obv8w6J" resolve="ColorReference" />
     <node concept="1iCGBv" id="3CF0obv98Cu" role="2wV5jI">
-      <ref role="1NtTu8" to="lpry:3CF0obv8waq" />
+      <ref role="1NtTu8" to="lpry:3CF0obv8waq" resolve="color" />
       <node concept="1sVBvm" id="3CF0obv98Cv" role="1sWHZn">
         <node concept="3F0A7n" id="3CF0obv98C$" role="2wV5jI">
           <property role="1Intyy" value="true" />
@@ -833,7 +833,7 @@
       <node concept="3EZMnI" id="3u6SZi0IxZO" role="3EZMnx">
         <node concept="2iRfu4" id="3u6SZi0IxZP" role="2iSdaV" />
         <node concept="3F2HdR" id="3u6SZi0IxZD" role="3EZMnx">
-          <ref role="1NtTu8" to="lpry:57sEyAnjZD7" />
+          <ref role="1NtTu8" to="lpry:57sEyAnjZD7" resolve="shapes" />
           <node concept="2iRkQZ" id="3u6SZi0IxZE" role="2czzBx" />
         </node>
         <node concept="3XFhqQ" id="3u6SZi0LuxV" role="3EZMnx" />
@@ -855,6 +855,18 @@
         </node>
       </node>
       <node concept="l2Vlx" id="3u6SZi0IxZF" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6ckZSPrYzsv">
+    <ref role="1XX52x" to="lpry:6ckZSPrYnm8" resolve="Color" />
+    <node concept="3EZMnI" id="6ckZSPrYzsx" role="2wV5jI">
+      <node concept="3F0ifn" id="6ckZSPrYzsC" role="3EZMnx">
+        <property role="3F0ifm" value="Color" />
+      </node>
+      <node concept="3F0A7n" id="6ckZSPrYzsI" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="l2Vlx" id="6ckZSPrYzs$" role="2iSdaV" />
     </node>
   </node>
 </model>

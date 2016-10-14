@@ -17,14 +17,16 @@ import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class Template_GDClass extends TemplateDeclarationBase implements TemplateDeclaration {
+
   public Template_GDClass() {
   }
+
   public SNodeReference getTemplateNode() {
-    return template_in8ni3_a0a1;
+    return template_in8ni3_a0a3;
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_263208052639693925(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a2));
+    SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_263208052639693925(new SourceSubstituteMacroNodeContext(context, callMacro_in8ni3_b0a0a1a4));
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
       tlist1 = new Template_GeneratorRuntime().apply(environment, context1);
@@ -32,6 +34,7 @@ public class Template_GDClass extends TemplateDeclarationBase implements Templat
     }
     return tlist1;
   }
-  private static SNodePointer template_in8ni3_a0a1 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639692929");
-  private static SNodePointer callMacro_in8ni3_b0a0a1a2 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639693915");
+
+  private static SNodePointer template_in8ni3_a0a3 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639692929");
+  private static SNodePointer callMacro_in8ni3_b0a0a1a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639693915");
 }

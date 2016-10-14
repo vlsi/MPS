@@ -16,8 +16,110 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AuthorBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="BaseBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="BaseDocComment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor" />
+    </file>
+    <file name="BaseDocReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocReference_BehaviorDescriptor" />
+    </file>
+    <file name="BaseInlineDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseInlineDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="BaseParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="BaseVariableDocReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseVariableDocReference_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,102,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,59,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ClassifierDocComment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_BehaviorDescriptor" />
+    </file>
+    <file name="ClassifierDocReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocReference_BehaviorDescriptor" />
+    </file>
+    <file name="CodeInlineDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CodeInlineDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="CodeSnippet_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CodeSnippet_BehaviorDescriptor" />
+    </file>
+    <file name="CommentLinePart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_BehaviorDescriptor" />
+    </file>
+    <file name="CommentLine_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_BehaviorDescriptor" />
+    </file>
+    <file name="DeprecatedBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DeprecatedBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="DocMethodParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DocMethodParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="DocTypeParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DocTypeParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="EmptyBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.EmptyBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="FieldDocComment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocComment_BehaviorDescriptor" />
+    </file>
+    <file name="FieldDocReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocReference_BehaviorDescriptor" />
+    </file>
+    <file name="HTMLElement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_BehaviorDescriptor" />
+    </file>
+    <file name="InheritDocInlineDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.InheritDocInlineDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="InlineTagCommentLinePart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_BehaviorDescriptor" />
+    </file>
+    <file name="LinkInlineDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.LinkInlineDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="MethodDocComment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_BehaviorDescriptor" />
+    </file>
+    <file name="MethodDocReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocReference_BehaviorDescriptor" />
+    </file>
+    <file name="ParameterBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ParameterBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="ReturnBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ReturnBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="SeeBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.SeeBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="SinceBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.SinceBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="StaticFieldDocReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.StaticFieldDocReference_BehaviorDescriptor" />
+    </file>
+    <file name="TextCommentLinePart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.TextCommentLinePart_BehaviorDescriptor" />
+    </file>
+    <file name="ThrowsBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ThrowsBlockDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="ValueInlineDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ValueInlineDocTag_BehaviorDescriptor" />
+    </file>
+    <file name="VersionBlockDocTag_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.VersionBlockDocTag_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/1262430001741642820">

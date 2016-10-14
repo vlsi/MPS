@@ -20,118 +20,159 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public class DeleteModuleHelper {
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+public final class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
-  public static void deleteModule(MPSProject project, SModule module, boolean safeDelete, boolean deleteFiles) {
+  @NotNull private final MPSProject myProject;
+  private final static String NON_PROJECT_MODULES_MSG = "Non-project modules can only be deleted with files deletion enabled. The module %s will not be deleted";
+
+  public DeleteModuleHelper(@NotNull MPSProject project) {
+    myProject = project;
+  }
+
+  public void deleteModules(List<SModule> modules, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
-      if (module instanceof Language) {
-        for (SModule m : ((Language) module).getGenerators()) {
-          safeDelete(project, m, deleteFiles);
-        }
-      }
-      safeDelete(project, module, deleteFiles);
+      LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
     } else {
-      if (module instanceof Language) {
-        for (SModule m : ((Language) module).getGenerators()) {
-          delete(project, m, deleteFiles);
-        }
-      }
-      delete(project, module, deleteFiles);
+      modules.stream().filter(m -> m instanceof Language).forEach(m -> {
+        List<SModule> generators = new ArrayList<>(((Language) m).getGenerators());
+        delete(generators, deleteFiles);
+      });
+      delete(modules, deleteFiles);
     }
   }
 
-  private static void delete(MPSProject project, SModule module, boolean deleteFiles) {
-    //HACK: generator module is not project module, so need to check it separately
-    if (!project.isProjectModule(module instanceof Generator ? ((Generator) module).getSourceLanguage() : module) && !deleteFiles) {
-      throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");
-    }
+  private void delete(@NotNull List<SModule> modules, boolean deleteFiles) {
+    modules = new ArrayList<>(modules);
 
-    //see MPS-18743
-    project.getRepository().saveAll();
+    checkNonProjectModules(modules, deleteFiles);
+
+    // fixme: MPS-18743
+    modules.stream().filter(module -> module instanceof AbstractModule).forEach(module -> ((AbstractModule) module).save());
 
     if (deleteFiles) {
-      for (SModel model : module.getModels()) {
-        DeleteModelHelper.delete(module, model, true);
-      }
+      modules.forEach(this::deleteModuleFiles);
+    }
 
-      if (module.getFacet(JavaModuleFacet.class) != null) {
-        IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
-        if (classesGen != null) {
-          deleteFile(classesGen.toPath().toString());
-        }
-      }
-      if (module.getFacet(TestsFacet.class) != null) {
-        final IFile testsOutputPath = module.getFacet(TestsFacet.class).getTestsOutputPath();
-        if (testsOutputPath != null) {
-          deleteFile(testsOutputPath.toPath().toString());
-        }
-      }
+    modules.forEach(this::removeFromProject);
 
-      if (module instanceof AbstractModule) {
-        AbstractModule curModule = (AbstractModule) module;
-        String outputPath = curModule.getOutputPath().toPath().toString();
+    if (deleteFiles) {
+      ModuleRepositoryFacade facade = new ModuleRepositoryFacade(myProject.getRepository());
+      modules.forEach(facade::unregisterModule);
+    }
+  }
+
+  private void deleteModuleFiles(SModule module) {
+    for (SModel model : module.getModels()) {
+      DeleteModelHelper.delete(module, model, true);
+    }
+
+    deleteJavaFacet(module);
+    deleteTestsFacet(module);
+
+    if (module instanceof AbstractModule) {
+      AbstractModule curModule = (AbstractModule) module;
+      IFile outputPath = curModule.getOutputPath();
+      if (outputPath != null) {
         deleteFile(outputPath);
-        deleteFile(FileGenerationUtil.getCachesPath(outputPath));
+        deleteFile(FileGenerationUtil.getCachesDir(outputPath));
+      }
 
-        if (curModule.getDescriptorFile() != null) {
-          curModule.getDescriptorFile().delete();
-        }
+      if (curModule.getDescriptorFile() != null) {
+        deleteFile(curModule.getDescriptorFile());
+      }
 
-        if (curModule.getModuleSourceDir() != null && curModule.getModuleSourceDir().getChildren().isEmpty()) {
-          deleteFile(curModule.getModuleSourceDir().toPath().toString());
-        }
+      if (curModule.getModuleSourceDir() != null &&
+          curModule.getModuleSourceDir().getChildren() != null &&
+          curModule.getModuleSourceDir().getChildren().isEmpty()) {
+        deleteFile(curModule.getModuleSourceDir());
+      }
 
-        if (curModule.getDescriptorFile() != null) {
-          IFile moduleFolder = curModule.getDescriptorFile().getParent();
-          if (moduleFolder !=null && deleteDirIfEmpty(moduleFolder)) {
-            moduleFolder.delete();
-          }
+      if (curModule.getDescriptorFile() != null) {
+        IFile moduleFolder = curModule.getDescriptorFile().getParent();
+        if (moduleFolder != null && deleteDirIfEmpty(moduleFolder)) {
+          moduleFolder.delete();
         }
       }
     }
+  }
 
+  private void checkNonProjectModules(List<SModule> modules, boolean deleteFiles) {
+    if (!deleteFiles) {
+      for (Iterator<SModule> iterator = modules.iterator(); iterator.hasNext();) {
+        SModule module = iterator.next();
+        SModule module0 = module;
+        if (module instanceof Generator) {
+          module0 = ((Generator) module).getSourceLanguage();
+        }
+        if (!myProject.isProjectModule(module0)) {
+          LOG.warn(String.format(NON_PROJECT_MODULES_MSG, module), new Exception());
+          iterator.remove();
+        }
+      }
+    }
+  }
+
+  private void removeFromProject(SModule module) {
     //remove from project
-    if (project.isProjectModule(module)) {
-      final SRepository repository = project.getRepository();
+    if (myProject.isProjectModule(module)) {
+      final SRepository repository = myProject.getRepository();
       if (repository instanceof SRepositoryExt) {
-        ((SRepositoryExt) repository).unregisterModule(module, project);
+        ((SRepositoryExt) repository).unregisterModule(module, myProject);
       }
-      project.removeModule(module);
-      project.save();
-
-      ((StandaloneMPSProject) project).update();
-    }
-
-    if (deleteFiles) {
-      new ModuleRepositoryFacade(project.getRepository()).removeModuleForced(module);
+      myProject.removeModule(module);
+      myProject.save();
+// FIXME !!!!!!!!!!!!!!!!!!!!
+//      ((StandaloneMPSProject) project).update();
     }
   }
 
-  private static void deleteFile(String path) {
-    IFile file = FileSystem.getInstance().getFile(path);
-    if (!file.exists()) {
-      return;
+  private static void deleteTestsFacet(SModule module) {
+    TestsFacet testsFacet = module.getFacet(TestsFacet.class);
+    if (testsFacet != null) {
+      final IFile testsOutputPath = testsFacet.getTestsOutputPath();
+      if (testsOutputPath != null) {
+        deleteFile(testsOutputPath);
+      }
     }
-    file.delete();
   }
 
-  private static boolean deleteDirIfEmpty(IFile file) {
+  private static void deleteJavaFacet(SModule module) {
+    JavaModuleFacet javaModuleFacet = module.getFacet(JavaModuleFacet.class);
+    if (javaModuleFacet != null) {
+      IFile classesGen = javaModuleFacet.getClassesGen();
+      if (classesGen != null) {
+        deleteFile(classesGen);
+      }
+    }
+  }
+
+  private static void deleteFile(@NotNull IFile file) {
+    if (file.exists()) {
+      file.delete();
+    }
+  }
+
+  private static boolean deleteDirIfEmpty(@NotNull IFile file) {
     if (!file.exists()) {
       return true;
     }
@@ -140,11 +181,12 @@ public class DeleteModuleHelper {
       return false;
     }
 
-    if (file.isDirectory() && file.getChildren().isEmpty()) {
+    if (file.isDirectory() &&
+        file.getChildren() != null &&
+        file.getChildren().isEmpty()) {
       return true;
     }
 
-    boolean checkChild = true;
     for (IFile child : file.getChildren()) {
       if (!deleteDirIfEmpty(child)) {
         return false;
@@ -152,9 +194,5 @@ public class DeleteModuleHelper {
     }
 
     return true;
-  }
-
-  private static void safeDelete(Project project, SModule module, boolean deleteFiles) {
-    LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
   }
 }

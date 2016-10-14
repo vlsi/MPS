@@ -15,32 +15,26 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.menus.CompositeMenuPart;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
-import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * @author simon
  */
-public class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
+class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
+  @NotNull
   private final SAbstractConcept myConcept;
 
-  public DefaultConceptSubstituteMenuPart(SAbstractConcept concept) {
+  DefaultConceptSubstituteMenuPart(@NotNull SAbstractConcept concept) {
     myConcept = concept;
   }
 
@@ -48,8 +42,8 @@ public class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<>();
-    if (!(myConcept.isAbstract()) && myConcept instanceof SConcept) {
-      result.add(new NonAbstractConceptSubstituteMenuPart(((SConcept) myConcept)));
+    if (myConcept instanceof SConcept && !myConcept.isAbstract()) {
+      result.add(new SimpleConceptSubstituteMenuPart(myConcept));
     }
     result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
     return new CompositeMenuPart<>(result).createItems(context);

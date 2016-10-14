@@ -23,11 +23,11 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.impl.RunManagerImpl;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
@@ -145,6 +145,7 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     return EqualUtil.equals(configCreator.myContext, myContext) && EqualUtil.equals(configCreator.mySourceElement, mySourceElement) && EqualUtil.equals(configCreator.getClass().getName(), getClass().getName());
   }
 
+  protected static Logger LOG = LogManager.getLogger(BaseMpsProducer.class);
   @NotNull
   protected static ConfigurationFactory findFactory(ConfigurationType configurationType, @NonNls String configurationFactoryClassName) {
     for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
@@ -157,5 +158,4 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     return configurationType.getConfigurationFactories()[0];
   }
-  protected static Logger LOG = LogManager.getLogger(BaseMpsProducer.class);
 }

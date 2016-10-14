@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -26,18 +27,23 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 class AutoValidator {
-  private final SRepository myRepository;
+  @NotNull
+  private final MyCellSelectionListener mySelectionListener;
+  @NotNull
+  private final EditorComponent myEditorComponent;
+  @NotNull
+  private final MyUpdaterListener myUpdaterListener;
   private boolean mySuppressSelectionChanges = false;
   private boolean myEventsBlocked;
 
-  AutoValidator(EditorComponent editorComponent) {
-    editorComponent.getSelectionManager().addSelectionListener(new MyCellSelectionListener());
-    editorComponent.getUpdater().addListener(new MyUpdaterListener());
-    myRepository = editorComponent.getEditorContext().getRepository();
+  AutoValidator(@NotNull EditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
+    myEditorComponent.getSelectionManager().addSelectionListener(mySelectionListener = new MyCellSelectionListener());
+    myEditorComponent.getUpdater().addListener(myUpdaterListener = new MyUpdaterListener());
   }
 
   private void validateErrorCell(CellInfo cellInfo, EditorComponent editorComponent) {
@@ -45,18 +51,26 @@ class AutoValidator {
     if (cell == null) {
       return;
     }
-    Object memento = editorComponent.getEditorContext().createMemento();
+    EditorComponentState state = editorComponent.getEditorContext().getEditorComponentState();
     mySuppressSelectionChanges = true;
     try {
       APICellAdapter.validate(cell, true, false);
       editorComponent.getUpdater().flushModelEvents();
-      editorComponent.getEditorContext().setMemento(memento);
+      editorComponent.getEditorContext().restoreEditorComponentState(state);
     } finally {
       mySuppressSelectionChanges = false;
     }
   }
 
+  void dispose() {
+    mySelectionListener.dispose();
+    myEditorComponent.getSelectionManager().removeSelectionListener(mySelectionListener);
+    myEditorComponent.getUpdater().removeListener(myUpdaterListener);
+  }
+
   private class MyCellSelectionListener implements SelectionListener {
+    private boolean myDisposed;
+
     @Override
     public void selectionChanged(final EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       if (mySuppressSelectionChanges || oldSelection == newSelection || !(oldSelection instanceof SingularSelection)) {
@@ -80,13 +94,20 @@ class AutoValidator {
 
       final SNode node = editorCell.getSNode();
       final CellInfo cellInfo = editorCell.getCellInfo();
-      myRepository.getModelAccess().executeCommandInEDT(() -> {
+      myEditorComponent.getEditorContext().getRepository().getModelAccess().executeCommandInEDT(() -> {
+        if (myDisposed) {
+          return;
+        }
         if (wasInErrorState) {
           validateErrorCell(cellInfo, editorComponent);
         } else {
           SideTransformInfoUtil.removeTransformInfo(node);
         }
       });
+    }
+
+    public void dispose() {
+      myDisposed = true;
     }
   }
 

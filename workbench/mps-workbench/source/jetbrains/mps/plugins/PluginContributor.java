@@ -22,9 +22,6 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
  * hashCode() and equals() must be overridden for PluginContributor!
  */
 public class PluginContributor extends AbstractPluginFactory {
-  public PluginContributor() {
-  }
-
   public BaseProjectPlugin createProjectPlugin() {
     return null;
   }

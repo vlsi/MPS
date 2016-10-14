@@ -31,17 +31,21 @@ public class MakeSession {
     this.myIsCleanMake = cleanMake;
     this.myIsSticky = false;
   }
+
   @NotNull
   public Project getProject() {
     return myProject;
   }
+
   @NotNull
   public IMessageHandler getMessageHandler() {
     return myMessageHandler;
   }
+
   public boolean isCleanMake() {
     return myIsCleanMake;
   }
+
   /**
    * 
    * @deprecated according to Fedor, obsolete functionality. There are usecases when we can benefit from sticky make session and its explicit shutdown, perhaps shall resurrect.
@@ -51,9 +55,11 @@ public class MakeSession {
   public boolean isSticky() {
     return myIsSticky;
   }
+
   public void doExecute(Runnable scriptRunnable) {
     scriptRunnable.run();
   }
+
   public IScript toScript(ScriptBuilder scriptBuilder) {
     return scriptBuilder.toScript();
   }

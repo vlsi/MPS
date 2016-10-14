@@ -31,6 +31,9 @@ public interface SelectionManager {
   String LAST_CELL = "selector_last";
   String FIRST_EDITABLE_CELL = "selector_first_editable";
   String LAST_EDITABLE_CELL = "selector_last_editable";
+  String FIRST_ERROR_CELL = "selector_first_error";
+  String LAST_ERROR_CELL = "selector_last_error";
+  String FOCUS_POLICY_CELL = "selector_focus_policy";
 
   void clearSelection();
 

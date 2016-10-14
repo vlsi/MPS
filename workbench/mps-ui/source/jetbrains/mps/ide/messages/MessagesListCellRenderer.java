@@ -18,34 +18,45 @@ package jetbrains.mps.ide.messages;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.markup.TextAttributes;
+import com.intellij.ui.JBColor;
 import jetbrains.mps.messages.IMessage;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.Date;
 import java.util.Formatter;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
-  private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
-  private static final TextAttributes INFO_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.SYSTEM_OUTPUT_KEY);
-  private static final TextAttributes ERROR_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_ERROR_OUTPUT_KEY);
-  private static final TextAttributes WARNING_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_WARNING_OUTPUT_KEY);
-  private static final Color CONSOLE_BACKGROUND = EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
+  private final EmptyBorder myEmptyBorder = new EmptyBorder(1, 1, 1, 1);
+  private final TextAttributes myAttributes =
+      EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.SYSTEM_OUTPUT_KEY);
+  private final TextAttributes myErrorAttributes =
+      EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_ERROR_OUTPUT_KEY);
+  private final TextAttributes myWarningAttributes =
+      EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_WARNING_OUTPUT_KEY);
+  private final Color myConsoleBackground =
+      EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
+  private final Color myConsoleBackgroundBrighter = JBColor.GRAY; // some neutral color, with works for both light and dark themes
+  private final Color myConsoleBackgroundDarker = myConsoleBackground.darker();
+  private final LineBorder myLineBorder = new LineBorder(myConsoleBackgroundBrighter, 1, true);
 
+  // Holds index of item, which must be highlighted by border, because it is under mouse cursor
+  private int indexUnderMouse = -1;
+
+  @SuppressWarnings("ThrowableInstanceNeverThrown")
   @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
     final IMessage message = (IMessage) value;
 
-    component.setBackground(isSelected
-      ? CONSOLE_BACKGROUND.darker()
-      : CONSOLE_BACKGROUND);
-    component.setBorder(EMPTY_BORDER);
+    component.setBackground(isSelected ? myConsoleBackgroundDarker : myConsoleBackground);
+    component.setBorder(index == indexUnderMouse ? myLineBorder : myEmptyBorder);
 
     StringBuilder sb = new StringBuilder(120);
     new Formatter(sb).format("%tT\t: ", new Date(message.getCreationTime()));
@@ -69,12 +80,12 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     switch (message.getKind()) {
       case WARNING: {
         component.setIcon(Icons.WARNING_ICON);
-        component.setForeground(WARNING_ATTRIBUTES.getForegroundColor());
+        component.setForeground(myWarningAttributes.getForegroundColor());
         break;
       }
       case ERROR: {
         component.setIcon(Icons.ERROR_ICON);
-        component.setForeground(ERROR_ATTRIBUTES.getForegroundColor());
+        component.setForeground(myErrorAttributes.getForegroundColor());
         break;
       }
       case INFORMATION: {
@@ -82,11 +93,20 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
         // fall-through
       }
       default: {
-        component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
+        component.setForeground(myAttributes.getForegroundColor());
         break;
       }
     }
     component.setText(text);
     return component;
+  }
+
+  /**
+   * Set index for highlighting, because it is under mouse cursor
+   *
+   * @param indexUnderMouse index to save
+   */
+  void setIndexUnderMouse(int indexUnderMouse) {
+    this.indexUnderMouse = indexUnderMouse;
   }
 }

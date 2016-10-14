@@ -43,6 +43,7 @@ public class RefactoringUtil {
     }
     return allRefactorings;
   }
+  protected static Logger LOG_1635700302 = LogManager.getLogger(RefactoringUtil.class);
   public static Set<IRefactoring> getRefactorings(Language language) {
     Set<IRefactoring> result = new HashSet<IRefactoring>();
     SModel refModelDescriptor = SModuleOperations.getAspect(language, "refactorings");
@@ -178,5 +179,4 @@ public class RefactoringUtil {
     }
     public abstract boolean lessThan(RefactoringUtil.Applicability level);
   }
-  protected static Logger LOG_1635700302 = LogManager.getLogger(RefactoringUtil.class);
 }

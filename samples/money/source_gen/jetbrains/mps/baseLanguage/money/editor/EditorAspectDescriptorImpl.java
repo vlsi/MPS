@@ -8,48 +8,40 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyCreator_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MoneyMethodCall_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new MoneyCreator_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new MoneyMethodCall_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new MoneyMethods_Contribution());
+      default:
     }
-    return res;
+    return Collections.<TransformationMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b1673L, "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"));
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL), MetaIdFactory.conceptId(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b1673L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
 }

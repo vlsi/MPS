@@ -229,7 +229,7 @@ public class ModelInputStream extends DataInputStream {
     if (b != LANGUAGE) {
       throw new IOException(Integer.toHexString(b));
     }
-    SLanguage l = MetaAdapterFactory.getLanguage(readUUID(), readString());
+    SLanguage l = MetaAdapterFactory.getLanguage(readLong(), readLong(), readString());
     myLanguages.add(l);
     return l;
   }
@@ -244,7 +244,7 @@ public class ModelInputStream extends DataInputStream {
     if (b != CONCEPT) {
       throw new IOException(Integer.toHexString(b));
     }
-    SConcept c = MetaAdapterFactory.getConcept(readUUID(), readLong(), readString());
+    SConcept c = MetaAdapterFactory.getConcept(readLong(), readLong(), readLong(), readString());
     myConcepts.add(c);
     return c;
   }

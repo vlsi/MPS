@@ -47,6 +47,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Igor Alshannikov
@@ -170,6 +171,10 @@ public class GenerationPartitioner {
       if (targetGenerators.isEmpty()) {
         continue;
       }
+      if (LOG.isDebugEnabled()) {
+        List<String> l = targetGenerators.stream().map(g -> g.getModuleReference().getModuleName()).collect(Collectors.toList());
+        LOG.debug(String.format("Generator %s targets languages with generators %s", generator.getModuleReference().getModuleName(), l));
+      }
       // for each target generator,  add a rule {all MC in the current generator} <= {all MC of target generator}, with respect to top-pri MC
       for (TemplateModule tg : targetGenerators) {
         if (myExplicitDependencies.contains(new Pair<TemplateModule, TemplateModule>(generator, tg))) {
@@ -199,6 +204,12 @@ public class GenerationPartitioner {
     rule.setLeft(createRefs(generator1, lhs));
     rule.setRight(createRefs(generator2, rhs));
     rule.setType(RuleType.BEFORE_OR_TOGETHER);
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(String.format("  Implicit rule added between %s and %s:", generator1.getAlias(), generator2.getAlias()));
+      List<String> lhString = lhs.stream().map(TemplateMappingConfiguration::getName).collect(Collectors.toList());
+      List<String> rhString = rhs.stream().map(TemplateMappingConfiguration::getName).collect(Collectors.toList());
+      LOG.debug(String.format("    %s <= %s", lhString, rhString));
+    }
     processRule(rule, generator1);
   }
 

@@ -2,7 +2,7 @@
 <model ref="r:6f104b69-0cfd-4b06-895f-bc1a1b43170f(jetbrains.mps.build.mps.tests.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -73,7 +73,7 @@
     <ref role="1XX52x" to="5tjl:3X9rC2XzJdM" resolve="BuildMpsLayout_TestModule" />
     <node concept="3EZMnI" id="3X9rC2XzJjj" role="2wV5jI">
       <node concept="1iCGBv" id="3X9rC2XzJjk" role="3EZMnx">
-        <ref role="1NtTu8" to="5tjl:3X9rC2XzJdN" />
+        <ref role="1NtTu8" to="5tjl:3X9rC2XzJdN" resolve="module" />
         <node concept="1sVBvm" id="3X9rC2XzJjl" role="1sWHZn">
           <node concept="3SHvHV" id="3X9rC2XzJjm" role="2wV5jI">
             <node concept="VPRnO" id="7XYaZQUBY5Y" role="3F10Kt" />
@@ -99,7 +99,7 @@
       </node>
       <node concept="3EZMnI" id="3X9rC2XzJjs" role="3EZMnx">
         <node concept="3F2HdR" id="3X9rC2XzJjt" role="3EZMnx">
-          <ref role="1NtTu8" to="5tjl:3X9rC2XzJdK" />
+          <ref role="1NtTu8" to="5tjl:3X9rC2XzJdK" resolve="modules" />
           <node concept="l2Vlx" id="3X9rC2XzJju" role="2czzBx" />
           <node concept="pj6Ft" id="3X9rC2XzJjv" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -129,7 +129,7 @@
           <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
         </node>
         <node concept="3F1sOY" id="6g2MV4s4M$d" role="3EZMnx">
-          <ref role="1NtTu8" to="5tjl:6g2MV4s4KuI" />
+          <ref role="1NtTu8" to="5tjl:6g2MV4s4KuI" resolve="haltonfailure" />
         </node>
         <node concept="l2Vlx" id="NvWe6DqhoP" role="2iSdaV" />
         <node concept="lj46D" id="NvWe6DqhoQ" role="3F10Kt">
@@ -143,7 +143,7 @@
     <ref role="1XX52x" to="5tjl:3X9rC2XzJdF" resolve="BuildMpsLayout_TestModuleGroup" />
     <node concept="3EZMnI" id="3X9rC2XzJjA" role="2wV5jI">
       <node concept="1iCGBv" id="3X9rC2XzJjB" role="3EZMnx">
-        <ref role="1NtTu8" to="5tjl:3X9rC2XzJdG" />
+        <ref role="1NtTu8" to="5tjl:3X9rC2XzJdG" resolve="group" />
         <node concept="1sVBvm" id="3X9rC2XzJjC" role="1sWHZn">
           <node concept="3SHvHV" id="3X9rC2XzJjD" role="2wV5jI">
             <node concept="VPRnO" id="7XYaZQUC2F9" role="3F10Kt" />

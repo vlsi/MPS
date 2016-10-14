@@ -2,7 +2,7 @@
 <model ref="r:c23df2a3-084e-497b-b2a5-1671f4fbf9de(jetbrains.mps.samples.Kaja.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -193,11 +193,11 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="6tmz5v675OR" role="2OqNvi">
-                  <ref role="3Tt5mk" to="c2kz:2Pif5TcL5tc" />
+                  <ref role="3Tt5mk" to="c2kz:2Pif5TcL5tc" resolve="body" />
                 </node>
               </node>
               <node concept="3Tsc0h" id="6tmz5v675Pj" role="2OqNvi">
-                <ref role="3TtcxE" to="c2kz:2RDssu5W6D0" />
+                <ref role="3TtcxE" to="c2kz:2RDssu5W6D0" resolve="commands" />
               </node>
             </node>
             <node concept="TSZUe" id="6tmz5v675PJ" role="2OqNvi">
@@ -232,7 +232,7 @@
                 <ref role="3cqZAo" node="6tmz5v675QM" resolve="call" />
               </node>
               <node concept="3TrEf2" id="6tmz5v675Rl" role="2OqNvi">
-                <ref role="3Tt5mk" to="c2kz:2RDssu5Vufc" />
+                <ref role="3Tt5mk" to="c2kz:2RDssu5Vufc" resolve="definition" />
               </node>
             </node>
           </node>
@@ -268,11 +268,11 @@
                       <ref role="3cqZAo" node="2URGstPlaxx" resolve="routineDefinition" />
                     </node>
                     <node concept="3TrEf2" id="6tmz5v66e4_" role="2OqNvi">
-                      <ref role="3Tt5mk" to="c2kz:2RDssu5VmXW" />
+                      <ref role="3Tt5mk" to="c2kz:2RDssu5VmXW" resolve="body" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="6tmz5v66e4C" role="2OqNvi">
-                    <ref role="3TtcxE" to="c2kz:2RDssu5W6D0" />
+                    <ref role="3TtcxE" to="c2kz:2RDssu5W6D0" resolve="commands" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="2fLCP33Emo4" role="2OqNvi">

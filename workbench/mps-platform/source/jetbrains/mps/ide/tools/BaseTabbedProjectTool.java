@@ -45,7 +45,10 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
 
   @Override
   protected void doUnregister() {
-    getContentManager().removeAllContents(true);
+    ContentManager contentManager = getContentManager();
+    if (contentManager != null && !contentManager.isDisposed()) {
+      contentManager.removeAllContents(true);
+    }
   }
 
   public void closeTab(JComponent component) {

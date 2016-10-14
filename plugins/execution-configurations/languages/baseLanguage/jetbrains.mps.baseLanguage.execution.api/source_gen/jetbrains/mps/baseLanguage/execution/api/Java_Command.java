@@ -11,32 +11,35 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
-import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
+import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.debug.api.IDebugger;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Set;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
@@ -48,8 +51,6 @@ import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -121,11 +122,12 @@ public class Java_Command {
     return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter_String))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter_String)), className, classPath);
   }
   public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
-    File java = Java_Command.getJavaCommand(myJrePath_String);
+    CommandPart classPathPart = new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator));
     if ((className == null || className.length() == 0)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0c0a2(programParameter) >= Java_Command.getMaxCommandLine()) {
+    File java = Java_Command.getJavaCommand(myJrePath_String);
+    if (check_yvpt_a0a0d0a2(programParameter) + check_yvpt_a0a0d0a2_0(myVirtualMachineParameter_ProcessBuilderCommandPart) + classPathPart.getLength() >= Java_Command.getMaxCommandLine()) {
       try {
         File parametersFile = Java_Command.writeToTmpFile(programParameter.getCommandList());
         File classPathFile = Java_Command.writeToTmpFile(ListSequence.fromList(classPath).select(new ISelector<File, String>() {
@@ -137,22 +139,23 @@ public class Java_Command {
           public File select(String it) {
             return new File(it);
           }
-        }).toListSequence();
+        }).distinct().toListSequence();
         return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classRunnerClassPath, File.pathSeparator))).append("jetbrains.mps.execution.lib.startup.ClassRunner").append(new KeyValueCommandPart("-" + ("c"), className)).append(new KeyValueCommandPart("-" + ("f"), parametersFile)).append(new KeyValueCommandPart("-" + ("p"), classPathFile)).build(myWorkingDirectory_File);
       } catch (FileNotFoundException e) {
-        throw new ExecutionException("Could not create temporal file for program parameters.", e);
+        throw new ExecutionException("Could not create temporary file for program parameters and class path.", e);
       }
 
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(classPathPart).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
     final Wrappers._T<SModule> module = new Wrappers._T<SModule>(null);
     final Wrappers._T<String> text = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        module.value = check_yvpt_a0a0a2a0d(check_yvpt_a0a0a0c0a3(check_yvpt_a0a0a0a2a0d(nodePointer)));
+        module.value = check_yvpt_a0a0a3a0d(check_yvpt_a0a0a0d0a3(check_yvpt_a0a0a0a3a0d(nodePointer, repo)));
         if (module.value == null) {
           text.value = "Can't find module for node " + nodePointer;
         }
@@ -176,10 +179,17 @@ public class Java_Command {
   public static boolean isUnitNode(SNode node) {
     return isNotEmptyString(Java_Command.getClassName(node));
   }
+  protected static Logger LOG = LogManager.getLogger(Java_Command.class);
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
+    SNode module = SModelOperations.getModuleStub(SNodeOperations.getModel(node));
     if (model == null) {
       return null;
+    }
+    if (!(SPropertyOperations.getBoolean(module, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("The hosting module's " + module + " classes are not managed by MPS");
+      }
     }
     if (!(TraceInfo.hasTrace(model))) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -198,7 +208,7 @@ public class Java_Command {
       } else {
         return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
           public boolean met(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a52(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a52_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a4a62(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a4a62_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0e0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
           }
         });
       }
@@ -206,9 +216,10 @@ public class Java_Command {
   }
   private static String getClassName(final SNodeReference node) {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode resolve = node.resolve(MPSModuleRepository.getInstance());
+        SNode resolve = node.resolve(repo);
         if (resolve != null) {
           className.value = Java_Command.getClassName(resolve);
         }
@@ -222,10 +233,7 @@ public class Java_Command {
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
-  public static List<String> getClasspath(SNode node) {
-    return Java_Command.getClasspath(SNodeOperations.getModel(node).getModule());
-  }
-  public static List<String> getClasspath(final SModule module) {
+  private static List<String> getClasspath(final SModule module) {
     final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -235,12 +243,15 @@ public class Java_Command {
     });
     return new ArrayList<String>(classpath.value);
   }
-  public static List<String> getClasspath(SModule module, boolean withDependencies) {
-    if (withDependencies) {
-      return Java_Command.getClasspath(module);
-    } else {
-      return new ArrayList<String>(module.getFacet(JavaModuleFacet.class).getClassPath());
-    }
+  public static List<String> getClasspath(final SModule... modules) {
+    final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        classpath.value = JavaModuleOperations.collectExecuteClasspath(modules);
+        classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
+      }
+    });
+    return new ArrayList<String>(classpath.value);
   }
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
@@ -322,28 +333,33 @@ public class Java_Command {
       }
     };
   }
-  protected static Logger LOG = LogManager.getLogger(Java_Command.class);
-  private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
+  private static int check_yvpt_a0a0d0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLength();
     }
     return 0;
   }
-  private static SModule check_yvpt_a0a0a2a0d(SModel checkedDotOperand) {
+  private static int check_yvpt_a0a0d0a2_0(CommandPart checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLength();
+    }
+    return 0;
+  }
+  private static SModule check_yvpt_a0a0a3a0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_yvpt_a0a0a0c0a3(SNode checkedDotOperand) {
+  private static SModel check_yvpt_a0a0a0d0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-  private static SNode check_yvpt_a0a0a0a2a0d(SNodeReference checkedDotOperand) {
+  private static SNode check_yvpt_a0a0a0a3a0d(SNodeReference checkedDotOperand, MPSModuleRepository repo) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.resolve(repo);
     }
     return null;
   }
@@ -377,7 +393,7 @@ public class Java_Command {
     }
     return null;
   }
-  private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b() {
+  private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -410,10 +426,10 @@ public class Java_Command {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a52(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a4a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a52_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a4a62_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

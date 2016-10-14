@@ -57,11 +57,13 @@ public class ModelDigestHelper {
   }
 
   public String getModelHash(@NotNull StreamDataSource source) {
-    if (!(source instanceof FileDataSource)) return null;
-
-    for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(((FileDataSource) source).getFile());
-      if (result != null) return result.get(GeneratableSModel.FILE);
+    if (source instanceof FileDataSource) {
+      for (DigestProvider p : myProviders) {
+        Map<String, String> result = p.getGenerationHashes(((FileDataSource) source).getFile());
+        if (result != null) {
+          return result.get(GeneratableSModel.FILE);
+        }
+      }
     }
 
     return null;

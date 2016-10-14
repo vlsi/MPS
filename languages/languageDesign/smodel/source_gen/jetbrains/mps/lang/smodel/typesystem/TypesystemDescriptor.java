@@ -557,6 +557,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptTypeLiteral_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SConceptType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

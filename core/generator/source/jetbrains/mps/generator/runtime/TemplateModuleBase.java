@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
@@ -112,30 +111,9 @@ public abstract class TemplateModuleBase implements TemplateModule {
     return Collections.emptySet();
   }
 
-  /**
-   * @deprecated Code generated with MPS-3.3 uses this method, remove once MPS-3.4 is out
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  protected TemplateModel loadModel(String modelName) {
-    ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getModuleReference());
-    Class<TemplateModel> clazz = null;
-    if (module != null && module.willLoad()) {
-      try {
-        clazz = (Class<TemplateModel>) module.getClass(modelName);
-      } catch (ClassNotFoundException e) {
-        throw new IllegalStateException("Class not found for model " + modelName, e);
-      }
-    }
-    if (clazz == null) {
-      throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
-    }
-    try {
-      return clazz.getConstructor(TemplateModule.class).newInstance(this);
-    } catch (RuntimeException ex) {
-      throw ex;
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
+  @Override
+  public Class<?> loadClass(String qualifiedName) throws ClassNotFoundException {
+    // default implementation for generated templates
+    return getClass().getClassLoader().loadClass(qualifiedName);
   }
 }

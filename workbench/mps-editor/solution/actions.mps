@@ -9,7 +9,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -698,7 +698,7 @@
                           <ref role="3cqZAo" node="5S30O7RQC0f" resolve="component" />
                         </node>
                         <node concept="3TrEf2" id="5S30O7RQC0v" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpc2:gXXX56I" />
+                          <ref role="3Tt5mk" to="tpc2:gXXX56I" resolve="conceptDeclaration" />
                         </node>
                       </node>
                       <node concept="2oxUTD" id="5S30O7RQC0w" role="2OqNvi">
@@ -720,7 +720,7 @@
                           <ref role="3cqZAo" node="5S30O7RQC0f" resolve="component" />
                         </node>
                         <node concept="3TrEf2" id="5S30O7RQC0C" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpc2:fIwV5gl" />
+                          <ref role="3Tt5mk" to="tpc2:fIwV5gl" resolve="cellModel" />
                         </node>
                       </node>
                       <node concept="2oxUTD" id="5S30O7RQC0D" role="2OqNvi">
@@ -755,7 +755,7 @@
                           <ref role="3cqZAo" node="5S30O7RQC0I" resolve="toReplace" />
                         </node>
                         <node concept="3TrEf2" id="5S30O7RQC0R" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpc2:fGPMmyn" />
+                          <ref role="3Tt5mk" to="tpc2:fGPMmyn" resolve="editorComponent" />
                         </node>
                       </node>
                       <node concept="2oxUTD" id="5S30O7RQC0S" role="2OqNvi">
@@ -7048,6 +7048,9 @@
         <property role="TrG5h" value="structure" />
       </node>
       <node concept="2a7GMi" id="1xsN4xJX8VO" role="ftvYc" />
+      <node concept="10WQ6h" id="4h0_rmDoo08" role="ftvYc">
+        <property role="TrG5h" value="copy" />
+      </node>
       <node concept="10WQ6h" id="1xsN4xJX8VP" role="ftvYc">
         <property role="TrG5h" value="paste" />
       </node>

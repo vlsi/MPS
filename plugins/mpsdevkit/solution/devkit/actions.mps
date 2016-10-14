@@ -2,17 +2,17 @@
 <model ref="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
@@ -127,6 +127,7 @@
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
     <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -838,8 +839,8 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Languages DevKit" />
-    <property role="9BnSO" value="143.1" />
-    <property role="9BnSK" value="3.4" />
+    <property role="9BnSO" value="163.1" />
+    <property role="9BnSK" value="3.5" />
   </node>
   <node concept="tC5Ba" id="56$IWKxe1aW">
     <property role="TrG5h" value="ProjectNewActionsEx" />
@@ -3053,8 +3054,8 @@
           <node concept="3clFbH" id="7IH442cRr1M" role="3cqZAp" />
           <node concept="1DcWWT" id="7IH442cReHn" role="3cqZAp">
             <node concept="2YIFZM" id="6lMTJPe4ja3" role="1DdaDG">
-              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
               <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.util.Collection" resolve="collectAspects" />
             </node>
             <node concept="3clFbS" id="7IH442cReHo" role="2LFqv$">
               <node concept="2JFkCU" id="7IH442cReHp" role="3cqZAp">
@@ -14153,8 +14154,8 @@
       <node concept="3clFbS" id="7IH442cRK2j" role="3clF47">
         <node concept="2Gpval" id="7IH442cRKFg" role="3cqZAp">
           <node concept="2YIFZM" id="6lMTJPe4jqy" role="2GsD0m">
-            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
             <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.util.Collection" resolve="collectAspects" />
           </node>
           <node concept="2GrKxI" id="7IH442cRKFi" role="2Gsz3X">
             <property role="TrG5h" value="ad" />
@@ -14564,46 +14565,6 @@
     <property role="3GE5qa" value="Menu.ProjectPane.Module" />
     <property role="2uzpH1" value="Find Usages" />
     <property role="TrG5h" value="FindModuleUsage" />
-    <node concept="2XrIbr" id="6gJrPYfVXI1" role="32lrUH">
-      <property role="TrG5h" value="providerForModule" />
-      <node concept="3uibUv" id="6gJrPYfVXWf" role="3clF45">
-        <ref role="3uigEE" to="9erk:~IResultProvider" resolve="IResultProvider" />
-      </node>
-      <node concept="3clFbS" id="6gJrPYfVXI3" role="3clF47">
-        <node concept="3cpWs6" id="6gJrPYfVYQL" role="3cqZAp">
-          <node concept="2YIFZM" id="6gJrPYfVYU$" role="3cqZAk">
-            <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
-            <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
-            <node concept="3K4zz7" id="6gJrPYfW9Qk" role="37wK5m">
-              <node concept="2ZW3vV" id="6gJrPYfW8LU" role="3K4Cdx">
-                <node concept="3uibUv" id="6gJrPYfW9eL" role="2ZW6by">
-                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                </node>
-                <node concept="37vLTw" id="6gJrPYfW8xV" role="2ZW6bz">
-                  <ref role="3cqZAo" node="6gJrPYfVY53" resolve="module" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="6gJrPYfVYU_" role="3K4GZi">
-                <node concept="1pGfFk" id="6gJrPYfVYUA" role="2ShVmc">
-                  <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="6gJrPYfVY65" role="3K4E3e">
-                <node concept="1pGfFk" id="6gJrPYfVY66" role="2ShVmc">
-                  <ref role="37wK5l" to="kkd6:ZVS8OJmVFy" resolve="LanguageImportFinder" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6gJrPYfVY53" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="6gJrPYfVY52" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
-    </node>
     <node concept="1DS2jV" id="6gJrPYfVx6g" role="1NuT2Z">
       <property role="TrG5h" value="module" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
@@ -14656,12 +14617,12 @@
           <node concept="3cpWsn" id="6gJrPYfVXeG" role="3cpWs9">
             <property role="TrG5h" value="provider" />
             <property role="3TUv4t" value="true" />
-            <node concept="2OqwBi" id="6gJrPYfWa5_" role="33vP2m">
-              <node concept="2WthIp" id="6gJrPYfWa5C" role="2Oq$k0" />
-              <node concept="2XshWL" id="6gJrPYfWa5E" role="2OqNvi">
-                <ref role="2WH_rO" node="6gJrPYfVXI1" resolve="providerForModule" />
-                <node concept="37vLTw" id="6gJrPYfWa7G" role="2XxRq1">
-                  <ref role="3cqZAo" node="6gJrPYfVXev" resolve="module" />
+            <node concept="2YIFZM" id="6gJrPYfVYU$" role="33vP2m">
+              <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
+              <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
+              <node concept="2ShNRf" id="6gJrPYfVYU_" role="37wK5m">
+                <node concept="1pGfFk" id="6gJrPYfVYUA" role="2ShVmc">
+                  <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
                 </node>
               </node>
             </node>

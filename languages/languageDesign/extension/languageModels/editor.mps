@@ -2,7 +2,7 @@
 <model ref="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -167,7 +167,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="6XJvNHU5VOh" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:6XJvNHU5VOb" />
+        <ref role="1NtTu8" to="v54s:6XJvNHU5VOb" resolve="objectType" />
       </node>
       <node concept="3F0ifn" id="6XJvNHU5VOf" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
@@ -202,7 +202,7 @@
           <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         </node>
         <node concept="1iCGBv" id="3f064wGFUBw" role="3EZMnx">
-          <ref role="1NtTu8" to="v54s:3f064wGFUBl" />
+          <ref role="1NtTu8" to="v54s:3f064wGFUBl" resolve="extensionPoint" />
           <node concept="1sVBvm" id="3f064wGFUBx" role="1sWHZn">
             <node concept="3F0A7n" id="3f064wGFUBy" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -213,7 +213,7 @@
       </node>
       <node concept="3XFhqQ" id="2CVPr4rxYbY" role="3EZMnx" />
       <node concept="3F2HdR" id="66AaOfxkOVw" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:66AaOfxkOVs" />
+        <ref role="1NtTu8" to="v54s:66AaOfxkOVs" resolve="fieldDeclaration" />
         <node concept="l2Vlx" id="66AaOfxkOVx" role="2czzBx" />
         <node concept="3F0ifn" id="66AaOfxkOVy" role="2czzBI">
           <property role="3F0ifm" value="" />
@@ -236,7 +236,7 @@
         <node concept="3F1sOY" id="66AaOfxk_fS" role="3EZMnx">
           <property role="1$x2rV" value="&lt;do nothing&gt;" />
           <property role="39s7Ar" value="true" />
-          <ref role="1NtTu8" to="v54s:66AaOfxk_fI" />
+          <ref role="1NtTu8" to="v54s:66AaOfxk_fI" resolve="activator" />
         </node>
       </node>
       <node concept="3XFhqQ" id="2CVPr4rxYk5" role="3EZMnx" />
@@ -247,7 +247,7 @@
         </node>
         <node concept="3F1sOY" id="66AaOfxk_fZ" role="3EZMnx">
           <property role="1$x2rV" value="&lt;do nothing&gt;" />
-          <ref role="1NtTu8" to="v54s:66AaOfxk_fQ" />
+          <ref role="1NtTu8" to="v54s:66AaOfxk_fQ" resolve="deactivator" />
         </node>
         <node concept="2iRfu4" id="66AaOfxkTMq" role="2iSdaV" />
       </node>
@@ -259,7 +259,7 @@
         </node>
         <node concept="l2Vlx" id="66AaOfxkTMu" role="2iSdaV" />
         <node concept="3F1sOY" id="6XJvNHU5VOl" role="3EZMnx">
-          <ref role="1NtTu8" to="v54s:6XJvNHU5VOj" />
+          <ref role="1NtTu8" to="v54s:6XJvNHU5VOj" resolve="objectGetter" />
         </node>
       </node>
       <node concept="2iRkQZ" id="66AaOfxkTMi" role="2iSdaV" />
@@ -278,7 +278,7 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="1iCGBv" id="5JRjEZJSeHn" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:5JRjEZJSeHl" />
+        <ref role="1NtTu8" to="v54s:5JRjEZJSeHl" resolve="extensionPoint" />
         <ref role="1k5W1q" to="tpen:hFIVf2f" resolve="ClassName" />
         <node concept="1sVBvm" id="5JRjEZJSeHo" role="1sWHZn">
           <node concept="3F0A7n" id="5JRjEZJSeHq" role="2wV5jI">
@@ -299,7 +299,7 @@
         <property role="3F0ifm" value="id:" />
       </node>
       <node concept="1iCGBv" id="5JRjEZJSeHx" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:5JRjEZJSeHl" />
+        <ref role="1NtTu8" to="v54s:5JRjEZJSeHl" resolve="extensionPoint" />
         <node concept="1sVBvm" id="5JRjEZJSeHy" role="1sWHZn">
           <node concept="1HlG4h" id="5JRjEZJSeH$" role="2wV5jI">
             <node concept="1HfYo3" id="5JRjEZJSeH_" role="1HlULh">
@@ -326,7 +326,7 @@
     <ref role="1XX52x" to="v54s:66AaOfxkOUp" resolve="ExtensionFieldDeclaration" />
     <node concept="3EZMnI" id="66AaOfxkOUy" role="2wV5jI">
       <node concept="3F1sOY" id="66AaOfxkOUB" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:66AaOfxkOUt" />
+        <ref role="1NtTu8" to="v54s:66AaOfxkOUt" resolve="fieldType" />
       </node>
       <node concept="3F0A7n" id="66AaOfxkOU_" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -339,7 +339,7 @@
     <ref role="1XX52x" to="v54s:66AaOfxkOUu" resolve="ExtensionFieldReference" />
     <node concept="3EZMnI" id="66AaOfxkOUF" role="2wV5jI">
       <node concept="1iCGBv" id="66AaOfxkOUI" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:66AaOfxkOUv" />
+        <ref role="1NtTu8" to="v54s:66AaOfxkOUv" resolve="declaration" />
         <node concept="1sVBvm" id="66AaOfxkOUJ" role="1sWHZn">
           <node concept="3F0A7n" id="66AaOfxkOUL" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -367,7 +367,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="aRphP9WICM" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:2KgYA8kbFkT" />
+        <ref role="1NtTu8" to="v54s:2KgYA8kbFkT" resolve="extensionPoint" />
         <node concept="1sVBvm" id="aRphP9WICO" role="1sWHZn">
           <node concept="3F0A7n" id="aRphP9WKRI" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -410,7 +410,7 @@
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="1iCGBv" id="7335HkeZ06" role="3EZMnx">
-        <ref role="1NtTu8" to="v54s:7335HkeYl_" />
+        <ref role="1NtTu8" to="v54s:7335HkeYl_" resolve="extensionPoint" />
         <node concept="1sVBvm" id="7335HkeZ08" role="1sWHZn">
           <node concept="3F0A7n" id="7335HkeZ1u" role="2wV5jI">
             <property role="1Intyy" value="true" />

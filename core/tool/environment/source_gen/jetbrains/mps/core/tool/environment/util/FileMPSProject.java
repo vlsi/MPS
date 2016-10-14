@@ -9,10 +9,16 @@ import org.apache.log4j.LogManager;
 import java.io.File;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.vfs.impl.IoFile;
+import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
-import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.ElementProjectDataSource;
+import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.ArrayList;
 
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
@@ -25,6 +31,11 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     init();
   }
 
+  @NotNull
+  private MacroHelper createMacroHelper() {
+    return MacrosFactory.forProjectFile(new IoFile(getProjectFile().getPath()));
+  }
+
   @Override
   @NotNull
   public String getName() {
@@ -33,6 +44,8 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
 
   @Override
   public void save() {
+    MacroHelper helper = createMacroHelper();
+    new ProjectDescriptorPersistence(getProjectFile(), helper).save(myProjectDescriptor);
   }
 
   /**
@@ -51,18 +64,37 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
    */
   @Nullable
   private Element getElement() {
-    return new ProjectDescriptorPersistence(getProjectFile()).loadProjectElement();
+    return new ProjectDescriptorPersistence(getProjectFile(), createMacroHelper()).loadProjectElement();
   }
 
   private void init() {
-    loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile()));
+    loadProjectDescriptorWithMacros();
     update();
     projectOpened();
   }
 
+  private void loadProjectDescriptorWithMacros() {
+    loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile(), createMacroHelper()));
+  }
+
+  @NotNull
+  public static FileMPSProject open(@NotNull String projectPath) {
+    return new FileMPSProject(new File(projectPath));
+  }
+
+  private boolean close() {
+    List<SModule> projectModules = new ArrayList<SModule>(getProjectModules());
+    for (SModule module : projectModules) {
+      removeModule(module);
+    }
+    projectClosed();
+    assert getProjectModules().isEmpty();
+    return true;
+  }
+
   @Override
   public void dispose() {
-    projectClosed();
+    close();
     super.dispose();
   }
 

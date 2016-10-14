@@ -65,7 +65,7 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
       return;
     }
     if (myCodeBlock == null) {
-      myCodeBlock = generator.getGeneratorSessionContext().getQueryProvider(getScriptNode()).getScriptCodeBlock(scriptNode);
+      myCodeBlock = generator.getQueryProvider(getScriptNode()).getScriptCodeBlock(scriptNode);
     }
     myCodeBlock.invoke(new MappingScriptContext(model, getScriptNode(), generator));
   }

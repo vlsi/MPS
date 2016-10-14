@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -36,6 +36,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.font.TextAttribute;
+import java.util.stream.StreamSupport;
 
 public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   private static final Logger LOG = LogManager.getLogger(SNodeTreeNode.class);
@@ -43,14 +44,14 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   protected boolean myInitialized = false;
   private SNode myNode;
   private String myRole;
-  private Condition<SNode> myCondition;
+  private final Condition<SNode> myCondition;
 
   public SNodeTreeNode(SNode node) {
     this(node, null);
   }
 
   public SNodeTreeNode(SNode node, String role) {
-    this(node, role, Condition.TRUE_CONDITION);
+    this(node, role, Condition.always());
   }
 
   public SNodeTreeNode(SNode node, String role, Condition<SNode> condition) {
@@ -107,7 +108,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
       addFontAttribute(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
     }
 
-    setText(caclulateNodeTextPresentation());
+    setText(calculateNodeTextPresentation());
     setAutoExpandable(myNode.getModel() == null || myNode.getParent() != null);
   }
 
@@ -152,7 +153,9 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
-    if (n == null || !SNodeUtil.isAccessible(n, MPSModuleRepository.getInstance())) return;
+    if (n == null || !SNodeUtil.isAccessible(n, MPSModuleRepository.getInstance())) {
+      return;
+    }
 
     NodeChildrenProvider provider = getAncestor(NodeChildrenProvider.class);
     if (provider != null) {
@@ -160,12 +163,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
     }
 
     if (isShowStructure()) {
-      for (SNode childNode : n.getChildren()) {
-        if (!myCondition.met(childNode)) continue;
-        SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent());
-        child.myCondition = myCondition;
-        add(child);
-      }
+      StreamSupport.stream(n.getChildren().spliterator(), false).filter(myCondition::met).forEach(o -> add(createChildTreeNode(o)));
     }
 
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
@@ -184,11 +182,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
     return ((TreeNodeParamProvider) tree).isShowStructure();
   }
 
+  protected SNodeTreeNode createChildTreeNode(SNode childNode) {
+    SContainmentLink cl = childNode.getContainmentLink();
+    return createChildTreeNode(childNode, cl == null ? null : cl.getName());
+  }
+
   protected SNodeTreeNode createChildTreeNode(SNode childNode, String role) {
     SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
-    SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role)
-        : sModelTreeNode.createSNodeTreeNode(childNode, role);
-    return child;
+    return sModelTreeNode == null ? new SNodeTreeNode(childNode, role, myCondition)
+        : sModelTreeNode.createSNodeTreeNode(childNode, role, myCondition);
   }
 
   @Nullable
@@ -197,15 +199,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
     return myNode == null ? null : myNode.getReference();
   }
 
-  protected SModel getModelDescriptor() {
-    SNode node = getSNode();
-    if (node == null) return null;
-    SModel md = node.getModel();
-    return md;
-  }
-
-  private String caclulateNodeTextPresentation() {
-    StringBuffer output = new StringBuffer();
+  private String calculateNodeTextPresentation() {
+    StringBuilder output = new StringBuilder();
 
     if (myRole != null) {
       output.append(myRole).append(" : ");

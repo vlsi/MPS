@@ -436,7 +436,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         IFile modelFile = ((FileSystemBasedDataSource) source).getAffectedFiles().iterator().next();
         VirtualFile realFile = null;
         if (modelFile != null) {
-          realFile = VirtualFileUtils.getVirtualFile(modelFile);
+          realFile = VirtualFileUtils.getProjectVirtualFile(modelFile);
         }
 
         myFile = realFile;

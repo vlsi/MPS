@@ -48,6 +48,7 @@
     <import index="mklf" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.content.tabs(MPS.IDEA/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2668,9 +2669,6 @@
   <node concept="312cEu" id="6m98d5YYbH1">
     <property role="TrG5h" value="MigrationScriptFinder" />
     <node concept="3Tm1VV" id="6m98d5YYbH2" role="1B3o_S" />
-    <node concept="3uibUv" id="6m98d5YYbH3" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="312cEg" id="6m98d5YYbH4" role="jymVt">
       <property role="TrG5h" value="myScripts" />
       <property role="3TUv4t" value="true" />
@@ -2765,6 +2763,25 @@
           <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
           <node concept="3uibUv" id="4B2IQdOpUzk" role="11_B2D">
             <ref role="3uigEE" to="nvof:~RefactoringScript" resolve="RefactoringScript" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofOXm" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofOXn" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofOXo" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofOXw" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofOXx" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofR1t" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofR1s" role="3clFbG">
+            <property role="Xl_RC" value="Migration Scripts" />
           </node>
         </node>
       </node>
@@ -3347,6 +3364,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="1Fz6CCofNeM" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
     </node>
   </node>
   <node concept="3HP615" id="DTcS_lxT1O">

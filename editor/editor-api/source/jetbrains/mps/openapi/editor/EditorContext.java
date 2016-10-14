@@ -83,9 +83,21 @@ public interface EditorContext {
 
   boolean isEditable();
 
+  /**
+   * @deprecated Since MPS 3.4 use getState()
+   */
+  @Deprecated
   Object createMemento();
 
+  /**
+   * @deprecated Since MPS 3.4 use restoreState()
+   */
+  @Deprecated
   boolean setMemento(Object o);
+
+  EditorComponentState getEditorComponentState();
+
+  void restoreEditorComponentState(EditorComponentState state);
 
   void runWithContextCell(EditorCell contextCell, Runnable r);
 

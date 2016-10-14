@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mps" />
   <property name="build.layout" location="${build.dir}/artifacts/mps" />
-  <property name="build.number" value="MPS-144.SNAPSHOT" />
+  <loadfile property="build.number" srcFile="${basedir}/build.txt" />
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>
@@ -17,6 +17,7 @@
   <property name="artifacts.mpsStandalone" location="${build.dir}/artifacts/mpsStandalone" />
   <property name="artifacts.mpsDevKit" location="${build.dir}/artifacts/mpsDevKit" />
   <property name="artifacts.mpsPlugins" location="${build.dir}/artifacts/mpsPlugins" />
+  <property name="artifacts.mpsHttpSupportPlugin" location="${build.dir}/artifacts/mpsHttpSupportPlugin" />
   <property name="artifacts.mpsMakePlugin" location="${build.dir}/artifacts/mpsMakePlugin" />
   <property name="artifacts.mpsBuildUI" location="${build.dir}/artifacts/mpsBuildUI" />
   <property name="artifacts.mpsVcs" location="${build.dir}/artifacts/mpsVcs" />
@@ -53,7 +54,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="3" minor="4" eap="true" update-channel="MPS34EAP" />
+        <version codename="MPS" major="3" minor="5" eap="true" update-channel="MPS35" />
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="002387" progressColor="00E184" progressY="393" progressHeight="3" />
@@ -73,7 +74,7 @@
         <support url="https://www.jetbrains.com/support/mps/index.html" />
         <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
         <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html" />
-        <keymap win="https://confluence.jetbrains.com/display/MPSD33/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD33/Default+Keymap+Reference" />
+        <keymap win="https://confluence.jetbrains.com/display/MPSD34/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD34/Default+Keymap+Reference" />
         <third-party url="http://www.jetbrains.org/" />
         <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS" />
         
@@ -161,10 +162,14 @@
       <fileset dir="${artifacts.mpsTesting}/mps-testing" />
     </copy>
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.mpsHttpSupportPlugin}" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsContextActionsTool}" />
     </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples">
+        <exclude name="**/vcs.xml" />
         <exclude name="**/*.history" />
       </zipfileset>
     </zip>
@@ -206,6 +211,7 @@
     <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsHttpSupportPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />

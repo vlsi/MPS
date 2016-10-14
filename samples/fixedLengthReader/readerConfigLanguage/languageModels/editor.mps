@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590435(jetbrains.mps.samples.readerConfigLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="tpnu" ref="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" />
@@ -89,7 +89,7 @@
           <property role="2czwfO" value="-------" />
           <property role="2czwfN" value="true" />
           <property role="2czwfM" value="true" />
-          <ref role="1NtTu8" to="tpnu:gfQFMcV" />
+          <ref role="1NtTu8" to="tpnu:gfQFMcV" resolve="mapping" />
           <node concept="3F0ifn" id="gfQGkja" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add mapping" />
             <node concept="Vb9p2" id="hF4QVNT" role="3F10Kt">
@@ -139,7 +139,7 @@
         <node concept="3F2HdR" id="gfQHjVs" role="3EZMnx">
           <property role="2czwfN" value="true" />
           <property role="2czwfM" value="true" />
-          <ref role="1NtTu8" to="tpnu:gfQHmRd" />
+          <ref role="1NtTu8" to="tpnu:gfQHmRd" resolve="field" />
           <node concept="3F0ifn" id="gfQHya7" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add field" />
             <node concept="Vb9p2" id="hF4QVO0" role="3F10Kt">

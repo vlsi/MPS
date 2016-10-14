@@ -11,7 +11,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -27,35 +29,30 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            // Concept: AbstractAppendPart 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new SetWithIndent_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: CollectionAppendPart 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddRemoveSeparator_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: ReferenceAppendPart 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new SetUniqueNameInFile_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: AbstractAppendPart 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SetWithIndent_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: CollectionAppendPart 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddRemoveSeparator_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: ReferenceAppendPart 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SetUniqueNameInFile_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
@@ -70,13 +67,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[2] = new SetUniqueNameInFile_Intention();
     return Arrays.asList(rv);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L, "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart"));
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL), MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L)).seal();
 }

@@ -10,7 +10,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
   </languages>
   <imports>
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
@@ -143,6 +143,10 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -189,6 +193,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -216,6 +223,12 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -454,19 +467,27 @@
                         </node>
                         <node concept="3clFbF" id="1KUoCiqb5Fm" role="3cqZAp">
                           <node concept="37vLTI" id="1KUoCiqb5Fn" role="3clFbG">
-                            <node concept="2OqwBi" id="1KUoCiqb5Fo" role="37vLTx">
-                              <node concept="37vLTw" id="3GM_nagTzYB" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7yrT30bVyzU" resolve="typeCheckingContext" />
-                              </node>
-                              <node concept="liA8E" id="1KUoCiqb5Fq" role="2OqNvi">
-                                <ref role="37wK5l" to="u78q:~TypeCheckingContext.getTypeDontCheck(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getTypeDontCheck" />
-                                <node concept="2OqwBi" id="1KUoCiqb5Fr" role="37wK5m">
-                                  <node concept="2WthIp" id="1KUoCiqb5Fs" role="2Oq$k0" />
-                                  <node concept="3gHZIF" id="7yrT30bWKb0" role="2OqNvi">
-                                    <ref role="2WH_rO" node="7yrT30bWG3K" resolve="node" />
+                            <node concept="2OqwBi" id="7dnad519muk" role="37vLTx">
+                              <node concept="1eOMI4" id="7dnad519lVK" role="2Oq$k0">
+                                <node concept="10QFUN" id="7dnad519lVH" role="1eOMHV">
+                                  <node concept="3Tqbb2" id="7dnad519mg9" role="10QFUM" />
+                                  <node concept="2OqwBi" id="1KUoCiqb5Fo" role="10QFUP">
+                                    <node concept="37vLTw" id="3GM_nagTzYB" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="7yrT30bVyzU" resolve="typeCheckingContext" />
+                                    </node>
+                                    <node concept="liA8E" id="1KUoCiqb5Fq" role="2OqNvi">
+                                      <ref role="37wK5l" to="u78q:~TypeCheckingContext.getTypeDontCheck(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getTypeDontCheck" />
+                                      <node concept="2OqwBi" id="1KUoCiqb5Fr" role="37wK5m">
+                                        <node concept="2WthIp" id="1KUoCiqb5Fs" role="2Oq$k0" />
+                                        <node concept="3gHZIF" id="7yrT30bWKb0" role="2OqNvi">
+                                          <ref role="2WH_rO" node="7yrT30bWG3K" resolve="node" />
+                                        </node>
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
+                              <node concept="1$rogu" id="7dnad519mNq" role="2OqNvi" />
                             </node>
                             <node concept="37vLTw" id="3GM_nagTu1O" role="37vLTJ">
                               <ref role="3cqZAo" node="4KDfkUwMaBZ" resolve="type" />
@@ -767,6 +788,11 @@
             <node concept="2LD9aU" id="C9PExlMHbi" role="3cqZAp">
               <node concept="1QHqEC" id="C9PExlMHbk" role="1QHqEI">
                 <node concept="3clFbS" id="C9PExlMHbm" role="1bW5cS">
+                  <node concept="3SKdUt" id="7dnad519luJ" role="3cqZAp">
+                    <node concept="3SKdUq" id="7dnad519luL" role="3SKWNk">
+                      <property role="3SKdUp" value="XXX what's the need to remove type node from the model we dispose anyway?" />
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="1KUoCiqEI1Y" role="3cqZAp">
                     <node concept="2OqwBi" id="1KUoCiqEI1Z" role="3clFbG">
                       <node concept="37vLTw" id="1KUoCiqEI20" role="2Oq$k0">
@@ -928,7 +954,7 @@
                 <ref role="3cqZAo" node="hpoR62c" resolve="nonTypesystemRule" />
               </node>
               <node concept="3TrEf2" id="hpoSfxc" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpd4:hp8ibRO" />
+                <ref role="3Tt5mk" to="tpd4:hp8ibRO" resolve="body" />
               </node>
             </node>
             <node concept="2oxUTD" id="hpoSfRu" role="2OqNvi">
@@ -941,7 +967,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="hpoWPpK" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpd4:hp8ibRO" />
+                    <ref role="3Tt5mk" to="tpd4:hp8ibRO" resolve="body" />
                   </node>
                 </node>
                 <node concept="1$rogu" id="hpoWE49" role="2OqNvi" />
@@ -956,7 +982,7 @@
                 <ref role="3cqZAo" node="hpoR62c" resolve="nonTypesystemRule" />
               </node>
               <node concept="3TrEf2" id="hpoWLG3" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                <ref role="3Tt5mk" to="tpd4:h5YuTL0" resolve="applicableNode" />
               </node>
             </node>
             <node concept="2oxUTD" id="hpoWMqJ" role="2OqNvi">
@@ -969,7 +995,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="hpoWW3B" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                    <ref role="3Tt5mk" to="tpd4:h5YuTL0" resolve="applicableNode" />
                   </node>
                 </node>
                 <node concept="1$rogu" id="hpoWWrQ" role="2OqNvi" />
@@ -988,7 +1014,7 @@
                         <ref role="3cqZAo" node="hpoWXum" resolve="applicableNodeReference" />
                       </node>
                       <node concept="3TrEf2" id="hpoXaPS" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpd4:h5YBMDq" />
+                        <ref role="3Tt5mk" to="tpd4:h5YBMDq" resolve="applicableNode" />
                       </node>
                     </node>
                     <node concept="2oxUTD" id="hpoXbkt" role="2OqNvi">
@@ -997,7 +1023,7 @@
                           <ref role="3cqZAo" node="hpoR62c" resolve="nonTypesystemRule" />
                         </node>
                         <node concept="3TrEf2" id="hpoXcKm" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                          <ref role="3Tt5mk" to="tpd4:h5YuTL0" resolve="applicableNode" />
                         </node>
                       </node>
                     </node>
@@ -1013,7 +1039,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="hpoX9Ig" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                    <ref role="3Tt5mk" to="tpd4:h5YuTL0" resolve="applicableNode" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="hxx$Kbn" role="3uHU7B">
@@ -1021,7 +1047,7 @@
                     <ref role="3cqZAo" node="hpoWXum" resolve="applicableNodeReference" />
                   </node>
                   <node concept="3TrEf2" id="hpoX5Tw" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpd4:h5YBMDq" />
+                    <ref role="3Tt5mk" to="tpd4:h5YBMDq" resolve="applicableNode" />
                   </node>
                 </node>
               </node>
@@ -1033,7 +1059,7 @@
                 <ref role="3cqZAo" node="hpoR62c" resolve="nonTypesystemRule" />
               </node>
               <node concept="3TrEf2" id="hpoX0D5" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpd4:hp8ibRO" />
+                <ref role="3Tt5mk" to="tpd4:hp8ibRO" resolve="body" />
               </node>
             </node>
             <node concept="2Rf3mk" id="hpoX1ew" role="2OqNvi">
@@ -1133,7 +1159,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="3pEbTEPOsRA" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpd4:1y5tROjsjnW" />
+                  <ref role="3Tt5mk" to="tpd4:1y5tROjsjnW" resolve="overridesFun" />
                 </node>
               </node>
               <node concept="3w_OXm" id="3pEbTEPOtBm" role="2OqNvi" />

@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuildLayout_ToBinaryCopyProcessor = new ConceptPresentationBuilder().create();
@@ -69,288 +67,115 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0cc.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BuildLayout_ToBinaryCopyProcessor;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BuildMPSPlugin;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BuildMpsAspect;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BuildMpsLayout_FolderWithSources;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BuildMpsLayout_ModuleJarContent;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BuildMpsLayout_ModuleJars;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BuildMpsLayout_ModuleSources;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_BuildMpsLayout_ModuleXml;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_BuildMpsLayout_ModuleXml_CustomJarLocation;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_BuildMpsLayout_Plugin;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_BuildMpsLayout_PluginDescriptor;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_BuildMps_AbstractModule;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_BuildMps_Branding;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_BuildMps_BrandingCompany;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_BuildMps_BrandingHelp;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_BuildMps_BrandingKeymap;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_BuildMps_BrandingStats;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_BuildMps_BrandingUpdateSite;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_BuildMps_DevKit;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_BuildMps_DevKitExport;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_BuildMps_DevKitExportLanguage;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_BuildMps_DevKitExportSolution;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_BuildMps_DevKitRef;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_BuildMps_ExtractedModuleDependency;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_BuildMps_Generator;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_BuildMps_GeneratorOptions;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_BuildMps_Group;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_BuildMps_IdeaPlugin;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_BuildMps_IdeaPluginContent;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_BuildMps_IdeaPluginDependency;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_BuildMps_IdeaPluginGroup;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_BuildMps_IdeaPluginGroupCustomModule;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_BuildMps_IdeaPluginModule;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_BuildMps_IdeaPluginVendor;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_BuildMps_Language;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_BuildMps_Module;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_BuildMps_ModuleDependency;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_BuildMps_ModuleDependencyExtendLanguage;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_BuildMps_ModuleDependencyJar;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_BuildMps_ModuleDependencyOnDevKit;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_BuildMps_ModuleDependencyOnJavaModule;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_BuildMps_ModuleDependencyOnModule;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_BuildMps_ModuleDependencyUseLanguage;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_BuildMps_ModuleJavaSource;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_BuildMps_ModuleModelRoot;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_BuildMps_ModuleRuntime;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_BuildMps_ModuleSolutionRuntime;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_BuildMps_ModuleSource;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_BuildMps_ModuleTestSource;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_BuildMps_Solution;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_GeneratorInternal_BuildMps_Module;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_GeneratorInternal_BuildSourcePath;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_GeneratorInternal_String;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BuildLayout_ToBinaryCopyProcessor:
+        return props_BuildLayout_ToBinaryCopyProcessor;
+      case LanguageConceptSwitch.BuildMPSPlugin:
+        return props_BuildMPSPlugin;
+      case LanguageConceptSwitch.BuildMpsAspect:
+        return props_BuildMpsAspect;
+      case LanguageConceptSwitch.BuildMpsLayout_FolderWithSources:
+        return props_BuildMpsLayout_FolderWithSources;
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleJarContent:
+        return props_BuildMpsLayout_ModuleJarContent;
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleJars:
+        return props_BuildMpsLayout_ModuleJars;
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleSources:
+        return props_BuildMpsLayout_ModuleSources;
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleXml:
+        return props_BuildMpsLayout_ModuleXml;
+      case LanguageConceptSwitch.BuildMpsLayout_ModuleXml_CustomJarLocation:
+        return props_BuildMpsLayout_ModuleXml_CustomJarLocation;
+      case LanguageConceptSwitch.BuildMpsLayout_Plugin:
+        return props_BuildMpsLayout_Plugin;
+      case LanguageConceptSwitch.BuildMpsLayout_PluginDescriptor:
+        return props_BuildMpsLayout_PluginDescriptor;
+      case LanguageConceptSwitch.BuildMps_AbstractModule:
+        return props_BuildMps_AbstractModule;
+      case LanguageConceptSwitch.BuildMps_Branding:
+        return props_BuildMps_Branding;
+      case LanguageConceptSwitch.BuildMps_BrandingCompany:
+        return props_BuildMps_BrandingCompany;
+      case LanguageConceptSwitch.BuildMps_BrandingHelp:
+        return props_BuildMps_BrandingHelp;
+      case LanguageConceptSwitch.BuildMps_BrandingKeymap:
+        return props_BuildMps_BrandingKeymap;
+      case LanguageConceptSwitch.BuildMps_BrandingStats:
+        return props_BuildMps_BrandingStats;
+      case LanguageConceptSwitch.BuildMps_BrandingUpdateSite:
+        return props_BuildMps_BrandingUpdateSite;
+      case LanguageConceptSwitch.BuildMps_DevKit:
+        return props_BuildMps_DevKit;
+      case LanguageConceptSwitch.BuildMps_DevKitExport:
+        return props_BuildMps_DevKitExport;
+      case LanguageConceptSwitch.BuildMps_DevKitExportLanguage:
+        return props_BuildMps_DevKitExportLanguage;
+      case LanguageConceptSwitch.BuildMps_DevKitExportSolution:
+        return props_BuildMps_DevKitExportSolution;
+      case LanguageConceptSwitch.BuildMps_DevKitRef:
+        return props_BuildMps_DevKitRef;
+      case LanguageConceptSwitch.BuildMps_ExtractedModuleDependency:
+        return props_BuildMps_ExtractedModuleDependency;
+      case LanguageConceptSwitch.BuildMps_Generator:
+        return props_BuildMps_Generator;
+      case LanguageConceptSwitch.BuildMps_GeneratorOptions:
+        return props_BuildMps_GeneratorOptions;
+      case LanguageConceptSwitch.BuildMps_Group:
+        return props_BuildMps_Group;
+      case LanguageConceptSwitch.BuildMps_IdeaPlugin:
+        return props_BuildMps_IdeaPlugin;
+      case LanguageConceptSwitch.BuildMps_IdeaPluginContent:
+        return props_BuildMps_IdeaPluginContent;
+      case LanguageConceptSwitch.BuildMps_IdeaPluginDependency:
+        return props_BuildMps_IdeaPluginDependency;
+      case LanguageConceptSwitch.BuildMps_IdeaPluginGroup:
+        return props_BuildMps_IdeaPluginGroup;
+      case LanguageConceptSwitch.BuildMps_IdeaPluginGroupCustomModule:
+        return props_BuildMps_IdeaPluginGroupCustomModule;
+      case LanguageConceptSwitch.BuildMps_IdeaPluginModule:
+        return props_BuildMps_IdeaPluginModule;
+      case LanguageConceptSwitch.BuildMps_IdeaPluginVendor:
+        return props_BuildMps_IdeaPluginVendor;
+      case LanguageConceptSwitch.BuildMps_Language:
+        return props_BuildMps_Language;
+      case LanguageConceptSwitch.BuildMps_Module:
+        return props_BuildMps_Module;
+      case LanguageConceptSwitch.BuildMps_ModuleDependency:
+        return props_BuildMps_ModuleDependency;
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyExtendLanguage:
+        return props_BuildMps_ModuleDependencyExtendLanguage;
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyJar:
+        return props_BuildMps_ModuleDependencyJar;
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyOnDevKit:
+        return props_BuildMps_ModuleDependencyOnDevKit;
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyOnJavaModule:
+        return props_BuildMps_ModuleDependencyOnJavaModule;
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyOnModule:
+        return props_BuildMps_ModuleDependencyOnModule;
+      case LanguageConceptSwitch.BuildMps_ModuleDependencyUseLanguage:
+        return props_BuildMps_ModuleDependencyUseLanguage;
+      case LanguageConceptSwitch.BuildMps_ModuleJavaSource:
+        return props_BuildMps_ModuleJavaSource;
+      case LanguageConceptSwitch.BuildMps_ModuleModelRoot:
+        return props_BuildMps_ModuleModelRoot;
+      case LanguageConceptSwitch.BuildMps_ModuleRuntime:
+        return props_BuildMps_ModuleRuntime;
+      case LanguageConceptSwitch.BuildMps_ModuleSolutionRuntime:
+        return props_BuildMps_ModuleSolutionRuntime;
+      case LanguageConceptSwitch.BuildMps_ModuleSource:
+        return props_BuildMps_ModuleSource;
+      case LanguageConceptSwitch.BuildMps_ModuleTestSource:
+        return props_BuildMps_ModuleTestSource;
+      case LanguageConceptSwitch.BuildMps_Solution:
+        return props_BuildMps_Solution;
+      case LanguageConceptSwitch.GeneratorInternal_BuildMps_Module:
+        return props_GeneratorInternal_BuildMps_Module;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSourcePath:
+        return props_GeneratorInternal_BuildSourcePath;
+      case LanguageConceptSwitch.GeneratorInternal_String:
+        return props_GeneratorInternal_String;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0cc = buildConceptIndices(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x127671bd5d8bb460L, "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5a408fb8c80220a9L, "jetbrains.mps.build.mps.structure.BuildMpsAspect"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x1d38569c566c8c91L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJarContent"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, "jetbrains.mps.build.mps.structure.BuildMps_Branding"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xad72aee24ac03d8L, "jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d08L, "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x51cd30ffb57f91cfL, "jetbrains.mps.build.mps.structure.BuildMps_BrandingKeymap"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xad72aee24a9d06fL, "jetbrains.mps.build.mps.structure.BuildMps_BrandingStats"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d07L, "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d23143L, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d6aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d7aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3ba296405b6f3b1bL, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbebL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x37fdb3de482e2b27L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6cb3984bfe5b72d3L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341cb7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d5bc49L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c195c50L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464389f7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e7771cfL, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String"));
 }

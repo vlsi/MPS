@@ -64,7 +64,4 @@ public class ClassConcept_TextGen extends TextGenDescriptorBase {
       tgs.fillUnitInfo(UnitConcept__BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))));
     }
   }
-  public String getExtension(SNode node) {
-    return "java";
-  }
 }

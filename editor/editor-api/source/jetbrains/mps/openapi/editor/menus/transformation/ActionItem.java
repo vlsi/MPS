@@ -32,7 +32,9 @@ public interface ActionItem extends TransformationMenuItem {
    *
    * @param pattern the text that the user has typed so far
    */
-  boolean canExecute(@NotNull String pattern);
+  default boolean canExecute(@NotNull String pattern) {
+    return true;
+  }
 
   /**
    * Performs the transformation. May change the editor selection and possibly other state. Will be called inside or outside a command depending

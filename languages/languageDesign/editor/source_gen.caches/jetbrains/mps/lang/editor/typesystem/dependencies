@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.typesystem.AddExtendedLanguage_QuickFix" file="AddExtendedLanguage_QuickFix.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.typesystem.DuplicationUtil" file="DuplicationUtil.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
@@ -48,12 +55,15 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellKeyMapDeclarationUsed_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellKeyMapItem_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellMenuPart_ApplySideTransforms_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefCell_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNodeList_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNode_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_hasConcept_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_ContributionDefaultReferenceTargetIsDefinde_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_ContributionIsNotInConceptLanguage_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_DefaultMenu_isInConceptLanguage_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_EditorCellModel_emptyCell_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_EditorComponentDeclaration_NonTypesystemRule" />
@@ -72,6 +82,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_TransformationFeaturesAreAvailable_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_TransformationFeaturesAreNotDuplicated_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_TransformationLocationsAreNotDuplicated_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_TransformationMenuDefaultReferenceTargetIsDefined_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperationArguments_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.typeof_CaretPositionParameter_InferenceRule" />
@@ -163,6 +174,28 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.typesystem.check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule" file="check_CellModel_Component_EditorComponentIsInExtendedLanguage_NonTypesystemRule.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
@@ -281,6 +314,37 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.typesystem.check_ContributionDefaultReferenceTargetIsDefinde_NonTypesystemRule" file="check_ContributionDefaultReferenceTargetIsDefinde_NonTypesystemRule.java">
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenu_Contribution__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.typesystem.check_ContributionIsNotInConceptLanguage_NonTypesystemRule" file="check_ContributionIsNotInConceptLanguage_NonTypesystemRule.java">
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
@@ -583,6 +647,20 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.DuplicationUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.typesystem.check_TransformationMenuDefaultReferenceTargetIsDefined_NonTypesystemRule" file="check_TransformationMenuDefaultReferenceTargetIsDefined_NonTypesystemRule.java">
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />

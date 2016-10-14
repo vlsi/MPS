@@ -9,6 +9,9 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import java.util.Set;
 import java.util.HashSet;
+import com.intellij.history.LocalHistoryAction;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -21,47 +24,72 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.util.Map;
 import jetbrains.mps.ide.migration.ProgressEstimation;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.history.LocalHistory;
+import jetbrains.mps.ide.project.ProjectHelper;
+import java.awt.Color;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import jetbrains.mps.ide.migration.RefactoringLogApplied;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import jetbrains.mps.project.AbstractModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem;
 
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
+  public static final String ID_fallback = "progressFallback";
+  public static final String START_LABEL_TEXT = "Migration started";
+  public static final String FINISH_LABEL_TEXT = "Migration finished";
+  public static final String APPLYING_MIG_LABEL = "Applying migration ";
   private MigrationManager myManager;
   private JBList myList;
   private ModalityState myModalityState;
   private Task myTask;
   private InlineProgressIndicator myProgress;
   private Set<String> myExecuted = new HashSet<String>();
-  private MigrationErrorContainer myErrorContainer;
-  private volatile boolean myIsComplete = false;
+  private MigrationProblemsContainer myErrorContainer;
+  private boolean myInitialized = false;
+  private volatile boolean myIsComplete = true;
+  private InitialStep myInitialStep;
+  private boolean mySearchBrokenReferences;
+  private LocalHistoryAction myCurrentChange = null;
 
-  public MigrationsProgressWizardStep(Project project, MigrationManager manager, MigrationErrorContainer errorContainer) {
-    super(project, "Migration In Progress", ID);
+  protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
+  public MigrationsProgressWizardStep(Project project, InitialStep initialStep, MigrationManager manager, MigrationProblemsContainer errorContainer, boolean searchBrokenReferences) {
+    super(project, "Migration In Progress", (searchBrokenReferences ? ID : ID_fallback));
     myManager = manager;
     myErrorContainer = errorContainer;
+    myInitialStep = initialStep;
+    mySearchBrokenReferences = searchBrokenReferences;
     this.myTask = new Task.Modal(project, "Migration progress", false) {
       public void run(@NotNull ProgressIndicator progress) {
         PersistenceRegistry.getInstance().disableFastFindUsages();
@@ -70,7 +98,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         } catch (Throwable t) {
           addElementToMigrationList("Finished with exception");
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("exception occured on migration", t);
+            LOG.error("exception occurred on migration", t);
           }
         } finally {
           myIsComplete = true;
@@ -91,6 +119,22 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
     myProgress = new InlineProgressIndicator(true, myTask) {
       @Override
+      protected void queueProgressUpdate() {
+        if (ThreadUtils.isInEDT()) {
+          updateAndRepaint();
+        } else {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
+            public void run() {
+              updateAndRepaint();
+            }
+          }, myModalityState);
+        }
+      }
+      @Override
+      protected void queueRunningUpdate(@NotNull Runnable update) {
+        throw new UnsupportedOperationException();
+      }
+      @Override
       protected boolean isFinished() {
         return myIsComplete;
       }
@@ -100,12 +144,23 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     mainPanel.add(myProgress.getComponent(), BorderLayout.SOUTH);
   }
 
+
+  @Override
+  public void _init() {
+    super._init();
+    if (!(myInitialized)) {
+      myModalityState = ModalityState.stateForComponent(myList);
+      myIsComplete = false;
+      myErrorContainer.setErrorDescriptor(null);
+      myInitialized = true;
+    }
+  }
+
   @Override
   public void autostart(final _FunctionTypes._void_P0_E0 later) {
     // this is needed to fully show the step before first migration is started 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        myModalityState = ModalityState.stateForComponent(myList);
         ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
             ProgressManager.getInstance().runProcess(new Runnable() {
@@ -122,14 +177,35 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     });
   }
 
+  public static void runMigrationsInTests(Project p) {
+    InitialStep initialStep = new InitialStep(p, Collections.<ProjectMigrationWithOptions.Option>emptyList());
+    MigrationProblemsContainer mpc = new MigrationProblemsContainer() {
+      private MigrationErrorDescriptor myD;
+      @Nullable
+      public MigrationErrorDescriptor getErrorDescriptor() {
+        return myD;
+      }
+      public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+        myD = errors;
+      }
+    };
+    MigrationsProgressWizardStep step = new MigrationsProgressWizardStep(p, initialStep, p.getComponent(MigrationManager.class), mpc, false);
+    step.myList = new JBList(new DefaultListModel());
+    step.myModalityState = ModalityState.any();
+    step.doRun(new EmptyProgressIndicator());
+  }
+
   private void doRun(final ProgressIndicator progress) {
-    Map<String, Object> options = InitialStep.getOptions();
+    Map<ProjectMigrationWithOptions.Option, Object> options = myInitialStep.getOptions();
     setFraction(progress, ProgressEstimation.initial());
 
     boolean cleanNotification = false;
     List<MigrationManager.MigrationStep> cleanupMigrations = ListSequence.fromList(new ArrayList<MigrationManager.MigrationStep>());
     int cleanupStepsCount = myManager.projectStepsCount(true);
     int stepNum = 0;
+
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), START_LABEL_TEXT, Color.ORANGE.getRGB());
+
     while (true) {
       MigrationManager.MigrationStep step = myManager.nextProjectStep(options, true);
       if (step == null) {
@@ -137,39 +213,75 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       }
 
       ListSequence.fromList(cleanupMigrations).addElement(step);
-      if (!(executeSingleStep(step))) {
+      if (!(executeSingleStep(step, false))) {
         break;
       }
 
       if (!(cleanNotification)) {
         cleanNotification = true;
-        addElementToMigrationList("Cleaning project... Please wait.");
+        addElementToMigrationList("Cleaning project...");
       }
 
       stepNum++;
       setFraction(progress, ProgressEstimation.cleanupMigrations(1.0 * stepNum / cleanupStepsCount));
     }
 
-    addElementToMigrationList("Checking migrations consistency... Please wait.");
+    addElementToMigrationList("Checking migrations consistency...");
     List<ScriptApplied.ScriptAppliedReference> missingMigrations = myManager.getMissingMigrations();
-    setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
+    setFraction(progress, ProgressEstimation.migrationsCheck(0.9));
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
       myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.MigrationsMissingError(missingMigrations));
       addElementToMigrationList("Some migrations are missing. Press 'Next' to continue.");
       return;
     }
-
-    addElementToMigrationList("Checking models... Please wait.");
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        final List<SModule> projectModules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
+        Set<SModule> depModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
+        SetSequence.fromSet(depModules).removeSequence(Sequence.fromIterable(((Iterable<SModule>) mpsProject.getModulesWithGenerators())));
+        List<ScriptApplied.ScriptAppliedReference> depMigrationsToRun = myManager.getModuleMigrationsToApply(depModules);
+        Iterable<SModule> notMigratedModules = ListSequence.fromList(depMigrationsToRun).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
+          public SModule select(ScriptApplied.ScriptAppliedReference it) {
+            return it.getModule();
+          }
+        }).distinct();
+        final Map<SModule, SModule> errsToShow = MapSequence.fromMap(new HashMap<SModule, SModule>());
+        Sequence.fromIterable(notMigratedModules).visitAll(new IVisitor<SModule>() {
+          public void visit(final SModule notMigrated) {
+            MapSequence.fromMap(errsToShow).put(notMigrated, ListSequence.fromList(projectModules).findFirst(new IWhereFilter<SModule>() {
+              public boolean accept(SModule depCandidate) {
+                return new GlobalModuleDependenciesManager(depCandidate).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(notMigrated);
+              }
+            }));
+          }
+        });
+        if (ListSequence.fromList(depMigrationsToRun).isNotEmpty()) {
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.NotMigratedLibsError(errsToShow));
+        }
+      }
+    });
+    if (myErrorContainer.getErrorDescriptor() != null) {
+      addElementToMigrationList("Some dependent modules are not migrated. Press 'Next' to continue.");
+      return;
+    }
+    setFraction(progress, ProgressEstimation.migrationsCheck(1.0));
+
+    addElementToMigrationList("Checking models...");
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
-        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+        if (MigrationCheckUtil.haveProblems(modules, mySearchBrokenReferences, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             setFraction(progress, ProgressEstimation.preCheck(fraction));
           }
         })) {
-          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PreCheckError());
+          boolean canIgnore = mySearchBrokenReferences && !(MigrationCheckUtil.haveProblems(modules, false, new _FunctionTypes._void_P1_E0<Double>() {
+            public void invoke(Double fraction) {
+              setFraction(progress, ProgressEstimation.fallbackPreCheck(fraction));
+            }
+          }));
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PreCheckError(canIgnore));
         }
       }
     });
@@ -184,7 +296,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
     int projectStepsCount = myManager.projectStepsCount(false);
     stepNum = 0;
-    while (executeSingleStep(myManager.nextProjectStep(options, false))) {
+    while (executeSingleStep(myManager.nextProjectStep(options, false), false)) {
       stepNum++;
       setFraction(progress, ProgressEstimation.projectMigrations(1.0 * stepNum / projectStepsCount));
     }
@@ -195,53 +307,87 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
 
     int languageStepsCount = myManager.moduleStepsCount();
     stepNum = 0;
-    while (executeSingleStep(myManager.nextModuleStep())) {
+    MigrationManager.MigrationStep lastStep = null;
+    while (true) {
+      String mergeId = (lastStep == null ? null : lastStep.getMergeId());
+      MigrationManager.MigrationStep nextStep = myManager.nextModuleStep(mergeId);
+      boolean merge = (mergeId != null && nextStep != null && mergeId.equals(nextStep.getMergeId()));
+      lastStep = nextStep;
+      boolean res = executeSingleStep(nextStep, merge);
+      if (!(res)) {
+        break;
+      }
+
       stepNum++;
       setFraction(progress, ProgressEstimation.languageMigrations(1.0 * stepNum / languageStepsCount));
     }
+    if (myCurrentChange != null) {
+      addElementToMigrationList("Saving changed models...");
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          mpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              mpsProject.getRepository().saveAll();
+            }
+          });
+        }
+      }, myModalityState);
+
+      myCurrentChange.finish();
+      myCurrentChange = null;
+    }
+
+    LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(getMPSProject()), FINISH_LABEL_TEXT, Color.ORANGE.getRGB());
+
     if (myErrorContainer.getErrorDescriptor() != null) {
       addElementToMigrationList("Exception while running migration. Press 'Next' to continue.");
       return;
     }
 
-    addElementToMigrationList("Saving changed models... Please wait.");
-
-    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-      public void run() {
-        mpsProject.getRepository().saveAll();
-      }
-    });
-    setFraction(progress, ProgressEstimation.saving(1.0));
-
-    addElementToMigrationList("Checking models... Please wait.");
+    final Wrappers._boolean haveBadCode = new Wrappers._boolean(false);
+    addElementToMigrationList("Checking models...");
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
         final Wrappers._int moduleNum = new Wrappers._int(0);
-        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+
+        haveBadCode.value = MigrationCheckUtil.haveProblems(modules, mySearchBrokenReferences, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             moduleNum.value++;
             setFraction(progress, ProgressEstimation.postCheck(fraction));
           }
-        })) {
-          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError());
+        });
+      }
+    });
+
+    addElementToMigrationList("Finding not migrated code...");
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
+        final Wrappers._int moduleNum = new Wrappers._int(0);
+
+        boolean haveNotMigrated = MigrationCheckUtil.haveNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), new _FunctionTypes._void_P1_E0<Double>() {
+          public void invoke(Double fraction) {
+            moduleNum.value++;
+            setFraction(progress, ProgressEstimation.nonMigratedCheck(fraction));
+          }
+        });
+
+        if (haveBadCode.value || haveNotMigrated) {
+          myErrorContainer.setErrorDescriptor(new MigrationsProgressWizardStep.PostCheckError(haveBadCode.value, haveNotMigrated));
         }
       }
     });
     if (myErrorContainer.getErrorDescriptor() != null) {
-      addElementToMigrationList("Errors are detected in project after executing migrations. Press 'Next' to continue.");
+      addElementToMigrationList("Problems are detected after executing migrations. Press 'Next' to continue.");
       return;
     }
 
     addElementToMigrationList("Done!");
   }
 
-  public void setFraction(final ProgressIndicator p, final double fraction) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        p.setFraction(fraction);
-      }
-    }, ModalityState.any());
+  public void setFraction(ProgressIndicator p, double fraction) {
+    p.setFraction(fraction);
   }
 
   private void addElementToMigrationList(final String step) {
@@ -255,18 +401,46 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }, myModalityState);
   }
 
-  private boolean executeSingleStep(final MigrationManager.MigrationStep result) {
+  private boolean executeSingleStep(final MigrationManager.MigrationStep result, boolean mergeWithPrev) {
     if (result == null) {
       return false;
+    }
+
+    final boolean startNewChange = !(mergeWithPrev) && myCurrentChange != null;
+
+    if (startNewChange) {
+      addElementToMigrationList("Saving changed models...");
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          final jetbrains.mps.project.Project mpsProject = getMPSProject();
+          mpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              mpsProject.getRepository().saveAll();
+            }
+          });
+        }
+      }, myModalityState);
     }
 
     final String step = ((MigrationManager.MigrationStep) result).getDescription();
     addElementToMigrationList(step);
 
     final Wrappers._boolean noException = new Wrappers._boolean();
+
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
-        noException.value = ((MigrationManager.MigrationStep) result).execute();
+        if (startNewChange) {
+          myCurrentChange.finish();
+          myCurrentChange = null;
+        }
+        if (myCurrentChange == null) {
+          myCurrentChange = LocalHistory.getInstance().startAction(APPLYING_MIG_LABEL + result.getCommonDescription());
+        }
+        getMPSProject().getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            noException.value = ((MigrationManager.MigrationStep) result).execute();
+          }
+        });
       }
     }, myModalityState);
 
@@ -305,35 +479,65 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
   }
 
   private class PreCheckError extends MigrationErrorDescriptor {
-    public PreCheckError() {
+    private final boolean myCanIgnore;
+    public PreCheckError(boolean canIgnore) {
+      myCanIgnore = canIgnore;
     }
     public String getMessage() {
-      return "Migration Assistant found that some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
+      if (!(myCanIgnore)) {
+        return "Migration Assistant found some problems that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
+      } else {
+        return "Migration Assistant found some broken references that prevent this project from being migrated.<br><br>" + "Try running migrations after correcting your project and/or adding necessary libraries.<br>" + "You can ignore all broken references and continue migration, but it can cause some migrations to run improperly.<br>" + "Migration Assistant will be started again on next project opening or it can be started " + "manually by choosing Tools->Run Migration Assistant from the main menu.<br><br>" + "Problems will be shown in Model Checker tool when the project is loaded.";
+      }
     }
-    public Iterable<Problem> getProblems() {
+    public boolean canIgnore() {
+      return myCanIgnore;
+    }
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
-      return MigrationCheckUtil.getProblems(modules, null, 100);
+      return MigrationCheckUtil.getProblems(modules, true, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 1), 100);
     }
   }
 
   private class PostCheckError extends MigrationErrorDescriptor {
-    public PostCheckError() {
+    private boolean myError;
+    private boolean myHasManuals;
+
+    public PostCheckError(boolean error, boolean hasManuals) {
+      assert error || hasManuals;
+      myError = error;
+      myHasManuals = hasManuals;
+    }
+    public boolean canIgnore() {
+      return false;
     }
     public String getMessage() {
-      return "Migration Assistant was unable to migrate some nodes in this project.<br><br>" + "Problem nodes will be shown in Model Checker tool after the project is loaded.<br>" + "Please correct them manually.";
+      String res = "Migration Assistant was unable to migrate some nodes in this project.<br><br>";
+      if (myError) {
+        res += "Problems " + ((myHasManuals ? "and code for manual correction" : "")) + "will be shown in Model Checker tool when the project is loaded.";
+      } else {
+        res += "Some code can't be migrated automatically and should be changed manually.<br>" + "Places to be changed manually will be shown in Model Checker tool after the project is loaded.<br>";
+      }
+      if (myHasManuals) {
+        res += "You can re-run search for not migrated code at any time by choosing MainMenu->Migrations->Run Pre-Update Check";
+      }
+      return res;
     }
-    public Iterable<Problem> getProblems() {
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(getMPSProject());
-      return MigrationCheckUtil.getProblems(modules, null, 100);
+      return CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(modules, getMPSProject().getComponent(MigrationComponent.class), MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 0.5), 100)).union(CollectionSequence.fromCollection(MigrationCheckUtil.getProblems(modules, true, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0.5, 1), 100)));
     }
   }
   private class MigrationExceptionError extends MigrationErrorDescriptor {
     public MigrationExceptionError() {
     }
     public String getMessage() {
-      return "Exception while running migration. See error log for details.";
+      return "Exception occurred while running migration. See log file for details.";
     }
-    public Iterable<Problem> getProblems() {
+    public boolean canIgnore() {
+      return false;
+    }
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       return Collections.<Problem>emptyList();
     }
   }
@@ -343,9 +547,12 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       this.errors = errors;
     }
     public String getMessage() {
-      return "Migration was not completed.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "You can try to continue migrations manually or execute Migration Assistant later by selecting Tools->Run Migration Assistant from the main menu.";
+      return "Migration was not started.<br>" + "Some migration scripts are missing or finished with errors.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
     }
-    public Iterable<Problem> getProblems() {
+    public boolean canIgnore() {
+      return false;
+    }
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
       final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied.ScriptAppliedReference, SModule>() {
         public SModule select(ScriptApplied.ScriptAppliedReference it) {
           return it.getModule();
@@ -388,5 +595,23 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       }));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
+  private class NotMigratedLibsError extends MigrationErrorDescriptor {
+    private Map<SModule, SModule> errors;
+    public NotMigratedLibsError(Map<SModule, SModule> errors) {
+      this.errors = errors;
+    }
+    public String getMessage() {
+      return "Migration was not started.<br>" + "The project depends on some external modules that were not fully migrated.<br><br>" + "Problems will be shown in Model Checker tool after the project is loaded.<br>" + "It's possible to invoke Migration Assistant at any time by selecting Tools->Run Migration Assistant from the main menu.";
+    }
+    public boolean canIgnore() {
+      return false;
+    }
+    public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
+      return MapSequence.fromMap(errors).select(new ISelector<IMapping<SModule, SModule>, DependencyOnNotMigratedLibProblem>() {
+        public DependencyOnNotMigratedLibProblem select(IMapping<SModule, SModule> it) {
+          return new DependencyOnNotMigratedLibProblem(it.value(), it.key());
+        }
+      });
+    }
+  }
 }

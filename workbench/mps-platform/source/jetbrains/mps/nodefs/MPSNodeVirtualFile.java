@@ -20,7 +20,6 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -36,7 +35,7 @@ import java.io.OutputStream;
 public final class MPSNodeVirtualFile extends VirtualFile {
   private static final byte[] CONTENTS = new byte[0];
   private static final Logger LOG = LogManager.getLogger(MPSNodeVirtualFile.class);
-  public static final String NODE_PREFIX = "node://";
+  static final String NODE_PREFIX = "node://";
 
   private SNodeReference myNode;
   private final RepositoryVirtualFiles myRepoFiles;
@@ -56,27 +55,24 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   // for exposed files, this shall happen in exclusive read (so that different threads from readAction do not get different
   // result e.g. for getName().
   /*package*/ void updateFields() {
-    myRepoFiles.getRepository().getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = myNode.resolve(myRepoFiles.getRepository());
-        if (node == null) {
-          LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
-          myName = myPresentationName = "";
-          myPath = "";
-        } else {
-          myName = myPresentationName = String.valueOf(node.getPresentation());
-          if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
-            // it's common to open same node from different generation steps (transient models)
-            // and to tell nodes from different steps we append model's identification
-            final String s = node.getModel().getName().getStereotype();
-            if (!s.isEmpty()) {
-              myPresentationName = myName + '@' + s;
-            }
+    myRepoFiles.getRepository().getModelAccess().runReadAction(() -> {
+      SNode node = myNode.resolve(myRepoFiles.getRepository());
+      if (node == null) {
+        LOG.warn("Cannot find node for passed SNodeReference: " + myNode);
+        myName = myPresentationName = "";
+        myPath = "";
+      } else {
+        myName = myPresentationName = String.valueOf(node.getPresentation());
+        if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
+          // it's common to open same node from different generation steps (transient models)
+          // and to tell nodes from different steps we append model's identification
+          final String s = node.getModel().getName().getStereotype();
+          if (!s.isEmpty()) {
+            myPresentationName = myName + '@' + s;
           }
-          myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
-          myTimeStamp = node.getModel().getSource().getTimestamp();
         }
+        myPath = NODE_PREFIX + myRepoFiles.getPathFacility().serializeNode(node);
+        myTimeStamp = node.getModel().getSource().getTimestamp();
       }
     });
   }
@@ -157,28 +153,25 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
     // but why it's not MPSModelVirtualFile that serves as parent for node VF?
     if (myNode == null || myNode.getModelReference() == null) return null;
-    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        if (myNode == null) {
-          // wow! this double check is needed even with the fact, that read action is run in the same thread
-          // i.e. getParent() and this runnable are in the same thread
-          // But! idea waits for the current write action to complete before proceeding to the read action
-          // (see ApplicationalImpl.startRead())
-          // And it happens so that invalidate() which sets myNode to null reproducibly happens exactly
-          // in the write action we're waiting for, hence NPE
-          return null;
-        }
-        org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
-        if (modelRef.resolve(myRepoFiles.getRepository()) == null) {
-          return null;
-        }
-        MPSModelVirtualFile modelVFile = myRepoFiles.getFileFor(modelRef);
-        if (modelVFile != null) {
-          return modelVFile.getParent();
-        }
+    return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(() -> {
+      if (myNode == null) {
+        // wow! this double check is needed even with the fact, that read action is run in the same thread
+        // i.e. getParent() and this runnable are in the same thread
+        // But! idea waits for the current write action to complete before proceeding to the read action
+        // (see ApplicationalImpl.startRead())
+        // And it happens so that invalidate() which sets myNode to null reproducibly happens exactly
+        // in the write action we're waiting for, hence NPE
         return null;
       }
+      org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
+      if (modelRef.resolve(myRepoFiles.getRepository()) == null) {
+        return null;
+      }
+      MPSModelVirtualFile modelVFile = myRepoFiles.getFileFor(modelRef);
+      if (modelVFile != null) {
+        return modelVFile.getParent();
+      }
+      return null;
     });
   }
 
@@ -205,6 +198,12 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   }
 
   /*package*/ void invalidate() {
+    if (myNode == null) {
+      // With proper fix of https://youtrack.jetbrains.com/issue/MPS-24244 (shared VFS notifier instance), shall not happen,
+      // nevertheless, doesn't hurt to be alert.
+      LOG.error("Attempt to invalidate already disposed file", new Throwable());
+      return;
+    }
     myRepoFiles.forgetVirtualFile(myNode);
     myNode = null;
   }

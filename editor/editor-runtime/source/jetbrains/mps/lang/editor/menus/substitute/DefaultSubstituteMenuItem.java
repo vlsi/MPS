@@ -15,11 +15,19 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
+import jetbrains.mps.util.PatternUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,57 +36,104 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author simon
  */
 public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
-  private final SNode myParentNode;
-  private final SNode myCurrentChild;
+
+  @NotNull
   private SAbstractConcept myConcept;
 
-  public DefaultSubstituteMenuItem(SAbstractConcept concept, SNode parentNode, SNode currentChild) {
+  @NotNull
+  private final SNode myParentNode;
+
+  @Nullable
+  private final SNode myCurrentChild;
+
+  @NotNull
+  private EditorContext myEditorContext;
+
+  public DefaultSubstituteMenuItem(@NotNull SAbstractConcept concept, @NotNull SNode parentNode, @Nullable SNode currentChild, @NotNull EditorContext editorContext) {
     myConcept = concept;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
+    myEditorContext = editorContext;
   }
 
+  @Nullable
   @Override
   public SAbstractConcept getOutputConcept() {
     return myConcept;
   }
 
+  @Nullable
   @Override
-  public SNode getType(String pattern) {
+  public SNode getType(@NotNull String pattern) {
     return null;
   }
 
+  @Nullable
   @Override
-  public String getMatchingText(String pattern) {
+  public String getMatchingText(@NotNull String pattern) {
     return NodePresentationUtil.matchingText(myConcept, false);
   }
 
+  @Nullable
   @Override
-  public String getDescriptionText(String pattern) {
+  public String getDescriptionText(@NotNull String pattern) {
     if (myConcept instanceof SConcept) {
-      return NodePresentationUtil.descriptionText(((SConcept) myConcept), false);
+      return NodePresentationUtil.descriptionText(myConcept, false);
     }
     //todo...
     return "";
   }
 
   @Override
-  public boolean canExecute(String pattern) {
-    return true;
+  public boolean canExecute(@NotNull String pattern) {
+    return PatternUtil.matchesPattern(pattern, getMatchingText(pattern));
   }
 
   @Override
-  public SNode createNode(String pattern) {
-    return NodeFactoryManager.createNode(myConcept, myParentNode, myCurrentChild, myParentNode.getModel());
+  public boolean canExecuteStrictly(@NotNull String pattern) {
+    return pattern.equals(getMatchingText(pattern));
   }
 
+  @Nullable
   @Override
-  public IconResource getIcon(String pattern) {
+  public SNode createNode(@NotNull String pattern) {
+    SNode currentChild = myCurrentChild;
+    if (myCurrentChild != null) {
+      final Object oldNodeForSubstitute = myCurrentChild.getUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION);
+      if (oldNodeForSubstitute != null) {
+        currentChild = ((SNode) oldNodeForSubstitute);
+      }
+    }
+    return NodeFactoryManager.createNode(myConcept, currentChild, myParentNode, myParentNode.getModel());
+  }
+
+  @Nullable
+  @Override
+  public IconResource getIcon(@NotNull String pattern) {
     return IconResourceUtil.getIconResourceForConcept(myConcept);
   }
 
   @Override
-  public boolean select(SNode createdNode, String pattern) {
-    return false;
+  public void select(@NotNull SNode createdNode, @NotNull String pattern) {
+    EditorComponent editorComponent = ((EditorComponent) myEditorContext.getEditorComponent());
+    EditorCell cell = editorComponent.findNodeCell(createdNode);
+    if (cell != null) {
+      EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+      if (errorCell != null) {
+        editorComponent.changeSelectionWRTFocusPolicy(errorCell);
+      } else {
+        editorComponent.changeSelectionWRTFocusPolicy(cell);
+      }
+    }
+  }
+
+  @Nullable
+  protected SNode getCurrentChild() {
+    return myCurrentChild;
+  }
+
+  @NotNull
+  protected SNode getParentNode() {
+    return myParentNode;
   }
 }

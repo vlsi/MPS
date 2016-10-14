@@ -62,7 +62,7 @@ public class OldCommentContainerMigration {
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(concept))).select(new ISelector<SNode, Problem>() {
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(concept), false)).select(new ISelector<SNode, Problem>() {
         public Problem select(SNode it) {
           return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
         }

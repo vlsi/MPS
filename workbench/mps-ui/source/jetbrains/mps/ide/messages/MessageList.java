@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.CopyPasteManagerEx;
@@ -25,22 +26,23 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ToggleAction;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.ui.InputValidatorEx;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.pom.NavigatableAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
+import com.intellij.ui.components.JBPanel;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.util.ExceptionUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
@@ -52,6 +54,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import sun.font.FontDesignMetrics;
 
 import javax.swing.AbstractAction;
 import javax.swing.AbstractListModel;
@@ -63,6 +66,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -72,9 +76,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -110,37 +112,44 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
   };
 
-  private Queue<IMessage> myMessages = new LinkedList<IMessage>();
+  private final Queue<IMessage> myMessages = new LinkedList<>();
+  private MessagesListCellRenderer myCellRenderer = new MessagesListCellRenderer();
   protected int myInfos;
   protected int myWarnings;
   protected int myErrors;
   protected int myHintObjects;
-  private List<String> mySearches = new ArrayList<String>();
+  private final List<String> mySearches = new ArrayList<>();
   private int myMaxListSize = 10000;
 
-  protected final FastListModel myModel = new FastListModel(this.myMaxListSize);
-  private JPanel myComponent = new RootPanel();
+  protected final FastListModel<IMessage> myModel = new FastListModel<>(this.myMaxListSize);
+  private final RootPanel myComponent = new RootPanel();
   protected final JList myList = new JBList(myModel);
   private ActionToolbar myToolbar;
-  private AtomicInteger myMessagesInProgress = new AtomicInteger();
+  private final AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
-  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, false, myComponent, null, null, true);
+  private final MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, false, myComponent, null, null, true);
   private final Object myUpdateIdentity = new Object();
-  private ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<IMessage>();
+  private final ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<>();
   private volatile boolean myIsDisposed = false;
   private boolean myActivateOnMessage = false;
 
   protected MessageList() {
     myUpdateQueue.setRestartTimerOnAdd(true);
+    // Recreate render to update colors after scheme change
+    EditorColorsManager.getInstance().addEditorColorsListener(scheme -> {
+      myCellRenderer = new MessagesListCellRenderer();
+      myList.setCellRenderer(myCellRenderer);
+    }, this);
   }
 
   /**
    * Tells whether the list shall show up once message is added.
    * XXX Note, there's difference between "just show up" and "show up and get active", but I don't know what is it
-   *  (i.e. whether window.show() brings the window to front, or it's windows.activate() that does, see #show(boolean), below.
-   *  Perhaps, it's just about focus gained?)
-   *
+   * (i.e. whether window.show() brings the window to front, or it's windows.activate() that does, see #show(boolean), below.
+   * Perhaps, it's just about focus gained?)
+   * <p>
    * By default, we don't show the list when message is added.
+   *
    * @see #bringToFront()
    */
   public void setActivateOnMessage(boolean activateOnMessage) {
@@ -159,7 +168,14 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       return;
     }
 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    // 1. clear of the list shall happen synchronously with addition of messages, hence use of the same queue/update mechanism and same priority
+    //    as update on #add()
+    // 2. updates are not dispatched until view has been initialized (prevents exceptions like https://youtrack.jetbrains.com/issue/MPS-24408)
+    // 3. though only one clear() in the queue makes sense, and we can ignore all but the last one, I didn't find a way to accomplish this with
+    //    MergingUpdateQueue API. It seems possible to merge subsequent clear with the one already in the queue, but that would yield incorrect
+    //    results (e.g. update requests: m1, m2, clear1, m3, clear2. If clear2 is ignored and merged with clear1, m3 would be visible)
+    //    That's why identity is a new object each time (I don't expect thousands of successive clear() calls)
+    myUpdateQueue.queue(new Update(new Object()) {
       @Override
       public void run() {
         if (myIsDisposed) {
@@ -194,7 +210,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
           return;
         }
 
-        List<IMessage> messagesToAdd = new ArrayList<IMessage>();
+        List<IMessage> messagesToAdd = new ArrayList<>();
         while (!myMessagesQueue.isEmpty()) {
           IMessage message = myMessagesQueue.remove();
           myMessagesInProgress.decrementAndGet();
@@ -269,7 +285,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   @Override
   public List<String> getSearches() {
-    return new ArrayList<String>(mySearches);
+    return new ArrayList<>(mySearches);
   }
 
   @Override
@@ -284,11 +300,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   protected void initUI() {
     myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    myList.setCellRenderer(new MessagesListCellRenderer());
-    myComponent.setLayout(new BorderLayout());
-
-    final JPanel panel = new JPanel(new BorderLayout());
-    panel.add(new JPanel(), BorderLayout.CENTER);
+    myList.setCellRenderer(myCellRenderer);
 
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(myWarningsAction);
@@ -298,11 +310,16 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.add(new ClearAction());
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-    panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
 
-    myComponent.add(panel, BorderLayout.WEST);
-    final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList);
-    myComponent.add(scrollPane, BorderLayout.CENTER);
+    myComponent.setToolbar(myToolbar.getComponent());
+    final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myList, true);
+    // Add MouseWheelListener to scrollPane instead of myList itself, because otherwise scrollPane default behaviour will be blocked
+    scrollPane.addMouseWheelListener(e -> {
+      // Need to convert event to get right mouse point relative to list
+      final MouseEvent mouseEvent = SwingUtilities.convertMouseEvent(e.getComponent(), e, myList);
+      myCellRenderer.setIndexUnderMouse(myList.locationToIndex(mouseEvent.getPoint()));
+    });
+    myComponent.setContent(scrollPane);
 
     myComponent.registerKeyboardAction(new AbstractAction() {
       @Override
@@ -316,21 +333,16 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }, KeyStroke.getKeyStroke('F', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-    myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
+    myList.setFixedCellHeight(FontDesignMetrics.getMetrics(myList.getFont()).getHeight() + 5);
 
-    myList.registerKeyboardAction(new AbstractAction() {
+    final AbstractAction openCurrentMessage = new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
         openCurrentMessageIfPossible();
       }
-    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    myList.registerKeyboardAction(new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        openCurrentMessageIfPossible();
-      }
-    }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    };
+    myList.registerKeyboardAction(openCurrentMessage, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myList.registerKeyboardAction(openCurrentMessage, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.registerKeyboardAction(new AbstractAction() {
       @Override
@@ -339,22 +351,13 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       }
     }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    myList.registerKeyboardAction(new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        myList.getSelectionModel().setSelectionInterval(0, myList.getModel().getSize());
-      }
-    }, KeyStroke.getKeyStroke('A', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    myList.addMouseWheelListener(new MouseWheelListener() {
-      @Override
-      public void mouseWheelMoved(MouseWheelEvent e) {
-        myList.setAutoscrolls(false);
-        scrollPane.dispatchEvent(e);
-      }
-    });
+    myList.registerKeyboardAction(e -> selectAll(),
+        KeyStroke.getKeyStroke('A', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseListener(new MouseAdapter() {
+      // Holds index of item, that was under cursor on mouse press action
+      private int mousePressedIndex = -1;
+
       @Override
       public void mouseClicked(MouseEvent e) {
         boolean oneClickOpen = e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1 && myAutoscrollToSourceAction.isSelected(null);
@@ -366,9 +369,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
       @Override
       public void mousePressed(MouseEvent e) {
-        //todo select element under mouse
         if (e.isPopupTrigger()) {
           showPopupMenu(e);
+        } else {
+          mousePressedIndex = myList.locationToIndex(e.getPoint());
         }
       }
 
@@ -376,27 +380,36 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       public void mouseReleased(MouseEvent e) {
         if (e.isPopupTrigger()) {
           showPopupMenu(e);
+          return;
         }
+        int index = myList.locationToIndex(e.getPoint());
+        if (mousePressedIndex != -1 && index != -1 && mousePressedIndex != index) {
+          myList.addSelectionInterval(mousePressedIndex, index);
+        }
+        // reset saved value to be set on next mouse press
+        mousePressedIndex = -1;
       }
     });
 
-    myList.addMouseMotionListener(new MouseMotionListener() {
+    // This does not select message after scroll, but adding mouse scroll listener will block scrolling
+    myList.addMouseMotionListener(new MouseMotionAdapter() {
       @Override
-      public void mouseDragged(MouseEvent e) {
-      }
+      public void mouseMoved(MouseEvent event) {
+        int index = myList.locationToIndex(event.getPoint());
 
-      @Override
-      public void mouseMoved(MouseEvent e) {
-        int index = myList.locationToIndex(e.getPoint());
-
-        final IMessage message = index != -1 ? (IMessage) myModel.getElementAt(index) : null;
+        final IMessage message = index != -1 && index >= myList.getFirstVisibleIndex() && index <= myList.getLastVisibleIndex()
+            ? myModel.getElementAt(index) : null;
         if (message == null || !myAutoscrollToSourceAction.isSelected(null)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+          myCellRenderer.setIndexUnderMouse(-1);
+          myList.repaint();
           return;
         }
 
         boolean canNavigate = canNavigate(message);
         myList.setCursor(Cursor.getPredefinedCursor(canNavigate ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
+        myCellRenderer.setIndexUnderMouse(index);
+        myList.repaint();
       }
     });
   }
@@ -408,17 +421,37 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
   }
 
-  // invoked in EDT
-  protected abstract boolean canNavigate(@NotNull IMessage msg);
-  // invoked in EDT
-  protected abstract void navigate(@NotNull IMessage msg, boolean focus);
+  private void selectAll() {
+    myList.setSelectionInterval(0, myList.getModel().getSize() - 1);
+  }
 
-  // invoked when there were visible messages added, and list requires exposure to user
+  /**
+   * Need to be invoked in EDT.
+   * Check if {@link IMessage} holds element, which can be navigated too
+   *
+   * @param message to be check for holding navigatable element
+   * @return <code>true<code/> if message can provide navigatable element
+   */
+  protected abstract boolean canNavigate(@NotNull IMessage message);
+
+  /**
+   * Need to be invoked in EDT.
+   * Check if {@link IMessage} holds element, which can be navigated too
+   *
+   * @param message holds navigatable element
+   * @param focus   sets obligation to focus element
+   */
+  protected abstract void navigate(@NotNull IMessage message, boolean focus);
+
+  /**
+   * Invoke when visible messages are added, and list requires exposure to user
+   */
   protected abstract void bringToFront();
 
   /**
    * Override and implement registration of UI component into the MessageView.
    * Don't forget to activate message dispatch once content is ready.
+   *
    * @see #activateUpdate()
    */
   public abstract void createContent(final boolean canClose, final boolean isMultiple);
@@ -431,25 +464,31 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myUpdateQueue.activate();
   }
 
-  private void showPopupMenu(MouseEvent evt) {
-    if (myList.getSelectedValue() == null) {
-      return;
+  public boolean isPinned() {
+    return false;
+  }
+
+  private void showPopupMenu(MouseEvent event) {
+    final int index = myList.locationToIndex(event.getPoint());
+    final IMessage message = index != -1 ? myModel.getElementAt(index) : null;
+    if (message != null && !myList.getSelectedValuesList().contains(message)) {
+      myList.setSelectedIndex(index);
     }
 
     DefaultActionGroup group = createActionGroup();
 
     JPopupMenu menu = ActionManager.getInstance().createActionPopupMenu(MPSActionPlaces.MPS_MESSAGES_POPUP, group).getComponent();
-    menu.show(myList, evt.getX(), evt.getY());
+    menu.show(myList, event.getX(), event.getY());
   }
 
+  @SuppressWarnings({"ThrowableInstanceNeverThrown", "unchecked"})
   private DefaultActionGroup createActionGroup() {
     DefaultActionGroup group = new DefaultActionGroup();
 
-    final Object[] selectedValues = myList.getSelectedValues();
-    if (selectedValues.length > 0) {
-      StringBuilder sb = new StringBuilder();
-      for (Object o : myList.getSelectedValues()) {
-        IMessage message = (IMessage) o;
+    final List<IMessage> selectedValues = myList.getSelectedValuesList();
+    if (!selectedValues.isEmpty()) {
+      final StringBuilder sb = new StringBuilder();
+      for (IMessage message : selectedValues) {
         sb.append(message.getText());
         sb.append("\n");
 
@@ -459,8 +498,8 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       }
       group.add(new CopyToClipboardAction("Copy Text").setTextToCopy(sb.toString()));
       Object hintObj;
-      if (selectedValues.length == 1 && (hintObj = ((IMessage) selectedValues[0]).getHintObject()) != null) {
-        SNodeId nodeId = hintObj instanceof SNodeReference ? ((SNodeReference) hintObj).getNodeId(): null;
+      if (selectedValues.size() == 1 && (hintObj = (selectedValues.get(0)).getHintObject()) != null) {
+        SNodeId nodeId = hintObj instanceof SNodeReference ? ((SNodeReference) hintObj).getNodeId() : null;
         if (nodeId != null) {
           group.add(new CopyToClipboardAction("Copy Node Id").setTextToCopy(nodeId.toString()));
         }
@@ -489,6 +528,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     group.addSeparator();
 
     group.add(new ClearAction());
+    group.add(new SelectAllAction());
 
     return group;
   }
@@ -504,7 +544,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   private String getHelpUrlForCurrentMessage() {
-    if (myList.getSelectedValues().length != 1) return null;
+    if (myList.getSelectedValuesList().size() != 1) {
+      return null;
+    }
 
     IMessage message = (IMessage) (myList.getSelectedValue());
     return message.getHelpUrl();
@@ -513,7 +555,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private void rebuildModel() {
     myModel.clear();
     myList.setFixedCellWidth(myList.getWidth());
-    List<IMessage> messagesToAdd = new ArrayList<IMessage>();
+    List<IMessage> messagesToAdd = new ArrayList<>();
     int width = 0;
     for (IMessage m : myMessages) {
       if (isVisible(m)) {
@@ -527,7 +569,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   private int getMessageWidth(IMessage message) {
-    Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
+    Component renderer = myCellRenderer.getListCellRendererComponent(myList, message, 0, false, false);
     return renderer.getPreferredSize().width;
   }
 
@@ -547,7 +589,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   private void updateActions() {
-    if (myToolbar == null) return;
+    if (myToolbar == null) {
+      return;
+    }
     myToolbar.updateActionsImmediately();
   }
 
@@ -573,6 +617,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     CopyToClipboardAction(String actionTitle) {
       super(actionTitle);
     }
+
     public CopyToClipboardAction setTextToCopy(String textToCopy) {
       myTextToCopy = textToCopy;
       return this;
@@ -592,7 +637,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   private class MyToggleAction extends ToggleAction {
     private boolean mySelected;
-    private Icon myIcon;
+    private final Icon myIcon;
 
     public MyToggleAction(String tooltip, Icon icon) {
       super("", tooltip, icon);
@@ -612,7 +657,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
 
     @Override
-    public void update(AnActionEvent e) {
+    public void update(@NotNull AnActionEvent e) {
       super.update(e);
 
       boolean enabled = isEnabled();
@@ -635,7 +680,8 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages Limit", null, String.valueOf(MessageList.this.myMaxListSize),
+      String result = Messages.showInputDialog(MessageList.this.myComponent, "Set max number of showing messages", "Messages Limit", null,
+          String.valueOf(MessageList.this.myMaxListSize),
           new InputValidatorEx() {
             @Nullable
             @Override
@@ -647,7 +693,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
             public boolean checkInput(String inputString) {
               try {
                 final Integer i = Integer.valueOf(inputString);
-                if(i < 1) return false;
+                if (i < 1) {
+                  return false;
+                }
               } catch (NumberFormatException nfe) {
                 return false;
               }
@@ -659,8 +707,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
               return checkInput(inputString);
             }
           });
-      if(result != null)
+      if (result != null) {
         MessageList.this.myMaxListSize = Integer.valueOf(result);
+      }
     }
   }
 
@@ -685,14 +734,15 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     myInfoAction.setSelected(null, enabled);
   }
 
-  public /*for tests*/ static class FastListModel extends AbstractListModel {
+  public /*for tests*/ static class FastListModel<T> extends AbstractListModel<T> {
     private int myStart;
     private int myEnd;
     private int mySize;
-    private Object[] myItems;
+    private final T[] myItems;
 
+    @SuppressWarnings("unchecked")
     FastListModel(int size) {
-      myItems = new Object[size];
+      myItems = (T[]) new Object[size];
       myStart = 0;
       myEnd = 0;
     }
@@ -703,23 +753,29 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
 
     @Override
-    public Object getElementAt(int index) {
+    public T getElementAt(int index) {
       return myItems[(myStart + index) % myItems.length];
     }
 
-    public void add(Object item) {
-      if (mySize == myItems.length) throw new RuntimeException("Buffer overflow");
+    public void add(T item) {
+      if (mySize == myItems.length) {
+        throw new RuntimeException("Buffer overflow");
+      }
       myItems[myEnd] = item;
       myEnd = (myEnd + 1) % myItems.length;
       mySize++;
       fireIntervalAdded(this, mySize - 1, mySize - 1);
     }
 
-    public void addAll(Collection items) {
-      if (items.isEmpty()) return;
-      if (mySize + items.size() > myItems.length) throw new RuntimeException("Buffer overflow");
+    public void addAll(Collection<T> items) {
+      if (items.isEmpty()) {
+        return;
+      }
+      if (mySize + items.size() > myItems.length) {
+        throw new RuntimeException("Buffer overflow");
+      }
       int intervalStart = mySize;
-      for (Object item : items) {
+      for (T item : items) {
         myItems[myEnd] = item;
         myEnd = (myEnd + 1) % myItems.length;
         mySize++;
@@ -768,7 +824,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     private boolean myWarnings;
     private boolean myInfo;
     private boolean myAutoscrollToSource;
-    private List<String> mySearches = new ArrayList<String>();
+    private List<String> mySearches = new ArrayList<>();
     private int myMaxListSize = 10000;
 
     public MessageListState() {
@@ -778,7 +834,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       myWarnings = warnings;
       myInfo = info;
       myAutoscrollToSource = autoscrollToSource;
-      mySearches = new ArrayList<String>(searches);
+      mySearches = new ArrayList<>(searches);
       myMaxListSize = maxListSize;
     }
 
@@ -823,35 +879,34 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
   }
 
-  private class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
+  private class RootPanel extends SimpleToolWindowPanel implements OccurenceNavigator {
+    public RootPanel() {
+      super(false, true);
+    }
+
+    @SuppressWarnings("unchecked")
     @Override
     public Object getData(@NonNls String id) {
       if (MPSCommonDataKeys.EXCEPTION.getName().equals(id)) {
         Throwable exc = null;
-        for (Object message : myList.getSelectedValues()) {
-          exc = ((IMessage) message).getException();
-          if (exc != null) break;
+        for (IMessage message : (List<IMessage>) myList.getSelectedValuesList()) {
+          exc = message.getException();
+          if (exc != null) {
+            break;
+          }
         }
         return exc;
       }
       if (MPSCommonDataKeys.MESSAGES.getName().equals(id)) {
-        Object[] selectedValues = myList.getSelectedValues();
-        if (selectedValues == null || selectedValues.length == 0) {
-          return null;
-        }
-
-        List<IMessage> messages = new ArrayList<IMessage>(selectedValues.length);
-        for (Object message : selectedValues) {
-          messages.add((IMessage) message);
-        }
-        return messages;
+        List selectedValues = myList.getSelectedValuesList();
+        return selectedValues == null || selectedValues.isEmpty() ? null : selectedValues;
       }
 
       if (PlatformDataKeys.HELP_ID.is(id)) {
         return "ideaInterface.messageList";
       }
 
-      return null;
+      return super.getData(id);
 
     }
 
@@ -880,8 +935,10 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     private OccurenceInfo next(final int delta, boolean doMove) {
       int current = myList.getSelectedIndex();
       for (current += delta; current >= 0 && current < myModel.getSize(); current += delta) {
-        IMessage msg = ((IMessage) myModel.getElementAt(current));
-        if (msg.getHintObject() == null) continue;
+        IMessage msg = myModel.getElementAt(current);
+        if (msg.getHintObject() == null) {
+          continue;
+        }
         if (doMove) {
           myList.setSelectedIndex(current);
           myList.ensureIndexIsVisible(current);
@@ -915,6 +972,18 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     @Override
     public void actionPerformed(AnActionEvent e) {
       clear();
+    }
+  }
+
+  private class SelectAllAction extends AnAction {
+
+    public SelectAllAction() {
+      super("Select All", "", AllIcons.Actions.Selectall);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent e) {
+      selectAll();
     }
   }
 }

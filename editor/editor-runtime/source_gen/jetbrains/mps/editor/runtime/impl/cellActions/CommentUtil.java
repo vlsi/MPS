@@ -8,16 +8,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.Iterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentUtil {
@@ -38,7 +36,9 @@ public class CommentUtil {
     assert containmentLink != null;
     return new NodeCommenter(node).commentOut();
   }
-
+  public static boolean isCommentedOut(@NotNull SNode node) {
+    return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) != null);
+  }
 
   /**
    * 
@@ -76,18 +76,6 @@ public class CommentUtil {
     });
   }
 
-  private static SNode getNext(SNode parent, SNode anchor, SContainmentLink containmentLink) {
-    Iterator<SNode> iterator = Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(parent, containmentLink)).iterator();
-    while (iterator.hasNext()) {
-      SNode next = iterator.next();
-      if (next == anchor) {
-        if (iterator.hasNext()) {
-          return iterator.next();
-        }
-      }
-    }
-    return null;
-  }
   public static boolean isComment(SNode node) {
     return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"));
   }

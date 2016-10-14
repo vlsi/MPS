@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import jetbrains.mps.debug.api.programState.Watchable2;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.tree.DefaultTreeModel;
-import com.intellij.openapi.application.ApplicationManager;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import com.intellij.openapi.application.ApplicationManager;
+import org.apache.log4j.Level;
 
 public class WatchableNode extends AbstractWatchableNode {
   private volatile boolean myInitialized;
@@ -66,6 +66,7 @@ public class WatchableNode extends AbstractWatchableNode {
       }
     });
   }
+  protected static Logger LOG = LogManager.getLogger(WatchableNode.class);
   public void init(final _FunctionTypes._void_P0_E0 callback) {
     if (myInitialized) {
       callback.invoke();
@@ -115,5 +116,4 @@ public class WatchableNode extends AbstractWatchableNode {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(WatchableNode.class);
 }

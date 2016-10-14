@@ -32,7 +32,7 @@ import java.util.List;
 
 /**
  * AP:
- * An abstraction similar to the {@link java.io.File}.
+ * An abstraction of path names similar to the {@link java.io.File}.
  * Represents an abstract path (or location) on disk (might be non-existent).
  * Moreover might represents a path to some archive + path within the archive (unlike the {@link java.io.File}).
  *
@@ -61,6 +61,14 @@ import java.util.List;
  *
  * This class mixes two different issues (as well as the {@link java.io.File}): it works with paths (which are strings) and
  * also it accesses the physical fs from time to time. I'd rather split it up.
+ *
+ * FIXME IFile is mutable
+ * (as well as the java.io.File) I think it is unacceptable.
+ * we define it as a pathname abstraction. That means that we cannot rename the IFile, we can only rename something
+ * that lies at this pathname on disk. The IFile itself must not be touched in any way. Otherwise it is cumbersome.
+ * The alternative is to reconsider the IFile contract.
+ *
+ * AP
  */
 public interface IFile {
   /**

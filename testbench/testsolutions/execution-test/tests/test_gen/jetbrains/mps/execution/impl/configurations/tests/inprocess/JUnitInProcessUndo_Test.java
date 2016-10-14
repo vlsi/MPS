@@ -5,6 +5,8 @@ package jetbrains.mps.execution.impl.configurations.tests.inprocess;
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -19,7 +21,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
@@ -28,8 +30,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListe
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 import com.intellij.execution.ExecutionException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 @MPSLaunch
 public class JUnitInProcessUndo_Test extends BaseTransformationTest {
@@ -39,6 +39,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
     runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody", "test_startTrickyTestCase", false);
   }
 
+  protected static Logger LOG = LogManager.getLogger(JUnitInProcessUndo_Test.class);
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startTrickyTestCase() throws Exception {
@@ -57,7 +58,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor;
-        processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
+        processExecutor = new JUnitInProcessExecutor(testNodes, eventsDispatcher);
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }
@@ -84,5 +85,4 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitInProcessUndo_Test.class);
 }

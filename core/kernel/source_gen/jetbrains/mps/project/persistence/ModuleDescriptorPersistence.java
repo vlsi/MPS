@@ -31,6 +31,8 @@ import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.persistence.MementoImpl;
 import org.apache.log4j.Level;
@@ -44,13 +46,13 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModuleDescriptorPersistence {
   private static final String HEADER_PATTERN = ".*<(language|dev-kit|solution)[^>]+(namespace|name)=\\\"([^\"]+)\\\"[^>]+uuid=\\\"([^\"]+)\\\".*";
+
   private ModuleDescriptorPersistence() {
   }
+
   public static void loadDependencies(final ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
 
@@ -100,6 +102,7 @@ public class ModuleDescriptorPersistence {
       }
     }
   }
+
   public static void saveDependencies(Element result, ModuleDescriptor descriptor) {
     if (!(descriptor.getDependencies().isEmpty())) {
       Element dependencies = new Element("dependencies");
@@ -166,25 +169,27 @@ public class ModuleDescriptorPersistence {
       }
     }
   }
+
   public static List<Dependency> loadDependenciesList(Element depElement) {
     return Sequence.fromIterable(XmlUtil.children(depElement, "dependency")).select(new ISelector<Element, Dependency>() {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
-            final Dependency result_dxyzb6_a0a0a0a0a0a4 = new Dependency();
-            final SModuleReference result_dxyzb6_a0a0a0a0a0a0a4 = PersistenceFacade.getInstance().createModuleReference(d.getText());
-            result_dxyzb6_a0a0a0a0a0a4.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a4);
-            final boolean result_dxyzb6_a1a0a0a0a0a0a4 = XmlUtil.booleanWithDefault(d, "reexport", true);
-            result_dxyzb6_a0a0a0a0a0a4.setReexport(result_dxyzb6_a1a0a0a0a0a0a4);
+            final Dependency result_dxyzb6_a0a0a0a0a0a8 = new Dependency();
+            final SModuleReference result_dxyzb6_a0a0a0a0a0a0a8 = PersistenceFacade.getInstance().createModuleReference(d.getText());
+            result_dxyzb6_a0a0a0a0a0a8.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a8);
+            final boolean result_dxyzb6_a1a0a0a0a0a0a8 = XmlUtil.booleanWithDefault(d, "reexport", true);
+            result_dxyzb6_a0a0a0a0a0a8.setReexport(result_dxyzb6_a1a0a0a0a0a0a8);
             SDependencyScope s = SDependencyScope.fromIdentity(d.getAttributeValue("scope"));
-            final SDependencyScope result_dxyzb6_a3a0a0a0a0a0a4 = (s == null ? SDependencyScope.DEFAULT : s);
-            result_dxyzb6_a0a0a0a0a0a4.setScope(result_dxyzb6_a3a0a0a0a0a0a4);
-            return result_dxyzb6_a0a0a0a0a0a4;
+            final SDependencyScope result_dxyzb6_a3a0a0a0a0a0a8 = (s == null ? SDependencyScope.DEFAULT : s);
+            result_dxyzb6_a0a0a0a0a0a8.setScope(result_dxyzb6_a3a0a0a0a0a0a8);
+            return result_dxyzb6_a0a0a0a0a0a8;
           }
         }.invoke();
       }
     }).toListSequence();
   }
+
   private static void saveDependencyList(Element result, Collection<Dependency> dependencies) {
     for (Dependency md : CollectionSequence.fromCollection(dependencies)) {
       Element child = new Element("dependency");
@@ -204,6 +209,7 @@ public class ModuleDescriptorPersistence {
     return new ModelRootDescriptor(type, m);
   }
 
+  protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
   public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, String moduleContentRoot, MacroHelper macroHelper) {
     List<ModelRootDescriptor> result = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
     ModelRootDescriptor[] cache = new ModelRootDescriptor[2];
@@ -226,6 +232,7 @@ public class ModuleDescriptorPersistence {
     }
     return result;
   }
+
   public static List<ModuleFacetDescriptor> loadFacets(Iterable<Element> facetElements, MacroHelper macroHelper) {
     List<ModuleFacetDescriptor> result = ListSequence.fromList(new ArrayList<ModuleFacetDescriptor>());
     for (Element element : facetElements) {
@@ -238,6 +245,7 @@ public class ModuleDescriptorPersistence {
     }
     return result;
   }
+
   public static void readMemento(Memento memento, Element element, final MacroHelper macroHelper) {
     for (Attribute attr : (List<Attribute>) element.getAttributes()) {
       String name = attr.getName();
@@ -248,6 +256,7 @@ public class ModuleDescriptorPersistence {
       readMemento(child, elem, macroHelper);
     }
   }
+
   public static void writeMemento(Memento memento, Element element, final MacroHelper macroHelper) {
     for (String key : memento.getKeys()) {
       element.setAttribute(key, (isPathAttribute(key) ? macroHelper.shrinkPath(memento.get(key)) : memento.get(key)));
@@ -258,9 +267,11 @@ public class ModuleDescriptorPersistence {
       element.addContent(child);
     }
   }
+
   private static boolean isPathAttribute(String name) {
     return name.equals("path") || name.endsWith("Path");
   }
+
   public static List<String> loadStubModelEntries(Element stubModelEntriesElement, final MacroHelper macroHelper) {
     return Sequence.fromIterable(XmlUtil.children(stubModelEntriesElement, "stubModelEntry")).select(new ISelector<Element, String>() {
       public String select(Element mre) {
@@ -272,6 +283,7 @@ public class ModuleDescriptorPersistence {
       }
     }).toListSequence();
   }
+
   private static String loadStubModelEntry(Element modelRootElement, MacroHelper macroHelper) {
     Element manager = XmlUtil.first(modelRootElement, "manager");
     if (manager != null) {
@@ -282,6 +294,7 @@ public class ModuleDescriptorPersistence {
     }
     return macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
   }
+
   public static void saveFacets(Element result, Collection<ModuleFacetDescriptor> facets, MacroHelper macroHelper) {
     for (ModuleFacetDescriptor facet : CollectionSequence.fromCollection(facets)) {
       Memento memento = facet.getMemento();
@@ -307,6 +320,7 @@ public class ModuleDescriptorPersistence {
       result.addContent(modelRoot);
     }
   }
+
   public static void saveStubModelEntries(Element result, Collection<String> entries, MacroHelper macroHelper) {
     for (String root : entries) {
       Element stubModelEntry = new Element("stubModelEntry");
@@ -314,10 +328,16 @@ public class ModuleDescriptorPersistence {
       result.addContent(stubModelEntry);
     }
   }
+
   public static void setTimestamp(ModuleDescriptor descriptor, IFile file) {
     descriptor.setTimestamp(Long.toString(file.lastModified()));
   }
+
   public static void loadBrokenModule(ModuleDescriptor md, IFile file, ModuleReadException exception) {
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("Module descriptor " + md + " from the file " + file + " has been loaded with error " + exception);
+    }
+
     md.setNamespace(FileUtil.getNameWithoutExtension(file.getName()));
     md.setId(ModuleId.regular());
 
@@ -347,5 +367,4 @@ public class ModuleDescriptorPersistence {
     setTimestamp(md, file);
     md.setLoadException((exception.getCause() == null ? exception : exception.getCause()));
   }
-  protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
 }

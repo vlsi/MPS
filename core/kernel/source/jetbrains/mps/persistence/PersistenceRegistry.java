@@ -246,6 +246,10 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return isDisabled ? Collections.<FindUsagesParticipant>emptySet() : Collections.unmodifiableSet(myFindUsagesParticipants);
   }
 
+  public boolean isFastSearch() {
+    return !isDisabled;
+  }
+
   @Override
   public void addNavigationParticipant(NavigationParticipant participant) {
     myNavigationParticipants.add(participant);

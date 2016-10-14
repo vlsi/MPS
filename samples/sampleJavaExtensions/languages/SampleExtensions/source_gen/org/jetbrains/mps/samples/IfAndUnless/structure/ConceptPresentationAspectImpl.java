@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_FalseFlow = new ConceptPresentationBuilder().create();
@@ -21,48 +18,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_FalseFlow;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Flow;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_MyIfStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_TrueFlow;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_UnlessStatement;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.FalseFlow:
+        return props_FalseFlow;
+      case LanguageConceptSwitch.Flow:
+        return props_Flow;
+      case LanguageConceptSwitch.MyIfStatement:
+        return props_MyIfStatement;
+      case LanguageConceptSwitch.TrueFlow:
+        return props_TrueFlow;
+      case LanguageConceptSwitch.UnlessStatement:
+        return props_UnlessStatement;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L, "org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL, "org.jetbrains.mps.samples.IfAndUnless.structure.Flow"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL, "org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"));
 }

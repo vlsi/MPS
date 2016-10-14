@@ -58,7 +58,7 @@ public final class CommonPaths {
 
     final CompositeClassPathItem result = new CompositeClassPathItem();
     for (String path : new ClassPathReader(PathManager.getHomePath(), Collections.singletonList(type)).read()) {
-      addIfExists(result, File.separator + path);
+      addIfExists(result, path);
     }
     if (type == ClassType.ANNOTATIONS) {
       addAnnotations(result);
@@ -195,67 +195,68 @@ public final class CommonPaths {
   }
 
   private static void addAnnotations(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/annotations.jar");
+    addIfExists(result, "lib/annotations.jar");
   }
 
   private static void addOpenAPIJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-openapi.jar");
+    addIfExists(result, "lib/mps-openapi.jar");
   }
 
   private static void addCoreJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-annotations.jar");
-    addIfExists(result, "/lib/mps-logging.jar");
-    addIfExists(result, "/lib/mps-messaging.jar");
-    addIfExists(result, "/lib/mps-core.jar");
-    addIfExists(result, "/lib/mps-boot-util.jar");
-    addIfExists(result, "/lib/mps-closures.jar");
-    addIfExists(result, "/lib/mps-collections.jar");
-    addIfExists(result, "/lib/mps-tuples.jar");
-    addIfExists(result, "/lib/log4j.jar");
-    addIfExists(result, "/lib/trove4j.jar");
-    addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/ecj-4.5.2.jar");
-    addIfExists(result, "/lib/guava-17.0.jar");
-    addIfExists(result, "/lib/xstream-1.4.8.jar");
-    addIfExists(result, "/lib/diffutils-1.2.1.jar");
-    addIfExists(result, "/lib/asm4-all.jar");
-    addIfExists(result, "/lib/asm-all.jar");
+    addIfExists(result, "lib/mps-annotations.jar");
+    addIfExists(result, "lib/mps-logging.jar");
+    addIfExists(result, "lib/mps-messaging.jar");
+    addIfExists(result, "lib/mps-core.jar");
+    addIfExists(result, "lib/mps-boot-util.jar");
+    addIfExists(result, "lib/mps-closures.jar");
+    addIfExists(result, "lib/mps-collections.jar");
+    addIfExists(result, "lib/mps-tuples.jar");
+    addIfExists(result, "lib/log4j.jar");
+    addIfExists(result, "lib/trove4j.jar");
+    addIfExists(result, "lib/jdom.jar");
+    addIfExists(result, "lib/ecj-4.5.2.jar");
+    addIfExists(result, "lib/guava-17.0.jar");
+    addIfExists(result, "lib/xstream-1.4.8.jar");
+    addIfExists(result, "lib/diffutils-1.2.1.jar");
+    addIfExists(result, "lib/asm4-all.jar");
+    addIfExists(result, "lib/asm-all.jar");
   }
 
   private static void addEditorJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-editor.jar");
-    addIfExists(result, "/lib/mps-editor-api.jar");
-    addIfExists(result, "/lib/mps-editor-runtime.jar");
+    addIfExists(result, "lib/mps-editor.jar");
+    addIfExists(result, "lib/mps-editor-api.jar");
+    addIfExists(result, "lib/mps-editor-runtime.jar");
   }
 
   private static void addRepackedIdeaJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/platform-api.jar");
-    addIfExists(result, "/lib/platform.jar");
+    addIfExists(result, "lib/platform-api.jar");
+    addIfExists(result, "lib/platform.jar");
   }
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addRepackedIdeaJars(result);
-    addIfExists(result, "/lib/sanselan-0.98-snapshot.jar");
-    addIfExists(result, "/lib/util.jar");
-    addIfExists(result, "/lib/extensions.jar");
-    addIfExists(result, "/lib/picocontainer.jar");
-    addIfExists(result, "/lib/forms_rt.jar");
+    addIfExists(result, "lib/netty-all-4.1.1.Final.jar");
+    addIfExists(result, "lib/sanselan-0.98-snapshot.jar");
+    addIfExists(result, "lib/util.jar");
+    addIfExists(result, "lib/extensions.jar");
+    addIfExists(result, "lib/picocontainer.jar");
+    addIfExists(result, "lib/forms_rt.jar");
   }
 
   private static void addPlatformJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-platform.jar");
-    addIfExists(result, "/lib/mps-icons.jar");
+    addIfExists(result, "lib/mps-platform.jar");
+    addIfExists(result, "lib/mps-icons.jar");
   }
 
   private static void addWorkbenchJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-workbench.jar");
-    addIfExists(result, "/lib/junit-4.12.jar");
+    addIfExists(result, "lib/mps-workbench.jar");
+    addIfExists(result, "lib/junit-4.12.jar");
   }
 
   private static void addTestJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-test.jar");
-    addIfExists(result, "/lib/mps-environment.jar");
-    addIfExists(result, "/lib/junit-4.12.jar");
+    addIfExists(result, "lib/mps-test.jar");
+    addIfExists(result, "lib/mps-environment.jar");
+    addIfExists(result, "lib/junit-4.12.jar");
   }
 
   private static void addClasses(final CompositeClassPathItem result) {
@@ -270,8 +271,9 @@ public final class CommonPaths {
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {
+    String dependentPath = UniPath.fromString(path).toSystemPath().toString(); // fixme waiting for Path#resolve method to resolve children in fs
     for (String basePath : PathManager.getHomePaths()) {
-      UniPath fullPath = UniPath.fromString(basePath + path).toSystemPath();
+      UniPath fullPath = UniPath.fromString(basePath + File.separator + dependentPath).toSystemPath();
       if (new IoFile(fullPath).exists()) {
         item.add(ourClassPathCachingFacility.createFromPath(fullPath.toString(), REQUESTER_STRING));
       }

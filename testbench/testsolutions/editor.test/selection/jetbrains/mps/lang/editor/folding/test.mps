@@ -257,26 +257,22 @@
           <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="K6TtETsJkU" role="3cqZAp">
-        <node concept="1iFQzN" id="K6TtETsJkV" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+      <node concept="2HxZob" id="7$OwY2_kQ$a" role="3cqZAp">
+        <node concept="1iFQzN" id="7$OwY2_kQ$b" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNW" resolve="MoveRight" />
         </node>
       </node>
-      <node concept="2HxZob" id="K6TtETsJle" role="3cqZAp">
-        <node concept="1iFQzN" id="K6TtETsJlf" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
-        </node>
-      </node>
+      <node concept="3clFbH" id="7$OwY2_kQzS" role="3cqZAp" />
       <node concept="3clFbH" id="K6TtETsJjH" role="3cqZAp" />
     </node>
     <node concept="3EZwfv" id="K6TtETsI$i" role="LiZbd">
       <node concept="2PtSq3" id="K6TtETsI$j" role="2PtSqc">
-        <node concept="LIFWc" id="K6TtETsJbE" role="lGtFl">
-          <property role="ZRATv" value="true" />
+        <node concept="LIFWc" id="7$OwY2_kQzQ" role="lGtFl">
+          <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="3" />
-          <property role="p6zMs" value="3" />
-          <property role="LIFWd" value="Constant_gbleq0_b1b0" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_gbleq0_a0b0" />
         </node>
       </node>
     </node>
@@ -905,7 +901,7 @@
     <node concept="3EZwfv" id="9Jk7l7ZQhh" role="LiZbd">
       <property role="2PtLbd" value="true" />
       <node concept="2PtSq3" id="9Jk7l7ZQhi" role="2PtSqc">
-        <node concept="LIFWc" id="9Jk7l7ZQio" role="lGtFl">
+        <node concept="LIFWc" id="7MxqSH2ryTi" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />

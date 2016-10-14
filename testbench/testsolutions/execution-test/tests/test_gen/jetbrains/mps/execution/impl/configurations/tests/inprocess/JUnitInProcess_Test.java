@@ -5,6 +5,8 @@ package jetbrains.mps.execution.impl.configurations.tests.inprocess;
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -19,7 +21,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
@@ -28,8 +30,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListe
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 import com.intellij.execution.ExecutionException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 @MPSLaunch
 public class JUnitInProcess_Test extends BaseTransformationTest {
@@ -44,12 +44,12 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
     runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
   }
 
+  protected static Logger LOG = LogManager.getLogger(JUnitInProcess_Test.class);
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleTestCase() throws Exception {
       List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380")));
       this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-
     }
     public void test_startFailedTestCase() throws Exception {
       List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082034140")));
@@ -67,7 +67,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor;
-        processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
+        processExecutor = new JUnitInProcessExecutor(testNodes, eventsDispatcher);
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }
@@ -80,11 +80,19 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
           }
         });
         OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
-        int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
-        if (exitcode != ListSequence.fromList(failure).count()) {
-          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);
-        } else if (exitcode < 0) {
+        int exitCode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
+        int failedMustBe = ListSequence.fromList(failure).count();
+        if (exitCode != failedMustBe) {
+          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitCode);
+        } else if (exitCode < 0) {
           Assert.fail("Process is running for too long");
+        }
+        if (runState.getFailedTests() != failedMustBe) {
+          Assert.fail("The number of failed tests be equal to " + failedMustBe + ", but " + runState.getFailedTests());
+        }
+        int completedMustBe = ListSequence.fromList(failure).count() + ListSequence.fromList(success).count();
+        if (runState.getCompletedTests() != completedMustBe) {
+          Assert.fail("The number of completed tests be equal to " + ListSequence.fromList(failure).count() + ", but " + runState.getFailedTests());
         }
         if (!(checkListener.value.getMessages().equals(""))) {
           Assert.fail(checkListener.value.getMessages());
@@ -94,5 +102,4 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(JUnitInProcess_Test.class);
 }

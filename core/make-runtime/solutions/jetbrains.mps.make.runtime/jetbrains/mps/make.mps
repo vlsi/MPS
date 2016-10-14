@@ -776,6 +776,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3RANN3aP9FK" role="jymVt" />
     <node concept="3clFb_" id="2BjwmTxTf34" role="jymVt">
       <property role="TrG5h" value="getProject" />
       <node concept="3uibUv" id="2BjwmTxTfRZ" role="3clF45">
@@ -793,6 +794,7 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3RANN3aP9FL" role="jymVt" />
     <node concept="3clFb_" id="7yGn3z4N4Nw" role="jymVt">
       <property role="TrG5h" value="getMessageHandler" />
       <node concept="3uibUv" id="7yGn3z4N62$" role="3clF45">
@@ -810,6 +812,7 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3RANN3aP9FM" role="jymVt" />
     <node concept="3clFb_" id="7yGn3z4N631" role="jymVt">
       <property role="TrG5h" value="isCleanMake" />
       <node concept="10P_77" id="7yGn3z4N636" role="3clF45" />
@@ -822,6 +825,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3RANN3aP9FN" role="jymVt" />
     <node concept="3clFb_" id="1AfPmE4tJU7" role="jymVt">
       <property role="TrG5h" value="isSticky" />
       <property role="IEkAT" value="false" />
@@ -856,6 +860,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3RANN3aP9FO" role="jymVt" />
     <node concept="3clFb_" id="7yGn3z4N62_" role="jymVt">
       <property role="TrG5h" value="doExecute" />
       <node concept="3cqZAl" id="7yGn3z4N62A" role="3clF45" />
@@ -879,6 +884,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3RANN3aP9FP" role="jymVt" />
     <node concept="3clFb_" id="6j3uy_cVOw4" role="jymVt">
       <property role="TrG5h" value="toScript" />
       <node concept="3uibUv" id="6j3uy_cVOw8" role="3clF45">
@@ -1088,16 +1094,12 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7t2WeWl97IG" role="jymVt" />
     <node concept="312cEu" id="7lTD6YZtjgo" role="jymVt">
       <property role="TrG5h" value="Stub" />
       <node concept="3Tm1VV" id="7lTD6YZtjgp" role="1B3o_S" />
       <node concept="3uibUv" id="7lTD6YZtjgu" role="EKbjA">
         <ref role="3uigEE" node="7lTD6YZtjg2" resolve="IMakeNotificationListener" />
-      </node>
-      <node concept="3clFbW" id="7lTD6YZtjgq" role="jymVt">
-        <node concept="3cqZAl" id="7lTD6YZtjgr" role="3clF45" />
-        <node concept="3Tm1VV" id="7lTD6YZtjgs" role="1B3o_S" />
-        <node concept="3clFbS" id="7lTD6YZtjgt" role="3clF47" />
       </node>
       <node concept="3clFb_" id="7lTD6YZtjgv" role="jymVt">
         <property role="1EzhhJ" value="false" />
@@ -1196,6 +1198,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="7t2WeWl97Kq" role="jymVt" />
       <node concept="3clFb_" id="7lTD6YZtjhG" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="scriptAboutToStart" />
@@ -1212,6 +1215,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="7t2WeWl97Kr" role="jymVt" />
       <node concept="3clFb_" id="7lTD6YZtjhA" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="scriptFinished" />
@@ -1228,6 +1232,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="7t2WeWl97Ks" role="jymVt" />
       <node concept="3clFb_" id="5O50Cn9WpZ3" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="sessionOpened" />
@@ -1244,6 +1249,7 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="7t2WeWl97Kt" role="jymVt" />
       <node concept="3clFb_" id="5O50Cn9WpYX" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="sessionClosed" />

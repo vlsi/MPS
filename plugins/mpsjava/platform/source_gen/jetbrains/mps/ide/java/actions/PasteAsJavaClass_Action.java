@@ -10,7 +10,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -34,7 +33,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
       return false;
     }
     SModel m = event.getData(MPSCommonDataKeys.MODEL);
-    return m != null && SModelOperations.getAllLanguageImports(m).contains(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage")) && JavaPaster.areDataAvailableInClipboard();
+    return m != null && SModelOperations.getAllLanguageImports(m).contains(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage")) && JavaPaster.areDataAvailableInClipboard();
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

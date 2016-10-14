@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.project.MPSProject;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;
@@ -18,7 +19,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -37,20 +37,22 @@ public class DependenciesPanel extends JPanel {
   private DependencyTree myInitTree;
   private TargetsView myTargetsView;
   private ReferencesView myReferencesView;
-  private Project myProject;
-  private jetbrains.mps.project.Project myMPSProject;
+  private final Project myProject;
+  private final jetbrains.mps.project.Project myMPSProject;
   private DependencyViewerScope myScope;
   private DependencyViewerScope myInitialScope;
   private Iterable<SNode> mySourceNodes = ListSequence.fromList(new ArrayList<SNode>());
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
   private boolean myIsMeta;
-  public DependenciesPanel(BaseTool tool, Project project) {
+  public DependenciesPanel(BaseTool tool, MPSProject project) {
     super(new BorderLayout());
     myTool = tool;
     myIsMeta = false;
+    // FIXME pass project right into DependencyTree instead of setContent(scope, myMPSProject) later in resetContent(), below. 
     myInitTree = new DependencyTree(this);
-    myProject = project;
+    myProject = project.getProject();
+    myMPSProject = project;
     myTargetsView = new TargetsView(myProject, this);
     myReferencesView = new ReferencesView(myProject, this);
     JBScrollPane leftPane = new JBScrollPane(myInitTree);
@@ -65,14 +67,13 @@ public class DependenciesPanel extends JPanel {
     add(splitter, BorderLayout.CENTER);
     add(createToolbar(), BorderLayout.NORTH);
   }
-  public void resetContent(DependencyViewerScope scope, jetbrains.mps.project.Project project, boolean isMeta) {
+  public void resetContent(DependencyViewerScope scope, boolean isMeta) {
     myIsMeta = isMeta;
     myReferencesFinder = new ReferencesFinder();
     setVisible(true);
-    myInitTree.setContent(scope, project);
-    updateTargetsView(scope);
+    myInitTree.setContent(scope, myMPSProject);
     myInitialScope = scope;
-    myMPSProject = project;
+    updateTargetsView(scope);
     repaint();
   }
   public UsagesView getReferencesViewComponent() {
@@ -87,10 +88,10 @@ public class DependenciesPanel extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myMPSProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-            mySourceNodes = myReferencesFinder.getNodes(sourceScope);
+            mySourceNodes = sourceScope.getNodes();
             try {
               if (myIsMeta) {
                 monitor.start("computing used languages", Sequence.fromIterable(mySourceNodes).count());
@@ -123,7 +124,7 @@ public class DependenciesPanel extends JPanel {
       public void run(@NotNull ProgressIndicator indicator) {
         final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
         final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>();
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myMPSProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             try {
               if (myIsMeta) {
@@ -172,7 +173,7 @@ public class DependenciesPanel extends JPanel {
     }
     @Override
     public void actionPerformed(AnActionEvent event) {
-      resetContent(myInitialScope, myMPSProject, myIsMeta);
+      resetContent(myInitialScope, myIsMeta);
     }
   }
   public class ToggleUsedLanguages extends ToggleAction {
@@ -185,7 +186,7 @@ public class DependenciesPanel extends JPanel {
     }
     @Override
     public void setSelected(AnActionEvent event, boolean b) {
-      resetContent(myInitialScope, myMPSProject, b);
+      resetContent(myInitialScope, b);
     }
   }
 }

@@ -43,5 +43,4 @@ public class DefaultConceptMenusTransformationMenuPart extends ConceptMenusPart<
     return context.createItems(
         new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
   }
-
 }

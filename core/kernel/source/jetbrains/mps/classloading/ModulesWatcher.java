@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.classloading.ModuleUpdater.SearchError;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -33,8 +33,8 @@ import org.jetbrains.mps.util.Condition;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -165,9 +165,9 @@ public class ModulesWatcher {
           }
         }
       }
-      LOG.debug(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() +
+      LOG.info(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() +
           " modules [totally in the repository]");
-      LOG.debug("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
+      LOG.info("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
 
       checkStatusMapCorrectness();
     }
@@ -189,32 +189,32 @@ public class ModulesWatcher {
   }
 
   private Collection<SModuleReference> findInvalidModules() {
-    return findInvalidModules0(false);
+    return findInvalidModules0(false).keySet();
   }
 
   @TestOnly
-  Collection<SModuleReference> findInvalidModulesAndReport() {
+  Map<SModuleReference, String> findInvalidModulesProblems() {
     return findInvalidModules0(true);
   }
 
   @NotNull
-  private Collection<SModuleReference> findInvalidModules0(boolean errorLevel) {
+  private Map<SModuleReference, String> findInvalidModules0(boolean errorLevel) {
     myRepository.getModelAccess().checkReadAccess();
 
-    Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps = myModuleUpdater.getModulesWithAbsentDeps();
-    Collection<SModuleReference> result = new HashSet<SModuleReference>();
+    Map<ReloadableModule, List<SearchError>> modulesWithAbsentDeps = myModuleUpdater.getModulesWithAbsentDeps();
+    Map<SModuleReference, String> mRefToProblem = new HashMap<>();
     Collection<? extends SModuleReference> allModuleRefs = getAllModules();
     for (SModuleReference mRef : allModuleRefs) {
-      if (!result.contains(mRef)) {
+      if (!mRefToProblem.containsKey(mRef)) {
         String msg = getModuleProblemMessage(mRef, modulesWithAbsentDeps);
         if (msg == null) {
           continue;
         }
         if (errorLevel) LOG.error(msg); else LOG.debug(msg);
-        result.add(mRef);
+        mRefToProblem.put(mRef, msg);
       }
     }
-    return result;
+    return mRefToProblem;
   }
 
   // FIXME rewrite!! need to extract some common API class for validity checking
@@ -225,7 +225,7 @@ public class ModulesWatcher {
    */
   @Nullable
   @Hack
-  private String getModuleProblemMessage(SModuleReference mRef, Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps) {
+  private String getModuleProblemMessage(SModuleReference mRef, Map<ReloadableModule, List<SearchError>> modulesWithAbsentDeps) {
     assert !isChanged();
     if (isModuleDisposed(mRef)) {
       return String.format("Module %s is disposed and therefore was marked invalid for class loading", mRef.getModuleName());
@@ -236,8 +236,8 @@ public class ModulesWatcher {
 
     // FIXME does not work for now, enable in the 3.4
     if (modulesWithAbsentDeps.containsKey(module)) {
-      AbsentDependencyException exception = modulesWithAbsentDeps.get(module);
-      return String.format("%s has got an absent dependency problem and therefore was marked invalid for class loading: %s", module, exception.getMessage());
+      List<SearchError> errors = modulesWithAbsentDeps.get(module);
+      return String.format("%s has got an absent dependency problem and therefore was marked invalid for class loading: %s", module, errors.get(0).getMsg());
     }
     for (SDependency dep : module.getDeclaredDependencies()) {
       if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {

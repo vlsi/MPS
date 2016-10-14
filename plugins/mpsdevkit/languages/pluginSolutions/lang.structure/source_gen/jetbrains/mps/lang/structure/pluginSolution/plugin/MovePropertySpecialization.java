@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.structure.util.ConceptIdHelper;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
@@ -36,9 +37,11 @@ public class MovePropertySpecialization extends StructureSpecializationBase<SPro
   public void confirm(Tuples._2<SProperty, SNodeReference> initialState, Tuples._2<SProperty, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
     SNode from = SNodeOperations.cast(initialState._1().resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
     SNode to = SNodeOperations.cast(finalState._1().resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+    SNode targetConcept = SNodeOperations.cast(SNodeOperations.getParent(to), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
     SPropertyOperations.set(from, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString_def(from, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "") + "_old");
-    AttributeOperations.setAttribute(from, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_fubpxk_a0d0b("The property was moved to concept \"" + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.cast(SNodeOperations.getParent(to), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) + "\""));
-    migrationBuilder.addPart(from, to, createMoveProperty_fubpxk_c0a4a1());
+    AttributeOperations.setAttribute(from, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_fubpxk_a0e0b("The property was moved to concept \"" + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(targetConcept) + "\""));
+    SPropertyOperations.set(to, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId"), ConceptIdHelper.generatePropertyId(targetConcept, to) + "");
+    migrationBuilder.addPart(from, to, createMoveProperty_fubpxk_c0a6a1());
   }
   public Collection<SNode> findInstances(SProperty oldProperty, SearchScope searchScope) {
     {
@@ -48,19 +51,19 @@ public class MovePropertySpecialization extends StructureSpecializationBase<SPro
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldProperty.getOwner()))).toListSequence();
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(oldProperty.getOwner()), false)).toListSequence();
     }
   }
   public void doReplaceInstance(SNode instance, SProperty oldProperty, SProperty newProperty) {
     RefactoringRuntime.changePropertyInstance(instance, oldProperty, newProperty);
   }
-  private static SNode createDeprecatedNodeAnnotation_fubpxk_a0d0b(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_fubpxk_a0e0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), p0 + "");
     return n1;
   }
-  private static SNode createMoveProperty_fubpxk_c0a4a1() {
+  private static SNode createMoveProperty_fubpxk_c0a6a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b9L, "jetbrains.mps.lang.migration.structure.MoveProperty"), null, null, false);
     return n1;

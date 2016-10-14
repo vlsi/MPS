@@ -11,7 +11,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="16,0,69,0" name="testOverridingType.intentions.IntentionsDescriptor" />
+      <unit at="18,0,58,0" name="testOverridingType.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d884d12b-f79a-4b35-a8fe-63e10e0c9c8d(testOverridingType.intentions)/1870027727456307005">

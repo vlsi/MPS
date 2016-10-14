@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelOperations;
@@ -36,9 +35,6 @@ public class MissingDependenciesFixer {
 
     List<SModelReference> existingImports = getExistingImports();
     fixImports(module, existingImports);
-    if (module instanceof ReloadableModule) {
-      ((ReloadableModule) module).reload();
-    }
   }
 
   private void fixImports(@NotNull AbstractModule module, List<SModelReference> importsToAdd) {

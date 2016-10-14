@@ -51,6 +51,6 @@ public class Language extends LanguageRuntime {
         return (T) new MigrationDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

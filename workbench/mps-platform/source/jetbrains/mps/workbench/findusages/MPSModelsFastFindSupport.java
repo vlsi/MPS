@@ -24,6 +24,7 @@ import jetbrains.mps.findUsages.NodeUsageFinder;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Mapper;
@@ -124,6 +125,13 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
         continue;
       }
 
+      /*
+      This is a tmp fix for MPS-24151. See the issue to learn about the correct fix
+       */
+      if (!(sm instanceof DefaultSModelDescriptor)) {
+        continue;
+      }
+
       Collection<IFile> modelFiles = getDataSourceFiles(source);
       for (IFile modelFile : modelFiles) {
         String ext = FileUtil.getExtension(modelFile.getName());
@@ -131,7 +139,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
           continue;
         }
 
-        VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
+        VirtualFile vf = VirtualFileUtils.getOrCreateVirtualFile(modelFile);
         if (vf == null) {
           LogManager.getLogger(MPSModelsFastFindSupport.class).warn(
               String.format("Model %s: virtual file not found for model file. Model file: %s", sm.getName(), modelFile.getPath()));
@@ -153,7 +161,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
       try {
         matchingFiles = MPSModelsIndexer.getContainingFiles(entry, allFiles);
-      }catch (ProcessCanceledException ce){
+      } catch (ProcessCanceledException ce) {
         matchingFiles = Collections.emptyList();
       }
 
@@ -170,7 +178,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
   private Collection<IFile> getDataSourceFiles(DataSource ds) {
     assert ds instanceof FileDataSource || ds instanceof FilePerRootDataSource;
     if (ds instanceof FileDataSource) {
-      return Collections.singletonList(((FileDataSource)ds).getFile());
+      return Collections.singletonList(((FileDataSource) ds).getFile());
     } else if (ds instanceof FilePerRootDataSource) {
       FilePerRootDataSource fds = (FilePerRootDataSource) ds;
       Set<IFile> files = new HashSet<IFile>();

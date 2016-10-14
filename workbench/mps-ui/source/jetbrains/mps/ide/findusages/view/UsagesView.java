@@ -97,6 +97,7 @@ public class UsagesView implements IExternalizeable {
   private boolean myOwnChangeTracker = false; // true indicates this class shall manage repository listener (myChangeTracker)
 
   // note: this field is not restored from XML
+  @Nullable
   private SearchResults myLastResults;
 
   public UsagesView(com.intellij.openapi.project.Project project, ViewOptions defaultOptions) {
@@ -178,7 +179,8 @@ public class UsagesView implements IExternalizeable {
     setActions(actions.toArray(new AnAction[actions.size()]));
   }
 
-  public void close() {}
+  public void close() {
+  }
 
   //----RESULTS MANIPUALTION STUFF----
 
@@ -198,6 +200,7 @@ public class UsagesView implements IExternalizeable {
     return myTreeComponent.getAllResultNodes();
   }
 
+  @Nullable
   public SearchResults getSearchResults() {
     return myLastResults;
   }
@@ -223,6 +226,7 @@ public class UsagesView implements IExternalizeable {
 
   private static class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
     private final OccurenceNavigator myOccurrenceNavigator;
+
     public RootPanel(@Nullable OccurenceNavigator occurrenceNavigator) {
       super(new BorderLayout());
       myOccurrenceNavigator = occurrenceNavigator;
@@ -290,11 +294,12 @@ public class UsagesView implements IExternalizeable {
     public RerunAction(UsagesView view, String text) {
       this(view, text, "", Actions.Rerun);
     }
+
     public RerunAction(UsagesView view, String text, String description, Icon icon) {
       super(text, description, icon);
       myView = view;
     }
-    
+
     public void setProgressText(@NotNull String text) {
       myProgressText = text;
     }
@@ -302,6 +307,7 @@ public class UsagesView implements IExternalizeable {
     public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery) {
       setRunOptions(new SearchTaskImpl(resultProvider, searchQuery));
     }
+
     public void setRunOptions(SearchTask searchTask) {
       mySearchTask = searchTask;
     }
@@ -320,6 +326,7 @@ public class UsagesView implements IExternalizeable {
       }
       ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(myView.myProject), myProgressText, true) {
         private SearchResults mySearchResults;
+
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
           mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator));
@@ -346,6 +353,7 @@ public class UsagesView implements IExternalizeable {
       myResultProvider = resultProvider;
       mySearchQuery = searchQuery;
     }
+
     public String getCaption() {
       return mySearchQuery.getCaption();
     }
@@ -422,6 +430,7 @@ public class UsagesView implements IExternalizeable {
     public RebuildAction(UsagesView view) {
       this(view, "Rebuild models", "", Actions.Compile);
     }
+
     public RebuildAction(UsagesView view, String text, String description, Icon icon) {
       super(text, description, icon);
       myView = view;

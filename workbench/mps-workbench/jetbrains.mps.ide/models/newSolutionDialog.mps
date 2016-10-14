@@ -39,6 +39,8 @@
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="z1c5" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.project(MPS.Workbench/)" />
+    <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -74,9 +76,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -145,6 +152,9 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -454,6 +464,7 @@
         <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3$" role="jymVt" />
     <node concept="2YIFZL" id="7BBl3KJ$Vq_" role="jymVt">
       <property role="TrG5h" value="createSandboxSolution" />
       <property role="od$2w" value="false" />
@@ -750,6 +761,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3_" role="jymVt" />
     <node concept="2YIFZL" id="7BBl3KIzam7" role="jymVt">
       <property role="TrG5h" value="createLanguage" />
       <property role="od$2w" value="false" />
@@ -834,6 +846,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3A" role="jymVt" />
     <node concept="2YIFZL" id="7BBl3KIzvoe" role="jymVt">
       <property role="TrG5h" value="createDevKit" />
       <property role="od$2w" value="false" />
@@ -975,6 +988,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3B" role="jymVt" />
     <node concept="2YIFZL" id="3WcIkZau4TB" role="jymVt">
       <property role="TrG5h" value="check" />
       <node concept="37vLTG" id="3WcIkZau4TG" role="3clF46">
@@ -1295,15 +1309,35 @@
         </node>
       </node>
       <node concept="3clFbS" id="7BBl3KIwhHU" role="3clF47">
-        <node concept="1gVbGN" id="1Yd98ZZnqHu" role="3cqZAp">
-          <node concept="3fqX7Q" id="1Yd98ZZnqHv" role="1gVkn0">
-            <node concept="2OqwBi" id="1Yd98ZZnqHw" role="3fr31v">
-              <node concept="liA8E" id="1Yd98ZZnqHy" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.exists():boolean" resolve="exists" />
+        <node concept="3clFbJ" id="3RkWhWCOEhP" role="3cqZAp">
+          <node concept="3clFbS" id="3RkWhWCOEhR" role="3clFbx">
+            <node concept="YS8fn" id="3RkWhWCOHdE" role="3cqZAp">
+              <node concept="2ShNRf" id="3RkWhWCOHfK" role="YScLw">
+                <node concept="1pGfFk" id="3RkWhWCOTqd" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
+                  <node concept="3cpWs3" id="3RkWhWCOU7$" role="37wK5m">
+                    <node concept="3cpWs3" id="3RkWhWCOTSI" role="3uHU7B">
+                      <node concept="Xl_RD" id="3RkWhWCOTs8" role="3uHU7B">
+                        <property role="Xl_RC" value="Descriptor file " />
+                      </node>
+                      <node concept="37vLTw" id="3RkWhWCOTW_" role="3uHU7w">
+                        <ref role="3cqZAo" node="7BBl3KIwk$e" resolve="descriptorFile" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="3RkWhWCOUbz" role="3uHU7w">
+                      <property role="Xl_RC" value=" already exists" />
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node concept="37vLTw" id="2BHiRxglPjL" role="2Oq$k0">
-                <ref role="3cqZAo" node="7BBl3KIwk$e" resolve="descriptorFile" />
-              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3RkWhWCOGwp" role="3clFbw">
+            <node concept="37vLTw" id="3RkWhWCOEpA" role="2Oq$k0">
+              <ref role="3cqZAo" node="7BBl3KIwk$e" resolve="descriptorFile" />
+            </node>
+            <node concept="liA8E" id="3RkWhWCOHbG" role="2OqNvi">
+              <ref role="37wK5l" to="3ju5:~IFile.exists():boolean" resolve="exists" />
             </node>
           </node>
         </node>
@@ -1945,6 +1979,7 @@
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3C" role="jymVt" />
     <node concept="2YIFZL" id="1Yd98ZZnqFy" role="jymVt">
       <property role="TrG5h" value="createNewSolution" />
       <property role="DiZV1" value="false" />
@@ -2053,6 +2088,7 @@
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3D" role="jymVt" />
     <node concept="2YIFZL" id="1Yd98ZZnqJf" role="jymVt">
       <property role="TrG5h" value="createNewDevkit" />
       <property role="DiZV1" value="false" />
@@ -2495,6 +2531,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3E" role="jymVt" />
     <node concept="2tJIrI" id="4B$Z5V0XLGt" role="jymVt" />
     <node concept="2YIFZL" id="5AqjJyeyiwa" role="jymVt">
       <property role="TrG5h" value="getModuleFile" />
@@ -2556,6 +2593,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3F" role="jymVt" />
     <node concept="2YIFZL" id="1Yd98ZZnqG6" role="jymVt">
       <property role="TrG5h" value="createNewSolutionDescriptor" />
       <property role="DiZV1" value="false" />
@@ -2809,6 +2847,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3G" role="jymVt" />
     <node concept="2YIFZL" id="1Yd98ZZnqHS" role="jymVt">
       <property role="TrG5h" value="createNewLanguageDescriptor" />
       <property role="DiZV1" value="false" />
@@ -2910,8 +2949,13 @@
               <node concept="2ShNRf" id="1Yd98ZZnqIu" role="YScLw">
                 <node concept="1pGfFk" id="1Yd98ZZnqIv" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                  <node concept="Xl_RD" id="1Yd98ZZnqIw" role="37wK5m">
-                    <property role="Xl_RC" value="Trying to create a language in an existing language's directory" />
+                  <node concept="3cpWs3" id="6s6LYnVtTOw" role="37wK5m">
+                    <node concept="37vLTw" id="6s6LYnVtTUF" role="3uHU7w">
+                      <ref role="3cqZAo" node="1Yd98ZZnqIg" resolve="languageModels" />
+                    </node>
+                    <node concept="Xl_RD" id="1Yd98ZZnqIw" role="3uHU7B">
+                      <property role="Xl_RC" value="Trying to create a language in an existing language's directory " />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3012,6 +3056,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3H" role="jymVt" />
     <node concept="2YIFZL" id="1Yd98ZZnqIS" role="jymVt">
       <property role="TrG5h" value="createNewDevkitDescriptor" />
       <property role="DiZV1" value="false" />
@@ -3073,6 +3118,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3I" role="jymVt" />
     <node concept="2YIFZL" id="7BBl3KJzj_$" role="jymVt">
       <property role="TrG5h" value="createModel" />
       <property role="od$2w" value="false" />
@@ -3171,7 +3217,6 @@
                     <ref role="3cqZAo" node="7QFrUMRLjfO" resolve="model" />
                   </node>
                 </node>
-                <node concept="3clFbH" id="2E9qbNiGsaW" role="3cqZAp" />
               </node>
             </node>
           </node>
@@ -3220,6 +3265,15 @@
       <node concept="37vLTG" id="7BBl3KJzkYO" role="3clF46">
         <property role="TrG5h" value="modelName" />
         <node concept="17QB3L" id="7BBl3KJzl2b" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="6s6LYnVtTV$" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="6s6LYnVtWQl" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="6s6LYnVtWUb" role="2B70Vg">
+          <property role="$nhwW" value="3.5" />
+        </node>
       </node>
     </node>
   </node>

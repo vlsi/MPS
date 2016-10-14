@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
 
 public class Rename extends BaseRefactoring {
   public Rename() {
@@ -34,6 +33,6 @@ public class Rename extends BaseRefactoring {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
   }
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), refactoringContext.getCurrentScope(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 }

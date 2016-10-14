@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListener;
+import org.jetbrains.mps.openapi.module.SModuleListenerBase;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -40,11 +42,11 @@ public abstract class SModuleBase implements SModule {
 
   private volatile SRepository myRepository = null;
 
-  private List<SModuleListener> myListeners = new CopyOnWriteArrayList<SModuleListener>();
+  private List<SModuleListener> myListeners = new CopyOnWriteArrayList<>();
 
   private final Object LOCK = new Object();
-  private final Set<SModelBase> myModels = new LinkedHashSet<SModelBase>();
-  private final ConcurrentMap<SModelId, SModel> myIdToModelMap = new ConcurrentHashMap<SModelId, SModel>();
+  private final Set<SModelBase> myModels = new LinkedHashSet<>();
+  private final ConcurrentMap<SModelId, SModel> myIdToModelMap = new ConcurrentHashMap<>();
 
   protected SModuleBase() {
   }
@@ -63,7 +65,7 @@ public abstract class SModuleBase implements SModule {
 //    TODO assertCanRead();
 
     synchronized (LOCK) {
-      return new ArrayList<SModel>(myModels);
+      return new ArrayList<>(myModels);
     }
   }
 
@@ -112,8 +114,26 @@ public abstract class SModuleBase implements SModule {
     for (SModuleListener listener : myListeners) {
       try {
         listener.moduleChanged(this);
+      } catch (VirtualMachineError e) {
+        throw e;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("", t);
+      }
+    }
+  }
+
+  protected final void fireModuleRenamed(SModuleReference oldRef) {
+    assertCanChange();
+
+    for (SModuleListener listener : myListeners) {
+      try {
+        if (listener instanceof SModuleListenerBase) {
+          ((SModuleListenerBase) listener).moduleRenamed(this, oldRef);
+        }
+      } catch (VirtualMachineError e) {
+        throw e;
+      } catch (Throwable t) {
+        LOG.error("", t);
       }
     }
   }
@@ -124,8 +144,10 @@ public abstract class SModuleBase implements SModule {
     for (SModuleListener listener : myListeners) {
       try {
         listener.modelAdded(this, model);
+      } catch (VirtualMachineError e) {
+        throw e;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("", t);
       }
     }
   }
@@ -136,6 +158,8 @@ public abstract class SModuleBase implements SModule {
     for (SModuleListener listener : myListeners) {
       try {
         listener.beforeModelRemoved(this, model);
+      } catch (VirtualMachineError e) {
+        throw e;
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -148,8 +172,10 @@ public abstract class SModuleBase implements SModule {
     for (SModuleListener listener : myListeners) {
       try {
         listener.modelRemoved(this, model);
+      } catch (VirtualMachineError e) {
+        throw e;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("", t);
       }
     }
   }
@@ -167,8 +193,10 @@ public abstract class SModuleBase implements SModule {
     for (SModuleListener listener : myListeners) {
       try {
         listener.beforeModelRenamed(this, model, newName);
+      } catch (VirtualMachineError e) {
+        throw e;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("", t);
       }
     }
   }
@@ -186,8 +214,10 @@ public abstract class SModuleBase implements SModule {
     for (SModuleListener listener : myListeners) {
       try {
         listener.modelRenamed(this, model, oldName);
+      } catch (VirtualMachineError e) {
+        throw e;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("", t);
       }
     }
   }

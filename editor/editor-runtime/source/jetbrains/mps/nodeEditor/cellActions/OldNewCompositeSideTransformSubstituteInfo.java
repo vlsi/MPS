@@ -18,9 +18,11 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -51,9 +53,15 @@ public class OldNewCompositeSideTransformSubstituteInfo extends AbstractNodeSubs
   }
   @Override
   protected List<SubstituteAction> createActions() {
-    List<SubstituteAction> actions = new ArrayList<>();
-    actions.addAll(myOldSubstituteInfo.createActions());
-    actions.addAll(myNewSubstituteInfo.createActions());
-    return actions;
+    final SNode sourceNode = myNewSubstituteInfo.getSourceNode();
+    if (sourceNode == null) {
+      return new ArrayList<>();
+    }
+    if (OldNewSubstituteUtil.areOldActionsApplicableToNode(SideTransformHintSubstituteActionsHelper.getNodeForSideTransforms(sourceNode),
+        myOldSubstituteInfo.getEditorContext().getRepository())) {
+      return myOldSubstituteInfo.createActions();
+    } else {
+      return myNewSubstituteInfo.createActions();
+    }
   }
 }

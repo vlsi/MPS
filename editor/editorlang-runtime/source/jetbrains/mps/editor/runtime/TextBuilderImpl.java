@@ -40,6 +40,9 @@ public class TextBuilderImpl implements TextBuilder {
 
   @Override
   public String getText() {
+    if (myLines.isEmpty()) {
+      return "";
+    }
     StringBuilder builder = new StringBuilder(myLines.get(0));
     for (int i = 1; i < myLines.size(); ++i) {
       builder.append('\n');

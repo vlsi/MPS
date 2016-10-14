@@ -17,11 +17,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import com.intellij.util.ui.UIUtil;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
+import java.util.Collections;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -92,8 +94,8 @@ public class DeleteModules_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
-    final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
+    String message = "<html>Are you sure you want to delete selected modules?<br>This operation is not undoable.</html>";
+    final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption(UIUtil.replaceMnemonicAmpersand("Delete &Files"), false, true);
     DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
     dialog.show();
     if (!(dialog.isOK())) {
@@ -113,7 +115,7 @@ public class DeleteModules_Action extends BaseAction {
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
         for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-          DeleteModuleHelper.deleteModule(((MPSProject) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
+          new DeleteModuleHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(Collections.singletonList(module), false, filesOption.selected);
         }
       }
     });

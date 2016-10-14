@@ -11,7 +11,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -27,37 +29,33 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            // Concept: AbstractConceptDeclaration 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ForbidIncomingReferencesInSubconcepts_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: ConceptDeclaration 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new MakeRootable_Intention();
-            intentions[1] = new MakeFinal_Intention();
-            intentions[2] = new MakeAbstract_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: IStructureDeprecatable 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddDeprecatedAnnotation_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: AbstractConceptDeclaration 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ForbidIncomingReferencesInSubconcepts_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: ConceptDeclaration 
+          intentions = new IntentionFactory[4];
+          intentions[0] = new MakeRootable_Intention();
+          intentions[1] = new MakeFinal_Intention();
+          intentions[2] = new MakeAbstract_Intention();
+          intentions[3] = new CreateConceptIcon_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: IStructureDeprecatable 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddDeprecatedAnnotation_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
@@ -66,21 +64,14 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[5];
+    IntentionFactory[] rv = new IntentionFactory[6];
     rv[0] = new AddDeprecatedAnnotation_Intention();
     rv[1] = new MakeRootable_Intention();
     rv[2] = new MakeFinal_Intention();
     rv[3] = new MakeAbstract_Intention();
     rv[4] = new ForbidIncomingReferencesInSubconcepts_Intention();
+    rv[5] = new CreateConceptIcon_Intention();
     return Arrays.asList(rv);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L)).seal();
 }

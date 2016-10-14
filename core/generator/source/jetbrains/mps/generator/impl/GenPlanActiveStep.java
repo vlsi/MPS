@@ -85,7 +85,7 @@ final class GenPlanActiveStep {
 
   public PlanIdentity getPlanIdentity() {
     // XXX perhaps, shall return MGP and let callers construct PlanIdentity?
-    return new PlanIdentity("FIXME"); // for now, do not identify plans. FIXME identify them
+    return new PlanIdentity(myPlan);
   }
 
   @Nullable

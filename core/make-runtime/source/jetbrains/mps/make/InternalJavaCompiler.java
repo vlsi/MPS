@@ -20,7 +20,6 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.CompilationErrorsHandler.ClassesErrorsTracker;
 import jetbrains.mps.make.ModuleAnalyzer.ModuleAnalyzerResult;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.reloading.ClassPathCachingFacility;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -44,60 +43,57 @@ import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
  * fixme use bundle for this package
  */
 class InternalJavaCompiler {
-  private final static String MODULE_WITH_REMOVALS_WAS_NOT_CHANGED = "Module with removals is not in the changed modules: %s";
-  private final static String NO_CHANGES_AFTER_COMPILATION_ERROR = "Compilation passed but the changed modules are empty";
-  private final static String CALCULATING_DEPS_MSG = "Calculating dependencies classpath";
-  private final static String COMPILING_JAVA_MSG = "Compiling java";
-  private final static String UPDATING_CLASSPATH_MSG = "Updating classpath";
-  private final static String PREPARING_TO_COMPILE_MSG = "Preparing to compile";
-  private final static String COPYING_RESOURCES_MSG = "Copying resources";
-  private final static String HANDLING_ERRORS_MSG = "Handling errors";
-  private final static String WRITING_CLASSES_MSG = "Writing class file";
-  private final static String ECLIPSE_COMPILER_MSG = "Running eclipse java compiler";
+  private final static String MODULE_WITH_REMOVALS_WAS_NOT_CHANGED = "Module With Removals Is Not In The Changed Modules: %s";
+  private final static String NO_CHANGES_AFTER_COMPILATION_ERROR = "Compilation Passed But The Changed Modules Are Empty";
+  private final static String CALCULATING_DEPS_MSG = "Calculating Classpath";
+  private final static String COMPILING_JAVA_MSG = "Compiling Java";
+  private final static String PREPARING_TO_COMPILE_MSG = "Preparing";
+  private final static String COPYING_RESOURCES_MSG = "Copying Resources";
+  private final static String HANDLING_ERRORS_MSG = "Handling Errors";
+  private final static String WRITING_CLASSES_MSG = "Writing Classes";
+  private final static String ECLIPSE_COMPILER_MSG = "Running ECJ";
 
-  @NotNull private final MessageSender mySender;
-  @NotNull private final CompositeTracer myTracer;
   @NotNull private final ModulesContainer myModulesContainer;
   @Nullable private final JavaCompilerOptions myCompilerOptions;
 
-  InternalJavaCompiler(@NotNull ModulesContainer modulesContainer, @NotNull MessageSender sender, @NotNull CompositeTracer tracer, @Nullable JavaCompilerOptions compilerOptions) {
+  InternalJavaCompiler(@NotNull ModulesContainer modulesContainer, @Nullable JavaCompilerOptions compilerOptions) {
     myModulesContainer = modulesContainer;
-    mySender = sender;
-    myTracer = tracer;
     myCompilerOptions = compilerOptions;
   }
 
   @NotNull
-  public MPSCompilationResult compile() {
+  public MPSCompilationResult compile(CompositeTracer tracer) {
     if (!myModulesContainer.hasModuleToCompile()) {
       return MPSCompilationResult.ZERO_COMPILATION_RESULT;
     }
+    tracer.start("", 5);
+    try {
+      ModuleAnalyzerResult analysisResult = new ModuleAnalyzer(myModulesContainer).analyze();
+      EclipseJavaCompiler compiler;
+      tracer.push(PREPARING_TO_COMPILE_MSG);
+      try {
+        if (!analysisResult.hasJavaToCompile && !analysisResult.hasResourcesToUpdate) {
+          return MPSCompilationResult.nothingToDoCompilationResult();
+        }
+        analysisResult.filesToDelete.forEach(FileUtil::delete); // removing all stale files
+        compiler = collectSources();
+      } finally {
+        tracer.pop(1);
+      }
 
-    myTracer.push(PREPARING_TO_COMPILE_MSG);
+      MPSCompilationResult result;
+      if (!analysisResult.hasJavaToCompile) {
+        result = MPSCompilationResult.noJavaCompiledCompilationResult();
+      } else {
+        result = compileJava(compiler, tracer.subTracer(3));
+        reportModulesWithRemovalsAreNotChanged(analysisResult.modulesWithRemovals, result.getChangedModules(), tracer);
+      }
+      copyResources(tracer.subTracer(1));
 
-    ModuleAnalyzerResult analysisResult = new ModuleAnalyzer(myModulesContainer).analyze();
-    if (!analysisResult.hasJavaToCompile && !analysisResult.hasResourcesToUpdate) {
-      myTracer.pop();
-      return MPSCompilationResult.nothingToDoCompilationResult();
+      return result;
+    } finally {
+      tracer.done();
     }
-
-    analysisResult.filesToDelete.forEach(FileUtil::delete); // removing all stale files
-    EclipseJavaCompiler compiler = collectSources();
-    invalidateCompiledClasses(analysisResult.modulesWithRemovals);
-
-    myTracer.pop();
-
-    MPSCompilationResult result;
-    if (!analysisResult.hasJavaToCompile) {
-      result = MPSCompilationResult.noJavaCompiledCompilationResult();
-    } else {
-      result = compileJava(compiler);
-      reportModulesWithRemovalsAreNotChanged(analysisResult.modulesWithRemovals, result.getChangedModules());
-      invalidateCompiledClasses(result.getChangedModules());
-    }
-    copyResources();
-
-    return result;
   }
 
   /**
@@ -116,94 +112,85 @@ class InternalJavaCompiler {
     return compiler;
   }
 
-  private void copyResources() {
-    myTracer.push(COPYING_RESOURCES_MSG);
-    for (SModule module : myModulesContainer.getModules()) {
-      ModuleSources sources = myModulesContainer.getSources(module);
-      IFile classesGen = getJavaFacet(module).getClassesGen();
-      if (classesGen == null) {
-        continue;
-      }
-      for (ResourceFile toCopy : sources.getResourcesToCopy()) {
-        String fqName = toCopy.getPath();
+  private void copyResources(CompositeTracer tracer) {
+    tracer.start(COPYING_RESOURCES_MSG, 1);
+    try {
+      for (SModule module : myModulesContainer.getModules()) {
+        ModuleSources sources = myModulesContainer.getSources(module);
+        IFile classesGen = getJavaFacet(module).getClassesGen();
+        if (classesGen == null) {
+          continue;
+        }
+        for (ResourceFile toCopy : sources.getResourcesToCopy()) {
+          String fqName = toCopy.getPath();
 
-        fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
-        String path = NameUtil.toSystemDependentPath(fqName) + toCopy.getFile().getName();
+          fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
+          String path = fqName + toCopy.getFile().getName();
 
-        if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
-          FileUtil.copyFile(new File(toCopy.getFile().getAbsolutePath()), new File(classesGen.getDescendant(path).getPath()));
+          if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
+            FileUtil.copyFile(new File(toCopy.getFile().getAbsolutePath()), new File(classesGen.getDescendant(path).toPath().toAbsolute().toString()));
+          }
         }
       }
+    } finally {
+      tracer.done(1);
     }
-    myTracer.pop();
   }
 
-  // FIXME!!!
-  private void invalidateCompiledClasses(Set<SModule> changedModules) {
-    ClassPathCachingFacility cpFactory = ClassPathCachingFacility.getInstance();
-    myTracer.push(UPDATING_CLASSPATH_MSG);
-    for (SModule module : changedModules) {
-      IFile classesGen = getJavaFacet(module).getClassesGen();
-      if (classesGen != null) {
-        cpFactory.invalidate(Collections.singleton(classesGen.getPath())); // fixme update the classes invalidation mechanism
-      }
-    }
-    myTracer.pop();
-  }
-
-  private void reportModulesWithRemovalsAreNotChanged(Set<SModule> modulesWithRemovals, Set<SModule> changedModules) {
+  private void reportModulesWithRemovalsAreNotChanged(Set<SModule> modulesWithRemovals, Set<SModule> changedModules, CompositeTracer tracer) {
     for (SModule module : modulesWithRemovals) {
       if (!changedModules.contains(module)) {
-        mySender.warn(String.format(MODULE_WITH_REMOVALS_WAS_NOT_CHANGED, module), module.getModuleReference());
+        tracer.warn(String.format(MODULE_WITH_REMOVALS_WAS_NOT_CHANGED, module), module.getModuleReference());
       }
     }
   }
 
   @NotNull
-  private MPSCompilationResult compileJava(EclipseJavaCompiler compiler) {
+  private MPSCompilationResult compileJava(EclipseJavaCompiler compiler, CompositeTracer tracer) {
+    tracer.start(COMPILING_JAVA_MSG, 10);
     try {
-      myTracer.push(COMPILING_JAVA_MSG);
-      IClassPathItem classPath = computeDependenciesClassPath(myModulesContainer.getModules(), myTracer);
-      final CompilationErrorsHandler errorsHandler = new CompilationErrorsHandler(myModulesContainer, mySender, classPath);
-      CompilationHandler compilationHandler = new CompilationHandler(classPath, errorsHandler);
+      IClassPathItem classPath = computeDependenciesClassPath(myModulesContainer.getModules(), tracer.subTracer(1));
+      final CompilationErrorsHandler errorsHandler = new CompilationErrorsHandler(myModulesContainer, tracer.getSender(), classPath);
+      CompilationHandler compilationHandler = new CompilationHandler(classPath, tracer.subTracer(3), errorsHandler);
       final CollectingResultsListener listener = new CollectingResultsListener(errorsHandler);
 
       compiler.addCompilationResultListener(listener);
-      doCompileJava(compiler, classPath, myCompilerOptions);
+      doCompileJava(compiler, classPath, myCompilerOptions, tracer.subTracer(6));
       compiler.removeCompilationResultListener(listener);
 
       Collection<SModule> changedModules = compilationHandler.process(listener.getResults());
 
       if (changedModules.isEmpty()){
-        mySender.error(NO_CHANGES_AFTER_COMPILATION_ERROR);
+        tracer.error(NO_CHANGES_AFTER_COMPILATION_ERROR);
       }
       return new MPSCompilationResult(errorsHandler.getErrorsCount(), 0, false, changedModules); // fixme: no warnings in the result
     } finally {
-      myTracer.pop();
+      tracer.done();
     }
   }
 
-  private void doCompileJava(EclipseJavaCompiler compiler, IClassPathItem classPath, @Nullable JavaCompilerOptions compilerOptions) {
+  private void doCompileJava(EclipseJavaCompiler compiler, IClassPathItem classPath, @Nullable JavaCompilerOptions compilerOptions, CompositeTracer tracer) {
     try {
-      myTracer.push(ECLIPSE_COMPILER_MSG, true);
+      tracer.start(ECLIPSE_COMPILER_MSG, 1);
       if (compilerOptions == null) {
         compiler.compile(classPath);
       } else {
         compiler.compile(classPath, compilerOptions);
       }
     } finally {
-      myTracer.pop();
+      tracer.done(1);
     }
   }
 
   // FIXME at least twice we count all the dependencies WHY
   private static IClassPathItem computeDependenciesClassPath(Set<SModule> modules, CompositeTracer tracer) {
-    tracer.push(CALCULATING_DEPS_MSG);
+    tracer.start(CALCULATING_DEPS_MSG, 1);
     try {
       Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
+      tracer.info("ClassPath: " + classpath);
       return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
     } finally {
-      tracer.pop();
+      tracer.done(1);
     }
   }
 
@@ -212,7 +199,7 @@ class InternalJavaCompiler {
    */
   private class CollectingResultsListener extends jetbrains.mps.compiler.CompilationResultAdapter {
     private final CompilationErrorsHandler myErrorsHandler;
-    private final List<CompilationResult> myResults = new ArrayList<CompilationResult>();
+    private final List<CompilationResult> myResults = new ArrayList<>();
 
     CollectingResultsListener(@NotNull CompilationErrorsHandler errorsHandler) {
       myErrorsHandler = errorsHandler;
@@ -238,32 +225,38 @@ class InternalJavaCompiler {
    */
   private class CompilationHandler {
     private final IClassPathItem myClassPath;
+    private final CompositeTracer myTracer;
     private final CompilationErrorsHandler myErrorsHandler;
-    private final ClassFileWriter writer;
+    private final ClassFileWriter myWriter;
 
-    public CompilationHandler(IClassPathItem classPath, CompilationErrorsHandler errorsHandler) {
+    CompilationHandler(IClassPathItem classPath, CompositeTracer tracer, CompilationErrorsHandler errorsHandler) {
       myClassPath = classPath;
+      myTracer = tracer;
       myErrorsHandler = errorsHandler;
-      writer = new ClassFileWriter(myModulesContainer, mySender, myClassPath);
+      myWriter = new ClassFileWriter(myModulesContainer, tracer, myClassPath);
     }
 
     /**
      * @return a set of changed modules
      */
     public Set<SModule> process(List<CompilationResult> results) {
-      ClassesErrorsTracker errorsTracker = new ClassesErrorsTracker();
-      for (CompilationResult result : results) {
-        CategorizedProblem[] errors = result.getErrors();
-        if (errors != null && errors.length > 0) {
-          myTracer.push(HANDLING_ERRORS_MSG);
-          errorsTracker = myErrorsHandler.handle(result);
-          myTracer.pop();
+      myTracer.start(HANDLING_ERRORS_MSG, 11);
+      try {
+        ClassesErrorsTracker errorsTracker = new ClassesErrorsTracker();
+        for (CompilationResult result : results) {
+          CategorizedProblem[] errors = result.getErrors();
+          if (errors != null && errors.length > 0) {
+            errorsTracker = myErrorsHandler.handle(result);
+          }
         }
+        myTracer.advance(1);
+        myTracer.push(WRITING_CLASSES_MSG);
+        Set<SModule> changedModules = myWriter.write(results, errorsTracker);
+        myTracer.pop(10);
+        return changedModules;
+      } finally {
+        myTracer.done();
       }
-      myTracer.push(WRITING_CLASSES_MSG);
-      Set<SModule> changedModules = writer.write(results, errorsTracker);
-      myTracer.pop();
-      return changedModules;
     }
   }
 }

@@ -5,9 +5,6 @@ package jetbrains.mps.ide.platform.watching;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public abstract class ReloadParticipant {
-  public ReloadParticipant() {
-  }
-
   public abstract void update(ProgressMonitor monitor);
 
   public boolean wantsToShowProgress() {

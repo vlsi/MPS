@@ -19,6 +19,8 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.ide.platform.refactoring.UsagesModelTracker;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
@@ -36,9 +38,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RefactoringProcessor {
 
@@ -98,6 +99,7 @@ public class RefactoringProcessor {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
   public static class RefactoringUIImpl extends RefactoringProcessor.RefactoringSearchUIImpl implements RefactoringProcessor.RefactoringUI {
     private RefactoringSessionImpl myRefactoringSession;
     public RefactoringUIImpl(MPSProject project, RefactoringSessionImpl refactoringSession) {
@@ -115,7 +117,6 @@ public class RefactoringProcessor {
               } else {
                 try {
                   performRefactoringTask.run();
-                  myRefactoringSession.performAllRegistered();
                 } catch (RuntimeException exception) {
                   if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Exception during refactoring: ", exception);
@@ -235,7 +236,7 @@ public class RefactoringProcessor {
     });
   }
 
-  public static <IP, FP, IS, FS> void performRefactoring(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringProcessor.RefactoringUI refactoringUI, final RefactoringSession refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._return_P1_E0<? extends Map<IS, FS>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>> doRefactor, final _FunctionTypes._void_P0_E0 doCleanup) {
+  public static <IP, FP, IS, FS> void performRefactoring(final RefactoringParticipant.ParticipantStateFactory<IP, FP, IS, FS> factory, RefactoringProcessor.RefactoringUI refactoringUI, final RefactoringSession refactoringSession, final SRepository repository, SearchScope scope, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IS> initialStates, final _FunctionTypes._return_P1_E0<? extends Map<IS, FS>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>> doRefactor, @Nullable final _FunctionTypes._void_P0_E0 doCleanup) {
 
 
     final Tuples._2<List<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IS, FS>>, SearchTask> participantChanges = askParticipantChanges(factory, refactoringUI, repository, scope, participants, initialStates);
@@ -250,6 +251,10 @@ public class RefactoringProcessor {
       }
     });
 
+    if (searchResults.value == null) {
+      return;
+    }
+
     refactoringUI.showRefactoringView(new Runnable() {
       public void run() {
         final Map<IS, FS> getFinalObject = doRefactor.invoke(participantChanges._0());
@@ -263,10 +268,11 @@ public class RefactoringProcessor {
             }
           }).toListSequence(), repository, refactoringSession, factory);
         }
-        doCleanup.invoke();
+        if (doCleanup != null) {
+          doCleanup.invoke();
+        }
       }
     }, refactoringName, searchResults.value, participantChanges._1(), refactoringSession);
   }
 
-  protected static Logger LOG = LogManager.getLogger(RefactoringProcessor.class);
 }

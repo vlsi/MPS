@@ -25,9 +25,11 @@ import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -53,6 +55,7 @@ import java.util.List;
  * Evgeny Gryaznov, 10/22/10
  */
 public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Source {
+  // FIXME with #getGenerator() being instance of GQP.Source, perhaps TEE shall not implement it?
 
   IOperationContext getOperationContext();
 
@@ -115,12 +118,30 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   /**
    * Support for references between template nodes
    */
+  void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull SReferenceLink role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
+
+  /**
+   * @deprecated replaced with {@link #resolveInTemplateLater(SNode, SReferenceLink, SNodeReference, String, String, TemplateContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
+
 
   /**
    * ReferenceMacro support
+   * @since 3.4
+   */
+  void resolve(@NotNull ReferenceResolver resolver);
+
+  /**
+   * ReferenceMacro support
+   * @deprecated switch to {@link #resolve(ReferenceResolver)}
+   *             WHEN REMOVING THE METHOD, update reduce_TemplateNode template not to cast to (ReferenceResolver) any more in resolve() call
    * @since 3.3
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void resolve(@NotNull ReferenceResolver2 resolver);
 
   /**

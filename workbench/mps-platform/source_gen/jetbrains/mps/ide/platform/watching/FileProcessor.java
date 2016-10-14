@@ -10,7 +10,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -18,22 +18,27 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.vfs.FileSystemEvent;
 import java.util.HashSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import java.util.Arrays;
 
 public class FileProcessor extends ReloadParticipant {
   private FileSystemListenersContainer listenersContainer;
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
+  private static final IdeaFileSystem FS = ((IdeaFileSystem) FileSystemExtPoint.getFS());
 
   public FileProcessor() {
-    listenersContainer = ((IdeaFileSystem) FileSystem.getInstance()).getListenersContainer();
+    listenersContainer = FS.getListenersContainer();
   }
 
   @Override
@@ -41,7 +46,7 @@ public class FileProcessor extends ReloadParticipant {
     if (MapSequence.fromMap(dataMap).isEmpty()) {
       return;
     }
-    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
+    monitor.start("", MapSequence.fromMap(dataMap).count() + 1);
     long updateStartTime = System.currentTimeMillis();
     try {
       for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {
@@ -119,13 +124,12 @@ public class FileProcessor extends ReloadParticipant {
   }
 
   protected boolean accepts(VirtualFile file) {
-    return true;
+    return !(MPSFileTypesManager.isFileIgnored(file.getPath()));
   }
 
   protected void processDelete(VirtualFile file) {
-    String path = file.getPath();
-    final IFile ifile = FileSystem.getInstance().getFileByPath(path);
-    Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
+    final IFile ifile = new IdeaFile(FS, file);
+    Sequence.fromIterable(get(ifile.getPath())).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.removed.add(ifile);
       }
@@ -134,7 +138,7 @@ public class FileProcessor extends ReloadParticipant {
 
   protected void processCreate(VirtualFile file) {
     String path = file.getPath();
-    final IFile ifile = FileSystem.getInstance().getFileByPath(path);
+    final IFile ifile = FS.getFile(path);
     Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.added.add(ifile);
@@ -144,7 +148,7 @@ public class FileProcessor extends ReloadParticipant {
 
   protected void processContentChanged(VirtualFile file) {
     String path = file.getPath();
-    final IFile ifile = FileSystem.getInstance().getFileByPath(path);
+    final IFile ifile = FS.getFile(path);
     Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
         it.changed.add(ifile);
@@ -170,6 +174,7 @@ public class FileProcessor extends ReloadParticipant {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(FileProcessor.class);
   private void printStat(String name, long beginTime) {
     // todo: ideal for AOP in MPS! 
     if (InternalFlag.isInternalMode()) {
@@ -207,6 +212,15 @@ public class FileProcessor extends ReloadParticipant {
     public void notify(FileSystemListener listener) {
       FileProcessor.this.notify(listener, this);
     }
+
+    @Override
+    public String toString() {
+      return String.format("[added: %s; removed: %s; changed: %s.", setToString(added), setToString(removed), setToString(changed));
+    }
+
+    @NotNull
+    private String setToString(Set<?> set) {
+      return Arrays.toString(set.toArray());
+    }
   }
-  protected static Logger LOG = LogManager.getLogger(FileProcessor.class);
 }

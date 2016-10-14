@@ -58,6 +58,10 @@ public class ModelValidatorAdapter implements ModelValidator {
 
     ModelCheckerViewer viewer = tool.checkModels(modelDescriptors);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
+    if (issues == null) {
+      // Cancelled
+      return false;
+    }
 
     int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
     int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_ERROR);

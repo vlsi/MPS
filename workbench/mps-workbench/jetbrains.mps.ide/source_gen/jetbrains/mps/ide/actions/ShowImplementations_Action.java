@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import com.intellij.openapi.ui.popup.JBPopup;
@@ -97,13 +97,13 @@ public class ShowImplementations_Action extends BaseAction {
 
     SearchResults<SNode> results;
     if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
     } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SPropertyOperations.getBoolean(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
-      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
     } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
     } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
+      results = FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) MapSequence.fromMap(_params).get("node")), new GlobalScope(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
     } else {
       return;
     }

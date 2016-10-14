@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.application.ApplicationManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.application.Application;
@@ -25,8 +27,6 @@ import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FSChangesWatcher implements ApplicationComponent {
   private final MessageBus myBus;
@@ -84,12 +84,15 @@ public class FSChangesWatcher implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(FSChangesWatcher.class);
   }
 
+  protected static Logger LOG = LogManager.getLogger(FSChangesWatcher.class);
   private class BulkFileChangesListener implements BulkFileListener {
     private BulkFileChangesListener() {
     }
+
     @Override
     public void before(@NotNull List<? extends VFileEvent> events) {
     }
+
     @Override
     public void after(@NotNull final List<? extends VFileEvent> events) {
       final Application application = ApplicationManager.getApplication();
@@ -103,7 +106,6 @@ public class FSChangesWatcher implements ApplicationComponent {
       })) {
         return;
       }
-
       myReloadManager.runReload(FileProcessor.class, new ReloadAction<FileProcessor>() {
         public void runAction(final FileProcessor participant) {
           ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
@@ -121,6 +123,7 @@ public class FSChangesWatcher implements ApplicationComponent {
         }
       });
     }
+
     private void processAfterEvent(VFileEvent event, FileProcessor processor) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Process after event for " + event.getPath());
@@ -152,5 +155,4 @@ public class FSChangesWatcher implements ApplicationComponent {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(FSChangesWatcher.class);
 }

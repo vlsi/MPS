@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -68,7 +68,7 @@
       </node>
       <node concept="1iCGBv" id="4zASA_hyumD" role="3EZMnx">
         <property role="1$x2rV" value="link" />
-        <ref role="1NtTu8" to="genb:70qA1hy$CWu" />
+        <ref role="1NtTu8" to="genb:70qA1hy$CWu" resolve="link" />
         <node concept="1sVBvm" id="4zASA_hyumE" role="1sWHZn">
           <node concept="3F0A7n" id="4zASA_hyumF" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -99,7 +99,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="70qA1hy$IDQ" role="3EZMnx">
-        <ref role="1NtTu8" to="genb:70qA1hy$IDj" />
+        <ref role="1NtTu8" to="genb:70qA1hy$IDj" resolve="expr" />
       </node>
       <node concept="3F0ifn" id="70qA1hy$IDC" role="3EZMnx">
         <property role="3F0ifm" value="with parent scope" />

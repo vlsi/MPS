@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.menus;
 
+import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
@@ -23,6 +28,8 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.IconResource;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -31,6 +38,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * @author simon
@@ -49,5 +57,16 @@ public class MenuUtil {
   public static Collection<SLanguage> getUsedLanguages(SModel model) {
     LanguageRegistry lr = LanguageRegistry.getInstance(model.getRepository());
     return new SLanguageHierarchy(lr, SModelOperations.getAllLanguageImports(model)).getExtended();
+  }
+
+  public static boolean isMenuApplicableToLocation(@NotNull TransformationMenuLookup menuLookup, @NotNull String menuLocation, @NotNull SNode node) {
+    Collection<? extends TransformationMenu> menus = menuLookup.lookup(getUsedLanguages(node), menuLocation);
+    return menus.stream().anyMatch(m -> m.isApplicableToLocation(menuLocation));
+  }
+
+  @NotNull
+  public static List<TransformationMenuItem> createMenu(@Nullable TransformationMenuLookup menuLookup, @NotNull String menuLocation, @NotNull EditorCell cell) {
+    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(cell, menuLocation);
+    return context.createItemsWithFallback(menuLookup);
   }
 }

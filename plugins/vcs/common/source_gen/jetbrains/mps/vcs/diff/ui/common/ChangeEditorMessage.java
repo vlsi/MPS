@@ -37,10 +37,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
@@ -367,6 +367,7 @@ __switch__:
   private static boolean isVertical(EditorCell cell) {
     return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
   }
+  protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
   private static EditorCell getChildCell(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {
     if (nodeIndex == -1) {
       return null;
@@ -392,7 +393,6 @@ __switch__:
   public interface ConflictChecker {
     boolean isChangeConflicted(ModelChange change);
   }
-  protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
   private static ModelAccessor check_myu41h_a0a0a71(EditorCell_Property checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelAccessor();

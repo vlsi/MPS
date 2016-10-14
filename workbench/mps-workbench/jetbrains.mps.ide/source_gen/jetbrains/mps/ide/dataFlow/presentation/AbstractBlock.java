@@ -5,6 +5,8 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import java.util.HashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.apache.log4j.Level;
 import java.awt.event.MouseEvent;
@@ -12,8 +14,6 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class AbstractBlock implements IBlock {
   protected int myX;
@@ -29,6 +29,7 @@ public abstract class AbstractBlock implements IBlock {
   private String myCaption;
   private Set<IBlockListener> myBlockListeners = new HashSet<IBlockListener>();
   private Set<IBlock> mySucc;
+  protected static Logger LOG = LogManager.getLogger(AbstractBlock.class);
   public AbstractBlock(int x, int y, int width, int height, SNodeReference sourceNode, String caption, String ruleNodeReference) {
     this.myX = x;
     this.myY = y;
@@ -143,5 +144,4 @@ public abstract class AbstractBlock implements IBlock {
     AbstractBlock.this.paintBlock(g);
     AbstractBlock.this.paintCaption(g);
   }
-  protected static Logger LOG = LogManager.getLogger(AbstractBlock.class);
 }

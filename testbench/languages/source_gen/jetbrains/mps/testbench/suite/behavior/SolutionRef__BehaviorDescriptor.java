@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -36,7 +37,7 @@ public final class SolutionRef__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SModuleReference moduleReference_id173Z5qAOun8(@NotNull SNode __thisNode__) {
-    return new ModuleReference(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName")), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID")));
+    return new ModuleReference(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName")), ModuleId.fromString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID"))));
   }
   /*package*/ static String presentation_id173Z5qAPmZ2(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName"));

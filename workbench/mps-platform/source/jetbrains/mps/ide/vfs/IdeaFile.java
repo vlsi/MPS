@@ -63,14 +63,14 @@ public class IdeaFile implements IFileEx, CachingFile {
   private String myPath;
   private VirtualFile myVirtualFile = null;
 
-  IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
+  public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
     myFileSystem = fileSystem;
 
     // fix for MPS-10350; todo move
     myPath = path.replace("//", "/").replace("\\\\", "\\");
   }
 
-  private IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
+  public IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFileSystem = fileSystem;
     myVirtualFile = virtualFile;
     myPath = virtualFile.getPath();
@@ -151,7 +151,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   @NotNull
   public IdeaFile getDescendant(@NotNull String suffix) {
     String path = getPath();
-    String separator = path.contains("!") ? "/" : File.separator;
+    String separator = Path.UNIX_SEPARATOR; // we are system-independent underneath
     return new IdeaFile(myFileSystem, path + (path.endsWith(separator) ? "" : separator) + suffix);
   }
 
@@ -347,12 +347,8 @@ public class IdeaFile implements IFileEx, CachingFile {
 
   @Override
   public void refresh(@NotNull CachingContext context) {
-    if (context.isSynchronous()) {
-      ApplicationManager.getApplication().assertWriteAccessAllowed();
-    }
     if (findVirtualFile()) {
       myVirtualFile.getChildren(); // This was added to force refresh
-      // synchronous non-recursive refresh
       myVirtualFile.refresh(!context.isSynchronous(), context.isRecursive());
     } else {
       findVirtualFile(true);

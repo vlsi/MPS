@@ -27,6 +27,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
+import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
@@ -45,6 +46,7 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -110,7 +112,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
-    return generator.getQuerySource().getQueryProvider(ruleNode);
+    return generator.getQueryProvider(ruleNode);
   }
 
   @NotNull
@@ -219,15 +221,27 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
+  public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull SReferenceLink role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
+    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
+    new PostponedReference(role, outputNode, refInfo).registerWith(generator);
+  }
+
+  @Deprecated
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
     new PostponedReference(((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), outputNode, refInfo).registerWith(generator);
   }
 
   @Override
-  public void resolve(@NotNull ReferenceResolver2 resolver) {
+  public void resolve(@NotNull ReferenceResolver resolver) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver);
     new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).registerWith(generator);
+  }
+
+  @Override
+  @Deprecated
+  public void resolve(@NotNull ReferenceResolver2 resolver) {
+    resolve((ReferenceResolver) resolver);
   }
 
   @Override

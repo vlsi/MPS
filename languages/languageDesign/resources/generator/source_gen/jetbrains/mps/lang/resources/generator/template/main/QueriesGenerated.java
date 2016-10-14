@@ -15,6 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.resources.behavior.OldIconBundle__BehaviorDescriptor;
 import jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -53,8 +55,38 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_5979521222239286107(final PropertyMacroContext _context) {
     return (String) Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, 0x52fb86deea79b940L, "icon")));
   }
+  public static Object propertyMacro_GetPropertyValue_8269982547288325753(final PropertyMacroContext _context) {
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    return "0x" + Long.toHexString(msb) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288403552(final PropertyMacroContext _context) {
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    return "0x" + Long.toHexString(lsb) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288411858(final PropertyMacroContext _context) {
+    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
+    return "0x" + Long.toHexString(id) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288435644(final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_6638738203687387540(final PropertyMacroContext _context) {
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    return "0x" + Long.toHexString(msb) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_6638738203687387557(final PropertyMacroContext _context) {
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    return "0x" + Long.toHexString(lsb) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_6638738203687387574(final PropertyMacroContext _context) {
+    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
+    return "0x" + Long.toHexString(id) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_6638738203687387587(final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode());
+  }
   public static Object referenceMacro_GetReferent_6759767305208080925(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("map_IconContainer");
+    return _context.getOutputNodeByMappingLabel("map_IconContainer", null);
   }
   public static Object referenceMacro_GetReferent_6759767305208080928(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconField");
@@ -69,19 +101,28 @@ public class QueriesGenerated {
     return (String) OldIconBundle__BehaviorDescriptor.getJavaName_id7Mb2akaesvf.invoke(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_5979521222239280705(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByMappingLabel("map_IconContainer");
+    return _context.getOutputNodeByMappingLabel("map_IconContainer", null);
   }
   public static Object referenceMacro_GetReferent_5979521222239280712(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconResourceField");
   }
   public static boolean ifMacro_Condition_4965310991037828399(final IfMacroContext _context) {
-    return Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon"))) == null;
+    return Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon"))) != null;
+  }
+  public static boolean ifMacro_Condition_6638738203687335897(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
   }
   public static SNode sourceNodeQuery_8814893218132245226(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, 0x7c8b08a50a39c6c1L, "iconExpression"));
   }
   public static SNode sourceNodeQuery_4965310991037946893(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon")), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon")), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x60d1cf8c81faea09L, "iconExpression"));
+  }
+  public static SNode sourceNodeQuery_562388756444871926(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept"));
+  }
+  public static SNode sourceNodeQuery_562388756444903398(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce019825925c1aL, 0x7ce019825925c1cL, "node"));
   }
   public static Iterable<SNode> sourceNodesQuery_2990235398086399665(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, 0x7c8b08a50a39c6beL, "icons"));

@@ -11,7 +11,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -27,42 +29,37 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            // Concept: BuildMps_AbstractModule 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ToggleCompactMpsModule_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: BuildMps_IdeaPluginGroup 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddCustomPackaging_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: BuildMps_ModuleDependencyJar 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddCustomLocationDependency_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: BuildProject 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ReloadModulesFromDisk_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: BuildMps_AbstractModule 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ToggleCompactMpsModule_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: BuildMps_IdeaPluginGroup 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddCustomPackaging_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: BuildMps_ModuleDependencyJar 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddCustomLocationDependency_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: BuildProject 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ReloadModulesFromDisk_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
@@ -78,13 +75,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[3] = new ReloadModulesFromDisk_Intention();
     return Arrays.asList(rv);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L)).seal();
 }

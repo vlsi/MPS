@@ -5,9 +5,9 @@ package jetbrains.mps.lang.actions.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a0ub = new IconResource("nodeFactories.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0ac = new IconResource("actions.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0jc = new IconResource("pasteWrapper.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0rd = new IconResource("rightTransform.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0de = new IconResource("smartActions.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0xb = new IconResource("nodeFactories.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0dc = new IconResource("actions.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0mc = new IconResource("pasteWrapper.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0ud = new IconResource("rightTransform.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0ge = new IconResource("smartActions.png", IconContainer.class);
 }

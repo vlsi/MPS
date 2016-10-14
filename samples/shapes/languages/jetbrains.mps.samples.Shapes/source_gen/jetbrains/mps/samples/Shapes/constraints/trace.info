@@ -5,16 +5,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,55,0" name="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,31,0" name="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/1082824515534700364">
     <file name="Square_Constraints.java">
-      <node id="1082824515534700364" at="17,31,18,153" concept="6" />
+      <node id="1082824515534700364" at="17,31,18,153" concept="5" />
       <node id="1082824515534700364" at="22,84,23,119" concept="3" />
       <node id="1082824515534700364" at="26,37,27,20" concept="4" />
       <node id="1082824515534700364" at="30,62,31,37" concept="3" />
@@ -47,7 +46,7 @@
   </root>
   <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/1082824515534982564">
     <file name="Circle_Constraints.java">
-      <node id="1082824515534982564" at="17,31,18,153" concept="6" />
+      <node id="1082824515534982564" at="17,31,18,153" concept="5" />
       <node id="1082824515534982564" at="22,84,23,119" concept="3" />
       <node id="1082824515534982564" at="26,37,27,20" concept="4" />
       <node id="1082824515534982564" at="30,62,31,39" concept="3" />
@@ -76,52 +75,6 @@
       <scope id="1082824515534982564" at="21,0,38,0" />
       <unit id="1082824515534982564" at="24,149,35,5" name="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints$1" />
       <unit id="1082824515534982564" at="16,0,39,0" name="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints" />
-    </file>
-  </root>
-  <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/4191445539799302835">
-    <file name="ColorReference_Constraints.java">
-      <node id="4191445539799302835" at="28,39,29,161" concept="6" />
-      <node id="4191445539799302835" at="33,90,34,131" concept="3" />
-      <node id="4191445539799302835" at="37,44,38,20" concept="4" />
-      <node id="4191445539799302835" at="45,63,46,58" concept="4" />
-      <node id="4191445539799459336" at="51,50,52,347" concept="4" />
-      <node id="4191445539799302835" at="58,7,59,22" concept="4" />
-      <node id="4191445539799302835" at="61,0,62,0" concept="5" trace="breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a2" />
-      <node id="4191445539799302835" at="28,0,31,0" concept="0" trace="ColorReference_Constraints#()V" />
-      <node id="4191445539799423083" at="51,0,54,0" concept="2" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4191445539799302835" at="36,0,40,0" concept="2" trace="hasOwnScopeProvider#()Z" />
-      <node id="4191445539799302835" at="44,0,48,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="4191445539799322084" at="49,122,54,14" concept="4" />
-      <node id="4191445539799302835" at="48,0,56,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-      <node id="4191445539799302835" at="42,56,56,10" concept="4" />
-      <node id="4191445539799302835" at="40,0,58,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="4191445539799302835" at="34,131,58,7" concept="1" />
-      <node id="4191445539799302835" at="32,0,61,0" concept="2" trace="getSpecifiedReferences#()Ljava/util/Map;" />
-      <scope id="4191445539799302835" at="28,39,29,161" />
-      <scope id="4191445539799302835" at="37,44,38,20" />
-      <scope id="4191445539799302835" at="45,63,46,58" />
-      <scope id="4191445539799423089" at="51,50,52,347" />
-      <scope id="4191445539799302835" at="28,0,31,0" />
-      <scope id="4191445539799423083" at="51,0,54,0">
-        <var name="child" id="4191445539799423087" />
-      </scope>
-      <scope id="4191445539799302835" at="36,0,40,0" />
-      <scope id="4191445539799302835" at="44,0,48,0" />
-      <scope id="4191445539799302835" at="49,122,54,14" />
-      <scope id="4191445539799302835" at="48,0,56,0">
-        <var name="_context" id="4191445539799302835" />
-        <var name="operationContext" id="4191445539799302835" />
-      </scope>
-      <scope id="4191445539799302835" at="42,56,56,10" />
-      <scope id="4191445539799302835" at="40,0,58,0" />
-      <scope id="4191445539799302835" at="33,90,59,22">
-        <var name="references" id="4191445539799302835" />
-      </scope>
-      <scope id="4191445539799302835" at="32,0,61,0" />
-      <unit id="4191445539799423071" at="50,23,54,13" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$3" />
-      <unit id="4191445539799302835" at="43,19,56,9" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$2" />
-      <unit id="4191445539799302835" at="35,153,58,5" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$1" />
-      <unit id="4191445539799302835" at="27,0,63,0" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints" />
     </file>
   </root>
 </debug-info>

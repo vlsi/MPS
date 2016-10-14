@@ -19,6 +19,8 @@ import jetbrains.mps.migration.component.util.MigrationDataUtil;
 import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
@@ -54,8 +56,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationComponent extends AbstractProjectComponent {
   private Project myMpsProject;
@@ -104,6 +104,7 @@ public class MigrationComponent extends AbstractProjectComponent {
   private MigrationAspectDescriptor getMigrationDescriptor(Language module) {
     return LanguageRegistry.getInstance(module.getRepository()).getLanguage(module).getAspect(MigrationAspectDescriptor.class);
   }
+  protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
   public MigrationScript fetchMigrationScript(MigrationScriptReference scriptReference, boolean silently) {
     SLanguage depLanguage = scriptReference.getLanguage();
     int current = scriptReference.getFromVersion();
@@ -242,7 +243,7 @@ public class MigrationComponent extends AbstractProjectComponent {
       public RefactoringPart select(final RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> participant) {
         List<SNode> participantParts = ListSequence.fromList(SLinkOperations.getChildren(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0v(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.getId());
+            return eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0w(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.getId());
           }
         }).toListSequence();
         return ((RefactoringPart) new MigrationComponent.RefactoringPartImpl(SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), participantParts, participant));
@@ -297,7 +298,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     RefactoringLog rLog = logApplied.getRefactoringLog();
     AbstractModule module = ((AbstractModule) logApplied.getModule());
     SModule fromModule = rLog.getDescriptor().getModule();
-    int importedVersion = MigrationModuleUtil.getDepVersion(module, fromModule.getModuleReference());
+    int importedVersion = MigrationModuleUtil.getDependencyVersion(module, fromModule);
     importedVersion = Math.max(importedVersion, 0);
     assert importedVersion == rLog.getDescriptor().getFromVersion();
     try {
@@ -319,14 +320,13 @@ public class MigrationComponent extends AbstractProjectComponent {
     return true;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
   private static MigrationScript check_gd1mrb_a0e0n(MigrationAspectDescriptor checkedDotOperand, Integer current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
     return null;
   }
-  private static boolean eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0v(Object a, Object b) {
+  private static boolean eq_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0h0w(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

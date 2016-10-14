@@ -8,68 +8,50 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
-          }
-          break;
-        case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new DebuggerReference_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ChooseBreakpoint_Contribution());
+      default:
     }
-    return res;
+    return Collections.<SubstituteMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb3a4L, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL, "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d16f5L, "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912bd83L, "jetbrains.mps.debugger.api.lang.structure.DebuggerType"));
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb3a4L), MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L), MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL), MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L), MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d16f5L), MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L), MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912bd83L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).seal();
 }

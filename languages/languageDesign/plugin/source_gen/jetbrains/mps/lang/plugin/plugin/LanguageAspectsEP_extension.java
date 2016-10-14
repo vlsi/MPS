@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -48,7 +47,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @NotNull
       public Collection<SLanguage> getMainLanguages() {
-        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin"), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x696c11654a59463bL, 0xbc5d902caab85dd0L), "jetbrains.mps.make.facet"), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL), "jetbrains.mps.lang.aspect"));
+        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"), MetaAdapterFactory.getLanguage(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet"), MetaAdapterFactory.getLanguage(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, "jetbrains.mps.lang.aspect"));
       }
       @Nullable
       public LanguageAspectGenerator getGenerator() {
@@ -60,7 +59,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public String getHelpUrl() {
-        return "http://confluence.jetbrains.com/display/MPSD33/Plugin";
+        return "http://confluence.jetbrains.com/display/MPSD34/Plugin";
       }
 
 

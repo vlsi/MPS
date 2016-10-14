@@ -2,7 +2,7 @@
 <model ref="90746344-04fd-4286-97d5-b46ae6a81709/r:f22d27ec-c702-420c-bd15-8c30195d31df(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.actions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -137,7 +137,7 @@
               <node concept="2OqwBi" id="1DzJCFImWmC" role="2Oq$k0">
                 <node concept="1r4Lsj" id="4SSaNAQkPW_" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="4SSaNAQkSaR" role="2OqNvi">
-                  <ref role="3TtcxE" to="tp2c:htbW2KO" />
+                  <ref role="3TtcxE" to="tp2c:htbW2KO" resolve="parameter" />
                 </node>
               </node>
               <node concept="TSZUe" id="1DzJCFIn4hP" role="2OqNvi">
@@ -202,7 +202,7 @@
                             <node concept="1r4N5L" id="2uZcAeYa5Kn" role="1m5AlR" />
                           </node>
                           <node concept="3TrEf2" id="6szrkDocr6f" role="2OqNvi">
-                            <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" />
+                            <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -246,7 +246,7 @@
                                 <node concept="1r4N5L" id="2uZcAeYa7nj" role="1m5AlR" />
                               </node>
                               <node concept="3TrEf2" id="6szrkDocsYS" role="2OqNvi">
-                                <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" />
+                                <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" resolve="target" />
                               </node>
                             </node>
                             <node concept="I4A8Y" id="2uZcAeYa7nl" role="2OqNvi" />
@@ -275,7 +275,7 @@
                         <node concept="1r4N5L" id="2uZcAeYa3RW" role="1m5AlR" />
                       </node>
                       <node concept="3TrEf2" id="6szrkDocrme" role="2OqNvi">
-                        <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" />
+                        <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" resolve="target" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="2uZcAeYa8m$" role="2OqNvi">

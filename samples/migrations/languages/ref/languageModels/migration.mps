@@ -3,11 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
-    <use id="9de7c5ce-ea6f-4fb4-a7ba-45e62b53cbad" name="decl" version="-1" />
     <use id="d3d2b6e3-a4b3-43d5-bb29-420d39fa86ab" name="ref" version="-1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -408,7 +406,7 @@
                           <ref role="37wK5l" to="mhbf:~SNode.getReference(java.lang.String):org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
                           <node concept="prKvN" id="1Ij79tqvk1C" role="37wK5m">
                             <ref role="prhl4" to="71f1:6FZb119cltd" resolve="OldComponentRef" />
-                            <ref role="prhl7" to="71f1:6FZb119cEqq" />
+                            <ref role="prhl7" to="71f1:6FZb119cEqq" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -467,7 +465,7 @@
                             </node>
                           </node>
                           <node concept="3Tsc0h" id="1Ij79tqwN2l" role="2OqNvi">
-                            <ref role="3TtcxE" to="3whe:1Ij79tqsMYq" />
+                            <ref role="3TtcxE" to="3whe:1Ij79tqsMYq" resolve="entry" />
                           </node>
                         </node>
                         <node concept="1z4cxt" id="1Ij79tqwN2m" role="2OqNvi">
@@ -566,7 +564,7 @@
                           <ref role="3cqZAo" node="1Ij79tqvfll" resolve="newNode" />
                         </node>
                         <node concept="3TrEf2" id="1Ij79tqwSER" role="2OqNvi">
-                          <ref role="3Tt5mk" to="71f1:6FZb119cEra" />
+                          <ref role="3Tt5mk" to="71f1:6FZb119cEra" resolve="target" />
                         </node>
                       </node>
                     </node>

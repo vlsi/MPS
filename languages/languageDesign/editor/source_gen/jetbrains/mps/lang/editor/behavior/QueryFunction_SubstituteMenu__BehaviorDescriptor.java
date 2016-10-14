@@ -35,11 +35,11 @@ public final class QueryFunction_SubstituteMenu__BehaviorDescriptor extends Base
 
   /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
     List<SNode> result = QueryFunction_Menu__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern").getDeclarationNode());
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10ccb7e17b2L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode").getDeclarationNode());
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentChild").getDeclarationNode());
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode").getDeclarationNode());
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c6f1d424dL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Link").getDeclarationNode());
     ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e76200a6fL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext").getDeclarationNode());
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69333c273254322aL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_model").getDeclarationNode());
     SNode menuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), false, false);
     return result;
   }

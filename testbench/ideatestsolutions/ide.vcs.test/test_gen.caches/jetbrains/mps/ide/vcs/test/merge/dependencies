@@ -110,7 +110,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge.RootStatusItem" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -123,7 +122,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.InspectorTool" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -142,6 +141,7 @@
     <classNode dependClassName="org.junit.After" />
     <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Assume" />
     <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.BeforeClass" />
   </dependency>
@@ -155,15 +155,12 @@
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintWriter" />
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -184,7 +181,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="jetbrains.mps.testbench.BaseMpsTest" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
@@ -202,7 +201,7 @@
     <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.BeforeClass" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.PlatformMpsTest" />
+    <classNode extendsClassName="jetbrains.mps.testbench.BaseMpsTest" />
   </dependency>
   <dependency className="jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model" file="IncrementalChangeUpdateTest_Model.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />

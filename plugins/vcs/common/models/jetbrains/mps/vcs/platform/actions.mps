@@ -255,6 +255,9 @@
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -271,6 +274,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -940,12 +944,20 @@
                 <node concept="3uibUv" id="6ySnuJfjmne" role="1tU5fm">
                   <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                 </node>
-                <node concept="2YIFZM" id="3LJYHDx2qZ5" role="33vP2m">
-                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getVirtualFile" />
+                <node concept="2YIFZM" id="6tLsn3mSYOQ" role="33vP2m">
+                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.getProjectVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolve="getProjectVirtualFile" />
                   <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                  <node concept="37vLTw" id="55$aReHk879" role="37wK5m">
+                  <node concept="37vLTw" id="6tLsn3mSYOR" role="37wK5m">
                     <ref role="3cqZAo" node="55$aReHhiWk" resolve="iFile" />
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1gVbGN" id="6tLsn3mT14L" role="3cqZAp">
+              <node concept="3y3z36" id="6tLsn3mT23l" role="1gVkn0">
+                <node concept="10Nm6u" id="6tLsn3mT2bo" role="3uHU7w" />
+                <node concept="37vLTw" id="6tLsn3mT1CR" role="3uHU7B">
+                  <ref role="3cqZAo" node="6ySnuJfjmnd" resolve="vFile" />
                 </node>
               </node>
             </node>
@@ -972,6 +984,38 @@
                 </node>
               </node>
             </node>
+            <node concept="1gVbGN" id="6tLsn3mT2U_" role="3cqZAp">
+              <node concept="3y3z36" id="6tLsn3mT3Jc" role="1gVkn0">
+                <node concept="10Nm6u" id="6tLsn3mT3Rt" role="3uHU7w" />
+                <node concept="37vLTw" id="6tLsn3mT3va" role="3uHU7B">
+                  <ref role="3cqZAo" node="78RbNhWi9Mt" resolve="vcs" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="6tLsn3mTc6L" role="3cqZAp">
+              <node concept="3cpWsn" id="6tLsn3mTc6M" role="3cpWs9">
+                <property role="TrG5h" value="diffProvider" />
+                <node concept="3uibUv" id="6tLsn3mTc6I" role="1tU5fm">
+                  <ref role="3uigEE" to="fy1h:~DiffProvider" resolve="DiffProvider" />
+                </node>
+                <node concept="2OqwBi" id="6tLsn3mTc6N" role="33vP2m">
+                  <node concept="liA8E" id="6tLsn3mTc6O" role="2OqNvi">
+                    <ref role="37wK5l" to="jlcu:~AbstractVcs.getDiffProvider():com.intellij.openapi.vcs.diff.DiffProvider" resolve="getDiffProvider" />
+                  </node>
+                  <node concept="37vLTw" id="6tLsn3mTc6P" role="2Oq$k0">
+                    <ref role="3cqZAo" node="78RbNhWi9Mt" resolve="vcs" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1gVbGN" id="6tLsn3mTdlH" role="3cqZAp">
+              <node concept="3y3z36" id="6tLsn3mTed4" role="1gVkn0">
+                <node concept="10Nm6u" id="6tLsn3mTelK" role="3uHU7w" />
+                <node concept="37vLTw" id="6tLsn3mTdWB" role="3uHU7B">
+                  <ref role="3cqZAo" node="6tLsn3mTc6M" resolve="diffProvider" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="78RbNhWi9M$" role="3cqZAp">
               <node concept="3cpWsn" id="78RbNhWi9M_" role="3cpWs9">
                 <property role="TrG5h" value="revisionNumber" />
@@ -985,13 +1029,8 @@
                       <ref role="3cqZAo" node="6ySnuJfjmnd" resolve="vFile" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="78RbNhWi9MC" role="2Oq$k0">
-                    <node concept="liA8E" id="78RbNhWi9ME" role="2OqNvi">
-                      <ref role="37wK5l" to="jlcu:~AbstractVcs.getDiffProvider():com.intellij.openapi.vcs.diff.DiffProvider" resolve="getDiffProvider" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagT_VX" role="2Oq$k0">
-                      <ref role="3cqZAo" node="78RbNhWi9Mt" resolve="vcs" />
-                    </node>
+                  <node concept="37vLTw" id="6tLsn3mTc6Q" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6tLsn3mTc6M" resolve="diffProvider" />
                   </node>
                 </node>
               </node>
@@ -1009,13 +1048,8 @@
                       <ref role="3cqZAo" node="6ySnuJfjmnd" resolve="vFile" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="78RbNhWi9ML" role="2Oq$k0">
-                    <node concept="liA8E" id="78RbNhWi9MN" role="2OqNvi">
-                      <ref role="37wK5l" to="jlcu:~AbstractVcs.getDiffProvider():com.intellij.openapi.vcs.diff.DiffProvider" resolve="getDiffProvider" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagTzJx" role="2Oq$k0">
-                      <ref role="3cqZAo" node="78RbNhWi9Mt" resolve="vcs" />
-                    </node>
+                  <node concept="37vLTw" id="6tLsn3mTc6R" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6tLsn3mTc6M" resolve="diffProvider" />
                   </node>
                 </node>
                 <node concept="3uibUv" id="78RbNhWi9MJ" role="1tU5fm">

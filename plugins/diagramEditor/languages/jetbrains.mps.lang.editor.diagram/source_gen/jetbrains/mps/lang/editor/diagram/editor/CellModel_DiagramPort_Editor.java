@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -51,7 +52,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createConstant_inwiug_a0a_0(editorContext, node);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CellModel_DiagramPort_Editor.CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0(), new CellModel_DiagramPort_Editor.CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CellModel_DiagramPort_Editor.CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0(), new CellModel_DiagramPort_Editor.CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static boolean renderingCondition_inwiug_a0a(SNode node, EditorContext editorContext) {

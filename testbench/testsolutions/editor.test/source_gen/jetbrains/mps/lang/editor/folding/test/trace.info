@@ -160,9 +160,9 @@
       <node id="866632705892349194" at="27,71,28,71" concept="0" />
       <node id="866632705892349208" at="28,71,29,71" concept="0" />
       <node id="866632705892349224" at="29,71,30,71" concept="0" />
-      <node id="866632705892349242" at="30,71,31,71" concept="0" />
-      <node id="866632705892349262" at="31,71,32,71" concept="0" />
-      <node id="866632705892349165" at="32,71,33,0" concept="2" />
+      <node id="8733750578247854346" at="30,71,31,72" concept="0" />
+      <node id="8733750578247854328" at="31,72,32,0" concept="2" />
+      <node id="866632705892349165" at="32,0,33,0" concept="2" />
       <node id="866632705892346111" at="12,0,17,0" concept="1" trace="test_ChangeCollapseCondition_ExpandCell#()V" />
       <node id="866632705892346111" at="20,0,35,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="866632705892346111" at="13,74,15,124" />

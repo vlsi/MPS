@@ -25,10 +25,11 @@ import java.util.Map;
 import jetbrains.mps.findUsages.NodeUsageFinder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
@@ -46,8 +47,6 @@ import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import java.util.Collections;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   private final PersistenceRegistry myRegistry;
@@ -60,10 +59,12 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   public void initComponent() {
     myRegistry.addFindUsagesParticipant(this);
   }
+
   @Override
   public void disposeComponent() {
     myRegistry.removeFindUsagesParticipant(this);
   }
+
   @NotNull
   @Override
   public String getComponentName() {
@@ -95,9 +96,10 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       new NodeUsageFinder(e.getValue(), consumer).collectUsages(e.getKey());
     }
   }
+
   @Override
   public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    final SLanguage bl = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
+    final SLanguage bl = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
     concepts = SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SAbstractConcept>() {
       public boolean accept(SAbstractConcept it) {
         return bl.equals(it.getLanguage());
@@ -109,6 +111,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       FindUsagesUtil.collectInstances(e.getKey(), e.getValue(), consumer);
     }
   }
+
   @Override
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
     modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
@@ -127,9 +130,9 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
         consumer.consume(e.getKey());
       }
     }
-
-
   }
+
+  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Mapper<T, String> id) {
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     if (elems.isEmpty()) {
@@ -151,7 +154,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
         continue;
       }
 
-      processedConsumer.consume(sm);
       FolderSetDataSource source = ((JavaClassStubModelDescriptor) sm).getSource();
       if (!(sources.add(source))) {
         continue;
@@ -160,7 +162,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       Collection<IFile> files = source.getAffectedFiles();
       ArrayList<VirtualFile> vFiles = new ArrayList();
       for (IFile path : files) {
-        final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
+        final VirtualFile vf = VirtualFileUtils.getOrCreateVirtualFile(path);
         if (vf == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
@@ -175,11 +177,16 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       }
       for (VirtualFile vf : vFiles) {
         // do not enter any directories but one at the top level.  Java package (corresponds to model) is just a list of files under single folder,  
-        // nested folders correspond to another package 
+        // nested folder corresponds to another package 
         if (vf.isDirectory()) {
           continue;
         }
         scopeFiles.addLink(sm, vf);
+      }
+      if (!(vFiles.isEmpty())) {
+        // for stub models not backed by IDEA's VF, we shall not tell we've processed them. 
+        // Let another find participant (e.g. the slowest default that walks model) to look up usages. 
+        processedConsumer.consume(sm);
       }
     }
 
@@ -204,5 +211,4 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
 }

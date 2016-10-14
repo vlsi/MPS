@@ -111,11 +111,20 @@
     </channel>
 
     <channel id="MPS34EAP" name="MPS 3.4" status="eap"
-             url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+3.4+EAP+Download+Page"
+             url="http://jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="4">
-      <build number="145.728" version="3.4 EAP2">
-        <message>JetBrains MPS 3.4 EAP2 is available.</message>
+      <build number="162.1616" version="3.4">
+        <message>JetBrains MPS 3.4 is available.</message>
+      </build>
+    </channel>
+
+    <channel id="MPS34" name="MPS 3.4" status="release"
+             url="http://jetbrains.com/mps/download"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="3" minorVersoin="4">
+      <build number="162.1616" version="3.4">
+        <message>JetBrains MPS 3.4 is available.</message>
       </build>
     </channel>
 

@@ -20,8 +20,92 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AbsractMake_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_BehaviorDescriptor" />
+    </file>
+    <file name="ActionCallDeclaredParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallDeclaredParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ActionCallGlobalParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallGlobalParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ActionCallParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,192,0" name="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,104,0" name="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="CallActionExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
+    </file>
+    <file name="Clean_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.Clean_BehaviorDescriptor" />
+    </file>
+    <file name="ClickableGenerator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator_BehaviorDescriptor" />
+    </file>
+    <file name="GlobalScope_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.GlobalScope_BehaviorDescriptor" />
+    </file>
+    <file name="GlobalStatisticTarget_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
+    </file>
+    <file name="INodeSetReference_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_BehaviorDescriptor" />
+    </file>
+    <file name="IStatisticsTarget_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
+    </file>
+    <file name="Make_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.Make_BehaviorDescriptor" />
+    </file>
+    <file name="ModelProperties_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ModelProperties_BehaviorDescriptor" />
+    </file>
+    <file name="ModelReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor" />
+    </file>
+    <file name="ModelStatisticsTarget_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" />
+    </file>
+    <file name="ModuleProperties_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_BehaviorDescriptor" />
+    </file>
+    <file name="NodeReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" />
+    </file>
+    <file name="OfAspectOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectStatisticsTarget_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
+    </file>
+    <file name="RebuildProjectCommand_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
+    </file>
+    <file name="RemoveGenSources_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources_BehaviorDescriptor" />
+    </file>
+    <file name="ShowBrokenReferences_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
+    </file>
+    <file name="ShowExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ShowExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ShowGenPlan_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" />
+    </file>
+    <file name="StatCommand_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
+    </file>
+    <file name="SubtreeStatisticsTarget_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" />
+    </file>
+    <file name="UnloadModelsCommand_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
+    </file>
+    <file name="WithDependencies_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.WithDependencies_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2087237500458009230">

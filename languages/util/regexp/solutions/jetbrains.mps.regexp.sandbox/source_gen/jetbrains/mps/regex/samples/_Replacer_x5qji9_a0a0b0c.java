@@ -15,4 +15,8 @@ public class _Replacer_x5qji9_a0a0b0c implements Replacer {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
+  public _Replacer_x5qji9_a0a0b0c(SimpleReplace enclosingClass) {
+    this._enclosingClass = enclosingClass;
+    this._closureContext = null;
+  }
 }

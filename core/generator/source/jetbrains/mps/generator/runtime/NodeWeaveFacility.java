@@ -63,6 +63,9 @@ public interface NodeWeaveFacility {
    * @param childRole role for the child
    * @param outputNodeToWeave new child node
    * @throws GenerationFailureException
+   *
+   * IMPORTANT The method is left in MPS 3.5 release cycle as there might be generated generator with MPS 3.4 that
+   *           uses this method. We don't want compilation error before user gets a change to re-generate it.
    */
   @ToRemove(version = 3.3)
   void weaveNode(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws GenerationFailureException;

@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BinaryOperationReference = new ConceptPresentationBuilder().create();
@@ -26,73 +23,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BinaryOperationReference;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ContainerImport;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CustomOperator;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_CustomOperatorDeclaration;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_CustomOperatorUsage;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_LeftOperand;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_Operator;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_OverloadedBinaryOperator;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_OverloadedOperatorContainer;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_RightOperand;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BinaryOperationReference:
+        return props_BinaryOperationReference;
+      case LanguageConceptSwitch.ContainerImport:
+        return props_ContainerImport;
+      case LanguageConceptSwitch.CustomOperator:
+        return props_CustomOperator;
+      case LanguageConceptSwitch.CustomOperatorDeclaration:
+        return props_CustomOperatorDeclaration;
+      case LanguageConceptSwitch.CustomOperatorUsage:
+        return props_CustomOperatorUsage;
+      case LanguageConceptSwitch.LeftOperand:
+        return props_LeftOperand;
+      case LanguageConceptSwitch.Operator:
+        return props_Operator;
+      case LanguageConceptSwitch.OverloadedBinaryOperator:
+        return props_OverloadedBinaryOperator;
+      case LanguageConceptSwitch.OverloadedOperatorContainer:
+        return props_OverloadedOperatorContainer;
+      case LanguageConceptSwitch.RightOperand:
+        return props_RightOperand;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d60237L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc60940541L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c4130926a0L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d06ca6L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c41300f84dL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c413011207L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6c1973240c8fe3e1L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"));
 }

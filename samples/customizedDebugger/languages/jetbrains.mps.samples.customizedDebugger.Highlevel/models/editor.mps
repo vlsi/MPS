@@ -2,7 +2,7 @@
 <model ref="r:148d8860-62be-4d6a-8520-3fd48938aa97(jetbrains.mps.samples.customizedDebugger.Highlevel.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -63,7 +63,7 @@
     <ref role="1XX52x" to="phaa:77mX7nW$Zsj" resolve="Message" />
     <node concept="3EZMnI" id="77mX7nW$ZtZ" role="2wV5jI">
       <node concept="1iCGBv" id="77mX7nW$Zu6" role="3EZMnx">
-        <ref role="1NtTu8" to="phaa:77mX7nW$Zsv" />
+        <ref role="1NtTu8" to="phaa:77mX7nW$Zsv" resolve="author" />
         <node concept="1sVBvm" id="77mX7nW$Zu8" role="1sWHZn">
           <node concept="3F0A7n" id="77mX7nW$Zui" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -97,7 +97,7 @@
       </node>
       <node concept="3F2HdR" id="77mX7nW$Zxs" role="3EZMnx">
         <property role="2czwfO" value=" and" />
-        <ref role="1NtTu8" to="phaa:77mX7nW$Zsx" />
+        <ref role="1NtTu8" to="phaa:77mX7nW$Zsx" resolve="participants" />
         <node concept="l2Vlx" id="77mX7nW$Zxu" role="2czzBx" />
         <node concept="ljvvj" id="77mX7nW$Zx$" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -110,7 +110,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="77mX7nW$Zy3" role="3EZMnx">
-        <ref role="1NtTu8" to="phaa:77mX7nW$Zsz" />
+        <ref role="1NtTu8" to="phaa:77mX7nW$Zsz" resolve="smallTalk" />
         <node concept="2iRkQZ" id="77mX7nW$Zyg" role="2czzBx" />
       </node>
       <node concept="l2Vlx" id="77mX7nW$ZwY" role="2iSdaV" />

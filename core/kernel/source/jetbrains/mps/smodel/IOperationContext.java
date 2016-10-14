@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SModule;
  *  Later it needs to be replaced with a corresponding static method call getInstance of the component class {T}.
  */
 @Deprecated
-@ToRemove(version = 3.1)
+@ToRemove(version = 3.5)
 public interface IOperationContext {
 
   Project getProject();

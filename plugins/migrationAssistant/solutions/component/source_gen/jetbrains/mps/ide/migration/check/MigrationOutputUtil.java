@@ -4,35 +4,60 @@ package jetbrains.mps.ide.migration.check;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.icons.IdeIcons;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MigrationOutputUtil {
   public static void showProblems(final Project project, Iterable<Problem> problems) {
-    show(project, null, Sequence.fromIterable(problems).select(new ISelector<Problem, SearchResult<ModelCheckerIssue>>() {
+    Iterable<SearchResult<ModelCheckerIssue>> items = Sequence.fromIterable(problems).select(new ISelector<Problem, SearchResult<ModelCheckerIssue>>() {
       public SearchResult<ModelCheckerIssue> select(Problem p) {
         return new SearchResult<ModelCheckerIssue>(issueByProblem(p), p.getReason(), p.getCategory());
       }
-    }));
+    }).where(new IWhereFilter<SearchResult<ModelCheckerIssue>>() {
+      public boolean accept(SearchResult<ModelCheckerIssue> it) {
+        return it != null;
+      }
+    });
+
+    if (Sequence.fromIterable(items).isEmpty()) {
+      return;
+    }
+
+    ModelCheckerViewer v = new ModelCheckerViewer(project, false) {
+      @Override
+      protected void close() {
+        ModelCheckerTool.getInstance(project).closeTab(this);
+        super.close();
+      }
+    };
+
+    final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
+    Sequence.fromIterable(items).visitAll(new IVisitor<SearchResult<ModelCheckerIssue>>() {
+      public void visit(SearchResult<ModelCheckerIssue> it) {
+        result.add(it);
+      }
+    });
+    v.setSearchResults(result);
+    ModelCheckerTool.getInstance(project).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
   }
 
   public static void showNodes(final Project project, Tuples._2<String, Set<SNode>>... toShow) {
@@ -53,12 +78,13 @@ public class MigrationOutputUtil {
     project.getComponent(UsagesViewTool.class).show(sr, "No results to show");
   }
 
+  protected static Logger LOG = LogManager.getLogger(MigrationOutputUtil.class);
   private static ModelCheckerIssue issueByProblem(Problem p) {
     Object r = p.getReason();
-    if (r instanceof jetbrains.mps.smodel.SNode) {
+    if (r instanceof SNode) {
       return new ModelCheckerIssue.NodeIssue(((SNode) r), p.getMessage(), null);
     }
-    if (r instanceof jetbrains.mps.smodel.SNode) {
+    if (r instanceof SModel) {
       return new ModelCheckerIssue.ModelIssue(((SModel) r), p.getMessage(), null);
     }
     if (r instanceof SModule) {
@@ -70,30 +96,4 @@ public class MigrationOutputUtil {
     }
     return null;
   }
-
-  private static <T> void show(final Project project, Iterable<SNode> searchedNodes, Iterable<SearchResult<ModelCheckerIssue>> items) {
-    ModelCheckerViewer v = new ModelCheckerViewer(project) {
-      @Override
-      protected void close() {
-        ModelCheckerTool.getInstance(project).closeTab(this);
-        super.close();
-      }
-    };
-    final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-    Sequence.fromIterable(items).where(new IWhereFilter<SearchResult<ModelCheckerIssue>>() {
-      public boolean accept(SearchResult<ModelCheckerIssue> it) {
-        return it != null;
-      }
-    }).visitAll(new IVisitor<SearchResult<ModelCheckerIssue>>() {
-      public void visit(SearchResult<ModelCheckerIssue> it) {
-        result.add(it);
-      }
-    });
-    if (searchedNodes != null) {
-      result.getSearchedNodes().addAll(Sequence.fromIterable(searchedNodes).toListSequence());
-    }
-    v.setSearchResults(result);
-    ModelCheckerTool.getInstance(project).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
-  }
-  protected static Logger LOG = LogManager.getLogger(MigrationOutputUtil.class);
 }

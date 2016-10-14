@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -132,7 +132,7 @@
             <node concept="2OqwBi" id="hTq2hEr" role="2Oq$k0">
               <node concept="2Sf5sV" id="hTq2hDQ" role="2Oq$k0" />
               <node concept="3Tsc0h" id="hTq2hZO" role="2OqNvi">
-                <ref role="3TtcxE" to="tpee:g91_B6F" />
+                <ref role="3TtcxE" to="tpee:g91_B6F" resolve="parameter" />
               </node>
             </node>
             <node concept="2DeJg1" id="x$tpHUZgA6" role="2OqNvi">
@@ -149,7 +149,7 @@
             <node concept="2OqwBi" id="hTq2e$P" role="2Oq$k0">
               <node concept="2Sf5sV" id="hTq2ezK" role="2Oq$k0" />
               <node concept="3Tsc0h" id="hTq2eJs" role="2OqNvi">
-                <ref role="3TtcxE" to="tpee:g91_B6F" />
+                <ref role="3TtcxE" to="tpee:g91_B6F" resolve="parameter" />
               </node>
             </node>
             <node concept="1v1jN8" id="5eo3iW6uLhK" role="2OqNvi" />
@@ -188,7 +188,7 @@
                   <node concept="2OqwBi" id="4BZqA32g05a" role="2c44t1">
                     <node concept="2Sf5sV" id="4BZqA32g04T" role="2Oq$k0" />
                     <node concept="3TrEf2" id="4BZqA32g05g" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp68:1o0vq_SlFQb" />
+                      <ref role="3Tt5mk" to="tp68:1o0vq_SlFQb" resolve="constant" />
                     </node>
                   </node>
                 </node>
@@ -238,7 +238,7 @@
                   <node concept="2OqwBi" id="4BZqA32g04x" role="2c44t1">
                     <node concept="2Sf5sV" id="4BZqA32g04y" role="2Oq$k0" />
                     <node concept="3TrEf2" id="4BZqA32g04z" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:f_2Pw7K" />
+                      <ref role="3Tt5mk" to="tpee:f_2Pw7K" resolve="staticFieldDeclaration" />
                     </node>
                   </node>
                 </node>

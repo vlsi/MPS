@@ -16,17 +16,22 @@
 package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.ide.startup.impl.StartupManagerImpl;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.RuntimeFlags;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,25 +41,26 @@ import java.util.List;
  * TODO find what are the actual differences between it and a standalone mps project
  */
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
-  private final com.intellij.openapi.project.Project myProject;
-  private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<ProjectModuleLoadingListener>();
+  private static final Logger LOG = LogManager.getLogger(MPSProject.class);
+
+  private com.intellij.openapi.project.Project myProject;
+  private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
+
+  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused) {
+    super(new ProjectDescriptor(project.getName()));
+    myProject = project;
+  }
 
   @Override
   public void initComponent() {
     NotFoundModulesListener listener = new NotFoundModulesListener(this);
     myListeners.add(listener);
     addListener(listener);
+    ClassLoaderManager.getInstance().runNonReloadableTransaction(this::update);
   }
 
   public void disposeComponent() {
-    for (ProjectModuleLoadingListener listener : myListeners) {
-      removeListener(listener);
-    }
-  }
-
-  public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
-    super(new ProjectDescriptor(project.getName()));
-    myProject = project;
+    myListeners.forEach(this::removeListener);
   }
 
   @NotNull
@@ -99,15 +105,23 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     getProject().save();
   }
 
+  public static MPSProject open(@NotNull String projectPath) throws InvalidDataException, IOException, JDOMException {
+    com.intellij.openapi.project.Project project = ProjectManagerEx.getInstanceEx().loadAndOpenProject(projectPath);
+    if (project == null) {
+      return null;
+    }
+    return project.getComponent(MPSProject.class);
+  }
+
   /**
    * closing the project if it has not already been closed
    */
   @Override
   public void dispose() {
-    List<Project> openProjects = jetbrains.mps.project.ProjectManager.getInstance().getOpenedProjects();
-    if (openProjects.contains(this)) {
-      ApplicationManager.getApplication().invokeAndWait(() -> ProjectUtil.closeAndDispose(getProject()), ModalityState.NON_MODAL);
+    if (isOpened()) {
+      ApplicationManager.getApplication().invokeAndWait(() -> ProjectUtil.closeAndDispose(myProject), ModalityState.NON_MODAL);
     }
+
     super.dispose();
   }
 

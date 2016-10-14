@@ -15,10 +15,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -99,6 +99,7 @@ public class CheckingUtil {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
   public static boolean isValidByteOrShortExpression(SNode expectedType, SNode expr) {
     if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"))) {
       return SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && (!(check_36hle6_a0a0a0a0a51(SPropertyOperations.getString(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")))) || !(SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"))));
@@ -134,7 +135,6 @@ public class CheckingUtil {
       return false;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
   private static boolean check_36hle6_a0a0a0a0a51(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.startsWith("\\u");

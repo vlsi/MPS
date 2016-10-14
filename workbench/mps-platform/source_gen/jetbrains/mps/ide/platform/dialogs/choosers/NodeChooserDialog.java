@@ -4,9 +4,9 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
+import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
@@ -23,23 +23,31 @@ import java.awt.Dimension;
 
 public class NodeChooserDialog extends DialogWrapper {
   private final ChooseByNamePanel myChooser;
+  private final BaseNodePointerModel myChooseByNameModel;
   private SNodeReference myChosenElement;
 
   public NodeChooserDialog(Project project, final BaseNodePointerModel chooseByNameModel) {
     super(project, true);
     setTitle("Choose Node");
 
+    myChooseByNameModel = chooseByNameModel;
     myChooser = MpsPopupFactory.createPanelForNode(project, chooseByNameModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object element) {
-        myChosenElement = chooseByNameModel.getModelObject(element);
         doOKAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
 
     init();
   }
+
+  @Override
+  protected void doOKAction() {
+    myChosenElement = myChooseByNameModel.getModelObject(myChooser.getChosenElement());
+    super.doOKAction();
+  }
+
   public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
     this(project, new BaseNodePointerModel(project) {
       @Override
@@ -52,6 +60,7 @@ public class NodeChooserDialog extends DialogWrapper {
       }
     });
   }
+
   public NodeChooserDialog(Project project, final List<SNode> nodes) {
     this(project, ListSequence.fromList(nodes).select(new ISelector<SNode, SNodeReference>() {
       public SNodeReference select(SNode it) {
@@ -59,12 +68,14 @@ public class NodeChooserDialog extends DialogWrapper {
       }
     }));
   }
+
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     myChooser.getPanel().setPreferredSize(new Dimension(400, 500));
     return myChooser.getPanel();
   }
+
   @Nullable
   public SNodeReference getResult() {
     if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
@@ -72,6 +83,7 @@ public class NodeChooserDialog extends DialogWrapper {
     }
     return myChosenElement;
   }
+
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {

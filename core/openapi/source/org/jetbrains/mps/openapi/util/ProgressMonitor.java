@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.util;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This interface is implemented by activity progress monitors. The methods of this interface are invoked by the monitored activities themselves.
  * Activities can be viewed as a linear sequence of tasks and sub-tasks.
@@ -84,7 +86,7 @@ public interface ProgressMonitor {
    * @param taskName The text to display in the progress dialog header, must not be null, can be an empty string, e.g. to keep the amount of text in the progress dialog low
    * @param totalWork The amount of work items to finish before completion, can be 0, in which case no advances are possible
    */
-  void start(String taskName, int totalWork);
+  void start(@NotNull String taskName, int totalWork);
 
   /**
    * Advance by the given number of work items.

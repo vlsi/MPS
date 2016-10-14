@@ -776,7 +776,7 @@
                   <property role="Xl_RC" value="You have %s left. You need to resolve them manually.\n" />
                 </node>
                 <node concept="Xl_RD" id="BjUsE2KRh0" role="3uHU7w">
-                  <property role="Xl_RC" value="Are you sure want to close merge dialog without resolving them?" />
+                  <property role="Xl_RC" value="Close merge dialog and save model without remaining conflicts resolving?" />
                 </node>
               </node>
               <node concept="2YIFZM" id="BjUsE2KRh1" role="37wK5m">
@@ -802,19 +802,19 @@
             </node>
           </node>
           <node concept="3clFbC" id="BjUsE2KRh7" role="3clFbw">
-            <node concept="2YIFZM" id="BjUsE2KRh8" role="3uHU7B">
-              <ref role="37wK5l" to="jkm4:~Messages.showYesNoDialog(java.awt.Component,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoDialog" />
+            <node concept="2YIFZM" id="5yiqMy2PM6r" role="3uHU7B">
+              <ref role="37wK5l" to="jkm4:~Messages.showOkCancelDialog(java.awt.Component,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showOkCancelDialog" />
               <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-              <node concept="37vLTw" id="2BHiRxgmFyi" role="37wK5m">
+              <node concept="37vLTw" id="5yiqMy2PM6s" role="37wK5m">
                 <ref role="3cqZAo" node="BjUsE2KRhh" resolve="parent" />
               </node>
-              <node concept="37vLTw" id="3GM_nagTy8Q" role="37wK5m">
+              <node concept="37vLTw" id="5yiqMy2PM6t" role="37wK5m">
                 <ref role="3cqZAo" node="BjUsE2KRgV" resolve="msg" />
               </node>
-              <node concept="Xl_RD" id="BjUsE2KRhb" role="37wK5m">
+              <node concept="Xl_RD" id="5yiqMy2PM6u" role="37wK5m">
                 <property role="Xl_RC" value="Unresolved Conflicting Changes" />
               </node>
-              <node concept="2YIFZM" id="BjUsE2KRhc" role="37wK5m">
+              <node concept="2YIFZM" id="5yiqMy2PM6v" role="37wK5m">
                 <ref role="37wK5l" to="jkm4:~Messages.getWarningIcon():javax.swing.Icon" resolve="getWarningIcon" />
                 <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
               </node>
@@ -869,7 +869,7 @@
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
               <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
               <node concept="Xl_RD" id="BjUsE2KRhx" role="37wK5m">
-                <property role="Xl_RC" value="You have %s left. Do you want to resolve %s automatically?" />
+                <property role="Xl_RC" value="You have %s left. You can resolve %s automatically." />
               </node>
               <node concept="2YIFZM" id="BjUsE2KRhy" role="37wK5m">
                 <ref role="37wK5l" to="18ew:~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolve="formatNumericalString" />
@@ -934,8 +934,8 @@
             <property role="TrG5h" value="answer" />
             <node concept="10Oyi0" id="BjUsE2KRhT" role="1tU5fm" />
             <node concept="2YIFZM" id="BjUsE2KRhU" role="33vP2m">
-              <ref role="37wK5l" to="jkm4:~Messages.showYesNoCancelDialog(java.awt.Component,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoCancelDialog" />
               <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              <ref role="37wK5l" to="jkm4:~Messages.showYesNoCancelDialog(java.awt.Component,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoCancelDialog" />
               <node concept="37vLTw" id="2BHiRxgm8OO" role="37wK5m">
                 <ref role="3cqZAo" node="BjUsE2KRhm" resolve="parent" />
               </node>
@@ -945,9 +945,18 @@
               <node concept="37vLTw" id="3GM_nagTrzo" role="37wK5m">
                 <ref role="3cqZAo" node="BjUsE2KRhG" resolve="title" />
               </node>
-              <node concept="2YIFZM" id="BjUsE2KRhY" role="37wK5m">
+              <node concept="Xl_RD" id="5yiqMy2PQWJ" role="37wK5m">
+                <property role="Xl_RC" value="Resolve automatically and exit" />
+              </node>
+              <node concept="Xl_RD" id="5yiqMy2PRjG" role="37wK5m">
+                <property role="Xl_RC" value="Exit without remaining changes resolving" />
+              </node>
+              <node concept="Xl_RD" id="5yiqMy2PRtL" role="37wK5m">
+                <property role="Xl_RC" value="Return to resolving" />
+              </node>
+              <node concept="2YIFZM" id="5yiqMy2PP8n" role="37wK5m">
+                <ref role="37wK5l" to="jkm4:~Messages.getWarningIcon():javax.swing.Icon" resolve="getWarningIcon" />
                 <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                <ref role="37wK5l" to="jkm4:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
               </node>
             </node>
           </node>

@@ -322,7 +322,7 @@ public class SolutionIdea extends Solution {
 
   @Override
   public IFile getDescriptorFile() {
-    return FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath());
+    return getFileSystem().getFile(myModule.getModuleFilePath());
   }
 
   private void handleFacetChanged(Facet facet) {

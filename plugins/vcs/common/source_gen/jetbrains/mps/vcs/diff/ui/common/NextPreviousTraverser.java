@@ -21,6 +21,8 @@ import java.util.Arrays;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -31,8 +33,6 @@ import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -106,6 +106,7 @@ public class NextPreviousTraverser {
       }
     });
   }
+  protected static Logger LOG = LogManager.getLogger(NextPreviousTraverser.class);
   private synchronized void setLastEditor(EditorComponent editor) {
     myLastEditor = editor;
     if (!(ListSequence.fromList(myChangeGroupLayouts).any(new IWhereFilter<ChangeGroupLayout>() {
@@ -240,7 +241,6 @@ public class NextPreviousTraverser {
       event.getPresentation().setEnabled(getNeighbourGroupBounds(myPrevious) != null);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(NextPreviousTraverser.class);
   private static Bounds check_mf966z_a5a51(ChangeGroup checkedDotOperand, Boolean left) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(left);

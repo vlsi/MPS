@@ -5,36 +5,23 @@ package jetbrains.mps.ide.migration.wizard;
 import javax.swing.JTextPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
-import com.intellij.openapi.ui.Messages;
-import javax.swing.event.HyperlinkListener;
-import javax.swing.event.HyperlinkEvent;
-import com.intellij.ide.BrowserUtil;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
-import com.intellij.openapi.util.SystemInfo;
+import jetbrains.mps.ide.ui.util.UIUtil;
 
 public class MigrationErrorWizardStep extends MigrationWizardStep {
   public static final String ID = "Problem";
   private JTextPane myInfoLabel;
 
-  private MigrationErrorContainer myErrorContainer;
+  private MigrationProblemsContainer myErrorContainer;
 
-  public MigrationErrorWizardStep(Project project, MigrationErrorContainer stateHolder) {
+  public MigrationErrorWizardStep(Project project, MigrationProblemsContainer stateHolder) {
     super(project, "Could not Apply All Migrations", ID);
     myErrorContainer = stateHolder;
   }
   @Override
   protected final void doCreateComponent(JComponent mainPanel) {
-    this.myInfoLabel = new JTextPane();
-    Messages.installHyperlinkSupport(this.myInfoLabel);
-
-    this.myInfoLabel.addHyperlinkListener(new HyperlinkListener() {
-      public void hyperlinkUpdate(HyperlinkEvent e) {
-        if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-          BrowserUtil.launchBrowser(e.getURL().toString());
-        }
-      }
-    });
+    myInfoLabel = new JTextPane();
     this.myInfoLabel.setPreferredSize(new Dimension(300, 220));
     mainPanel.add(this.myInfoLabel, BorderLayout.CENTER);
   }
@@ -42,11 +29,7 @@ public class MigrationErrorWizardStep extends MigrationWizardStep {
   @Override
   public void _init() {
     super._init();
-
-    StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
-    sb.append((SystemInfo.isMac ? "" : "size=\"-1\"")).append('>');
-    sb.append(myErrorContainer.getErrorDescriptor().getMessage()).append("</font></body></html>");
-    myInfoLabel.setText(sb.toString());
+    UIUtil.setTextPaneHtmlText(myInfoLabel, myErrorContainer.getErrorDescriptor().getMessage());
   }
   @Override
   public Object getPreviousStepId() {
@@ -54,10 +37,34 @@ public class MigrationErrorWizardStep extends MigrationWizardStep {
   }
   @Override
   public Object getNextStepId() {
-    return null;
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return MigrationsProgressWizardStep.ID_fallback;
+    } else {
+      return null;
+    }
   }
   @Override
   public boolean canBeCancelled() {
-    return false;
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  @Override
+  public String nextButtonLabel() {
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return "Ignore and Proceed";
+    } else {
+      return null;
+    }
+  }
+  @Override
+  public String cancelButtonLabel() {
+    if (myErrorContainer.getErrorDescriptor().canIgnore()) {
+      return "Stop Migration";
+    } else {
+      return null;
+    }
   }
 }

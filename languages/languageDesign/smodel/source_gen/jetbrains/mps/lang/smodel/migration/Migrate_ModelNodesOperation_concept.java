@@ -43,6 +43,10 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Pattern_o1m83rbme29w(_quotation_createNode_vs95qi_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -82,7 +86,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
             public void invoke(SNode oldNode, SNode newNode) {
               List<SNode> attributes = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode attr) {
-                  return eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a2(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attr), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
+                  return eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a3(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attr), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
                 }
               }).toListSequence();
               ListSequence.fromList(attributes).visitAll(new IVisitor<SNode>() {
@@ -96,7 +100,6 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {
@@ -107,7 +110,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation"))).where(new IWhereFilter<SNode>() {
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "3164834233148532313");
         }
@@ -143,7 +146,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument"), quotedNode_3);
     return quotedNode_2;
   }
-  private static boolean eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a2(Object a, Object b) {
+  private static boolean eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a3(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

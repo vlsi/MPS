@@ -7,9 +7,9 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myConceptDeclaration__BehaviorDescriptor = new ConceptDeclaration__BehaviorDescriptor();
@@ -32,94 +32,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0r.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return myAbstractConceptDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 1:
-          if (true) {
-            return myAttributeInfo__BehaviorDescriptor;
-          }
-          break;
-        case 2:
-          if (true) {
-            return myConceptDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 3:
-          if (true) {
-            return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return myDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return myDeprecatedNodeAnnotation__BehaviorDescriptor;
-          }
-          break;
-        case 6:
-          if (true) {
-            return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 7:
-          if (true) {
-            return myEnumerationMemberDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 8:
-          if (true) {
-            return myIConceptAspect__BehaviorDescriptor;
-          }
-          break;
-        case 9:
-          if (true) {
-            return myIStructureDeprecatable__BehaviorDescriptor;
-          }
-          break;
-        case 10:
-          if (true) {
-            return myInterfaceConceptDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 11:
-          if (true) {
-            return myLinkDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 12:
-          if (true) {
-            return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
-          }
-          break;
-        case 13:
-          if (true) {
-            return myPropertyDeclaration__BehaviorDescriptor;
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0r.index(cncpt)) {
+      case 0:
+        return myAbstractConceptDeclaration__BehaviorDescriptor;
+      case 1:
+        return myAttributeInfo__BehaviorDescriptor;
+      case 2:
+        return myConceptDeclaration__BehaviorDescriptor;
+      case 3:
+        return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
+      case 4:
+        return myDataTypeDeclaration__BehaviorDescriptor;
+      case 5:
+        return myDeprecatedNodeAnnotation__BehaviorDescriptor;
+      case 6:
+        return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
+      case 7:
+        return myEnumerationMemberDeclaration__BehaviorDescriptor;
+      case 8:
+        return myIConceptAspect__BehaviorDescriptor;
+      case 9:
+        return myIStructureDeprecatable__BehaviorDescriptor;
+      case 10:
+        return myInterfaceConceptDeclaration__BehaviorDescriptor;
+      case 11:
+        return myLinkDeclaration__BehaviorDescriptor;
+      case 12:
+        return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
+      case 13:
+        return myPropertyDeclaration__BehaviorDescriptor;
+      default:
     }
     return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0r = buildConceptIndices(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L, "jetbrains.mps.lang.structure.structure.AttributeInfo"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+  private static final ConceptSwitchIndex index_846f5o_a0r = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L), MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL)).seal();
 }

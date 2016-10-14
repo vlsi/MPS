@@ -8,15 +8,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
@@ -41,16 +40,16 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_4929591503636643306(final IfMacroContext _context) {
     return false;
   }
-  public static Object templateArgumentQuery_7496726876599916822(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_7496726876599916822(final TemplateArgumentContext _context) {
     return "from expression";
   }
-  public static Object templateArgumentQuery_7496726876599937591(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_7496726876599937591(final TemplateArgumentContext _context) {
     return "from within case of inline switch";
   }
-  public static Object templateArgumentQuery_4929591503636646079(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4929591503636646079(final TemplateArgumentContext _context) {
     return "from IF/ELSE alternative concequence";
   }
-  public static Object templateArgumentQuery_4929591503636680081(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_4929591503636680081(final TemplateArgumentContext _context) {
     return "from within default case of in-line switch";
   }
   public static Iterable<SNode> sourceNodesQuery_7496726876599914779(final SourceSubstituteMacroNodesContext _context) {
@@ -62,8 +61,5 @@ public class QueriesGenerated {
         return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "argsInTemplDeclRef", "none");
       }
     }).isNotEmpty();
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
 }

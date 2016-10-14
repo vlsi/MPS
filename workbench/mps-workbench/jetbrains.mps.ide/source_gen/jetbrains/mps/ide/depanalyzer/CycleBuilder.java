@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Arrays;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /*package*/ class CycleBuilder {
   private final Condition<DepLink> elementMatch;
@@ -25,6 +25,7 @@ import org.apache.log4j.LogManager;
     this.elementMatch = elementMatch;
   }
 
+  protected static Logger LOG = LogManager.getLogger(CycleBuilder.class);
   /**
    * Each cycle found when traversing supplied depLink.
    * Cycle starts and ends at the same module with the same role, and these are of supplied depLink
@@ -64,7 +65,7 @@ import org.apache.log4j.LogManager;
       }
     })) {
       if (myCurrent.seen(ch)) {
-        if (eq_tn82ka_a0a0a0d0k(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
+        if (eq_tn82ka_a0a0a0d0l(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
           // cycle found 
           myCurrent.push(ch);
           myCycles.add(new DepPath(myCurrent));
@@ -90,8 +91,7 @@ import org.apache.log4j.LogManager;
     Arrays.fill(rv, 0, myNestLevelDebug, ' ');
     return new String(rv);
   }
-  protected static Logger LOG = LogManager.getLogger(CycleBuilder.class);
-  private static boolean eq_tn82ka_a0a0a0d0k(Object a, Object b) {
+  private static boolean eq_tn82ka_a0a0a0d0l(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

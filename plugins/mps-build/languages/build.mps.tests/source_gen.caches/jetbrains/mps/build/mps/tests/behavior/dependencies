@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin_BehaviorDescriptor" file="BuildModuleTestsPlugin_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin__BehaviorDescriptor" file="BuildModuleTestsPlugin__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -51,6 +54,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup_BehaviorDescriptor" file="BuildMpsLayout_TestModuleGroup_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup__BehaviorDescriptor" file="BuildMpsLayout_TestModuleGroup__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -77,6 +84,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule_BehaviorDescriptor" file="BuildMpsLayout_TestModule_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule__BehaviorDescriptor" file="BuildMpsLayout_TestModule__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -102,6 +113,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor" file="BuildMpsLayout_TestModules_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content_BehaviorDescriptor" file="BuildMpsLayout_TestModules_Content_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content__BehaviorDescriptor" file="BuildMpsLayout_TestModules_Content__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

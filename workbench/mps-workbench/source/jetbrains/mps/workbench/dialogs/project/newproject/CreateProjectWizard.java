@@ -26,7 +26,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.ListItemDescriptor;
 import com.intellij.openapi.util.Condition;
-import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.DocumentAdapter;
@@ -43,6 +42,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.JBUI;
+import jetbrains.mps.ide.ui.util.UIUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField.PathChangedListner;
@@ -306,7 +306,6 @@ public class CreateProjectWizard extends DialogWrapper {
     myDescriptionPanel.setBorder(IdeBorderFactory.createTitledBorder("Description", true));
 
     myDescriptionPane = new JTextPane();
-    Messages.installHyperlinkSupport(myDescriptionPane);
 
     myDescriptionPanel.add(myDescriptionPane, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
 
@@ -382,14 +381,12 @@ public class CreateProjectWizard extends DialogWrapper {
 
     String description = myCurrentTemplateItem != null ? myCurrentTemplateItem.getDescription() : null;
     if (StringUtil.isNotEmpty(description)) {
-      StringBuilder sb = new StringBuilder("<html><body><font face=\"Verdana\" ");
-      sb.append(SystemInfo.isMac ? "" : "size=\"-1\"").append('>');
-      sb.append(description).append("</font></body></html>");
-      description = sb.toString();
-
+      UIUtil.setTextPaneHtmlText(myDescriptionPane, description);
+      myDescriptionPanel.setVisible(true);
+    } else {
+      myDescriptionPane.setText("");
+      myDescriptionPanel.setVisible(false);
     }
-    myDescriptionPane.setText(description);
-    myDescriptionPanel.setVisible(description != null);
 
     JComponent component = myCurrentTemplateItem != null ? myCurrentTemplateItem.getSettings() : null;
     myTemplateSettings.removeAll();

@@ -16,6 +16,8 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.common.LayoutUtil;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.net.URL;
 import jetbrains.mps.workbench.MPSApplicationInfo;
 import javax.swing.ImageIcon;
@@ -28,8 +30,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class AbstractStep extends StepAdapter {
   protected JPanel myMainPanel;
@@ -110,6 +110,7 @@ public abstract class AbstractStep extends StepAdapter {
     stepPanel.add(new JPanel(), LayoutUtil.createPanelConstraints(2));
     return stepPanel;
   }
+  protected static Logger LOG = LogManager.getLogger(AbstractStep.class);
   private JComponent createImagePanel() {
     URL imageUrl = MPSApplicationInfo.getInstance().getDialogImageURL();
     String imageText = getImageText();
@@ -137,5 +138,4 @@ public abstract class AbstractStep extends StepAdapter {
     graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
     return new JLabel(new ImageIcon(bim));
   }
-  protected static Logger LOG = LogManager.getLogger(AbstractStep.class);
 }

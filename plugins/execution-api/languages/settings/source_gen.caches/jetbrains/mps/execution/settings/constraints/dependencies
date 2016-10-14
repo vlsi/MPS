@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.EditorExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.EditorOperationCall_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.EditorPropertyReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.GetEditorOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.PersistentPropertyReferenceOperation_Constraints" />
-    <classNode dependClassName="jetbrains.mps.execution.settings.constraints.ReportConfigurationErrorStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.SettingsEditor_Constraints" />
     <classNode dependClassName="jetbrains.mps.execution.settings.constraints.TemplateParameterReference_Constraints" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -145,17 +143,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.settings.constraints.ReportConfigurationErrorStatement_Constraints" file="ReportConfigurationErrorStatement_Constraints.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.constraints.SettingsEditor_Constraints" file="SettingsEditor_Constraints.java">

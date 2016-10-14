@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.PowerSaveMode;
 import com.intellij.ide.ui.UISettings;
-import com.intellij.ide.ui.UISettingsListener;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
@@ -55,6 +54,10 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
   private static final Color DEFAULT_SELECTION_FOREGROUND_COLOR = Color.WHITE;
   private static final Color DEFAULT_HYPERLINK_COLOR = Color.BLUE;
 
+  private static final int DEFAULT_CARET_BLINK_PERIOD = 500;
+  static final int MIN_CARET_BLINK_PERIOD = 100;
+  static final int MAX_CARET_BLINK_PERIOD = 1000;
+
   private static EditorSettings ourInstance;
 
   public static EditorSettings getInstance() {
@@ -64,7 +67,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     return ourInstance;
   }
 
-  private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
+  private List<EditorSettingsListener> myListeners = new ArrayList<>();
 
   private final EditorColorsManager myColorsManager;
 
@@ -86,66 +89,71 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
   }
 
   private void registerUIListener(UISettings uiSettings) {
-    uiSettings.addUISettingsListener(new UISettingsListener() {
-      @Override
-      public void uiSettingsChanged(UISettings source) {
-        if (myPresentationMode == source.PRESENTATION_MODE && myPresentationModeFontSize == source.PRESENTATION_MODE_FONT_SIZE) {
-          return;
-        }
-        myPresentationMode = source.PRESENTATION_MODE;
-        myPresentationModeFontSize = source.PRESENTATION_MODE_FONT_SIZE;
-        updateCachedValue();
-        fireEditorSettingsChanged();
+    uiSettings.addUISettingsListener(source -> {
+      if (myPresentationMode == source.PRESENTATION_MODE && myPresentationModeFontSize == source.PRESENTATION_MODE_FONT_SIZE) {
+        return;
       }
+      myPresentationMode = source.PRESENTATION_MODE;
+      myPresentationModeFontSize = source.PRESENTATION_MODE_FONT_SIZE;
+      updateCachedValue();
+      fireEditorSettingsChanged();
     }, ApplicationManager.getApplication());
   }
 
   public double getLineSpacing() {
-    return myState.myLineSpacing;
+    return myState.lineSpacing;
+  }
+
+  public void setLineSpacing(double lineSpacing) {
+    myState.lineSpacing = lineSpacing;
   }
 
   public Font getDefaultEditorFont() {
     if (myDefaultEditorFont == null) {
-      myDefaultEditorFont = FontRegistry.getInstance().getFont(myState.myFontFamily, 0, getFontSize());
+      myDefaultEditorFont = FontRegistry.getInstance().getFont(myState.fontFamily, 0, getFontSize());
     }
     return myDefaultEditorFont;
   }
 
+  public void setDefaultEditorFont(Font newFont) {
+    myState.fontFamily = newFont.getFamily();
+    myState.fontSize = newFont.getSize();
+  }
+
   public int getFontSize() {
-    return myPresentationMode ? myPresentationModeFontSize : myState.myFontSize;
+    return myPresentationMode ? myPresentationModeFontSize : myState.fontSize;
+  }
+
+  public int getSpecifiedFontSize() {
+    return myState.fontSize;
   }
 
   public String getFontFamily() {
-    return myState.myFontFamily;
-  }
-
-  public void setDefaultEditorFont(Font newFont) {
-    myState.myFontFamily = newFont.getFamily();
-    myState.myFontSize = newFont.getSize();
+    return myState.fontFamily;
   }
 
   public boolean useBraces() {
-    return myState.myUseBraces;
+    return myState.useBraces;
   }
 
   public void setUseBraces(boolean newUseBraces) {
-    myState.myUseBraces = newUseBraces;
+    myState.useBraces = newUseBraces;
   }
 
   public int getIndentSize() {
-    return myState.myIndentSize;
+    return myState.indentSize;
   }
 
   public void setIndentSize(int indentSize) {
-    myState.myIndentSize = indentSize;
+    myState.indentSize = indentSize;
   }
 
   public int getVerticalBound() {
-    return myState.myVerticalBound;
+    return myState.verticalBound;
   }
 
   public void setVerticalBound(int verticalBound) {
-    myState.myVerticalBound = verticalBound;
+    myState.verticalBound = verticalBound;
   }
 
   public int getVerticalBoundWidth() {
@@ -153,19 +161,15 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
   }
 
   public boolean isUseAntialiasing() {
-    return myState.myUseAntialiasing;
+    return myState.useAntialiasing;
   }
 
   public void setUseAntialiasing(boolean useAntialiasing) {
-    myState.myUseAntialiasing = useAntialiasing;
+    myState.useAntialiasing = useAntialiasing;
   }
 
   public boolean isPowerSaveMode() {
     return PowerSaveMode.isEnabled();
-  }
-
-  public boolean isAutoQuickFix() {
-    return myState.myAutoQuickFix;
   }
 
   public void setPowerSaveMode(boolean powerSaveMode) {
@@ -173,16 +177,58 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     PowerSaveMode.setEnabled(powerSaveMode);
   }
 
+  public boolean isAutoQuickFix() {
+    return myState.autoQuickFix;
+  }
+
   public void setAutoQuickFix(boolean autoQuickFix) {
-    myState.myAutoQuickFix = autoQuickFix;
+    myState.autoQuickFix = autoQuickFix;
+  }
+
+  /**
+   * @return <code>true</code> when each (potential) use of an edited node get own tab, <code>false</code> means aspect has own tab
+   */
+  public boolean isShowPlain() {
+    return myState.showPlain;
+  }
+
+  public void setShowPlain(boolean showPlain) {
+    myState.showPlain = showPlain;
+  }
+
+  public boolean isShowGrayed() {
+    return myState.showGrayed;
+  }
+
+  public void setShowGrayed(boolean showGrayed) {
+    myState.showGrayed = showGrayed;
+  }
+
+  /**
+   * @return <code>true</code> to indicate use of tabs with aspects inside node editor
+   */
+  public boolean isShow() {
+    return myState.show;
+  }
+
+  public void setShow(boolean show) {
+    myState.show = show;
   }
 
   public boolean isShowContextAssistant() {
-    return myState.myShowContextAssistant;
+    return myState.showContextAssistant;
   }
 
   public void setShowContextAssistant(boolean showContextAssistant) {
-    myState.myShowContextAssistant = showContextAssistant;
+    myState.showContextAssistant = showContextAssistant;
+  }
+
+  public int getCaretBlinkPeriod() {
+    return myState.caretBlinkPeriod;
+  }
+
+  public void setCaretBlinkPeriod(int rate) {
+    myState.caretBlinkPeriod = rate;
   }
 
   public Color getRangeSelectionForegroundColor() {
@@ -237,7 +283,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
   }
 
   /*package private*/ void fireEditorSettingsChanged() {
-    for (EditorSettingsListener l : new ArrayList<EditorSettingsListener>(myListeners)) {
+    for (EditorSettingsListener l : new ArrayList<>(myListeners)) {
       try {
         l.settingsChanged();
       } catch (Throwable t) {
@@ -276,12 +322,10 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
 
   @Override
   public void initComponent() {
-
   }
 
   @Override
   public void disposeComponent() {
-
   }
 
   @NotNull
@@ -290,26 +334,28 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     return "EditorSettings";
   }
 
+  @SuppressWarnings("WeakerAccess")
   public static class MyState {
-    private String myFontFamily = "Monospaced";
-    private int myFontSize = 13;
-    private double myLineSpacing = 1.0;
+    public String fontFamily = "Monospaced";
+    public int fontSize = 13;
+    public double lineSpacing = 1.0;
 
-    private int myTextWidth = 500;
-    private boolean myUseAntialiasing = true;
+    public int textWidth = 500;
+    public boolean useAntialiasing = true;
 
-    private boolean myUseBraces = true;
+    public boolean useBraces = true;
 
-    private int myIndentSize = 2;
-    private int myVerticalBound = 120;
+    public int indentSize = 2;
+    public int verticalBound = 120;
 
-    private boolean myAutoQuickFix = false;
+    public boolean autoQuickFix = false;
 
-    private boolean showPlain = true;
-    private boolean showGrayed = true;
-    private boolean show = true;
+    public boolean showPlain = true;
+    public boolean showGrayed = true;
+    public boolean show = true;
 
-    private boolean myShowContextAssistant = true;
+    public boolean showContextAssistant = true;
+    public int caretBlinkPeriod = DEFAULT_CARET_BLINK_PERIOD;
 
     @Override
     public boolean equals(Object o) {
@@ -320,176 +366,70 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
         return false;
       }
 
-      MyState otherState = (MyState) o;
+      MyState myState = (MyState) o;
 
-      if (myFontSize != otherState.myFontSize) {
+      if (fontSize != myState.fontSize) {
         return false;
       }
-      if (Double.compare(otherState.myLineSpacing, myLineSpacing) != 0) {
+      if (Double.compare(myState.lineSpacing, lineSpacing) != 0) {
         return false;
       }
-      if (myTextWidth != otherState.myTextWidth) {
+      if (textWidth != myState.textWidth) {
         return false;
       }
-      if (myUseAntialiasing != otherState.myUseAntialiasing) {
+      if (useAntialiasing != myState.useAntialiasing) {
         return false;
       }
-      if (myUseBraces != otherState.myUseBraces) {
+      if (useBraces != myState.useBraces) {
         return false;
       }
-      if (myFontFamily != null ? !myFontFamily.equals(otherState.myFontFamily) : otherState.myFontFamily != null) {
+      if (indentSize != myState.indentSize) {
         return false;
       }
-
-      if (myIndentSize != otherState.myIndentSize) {
+      if (verticalBound != myState.verticalBound) {
         return false;
       }
-
-      if (myVerticalBound != otherState.myVerticalBound) {
+      if (autoQuickFix != myState.autoQuickFix) {
         return false;
       }
-
-
-      if (myAutoQuickFix != otherState.myAutoQuickFix) {
+      if (showPlain != myState.showPlain) {
         return false;
       }
-
-      if (myShowContextAssistant != otherState.myShowContextAssistant) {
+      if (showGrayed != myState.showGrayed) {
         return false;
       }
-
-      return true;
+      if (show != myState.show) {
+        return false;
+      }
+      if (showContextAssistant != myState.showContextAssistant) {
+        return false;
+      }
+      if (caretBlinkPeriod != myState.caretBlinkPeriod) {
+        return false;
+      }
+      return fontFamily != null ? fontFamily.equals(myState.fontFamily) : myState.fontFamily == null;
     }
 
     @Override
     public int hashCode() {
       int result;
       long temp;
-      result = myFontFamily != null ? myFontFamily.hashCode() : 0;
-      result = 31 * result + myFontSize;
-      temp = myLineSpacing != +0.0d ? Double.doubleToLongBits(myLineSpacing) : 0L;
+      result = fontFamily != null ? fontFamily.hashCode() : 0;
+      result = 31 * result + fontSize;
+      temp = Double.doubleToLongBits(lineSpacing);
       result = 31 * result + (int) (temp ^ (temp >>> 32));
-      result = 31 * result + myTextWidth;
-      result = 31 * result + myIndentSize;
-      result = 31 * result + myVerticalBound;
-      result = 31 * result + (myAutoQuickFix ? 1 : 0);
-      result = 31 * result + (myUseAntialiasing ? 1 : 0);
-      result = 31 * result + (myUseBraces ? 1 : 0);
-      result = 31 * result + (myShowContextAssistant ? 1 : 0);
+      result = 31 * result + textWidth;
+      result = 31 * result + (useAntialiasing ? 1 : 0);
+      result = 31 * result + (useBraces ? 1 : 0);
+      result = 31 * result + indentSize;
+      result = 31 * result + verticalBound;
+      result = 31 * result + (autoQuickFix ? 1 : 0);
+      result = 31 * result + (showPlain ? 1 : 0);
+      result = 31 * result + (showGrayed ? 1 : 0);
+      result = 31 * result + (show ? 1 : 0);
+      result = 31 * result + (showContextAssistant ? 1 : 0);
+      result = 31 * result + caretBlinkPeriod;
       return result;
-    }
-
-    public String getFontFamily() {
-      return myFontFamily;
-    }
-
-    public void setFontFamily(String fontFamily) {
-      myFontFamily = fontFamily;
-    }
-
-    public int getFontSize() {
-      return myFontSize;
-    }
-
-    public void setFontSize(int fontSize) {
-      myFontSize = fontSize;
-    }
-
-    public int getTextWidth() {
-      return myTextWidth;
-    }
-
-    public void setTextWidth(int textWidth) {
-      myTextWidth = textWidth;
-    }
-
-    public int getVerticalBound() {
-      return myVerticalBound;
-    }
-
-    public void setVerticalBound(int verticalBound) {
-      myVerticalBound = verticalBound;
-    }
-
-    public int getIndentSize() {
-      return myIndentSize;
-    }
-
-    public void setIndentSize(int indentSize) {
-      myIndentSize = indentSize;
-    }
-
-    public boolean isUseAntialiasing() {
-      return myUseAntialiasing;
-    }
-
-    public void setUseAntialiasing(boolean useAntialiasing) {
-      myUseAntialiasing = useAntialiasing;
-    }
-
-    public boolean isUseBraces() {
-      return myUseBraces;
-    }
-
-    public void setUseBraces(boolean useBraces) {
-      myUseBraces = useBraces;
-    }
-
-    public double getLineSpacing() {
-      return myLineSpacing;
-    }
-
-    public void setLineSpacing(double lineSpacing) {
-      myLineSpacing = lineSpacing;
-    }
-
-    public boolean isAutoQuickFix() {
-      return myAutoQuickFix;
-    }
-
-    public void setAutoQuickFix(boolean autoQuickFix) {
-      myAutoQuickFix = autoQuickFix;
-    }
-
-    //setters are for persistence
-    public void setShowPlain(boolean showPlain) {
-      this.showPlain = showPlain;
-    }
-
-    //setters are for persistence
-    public void setShowGrayed(boolean showGrayed) {
-      this.showGrayed = showGrayed;
-    }
-
-    //setters are for persistence
-    public void setShow(boolean show) {
-      this.show = show;
-    }
-
-    /**
-     * @return <code>true</code> when each (potential) use of an edited node get own tab, <code>false</code> means aspect has own tab
-     */
-    public boolean isShowPlain() {
-      return showPlain;
-    }
-
-    public boolean isShowGrayed() {
-      return showGrayed;
-    }
-
-    /**
-     * @return <code>true</code> to indicate use of tabs with aspects inside node editor
-     */
-    public boolean isShow() {
-      return show;
-    }
-
-    public boolean isShowContextAssistant() {
-      return myShowContextAssistant;
-    }
-
-    public void setShowContextAssistant(boolean showContextAssistant) {
-      myShowContextAssistant = showContextAssistant;
     }
   }
 }

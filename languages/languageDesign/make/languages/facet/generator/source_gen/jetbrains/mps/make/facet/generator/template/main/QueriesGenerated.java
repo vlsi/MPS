@@ -32,7 +32,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -45,9 +44,11 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_671853460608709085(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static boolean createRootRule_Condition_2824583209542435179(final CreateRootRuleContext _context) {
+    // see MPS-24613 
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static boolean baseMappingRule_Condition_8170824575195255922(final BaseMappingRuleContext _context) {
@@ -78,6 +79,7 @@ public class QueriesGenerated {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")), true) != null) || (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType")), true) != null);
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
+    // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "plugin") && ListSequence.fromList(SModelOperations.roots(((SModel) _context.getVariable("model")), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static Object propertyMacro_GetPropertyValue_1919086248986829201(final PropertyMacroContext _context) {
@@ -281,25 +283,25 @@ public class QueriesGenerated {
     SNode rct = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, "jetbrains.mps.make.facet.structure.TargetDeclaration")), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x1a6da65e8aab1e0L, "input")), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aab1d4L, 0x1a6da65e8aab1d7L, "resourceType"))).first();
     return (rct != null ? _quotation_createNode_x583g4_a0b0uc_0(SLinkOperations.getTarget(rct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))) : _quotation_createNode_x583g4_a0b0uc());
   }
-  public static Object templateArgumentQuery_5189627237350270329(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350270329(final TemplateArgumentContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, 0x5979ed6d2b21b301L, "optional"));
   }
-  public static Object templateArgumentQuery_5189627237350270355(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350270355(final TemplateArgumentContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, 0x5979ed6d2b21b300L, "required"));
   }
-  public static Object templateArgumentQuery_5189627237350270366(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350270366(final TemplateArgumentContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, 0x5979ed6d2b21b2feL, "extended"));
   }
-  public static Object templateArgumentQuery_5189627237350268044(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350268044(final TemplateArgumentContext _context) {
     return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "not after");
   }
-  public static Object templateArgumentQuery_5189627237350268053(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350268053(final TemplateArgumentContext _context) {
     return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "after");
   }
-  public static Object templateArgumentQuery_5189627237350268062(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350268062(final TemplateArgumentContext _context) {
     return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "not before");
   }
-  public static Object templateArgumentQuery_5189627237350268071(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5189627237350268071(final TemplateArgumentContext _context) {
     return SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier"), "before");
   }
   public static Object templateArgumentQuery_4565427742315565556(final TemplateArgumentContext _context) {

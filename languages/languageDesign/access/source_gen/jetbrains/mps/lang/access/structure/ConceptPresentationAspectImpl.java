@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BaseExecuteCommandStatement = new ConceptPresentationBuilder().create();
@@ -26,73 +23,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BaseExecuteCommandStatement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BaseExecuteCommandStatementSync;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CommandClosureLiteral;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ExecuteCommandInEDTStatement;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ExecuteCommandStatement;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ExecuteEDTCommandStatement;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ExecuteLightweightCommandStatement;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ExecuteTransparentCommandStatement;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ExecuteWriteActionStatement;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IExecuteCommandStatementSync;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BaseExecuteCommandStatement:
+        return props_BaseExecuteCommandStatement;
+      case LanguageConceptSwitch.BaseExecuteCommandStatementSync:
+        return props_BaseExecuteCommandStatementSync;
+      case LanguageConceptSwitch.CommandClosureLiteral:
+        return props_CommandClosureLiteral;
+      case LanguageConceptSwitch.ExecuteCommandInEDTStatement:
+        return props_ExecuteCommandInEDTStatement;
+      case LanguageConceptSwitch.ExecuteCommandStatement:
+        return props_ExecuteCommandStatement;
+      case LanguageConceptSwitch.ExecuteEDTCommandStatement:
+        return props_ExecuteEDTCommandStatement;
+      case LanguageConceptSwitch.ExecuteLightweightCommandStatement:
+        return props_ExecuteLightweightCommandStatement;
+      case LanguageConceptSwitch.ExecuteTransparentCommandStatement:
+        return props_ExecuteTransparentCommandStatement;
+      case LanguageConceptSwitch.ExecuteWriteActionStatement:
+        return props_ExecuteWriteActionStatement;
+      case LanguageConceptSwitch.IExecuteCommandStatementSync:
+        return props_IExecuteCommandStatementSync;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20cL, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20dL, "jetbrains.mps.lang.access.structure.CommandClosureLiteral"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20eL, "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea211L, "jetbrains.mps.lang.access.structure.ExecuteCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea213L, "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea215L, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x4a0179cdfba5eb77L, "jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea217L, "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement"), MetaAdapterFactory.getInterfaceConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea219L, "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"));
 }

@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BwfAntStatement = new ConceptPresentationBuilder().create();
@@ -44,163 +41,65 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0db.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BwfAntStatement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BwfAntTaskBundleDeclaration;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BwfAntTaskDeclaration;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BwfCustomMacro;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BwfDependency;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BwfFileSet;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BwfJavaClassPath;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_BwfJavaDependency;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_BwfJavaDescriptor;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_BwfJavaLibrary;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_BwfJavaLibraryReference;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_BwfJavaModule;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_BwfJavaModuleReference;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_BwfMacro;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_BwfMacroListImport;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_BwfPathDeclaration;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_BwfPathReference;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_BwfProject;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_BwfProjectPart;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_BwfProjectPartStatement;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_BwfStatement;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_BwfSubTask;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_BwfSubTaskDependency;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_BwfTask;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_BwfTaskDependency;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_BwfTaskLibrary;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_BwfTaskLibraryDependency;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_BwfTaskPart;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BwfAntStatement:
+        return props_BwfAntStatement;
+      case LanguageConceptSwitch.BwfAntTaskBundleDeclaration:
+        return props_BwfAntTaskBundleDeclaration;
+      case LanguageConceptSwitch.BwfAntTaskDeclaration:
+        return props_BwfAntTaskDeclaration;
+      case LanguageConceptSwitch.BwfCustomMacro:
+        return props_BwfCustomMacro;
+      case LanguageConceptSwitch.BwfDependency:
+        return props_BwfDependency;
+      case LanguageConceptSwitch.BwfFileSet:
+        return props_BwfFileSet;
+      case LanguageConceptSwitch.BwfJavaClassPath:
+        return props_BwfJavaClassPath;
+      case LanguageConceptSwitch.BwfJavaDependency:
+        return props_BwfJavaDependency;
+      case LanguageConceptSwitch.BwfJavaDescriptor:
+        return props_BwfJavaDescriptor;
+      case LanguageConceptSwitch.BwfJavaLibrary:
+        return props_BwfJavaLibrary;
+      case LanguageConceptSwitch.BwfJavaLibraryReference:
+        return props_BwfJavaLibraryReference;
+      case LanguageConceptSwitch.BwfJavaModule:
+        return props_BwfJavaModule;
+      case LanguageConceptSwitch.BwfJavaModuleReference:
+        return props_BwfJavaModuleReference;
+      case LanguageConceptSwitch.BwfMacro:
+        return props_BwfMacro;
+      case LanguageConceptSwitch.BwfMacroListImport:
+        return props_BwfMacroListImport;
+      case LanguageConceptSwitch.BwfPathDeclaration:
+        return props_BwfPathDeclaration;
+      case LanguageConceptSwitch.BwfPathReference:
+        return props_BwfPathReference;
+      case LanguageConceptSwitch.BwfProject:
+        return props_BwfProject;
+      case LanguageConceptSwitch.BwfProjectPart:
+        return props_BwfProjectPart;
+      case LanguageConceptSwitch.BwfProjectPartStatement:
+        return props_BwfProjectPartStatement;
+      case LanguageConceptSwitch.BwfStatement:
+        return props_BwfStatement;
+      case LanguageConceptSwitch.BwfSubTask:
+        return props_BwfSubTask;
+      case LanguageConceptSwitch.BwfSubTaskDependency:
+        return props_BwfSubTaskDependency;
+      case LanguageConceptSwitch.BwfTask:
+        return props_BwfTask;
+      case LanguageConceptSwitch.BwfTaskDependency:
+        return props_BwfTaskDependency;
+      case LanguageConceptSwitch.BwfTaskLibrary:
+        return props_BwfTaskLibrary;
+      case LanguageConceptSwitch.BwfTaskLibraryDependency:
+        return props_BwfTaskLibraryDependency;
+      case LanguageConceptSwitch.BwfTaskPart:
+        return props_BwfTaskPart;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0db = buildConceptIndices(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5dc467L, "jetbrains.mps.build.workflow.structure.BwfAntStatement"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc1e415L, "jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x1c936d31d3127b3bL, "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x365f30e12d6048cL, "jetbrains.mps.build.workflow.structure.BwfCustomMacro"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x7313ce29aa27bafcL, "jetbrains.mps.build.workflow.structure.BwfDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL, "jetbrains.mps.build.workflow.structure.BwfJavaDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114723a759L, "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2021cfb4db4e306L, "jetbrains.mps.build.workflow.structure.BwfJavaLibrary"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2021cfb4db759cbL, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38c4L, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, "jetbrains.mps.build.workflow.structure.BwfMacro"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5a7e1dc16b0ca24fL, "jetbrains.mps.build.workflow.structure.BwfMacroListImport"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL, "jetbrains.mps.build.workflow.structure.BwfPathReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, "jetbrains.mps.build.workflow.structure.BwfProject"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc153dbL, "jetbrains.mps.build.workflow.structure.BwfProjectPartStatement"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b4a1bL, "jetbrains.mps.build.workflow.structure.BwfStatement"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6275L, "jetbrains.mps.build.workflow.structure.BwfSubTask"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, "jetbrains.mps.build.workflow.structure.BwfTask"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart"));
 }

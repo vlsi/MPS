@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * Igor Alshannikov
@@ -47,7 +48,11 @@ public class TemplateFunctionMethodName {
   }
 
   public static String referenceMacro_GetReferent(SNode function) {
-    return "referenceMacro_GetReferent_" + function.getNodeId().toString();
+    return referenceMacro_GetReferent(function.getNodeId());
+  }
+
+  public static String referenceMacro_GetReferent(SNodeId functionId) {
+    return "referenceMacro_GetReferent_" + functionId.toString();
   }
 
   public static String sourceSubstituteMacro_SourceNodesQuery(SNode function) {
@@ -71,11 +76,18 @@ public class TemplateFunctionMethodName {
   }
 
   public static String mapSrcMacro_MapperFunction(SNode function) {
-    return "mapSrcMacro_mapper_" + function.getNodeId().toString();
+    return mapSrcMacro_MapperFunction(function.getNodeId());
+  }
+
+  public static String mapSrcMacro_MapperFunction(SNodeId function) {
+    return "mapSrcMacro_mapper_" + function.toString();
   }
 
   public static String mapSrcMacro_PostMapperFunction(SNode function) {
-    return "mapSrcMacro_post_mapper_" + function.getNodeId().toString();
+    return mapSrcMacro_PostMapperFunction(function.getNodeId());
+  }
+  public static String mapSrcMacro_PostMapperFunction(SNodeId function) {
+    return "mapSrcMacro_post_mapper_" + function.toString();
   }
 
   public static String mappingScript_CodeBlock(SNode function) {
@@ -83,7 +95,11 @@ public class TemplateFunctionMethodName {
   }
 
   public static String templateArgumentQuery(SNode function) {
-    return "templateArgumentQuery_" + function.getNodeId().toString();
+    return templateArgumentQuery(function.getNodeId());
+  }
+
+  public static String templateArgumentQuery(SNodeId function) {
+    return "templateArgumentQuery_" + function.toString();
   }
 
   public static String patternRule_Condition(SNode pattern) {
@@ -95,10 +111,18 @@ public class TemplateFunctionMethodName {
   }
 
   public static String insertMacro_Query(SNode function) {
-    return "insertMacro_Query_" + function.getNodeId().toString();
+    return insertMacro_Query(function.getNodeId());
+  }
+
+  public static String insertMacro_Query(SNodeId function) {
+    return "insertMacro_Query_" + function.toString();
   }
 
   public static String varValue_Query(SNode function) {
-    return "insertMacro_varValue_" + function.getNodeId().toString();
+    return varValue_Query(function.getNodeId());
+  }
+
+  public static String varValue_Query(SNodeId function) {
+    return "insertMacro_varValue_" + function.toString();
   }
 }

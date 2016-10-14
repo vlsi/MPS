@@ -596,6 +596,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     TOP, BOTTOM
   }
 
+  jetbrains.mps.openapi.editor.EditorComponent getEditorComponent() {
+    return myEditorComponent;
+  }
+
   class PopupWindow extends JWindow {
     //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
     private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
@@ -814,6 +818,5 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myPosition = position;
     }
   }
-
 
 }

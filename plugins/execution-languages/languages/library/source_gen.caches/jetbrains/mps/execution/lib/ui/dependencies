@@ -4,13 +4,12 @@
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
-    <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="com.intellij.openapi.ui.NoPathCompletion" />
+    <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.ListPanel" file="ListPanel.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
@@ -118,7 +117,6 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.awt.event.KeyAdapter" />
@@ -153,7 +151,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="com.intellij.openapi.ui.NoPathCompletion" />
+    <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" file="RawLineEditorComponent.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />

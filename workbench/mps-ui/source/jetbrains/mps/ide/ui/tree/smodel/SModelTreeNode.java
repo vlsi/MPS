@@ -48,7 +48,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
+public class SModelTreeNode extends MPSTreeNode implements TreeElement {
 
   private final SModel myModelDescriptor;
   private final TreeNodeTextSource<SModelTreeNode> myTextSource;
@@ -129,8 +129,8 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
   }
 
   @Override
-  public SNode getSNode() {
-    return null;
+  public boolean isLeaf() {
+    return false;
   }
 
   public boolean hasModelsUnder() {

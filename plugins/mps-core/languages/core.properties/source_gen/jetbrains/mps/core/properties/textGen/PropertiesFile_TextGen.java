@@ -16,15 +16,11 @@ public class PropertiesFile_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.createUnitInfo();
-    tgs.setEncoding("ISO-8859-1");
     for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a2754L, 0x36fb0dc9fd3a3ac3L, "lines"))) {
       tgs.appendNode(item);
     }
     if (tgs.needPositions()) {
       tgs.fillUnitInfo(UnitConcept__BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))));
     }
-  }
-  public String getExtension(SNode node) {
-    return "properties";
   }
 }

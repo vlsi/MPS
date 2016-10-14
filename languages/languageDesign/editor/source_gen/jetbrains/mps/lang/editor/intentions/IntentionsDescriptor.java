@@ -11,7 +11,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -27,140 +29,156 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            // Concept: BooleanStyleSheetItem 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new BooleanQuery_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: CellModel_Alternation 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ChangeOrientationAlternation_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: CellModel_Collection 
-            intentions = new IntentionFactory[3];
-            intentions[0] = new ChangeOrientationCollection_Intention();
-            intentions[1] = new UseIndentLayoutInCollection_Intention();
-            intentions[2] = new MigrateToIndentLayout_Intention();
-          }
-          break;
-        case 3:
-          if (true) {
-            // Concept: CellModel_Constant 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new SplitConstantCellIntoWords_Intention();
-            intentions[1] = new TrimConstantCell_Intention();
-          }
-          break;
-        case 4:
-          if (true) {
-            // Concept: CellModel_ListWithRole 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ChangeOrientationList_Intention();
-          }
-          break;
-        case 5:
-          if (true) {
-            // Concept: CellModel_NonEmptyProperty 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ChangeNonEmptyProperty_Intention();
-          }
-          break;
-        case 6:
-          if (true) {
-            // Concept: CellModel_Property 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new ChangeProperty_Intention();
-            intentions[1] = new ChangePropertyWithNonEmpty_Intention();
-          }
-          break;
-        case 7:
-          if (true) {
-            // Concept: CellModel_RefNodeList 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new UseIndentLayoutInRefNodeList_Intention();
-          }
-          break;
-        case 8:
-          if (true) {
-            // Concept: CellModel_TransactionalProperty 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ChangeTransactionalProperty_Intention();
-          }
-          break;
-        case 9:
-          if (true) {
-            // Concept: ColorStyleClassItem 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ColorQuery_Intention();
-          }
-          break;
-        case 10:
-          if (true) {
-            // Concept: ConceptEditorDeclaration 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new GenerateMultiLineDefaultEditor_Intention();
-            intentions[1] = new GenerateSingleLineDefaultEditor_Intention();
-          }
-          break;
-        case 11:
-          if (true) {
-            // Concept: EditorCellModel 
-            intentions = new IntentionFactory[10];
-            intentions[0] = new SurroundWithVerticalCollection_Intention();
-            intentions[1] = new SurroundWithHorizontalCollection_Intention();
-            intentions[2] = new AddNewLine_Intention();
-            intentions[3] = new AddIndent_Intention();
-            intentions[4] = new AddOnNewLine_Intention();
-            intentions[5] = new RemoveIndent_Intention();
-            intentions[6] = new RemoveNewLine_Intention();
-            intentions[7] = new RemoveOnNewLine_Intention();
-            intentions[8] = new AddRemoveNewLineForChildren_Intention();
-            intentions[9] = new SurroundWithIndentCollection_Intention();
-          }
-          break;
-        case 12:
-          if (true) {
-            // Concept: FontStyleStyleClassItem 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new FontStyleQuery_Intention();
-          }
-          break;
-        case 13:
-          if (true) {
-            // Concept: ITransformationMenu 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new ConvertMenu_Intention();
-          }
-          break;
-        case 14:
-          if (true) {
-            // Concept: StyleClass 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddDominance_Intention();
-          }
-          break;
-        case 15:
-          if (true) {
-            // Concept: StyleSheetClass 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new AddExtendsClause_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: BooleanStyleSheetItem 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new BooleanQuery_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: CellModel_Alternation 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ChangeOrientationAlternation_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: CellModel_Collection 
+          intentions = new IntentionFactory[3];
+          intentions[0] = new ChangeOrientationCollection_Intention();
+          intentions[1] = new UseIndentLayoutInCollection_Intention();
+          intentions[2] = new MigrateToIndentLayout_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
+          // Concept: CellModel_Constant 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new SplitConstantCellIntoWords_Intention();
+          intentions[1] = new TrimConstantCell_Intention();
+        }
+        break;
+      case 4:
+        if (true) {
+          // Concept: CellModel_ListWithRole 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ChangeOrientationList_Intention();
+        }
+        break;
+      case 5:
+        if (true) {
+          // Concept: CellModel_NonEmptyProperty 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ChangeNonEmptyProperty_Intention();
+        }
+        break;
+      case 6:
+        if (true) {
+          // Concept: CellModel_Property 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new ChangeProperty_Intention();
+          intentions[1] = new ChangePropertyWithNonEmpty_Intention();
+        }
+        break;
+      case 7:
+        if (true) {
+          // Concept: CellModel_RefNodeList 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new UseIndentLayoutInRefNodeList_Intention();
+        }
+        break;
+      case 8:
+        if (true) {
+          // Concept: CellModel_TransactionalProperty 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ChangeTransactionalProperty_Intention();
+        }
+        break;
+      case 9:
+        if (true) {
+          // Concept: ColorStyleClassItem 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ColorQuery_Intention();
+        }
+        break;
+      case 10:
+        if (true) {
+          // Concept: ConceptEditorDeclaration 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new GenerateMultiLineDefaultEditor_Intention();
+          intentions[1] = new GenerateSingleLineDefaultEditor_Intention();
+        }
+        break;
+      case 11:
+        if (true) {
+          // Concept: EditorCellModel 
+          intentions = new IntentionFactory[10];
+          intentions[0] = new SurroundWithVerticalCollection_Intention();
+          intentions[1] = new SurroundWithHorizontalCollection_Intention();
+          intentions[2] = new AddNewLine_Intention();
+          intentions[3] = new AddIndent_Intention();
+          intentions[4] = new AddOnNewLine_Intention();
+          intentions[5] = new RemoveIndent_Intention();
+          intentions[6] = new RemoveNewLine_Intention();
+          intentions[7] = new RemoveOnNewLine_Intention();
+          intentions[8] = new AddRemoveNewLineForChildren_Intention();
+          intentions[9] = new SurroundWithIndentCollection_Intention();
+        }
+        break;
+      case 12:
+        if (true) {
+          // Concept: FontStyleStyleClassItem 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new FontStyleQuery_Intention();
+        }
+        break;
+      case 13:
+        if (true) {
+          // Concept: ISubstituteMenu 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertSubstituteMenu_Intention();
+        }
+        break;
+      case 14:
+        if (true) {
+          // Concept: ITransformationMenu 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new ConvertTransformationMenu_Intention();
+        }
+        break;
+      case 15:
+        if (true) {
+          // Concept: StyleClass 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddDominance_Intention();
+        }
+        break;
+      case 16:
+        if (true) {
+          // Concept: StyleSheetClass 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new AddExtendsClause_Intention();
+        }
+        break;
+      case 17:
+        if (true) {
+          // Concept: TransformationMenuPart_Action 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SpecifyOutputConcept_Intention();
+        }
+        break;
+      case 18:
+        if (true) {
+          // Concept: TransformationMenuPart_IncludeMenu 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new SpecifyLocation_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
@@ -169,7 +187,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[30];
+    IntentionFactory[] rv = new IntentionFactory[33];
     rv[0] = new SurroundWithVerticalCollection_Intention();
     rv[1] = new SurroundWithHorizontalCollection_Intention();
     rv[2] = new ColorQuery_Intention();
@@ -199,16 +217,11 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[26] = new GenerateMultiLineDefaultEditor_Intention();
     rv[27] = new GenerateSingleLineDefaultEditor_Intention();
     rv[28] = new AddDominance_Intention();
-    rv[29] = new ConvertMenu_Intention();
+    rv[29] = new ConvertTransformationMenu_Intention();
+    rv[30] = new SpecifyLocation_Intention();
+    rv[31] = new SpecifyOutputConcept_Intention();
+    rv[32] = new ConvertSubstituteMenu_Intention();
     return Arrays.asList(rv);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"));
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L)).seal();
 }

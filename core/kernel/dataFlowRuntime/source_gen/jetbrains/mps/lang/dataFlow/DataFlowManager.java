@@ -14,14 +14,14 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * 
@@ -82,6 +82,7 @@ public class DataFlowManager implements CoreComponent {
     myLoaded = true;
     this.load();
   }
+  protected static Logger LOG = LogManager.getLogger(DataFlowManager.class);
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModel dfaModel = SModuleOperations.getAspect(l, "dataFlow");
@@ -112,5 +113,4 @@ public class DataFlowManager implements CoreComponent {
   public static DataFlowManager getInstance() {
     return INSTANCE;
   }
-  protected static Logger LOG = LogManager.getLogger(DataFlowManager.class);
 }

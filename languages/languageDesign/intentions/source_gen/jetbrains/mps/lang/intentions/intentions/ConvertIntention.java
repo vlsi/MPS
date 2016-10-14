@@ -24,8 +24,6 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import jetbrains.mps.editor.intentions.BaseNodeTransformer;
-import java.util.Map;
-import java.util.HashMap;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -89,31 +87,15 @@ public class ConvertIntention extends IntentionsFactory {
     return nodeRef;
   }
   public void resolveChildFilterRefernce(SNode root, SNode node) {
-    {
-      SAbstractConcept cncpt = SNodeOperations.getConcept(node);
-      Integer preIndex = indices_lf8yx8_a0cb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        default:
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"))) {
-            if (true) {
-              SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 1));
-            }
-            break;
-          }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
-            if (true) {
-              SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 2));
-            }
-            break;
-          }
-          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
-            if (true) {
-              SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 0));
-            }
-            break;
-          }
-      }
+    SAbstractConcept cncpt = SNodeOperations.getConcept(node);
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"))) {
+      SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 1));
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
+      SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 2));
+    }
+    if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"))) {
+      SNodeOperations.replaceWithAnother(node, createParameterReference(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")), 0));
     }
 
     for (SNode child : SNodeOperations.getChildren(node)) {
@@ -200,15 +182,6 @@ public class ConvertIntention extends IntentionsFactory {
     });
     return result;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lf8yx8_a0cb = buildConceptIndices();
   private static SNode _quotation_createNode_lf8yx8_a0a0a2a51a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

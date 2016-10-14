@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -28,54 +29,48 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import static org.jetbrains.mps.openapi.module.SDependencyScope.DESIGN;
+import static org.jetbrains.mps.openapi.module.SDependencyScope.EXTENDS;
+import static org.jetbrains.mps.openapi.module.SDependencyScope.GENERATES_INTO;
+
 /**
  * User: shatalin
  * Date: 19/11/15
  */
-public class UsedModulesCollector {
+@Immutable
+public final class UsedModulesCollector {
+  private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache = new HashMap<>();
 
-  private Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache = new HashMap<SLanguage, Collection<SModule>>();
-
-  /**
-   * AP: plugin use only!
-   */
-  public Collection<SModule> directlyUsedModules0(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
-    try {
-      return directlyUsedModules0(module, includeNonReexport, runtimes, false);
-    } catch (AbsentDependencyException e) {
-      throw new IllegalStateException("Impossible to get exception when the check is off", e);
-    }
+  @NotNull
+  public Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+    return directlyUsedModules(module, new PostingWarningsErrorHandler(), includeNonReexport, runtimes);
   }
 
-  public Collection<SModule> directlyUsedModules0(@NotNull SModule module, boolean includeNonReexport, boolean runtimes, boolean checked) throws
-      AbsentDependencyException {
-    Set<SModule> result = new HashSet<SModule>();
+  @NotNull
+  public Collection<SModule> directlyUsedModules(@NotNull SModule module, @NotNull ErrorHandler handler, boolean includeNonReexport, boolean runtimes) {
+    Set<SModule> result = new HashSet<>();
     for (SDependency dependency : module.getDeclaredDependencies()) {
       SModule dependencyModule = dependency.getTarget();
-      if (dependencyModule == null) {
-        if (dependency.getScope() == SDependencyScope.GENERATES_INTO || dependency.getScope() == SDependencyScope.DESIGN) {
-          continue;
+      SDependencyScope scope = dependency.getScope();
+      if (dependencyModule != null) {
+        // if module A extends module B, and module C depends from A, module B shall always be part of C dependencies along with A.
+        boolean isExport = dependency.isReexport() || scope == EXTENDS;
+        if (includeNonReexport || isExport) {
+          result.add(dependencyModule);
         }
-        if (!checked) {
-          continue;
-        } else {
-          throw new AbsentDependencyException(dependency);
+      } else {
+        if (scope != GENERATES_INTO && scope != DESIGN) {
+          handler.depCannotBeResolved(dependency);
         }
-      }
-      // if module A extends module B, and module C depends from A, module B shall always be part of C dependencies along with A.
-      boolean isExport = dependency.isReexport() || dependency.getScope() == SDependencyScope.EXTENDS;
-      if (includeNonReexport || isExport) {
-        result.add(dependencyModule);
       }
     }
 
     if (includeNonReexport) {
       if (runtimes) {
-        result.addAll(new RuntimesOfUsedLanguageCalculator(module, checked, myLanguageRuntimesCache).invoke());
+        result.addAll(new RuntimesOfUsedLanguageCalculator(module, myLanguageRuntimesCache, handler).invoke());
       }
     }
 
     return result;
   }
-
 }

@@ -37,6 +37,7 @@ import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.nodefs.MPSModelVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
@@ -196,7 +197,9 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   @NotNull
   @Override
   public VirtualFile getVirtualFile() {
-    return NodeVirtualFileSystem.getInstance().getFileFor(getProjectRepository(), myModelReference);
+    SRepository repository = getProjectRepository();
+    NodeVirtualFileSystem fs = NodeVirtualFileSystem.getInstance();
+    return new ModelAccessHelper(repository).runReadAction(() -> fs.getFileFor(repository, myModelReference));
   }
 
   @Override

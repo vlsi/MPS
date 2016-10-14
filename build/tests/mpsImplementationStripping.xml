@@ -159,15 +159,15 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
-      <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.stripping.tests.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.stripping.tests-models">
-      <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.build.stripping.tests-models">
+      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests-src.jar" duplicate="preserve">
-      <zipfileset file="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.stripping.tests-models" prefix="module/models" />
+      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.build.stripping.tests-models" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -213,6 +213,7 @@
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
+      <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.templates.devkit" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.aspect.jar" />
@@ -227,6 +228,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
@@ -279,7 +281,7 @@
         <module file="${basedir}/samples/robot_Kaja/languages/Kajak/Kajak.mpl" />
       </chunk>
       <chunk>
-        <module file="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" />
+        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -301,7 +303,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/test_gen/" />
+      <src path="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
@@ -360,7 +362,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests">
-      <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -506,6 +508,7 @@
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
+      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.templates.devkit" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
@@ -518,6 +521,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
@@ -630,6 +634,6 @@
     <delete dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" />
     <delete dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" />
     <delete dir="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen" />
-    <delete dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/test_gen" />
   </target>
 </project>

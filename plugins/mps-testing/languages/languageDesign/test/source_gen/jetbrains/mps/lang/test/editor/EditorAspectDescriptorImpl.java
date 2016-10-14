@@ -8,303 +8,148 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BootstrapActionReference_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckDataFlowOperation_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckNodeDataflow_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckNodeForErrorMessagesOperation_Editor());
-          }
-          break;
-        case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CheckNodeForErrors_Editor());
-          }
-          break;
-        case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new DragMouseStatement_Editor());
-          }
-          break;
-        case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorComponentExpression_Editor());
-          }
-          break;
-        case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
-          }
-          break;
-        case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new EditorTestCase_Editor());
-          }
-          break;
-        case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExpressionContainer_Editor());
-          }
-          break;
-        case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IRuleReference_Editor());
-          }
-          break;
-        case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeActionStatement_Editor());
-          }
-          break;
-        case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
-          }
-          break;
-        case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IsIntentionApplicableExpression_Editor());
-          }
-          break;
-        case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
-          }
-          break;
-        case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
-          }
-          break;
-        case 18:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MockAnnotation_Editor());
-          }
-          break;
-        case 19:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new MockScopeProvider_Editor());
-          }
-          break;
-        case 20:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ModelExpression_Editor());
-          }
-          break;
-        case 21:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NamedNodeReference_Editor());
-          }
-          break;
-        case 22:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeConstraintsErrorCheckOperation_Editor());
-          }
-          break;
-        case 23:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeConstraintsWarningCheckOperation_Editor());
-          }
-          break;
-        case 24:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeErrorCheckOperation_Editor());
-          }
-          break;
-        case 25:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeInfoCheckOperation_Editor());
-          }
-          break;
-        case 26:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeOperationsContainer_Editor());
-          }
-          break;
-        case 27:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodePropertiesContainer_Editor());
-          }
-          break;
-        case 28:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeReachable_Editor());
-          }
-          break;
-        case 29:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeCheckOperation_Editor());
-          }
-          break;
-        case 30:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
-          }
-          break;
-        case 31:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
-          }
-          break;
-        case 32:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
-          }
-          break;
-        case 33:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeUnknownErrorCheckOperation_Editor());
-          }
-          break;
-        case 34:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeUnknownWarningCheckOperation_Editor());
-          }
-          break;
-        case 35:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
-          }
-          break;
-        case 36:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
-          }
-          break;
-        case 37:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
-          }
-          break;
-        case 38:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
-          }
-          break;
-        case 39:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PressMouseStatement_Editor());
-          }
-          break;
-        case 40:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
-          }
-          break;
-        case 41:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopeEntry_Editor());
-          }
-          break;
-        case 42:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
-          }
-          break;
-        case 43:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
-          }
-          break;
-        case 44:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
-          }
-          break;
-        case 45:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
-          }
-          break;
-        case 46:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
-          }
-          break;
-        case 47:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
-          }
-          break;
-        case 48:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
-          }
-          break;
-        case 49:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
-          }
-          break;
-        case 50:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
-          }
-          break;
-        case 51:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new UntypedExpression_Editor());
-          }
-          break;
-        case 52:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
-          }
-          break;
-        case 53:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BootstrapActionReference_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CheckDataFlowOperation_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new CheckNodeDataflow_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new CheckNodeForErrorMessagesOperation_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new CheckNodeForErrors_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new DragMouseStatement_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new EditorComponentExpression_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new EditorTestCase_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new ExpressionContainer_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new IRuleReference_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new InvokeActionStatement_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new IsIntentionApplicableExpression_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new MockAnnotation_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new MockScopeProvider_Editor());
+      case 20:
+        return Collections.<ConceptEditor>singletonList(new ModelExpression_Editor());
+      case 21:
+        return Collections.<ConceptEditor>singletonList(new NamedNodeReference_Editor());
+      case 22:
+        return Collections.<ConceptEditor>singletonList(new NodeConstraintsErrorCheckOperation_Editor());
+      case 23:
+        return Collections.<ConceptEditor>singletonList(new NodeConstraintsWarningCheckOperation_Editor());
+      case 24:
+        return Collections.<ConceptEditor>singletonList(new NodeErrorCheckOperation_Editor());
+      case 25:
+        return Collections.<ConceptEditor>singletonList(new NodeInfoCheckOperation_Editor());
+      case 26:
+        return Collections.<ConceptEditor>singletonList(new NodeOperationsContainer_Editor());
+      case 27:
+        return Collections.<ConceptEditor>singletonList(new NodePropertiesContainer_Editor());
+      case 28:
+        return Collections.<ConceptEditor>singletonList(new NodeReachable_Editor());
+      case 29:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeCheckOperation_Editor());
+      case 30:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSetCheckOperation_Editor());
+      case 31:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSystemErrorCheckOperation_Editor());
+      case 32:
+        return Collections.<ConceptEditor>singletonList(new NodeTypeSystemWarningCheckOperation_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new NodeUnknownErrorCheckOperation_Editor());
+      case 34:
+        return Collections.<ConceptEditor>singletonList(new NodeUnknownWarningCheckOperation_Editor());
+      case 35:
+        return Collections.<ConceptEditor>singletonList(new NodeUnreachable_Editor());
+      case 36:
+        return Collections.<ConceptEditor>singletonList(new NodeWarningCheckOperation_Editor());
+      case 37:
+        return Collections.<ConceptEditor>singletonList(new NodesTestCase_Editor());
+      case 38:
+        return Collections.<ConceptEditor>singletonList(new PressKeyStatement_Editor());
+      case 39:
+        return Collections.<ConceptEditor>singletonList(new PressMouseStatement_Editor());
+      case 40:
+        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
+      case 41:
+        return Collections.<ConceptEditor>singletonList(new ScopeEntry_Editor());
+      case 42:
+        return Collections.<ConceptEditor>singletonList(new ScopesExpectedNode_Editor());
+      case 43:
+        return Collections.<ConceptEditor>singletonList(new ScopesTest_Editor());
+      case 44:
+        return Collections.<ConceptEditor>singletonList(new SimpleNodeTest_Editor());
+      case 45:
+        return Collections.<ConceptEditor>singletonList(new SwitchToInspector_Editor());
+      case 46:
+        return Collections.<ConceptEditor>singletonList(new TestInfo_Editor());
+      case 47:
+        return Collections.<ConceptEditor>singletonList(new TestNode_Editor());
+      case 48:
+        return Collections.<ConceptEditor>singletonList(new TestNodeAnnotation_Editor());
+      case 49:
+        return Collections.<ConceptEditor>singletonList(new TestNodeReference_Editor());
+      case 50:
+        return Collections.<ConceptEditor>singletonList(new TypeKeyStatement_Editor());
+      case 51:
+        return Collections.<ConceptEditor>singletonList(new UntypedExpression_Editor());
+      case 52:
+        return Collections.<ConceptEditor>singletonList(new VariableAlive_Editor());
+      case 53:
+        return Collections.<ConceptEditor>singletonList(new VariableInitialized_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new NodeConstraintsErrorCheckOperation_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new NodeConstraintsWarningCheckOperation_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new NodeUnknownErrorCheckOperation_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new NodeUnknownWarningCheckOperation_SubstituteMenu());
+      default:
     }
-    return res;
+    return Collections.<SubstituteMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, "jetbrains.mps.lang.test.structure.AssertMatch"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899d06L, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b081c90baL, "jetbrains.mps.lang.test.structure.CheckDataFlowOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b743c0e8cL, "jetbrains.mps.lang.test.structure.CheckNodeDataflow"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL, "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11ae82817b8L, "jetbrains.mps.lang.test.structure.CheckNodeForErrors"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c55ca0a3L, "jetbrains.mps.lang.test.structure.DragMouseStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb2963ab0ffL, "jetbrains.mps.lang.test.structure.EditorComponentExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d7249a7dbL, "jetbrains.mps.lang.test.structure.EditorExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x254649f227ff5d72L, "jetbrains.mps.lang.test.structure.ExpressionContainer"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, "jetbrains.mps.lang.test.structure.IRuleReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x614c5660cccba06bL, "jetbrains.mps.lang.test.structure.InvokeActionStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, "jetbrains.mps.lang.test.structure.InvokeIntentionStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x83a4b2183e44b99L, "jetbrains.mps.lang.test.structure.IsIntentionApplicableExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L, "jetbrains.mps.lang.test.structure.LogEvent"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, "jetbrains.mps.lang.test.structure.MPSActionReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e6f14cfccL, "jetbrains.mps.lang.test.structure.MockAnnotation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf63919L, "jetbrains.mps.lang.test.structure.MockScopeProvider"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d53b20b9cL, "jetbrains.mps.lang.test.structure.ModelExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf9c211L, "jetbrains.mps.lang.test.structure.NamedNodeReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL, "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf8aadL, "jetbrains.mps.lang.test.structure.NodeConstraintsWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, "jetbrains.mps.lang.test.structure.NodeInfoCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e50b53L, "jetbrains.mps.lang.test.structure.NodePropertiesContainer"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b02f9eeb8L, "jetbrains.mps.lang.test.structure.NodeReachable"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b03034484L, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x15404cb86444497L, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5f2a921acc5d63aL, "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x770c2c9f6f1bbfcaL, "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL, "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbc0b900L, "jetbrains.mps.lang.test.structure.NodeUnknownWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b082d1cb9L, "jetbrains.mps.lang.test.structure.NodeUnreachable"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0224b421L, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e223413eeL, "jetbrains.mps.lang.test.structure.PressKeyStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c5348f79L, "jetbrains.mps.lang.test.structure.PressMouseStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d5387d7a1L, "jetbrains.mps.lang.test.structure.ProjectExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf67ae2L, "jetbrains.mps.lang.test.structure.ScopeEntry"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x32ba5b0ec25fe9f3L, "jetbrains.mps.lang.test.structure.ScopesExpectedNode"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d71fcb191L, "jetbrains.mps.lang.test.structure.SimpleNodeTest"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb29636e491L, "jetbrains.mps.lang.test.structure.SwitchToInspector"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1c6609cL, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, "jetbrains.mps.lang.test.structure.TestNodeReference"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11db9c07f43L, "jetbrains.mps.lang.test.structure.TypeKeyStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x706cdc8a9fd69324L, "jetbrains.mps.lang.test.structure.UntypedExpression"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b086b4872L, "jetbrains.mps.lang.test.structure.VariableAlive"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, "jetbrains.mps.lang.test.structure.VariableInitialized"));
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899d06L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b081c90baL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b743c0e8cL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07d3d54aL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11ae82817b8L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c55ca0a3L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb2963ab0ffL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d7249a7dbL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x254649f227ff5d72L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x614c5660cccba06bL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x83a4b2183e44b99L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e6f14cfccL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf63919L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d53b20b9cL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf9c211L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf8aadL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e50b53L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b02f9eeb8L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b03034484L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x15404cb86444497L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5f2a921acc5d63aL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x770c2c9f6f1bbfcaL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbc0b900L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b082d1cb9L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0224b421L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e223413eeL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c5348f79L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d5387d7a1L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf67ae2L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x32ba5b0ec25fe9f3L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d71fcb191L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb29636e491L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1c6609cL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11db9c07f43L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x706cdc8a9fd69324L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b086b4872L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfba5276dfL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbbf8aadL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6cbc57bb7a1917bdL), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x73a7cdcfbbc0b900L)).seal();
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure;
 
+import gnu.trove.TLongObjectHashMap;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
@@ -32,7 +33,6 @@ import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
@@ -45,38 +45,47 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * {@implNote} This class shall stay pure FACTORY of SXAdapter objects (i.e. instantiate them only), and shall not contradict with
+ * their "proxy" aspect (i.e. implementation that needs to look for {@link ConceptDescriptor} and alike).
+ * Simply put, methods of this class shall not go outside, e.g. to {@link ConceptRegistry} or
+ * {@link jetbrains.mps.smodel.language.StructureRegistry}, like {@link #getConceptById(SConceptId)} does now.
+ */
 public abstract class MetaAdapterFactory {
-  private static final ConcurrentMap<LangKey, SLanguage> ourLanguageIds = new ConcurrentHashMap<LangKey, SLanguage>();
-  private static final ConcurrentMap<Pair<SConceptId, String>, SConcept> ourConceptIds = new ConcurrentHashMap<Pair<SConceptId, String>, SConcept>();
-  private static final ConcurrentMap<Pair<SConceptId, String>, SInterfaceConcept> ourIntfcConceptIds =
-      new ConcurrentHashMap<Pair<SConceptId, String>, SInterfaceConcept>();
-  private static final ConcurrentMap<Pair<SPropertyId, String>, SProperty> ourPropertyIds = new ConcurrentHashMap<Pair<SPropertyId, String>, SProperty>();
-  private static final ConcurrentMap<Pair<SReferenceLinkId, String>, SReferenceLink> ourRefIds =
-      new ConcurrentHashMap<Pair<SReferenceLinkId, String>, SReferenceLink>();
-  private static final ConcurrentMap<Pair<SContainmentLinkId, String>, SContainmentLink> ourLinkIds =
-      new ConcurrentHashMap<Pair<SContainmentLinkId, String>, SContainmentLink>();
+  private static final TLongObjectHashMap<List<SLanguageAdapterById>> ourLanguages = new TLongObjectHashMap<>(200);
+
+  // there are 5 thousand concepts in MPS alone, don't need to be shy, rehash would be more expensive.
+  private static final TLongObjectHashMap<List<ConceptBucket>> ourConcepts = new TLongObjectHashMap<>(5000);
+  private static final TLongObjectHashMap<List<InterfaceBucket>> ourInterfaces = new TLongObjectHashMap<>(1000);
+  private static final TLongObjectHashMap<List<PropertyBucket>> ourProperties = new TLongObjectHashMap<>(5000);
+  private static final TLongObjectHashMap<List<AssociationLinkBucket>> ourAssociations = new TLongObjectHashMap<>(1000);
+  private static final TLongObjectHashMap<List<AggregationLinkBucket>> ourAggregations = new TLongObjectHashMap<>(1000);
 
   @NotNull
   public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName) {
-    SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
-    LangKey p = new LangKey(id, langName);
-    SLanguage result = ourLanguageIds.putIfAbsent(p, l);
-    return result != null ? result : l;
+    // FIXME change templates to invoke getLanguage(long,long,string) instead
+    return getLanguage(id.getHighBits(), id.getLowBits(), langName);
   }
 
   @NotNull
   public static SLanguage getLanguage(long uuidHigh, long uuidLow, String langName) {
-    return getLanguage(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SLanguage getLanguage(UUID lang, String langName) {
-    return getLanguage(MetaIdFactory.langId(lang), langName);
+    List<SLanguageAdapterById> list = getBucketList(ourLanguages, uuidHigh * 17 + uuidLow);
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (list) {
+      for (int i = 0, x = list.size(); i < x; i++) {
+        SLanguageAdapterById rv = list.get(i);
+        SLanguageId id = rv.getId();
+        if (uuidHigh == id.getHighBits() && uuidLow == id.getLowBits()) {
+          return rv;
+        }
+      }
+      SLanguageAdapterById rv = new SLanguageAdapterById(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
+      list.add(rv);
+      return rv;
+    }
   }
 
   @NotNull
@@ -86,112 +95,148 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SConcept getConcept(SConceptId id, String conceptName) {
-    SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
-    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
-    SConcept result = ourConceptIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    SLanguageId langId = id.getLanguageId();
+    return getConcept(langId.getHighBits(), langId.getLowBits(), id.getIdValue(), conceptName);
   }
 
   @NotNull
   public static SConcept getConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
-    return getConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
+    List<ConceptBucket> bucketList = getBucketList(ourConcepts, bucketKey(uuidHigh, uuidLow, concept));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        ConceptBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept)) {
+          return rv.get();
+        }
+      }
+      ConceptBucket b = new ConceptBucket(uuidHigh, uuidLow, concept, conceptName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
   public static SConcept getConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
     final SLanguageId langId = MetaIdHelper.getLanguage(language);
-    return getConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SConcept getConcept(UUID lang, long concept, String conceptName) {
-    return getConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
+    return getConcept(langId.getHighBits(), langId.getLowBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
   }
 
   @NotNull
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
-    SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
-    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
-    SInterfaceConcept result = ourIntfcConceptIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    SLanguageId langId = id.getLanguageId();
+    return getInterfaceConcept(langId.getHighBits(), langId.getLowBits(), id.getIdValue(), conceptName);
   }
 
   @NotNull
   public static SInterfaceConcept getInterfaceConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
-    return getInterfaceConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
+    List<InterfaceBucket> bucketList = getBucketList(ourInterfaces, bucketKey(uuidHigh, uuidLow, concept));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        InterfaceBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept)) {
+          return rv.get();
+        }
+      }
+      InterfaceBucket b = new InterfaceBucket(uuidHigh, uuidLow, concept, conceptName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
   public static SInterfaceConcept getInterfaceConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
     final SLanguageId langId = MetaIdHelper.getLanguage(language);
-    return getInterfaceConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
-    return getInterfaceConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
+    return getInterfaceConcept(langId.getHighBits(), langId.getLowBits(), concept, NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
   }
 
   @NotNull
   public static SProperty getProperty(SPropertyId id, String propName) {
-    SPropertyAdapterById c = new SPropertyAdapterById(id, propName);
-    Pair<SPropertyId, String> p = new Pair<SPropertyId, String>(id, propName);
-    SProperty result = ourPropertyIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    SConceptId cid = id.getConceptId();
+    SLanguageId langId = cid.getLanguageId();
+    return getProperty(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), id.getIdValue(), propName);
   }
 
   @NotNull
   public static SProperty getProperty(long uuidHigh, long uuidLow, long concept, long prop, String propName) {
-    return getProperty(MetaIdFactory.propId(uuidHigh, uuidLow, concept, prop), propName);
+    List<PropertyBucket> bucketList = getBucketList(ourProperties, bucketKey(uuidHigh, uuidLow, concept, prop));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        PropertyBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept, prop)) {
+          return rv.get();
+        }
+      }
+      PropertyBucket b = new PropertyBucket(uuidHigh, uuidLow, concept, prop, propName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
   public static SProperty getProperty(@NotNull SAbstractConcept concept, long prop, String propName) {
     final SConceptId cid = MetaIdHelper.getConcept(concept);
-    return getProperty(MetaIdFactory.propId(cid, prop), propName);
-  }
-
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
-    return getProperty(MetaIdFactory.propId(lang, concept, prop), propName);
+    SLanguageId langId = cid.getLanguageId();
+    return getProperty(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), prop, propName);
   }
 
   @NotNull
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
-    SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
-    Pair<SReferenceLinkId, String> p = new Pair<SReferenceLinkId, String>(id, refName);
-    SReferenceLink result = ourRefIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    SConceptId cid = id.getConceptId();
+    SLanguageId langId = cid.getLanguageId();
+    return getReferenceLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), id.getIdValue(), refName);
   }
 
   @NotNull
-  public static SReferenceLink getReferenceLink(long uuidHigh, long uuidLow, long concept, long ref, String refName) {
-    return getReferenceLink(MetaIdFactory.refId(uuidHigh, uuidLow, concept, ref), refName);
+  public static SReferenceLink getReferenceLink(long uuidHigh, long uuidLow, long concept, long link, String refName) {
+    List<AssociationLinkBucket> bucketList = getBucketList(ourAssociations, bucketKey(uuidHigh, uuidLow, concept, link));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        AssociationLinkBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept, link)) {
+          return rv.get();
+        }
+      }
+      AssociationLinkBucket b = new AssociationLinkBucket(uuidHigh, uuidLow, concept, link, refName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
-    return getReferenceLink(MetaIdFactory.refId(lang, concept, ref), refName);
+  public static SReferenceLink getReferenceLink(@NotNull SAbstractConcept concept, long link, String linkName) {
+    final SConceptId cid = MetaIdHelper.getConcept(concept);
+    SLanguageId langId = cid.getLanguageId();
+    return getReferenceLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), link, linkName);
   }
 
   @NotNull
   public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
-    SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
-    Pair<SContainmentLinkId, String> p = new Pair<SContainmentLinkId, String>(id, linkName);
-    SContainmentLink result = ourLinkIds.putIfAbsent(p, c);
-    return result != null ? result : c;
+    SConceptId cid = id.getConceptId();
+    SLanguageId langId = cid.getLanguageId();
+    return getContainmentLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), id.getIdValue(), linkName);
   }
 
   @NotNull
   public static SContainmentLink getContainmentLink(long uuidHigh, long uuidLow, long concept, long link, String linkName) {
-    return getContainmentLink(MetaIdFactory.linkId(uuidHigh, uuidLow, concept, link), linkName);
+    List<AggregationLinkBucket> bucketList = getBucketList(ourAggregations, bucketKey(uuidHigh, uuidLow, concept, link));
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (bucketList) {
+      for (int i = 0, x = bucketList.size(); i < x; i++) {
+        AggregationLinkBucket rv = bucketList.get(i);
+        if (rv.isBucketFor(uuidHigh, uuidLow, concept, link)) {
+          return rv.get();
+        }
+      }
+      AggregationLinkBucket b = new AggregationLinkBucket(uuidHigh, uuidLow, concept, link, linkName);
+      bucketList.add(b);
+      return b.get();
+    }
   }
 
-  @NotNull
-  @Deprecated //todo: 2 hex values instead of UUID
-  public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
-    return getContainmentLink(MetaIdFactory.linkId(lang, concept, link), linkName);
+    public static SContainmentLink getContainmentLink(@NotNull SAbstractConcept concept, long link, String linkName) {
+    final SConceptId cid = MetaIdHelper.getConcept(concept);
+      SLanguageId langId = cid.getLanguageId();
+    return getContainmentLink(langId.getHighBits(), langId.getLowBits(), cid.getIdValue(), link, linkName);
   }
 
   @NotNull
@@ -215,6 +260,12 @@ public abstract class MetaAdapterFactory {
    * which caused a stack overflow at last.
    */
   public static SAbstractConcept getConceptById(SConceptId id){
+    // FIXME the main defect of this method is that it goes to ConceptRegistry.getInstance()
+    //       and denies 'factory' nature of MAF. It's tempting to use this method e.g.
+    //       from SReferenceLinkAdapter.getTargetConcept(), but there shall be distinction between
+    //       instantiation of SXAdapter (what MAF) does, and its implementation (its "proxy" aspect)
+    //       that may access ConceptRegistry and alike to fulfil the contract. MAF doing the same
+    //       becomes dangerous.
     return MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
   }
 
@@ -240,6 +291,138 @@ public abstract class MetaAdapterFactory {
         return myId.equals(o.myId) && myName.equals(o.myName);
       }
       return false;
+    }
+  }
+
+  private static <T> List<T> getBucketList(TLongObjectHashMap<List<T>> map, long bucketKey) {
+    //noinspection SynchronizationOnLocalVariableOrMethodParameter
+    synchronized (map) {
+      List<T> rv = map.get(bucketKey);
+      if (rv == null) {
+        // I don't expect too much collisions
+        map.put(bucketKey, rv = new ArrayList<T>(4));
+      }
+      return rv;
+    }
+  }
+
+  // bucket key doesn't need to be unique for a concept, just rare enough to get less collisions
+  // if necessary, may add hashcode of concept name if we'd like to distinguish concepts with new and old name (as it used to be with MPS 3.4)
+  private static long bucketKey(long highBits, long lowBits, long concept) {
+    return concept * 11 + lowBits + highBits * 17;
+  }
+
+  private static long bucketKey(long highBits, long lowBits, long concept, long feature) {
+    return feature * 19 + concept * 11 + lowBits + highBits * 17;
+  }
+
+  /*
+   * Original idea was to have ConceptBucket and to keep props and links in there. However,
+   * access to features (say, MAF.getProperty) doesn't give any hint whether it comes through interface or a class concept.
+   * Possible mitigation is to have generic ConceptBucketBase without prop/link fields, with 3 subclasses (for InterfaceConcept,
+   * ClassConcept and AbstractConcept). Latter would receive all prop/link collections and would be used for corresponding MAF accessors
+   * when exact concept kind is unknown. For the time being, however, I decided to try with distinct map per feature as it results in less
+   * indirection (map of list vs map of object with map/list), OTOH might be fruitful to try aforementioned approach as it gives a chance for
+   * further optimization based on limited number of features per concept (i.e. may stick to plain/sorted arrays and manage them in AbstractConceptBucket
+   * plain arrays could be used with copy-on-write semantics and with access synchronized only when changed).
+   */
+  static class AbstractConceptBucket {
+    private final long myLanguageHighBits;
+    private final long myLanguageLowBits;
+    private final long myConceptId;
+
+    /*package*/ AbstractConceptBucket(long highBits, long lowBits, long concept) {
+      myLanguageHighBits = highBits;
+      myLanguageLowBits = lowBits;
+      myConceptId = concept;
+    }
+
+    /*package*/ final boolean isBucketFor(long highBits, long lowBits, long concept) {
+      return myLanguageHighBits == highBits && myLanguageLowBits == lowBits && myConceptId == concept;
+    }
+  }
+
+  static final class ConceptBucket extends AbstractConceptBucket {
+    private final SConceptAdapterById myConcept;
+
+    /*package*/ ConceptBucket(long highBits, long lowBits, long concept, String name) {
+      super(highBits, lowBits, concept);
+      myConcept = new SConceptAdapterById(MetaIdFactory.conceptId(highBits, lowBits, concept), name);
+    }
+
+    public SConcept get() {
+      return myConcept;
+    }
+  }
+
+  static final class InterfaceBucket extends AbstractConceptBucket {
+    private final SInterfaceConceptAdapterById myConcept;
+
+    InterfaceBucket(long highBits, long lowBits, long concept, String name) {
+      super(highBits, lowBits, concept);
+      myConcept = new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(highBits, lowBits, concept), name);
+    }
+
+    public SInterfaceConcept get() {
+      return myConcept;
+    }
+  }
+
+
+  static abstract class StructuralFeatureBucket {
+    private final long myLanguageHighBits;
+    private final long myLanguageLowBits;
+    private final long myConceptId;
+    private final long myFeatureId;
+
+    /*package*/ StructuralFeatureBucket(long highBits, long lowBits, long concept, long feature) {
+      myLanguageHighBits = highBits;
+      myLanguageLowBits = lowBits;
+      myConceptId = concept;
+      myFeatureId = feature;
+    }
+
+    /*package*/ final boolean isBucketFor(long highBits, long lowBits, long concept, long feature) {
+      return myLanguageHighBits == highBits && myLanguageLowBits == lowBits && myConceptId == concept && myFeatureId == feature;
+    }
+  }
+
+  static final class PropertyBucket extends StructuralFeatureBucket {
+    private final SPropertyAdapterById myProperty;
+
+    /*package*/ PropertyBucket(long highBits, long lowBits, long concept, long prop, String name) {
+      super(highBits, lowBits, concept, prop);
+      myProperty = new SPropertyAdapterById(MetaIdFactory.propId(highBits, lowBits, concept, prop), name);
+    }
+
+    /*package*/ SProperty get() {
+      return myProperty;
+    }
+  }
+
+  static final class AssociationLinkBucket extends StructuralFeatureBucket {
+    private final SReferenceLinkAdapterById myLink;
+
+    /*package*/ AssociationLinkBucket(long highBits, long lowBits, long concept, long link, String name) {
+      super(highBits, lowBits, concept, link);
+      myLink = new SReferenceLinkAdapterById(MetaIdFactory.refId(highBits, lowBits, concept, link), name);
+    }
+
+    /*package*/ SReferenceLink get() {
+      return myLink;
+    }
+  }
+
+  static final class AggregationLinkBucket extends StructuralFeatureBucket {
+    private final SContainmentLinkAdapterById myLink;
+
+    /*package*/ AggregationLinkBucket(long highBits, long lowBits, long concept, long link, String name) {
+      super(highBits, lowBits, concept, link);
+      myLink = new SContainmentLinkAdapterById(MetaIdFactory.linkId(highBits, lowBits, concept, link), name);
+    }
+
+    /*package*/ SContainmentLinkAdapterById get() {
+      return myLink;
     }
   }
 }

@@ -68,6 +68,9 @@ public class NodePresentationUtil {
     }
     return m;
   }
+  public static String matchingText(SAbstractConcept concept) {
+    return matchingText(concept, false);
+  }
 
   public static String matchingText(SAbstractConcept concept, boolean referentPresentation) {
     if (!referentPresentation && !concept.getConceptAlias().isEmpty()) {
@@ -104,16 +107,24 @@ public class NodePresentationUtil {
     return node.getPresentation();
   }
 
-  public static String descriptionText(SConcept concept, boolean referentPresentation) {
-    if (!referentPresentation) {
-      if (!concept.getShortDescription().isEmpty()) {
-        return concept.getShortDescription();
+  public static String descriptionText(SAbstractConcept concept) {
+    return descriptionText(concept, false);
+  }
+
+  public static String descriptionText(SAbstractConcept concept, boolean referentPresentation) {
+    if (concept instanceof SConcept) {
+      if (!referentPresentation) {
+        if (!concept.getShortDescription().isEmpty()) {
+          return concept.getShortDescription();
+        }
+        SConcept superConcept = ((SConcept) concept).getSuperConcept();
+        if (superConcept != null) {
+          return "(" + superConcept.getName() + " in " + superConcept.getLanguage().getQualifiedName() + ")";
+        }
       }
-      if (concept.getSuperConcept() != null) {
-        return "(" + concept.getSuperConcept().getName() + " in " + concept.getSuperConcept().getLanguage().getQualifiedName() + ")";
-      }
+      return SNodeUtil.concept_ConceptDeclaration.getName() + " (" + SNodeUtil.concept_ConceptDeclaration.getLanguage().getQualifiedName() + ")";
     }
-    return SNodeUtil.concept_ConceptDeclaration.getName() + " (" + SNodeUtil.concept_ConceptDeclaration.getLanguage().getQualifiedName() + ")";
+    return "";
   }
 
   public static String descriptionText(SNode node) {

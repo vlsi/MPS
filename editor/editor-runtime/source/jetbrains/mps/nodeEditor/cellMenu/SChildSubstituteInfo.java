@@ -17,26 +17,26 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
 /**
  * @author simon
  */
-public class SChildSubstituteInfo extends AbstractSubstituteInfo {
-  //todo remove
-  public final static String SUBSTITUTE = "jetbrains.mps.nodeEditor.cellMenu.SUBSTITUTE";
+public class SChildSubstituteInfo extends AbstractSubstituteInfo implements DefaultSubstituteInfo {
   private SContainmentLink myLink;
   private SNode myParentNode;
   private SNode myCurrentChild;
@@ -47,15 +47,16 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo {
   }
 
   public SChildSubstituteInfo(EditorCell editorCell, SNode parentNode, SContainmentLink link, SNode currentChild) {
-    super(editorCell);
+    super(editorCell, parentNode);
     myParentNode = parentNode;
     myLink =  link;
     myCurrentChild = currentChild;
   }
 
+  @NotNull
   @Override
-  protected DefaultTransformationMenuContext createTransformationContext() {
-    return DefaultTransformationMenuContext.createInitialContextForCell(getEditorCell(), MenuLocations.SUBSTITUTE);
+  protected String getMenuLocation() {
+    return MenuLocations.SUBSTITUTE;
   }
 
   @Override

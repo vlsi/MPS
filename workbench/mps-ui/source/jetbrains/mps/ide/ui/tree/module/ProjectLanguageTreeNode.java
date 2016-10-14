@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,10 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
   @Override
   protected void doInit() {
-    populate();
+    ModuleNodeChildrenProvider childrenProvider = getAncestor(ModuleNodeChildrenProvider.class);
+    if (childrenProvider == null || !childrenProvider.populate(this, getModule())) {
+      populate();
+    }
     myInitialized = true;
   }
 
@@ -102,14 +105,16 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     for (Generator generator : getModule().getGenerators()) {
-      MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
+      MPSTreeNode generatorNode = createFor(myProject, generator);
       add(generatorNode);
     }
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (SModuleReference mr : getModule().getRuntimeModulesReferences()) {
       SModule m = ModuleRepositoryFacade.getInstance().getModule(mr);
-      if (m == null || m == getModule()) continue;
+      if (m == null || m == getModule()) {
+        continue;
+      }
       languageRuntime.add(createFor(myProject, m));
     }
     add(languageRuntime);
@@ -127,8 +132,11 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     add(allModels);
   }
 
-  public class AllModelsTreeNode extends TextTreeNode {
-    public AllModelsTreeNode() {
+  /**
+   * need a dedicated instance as long as ProjectTreeFindHelper uses instanceof to decide whether to descend a node or not.
+   */
+  public static class AllModelsTreeNode extends TextTreeNode {
+    /*package*/ AllModelsTreeNode() {
       super("all models");
     }
   }

@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractFinderDeclaration = new ConceptPresentationBuilder().create();
@@ -32,103 +29,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0r.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractFinderDeclaration;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CategorizeBlock;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CheckCancelledStatusStatement;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConceptFunctionParameter_node;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ExecuteFinderExpression;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ExecuteFindersGetSearchResults;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_FindBlock;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_FinderDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_FinderReference;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_IsApplicableBlock;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IsUsedByDefault;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_IsVisibleBlock;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_MakeResultProvider;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_NodeStatement;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ResultStatement;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_SearchedNodesBlock;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractFinderDeclaration:
+        return props_AbstractFinderDeclaration;
+      case LanguageConceptSwitch.CategorizeBlock:
+        return props_CategorizeBlock;
+      case LanguageConceptSwitch.CheckCancelledStatusStatement:
+        return props_CheckCancelledStatusStatement;
+      case LanguageConceptSwitch.ConceptFunctionParameter_node:
+        return props_ConceptFunctionParameter_node;
+      case LanguageConceptSwitch.ExecuteFinderExpression:
+        return props_ExecuteFinderExpression;
+      case LanguageConceptSwitch.ExecuteFindersGetSearchResults:
+        return props_ExecuteFindersGetSearchResults;
+      case LanguageConceptSwitch.FindBlock:
+        return props_FindBlock;
+      case LanguageConceptSwitch.FinderDeclaration:
+        return props_FinderDeclaration;
+      case LanguageConceptSwitch.FinderReference:
+        return props_FinderReference;
+      case LanguageConceptSwitch.IsApplicableBlock:
+        return props_IsApplicableBlock;
+      case LanguageConceptSwitch.IsUsedByDefault:
+        return props_IsUsedByDefault;
+      case LanguageConceptSwitch.IsVisibleBlock:
+        return props_IsVisibleBlock;
+      case LanguageConceptSwitch.MakeResultProvider:
+        return props_MakeResultProvider;
+      case LanguageConceptSwitch.NodeStatement:
+        return props_NodeStatement;
+      case LanguageConceptSwitch.ResultStatement:
+        return props_ResultStatement;
+      case LanguageConceptSwitch.SearchedNodesBlock:
+        return props_SearchedNodesBlock;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0r = buildConceptIndices(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, "jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b14c36L, "jetbrains.mps.lang.findUsages.structure.CategorizeBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L, "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116c9c51f82L, "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L, "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a88L, "jetbrains.mps.lang.findUsages.structure.FindBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, "jetbrains.mps.lang.findUsages.structure.FinderReference"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a94L, "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1660f4e85a04a8fL, "jetbrains.mps.lang.findUsages.structure.IsUsedByDefault"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11b36e60151L, "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x585a05e7f40a28d1L, "jetbrains.mps.lang.findUsages.structure.MakeResultProvider"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL, "jetbrains.mps.lang.findUsages.structure.NodeStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L, "jetbrains.mps.lang.findUsages.structure.ResultStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b5cc19L, "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"));
 }

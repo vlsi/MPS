@@ -36,14 +36,17 @@ public class TestEventsDispatcher {
   }
 
   public void onTestEvent(TestEvent event) {
-    this.myState.setToken(event.getToken());
-    if (TestEvent.START_TEST_PREFIX.equals(event.getToken())) {
+    String token = event.getToken();
+    this.myState.setToken(token);
+    if (TestEvent.START_TEST_PREFIX.equals(token)) {
       this.myState.onTestStarted(event);
-    } else if (TestEvent.FINISH_TEST_PREFIX.equals(event.getToken())) {
+    } else if (TestEvent.FINISH_TEST_PREFIX.equals(token)) {
       this.myState.onTestFinished(event);
-    } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(event.getToken())) {
+    } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(token)) {
       this.myState.onTestAssumptionFailure(event);
-    } else if (TestEvent.FAILURE_TEST_PREFIX.equals(event.getToken())) {
+    } else if (TestEvent.IGNORE_FAILURE_TEST_PREFIX.equals(token)) {
+      this.myState.onTestAssumptionFailure(event);
+    } else if (TestEvent.FAILURE_TEST_PREFIX.equals(token)) {
       this.myState.onTestFailure(event);
     }
   }

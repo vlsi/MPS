@@ -8,15 +8,13 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.editor.menus.transformation.DefaultMenuLookup;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,14 +22,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class MenuLoadingUtils {
   public static List<TransformationMenuItem> loadDefaultMenu(EditorComponent editorComponent, final String location) {
     final EditorContext editorContext = editorComponent.getEditorContext();
-    final SNode node = editorComponent.getEditedNode();
+    SNode node = editorComponent.getEditedNode();
     SRepository repository = editorContext.getRepository();
-    final DefaultMenuLookup<TransformationMenu> lookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(repository), SNodeOperations.getConcept(node));
+    final TransformationMenuLookup lookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(repository), SNodeOperations.getConcept(node));
 
     final Wrappers._T<List<TransformationMenuItem>> items = new Wrappers._T<List<TransformationMenuItem>>();
     repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        items.value = DefaultTransformationMenuContext.createInitialContextForNode(editorContext, node, location).createItems(lookup);
+        items.value = MenuUtil.createMenu(lookup, location, editorContext.getSelectedCell());
       }
     });
     return items.value;
@@ -43,16 +41,16 @@ public class MenuLoadingUtils {
 
   private static List<TransformationMenuItem> loadNamedMenu(EditorComponent editorComponent, String menuFqName, final String location) {
     final EditorContext editorContext = editorComponent.getEditorContext();
-    final SNode node = editorComponent.getEditedNode();
+    SNode node = editorComponent.getEditedNode();
     SRepository repository = editorContext.getRepository();
 
-    final MenuLookup<TransformationMenu> lookup = new NamedTransformationMenuLookup(LanguageRegistry.getInstance(repository), SNodeOperations.getConcept(node), menuFqName);
+    final TransformationMenuLookup lookup = new NamedTransformationMenuLookup(LanguageRegistry.getInstance(repository), SNodeOperations.getConcept(node), menuFqName);
 
     final Wrappers._T<List<TransformationMenuItem>> items = new Wrappers._T<List<TransformationMenuItem>>();
 
     repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        items.value = DefaultTransformationMenuContext.createInitialContextForNode(editorContext, node, location).createItems(lookup);
+        items.value = MenuUtil.createMenu(lookup, location, editorContext.getSelectedCell());
       }
     });
 

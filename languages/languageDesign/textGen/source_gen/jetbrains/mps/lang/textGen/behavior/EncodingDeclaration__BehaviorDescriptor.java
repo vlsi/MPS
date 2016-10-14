@@ -31,9 +31,8 @@ public final class EncodingDeclaration__BehaviorDescriptor extends BaseBHDescrip
 
   public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
   public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
-  public static final SMethod<Boolean> usesParameterObjectFor_idhEwIGRw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObjectFor").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRw").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConceptFunctionParameter_id2D1PBM_bxJg, getExpectedReturnType_idhEwIGRD, usesParameterObjectFor_idhEwIGRw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConceptFunctionParameter_id2D1PBM_bxJg, getExpectedReturnType_idhEwIGRD);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -45,9 +44,6 @@ public final class EncodingDeclaration__BehaviorDescriptor extends BaseBHDescrip
   }
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     return _quotation_createNode_8f19ed_a0a1();
-  }
-  /*package*/ static boolean usesParameterObjectFor_idhEwIGRw(@NotNull SNode __thisNode__, SNode parameter) {
-    return true;
   }
 
   /*package*/ EncodingDeclaration__BehaviorDescriptor() {
@@ -68,8 +64,6 @@ public final class EncodingDeclaration__BehaviorDescriptor extends BaseBHDescrip
     switch (methodIndex) {
       case 1:
         return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
-      case 2:
-        return (T) ((Boolean) usesParameterObjectFor_idhEwIGRw(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

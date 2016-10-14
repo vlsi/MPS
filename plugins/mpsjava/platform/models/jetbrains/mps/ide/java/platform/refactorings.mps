@@ -56,6 +56,7 @@
     <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
+    <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -81,6 +82,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="7282214966977214052" name="jetbrains.mps.baseLanguage.structure.NestedNewExpression" flags="ng" index="2pIyA9" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
@@ -6086,8 +6088,14 @@
     </node>
     <node concept="3clFb_" id="3UdhnxHuoDA" role="jymVt">
       <property role="TrG5h" value="appendProblems" />
+      <node concept="37vLTG" id="6o1U_cwyXDv" role="3clF46">
+        <property role="TrG5h" value="scope" />
+        <node concept="3uibUv" id="6o1U_cwz1Z6" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+        </node>
+      </node>
       <node concept="37vLTG" id="3UdhnxHuoDD" role="3clF46">
-        <property role="TrG5h" value="ussages" />
+        <property role="TrG5h" value="usages" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="3UdhnxHuoDE" role="1tU5fm">
           <ref role="3uigEE" to="9erk:~SearchResults" resolve="SearchResults" />
@@ -6117,6 +6125,9 @@
             <node concept="2YIFZM" id="1KUoCipvFxW" role="33vP2m">
               <ref role="1Pybhc" to="89o2:7nrhK3uHecP" resolve="MethodRefactoringUtils" />
               <ref role="37wK5l" to="89o2:7nrhK3uHedz" resolve="findOverridingMethods" />
+              <node concept="37vLTw" id="6o1U_cwz2b2" role="37wK5m">
+                <ref role="3cqZAo" node="6o1U_cwyXDv" resolve="scope" />
+              </node>
               <node concept="37vLTw" id="1nl8jG9LaRA" role="37wK5m">
                 <ref role="3cqZAo" node="3UdhnxHuoGU" resolve="myMethod" />
               </node>
@@ -6168,7 +6179,7 @@
               </node>
               <node concept="2OqwBi" id="1KUoCipvz$f" role="2GsD0m">
                 <node concept="37vLTw" id="2BHiRxgld_r" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3UdhnxHuoDD" resolve="ussages" />
+                  <ref role="3cqZAo" node="3UdhnxHuoDD" resolve="usages" />
                 </node>
                 <node concept="liA8E" id="1KUoCipvz$h" role="2OqNvi">
                   <ref role="37wK5l" to="9erk:~SearchResults.getSearchResults():java.util.List" resolve="getSearchResults" />
@@ -6194,7 +6205,7 @@
           <node concept="3y3z36" id="1KUoCipvz$s" role="3clFbw">
             <node concept="10Nm6u" id="1KUoCipvz$t" role="3uHU7w" />
             <node concept="37vLTw" id="2BHiRxgmG76" role="3uHU7B">
-              <ref role="3cqZAo" node="3UdhnxHuoDD" resolve="ussages" />
+              <ref role="3cqZAo" node="3UdhnxHuoDD" resolve="usages" />
             </node>
           </node>
         </node>
@@ -7741,6 +7752,20 @@
                                       <node concept="2YIFZM" id="1KUoCipvscU" role="37vLTx">
                                         <ref role="1Pybhc" to="89o2:7nrhK3uHecP" resolve="MethodRefactoringUtils" />
                                         <ref role="37wK5l" to="89o2:7nrhK3uHefw" resolve="findMethodUsages" />
+                                        <node concept="2OqwBi" id="psC2_anow6" role="37wK5m">
+                                          <node concept="2YIFZM" id="psC2_annsu" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                            <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                            <node concept="1rXfSq" id="psC2_ano5N" role="37wK5m">
+                                              <ref role="37wK5l" to="xygl:~Task.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                                            </node>
+                                          </node>
+                                          <node concept="2pIyA9" id="psC2_anp4S" role="2OqNvi">
+                                            <node concept="1pGfFk" id="psC2_anpWo" role="2ShVmc">
+                                              <ref role="37wK5l" to="z1c4:~Project$ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="Project.ProjectScope" />
+                                            </node>
+                                          </node>
+                                        </node>
                                         <node concept="2OqwBi" id="1KUoCipvscV" role="37wK5m">
                                           <node concept="37vLTw" id="2BHiRxeuyJ$" role="2Oq$k0">
                                             <ref role="3cqZAo" node="3UdhnxHuoLR" resolve="myModel" />
@@ -7961,6 +7986,20 @@
                                     <node concept="2OqwBi" id="3JD6rrJwcZX" role="3clFbG">
                                       <node concept="liA8E" id="3JD6rrJwcZY" role="2OqNvi">
                                         <ref role="37wK5l" node="3UdhnxHuoDA" resolve="appendProblems" />
+                                        <node concept="2OqwBi" id="6o1U_cwzbnU" role="37wK5m">
+                                          <node concept="2YIFZM" id="6o1U_cwz9xA" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                            <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                            <node concept="1rXfSq" id="6o1U_cwz50I" role="37wK5m">
+                                              <ref role="37wK5l" to="xygl:~Task.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                                            </node>
+                                          </node>
+                                          <node concept="2pIyA9" id="6o1U_cwzbPj" role="2OqNvi">
+                                            <node concept="1pGfFk" id="6o1U_cwzcCe" role="2ShVmc">
+                                              <ref role="37wK5l" to="z1c4:~Project$ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="Project.ProjectScope" />
+                                            </node>
+                                          </node>
+                                        </node>
                                         <node concept="37vLTw" id="2BHiRxgha8U" role="37wK5m">
                                           <ref role="3cqZAo" node="3JD6rrJwk3M" resolve="usages" />
                                         </node>

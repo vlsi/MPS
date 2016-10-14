@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_QueryFunction_TransformationMenu_Icon = new ConceptPresentationBuilder().create();
@@ -21,48 +18,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_QueryFunction_TransformationMenu_Icon;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_QueryFunction_TransformationMenu_Tooltip;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_TransformationFeature_Icon;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_TransformationFeature_Tooltip;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_TransformationLocation_ContextActionsTool;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Icon:
+        return props_QueryFunction_TransformationMenu_Icon;
+      case LanguageConceptSwitch.QueryFunction_TransformationMenu_Tooltip:
+        return props_QueryFunction_TransformationMenu_Tooltip;
+      case LanguageConceptSwitch.TransformationFeature_Icon:
+        return props_TransformationFeature_Icon;
+      case LanguageConceptSwitch.TransformationFeature_Tooltip:
+        return props_TransformationFeature_Tooltip;
+      case LanguageConceptSwitch.TransformationLocation_ContextActionsTool:
+        return props_TransformationLocation_ContextActionsTool;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1acaL, "jetbrains.mps.editor.contextActionsTool.lang.menus.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x652f322a3695c3acL, "jetbrains.mps.editor.contextActionsTool.lang.menus.structure.QueryFunction_TransformationMenu_Tooltip"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1ac7L, "jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationFeature_Icon"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da5L, "jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationFeature_Tooltip"), MetaAdapterFactory.getConcept(0xb1c7d06f525d43b5L, 0x9b0a2fc8f7f076baL, 0x7c45559defbb1da8L, "jetbrains.mps.editor.contextActionsTool.lang.menus.structure.TransformationLocation_ContextActionsTool"));
 }

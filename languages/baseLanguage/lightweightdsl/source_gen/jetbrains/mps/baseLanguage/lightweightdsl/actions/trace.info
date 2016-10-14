@@ -9,18 +9,10 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,36,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
-      <unit at="36,42,40,9" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$1" />
-      <unit at="70,42,74,9" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$3" />
-      <unit at="104,42,108,9" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$5" />
-      <unit at="164,34,168,7" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$8" />
-      <unit at="139,34,148,7" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$7" />
-      <unit at="111,57,126,13" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$6" />
-      <unit at="43,57,61,13" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$2" />
-      <unit at="77,57,95,13" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$4" />
-      <unit at="29,0,175,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated" />
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/1055884086724932453">
@@ -91,71 +83,6 @@
       </scope>
       <unit id="2141245758542056547" at="28,196,35,5" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil$1" />
       <unit id="2260648088428400642" at="16,0,52,0" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil" />
-    </file>
-  </root>
-  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/3751132065236797749">
-    <file name="QueriesGenerated.java">
-      <node id="6141693041785103404" at="37,44,38,441" concept="4" />
-      <node id="544737153666968060" at="46,47,47,51" concept="0" />
-      <node id="3384419124891068988" at="49,19,50,104" concept="4" />
-      <node id="3049271543087883765" at="52,61,53,175" concept="4" />
-      <node id="3751132065236797799" at="58,64,59,32" concept="4" />
-      <node id="510971631002957896" at="71,44,72,445" concept="4" />
-      <node id="544737153667003946" at="80,47,81,51" concept="0" />
-      <node id="510971631002957901" at="83,19,84,104" concept="4" />
-      <node id="510971631002957911" at="86,61,87,175" concept="4" />
-      <node id="510971631002957907" at="92,64,93,34" concept="4" />
-      <node id="544737153667071646" at="105,44,106,453" concept="4" />
-      <node id="544737153667087473" at="114,47,115,51" concept="0" />
-      <node id="544737153667085215" at="117,19,118,104" concept="4" />
-      <node id="544737153667077246" at="120,61,121,281" concept="4" />
-      <node id="6909536935410900244" at="140,43,141,34" concept="3" />
-      <node id="544737153667144513" at="143,45,144,186" concept="4" />
-      <node id="544737153666965415" at="46,0,49,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="544737153667003944" at="80,0,83,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="544737153667087471" at="114,0,117,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="544737153667144511" at="143,0,146,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="544737153666966879" at="44,98,49,19" concept="0" />
-      <node id="544737153667003936" at="78,98,83,19" concept="0" />
-      <node id="544737153667087463" at="112,98,117,19" concept="0" />
-      <node id="544737153667349909" at="141,34,146,13" concept="4" />
-      <scope id="544737153666965416" at="46,47,47,51" />
-      <scope id="3049271543087880856" at="52,61,53,175" />
-      <scope id="3751132065236797798" at="58,64,59,32" />
-      <scope id="544737153667003945" at="80,47,81,51" />
-      <scope id="510971631002957910" at="86,61,87,175" />
-      <scope id="510971631002957906" at="92,64,93,34" />
-      <scope id="544737153667087472" at="114,47,115,51" />
-      <scope id="544737153667076114" at="120,61,121,281" />
-      <scope id="544737153667144512" at="143,45,144,186" />
-      <scope id="544737153666965415" at="46,0,49,0">
-        <var name="it" id="544737153666965415" />
-      </scope>
-      <scope id="544737153667003944" at="80,0,83,0">
-        <var name="it" id="544737153667003944" />
-      </scope>
-      <scope id="544737153667087471" at="114,0,117,0">
-        <var name="it" id="544737153667087471" />
-      </scope>
-      <scope id="544737153667144511" at="143,0,146,0">
-        <var name="it" id="544737153667144511" />
-      </scope>
-      <scope id="3751132065236797764" at="44,98,50,104" />
-      <scope id="510971631002957900" at="78,98,84,104" />
-      <scope id="544737153667062221" at="112,98,118,104" />
-      <scope id="7259558235997791094" at="140,43,146,13">
-        <var name="c" id="6909536935410900245" />
-      </scope>
-      <unit id="544737153666965415" at="45,322,49,17" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$3" />
-      <unit id="544737153667003944" at="79,322,83,17" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$5" />
-      <unit id="544737153667087471" at="113,322,117,17" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$7" />
-      <unit id="544737153667144511" at="142,474,146,11" name="jetbrains.mps.baseLanguage.lightweightdsl.actions.QueriesGenerated$8" />
-    </file>
-  </root>
-  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/6305381134221450438">
-    <file name="QueriesGenerated.java">
-      <node id="6305381134221450767" at="165,43,166,553" concept="4" />
-      <scope id="6305381134221473967" at="165,43,166,553" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.actions)/9097849371504700257">

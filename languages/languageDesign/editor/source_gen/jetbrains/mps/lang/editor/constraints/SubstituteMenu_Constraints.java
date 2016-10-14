@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SubstituteMenu_Constraints extends BaseConstraintsDescriptor {
   public SubstituteMenu_Constraints() {
-    super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x353e973152a92000L, "jetbrains.mps.lang.editor.structure.SubstituteMenu"));
+    super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a0078L, "jetbrains.mps.lang.editor.structure.SubstituteMenu"));
   }
 
   @Override

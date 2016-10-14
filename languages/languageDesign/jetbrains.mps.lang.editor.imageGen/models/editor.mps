@@ -2,7 +2,7 @@
 <model ref="r:d306cf2d-7a9b-45e7-845a-141e46480d21(jetbrains.mps.lang.editor.imageGen.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -103,7 +103,7 @@
         <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
       </node>
       <node concept="1iCGBv" id="2OaO_a3$2AP" role="3EZMnx">
-        <ref role="1NtTu8" to="l04x:2OaO_a3$2sm" />
+        <ref role="1NtTu8" to="l04x:2OaO_a3$2sm" resolve="node" />
         <node concept="1sVBvm" id="2OaO_a3$2AR" role="1sWHZn">
           <node concept="3SHvHV" id="2OaO_a3$2BR" role="2wV5jI" />
         </node>
@@ -228,7 +228,7 @@
                   <node concept="2OqwBi" id="IQN7WiQ_E1" role="3uHU7B">
                     <node concept="pncrf" id="IQN7WiQ_Bp" role="2Oq$k0" />
                     <node concept="3TrEf2" id="IQN7WiQ_Kg" role="2OqNvi">
-                      <ref role="3Tt5mk" to="l04x:2OaO_a3$2sm" />
+                      <ref role="3Tt5mk" to="l04x:2OaO_a3$2sm" resolve="node" />
                     </node>
                   </node>
                 </node>

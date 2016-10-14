@@ -22,13 +22,16 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
@@ -37,12 +40,14 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -50,6 +55,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -68,7 +74,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -82,10 +87,9 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.event.SModelImportEvent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ChangesTracking {
+  private static final Object LOCK = new Object();
   private final Project myProject;
   private final CurrentDifference myDifference;
   private final SimpleCommandQueue myQueue;
@@ -99,6 +103,7 @@ public class ChangesTracking {
   private Tuples._2<SNodeId, List<SNodeId>> myLastParentAndNewChildrenIds;
   private FileStatus myStatusOnLastUpdate;
   private EventConsumingMapping myEventConsumingMapping = new EventConsumingMapping();
+
   public ChangesTracking(@NotNull CurrentDifferenceRegistry registry, @NotNull CurrentDifference difference) {
     myDifference = difference;
     myProject = registry.getProject();
@@ -107,8 +112,9 @@ public class ChangesTracking {
     myRegistry = registry;
     registry.addEventCollector(myModelDescriptor, myEventCollector);
   }
+
   public void dispose() {
-    synchronized (this) {
+    synchronized (LOCK) {
       if (!(myDisposed)) {
         myDisposed = true;
         myRegistry.removeEventCollector(myModelDescriptor, myEventCollector);
@@ -120,6 +126,7 @@ public class ChangesTracking {
       }
     }
   }
+
   private void updateCacheForChange(@NotNull ModelChange change) {
     SNodeId id = getNodeIdForChange(change);
     if (id != null) {
@@ -130,11 +137,12 @@ public class ChangesTracking {
     if (change instanceof AddRootChange) {
       MapSequence.fromMap(myAddedNodesToChanges).put(change.getRootId(), change);
     } else if (change instanceof NodeGroupChange) {
-      for (SNodeId i : Sequence.fromIterable(getNodeIdsForNodeGroupChange((NodeGroupChange) change, myLastParentAndNewChildrenIds))) {
-        MapSequence.fromMap(myAddedNodesToChanges).put(i, change);
+      for (SNodeId nodeId : Sequence.fromIterable(getNodeIdsForNodeGroupChange((NodeGroupChange) change, myLastParentAndNewChildrenIds))) {
+        MapSequence.fromMap(myAddedNodesToChanges).put(nodeId, change);
       }
     }
   }
+
   private void buildCaches() {
     myNodesToChanges.clear();
     SetSequence.fromSet(myMetadataChanges).clear();
@@ -144,6 +152,7 @@ public class ChangesTracking {
       updateCacheForChange(ch);
     }
   }
+
   /*package*/ void scheduleFullUpdate(final boolean force) {
     myQueue.addTask(new Runnable() {
       public void run() {
@@ -151,6 +160,8 @@ public class ChangesTracking {
       }
     });
   }
+
+  protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
   private void update(boolean force) {
     myQueue.assertSoftlyIsCommandThread();
     if (!(myDifference.isEnabled())) {
@@ -167,7 +178,14 @@ public class ChangesTracking {
     if (status != null && myStatusOnLastUpdate == status && !(force)) {
       return;
     }
-    myDifference.removeChangeSet();
+
+    SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        myDifference.removeChangeSet();
+      }
+    });
+
     myStatusOnLastUpdate = status;
     if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
@@ -197,9 +215,9 @@ public class ChangesTracking {
         return;
       }
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        synchronized (ChangesTracking.this) {
+        synchronized (LOCK) {
           if (!(myDisposed)) {
             DiffModelUtil.renameModel(baseVersionModel.value, "repository");
             ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
@@ -210,7 +228,8 @@ public class ChangesTracking {
       }
     });
   }
-  private boolean isUnderVcs(SModel model) {
+
+  private boolean isUnderVcs(@NotNull SModel model) {
     DataSource ds = model.getSource();
     IFile file = null;
     if (ds instanceof FileDataSource) {
@@ -218,9 +237,19 @@ public class ChangesTracking {
     } else if (ds instanceof FilePerRootDataSource) {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
-    VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+    if (file == null) {
+      return false;
+    }
+    if (!(file instanceof IdeaFile)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("File " + file + " must be a project file and managed by IDEA FS");
+      }
+      return false;
+    }
+    VirtualFile vFile = ((IdeaFile) file).getVirtualFile();
     return vFile != null && ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vFile) != null;
   }
+
   private boolean isAdded(SModel model) {
     DataSource ds = model.getSource();
     IFile file = null;
@@ -229,13 +258,16 @@ public class ChangesTracking {
     } else if (ds instanceof FilePerRootDataSource) {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
-    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(VirtualFileUtils.getVirtualFile(file));
+    VirtualFile vFile = VirtualFileUtils.getProjectVirtualFile(file);
+    assert vFile != null;
+    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(vFile);
     return BaseVersionUtil.isAddedFileStatus(status);
   }
+
   private FileStatus getStatus(SModel model) {
     DataSource ds = model.getSource();
     if (ds instanceof FileDataSource) {
-      VirtualFile file = VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+      VirtualFile file = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) ds).getFile());
       return FileStatusManager.getInstance(myProject).getStatus(file);
     } else if (ds instanceof FilePerRootDataSource) {
       // todo: do we need status at all? 
@@ -248,6 +280,7 @@ public class ChangesTracking {
     updateCacheForChange(change);
     myDifference.addChange(change);
   }
+
   private void removeChange(@NotNull ModelChange change) {
     if (change instanceof MetadataChange) {
       SetSequence.fromSet(myMetadataChanges).removeElement((MetadataChange) change);
@@ -257,6 +290,7 @@ public class ChangesTracking {
     myAddedNodesToChanges.removeValue(change);
     myDifference.removeChange(change);
   }
+
   private <C extends ModelChange> int removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
     Set<ModelChange> changes = (nodeId == null ? myMetadataChanges : myNodesToChanges.getValues(nodeId));
     List<ModelChange> toRemove = SetSequence.fromSet(changes).where(new IWhereFilter<ModelChange>() {
@@ -271,9 +305,12 @@ public class ChangesTracking {
     });
     return ListSequence.fromList(toRemove).count();
   }
-  private void removeDescendantChanges(SNodeId parentId, String role) {
+
+  private void removeDescendantChanges(SNodeId parentId, SContainmentLink role) {
     SNode oldNode = getOldNode(parentId);
-    assert oldNode != null;
+    if (oldNode == null) {
+      return;
+    }
     List<? extends SNode> children = IterableUtil.asList(oldNode.getChildren(role));
     ListSequence.fromList(children).visitAll(new IVisitor<SNode>() {
       public void visit(SNode c) {
@@ -281,6 +318,7 @@ public class ChangesTracking {
       }
     });
   }
+
   private void removeDescendantChanges(SNodeId nodeId) {
     SNode oldNode = getOldNode(nodeId);
     assert oldNode != null;
@@ -292,6 +330,7 @@ public class ChangesTracking {
       });
     }
   }
+
   private void buildAndAddChanges(_FunctionTypes._void_P1_E0<? super ChangeSetBuilder> buildAction) {
     ChangeSet cs = myDifference.getChangeSet();
     ChangeSetBuilder builder = ChangeSetBuilder.createBuilder(cs);
@@ -302,10 +341,12 @@ public class ChangesTracking {
       }
     });
   }
+
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a92(check_5iuzi5_a0a0a92(myDifference.getChangeSet()), id);
+    return check_5iuzi5_a0a54(check_5iuzi5_a0a0a54(myDifference.getChangeSet()), id);
   }
+
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {
     myEventConsumingMapping.addEvent(event);
     final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getNodeAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
@@ -327,9 +368,10 @@ public class ChangesTracking {
           } else {
             if (myEventConsumingMapping.removeEvent(event)) {
               myDifference.getBroadcaster().changeUpdateStarted();
-              ModelAccess.instance().runReadAction(new Runnable() {
+              MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+              mpsProject.getModelAccess().runReadAction(new Runnable() {
                 public void run() {
-                  synchronized (ChangesTracking.this) {
+                  synchronized (LOCK) {
                     if (!(myDisposed)) {
                       task.invoke();
                     }
@@ -343,9 +385,10 @@ public class ChangesTracking {
       }
     });
   }
+
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
-    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a13(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
+    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a05(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
       List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
@@ -357,6 +400,7 @@ public class ChangesTracking {
     }
     return ListSequence.fromList(childrenIds).page(ngc.getResultBegin(), ngc.getResultEnd());
   }
+
   @Nullable
   private static SNodeId getNodeIdForChange(@NotNull ModelChange change) {
     if (change instanceof NodeChange) {
@@ -368,6 +412,7 @@ public class ChangesTracking {
     }
     return null;
   }
+
   public class MyEventsCollector extends SModelEventVisitorAdapter implements SModelCommandListener {
     private Map<SNode, Set<String>> childChanged;
 
@@ -407,6 +452,7 @@ public class ChangesTracking {
         }
       }
     }
+
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
       final SNode node = event.getNode();
@@ -414,8 +460,7 @@ public class ChangesTracking {
         return;
       }
       final SNodeId nodeId = node.getNodeId();
-      String propertyName = event.getPropertyName();
-      final SProperty property = node.getConcept().getProperty(propertyName);
+      final SProperty property = event.getProperty();
 
       // get more info for debugging 
       assert node.getModel().getNode(nodeId) != null : "cannot find node " + nodeId + " in model " + node.getModel();
@@ -435,6 +480,7 @@ public class ChangesTracking {
         }
       }, node, event);
     }
+
     @Override
     public void visitReferenceEvent(SModelReferenceEvent event) {
       SReference ref = event.getReference();
@@ -459,15 +505,16 @@ public class ChangesTracking {
         }
       }, event.getReference().getSourceNode(), event);
     }
+
     @Override
     public void visitChildEvent(SModelChildEvent event) {
       SNode parent = event.getParent();
       if (parent.getModel() == null) {
         return;
       }
-      final String childRoleName = event.getChildRole();
+      String childRoleName = event.getChildRole();
 
-      // tyring to avoid update task execution for the same child role twice 
+      // trying to avoid update task execution for the same child role twice 
       Set<String> childRoles = MapSequence.fromMap(childChanged).get(parent);
       if (childRoles == null) {
         childRoles = SetSequence.fromSet(new HashSet<String>());
@@ -479,7 +526,7 @@ public class ChangesTracking {
         SetSequence.fromSet(childRoles).addElement(childRoleName);
       }
       final SNodeId parentId = parent.getNodeId();
-      final SContainmentLink childRole = (SContainmentLink) parent.getConcept().getLink(childRoleName);
+      final SContainmentLink childRole = event.getAggregationLink();
 
       final Wrappers._T<List<? extends SNode>> childrenRightAfterEvent = new Wrappers._T<List<? extends SNode>>(IterableUtil.asList(parent.getChildren(childRole)));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
@@ -489,13 +536,12 @@ public class ChangesTracking {
       }).toListSequence();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-
           removeChanges(parentId, NodeGroupChange.class, new _FunctionTypes._return_P1_E0<Boolean, NodeGroupChange>() {
             public Boolean invoke(NodeGroupChange ch) {
               return ch.isAbout(childRole);
             }
           });
-          removeDescendantChanges(parentId, childRoleName);
+          removeDescendantChanges(parentId, childRole);
           myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
               return n.getNodeId();
@@ -503,12 +549,16 @@ public class ChangesTracking {
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForNodeRole(IterableUtil.asList(getOldNode(parentId).getChildren(childRole)), childrenRightAfterEvent.value, parentId, childRole);
+              SNode oldParentNode = getOldNode(parentId);
+              if (oldParentNode != null) {
+                b.buildForNodeRole(IterableUtil.asList(oldParentNode.getChildren(childRole)), childrenRightAfterEvent.value, parentId, childRole);
+              }
             }
           });
         }
       }, parent, event);
     }
+
     @Override
     public void visitRootEvent(final SModelRootEvent event) {
       SNode root = event.getRoot();
@@ -557,6 +607,7 @@ public class ChangesTracking {
         }
       }, null, event);
     }
+
     @Override
     public void visitLanguageEvent(SModelLanguageEvent event) {
       final SLanguage eventLang = MetaAdapterFactory.getLanguage(event.getLanguageNamespace());
@@ -575,10 +626,12 @@ public class ChangesTracking {
         }
       }, null, event);
     }
+
     @Override
     public void visitDevKitEvent(SModelDevKitEvent event) {
       moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, event.isAdded());
     }
+
     private void moduleDependencyEvent(SModelEvent event, final SModuleReference moduleRef, final ModuleDependencyChange.DependencyType type, final boolean added) {
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -592,6 +645,7 @@ public class ChangesTracking {
         }
       }, null, event);
     }
+
     @Override
     public void visitImportEvent(final SModelImportEvent event) {
       final SModelReference modelRef = event.getModelUID();
@@ -608,20 +662,19 @@ public class ChangesTracking {
       }, null, event);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
-  private static SNode check_5iuzi5_a0a92(SModel checkedDotOperand, SNodeId id) {
+  private static SNode check_5iuzi5_a0a54(SModel checkedDotOperand, SNodeId id) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(id);
     }
     return null;
   }
-  private static SModel check_5iuzi5_a0a0a92(ChangeSet checkedDotOperand) {
+  private static SModel check_5iuzi5_a0a0a54(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();
     }
     return null;
   }
-  private static boolean neq_5iuzi5_a0a1a13(Object a, Object b) {
+  private static boolean neq_5iuzi5_a0a1a05(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

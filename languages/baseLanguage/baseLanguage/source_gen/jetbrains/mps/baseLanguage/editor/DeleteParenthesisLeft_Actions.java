@@ -36,6 +36,11 @@ public class DeleteParenthesisLeft_Actions {
 
 
       SNode replacing = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"));
+      if (replacing == null) {
+        SNodeOperations.deleteNode(node);
+        return;
+      }
+
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       SNodeOperations.replaceWithAnother(node, replacing);
 
@@ -71,6 +76,11 @@ public class DeleteParenthesisLeft_Actions {
 
 
       SNode replacing = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"));
+      if (replacing == null) {
+        SNodeOperations.deleteNode(node);
+        return;
+      }
+
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       SNodeOperations.replaceWithAnother(node, replacing);
 

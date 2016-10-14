@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Comparator;
 
@@ -28,9 +30,11 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     this.myPattern = pattern;
   }
 
+
   protected int getLocalSortPriority(SubstituteAction action) {
-    if (action.getParameterObject() instanceof SNode) {
-      return NodePresentationUtil.getSortPriority(action.getSourceNode(), (SNode) action.getParameterObject());
+    final Object parameterObject = action.getParameterObject();
+    if (parameterObject instanceof SNode) {
+      return NodePresentationUtil.getSortPriority(action.getSourceNode(), (SNode) parameterObject);
     } else {
       return 0;
     }

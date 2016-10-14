@@ -14,6 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
@@ -44,7 +45,7 @@ public class TransformationMenuReference_Default_Editor extends DefaultNodeEdito
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, TransformationMenuReference_Default_Editor._StyleParameter_QueryFunction_9zto5v_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuReference_Default_Editor.ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TransformationMenuReference_Default_Editor.ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static SNode _StyleParameter_QueryFunction_9zto5v_a0a0(EditorContext editorContext, SNode node) {

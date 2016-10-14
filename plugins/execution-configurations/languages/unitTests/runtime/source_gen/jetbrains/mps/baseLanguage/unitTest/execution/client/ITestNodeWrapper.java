@@ -7,8 +7,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.util.List;
 
 public interface ITestNodeWrapper<N extends SNode> {
   N getNode();
@@ -23,5 +21,6 @@ public interface ITestNodeWrapper<N extends SNode> {
   @NonNls
   String getFqName();
   String getCachedFqName();
-  Tuples._3<String, List<String>, List<String>> getTestRunParameters();
+  @NotNull
+  TestParameters getTestRunParameters();
 }

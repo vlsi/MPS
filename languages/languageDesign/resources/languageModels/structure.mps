@@ -8,6 +8,7 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -356,6 +357,33 @@
     <node concept="M4N5e" id="1ng4Vf3UMuf" role="M5hS2">
       <property role="1uS6qv" value="4" />
       <property role="1uS6qo" value="small" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="ve0pw_$bOu">
+    <property role="EcuMT" value="562388756444790046" />
+    <property role="3GE5qa" value="icons.instantiation" />
+    <property role="TrG5h" value="ConceptIconResourceExpression" />
+    <property role="34LRSv" value="icon resource for concept" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="ve0pw_$bP8" role="1TKVEi">
+      <property role="IQ2ns" value="562388756444790088" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="concept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="ve0pw_$_Kq">
+    <property role="EcuMT" value="562388756444896282" />
+    <property role="3GE5qa" value="icons.instantiation" />
+    <property role="TrG5h" value="NodeIconResourceExpression" />
+    <property role="34LRSv" value="icon resource for node" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="ve0pw_$_Ks" role="1TKVEi">
+      <property role="IQ2ns" value="562388756444896284" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="node" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

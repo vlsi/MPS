@@ -8,12 +8,9 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.dataFlow.BinaryRegexp_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.dataFlow.FindMatchStatement_DataFlow" />
@@ -39,7 +36,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.dataFlow.SymbolClassRegexp_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.dataFlow.UnaryRegexp_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />

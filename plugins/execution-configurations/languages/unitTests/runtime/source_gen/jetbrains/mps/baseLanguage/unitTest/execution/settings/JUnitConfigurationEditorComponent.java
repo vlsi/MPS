@@ -10,6 +10,7 @@ import javax.swing.JComponent;
 import com.intellij.ui.components.JBRadioButton;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.NotNull;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.BoxLayout;
@@ -32,7 +33,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
-  private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Execute in the same process ", true);
+  private final InProcessJBCheckBox myInProcessCheckBox = new InProcessJBCheckBox("Execute in the same process ", true);
   private JBReuseCachesCheckBox myReuseCachesCheckBox = new JBReuseCachesCheckBox("Reuse caches", true);
   private FieldWithPathChooseDialog myCachesDir = new FieldWithPathChooseDialog(new FileChooserDescriptor(false, true, false, false, false, false));
 
@@ -48,9 +49,9 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   private SModule myModule;
   private SModel myModel;
 
-  public JUnitConfigurationEditorComponent(com.intellij.openapi.project.Project project) {
+  public JUnitConfigurationEditorComponent(@NotNull com.intellij.openapi.project.Project project) {
     super(new GridBagLayout());
-    myProject = ProjectHelper.toMPSProject(project);
+    myProject = ProjectHelper.fromIdeaProject(project);
     final JBPanel kindPanel = new JBPanel();
     kindPanel.setLayout(new BoxLayout(kindPanel, BoxLayout.X_AXIS));
     kindPanel.add(new JBLabel("Test scope:"));
@@ -156,7 +157,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     add(modelPanel, LayoutUtil.createPanelConstraints(1));
     add(myClassesList, LayoutUtil.createPanelConstraints(1));
     add(myMethodsList, LayoutUtil.createPanelConstraints(1));
-    add(myLightExecCheckBox, LayoutUtil.createFieldConstraints(2));
+    add(myInProcessCheckBox, LayoutUtil.createFieldConstraints(2));
     add(myReuseCachesCheckBox, LayoutUtil.createFieldConstraints(3));
     add(saveCachesPanel, LayoutUtil.createPanelConstraints(4));
   }
@@ -178,10 +179,10 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   public void attachJavaComponent(final JavaConfigurationEditorComponent javaEditorComponent) {
-    myLightExecCheckBox.registerComponents(Sequence.fromArray(javaEditorComponent.getComponents()));
-    myLightExecCheckBox.registerComponent(myCachesDir);
-    myLightExecCheckBox.registerComponent(myReuseCachesCheckBox);
-    myLightExecCheckBox.update();
+    myInProcessCheckBox.registerComponents(Sequence.fromArray(javaEditorComponent.getComponents()));
+    myInProcessCheckBox.registerComponent(myCachesDir);
+    myInProcessCheckBox.registerComponent(myReuseCachesCheckBox);
+    myInProcessCheckBox.update();
   }
 
   private void updatePanels() {
@@ -229,7 +230,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     configuration.setTestCases(testCases);
     configuration.setModel(model.value);
     configuration.setModule(module.value);
-    configuration.setLightExec(myLightExecCheckBox.isSelected());
+    configuration.setInProcess(myInProcessCheckBox.isSelected());
     configuration.setReuseCaches(myReuseCachesCheckBox.isSelected());
     configuration.setCachesPath(myCachesDir.getText());
   }
@@ -246,7 +247,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     final List<ITestNodeWrapper> classes = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Sequence.fromIterable(TestUtils.wrapPointerStrings(myProject, settings.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
+        ListSequence.fromList(TestUtils.wrapPointerStrings(myProject, settings.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
             ListSequence.fromList(classes).addElement(it);
           }
@@ -259,7 +260,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     final List<ITestNodeWrapper> methods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Sequence.fromIterable(TestUtils.wrapPointerStrings(myProject, settings.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
+        ListSequence.fromList(TestUtils.wrapPointerStrings(myProject, settings.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
             ListSequence.fromList(methods).addElement(it);
           }
@@ -300,9 +301,9 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   private void updateCheckBoxes(JUnitSettings_Configuration configuration) {
-    myLightExecCheckBox.setSelected(configuration.getLightExec());
+    myInProcessCheckBox.setSelected(configuration.getInProcess());
     myReuseCachesCheckBox.setSelected(configuration.getReuseCaches());
-    myLightExecCheckBox.update();
+    myInProcessCheckBox.update();
   }
 
   public void resetEditorModelWith(final String modelName) {

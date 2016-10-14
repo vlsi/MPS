@@ -99,12 +99,19 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     myErrorCachingStream.reRoute();
     myCachingAppender = new CachingAppender(myWatchLevel);
     Logger.getRootLogger().addAppender(myCachingAppender);
-    ExpectLogEvent ignoreEvent = desc.getAnnotation(ExpectLogEvent.class);
-    if (ignoreEvent != null) {
-      for (String text : ignoreEvent.text()) {
-        myCachingAppender.expectEvent(ignoreEvent.level(), text);
+
+    ExpectLogEvent expectEvent = desc.getAnnotation(ExpectLogEvent.class);
+    if (expectEvent != null) {
+      for (String text : expectEvent.text()) {
+        myCachingAppender.expectEvent(expectEvent.level(), text);
       }
     }
+
+    IgnoreLogEvents ignoreEvents = desc.getAnnotation(IgnoreLogEvents.class);
+    if (ignoreEvents != null) {
+      myTestsToIgnore.put(desc, Boolean.TRUE);
+    }
+
     myThreadWatcher = new ThreadWatcher(true);
   }
 

@@ -83,7 +83,7 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
                     Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getModuleLocation(), project);
                     language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
                   }
-                  if (myLanguageSettings.isSandboxSolutionNeeded()) {
+                  if (myLanguageSettings.isSandBoxSolutionNeeded()) {
                     NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);
                   }
                 } catch (IOException e) {

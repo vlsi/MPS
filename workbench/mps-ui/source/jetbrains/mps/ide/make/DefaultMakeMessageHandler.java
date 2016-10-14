@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public class DefaultMakeMessageHandler implements IMessageHandler {
   public DefaultMakeMessageHandler(Project mpsProject) {
       MessagesViewTool tool = mpsProject.getComponent(MessagesViewTool.class);
       if (tool != null) {
-        myDelegate = tool.newHandler("Make");
+        myDelegate = tool.newHandler("Make", true);
       } else {
         //it might happen if we haven't opened IDE yet
         myDelegate = new LogHandler(Logger.getLogger(IMakeService.class));

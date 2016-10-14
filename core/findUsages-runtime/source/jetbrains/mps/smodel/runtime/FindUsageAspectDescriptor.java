@@ -24,5 +24,5 @@ package jetbrains.mps.smodel.runtime;
  *
  * @author Artem Tikhomirov
  */
-public interface FindUsageAspectDescriptor extends LanguageAspectDescriptor {
+public interface FindUsageAspectDescriptor extends ILanguageAspect {
 }

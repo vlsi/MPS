@@ -135,12 +135,13 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
 
     public MessageViewToolState() {
+      // default cons is essential for IDEA to construct the state.
       this.defaultListState = new MessageListState();
-      this.showToolAfterAddingMessage = true;
     }
 
+    // XXX documentation of PersistentStateComponent tells it saves annotated and public fields. This one is neither of those.
+    //     I don't see MessagesViewTool entry in .mps/workspace.xml either. Does it work?
     MessageListState defaultListState;
-    boolean showToolAfterAddingMessage;
   }
 
   @Override
@@ -161,9 +162,24 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return new MsgHandler(getDefaultList());
   }
 
+  /**
+   * Shorthand for {@link #newHandler(String, boolean) newHandler(name, false)}.
+   */
   public IMessageHandler newHandler(@NotNull final String name) {
-    return new MsgHandler(getAvailableList(name, true));
+    return newHandler(name, false /*newHandler used to keep the list intact in MPS releases to date*/);
+  }
 
+  /**
+   * @param name identifies named collection of messages, value is visible in UI as the name of the collection.
+   * @param clear true if caller doesn't need to keep messages already reported under same named handler (if any)
+   * @return handler that pipes messages to designated UI component, never {@code null}
+   */
+  public IMessageHandler newHandler(@NotNull final String name, boolean clear) {
+    MessageList availableList = getAvailableList(name, true);
+    if (clear) {
+      availableList.clear();
+    }
+    return new MsgHandler(availableList);
   }
 
   private synchronized void addList(String name, MessageList list) {
@@ -174,6 +190,11 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     lists.add(list);
   }
 
+  /**
+   * @deprecated I don't feel it's a nice idea to expose implementation detail, {@link #newHandler()} shall suffice, perhaps,
+   *             augmented with options object to pass info/warn/clear settings
+   */
+  @Deprecated
   public synchronized MessageList getAvailableList(String name, boolean createIfNotFound) {
     List<MessageList> lists;
     if (myMessageLists.containsKey(name)) {
@@ -183,9 +204,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
     for (int i = lists.size() - 1; i >= 0; --i) {
       MessageList messageList = lists.get(i);
-      ContentManager contentManager = getMessagesService() == null ? null : getMessagesService().getContentManager();
-      Content content = contentManager != null ? contentManager.getContent(messageList.getComponent()) : null;
-      if (content == null || !content.isPinned()) {
+      if (!messageList.isPinned()) {
         return messageList;
       }
     }
@@ -222,6 +241,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     private final String myTitle;
     private String myTitleUpdateFormat =
         "{0}: {1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}";
+    /*
+     * getMessagesService().getContentManager() may fail with NPE as respective tool window is initialized as post-startup activity
+     * while users are quite quick to run rebuild (or another messages client). One way to prevent NPE is to check
+     * {@code myToolWindowManager.getToolWindow(ToolWindowId.MESSAGES_WINDOW) != null}, another is to track whether our createContent() completed.
+     */
+    private boolean myContentReady = false;
 
     protected MyMessageList(@NotNull String title) {
       myTitle = title;
@@ -229,6 +254,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void dispose() {
+      myContentReady = false;
       super.dispose();
       removeList(this, myTitle);
     }
@@ -274,11 +300,21 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
           content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
           service.getContentManager().addContent(content);
           activateUpdate();
+          myContentReady = true;
         }
       };
       getMessagesService().runWhenInitialized(new RunInUIRunnable(initRunnable, false));
     }
 
+    @Override
+    public boolean isPinned() {
+      if (myContentReady) {
+        ContentManager contentManager = getMessagesService().getContentManager();
+        Content content = contentManager != null ? contentManager.getContent(getComponent()) : null;
+        return content != null && content.isPinned();
+      }
+      return super.isPinned();
+    }
 
     @Override
     protected void updateHeader() {
@@ -297,16 +333,16 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
 
     @Override
-    protected boolean canNavigate(@NotNull IMessage msg) {
-      return msg.getHintObject() != null && myNavigationManager.canNavigateTo(msg.getHintObject());
+    protected boolean canNavigate(@NotNull IMessage message) {
+      return message.getHintObject() != null && myNavigationManager.canNavigateTo(message.getHintObject());
     }
 
     @Override
-    protected void navigate(@NotNull IMessage msg, boolean focus) {
+    protected void navigate(@NotNull IMessage message, boolean focus) {
       // XXX could receive Navigatable from NM and in case navigation fails (e.g. due to deleted/missing node)
       // could show a balloon with explanation (it's better to do it here rather than in Navigatable itself as here we've
       // got tool window to anchor.
-      myNavigationManager.navigateTo(msg.getHintObject(), focus);
+      myNavigationManager.navigateTo(message.getHintObject(), focus);
     }
 
     @Override

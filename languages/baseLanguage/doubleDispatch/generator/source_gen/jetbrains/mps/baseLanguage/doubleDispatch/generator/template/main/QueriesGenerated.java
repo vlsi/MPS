@@ -15,8 +15,9 @@ import jetbrains.mps.baseLanguage.doubleDispatch.generator.util.DispatchGenUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
@@ -77,16 +78,16 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2323553266849838761(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("targetMethod")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
   }
-  public static Object templateArgumentQuery_2323553266848892792(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2323553266848892792(final TemplateArgumentContext _context) {
     return ((SNode) _context.getVariable("var:methodDecl"));
   }
-  public static Object templateArgumentQuery_2323553266848938515(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2323553266848938515(final TemplateArgumentContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:methods"))).first();
   }
-  public static Object templateArgumentQuery_2323553266849248475(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2323553266849248475(final TemplateArgumentContext _context) {
     return ((SNode) _context.getVariable("var:methodDecl"));
   }
-  public static Object templateArgumentQuery_2323553266849259847(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2323553266849259847(final TemplateArgumentContext _context) {
     return _context.getNode();
   }
   public static Iterable<SNode> sourceNodesQuery_2379134940430025802(final SourceSubstituteMacroNodesContext _context) {
@@ -102,13 +103,13 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_2323553266848914918(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("methodDecl")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).skip(1);
   }
-  public static Object insertMacro_varValue_2379134940430813886(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2379134940430813886(final TemplateVarContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first();
   }
-  public static Object insertMacro_varValue_2379134940431021756(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2379134940431021756(final TemplateVarContext _context) {
     return DispatchGenUtil.getMatchingMethods(((SNode) _context.getVariable("var:methodDecl")));
   }
-  public static Object insertMacro_varValue_2379134940433430092(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2379134940433430092(final TemplateVarContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
   }
 }

@@ -5,6 +5,8 @@ package jetbrains.mps.vcs.platform.mergedriver;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.PathManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.platform.util.PluginUtil;
 import com.intellij.openapi.ui.Messages;
@@ -19,8 +21,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import java.io.FileNotFoundException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   private File myConfigFile;
@@ -30,6 +30,7 @@ import org.apache.log4j.LogManager;
     myConfigFile = new File(System.getProperty("user.home") + File.separator + ".gitconfig");
     myScriptFile = new File(PathManager.getConfigPath() + File.separator + "mps-merger.sh");
   }
+  protected static Logger LOG = LogManager.getLogger(GitGlobalInstaller.class);
   @NotNull
   @Override
   protected AbstractInstaller.State install(boolean dryRun) {
@@ -96,7 +97,7 @@ import org.apache.log4j.LogManager;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0g0t0d(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0g0t0e(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -150,8 +151,7 @@ import org.apache.log4j.LogManager;
   public String getAffectedVcsName() {
     return "Git";
   }
-  protected static Logger LOG = LogManager.getLogger(GitGlobalInstaller.class);
-  private static boolean neq_btx4zt_a0a0a0g0t0d(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0g0t0e(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

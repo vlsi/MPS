@@ -4,6 +4,8 @@ package jetbrains.mps.tool.environment;
 
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -17,8 +19,6 @@ import jetbrains.mps.project.Project;
 import java.io.File;
 import jetbrains.mps.core.tool.environment.util.FileMPSProject;
 import jetbrains.mps.util.FileUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MpsEnvironment extends EnvironmentBase {
   private Platform myPlatform;
@@ -48,6 +48,7 @@ public class MpsEnvironment extends EnvironmentBase {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(MpsEnvironment.class);
   @Override
   public void init() {
     if (LOG.isInfoEnabled()) {
@@ -119,5 +120,4 @@ public class MpsEnvironment extends EnvironmentBase {
   protected ClassLoader rootClassLoader() {
     return MpsEnvironment.class.getClassLoader();
   }
-  protected static Logger LOG = LogManager.getLogger(MpsEnvironment.class);
 }

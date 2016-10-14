@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.junit.runner.Request;
 import org.junit.runner.notification.RunNotifier;
+import org.junit.runner.Description;
 import org.junit.runner.notification.Failure;
 
 public class IgnoringStoppableRunner extends StoppableRunner {
@@ -25,8 +26,9 @@ public class IgnoringStoppableRunner extends StoppableRunner {
   }
 
   private void ignoreRequest(RunNotifier notifier, Exception e) {
-    notifier.fireTestStarted(getDescription());
-    notifier.fireTestAssumptionFailed(new Failure(getDescription(), e));
-    notifier.fireTestFinished(getDescription());
+    Description description = getDescription();
+    notifier.fireTestStarted(description);
+    notifier.fireTestAssumptionFailed(new Failure(description, e));
+    notifier.fireTestFinished(description);
   }
 }

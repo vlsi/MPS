@@ -42,6 +42,7 @@ import java.util.concurrent.ExecutionException;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -221,6 +222,7 @@ public class GenTestWorker extends GeneratorWorker {
       myErrors.add(e.toString());
     }
   }
+
   private void loadAndMake(final Project project, final MpsWorker.ObjectsToProcess go) {
     ModelAccess access = project.getRepository().getModelAccess();
     access.runReadAction(new Runnable() {
@@ -231,7 +233,7 @@ public class GenTestWorker extends GeneratorWorker {
             // silently 
           }
           @Override
-          public void start(String taskName, int work) {
+          public void start(@NotNull String taskName, int work) {
             // silently 
           }
         }, myJavaCompilerOptions);
@@ -249,11 +251,13 @@ public class GenTestWorker extends GeneratorWorker {
       }
     });
   }
+
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
       format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ? null : prefix.trim())));
     }
   }
+
   private void cleanUp() {
     for (Queue<File> dirs = QueueSequence.fromQueueAndArray(new LinkedList<File>(), new File(tmpPath)); QueueSequence.fromQueue(dirs).isNotEmpty();) {
       File dir = QueueSequence.fromQueue(dirs).removeFirstElement();
@@ -269,9 +273,10 @@ public class GenTestWorker extends GeneratorWorker {
     this.tmpPath = null;
     MapSequence.fromMap(path2tmp).clear();
   }
+
   private Iterable<IResource> collectResources(Project project, final Iterable<SModule> modules, final Iterable<SModel> models) {
     final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
-    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
           public Iterable<SModel> translate(SModule m) {
@@ -300,6 +305,7 @@ public class GenTestWorker extends GeneratorWorker {
       }
     })).resources(false);
   }
+
   private IFile tmpFile(String path) {
     if (MapSequence.fromMap(path2tmp).containsKey(path)) {
       return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
@@ -316,6 +322,7 @@ public class GenTestWorker extends GeneratorWorker {
     MapSequence.fromMap(path2tmp).put(path, tmp);
     return FileSystem.getInstance().getFileByPath(tmp);
   }
+
   private String pathOfTmpFile(IFile file) {
     String p = file.getPath();
     if (!(p.startsWith(tmpPath))) {
@@ -328,6 +335,7 @@ public class GenTestWorker extends GeneratorWorker {
     String prefix = (File.separatorChar == '/' ? "/" : "\\\\");
     return FileSystem.getInstance().getFileByPath(prefix + p).getPath();
   }
+
   public IMessageFormat getBuildServerMessageFormat() {
     if (isRunningOnTeamCity()) {
       return new TeamCityMessageFormat();
@@ -335,18 +343,23 @@ public class GenTestWorker extends GeneratorWorker {
       return new ConsoleMessageFormat();
     }
   }
+
   private boolean isRunningOnTeamCity() {
     return myWhatToDo.getProperty("teamcity.version") != null;
   }
+
   private boolean isInvokeTestsSet() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.INVOKE_TESTS)) && isCompileSet();
   }
+
   private boolean isCompileSet() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.COMPILE));
   }
+
   private boolean isShowDiff() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SHOW_DIFF));
   }
+
   @Override
   protected void showStatistic() {
     super.showStatistic();
@@ -354,6 +367,7 @@ public class GenTestWorker extends GeneratorWorker {
       throw new RuntimeException("Tests Failed");
     }
   }
+
   public static void main(String[] args) {
     GenTestWorker generator = new GenTestWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
@@ -388,7 +402,7 @@ public class GenTestWorker extends GeneratorWorker {
     public MyMessageHandler() {
     }
     @Override
-    public void handle(IMessage msg) {
+    public void handle(@NotNull IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
           GenTestWorker.this.error(msg.getText());

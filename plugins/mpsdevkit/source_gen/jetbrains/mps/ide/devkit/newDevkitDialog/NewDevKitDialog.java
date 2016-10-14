@@ -4,7 +4,6 @@ package jetbrains.mps.ide.devkit.newDevkitDialog;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
-import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import javax.swing.JTextField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
@@ -12,25 +11,36 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import java.awt.GridLayout;
-import java.awt.Dimension;
+import com.intellij.ui.components.panels.VerticalLayout;
 import javax.swing.JLabel;
-import java.io.File;
+import com.intellij.ui.DocumentAdapter;
+import javax.swing.event.DocumentEvent;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.ui.InsertPathAction;
+import com.intellij.ide.util.BrowseFilesListener;
+import com.intellij.ui.FieldPanel;
+import com.intellij.openapi.util.EmptyRunnable;
+import com.intellij.openapi.fileChooser.FileChooserFactory;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.io.File;
 
 public class NewDevKitDialog extends DialogWrapper {
-  public JPanel myContentPane;
-  private PathField myPathField;
-  private JTextField myNameField;
+  private JPanel myContentPane;
+  private JTextField myDevkitLocation;
+  private JTextField myDevkitName;
 
   private MPSProject myProject;
   private DevKit myResult;
 
+  private boolean myDevkitLocationChangedByUser = false;
+  private boolean myDevkitLocationDocListenerEnabled = true;
+
   public NewDevKitDialog(Project project) {
     super(project);
-    setTitle("New DevKit");
+    setTitle("New Devkit");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
 
@@ -46,38 +56,85 @@ public class NewDevKitDialog extends DialogWrapper {
   }
 
   private void createMainComponent() {
-    myContentPane = new JPanel(new GridLayout(4, 1));
-    myContentPane.setPreferredSize(new Dimension(400, 100));
+    myContentPane = new JPanel(new VerticalLayout(5));
 
     myContentPane.add(new JLabel("Name"));
-    myContentPane.add(myNameField = new JTextField());
-    myNameField.setName("Name");
+    myContentPane.add(myDevkitName = new JTextField("NewDevkit"));
+    myDevkitName.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent p0) {
+        if (!(myDevkitLocationChangedByUser)) {
+          setDevkitLocation(generateDevkitPath());
+        }
+        check();
+      }
+    });
 
-    myContentPane.add(new JLabel("Folder"));
-    myContentPane.add(myPathField = new PathField());
-    myPathField.setName("Path");
+    myDevkitLocation = new JTextField(generateDevkitPath());
+    myDevkitLocation.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent p0) {
+        if (myDevkitLocationDocListenerEnabled) {
+          myDevkitLocationChangedByUser = true;
+          check();
+        }
+      }
+    });
 
-    myPathField.setPath(myProject.getProjectFile().getAbsolutePath() + File.separator + "devkits" + File.separator);
-    myNameField.setText("NewDevkit");
+    final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
+    InsertPathAction.addTo(myDevkitLocation, descriptor);
+    BrowseFilesListener listener = new BrowseFilesListener(myDevkitLocation, "Choose Devkit Location Folder", "", descriptor);
+    FieldPanel fieldPanel = new FieldPanel(myDevkitLocation, "Devkit location:", null, listener, EmptyRunnable.getInstance());
+    FileChooserFactory.getInstance().installFileCompletion(fieldPanel.getTextField(), descriptor, false, myProject.getProject());
+    myContentPane.add(fieldPanel);
+
+    check();
+
+    // Testing stuff 
+    myDevkitName.setName("Name");
+    myDevkitLocation.setName("Path");
+  }
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myDevkitName;
+  }
+
+  private void check() {
+    setErrorText(NewModuleUtil.check(MPSExtentions.DOT_DEVKIT, getDevkitName(), getDevkitLocation()));
   }
 
   @Override
   protected void doOKAction() {
-    final String path = myPathField.getPath();
-    String message = NewModuleUtil.check(MPSExtentions.DOT_DEVKIT, myNameField.getText(), path);
-    if (message != null) {
-      setErrorText(message);
-      return;
-    }
-    dispose();
+    final String devkitName = getDevkitName();
+    final String devkitLocation = getDevkitLocation();
+    super.doOKAction();
+
     NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        myResult = NewModuleUtil.createDevKit(myNameField.getText(), path, myProject);
+        myResult = NewModuleUtil.createDevKit(devkitName, devkitLocation, myProject);
       }
     });
   }
 
   public DevKit getResult() {
     return this.myResult;
+  }
+
+  private String getDevkitName() {
+    return myDevkitName.getText().trim();
+  }
+
+  private String getDevkitLocation() {
+    return myDevkitLocation.getText().trim();
+  }
+
+  private void setDevkitLocation(String devkitLocation) {
+    myDevkitLocationDocListenerEnabled = false;
+    myDevkitLocation.setText(devkitLocation);
+    myDevkitLocationDocListenerEnabled = true;
+  }
+
+  private String generateDevkitPath() {
+    return myProject.getProject().getBasePath() + File.separator + "devkits" + File.separator + getDevkitName();
   }
 }

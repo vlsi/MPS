@@ -26,6 +26,8 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
+import jetbrains.mps.project.dependency.PostingWarningsErrorHandler;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -47,6 +49,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.Reference;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.openapi.FileSystem;
@@ -54,6 +58,7 @@ import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -180,15 +185,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
-    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
-    LinkedHashSet<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
-    collectLanguagesAndDevkits(usedLanguages, devkits);
-    return usedLanguages;
+    return collectLanguagesAndDevkits().languages;
   }
 
   // fills collections with of imported languages and devkits.
   // Languages include directly imported and coming immediately through devkits; listed devkits are imported directly, without those they extend (why?).
-  private void collectLanguagesAndDevkits(Set<SLanguage> usedLanguages, Set<SModuleReference> devkits) {
+  private LangAndDevkits collectLanguagesAndDevkits() {
+    Set<SLanguage> usedLanguages = new LinkedHashSet<>();
+    Set<SModuleReference> devkits = new LinkedHashSet<>();
+
     // perhaps, shall introduce ModuleImports similar to ModelImports to accomplish this?
     for (SModel m : getModels()) {
       final SModelInternal modelInternal = (SModelInternal) m;
@@ -208,6 +213,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       }
     }
     usedLanguages.add(BootstrapLanguages.getLangCore());
+    return new LangAndDevkits(usedLanguages, devkits);
+  }
+
+  private static class LangAndDevkits {
+    public final Set<SLanguage> languages;
+    public final Set<SModuleReference> devkits;
+
+    public LangAndDevkits(@NotNull Set<SLanguage> languages, @NotNull Set<SModuleReference> devkits) {
+      this.languages = languages;
+      this.devkits = devkits;
+    }
   }
 
   @Override
@@ -267,6 +283,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public void setChanged() {
     assertCanChange();
+    if (isReadOnly()) {
+      LOG.warn("Changing read-only module " + this);
+    }
     myChanged = true;
   }
 
@@ -598,19 +617,27 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return descriptor == null ? 0 : descriptor.getModuleVersion();
   }
 
-  public void rename(String newName) {
+  public void rename(@NotNull String newName) {
+    SModuleReference oldRef = getModuleReference();
     renameModels(getModuleName(), newName, true);
 
-    //see MPS-18743, need to save before setting descriptor
-    getRepository().saveAll();
+    save(); //see MPS-18743, need to save before setting descriptor
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (myDescriptorFile != null) {
+      // fixme AP: this looks awful -- I agree; the right way is to have IFile something immutable
+      // fixme or just work in <code>WatchedRoots</code> by IFile (not by String) and listen for rename
+      myFileSystem.removeListener(this);
       myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
+      myFileSystem.addListener(this);
     }
 
-    descriptor.setNamespace(newName);
-    setModuleDescriptor(descriptor);
+    if (descriptor != null) {
+      descriptor.setNamespace(newName);
+      setModuleDescriptor(descriptor);
+    }
+
+    fireModuleRenamed(oldRef);
   }
 
   protected void renameModels(String oldName, String newName, boolean moveModels) {
@@ -664,7 +691,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     assertCanChange();
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
-        ModuleRepositoryFacade.getInstance().removeModuleForced(this);
+        ModuleRepositoryFacade.getInstance().unregisterModule(this);
         return;
       }
     }
@@ -680,14 +707,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public String toString() {
     String namespace = getModuleName();
     return namespace + " [module]";
-  }
-
-  /**
-   * @deprecated use {@link #getModuleName}
-   */
-  @Deprecated
-  public String getName() {
-    return getModuleName();
   }
 
   @Override
@@ -748,7 +767,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
         LOG.warn(
             "Trying to reload module " + getModuleName() + " which contains a non-saved model '" +
-                model.getModelName() + "'. To prevent data loss, MPS will not update models in this module. " +
+                model.getName() + "'. To prevent data loss, MPS will not update models in this module. " +
                 "Please save your work and restart MPS. See MPS-18743 for details."
         );
         return;
@@ -890,7 +909,18 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public IFile getOutputPath() {
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
-
+  /**
+   * AP
+   * the contract is not clear: when should this method be called?
+   * it seems to be our internal mechanism which is exposed to the client
+   * it must be done on the fs update (actually it is #update method here)
+   * Nobody must recount the module dependency versions from the outside
+   *
+   * Currently happens only during migration;
+   * @deprecated please do not use
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void validateLanguageVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
@@ -900,51 +930,43 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
 
-    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
-    LinkedHashSet<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
-    collectLanguagesAndDevkits(usedLanguages, devkits);
-    final Set<SLanguage> allUsedLanguages = new SLanguageHierarchy(usedLanguages).getExtended();
+    LangAndDevkits langAndDevkits = collectLanguagesAndDevkits();
+    Set<SLanguage> usedLanguages = langAndDevkits.languages;
+    Set<SModuleReference> devkits = langAndDevkits.devkits;
+    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(usedLanguages);
+    Reference<Boolean> hasErrors = new Reference<>(false);
+    Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtendedLangs(language -> hasErrors.set(true));
+    if (hasErrors.get()) {
+      return;
+    }
     if (!md.hasLanguageVersions()) {
-      for (SLanguage lang : allUsedLanguages) {
+      for (SLanguage lang : extendingLangsClosure) {
         newLanguageVersions.put(lang, 0);
       }
       md.getUsedDevkits().addAll(devkits);
       md.setHasLanguageVersions(true);
     } else {
-      for (SLanguage lang : allUsedLanguages) {
+      for (SLanguage lang : extendingLangsClosure) {
         if (oldLanguageVersions.containsKey(lang)) {
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
-          int currentVersion = lang.getLanguageVersion();
-
-          for (SModel m : getModels()) {
-            SModelInternal modelInternal = (SModelInternal) m;
-            if (!modelInternal.importedLanguageIds().contains(lang)) continue;
-            int modelVer = modelInternal.getLanguageImportVersion(lang);
-            if (modelVer == -1) continue;
-
-            if (modelInternal.importedLanguageIds().contains(lang) && modelVer != currentVersion) {
-              LOG.error("Could not update used language versions. Language " + lang + " has current version " + currentVersion
-                  + " while model " + m.getModelName() + " uses this language with version " + modelVer);
-            }
-          }
-
-          newLanguageVersions.put(lang, currentVersion);
+          checkModelVersionsAreValid(lang);
+          newLanguageVersions.put(lang, lang.getLanguageVersion());
           // this check is needed to avoid numerous changes in msd/mpl files when opening project without dependency versions
           // here we assume that validateLanguageVersions() is called before validateDependencyVersions()
-          // todo: remove this hack after 3.3
+          // todo: remove this hack after 3.4
           if (md.hasDependencyVersions()) {
             setChanged();
           }
         }
       }
-      if (!md.getUsedDevkits().equals(devkits)) {
+      if (!md.getUsedDevkits().containsAll(devkits)) {
         // intentionally no clean(), augmentation only, just in case there's anything vital already.
         md.getUsedDevkits().addAll(devkits);
         setChanged();
       }
-      if (oldLanguageVersions.size() != newLanguageVersions.size()) {
-        // todo: remove this hack after 3.3
+      if (!oldLanguageVersions.equals(newLanguageVersions)) {
+        // todo: remove this hack after 3.4
         if (md.hasDependencyVersions()) {
           setChanged();
         }
@@ -954,6 +976,34 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     oldLanguageVersions.putAll(newLanguageVersions);
   }
 
+  private void checkModelVersionsAreValid(SLanguage lang) {
+    int currentVersion = lang.getLanguageVersion();
+    for (SModel m : getModels()) {
+      SModelInternal modelInternal = (SModelInternal) m;
+      if (modelInternal.importedLanguageIds().contains(lang)) {
+        int modelVer = modelInternal.getLanguageImportVersion(lang);
+        if (modelVer != -1) {
+          if (modelInternal.importedLanguageIds().contains(lang) && modelVer != currentVersion) {
+            LOG.error("Could not update used language versions. Language " + lang + " has current version " + currentVersion
+                + " while model " + m.getName() + " uses this language with version " + modelVer);
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * FIXME
+   * Obviously it must be internal module method:
+   * it must be done on the fs update (actually it is #update method here)
+   * Nobody must recount the module dependency versions from the outside
+   * AP
+   *
+   * Currently happens only during migration;
+   * @deprecated please do not use
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void validateDependencyVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
@@ -962,9 +1012,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
     Map<SModuleReference, Integer> oldDepVersions = md.getDependencyVersions();
     Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
-    List<SModule> visible = new ArrayList<SModule>();
+    Set<SModule> visible = new LinkedHashSet<SModule>();
     visible.add(this);
-    visible.addAll(new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE));
+    PostingWarningsErrorHandler handler = new PostingWarningsErrorHandler();
+    Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(this, handler).getModules(Deptype.VISIBLE);
+    if (handler.hasErrors()) {
+      return;
+    }
+    visible.addAll(dependentModules);
     if (!md.hasDependencyVersions()) {
       for (SModule dep : visible) {
         newDepVersions.put(dep.getModuleReference(), 0);
@@ -988,31 +1043,74 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   @Override
-  public int getUsedLanguageVersion(SLanguage usedLanguage) {
-    Integer res = getModuleDescriptor().getLanguageVersions().get(usedLanguage);
+  public int getUsedLanguageVersion(@NotNull SLanguage usedLanguage) {
+    return getUsedLanguageVersion(usedLanguage, true);
+  }
+
+  /**
+   * has a fallback if the usedLanguage is absent in the module descriptor. if it happens then returns simply the current usedLanguage version
+   * @param check is whether to show error for not found version
+   * @deprecated hack for migration, will be gone after 3.4
+   */
+  @ToRemove(version = 3.4)
+  @Hack
+  @Deprecated
+  public int getUsedLanguageVersion(@NotNull SLanguage usedLanguage, boolean check) {
+    ModuleDescriptor moduleDescriptor = getModuleDescriptor();
+    if (!checkDescriptorNotNull(moduleDescriptor)) {
+      return -1;
+    }
+    Integer res = moduleDescriptor.getLanguageVersions().get(usedLanguage);
     if (res == null) {
-      LOG.error(
-          "getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
-              " in module " + getModuleName() + "." +
-              " This can either mean that the language is not imported into this module or that " +
-              "validateLanguageVersions() was not called on this module in appropriate moment.",
-          new Throwable());
+      if (check) {
+        LOG.warn(String.format(
+            "#getUsedLanguageVersion can't find a version for language %s in module %s, so it is falling back to the current version of the language. " +
+                "Probably the language is not imported into this module or #validateLanguageVersions() was not called on this module in appropriate moment." +
+                "NB: there might be migrations which must be applied, however they are not going to.",
+            usedLanguage.getQualifiedName(), getModuleName()), new Throwable());
+      }
       return usedLanguage.getLanguageVersion();
     }
     return res;
   }
 
-  public int getDependencyVersion(SModule dependency) {
-    Integer res = getModuleDescriptor().getDependencyVersions().get(dependency.getModuleReference());
+  public int getDependencyVersion(@NotNull SModule dependency) {
+    return getDependencyVersion(dependency, true);
+  }
+
+  /**
+   * has a fallback if the dependency is absent in the module descriptor. if it happens then returns simply the current dep. module version
+   * @param check is whether to show error for not found version
+   */
+  public int getDependencyVersion(@NotNull SModule dependency, boolean check) {
+    ModuleDescriptor moduleDescriptor = getModuleDescriptor();
+    if (!checkDescriptorNotNull(moduleDescriptor)) {
+      return -1;
+    }
+    Integer res = moduleDescriptor.getDependencyVersions().get(dependency.getModuleReference());
     if (res == null) {
-      LOG.error(
-          "getDependencyVersion can't find a version for module " + dependency.getModuleName() +
-              " in module " + getModuleName() + "." +
-              " This can either mean that the module is not visible from this module or that " +
-              "validateDependencyVersions() was not called on this module in appropriate moment.",
-          new Throwable());
+      if (check) {
+        LOG.error(
+            "#getDependencyVersion can't find a version for module " + dependency.getModuleName() +
+                " in module " + getModuleName() + "." +
+                " This can either mean that the module is not visible from this module or that " +
+                "#validateDependencyVersions() was not called on this module in appropriate moment.",
+            new Throwable());
+      }
       return ((AbstractModule) dependency).getModuleVersion();
     }
     return res;
+  }
+
+  /**
+   * @return true iff descriptor is not null
+   */
+  @Contract("null -> false")
+  private boolean checkDescriptorNotNull(ModuleDescriptor moduleDescriptor) {
+    if (moduleDescriptor == null) {
+      LOG.warn("Descriptor is null " + this + "; returning -1");
+      return false;
+    }
+    return true;
   }
 }

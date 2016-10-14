@@ -12,8 +12,83 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AdvanceWorkStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.AdvanceWorkStatement_BehaviorDescriptor" />
+    </file>
+    <file name="AllWorkLeftExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.AllWorkLeftExpression_BehaviorDescriptor" />
+    </file>
+    <file name="BeginWorkStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.BeginWorkStatement_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,96,0" name="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,56,0" name="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_progressMonitor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ConceptFunctionParameter_progressMonitor_BehaviorDescriptor" />
+    </file>
+    <file name="ConfigDefinition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ConfigDefinition_BehaviorDescriptor" />
+    </file>
+    <file name="ExpectedInput_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ExpectedInput_BehaviorDescriptor" />
+    </file>
+    <file name="ExpectedOption_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ExpectedOption_BehaviorDescriptor" />
+    </file>
+    <file name="Expected_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.Expected_BehaviorDescriptor" />
+    </file>
+    <file name="FinishWorkStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.FinishWorkStatement_BehaviorDescriptor" />
+    </file>
+    <file name="IExpected_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.make.script.behavior.IExpected_BehaviorDescriptor" />
+    </file>
+    <file name="InputResourcesParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.InputResourcesParameter_BehaviorDescriptor" />
+    </file>
+    <file name="JobDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.JobDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="JobDefinition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.JobDefinition_BehaviorDescriptor" />
+    </file>
+    <file name="OptionExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.OptionExpression_BehaviorDescriptor" />
+    </file>
+    <file name="OptionType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.OptionType_BehaviorDescriptor" />
+    </file>
+    <file name="Option_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.Option_BehaviorDescriptor" />
+    </file>
+    <file name="OutputResources_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.OutputResources_BehaviorDescriptor" />
+    </file>
+    <file name="PropertiesAccessorParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.PropertiesAccessorParameter_BehaviorDescriptor" />
+    </file>
+    <file name="QueryDefinition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.QueryDefinition_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.QueryParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="RelayQueryExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.RelayQueryExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ReportFeedbackStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ReportFeedbackStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ResourceType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ResourceType_BehaviorDescriptor" />
+    </file>
+    <file name="ResultStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.ResultStatement_BehaviorDescriptor" />
+    </file>
+    <file name="Text_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.script.behavior.Text_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/1977954644795510055">

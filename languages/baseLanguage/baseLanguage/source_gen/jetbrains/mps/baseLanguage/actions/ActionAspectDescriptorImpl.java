@@ -13,6 +13,7 @@ import java.util.Collections;
 public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor implements ActionAspectDescriptor {
   private static final String LANGUAGE_FQ_NAME = "jetbrains.mps.baseLanguage";
 
+  @Override
   public Collection<NodeFactory> getFactories(SAbstractConcept concept) {
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
@@ -80,6 +81,11 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
       }
     }
     return Collections.<NodeFactory>emptyList();
+  }
+
+  @Override
+  public boolean hasBuilders() {
+    return false;
   }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractForStatement", "AdditionalForLoopVariable", "AnnotationMethodDeclaration", "BaseAssignmentExpression", "BinaryOperation", "BitwiseNotExpression", "BlockStatement", "ClassConcept", "ConstructorDeclaration", "DoWhileStatement", "FieldDeclaration", "ForStatement", "ForeachStatement", "GenericNewExpression", "IfStatement", "ImplicitAnnotationInstanceValue", "InstanceMethodDeclaration", "Interface", "LocalVariableDeclaration", "NotExpression", "ParenthesizedExpression", "PrefixDecrementExpression", "PrefixIncrementExpression", "ReturnStatement", "SingleLineComment", "StaticFieldDeclaration", "StaticMethodDeclaration", "TryCatchStatement", "TryStatement", "WhileStatement"};
 }

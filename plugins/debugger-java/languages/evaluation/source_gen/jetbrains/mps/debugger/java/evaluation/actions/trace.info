@@ -1,34 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="QueriesGenerated.java">
-      <unit at="27,49,49,5" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated$1" />
-      <unit at="24,0,56,0" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated" />
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,24,0" name="jetbrains.mps.debugger.java.evaluation.actions.ActionAspectDescriptorImpl" />
     </file>
-  </root>
-  <root nodeRef="r:04e6e456-215e-4b1c-87a4-b311105e46e8(jetbrains.mps.debugger.java.evaluation.actions)/7915630211773500742">
     <file name="QueriesGenerated.java">
-      <node id="7915630211773500898" at="28,94,29,301" concept="1" />
-      <node id="7915630211773500914" at="29,301,30,207" concept="0" />
-      <node id="7915630211773500932" at="30,207,31,24" concept="2" />
-      <node id="7915630211773500891" at="33,53,34,19" concept="2" />
-      <node id="7915630211773500896" at="39,56,40,44" concept="2" />
-      <node id="7915630211773500839" at="52,202,53,341" concept="2" />
-      <node id="7915630211773500744" at="52,0,55,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7915630211773500744#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="7915630211773500890" at="33,53,34,19" />
-      <scope id="7915630211773500895" at="39,56,40,44" />
-      <scope id="7915630211773500745" at="52,202,53,341" />
-      <scope id="7915630211773500885" at="28,94,31,24">
-        <var name="downcast" id="7915630211773500899" />
-      </scope>
-      <scope id="7915630211773500744" at="52,0,55,0">
-        <var name="_context" id="7915630211773500744" />
-        <var name="operationContext" id="7915630211773500744" />
-      </scope>
+      <unit at="6,0,8,0" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated" />
     </file>
   </root>
 </debug-info>

@@ -41,6 +41,10 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Pattern_1xaun2ykvsnf6(_quotation_createNode_q6klpg_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -115,7 +119,6 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {
@@ -127,7 +130,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
         }
       };
       List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
-      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x6058d1d9e79eef7bL, "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"))).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x6058d1d9e79eef7bL, "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:b19397cd-8ff5-4952-b32f-ca4bf390ff99(jetbrains.mps.lang.traceable.operations.migration)", "9121571065746633748");
         }
@@ -136,7 +139,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
           return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
         }
       }));
-      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, "jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation"))).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, "jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:b19397cd-8ff5-4952-b32f-ca4bf390ff99(jetbrains.mps.lang.traceable.operations.migration)", "9121571065746633748");
         }

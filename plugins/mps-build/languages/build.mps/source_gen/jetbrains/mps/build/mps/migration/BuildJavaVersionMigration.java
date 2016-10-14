@@ -28,6 +28,10 @@ public class BuildJavaVersionMigration extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     Iterable<SModel> models = m.getModels();
     Iterable<SNode> projects = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {
@@ -64,7 +68,6 @@ public class BuildJavaVersionMigration extends MigrationScriptBase {
         }
       }
     }
-    return null;
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps"), 0);

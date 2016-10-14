@@ -56,6 +56,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -571,8 +572,8 @@
     </node>
     <node concept="312cEg" id="51NkKCgB3dh" role="jymVt">
       <property role="TrG5h" value="myComponent" />
-      <node concept="3uibUv" id="51NkKCgB3di" role="1tU5fm">
-        <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+      <node concept="3uibUv" id="7ucF$Rjvdta" role="1tU5fm">
+        <ref role="3uigEE" node="3cy8vNEdt5R" resolve="AbstractHierarchyView.RootPanel" />
       </node>
       <node concept="3Tmbuc" id="51NkKCgB3dj" role="1B3o_S" />
     </node>
@@ -915,9 +916,12 @@
             </node>
             <node concept="2YIFZM" id="6ss$DOg8c$D" role="37vLTx">
               <ref role="1Pybhc" to="lzb2:~ScrollPaneFactory" resolve="ScrollPaneFactory" />
-              <ref role="37wK5l" to="lzb2:~ScrollPaneFactory.createScrollPane(java.awt.Component):javax.swing.JScrollPane" resolve="createScrollPane" />
+              <ref role="37wK5l" to="lzb2:~ScrollPaneFactory.createScrollPane(java.awt.Component,boolean):javax.swing.JScrollPane" resolve="createScrollPane" />
               <node concept="37vLTw" id="2BHiRxeurq1" role="37wK5m">
                 <ref role="3cqZAo" node="51NkKCgB3d9" resolve="myHierarchyTree" />
+              </node>
+              <node concept="3clFbT" id="3Tx$UUKI6N4" role="37wK5m">
+                <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
@@ -928,13 +932,9 @@
               <ref role="3cqZAo" node="51NkKCgB3dh" resolve="myComponent" />
             </node>
             <node concept="liA8E" id="51NkKCgB3es" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.setContent(javax.swing.JComponent):void" resolve="setContent" />
               <node concept="37vLTw" id="2BHiRxeuTqz" role="37wK5m">
                 <ref role="3cqZAo" node="51NkKCgB3dw" resolve="myScrollPane" />
-              </node>
-              <node concept="10M0yZ" id="51NkKCgB3eu" role="37wK5m">
-                <ref role="3cqZAo" to="z60i:~BorderLayout.CENTER" resolve="CENTER" />
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
               </node>
             </node>
           </node>
@@ -961,42 +961,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5CK42mQosJu" role="3clF47">
-        <node concept="3cpWs8" id="5CK42mQosJw" role="3cqZAp">
-          <node concept="3cpWsn" id="5CK42mQosJv" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="panel" />
-            <node concept="3uibUv" id="5CK42mQosJx" role="1tU5fm">
-              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
-            </node>
-            <node concept="2ShNRf" id="5CK42mQosK4" role="33vP2m">
-              <node concept="1pGfFk" id="5CK42mQosKh" role="2ShVmc">
-                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
-                <node concept="2ShNRf" id="5CK42mQosKi" role="37wK5m">
-                  <node concept="1pGfFk" id="5CK42mQosKj" role="2ShVmc">
-                    <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5CK42mQosJ$" role="3cqZAp">
-          <node concept="2OqwBi" id="5CK42mQosKo" role="3clFbG">
-            <node concept="37vLTw" id="5CK42mQosKn" role="2Oq$k0">
-              <ref role="3cqZAo" node="51NkKCgB3dh" resolve="myComponent" />
-            </node>
-            <node concept="liA8E" id="5CK42mQosKp" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="37vLTw" id="5CK42mQosJA" role="37wK5m">
-                <ref role="3cqZAo" node="5CK42mQosJv" resolve="panel" />
-              </node>
-              <node concept="10M0yZ" id="5CK42mQosRX" role="37wK5m">
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-                <ref role="3cqZAo" to="z60i:~BorderLayout.NORTH" resolve="NORTH" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="WEmn41y5F2" role="3cqZAp">
           <node concept="2OqwBi" id="WEmn41y6GT" role="3clFbG">
             <node concept="2YIFZM" id="WEmn41y64y" role="2Oq$k0">
@@ -1022,53 +986,59 @@
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                       </node>
                       <node concept="3clFbS" id="5CK42mQosJK" role="3clF47">
-                        <node concept="3cpWs8" id="5CK42mQosJM" role="3cqZAp">
-                          <node concept="3cpWsn" id="5CK42mQosJL" role="3cpWs9">
-                            <property role="3TUv4t" value="false" />
-                            <property role="TrG5h" value="buttonsPanel" />
-                            <node concept="3uibUv" id="5CK42mQosJN" role="1tU5fm">
-                              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
-                            </node>
-                            <node concept="2OqwBi" id="5CK42mQosJO" role="33vP2m">
-                              <node concept="2OqwBi" id="5CK42mQosJP" role="2Oq$k0">
-                                <node concept="2YIFZM" id="5CK42mQosKC" role="2Oq$k0">
-                                  <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
-                                  <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                        <node concept="3clFbJ" id="7ucF$RjvAgG" role="3cqZAp">
+                          <node concept="3clFbS" id="7ucF$RjvAgI" role="3clFbx">
+                            <node concept="3cpWs8" id="5CK42mQosJM" role="3cqZAp">
+                              <node concept="3cpWsn" id="5CK42mQosJL" role="3cpWs9">
+                                <property role="3TUv4t" value="false" />
+                                <property role="TrG5h" value="buttonsPanel" />
+                                <node concept="3uibUv" id="5CK42mQosJN" role="1tU5fm">
+                                  <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
                                 </node>
-                                <node concept="liA8E" id="5CK42mQosJR" role="2OqNvi">
-                                  <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
-                                  <node concept="10M0yZ" id="5CK42mQosRY" role="37wK5m">
-                                    <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                                    <ref role="3cqZAo" to="qkt:~ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR" resolve="TYPE_HIERARCHY_VIEW_TOOLBAR" />
+                                <node concept="2OqwBi" id="5CK42mQosJO" role="33vP2m">
+                                  <node concept="2OqwBi" id="5CK42mQosJP" role="2Oq$k0">
+                                    <node concept="2YIFZM" id="5CK42mQosKC" role="2Oq$k0">
+                                      <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                                      <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                                    </node>
+                                    <node concept="liA8E" id="5CK42mQosJR" role="2OqNvi">
+                                      <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
+                                      <node concept="10M0yZ" id="5CK42mQosRY" role="37wK5m">
+                                        <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+                                        <ref role="3cqZAo" to="qkt:~ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR" resolve="TYPE_HIERARCHY_VIEW_TOOLBAR" />
+                                      </node>
+                                      <node concept="1rXfSq" id="5CK42mQosJT" role="37wK5m">
+                                        <ref role="37wK5l" node="51NkKCgB3f5" resolve="createButtonsGroup" />
+                                      </node>
+                                      <node concept="3clFbT" id="5CK42mQosJU" role="37wK5m">
+                                        <property role="3clFbU" value="true" />
+                                      </node>
+                                    </node>
                                   </node>
-                                  <node concept="1rXfSq" id="5CK42mQosJT" role="37wK5m">
-                                    <ref role="37wK5l" node="51NkKCgB3f5" resolve="createButtonsGroup" />
-                                  </node>
-                                  <node concept="3clFbT" id="5CK42mQosJU" role="37wK5m">
-                                    <property role="3clFbU" value="true" />
+                                  <node concept="liA8E" id="5CK42mQosJV" role="2OqNvi">
+                                    <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
                                   </node>
                                 </node>
                               </node>
-                              <node concept="liA8E" id="5CK42mQosJV" role="2OqNvi">
-                                <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                            </node>
+                            <node concept="3clFbF" id="7ucF$RjvgIH" role="3cqZAp">
+                              <node concept="2OqwBi" id="7ucF$RjvhKX" role="3clFbG">
+                                <node concept="37vLTw" id="7ucF$RjvgIF" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="51NkKCgB3dh" resolve="myComponent" />
+                                </node>
+                                <node concept="liA8E" id="7ucF$Rjv$jB" role="2OqNvi">
+                                  <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.setToolbar(javax.swing.JComponent):void" resolve="setToolbar" />
+                                  <node concept="37vLTw" id="7ucF$Rjv$WW" role="37wK5m">
+                                    <ref role="3cqZAo" node="5CK42mQosJL" resolve="buttonsPanel" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="3clFbF" id="5CK42mQosJW" role="3cqZAp">
-                          <node concept="2OqwBi" id="5CK42mQosKR" role="3clFbG">
-                            <node concept="37vLTw" id="5CK42mQosKQ" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5CK42mQosJv" resolve="panel" />
-                            </node>
-                            <node concept="liA8E" id="5CK42mQosKS" role="2OqNvi">
-                              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-                              <node concept="37vLTw" id="5CK42mQosJY" role="37wK5m">
-                                <ref role="3cqZAo" node="5CK42mQosJL" resolve="buttonsPanel" />
-                              </node>
-                              <node concept="10M0yZ" id="5CK42mQosRZ" role="37wK5m">
-                                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-                                <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
-                              </node>
+                          <node concept="3y3z36" id="7ucF$RjvC7L" role="3clFbw">
+                            <node concept="10Nm6u" id="7ucF$RjvCrA" role="3uHU7w" />
+                            <node concept="37vLTw" id="7ucF$RjvAYC" role="3uHU7B">
+                              <ref role="3cqZAo" node="51NkKCgB3dh" resolve="myComponent" />
                             </node>
                           </node>
                         </node>
@@ -1994,8 +1964,8 @@
       <property role="TrG5h" value="RootPanel" />
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="3cy8vNEdt5S" role="1B3o_S" />
-      <node concept="3uibUv" id="3cy8vNEdxlc" role="1zkMxy">
-        <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+      <node concept="3uibUv" id="6hSp8SHdbQv" role="1zkMxy">
+        <ref role="3uigEE" to="jkm4:~SimpleToolWindowPanel" resolve="SimpleToolWindowPanel" />
       </node>
       <node concept="3uibUv" id="3cy8vNEdyeo" role="EKbjA">
         <ref role="3uigEE" to="ddhc:~OccurenceNavigator" resolve="OccurenceNavigator" />
@@ -2008,11 +1978,12 @@
         <node concept="3Tm1VV" id="3cy8vNEdt5V" role="1B3o_S" />
         <node concept="3clFbS" id="3cy8vNEdt5W" role="3clF47">
           <node concept="XkiVB" id="3cy8vNEdygK" role="3cqZAp">
-            <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
-            <node concept="2ShNRf" id="3cy8vNEdygL" role="37wK5m">
-              <node concept="1pGfFk" id="3cy8vNEdygN" role="2ShVmc">
-                <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
-              </node>
+            <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.&lt;init&gt;(boolean,boolean)" resolve="SimpleToolWindowPanel" />
+            <node concept="3clFbT" id="6hSp8SHddtB" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="3clFbT" id="6hSp8SHdeD1" role="37wK5m">
+              <property role="3clFbU" value="true" />
             </node>
           </node>
         </node>
@@ -2061,7 +2032,12 @@
             </node>
           </node>
           <node concept="3cpWs6" id="22Czinas0f6" role="3cqZAp">
-            <node concept="10Nm6u" id="22Czinas0__" role="3cqZAk" />
+            <node concept="3nyPlj" id="6hSp8SHdi2t" role="3cqZAk">
+              <ref role="37wK5l" to="jkm4:~SimpleToolWindowPanel.getData(java.lang.String):java.lang.Object" resolve="getData" />
+              <node concept="37vLTw" id="6hSp8SHdkDq" role="37wK5m">
+                <ref role="3cqZAo" node="22CzinarWbs" resolve="id" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -2462,7 +2438,7 @@
                       <ref role="3cqZAo" node="51NkKCgB3nf" resolve="anInterface" />
                     </node>
                     <node concept="3Tsc0h" id="7pTo6H6m2AY" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpee:g7HQHFn" />
+                      <ref role="3TtcxE" to="tpee:g7HQHFn" resolve="extendedInterface" />
                     </node>
                   </node>
                   <node concept="3cpWsn" id="51NkKCgB3no" role="1Duv9x">
@@ -2483,7 +2459,7 @@
                             <ref role="3cqZAo" node="51NkKCgB3no" resolve="interfaceType" />
                           </node>
                           <node concept="3TrEf2" id="7pTo6H6m2B2" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                           </node>
                         </node>
                       </node>
@@ -2555,7 +2531,7 @@
                       <ref role="3cqZAo" node="51NkKCgB3nH" resolve="classConcept" />
                     </node>
                     <node concept="3TrEf2" id="7pTo6H6m2Af" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:gXzkM_H" />
+                      <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
                     </node>
                   </node>
                 </node>
@@ -2579,7 +2555,7 @@
                           <ref role="3cqZAo" node="51NkKCgB3nN" resolve="classifierType" />
                         </node>
                         <node concept="3TrEf2" id="7pTo6H6m2Ai" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                          <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                         </node>
                       </node>
                     </node>
@@ -2619,7 +2595,7 @@
                     <ref role="3cqZAo" node="51NkKCgB3nH" resolve="classConcept" />
                   </node>
                   <node concept="3Tsc0h" id="7pTo6H6m2Aw" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:fWEKbgp" />
+                    <ref role="3TtcxE" to="tpee:fWEKbgp" resolve="implementedInterface" />
                   </node>
                 </node>
                 <node concept="3cpWsn" id="51NkKCgB3oh" role="1Duv9x">
@@ -2640,7 +2616,7 @@
                           <ref role="3cqZAo" node="51NkKCgB3oh" resolve="interfaceType" />
                         </node>
                         <node concept="3TrEf2" id="7pTo6H6m2Az" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                          <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                         </node>
                       </node>
                     </node>
@@ -2766,7 +2742,7 @@
                       <ref role="3cqZAo" node="51NkKCgB3oR" resolve="classConcept" />
                     </node>
                     <node concept="3TrEf2" id="7pTo6H6m2Bx" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:gXzkM_H" />
+                      <ref role="3Tt5mk" to="tpee:gXzkM_H" resolve="superclass" />
                     </node>
                   </node>
                 </node>
@@ -2795,7 +2771,7 @@
                       <ref role="3cqZAo" node="51NkKCgB3oX" resolve="type" />
                     </node>
                     <node concept="3TrEf2" id="7pTo6H6m2B$" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                      <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                     </node>
                   </node>
                 </node>
@@ -2979,7 +2955,7 @@
                   </node>
                   <node concept="359W_D" id="19AH0QQnnrG" role="2Oq$k0">
                     <ref role="359W_E" to="tpee:g7uibYu" resolve="ClassifierType" />
-                    <ref role="359W_F" to="tpee:g7uigIF" />
+                    <ref role="359W_F" to="tpee:g7uigIF" resolve="classifier" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="51NkKCgB3pY" role="3clFbx">
@@ -3004,7 +2980,7 @@
                           <node concept="2OqwBi" id="51NkKCgB3qj" role="3uHU7w">
                             <node concept="359W_D" id="19AH0QQntyx" role="2Oq$k0">
                               <ref role="359W_E" to="tpee:fz12cDA" resolve="ClassConcept" />
-                              <ref role="359W_F" to="tpee:gXzkM_H" />
+                              <ref role="359W_F" to="tpee:gXzkM_H" resolve="superclass" />
                             </node>
                             <node concept="liA8E" id="51NkKCgB3ql" role="2OqNvi">
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
@@ -3071,7 +3047,7 @@
                             </node>
                             <node concept="359W_D" id="19AH0QQnuzg" role="2Oq$k0">
                               <ref role="359W_E" to="tpee:fz12cDA" resolve="ClassConcept" />
-                              <ref role="359W_F" to="tpee:fWEKbgp" />
+                              <ref role="359W_F" to="tpee:fWEKbgp" resolve="implementedInterface" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="7pTo6H6m94d" role="3uHU7B">
@@ -3112,7 +3088,7 @@
                           <node concept="2OqwBi" id="51NkKCgB3r1" role="3uHU7w">
                             <node concept="359W_D" id="19AH0QQnuLP" role="2Oq$k0">
                               <ref role="359W_E" to="tpee:g7HP654" resolve="Interface" />
-                              <ref role="359W_F" to="tpee:g7HQHFn" />
+                              <ref role="359W_F" to="tpee:g7HQHFn" resolve="extendedInterface" />
                             </node>
                             <node concept="liA8E" id="51NkKCgB3r3" role="2OqNvi">
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
@@ -3190,7 +3166,7 @@
                   </node>
                   <node concept="359W_D" id="19AH0QQn$xM" role="2Oq$k0">
                     <ref role="359W_E" to="tpee:h1Y3b43" resolve="AnonymousClass" />
-                    <ref role="359W_F" to="tpee:h1Y3Xaw" />
+                    <ref role="359W_F" to="tpee:h1Y3Xaw" resolve="classifier" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="51NkKCgB3ro" role="3clFbx">
@@ -4834,7 +4810,7 @@
                         <ref role="3cqZAo" node="51NkKCgB3$f" resolve="parentConcept" />
                       </node>
                       <node concept="3TrEf2" id="7pTo6H6mmu$" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                        <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                       </node>
                     </node>
                   </node>
@@ -9574,7 +9550,7 @@
                     <ref role="3cqZAo" node="51NkKCgB46g" resolve="concept" />
                   </node>
                   <node concept="3TrEf2" id="7pTo6H6lUoL" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                    <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                   </node>
                 </node>
               </node>

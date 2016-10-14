@@ -2,10 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,111,0" name="testDefaultEditor.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,58,0" name="testDefaultEditor.structure.ConceptPresentationAspectImpl" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,50,0" name="testDefaultEditor.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,126,0" name="testDefaultEditor.structure.StructureAspectDescriptor" />
+      <unit at="14,0,176,0" name="testDefaultEditor.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

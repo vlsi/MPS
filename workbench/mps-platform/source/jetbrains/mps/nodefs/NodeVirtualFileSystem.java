@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.NodeChangeCollector;
@@ -48,6 +49,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
@@ -70,15 +73,17 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
    */
   @ToRemove(version = 3.4)
   private final RepositoryVirtualFiles myGlobalRepoFiles;
+
+  private final Object myRepoVFLock = new Object();
   // I don't expect this collection to grow significantly, hence just List
-  private final List<RepositoryVirtualFiles> myPerRepositoryFiles = new ArrayList<>();
+  private final List<RepositoryVirtualFiles> myPerRepositoryFiles = new CopyOnWriteArrayList<>();
   private final Map<RepositoryVirtualFiles, MyRepositoryListener> myFiles2ListenerMap = new HashMap<>();
   private final SRepositoryContentAdapter myRepositoryListener;
   private boolean myDisposed = false;
 
   void register(@NotNull RepositoryVirtualFiles repoFiles) {
     MyRepositoryListener listener;
-    synchronized (this) {
+    synchronized (myRepoVFLock) {
       // assert not more than 1 file container per repository
       RepositoryVirtualFiles existing = findForRepository(repoFiles.getRepository());
       if (existing != null) {
@@ -94,7 +99,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
 
   void unregister(@NotNull RepositoryVirtualFiles repoFiles) {
     MyRepositoryListener listener;
-    synchronized (this) {
+    synchronized (myRepoVFLock) {
       myPerRepositoryFiles.remove(repoFiles);
       listener = myFiles2ListenerMap.remove(repoFiles);
     }
@@ -118,10 +123,12 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   }
 
   @Nullable
-  /*package*/ synchronized RepositoryVirtualFiles findForRepository(/*not-null*/SRepository repo) {
-    for (RepositoryVirtualFiles rvf : myPerRepositoryFiles) {
-      if (repo.equals(rvf.getRepository())) {
-        return rvf;
+  private RepositoryVirtualFiles findForRepository(@NotNull SRepository repo) {
+    synchronized (myRepoVFLock) {
+      for (RepositoryVirtualFiles rvf : myPerRepositoryFiles) {
+        if (repo.equals(rvf.getRepository())) {
+          return rvf;
+        }
       }
     }
     return null;
@@ -155,15 +162,20 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
   @Override
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
-    synchronized (this) {
-      for (RepositoryVirtualFiles rvf : myPerRepositoryFiles) {
-        final VirtualFile vf = rvf.findFileByPath(path);
-        if (vf != null) {
-          return vf;
+    for (RepositoryVirtualFiles rvf : myPerRepositoryFiles) { // going by snapshot here and checking all persisted repositories
+      VirtualFile file = new ModelAccessHelper(rvf.getRepository()).runReadAction(() -> {
+        synchronized (myRepoVFLock) {
+          if (myPerRepositoryFiles.contains(rvf)) { // double check
+            return rvf.findFileByPath(path);
+          }
+          return null;
         }
+      });
+      if (file != null) {
+        return file;
       }
     }
-    return myGlobalRepoFiles.findFileByPath(path);
+    return new ModelAccessHelper(myGlobalRepoFiles.getRepository()).runReadAction(() -> myGlobalRepoFiles.findFileByPath(path));
   }
 
   @Override
@@ -177,7 +189,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     return null;
   }
 
-  /*package*/ void updateModificationStamp(Collection<MPSNodeVirtualFile> files) {
+  private void updateModificationStamp(Collection<MPSNodeVirtualFile> files) {
     // identical timestamp for all roots touched simultaneously
     final long vfsStamp = LocalTimeCounter.currentTime();
     final long localStamp = System.currentTimeMillis();
@@ -242,7 +254,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
       if (rvf == null) {
         return;
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(rvf);
+      VFSNotifier vfsNotifier = rvf.getNotifier(new VFSNotifier(rvf));
       vfsNotifier.deleted(rvf.getKnownVirtualFilesIn(modelDescriptor.getReference()));
       vfsNotifier.execute();
     }
@@ -267,7 +279,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
           changedFiles.add(vf);
         }
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(rvf);
+      VFSNotifier vfsNotifier = rvf.getNotifier(new VFSNotifier(rvf));
       vfsNotifier.deleted(deletedFiles);
       vfsNotifier.changed(changedFiles);
       vfsNotifier.execute();
@@ -303,7 +315,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
           }
         }
       }
-      VFSNotifier vfsNotifier = new VFSNotifier(rvf);
+      VFSNotifier vfsNotifier = rvf.getNotifier(new VFSNotifier(rvf));
       vfsNotifier.deleted(deletedFiles);
       vfsNotifier.changed(changedFiles);
       vfsNotifier.execute();
@@ -370,22 +382,33 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     private final RepositoryVirtualFiles mySource;
     private final Set<MPSNodeVirtualFile> myDeletedFiles = new HashSet<>();
     private final Set<MPSNodeVirtualFile> myChangedFiles = new HashSet<>();
+    private final AtomicBoolean myPendingChanges = new AtomicBoolean();
 
     public VFSNotifier(@NotNull RepositoryVirtualFiles source) {
       mySource = source;
     }
 
     public synchronized void deleted(Collection<MPSNodeVirtualFile> deletedFiles) {
+      if (!deletedFiles.isEmpty()) {
+        myPendingChanges.set(true);
+      }
       myDeletedFiles.addAll(deletedFiles);
     }
 
     public synchronized void changed(Collection<MPSNodeVirtualFile> changed) {
+      if (!changed.isEmpty()) {
+        myPendingChanges.set(true);
+      }
       myChangedFiles.addAll(changed);
     }
 
+    /**
+     * Asynchronous invocation does not guarantee that node reference will persist in the given repository.
+     * However Artem proposed to get rid of SNodeReference#resolve at all.
+     */
     public void execute() {
       if (hasPendingNotifications()) {
-        mySource.getRepository().getModelAccess().runWriteInEDT(this);
+        mySource.scheduleNotifier(this);
       }
     }
 
@@ -402,6 +425,10 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
         myDeletedFiles.clear();
         myChangedFiles.clear();
       }
+
+      // notifier is shared, it's possible to get both changed and deleted notification for the same file
+      // no reason to report changes for deleted.
+      changedFiles.removeAll(deletedFiles);
 
       for (MPSNodeVirtualFile deletedFile : deletedFiles) {
         fireBeforeFileDeletion(this, deletedFile);
@@ -421,7 +448,7 @@ public final class NodeVirtualFileSystem extends DeprecatedVirtualFileSystem imp
     }
 
     private boolean hasPendingNotifications() {
-      return !myDeletedFiles.isEmpty() || !myChangedFiles.isEmpty();
+      return myPendingChanges.get();
     }
   }
 }

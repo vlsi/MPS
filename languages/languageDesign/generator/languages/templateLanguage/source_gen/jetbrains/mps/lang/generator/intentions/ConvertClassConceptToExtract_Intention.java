@@ -21,6 +21,7 @@ import java.util.List;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class ConvertClassConceptToExtract_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -40,7 +41,7 @@ public final class ConvertClassConceptToExtract_Intention extends IntentionDescr
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   @Override
   public boolean isSurroundWith() {
@@ -62,21 +63,21 @@ public final class ConvertClassConceptToExtract_Intention extends IntentionDescr
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xd01bb6e8b1cd97aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept")), null);
-      for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(newNode)) {
-        newNode.removeChild(child);
+      for (SNode child : SNodeOperations.getChildren(newNode)) {
+        SNodeOperations.deleteNode(child);
       }
       HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
       mapping.put(node, newNode);
-      List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(node);
+      List<SNode> children = SNodeOperations.getChildren(node);
       CopyUtil.copy(children, mapping);
       for (SNode child : children) {
-        newNode.addChild(child.getRoleInParent(), mapping.get(child));
+        newNode.addChild(child.getContainmentLink(), mapping.get(child));
       }
-      for (SReference reference : node.getReferences()) {
-        SNodeAccessUtil.setReferenceTarget(newNode, reference.getRole(), reference.getTargetNode());
+      for (SReference reference : SNodeOperations.getReferences(node)) {
+        SNodeAccessUtil.setReferenceTarget(newNode, reference.getLink(), reference.getTargetNode());
       }
-      for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
-        SNodeAccessUtil.setProperty(newNode, propertyName, SNodeAccessUtil.getProperty(node, propertyName));
+      for (SProperty p : node.getProperties()) {
+        SNodeAccessUtil.setProperty(newNode, p, SNodeAccessUtil.getProperty(node, p));
       }
       SNodeOperations.replaceWithAnother(node, newNode);
     }

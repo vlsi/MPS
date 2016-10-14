@@ -11,10 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.IterableUtil;
 
 @MPSLaunch
@@ -23,6 +21,16 @@ public class SConceptHierarchy_Test extends BaseTransformationTest {
   public void test_conceptHierarchy() throws Throwable {
     initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
     runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptHierarchy", true);
+  }
+  @Test
+  public void test_conceptSuperConcept() throws Throwable {
+    initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
+    runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptSuperConcept", true);
+  }
+  @Test
+  public void test_defaultIfaceConcept() throws Throwable {
+    initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
+    runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_defaultIfaceConcept", true);
   }
 
   @MPSLaunch
@@ -33,21 +41,32 @@ public class SConceptHierarchy_Test extends BaseTransformationTest {
       Assert.assertFalse(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
       Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))));
       Assert.assertTrue(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept") instanceof SInterfaceConcept);
-      final Wrappers._T<SAbstractConcept> defaultIfaceConcept = new Wrappers._T<SAbstractConcept>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          defaultIfaceConcept.value = SNodeOperations.getConcept(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))));
-        }
-      });
-      Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(defaultIfaceConcept.value), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
-      Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(defaultIfaceConcept.value), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
-      Assert.assertFalse(defaultIfaceConcept.value.equals(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
-      Assert.assertFalse(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept").isSubConceptOf(defaultIfaceConcept.value));
+      //  there's suspicious code in SConceptAdapter.getSuperInterfaces, make sure it didn't get out elsewhere 
+      Assert.assertTrue(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart").getSuperInterfaces().iterator().next().equals(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart")));
+    }
+    public void test_conceptSuperConcept() throws Exception {
+      // state the fact we do not report BaseConcept as its own super-concept 
+      // it's questionable, as it makes BC the only concept without superconcept. 
+      SConcept baseConcept = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
+      Assert.assertNull(baseConcept.getSuperConcept());
+      Assert.assertFalse(baseConcept.getSuperInterfaces().iterator().hasNext());
+      Assert.assertTrue(baseConcept.equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute").getSuperConcept()));
+      Assert.assertTrue(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute").equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute").getSuperConcept()));
+    }
+    public void test_defaultIfaceConcept() throws Exception {
+      SAbstractConcept defaultIfaceConcept = SNodeOperations.getConcept(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))));
+      Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(defaultIfaceConcept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
+      Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(defaultIfaceConcept), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
+      // next two checks are questionable, as it puzzles users (see mbeddr slack Sep 17, 2016) 
+      Assert.assertFalse(defaultIfaceConcept.equals(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
+      Assert.assertFalse(SConceptOperations.isExactly(SNodeOperations.asSConcept(defaultIfaceConcept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
 
-      Assert.assertTrue(defaultIfaceConcept.value instanceof SConcept);
-      Assert.assertTrue(((SConcept) defaultIfaceConcept.value).getSuperConcept().equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
-      Assert.assertTrue(IterableUtil.asCollection(((SConcept) defaultIfaceConcept.value).getSuperInterfaces()).size() == 1);
-      Assert.assertTrue(((SConcept) defaultIfaceConcept.value).getSuperInterfaces().iterator().next().equals(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
+      Assert.assertFalse(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept").isSubConceptOf(defaultIfaceConcept));
+
+      Assert.assertTrue(defaultIfaceConcept instanceof SConcept);
+      Assert.assertTrue(((SConcept) defaultIfaceConcept).getSuperConcept().equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
+      Assert.assertTrue(IterableUtil.asCollection(((SConcept) defaultIfaceConcept).getSuperInterfaces()).size() == 1);
+      Assert.assertTrue(((SConcept) defaultIfaceConcept).getSuperInterfaces().iterator().next().equals(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
     }
 
 

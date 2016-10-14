@@ -14,12 +14,13 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor;
 import java.util.ArrayList;
 import com.intellij.openapi.application.PathManager;
 import java.io.File;
@@ -27,7 +28,6 @@ import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
 import java.net.URI;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NonNls;
@@ -77,20 +77,24 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
 
   @Override
   @NotNull
-  public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
-    SNode node = getNode();
-    if (node == null) {
-      return super.getTestRunParameters();
-    }
-    if (((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
-      Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", ListSequence.fromList(new JvmArgs().getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
-        public String select(String key) {
-          return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
+  public TestParameters getTestRunParameters() {
+    final SNode node = getNode();
+    return new ModelAccessHelper(getRepo()).runReadAction(new Computable<TestParameters>() {
+      public TestParameters compute() {
+        if (node != null && ((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
+          Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
+          List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
+            public String select(String key) {
+              return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
+            }
+          })).toListSequence();
+          List<String> classPath = getIdeaClasspath();
+          return new TestParameters(CachingTestExecutor.class, ListSequence.fromList(classPath).union(ListSequence.fromList(LanguageTestWrapper.super.getTestRunParameters().getClassPath())).toListSequence(), jvmArgsWithMacros);
+        } else {
+          return LanguageTestWrapper.super.getTestRunParameters();
         }
-      })).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
-    }
-    return super.getTestRunParameters();
+      }
+    });
   }
 
   private List<String> getPluginClasspath() {
@@ -134,35 +138,48 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       for (URL url : urls) {
         ListSequence.fromList(result).addElement(new URI(url.toString()).getPath());
       }
-    } catch (Throwable e) {
+    } catch (Exception ignored) {
     }
-    for (SModuleReference dep : Sequence.fromIterable(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL), "jetbrains.mps.lang.test").getLanguageRuntimes())) {
-      SModule module = dep.resolve(getRepo());
-      JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-      if (facet != null) {
-        ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
+    getRepo().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModuleReference> languageRuntimes = MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test").getLanguageRuntimes();
+        for (SModuleReference dep : Sequence.fromIterable(languageRuntimes)) {
+          SModule module = dep.resolve(getRepo());
+          JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+          if (facet != null) {
+            ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
+          }
+        }
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));
       }
-    }
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));
+    });
     return result;
   }
 
   @NonNls
   @Override
   public String getFqName() {
-    if (isTestCase()) {
-      return check_9og6tg_a0a0a61(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
-    }
-    return super.getFqName();
+    return new ModelAccessHelper(getRepo()).runReadAction(new Computable<String>() {
+      public String compute() {
+        if (isTestCase()) {
+          return check_9og6tg_a0a0a0a0a0q(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), LanguageTestWrapper.this);
+        }
+        return LanguageTestWrapper.super.getFqName();
+      }
+    });
   }
 
   @NonNls
   @Override
   public String getName() {
-    if (isTestMethod()) {
-      return check_9og6tg_a0a0a81(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), this);
-    }
-    return check_9og6tg_a1a81(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
+    return new ModelAccessHelper(getRepo()).runReadAction(new Computable<String>() {
+      public String compute() {
+        if (isTestMethod()) {
+          return check_9og6tg_a0a0a0a0a0s(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), LanguageTestWrapper.this);
+        }
+        return check_9og6tg_a1a0a0a0s(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), LanguageTestWrapper.this);
+      }
+    });
   }
   private static boolean check_9og6tg_a0a2(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
@@ -182,19 +199,19 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return false;
   }
-  private static String check_9og6tg_a0a0a61(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a0a0a0a0a0q(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getClassName", null, "hGBnqtL")));
     }
     return null;
   }
-  private static String check_9og6tg_a0a0a81(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a0a0a0a0a0s(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getTestName", null, "hGBohAB")));
     }
     return null;
   }
-  private static String check_9og6tg_a1a81(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
+  private static String check_9og6tg_a1a0a0a0s(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getSimpleClassName", null, "hSQIE8p")));
     }

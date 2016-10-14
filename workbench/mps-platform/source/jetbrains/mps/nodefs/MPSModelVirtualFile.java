@@ -57,18 +57,15 @@ public final class MPSModelVirtualFile extends VirtualFile {
   }
 
   private void updateFields() {
-    myRepoFiles.getRepository().getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModel model = myModelReference.resolve(myRepoFiles.getRepository());
-        if (model == null) {
-          LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
-          myName = "";
-          myPath = "";
-        } else {
-          myName = NameUtil.shortNameFromLongName(model.getModelName());
-          myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
-        }
+    myRepoFiles.getRepository().getModelAccess().runReadAction(() -> {
+      SModel model = myModelReference.resolve(myRepoFiles.getRepository());
+      if (model == null) {
+        LOG.error("Model resolve failed for SModelReference: " + myModelReference.toString(), new Throwable());
+        myName = "";
+        myPath = "";
+      } else {
+        myName = model.getName().getSimpleName();
+        myPath = MODEL_PREFIX + myRepoFiles.getPathFacility().serializeModel(model);
       }
     });
   }
@@ -89,6 +86,7 @@ public final class MPSModelVirtualFile extends VirtualFile {
     return myRepoFiles.getFileSystem();
   }
 
+  @NotNull
   @Override
   public String getPath() {
     return myPath;
@@ -121,9 +119,9 @@ public final class MPSModelVirtualFile extends VirtualFile {
         }
         DataSource ds = model.getSource();
         if (ds instanceof FileDataSource) {
-          return VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+          return VirtualFileUtils.getOrCreateVirtualFile(((FileDataSource) ds).getFile());
         } else if (ds instanceof FolderDataSource) {
-          return VirtualFileUtils.getVirtualFile(((FolderDataSource) ds).getFolder());
+          return VirtualFileUtils.getOrCreateVirtualFile(((FolderDataSource) ds).getFolder());
         } else {
           return null;
         }

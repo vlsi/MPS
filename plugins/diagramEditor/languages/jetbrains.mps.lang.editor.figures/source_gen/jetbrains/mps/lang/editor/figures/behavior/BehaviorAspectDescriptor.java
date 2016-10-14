@@ -7,9 +7,9 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myFigureParameter__BehaviorDescriptor = new FigureParameter__BehaviorDescriptor();
@@ -26,64 +26,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return myExternalViewFigure__BehaviorDescriptor;
-          }
-          break;
-        case 1:
-          if (true) {
-            return myExternalViewFigureParameter__BehaviorDescriptor;
-          }
-          break;
-        case 2:
-          if (true) {
-            return myFigureAttribute__BehaviorDescriptor;
-          }
-          break;
-        case 3:
-          if (true) {
-            return myFigureParameter__BehaviorDescriptor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return myFigureParameterAttribute__BehaviorDescriptor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return myFigureParameterAttributeField__BehaviorDescriptor;
-          }
-          break;
-        case 6:
-          if (true) {
-            return myFigureParameterAttributeMethod__BehaviorDescriptor;
-          }
-          break;
-        case 7:
-          if (true) {
-            return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0l.index(cncpt)) {
+      case 0:
+        return myExternalViewFigure__BehaviorDescriptor;
+      case 1:
+        return myExternalViewFigureParameter__BehaviorDescriptor;
+      case 2:
+        return myFigureAttribute__BehaviorDescriptor;
+      case 3:
+        return myFigureParameter__BehaviorDescriptor;
+      case 4:
+        return myFigureParameterAttribute__BehaviorDescriptor;
+      case 5:
+        return myFigureParameterAttributeField__BehaviorDescriptor;
+      case 6:
+        return myFigureParameterAttributeMethod__BehaviorDescriptor;
+      case 7:
+        return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
+      default:
     }
     return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure"), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f749406L, "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter"), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a095b5a4L, "jetbrains.mps.lang.editor.figures.structure.FigureAttribute"), MetaAdapterFactory.getInterfaceConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4bf6bbafe7e7155L, "jetbrains.mps.lang.editor.figures.structure.FigureParameter"), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a0c593e1L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1ceea85e3fd59976L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField"), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1ceea85e3fd59954L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod"), MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x6595651980a1f8ecL, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"));
+  private static final ConceptSwitchIndex index_846f5o_a0l = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f749406L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a095b5a4L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4bf6bbafe7e7155L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x4b412569a0c593e1L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1ceea85e3fd59976L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1ceea85e3fd59954L), MetaIdFactory.conceptId(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x6595651980a1f8ecL)).seal();
 }

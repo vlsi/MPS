@@ -15,12 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
-import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 
 public class FindModuleUsage_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -57,11 +55,8 @@ public class FindModuleUsage_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModule module = event.getData(MPSCommonDataKeys.MODULE);
     final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
-    final IResultProvider provider = FindModuleUsage_Action.this.providerForModule(module, event);
+    final IResultProvider provider = FindUtils.makeProvider(new ModuleUsagesFinder());
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage(String.format("No usages found for %s", module.getModuleName()));
     UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), provider, query, opt);
-  }
-  /*package*/ IResultProvider providerForModule(SModule module, final AnActionEvent event) {
-    return FindUtils.makeProvider((module instanceof Language ? new LanguageImportFinder() : new ModuleUsagesFinder()));
   }
 }

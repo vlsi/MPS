@@ -272,7 +272,7 @@
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3205778618063801970">
     <file name="MPSEditorActions.xml">
-      <unit id="3205778618063801970" at="1,0,364,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
+      <unit id="3205778618063801970" at="1,0,366,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3207605520775490121">

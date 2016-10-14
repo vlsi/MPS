@@ -113,7 +113,7 @@
       <property role="20kJfa" value="debuggedType" />
       <property role="IQ2ns" value="4544608336420700079" />
       <ref role="20lvS9" node="3WhGjgvC_Vo" resolve="DebuggedType" />
-      <ref role="20ksaX" to="tpee:4VkOLwjf83e" />
+      <ref role="20ksaX" to="tpee:4VkOLwjf83e" resolve="type" />
     </node>
     <node concept="1TJgyi" id="5lbjwfl_ggL" role="1TKVEl">
       <property role="TrG5h" value="isOutOfScope" />
@@ -155,7 +155,7 @@
       <property role="20kJfa" value="instanceMethodDeclaration" />
       <property role="IQ2ns" value="6036237525966317627" />
       <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-      <ref role="20ksaX" to="tpee:fz7wK6H" />
+      <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1uLMfvJuFgc">
@@ -165,18 +165,6 @@
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="6_gUeuqOeQz" role="lGtFl">
       <property role="Hh88m" value="" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="44PLNYYvWA5">
-    <property role="TrG5h" value="ToEvaluateAnnotation" />
-    <property role="3GE5qa" value="annotations" />
-    <property role="EcuMT" value="4698880862823893381" />
-    <ref role="1TJDcQ" node="1uLMfvJuFgc" resolve="GenerationHelperAnnotation" />
-    <node concept="M6xJ_" id="6_gUeuqOeSu" role="lGtFl">
-      <property role="Hh88m" value="toEvaluateAnnotation" />
-      <node concept="trNpa" id="166$sc$ZIAB" role="EQaZv">
-        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="7Qql7Y5uz_b">
@@ -190,7 +178,7 @@
       <property role="20kJfa" value="variableDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="9050639307831393059" />
-      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" />
+      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" resolve="baseVariableDeclaration" />
       <ref role="20lvS9" node="5f51wLF6d$A" resolve="LowLevelVariable" />
     </node>
   </node>

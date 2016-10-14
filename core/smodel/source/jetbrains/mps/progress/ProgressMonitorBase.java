@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.progress;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -22,9 +25,12 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
  * Evgeny Gryaznov, 10/3/11
  */
 public abstract class ProgressMonitorBase implements ProgressMonitor {
+  private static final Logger LOG = LogManager.getLogger(ProgressMonitorBase.class);
 
-  protected int myTotal = 0;
-  protected int myDone = 0;
+  // -1 means "not started", 0 is possible not to check collection.size()>0 when calling start()
+  // if totalWork==0, step() can be called, advance(>0) can't
+  private int myTotal = -1;
+  private int myDone = 0;
   private SubProgressMonitor myActiveChild;
   private int myAfterActiveChild;
   private String myName;
@@ -34,14 +40,15 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   }
 
   @Override
-  public final void start(String taskName, int totalWork) {
-    if (myTotal > 0) {
+  public final void start(@NotNull String taskName, int totalWork) {
+    if (myTotal >= 0) {
       throw new IllegalStateException("start() is called twice");
     }
 
     myActiveChild = null;
     myDone = 0;
-    myTotal = Math.max(0, totalWork);
+    assert totalWork >= 0 : "totalWork=" + totalWork;
+    myTotal = totalWork;
     myName = taskName;
     setTitleInternal(taskName);
     setStepInternal("");
@@ -56,7 +63,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public final void step(String title) {
     check();
-    if (myTotal <= 0) {
+    if (myTotal < 0) {
       throw new IllegalStateException("call start() first");
     }
 
@@ -67,12 +74,19 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
   @Override
   public void advance(int work) {
     check();
-    if (myTotal <= 0) {
+    if (myTotal < 0) {
       throw new IllegalStateException("call start() first");
     }
-    if (work == 0) return;
+    assert work >= 0;
 
-    myDone = Math.min(myTotal, Math.max(0, myDone + work));
+    //todo replace with exception and remove overflow check when MPS-24455 is fixed
+    if (myTotal < myDone + work || myDone + work < 0) {
+      LOG.warn("advance(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work);
+      myDone = myTotal;
+    } else {
+      myDone += work;
+    }
+
     update();
   }
 
@@ -124,9 +138,14 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     if (work < 0) {
       throw new IllegalArgumentException("illegal amount of work");
     }
+    //todo replace with exception and remove overflow check when MPS-24455 is fixed
+    if (myTotal < myDone + work || myDone + work < 0) {
+      LOG.warn("subTask(work): work is too big: total=" + myTotal + "; done=" + myDone + "; work=" + work);
+      myAfterActiveChild = myTotal;
+    } else {
+      myAfterActiveChild = myDone + work;
+    }
 
-    work = Math.max(0, work);
-    myAfterActiveChild = Math.min(myDone + work, myTotal);
     return (myActiveChild = subTaskInternal(work, kind));
   }
 
@@ -134,13 +153,12 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     return new SubProgressMonitor(this, work, kind);
   }
 
-  protected static class SubProgressMonitor extends ProgressMonitorBase {
-
+  public static class SubProgressMonitor extends ProgressMonitorBase {
     private final ProgressMonitorBase parent;
     private final int parentTotalWork;
     private final SubProgressKind kind;
 
-    protected SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
+    public SubProgressMonitor(ProgressMonitorBase parent, int work, SubProgressKind kind) {
       this.parent = parent;
       this.parentTotalWork = work;
       this.kind = kind;
@@ -150,7 +168,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     protected void setTitleInternal(String name) {
       if (kind == SubProgressKind.DEFAULT) {
         parent.setTitleInternal(combineTasks(parent.getTaskName(), name));
-      } else if(kind == SubProgressKind.REPLACING){
+      } else if (kind == SubProgressKind.REPLACING) {
         parent.setTitleInternal(name);
       } else if (kind == SubProgressKind.AS_COMMENT) {
         parent.setStepInternal(name);
@@ -172,7 +190,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     protected void startInternal(String text) {
     }
 
-    protected ProgressMonitorBase getParent () {
+    public ProgressMonitorBase getParent() {
       return parent;
     }
 
@@ -191,16 +209,24 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
       if (parent.myActiveChild == this) {
         int startTicks = parent.myAfterActiveChild - parentTotalWork;
         double parentFraction = (startTicks + fraction * parentTotalWork) / parent.myTotal;
-        if (parentFraction < 0d) parentFraction = 0d;
-        if (parentFraction > 1d) parentFraction = 1d;
+        if (parentFraction < 0d) {
+          parentFraction = 0d;
+        }
+        if (parentFraction > 1d) {
+          parentFraction = 1d;
+        }
         parent.update(parentFraction);
       }
     }
   }
 
   private static String combineTasks(String taskName, String subTask) {
-    if (taskName == null || taskName.isEmpty()) return subTask;
-    if (subTask == null || subTask.isEmpty()) return taskName;
+    if (taskName == null || taskName.isEmpty()) {
+      return subTask;
+    }
+    if (subTask == null || subTask.isEmpty()) {
+      return taskName;
+    }
     return taskName.trim() + " :: " + subTask;
   }
 }

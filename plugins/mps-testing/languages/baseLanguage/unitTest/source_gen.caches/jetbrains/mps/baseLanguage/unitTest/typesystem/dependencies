@@ -1,43 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.typesystem.CheckUtils" file="CheckUtils.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionKind" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.typesystem.check_BTestCase_NonTypesystemRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.typesystem.check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.typesystem.check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.typesystem.typeof_Message_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.typesystem.check_BTestCase_NonTypesystemRule" file="check_BTestCase_NonTypesystemRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.typesystem.check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule" file="check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.typesystem.CheckUtils" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.typesystem.check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule" file="check_TestIsCompiledAndLoadedByMPS_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>

@@ -19,9 +19,9 @@
   <name>MPS Core</name>
   <category>Custom Languages</category>
   <description>MPS Core</description>
-  <version>3.4</version>
+  <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
-  <idea-version since-build="145.1" until-build="163.1"/>
+  <idea-version since-build="145.1" until-build="171.1"/>
 
   <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
   <depends optional="true" config-file="intellij-ides-support.xml">com.intellij.modules.ultimate</depends>
@@ -61,6 +61,7 @@
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSGlobalLibImporter</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.ide.platform.watching.ReloadManager</interface-class>
       <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
     </component>
     <!--
@@ -90,6 +91,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.WatchedRoots</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.PluginsPathMacroCrutch</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -100,7 +104,10 @@
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
-    <!-- coped from MPSUI.xml -->
+    <!-- next 3 components were copied from MPSUI.xml. Could I use xi:include xpointer(components/project-components) instead? -->
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
     </component>
@@ -112,6 +119,9 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.ProjectRootListenerComponent</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>

@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_DevKit = new ConceptPresentationBuilder().create();
@@ -35,118 +33,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0u.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_DevKit;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Generator;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_Language;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_MappingConfigExternalRef;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_MappingConfigNormalRef;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_MappingConfigRefAllGlobal;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_MappingConfigRefAllLocal;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_MappingConfigRefBase;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_MappingConfigRefSet;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_MappingPriorityRule;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_ModelReference;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ModelRoot;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_Module;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ModuleDependency;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ModuleReference;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_Solution;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_SourcePath;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_StubEntry;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_StubSolution;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.DevKit:
+        return props_DevKit;
+      case LanguageConceptSwitch.Generator:
+        return props_Generator;
+      case LanguageConceptSwitch.Language:
+        return props_Language;
+      case LanguageConceptSwitch.MappingConfigExternalRef:
+        return props_MappingConfigExternalRef;
+      case LanguageConceptSwitch.MappingConfigNormalRef:
+        return props_MappingConfigNormalRef;
+      case LanguageConceptSwitch.MappingConfigRefAllGlobal:
+        return props_MappingConfigRefAllGlobal;
+      case LanguageConceptSwitch.MappingConfigRefAllLocal:
+        return props_MappingConfigRefAllLocal;
+      case LanguageConceptSwitch.MappingConfigRefBase:
+        return props_MappingConfigRefBase;
+      case LanguageConceptSwitch.MappingConfigRefSet:
+        return props_MappingConfigRefSet;
+      case LanguageConceptSwitch.MappingPriorityRule:
+        return props_MappingPriorityRule;
+      case LanguageConceptSwitch.ModelReference:
+        return props_ModelReference;
+      case LanguageConceptSwitch.ModelRoot:
+        return props_ModelRoot;
+      case LanguageConceptSwitch.Module:
+        return props_Module;
+      case LanguageConceptSwitch.ModuleDependency:
+        return props_ModuleDependency;
+      case LanguageConceptSwitch.ModuleReference:
+        return props_ModuleReference;
+      case LanguageConceptSwitch.Solution:
+        return props_Solution;
+      case LanguageConceptSwitch.SourcePath:
+        return props_SourcePath;
+      case LanguageConceptSwitch.StubEntry:
+        return props_StubEntry;
+      case LanguageConceptSwitch.StubSolution:
+        return props_StubSolution;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, "jetbrains.mps.lang.project.structure.DevKit"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845954f70fL, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595702d4L, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845954f70dL, "jetbrains.mps.lang.project.structure.MappingConfigRefBase"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, "jetbrains.mps.lang.project.structure.MappingConfigRefSet"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, "jetbrains.mps.lang.project.structure.MappingPriorityRule"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, "jetbrains.mps.lang.project.structure.ModelReference"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52426L, "jetbrains.mps.lang.project.structure.ModelRoot"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, "jetbrains.mps.lang.project.structure.Module"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, "jetbrains.mps.lang.project.structure.ModuleDependency"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, "jetbrains.mps.lang.project.structure.Solution"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x3be012d639dffb7L, "jetbrains.mps.lang.project.structure.SourcePath"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52422L, "jetbrains.mps.lang.project.structure.StubEntry"), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x3be012d639dff87L, "jetbrains.mps.lang.project.structure.StubSolution"));
 }

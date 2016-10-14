@@ -4,5 +4,5 @@ package jetbrains.mps.lang.actions.testLanguage.actions;
 
 
 public class StringHolder {
-  /*package*/ String matchingText = null;
+  public String matchingText = "newChild1";
 }

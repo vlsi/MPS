@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractAntiquotation = new ConceptPresentationBuilder().create();
@@ -33,108 +30,43 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0s.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractAntiquotation;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Antiquotation;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_GeneratorInternal_InternalReferenceHolder;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_GeneratorInternal_PropertyDescriptor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_GeneratorInternal_ReferenceDescriptor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ListAntiquotation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_NodeBuilder;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_NodeBuilderExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_NodeBuilderInitLink;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_NodeBuilderInitPart;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_NodeBuilderInitProperty;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_NodeBuilderList;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_NodeBuilderNode;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_NodeBuilderRef;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_PropertyAntiquotation;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_Quotation;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ReferenceAntiquotation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractAntiquotation:
+        return props_AbstractAntiquotation;
+      case LanguageConceptSwitch.Antiquotation:
+        return props_Antiquotation;
+      case LanguageConceptSwitch.GeneratorInternal_InternalReferenceHolder:
+        return props_GeneratorInternal_InternalReferenceHolder;
+      case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
+        return props_GeneratorInternal_PropertyDescriptor;
+      case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
+        return props_GeneratorInternal_ReferenceDescriptor;
+      case LanguageConceptSwitch.ListAntiquotation:
+        return props_ListAntiquotation;
+      case LanguageConceptSwitch.NodeBuilder:
+        return props_NodeBuilder;
+      case LanguageConceptSwitch.NodeBuilderExpression:
+        return props_NodeBuilderExpression;
+      case LanguageConceptSwitch.NodeBuilderInitLink:
+        return props_NodeBuilderInitLink;
+      case LanguageConceptSwitch.NodeBuilderInitPart:
+        return props_NodeBuilderInitPart;
+      case LanguageConceptSwitch.NodeBuilderInitProperty:
+        return props_NodeBuilderInitProperty;
+      case LanguageConceptSwitch.NodeBuilderList:
+        return props_NodeBuilderList;
+      case LanguageConceptSwitch.NodeBuilderNode:
+        return props_NodeBuilderNode;
+      case LanguageConceptSwitch.NodeBuilderRef:
+        return props_NodeBuilderRef;
+      case LanguageConceptSwitch.PropertyAntiquotation:
+        return props_PropertyAntiquotation;
+      case LanguageConceptSwitch.Quotation:
+        return props_Quotation;
+      case LanguageConceptSwitch.ReferenceAntiquotation:
+        return props_ReferenceAntiquotation;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0s = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1c4b068f93acf228L, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_InternalReferenceHolder"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_PropertyDescriptor"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_ReferenceDescriptor"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, "jetbrains.mps.lang.quotation.structure.NodeBuilder"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0339L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a2df32L, "jetbrains.mps.lang.quotation.structure.NodeBuilderList"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a0fa93L, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
 }

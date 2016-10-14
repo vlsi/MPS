@@ -20,19 +20,30 @@ import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
+/**
+ * Idea platform has the same mechanism in {@link com.intellij.ide.SaveAndSyncHandlerImpl}
+ * however it does not work for us (poor editor subsystem platform integration?)
+ *
+ * SO this class is a delegate: it saves everything whenever the platform saves everything.
+ */
 public class MPSFilesSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
+  private final SRepository myRepository;
 
   public MPSFilesSaver(MPSCoreComponents coreComponents) {
+    myRepository = coreComponents.getModuleRepository();
   }
 
   @Override
@@ -47,17 +58,20 @@ public class MPSFilesSaver implements ApplicationComponent {
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       @Override
       public void beforeAllDocumentsSaving() {
-        if (RuntimeFlags.isTestMode()) return;
-        ThreadUtils.assertEDT();
+        if (!RuntimeFlags.isTestMode()) {
+          ThreadUtils.assertEDT();
 
-        Runnable saveAllRunnable = new SaveRepositoryCommand(MPSModuleRepository.getInstance());
-        // FIXME consider IMakeService check to move inro SaveRepositoryCommand - whether other clients of repo save might
-        // be interested as well.
+          SaveRepositoryCommand saveCommand = new SaveRepositoryCommand(myRepository);
+          // FIXME consider IMakeService check to move into SaveRepositoryCommand - whether other clients of repo save might
+          // be interested as well.
 
-        if (IMakeService.INSTANCE.isSessionActive()) {
-          ModelAccess.instance().runWriteInEDT(saveAllRunnable);
-        } else {
-          ModelAccess.instance().runWriteAction(saveAllRunnable);
+          if (ProjectManager.getInstance().getOpenProjects().length > 0) {
+            if (IMakeService.INSTANCE.isSessionActive()) {
+              ApplicationManager.getApplication().invokeLater(saveCommand::runSavingTask);
+            } else {
+              saveCommand.runSavingTask();
+            }
+          }
         }
       }
     });

@@ -5,97 +5,43 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 @Deprecated
 @ToRemove(version = 3.3)
 public class BootstrapLanguages {
-  public static final String ACTIONS_NAMESPACE = "jetbrains.mps.lang.actions";
-  public static final String BEHAVIOR_NAMESPACE = "jetbrains.mps.lang.behavior";
-  public static final String CONSTRAINTS_NAMESPACE = "jetbrains.mps.lang.constraints";
-  public static final String CORE_NAMESPACE = "jetbrains.mps.lang.core";
-  public static final String DATA_FLOW_NAMESPACE = "jetbrains.mps.lang.dataFlow";
-  public static final String DESCRIPTOR_NAMESPACE = "jetbrains.mps.lang.descriptor";
-  public static final String EDITOR_NAMESPACE = "jetbrains.mps.lang.editor";
-  public static final String FIND_USAGES_NAMESPACE = "jetbrains.mps.lang.findUsages";
-  public static final String PROJECT_NAMESPACE = "jetbrains.mps.lang.project";
-  public static final String GENERATOR_NAMESPACE = "jetbrains.mps.lang.generator";
-  public static final String GENERATOR_CONTEXT_NAMESPACE = "jetbrains.mps.lang.generator.generationContext";
-  public static final String GENERATOR_PARAMETERS_NAMESPACE = "jetbrains.mps.lang.generator.generationParameters";
-  public static final String INTENTIONS_NAMESPACE = "jetbrains.mps.lang.intentions";
-  public static final String PLUGIN_NAMESPACE = "jetbrains.mps.lang.plugin";
-  public static final String MAKE_FACET_NAMESPACE = "jetbrains.mps.make.facet";
-  public static final String REFACTORING_NAMESPACE = "jetbrains.mps.lang.refactoring";
-  public static final String SCRIPT_NAMESPACE = "jetbrains.mps.lang.script";
-  public static final String SHARED_CONCEPTS_NAMESPACE = "jetbrains.mps.lang.sharedConcepts";
-  public static final String SMODEL_NAMESPACE = "jetbrains.mps.lang.smodel";
-  public static final String STRUCTURE_NAMESPACE = "jetbrains.mps.lang.structure";
-  public static final String MIGRATION_NAMESPACE = "jetbrains.mps.lang.migration";
-  public static final String TEST_NAMESPACE = "jetbrains.mps.lang.test";
-  public static final String TEXT_GEN_NAMESPACE = "jetbrains.mps.lang.textGen";
-  public static final String TYPESYSTEM_NAMESPACE = "jetbrains.mps.lang.typesystem";
-  public static final String BASE_LANGUAGE_NAMESPACE = "jetbrains.mps.baseLanguage";
-  public static final String COLLECTIONS_NAMESPACE = "jetbrains.mps.baseLanguage.collections";
-  public static final String CLOSURES_NAMESPACE = "jetbrains.mps.baseLanguage.closures";
-  public static final String TUPLES_NAMESPACE = "jetbrains.mps.baseLanguage.tuples";
-  public static final String UNITTEST_NAMESPACE = "jetbrains.mps.baseLanguage.unitTest";
-  public static final String DEVKIT_GENERAL_NAMESPACE = "jetbrains.mps.devkit.general-purpose";
-  public static final String DEVKIT_BOOTSTRAP_NAMESPACE = "jetbrains.mps.devkit.bootstrap-languages";
-  public static final String DEVKIT_LANGUAGE_DESIGN_NAMESPACE = "jetbrains.mps.devkit.language-design";
-  public static final String JDK_NAMESPACE = "JDK";
-  public static final String concept_baseLanguage_Annotation = "jetbrains.mps.baseLanguage.structure.Annotation";
-  public static final String concept_baseLanguage_ClassConcept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-  public static final String concept_baseLanguage_EnumClass = "jetbrains.mps.baseLanguage.structure.EnumClass";
-  public static final String concept_baseLanguage_Interface = "jetbrains.mps.baseLanguage.structure.Interface";
-  public static final String concept_generator_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
-
   @Deprecated
   private BootstrapLanguages() {
   }
   public static SLanguage getLangCore() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core");
+    return MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
   }
   public static SLanguage getGeneratorLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator");
+    return MetaAdapterFactory.getLanguage(0xb401a68083254110L, 0x8fd384331ff25befL, "jetbrains.mps.lang.generator");
   }
   public static SLanguage getGenContextLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L), "jetbrains.mps.lang.generator.generationContext");
+    return MetaAdapterFactory.getLanguage(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, "jetbrains.mps.lang.generator.generationContext");
   }
   public static SLanguage getBaseLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
+    return MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
   }
   public static SLanguage getBaseLangUnitTestLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L), "jetbrains.mps.baseLanguage.unitTest");
+    return MetaAdapterFactory.getLanguage(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, "jetbrains.mps.baseLanguage.unitTest");
   }
   public static SLanguage getLanguageDescriptorLang() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf4ad079dbc714ffbL, 0x96009328705cf998L), "jetbrains.mps.lang.descriptor");
+    return MetaAdapterFactory.getLanguage(0xf4ad079dbc714ffbL, 0x96009328705cf998L, "jetbrains.mps.lang.descriptor");
   }
-  public static Language baseLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"), Language.class);
+  public static SModuleReference getGeneralPurposeDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");
   }
-  public static Language smodelLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)"), Language.class);
+  public static SModuleReference getGeneratorTemplatesDevKit() {
+    // unless we introduce anything like SLanguage for DevKit runtime, SModuleReference is the way 
+    // we identify devkit at RT. 
+    return PersistenceFacade.getInstance().createModuleReference("a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)");
   }
-  public static Language collectionsLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)"), Language.class);
-  }
-  public static Language generatorLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"), Language.class);
-  }
-  public static Language generatorContextLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"), Language.class);
-  }
-  public static Language generatorParametersLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)"), Language.class);
-  }
-  public static Language coreLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)"), Language.class);
-  }
-  public static DevKit generalDevKit() {
-    return (DevKit) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+  public static SModuleReference getLanguageDesignDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
   }
   public static SModuleReference descriptorLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)");

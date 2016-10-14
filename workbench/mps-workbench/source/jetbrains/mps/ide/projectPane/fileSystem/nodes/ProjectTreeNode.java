@@ -23,6 +23,7 @@ import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.module.ModuleTreeNodeComparator;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -41,10 +42,12 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
     if (mpsProject != null) {
       for (SModule m : mpsProject.getModules()) {
-        if (m instanceof AbstractModule) {
-          if (((AbstractModule) m).getDescriptorFile().exists()) {
-            moduleNodes.add(new ModuleTreeNode(project, (AbstractModule) m));
-          }
+        if (!(m instanceof AbstractModule)) {
+          continue;
+        }
+        IFile moduleFile = ((AbstractModule) m).getDescriptorFile();
+        if (moduleFile != null && moduleFile.exists()) {
+          moduleNodes.add(new ModuleTreeNode(project, (AbstractModule) m));
         }
       }
     }

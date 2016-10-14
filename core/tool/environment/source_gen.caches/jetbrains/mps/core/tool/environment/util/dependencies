@@ -14,14 +14,20 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.project.ElementProjectDataSource" />
     <classNode dependClassName="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="jetbrains.mps.vfs.impl.IoFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.project.FileBasedProject" />
     <classNode extendsClassName="jetbrains.mps.project.ProjectBase" />
   </dependency>

@@ -12,6 +12,11 @@
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
+      </concept>
+    </language>
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
       <concept id="5177162104569058199" name="jetbrains.mps.lang.aspect.structure.HelpURL" flags="ng" index="1sEMCm">
         <property id="5177162104569058200" name="url" index="1sEMCp" />
@@ -19,6 +24,7 @@
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
+        <child id="3433054418425083029" name="icon" index="3vqPLo" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -36,11 +42,14 @@
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="migration" />
     <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Migrations" />
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD34/Migrations" />
     </node>
     <node concept="2V$Bhx" id="7XWR6$5jjmC" role="QG$2i">
       <property role="2V$B1T" value="90746344-04fd-4286-97d5-b46ae6a81709" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.migration" />
+    </node>
+    <node concept="1QGGSu" id="3hP8sYBd2EZ" role="3vqPLo">
+      <property role="1iqoE4" value="${module}/icons/migration.png" />
     </node>
   </node>
 </model>

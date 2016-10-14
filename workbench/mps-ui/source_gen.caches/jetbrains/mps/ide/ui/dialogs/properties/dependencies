@@ -55,7 +55,6 @@
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="javax.swing.tree.TreeCellEditor" />
     <classNode dependClassName="javax.swing.tree.TreeCellRenderer" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.NodeData" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />

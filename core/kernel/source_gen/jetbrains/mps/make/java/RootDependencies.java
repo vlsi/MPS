@@ -5,7 +5,6 @@ package jetbrains.mps.make.java;
 import java.util.List;
 import jetbrains.mps.util.InternAwareStringList;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
 import org.jdom.Attribute;
 import java.util.Set;
@@ -18,23 +17,43 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private static final String DEPEND_CLASS = "classNode";
   private static final String DEPEND_CLASS_NAME = "dependClassName";
   private static final String EXTENDS_CLASS_NAME = "extendsClassName";
-  private List<String> myDependNodes = new InternAwareStringList(2);
-  private List<String> myExtendsNodes = new InternAwareStringList(2);
+  private final List<String> myDependNodes;
+  private final List<String> myExtendsNodes;
   private String myClassName;
   private String myFileName;
   /*package*/ RootDependencies() {
+    myDependNodes = new InternAwareStringList();
+    myExtendsNodes = new InternAwareStringList();
   }
-  public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
+  public RootDependencies(String nodeName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = InternUtil.intern(nodeName);
-    this.myFileName = InternUtil.intern(fileName);
     if (dependNodes != null) {
-      ListSequence.fromList(this.myDependNodes).addSequence(ListSequence.fromList(dependNodes));
+      this.myDependNodes = new InternAwareStringList(dependNodes.size());
+      this.myDependNodes.addAll(dependNodes);
+    } else {
+      this.myDependNodes = new InternAwareStringList(2);
     }
     if (extendsNodes != null) {
-      ListSequence.fromList(this.myExtendsNodes).addSequence(ListSequence.fromList(extendsNodes));
+      myExtendsNodes = new InternAwareStringList(extendsNodes.size());
+      myExtendsNodes.addAll(extendsNodes);
+    } else {
+      myExtendsNodes = new InternAwareStringList(2);
     }
+
   }
+
+  /**
+   * 
+   * @deprecated Shall move fileName (if needed at all) to ModelDependencies
+   */
+  @Deprecated
+  public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
+    this(nodeName, dependNodes, extendsNodes);
+    this.myFileName = InternUtil.intern(fileName);
+  }
+
   public RootDependencies(Element element) {
+    this();
     myClassName = InternUtil.intern(element.getAttribute(CLASS_NAME).getValue());
     Attribute attr = element.getAttribute(FILE_NAME);
     if (attr != null) {
@@ -46,11 +65,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
       }
       if (e.getAttribute(DEPEND_CLASS_NAME) != null) {
         String d = e.getAttribute(DEPEND_CLASS_NAME).getValue();
-        ListSequence.fromList(this.myDependNodes).addElement(d);
+        myDependNodes.add(d);
       }
       if (e.getAttribute(EXTENDS_CLASS_NAME) != null) {
         String ext = e.getAttribute(EXTENDS_CLASS_NAME).getValue();
-        ListSequence.fromList(this.myExtendsNodes).addElement(ext);
+        myExtendsNodes.add(ext);
       }
     }
   }
@@ -71,16 +90,16 @@ public class RootDependencies implements Comparable<RootDependencies> {
     }
   }
   public Set<String> getDependencies() {
-    return new HashSet((Collection) myDependNodes);
+    return new HashSet<String>((Collection) myDependNodes);
   }
   public Set<String> getExtends() {
-    return new HashSet((Collection) myExtendsNodes);
+    return new HashSet<String>((Collection) myExtendsNodes);
   }
   /*package*/ void addDependNode(String s) {
-    ListSequence.fromList(myDependNodes).addElement(s);
+    myDependNodes.add(s);
   }
   /*package*/ void addExtendsNode(String s) {
-    ListSequence.fromList(myExtendsNodes).addElement(s);
+    myExtendsNodes.add(s);
   }
   /*package*/ void setFileName(String fileName) {
     this.myFileName = InternUtil.intern(fileName);
@@ -100,5 +119,9 @@ public class RootDependencies implements Comparable<RootDependencies> {
       return 0;
     }
     return this.myClassName.compareTo(p0.myClassName);
+  }
+
+  public interface Source {
+    RootDependencies getDependencies();
   }
 }

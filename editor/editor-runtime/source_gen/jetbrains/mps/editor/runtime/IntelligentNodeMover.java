@@ -27,9 +27,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.annotations.Nullable;
 
 public class IntelligentNodeMover {
@@ -261,7 +261,7 @@ public class IntelligentNodeMover {
     }
     EditorCell cellToMove = findCellToMoveInsideCell(cell);
     if (cellToMove != null) {
-      SContainmentLink cellContainmentLink = getCellContainmentLink(cellToMove);
+      SContainmentLink cellContainmentLink = CellUtil.getCellContainmentLink(cellToMove);
       assert cellContainmentLink != null;
       return new IntelligentNodeMover.PlaceToMove(cellToMove.getSNode(), cellContainmentLink, null, myIsForward);
     }
@@ -279,26 +279,12 @@ public class IntelligentNodeMover {
   }
 
   private boolean isProperCellToMove(@NotNull EditorCell cell) {
-    SContainmentLink link = getCellContainmentLink(cell);
+    SContainmentLink link = CellUtil.getCellContainmentLink(cell);
     return link != null && link.isMultiple() && isSimilarLink(link);
   }
 
-  private SContainmentLink getCellContainmentLink(EditorCell cell) {
-    SNode node = cell.getSNode();
-    if (node == null) {
-      return null;
-    }
-    String role = cell.getRole();
-    if (role == null) {
-      return null;
-    }
-
-    // todo remove getLink(role) when cell will have link 
-    SAbstractLink link = node.getConcept().getLink(role);
-    return (link instanceof SContainmentLink ? ((SContainmentLink) link) : null);
-  }
   private boolean isSimilarLink(@NotNull SContainmentLink link) {
-    return eq_9l6nqc_a0a0a63_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a63(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
+    return eq_9l6nqc_a0a0a53_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a53(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
   }
 
   private static class PlaceToMove {
@@ -347,10 +333,10 @@ public class IntelligentNodeMover {
     }
     return node.getContainmentLink();
   }
-  private static boolean eq_9l6nqc_a0a0a63(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a53(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_9l6nqc_a0a0a63_0(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a53_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

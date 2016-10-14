@@ -16,6 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import java.util.Set;
 
@@ -26,6 +27,8 @@ import java.util.Set;
  * API: A client must not throw exceptions in {@link #modulesReloaded(java.util.Set)}
  * Otherwise the application may behave unexpectedly
  */
+@Deprecated
+@ToRemove(version = 3.4)
 public interface ModuleReloadListener {
   void modulesReloaded(Set<ReloadableModule> modules);
 }

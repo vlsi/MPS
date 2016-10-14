@@ -7,6 +7,8 @@ import java.util.Set;
 import jetbrains.mps.debug.api.BreakpointCreator;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.debug.api.BreakpointCreatorsManager;
@@ -21,13 +23,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private Set<BreakpointCreator> myCreators = SetSequence.fromSet(new HashSet<BreakpointCreator>());
   public DebugInfoProvider_CustomApplicationPlugin() {
   }
+  protected static Logger LOG = LogManager.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
   public void doInit() {
     PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.BreakpointCreatorsManager");
     if (debuggerPlugin == null) {
@@ -114,5 +115,4 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     }
     SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).clear();
   }
-  protected static Logger LOG = LogManager.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
 }

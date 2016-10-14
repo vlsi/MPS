@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -43,8 +45,8 @@ public class NodeNodeData extends AbstractResultNodeData {
 
   private SNodeReference myNodePointer;
 
-  public NodeNodeData(PathItemRole role, @Nullable String caption, @NotNull SNode pathObject, boolean isResultNode, boolean resultsSection) {
-    super(role, caption != null ? caption : snodeRepresentation(pathObject), nodeAdditionalInfo(pathObject), false, isResultNode, resultsSection);
+  public NodeNodeData(PathItemRole role, @Nullable String caption, @NotNull SNode pathObject, boolean isPathTail, boolean resultsSection) {
+    super(role, caption != null ? caption : snodeRepresentation(pathObject), nodeAdditionalInfo(pathObject), false, isPathTail, resultsSection);
     myNodePointer = pathObject.getReference();
   }
 
@@ -127,5 +129,14 @@ public class NodeNodeData extends AbstractResultNodeData {
 
   private static String sizeRepresentation(int size) {
     return "<font color='gray'>(" + Integer.toString(size) + ")</font>";
+  }
+
+  @Override
+  public void navigate(Project mpsProject, boolean useProjectTree, boolean focus) {
+    if (useProjectTree) {
+      new ProjectPaneNavigator(mpsProject).shallFocus(focus).select(myNodePointer);
+    } else {
+      new EditorNavigator(mpsProject).shallFocus(focus).selectIfChild().open(myNodePointer);
+    }
   }
 }

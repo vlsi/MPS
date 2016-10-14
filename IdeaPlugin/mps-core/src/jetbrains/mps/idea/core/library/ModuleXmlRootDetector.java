@@ -50,7 +50,7 @@ public class ModuleXmlRootDetector extends RootDetector {
       // need only loaded modules
       // we may want loading in the future, but the time has not come yet
       if (ModuleRepositoryFacade.getInstance().getModule(handle.getDescriptor().getModuleReference()) != null) {
-        VirtualFile ideaFile = VirtualFileUtils.getVirtualFile(handle.getFile());
+        VirtualFile ideaFile = VirtualFileUtils.getOrCreateVirtualFile(handle.getFile());
         // we compare file system since idea has been very, very bad:( See DetectedRootsChooserDialog.createTreeTable
         // problem in VfsUtilCore.getRelativePath
         if (ideaFile != null && ideaFile.getFileSystem() == rootCandidate.getFileSystem()) {

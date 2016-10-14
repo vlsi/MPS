@@ -10,7 +10,11 @@ public enum PredefinedCellID {
   FIRST("FIRST", "first"),
   LAST("LAST", "last"),
   FIRST_EDITABLE("FIRST_EDITABLE", "firstEditable"),
-  LAST_EDITABLE("LAST_EDITABLE", "lastEditable");
+  LAST_EDITABLE("LAST_EDITABLE", "lastEditable"),
+  FIRST_ERROR("FIRST_ERROR", "firstError"),
+  LAST_ERROR("LAST_ERROR", "lastError"),
+  FOCUS_POLICY("FOCUS_POLICY", "focusPolicy"),
+  MOST_RELEVANT("MOST_RELEVANT", "mostRelevant");
 
   private final String myName;
   public String getName() {
@@ -33,6 +37,10 @@ public enum PredefinedCellID {
     ListSequence.fromList(list).addElement(PredefinedCellID.LAST);
     ListSequence.fromList(list).addElement(PredefinedCellID.FIRST_EDITABLE);
     ListSequence.fromList(list).addElement(PredefinedCellID.LAST_EDITABLE);
+    ListSequence.fromList(list).addElement(PredefinedCellID.FIRST_ERROR);
+    ListSequence.fromList(list).addElement(PredefinedCellID.LAST_ERROR);
+    ListSequence.fromList(list).addElement(PredefinedCellID.FOCUS_POLICY);
+    ListSequence.fromList(list).addElement(PredefinedCellID.MOST_RELEVANT);
     return list;
   }
   public static PredefinedCellID getDefault() {
@@ -53,6 +61,18 @@ public enum PredefinedCellID {
     }
     if (value.equals(PredefinedCellID.LAST_EDITABLE.getValueAsString())) {
       return PredefinedCellID.LAST_EDITABLE;
+    }
+    if (value.equals(PredefinedCellID.FIRST_ERROR.getValueAsString())) {
+      return PredefinedCellID.FIRST_ERROR;
+    }
+    if (value.equals(PredefinedCellID.LAST_ERROR.getValueAsString())) {
+      return PredefinedCellID.LAST_ERROR;
+    }
+    if (value.equals(PredefinedCellID.FOCUS_POLICY.getValueAsString())) {
+      return PredefinedCellID.FOCUS_POLICY;
+    }
+    if (value.equals(PredefinedCellID.MOST_RELEVANT.getValueAsString())) {
+      return PredefinedCellID.MOST_RELEVANT;
     }
     return PredefinedCellID.getDefault();
   }

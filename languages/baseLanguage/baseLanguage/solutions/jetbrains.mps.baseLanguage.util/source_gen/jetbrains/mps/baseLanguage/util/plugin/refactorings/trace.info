@@ -4689,44 +4689,45 @@
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/8492459591399170869">
     <file name="MethodRefactoringUtils.java">
-      <node id="8492459591399170923" at="22,98,23,49" concept="10" />
+      <node id="8492459591399170923" at="22,117,23,49" concept="10" />
       <node id="8492459591399170933" at="25,684,26,23" concept="11" />
       <node id="8492459591399170953" at="27,7,28,41" concept="10" />
-      <node id="8492459591399170959" at="29,215,30,182" concept="4" />
-      <node id="8492459591399170975" at="31,14,32,169" concept="4" />
+      <node id="8492459591399170959" at="29,215,30,162" concept="4" />
+      <node id="8492459591399170975" at="31,14,32,149" concept="4" />
       <node id="8492459591399170983" at="33,7,34,0" concept="13" />
       <node id="8492459591399170990" at="35,98,36,242" concept="4" />
-      <node id="8492459591399171011" at="39,202,40,189" concept="10" />
+      <node id="8492459591399171011" at="39,202,40,169" concept="10" />
       <node id="8492459591399171026" at="41,98,42,242" concept="4" />
       <node id="8492459591399171038" at="44,5,45,19" concept="11" />
-      <node id="8492459591399171051" at="47,95,48,156" concept="11" />
+      <node id="8492459591399171051" at="47,114,48,136" concept="11" />
       <node id="1279276159889585463" at="20,0,22,0" concept="2" trace="MethodRefactoringUtils#()V" />
       <node id="8492459591399170973" at="31,12,33,7" concept="0" />
       <node id="8492459591399170931" at="24,201,27,7" concept="8" />
       <node id="8492459591399170984" at="34,0,37,7" concept="7" />
-      <node id="8492459591399171020" at="40,189,43,7" concept="7" />
-      <node id="8492459591399171040" at="47,0,50,0" concept="15" trace="findMethodUsages#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <node id="8492459591399171020" at="40,169,43,7" concept="7" />
+      <node id="8492459591399171040" at="47,0,50,0" concept="15" trace="findMethodUsages#(Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="8492459591399170957" at="28,41,33,7" concept="8" />
       <node id="8492459591399171002" at="38,5,44,5" concept="8" />
       <node id="8492459591399170929" at="23,49,38,5" concept="8" />
-      <node id="8492459591399170915" at="22,0,47,0" concept="15" trace="findOverridingMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <node id="8492459591399170915" at="22,0,47,0" concept="15" trace="findOverridingMethods#(Lorg/jetbrains/mps/openapi/module/SearchScope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
       <scope id="1279276159889585465" at="20,35,20,35" />
       <scope id="8492459591399170932" at="25,684,26,23" />
-      <scope id="8492459591399170958" at="29,215,30,182" />
-      <scope id="8492459591399170974" at="31,14,32,169" />
+      <scope id="8492459591399170958" at="29,215,30,162" />
+      <scope id="8492459591399170974" at="31,14,32,149" />
       <scope id="8492459591399170989" at="35,98,36,242" />
       <scope id="8492459591399171025" at="41,98,42,242" />
-      <scope id="8492459591399171043" at="47,95,48,156" />
+      <scope id="8492459591399171043" at="47,114,48,136" />
       <scope id="1279276159889585463" at="20,0,22,0" />
       <scope id="8492459591399170984" at="34,0,37,7">
         <var name="result" id="8492459591399170985" />
       </scope>
-      <scope id="8492459591399171020" at="40,189,43,7">
+      <scope id="8492459591399171020" at="40,169,43,7">
         <var name="result" id="8492459591399171021" />
       </scope>
       <scope id="8492459591399171040" at="47,0,50,0">
         <var name="method" id="8492459591399171057" />
         <var name="progressMonitor" id="8492459591399171059" />
+        <var name="scope" id="458417361286701832" />
       </scope>
       <scope id="8492459591399171003" at="39,202,43,7">
         <var name="searchResults" id="8492459591399171012" />
@@ -4734,12 +4735,13 @@
       <scope id="8492459591399170930" at="24,201,37,7">
         <var name="searchResults" id="8492459591399170954" />
       </scope>
-      <scope id="8492459591399170922" at="22,98,45,19">
+      <scope id="8492459591399170922" at="22,117,45,19">
         <var name="results" id="8492459591399170924" />
       </scope>
       <scope id="8492459591399170915" at="22,0,47,0">
         <var name="method" id="8492459591399170916" />
         <var name="progressMonitor" id="8492459591399170918" />
+        <var name="scope" id="7350413709594182189" />
       </scope>
       <unit id="8492459591399170869" at="19,0,51,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     </file>

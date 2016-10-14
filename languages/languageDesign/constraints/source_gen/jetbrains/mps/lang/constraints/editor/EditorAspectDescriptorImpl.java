@@ -8,63 +8,84 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ConceptConstraints_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new InheritedNodeScopeFactory_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new NodeDefaultSearchScope_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new NodePropertyConstraint_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new NodeReferentConstraint_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ConceptParameter_ReferentSearchScope_enclosingNode_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_checkedNode_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConcept_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childNode_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_containingLink_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextNode_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_contextRole_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_exists_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_inEditor_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_link_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkTarget_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_newReferentNode_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_oldReferentNode_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parameterNode_SubstituteMenu());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_parentNode_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_position_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_referenceNode_SubstituteMenu());
+      case 17:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_smartReference_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_visible_SubstituteMenu());
+      case 19:
+        return Collections.<SubstituteMenu>singletonList(new ConstraintsFunctionParameter_node_SubstituteMenu());
+      default:
     }
-    return res;
+    return Collections.<SubstituteMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L, "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"));
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x118bd28275fL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed447b91aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4488befL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a29ccL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4294f69L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL)).seal();
 }

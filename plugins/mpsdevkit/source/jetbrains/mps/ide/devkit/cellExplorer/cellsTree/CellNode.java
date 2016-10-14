@@ -135,8 +135,12 @@ class CellNode extends MPSTreeNode {
     myInitialized = true;
   }
 
-  public String calculateNodeIdentifier() {
+  private String calculateNodeIdentifier() {
     String className = myCell.getClass().getSimpleName();
-    return className + '[' + myCell.getCellId() + ']';
+    if (myCell.getRole() != null) {
+      return String.format("%s[%s#%s]", className, myCell.getRole(), myCell.getCellId());
+    } else {
+      return String.format("%s[%s]", className, myCell.getCellId());
+    }
   }
 }

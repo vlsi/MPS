@@ -28,6 +28,13 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import java.util.HashMap;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import org.apache.log4j.Level;
 
 public class Rename_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -92,7 +99,7 @@ public class Rename_Action extends BaseAction {
     final Wrappers._boolean canBeRenamed = new Wrappers._boolean();
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        canBeRenamed.value = RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target")));
+        canBeRenamed.value = Rename_Action.this.canBeRenamed(_params);
         oldName.value = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     });
@@ -113,5 +120,21 @@ public class Rename_Action extends BaseAction {
         return m;
       }
     });
+  }
+  protected static Logger LOG = LogManager.getLogger(Rename_Action.class);
+  /*package*/ boolean canBeRenamed(final Map<String, Object> _params) {
+    SNode node = ((SNode) MapSequence.fromMap(_params).get("target"));
+    // we won't rename nodes, for which there are registered name constrints 
+    // if there are constrints, but they are not compiled, we can rename it 
+    SProperty nameProperty = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    ConstraintsDescriptor cd = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node));
+    PropertyConstraintsDescriptor propertyConstraint = cd.getProperty(nameProperty);
+    if (propertyConstraint == null) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Missing constraints descriptor for property INamedConcept.name for node:" + node.getPresentation());
+      }
+      return false;
+    }
+    return !(propertyConstraint.isReadOnly());
   }
 }

@@ -18,7 +18,7 @@
       <unit at="12,0,29,0" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.DefaultDiagramElementActionMap_0" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,76,0" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,43,0" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/1220375669566228856">

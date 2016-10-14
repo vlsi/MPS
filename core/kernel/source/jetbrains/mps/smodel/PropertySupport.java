@@ -20,9 +20,8 @@ import jetbrains.mps.classloading.ModuleReloadListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.util.Computable;
@@ -50,22 +49,8 @@ public abstract class PropertySupport {
    */
   @Deprecated
   public boolean canSetValue(SNode node, String propertyName, String value, boolean nullsAlwaysAllowed) {
-    if (value == null && nullsAlwaysAllowed) {
-      return true;  // can always remove property
-    }
-    if (value == null) {
-      value = "";
-    }
-    if (!canSetValue(value)) {
-      return false;
-    }
-    PropertyConstraintsDescriptor descriptor =
-        ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept()).getProperty(propertyName);
-    if (descriptor == null) {
-      LOG.error("No property constraints are available for property " + propertyName + " in node " + node.getPresentation());
-      return false;
-    }
-    return canSetValue(descriptor, node, propertyName, value);
+    SProperty sprop = ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName);
+    return canSetValue(node, sprop, value, nullsAlwaysAllowed);
   }
 
   public boolean canSetValue(SNode node, SProperty property, String value, boolean nullsAlwaysAllowed) {
@@ -201,19 +186,17 @@ public abstract class PropertySupport {
 
   private static PropertySupport loadPropertySupport(SNode propertyDeclaration) {
     SNode propertyDataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
-
-    SNode cd = propertyDeclaration.getParent();
-    Language l = SModelUtil.getDeclaringLanguage(cd);
+    Language l = SModelUtil.getDeclaringLanguage(propertyDataType);
 
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;
     try {
-      Class propertySupportClass = ClassLoaderManager.getInstance().getClass(l, propertySupportClassName);
+      Class propertySupportClass = ClassLoaderManager.getInstance().getOwnClass(l, propertySupportClassName);
       if (propertySupportClass != null) {
         Constructor constructor = propertySupportClass.getConstructor();
         propertySupport = (PropertySupport) constructor.newInstance();
       } else {
-        LOG.error("Can't find a class " + propertySupportClassName);
+        LOG.error("Can't find a class " + propertySupportClassName + " using classloader of " + l.getModuleName() + " module");
       }
     } catch (NoSuchMethodException e) {
       LOG.error(null, e);

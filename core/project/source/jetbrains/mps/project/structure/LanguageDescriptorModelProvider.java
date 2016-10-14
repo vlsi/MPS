@@ -49,6 +49,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -68,7 +69,6 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
 
   private class RootChangeListener extends SNodeChangeListenerAdapter {
     private final Set<SModelReference> myListenedModels = new HashSet<SModelReference>();
-
 
     public void attach(SModule module) {
       for (SModel model : module.getModels()) {
@@ -95,7 +95,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       }
       Language language = Language.getLanguageFor(event.getModel());
       if (language != null) {
-        refreshModule(language);
+        refreshModule(language,true);
       }
     }
 
@@ -106,7 +106,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       }
       Language language = Language.getLanguageFor(event.getModel());
       if (language != null) {
-        refreshModule(language);
+        refreshModule(language,true);
       }
     }
   }
@@ -116,18 +116,19 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
         aspects: for (SModel aspect : LanguageAspectSupport.getAspectModels(l)) {
-          ArrayList<SLanguage> mainLanguages = new ArrayList<SLanguage>(LanguageAspectSupport.getMainLanguages(aspect));
+          List<SLanguage> mainLanguages = new ArrayList<>(LanguageAspectSupport.getMainLanguages(aspect));
           for (SModule loadedModule : loadedModules) {
-            if (! (loadedModule instanceof Language)) continue;
-            if (!mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) continue;
+            if (loadedModule instanceof Language) {
+              if (mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) {
+                SModelReference ref = getSModelReference(l);
+                LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
+                if (languageModelDescriptor != null) {
+                  languageModelDescriptor.updateGenerationLanguages();
+                }
 
-            SModelReference ref = getSModelReference(l);
-            LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
-            if (languageModelDescriptor != null) {
-              languageModelDescriptor.updateGenerationLanguages();
+                break aspects;
+              }
             }
-
-            break aspects;
           }
         }
       }
@@ -166,12 +167,19 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
 
   @Override
   public void refreshModule(SModule language) {
+    refreshModule(language,false);
+  }
+
+  public void refreshModule(SModule language,boolean nodeChange) {
     myListener.attach(language);
     Language module = (Language) language;
     SModelReference ref = getSModelReference(module);
     if (!myModels.containsKey(ref)) {
       createModel(ref, module);
     } else {
+      if (!nodeChange){
+        myModels.get(ref).updateGenerationLanguages();
+      }
       LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
       if (languageModelDescriptor != null) {
         languageModelDescriptor.invalidate();
@@ -194,7 +202,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     }
   }
 
-  public LanguageModelDescriptor createModel(SModelReference ref, Language module) {
+  public LanguageModelDescriptor createModel(SModelReference ref, @NotNull Language module) {
     LanguageModelDescriptor result = new LanguageModelDescriptor(ref, module);
     result.updateGenerationLanguages();
 
@@ -221,16 +229,26 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       myHash = null;
     }
 
-    public void updateGenerationLanguages() {
+    /**
+     * FIXME
+     * adding used languages to descriptor model is a hack,
+     * fixing that the runtime solutions of languages engaged on generations are ignored at compilation
+     */
+    void updateGenerationLanguages() {
+      jetbrains.mps.smodel.SModel m = getSModel();
       addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
-      for (SModel aspect : LanguageAspectSupport.getAspectModels(myModule)) {
-        for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
+      Set<SLanguage> importsToRemove = new HashSet<>(m.usedLanguages()); // calculating the delta
+      Set<SLanguage> importsToAdd = new HashSet<>();
+      Collection<SModel> aspectModels = LanguageAspectSupport.getAspectModels(myModule);
+      for (SModel aspect : aspectModels) {
+        for (@NotNull SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
           addEngagedOnGenerationLanguage(aspectLanguage);
-
-          //todo this line is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
-          addLanguage(aspectLanguage);
+          importsToRemove.remove(aspectLanguage);
+          importsToAdd.add(aspectLanguage);
         }
       }
+      importsToRemove.forEach(m::deleteLanguage); // applying calculated delta
+      importsToAdd.forEach(m::addLanguage);
     }
 
     @Override

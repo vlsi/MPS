@@ -20,12 +20,7 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.List;
 
 /**
  * Produce collection of BaseLanguage dependencies (aka {@link ModelDependencies}) from information
@@ -34,6 +29,9 @@ import java.util.List;
  * generated files, hence ModelDependencies in [kernel] and this builder in [textgen]
  *
  * See {@link CompatibilityTextUnit} for ideas how to get rid of explicit BL dependency.
+ * Now, it seems better approach is to move this builder next to TextGen_Facet (which knows about [kernel] and [textgen]). It's still
+ * not best solution (we need a mechanism to contribute these builders, along with cache generators, based on actual languages involved).
+ * Shall get back to this question once RTU.findContextObject goes API/public (into TU) and I can use it without need to cast to RTU implementation
  *
  * @see jetbrains.mps.text.impl.DebugInfoBuilder
  * @author Artem Tikhomirov
@@ -48,17 +46,14 @@ public class BLDependenciesBuilder {
       if (tu.getState() == TextUnit.Status.Empty) {
         continue;
       }
-      if (!(tu instanceof RegularTextUnit2)) {
-        continue;
-      }
-      final Pair<List<String>, List<String>> dependencies = ((RegularTextUnit2) tu).getDependencies();
-      if (dependencies != null) {
-        final SNode root = tu.getStartNode();
-        modelDependencies.addDependencies(new RootDependencies(
-            NameUtil.nodeFQName(root), // JavaTextUnit.getClassName()?
-            tu.getFileName(),
-            dependencies.o1,
-            dependencies.o2));
+      if (tu instanceof RegularTextUnit) {
+        RootDependencies.Source co = ((RegularTextUnit) tu).findContextObject(RootDependencies.Source.class);
+        if (co != null) {
+          RootDependencies deps = co.getDependencies();
+          if (deps != null) {
+            modelDependencies.addDependencies(deps);
+          }
+        }
       }
     }
     return modelDependencies;

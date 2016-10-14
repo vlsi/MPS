@@ -206,7 +206,7 @@ public class SModuleOperations {
   /**
    * Reads module from file and eventually reloads it (when CLManager triggers refresh)
    */
-  public static void reloadFromDisk(AbstractModule module) {
+  public static void reloadFromDisk(@NotNull AbstractModule module) {
     if (module.getRepository() == null) {
       throw new IllegalArgumentException("Module " + module + " is disposed");
     }

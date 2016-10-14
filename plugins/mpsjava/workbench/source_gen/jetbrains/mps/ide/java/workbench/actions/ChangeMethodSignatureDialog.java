@@ -32,6 +32,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -101,7 +102,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
         ModelAccess modelAccess = ChangeMethodSignatureDialog.this.myProject.getRepository().getModelAccess();
         modelAccess.runReadAction(new Runnable() {
           public void run() {
-            methodsToRefactor.value = MethodRefactoringUtils.findOverridingMethods(ChangeMethodSignatureDialog.this.myDeclaration, new ProgressMonitorAdapter(indicator));
+            methodsToRefactor.value = MethodRefactoringUtils.findOverridingMethods(ProjectHelper.toMPSProject(myProject).new ProjectScope(), ChangeMethodSignatureDialog.this.myDeclaration, new ProgressMonitorAdapter(indicator));
           }
         });
       }

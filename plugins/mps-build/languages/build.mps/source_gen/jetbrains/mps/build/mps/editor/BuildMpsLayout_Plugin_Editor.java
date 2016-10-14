@@ -13,6 +13,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -46,7 +47,7 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_Plugin_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_y1xun7_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_Plugin_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_y1xun7_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class ReplaceWith_BuildLayout_NamedContainer_cellMenu_y1xun7_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

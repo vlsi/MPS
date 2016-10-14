@@ -26,8 +26,13 @@ import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
+import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -37,8 +42,10 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.WeavingWithAnchor;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
@@ -82,7 +89,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     return myGenerator;
   }
   /*package*/ GeneratorQueryProvider getQueryProvider(SNodeReference templateNode) {
-    return myGenerator.getQuerySource().getQueryProvider(templateNode);
+    return myGenerator.getQueryProvider(templateNode);
   }
 
   @Override
@@ -123,6 +130,9 @@ public final class TemplateProcessor implements ITemplateProcessor {
     SNode outputNode = env.createOutputNode(rtTemplateNode.getConcept());
 
     // use same env method as reduce_TemplateNode does
+    // XXX reduce_TemplateNode looks into incoming references now, not to save template node id if there are no
+    //     references inside template model (and hence no attempt to restore the reference using template node id)
+    //     Would be great to do smth similar here
     env.nodeCopied(context, outputNode, rtTemplateNode.getTemplateNodeId());
     env.registerLabel(context.getInput(), outputNode, context.getInputName()); // XXX reduce_TemplateNode doesn't do that
 
@@ -138,22 +148,17 @@ public final class TemplateProcessor implements ITemplateProcessor {
       } else {
         outputChildNodes = applyTemplate(rtTemplateChildNode, context);
       }
-      SConcept originalConcept = rtTemplateChildNode.getConcept();
       SContainmentLink role = rtTemplateChildNode.getRoleInParent();
       RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
       for (SNode outputChildNode : outputChildNodes) {
-        // returned node is subconcept of template node => fine
-        final boolean notSubConcept = !(outputChildNode.getConcept().isSubConceptOf(originalConcept));
-        if (notSubConcept) {
-          // check child
-          Status status = validator.validate(outputChildNode);
-          if (status != null) {
-            myGenerator.getLogger().warning(rtTemplateChildNode.getTemplateNodeReference(), status.getMessage("apply template"), status.describe(
-                GeneratorUtil.describe(context.getInput(), "input"),
-                GeneratorUtil.describe(outputNode, "output"),
-                GeneratorUtil.describe(rtTemplateNode.getTemplateNodeReference(), "template node")
-            ));
-          }
+        // check child
+        Status status = validator.validate(outputChildNode);
+        if (status != null) {
+          myGenerator.getLogger().warning(rtTemplateChildNode.getTemplateNodeReference(), status.getMessage("apply template"), status.describe(
+              GeneratorUtil.describe(context.getInput(), "input"),
+              GeneratorUtil.describe(outputNode, "output"),
+              GeneratorUtil.describe(rtTemplateNode.getTemplateNodeReference(), "template node")
+          ));
         }
         outputNode.addChild(role, outputChildNode);
       }
@@ -445,18 +450,16 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   // $INSERT$
   private static class InsertMacro extends MacroImpl {
+    private final InsertMacroQuery myQuery;
+
     protected InsertMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
+      QueryKeyImpl qk = new QueryKeyImpl(getMacroNodeRef(), RuleUtil.getInsertMacro_Query(macro).getNodeId());
+      myQuery = templateProcessor.getQueryProvider(getMacroNodeRef()).getInsertMacroQuery(qk);
     }
 
     private SNode getNodeToInsert(TemplateContext context) throws GenerationFailureException {
-      SNode query = RuleUtil.getInsertMacro_Query(macro);
-      if(query != null) {
-        return context.getEnvironment().getQueryExecutor().evaluateInsertQuery(context.getInput(), macro, query, context);
-      }
-
-      getLogger().error(getMacroNodeRef(), "couldn't get nodes to insert", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException("couldn't get nodes to insert");
+      return context.getEnvironment().getQueryExecutor().evaluate(myQuery, new InsertMacroContext(context, getMacroNodeRef()));
     }
 
     @NotNull
@@ -547,9 +550,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   // $VAR$
   private static class VarMacro extends MacroImpl {
+    private final VariableValueQuery myValueQuery;
 
     protected VarMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
+      QueryKeyImpl qk = new QueryKeyImpl(getMacroNodeRef(), RuleUtil.getVarMacro_Query(macro).getNodeId());
+      myValueQuery = templateProcessor.getQueryProvider(getMacroNodeRef()).getVariableValueQuery(qk);
     }
 
     @NotNull
@@ -557,8 +563,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
         GenerationCanceledException {
       String varName = RuleUtil.getVarMacro_Name(macro);
-      Object varValue = templateContext.getEnvironment().getQueryExecutor().evaluateVariableQuery(templateContext.getInput(), RuleUtil.getVarMacro_Query(macro),
-          templateContext);
+      Object varValue = templateContext.getEnvironment().getQueryExecutor().evaluate(myValueQuery, new TemplateVarContext(templateContext, getMacroNodeRef()));
       TemplateContext newContext = templateContext.subContext(Collections.singletonMap(varName, varValue));
 
       // tc.subContext(Map props) doesn't save mapping label, so "LABEL aaa VAR bb <templateNode>" fails to
@@ -577,7 +582,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       super(macro, templateNode, next, templateProcessor);
       SNode alternativeConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
       myAlternativeConsequence = alternativeConsequence == null ? null : RuleConsequenceProcessor.prepare(alternativeConsequence);
-      myCondition = templateProcessor.getQueryProvider(macro.getReference()).getIfMacroCondition(macro);
+      myCondition = templateProcessor.getQueryProvider(getMacroNodeRef()).getIfMacroCondition(macro);
     }
 
     @NotNull
@@ -625,22 +630,29 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
+      GeneratorQueryProvider queryProvider = myTemplateProcessor.getQueryProvider(getMacroNodeRef());
+      SNode mf = RuleUtil.getMapSrc_MapperFunction(macro);
+      SNode ppf = RuleUtil.getMapSrc_PostMapperFunction(macro);
+      MapNodeQuery mapNodeQuery = mf == null ? null : queryProvider.getMapNodeQuery(new QueryKeyImpl(getMacroNodeRef(), mf.getNodeId()));
+      MapPostProcessor postProcessor = ppf == null ? null : queryProvider.getMapPostProcessor(new QueryKeyImpl(getMacroNodeRef(), ppf.getNodeId()));
+      // it's perfectly legal to have neither mapNodeQuery nor postProcessor
       final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-      SNode macro_mapperFunction = RuleUtil.getMapSrc_MapperFunction(macro);
+      ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
       final DelayedChanges delayedChanges = myTemplateProcessor.getGenerator().getDelayedChanges();
       for (SNode newInputNode : newInputNodes) {
         TemplateContext newcontext = templateContext.subContext(newInputNode);
-        if (macro_mapperFunction != null) {
+        if (mapNodeQuery != null) {
           SNode childToReplaceLater = env.createOutputNode(templateNode.getConcept());
           outputNodes.add(childToReplaceLater);
           // execute the 'mapper' function later
-          delayedChanges.add(new MapSrcMacroProcessorInterpreted(macro, childToReplaceLater, newcontext));
+          delayedChanges.add(new MapSrcMacroProcessorInterpreted(mapNodeQuery, postProcessor, getMacroNodeRef(), childToReplaceLater, newcontext));
         } else {
           List<SNode> _outputNodes = nextMacro(newcontext);
           outputNodes.addAll(_outputNodes);
-          for (SNode outputNode : _outputNodes) {
-            delayedChanges.add(new MapSrcMacroProcessorInterpreted(macro, outputNode, newcontext));
+          if (postProcessor != null) {
+            for (SNode outputNode : _outputNodes) {
+              delayedChanges.add(new MapSrcMacroProcessorInterpreted(postProcessor, getMacroNodeRef(), outputNode, newcontext));
+            }
           }
         }
       }
@@ -697,11 +709,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       Collection<SNode> collection = null;
       try {
         collection = templateContext.getEnvironment().trySwitch(switchPtr, switchContext);
-      } catch (GenerationCanceledException e) {
-        throw e;
-      } catch (GenerationFailureException e) {
-        throw e;
-      } catch (DismissTopMappingRuleException e) {
+      } catch (GenerationCanceledException | GenerationFailureException | DismissTopMappingRuleException e) {
         throw e;
       } catch (GenerationException e) {
         getLogger().error(switchPtr, "internal error in switch: " + e.toString(), GeneratorUtil.describe(macro, "macro"));

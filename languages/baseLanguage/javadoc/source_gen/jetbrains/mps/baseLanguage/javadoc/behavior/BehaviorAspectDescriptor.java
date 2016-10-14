@@ -7,9 +7,9 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myClassifierDocComment__BehaviorDescriptor = new ClassifierDocComment__BehaviorDescriptor();
@@ -28,74 +28,31 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0n.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return myAuthorBlockDocTag__BehaviorDescriptor;
-          }
-          break;
-        case 1:
-          if (true) {
-            return myBaseDocComment__BehaviorDescriptor;
-          }
-          break;
-        case 2:
-          if (true) {
-            return myClassifierDocComment__BehaviorDescriptor;
-          }
-          break;
-        case 3:
-          if (true) {
-            return myCommentLine__BehaviorDescriptor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return myCommentLinePart__BehaviorDescriptor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return myEmptyBlockDocTag__BehaviorDescriptor;
-          }
-          break;
-        case 6:
-          if (true) {
-            return myFieldDocComment__BehaviorDescriptor;
-          }
-          break;
-        case 7:
-          if (true) {
-            return myHTMLElement__BehaviorDescriptor;
-          }
-          break;
-        case 8:
-          if (true) {
-            return myInlineTagCommentLinePart__BehaviorDescriptor;
-          }
-          break;
-        case 9:
-          if (true) {
-            return myMethodDocComment__BehaviorDescriptor;
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0n.index(cncpt)) {
+      case 0:
+        return myAuthorBlockDocTag__BehaviorDescriptor;
+      case 1:
+        return myBaseDocComment__BehaviorDescriptor;
+      case 2:
+        return myClassifierDocComment__BehaviorDescriptor;
+      case 3:
+        return myCommentLine__BehaviorDescriptor;
+      case 4:
+        return myCommentLinePart__BehaviorDescriptor;
+      case 5:
+        return myEmptyBlockDocTag__BehaviorDescriptor;
+      case 6:
+        return myFieldDocComment__BehaviorDescriptor;
+      case 7:
+        return myHTMLElement__BehaviorDescriptor;
+      case 8:
+        return myInlineTagCommentLinePart__BehaviorDescriptor;
+      case 9:
+        return myMethodDocComment__BehaviorDescriptor;
+      default:
     }
     return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x44ac82392ce5c6b0L, "jetbrains.mps.baseLanguage.javadoc.structure.EmptyBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
+  private static final ConceptSwitchIndex index_846f5o_a0n = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x44ac82392ce5c6b0L), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L), MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L)).seal();
 }

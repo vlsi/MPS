@@ -73,13 +73,12 @@ public class TabbedEditor extends BaseNodeEditor {
   private final SNodeReference myBaseNode;
   private final Set<RelationDescriptor> myPossibleTabs;
   private final ShadowAction myNextTabAction, myPrevTabAction;
-  private final AnAction myAddAction;
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
   private final JPanel myTabsPanel;
   private final RepoChangeListener myRepoChangeListener = new RepoChangeListener();
   private final FileStatusChangeListener myFileStatusListener = new FileStatusChangeListener();
 
-  private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
+  private final EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
     public void settingsChanged() {
       final SNodeReference node = getCurrentlyEditedNode();
@@ -103,7 +102,7 @@ public class TabbedEditor extends BaseNodeEditor {
     }
   };
 
-  private MPSNodeVirtualFile myVirtualFile;
+  private final MPSNodeVirtualFile myVirtualFile;
   private boolean myDisposed;
 
   public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull Project mpsProject) {
@@ -121,26 +120,18 @@ public class TabbedEditor extends BaseNodeEditor {
 
     showNode(myBaseNode.resolve(myProject.getRepository()), false);
 
-    myNextTabAction = new ShadowAction(new BaseNavigationAction(new Runnable() {
-      @Override
-      public void run() {
-        myTabsComponent.nextTab();
-      }
-    }), ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent());
-    myPrevTabAction = new ShadowAction(new BaseNavigationAction(new Runnable() {
-      @Override
-      public void run() {
-        myTabsComponent.prevTab();
-      }
-    }), ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent());
+    myNextTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.nextTab()),
+        ActionManager.getInstance().getAction(IdeActions.ACTION_NEXT_EDITOR_TAB), getComponent());
+    myPrevTabAction = new ShadowAction(new BaseNavigationAction(() -> myTabsComponent.prevTab()),
+        ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent());
 
-    myAddAction = new AddAspectAction(mpsProject, myBaseNode, myPossibleTabs, new SetTabsComponentNode()) {
+    final AnAction addAction = new AddAspectAction(mpsProject, myBaseNode, myPossibleTabs, new SetTabsComponentNode()) {
       @Override
       protected RelationDescriptor getCurrentAspect() {
         return myTabsComponent.getCurrentTabAspect();
       }
     };
-    ActionButton btn = new ActionButton(myAddAction, myAddAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
+    ActionButton btn = new ActionButton(addAction, addAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
     myTabsPanel.add(btn, BorderLayout.WEST);
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
@@ -152,12 +143,7 @@ public class TabbedEditor extends BaseNodeEditor {
     if (myTabsComponent != null) {
       myTabsComponent.dispose();
     }
-    final NodeChangeCallback nodeChangeCallback = new NodeChangeCallback() {
-      @Override
-      public void changeNode(SNodeReference newNode) {
-        showNodeInternal(newNode);
-      }
-    };
+    final NodeChangeCallback nodeChangeCallback = newNode -> showNodeInternal(newNode);
     final CreateModeCallback createAspectCallback = new CreateModeCallback() {
       @Override
       public void create(RelationDescriptor tab) {
@@ -165,12 +151,7 @@ public class TabbedEditor extends BaseNodeEditor {
         final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new SetTabsComponentNode(), tab);
         showComponent(cp);
         final IdeFocusManager fm = IdeFocusManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-        fm.doWhenFocusSettlesDown(new Runnable() {
-          @Override
-          public void run() {
-            fm.requestFocus(cp, false);
-          }
-        });
+        fm.doWhenFocusSettlesDown(() -> fm.requestFocus(cp, false));
       }
     };
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback,
@@ -193,12 +174,9 @@ public class TabbedEditor extends BaseNodeEditor {
 
     myNextTabAction.dispose();
     myPrevTabAction.dispose();
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
-        myNameListener.detach();
-      }
+    myProject.getModelAccess().runReadAction(() -> {
+      myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
+      myNameListener.detach();
     });
     myTabsComponent.dispose();
     super.dispose();
@@ -287,7 +265,9 @@ public class TabbedEditor extends BaseNodeEditor {
 
   @Override
   public Object getData(@NonNls String dataId) {
-    if (MPSEditorDataKeys.EDITOR_CREATE_GROUP.getName().equals(dataId)) return getCreateGroup();
+    if (MPSEditorDataKeys.EDITOR_CREATE_GROUP.getName().equals(dataId)) {
+      return getCreateGroup();
+    }
     if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
       return myVirtualFile;
     }
@@ -338,31 +318,30 @@ public class TabbedEditor extends BaseNodeEditor {
   @Override
   public EditorState saveState() {
     TabbedEditorState state = new TabbedEditorState();
-    state.setNode(getCurrentlyEditedNode());
-
-    BaseEditorState superState = (BaseEditorState) super.saveState();
-    state.refCopyFrom(superState);
+    saveState(state);
     return state;
+  }
+
+  protected void saveState(TabbedEditorState state) {
+    super.saveState(state);
+    state.setNode(getCurrentlyEditedNode());
   }
 
   @Override
   public void loadState(@NotNull final EditorState state) {
-    super.loadState(state);
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (state instanceof TabbedEditorState) {
-          SNodeReference nodePointer = ((TabbedEditorState) state).getNode();
-          SNode node = nodePointer == null ? null : nodePointer.resolve(myProject.getRepository());
-          if (node != null) {
-            showNode(node, false);
-          }
-        } else {
-          //regular editor was shown for that node last time
-          showNode(myBaseNode.resolve(myProject.getRepository()), false);
+    myProject.getModelAccess().runReadAction(() -> {
+      if (state instanceof TabbedEditorState) {
+        SNodeReference nodePointer = ((TabbedEditorState) state).getNode();
+        SNode node = nodePointer == null ? null : nodePointer.resolve(myProject.getRepository());
+        if (node != null) {
+          showNode(node, false);
         }
+      } else {
+        //regular editor was shown for that node last time
+        showNode(myBaseNode.resolve(myProject.getRepository()), false);
       }
     });
+    super.loadState(state);
   }
 
   public final static class TabbedEditorState extends BaseEditorState implements EditorState {
@@ -383,18 +362,20 @@ public class TabbedEditor extends BaseNodeEditor {
     @Override
     public void save(Element e) {
       super.save(e);
-      Element node = new Element(NODE);
+      boolean createNewElement = (e.getChild(NODE) == null);
+      Element node = createNewElement ? new Element(NODE) : e.getChild(NODE);
       if (myCurrentNode != null) {
         node.setAttribute(NODE_REF, jetbrains.mps.smodel.SNodePointer.serialize(myCurrentNode));
       }
-      e.addContent(node);
+      if (createNewElement) {
+        e.addContent(node);
+      }
     }
 
     @Override
     public void load(Element e) {
       super.load(e);
       Element nodeElem = e.getChild(NODE);
-
       String val = nodeElem.getAttributeValue(NODE_REF);
       if (val != null) {
         myCurrentNode = jetbrains.mps.smodel.SNodePointer.deserialize(val);

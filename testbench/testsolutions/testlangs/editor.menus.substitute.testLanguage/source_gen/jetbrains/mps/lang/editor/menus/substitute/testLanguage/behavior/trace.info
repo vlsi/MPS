@@ -1,3 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info version="2" />
+<debug-info version="2">
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="TestConceptForMenuParameterizedByPrimitiveType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestConceptForMenuParameterizedByPrimitiveType_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteChildBrother_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildBrother_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteChildSuper_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildSuper_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChild_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteConceptChildToReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteConceptChildToReference_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteConceptToWrap_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteConceptToWrap_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteParentToReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteParentToReference_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteParent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteParent_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSubChild1_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChild1_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSubChild2_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChild2_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSubChildSmartReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChildSmartReference_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSubConceptToWrap_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubConceptToWrap_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

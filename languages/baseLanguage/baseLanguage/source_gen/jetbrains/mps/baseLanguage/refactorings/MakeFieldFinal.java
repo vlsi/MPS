@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
 
 public class MakeFieldFinal extends BaseRefactoring {
   public MakeFieldFinal() {
@@ -25,7 +24,6 @@ public class MakeFieldFinal extends BaseRefactoring {
     SPropertyOperations.set(refactoringContext.getSelectedNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"), "" + (true));
   }
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
-
+    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), refactoringContext.getCurrentScope(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
   }
 }

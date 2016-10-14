@@ -11,6 +11,8 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
 import java.io.File;
 import com.intellij.openapi.application.PathManager;
@@ -29,8 +31,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeployPlugins_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -51,6 +51,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
       element.addContent(fieldElement);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(DeployPlugins_Configuration.class);
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -165,5 +166,4 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   public Object[] createMakedeployscriptsTask() {
     return new Object[]{this.getPluginsSettings().getPluginsListToDeploy()};
   }
-  protected static Logger LOG = LogManager.getLogger(DeployPlugins_Configuration.class);
 }

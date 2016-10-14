@@ -8,73 +8,67 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptBehavior_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptConstructorDeclaration_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConceptMethodDeclaration_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationReference_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationsHolder_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new LocalBehaviorMethodCall_Editor());
-          }
-          break;
-        case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new SuperNodeExpression_Editor());
-          }
-          break;
-        case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ThisNodeExpression_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new ConceptBehavior_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new ConceptConstructorDeclaration_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new ConceptMethodDeclaration_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationReference_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new InternalConceptDeclarationsHolder_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new LocalBehaviorMethodCall_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new SuperNodeExpression_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new ThisNodeExpression_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
 
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0d.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new SuperNodeExpression_TransformationMenu());
+      default:
     }
-    return res;
+    return Collections.<TransformationMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43471eedL, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L, "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe0bL, "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x5a277db47d54d7e1L, "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"));
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new ConceptMethodsWithoutThis_Contribution());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new InternalConceptDeclarationReference_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new InternalConceptDeclarationsHolder_SubstituteMenu());
+      default:
+    }
+    return Collections.<SubstituteMenu>emptyList();
+  }
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43471eedL), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe0bL), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x5a277db47d54d7e1L), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L), MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe0bL)).seal();
 }

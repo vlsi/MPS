@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.plugins;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-
 import java.util.List;
 
 /**
  * Note: plugins must come in the right order
  */
 public interface PluginLoader {
-  void loadPlugins(final List<PluginContributor> contributors, @NotNull ProgressMonitor monitor);
+  void loadPlugins(final List<PluginContributor> contributors);
 
-  void unloadPlugins(List<PluginContributor> contributors, @NotNull ProgressMonitor monitor);
+  void unloadPlugins(List<PluginContributor> contributors);
 }

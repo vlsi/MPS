@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CommentAttribute = new ConceptPresentationBuilder().create();
@@ -22,53 +19,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_CommentAttribute;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CommentAttribute2;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_HandlerAsChild;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_HandlerAsRoot;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_SubConceptToTransform;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_SubConceptToTransformNested;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.CommentAttribute:
+        return props_CommentAttribute;
+      case LanguageConceptSwitch.CommentAttribute2:
+        return props_CommentAttribute2;
+      case LanguageConceptSwitch.HandlerAsChild:
+        return props_HandlerAsChild;
+      case LanguageConceptSwitch.HandlerAsRoot:
+        return props_HandlerAsRoot;
+      case LanguageConceptSwitch.SubConceptToTransform:
+        return props_SubConceptToTransform;
+      case LanguageConceptSwitch.SubConceptToTransformNested:
+        return props_SubConceptToTransformNested;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x63feb1ccbe205151L, "jetbrains.mps.samples.attribute.structure.CommentAttribute"), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x702703eb14011dd3L, "jetbrains.mps.samples.attribute.structure.CommentAttribute2"), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x33ec18d5113b4bdcL, "jetbrains.mps.samples.attribute.structure.HandlerAsChild"), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x33ec18d5113abcd9L, "jetbrains.mps.samples.attribute.structure.HandlerAsRoot"), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x702703eb1401f557L, "jetbrains.mps.samples.attribute.structure.SubConceptToTransform"), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x702703eb14027bc6L, "jetbrains.mps.samples.attribute.structure.SubConceptToTransformNested"));
 }

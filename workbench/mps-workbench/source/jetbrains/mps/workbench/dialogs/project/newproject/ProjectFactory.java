@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.execution.RunCanceledByUserException;
 import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -60,7 +61,7 @@ public class ProjectFactory {
 
   public Project createProject() throws ProjectNotCreatedException {
     final String[] error = new String[]{null};
-    ProgressManager.getInstance().run(new Task.Modal(myCurrentProject, "Creating", false) {
+    ProgressManager.getInstance().run(new Task.Modal(myCurrentProject, "Creating Project", false) {
       @Override
       public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
@@ -77,9 +78,16 @@ public class ProjectFactory {
 
         final String projectFilePath = myOptions.getProjectPath() + File.separator + suffix;
         //MPS-22895 need to run in EDT
-        ApplicationManager.getApplication().invokeAndWait(
-            () -> myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false),
-            indicator.getModalityState());
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+          @Override
+          public void run() {
+            try {
+              myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+          }
+        }, indicator.getModalityState());
       }
     });
 
@@ -102,12 +110,10 @@ public class ProjectFactory {
     StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(() -> mpsProject.getModelAccess().executeCommand(() -> {
       if (myOptions.getCreateNewLanguage()) {
         myCreatedLanguage = NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
-        mpsProject.addModule(myCreatedLanguage);
       }
 
       if (myOptions.getCreateNewSolution()) {
         myCreatedSolution = NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
-        mpsProject.addModule(myCreatedSolution);
       }
 
       if (myCreatedSolution != null && myCreatedLanguage != null) {

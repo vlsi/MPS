@@ -139,7 +139,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" file="ModelCheckerPreferencesPage.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
@@ -252,6 +252,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -311,6 +313,7 @@
     <classNode dependClassName="jetbrains.mps.util.StringUtil" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />

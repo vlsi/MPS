@@ -5,16 +5,14 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.util.Condition;
-import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Map;
-import jetbrains.mps.generator.GenerationSessionContext;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -22,8 +20,6 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashMap;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
@@ -36,64 +32,55 @@ public class ClosuresUtil {
     return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure")));
   }
   public static SNode findEnclosingClosureContextOwner(SNode node) {
-    if (node == null) {
-      return null;
-    }
-    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
-      public boolean met(SNode n) {
-        if (!(n instanceof SNode)) {
-          if (LOG.isEnabledFor(Level.WARN)) {
-            LOG.warn("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");
-          }
-          return false;
-        }
-        return ClosuresUtil.isClosureContextOwner(((SNode) n));
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return ClosuresUtil.isClosureContextOwner(it);
       }
-    }));
+    });
   }
-  public static List<SNode> getVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
-    ensureClosureContextOwnerProcessed(contextOwner, generator);
-    return getClosureContextData(contextOwner, generator).getVariables();
+  public static List<SNode> getVariablesUsedInClosure(SNode contextOwner, TemplateQueryContext genContext) {
+    ensureClosureContextOwnerProcessed(contextOwner, genContext);
+    return getClosureContextData(contextOwner, genContext).getVariables();
   }
-  public static String getVariableNameInClosureContext(SNode contextOwner, SNode var, ITemplateGenerator generator) {
-    ensureClosureContextOwnerProcessed(contextOwner, generator);
-    return getClosureContextData(contextOwner, generator).getVariableName(var);
+  public static String getVariableNameInClosureContext(SNode contextOwner, SNode var, TemplateQueryContext genContext) {
+    ensureClosureContextOwnerProcessed(contextOwner, genContext);
+    return getClosureContextData(contextOwner, genContext).getVariableName(var);
   }
-  public static boolean isVariableUsedInClosure(SNode contextOwner, SNode var, ITemplateGenerator generator) {
-    ensureClosureContextOwnerProcessed(contextOwner, generator);
-    ClosuresUtil.ClosureContextData contextData = getClosureContextData(contextOwner, generator);
+  public static boolean isVariableUsedInClosure(SNode contextOwner, SNode var, TemplateQueryContext genContext) {
+    ensureClosureContextOwnerProcessed(contextOwner, genContext);
+    ClosuresUtil.ClosureContextData contextData = getClosureContextData(contextOwner, genContext);
     return (contextData != null ? contextData.hasVariable(var) : false);
   }
-  public static boolean hasVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
-    ensureClosureContextOwnerProcessed(contextOwner, generator);
-    return !(getClosureContextData(contextOwner, generator).isEmpty());
+  public static boolean hasVariablesUsedInClosure(SNode contextOwner, TemplateQueryContext genContext) {
+    ensureClosureContextOwnerProcessed(contextOwner, genContext);
+    return !(getClosureContextData(contextOwner, genContext).isEmpty());
   }
-  private static void ensureClosureContextOwnerProcessed(SNode node, ITemplateGenerator generator) {
+  private static void ensureClosureContextOwnerProcessed(SNode node, TemplateQueryContext genContext) {
     if (!(isClosureContextOwner(node))) {
-      throw new RuntimeException("node can't be owner of a closure context " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
+      genContext.showErrorMessage(node, "node can't be owner of a closure context ");
+      return;
     }
-    if (getClosureContextData(node, generator) == null) {
-      MapSequence.fromMap(ClosuresUtil.getClosureContext(generator)).put(node, new ClosuresUtil.ClosureContextData());
+    if (getClosureContextData(node, genContext) == null) {
+      MapSequence.fromMap(ClosuresUtil.getClosureContext(genContext)).put(node, new ClosuresUtil.ClosureContextData());
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
-        processMethodDeclaration(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), generator);
+        processMethodDeclaration(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), genContext);
       } else {
-        processConceptFunction(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction")), generator);
+        processConceptFunction(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction")), genContext);
       }
     }
   }
-  private static Map<SNode, ClosuresUtil.ClosureContextData> getClosureContext(ITemplateGenerator generator) {
+  private static Map<SNode, ClosuresUtil.ClosureContextData> getClosureContext(TemplateQueryContext genContext) {
     // init ClosureContextData 
     synchronized (CLOSURE_CONTEXT_DATA) {
-      GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) genContext.getTransientObject(CLOSURE_CONTEXT_DATA));
       if (closureContexts == null) {
         closureContexts = new ConcurrentHashMap<SNode, ClosuresUtil.ClosureContextData>();
-        sessionContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
+        genContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
       }
       return closureContexts;
     }
   }
-  private static boolean processMethodDeclaration(SNode method, ITemplateGenerator generator) {
+  private static boolean processMethodDeclaration(SNode method, TemplateQueryContext genContext) {
     if (SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")) == null) {
       return false;
     }
@@ -101,40 +88,40 @@ public class ClosuresUtil {
       return false;
     }
     Set<SNode> varDecl = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter")));
-    return processNode(method, SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), varDecl, generator);
+    return processNode(method, SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), varDecl, genContext);
   }
-  private static boolean processConceptFunction(SNode concFunc, ITemplateGenerator generator) {
+  private static boolean processConceptFunction(SNode concFunc, TemplateQueryContext genContext) {
     if (SLinkOperations.getTarget(concFunc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")) == null) {
       return false;
     }
     if (ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(concFunc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure"), false, new SAbstractConcept[]{})).isEmpty()) {
       return false;
     }
-    return processNode(concFunc, SLinkOperations.getTarget(concFunc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), SetSequence.fromSet(new HashSet<SNode>()), generator);
+    return processNode(concFunc, SLinkOperations.getTarget(concFunc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), SetSequence.fromSet(new HashSet<SNode>()), genContext);
   }
-  private static boolean processNode(SNode contextOwner, SNode node, Set<SNode> localVariables, ITemplateGenerator generator) {
+  private static boolean processNode(SNode contextOwner, SNode node, Set<SNode> localVariables, TemplateQueryContext genContext) {
     boolean outerVarsFound = false;
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
         SetSequence.fromSet(localVariables).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")));
       } else if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure"))) {
-        if (processClosure(contextOwner, SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure")), localVariables, generator)) {
+        if (processClosure(contextOwner, SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure")), localVariables, genContext)) {
           outerVarsFound = true;
         }
       }
-      if (processNode(contextOwner, child, localVariables, generator)) {
+      if (processNode(contextOwner, child, localVariables, genContext)) {
         outerVarsFound = true;
       }
     }
     return outerVarsFound;
   }
-  private static boolean processClosure(SNode contextOwner, SNode closure, Set<SNode> localVars, ITemplateGenerator generator) {
+  private static boolean processClosure(SNode contextOwner, SNode closure, Set<SNode> localVars, TemplateQueryContext genContext) {
     if (SLinkOperations.getTarget(closure, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")) == null) {
       return false;
     }
-    return processClosureNode(contextOwner, SLinkOperations.getTarget(closure, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), localVars, generator);
+    return processClosureNode(contextOwner, SLinkOperations.getTarget(closure, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), localVars, genContext);
   }
-  private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, ITemplateGenerator generator) {
+  private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, TemplateQueryContext genContext) {
     boolean outerVarsFound = false;
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       // skip inner closure 
@@ -144,20 +131,19 @@ public class ClosuresUtil {
       if ((SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) || (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")))) {
         SNode variable = SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));
         if (SetSequence.fromSet(localVars).contains(variable)) {
-          getClosureContextData(contextOwner, generator).putVariable(variable);
+          getClosureContextData(contextOwner, genContext).putVariable(variable);
           outerVarsFound = true;
         }
       } else {
-        if (processClosureNode(contextOwner, child, localVars, generator)) {
+        if (processClosureNode(contextOwner, child, localVars, genContext)) {
           outerVarsFound = true;
         }
       }
     }
     return outerVarsFound;
   }
-  private static ClosuresUtil.ClosureContextData getClosureContextData(SNode contextOwner, ITemplateGenerator generator) {
-    GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-    Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+  private static ClosuresUtil.ClosureContextData getClosureContextData(SNode contextOwner, TemplateQueryContext genContext) {
+    Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) genContext.getTransientObject(CLOSURE_CONTEXT_DATA));
     if (closureContexts == null) {
       return null;
     }
@@ -209,5 +195,4 @@ public class ClosuresUtil {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ClosuresUtil.class);
 }

@@ -40,7 +40,7 @@ public abstract class SubstituteMenuBase implements SubstituteMenu {
 
   @NotNull
   @Override
-  public List<SubstituteMenuItem> createMenuItems(SubstituteMenuContext context) {
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     return new CompositeMenuPart<>(getParts(context)).createItems(context);
   }
 
@@ -49,5 +49,6 @@ public abstract class SubstituteMenuBase implements SubstituteMenu {
     return myIsContribution;
   }
 
+  @NotNull
   protected abstract List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext context);
 }

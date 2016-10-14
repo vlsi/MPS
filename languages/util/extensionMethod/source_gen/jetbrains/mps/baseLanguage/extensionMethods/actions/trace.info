@@ -1,51 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.extensionMethods.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,34,0" name="jetbrains.mps.baseLanguage.extensionMethods.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
-      <unit at="35,42,39,9" name="jetbrains.mps.baseLanguage.extensionMethods.actions.QueriesGenerated$1" />
-      <unit at="68,42,74,9" name="jetbrains.mps.baseLanguage.extensionMethods.actions.QueriesGenerated$3" />
-      <unit at="42,57,49,13" name="jetbrains.mps.baseLanguage.extensionMethods.actions.QueriesGenerated$2" />
-      <unit at="77,57,85,13" name="jetbrains.mps.baseLanguage.extensionMethods.actions.QueriesGenerated$4" />
-      <unit at="28,0,99,0" name="jetbrains.mps.baseLanguage.extensionMethods.actions.QueriesGenerated" />
-    </file>
-  </root>
-  <root nodeRef="r:e0c5b5da-9545-4753-a462-f79d5ed8b466(jetbrains.mps.baseLanguage.extensionMethods.actions)/5246850046234986609">
-    <file name="QueriesGenerated.java">
-      <node id="5246850046234989707" at="36,44,37,518" concept="4" />
-      <node id="5246850046234989782" at="43,98,44,279" concept="3" />
-      <node id="5246850046234989818" at="44,279,45,781" concept="0" />
-      <node id="5246850046234989842" at="45,781,46,436" concept="3" />
-      <node id="5246850046234989838" at="46,436,47,43" concept="4" />
-      <node id="5246850046234986623" at="57,313,58,18" concept="4" />
-      <node id="5246850046234986625" at="59,5,60,17" concept="4" />
-      <node id="5246850046234986613" at="56,190,59,5" concept="1" />
-      <node id="5246850046234986611" at="56,0,62,0" concept="6" trace="nodeSubstituteActionsBuilder_Precondition_Expression_5246850046234986611#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="5246850046234986622" at="57,313,58,18" />
-      <scope id="5246850046234989731" at="43,98,47,43">
-        <var name="operationExpression" id="5246850046234989783" />
-        <var name="thisExpression" id="5246850046234989843" />
-      </scope>
-      <scope id="5246850046234986612" at="56,190,60,17" />
-      <scope id="5246850046234986611" at="56,0,62,0">
-        <var name="_context" id="5246850046234986611" />
-        <var name="operationContext" id="5246850046234986611" />
-      </scope>
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.extensionMethods.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:e0c5b5da-9545-4753-a462-f79d5ed8b466(jetbrains.mps.baseLanguage.extensionMethods.actions)/720975379598240371">
     <file name="EM_node_factories.java">
       <node id="3097384118512214627" at="13,91,14,365" concept="0" />
-      <node id="720975379598240372" at="13,0,16,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="720975379598240372" at="13,0,16,0" concept="1" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="720975379598240372" at="13,91,14,365" />
       <scope id="720975379598240372" at="13,0,16,0">
         <var name="enclosingNode" id="720975379598240372" />
@@ -55,32 +23,6 @@
       </scope>
       <unit id="720975379598240372" at="12,0,17,0" name="jetbrains.mps.baseLanguage.extensionMethods.actions.EM_node_factories$NodeFactory_720975379598240372" />
       <unit id="720975379598240371" at="11,0,18,0" name="jetbrains.mps.baseLanguage.extensionMethods.actions.EM_node_factories" />
-    </file>
-  </root>
-  <root nodeRef="r:e0c5b5da-9545-4753-a462-f79d5ed8b466(jetbrains.mps.baseLanguage.extensionMethods.actions)/8455935734540360532">
-    <file name="QueriesGenerated.java">
-      <node id="5417760646066155069" at="69,44,70,360" concept="3" />
-      <node id="5417760646066155076" at="70,360,71,288" concept="3" />
-      <node id="3021057898025632033" at="71,288,72,139" concept="4" />
-      <node id="8455935734540361476" at="78,98,79,279" concept="3" />
-      <node id="8455935734540361596" at="79,279,80,743" concept="0" />
-      <node id="8455935734540361518" at="80,743,81,436" concept="3" />
-      <node id="8455935734540361526" at="81,436,82,0" concept="5" />
-      <node id="8455935734540361583" at="82,0,83,43" concept="4" />
-      <node id="8455935734540360546" at="93,313,94,19" concept="4" />
-      <node id="8455935734540360548" at="95,5,96,17" concept="4" />
-      <node id="8455935734540360536" at="92,190,95,5" concept="1" />
-      <node id="8455935734540360534" at="92,0,98,0" concept="6" trace="nodeSubstituteActionsBuilder_Precondition_Expression_8455935734540360534#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="8455935734540360545" at="93,313,94,19" />
-      <scope id="8455935734540360535" at="92,190,96,17" />
-      <scope id="8455935734540361464" at="78,98,83,43">
-        <var name="operationExpression" id="8455935734540361477" />
-        <var name="thisExpression" id="8455935734540361519" />
-      </scope>
-      <scope id="8455935734540360534" at="92,0,98,0">
-        <var name="_context" id="8455935734540360534" />
-        <var name="operationContext" id="8455935734540360534" />
-      </scope>
     </file>
   </root>
 </debug-info>

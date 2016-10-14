@@ -9,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Basic" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.cells.optional.WithCaret" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" file="HLineCellProvider.java">
     <classNode dependClassName="java.awt.Color" />

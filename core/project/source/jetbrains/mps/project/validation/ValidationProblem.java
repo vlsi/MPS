@@ -31,7 +31,6 @@ public class ValidationProblem {
   }
 
   public void fix(){
-
   }
 
   public String getMessage() {

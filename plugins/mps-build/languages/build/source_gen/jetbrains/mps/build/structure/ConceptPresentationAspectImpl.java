@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuildAspect = new ConceptPresentationBuilder().create();
@@ -150,693 +147,277 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0ff.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_BuildAspect;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_BuildCompositePath;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_BuildCustomWorkflow;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_BuildDependency;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_BuildExternalDependency;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BuildExternalLayout;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_BuildExternalLayoutDependency;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_BuildFileExcludeSelector;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_BuildFileIncludeSelector;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_BuildFileIncludesSelector;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_BuildFileSelector;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_BuildFileSelectorInAttribute;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_BuildFolderMacro;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_BuildInputFileSet;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_BuildInputFiles;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_BuildInputFolderSet;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_BuildInputFolders;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_BuildInputResourceSet;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_BuildInputSingleFile;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_BuildInputSingleFolder;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_BuildJavaPlugin;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_BuildLayout;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_BuildLayout_AbstractContainer;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_BuildLayout_AbstractCopy;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_BuildLayout_Comment;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_BuildLayout_CompileOutputOf;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_BuildLayout_Container;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_BuildLayout_ContainerAcceptingFileSet;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_BuildLayout_Copy;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_BuildLayout_CopyFilter;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_BuildLayout_CopyFilterFixCRLF;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_BuildLayout_CopyFilterReplaceRegex;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_BuildLayout_CopyFilterReplaceTokens;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_BuildLayout_CopyFlattenMapper;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_BuildLayout_CopyGlobMapper;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_BuildLayout_CopyHandler;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_BuildLayout_CopyMapper;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_BuildLayout_CopyParameter;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_BuildLayout_CopyProcessor;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_BuildLayout_CopyRegexMapper;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_BuildLayout_CustomCopy;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_BuildLayout_EchoProperties;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_BuildLayout_EchoPropertyEntry;
-          }
-          break;
-        case 43:
-          if (true) {
-            return props_BuildLayout_EchoXml;
-          }
-          break;
-        case 44:
-          if (true) {
-            return props_BuildLayout_ExportAsJavaLibrary;
-          }
-          break;
-        case 45:
-          if (true) {
-            return props_BuildLayout_File;
-          }
-          break;
-        case 46:
-          if (true) {
-            return props_BuildLayout_FileSet;
-          }
-          break;
-        case 47:
-          if (true) {
-            return props_BuildLayout_FileStub;
-          }
-          break;
-        case 48:
-          if (true) {
-            return props_BuildLayout_Filemode;
-          }
-          break;
-        case 49:
-          if (true) {
-            return props_BuildLayout_Files;
-          }
-          break;
-        case 50:
-          if (true) {
-            return props_BuildLayout_FilesOf;
-          }
-          break;
-        case 51:
-          if (true) {
-            return props_BuildLayout_Folder;
-          }
-          break;
-        case 52:
-          if (true) {
-            return props_BuildLayout_Import;
-          }
-          break;
-        case 53:
-          if (true) {
-            return props_BuildLayout_ImportContent;
-          }
-          break;
-        case 54:
-          if (true) {
-            return props_BuildLayout_InJarNode;
-          }
-          break;
-        case 55:
-          if (true) {
-            return props_BuildLayout_Jar;
-          }
-          break;
-        case 56:
-          if (true) {
-            return props_BuildLayout_JarManifest;
-          }
-          break;
-        case 57:
-          if (true) {
-            return props_BuildLayout_JarManifest_Attribute;
-          }
-          break;
-        case 58:
-          if (true) {
-            return props_BuildLayout_JarManifest_Part;
-          }
-          break;
-        case 59:
-          if (true) {
-            return props_BuildLayout_JarManifest_Section;
-          }
-          break;
-        case 60:
-          if (true) {
-            return props_BuildLayout_NamedContainer;
-          }
-          break;
-        case 61:
-          if (true) {
-            return props_BuildLayout_Node;
-          }
-          break;
-        case 62:
-          if (true) {
-            return props_BuildLayout_PathElement;
-          }
-          break;
-        case 63:
-          if (true) {
-            return props_BuildLayout_PureNode;
-          }
-          break;
-        case 64:
-          if (true) {
-            return props_BuildLayout_Tar;
-          }
-          break;
-        case 65:
-          if (true) {
-            return props_BuildLayout_TransparentContainer;
-          }
-          break;
-        case 66:
-          if (true) {
-            return props_BuildLayout_War;
-          }
-          break;
-        case 67:
-          if (true) {
-            return props_BuildLayout_Zip;
-          }
-          break;
-        case 68:
-          if (true) {
-            return props_BuildMacro;
-          }
-          break;
-        case 69:
-          if (true) {
-            return props_BuildNamedLayout;
-          }
-          break;
-        case 70:
-          if (true) {
-            return props_BuildPlugin;
-          }
-          break;
-        case 71:
-          if (true) {
-            return props_BuildProject;
-          }
-          break;
-        case 72:
-          if (true) {
-            return props_BuildProjectDependency;
-          }
-          break;
-        case 73:
-          if (true) {
-            return props_BuildProjectPart;
-          }
-          break;
-        case 74:
-          if (true) {
-            return props_BuildRelativePath;
-          }
-          break;
-        case 75:
-          if (true) {
-            return props_BuildSourceArchiveRelativePath;
-          }
-          break;
-        case 76:
-          if (true) {
-            return props_BuildSourceMacroRelativePath;
-          }
-          break;
-        case 77:
-          if (true) {
-            return props_BuildSourcePath;
-          }
-          break;
-        case 78:
-          if (true) {
-            return props_BuildSourceProjectRelativePath;
-          }
-          break;
-        case 79:
-          if (true) {
-            return props_BuildSourceSetContainer;
-          }
-          break;
-        case 80:
-          if (true) {
-            return props_BuildSource_CompilablePart;
-          }
-          break;
-        case 81:
-          if (true) {
-            return props_BuildSource_FilesetProjectPart;
-          }
-          break;
-        case 82:
-          if (true) {
-            return props_BuildSource_JavaCP;
-          }
-          break;
-        case 83:
-          if (true) {
-            return props_BuildSource_JavaClassFolder;
-          }
-          break;
-        case 84:
-          if (true) {
-            return props_BuildSource_JavaContentFolder;
-          }
-          break;
-        case 85:
-          if (true) {
-            return props_BuildSource_JavaContentRoot;
-          }
-          break;
-        case 86:
-          if (true) {
-            return props_BuildSource_JavaDependency;
-          }
-          break;
-        case 87:
-          if (true) {
-            return props_BuildSource_JavaDependencyExternalJar;
-          }
-          break;
-        case 88:
-          if (true) {
-            return props_BuildSource_JavaDependencyExternalJarInFolder;
-          }
-          break;
-        case 89:
-          if (true) {
-            return props_BuildSource_JavaDependencyFileset;
-          }
-          break;
-        case 90:
-          if (true) {
-            return props_BuildSource_JavaDependencyJar;
-          }
-          break;
-        case 91:
-          if (true) {
-            return props_BuildSource_JavaDependencyLibrary;
-          }
-          break;
-        case 92:
-          if (true) {
-            return props_BuildSource_JavaDependencyModule;
-          }
-          break;
-        case 93:
-          if (true) {
-            return props_BuildSource_JavaExternalJarFolderRef;
-          }
-          break;
-        case 94:
-          if (true) {
-            return props_BuildSource_JavaExternalJarRef;
-          }
-          break;
-        case 95:
-          if (true) {
-            return props_BuildSource_JavaFiles;
-          }
-          break;
-        case 96:
-          if (true) {
-            return props_BuildSource_JavaJar;
-          }
-          break;
-        case 97:
-          if (true) {
-            return props_BuildSource_JavaJars;
-          }
-          break;
-        case 98:
-          if (true) {
-            return props_BuildSource_JavaLibrary;
-          }
-          break;
-        case 99:
-          if (true) {
-            return props_BuildSource_JavaLibraryCP;
-          }
-          break;
-        case 100:
-          if (true) {
-            return props_BuildSource_JavaLibraryElement;
-          }
-          break;
-        case 101:
-          if (true) {
-            return props_BuildSource_JavaLibraryExternalJar;
-          }
-          break;
-        case 102:
-          if (true) {
-            return props_BuildSource_JavaLibraryExternalJarFolder;
-          }
-          break;
-        case 103:
-          if (true) {
-            return props_BuildSource_JavaModule;
-          }
-          break;
-        case 104:
-          if (true) {
-            return props_BuildSource_JavaModuleOptions;
-          }
-          break;
-        case 105:
-          if (true) {
-            return props_BuildSource_JavaOptions;
-          }
-          break;
-        case 106:
-          if (true) {
-            return props_BuildSource_JavaResources;
-          }
-          break;
-        case 107:
-          if (true) {
-            return props_BuildSource_JavaSources;
-          }
-          break;
-        case 108:
-          if (true) {
-            return props_BuildSource_SingleFile;
-          }
-          break;
-        case 109:
-          if (true) {
-            return props_BuildSource_SingleFolder;
-          }
-          break;
-        case 110:
-          if (true) {
-            return props_BuildString;
-          }
-          break;
-        case 111:
-          if (true) {
-            return props_BuildStringContainer;
-          }
-          break;
-        case 112:
-          if (true) {
-            return props_BuildStringNotEmpty;
-          }
-          break;
-        case 113:
-          if (true) {
-            return props_BuildStringPart;
-          }
-          break;
-        case 114:
-          if (true) {
-            return props_BuildTextStringPart;
-          }
-          break;
-        case 115:
-          if (true) {
-            return props_BuildVarRefStringPart;
-          }
-          break;
-        case 116:
-          if (true) {
-            return props_BuildVariableMacro;
-          }
-          break;
-        case 117:
-          if (true) {
-            return props_BuildVariableMacroInitValue;
-          }
-          break;
-        case 118:
-          if (true) {
-            return props_BuildVariableMacroInitWithDate;
-          }
-          break;
-        case 119:
-          if (true) {
-            return props_BuildVariableMacroInitWithFileContent;
-          }
-          break;
-        case 120:
-          if (true) {
-            return props_BuildVariableMacroInitWithString;
-          }
-          break;
-        case 121:
-          if (true) {
-            return props_BuildVariableMacroInitWithValueFromFile;
-          }
-          break;
-        case 122:
-          if (true) {
-            return props_GeneratorInternal_BuildSource_Folder;
-          }
-          break;
-        case 123:
-          if (true) {
-            return props_GeneratorInternal_BuildSource_JarFolder;
-          }
-          break;
-        case 124:
-          if (true) {
-            return props_GeneratorInternal_BuildSource_JavaJar;
-          }
-          break;
-        case 125:
-          if (true) {
-            return props_GeneratorInternal_BuildSource_JavaLibrary;
-          }
-          break;
-        case 126:
-          if (true) {
-            return props_GeneratorInternal_BuildSource_JavaModule;
-          }
-          break;
-        case 127:
-          if (true) {
-            return props_GeneratorInternal_BuildSource_SingleFile;
-          }
-          break;
-        case 128:
-          if (true) {
-            return props_GeneratorInternal_IWorkflowParticipantReference;
-          }
-          break;
-        case 129:
-          if (true) {
-            return props_GeneratorInternal_IWorkfowParticipants;
-          }
-          break;
-        case 130:
-          if (true) {
-            return props_GeneratorInternal_LibraryArtifacts;
-          }
-          break;
-        case 131:
-          if (true) {
-            return props_GeneratorInternal_Mapping;
-          }
-          break;
-        case 132:
-          if (true) {
-            return props_GeneratorInternal_ProjectDependency;
-          }
-          break;
-        case 133:
-          if (true) {
-            return props_IWorkflowParticipant;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BuildAspect:
+        return props_BuildAspect;
+      case LanguageConceptSwitch.BuildCompositePath:
+        return props_BuildCompositePath;
+      case LanguageConceptSwitch.BuildCustomWorkflow:
+        return props_BuildCustomWorkflow;
+      case LanguageConceptSwitch.BuildDependency:
+        return props_BuildDependency;
+      case LanguageConceptSwitch.BuildExternalDependency:
+        return props_BuildExternalDependency;
+      case LanguageConceptSwitch.BuildExternalLayout:
+        return props_BuildExternalLayout;
+      case LanguageConceptSwitch.BuildExternalLayoutDependency:
+        return props_BuildExternalLayoutDependency;
+      case LanguageConceptSwitch.BuildFileExcludeSelector:
+        return props_BuildFileExcludeSelector;
+      case LanguageConceptSwitch.BuildFileIncludeSelector:
+        return props_BuildFileIncludeSelector;
+      case LanguageConceptSwitch.BuildFileIncludesSelector:
+        return props_BuildFileIncludesSelector;
+      case LanguageConceptSwitch.BuildFileSelector:
+        return props_BuildFileSelector;
+      case LanguageConceptSwitch.BuildFileSelectorInAttribute:
+        return props_BuildFileSelectorInAttribute;
+      case LanguageConceptSwitch.BuildFolderMacro:
+        return props_BuildFolderMacro;
+      case LanguageConceptSwitch.BuildInputFileSet:
+        return props_BuildInputFileSet;
+      case LanguageConceptSwitch.BuildInputFiles:
+        return props_BuildInputFiles;
+      case LanguageConceptSwitch.BuildInputFolderSet:
+        return props_BuildInputFolderSet;
+      case LanguageConceptSwitch.BuildInputFolders:
+        return props_BuildInputFolders;
+      case LanguageConceptSwitch.BuildInputResourceSet:
+        return props_BuildInputResourceSet;
+      case LanguageConceptSwitch.BuildInputSingleFile:
+        return props_BuildInputSingleFile;
+      case LanguageConceptSwitch.BuildInputSingleFolder:
+        return props_BuildInputSingleFolder;
+      case LanguageConceptSwitch.BuildJavaPlugin:
+        return props_BuildJavaPlugin;
+      case LanguageConceptSwitch.BuildLayout:
+        return props_BuildLayout;
+      case LanguageConceptSwitch.BuildLayout_AbstractContainer:
+        return props_BuildLayout_AbstractContainer;
+      case LanguageConceptSwitch.BuildLayout_AbstractCopy:
+        return props_BuildLayout_AbstractCopy;
+      case LanguageConceptSwitch.BuildLayout_Comment:
+        return props_BuildLayout_Comment;
+      case LanguageConceptSwitch.BuildLayout_CompileOutputOf:
+        return props_BuildLayout_CompileOutputOf;
+      case LanguageConceptSwitch.BuildLayout_Container:
+        return props_BuildLayout_Container;
+      case LanguageConceptSwitch.BuildLayout_ContainerAcceptingFileSet:
+        return props_BuildLayout_ContainerAcceptingFileSet;
+      case LanguageConceptSwitch.BuildLayout_Copy:
+        return props_BuildLayout_Copy;
+      case LanguageConceptSwitch.BuildLayout_CopyFilter:
+        return props_BuildLayout_CopyFilter;
+      case LanguageConceptSwitch.BuildLayout_CopyFilterFixCRLF:
+        return props_BuildLayout_CopyFilterFixCRLF;
+      case LanguageConceptSwitch.BuildLayout_CopyFilterReplaceRegex:
+        return props_BuildLayout_CopyFilterReplaceRegex;
+      case LanguageConceptSwitch.BuildLayout_CopyFilterReplaceTokens:
+        return props_BuildLayout_CopyFilterReplaceTokens;
+      case LanguageConceptSwitch.BuildLayout_CopyFlattenMapper:
+        return props_BuildLayout_CopyFlattenMapper;
+      case LanguageConceptSwitch.BuildLayout_CopyGlobMapper:
+        return props_BuildLayout_CopyGlobMapper;
+      case LanguageConceptSwitch.BuildLayout_CopyHandler:
+        return props_BuildLayout_CopyHandler;
+      case LanguageConceptSwitch.BuildLayout_CopyMapper:
+        return props_BuildLayout_CopyMapper;
+      case LanguageConceptSwitch.BuildLayout_CopyParameter:
+        return props_BuildLayout_CopyParameter;
+      case LanguageConceptSwitch.BuildLayout_CopyProcessor:
+        return props_BuildLayout_CopyProcessor;
+      case LanguageConceptSwitch.BuildLayout_CopyRegexMapper:
+        return props_BuildLayout_CopyRegexMapper;
+      case LanguageConceptSwitch.BuildLayout_CustomCopy:
+        return props_BuildLayout_CustomCopy;
+      case LanguageConceptSwitch.BuildLayout_EchoProperties:
+        return props_BuildLayout_EchoProperties;
+      case LanguageConceptSwitch.BuildLayout_EchoPropertyEntry:
+        return props_BuildLayout_EchoPropertyEntry;
+      case LanguageConceptSwitch.BuildLayout_EchoXml:
+        return props_BuildLayout_EchoXml;
+      case LanguageConceptSwitch.BuildLayout_ExportAsJavaLibrary:
+        return props_BuildLayout_ExportAsJavaLibrary;
+      case LanguageConceptSwitch.BuildLayout_File:
+        return props_BuildLayout_File;
+      case LanguageConceptSwitch.BuildLayout_FileSet:
+        return props_BuildLayout_FileSet;
+      case LanguageConceptSwitch.BuildLayout_FileStub:
+        return props_BuildLayout_FileStub;
+      case LanguageConceptSwitch.BuildLayout_Filemode:
+        return props_BuildLayout_Filemode;
+      case LanguageConceptSwitch.BuildLayout_Files:
+        return props_BuildLayout_Files;
+      case LanguageConceptSwitch.BuildLayout_FilesOf:
+        return props_BuildLayout_FilesOf;
+      case LanguageConceptSwitch.BuildLayout_Folder:
+        return props_BuildLayout_Folder;
+      case LanguageConceptSwitch.BuildLayout_Import:
+        return props_BuildLayout_Import;
+      case LanguageConceptSwitch.BuildLayout_ImportContent:
+        return props_BuildLayout_ImportContent;
+      case LanguageConceptSwitch.BuildLayout_InJarNode:
+        return props_BuildLayout_InJarNode;
+      case LanguageConceptSwitch.BuildLayout_Jar:
+        return props_BuildLayout_Jar;
+      case LanguageConceptSwitch.BuildLayout_JarManifest:
+        return props_BuildLayout_JarManifest;
+      case LanguageConceptSwitch.BuildLayout_JarManifest_Attribute:
+        return props_BuildLayout_JarManifest_Attribute;
+      case LanguageConceptSwitch.BuildLayout_JarManifest_Part:
+        return props_BuildLayout_JarManifest_Part;
+      case LanguageConceptSwitch.BuildLayout_JarManifest_Section:
+        return props_BuildLayout_JarManifest_Section;
+      case LanguageConceptSwitch.BuildLayout_NamedContainer:
+        return props_BuildLayout_NamedContainer;
+      case LanguageConceptSwitch.BuildLayout_Node:
+        return props_BuildLayout_Node;
+      case LanguageConceptSwitch.BuildLayout_PathElement:
+        return props_BuildLayout_PathElement;
+      case LanguageConceptSwitch.BuildLayout_PureNode:
+        return props_BuildLayout_PureNode;
+      case LanguageConceptSwitch.BuildLayout_Tar:
+        return props_BuildLayout_Tar;
+      case LanguageConceptSwitch.BuildLayout_TransparentContainer:
+        return props_BuildLayout_TransparentContainer;
+      case LanguageConceptSwitch.BuildLayout_War:
+        return props_BuildLayout_War;
+      case LanguageConceptSwitch.BuildLayout_Zip:
+        return props_BuildLayout_Zip;
+      case LanguageConceptSwitch.BuildMacro:
+        return props_BuildMacro;
+      case LanguageConceptSwitch.BuildNamedLayout:
+        return props_BuildNamedLayout;
+      case LanguageConceptSwitch.BuildPlugin:
+        return props_BuildPlugin;
+      case LanguageConceptSwitch.BuildProject:
+        return props_BuildProject;
+      case LanguageConceptSwitch.BuildProjectDependency:
+        return props_BuildProjectDependency;
+      case LanguageConceptSwitch.BuildProjectPart:
+        return props_BuildProjectPart;
+      case LanguageConceptSwitch.BuildRelativePath:
+        return props_BuildRelativePath;
+      case LanguageConceptSwitch.BuildSourceArchiveRelativePath:
+        return props_BuildSourceArchiveRelativePath;
+      case LanguageConceptSwitch.BuildSourceMacroRelativePath:
+        return props_BuildSourceMacroRelativePath;
+      case LanguageConceptSwitch.BuildSourcePath:
+        return props_BuildSourcePath;
+      case LanguageConceptSwitch.BuildSourceProjectRelativePath:
+        return props_BuildSourceProjectRelativePath;
+      case LanguageConceptSwitch.BuildSourceSetContainer:
+        return props_BuildSourceSetContainer;
+      case LanguageConceptSwitch.BuildSource_CompilablePart:
+        return props_BuildSource_CompilablePart;
+      case LanguageConceptSwitch.BuildSource_FilesetProjectPart:
+        return props_BuildSource_FilesetProjectPart;
+      case LanguageConceptSwitch.BuildSource_JavaCP:
+        return props_BuildSource_JavaCP;
+      case LanguageConceptSwitch.BuildSource_JavaClassFolder:
+        return props_BuildSource_JavaClassFolder;
+      case LanguageConceptSwitch.BuildSource_JavaContentFolder:
+        return props_BuildSource_JavaContentFolder;
+      case LanguageConceptSwitch.BuildSource_JavaContentRoot:
+        return props_BuildSource_JavaContentRoot;
+      case LanguageConceptSwitch.BuildSource_JavaDependency:
+        return props_BuildSource_JavaDependency;
+      case LanguageConceptSwitch.BuildSource_JavaDependencyExternalJar:
+        return props_BuildSource_JavaDependencyExternalJar;
+      case LanguageConceptSwitch.BuildSource_JavaDependencyExternalJarInFolder:
+        return props_BuildSource_JavaDependencyExternalJarInFolder;
+      case LanguageConceptSwitch.BuildSource_JavaDependencyFileset:
+        return props_BuildSource_JavaDependencyFileset;
+      case LanguageConceptSwitch.BuildSource_JavaDependencyJar:
+        return props_BuildSource_JavaDependencyJar;
+      case LanguageConceptSwitch.BuildSource_JavaDependencyLibrary:
+        return props_BuildSource_JavaDependencyLibrary;
+      case LanguageConceptSwitch.BuildSource_JavaDependencyModule:
+        return props_BuildSource_JavaDependencyModule;
+      case LanguageConceptSwitch.BuildSource_JavaExternalJarFolderRef:
+        return props_BuildSource_JavaExternalJarFolderRef;
+      case LanguageConceptSwitch.BuildSource_JavaExternalJarRef:
+        return props_BuildSource_JavaExternalJarRef;
+      case LanguageConceptSwitch.BuildSource_JavaFiles:
+        return props_BuildSource_JavaFiles;
+      case LanguageConceptSwitch.BuildSource_JavaJar:
+        return props_BuildSource_JavaJar;
+      case LanguageConceptSwitch.BuildSource_JavaJars:
+        return props_BuildSource_JavaJars;
+      case LanguageConceptSwitch.BuildSource_JavaLibrary:
+        return props_BuildSource_JavaLibrary;
+      case LanguageConceptSwitch.BuildSource_JavaLibraryCP:
+        return props_BuildSource_JavaLibraryCP;
+      case LanguageConceptSwitch.BuildSource_JavaLibraryElement:
+        return props_BuildSource_JavaLibraryElement;
+      case LanguageConceptSwitch.BuildSource_JavaLibraryExternalJar:
+        return props_BuildSource_JavaLibraryExternalJar;
+      case LanguageConceptSwitch.BuildSource_JavaLibraryExternalJarFolder:
+        return props_BuildSource_JavaLibraryExternalJarFolder;
+      case LanguageConceptSwitch.BuildSource_JavaModule:
+        return props_BuildSource_JavaModule;
+      case LanguageConceptSwitch.BuildSource_JavaModuleOptions:
+        return props_BuildSource_JavaModuleOptions;
+      case LanguageConceptSwitch.BuildSource_JavaOptions:
+        return props_BuildSource_JavaOptions;
+      case LanguageConceptSwitch.BuildSource_JavaResources:
+        return props_BuildSource_JavaResources;
+      case LanguageConceptSwitch.BuildSource_JavaSources:
+        return props_BuildSource_JavaSources;
+      case LanguageConceptSwitch.BuildSource_SingleFile:
+        return props_BuildSource_SingleFile;
+      case LanguageConceptSwitch.BuildSource_SingleFolder:
+        return props_BuildSource_SingleFolder;
+      case LanguageConceptSwitch.BuildString:
+        return props_BuildString;
+      case LanguageConceptSwitch.BuildStringContainer:
+        return props_BuildStringContainer;
+      case LanguageConceptSwitch.BuildStringNotEmpty:
+        return props_BuildStringNotEmpty;
+      case LanguageConceptSwitch.BuildStringPart:
+        return props_BuildStringPart;
+      case LanguageConceptSwitch.BuildTextStringPart:
+        return props_BuildTextStringPart;
+      case LanguageConceptSwitch.BuildVarRefStringPart:
+        return props_BuildVarRefStringPart;
+      case LanguageConceptSwitch.BuildVariableMacro:
+        return props_BuildVariableMacro;
+      case LanguageConceptSwitch.BuildVariableMacroInitValue:
+        return props_BuildVariableMacroInitValue;
+      case LanguageConceptSwitch.BuildVariableMacroInitWithDate:
+        return props_BuildVariableMacroInitWithDate;
+      case LanguageConceptSwitch.BuildVariableMacroInitWithFileContent:
+        return props_BuildVariableMacroInitWithFileContent;
+      case LanguageConceptSwitch.BuildVariableMacroInitWithString:
+        return props_BuildVariableMacroInitWithString;
+      case LanguageConceptSwitch.BuildVariableMacroInitWithValueFromFile:
+        return props_BuildVariableMacroInitWithValueFromFile;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_Folder:
+        return props_GeneratorInternal_BuildSource_Folder;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JarFolder:
+        return props_GeneratorInternal_BuildSource_JarFolder;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaJar:
+        return props_GeneratorInternal_BuildSource_JavaJar;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaLibrary:
+        return props_GeneratorInternal_BuildSource_JavaLibrary;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaModule:
+        return props_GeneratorInternal_BuildSource_JavaModule;
+      case LanguageConceptSwitch.GeneratorInternal_BuildSource_SingleFile:
+        return props_GeneratorInternal_BuildSource_SingleFile;
+      case LanguageConceptSwitch.GeneratorInternal_IWorkflowParticipantReference:
+        return props_GeneratorInternal_IWorkflowParticipantReference;
+      case LanguageConceptSwitch.GeneratorInternal_IWorkfowParticipants:
+        return props_GeneratorInternal_IWorkfowParticipants;
+      case LanguageConceptSwitch.GeneratorInternal_LibraryArtifacts:
+        return props_GeneratorInternal_LibraryArtifacts;
+      case LanguageConceptSwitch.GeneratorInternal_Mapping:
+        return props_GeneratorInternal_Mapping;
+      case LanguageConceptSwitch.GeneratorInternal_ProjectDependency:
+        return props_GeneratorInternal_ProjectDependency;
+      case LanguageConceptSwitch.IWorkflowParticipant:
+        return props_IWorkflowParticipant;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0ff = buildConceptIndices(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL, "jetbrains.mps.build.structure.BuildAspect"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b23438dabL, "jetbrains.mps.build.structure.BuildCustomWorkflow"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a23L, "jetbrains.mps.build.structure.BuildDependency"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L, "jetbrains.mps.build.structure.BuildExternalDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, "jetbrains.mps.build.structure.BuildFileExcludeSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262f9cL, "jetbrains.mps.build.structure.BuildFileIncludeSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, "jetbrains.mps.build.structure.BuildFileIncludesSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a7L, "jetbrains.mps.build.structure.BuildFileSelector"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7c4bL, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9216cebL, "jetbrains.mps.build.structure.BuildInputFileSet"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9216cecL, "jetbrains.mps.build.structure.BuildInputFolderSet"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6d2aa38ffdbd053fL, "jetbrains.mps.build.structure.BuildInputFolders"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9216ceaL, "jetbrains.mps.build.structure.BuildInputResourceSet"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9ac67L, "jetbrains.mps.build.structure.BuildJavaPlugin"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6dea0cbL, "jetbrains.mps.build.structure.BuildLayout_Comment"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd24L, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L, "jetbrains.mps.build.structure.BuildLayout_Copy"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a39527643L, "jetbrains.mps.build.structure.BuildLayout_CopyFilter"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3a43b020f623c9acL, "jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3956ec48L, "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a39527645L, "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceTokens"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x60d5783406a77553L, "jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3718a2df935ad4caL, "jetbrains.mps.build.structure.BuildLayout_CopyGlobMapper"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394dcc33L, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x60d5783406a77552L, "jetbrains.mps.build.structure.BuildLayout_CopyMapper"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c124L, "jetbrains.mps.build.structure.BuildLayout_CopyParameter"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x127671bd5d12a2c2L, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3718a2df935d7c9fL, "jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L, "jetbrains.mps.build.structure.BuildLayout_CustomCopy"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x2d0f82f7bfda46aL, "jetbrains.mps.build.structure.BuildLayout_EchoProperties"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x2d0f82f7bfda477L, "jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6a3e160a3eff6a94L, "jetbrains.mps.build.structure.BuildLayout_EchoXml"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde534f69bL, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, "jetbrains.mps.build.structure.BuildLayout_File"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L, "jetbrains.mps.build.structure.BuildLayout_FileSet"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d31b36L, "jetbrains.mps.build.structure.BuildLayout_FileStub"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, "jetbrains.mps.build.structure.BuildLayout_Files"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L, "jetbrains.mps.build.structure.BuildLayout_FilesOf"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, "jetbrains.mps.build.structure.BuildLayout_Import"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, "jetbrains.mps.build.structure.BuildLayout_JarManifest"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x76d807f8dd95718eL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Part"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, "jetbrains.mps.build.structure.BuildLayout_NamedContainer"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0c8fbL, "jetbrains.mps.build.structure.BuildLayout_PureNode"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, "jetbrains.mps.build.structure.BuildLayout_Tar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde532a284L, "jetbrains.mps.build.structure.BuildLayout_TransparentContainer"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x60b09627fedeb73cL, "jetbrains.mps.build.structure.BuildLayout_War"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f97L, "jetbrains.mps.build.structure.BuildLayout_Zip"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL, "jetbrains.mps.build.structure.BuildPlugin"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc08L, "jetbrains.mps.build.structure.BuildProjectPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61fe82bL, "jetbrains.mps.build.structure.BuildSourceSetContainer"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd27L, "jetbrains.mps.build.structure.BuildSource_CompilablePart"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9402L, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61c2404L, "jetbrains.mps.build.structure.BuildSource_JavaCP"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbd021959L, "jetbrains.mps.build.structure.BuildSource_JavaClassFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d431989677L, "jetbrains.mps.build.structure.BuildSource_JavaDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6fcf41976cfa6175L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyFileset"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61fe867L, "jetbrains.mps.build.structure.BuildSource_JavaJars"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144e320L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, "jetbrains.mps.build.structure.BuildSource_JavaModuleOptions"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f21e006dL, "jetbrains.mps.build.structure.BuildSource_JavaResources"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92974fcL, "jetbrains.mps.build.structure.BuildSource_JavaSources"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afa57ad2L, "jetbrains.mps.build.structure.BuildSource_SingleFile"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb659d7L, "jetbrains.mps.build.structure.BuildSource_SingleFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L, "jetbrains.mps.build.structure.BuildStringNotEmpty"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL, "jetbrains.mps.build.structure.BuildStringPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d2c3e4L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x74a438668c1b9d5aL, "jetbrains.mps.build.structure.BuildVariableMacroInitWithFileContent"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd26287L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d43ad7L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892875c0L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_Folder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0c18L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0d4aL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f1f0652f6049405L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892d3b5bL, "jetbrains.mps.build.structure.GeneratorInternal_Mapping"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x546bf9ab92fe0b3fL, "jetbrains.mps.build.structure.IWorkflowParticipant"));
 }

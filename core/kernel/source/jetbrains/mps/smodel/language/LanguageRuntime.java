@@ -18,8 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -49,16 +48,19 @@ import java.util.concurrent.ConcurrentMap;
 public abstract class LanguageRuntime {
   private final ConcurrentMap<Class<? extends ILanguageAspect>, ILanguageAspect> myAspectDescriptors =
       new ConcurrentHashMap<Class<? extends ILanguageAspect>, ILanguageAspect>();
+  // FIXME AP: is there a contract on duplication????
   private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
   private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
 
+  /**
+   * @return full name of the language, never {@code null}.
+   */
   public abstract String getNamespace();
 
   /**
-   * @return now value of the field, <code>null</code> if not set. Generated LanguageRuntime classes shall override return value
-   * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
+   * @return identity of the language, never {@code null}. Generated LanguageRuntime classes shall override return value
    */
-  public abstract SLanguageId getId();
+  public abstract SLanguageId getId(); // FIXME supply a cons that takes mandatory values (id, name), rather than overriding methods in generated classes
 
   /**
    * Generated LanguageRuntime classes shall override this method
@@ -92,38 +94,37 @@ public abstract class LanguageRuntime {
    * @see jetbrains.mps.smodel.runtime.ILanguageAspect
    */
   public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> aspectClass) {
-    T aspectDescriptor = aspectClass.cast(myAspectDescriptors.get(aspectClass));
-    if (aspectDescriptor == null) {
-      aspectDescriptor = createAspect(aspectClass);
+    try {
+      T aspectDescriptor = aspectClass.cast(myAspectDescriptors.get(aspectClass));
       if (aspectDescriptor == null) {
-        return null;
+        aspectDescriptor = createAspect(aspectClass);
+        if (aspectDescriptor == null) {
+          return null;
+        }
+        if (aspectDescriptor instanceof LanguageRuntimeAware) {
+          ((LanguageRuntimeAware) aspectDescriptor).setLanguageRuntime(this);
+        }
+        T alreadyThere = aspectClass.cast(myAspectDescriptors.putIfAbsent(aspectClass, aspectDescriptor));
+        if (alreadyThere != null) {
+          return alreadyThere;
+        }
       }
-      if (aspectDescriptor instanceof LanguageRuntimeAware) {
-        ((LanguageRuntimeAware) aspectDescriptor).setLanguageRuntime(this);
-      }
-      T alreadyThere = aspectClass.cast(myAspectDescriptors.putIfAbsent(aspectClass, aspectDescriptor));
-      if (alreadyThere != null) {
-        return alreadyThere;
-      }
+      return aspectDescriptor;
+    } catch (Throwable th) {
+      String msg = String.format("Failed to instantiate aspect %s in language %s", aspectClass, getNamespace());
+      Logger.getLogger(LanguageRuntime.class).error(msg, th);
+      return null;
     }
-    return aspectDescriptor;
   }
 
-  //body needed for compatibility with 3.2-generated classes, remove it after 3.3
-  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (LanguageAspectDescriptor.class.isAssignableFrom(aspectClass)) {
-      return aspectClass.cast(createAspectDescriptor(((Class<? extends LanguageAspectDescriptor>) aspectClass)));
-    }
-    return null;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //for compatibility purposes only
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
-    // FIXME Method shall become abstract past 3.3, once we change generated override methods not to delegate to this super.
-    return null;
-  }
+  /**
+   * Method every language shall implement to tell its capabilities.
+   * Implementation doesn't need to keep state, {@link #getAspect(Class)} does that.
+   * @param aspectClass never null identifying interface of the aspect
+   * @param <T> aspect class
+   * @return may return {@code null} indicating language has no such aspect
+   */
+  protected abstract <T extends ILanguageAspect> T createAspect(Class<T> aspectClass);
 
   /*
    * perhaps, could use WeakHashMap, although proper registration/un-registration sequence shall enforce no stale entries

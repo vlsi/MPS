@@ -7,7 +7,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="16,0,87,0" name="jetbrains.mps.samples.notesOrganizer.textGen.TextGenAspectDescriptor" />
+      <unit at="15,0,57,0" name="jetbrains.mps.samples.notesOrganizer.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c744ee87-fe3f-4a93-8994-1d2750c28013(jetbrains.mps.samples.notesOrganizer.textGen)/8908453262579995732">
@@ -18,17 +18,11 @@
       <node id="8908453262579995732" at="18,183,19,18" concept="0" />
       <node id="8908453262579995732" at="19,18,20,18" concept="0" />
       <node id="8908453262579997297" at="21,207,22,27" concept="0" />
-      <node id="8908453262579995811" at="25,42,26,17" concept="4" />
       <node id="8908453262579997297" at="20,18,23,5" concept="1" />
-      <node id="8908453262579995732" at="25,0,28,0" concept="2" trace="getExtension#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8908453262579995732" at="14,0,25,0" concept="2" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="8908453262579997297" at="21,207,22,27" />
-      <scope id="8908453262579995732" at="25,42,26,17" />
       <scope id="8908453262579997297" at="20,18,23,5">
         <var name="item" id="8908453262579997297" />
-      </scope>
-      <scope id="8908453262579995732" at="25,0,28,0">
-        <var name="node" id="8908453262579995732" />
       </scope>
       <scope id="8908453262579995732" at="15,54,23,5">
         <var name="tgs" id="8908453262579995732" />
@@ -36,10 +30,10 @@
       <scope id="8908453262579995732" at="14,0,25,0">
         <var name="ctx" id="8908453262579995732" />
       </scope>
-      <unit id="8908453262579995732" at="13,0,29,0" name="jetbrains.mps.samples.notesOrganizer.textGen.Notes_TextGen" />
+      <unit id="8908453262579995732" at="13,0,26,0" name="jetbrains.mps.samples.notesOrganizer.textGen.Notes_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="8908453262579995811" at="74,60,75,17" concept="4" />
+      <node id="8908453262579995811" at="53,60,54,17" concept="4" />
     </file>
   </root>
   <root nodeRef="r:c744ee87-fe3f-4a93-8994-1d2750c28013(jetbrains.mps.samples.notesOrganizer.textGen)/8908453262579999362">

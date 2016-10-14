@@ -4,7 +4,7 @@
   <languages>
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -372,7 +372,7 @@
                 <node concept="3CFYIw" id="2vlU4mSUD8m" role="3CFYIz">
                   <ref role="3CFYIJ" to="j0bb:2vlU4mSUaUR" resolve="DefaultReferenceAttribute" />
                   <node concept="29tlS9" id="2vlU4mSUDmk" role="3CFYM5">
-                    <ref role="29tlSl" to="j0bb:O7qdvf4M_j" />
+                    <ref role="29tlSl" to="j0bb:O7qdvf4M_j" resolve="bestFriend" />
                   </node>
                 </node>
               </node>
@@ -403,7 +403,7 @@
                     <node concept="3CFYIw" id="2vlU4mSUEHj" role="3CFYIz">
                       <ref role="3CFYIJ" to="j0bb:2vlU4mSUaUR" resolve="DefaultReferenceAttribute" />
                       <node concept="29tlS9" id="2vlU4mSUEHk" role="3CFYM5">
-                        <ref role="29tlSl" to="j0bb:O7qdvf4M_j" />
+                        <ref role="29tlSl" to="j0bb:O7qdvf4M_j" resolve="bestFriend" />
                       </node>
                     </node>
                   </node>
@@ -419,7 +419,7 @@
                 <node concept="3CFYIw" id="2vlU4mSUElk" role="3CFYIz">
                   <ref role="3CFYIJ" to="j0bb:2vlU4mSUaUR" resolve="DefaultReferenceAttribute" />
                   <node concept="29tlS9" id="2vlU4mSUEll" role="3CFYM5">
-                    <ref role="29tlSl" to="j0bb:O7qdvf4M_j" />
+                    <ref role="29tlSl" to="j0bb:O7qdvf4M_j" resolve="bestFriend" />
                   </node>
                 </node>
               </node>
@@ -443,7 +443,7 @@
                       <node concept="3CFYIw" id="2vlU4mSUdNp" role="3CFYIz">
                         <ref role="3CFYIJ" to="j0bb:2vlU4mSUaUR" resolve="DefaultReferenceAttribute" />
                         <node concept="29tlS9" id="2vlU4mSUdRM" role="3CFYM5">
-                          <ref role="29tlSl" to="j0bb:O7qdvf4M_j" />
+                          <ref role="29tlSl" to="j0bb:O7qdvf4M_j" resolve="bestFriend" />
                         </node>
                       </node>
                     </node>
@@ -458,7 +458,7 @@
                       <node concept="3CFYIw" id="6z32qfm6lnE" role="3CFYIz">
                         <ref role="3CFYIJ" to="j0bb:2vlU4mSUaUR" resolve="DefaultReferenceAttribute" />
                         <node concept="29tlS9" id="6z32qfm6lnF" role="3CFYM5">
-                          <ref role="29tlSl" to="j0bb:O7qdvf4M_j" />
+                          <ref role="29tlSl" to="j0bb:O7qdvf4M_j" resolve="bestFriend" />
                         </node>
                       </node>
                     </node>

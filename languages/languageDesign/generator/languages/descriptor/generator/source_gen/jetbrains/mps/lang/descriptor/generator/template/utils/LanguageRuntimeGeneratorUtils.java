@@ -34,7 +34,7 @@ public class LanguageRuntimeGeneratorUtils {
     }) != null);
   }
 
-  public static boolean hasManualEditorAspectDescriptor(TemplateQueryContext genContext, SModel editorModel) {
+  public static boolean hasManualEditorAspectDescriptor(SModel editorModel) {
     List<SNode> roots = SModelOperations.roots(((SModel) editorModel), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     return ListSequence.fromList(roots).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

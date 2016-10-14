@@ -7,13 +7,12 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_TestConceptForMenuParameterizedByPrimitiveType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildBrother = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildSuper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptChildToReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptToWrap = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParent = new ConceptPresentationBuilder().create();
@@ -26,73 +25,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0l.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_TestConceptForMenuParameterizedByPrimitiveType;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_TestSubstituteChild;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_TestSubstituteConceptChildToReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_TestSubstituteConceptToWrap;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_TestSubstituteParent;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_TestSubstituteParentToReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_TestSubstituteSubChild1;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_TestSubstituteSubChild2;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_TestSubstituteSubChildSmartReference;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_TestSubstituteSubConceptToWrap;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.TestConceptForMenuParameterizedByPrimitiveType:
+        return props_TestConceptForMenuParameterizedByPrimitiveType;
+      case LanguageConceptSwitch.TestSubstituteChild:
+        return props_TestSubstituteChild;
+      case LanguageConceptSwitch.TestSubstituteChildBrother:
+        return props_TestSubstituteChildBrother;
+      case LanguageConceptSwitch.TestSubstituteChildSuper:
+        return props_TestSubstituteChildSuper;
+      case LanguageConceptSwitch.TestSubstituteConceptChildToReference:
+        return props_TestSubstituteConceptChildToReference;
+      case LanguageConceptSwitch.TestSubstituteConceptToWrap:
+        return props_TestSubstituteConceptToWrap;
+      case LanguageConceptSwitch.TestSubstituteParent:
+        return props_TestSubstituteParent;
+      case LanguageConceptSwitch.TestSubstituteParentToReference:
+        return props_TestSubstituteParentToReference;
+      case LanguageConceptSwitch.TestSubstituteSubChild1:
+        return props_TestSubstituteSubChild1;
+      case LanguageConceptSwitch.TestSubstituteSubChild2:
+        return props_TestSubstituteSubChild2;
+      case LanguageConceptSwitch.TestSubstituteSubChildSmartReference:
+        return props_TestSubstituteSubChildSmartReference;
+      case LanguageConceptSwitch.TestSubstituteSubConceptToWrap:
+        return props_TestSubstituteSubConceptToWrap;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestConceptForMenuParameterizedByPrimitiveType"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptChildToReference"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrap"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3aa7c75fL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentToReference"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference"), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2abL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubConceptToWrap"));
 }

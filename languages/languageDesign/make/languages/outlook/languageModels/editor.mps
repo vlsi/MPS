@@ -2,7 +2,7 @@
 <model ref="r:6df9b1ec-2a82-4a17-9636-f155e1db2678(jetbrains.mps.make.outlook.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="z5g5" ref="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)" />
@@ -70,7 +70,7 @@
         </node>
         <node concept="3XFhqQ" id="4RkbWW0I_AN" role="3EZMnx" />
         <node concept="3F2HdR" id="4RkbWW0I_AU" role="3EZMnx">
-          <ref role="1NtTu8" to="z5g5:4RkbWW0I_Ax" />
+          <ref role="1NtTu8" to="z5g5:4RkbWW0I_Ax" resolve="facet" />
           <node concept="2iRkQZ" id="4RkbWW0I_AW" role="2czzBx" />
           <node concept="3F0ifn" id="4RkbWW0I_AY" role="2czzBI">
             <property role="3F0ifm" value="" />

@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -37,7 +38,6 @@ import com.intellij.openapi.editor.impl.LeftHandScrollbarLayout;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
 import com.intellij.openapi.wm.WindowManager;
@@ -45,7 +45,6 @@ import com.intellij.openapi.wm.ex.StatusBarEx;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
@@ -91,6 +90,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
@@ -108,7 +108,6 @@ import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
@@ -143,6 +142,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -195,7 +195,6 @@ import java.awt.RenderingHints;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
-import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
@@ -313,7 +312,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftY = 10;
 
   private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
-  private UpdaterImpl myUpdater = createUpdater();
+  private final CommandContextImpl myCommandContext;
+  private final UpdaterImpl myUpdater;
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
@@ -323,14 +323,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private NodeInformationDialog myNodeInformationDialog;
 
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<>();
-  private final NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
+  private final NodeHighlightManager myHighlightManager;
 
   private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
   protected SNode myNode;
-  @Nullable
-  private MPSNodeVirtualFile myVirtualFile;
   private boolean myNoVirtualFile;
 
   @Nullable
@@ -386,6 +384,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorComponent(@NotNull SRepository repository, @NotNull EditorConfiguration configuration) {
     myRepository = repository;
     myEditorConfiguration = configuration;
+    myCommandContext = createCommandContext();
+    myUpdater = createUpdater(myCommandContext);
+    myHighlightManager = new NodeHighlightManager(this);
+
     if (ApplicationManager.getApplication() != null && ApplicationManager.getApplication().getComponent(MPSCoreComponents.class) != null) {
       myClassLoaderManager = ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager();
     } else {
@@ -598,46 +600,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (isDisposed()) {
           return;
         }
-        if (getSelectionManager().getSelection() == null) {
-          EditorCell rootCell = getRootCell();
-          if (rootCell instanceof EditorCell_Collection) {
-            jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
-            jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
-            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-              toSelect = CellFinderUtil.findChildByManyFinders(rootCell, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
-            } else {
-              toSelect = focusPolicyCell;
-            }
-            if (toSelect == null) {
-              toSelect = rootCell;
-            }
-            changeSelection(toSelect);
-            repaintExternalComponent();
-            return;
-          }
-          if (rootCell != null && rootCell.isSelectable()) {
-            changeSelection(rootCell);
-          }
-        }
-        repaintExternalComponent();
+        setDefaultSelection();
+        activateCaretBlinker();
       }
 
       @Override
       public void focusLost(FocusEvent e) {
-        repaintExternalComponent();
-        if (myNodeSubstituteChooser.getWindow() != null &&
-            (myNodeSubstituteChooser.getWindow().isAncestorOf(
-                e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent())) {
-          return;
-        }
-        deactivateSubstituteChooser();
-      }
-    });
-
-    addFocusListener(new FocusAdapter() {
-      @Override
-      public void focusLost(FocusEvent e) {
-        commitAll();
+        closeSubstituteChooser(e.getOppositeComponent());
+        commitAllCellValues();
+        deActivateCaretBlinker();
       }
     });
 
@@ -744,10 +715,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myIntentionsSupport = new IntentionsSupport(this);
 
-    if (CaretBlinker.getInstance() != null) {
-      CaretBlinker.getInstance().registerEditor(this);
-    }
-
     if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().registerComponent(this);
     }
@@ -790,8 +757,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  protected UpdaterImpl createUpdater() {
-    return new UpdaterImpl(this);
+  protected UpdaterImpl createUpdater(CommandContextImpl commandContext) {
+    return new UpdaterImpl(this, commandContext);
+  }
+
+  protected CommandContextImpl createCommandContext() {
+    return new CommandContextImpl(this);
   }
 
   protected void attachListeners() {
@@ -833,8 +804,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
+  /**
+   * From now on only NodeEditorComponent has virtual file.
+   * This method will be removed in the next release.
+   *
+   * @param noVirtualFile
+   * @deprecated since MPS 3.4
+   */
+  @Deprecated
   public void setNoVirtualFile(boolean noVirtualFile) {
-    myNoVirtualFile = noVirtualFile;
   }
 
   public int getShiftX() {
@@ -930,16 +908,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNode;
   }
 
+  /**
+   * From now on only NodeEditorComponent has virtual file.
+   * This method will be removed in the next release.
+   *
+   * @deprecated since MPS 3.4
+   */
+  @Deprecated
   @Nullable
   public MPSNodeVirtualFile getVirtualFile() {
-    return myVirtualFile;
+    return null;
   }
 
   @Override
   public void touch() {
-    if (getVirtualFile() != null) {
-      getVirtualFile().setModificationStamp(LocalTimeCounter.currentTime());
-    }
   }
 
   @Override
@@ -1133,18 +1115,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         myNode = node;
         if (myNode != null) {
-          myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
-          myVirtualFile = !myNoVirtualFile ? NodeVirtualFileSystem.getInstance().getFileFor(getRepository(), node.getContainingRoot()) : null;
+          myNodePointer = myNode.getReference();
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
           setEditorContext(model, myRepository);
           myReadOnly = model.isReadOnly();
         } else {
           myNodePointer = null;
-          myVirtualFile = null;
           setEditorContext(null, myRepository);
           myReadOnly = true;
         }
+        myCommandContext.updateContextNode();
 
         if (needNewTypecheckingContext) {
           acquireTypeCheckingContext();
@@ -1473,7 +1454,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myHighlightManager.dispose();
 
     detachListeners();
-
+    // we expect this method to be executed at least inside model read
+    // TODO: add assertion here
+    myAutoValidator.dispose();
     myUpdater.dispose();
 
     if (hasUI()) {
@@ -1492,9 +1475,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myLeftMarginPressListeners.clear();
 
-    if (CaretBlinker.getInstance() != null) {
-      CaretBlinker.getInstance().unregisterEditor(this);
-    }
     myFocusTracker.dispose();
   }
 
@@ -2463,7 +2443,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public CommandContext getCommandContext() {
-    return myUpdater;
+    return myCommandContext;
   }
 
   <T> T runRead(final Computable<T> c) {
@@ -2472,7 +2452,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return r.getResult();
   }
 
+  /**
+   * @deprecated editor component does not always correspond to a project!
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected final jetbrains.mps.project.Project getCurrentProject() {
     // there's no need in MPSProject, there's just no key for generic MPS project in MPSCommonDataKeys.
     final MPSProject p = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext(this));
@@ -2613,7 +2598,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
+    jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findFocusedCell(cell);
     jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
       toSelect = CellFinderUtil.findChildByManyFinders(cell, Finder.FIRST_ERROR, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
@@ -2748,9 +2733,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName()) && (isFocusOwner() || mySearchPanel == null || !mySearchPanel.isVisible())) {
       return new MyPasteProvider();
     }
-    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
-      return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
-    }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
       ProjectViewSelectInProvider selectInHelper =
@@ -2765,13 +2747,54 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
-  private void commitAll() {
+  private void commitAllCellValues() {
     final List<EditorCell_Property> cellsToCommit = getCellsToCommit();
     if (cellsToCommit.isEmpty()) {
       return;
     }
 
     getModelAccess().executeCommand(() -> doCommitAll(cellsToCommit));
+  }
+
+  private void setDefaultSelection() {
+    if (getSelectionManager().getSelection() != null) {
+      return;
+    }
+
+    EditorCell rootCell = getRootCell();
+    if (rootCell instanceof EditorCell_Collection) {
+      jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findFocusedCell(rootCell);
+      jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
+      if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
+        toSelect = CellFinderUtil.findChildByManyFinders(rootCell, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
+      } else {
+        toSelect = focusPolicyCell;
+      }
+      if (toSelect == null) {
+        toSelect = rootCell;
+      }
+      changeSelection(toSelect);
+      return;
+    }
+    if (rootCell != null && rootCell.isSelectable()) {
+      changeSelection(rootCell);
+    }
+  }
+
+  private void closeSubstituteChooser(Component newFocusOwner) {
+    if (myNodeSubstituteChooser.getWindow() != null &&
+        (myNodeSubstituteChooser.getWindow().isAncestorOf(newFocusOwner) || myNodeSubstituteChooser.getWindow() == newFocusOwner)) {
+      return;
+    }
+    deactivateSubstituteChooser();
+  }
+
+  private void activateCaretBlinker() {
+    myEditorConfiguration.caretManager.setActiveEditor(this);
+  }
+
+  private void deActivateCaretBlinker() {
+    myEditorConfiguration.caretManager.unsetActiveEditor(this);
   }
 
   private List<EditorCell_Property> getCellsToCommit() {
@@ -3007,9 +3030,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         protected void doExecute() {
           if (isInvalid() || !isCutEnabled(dataContext)) {
-            return;
-          }
-          if (!isCutEnabled(dataContext)) {
             return;
           }
           jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();

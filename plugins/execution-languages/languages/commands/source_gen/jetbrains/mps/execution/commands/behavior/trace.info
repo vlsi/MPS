@@ -15,7 +15,91 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,138,0" name="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,77,0" name="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BuilderBlockStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BuilderParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.BuilderParameter_BehaviorDescriptor" />
+    </file>
+    <file name="CommandBuilderExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandBuilderExpression_BehaviorDescriptor" />
+    </file>
+    <file name="CommandDebuggerOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandDebuggerOperation_BehaviorDescriptor" />
+    </file>
+    <file name="CommandDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="CommandMethod_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandMethod_BehaviorDescriptor" />
+    </file>
+    <file name="CommandParameterAssignment_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterAssignment_BehaviorDescriptor" />
+    </file>
+    <file name="CommandParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="CommandParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="CommandPartLengthOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_BehaviorDescriptor" />
+    </file>
+    <file name="CommandPartToListOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandPartToListOperation_BehaviorDescriptor" />
+    </file>
+    <file name="CommandProcessType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandProcessType_BehaviorDescriptor" />
+    </file>
+    <file name="CommandReferenceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandReferenceExpression_BehaviorDescriptor" />
+    </file>
+    <file name="CommandType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.CommandType_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteCommandPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_BehaviorDescriptor" />
+    </file>
+    <file name="ExplicitCommandParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="KeyValueCommandPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.KeyValueCommandPart_BehaviorDescriptor" />
+    </file>
+    <file name="ListCommandPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ListCommandPart_BehaviorDescriptor" />
+    </file>
+    <file name="NewProcessBuilderExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ProcessBuilderCommandPartType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPartType_BehaviorDescriptor" />
+    </file>
+    <file name="ProcessBuilderCommandPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPart_BehaviorDescriptor" />
+    </file>
+    <file name="ProcessType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyCommandPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.PropertyCommandPart_BehaviorDescriptor" />
+    </file>
+    <file name="RedirectOutputExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ReportErrorStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ReportExecutionError_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
+    </file>
+    <file name="StartAndWaitOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/1262430001741647344">

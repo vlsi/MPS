@@ -15,7 +15,91 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,126,0" name="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,71,0" name="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BwfAntStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfAntStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BwfAntTaskBundleDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="BwfAntTaskDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="BwfCustomMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfCustomMacro_BehaviorDescriptor" />
+    </file>
+    <file name="BwfDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BwfFileSet_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfFileSet_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaClassPath_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaClassPath_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaLibraryReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaLibraryReference_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaLibrary_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaLibrary_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaModuleReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference_BehaviorDescriptor" />
+    </file>
+    <file name="BwfJavaModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModule_BehaviorDescriptor" />
+    </file>
+    <file name="BwfMacroListImport_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfMacroListImport_BehaviorDescriptor" />
+    </file>
+    <file name="BwfMacro_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfMacro_BehaviorDescriptor" />
+    </file>
+    <file name="BwfPathDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="BwfPathReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfPathReference_BehaviorDescriptor" />
+    </file>
+    <file name="BwfProjectPartStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfProjectPartStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BwfProjectPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfProjectPart_BehaviorDescriptor" />
+    </file>
+    <file name="BwfProject_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfProject_BehaviorDescriptor" />
+    </file>
+    <file name="BwfStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BwfSubTaskDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfSubTaskDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BwfSubTask_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfSubTask_BehaviorDescriptor" />
+    </file>
+    <file name="BwfTaskDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BwfTaskLibraryDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskLibraryDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BwfTaskLibrary_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskLibrary_BehaviorDescriptor" />
+    </file>
+    <file name="BwfTaskPart_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskPart_BehaviorDescriptor" />
+    </file>
+    <file name="BwfTask_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2059109515400548715">

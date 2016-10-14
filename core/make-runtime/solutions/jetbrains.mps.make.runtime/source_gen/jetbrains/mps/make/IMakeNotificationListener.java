@@ -9,9 +9,8 @@ public interface IMakeNotificationListener {
   void scriptFinished(MakeNotification notification);
   void sessionOpened(MakeNotification notification);
   void sessionClosed(MakeNotification notification);
+
   class Stub implements IMakeNotificationListener {
-    public Stub() {
-    }
     @Override
     public final void handleNotification(MakeNotification notification) {
       switch (notification.getKind()) {
@@ -30,15 +29,19 @@ public interface IMakeNotificationListener {
         default:
       }
     }
+
     @Override
     public void scriptAboutToStart(MakeNotification notification) {
     }
+
     @Override
     public void scriptFinished(MakeNotification notification) {
     }
+
     @Override
     public void sessionOpened(MakeNotification notification) {
     }
+
     @Override
     public void sessionClosed(MakeNotification notification) {
     }

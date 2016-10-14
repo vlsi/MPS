@@ -19,8 +19,9 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellActions.OldNewCompositeSideTransformSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -34,7 +35,6 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -113,14 +113,18 @@ public class IntelligentInputUtil {
       List<SubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
       SubstituteAction item = matchingActions.get(0);
       SNode newNode = item.substitute(editorContext, smallPattern);
+      if (newNode == null) {
+        newNode = editorContext.getSelectedNode();
+      }
       editorContext.flushEvents();
-      EditorCell cellForNewNode = editorContext.getEditorComponent().findNodeCell(newNode);
+      EditorCell cellForNewNode;
+      cellForNewNode = editorContext.getEditorComponent().findNodeCell(newNode);
       if (cellForNewNode != null) {
         EditorCell_Label target = null;
-        EditorCell errorOrEditable =
-            CellFinderUtil.findChildByManyFinders(cellForNewNode, true, Finder.FIRST_ERROR, Finder.LAST_EDITABLE);
-        if (errorOrEditable instanceof EditorCell_Label) {
-          target = (EditorCell_Label) errorOrEditable;
+        EditorCell errorCell =
+            CellFinderUtil.findChildByManyFinders(cellForNewNode, true, Finder.FIRST_ERROR);
+        if (errorCell instanceof EditorCell_Label) {
+          target = (EditorCell_Label) errorCell;
         }
 
         if (target != null) {
@@ -268,7 +272,7 @@ public class IntelligentInputUtil {
       }
 
       SubstituteAction rtItem = rtMatchingActions.get(0);
-      final SNode yetNewNode = rtItem.substitute(editorContext, tail);
+      SNode yetNewNode = rtItem.substitute(editorContext, tail);
 
       editorContext.flushEvents();
 
@@ -334,7 +338,11 @@ public class IntelligentInputUtil {
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, true);
     } else if (canCompleteSmallPatternImmediatelyLeft(info, head, smallPattern) &&
         !canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
-      newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
+      final SubstituteAction substituteAction = info.getMatchingActions(smallPattern, true).get(0);
+      newNode = substituteAction.substitute(editorContext, smallPattern);
+      if (newNode == null) {
+        newNode = editorContext.getSelectedNode();
+      }
       if (newNode == null) {
         return true;
       }
@@ -456,15 +464,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
-    final SideTransformHintSubstituteActionsHelper helper =
-        new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG),
-            cell.getContext().getOperationContext());
-    SubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
-      @Override
-      protected List<SubstituteAction> createActions() {
-        return helper.createActions();
-      }
-    };
+    SubstituteInfo info = OldNewCompositeSideTransformSubstituteInfo.createSubstituteInfo(side, cell, cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG));
     return !info.hasExactlyNActions(prefix, false, 0);
   }
 

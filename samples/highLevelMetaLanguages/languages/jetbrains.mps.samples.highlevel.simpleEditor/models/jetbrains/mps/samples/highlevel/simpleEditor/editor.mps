@@ -2,7 +2,7 @@
 <model ref="r:480744f7-02c7-40e7-9a5b-a7b55c73f551(jetbrains.mps.samples.highlevel.simpleEditor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -54,7 +54,7 @@
           <property role="3F0ifm" value="editor for" />
         </node>
         <node concept="1iCGBv" id="3hIFiK8NgDt" role="3EZMnx">
-          <ref role="1NtTu8" to="nvz:3hIFiK8NfBN" />
+          <ref role="1NtTu8" to="nvz:3hIFiK8NfBN" resolve="cncpt" />
           <node concept="1sVBvm" id="3hIFiK8NgDv" role="1sWHZn">
             <node concept="3F0A7n" id="3hIFiK8NgDB" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -81,7 +81,7 @@
         </node>
         <node concept="3F2HdR" id="3hIFiK8NgE_" role="3EZMnx">
           <property role="2czwfO" value="," />
-          <ref role="1NtTu8" to="nvz:3hIFiK8NfCd" />
+          <ref role="1NtTu8" to="nvz:3hIFiK8NfCd" resolve="visibleProperties" />
           <node concept="2iRfu4" id="3hIFiK8NgEB" role="2czzBx" />
         </node>
       </node>
@@ -98,7 +98,7 @@
         <node concept="3XFhqQ" id="QNcRo9vDgM" role="3EZMnx" />
         <node concept="2iRfu4" id="QNcRo9vDgA" role="2iSdaV" />
         <node concept="3F2HdR" id="3hIFiK8NfBH" role="3EZMnx">
-          <ref role="1NtTu8" to="nvz:3hIFiK8Nfsc" />
+          <ref role="1NtTu8" to="nvz:3hIFiK8Nfsc" resolve="editors" />
           <node concept="2iRkQZ" id="3hIFiK8NfBJ" role="2czzBx" />
         </node>
       </node>
@@ -107,7 +107,7 @@
   <node concept="24kQdi" id="3hIFiK8NfCU">
     <ref role="1XX52x" to="nvz:3hIFiK8NfCg" resolve="SimplePropertyReference" />
     <node concept="1iCGBv" id="3hIFiK8NfD8" role="2wV5jI">
-      <ref role="1NtTu8" to="nvz:3hIFiK8NfCv" />
+      <ref role="1NtTu8" to="nvz:3hIFiK8NfCv" resolve="prop" />
       <node concept="1sVBvm" id="3hIFiK8NfDa" role="1sWHZn">
         <node concept="3F0A7n" id="3hIFiK8NfDh" role="2wV5jI">
           <property role="1Intyy" value="true" />

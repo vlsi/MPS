@@ -18,6 +18,6 @@ public class QueriesGenerated {
     return null;
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_6145560071556216092(final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("aaa");
+    return _context.getOutputNodeByMappingLabel("aaa", null);
   }
 }

@@ -10,10 +10,10 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import org.apache.log4j.Level;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class AntSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -49,6 +49,7 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
   public void setAntOptions(String value) {
     myState.myAntOptions = value;
   }
+  protected static Logger LOG = LogManager.getLogger(AntSettings_Configuration.class);
   @Override
   public AntSettings_Configuration clone() {
     AntSettings_Configuration clone = null;
@@ -93,5 +94,4 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(AntSettings_Configuration.class);
 }

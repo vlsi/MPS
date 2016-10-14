@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.assist;
 
+import jetbrains.mps.nodeEditor.selection.SingularSelectionUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -71,8 +72,8 @@ class EditorContextAssistantsController {
   private class ScheduleUpdateListener extends UpdaterListenerAdapter implements SelectionListener, UpdaterListener {
     @Override
     public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
-      EditorCell oldCell = ContextAssistantSelectionUtil.getSingleSelectedCell(oldSelection);
-      EditorCell newCell = ContextAssistantSelectionUtil.getSingleSelectedCell(newSelection);
+      EditorCell oldCell = SingularSelectionUtil.getSingleSelectedCell(oldSelection);
+      EditorCell newCell = SingularSelectionUtil.getSingleSelectedCell(newSelection);
       // Skip uninteresting changes - either within a single cell or from multiple cells to multiple cells.
       if (oldCell == newCell) {
         return;

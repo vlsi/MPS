@@ -102,6 +102,13 @@
       <property role="IQ2ns" value="3147320813467893228" />
       <ref role="20lvS9" node="2IHxTF8WBR9" resolve="TextUnitLayout" />
     </node>
+    <node concept="1TJgyj" id="1RWKWpMUBow" role="1TKVEi">
+      <property role="IQ2ns" value="2160817178329904672" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="contextObjects" />
+      <ref role="20lvS9" node="1RWKWpMUBoG" resolve="UnitContextObject" />
+    </node>
     <node concept="1TJgyj" id="hWWuzPd" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
       <property role="20lbJX" value="1" />
@@ -198,6 +205,13 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1234526822589" />
       <ref role="20lvS9" node="hXJqxz$" resolve="UtilityMethodDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="3tQ$H_xEZSE" role="1TKVEi">
+      <property role="IQ2ns" value="3996543181682114090" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="contextObjects" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="3tQ$H_xEITT" resolve="UnitContextDeclaration" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRk" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/textGenComponent.png" />
@@ -608,6 +622,89 @@
     </node>
     <node concept="PrWs8" id="2IHxTF8WBRg" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3tQ$H_xEITT">
+    <property role="EcuMT" value="3996543181682044537" />
+    <property role="TrG5h" value="UnitContextDeclaration" />
+    <property role="R4oN_" value="Define a context object for a text unit" />
+    <property role="3GE5qa" value="context" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3tQ$H_xEITW" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="3tQ$H_xEITY" role="1TKVEi">
+      <property role="IQ2ns" value="3996543181682044542" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="3tQ$H_xF91S" role="1TKVEi">
+      <property role="IQ2ns" value="3996543181682151544" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="instance" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3tQ$H_xF91M" resolve="ContextInstanceSpecification" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3tQ$H_xEPE1">
+    <property role="EcuMT" value="3996543181682072193" />
+    <property role="3GE5qa" value="context" />
+    <property role="TrG5h" value="UnitContextReference" />
+    <property role="R4oN_" value="reference to unit context object" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="3tQ$H_xEPE2" role="1TKVEi">
+      <property role="IQ2ns" value="3996543181682072194" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="context" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3tQ$H_xEITT" resolve="UnitContextDeclaration" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3tQ$H_xF91M">
+    <property role="EcuMT" value="3996543181682151538" />
+    <property role="3GE5qa" value="context" />
+    <property role="TrG5h" value="ContextInstanceSpecification" />
+  </node>
+  <node concept="1TIwiD" id="3tQ$H_xF91N">
+    <property role="EcuMT" value="3996543181682151539" />
+    <property role="3GE5qa" value="context" />
+    <property role="TrG5h" value="ClassConceptUnitContext" />
+    <property role="R4oN_" value="Instantiate a class as unit context object" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3tQ$H_xF91O" role="PzmwI">
+      <ref role="PrY4T" node="3tQ$H_xF91M" resolve="ContextInstanceSpecification" />
+    </node>
+    <node concept="1TJgyj" id="3tQ$H_xF91Q" role="1TKVEi">
+      <property role="IQ2ns" value="3996543181682151542" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="classifier" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RWKWpMUBoF">
+    <property role="EcuMT" value="2160817178329904683" />
+    <property role="3GE5qa" value="context" />
+    <property role="TrG5h" value="InstancePerUnitContextObject" />
+    <property role="R4oN_" value="Associate new instance of a context object with a text unit (one context object for each text unit)" />
+    <ref role="1TJDcQ" node="1RWKWpMUBoG" resolve="UnitContextObject" />
+  </node>
+  <node concept="1TIwiD" id="1RWKWpMUBoG">
+    <property role="EcuMT" value="2160817178329904684" />
+    <property role="3GE5qa" value="context" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="UnitContextObject" />
+    <property role="R4oN_" value="Tells text unit has a context object according to the given declaration" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1RWKWpMUBoH" role="1TKVEi">
+      <property role="IQ2ns" value="2160817178329904685" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="context" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3tQ$H_xEITT" resolve="UnitContextDeclaration" />
     </node>
   </node>
 </model>

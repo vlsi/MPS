@@ -19,10 +19,13 @@ import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -32,7 +35,8 @@ public class TestsModelAutoImports extends AutoImportsContributor<Solution> {
   @Override
   public Collection<SLanguage> getLanguages(Solution contextModule, SModel model) {
     if (SModelStereotype.isTestModel(model)) {
-      return Collections.singleton(BootstrapLanguages.getBaseLangUnitTestLang());
+      SLanguage langTest = MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test");
+      return Arrays.asList(BootstrapLanguages.getBaseLangUnitTestLang(), langTest);
     } else {
       return Collections.emptySet();
     }

@@ -42,7 +42,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.lang.script.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -51,7 +50,9 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
     <classNode dependClassName="jetbrains.mps.lang.script.intentions.ConvertToClassifierFQNameSpecification_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.script.intentions.ConvertToMethodFQNameSpecification_Intention" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.project.validation.ValidationUtil;
@@ -25,8 +27,6 @@ import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * 
@@ -97,6 +97,7 @@ public class TestsErrorsChecker {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestsErrorsChecker.class);
   private Iterable<IErrorReporter> getRootErrors() {
     Set<IErrorReporter> cachedErrors = TestsErrorsChecker.ourModelErrorsHolder.get(myRoot);
     if (cachedErrors != null) {
@@ -151,5 +152,4 @@ public class TestsErrorsChecker {
       SetSequence.fromSet(myCachedErrors).addSequence(SetSequence.fromSet(errors));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TestsErrorsChecker.class);
 }

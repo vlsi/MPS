@@ -15,12 +15,11 @@
                     interface="jetbrains.mps.nodeEditor.IntentionActionsProvider"/>
   </extensionPoints>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <applicationService serviceInterface="jetbrains.mps.nodeEditor.CaretBlinker"
-                        serviceImplementation="jetbrains.mps.nodeEditor.CaretBlinker"/>
-  </extensions>
-
   <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.IdeaCaretManager</implementation-class>
+    </component>
+
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.EditorSettings</implementation-class>
     </component>
@@ -52,7 +51,9 @@
     </component>
 
     <component>
+      <interface-class>jetbrains.mps.nodeEditor.Highlighter</interface-class>
       <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
+      <headless-implementation-class>jetbrains.mps.nodeEditor.EmptyHighlighter</headless-implementation-class>
     </component>
 
     <component>

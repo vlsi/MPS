@@ -16,10 +16,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -105,11 +106,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("variableDeclaration");
     }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
-    editorCell.getStyle().putAll(style);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

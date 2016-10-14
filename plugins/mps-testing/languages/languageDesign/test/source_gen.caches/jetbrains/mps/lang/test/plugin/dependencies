@@ -12,6 +12,7 @@
   <dependency className="jetbrains.mps.lang.test.plugin.IconContainer" file="IconContainer.java">
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.IconResource" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.plugin.Icons" file="Icons.java">
     <classNode dependClassName="com.intellij.ui.LayeredIcon" />
@@ -32,7 +33,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.plugin.IconContainer" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectGenerator" />

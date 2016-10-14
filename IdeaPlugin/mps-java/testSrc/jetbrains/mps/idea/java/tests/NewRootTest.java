@@ -63,7 +63,7 @@ public class NewRootTest extends DataMPSFixtureTestCase {
   @Override
   protected void setUp() throws Exception {
     super.setUp();
-    myStructure = new TestProjectTreeStructure(myProjectBuilder.getFixture().getProject(), myTestRootDisposable);
+    myStructure = new TestProjectTreeStructure(myProjectBuilder.getFixture().getProject(), getTestRootDisposable());
     myStructure.setProviders(new MPSTreeStructureProvider());
   }
 

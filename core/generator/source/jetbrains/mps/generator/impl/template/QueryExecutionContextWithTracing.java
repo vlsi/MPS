@@ -16,11 +16,17 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.InsertMacroQuery;
+import jetbrains.mps.generator.impl.query.MapNodeQuery;
+import jetbrains.mps.generator.impl.query.MapPostProcessor;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -32,10 +38,16 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.InsertMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -79,7 +91,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check condition(with context)", context.getTemplateNode()), true);
+      tracer.push(taskName("check condition(with context)", context.getTemplateReference()), true);
       return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
@@ -89,28 +101,29 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check if condition", context.getTemplateNode()), true);
+      tracer.push(taskName("check if condition", context.getTemplateReference()), true);
       return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
     }
   }
 
+  @Nullable
   @Override
-  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public SNode evaluate(@NotNull MapNodeQuery query, @NotNull MapSrcMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("map-src node macro", mapSrcNodeOrListMacro), true);
-      return wrapped.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode, context);
+      tracer.push(taskName("map-src node macro", context.getTemplateReference()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
   }
 
   @Override
-  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public void execute(@NotNull MapPostProcessor codeBlock, @NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("map-src postproc", mapSrcNodeOrListMacro), true);
-      wrapped.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode, context);
+      tracer.push(taskName("map-src postproc", context.getTemplateReference()), true);
+      wrapped.execute(codeBlock, context);
     } finally {
       tracer.pop();
     }
@@ -131,7 +144,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source node", context.getTemplateNode()), true);
+      tracer.push(taskName("evaluate source node", context.getTemplateReference()), true);
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -142,28 +155,30 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source nodes", context.getTemplateNode()), true);
+      tracer.push(taskName("evaluate source nodes", context.getTemplateReference()), true);
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
   }
 
+  @Nullable
   @Override
-  public SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+  public SNode evaluate(@NotNull InsertMacroQuery query, @NotNull InsertMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("insert node query", query), true);
-      return wrapped.evaluateInsertQuery(inputNode, macroNode, query, context);
+      tracer.push(taskName("insert node query", context.getTemplateReference()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
   }
 
+  @Nullable
   @Override
-  public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
+  public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("context for template fragment", templateFragmentNode), true);
-      return wrapped.getContextNodeForTemplateFragment(templateFragmentNode, mainContextNode, context);
+      tracer.push(taskName("referent target", context.getTemplateReference()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
@@ -179,21 +194,23 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
+  @Nullable
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
+  public Object evaluate(@NotNull CallArgumentQuery query, @NotNull TemplateArgumentContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate template argument query", query), true);
-      return wrapped.evaluateArgumentQuery(inputNode, query, context);
+      tracer.push(taskName("evaluate template argument query", context.getTemplateReference()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
   }
 
+  @Nullable
   @Override
-  public Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context) {
+  public Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate variable value query", query), true);
-      return wrapped.evaluateVariableQuery(inputNode, query, context);
+      tracer.push(taskName("evaluate variable value query", context.getTemplateReference()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }

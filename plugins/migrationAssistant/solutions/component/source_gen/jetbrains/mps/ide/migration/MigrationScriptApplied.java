@@ -7,6 +7,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,12 +23,15 @@ public final class MigrationScriptApplied implements ScriptApplied {
       myModule = module;
       myMigrationScriptReference = migrationScriptReference;
     }
+
     public SModule getModule() {
       return myModule;
     }
+
     public MigrationScriptReference getMigrationSciptReference() {
       return myMigrationScriptReference;
     }
+
     public MigrationScriptApplied resolve(MigrationComponent migrationComponent, boolean silently) {
       MigrationScript fetchMigrationScript = migrationComponent.fetchMigrationScript(myMigrationScriptReference, silently);
       if (fetchMigrationScript == null) {
@@ -35,9 +39,11 @@ public final class MigrationScriptApplied implements ScriptApplied {
       }
       return new MigrationScriptApplied(fetchMigrationScript, myModule);
     }
+
     public boolean isAlreadyDone() {
-      return !(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(myModule)).contains(myMigrationScriptReference.getLanguage())) || myMigrationScriptReference.getFromVersion() < myModule.getUsedLanguageVersion(myMigrationScriptReference.getLanguage());
+      return !(SetSequence.fromSet(MigrationsUtil.getUsedLanguages(myModule)).contains(myMigrationScriptReference.getLanguage())) || myMigrationScriptReference.getFromVersion() < ((AbstractModule) myModule).getUsedLanguageVersion(myMigrationScriptReference.getLanguage(), false);
     }
+
     public String getKindDescription(ScriptApplied resolved) {
       MigrationScriptApplied script = ((MigrationScriptApplied) resolved);
       String langNameShrinked = NameUtil.compactNamespace(myMigrationScriptReference.getLanguage().getQualifiedName());
@@ -54,12 +60,15 @@ public final class MigrationScriptApplied implements ScriptApplied {
     myScript = script;
     myModule = module;
   }
+
   public MigrationScript getScript() {
     return myScript;
   }
+
   public SModule getModule() {
     return myModule;
   }
+
   public Iterable<ScriptApplied.ScriptAppliedReference> getDependencies() {
     List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
     int fromVersion = myScript.getDescriptor().getFromVersion();
@@ -80,7 +89,13 @@ public final class MigrationScriptApplied implements ScriptApplied {
   public boolean execute(MigrationComponent migrationComponent) {
     return migrationComponent.executeMigrationScript(this);
   }
+
   public String getDescription() {
-    return new MigrationScriptApplied.MigrationScriptAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this) + ": " + myModule.getModuleName();
+    return new MigrationScriptApplied.MigrationScriptAppliedReference(myScript.getDescriptor(), myModule).getKindDescription(this);
+  }
+  @Override
+  public String getId() {
+    MigrationScriptReference d = myScript.getDescriptor();
+    return "migration:" + d.getLanguage().toString() + ":" + d.getFromVersion();
   }
 }

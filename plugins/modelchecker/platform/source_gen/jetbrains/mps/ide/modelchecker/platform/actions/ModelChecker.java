@@ -5,6 +5,8 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -12,8 +14,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModelChecker {
   public static final String SEVERITY_ERROR = "Errors";
@@ -25,6 +25,7 @@ public class ModelChecker {
     myResults = new SearchResults<ModelCheckerIssue>();
     mySpecificCheckers = specificCheckers;
   }
+  protected static Logger LOG = LogManager.getLogger(ModelChecker.class);
   public void checkModel(SModel model, ProgressMonitor monitor) {
     List<SpecificChecker> specificCheckers = mySpecificCheckers;
 
@@ -60,5 +61,4 @@ public class ModelChecker {
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myResults;
   }
-  protected static Logger LOG = LogManager.getLogger(ModelChecker.class);
 }

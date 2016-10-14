@@ -14,7 +14,67 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,90,0" name="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,53,0" name="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ExtendsFacetReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" />
+    </file>
+    <file name="FacetDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="FacetJavaClassExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.FacetJavaClassExpression_BehaviorDescriptor" />
+    </file>
+    <file name="FacetReferenceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
+    </file>
+    <file name="FacetReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.FacetReference_BehaviorDescriptor" />
+    </file>
+    <file name="ForeignParametersComponentExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ForeignParametersExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" />
+    </file>
+    <file name="IFacet_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" />
+    </file>
+    <file name="IPropertyExpression_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
+    </file>
+    <file name="LocalParametersComponentExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" />
+    </file>
+    <file name="LocalParametersExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.LocalParametersExpression_BehaviorDescriptor" />
+    </file>
+    <file name="NamedFacetReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.NamedFacetReference_BehaviorDescriptor" />
+    </file>
+    <file name="ParametersDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ParametersDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="RelatedFacetReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" />
+    </file>
+    <file name="ResourceClassifierType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ResourceClassifierType_BehaviorDescriptor" />
+    </file>
+    <file name="ResourceSpecificPropertiesExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ResourceTypeDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.ResourceTypeDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TargetDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TargetDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.TargetDependency_BehaviorDescriptor" />
+    </file>
+    <file name="TargetReferenceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)/1262430001741641704">

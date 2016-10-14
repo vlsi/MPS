@@ -13,7 +13,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,55,0" name="jetbrains.mps.samples.Kaja.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,33,0" name="jetbrains.mps.samples.Kaja.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:6c66d6ce-c8f4-4daf-92c4-a518b78006a8(jetbrains.mps.samples.Kaja.constraints)/3308300503039782402">

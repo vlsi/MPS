@@ -155,7 +155,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
     }
 
     CellAction applicableCellAction = getEditorComponent().getActionHandler().getApplicableCellAction(myEditorCell, type);
-    return applicableCellAction != null && applicableCellAction.canExecute(getEditorComponent().getEditorContext());
+    return applicableCellAction != null;
   }
 
 

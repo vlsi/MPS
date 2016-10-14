@@ -18,7 +18,166 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,144,0" name="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,80,0" name="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMPSPlugin_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsAspect_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsAspect_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_ModuleJarContent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJarContent_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_ModuleJars_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_ModuleSources_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleSources_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_ModuleXml_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleXml_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_PluginDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_PluginDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMpsLayout_Plugin_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMpsLayout_Plugin_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_AbstractModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_BrandingCompany_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingCompany_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_BrandingHelp_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingHelp_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_BrandingKeymap_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingKeymap_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_BrandingStats_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingStats_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_BrandingUpdateSite_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingUpdateSite_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_Branding_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Branding_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_DevKitExportLanguage_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportLanguage_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_DevKitExportSolution_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExportSolution_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_DevKitExport_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitExport_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_DevKitRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKitRef_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_DevKit_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ExtractedModuleDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ExtractedModuleDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_GeneratorOptions_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_GeneratorOptions_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_Generator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Generator_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_Group_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPluginContent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPluginDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPluginGroup_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPluginModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPluginVendor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginVendor_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_IdeaPlugin_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_Language_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Language_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependencyJar_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyJar_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependencyOnModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyOnModule_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleDependency_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleJavaSource_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleJavaSource_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleModelRoot_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleModelRoot_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleRuntime_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleRuntime_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleSolutionRuntime_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleSolutionRuntime_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleSource_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleSource_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_ModuleTestSource_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_ModuleTestSource_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_Module_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Module_BehaviorDescriptor" />
+    </file>
+    <file name="BuildMps_Solution_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.BuildMps_Solution_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_BuildMps_Module_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildMps_Module_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_BuildSourcePath_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildSourcePath_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_String_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.build.mps.behavior.GeneratorInternal_String_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1224588814561889092">

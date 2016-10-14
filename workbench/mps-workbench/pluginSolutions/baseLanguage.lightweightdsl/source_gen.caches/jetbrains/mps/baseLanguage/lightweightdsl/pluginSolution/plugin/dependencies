@@ -121,6 +121,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.IconContainer" file="IconContainer.java">
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_CustomProjectPlugin" file="LightweightDSLUneditableMemberGutter_CustomProjectPlugin.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.DSLComponentChecker" />

@@ -15,6 +15,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -50,13 +51,18 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
+    {
+      Style styleToPut = new StyleImpl();
+      jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet.apply_deprecated(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExportMacro_Editor.ExportMacro_component_cellMenu_gzv99m_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExportMacro_Editor.ExportMacro_component_cellMenu_gzv99m_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   public static class ExportMacro_component_cellMenu_gzv99m_a0a0 implements SubstituteInfoPartExt {

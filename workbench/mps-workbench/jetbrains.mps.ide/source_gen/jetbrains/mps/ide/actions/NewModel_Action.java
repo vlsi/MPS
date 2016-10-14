@@ -24,6 +24,7 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import org.jetbrains.mps.openapi.model.SModel;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
@@ -131,10 +132,12 @@ public class NewModel_Action extends BaseAction {
     dialog.value.show();
     SModel result = dialog.value.getResult();
     if (result != null) {
-      SModel modelDescriptor = result;
-      ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
-
-      dialog.value.openSettings();
+      final SModel modelDescriptor = result;
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
+        }
+      });
     }
   }
   private StereotypeProvider getStereotypeProvider(final Map<String, Object> _params) {
@@ -172,7 +175,7 @@ public class NewModel_Action extends BaseAction {
   protected String getNamespace(final Map<String, Object> _params) {
     if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
       Generator gen = (Generator) ((SModule) MapSequence.fromMap(_params).get("module"));
-      String name = gen.getName();
+      String name = gen.getModuleName();
       String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
 
       if ((name == null || name.length() == 0)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   // absence of model in the cache means we have no idea about present cache state.
   // if model is in the cache, we do know both IFile and cached object
   private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<SModelReference, Pair<IFile, T>>();
-  private final SRepository myRepository;
+  protected final SRepository myRepository;
   private final CleanupManager myCleanupManager;
   private final SRepositoryContentAdapter myRepoListener = new MyRepositoryListener();
 
@@ -152,6 +152,10 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
    */
   public final void clean(@NotNull SModel model) {
     myCache.remove(model.getReference());
+  }
+
+  protected final void clean(SModelReference modelRef) {
+    myCache.remove(modelRef);
   }
 
   /**

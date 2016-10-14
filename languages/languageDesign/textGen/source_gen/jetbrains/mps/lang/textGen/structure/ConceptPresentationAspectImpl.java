@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractAppendPart = new ConceptPresentationBuilder().create();
@@ -18,9 +15,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AppendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributedNodePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BufferParameter = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ClassConceptUnitContext = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CollectionAppendPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
+  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_ConstantStringAppendPart = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ContextInstanceSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextParameter = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_DecreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EncodingDeclaration = new ConceptPresentationBuilder().create();
@@ -33,7 +32,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IncreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentBufferOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IndentPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0v).create();
+  private final ConceptPresentation props_InstancePerUnitContextObject = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0y).create();
   private final ConceptPresentation props_LayoutPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NewLineAppendPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeAppendPart = new ConceptPresentationBuilder().create();
@@ -44,6 +44,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SimpleTextGenOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubOperationDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextUnitLayout = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnitContextDeclaration = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnitContextObject = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnitContextReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UtilityMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UtilityMethodDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_WithIndentOperation = new ConceptPresentationBuilder().create();
@@ -51,198 +54,91 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0kb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractAppendPart;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AbstractTextGenDeclaration;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AbstractTextGenParameter;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AppendOperation;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AttributedNodePart;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_BufferParameter;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_CollectionAppendPart;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ConceptTextGenDeclaration;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ConstantStringAppendPart;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ContextParameter;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_DecreaseDepthOperation;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_EncodingDeclaration;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_EncodingDeclarationBase;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_EncodingLiteral;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ExtensionDeclaration;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_FilenameFunction;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_FoundErrorOperation;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_GenerateTextDeclaration;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_IncreaseDepthOperation;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_IndentBufferOperation;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_IndentPart;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_LanguageTextGenDeclaration;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_LayoutPart;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_NewLineAppendPart;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_NodeAppendPart;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_NodeParameter;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_OperationCall;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_OperationDeclaration;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_ReferenceAppendPart;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_SimpleTextGenOperation;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_StubOperationDeclaration;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_TextUnitLayout;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_UtilityMethodCall;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_UtilityMethodDeclaration;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_WithIndentOperation;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractAppendPart:
+        return props_AbstractAppendPart;
+      case LanguageConceptSwitch.AbstractTextGenDeclaration:
+        return props_AbstractTextGenDeclaration;
+      case LanguageConceptSwitch.AbstractTextGenParameter:
+        return props_AbstractTextGenParameter;
+      case LanguageConceptSwitch.AppendOperation:
+        return props_AppendOperation;
+      case LanguageConceptSwitch.AttributedNodePart:
+        return props_AttributedNodePart;
+      case LanguageConceptSwitch.BufferParameter:
+        return props_BufferParameter;
+      case LanguageConceptSwitch.ClassConceptUnitContext:
+        return props_ClassConceptUnitContext;
+      case LanguageConceptSwitch.CollectionAppendPart:
+        return props_CollectionAppendPart;
+      case LanguageConceptSwitch.ConceptTextGenDeclaration:
+        return props_ConceptTextGenDeclaration;
+      case LanguageConceptSwitch.ConstantStringAppendPart:
+        return props_ConstantStringAppendPart;
+      case LanguageConceptSwitch.ContextInstanceSpecification:
+        return props_ContextInstanceSpecification;
+      case LanguageConceptSwitch.ContextParameter:
+        return props_ContextParameter;
+      case LanguageConceptSwitch.DecreaseDepthOperation:
+        return props_DecreaseDepthOperation;
+      case LanguageConceptSwitch.EncodingDeclaration:
+        return props_EncodingDeclaration;
+      case LanguageConceptSwitch.EncodingDeclarationBase:
+        return props_EncodingDeclarationBase;
+      case LanguageConceptSwitch.EncodingLiteral:
+        return props_EncodingLiteral;
+      case LanguageConceptSwitch.ExtensionDeclaration:
+        return props_ExtensionDeclaration;
+      case LanguageConceptSwitch.FilenameFunction:
+        return props_FilenameFunction;
+      case LanguageConceptSwitch.FoundErrorOperation:
+        return props_FoundErrorOperation;
+      case LanguageConceptSwitch.GenerateTextDeclaration:
+        return props_GenerateTextDeclaration;
+      case LanguageConceptSwitch.IncreaseDepthOperation:
+        return props_IncreaseDepthOperation;
+      case LanguageConceptSwitch.IndentBufferOperation:
+        return props_IndentBufferOperation;
+      case LanguageConceptSwitch.IndentPart:
+        return props_IndentPart;
+      case LanguageConceptSwitch.InstancePerUnitContextObject:
+        return props_InstancePerUnitContextObject;
+      case LanguageConceptSwitch.LanguageTextGenDeclaration:
+        return props_LanguageTextGenDeclaration;
+      case LanguageConceptSwitch.LayoutPart:
+        return props_LayoutPart;
+      case LanguageConceptSwitch.NewLineAppendPart:
+        return props_NewLineAppendPart;
+      case LanguageConceptSwitch.NodeAppendPart:
+        return props_NodeAppendPart;
+      case LanguageConceptSwitch.NodeParameter:
+        return props_NodeParameter;
+      case LanguageConceptSwitch.OperationCall:
+        return props_OperationCall;
+      case LanguageConceptSwitch.OperationDeclaration:
+        return props_OperationDeclaration;
+      case LanguageConceptSwitch.ReferenceAppendPart:
+        return props_ReferenceAppendPart;
+      case LanguageConceptSwitch.SimpleTextGenOperation:
+        return props_SimpleTextGenOperation;
+      case LanguageConceptSwitch.StubOperationDeclaration:
+        return props_StubOperationDeclaration;
+      case LanguageConceptSwitch.TextUnitLayout:
+        return props_TextUnitLayout;
+      case LanguageConceptSwitch.UnitContextDeclaration:
+        return props_UnitContextDeclaration;
+      case LanguageConceptSwitch.UnitContextObject:
+        return props_UnitContextObject;
+      case LanguageConceptSwitch.UnitContextReference:
+        return props_UnitContextReference;
+      case LanguageConceptSwitch.UtilityMethodCall:
+        return props_UtilityMethodCall;
+      case LanguageConceptSwitch.UtilityMethodDeclaration:
+        return props_UtilityMethodDeclaration;
+      case LanguageConceptSwitch.WithIndentOperation:
+        return props_WithIndentOperation;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0kb = buildConceptIndices(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f84e1988dL, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x120153077caL, "jetbrains.mps.lang.textGen.structure.AppendOperation"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x7c096989aaf957c1L, "jetbrains.mps.lang.textGen.structure.AttributedNodePart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f65197df2L, "jetbrains.mps.lang.textGen.structure.BufferParameter"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60cd534bL, "jetbrains.mps.lang.textGen.structure.ContextParameter"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4165704bL, "jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8f93L, "jetbrains.mps.lang.textGen.structure.EncodingDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x10fd02ec599e8fbbL, "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x63754d97e1c86b8cL, "jetbrains.mps.lang.textGen.structure.EncodingLiteral"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x7bf48616723f681dL, "jetbrains.mps.lang.textGen.structure.ExtensionDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0xa0f73089d40b8eL, "jetbrains.mps.lang.textGen.structure.FilenameFunction"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f7f7ff1bdL, "jetbrains.mps.lang.textGen.structure.FoundErrorOperation"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L, "jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f41648039L, "jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b64a5c9L, "jetbrains.mps.lang.textGen.structure.IndentBufferOperation"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x3c78adfd9bcaac6aL, "jetbrains.mps.lang.textGen.structure.IndentPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dcaL, "jetbrains.mps.lang.textGen.structure.LayoutPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015232fd0L, "jetbrains.mps.lang.textGen.structure.NewLineAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f411d576bL, "jetbrains.mps.lang.textGen.structure.NodeParameter"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL, "jetbrains.mps.lang.textGen.structure.OperationCall"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L, "jetbrains.mps.lang.textGen.structure.OperationDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L, "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4153bc8cL, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bacbf19e457bd3bL, "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x2bad879ac8f27dc9L, "jetbrains.mps.lang.textGen.structure.TextUnitLayout"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L, "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration"), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11fd28e1146L, "jetbrains.mps.lang.textGen.structure.WithIndentOperation"));
 }

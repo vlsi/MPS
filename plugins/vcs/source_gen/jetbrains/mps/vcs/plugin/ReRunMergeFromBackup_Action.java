@@ -18,6 +18,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.vcs.util.MergeVersion;
@@ -41,8 +43,6 @@ import com.intellij.diff.InvalidDiffRequestException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -65,7 +65,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     if (manager.getAllVersionedRoots().length == 0) {
       return false;
     }
-    VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
+    VirtualFile file = VirtualFileUtils.getProjectVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
     if (file == null) {
       return false;
     }
@@ -99,6 +99,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     }
     return true;
   }
+  protected static Logger LOG = LogManager.getLogger(ReRunMergeFromBackup_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
@@ -124,7 +125,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         if (mine == null) {
           return;
         }
-        VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
+        VirtualFile file = VirtualFileUtils.getProjectVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
         assert file != null;
         List<String> contents = ListSequence.fromListAndArray(new ArrayList<String>(), mine, base, repository);
         List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Mine", "Base version", "Repository");
@@ -168,5 +169,4 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ReRunMergeFromBackup_Action.class);
 }

@@ -7,68 +7,45 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Base = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BaseWithNonEmptyMenu = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ChildOfParentWithEmptyCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptWithoutDefaultMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Derived = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DerivedWithEmptyMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeHolder = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParentWithEmptyCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ScopesTestConceptBase = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuTestConcept = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0h.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Base;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ConceptWithoutDefaultMenu;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_Derived;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_NodeHolder;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ScopesTestConceptBase;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_TransformationMenuTestConcept;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Base:
+        return props_Base;
+      case LanguageConceptSwitch.BaseWithNonEmptyMenu:
+        return props_BaseWithNonEmptyMenu;
+      case LanguageConceptSwitch.ChildOfParentWithEmptyCell:
+        return props_ChildOfParentWithEmptyCell;
+      case LanguageConceptSwitch.ConceptWithoutDefaultMenu:
+        return props_ConceptWithoutDefaultMenu;
+      case LanguageConceptSwitch.Derived:
+        return props_Derived;
+      case LanguageConceptSwitch.DerivedWithEmptyMenu:
+        return props_DerivedWithEmptyMenu;
+      case LanguageConceptSwitch.NodeHolder:
+        return props_NodeHolder;
+      case LanguageConceptSwitch.ParentWithEmptyCell:
+        return props_ParentWithEmptyCell;
+      case LanguageConceptSwitch.ScopesTestConceptBase:
+        return props_ScopesTestConceptBase;
+      case LanguageConceptSwitch.TransformationMenuTestConcept:
+        return props_TransformationMenuTestConcept;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024953L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Base"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x1de1fbd5fbf62470L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ConceptWithoutDefaultMenu"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x258c7e2e22024954L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.Derived"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x4a19acf9397f4948L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.NodeHolder"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ScopesTestConceptBase"), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x208970783ba43296L, "jetbrains.mps.lang.editor.menus.testLanguage.structure.TransformationMenuTestConcept"));
 }

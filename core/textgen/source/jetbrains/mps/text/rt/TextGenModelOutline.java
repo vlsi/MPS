@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,11 @@ package jetbrains.mps.text.rt;
 
 import jetbrains.mps.text.TextUnit;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.nio.charset.Charset;
 
 /**
  * WORK IN PROGRESS
@@ -47,6 +50,14 @@ public interface TextGenModelOutline {
    * @param input sequence of inputs, primary input first. FIXME could be empty? Generally, why not?
    */
   void registerTextUnit(@NotNull String unitName, SNode... input);
+
+  /**
+   * {@link #registerTextUnit(String, SNode...)} alternative with explicit encoding
+   * @param unitName name of the unit
+   * @param encoding {@code null} indicates use default
+   * @param input @see {@link #registerTextUnit(String, SNode...)} above
+   */
+  void registerTextUnit(@NotNull String unitName, @Nullable Charset encoding, SNode... input);
 
 //  XXX perhaps, generation of a binary file shall start this way
 //  void registerBinaryUnit(@NotNull String unitName, SNode... input);

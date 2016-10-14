@@ -350,7 +350,7 @@ public class TypeContextManager implements CoreComponent {
     return new Executor<SNode>(contextOwner, node, new Computation<SNode>() {
       @Override
       public SNode compute(TypeCheckingContext context) {
-        return context.getTypeOf(node, myTypeChecker);
+        return context != null ? context.getTypeOf(node, myTypeChecker) : null;
       }
     }).execute();
   }

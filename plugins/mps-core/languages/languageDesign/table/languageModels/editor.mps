@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -99,7 +99,7 @@
             <ref role="1k5W1q" to="tpc5:hF4H1c8" resolve="property" />
           </node>
           <node concept="3F1sOY" id="2IYlHYhBDmY" role="3EZMnx">
-            <ref role="1NtTu8" to="ohyq:3ThmjU3UlMz" />
+            <ref role="1NtTu8" to="ohyq:3ThmjU3UlMz" resolve="tableModel" />
           </node>
           <node concept="VPM3Z" id="2IYlHYhBDmD" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -144,7 +144,7 @@
             <ref role="1k5W1q" to="tpc5:hX1xO3O" resolve="bordered" />
           </node>
           <node concept="1iCGBv" id="5p3TFWLvHle" role="3EZMnx">
-            <ref role="1NtTu8" to="ohyq:5p3TFWLvDOh" />
+            <ref role="1NtTu8" to="ohyq:5p3TFWLvDOh" resolve="headerRowLinkDeclaration" />
             <node concept="1sVBvm" id="5p3TFWLvHlf" role="1sWHZn">
               <node concept="3F0A7n" id="5p3TFWLvHlg" role="2wV5jI">
                 <property role="1Intyy" value="true" />
@@ -171,7 +171,7 @@
             <ref role="1k5W1q" to="tpc5:hX1xO3O" resolve="bordered" />
           </node>
           <node concept="1iCGBv" id="5p3TFWLvHls" role="3EZMnx">
-            <ref role="1NtTu8" to="ohyq:5p3TFWLvDOi" />
+            <ref role="1NtTu8" to="ohyq:5p3TFWLvDOi" resolve="rowsLinkDeclaration" />
             <node concept="1sVBvm" id="5p3TFWLvHlt" role="1sWHZn">
               <node concept="3F0A7n" id="5p3TFWLvHlu" role="2wV5jI">
                 <property role="1Intyy" value="true" />
@@ -195,7 +195,7 @@
             <property role="VOm3f" value="false" />
           </node>
           <node concept="1iCGBv" id="5p3TFWLvHlC" role="3EZMnx">
-            <ref role="1NtTu8" to="ohyq:5p3TFWLvDOj" />
+            <ref role="1NtTu8" to="ohyq:5p3TFWLvDOj" resolve="cellsInRowLinkDeclaration" />
             <node concept="1sVBvm" id="5p3TFWLvHlD" role="1sWHZn">
               <node concept="3F0A7n" id="5p3TFWLvHlE" role="2wV5jI">
                 <property role="1Intyy" value="true" />

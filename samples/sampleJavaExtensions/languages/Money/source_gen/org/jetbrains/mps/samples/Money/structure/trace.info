@@ -2,10 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,99,0" name="org.jetbrains.mps.samples.Money.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,52,0" name="org.jetbrains.mps.samples.Money.structure.ConceptPresentationAspectImpl" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,46,0" name="org.jetbrains.mps.samples.Money.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,113,0" name="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
+      <unit at="16,0,161,0" name="org.jetbrains.mps.samples.Money.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

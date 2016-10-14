@@ -29,6 +29,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -202,12 +203,9 @@ public class TextLine {
     }
     myInitialized = true;
     updateStyle(null);
-    myStyle.addListener(new StyleListener() {
-      @Override
-      public void styleChanged(StyleChangeEvent e) {
-        Set<StyleAttribute> changedAttributes = e.getChangedAttributes();
-        updateStyle(changedAttributes);
-      }
+    myStyle.addListener(e -> {
+      Set<StyleAttribute> changedAttributes = e.getChangedAttributes();
+      updateStyle(changedAttributes);
     });
 
   }
@@ -520,6 +518,10 @@ public class TextLine {
     g.fillRect(x, shiftY, 2, myTextHeight);
   }
 
+  public void repaintCaret(Component component, int shiftX, int shiftY) {
+    int x = getCaretX(shiftX);
+    component.repaint(x - 1, shiftY - 1, x + 2, myTextHeight + 2);
+  }
 
   public int getCaretX(int shiftX) {
     if (myCaretX == -1) {

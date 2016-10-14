@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -84,7 +85,12 @@ public class CheckpointState {
     return rv == null ? Collections.<SNode>emptyList() : resolve(rv);
   }
 
-  private Collection<SNode> resolve(Collection<SNodeId> output) {
+  @NotNull
+  public List<SNode> getOutputWithoutInput(String mappingLabel) {
+    return resolve(myState.getNewOutputNodes(mappingLabel));
+  }
+
+  private List<SNode> resolve(Collection<SNodeId> output) {
     ArrayList<SNode> rv = new ArrayList<SNode>(output.size());
     for (SNodeId id : output) {
       SNode node = myCheckpointModel.getNode(id);

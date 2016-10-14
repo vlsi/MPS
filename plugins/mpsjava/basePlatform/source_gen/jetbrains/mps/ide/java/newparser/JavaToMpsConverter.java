@@ -27,7 +27,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -169,8 +168,8 @@ public class JavaToMpsConverter {
               continue;
             }
 
-            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
-            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc"));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"));
 
             Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
             SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
@@ -194,8 +193,8 @@ public class JavaToMpsConverter {
             myModel.addRootNode(root);
           }
           myAttachedRoots = myRoots;
-          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
-          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc"));
+          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"));
+          ((SModelBase) myModel).addLanguage(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"));
         }
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);

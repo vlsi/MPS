@@ -21,6 +21,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -103,5 +104,10 @@ public class ModelNodeData extends AbstractResultNodeData {
 
   private static String sizeRepresentation(int size) {
     return "<font color='gray'>(" + Integer.toString(size) + ")</font>";
+  }
+
+  @Override
+  public void navigate(Project mpsProject, boolean useProjectTree, boolean focus) {
+    new ProjectPaneNavigator(mpsProject).shallFocus(focus).select(myModelReference);
   }
 }

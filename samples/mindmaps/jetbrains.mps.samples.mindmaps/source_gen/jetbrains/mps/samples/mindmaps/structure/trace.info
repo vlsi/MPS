@@ -2,10 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="14,0,75,0" name="jetbrains.mps.samples.mindmaps.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,40,0" name="jetbrains.mps.samples.mindmaps.structure.ConceptPresentationAspectImpl" />
+    </file>
+    <file name="LanguageConceptSwitch.java">
+      <unit at="10,0,38,0" name="jetbrains.mps.samples.mindmaps.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="17,0,84,0" name="jetbrains.mps.samples.mindmaps.structure.StructureAspectDescriptor" />
+      <unit at="14,0,109,0" name="jetbrains.mps.samples.mindmaps.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

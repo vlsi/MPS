@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
@@ -54,10 +53,10 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<SLanguage> getTargetLanguages() {
     SLanguage[] rv = new SLanguage[4];
-    rv[0] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
-    rv[1] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core");
-    rv[2] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL), "jetbrains.mps.transformation.test.inputLang");
-    rv[3] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x157a9668bf58417bL, 0x893e53d86388dc56L), "jetbrains.mps.transformation.test.outputLang");
+    rv[0] = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
+    rv[1] = MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    rv[2] = MetaAdapterFactory.getLanguage(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, "jetbrains.mps.transformation.test.inputLang");
+    rv[3] = MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang");
     return Arrays.asList(rv);
   }
 

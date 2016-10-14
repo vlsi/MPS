@@ -19,6 +19,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -50,6 +51,11 @@ public final class TextIcon__BehaviorDescriptor extends BaseBHDescriptor {
     return "TextIcon_" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, 0x12dbb53bb6b60039L, "iconId")) + ".png";
   }
   /*package*/ static List<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8(@NotNull final SNode __thisNode__, IFile outputRoot) {
+
+    if (((int) BaseConcept__BehaviorDescriptor.getMetaLevel_id3t0v3yFOD1A.invoke(__thisNode__)) != 0) {
+      return null;
+    }
+
     SModel model = SNodeOperations.getModel(__thisNode__);
     IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 

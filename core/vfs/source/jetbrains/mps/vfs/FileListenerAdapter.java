@@ -63,4 +63,9 @@ public final class FileListenerAdapter implements FileSystemListener {
     }
     return false;
   }
+
+  @Override
+  public String toString() {
+    return "FileListenerAdapter for " + myFileListener + "; file is " + myFile;
+  }
 }

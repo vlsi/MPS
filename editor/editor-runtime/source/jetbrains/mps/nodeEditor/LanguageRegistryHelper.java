@@ -28,7 +28,7 @@ public class LanguageRegistryHelper {
   public static EditorAspectDescriptor getEditorAspectDescriptor(LanguageRegistry languageRegistry, SLanguage language) {
     LanguageRuntime languageRuntime = languageRegistry.getLanguage(language);
     if (languageRuntime == null) {
-      LOG.warn("No language runtime found for language: " + language + ". Declarations in this language will not be taken into account");
+      LOG.warn("The language " + language + " is not deployed. Declarations in this language will not be taken into account");
       return null;
     }
 

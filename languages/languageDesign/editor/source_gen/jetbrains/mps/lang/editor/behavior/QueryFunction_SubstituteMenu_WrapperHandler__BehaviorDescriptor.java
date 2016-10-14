@@ -18,11 +18,13 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public final class QueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1c001L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_WrapperHandler");
@@ -38,12 +40,19 @@ public final class QueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescript
 
   /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(QueryFunction_SubstituteMenu__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__)));
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd4fe34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_CreatedNode").getDeclarationNode());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(QueryFunction_SubstituteMenuPart__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__)));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd4fe34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_NodeToWrap").getDeclarationNode());
     return result;
   }
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
-    return _quotation_createNode_72xm95_a0a1();
+    SNode ancestor = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Wrapper"), false, false);
+    if (ancestor != null) {
+      SNode outputConcept = SubstituteMenuPart__BehaviorDescriptor.getOutputConcept_id7mC_uHFK7Hn.invoke(ancestor);
+      if (outputConcept != null) {
+        return _quotation_createNode_72xm95_a0a1a1a1(outputConcept);
+      }
+    }
+    return _quotation_createNode_72xm95_a2a1();
   }
 
   /*package*/ QueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor() {
@@ -94,7 +103,14 @@ public final class QueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescript
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_72xm95_a0a1() {
+  private static SNode _quotation_createNode_72xm95_a0a1a1a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), (SNode) parameter_1);
+    return quotedNode_2;
+  }
+  private static SNode _quotation_createNode_72xm95_a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);

@@ -10,6 +10,7 @@
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
     <import index="4stj" ref="r:ed8e9175-44d1-47ad-9d2b-75c7b10d01f8(jetbrains.mps.samples.customAspect.documentation.runtime)" />
@@ -89,6 +90,12 @@
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
@@ -302,7 +309,7 @@
                                             <ref role="3cqZAo" node="2wQ3F8Gf9xn" resolve="it" />
                                           </node>
                                           <node concept="3TrEf2" id="2wQ3F8Gfaam" role="2OqNvi">
-                                            <ref role="3Tt5mk" to="j6e7:2wQ3F8GeHgQ" />
+                                            <ref role="3Tt5mk" to="j6e7:2wQ3F8GeHgQ" resolve="cncpt" />
                                           </node>
                                         </node>
                                       </node>
@@ -350,7 +357,7 @@
                                     <ref role="3cqZAo" node="_dFfuhhTSt" resolve="it" />
                                   </node>
                                   <node concept="3TrEf2" id="_dFfuhhVKJ" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="j6e7:2wQ3F8GeHgQ" />
+                                    <ref role="3Tt5mk" to="j6e7:2wQ3F8GeHgQ" resolve="cncpt" />
                                   </node>
                                 </node>
                               </node>
@@ -387,6 +394,11 @@
       <ref role="30HIoZ" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
+          <node concept="3SKdUt" id="6hfjOhYi4$u" role="3cqZAp">
+            <node concept="3SKdUq" id="6hfjOhYi4$w" role="3SKWNk">
+              <property role="3SKdUp" value="see MPS-24613" />
+            </node>
+          </node>
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
             <node concept="2OqwBi" id="1KHvivZKB8J" role="3clFbG">
               <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">

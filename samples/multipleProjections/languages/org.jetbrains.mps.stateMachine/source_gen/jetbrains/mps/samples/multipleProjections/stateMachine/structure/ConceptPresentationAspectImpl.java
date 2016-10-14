@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractStateMachineElement = new ConceptPresentationBuilder().create();
@@ -23,58 +20,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbstractStateMachineElement;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Event;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_EventReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_State;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_StateMachine;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_StateReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_Transition;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractStateMachineElement:
+        return props_AbstractStateMachineElement;
+      case LanguageConceptSwitch.Event:
+        return props_Event;
+      case LanguageConceptSwitch.EventReference:
+        return props_EventReference;
+      case LanguageConceptSwitch.State:
+        return props_State;
+      case LanguageConceptSwitch.StateMachine:
+        return props_StateMachine;
+      case LanguageConceptSwitch.StateReference:
+        return props_StateReference;
+      case LanguageConceptSwitch.Transition:
+        return props_Transition;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"));
 }

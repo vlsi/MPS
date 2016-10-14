@@ -65,15 +65,23 @@ public abstract class SReferenceBase extends SReference {
   @Override
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || makeIndirect()) return myTargetModelReference;
+    if (immatureNode == null || makeIndirect()) {
+      return myTargetModelReference;
+    }
     SModel model = immatureNode.getModel();
     return model == null ? null : model.getReference();
   }
 
   @Override
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    if (!makeIndirect()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
+    if (!makeIndirect()) {
+      makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
+    }
     myTargetModelReference = modelReference;
+  }
+
+  public boolean isDirect() {
+    return myImmatureTargetNode != null;
   }
 
   @Override
@@ -93,12 +101,16 @@ public abstract class SReferenceBase extends SReference {
   }
 
   public synchronized final boolean makeIndirect(boolean force) {
-    if (myImmatureTargetNode == null) return true;
+    if (myImmatureTargetNode == null) {
+      return true;
+    }
 
     ImmatureReferences.getInstance().remove(this);
     SNode sourceNode = getSourceNode();
     SModel sourceModel = sourceNode.getModel();
-    if (sourceModel == null || sourceModel.getRepository() == null) return myImmatureTargetNode == null;
+    if (sourceModel == null) {
+      return myImmatureTargetNode == null;
+    }
 
     if (sourceNode.getModel() != null && myImmatureTargetNode.getModel() != null) {
       // convert 'young' reference to 'mature'
@@ -121,7 +133,9 @@ public abstract class SReferenceBase extends SReference {
   }
 
   protected synchronized void makeMature() {
-    if (myImmatureTargetNode == null) return;
+    if (myImmatureTargetNode == null) {
+      return;
+    }
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);

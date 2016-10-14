@@ -17,6 +17,12 @@
     <classNode dependClassName="java.lang.annotation.Target" />
     <classNode dependClassName="org.apache.log4j.Priority" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.IgnoreLogEvents" file="IgnoreLogEvents.java">
+    <classNode dependClassName="java.lang.annotation.ElementType" />
+    <classNode dependClassName="java.lang.annotation.Retention" />
+    <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
+    <classNode dependClassName="java.lang.annotation.Target" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.IgnoringPatternErrorStream" file="IgnoringPatternErrorStream.java">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.FilterOutputStream" />
@@ -62,6 +68,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.ExpectLogEvent" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.IgnoreLogEvents" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.IgnoringPatternErrorStream" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
     <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />

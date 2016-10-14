@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
@@ -177,7 +177,7 @@
             <node concept="2OqwBi" id="4xJ8SYvVLL3" role="37vLTx">
               <node concept="2Sf5sV" id="4xJ8SYvVLL2" role="2Oq$k0" />
               <node concept="3TrEf2" id="4xJ8SYvVLL7" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hDpISCB" />
+                <ref role="3Tt5mk" to="tpee:hDpISCB" resolve="constructorDeclaration" />
               </node>
             </node>
             <node concept="2OqwBi" id="4xJ8SYvVJIS" role="37vLTJ">
@@ -185,7 +185,7 @@
                 <ref role="3cqZAo" node="4xJ8SYvVJIJ" resolve="builder" />
               </node>
               <node concept="3TrEf2" id="4xJ8SYvVLKY" role="2OqNvi">
-                <ref role="3Tt5mk" to="pmg0:5M3yimiSuJ0" />
+                <ref role="3Tt5mk" to="pmg0:5M3yimiSuJ0" resolve="constructor" />
               </node>
             </node>
           </node>
@@ -199,7 +199,7 @@
                     <ref role="3cqZAo" node="4xJ8SYvVJIJ" resolve="builder" />
                   </node>
                   <node concept="3Tsc0h" id="4xJ8SYvVLLD" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                    <ref role="3TtcxE" to="tpee:fz7wK6I" resolve="actualArgument" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="2fLCP33K9tL" role="2OqNvi">
@@ -219,7 +219,7 @@
           <node concept="2OqwBi" id="4xJ8SYvVLLp" role="1DdaDG">
             <node concept="2Sf5sV" id="4xJ8SYvVLLo" role="2Oq$k0" />
             <node concept="3Tsc0h" id="4xJ8SYvVLLv" role="2OqNvi">
-              <ref role="3TtcxE" to="tpee:fz7wK6I" />
+              <ref role="3TtcxE" to="tpee:fz7wK6I" resolve="actualArgument" />
             </node>
           </node>
         </node>
@@ -233,7 +233,7 @@
                 <ref role="3cqZAo" node="4xJ8SYvVJIA" resolve="creator" />
               </node>
               <node concept="3TrEf2" id="4xJ8SYvVLM3" role="2OqNvi">
-                <ref role="3Tt5mk" to="pmg0:4ak9ytIbIbS" />
+                <ref role="3Tt5mk" to="pmg0:4ak9ytIbIbS" resolve="builder" />
               </node>
             </node>
           </node>
@@ -259,7 +259,7 @@
                   <ref role="3cqZAo" node="4xJ8SYvVJIA" resolve="creator" />
                 </node>
                 <node concept="3TrEf2" id="4xJ8SYvWQ_G" role="2OqNvi">
-                  <ref role="3Tt5mk" to="pmg0:4ak9ytI9has" />
+                  <ref role="3Tt5mk" to="pmg0:4ak9ytI9has" resolve="body" />
                 </node>
               </node>
             </node>

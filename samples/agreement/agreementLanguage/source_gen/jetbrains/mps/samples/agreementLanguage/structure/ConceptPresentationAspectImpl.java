@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AccountType = new ConceptPresentationBuilder().create();
@@ -33,108 +30,43 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0s.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AccountType;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_AgreementDeclarations;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_Date;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Date_Future;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_Date_Past;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_Event;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_EventType;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_EventVariable;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_EventVariableReference;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_Plan;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_PostingRule;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_PostingRuleTemporalProperty;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_Quantity;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_QuantityTemporalProperty;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_TemporalProperty;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_Value;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ValueReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AccountType:
+        return props_AccountType;
+      case LanguageConceptSwitch.AgreementDeclarations:
+        return props_AgreementDeclarations;
+      case LanguageConceptSwitch.Date:
+        return props_Date;
+      case LanguageConceptSwitch.Date_Future:
+        return props_Date_Future;
+      case LanguageConceptSwitch.Date_Past:
+        return props_Date_Past;
+      case LanguageConceptSwitch.Event:
+        return props_Event;
+      case LanguageConceptSwitch.EventType:
+        return props_EventType;
+      case LanguageConceptSwitch.EventVariable:
+        return props_EventVariable;
+      case LanguageConceptSwitch.EventVariableReference:
+        return props_EventVariableReference;
+      case LanguageConceptSwitch.Plan:
+        return props_Plan;
+      case LanguageConceptSwitch.PostingRule:
+        return props_PostingRule;
+      case LanguageConceptSwitch.PostingRuleTemporalProperty:
+        return props_PostingRuleTemporalProperty;
+      case LanguageConceptSwitch.Quantity:
+        return props_Quantity;
+      case LanguageConceptSwitch.QuantityTemporalProperty:
+        return props_QuantityTemporalProperty;
+      case LanguageConceptSwitch.TemporalProperty:
+        return props_TemporalProperty;
+      case LanguageConceptSwitch.Value:
+        return props_Value;
+      case LanguageConceptSwitch.ValueReference:
+        return props_ValueReference;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0s = buildConceptIndices(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc29baa2L, "jetbrains.mps.samples.agreementLanguage.structure.AccountType"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102fae6140bL, "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd8dcdL, "jetbrains.mps.samples.agreementLanguage.structure.Date"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f15b1a76L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Future"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f1595f54L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Past"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L, "jetbrains.mps.samples.agreementLanguage.structure.EventType"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, "jetbrains.mps.samples.agreementLanguage.structure.EventVariable"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, "jetbrains.mps.samples.agreementLanguage.structure.PostingRule"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc2154d7L, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbff8d6dL, "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd085fL, "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, "jetbrains.mps.samples.agreementLanguage.structure.Value"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"));
 }

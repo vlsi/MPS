@@ -40,6 +40,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   public SAbstractConcept getSConcept() {
     return MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
+  protected static Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -75,7 +76,6 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Concept Instances";
   }
-  protected static Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
   private static SModule check_mbibnv_a0g0b0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

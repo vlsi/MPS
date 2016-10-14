@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -153,14 +153,14 @@
                 <ref role="3cqZAo" node="hyf3qBw" resolve="rootGroup" />
               </node>
               <node concept="3TrEf2" id="h$fFe6F" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp4k:h$ftENW" />
+                <ref role="3Tt5mk" to="tp4k:h$ftENW" resolve="contents" />
               </node>
             </node>
             <node concept="2oxUTD" id="h$fFfny" role="2OqNvi">
               <node concept="2OqwBi" id="h$fFg4g" role="2oxUTC">
                 <node concept="2Sf5sV" id="h$fFfOB" role="2Oq$k0" />
                 <node concept="3TrEf2" id="h$fFgst" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp4k:h$ftENW" />
+                  <ref role="3Tt5mk" to="tp4k:h$ftENW" resolve="contents" />
                 </node>
               </node>
             </node>

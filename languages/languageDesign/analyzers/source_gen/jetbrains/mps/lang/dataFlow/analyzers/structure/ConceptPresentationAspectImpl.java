@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AnalysisDirection = new ConceptPresentationBuilder().create();
@@ -53,208 +50,83 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0mb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AnalysisDirection;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Analyzer;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_AnalyzerConstructorParameter;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_AnalyzerConstructorParameterReference;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_AnalyzerFunFunction;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_AnalyzerFunParameterInput;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_AnalyzerFunParameterProgramState;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_AnalyzerFunParameterStateValues;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_AnalyzerFunctionResultType;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_AnalyzerInitialFunction;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_AnalyzerMergeFunction;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_AnalyzerMergeParameterInput;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_AnalyzerParameterProgram;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_AnalyzerRunnerAnalyzeOperation;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_AnalyzerRunnerClassKeeper;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_AnalyzerRunnerCreator;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_AnalyzerRunnerType;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ApplicableCondition;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ApplicableNodeReference;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_BackwardDirection;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ConceptCondition;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_CustomInstructionsContainer;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_CustomInstructionsContainerReference;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_EmitInstruction;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ForwardDirection;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_InsertAfterPosition;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_InsertBeforePosition;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_InsertPosition;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_Instruction;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_InstructionClassKeeper;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_InstructionParameter;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_InstructionReference;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_IsOperation;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_PatternCondition;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_ProgramParameter;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_Rule;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_RuleReference;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AnalysisDirection:
+        return props_AnalysisDirection;
+      case LanguageConceptSwitch.Analyzer:
+        return props_Analyzer;
+      case LanguageConceptSwitch.AnalyzerConstructorParameter:
+        return props_AnalyzerConstructorParameter;
+      case LanguageConceptSwitch.AnalyzerConstructorParameterReference:
+        return props_AnalyzerConstructorParameterReference;
+      case LanguageConceptSwitch.AnalyzerFunFunction:
+        return props_AnalyzerFunFunction;
+      case LanguageConceptSwitch.AnalyzerFunParameterInput:
+        return props_AnalyzerFunParameterInput;
+      case LanguageConceptSwitch.AnalyzerFunParameterProgramState:
+        return props_AnalyzerFunParameterProgramState;
+      case LanguageConceptSwitch.AnalyzerFunParameterStateValues:
+        return props_AnalyzerFunParameterStateValues;
+      case LanguageConceptSwitch.AnalyzerFunctionResultType:
+        return props_AnalyzerFunctionResultType;
+      case LanguageConceptSwitch.AnalyzerInitialFunction:
+        return props_AnalyzerInitialFunction;
+      case LanguageConceptSwitch.AnalyzerMergeFunction:
+        return props_AnalyzerMergeFunction;
+      case LanguageConceptSwitch.AnalyzerMergeParameterInput:
+        return props_AnalyzerMergeParameterInput;
+      case LanguageConceptSwitch.AnalyzerParameterProgram:
+        return props_AnalyzerParameterProgram;
+      case LanguageConceptSwitch.AnalyzerRunnerAnalyzeOperation:
+        return props_AnalyzerRunnerAnalyzeOperation;
+      case LanguageConceptSwitch.AnalyzerRunnerClassKeeper:
+        return props_AnalyzerRunnerClassKeeper;
+      case LanguageConceptSwitch.AnalyzerRunnerCreator:
+        return props_AnalyzerRunnerCreator;
+      case LanguageConceptSwitch.AnalyzerRunnerType:
+        return props_AnalyzerRunnerType;
+      case LanguageConceptSwitch.ApplicableCondition:
+        return props_ApplicableCondition;
+      case LanguageConceptSwitch.ApplicableNodeReference:
+        return props_ApplicableNodeReference;
+      case LanguageConceptSwitch.BackwardDirection:
+        return props_BackwardDirection;
+      case LanguageConceptSwitch.ConceptCondition:
+        return props_ConceptCondition;
+      case LanguageConceptSwitch.CustomInstructionsContainer:
+        return props_CustomInstructionsContainer;
+      case LanguageConceptSwitch.CustomInstructionsContainerReference:
+        return props_CustomInstructionsContainerReference;
+      case LanguageConceptSwitch.EmitInstruction:
+        return props_EmitInstruction;
+      case LanguageConceptSwitch.ForwardDirection:
+        return props_ForwardDirection;
+      case LanguageConceptSwitch.InsertAfterPosition:
+        return props_InsertAfterPosition;
+      case LanguageConceptSwitch.InsertBeforePosition:
+        return props_InsertBeforePosition;
+      case LanguageConceptSwitch.InsertPosition:
+        return props_InsertPosition;
+      case LanguageConceptSwitch.Instruction:
+        return props_Instruction;
+      case LanguageConceptSwitch.InstructionClassKeeper:
+        return props_InstructionClassKeeper;
+      case LanguageConceptSwitch.InstructionParameter:
+        return props_InstructionParameter;
+      case LanguageConceptSwitch.InstructionReference:
+        return props_InstructionReference;
+      case LanguageConceptSwitch.IsOperation:
+        return props_IsOperation;
+      case LanguageConceptSwitch.PatternCondition:
+        return props_PatternCondition;
+      case LanguageConceptSwitch.ProgramParameter:
+        return props_ProgramParameter;
+      case LanguageConceptSwitch.Rule:
+        return props_Rule;
+      case LanguageConceptSwitch.RuleReference:
+        return props_RuleReference;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0mb = buildConceptIndices(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d4L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d2L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7e9442f75769ab4eL, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterStateValues"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c52fa7L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1d7ec5L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1d7ebcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a11L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x13ac225cc9e9f5bfL, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x1c63af9d2f3a7f23L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919dd6d8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb96L, "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c172b8b1L, "jetbrains.mps.lang.dataFlow.analyzers.structure.CustomInstructionsContainer"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, "jetbrains.mps.lang.dataFlow.analyzers.structure.CustomInstructionsContainerReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb88L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafcebf24L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafce9c9fL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafcebf23L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x57e18a43f31d0ef6L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd583aa0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x6ed2c546d46ea462L, "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919e0b63L, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x33bb3f8bce3bc61cL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ProgramParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"));
 }

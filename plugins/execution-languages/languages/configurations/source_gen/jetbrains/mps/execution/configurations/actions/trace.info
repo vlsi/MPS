@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="QueriesGenerated.java">
-      <unit at="29,43,33,9" name="jetbrains.mps.execution.configurations.actions.QueriesGenerated$1" />
-      <unit at="36,57,40,13" name="jetbrains.mps.execution.configurations.actions.QueriesGenerated$2" />
-      <unit at="22,0,51,0" name="jetbrains.mps.execution.configurations.actions.QueriesGenerated" />
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,24,0" name="jetbrains.mps.execution.configurations.actions.ActionAspectDescriptorImpl" />
     </file>
-  </root>
-  <root nodeRef="r:f7b87f92-a08a-4895-8bca-f9a67fdad62e(jetbrains.mps.execution.configurations.actions)/7806358006983765718">
     <file name="QueriesGenerated.java">
-      <node id="7806358006983766889" at="30,45,31,504" concept="0" />
-      <node id="7806358006983766902" at="37,98,38,289" concept="0" />
-      <node id="2186841766260430072" at="47,214,48,280" concept="0" />
-      <node id="2186841766260429985" at="47,0,50,0" concept="1" trace="nodeSubstituteActionsBuilder_Precondition_ConfigurationFromExecutorReference_2186841766260429985#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="7806358006983766887" at="37,98,38,289" />
-      <scope id="2186841766260429986" at="47,214,48,280" />
-      <scope id="2186841766260429985" at="47,0,50,0">
-        <var name="_context" id="2186841766260429985" />
-        <var name="operationContext" id="2186841766260429985" />
-      </scope>
+      <unit at="6,0,8,0" name="jetbrains.mps.execution.configurations.actions.QueriesGenerated" />
     </file>
   </root>
 </debug-info>

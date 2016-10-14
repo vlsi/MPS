@@ -35,12 +35,19 @@ import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -68,6 +75,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * GUESS: while {@link ProjectTree} is deemed for embedded UI components, e.g. in a dialog,
@@ -75,7 +84,7 @@ import java.util.List;
  * need move to ProjectPane, as it's project stuff and needs Idea's project Message bus), integration with
  * editor (activation, auto-select/expand), etc.
  */
-public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider {
+public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider, ProjectModuleTreeNode.ModuleNodeChildrenProvider {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
     @Override
@@ -209,6 +218,31 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       treeNode.add(new PropertiesTreeNode(n));
       treeNode.add(new ReferencesTreeNode(n));
     }
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, Language language) {
+    return false;
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, Solution solution) {
+    return false;
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, Generator generator) {
+    if (myProjectPane.isDescriptorModelInGeneratorVisible()) {
+      return false;
+    }
+    Predicate<SModel> isDescriptorModel = SModelStereotype::isDescriptorModel;
+    new SModelsSubtree(treeNode).create(generator.getModels().stream().filter(isDescriptorModel.negate()).collect(Collectors.toList()));
+    return true;
+  }
+
+  @Override
+  public boolean populate(MPSTreeNode treeNode, DevKit devkit) {
+    return false;
   }
 
   private class MyTransferable implements Transferable {

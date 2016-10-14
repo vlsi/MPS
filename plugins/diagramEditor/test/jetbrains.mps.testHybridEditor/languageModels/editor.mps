@@ -2,7 +2,7 @@
 <model ref="r:814b5a42-e9ec-45d8-81f9-8c398455e907(jetbrains.mps.testHybridEditor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -120,7 +120,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="3NXJmdrtjuv" role="3EZMnx">
-          <ref role="1NtTu8" to="adck:22C1ebGggi6" />
+          <ref role="1NtTu8" to="adck:22C1ebGggi6" resolve="inMetaPorts" />
           <node concept="l2Vlx" id="3NXJmdrtjuw" role="2czzBx" />
           <node concept="pj6Ft" id="3NXJmdrtjux" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -150,7 +150,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="3NXJmdrtjuE" role="3EZMnx">
-          <ref role="1NtTu8" to="adck:2NgG6tkMeKc" />
+          <ref role="1NtTu8" to="adck:2NgG6tkMeKc" resolve="outMetaPorts" />
           <node concept="l2Vlx" id="3NXJmdrtjuF" role="2czzBx" />
           <node concept="pj6Ft" id="3NXJmdrtjuG" role="3F10Kt">
             <property role="VOm3f" value="true" />

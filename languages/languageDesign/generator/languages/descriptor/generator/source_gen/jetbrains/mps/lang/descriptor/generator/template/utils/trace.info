@@ -12,7 +12,7 @@
       <node id="2269164187047083160" at="23,5,24,77" concept="3" />
       <node id="2269164187047083187" at="28,151,29,24" concept="4" />
       <node id="2269164187047083196" at="31,9,32,21" concept="4" />
-      <node id="725186580884194035" at="37,110,38,212" concept="3" />
+      <node id="725186580884194035" at="37,77,38,212" concept="3" />
       <node id="725186580885050982" at="40,39,41,200" concept="4" />
       <node id="7046202590379972492" at="46,74,47,210" concept="3" />
       <node id="7046202590379988521" at="51,43,52,211" concept="4" />
@@ -25,7 +25,7 @@
       <node id="7046202590379976846" at="49,39,54,11" concept="4" />
       <node id="7046202590379972505" at="49,0,56,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2269164187047083179" at="26,0,34,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="725186580884192681" at="37,0,45,0" concept="5" trace="hasManualEditorAspectDescriptor#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="725186580884192681" at="37,0,45,0" concept="5" trace="hasManualEditorAspectDescriptor#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="7046202590379972501" at="47,210,56,7" concept="4" />
       <node id="2269164187047083169" at="24,77,34,16" concept="4" />
       <node id="7046202590379972486" at="46,0,58,0" concept="5" trace="hasStyleAttributeDeclaration#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
@@ -46,7 +46,7 @@
       </scope>
       <scope id="7046202590379972506" at="49,39,54,11" />
       <scope id="2269164187047083180" at="26,39,32,21" />
-      <scope id="725186580884192684" at="37,110,43,7">
+      <scope id="725186580884192684" at="37,77,43,7">
         <var name="roots" id="725186580884194036" />
       </scope>
       <scope id="7046202590379972505" at="49,0,56,0">
@@ -57,7 +57,6 @@
       </scope>
       <scope id="725186580884192681" at="37,0,45,0">
         <var name="editorModel" id="8911797107065024143" />
-        <var name="genContext" id="725186580884193392" />
       </scope>
       <scope id="7046202590379972491" at="46,74,56,7">
         <var name="roots" id="7046202590379972493" />

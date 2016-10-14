@@ -31,6 +31,7 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -53,8 +54,9 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> hasSetter_idhEwIJ0S = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasSetter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIJ0S").registry(REGISTRY).build();
   public static final SMethod<IconResource> getSideIcon_id6TtJ6IUjtJX = new SMethodBuilder<IconResource>(new SJavaCompoundTypeImpl(IconResource.class)).name("getSideIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6TtJ6IUjtJX").registry(REGISTRY).build();
   public static final SMethod<Void> populateMember_id6r77ob2UW9O = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMember").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UW9O").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDefaultImplementation_idhEwIIZu, isCustomImplementation_idhEwIIZC, isCustomSetterOnlyImplementation_id2hzApTi_Lsg, getCustomPropertyImplementation_idhEwIIZM, getCustomSetterStatements_id2hzApTjcJcI, getPropertyNameWithId_idhEwIIZU, getBackingVarName_id1tRxQXfvLw, getGetterMethodName_idhEwIJ02, getSetterMethodName_idhEwIJ0b, getSetterVisibility_idhEwIJ0k, isSetterVisible_id5WTl5xSBxvj, hasSetter_idhEwIJ0S, getSideIcon_id6TtJ6IUjtJX, populateMember_id6r77ob2UW9O);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDefaultImplementation_idhEwIIZu, isCustomImplementation_idhEwIIZC, isCustomSetterOnlyImplementation_id2hzApTi_Lsg, getCustomPropertyImplementation_idhEwIIZM, getCustomSetterStatements_id2hzApTjcJcI, getPropertyNameWithId_idhEwIIZU, getBackingVarName_id1tRxQXfvLw, getGetterMethodName_idhEwIJ02, getSetterMethodName_idhEwIJ0b, getSetterVisibility_idhEwIJ0k, isSetterVisible_id5WTl5xSBxvj, hasSetter_idhEwIJ0S, getSideIcon_id6TtJ6IUjtJX, populateMember_id6r77ob2UW9O, getFqName_idhEwIO9y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SLinkOperations.setNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
@@ -116,12 +118,12 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
     if ((setterVisibility == null)) {
-      return eq_49ixrf_a0a0i0gb(contextNodePackage, contextClassifierPackage);
+      return eq_49ixrf_a0a0i0hb(contextNodePackage, contextClassifierPackage);
     }
     // protected 
     if (SNodeOperations.isInstanceOf(setterVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       String declarationClassifierPackage = VisibilityUtil.packageName(Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__));
-      if (eq_49ixrf_a0b0k0gb(contextNodePackage, declarationClassifierPackage)) {
+      if (eq_49ixrf_a0b0k0hb(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
 
@@ -157,6 +159,13 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static void populateMember_id6r77ob2UW9O(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
     // todo: just populate for now, make it right! 
     context.addMember(__thisNode__, null);
+  }
+  /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
+    SNode containingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (containingClassifier != null) {
+      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(containingClassifier) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__);
   }
 
   /*package*/ Property__BehaviorDescriptor() {
@@ -204,6 +213,8 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
       case 13:
         populateMember_id6r77ob2UW9O(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
+      case 14:
+        return (T) ((String) getFqName_idhEwIO9y(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -238,10 +249,10 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return false;
   }
-  private static boolean eq_49ixrf_a0a0i0gb(Object a, Object b) {
+  private static boolean eq_49ixrf_a0a0i0hb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_49ixrf_a0b0k0gb(Object a, Object b) {
+  private static boolean eq_49ixrf_a0b0k0hb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

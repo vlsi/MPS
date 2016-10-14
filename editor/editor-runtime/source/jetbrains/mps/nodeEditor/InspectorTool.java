@@ -19,13 +19,13 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
@@ -49,15 +49,13 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class InspectorTool extends BaseTool implements EditorInspector, ProjectComponent {
   public static final String ID = "Inspector";
 
-  private JPanel myComponent;
+  private MyPanel myComponent;
   private InspectorEditorComponent myInspectorComponent;
   private MyMessagePanel myMessagePanel;
   private FileEditor myFileEditor;
@@ -104,9 +102,9 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       myInspectorComponent = new InspectorEditorComponent(project.getRepository(),
           new EditorConfigurationBuilder().editorPanelManager(new EditorPanelManagerImpl(project)).build());
       EditorExtensionUtil.extendUsingProject(myInspectorComponent, project);
-      myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
+      myComponent.setContent(myInspectorComponent.getExternalComponent());
       myMessagePanel.setNode(null);
-      myComponent.add(myMessagePanel, BorderLayout.NORTH);
+      myComponent.setToolbar(myMessagePanel);
       AnAction moveDownAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
       moveDownAction.registerCustomShortcutSet(moveDownAction.getShortcutSet(), myComponent);
       AnAction moveUpAction = ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
@@ -150,9 +148,10 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     myMessagePanel.setNode(node);
   }
 
-  private class MyPanel extends JPanel implements DataProvider {
+  private class MyPanel extends SimpleToolWindowPanel {
     private MyPanel() {
-      super(new BorderLayout());
+      super(true, true);
+      setProvideQuickActions(false);
     }
 
     @Override
@@ -167,7 +166,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       if (PlatformDataKeys.HELP_ID.is(dataId)) {
         return "ideaInterface.editor.inspector";
       }
-      return null;
+      return super.getData(dataId);
     }
   }
 

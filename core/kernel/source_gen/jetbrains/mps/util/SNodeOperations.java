@@ -16,12 +16,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
-import jetbrains.mps.util.annotation.ToRemove;
-import java.util.Iterator;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
@@ -146,43 +144,6 @@ public class SNodeOperations {
   @Deprecated
   public static boolean isRoot(SNode n) {
     return n.getModel() != null && n.getParent() == null;
-  }
-  /**
-   * todo rewrite the code via snode methods
-   * @deprecated Use OpenAPI methods directly
-   * 
-   * @deprecated use SNode.insertChildBefore/insertChildAfter
-   */
-  @Deprecated
-  public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
-    if (before) {
-      parent.insertChildBefore(role, child, anchor);
-    } else {
-      insertChild(parent, role, child, anchor);
-    }
-  }
-  /**
-   * todo rewrite the code via snode methods
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static void insertChild(SNode parent, String role, SNode child, SNode anchor) {
-    if (anchor != null) {
-      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
-      return;
-    }
-    Iterator<? extends SNode> it = parent.getChildren().iterator();
-    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
-  }
-  /**
-   * Insert a child *after* specified anchor, or to the head of children list if anchor is null
-   * todo rewrite the code via snode methods
-   * 
-   * @deprecated use SNode.insertChildBefore/insertChildAfter
-   */
-  @Deprecated
-  public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
-    parent.insertChildAfter(role, child, anchor);
   }
   /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode

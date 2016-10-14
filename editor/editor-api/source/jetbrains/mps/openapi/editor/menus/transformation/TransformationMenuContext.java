@@ -19,6 +19,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -27,25 +29,50 @@ public interface TransformationMenuContext {
   @NotNull
   String getMenuLocation();
 
+  /**
+   * The transformed node
+   */
   @NotNull
-  SNode getNode();
+  default SNode getNode() {
+    return getNodeLocation().getContextNode();
+  }
+
+  /**
+   * The transformed/substituted node location
+   */
+  @NotNull
+  SNodeLocation getNodeLocation();
+
+  default SModel getModel() {
+    return getNode().getModel();
+  }
 
   @NotNull
   EditorContext getEditorContext();
 
   /**
-   * Returns a context similar to the current one but with node changed to {@code node}. May return this instance if {@code node} is the same as the current
-   * node.
+   * Returns a context similar to the current one but with node location changed to {@code nodeLocation} (if non-null) and menu location changed to
+   * {@code menuLocation} (if non-null). May return this instance if both {@code nodeLocation} and {@code menuLocation} are unchanged or null.
    */
   @NotNull
-  TransformationMenuContext withNode(@NotNull SNode node);
+  TransformationMenuContext with(@Nullable SNodeLocation nodeLocation, @Nullable String menuLocation);
+
+  @NotNull
+  default TransformationMenuContext withNode(@NotNull SNode node) {
+    return with(new SNodeLocation.FromNode(node), null);
+  }
+
+  @NotNull
+  default TransformationMenuContext withLocation(@NotNull String menuLocation) {
+    return with(null, menuLocation);
+  }
 
   /**
-   * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
+   * Creates applicable menu items from the menus returned by {@code menuLookup}. If {@code menuLookup} is null, creates the default menu.
    *
    * @param menuLookup a menu reference, may be null
    * @return menu items for the node, not null but possibly empty
    */
   @NotNull
-  List<TransformationMenuItem> createItems(@Nullable MenuLookup<TransformationMenu> menuLookup);
+  List<TransformationMenuItem> createItems(@Nullable TransformationMenuLookup menuLookup);
 }

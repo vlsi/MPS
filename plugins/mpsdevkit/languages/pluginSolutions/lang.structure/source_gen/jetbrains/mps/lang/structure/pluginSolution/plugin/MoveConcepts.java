@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -70,20 +71,24 @@ public class MoveConcepts implements MoveNodesAction {
       }
     });
     if (hasGenerator.value) {
-      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", "Move concepts");
+      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", "Move Concepts");
     }
 
     final Wrappers._T<List<SModelReference>> structureModels = new Wrappers._T<List<SModelReference>>();
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
+    project.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SModelReference>>() {
+      public List<SModelReference> invoke() {
         Iterable<SModule> modules = project.getRepository().getModules();
-        structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
+        return structureModels.value = Sequence.fromIterable(modules).ofType(Language.class).select(new ISelector<Language, SModelReference>() {
           public SModelReference select(Language it) {
-            return it.getStructureModelDescriptor().getReference();
+            return check_u6ijv2_a0a0a0a0a1a0a0h0f(it.getStructureModelDescriptor());
+          }
+        }).where(new IWhereFilter<SModelReference>() {
+          public boolean accept(SModelReference it) {
+            return it != null;
           }
         }).toListSequence();
       }
-    });
+    }));
     final SModelReference targetModelRef = SModelReferenceDialog.getSelectedModel(project, structureModels.value);
     if (targetModelRef == null) {
       return;
@@ -99,4 +104,10 @@ public class MoveConcepts implements MoveNodesAction {
     MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel.value), project)).withValues(nodesToMove));
   }
 
+  private static SModelReference check_u6ijv2_a0a0a0a0a1a0a0h0f(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
 }

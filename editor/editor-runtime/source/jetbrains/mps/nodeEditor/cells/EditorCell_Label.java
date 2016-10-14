@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.cells.CaretState;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -59,7 +60,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
-  protected boolean myCaretIsVisible = true;
+  protected CaretState myCaretState = new CaretState();
 
   protected EditorCell_Label(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);
@@ -112,6 +113,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
+    myCaretState.touch(selected);
   }
 
   @Override
@@ -173,8 +175,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   public void setCaretPosition(int position, boolean selection) {
     assert isCaretPositionAllowed(position) : "Position " + position + " is not allowed for EditorCell_Label: \"" + myTextLine.getText() + "\"";
+    repaintCaret();
     myTextLine.setCaretPosition(position, selection);
-    getEditor().getBracesHighlighter().updateBracesSelection(this);
+    myCaretState.touch();
+    repaintCaret();
   }
 
   public boolean isCaretPositionAllowed(int position) {
@@ -348,7 +352,18 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public void switchCaretVisible() {
-    myCaretIsVisible = !myCaretIsVisible;
+    myCaretState.tick();
+    repaintCaret();
+  }
+
+  @Override
+  public void setCaretVisible(boolean visible) {
+    myCaretState.touch(visible);
+    repaintCaret();
+  }
+
+  private void repaintCaret() {
+    getRenderedTextLine().repaintCaret(getEditor(), getShiftX(), getY());
   }
 
   @Override
@@ -364,11 +379,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     textLine.setSelected(selected);
     textLine.setShowCaret(toShowCaret);
     Color cellFontColor = getEditor().getAdditionalCellFontColor(this);
-    if (isDrawBrackets()) {
-      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, cellFontColor);
-    } else {
-      textLine.paint(g, myX + myGapLeft, myY, cellFontColor);
-    }
+    textLine.paint(g, getShiftX(), myY, cellFontColor);
   }
 
   @Override
@@ -386,7 +397,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   protected boolean toShowCaret() {
-    return myCaretIsVisible && isWithinSelection() && getEditor().isActive();
+    return myCaretState.isVisible() && isWithinSelection();
   }
 
   TextLine getTextLine() {
@@ -426,7 +437,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public int getCaretX() {
-    return myTextLine.getCaretX(myX + myGapLeft);
+    return myTextLine.getCaretX(getShiftX());
+  }
+
+  private int getShiftX() {
+    return isDrawBrackets() ? myX + myGapLeft + BRACKET_WIDTH : myX + myGapLeft;
   }
 
   @Override
@@ -517,7 +532,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if ("".equals(getText()) && getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
       // TODO: just use delete action (do not call getSNode().delete()) in the end if acton was not found or is not applicable
       CellAction deleteAction = getEditorComponent().getActionHandler().getApplicableCellAction(this, actionType);
-      if (deleteAction != null && deleteAction.canExecute(getContext())) {
+      if (deleteAction != null) {
         deleteAction.execute(getContext());
       }
     }
@@ -721,7 +736,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
     jetbrains.mps.openapi.editor.cells.EditorCell containingBigCell = CellTraversalUtil.getContainingBigCell(this);
-    return containingBigCell != null && CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
+    return CellTraversalUtil.getFirstLeaf(containingBigCell) == this && CellTraversalUtil.getLastLeaf(containingBigCell) == this &&
         getText().equals(getSelectedText());
   }
 

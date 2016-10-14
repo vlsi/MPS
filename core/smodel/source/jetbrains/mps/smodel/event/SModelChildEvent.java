@@ -69,6 +69,13 @@ public class SModelChildEvent extends SModelEvent {
     return myChildRole.getName();
   }
 
+  /**
+   * @since 3.4
+   */
+  public SContainmentLink getAggregationLink() {
+    return myChildRole;
+  }
+
   @Override
   public void accept(SModelEventVisitor visitor) {
     visitor.visitChildEvent(this);

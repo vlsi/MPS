@@ -7,6 +7,7 @@ import org.junit.internal.AssumptionViolatedException;
 
 public interface Filter {
   boolean accept(Request request) throws Filter.FilterException;
+
   class FilterException extends AssumptionViolatedException {
     public FilterException(String msg) {
       super(msg);

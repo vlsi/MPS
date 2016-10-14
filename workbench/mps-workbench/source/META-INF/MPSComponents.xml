@@ -30,6 +30,9 @@
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.icons.GlobalIconManager</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
     </component>
     <component>
@@ -39,6 +42,7 @@
       <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.ide.platform.watching.ReloadManager</interface-class>
       <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
     </component>
     <component>
@@ -93,6 +97,9 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.plugins.PluginLoaderRegistry</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.classloading.WorkbenchClassloadingEDTDispatcher</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.generator.GenerationSettings</implementation-class>

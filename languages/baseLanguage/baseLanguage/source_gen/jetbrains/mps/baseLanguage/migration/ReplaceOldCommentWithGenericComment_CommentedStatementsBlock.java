@@ -19,8 +19,11 @@ public class ReplaceOldCommentWithGenericComment_CommentedStatementsBlock extend
     return true;
   }
   public SNode execute(final SModule m) {
-    new OldCommentContainerMigration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), m).migrate();
+    doExecute(m);
     return null;
+  }
+  public void doExecute(final SModule m) {
+    new OldCommentContainerMigration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), m).migrate();
   }
   @Override
   public Iterable<Problem> check(SModule m) {

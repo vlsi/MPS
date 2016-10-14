@@ -33,6 +33,10 @@ public class MigrateReferences extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new Pattern_9d9f5o1sz0ui(_quotation_createNode_w5820p_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -66,7 +70,6 @@ public class MigrateReferences extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   public Iterable<MigrationScriptReference> executeAfter() {
     return ListSequence.fromListAndArray(new ArrayList<MigrationScriptReference>(), new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, "declarations"), 0));

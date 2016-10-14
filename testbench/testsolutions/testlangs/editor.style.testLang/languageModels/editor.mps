@@ -2,7 +2,7 @@
 <model ref="r:716dc35d-6443-4b45-a1e5-08b46978f63d(jetbrains.mps.lang.editor.styleTests.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -326,7 +326,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="3yp29n1nir3" role="3EZMnx">
-          <ref role="1NtTu8" to="dekf:7jyxAjKlwmI" />
+          <ref role="1NtTu8" to="dekf:7jyxAjKlwmI" resolve="node" />
           <node concept="2iRkQZ" id="3yp29n1nir4" role="2czzBx" />
           <node concept="VPM3Z" id="3yp29n1nir5" role="3F10Kt">
             <property role="VOm3f" value="false" />

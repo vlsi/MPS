@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,19 +21,19 @@ import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -166,22 +166,17 @@ public abstract class ReferenceDescriptor {
 
     @Nullable
     static ReferenceScopeProvider getScopeProvider(SConcept nodeConcept, String referentRole) {
+      SReferenceLink associationLink = ((ConceptMetaInfoConverter) nodeConcept).convertAssociation(referentRole);
       // todo: should be private
       ReferenceConstraintsDescriptor refConstraintsDescriptor =
-          ConceptRegistryUtil.getConstraintsDescriptor(nodeConcept).getReference(referentRole);
-      // FIXME once I got SReferenceLink here, shall refactor SNodeAccessUtilImpl.getReferenceConstraintsDescriptor() as well
+          ConceptRegistryUtil.getConstraintsDescriptor(nodeConcept).getReference(associationLink);
       if (refConstraintsDescriptor != null) {
         ReferenceScopeProvider result = refConstraintsDescriptor.getScopeProvider();
         if (result != null) {
           return result;
         }
       }
-      SAbstractLink linkDeclaration = nodeConcept.getLink(referentRole);
-      if (linkDeclaration == null) {
-        LOG.error("No reference search scope provider was found. Concept: " + nodeConcept + "; refName: " + referentRole);
-        return EMPTY_REFERENCE_SCOPE_PROVIDER;
-      }
-      SAbstractConcept conceptForDefaultSearchScope = linkDeclaration.getTargetConcept();
+      SAbstractConcept conceptForDefaultSearchScope = associationLink.getTargetConcept();
       return ConceptRegistryUtil.getConstraintsDescriptor(conceptForDefaultSearchScope).getDefaultScopeProvider();
     }
 

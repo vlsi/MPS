@@ -19,9 +19,7 @@ import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
-import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
-import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
@@ -52,7 +50,7 @@ import java.util.concurrent.ConcurrentMap;
  * Igor Alshannikov
  * Sep 19, 2005
  */
-public class GenerationSessionContext extends StandaloneMPSContext implements GeneratorQueryProvider.Source {
+public class GenerationSessionContext extends StandaloneMPSContext {
 
   private final Object COPIED_ROOTS = new Object();
 
@@ -62,7 +60,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final TransientModelsModule myTransientModule;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
-  private final QueryProviderCache myQueryProviders;
   /*
    * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
    * however it's per-model object, and generation session is per-model as well (thus, can't put it into e.g. GenControllerContext)
@@ -101,7 +98,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
     myLogger = logger;
-    myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     myExportsSession = new ExportsSessionContext(environment.getExportModels(), this);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
@@ -122,7 +118,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
-    myQueryProviders = prevContext.myQueryProviders;
     myExportsSession = prevContext.myExportsSession;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
@@ -162,12 +157,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   @Deprecated
   public SRepository getRepository() {
     return myEnvironment.getRepository();
-  }
-
-  @NotNull
-  @Override
-  public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
-    return myQueryProviders.getQueryProvider(ruleNode);
   }
 
   public String toString() {
@@ -327,10 +316,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
       putStepObject(COPIED_ROOTS, set = new HashSet<SNode>());
     }
     return set;
-  }
-
-  public void disposeQueryProvider() {
-    myQueryProviders.dispose();
   }
 
   public Object getGenerationParameter(String name) {

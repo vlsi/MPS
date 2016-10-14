@@ -13,12 +13,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DevkitDescriptorPersistence {
   private DevkitDescriptorPersistence() {
@@ -70,6 +70,7 @@ public class DevkitDescriptorPersistence {
       throw new ModuleReadException(e);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(DevkitDescriptorPersistence.class);
   public static void saveDevKitDescriptor(IFile file, final DevkitDescriptor descriptor) {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
@@ -147,5 +148,4 @@ public class DevkitDescriptorPersistence {
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
-  protected static Logger LOG = LogManager.getLogger(DevkitDescriptorPersistence.class);
 }

@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
@@ -181,9 +182,44 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myNodeEditorComponent.getUpdater().flushModelEvents();
   }
 
+  /**
+   * @deprecated Since MPS 3.4 use getState()
+   */
+  @Deprecated
   @Override
   public Object createMemento() {
+    return getEditorComponentState();
+  }
+
+  @Override
+  public EditorComponentState getEditorComponentState() {
     return new Memento(this, false);
+  }
+
+  /**
+   * @deprecated Since MPS 3.4 use getState()
+   */
+  @Deprecated
+  @Override
+  public boolean setMemento(Object o) {
+    if (o instanceof EditorComponentState) {
+      restoreEditorComponentState((EditorComponentState) o);
+      return true;
+    }
+    return false;
+  }
+
+  @Override
+  public void restoreEditorComponentState(EditorComponentState state) {
+    if (state instanceof Memento) {
+      Memento memento = (Memento) state;
+      ModelAccess.instance().runReadAction(() -> {
+        myNodeEditorComponent.relayout();
+        memento.restore(myNodeEditorComponent);
+      });
+
+      myNodeEditorComponent.getUpdater().flushModelEvents();
+    }
   }
 
   @Override
@@ -237,22 +273,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         inspector.openTool(true);
       }
     }));
-  }
-
-  @Override
-  public boolean setMemento(Object o) {
-    if (o instanceof Memento) {
-      final Memento memento = (Memento) o;
-      ModelAccess.instance().runReadAction(() -> {
-        myNodeEditorComponent.relayout();
-        memento.restore(myNodeEditorComponent);
-      });
-
-      myNodeEditorComponent.getUpdater().flushModelEvents();
-
-      return true;
-    }
-    return false;
   }
 
   @Override

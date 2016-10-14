@@ -147,7 +147,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
           int answer = Messages.showYesNoDialog(
               "Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() +
                   " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
-          if (answer == 0) {
+          if (answer == Messages.YES) {
             FileUtil.delete(samplesDir);
             actuallyExtractSamples(samplesZipFile);
           }

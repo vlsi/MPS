@@ -31,6 +31,16 @@ public class PatternUtil {
     SEQUENCE_LETTERS
   }
 
+  public static boolean matchesPattern(String pattern, String matchingText) {
+    if (pattern == null || pattern.length() == 0) {
+      return true;
+    }
+    if (matchingText == null || matchingText.length() == 0) {
+      return false;
+    }
+    return matchingText.charAt(0) == pattern.charAt(0) &&
+        (matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*"));
+  }
 
   public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots, boolean useStarAndQuestionMark) {
     StringBuilder b = new StringBuilder();

@@ -142,12 +142,18 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
   boolean isFoldable();
 
   /**
-   * This method can be used to set specify if this (newly created) EditorCell_Collection should be
+   * This method can be used to specify if this (newly created) {@link EditorCell_Collection} should be
    * initially collapsed in the editor or not.
    *
    * @param collapsed true if the cell should be collapsed, false by default
    */
   void setInitiallyCollapsed(boolean collapsed);
+
+  /**
+   * Returning initially collapsed state of this {@link EditorCell_Collection}, specified by setInitiallyCollapsed()
+   * method call.
+   */
+  boolean isInitiallyCollapsed();
 
   int getBracesIndent();
 

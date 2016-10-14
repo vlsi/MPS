@@ -4,61 +4,96 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import java.io.PrintStream;
 import java.io.PipedInputStream;
-import java.io.IOException;
-import java.io.PipedOutputStream;
 import java.io.InputStream;
+import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PipedOutputStream;
+import java.io.BufferedOutputStream;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 import com.intellij.util.WaitFor;
 
+/**
+ * The buffer size value is chosen arbitrarily without any reasonable argumentation
+ * Just that default 1024 in the pipe stream classes seem to be too small
+ */
 public class FakeProcess extends Process {
   public static final int TERMINATION_CODE = 137;
+  private static final int BUFFER_SIZE = 65535;
 
   private final PrintStream myOldOut;
   private final PrintStream myOldErr;
-  private final PipedInputStream myInputOut;
-  private final PipedInputStream myInputErr;
+  private final PipedInputStream myInputOut = new PipedInputStream(BUFFER_SIZE);
+  private final PipedInputStream myInputErr = new PipedInputStream(BUFFER_SIZE);
+  private final InputStream myBufIn = new BufferedInputStream(myInputOut);
+  private final InputStream myBufErr = new BufferedInputStream(myInputErr);
   private int myExitCode = -1;
   private boolean myDestroyed = false;
 
   public FakeProcess() {
     myOldOut = System.out;
     myOldErr = System.err;
-    myInputOut = new PipedInputStream();
-    myInputErr = new PipedInputStream();
   }
 
   public void init() throws IOException {
-    PrintStream newOut = new PrintStream(new PipedOutputStream(myInputOut), true);
-    PrintStream newErr = new PrintStream(new PipedOutputStream(myInputErr), true);
+    System.setOut(createCompositeWrapper(myInputOut));
+    System.setErr(createCompositeWrapper(myInputErr));
+  }
 
-    System.setOut(new PrintStream(new CompositeStream(myOldOut, newOut)));
-    System.setErr(new PrintStream(new CompositeStream(myOldErr, newErr)));
+  private PrintStream createCompositeWrapper(PipedInputStream pipeInput) throws IOException {
+    OutputStream newOut = new PipedOutputStream(pipeInput);
+    return new PrintStream(new BufferedOutputStream(newOut));
   }
 
   public void setExitCode(int code) {
     myExitCode = code;
   }
 
+  protected static Logger LOG = LogManager.getLogger(FakeProcess.class);
+  @Override
   public void destroy() {
-    assert !(myDestroyed);
+    if (myDestroyed) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Already destroyed");
+      }
+      return;
+    }
     myDestroyed = true;
+    closeOutAndErr();
+  }
+
+  private void closeOutAndErr() {
+    PrintStream newOut = System.out;
+    PrintStream newErr = System.err;
     System.setOut(myOldOut);
     System.setErr(myOldErr);
+    newOut.close();
+    newErr.close();
   }
+
+  @Override
   public int exitValue() {
-    assert false;
     return myExitCode;
   }
+
+  @Override
   public InputStream getErrorStream() {
-    return myInputErr;
+    return myBufErr;
   }
+
+  @Override
   public InputStream getInputStream() {
-    return myInputOut;
+    return myBufIn;
   }
+
+  @Override
   public OutputStream getOutputStream() {
-    assert false;
-    return null;
+    throw new UnsupportedOperationException("No output stream here");
   }
+
+  @Override
   public int waitFor() throws InterruptedException {
     new WaitFor() {
       protected boolean condition() {
@@ -66,5 +101,10 @@ public class FakeProcess extends Process {
       }
     };
     return myExitCode;
+  }
+
+  @Override
+  public String toString() {
+    return "in-process.execution";
   }
 }

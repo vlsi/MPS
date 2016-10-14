@@ -21,6 +21,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RefactoringRuntime {
 
@@ -92,7 +94,7 @@ public class RefactoringRuntime {
     node.setReferenceTarget(oldLink, null);
   }
 
-  public static SNode replaceWithNewConcept(SNode node, SAbstractConcept newConcept) {
+  public static SNode replaceWithNewConcept(final SNode node, SAbstractConcept newConcept) {
     jetbrains.mps.smodel.SNode newInstance = (jetbrains.mps.smodel.SNode) SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(newConcept));
     newInstance.setId(((jetbrains.mps.smodel.SNode) node).getNodeId());
 
@@ -112,7 +114,21 @@ public class RefactoringRuntime {
         as_7voxfg_a0a0a0a6a7(SNodeOperations.getModel(node), SModelInternal.class).addLanguage(newConcept.getLanguage());
       }
     }
-    return SNodeOperations.replaceWithAnother(node, newInstance);
+    final SNode result = SNodeOperations.replaceWithAnother(node, newInstance);
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(result, null, true, new SAbstractConcept[]{})).translate(new ITranslator2<SNode, SReference>() {
+      public Iterable<SReference> translate(SNode it) {
+        return SNodeOperations.getReferences(it);
+      }
+    }).where(new IWhereFilter<SReference>() {
+      public boolean accept(SReference it) {
+        return SLinkOperations.getTargetNode(it) == node;
+      }
+    }).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference it) {
+        it.getSourceNode().setReferenceTarget(it.getLink(), result);
+      }
+    });
+    return result;
   }
   private static boolean neq_7voxfg_a0a0a0b(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

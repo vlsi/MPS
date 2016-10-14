@@ -23,10 +23,10 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.log4j.Level;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class MpsStartupSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -146,6 +146,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       replacePathMacro((Element) child, project);
     }
   }
+  protected static Logger LOG = LogManager.getLogger(MpsStartupSettings_Configuration.class);
   @Override
   public MpsStartupSettings_Configuration clone() {
     MpsStartupSettings_Configuration clone = null;
@@ -196,7 +197,6 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(MpsStartupSettings_Configuration.class);
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

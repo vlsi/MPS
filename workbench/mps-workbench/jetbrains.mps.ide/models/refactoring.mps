@@ -52,16 +52,11 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mz8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb(MPS.IDEA/)" />
     <import index="yha4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.choose(MPS.Platform/)" />
-    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" implicit="true" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
-      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
-        <child id="1082485599096" name="statements" index="9aQI4" />
-      </concept>
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -184,7 +179,6 @@
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
-        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
@@ -2489,7 +2483,6 @@
                   <property role="3SKdUp" value="FIXME why validation code is part of change command? Shall refactor into distinct read" />
                 </node>
               </node>
-              <node concept="3clFbH" id="JvV_Sx_LoJ" role="3cqZAp" />
               <node concept="1DcWWT" id="70LWmLwgc1p" role="3cqZAp">
                 <node concept="3clFbS" id="70LWmLwgc1r" role="2LFqv$">
                   <node concept="3SKdUt" id="1dXf3Q0SQ4E" role="3cqZAp">
@@ -2549,202 +2542,15 @@
                 </node>
               </node>
               <node concept="3clFbH" id="70LWmLwgf2A" role="3cqZAp" />
-              <node concept="3clFbJ" id="2lmn7fae_bX" role="3cqZAp">
-                <node concept="3clFbS" id="2lmn7fae_bZ" role="3clFbx">
-                  <node concept="3cpWs8" id="2lmn7faewg6" role="3cqZAp">
-                    <node concept="3cpWsn" id="2lmn7faewg7" role="3cpWs9">
-                      <property role="TrG5h" value="smp" />
-                      <node concept="3uibUv" id="2lmn7faewg8" role="1tU5fm">
-                        <ref role="3uigEE" to="z1c5:~StandaloneMPSProject" resolve="StandaloneMPSProject" />
-                      </node>
-                      <node concept="10QFUN" id="2lmn7faewg9" role="33vP2m">
-                        <node concept="3uibUv" id="2lmn7faewga" role="10QFUM">
-                          <ref role="3uigEE" to="z1c5:~StandaloneMPSProject" resolve="StandaloneMPSProject" />
-                        </node>
-                        <node concept="37vLTw" id="2sTGsLqfh4N" role="10QFUP">
-                          <ref role="3cqZAo" node="2sTGsLqeK$D" resolve="myProject" />
-                        </node>
-                      </node>
-                    </node>
+              <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
+                <node concept="2YIFZM" id="7$ME23pAQH9" role="3clFbG">
+                  <ref role="37wK5l" to="smoa:~Renamer.renameModule(jetbrains.mps.project.AbstractModule,java.lang.String):void" resolve="renameModule" />
+                  <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
+                  <node concept="37vLTw" id="7$ME23pAQHa" role="37wK5m">
+                    <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                   </node>
-                  <node concept="3cpWs8" id="2lmn7faeBC5" role="3cqZAp">
-                    <node concept="3cpWsn" id="2lmn7faeBC6" role="3cpWs9">
-                      <property role="TrG5h" value="folder" />
-                      <node concept="17QB3L" id="6j8UItvFvYr" role="1tU5fm" />
-                      <node concept="2OqwBi" id="2lmn7faeBC7" role="33vP2m">
-                        <node concept="37vLTw" id="2lmn7faeBC8" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2lmn7faewg7" resolve="smp" />
-                        </node>
-                        <node concept="liA8E" id="2lmn7faeBC9" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c5:~StandaloneMPSProject.getFolderFor(org.jetbrains.mps.openapi.module.SModule):java.lang.String" resolve="getFolderFor" />
-                          <node concept="37vLTw" id="2lmn7faeBCa" role="37wK5m">
-                            <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="JvV_SxA05l" role="3cqZAp">
-                    <node concept="3cpWsn" id="JvV_SxA05m" role="3cpWs9">
-                      <property role="TrG5h" value="oldName" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="17QB3L" id="JvV_SxA0kg" role="1tU5fm" />
-                      <node concept="2OqwBi" id="6j8UItvFFG0" role="33vP2m">
-                        <node concept="2OqwBi" id="5_k7uOd1lD4" role="2Oq$k0">
-                          <node concept="2OqwBi" id="JvV_SxA05n" role="2Oq$k0">
-                            <node concept="37vLTw" id="JvV_SxA05o" role="2Oq$k0">
-                              <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                            </node>
-                            <node concept="liA8E" id="JvV_SxA05p" role="2OqNvi">
-                              <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="5_k7uOd1lNL" role="2OqNvi">
-                            <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6j8UItvFGYS" role="2OqNvi">
-                          <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbH" id="2lmn7faeFh8" role="3cqZAp" />
-                  <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
-                    <node concept="2YIFZM" id="4FkYMYI0tAH" role="3clFbG">
-                      <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
-                      <ref role="37wK5l" to="smoa:~Renamer.renameModule(org.jetbrains.mps.openapi.module.SModule,java.lang.String):void" resolve="renameModule" />
-                      <node concept="37vLTw" id="4FkYMYI0tAI" role="37wK5m">
-                        <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                      </node>
-                      <node concept="37vLTw" id="4FkYMYI0tAJ" role="37wK5m">
-                        <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbH" id="2lmn7faeFqV" role="3cqZAp" />
-                  <node concept="3SKdUt" id="3VDQ9MQQ1vo" role="3cqZAp">
-                    <node concept="3SKdUq" id="3VDQ9MQQ1BJ" role="3SKWNk">
-                      <property role="3SKdUp" value="TODO: add moduleRenamed to SRepositoryListener?" />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="5_k7uOd1y$m" role="3cqZAp">
-                    <node concept="3SKdUq" id="5_k7uOd1yGb" role="3SKWNk">
-                      <property role="3SKdUp" value="update module path in project descriptor" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="5_k7uOd1lVd" role="3cqZAp">
-                    <node concept="3cpWsn" id="5_k7uOd1lVe" role="3cpWs9">
-                      <property role="TrG5h" value="projectDescriptor" />
-                      <property role="3TUv4t" value="true" />
-                      <node concept="3uibUv" id="5_k7uOd1lV6" role="1tU5fm">
-                        <ref role="3uigEE" to="y8s3:~ProjectDescriptor" resolve="ProjectDescriptor" />
-                      </node>
-                      <node concept="2OqwBi" id="5_k7uOd1lVf" role="33vP2m">
-                        <node concept="37vLTw" id="2lmn7faeuab" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2lmn7faewg7" resolve="smp" />
-                        </node>
-                        <node concept="liA8E" id="5_k7uOd1lVk" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c5:~StandaloneMPSProject.getProjectDescriptor():jetbrains.mps.project.structure.project.ProjectDescriptor" resolve="getProjectDescriptor" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="2jhQWX29YTK" role="3cqZAp">
-                    <node concept="3cpWsn" id="15VbAzMGEYk" role="3cpWs9">
-                      <property role="TrG5h" value="virtualFolder" />
-                      <node concept="17QB3L" id="6j8UItvFvCV" role="1tU5fm" />
-                      <node concept="2OqwBi" id="15VbAzMGFyb" role="33vP2m">
-                        <node concept="37vLTw" id="15VbAzMGFqO" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5_k7uOd1lVe" resolve="projectDescriptor" />
-                        </node>
-                        <node concept="liA8E" id="15VbAzMGFEN" role="2OqNvi">
-                          <ref role="37wK5l" to="y8s3:~ProjectDescriptor.removeModulePath(jetbrains.mps.project.structure.project.ModulePath):java.lang.String" resolve="removeModulePath" />
-                          <node concept="2ShNRf" id="15VbAzMGFU7" role="37wK5m">
-                            <node concept="1pGfFk" id="15VbAzMGPE7" role="2ShVmc">
-                              <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
-                              <node concept="37vLTw" id="2jhQWX29YUc" role="37wK5m">
-                                <ref role="3cqZAo" node="JvV_SxA05m" resolve="oldName" />
-                              </node>
-                              <node concept="37vLTw" id="6j8UItvFz2N" role="37wK5m">
-                                <ref role="3cqZAo" node="2lmn7faeBC6" resolve="folder" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="15VbAzMGQ9d" role="3cqZAp">
-                    <node concept="3cpWsn" id="15VbAzMGQ9e" role="3cpWs9">
-                      <property role="TrG5h" value="modulePath" />
-                      <node concept="3uibUv" id="15VbAzMGQ9f" role="1tU5fm">
-                        <ref role="3uigEE" to="y8s3:~ModulePath" resolve="ModulePath" />
-                      </node>
-                      <node concept="2ShNRf" id="15VbAzMGQwh" role="33vP2m">
-                        <node concept="1pGfFk" id="15VbAzMGRqh" role="2ShVmc">
-                          <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
-                          <node concept="2OqwBi" id="6j8UItvF_DF" role="37wK5m">
-                            <node concept="2OqwBi" id="15VbAzMGS4Q" role="2Oq$k0">
-                              <node concept="2OqwBi" id="15VbAzMGREG" role="2Oq$k0">
-                                <node concept="37vLTw" id="15VbAzMGRy3" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                                </node>
-                                <node concept="liA8E" id="15VbAzMGRVD" role="2OqNvi">
-                                  <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="15VbAzMGSdY" role="2OqNvi">
-                                <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="6j8UItvFAWl" role="2OqNvi">
-                              <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="2jhQWX29YTW" role="37wK5m">
-                            <ref role="3cqZAo" node="15VbAzMGEYk" resolve="virtualFolder" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="5_k7uOd1tQz" role="3cqZAp">
-                    <node concept="2OqwBi" id="5_k7uOd1tXG" role="3clFbG">
-                      <node concept="37vLTw" id="5_k7uOd1tQx" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5_k7uOd1lVe" resolve="projectDescriptor" />
-                      </node>
-                      <node concept="liA8E" id="5_k7uOd1u7U" role="2OqNvi">
-                        <ref role="37wK5l" to="y8s3:~ProjectDescriptor.addModulePath(jetbrains.mps.project.structure.project.ModulePath):java.lang.String" resolve="addModulePath" />
-                        <node concept="37vLTw" id="2qD8WtntAt5" role="37wK5m">
-                          <ref role="3cqZAo" node="15VbAzMGQ9e" resolve="modulePath" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="2ZW3vV" id="2lmn7faewgB" role="3clFbw">
-                  <node concept="3uibUv" id="2lmn7faewgC" role="2ZW6by">
-                    <ref role="3uigEE" to="z1c5:~StandaloneMPSProject" resolve="StandaloneMPSProject" />
-                  </node>
-                  <node concept="37vLTw" id="2sTGsLqfgVL" role="2ZW6bz">
-                    <ref role="3cqZAo" node="2sTGsLqeK$D" resolve="myProject" />
-                  </node>
-                </node>
-                <node concept="9aQIb" id="2lmn7faeAqc" role="9aQIa">
-                  <node concept="3clFbS" id="2lmn7faeAqd" role="9aQI4">
-                    <node concept="3clFbF" id="2lmn7faeF$O" role="3cqZAp">
-                      <node concept="2YIFZM" id="2lmn7faeF$P" role="3clFbG">
-                        <ref role="37wK5l" to="smoa:~Renamer.renameModule(org.jetbrains.mps.openapi.module.SModule,java.lang.String):void" resolve="renameModule" />
-                        <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
-                        <node concept="37vLTw" id="2lmn7faeF$Q" role="37wK5m">
-                          <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                        </node>
-                        <node concept="37vLTw" id="2lmn7faeF$R" role="37wK5m">
-                          <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
-                        </node>
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="7$ME23pAQHb" role="37wK5m">
+                    <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
                   </node>
                 </node>
               </node>

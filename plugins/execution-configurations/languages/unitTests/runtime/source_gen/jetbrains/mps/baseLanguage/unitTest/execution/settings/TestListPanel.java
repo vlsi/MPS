@@ -19,6 +19,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -50,10 +51,13 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     final SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SAbstractConcept c : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-          Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, progress);
+        Iterable<SAbstractConcept> wrappedRootConcepts = TestNodeWrapperFactory.getWrappedRootConcepts();
+        progress.start("Looking up...", Sequence.fromIterable(wrappedRootConcepts).count());
+        for (SAbstractConcept c : Sequence.fromIterable(wrappedRootConcepts)) {
+          Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, progress.subTask(1, SubProgressKind.REPLACING));
           ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
         }
+        progress.done();
       }
     });
 

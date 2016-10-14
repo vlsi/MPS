@@ -13,8 +13,371 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="ActionAccessOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionAccessOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ActionConstructionParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionConstructionParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ActionConstructorParameterReferenceOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionConstructorParameterReferenceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ActionDataParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ActionDataParameterReferenceOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionDataParameterReferenceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ActionDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ActionGroupDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ActionGroupMember_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.ActionGroupMember_BehaviorDescriptor" />
+    </file>
+    <file name="ActionGroupRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionGroupRef_BehaviorDescriptor" />
+    </file>
+    <file name="ActionInstance_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionInstance_BehaviorDescriptor" />
+    </file>
+    <file name="ActionParameterCondition_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameterCondition_BehaviorDescriptor" />
+    </file>
+    <file name="ActionParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ActionParameterReferenceOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameterReferenceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ActionParameterReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="ActionParameter_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ActionPlaceSpecification_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.ActionPlaceSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="ActionReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionReference_BehaviorDescriptor" />
+    </file>
+    <file name="ActionType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ActionType_BehaviorDescriptor" />
+    </file>
+    <file name="AddElementStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.AddElementStatement_BehaviorDescriptor" />
+    </file>
+    <file name="AddKeystrokeStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.AddKeystrokeStatement_BehaviorDescriptor" />
+    </file>
+    <file name="AddStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.AddStatement_BehaviorDescriptor" />
+    </file>
+    <file name="AddTabOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.AddTabOperation_BehaviorDescriptor" />
+    </file>
+    <file name="BaseNodeBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.BaseNodeBlock_BehaviorDescriptor" />
+    </file>
+    <file name="BaseProjectOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
+    </file>
+    <file name="BaseToolDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,432,0" name="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,224,0" name="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BuildGroupBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />
+    </file>
+    <file name="ButtonCreator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
+    </file>
+    <file name="CloseTabOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.CloseTabOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptCondition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptCondition_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_AnActionEvent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_AnActionEvent_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Concept_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_CreatorType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_CreatorType_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_IModule_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_IModule_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_MPSProject_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_MPSProject_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Model_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_Model_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_OperationContext_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_OperationContext_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_PreferencePage_component_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_PreferencePage_component_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Project_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_Project_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_SConceptClass_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_SConceptClass_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptsBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ConceptsBlock_BehaviorDescriptor" />
+    </file>
+    <file name="CreateBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.CreateBlock_BehaviorDescriptor" />
+    </file>
+    <file name="CreateNodeAspectBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.CreateNodeAspectBlock_BehaviorDescriptor" />
+    </file>
+    <file name="CreateTabBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.CreateTabBlock_BehaviorDescriptor" />
+    </file>
+    <file name="CustomCondition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.CustomCondition_BehaviorDescriptor" />
+    </file>
+    <file name="DisposeBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.DisposeBlock_BehaviorDescriptor" />
+    </file>
+    <file name="DoUpdateBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.DoUpdateBlock_BehaviorDescriptor" />
+    </file>
+    <file name="EditableModel_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.EditableModel_BehaviorDescriptor" />
+    </file>
+    <file name="EditorTabReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.EditorTabReference_BehaviorDescriptor" />
+    </file>
+    <file name="EditorTab_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.EditorTab_BehaviorDescriptor" />
+    </file>
+    <file name="ElementListContents_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ElementListContents_BehaviorDescriptor" />
+    </file>
+    <file name="EnumerateChildrenFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.EnumerateChildrenFunction_BehaviorDescriptor" />
+    </file>
+    <file name="EverywhereActionPlace_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.EverywhereActionPlace_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ExecuteBlock_BehaviorDescriptor" />
+    </file>
+    <file name="GetComponentBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GetComponentBlock_BehaviorDescriptor" />
+    </file>
+    <file name="GetGroupOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GetGroupOperation_BehaviorDescriptor" />
+    </file>
+    <file name="GetNodeBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GetNodeBlock_BehaviorDescriptor" />
+    </file>
+    <file name="GetNodesBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GetNodesBlock_BehaviorDescriptor" />
+    </file>
+    <file name="GetSelectedTabOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GetSelectedTabOperation_BehaviorDescriptor" />
+    </file>
+    <file name="GroupAccessOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GroupAccessOperation_BehaviorDescriptor" />
+    </file>
+    <file name="GroupAnchor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GroupAnchor_BehaviorDescriptor" />
+    </file>
+    <file name="GroupContents_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.GroupContents_BehaviorDescriptor" />
+    </file>
+    <file name="GroupType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.GroupType_BehaviorDescriptor" />
+    </file>
+    <file name="IdeaActionsDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="IdeaConfigurationXml_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
+    </file>
+    <file name="IdeaInitializerDescriptor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="IdeaPluginDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.IdeaPluginDependency_BehaviorDescriptor" />
+    </file>
+    <file name="InitBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.InitBlock_BehaviorDescriptor" />
+    </file>
+    <file name="InterfaceExtentionPoint_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.InterfaceExtentionPoint_BehaviorDescriptor" />
+    </file>
+    <file name="InterfaceGroup_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.InterfaceGroup_BehaviorDescriptor" />
+    </file>
+    <file name="IsApplicableBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.IsApplicableBlock_BehaviorDescriptor" />
+    </file>
+    <file name="IsApplicableTabBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.IsApplicableTabBlock_BehaviorDescriptor" />
+    </file>
+    <file name="KeyMapKeystroke_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_BehaviorDescriptor" />
+    </file>
+    <file name="KeyStrokeType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.KeyStrokeType_BehaviorDescriptor" />
+    </file>
+    <file name="KeymapChangesDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="KeymapRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.KeymapRef_BehaviorDescriptor" />
+    </file>
+    <file name="ListenBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ListenBlock_BehaviorDescriptor" />
+    </file>
+    <file name="MPSPluginDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.MPSPluginDependency_BehaviorDescriptor" />
+    </file>
+    <file name="ModificationStatement_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ModificationStatement_BehaviorDescriptor" />
+    </file>
+    <file name="NodesBlock_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.NodesBlock_BehaviorDescriptor" />
+    </file>
+    <file name="NonDumbAwareActions_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.NonDumbAwareActions_BehaviorDescriptor" />
+    </file>
+    <file name="OldConceptsBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.OldConceptsBlock_BehaviorDescriptor" />
+    </file>
+    <file name="OldCreateBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.OldCreateBlock_BehaviorDescriptor" />
+    </file>
+    <file name="OnAfterReadBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.OnAfterReadBlock_BehaviorDescriptor" />
+    </file>
+    <file name="OnBeforeWriteBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.OnBeforeWriteBlock_BehaviorDescriptor" />
+    </file>
+    <file name="OrderConstraints_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.OrderConstraints_BehaviorDescriptor" />
+    </file>
+    <file name="OrderReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.OrderReference_BehaviorDescriptor" />
+    </file>
+    <file name="Order_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.Order_BehaviorDescriptor" />
+    </file>
+    <file name="ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ParameterizedShortcutChange_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ParameterizedShortcutChange_BehaviorDescriptor" />
+    </file>
+    <file name="PersistentPropertyDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="PersistentPropertyReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PersistentPropertyReference_BehaviorDescriptor" />
+    </file>
+    <file name="PinTabOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PinTabOperation_BehaviorDescriptor" />
+    </file>
+    <file name="PluginDependency_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
+    </file>
+    <file name="PopupCreator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PopupCreator_BehaviorDescriptor" />
+    </file>
+    <file name="PreferencePageCommitBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PreferencePageCommitBlock_BehaviorDescriptor" />
+    </file>
+    <file name="PreferencePageIsModifiedBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PreferencePageIsModifiedBlock_BehaviorDescriptor" />
+    </file>
+    <file name="PreferencePageResetBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PreferencePageResetBlock_BehaviorDescriptor" />
+    </file>
+    <file name="PreferencePage_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PreferencePage_BehaviorDescriptor" />
+    </file>
+    <file name="PreferencesComponentDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="PreferencesComponentType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PreferencesComponentType_BehaviorDescriptor" />
+    </file>
+    <file name="RequiredCondition_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.RequiredCondition_BehaviorDescriptor" />
+    </file>
+    <file name="Separator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.Separator_BehaviorDescriptor" />
+    </file>
+    <file name="ShortcutChange_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.plugin.behavior.ShortcutChange_BehaviorDescriptor" />
+    </file>
+    <file name="SimpleActionPlace_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.SimpleActionPlace_BehaviorDescriptor" />
+    </file>
+    <file name="SimpleShortcutChange_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange_BehaviorDescriptor" />
+    </file>
+    <file name="SmartDisposeClosureParameterDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.SmartDisposeClosureParameterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TabbedToolDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.TabbedToolDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TabbedToolOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.TabbedToolOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ToStringConceptFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToStringConceptFunction_BehaviorDescriptor" />
+    </file>
+    <file name="ToStringParameter_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToStringParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ToolActionPlace_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToolActionPlace_BehaviorDescriptor" />
+    </file>
+    <file name="ToolDeclaration_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToolDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ToolInstanceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToolInstanceExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ToolTab_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToolTab_BehaviorDescriptor" />
+    </file>
+    <file name="ToolType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToolType_BehaviorDescriptor" />
+    </file>
+    <file name="ToolbarCreator_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.ToolbarCreator_BehaviorDescriptor" />
+    </file>
+    <file name="UnpinTabOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.UnpinTabOperation_BehaviorDescriptor" />
+    </file>
+    <file name="UpdateBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.UpdateBlock_BehaviorDescriptor" />
+    </file>
+    <file name="UpdateGroupBlock_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.UpdateGroupBlock_BehaviorDescriptor" />
+    </file>
+    <file name="UpdateGroupFunction_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.plugin.behavior.UpdateGroupFunction_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1171743928471337190">

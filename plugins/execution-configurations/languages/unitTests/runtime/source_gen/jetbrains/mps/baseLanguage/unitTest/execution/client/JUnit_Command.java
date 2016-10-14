@@ -7,7 +7,6 @@ import com.intellij.execution.process.ProcessHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -15,9 +14,10 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
 import java.util.Set;
@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
@@ -34,8 +33,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class JUnit_Command {
   private String myDebuggerSettings_String;
@@ -76,11 +73,11 @@ public class JUnit_Command {
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
     }
-    Tuples._2<List<ITestNodeWrapper>, Tuples._3<String, List<String>, List<String>>> testsToRun = JUnit_Command.getTestsToRunWithParameters(tests);
-    if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
+    TestsWithParameters testsToRun = JUnit_Command.getTestsToRunWithParameters(tests);
+    if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun.getParameters().getClassPath()).union(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun.getTests()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun.getTests())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
   }
 
   public static IDebugger getDebugger() {
@@ -100,50 +97,50 @@ public class JUnit_Command {
     });
     return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
-  private static Tuples._2<List<ITestNodeWrapper>, Tuples._3<String, List<String>, List<String>>> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
-    final Wrappers._T<List<ITestNodeWrapper>> _tests = new Wrappers._T<List<ITestNodeWrapper>>(tests);
-    final Wrappers._T<Tuples._3<String, List<String>, List<String>>> runParams = new Wrappers._T<Tuples._3<String, List<String>, List<String>>>();
-    final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
-    final Wrappers._T<String> skipped = new Wrappers._T<String>();
-    _tests.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
+  protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
+  private static TestsWithParameters getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
+    tests = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it != null;
       }
     }).toListSequence();
-    if (ListSequence.fromList(_tests.value).isEmpty()) {
-      final Wrappers._T<Tuples._3<String, List<String>, List<String>>> defaultRunParameters = new Wrappers._T<Tuples._3<String, List<String>, List<String>>>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          defaultRunParameters.value = AbstractTestWrapper.getDefaultRunParameters();
-        }
-      });
-      return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), defaultRunParameters.value);
+    if (ListSequence.fromList(tests).isEmpty()) {
+      TestParameters defaultRunParameters;
+      defaultRunParameters = TestParameters.DEFAULT;
+      return new TestsWithParameters(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), defaultRunParameters);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        runParams.value = ListSequence.fromList(_tests.value).first().getTestRunParameters();
-        testsToRun.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
-          public boolean accept(ITestNodeWrapper it) {
-            return eq_ifael_a0a0a0a0a0a0b0a0a0a0g0q(it.getTestRunParameters(), runParams.value);
-          }
-        }).toListSequence();
-        skipped.value = IterableUtils.join(ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
-          public boolean accept(ITestNodeWrapper it) {
-            return neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a61(it.getTestRunParameters(), runParams.value);
-          }
-        }).select(new ISelector<ITestNodeWrapper, String>() {
-          public String select(ITestNodeWrapper it) {
-            return it.getName();
-          }
-        }), " ");
+    TestParameters runParams = JUnit_Command.getMaxParams(tests);
+    List<ITestNodeWrapper> testsToRun = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    List<ITestNodeWrapper> testsToSkip = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
+      TestParameters testRunParameters = test.getTestRunParameters();
+      if (runParams.comprises(testRunParameters)) {
+        ListSequence.fromList(testsToRun).addElement(test);
+      } else {
+        ListSequence.fromList(testsToSkip).addElement(test);
       }
-    });
-    if (isNotEmptyString(skipped.value)) {
+    }
+    String skipped = IterableUtils.join(ListSequence.fromList(testsToSkip).select(new ISelector<ITestNodeWrapper, String>() {
+      public String select(ITestNodeWrapper it) {
+        return it.getName();
+      }
+    }), " ");
+    if ((skipped != null && skipped.length() > 0)) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("All tests could not be executed together. Skipped " + skipped.value);
+        LOG.warn("All tests could not be executed together. Skipped: " + skipped);
       }
     }
-    return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(testsToRun.value, runParams.value);
+    return new TestsWithParameters(testsToRun, runParams);
+  }
+  private static TestParameters getMaxParams(List<ITestNodeWrapper> tests) {
+    TestParameters maxParams = ListSequence.fromList(tests).first().getTestRunParameters();
+    for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
+      TestParameters newRunParams = test.getTestRunParameters();
+      if (newRunParams.comprises(maxParams)) {
+        maxParams = newRunParams;
+      }
+    }
+    return maxParams;
   }
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
     final Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
@@ -155,13 +152,11 @@ public class JUnit_Command {
         }
       }
     });
-    List<String> classpath = SetSequence.fromSet(uniqueModules).translate(new ITranslator2<SModule, String>() {
-      public Iterable<String> translate(SModule it) {
-        return Java_Command.getClasspath(it);
-      }
-    }).toListSequence();
+    List<String> classpath = Java_Command.getClasspath(SetSequence.fromSet(uniqueModules).toListSequence().toGenericArray(SModule.class));
+    // fixme need this to allow user to start MPS inside the BTestCase 
     ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
     ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();
+
     return classpath;
   }
   private static List<String> collectFromLibFolder() {
@@ -220,7 +215,6 @@ public class JUnit_Command {
       }
     };
   }
-  protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
   private static String check_txeh3_a1a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
@@ -241,14 +235,5 @@ public class JUnit_Command {
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_ifael_a0a0a0a0a0a0b0a0a0a0g0q(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a61(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

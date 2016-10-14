@@ -17,6 +17,8 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -26,17 +28,17 @@ import java.util.function.Predicate;
 /**
  * @author simon
  */
-class InUsedLanguagesPredicate implements Predicate<SubstituteMenuItem> {
+public class InUsedLanguagesPredicate implements Predicate<SAbstractConcept> {
   private final SModel myModel;
   private final Collection<SLanguage> myUsedLanguages;
 
-  InUsedLanguagesPredicate(SModel model) {
+  public InUsedLanguagesPredicate(SModel model) {
     myModel = model;
-    myUsedLanguages = MenuUtil.getUsedLanguages(myModel);
+    myUsedLanguages = model == null ? null : MenuUtil.getUsedLanguages(myModel);
   }
 
   @Override
-  public boolean test(SubstituteMenuItem item) {
-    return myModel != null && myUsedLanguages.contains(item.getOutputConcept().getLanguage());
+  public boolean test(@Nullable SAbstractConcept concept) {
+    return concept == null || myModel == null || myUsedLanguages.contains(concept.getLanguage());
   }
 }

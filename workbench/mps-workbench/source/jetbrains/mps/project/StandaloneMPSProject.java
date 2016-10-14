@@ -18,21 +18,28 @@ package jetbrains.mps.project;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.MacroHelper.MacroNoHelper;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,15 +54,15 @@ import java.util.List;
  * evgeny, 11/10/11
  */
 @State(
-    name = "MPSProject",
-    storages = @Storage("modules.xml")
+  name = "MPSProject",
+  storages = @Storage("modules.xml")
 )
 public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
   @SuppressWarnings("UnusedParameters")
-  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
-    super(project);
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused) {
+    super(project, unused);
   }
 
   @Override
@@ -63,16 +70,13 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     if (getProject().isDefault()) {
       return null;
     }
-    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<Element>() {
-      @Override
-      public Element compute() {
-        ProjectDescriptor descriptor = getProjectDescriptor();
+    return new ModelAccessHelper(getModelAccess()).runReadAction(() -> {
+      ProjectDescriptor descriptor = getProjectDescriptor();
 
-        String presentableUrl = getProject().getPresentableUrl();
-        assert presentableUrl != null; // by contract the project is default <=> url == null
-        File projectFile = new File(presentableUrl);
-        return new ProjectDescriptorPersistence(projectFile).saveProjectDescriptor(descriptor);
-      }
+      String presentableUrl = getProject().getPresentableUrl();
+      assert presentableUrl != null; // by contract the project is default <=> url == null
+      File projectFile = new File(presentableUrl);
+      return new ProjectDescriptorPersistence(projectFile, new MacroNoHelper()).save(descriptor);
     });
   }
 
@@ -105,20 +109,6 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     dispose();
   }
 
-
-  @Override
-  public void projectOpened() {
-    LOG.info("Project '" + getName() + "' is opened");
-    update();
-    super.projectOpened();
-  }
-
-  @Override
-  public void projectClosed() {
-    LOG.info("Project '" + getName() + "' is closing");
-    super.projectClosed();
-  }
-
   @NotNull
   public List<ModulePath> getAllModulePaths() {
     return Collections.unmodifiableList(myProjectDescriptor.getModulePaths());
@@ -140,7 +130,24 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   // AP fixme : public update exposes the project internals too much (as it looks for me)
   public final void update() {
-    super.update();
+    ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+    long beginTime = System.nanoTime();
+    LOG.info("Updating " + this);
+    try {
+      if (progressIndicator != null) {
+        progressIndicator.setText2("Loading Project Modules");
+      }
+      super.update();
+      if (progressIndicator != null) {
+        progressIndicator.setText2("");
+      }
+    } finally {
+      LOG.info(String.format("Updating %s took %.3f s", this, (System.nanoTime() - beginTime) / 1e9));
+    }
+  }
+
+  public static StandaloneMPSProject open(@NotNull String projectPath) throws JDOMException, InvalidDataException, IOException {
+    return (StandaloneMPSProject) MPSProject.open(projectPath);
   }
 
   // AP: fixme these two methods are working with the UI virtual paths; I want them to be extracted somewhere else
@@ -159,7 +166,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     // TODO: remove duplication of ModulePath in ProjectBase.myModuleToPathMap to avoid handling both lists
     ModulePath modulePath = getPath(module);
     if (modulePath != null) {
-      if(myProjectDescriptor.contains(modulePath)) {
+      if (myProjectDescriptor.contains(modulePath)) {
         myProjectDescriptor.removeModulePath(modulePath);
       }
       modulePath.setVirtualFolder(newFolder);

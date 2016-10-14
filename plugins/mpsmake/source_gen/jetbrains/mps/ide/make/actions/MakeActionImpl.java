@@ -5,19 +5,20 @@ package jetbrains.mps.ide.make.actions;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.make.IMakeService;
 import java.util.List;
 import jetbrains.mps.make.resources.IResource;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
-import jetbrains.mps.make.IMakeService;
 
 public class MakeActionImpl {
   private MakeActionParameters myParams;
@@ -37,29 +38,47 @@ public class MakeActionImpl {
     // save all before launching make 
     new SaveRepositoryCommand(project.getRepository()).execute();
 
-    // empty collection is fine, it's up to make service to report there's nothing to do (odd, but fine for now. Action could have do that instead) 
-    final List<IResource> inputRes = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
-      public List<IResource> compute() {
-        List<IResource> rv = Sequence.fromIterable(myParams.collectInput()).toListSequence();
-        List<SModel> models = ListSequence.fromList(rv).translate(new ITranslator2<IResource, SModel>() {
-          public Iterable<SModel> translate(IResource it) {
-            return ((MResource) it).models();
-          }
-        }).toListSequence();
-        if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
-          return rv;
-        }
-        return null;
-      }
-    });
-
-    if (inputRes == null) {
-      return;
-    }
 
     MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), myParams.isCleanMake());
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      IMakeService.INSTANCE.get().make(session, inputRes);
+      // empty collection is fine, it's up to make service to report there's nothing to do (odd, but fine for now. Action could have do that instead) 
+      // 
+      // ModelValidatorAdapter needs to be refactored not to mix model checking code with UI, which might request  
+      // write access e.g. on focus lost and eventually lead to 'write from read' issue like 
+      // FIXME https://youtrack.jetbrains.com/issue/MPS-24020. Proper fix is to split model check into read, and results reporting into EDT. 
+      // For 3.4 RC, we decided to go with a hack and let SModel instances cross model read boundary 
+      List<IResource> inputRes = null;
+      final ArrayList<SModel> models = new ArrayList<SModel>();
+      try {
+        inputRes = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
+          public List<IResource> compute() {
+            List<IResource> rv = Sequence.fromIterable(myParams.collectInput()).toListSequence();
+            models.addAll(ListSequence.fromList(rv).translate(new ITranslator2<IResource, SModel>() {
+              public Iterable<SModel> translate(IResource it) {
+                return ((MResource) it).models();
+              }
+            }).toListSequence());
+            return rv;
+          }
+        });
+        if (!(new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models))) {
+          inputRes = null;
+          // fall-through to close make session 
+        }
+
+
+      } catch (RuntimeException e) {
+        IMakeService.INSTANCE.get().closeSession(session);
+        throw e;
+      }
+
+      if (inputRes != null) {
+        IMakeService.INSTANCE.get().make(session, inputRes);
+
+      } else {
+        IMakeService.INSTANCE.get().closeSession(session);
+      }
+
     }
   }
 }

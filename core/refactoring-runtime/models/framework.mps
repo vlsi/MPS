@@ -3806,6 +3806,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1KbO_aWRFk2" role="3cqZAp">
+          <node concept="2OqwBi" id="1KbO_aWRFqb" role="3clFbG">
+            <node concept="37vLTw" id="1KbO_aWRFk0" role="2Oq$k0">
+              <ref role="3cqZAo" node="5uIylN7YCWu" resolve="result" />
+            </node>
+            <node concept="liA8E" id="1KbO_aWRF_k" role="2OqNvi">
+              <ref role="37wK5l" node="4a0HOMfn9xA" resolve="setCurrentScope" />
+              <node concept="2OqwBi" id="1KbO_aWRFIK" role="37wK5m">
+                <node concept="37vLTw" id="1KbO_aWRFBm" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6nthb2JwpRF" resolve="project" />
+                </node>
+                <node concept="liA8E" id="1KbO_aWRFW$" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="5uIylN7YCX9" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTvzy" role="3cqZAk">
             <ref role="3cqZAo" node="5uIylN7YCWu" resolve="result" />
@@ -4101,7 +4119,7 @@
                 <property role="TrG5h" value="parent" />
                 <node concept="2OqwBi" id="6KUHvCV8$WO" role="33vP2m">
                   <node concept="3TrEf2" id="6KUHvCV8$WS" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                    <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTyHc" role="2Oq$k0">
                     <ref role="3cqZAo" node="4a0HOMfn9z$" resolve="conceptDeclaration" />
@@ -4138,7 +4156,7 @@
             <node concept="1DcWWT" id="4a0HOMfn9zX" role="3cqZAp">
               <node concept="2OqwBi" id="6KUHvCV8$WZ" role="1DdaDG">
                 <node concept="3Tsc0h" id="6KUHvCV8$X3" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpce:h0Pzm$Y" />
+                  <ref role="3TtcxE" to="tpce:h0Pzm$Y" resolve="implements" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagT$w$" role="2Oq$k0">
                   <ref role="3cqZAo" node="4a0HOMfn9z$" resolve="conceptDeclaration" />
@@ -4151,7 +4169,7 @@
                       <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                       <node concept="2OqwBi" id="6KUHvCV8$X4" role="37wK5m">
                         <node concept="3TrEf2" id="6KUHvCV8$X8" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpce:h0PrY0D" />
+                          <ref role="3Tt5mk" to="tpce:h0PrY0D" resolve="intfc" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTwwf" role="2Oq$k0">
                           <ref role="3cqZAo" node="4a0HOMfn9$1" resolve="interfaceConceptReference" />
@@ -4202,7 +4220,7 @@
             <node concept="1DcWWT" id="4a0HOMfn9$s" role="3cqZAp">
               <node concept="2OqwBi" id="6KUHvCV8$Xt" role="1DdaDG">
                 <node concept="3Tsc0h" id="6KUHvCV8$Xx" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpce:h0PrDRO" />
+                  <ref role="3TtcxE" to="tpce:h0PrDRO" resolve="extends" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTuse" role="2Oq$k0">
                   <ref role="3cqZAo" node="4a0HOMfn9$l" resolve="interfaceConceptDeclaration" />
@@ -4224,7 +4242,7 @@
                       <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                       <node concept="2OqwBi" id="6KUHvCV8$Xy" role="37wK5m">
                         <node concept="3TrEf2" id="6KUHvCV8$XA" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpce:h0PrY0D" />
+                          <ref role="3Tt5mk" to="tpce:h0PrY0D" resolve="intfc" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagT_Sq" role="2Oq$k0">
                           <ref role="3cqZAo" node="4a0HOMfn9$w" resolve="interfaceConceptReference" />

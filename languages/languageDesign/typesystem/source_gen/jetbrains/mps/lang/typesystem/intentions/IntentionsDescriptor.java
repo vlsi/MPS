@@ -11,7 +11,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
@@ -27,36 +29,31 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            // Concept: AbstractInequationStatement 
-            intentions = new IntentionFactory[2];
-            intentions[0] = new FlipInequality_Intention();
-            intentions[1] = new MakeInequalityCheckOnly_Intention();
-          }
-          break;
-        case 1:
-          if (true) {
-            // Concept: MessageStatement 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new CreateTypesystemIntention_Intention();
-          }
-          break;
-        case 2:
-          if (true) {
-            // Concept: MultipleForeachLoop 
-            intentions = new IntentionFactory[1];
-            intentions[0] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_hphjzv_d0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          // Concept: AbstractInequationStatement 
+          intentions = new IntentionFactory[2];
+          intentions[0] = new FlipInequality_Intention();
+          intentions[1] = new MakeInequalityCheckOnly_Intention();
+        }
+        break;
+      case 1:
+        if (true) {
+          // Concept: MessageStatement 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new CreateTypesystemIntention_Intention();
+        }
+        break;
+      case 2:
+        if (true) {
+          // Concept: MultipleForeachLoop 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
+        }
+        break;
+      default:
     }
     myCached.put(concept, intentions);
     return Arrays.asList(intentions);
@@ -72,13 +69,5 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[3] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
     return Arrays.asList(rv);
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"));
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL)).seal();
 }

@@ -16,7 +16,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.build.mps.util.ModuleFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.mps.util.ModulePlugins;
@@ -93,20 +93,20 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_6102524510012299620(final SourceSubstituteMacroNodesContext _context) {
     return ModuleFinder.findModules(Sequence.<SNode>singleton(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))), _context, _context.getNode());
   }
-  public static Object insertMacro_varValue_3919210978214839183(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3919210978214839183(final TemplateVarContext _context) {
     return Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:closure")).getAllModules()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(DependenciesHelper.getOriginalNode(it, _context), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
       }
     });
   }
-  public static Object insertMacro_varValue_3919210978213957549(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3919210978213957549(final TemplateVarContext _context) {
     return new MPSModulesClosure(Sequence.<SNode>singleton(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))), new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).designtimeClosure();
   }
-  public static Object insertMacro_varValue_3919210978213965147(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3919210978213965147(final TemplateVarContext _context) {
     return new ModulePlugins(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), _context).getPluginPaths();
   }
-  public static Object insertMacro_varValue_3919210978214780329(final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_3919210978214780329(final TemplateVarContext _context) {
     return SNodeOperations.as(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
   }
   private static boolean isNotEmptyString(String str) {

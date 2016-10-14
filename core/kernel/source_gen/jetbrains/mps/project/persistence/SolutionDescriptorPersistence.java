@@ -14,10 +14,10 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.log4j.Level;
-import java.io.OutputStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
+import java.io.OutputStream;
 
 public class SolutionDescriptorPersistence {
   public static final String SOURCE_PATH = "sourcePath";
@@ -100,6 +100,7 @@ public class SolutionDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
+  protected static Logger LOG = LogManager.getLogger(SolutionDescriptorPersistence.class);
   public static void saveSolutionDescriptor(IFile file, SolutionDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -160,5 +161,4 @@ public class SolutionDescriptorPersistence {
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
-  protected static Logger LOG = LogManager.getLogger(SolutionDescriptorPersistence.class);
 }

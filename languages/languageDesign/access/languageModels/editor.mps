@@ -2,7 +2,7 @@
 <model ref="r:f3e9fe62-b7bf-45b5-802d-9490929b754a(jetbrains.mps.lang.access.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="qff7" ref="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" />
@@ -75,7 +75,7 @@
       <node concept="3F1sOY" id="1eZSuKdVokF" role="3EZMnx">
         <property role="39s7Ar" value="true" />
         <property role="1$x2rV" value="global repository" />
-        <ref role="1NtTu8" to="qff7:1eZSuKdVoku" />
+        <ref role="1NtTu8" to="qff7:1eZSuKdVoku" resolve="repo" />
       </node>
       <node concept="3F0ifn" id="7Mb2akafE8t" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -85,7 +85,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="7Mb2akafE8v" role="3EZMnx">
-        <ref role="1NtTu8" to="qff7:7Mb2akafE8b" />
+        <ref role="1NtTu8" to="qff7:7Mb2akafE8b" resolve="commandClosureLiteral" />
         <node concept="lj46D" id="7Mb2akafE8w" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -109,7 +109,7 @@
     <node concept="3EZMnI" id="7Mb2akafE8A" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="7Mb2akafE8B" role="3EZMnx">
-        <ref role="1NtTu8" to="tp2c:htbW58J" />
+        <ref role="1NtTu8" to="tp2c:htbW58J" resolve="body" />
       </node>
       <node concept="l2Vlx" id="7Mb2akafE8C" role="2iSdaV" />
     </node>

@@ -33,9 +33,9 @@ set ACC=
 FOR /F "delims=" %%i in ('TYPE "%MPS_VM_OPTIONS%"') DO call :parse_vmoptions "%%i"
 set JVM_ARGS=%ACC%
 :: 32 bit
-::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5021
+::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5031
 :: 64 bit
-::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5021
+::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5031
 
 set CLASSPATH=%PROJECT_HOME%lib\branding.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\mps-boot.jar

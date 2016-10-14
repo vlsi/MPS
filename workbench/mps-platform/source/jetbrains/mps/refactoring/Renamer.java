@@ -18,49 +18,47 @@ package jetbrains.mps.refactoring;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Renamer {
-  public static void renameModule(SModule module, String newName) {
-    assert module instanceof AbstractModule;
+/**
+ * This code must be located in module and model classes
+ */
+@ToRemove(version = 3.5)
+public final class Renamer {
+  public static void renameModule(@NotNull AbstractModule module, String newName) {
     module.getRepository().saveAll();
-    ((AbstractModule) module).rename(newName);
+    module.rename(newName);
     updateModelAndModuleReferences(module.getRepository());
     module.getRepository().saveAll();
   }
 
-  public static void renameModel(EditableSModel model, String newName) {
+  public static void renameModel(@NotNull EditableSModel model, String newName) {
     model.getRepository().saveAll();
     model.rename(newName, model.getSource() instanceof FileDataSource);
     updateModelAndModuleReferences(model.getRepository());
     model.getRepository().saveAll();
   }
 
-  public static void updateModelAndModuleReferences(SRepository repo) {
+  public static void updateModelAndModuleReferences(@NotNull SRepository repo) {
     repo.getModelAccess().checkWriteAccess();
 
     for (SModule m : repo.getModules()) {
-      if (m.isReadOnly() || !(m instanceof AbstractModule)) {
-        continue;
-      }
+      if (m instanceof AbstractModule && !m.isReadOnly()){
+        AbstractModule module = (AbstractModule) m;
+        module.updateExternalReferences();
 
-      AbstractModule module = (AbstractModule) m;
-      module.updateExternalReferences();
-
-      for (SModel sm : m.getModels()) {
-        if (sm.isReadOnly()) {
-          continue;
-        }
-
-        final SModelInternal model = (SModelInternal) sm;
-        if ((sm instanceof EditableSModel) && model.updateExternalReferences(repo)) {
-          ((EditableSModel) sm).setChanged(true);
+        for (SModel sm : m.getModels()) {
+          if (!sm.isReadOnly()) {
+            final SModelInternal model = (SModelInternal) sm;
+            if ((sm instanceof EditableSModel) && model.updateExternalReferences(repo)) {
+              ((EditableSModel) sm).setChanged(true);
+            }
+          }
         }
       }
     }

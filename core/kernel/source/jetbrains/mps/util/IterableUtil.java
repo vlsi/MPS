@@ -141,18 +141,18 @@ public class IterableUtil {
     };
   }
 
-  public static <T> T get(@Nullable Iterable<T> data, int index) {
+  public static <T> T get(@Nullable Iterable<? extends T> data, int index) {
     if (data == null) {
       throw new IndexOutOfBoundsException();
     }
-    Iterator<T> it = data.iterator();
+    Iterator<? extends T> it = data.iterator();
     for (int i = 0; i < index; i++) {
       it.next();
     }
     return it.next();
   }
 
-  public static <T> int indexOf(Iterable<T> data, T element) {
+  public static <T> int indexOf(Iterable<? extends T> data, T element) {
     if (data == null) {
       return -1;
     }

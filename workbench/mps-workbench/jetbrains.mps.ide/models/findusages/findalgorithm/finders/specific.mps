@@ -31,6 +31,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -82,6 +83,7 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -97,12 +99,15 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
-      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
+      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
+        <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
+      </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
@@ -246,13 +251,29 @@
   <node concept="312cEu" id="6hha$XdHaWh">
     <property role="TrG5h" value="LanguageConceptsUsagesFinder" />
     <node concept="3Tm1VV" id="6hha$XdHaWi" role="1B3o_S" />
-    <node concept="3uibUv" id="6hha$XdHbls" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="3clFbW" id="6hha$XdHaWk" role="jymVt">
       <node concept="3Tm1VV" id="6hha$XdHaWl" role="1B3o_S" />
       <node concept="3cqZAl" id="6hha$XdHaWm" role="3clF45" />
       <node concept="3clFbS" id="6hha$XdHaWn" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofBgr" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofBgs" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofBgt" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofBg_" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofBgA" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofBBA" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofBB_" role="3clFbG">
+            <property role="Xl_RC" value="Language Concepts' Usages" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="6hha$XdHaWo" role="jymVt">
       <property role="TrG5h" value="find" />
@@ -870,13 +891,13 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="3uibUv" id="1Fz6CCofBaQ" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="6hha$XdHaZ8">
     <property role="TrG5h" value="AspectMethodsFinder" />
     <node concept="3Tm1VV" id="6hha$XdHaZ9" role="1B3o_S" />
-    <node concept="3uibUv" id="6hha$XdHblq" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="3clFbW" id="6hha$XdHb04" role="jymVt">
       <node concept="3Tm1VV" id="6hha$XdHb05" role="1B3o_S" />
       <node concept="3cqZAl" id="6hha$XdHb06" role="3clF45" />
@@ -1225,7 +1246,7 @@
       <node concept="3clFbS" id="6hha$XdHb1X" role="3clF47">
         <node concept="3cpWs6" id="6hha$XdHb1Y" role="3cqZAp">
           <node concept="Xl_RD" id="6hha$XdHb1Z" role="3cqZAk">
-            <property role="Xl_RC" value="aspect methods" />
+            <property role="Xl_RC" value="Aspect Methods" />
           </node>
         </node>
       </node>
@@ -1551,13 +1572,13 @@
         <node concept="3clFbS" id="6hha$XdHb3c" role="3clF47" />
       </node>
     </node>
+    <node concept="3uibUv" id="1Fz6CCoewya" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="6hha$XdHb3A">
     <property role="TrG5h" value="ConstantFinder" />
     <node concept="3Tm1VV" id="6hha$XdHb3B" role="1B3o_S" />
-    <node concept="3uibUv" id="6hha$XdHblr" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="312cEg" id="6hha$XdHb4x" role="jymVt">
       <property role="TrG5h" value="myResults" />
       <node concept="3uibUv" id="6hha$XdHb4y" role="1tU5fm">
@@ -1620,18 +1641,18 @@
       <node concept="3clFbS" id="6hha$XdHb4U" role="3clF47">
         <node concept="3cpWs6" id="6hha$XdHb4V" role="3cqZAp">
           <node concept="Xl_RD" id="6hha$XdHb4W" role="3cqZAk">
-            <property role="Xl_RC" value="constant finder" />
+            <property role="Xl_RC" value="Specific Usages" />
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="1Fz6CCofpIK" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
     </node>
   </node>
   <node concept="312cEu" id="5gewV25wDe3">
     <property role="TrG5h" value="MappingConfigFinder" />
     <node concept="3Tm1VV" id="5gewV25wDe4" role="1B3o_S" />
-    <node concept="3uibUv" id="5gewV25wJ5X" role="EKbjA">
-      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-    </node>
     <node concept="312cEg" id="5gewV25wDe6" role="jymVt">
       <property role="TrG5h" value="myGenerator" />
       <node concept="3uibUv" id="5gewV25wDe7" role="1tU5fm">
@@ -1680,6 +1701,25 @@
             <node concept="37vLTw" id="2BHiRxgmyxa" role="37vLTx">
               <ref role="3cqZAo" node="5gewV25wDeh" resolve="nodeToFindUsages" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1Fz6CCofVe$" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDescription" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Fz6CCofVe_" role="1B3o_S" />
+      <node concept="3uibUv" id="1Fz6CCofVeA" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="2AHcQZ" id="1Fz6CCofVeI" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="1Fz6CCofVeJ" role="3clF47">
+        <node concept="3clFbF" id="1Fz6CCofWfD" role="3cqZAp">
+          <node concept="Xl_RD" id="1Fz6CCofWfC" role="3clFbG">
+            <property role="Xl_RC" value="Mapping Configs" />
           </node>
         </node>
       </node>
@@ -1886,7 +1926,7 @@
                       <ref role="3cqZAo" node="5gewV25wDeX" resolve="mappingConfig" />
                     </node>
                     <node concept="3Tsc0h" id="5gewV25wJsJ" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpf8:gYVS0kp" />
+                      <ref role="3TtcxE" to="tpf8:gYVS0kp" resolve="createRootRule" />
                     </node>
                   </node>
                 </node>
@@ -2104,6 +2144,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="1Fz6CCofUnJ" role="1zkMxy">
+      <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
     </node>
   </node>
 </model>

@@ -147,7 +147,7 @@
   </registry>
   <node concept="312cEu" id="1$FrpHy4ud$">
     <property role="3GE5qa" value="" />
-    <property role="TrG5h" value="TestLightRunState" />
+    <property role="TrG5h" value="TestInProcessRunState" />
     <node concept="312cEg" id="1$FrpHy4ud_" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -390,7 +390,7 @@
         <property role="TrG5h" value="another" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="1$FrpHy4ueD" role="1tU5fm">
-          <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
+          <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestInProcessRunState" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4ueE" role="3clF47">
@@ -431,7 +431,7 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
         <node concept="3uibUv" id="1$FrpHy4ueT" role="1tU5fm">
-          <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
+          <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestInProcessRunState" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4ueU" role="3clF47">
@@ -598,12 +598,11 @@
       <node concept="3Tm1VV" id="1$FrpHy4ufy" role="1B3o_S" />
       <node concept="10P_77" id="1$FrpHy4ufz" role="3clF45" />
     </node>
-    <node concept="2tJIrI" id="1$FrpHy4uf$" role="jymVt" />
     <node concept="3Tm1VV" id="1$FrpHy4uf_" role="1B3o_S" />
     <node concept="3uibUv" id="1$FrpHy4ufA" role="EKbjA">
       <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
       <node concept="3uibUv" id="1$FrpHy4ufB" role="11_B2D">
-        <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
+        <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestInProcessRunState" />
       </node>
     </node>
   </node>

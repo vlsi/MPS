@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.FacetDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression__BehaviorDescriptor" />
@@ -13,11 +12,19 @@
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ParametersDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.TargetDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.TargetReferenceExpression__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" file="ExtendsFacetReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" file="FacetDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.FacetDeclaration__BehaviorDescriptor" file="FacetDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -57,6 +64,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.FacetJavaClassExpression_BehaviorDescriptor" file="FacetJavaClassExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" file="FacetReferenceExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.FacetReferenceExpression__BehaviorDescriptor" file="FacetReferenceExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -78,6 +93,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.FacetReference_BehaviorDescriptor" file="FacetReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" file="ForeignParametersComponentExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression__BehaviorDescriptor" file="ForeignParametersComponentExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -101,6 +124,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" file="ForeignParametersExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" file="IFacet_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.IFacet__BehaviorDescriptor" file="IFacet__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -117,6 +147,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" file="IPropertyExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" file="LocalParametersComponentExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression__BehaviorDescriptor" file="LocalParametersComponentExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -140,6 +177,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.LocalParametersExpression_BehaviorDescriptor" file="LocalParametersExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.NamedFacetReference_BehaviorDescriptor" file="NamedFacetReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ParametersDeclaration_BehaviorDescriptor" file="ParametersDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.ParametersDeclaration__BehaviorDescriptor" file="ParametersDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -161,6 +210,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" file="RelatedFacetReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ResourceClassifierType_BehaviorDescriptor" file="ResourceClassifierType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" file="ResourceSpecificPropertiesExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ResourceTypeDeclaration_BehaviorDescriptor" file="ResourceTypeDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" file="TargetDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.TargetDeclaration__BehaviorDescriptor" file="TargetDeclaration__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -189,6 +258,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.TargetDependency_BehaviorDescriptor" file="TargetDependency_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_BehaviorDescriptor" file="TargetReferenceExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.TargetReferenceExpression__BehaviorDescriptor" file="TargetReferenceExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

@@ -12,137 +12,76 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
 import java.util.Arrays;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new AbstractPrintExpression_Editor());
-          }
-          break;
-        case 1:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
-          }
-          break;
-        case 2:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new BLExpression_Editor());
-          }
-          break;
-        case 3:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
-          }
-          break;
-        case 4:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ConsoleRoot_Editor());
-          }
-          break;
-        case 5:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
-          }
-          break;
-        case 6:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HelpCommand_Editor());
-          }
-          break;
-        case 7:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new HelpConceptReference_Editor());
-          }
-          break;
-        case 8:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new History_Editor());
-          }
-          break;
-        case 9:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
-          }
-          break;
-        case 10:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
-          }
-          break;
-        case 11:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
-          }
-          break;
-        case 12:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NewLineResponseItem_Editor());
-          }
-          break;
-        case 13:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new NodeResponseItem_Editor());
-          }
-          break;
-        case 14:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new OutputConsoleRoot_Editor());
-          }
-          break;
-        case 15:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
-          }
-          break;
-        case 16:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new Response_Editor());
-          }
-          break;
-        case 17:
-          if (true) {
-            return Collections.<ConceptEditor>singletonList(new TextResponseItem_Editor());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0a.index(cncpt)) {
+      case 0:
+        return Collections.<ConceptEditor>singletonList(new AbstractPrintExpression_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new BLExpression_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new ConsoleRoot_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new HelpCommand_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new HelpConceptReference_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new History_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
+      case 12:
+        return Collections.<ConceptEditor>singletonList(new NewLineResponseItem_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new NodeResponseItem_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new OutputConsoleRoot_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new Response_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new TextResponseItem_Editor());
+      default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
   @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
-    {
-      SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      Integer preIndex = indices_xbvbvu_a0c.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            if ("jetbrains.mps.console.base.editor.ClickableEditorComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new ClickableEditorComponent());
-            }
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (index_xbvbvu_a0c.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("jetbrains.mps.console.base.editor.ClickableEditorComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new ClickableEditorComponent());
           }
-          break;
-        case 1:
-          if (true) {
-            if ("jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent".equals(editorComponentId)) {
-              return Collections.<ConceptEditorComponent>singletonList(new INodeWithReference_EditorComponent());
-            }
+        }
+        break;
+      case 1:
+        if (true) {
+          if ("jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new INodeWithReference_EditorComponent());
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
@@ -150,56 +89,53 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredDefaultTransformationMenus(SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_xbvbvu_a0e.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return Collections.<TransformationMenu>singletonList(new BLCommand_TransformationMenu());
-          }
-          break;
-        default:
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0e.index(cncpt)) {
+      case 0:
+        return Collections.<TransformationMenu>singletonList(new BLCommand_TransformationMenu());
+      default:
     }
     return Collections.<TransformationMenu>emptyList();
   }
   @NotNull
   @Override
   public Collection<TransformationMenu> getDeclaredNamedTransformationMenus(NamedMenuId menuId) {
-    {
-      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
-      Integer preIndex = indices_xbvbvu_a0f.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3a0a5, menuId.getFqName())) {
-              case 0:
-                return Arrays.asList(new TransformationMenu[]{new CommandHolder_Empty_ContextAssistantMenu()});
-              default:
-            }
+    SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0f.index(cncpt)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a5, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new TransformationMenu[]{new CommandHolder_EmptyCell_TransformationMenu()});
+            default:
           }
-          break;
-        default:
-      }
+        }
+        break;
+      default:
     }
 
     return Collections.<TransformationMenu>emptyList();
   }
-
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (index_xbvbvu_a0g.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new Command_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new PastedNodeReference_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new Response_SubstituteMenu());
+      default:
     }
-    return res;
+    return Collections.<SubstituteMenu>emptyList();
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, "jetbrains.mps.console.base.structure.AbstractPrintExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, "jetbrains.mps.console.base.structure.ConsoleRoot"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, "jetbrains.mps.console.base.structure.HelpCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, "jetbrains.mps.console.base.structure.HelpConceptReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, "jetbrains.mps.console.base.structure.History"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, "jetbrains.mps.console.base.structure.IClickable"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L, "jetbrains.mps.console.base.structure.InterpretedCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35d30L, "jetbrains.mps.console.base.structure.NewLineResponseItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, "jetbrains.mps.console.base.structure.NodeResponseItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x131ec6f2097ff75fL, "jetbrains.mps.console.base.structure.OutputConsoleRoot"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, "jetbrains.mps.console.base.structure.Response"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, "jetbrains.mps.console.base.structure.TextResponseItem"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, "jetbrains.mps.console.base.structure.IClickable"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"));
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"));
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3a0a5 = new String[]{"jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu"};
+
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35d30L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x131ec6f2097ff75fL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L)).seal();
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.console.base.editor.CommandHolder_EmptyCell_TransformationMenu"};
 }

@@ -4,12 +4,12 @@ package jetbrains.mps.ide.icons;
 
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.io.InputStream;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * 
@@ -27,6 +27,7 @@ public class String2IconResourceAdapter_Deprecated extends IconResource {
   public boolean isAlreadyReloaded() {
     return false;
   }
+  protected static Logger LOG = LogManager.getLogger(String2IconResourceAdapter_Deprecated.class);
   @Override
   public InputStream getResource() {
     if (myIcon == null) {
@@ -56,5 +57,4 @@ public class String2IconResourceAdapter_Deprecated extends IconResource {
   public int hashCode() {
     return myIcon.hashCode();
   }
-  protected static Logger LOG = LogManager.getLogger(String2IconResourceAdapter_Deprecated.class);
 }

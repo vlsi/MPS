@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -62,7 +63,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private List<String> parents;
   private List<SConceptId> parentsIds;
 
-  private Set<String> ancestors;
   private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> myProperties;
   private Map<String, PropertyDescriptor> myPropertiesByName;
@@ -106,8 +106,11 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         // and might query concept descriptor we are trying to initialize right now, which is not what we would like to encounter.
         isFinal = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_final));
         isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
-        isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
+        myIsRootable = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
         helpURL = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_helpURL);
+        if (helpURL == null) {
+          helpURL = "";
+        }
 
         conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
         if (conceptAlias == null) {
@@ -115,6 +118,9 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
 
         shortDescription = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptShortDescription);
+        if (shortDescription == null) {
+          shortDescription = "";
+        }
 
         // scope
         if (isInterface) {
@@ -245,12 +251,9 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
       // ancestors
       ancestorsIds = new HashSet<SConceptId>(parentsIds);
-      ancestors = new HashSet<String>(parents);
       ancestorsIds.add(myId);
-      ancestors.add(myQualifiedName);
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
-        ancestors.addAll(parentDescriptor.getAncestorsNames());
       }
 
       // properties
@@ -261,9 +264,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       propertiesByName.putAll(directPropertiesByName);
 
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-        for (SPropertyId pid : parentDescriptor.getPropertyIds()) {
-          final PropertyDescriptor pd = parentDescriptor.getPropertyDescriptor(pid);
-          propertiesByIds.put(pid, pd);
+        for (PropertyDescriptor pd : parentDescriptor.getPropertyDescriptors()) {
+          propertiesByIds.put(pd.getId(), pd);
           propertiesByName.put(pd.getName(), pd);
         }
       }
@@ -279,9 +281,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       referencesByName.putAll(directReferencesByName);
 
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-        for (SReferenceLinkId rid : parentDescriptor.getReferenceIds()) {
-          final ReferenceDescriptor rd = parentDescriptor.getRefDescriptor(rid);
-          referencesByIds.put(rid, rd);
+        for (ReferenceDescriptor rd : parentDescriptor.getReferenceDescriptors()) {
+          referencesByIds.put(rd.getId(), rd);
           referencesByName.put(rd.getName(), rd);
         }
       }
@@ -297,9 +298,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       linksByName.putAll(directLinksByName);
 
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-        for (SContainmentLinkId lid : parentDescriptor.getLinkIds()) {
-          final LinkDescriptor ld = parentDescriptor.getLinkDescriptor(lid);
-          linksByIds.put(lid, ld);
+        for (LinkDescriptor ld : parentDescriptor.getLinkDescriptors()) {
+          linksByIds.put(ld.getId(), ld);
           linksByName.put(ld.getName(), ld);
         }
       }
@@ -342,17 +342,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public StaticScope getStaticScope() {
     return staticScope;
-  }
-
-  @Override
-  public List<String> getParentsNames() {
-    return parents;
-  }
-
-  @Override
-  public Set<String> getAncestorsNames() {
-    init();
-    return ancestors;
   }
 
   @Override
@@ -418,6 +407,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public Collection<PropertyDescriptor> getPropertyDescriptors() {
+    init();
+    return myProperties.values();
+  }
+
+  @Override
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
     init();
     return myProperties.get(id);
@@ -448,9 +443,21 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public Collection<LinkDescriptor> getLinkDescriptors() {
+    init();
+    return myLinks.values();
+  }
+
+  @Override
   public Set<SReferenceLinkId> getReferenceIds() {
     init();
     return myReferences.keySet();
+  }
+
+  @Override
+  public Collection<ReferenceDescriptor> getReferenceDescriptors() {
+    init();
+    return myReferences.values();
   }
 
   @Override

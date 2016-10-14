@@ -2,11 +2,11 @@
 <model ref="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -216,7 +216,7 @@
                 <ref role="3cqZAo" node="hzF4gId" resolve="result" />
               </node>
               <node concept="3TrEf2" id="hzF4lvH" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp41:hzF2SsG" />
+                <ref role="3Tt5mk" to="tp41:hzF2SsG" resolve="emitStatement" />
               </node>
             </node>
             <node concept="2oxUTD" id="hzF4lTp" role="2OqNvi">
@@ -273,7 +273,7 @@
             <node concept="2OqwBi" id="3nqUySdh$ww" role="2Oq$k0">
               <node concept="2Sf5sV" id="3nqUySdhxJ2" role="2Oq$k0" />
               <node concept="3Tsc0h" id="3nqUySdh$Go" role="2OqNvi">
-                <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
+                <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" resolve="modes" />
               </node>
             </node>
             <node concept="WFELt" id="4nuJlNnV$P4" role="2OqNvi" />
@@ -288,7 +288,7 @@
             <node concept="2OqwBi" id="3nqUySdhtza" role="2Oq$k0">
               <node concept="2Sf5sV" id="3nqUySdhtm$" role="2Oq$k0" />
               <node concept="3Tsc0h" id="3nqUySdhtPU" role="2OqNvi">
-                <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" />
+                <ref role="3TtcxE" to="tp41:6UdHCtZO4VV" resolve="modes" />
               </node>
             </node>
             <node concept="1v1jN8" id="3DWy1GwaCER" role="2OqNvi" />

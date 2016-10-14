@@ -70,6 +70,12 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
     return result;
   }
 
+  /**
+   *
+   * @param repository FIXME in fact, MPR is sort of RT API, and as such doesn't need SRepository (SRepository would be vital for
+   *                   design-time modules, while deployed modules should have this information generated). However, as long as our
+   *                   generators are mostly interpreted, we need to resolve references first to figure out proper/actual name of the referenced MC
+   */
   public String asString(SRepository repository) {
     String left = myLeft == null ? "???" : myLeft.asString(repository);
     String right = myRight == null ? "???" : myRight.asString(repository);

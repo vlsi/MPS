@@ -40,6 +40,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -61,6 +62,10 @@ public class ModelCheckerViewer extends JPanel {
   private JButton myFixButton;
   private UsagesView.RerunAction myCheckAction;
   public ModelCheckerViewer(Project project) {
+    this(project, true);
+  }
+
+  public ModelCheckerViewer(Project project, boolean canFix) {
     myIdeaProject = project;
     myProject = ProjectHelper.toMPSProject(project);
 
@@ -80,15 +85,16 @@ public class ModelCheckerViewer extends JPanel {
 
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     // XXX fix button might be an action along with others above (i.e. button in the left pane) 
-    myFixButton = new JButton("Perform Quick Fixes");
-    myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
-    myFixButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent event) {
-        performQuickFixes();
-      }
-    });
-    buttonPanel.add(myFixButton);
+    if (canFix) {
+      myFixButton = new JButton("Perform Quick Fixes");
+      myFixButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+          performQuickFixes();
+        }
+      });
+      buttonPanel.add(myFixButton);
+    }
     add(buttonPanel, BorderLayout.SOUTH);
   }
   protected void close() {
@@ -145,7 +151,9 @@ public class ModelCheckerViewer extends JPanel {
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable() || sr instanceof ModelCheckerIssue.ModelIssue && SetSequence.fromSet(includedResultModels).contains(((ModelCheckerIssue.ModelIssue) sr).getModel()) && sr.isFixable();
+        boolean isNodeIssueAndFixable = sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable();
+        boolean isModelIssueAndFixable = sr instanceof ModelCheckerIssue.ModelIssue && SetSequence.fromSet(includedResultModels).contains(((ModelCheckerIssue.ModelIssue) sr).getModel()) && sr.isFixable();
+        return isNodeIssueAndFixable || isModelIssueAndFixable;
       }
     }).toListSequence();
 
@@ -171,6 +179,7 @@ public class ModelCheckerViewer extends JPanel {
   public void dispose() {
     myUsagesView.dispose();
   }
+  @Nullable
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myUsagesView.getSearchResults();
   }

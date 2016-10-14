@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590604(jetbrains.mps.transformation.test.outputLang.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="tq1l" ref="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" />
@@ -88,14 +88,14 @@
           <property role="3F0ifm" value="special child:" />
         </node>
         <node concept="3F1sOY" id="hJ2kP2n" role="3EZMnx">
-          <ref role="1NtTu8" to="tq1l:hJ2jB2c" />
+          <ref role="1NtTu8" to="tq1l:hJ2jB2c" resolve="specialChild" />
         </node>
         <node concept="2iRfu4" id="i2IQW04" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="hJ2kSam" role="3EZMnx" />
       <node concept="3F2HdR" id="hp5ETOZ" role="3EZMnx">
         <property role="2czwfN" value="true" />
-        <ref role="1NtTu8" to="tq1l:hp5EkTa" />
+        <ref role="1NtTu8" to="tq1l:hp5EkTa" resolve="outputChild" />
         <node concept="2iRkQZ" id="i2IQW0d" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i2IQW07" role="2iSdaV" />
@@ -137,7 +137,7 @@
         <node concept="3F2HdR" id="hvKi2Mn" role="3EZMnx">
           <property role="2czwfN" value="false" />
           <property role="2czwfO" value="," />
-          <ref role="1NtTu8" to="tq1l:hvKhXhZ" />
+          <ref role="1NtTu8" to="tq1l:hvKhXhZ" resolve="outputChild" />
           <node concept="3F0ifn" id="hvKi4_R" role="2czzBI">
             <property role="3F0ifm" value=".." />
           </node>
@@ -159,7 +159,7 @@
       </node>
       <node concept="3F0ifn" id="3AbzyktXSmf" role="3EZMnx" />
       <node concept="3F1sOY" id="3AbzyktXSmd" role="3EZMnx">
-        <ref role="1NtTu8" to="tq1l:3AbzyktXSm5" />
+        <ref role="1NtTu8" to="tq1l:3AbzyktXSm5" resolve="statement" />
       </node>
       <node concept="2iRkQZ" id="3AbzyktXSma" role="2iSdaV" />
     </node>
@@ -178,7 +178,7 @@
         <property role="3F0ifm" value="for" />
       </node>
       <node concept="3F1sOY" id="2kPUo4NeuZq" role="3EZMnx">
-        <ref role="1NtTu8" to="tq1l:2kPUo4NeuZd" />
+        <ref role="1NtTu8" to="tq1l:2kPUo4NeuZd" resolve="inner" />
       </node>
     </node>
   </node>
@@ -189,7 +189,7 @@
         <property role="3F0ifm" value="ref to" />
       </node>
       <node concept="1iCGBv" id="1S7rCMcUiwa" role="3EZMnx">
-        <ref role="1NtTu8" to="tq1l:1S7rCMcUiw1" />
+        <ref role="1NtTu8" to="tq1l:1S7rCMcUiw1" resolve="myStatement" />
         <node concept="1sVBvm" id="1S7rCMcUiwb" role="1sWHZn">
           <node concept="3F0A7n" id="1S7rCMcUiwe" role="2wV5jI">
             <property role="1Intyy" value="true" />

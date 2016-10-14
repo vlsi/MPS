@@ -383,10 +383,8 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsageToolOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.finders.LanguageImportFinder" />
     <classNode dependClassName="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -483,7 +481,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
@@ -976,7 +973,7 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.NewAspectModelActionHelper" file="NewAspectModelActionHelper.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectSupport" />
   </dependency>

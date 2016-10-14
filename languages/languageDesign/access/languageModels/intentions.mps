@@ -4,7 +4,7 @@
   <languages>
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -194,15 +194,15 @@
                         <ref role="3cqZAo" node="7DH4b15vcvP" resolve="readActionStatement" />
                       </node>
                       <node concept="3TrEf2" id="7DH4b15vgjM" role="2OqNvi">
-                        <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                        <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" resolve="commandClosureLiteral" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="7DH4b15vgjR" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp2c:htbW58J" />
+                      <ref role="3Tt5mk" to="tp2c:htbW58J" resolve="body" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="7DH4b15vgjW" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:fzcqZ_x" />
+                    <ref role="3TtcxE" to="tpee:fzcqZ_x" resolve="statement" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="7DH4b15vgk1" role="2OqNvi">
@@ -237,15 +237,15 @@
                         <ref role="3cqZAo" node="7DH4b15vcvP" resolve="readActionStatement" />
                       </node>
                       <node concept="3TrEf2" id="7DH4b15vgkK" role="2OqNvi">
-                        <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                        <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" resolve="commandClosureLiteral" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="7DH4b15vgkP" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp2c:htbW58J" />
+                      <ref role="3Tt5mk" to="tp2c:htbW58J" resolve="body" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="7DH4b15vgkU" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:fzcqZ_x" />
+                    <ref role="3TtcxE" to="tpee:fzcqZ_x" resolve="statement" />
                   </node>
                 </node>
                 <node concept="1uHKPH" id="7DH4b15vgkZ" role="2OqNvi" />

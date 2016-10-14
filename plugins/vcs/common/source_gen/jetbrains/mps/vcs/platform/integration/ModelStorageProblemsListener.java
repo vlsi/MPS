@@ -27,6 +27,8 @@ import com.intellij.notification.Notifications;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.project.ProjectManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.apache.log4j.Level;
 import jetbrains.mps.vfs.IFile;
@@ -37,6 +39,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
+import com.intellij.openapi.application.ModalityState;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
@@ -56,8 +59,6 @@ import com.intellij.diff.DiffDialogHints;
 import jetbrains.mps.vcs.util.ModelVersion;
 import com.intellij.openapi.ui.TestDialog;
 import com.intellij.openapi.application.Application;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private Notification myLastNotification;
@@ -166,6 +167,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     return project;
   }
 
+  protected static Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
   private void resolveDiskMemoryConflict(final EditableSModel model) {
     if (!(model.getSource() instanceof FileDataSource)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -175,7 +177,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
     final IFile file = ((FileDataSource) model.getSource()).getFile();
     final File backupFile = doBackup(file, model);
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         // do nothing if conflict was already resolved and model was saved or reloaded or unregistered 
         if (!(model.isChanged()) || model.getRepository() == null) {
@@ -212,7 +214,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           });
         }
       }
-    });
+    }, ModalityState.NON_MODAL);
   }
 
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
@@ -312,5 +314,4 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     final Application application = ApplicationManager.getApplication();
     return application != null && (application.isUnitTestMode() || application.isHeadlessEnvironment());
   }
-  protected static Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
 }

@@ -4,11 +4,10 @@ package jetbrains.mps.idea.java;
 
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class Constants {
-  public static final SLanguage baseLanguage = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
-  public static final SLanguage baseLanguageJavadoc = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc");
+  public static final SLanguage baseLanguage = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
+  public static final SLanguage baseLanguageJavadoc = MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc");
 
   public static class ConceptNames {
     public static final String Classifier = "jetbrains.mps.baseLanguage.structure.Classifier";

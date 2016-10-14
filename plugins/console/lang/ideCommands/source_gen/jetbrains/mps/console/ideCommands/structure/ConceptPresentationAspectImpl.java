@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbsractMake = new ConceptPresentationBuilder().create();
@@ -44,163 +42,65 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0db.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_AbsractMake;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ActionCallDeclaredParameter;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ActionCallGlobalParameter;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ActionCallParameter;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_CallActionExpression;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_Clean;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ClickableGenerator;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_GlobalScope;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_GlobalStatisticTarget;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_INodeSetReference;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_IStatisticsTarget;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_Make;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ModelProperties;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ModelReference;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ModelStatisticsTarget;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ModuleProperties;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_NodeReference;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_OfAspectOperation;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ProjectStatisticsTarget;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_RebuildProjectCommand;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_RemoveGenSources;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ShowBrokenReferences;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ShowExpression;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ShowGenPlan;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_StatCommand;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_SubtreeStatisticsTarget;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_UnloadModelsCommand;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_WithDependencies;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbsractMake:
+        return props_AbsractMake;
+      case LanguageConceptSwitch.ActionCallDeclaredParameter:
+        return props_ActionCallDeclaredParameter;
+      case LanguageConceptSwitch.ActionCallGlobalParameter:
+        return props_ActionCallGlobalParameter;
+      case LanguageConceptSwitch.ActionCallParameter:
+        return props_ActionCallParameter;
+      case LanguageConceptSwitch.CallActionExpression:
+        return props_CallActionExpression;
+      case LanguageConceptSwitch.Clean:
+        return props_Clean;
+      case LanguageConceptSwitch.ClickableGenerator:
+        return props_ClickableGenerator;
+      case LanguageConceptSwitch.GlobalScope:
+        return props_GlobalScope;
+      case LanguageConceptSwitch.GlobalStatisticTarget:
+        return props_GlobalStatisticTarget;
+      case LanguageConceptSwitch.INodeSetReference:
+        return props_INodeSetReference;
+      case LanguageConceptSwitch.IStatisticsTarget:
+        return props_IStatisticsTarget;
+      case LanguageConceptSwitch.Make:
+        return props_Make;
+      case LanguageConceptSwitch.ModelProperties:
+        return props_ModelProperties;
+      case LanguageConceptSwitch.ModelReference:
+        return props_ModelReference;
+      case LanguageConceptSwitch.ModelStatisticsTarget:
+        return props_ModelStatisticsTarget;
+      case LanguageConceptSwitch.ModuleProperties:
+        return props_ModuleProperties;
+      case LanguageConceptSwitch.NodeReference:
+        return props_NodeReference;
+      case LanguageConceptSwitch.OfAspectOperation:
+        return props_OfAspectOperation;
+      case LanguageConceptSwitch.ProjectStatisticsTarget:
+        return props_ProjectStatisticsTarget;
+      case LanguageConceptSwitch.RebuildProjectCommand:
+        return props_RebuildProjectCommand;
+      case LanguageConceptSwitch.RemoveGenSources:
+        return props_RemoveGenSources;
+      case LanguageConceptSwitch.ShowBrokenReferences:
+        return props_ShowBrokenReferences;
+      case LanguageConceptSwitch.ShowExpression:
+        return props_ShowExpression;
+      case LanguageConceptSwitch.ShowGenPlan:
+        return props_ShowGenPlan;
+      case LanguageConceptSwitch.StatCommand:
+        return props_StatCommand;
+      case LanguageConceptSwitch.SubtreeStatisticsTarget:
+        return props_SubtreeStatisticsTarget;
+      case LanguageConceptSwitch.UnloadModelsCommand:
+        return props_UnloadModelsCommand;
+      case LanguageConceptSwitch.WithDependencies:
+        return props_WithDependencies;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0db = buildConceptIndices(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL, "jetbrains.mps.console.ideCommands.structure.AbsractMake"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL, "jetbrains.mps.console.ideCommands.structure.ActionCallParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e74f88509L, "jetbrains.mps.console.ideCommands.structure.Clean"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x3bc64421763add42L, "jetbrains.mps.console.ideCommands.structure.GlobalScope"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb8L, "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget"), MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L, "jetbrains.mps.console.ideCommands.structure.INodeSetReference"), MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afcebfef23L, "jetbrains.mps.console.ideCommands.structure.Make"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b0L, "jetbrains.mps.console.ideCommands.structure.ModelProperties"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b3L, "jetbrains.mps.console.ideCommands.structure.ModuleProperties"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f4699443afL, "jetbrains.mps.console.ideCommands.structure.NodeReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, "jetbrains.mps.console.ideCommands.structure.OfAspectOperation"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579e36L, "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191df02L, "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a11bL, "jetbrains.mps.console.ideCommands.structure.RemoveGenSources"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, "jetbrains.mps.console.ideCommands.structure.StatCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191ddffL, "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x826e97ca237a1b1L, "jetbrains.mps.console.ideCommands.structure.WithDependencies"));
 }

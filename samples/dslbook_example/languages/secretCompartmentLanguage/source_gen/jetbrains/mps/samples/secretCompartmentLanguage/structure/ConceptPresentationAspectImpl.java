@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Event = new ConceptPresentationBuilder().create();
@@ -23,58 +20,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Event;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_HandleEvent;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_State;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_StateMachine;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_StateMachineTest;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_StateMachineTestMethod;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_Transition;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Event:
+        return props_Event;
+      case LanguageConceptSwitch.HandleEvent:
+        return props_HandleEvent;
+      case LanguageConceptSwitch.State:
+        return props_State;
+      case LanguageConceptSwitch.StateMachine:
+        return props_StateMachine;
+      case LanguageConceptSwitch.StateMachineTest:
+        return props_StateMachineTest;
+      case LanguageConceptSwitch.StateMachineTestMethod:
+        return props_StateMachineTestMethod;
+      case LanguageConceptSwitch.Transition:
+        return props_Transition;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bcdac91eL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Event"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c2015933L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bced8217L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.State"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c17a1865L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c112fe2aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"));
 }

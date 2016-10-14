@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.languageScope.LanguageScopeExecutor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;

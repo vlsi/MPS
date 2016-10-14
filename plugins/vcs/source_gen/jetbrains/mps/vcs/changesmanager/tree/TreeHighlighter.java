@@ -21,6 +21,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,10 +45,11 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import com.intellij.openapi.vcs.FileStatusListener;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -54,8 +57,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TreeHighlighter implements TreeMessageOwner {
   private Map<FileStatus, TreeMessage> myTreeMessages = MapSequence.fromMap(new HashMap<FileStatus, TreeMessage>());
@@ -81,6 +82,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       myGlobalModelListener = new TreeHighlighter.MyModelDisposeListener();
     }
   }
+
   public synchronized void init() {
     if (myInitialized) {
       return;
@@ -103,6 +105,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     });
   }
+
   public synchronized void dispose() {
     if (!(myInitialized)) {
       return;
@@ -128,6 +131,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       registerNodeRecursively(child);
     }
   }
+
   private void registerNode(@NotNull final MPSTreeNode node) {
     final Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
@@ -148,6 +152,8 @@ public class TreeHighlighter implements TreeMessageOwner {
       });
     }
   }
+
+  protected static Logger LOG = LogManager.getLogger(TreeHighlighter.class);
   private void unregisterNode(@NotNull MPSTreeNode node) {
     Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
@@ -163,11 +169,13 @@ public class TreeHighlighter implements TreeMessageOwner {
       unhighlightNode(node);
     }
   }
+
   private void unhighlightNode(@NotNull MPSTreeNode node) {
     if (!(node.removeTreeMessages(this).isEmpty())) {
       updatePresentation(node);
     }
   }
+
   /**
    * This method runs with model read lock, and shall own lock on myFeatureHolder as it might lead 
    * to a deadlock (MPSTree rebuilds itself in a model read, thus treeNodeAdded and registerNode keep model read + myFeatureHolder, and if this method
@@ -208,6 +216,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       updatePresentation(node);
     }
   }
+
   private void updatePresentation(final MPSTreeNode treeNode) {
     // schedules node update to run in correct thread 
     getProjectRepository().getModelAccess().runReadInEDT(new Runnable() {
@@ -216,6 +225,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     });
   }
+
   private void rehighlightFeature(@NotNull Feature feature) {
     List<MPSTreeNode> toUpdate = new ArrayList<MPSTreeNode>();
     synchronized (myFeaturesHolder) {
@@ -228,6 +238,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       rehighlightNode(node, feature);
     }
   }
+
   private void rehighlightFeatureAndDescendants(@NotNull final Feature feature) {
     if (myTree.isDisposed()) {
       return;
@@ -276,6 +287,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void rehighlightAllFeaturesLater() {
     myQueue.queue(rehighlightAllFeaturesUpdate);
   }
+
   private void rehighlightAllFeaturesNow() {
     List<Feature> toUpdate = new ArrayList<Feature>();
     synchronized (myFeaturesHolder) {
@@ -293,6 +305,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
     return MapSequence.fromMap(myTreeMessages).get(fileStatus);
   }
+
   @NotNull
   private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull EditableSModel modelDescriptor) {
     switch (modelChange.getType()) {
@@ -314,11 +327,13 @@ public class TreeHighlighter implements TreeMessageOwner {
         return getMessage(FileStatus.MERGED_WITH_CONFLICTS);
     }
   }
+
   @Nullable
   private TreeMessage getMessage(@NotNull EditableSModel md) {
     FileStatus status = getModelFileStatus(md, myRegistry.getProject());
     return (status == null ? null : getMessage(status));
   }
+
   @Nullable
   private static FileStatus getModelFileStatus(@NotNull EditableSModel ed, @NotNull Project project) {
     DataSource ds = ed.getSource();
@@ -328,9 +343,16 @@ public class TreeHighlighter implements TreeMessageOwner {
     } else if (ds instanceof FilePerRootDataSource) {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(file);
+    if (!(file instanceof IdeaFile)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("File " + file + " must be a project file and managed by IDEA FS");
+      }
+      return null;
+    }
+    VirtualFile vf = ((IdeaFile) file).getVirtualFile();
     return (vf == null ? null : FileStatusManager.getInstance(project).getStatus(vf));
   }
+
   private class MyTreeNodeListener implements MPSTreeNodeListener {
     public MyTreeNodeListener() {
     }
@@ -441,5 +463,4 @@ public class TreeHighlighter implements TreeMessageOwner {
       return features;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TreeHighlighter.class);
 }

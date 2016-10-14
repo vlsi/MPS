@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
-import jetbrains.mps.openapi.editor.EditorPanelManager;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -63,7 +62,6 @@ public class InspectorEditorComponent extends EditorComponent {
     myNode = null;
     myNodePointer = null;
     myContainingRoot = null;
-    setNoVirtualFile(true);
     myRootCell = createEmptyCell();
   }
 

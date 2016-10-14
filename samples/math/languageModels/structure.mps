@@ -519,7 +519,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type_M" />
       <property role="IQ2ns" value="1418611629042608218" />
-      <ref role="20ksaX" to="tpee:4VkOLwjf83e" />
+      <ref role="20ksaX" to="tpee:4VkOLwjf83e" resolve="type" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
     <node concept="1TJgyj" id="1eJUWaJk8Ym" role="1TKVEi">

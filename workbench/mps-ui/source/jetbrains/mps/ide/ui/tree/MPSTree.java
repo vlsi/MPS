@@ -475,7 +475,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
       ModelAccess.instance().runReadAction(rebuildAction);
       if (restoreExpansion != null) {
-          runWithoutExpansion(restoreExpansion);
+        runWithoutExpansion(restoreExpansion);
       }
     } finally {
       myLoadingDisabled = false;
@@ -556,7 +556,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return getNodeFromPath(getLeadSelectionPath());
   }
 
-  public void setCurrentNode(MPSTreeNode node) {
+  public void setCurrentNode(@NotNull MPSTreeNode node) {
     TreePath path = new TreePath(node.getPath());
     setSelectionPath(path);
     this.scrollPathToVisible(path);

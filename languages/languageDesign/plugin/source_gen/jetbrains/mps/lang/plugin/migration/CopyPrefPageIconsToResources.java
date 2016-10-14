@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
@@ -35,6 +34,10 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -42,7 +45,7 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
           return scope;
         }
       };
-      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"))).where(new IWhereFilter<SNode>() {
+      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x119e28e412bL, "iconPath")));
         }
@@ -56,15 +59,14 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.models(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
-          return LanguageAspect.STRUCTURE.is(it);
+          return LanguageAspect.STRUCTURE.is(it) && !(((SModelInternal) it).importedLanguageIds().contains(MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources")));
         }
       }).visitAll(new IVisitor<SModel>() {
         public void visit(SModel it) {
-          ((SModelInternal) it).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x982eb8df2c964bd7L, 0x996311712ea622e5L), "jetbrains.mps.lang.resources"));
+          ((SModelInternal) it).addLanguage(MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources"));
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {
@@ -76,7 +78,7 @@ public class CopyPrefPageIconsToResources extends MigrationScriptBase {
           return scope;
         }
       };
-      result = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"))).where(new IWhereFilter<SNode>() {
+      result = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, "jetbrains.mps.lang.plugin.structure.PreferencePage"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x119e28e412bL, "iconPath")));
         }

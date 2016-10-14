@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.httpsupport.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
+  </dependency>
+</dependenciesRoot>
+

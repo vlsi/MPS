@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.actions.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
+import jetbrains.mps.lang.actions.migration.MigrationDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.actions.structure.ConceptPresentationAspectImpl;
@@ -22,7 +24,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.actions.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)";
+  public static final String MODULE_REF = "aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)";
   public Language() {
   }
   @Override
@@ -32,7 +34,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public int getVersion() {
-    return 0;
+    return 3;
   }
 
   public SLanguageId getId() {
@@ -68,6 +70,11 @@ public class Language extends LanguageRuntime {
         return (T) new EditorAspectDescriptorImpl();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor")) {
+      if (aspectClass == MigrationAspectDescriptor.class) {
+        return (T) new MigrationDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
       if (aspectClass == StructureAspectDescriptor.class) {
         return (T) new jetbrains.mps.lang.actions.structure.StructureAspectDescriptor();
@@ -83,6 +90,6 @@ public class Language extends LanguageRuntime {
         return (T) new TypesystemDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

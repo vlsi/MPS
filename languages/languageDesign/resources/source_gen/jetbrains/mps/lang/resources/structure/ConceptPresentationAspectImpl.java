@@ -8,20 +8,20 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorLiteral = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).create();
   private final ConceptPresentation props_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconLayerDescription = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconResourceExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Image = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon(IconContainer.RESOURCE_a0a0j).create();
+  private final ConceptPresentation props_NodeIconResourceExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon(IconContainer.RESOURCE_a0a0l).create();
   private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();
@@ -33,108 +33,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0s.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Circle;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Color;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ColorLiteral;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_FileIcon;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_Icon;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_IconExpression;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_IconLayerDescription;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_IconResourceExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_Image;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_OldIconBundle;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_OldIconDeclaration;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_OldIconReference;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_Primitive;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_Rect;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_Resource;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_Text;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_TextIcon;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Circle:
+        return props_Circle;
+      case LanguageConceptSwitch.Color:
+        return props_Color;
+      case LanguageConceptSwitch.ColorLiteral:
+        return props_ColorLiteral;
+      case LanguageConceptSwitch.ConceptIconResourceExpression:
+        return props_ConceptIconResourceExpression;
+      case LanguageConceptSwitch.FileIcon:
+        return props_FileIcon;
+      case LanguageConceptSwitch.Icon:
+        return props_Icon;
+      case LanguageConceptSwitch.IconExpression:
+        return props_IconExpression;
+      case LanguageConceptSwitch.IconLayerDescription:
+        return props_IconLayerDescription;
+      case LanguageConceptSwitch.IconResourceExpression:
+        return props_IconResourceExpression;
+      case LanguageConceptSwitch.Image:
+        return props_Image;
+      case LanguageConceptSwitch.NodeIconResourceExpression:
+        return props_NodeIconResourceExpression;
+      case LanguageConceptSwitch.OldIconBundle:
+        return props_OldIconBundle;
+      case LanguageConceptSwitch.OldIconDeclaration:
+        return props_OldIconDeclaration;
+      case LanguageConceptSwitch.OldIconReference:
+        return props_OldIconReference;
+      case LanguageConceptSwitch.Primitive:
+        return props_Primitive;
+      case LanguageConceptSwitch.Rect:
+        return props_Rect;
+      case LanguageConceptSwitch.Resource:
+        return props_Resource;
+      case LanguageConceptSwitch.Text:
+        return props_Text;
+      case LanguageConceptSwitch.TextIcon:
+        return props_TextIcon;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0s = buildConceptIndices(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e60L, "jetbrains.mps.lang.resources.structure.Circle"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bdeL, "jetbrains.mps.lang.resources.structure.Color"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x19d079f4ec114bddL, "jetbrains.mps.lang.resources.structure.ColorLiteral"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL, "jetbrains.mps.lang.resources.structure.Icon"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, "jetbrains.mps.lang.resources.structure.IconExpression"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e65L, "jetbrains.mps.lang.resources.structure.IconLayerDescription"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x52fb86deea79455eL, "jetbrains.mps.lang.resources.structure.IconResourceExpression"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, "jetbrains.mps.lang.resources.structure.Image"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bdL, "jetbrains.mps.lang.resources.structure.OldIconBundle"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, "jetbrains.mps.lang.resources.structure.OldIconDeclaration"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b1L, "jetbrains.mps.lang.resources.structure.Primitive"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0e61L, "jetbrains.mps.lang.resources.structure.Rect"), MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e28b9L, "jetbrains.mps.lang.resources.structure.Text"), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c37742e0d45L, "jetbrains.mps.lang.resources.structure.TextIcon"));
 }

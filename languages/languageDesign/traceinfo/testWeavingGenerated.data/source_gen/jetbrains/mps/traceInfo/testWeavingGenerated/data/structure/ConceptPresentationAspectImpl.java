@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ChildConceptWeave = new ConceptPresentationBuilder().create();
@@ -21,48 +18,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ChildConceptWeave;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ChildConceptWeaveEach;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ChildConceptWeaveEachMany;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ChildConceptWeaveMany;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_RootConcept;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ChildConceptWeave:
+        return props_ChildConceptWeave;
+      case LanguageConceptSwitch.ChildConceptWeaveEach:
+        return props_ChildConceptWeaveEach;
+      case LanguageConceptSwitch.ChildConceptWeaveEachMany:
+        return props_ChildConceptWeaveEachMany;
+      case LanguageConceptSwitch.ChildConceptWeaveMany:
+        return props_ChildConceptWeaveMany;
+      case LanguageConceptSwitch.RootConcept:
+        return props_RootConcept;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64f39cL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64f39aL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c681163L, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c681159L, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"));
 }

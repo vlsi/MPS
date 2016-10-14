@@ -15,4 +15,8 @@ public class _Replacer_55w9mm_a0a0a0 implements Replacer {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
+  public _Replacer_55w9mm_a0a0a0(Replace_Test enclosingClass) {
+    this._enclosingClass = enclosingClass;
+    this._closureContext = null;
+  }
 }

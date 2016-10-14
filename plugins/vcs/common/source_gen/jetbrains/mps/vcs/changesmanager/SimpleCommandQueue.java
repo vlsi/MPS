@@ -5,9 +5,9 @@ package jetbrains.mps.vcs.changesmanager;
 import java.util.Queue;
 import java.util.LinkedList;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 public class SimpleCommandQueue {
   private Thread myThread;
@@ -38,6 +38,7 @@ public class SimpleCommandQueue {
   public void assertIsCommandThread() {
     assert Thread.currentThread() == myThread;
   }
+  protected static Logger LOG = LogManager.getLogger(SimpleCommandQueue.class);
   public void assertSoftlyIsCommandThread() {
     if (Thread.currentThread() != myThread) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -86,5 +87,4 @@ public class SimpleCommandQueue {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(SimpleCommandQueue.class);
 }

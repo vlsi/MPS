@@ -21,17 +21,20 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget {
+  private static final IdeaFileSystem ourFileSystem = (IdeaFileSystem) FileSystem.getInstance();
   private MPSProject myProject;
   private boolean mySelectRoot;
 
@@ -66,22 +69,23 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
 
   private SModel getModel(SelectInContext context) {
     VirtualFile virtualFile = context.getVirtualFile();
-    if (!MPSFileTypesManager.instance().isModelFile(virtualFile)) {
+    if (!MPSFileTypesManager.isModelFile(virtualFile)) {
       return null;
     }
 
-    IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+    IFile modelFile = new IdeaFile(ourFileSystem, virtualFile);
     return SModelFileTracker.getInstance(myProject.getRepository()).findModel(modelFile);
   }
 
   private SModule getModule(SelectInContext context) {
     VirtualFile virtualFile = context.getVirtualFile();
-    if (!MPSFileTypesManager.instance().isModuleFile(virtualFile)) {
+    if (!MPSFileTypesManager.isModuleFile(virtualFile)) {
       return null;
     }
 
-    IFile moduleFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
-    return ModuleFileTracker.getInstance().getModuleByFile(moduleFile);
+    IFile moduleFile = new IdeaFile(ourFileSystem, virtualFile);
+    // XXX why don't we obtain model read here? ModuleFileTracker might need to walk repository to find out actual modules and their files
+    return ModuleFileTracker.getInstance(myProject.getRepository()).getModuleByFile(moduleFile);
   }
 
   private SNode getNode(SelectInContext context) {

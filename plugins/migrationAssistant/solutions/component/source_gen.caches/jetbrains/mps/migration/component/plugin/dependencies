@@ -44,7 +44,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationTrigger" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />

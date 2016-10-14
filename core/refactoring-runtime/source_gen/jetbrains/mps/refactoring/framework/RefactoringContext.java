@@ -258,6 +258,7 @@ public class RefactoringContext {
     RefactoringContext result = new RefactoringContext(project, refactoring);
     result.setTarget(target);
     result.setParameters(names, parameters);
+    result.setCurrentScope(project.getScope());
     return result;
   }
   public static RefactoringContext createRefactoringContextByName(final String refName, List names, List parameters, Object target, Project project) {

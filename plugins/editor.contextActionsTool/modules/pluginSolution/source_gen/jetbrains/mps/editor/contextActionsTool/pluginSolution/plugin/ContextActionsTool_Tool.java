@@ -24,20 +24,19 @@ public class ContextActionsTool_Tool extends GeneratedTool {
   }
   public void init(Project project) {
     super.init(project);
-    final ContextActionsTool_Tool tool = ContextActionsTool_Tool.this;
     MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     if (mpsProject == null) {
       throw new IllegalArgumentException("project must be an MPSProject");
     }
 
-    ContextActionsTool_Tool.this.myComponent = new ToolComponent(tool);
+    ContextActionsTool_Tool.this.myComponent = new ToolComponent(ContextActionsTool_Tool.this);
     ContextActionsTool_Tool.this.myController = new ToolController(mpsProject, ContextActionsTool_Tool.this.myComponent, new SelectionMenuProviderByCellAndConcept(MenuLocations.CONTEXT_ACTIONS_TOOL));
 
-    ((ToolWindowEx) tool.getToolWindow()).setAdditionalGearActions(ContextActionsTool_Tool.this.createGearActionGroup());
+    ((ToolWindowEx) ContextActionsTool_Tool.this.getToolWindow()).setAdditionalGearActions(ContextActionsTool_Tool.this.createGearActionGroup());
 
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        tool.makeAvailableLater();
+        ContextActionsTool_Tool.this.makeAvailableLater();
       }
     });
   }

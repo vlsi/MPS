@@ -11,6 +11,8 @@ import com.intellij.mock.MockProjectEx;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
 import jetbrains.mps.project.StandaloneMPSProject;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -35,8 +37,6 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.diff.DiffManager;
 import com.intellij.diff.InvalidDiffRequestException;
 import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * Class for analyzing merge driver dumps
@@ -64,11 +64,12 @@ public class TestMergeDialog {
     }
   };
 
-  private static MPSProject ourMPSProject = new StandaloneMPSProject(TestMergeDialog.ourProject, null);
+  private static MPSProject ourMPSProject = new StandaloneMPSProject(TestMergeDialog.ourProject, null, null);
 
   public TestMergeDialog() {
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
   public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");
@@ -116,5 +117,4 @@ public class TestMergeDialog {
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 }

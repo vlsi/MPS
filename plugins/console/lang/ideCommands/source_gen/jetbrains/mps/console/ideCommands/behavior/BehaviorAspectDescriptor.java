@@ -7,9 +7,9 @@ import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
+import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myShowBrokenReferences__BehaviorDescriptor = new ShowBrokenReferences__BehaviorDescriptor();
@@ -43,149 +43,61 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    {
-      SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0cb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return myAbsractMake__BehaviorDescriptor;
-          }
-          break;
-        case 1:
-          if (true) {
-            return myActionCallDeclaredParameter__BehaviorDescriptor;
-          }
-          break;
-        case 2:
-          if (true) {
-            return myActionCallGlobalParameter__BehaviorDescriptor;
-          }
-          break;
-        case 3:
-          if (true) {
-            return myActionCallParameter__BehaviorDescriptor;
-          }
-          break;
-        case 4:
-          if (true) {
-            return myCallActionExpression__BehaviorDescriptor;
-          }
-          break;
-        case 5:
-          if (true) {
-            return myClean__BehaviorDescriptor;
-          }
-          break;
-        case 6:
-          if (true) {
-            return myClickableGenerator__BehaviorDescriptor;
-          }
-          break;
-        case 7:
-          if (true) {
-            return myGlobalStatisticTarget__BehaviorDescriptor;
-          }
-          break;
-        case 8:
-          if (true) {
-            return myINodeSetReference__BehaviorDescriptor;
-          }
-          break;
-        case 9:
-          if (true) {
-            return myIStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
-        case 10:
-          if (true) {
-            return myMake__BehaviorDescriptor;
-          }
-          break;
-        case 11:
-          if (true) {
-            return myModelProperties__BehaviorDescriptor;
-          }
-          break;
-        case 12:
-          if (true) {
-            return myModelReference__BehaviorDescriptor;
-          }
-          break;
-        case 13:
-          if (true) {
-            return myModelStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
-        case 14:
-          if (true) {
-            return myModuleProperties__BehaviorDescriptor;
-          }
-          break;
-        case 15:
-          if (true) {
-            return myOfAspectOperation__BehaviorDescriptor;
-          }
-          break;
-        case 16:
-          if (true) {
-            return myProjectStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
-        case 17:
-          if (true) {
-            return myRebuildProjectCommand__BehaviorDescriptor;
-          }
-          break;
-        case 18:
-          if (true) {
-            return myRemoveGenSources__BehaviorDescriptor;
-          }
-          break;
-        case 19:
-          if (true) {
-            return myShowBrokenReferences__BehaviorDescriptor;
-          }
-          break;
-        case 20:
-          if (true) {
-            return myShowExpression__BehaviorDescriptor;
-          }
-          break;
-        case 21:
-          if (true) {
-            return myShowGenPlan__BehaviorDescriptor;
-          }
-          break;
-        case 22:
-          if (true) {
-            return myStatCommand__BehaviorDescriptor;
-          }
-          break;
-        case 23:
-          if (true) {
-            return mySubtreeStatisticsTarget__BehaviorDescriptor;
-          }
-          break;
-        case 24:
-          if (true) {
-            return myUnloadModelsCommand__BehaviorDescriptor;
-          }
-          break;
-        default:
-          // default 
-      }
+    SAbstractConcept cncpt = concept;
+    switch (index_846f5o_a0cb.index(cncpt)) {
+      case 0:
+        return myAbsractMake__BehaviorDescriptor;
+      case 1:
+        return myActionCallDeclaredParameter__BehaviorDescriptor;
+      case 2:
+        return myActionCallGlobalParameter__BehaviorDescriptor;
+      case 3:
+        return myActionCallParameter__BehaviorDescriptor;
+      case 4:
+        return myCallActionExpression__BehaviorDescriptor;
+      case 5:
+        return myClean__BehaviorDescriptor;
+      case 6:
+        return myClickableGenerator__BehaviorDescriptor;
+      case 7:
+        return myGlobalStatisticTarget__BehaviorDescriptor;
+      case 8:
+        return myINodeSetReference__BehaviorDescriptor;
+      case 9:
+        return myIStatisticsTarget__BehaviorDescriptor;
+      case 10:
+        return myMake__BehaviorDescriptor;
+      case 11:
+        return myModelProperties__BehaviorDescriptor;
+      case 12:
+        return myModelReference__BehaviorDescriptor;
+      case 13:
+        return myModelStatisticsTarget__BehaviorDescriptor;
+      case 14:
+        return myModuleProperties__BehaviorDescriptor;
+      case 15:
+        return myOfAspectOperation__BehaviorDescriptor;
+      case 16:
+        return myProjectStatisticsTarget__BehaviorDescriptor;
+      case 17:
+        return myRebuildProjectCommand__BehaviorDescriptor;
+      case 18:
+        return myRemoveGenSources__BehaviorDescriptor;
+      case 19:
+        return myShowBrokenReferences__BehaviorDescriptor;
+      case 20:
+        return myShowExpression__BehaviorDescriptor;
+      case 21:
+        return myShowGenPlan__BehaviorDescriptor;
+      case 22:
+        return myStatCommand__BehaviorDescriptor;
+      case 23:
+        return mySubtreeStatisticsTarget__BehaviorDescriptor;
+      case 24:
+        return myUnloadModelsCommand__BehaviorDescriptor;
+      default:
     }
     return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0cb = buildConceptIndices(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL, "jetbrains.mps.console.ideCommands.structure.AbsractMake"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL, "jetbrains.mps.console.ideCommands.structure.ActionCallParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e74f88509L, "jetbrains.mps.console.ideCommands.structure.Clean"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb8L, "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget"), MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L, "jetbrains.mps.console.ideCommands.structure.INodeSetReference"), MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afcebfef23L, "jetbrains.mps.console.ideCommands.structure.Make"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b0L, "jetbrains.mps.console.ideCommands.structure.ModelProperties"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b3L, "jetbrains.mps.console.ideCommands.structure.ModuleProperties"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, "jetbrains.mps.console.ideCommands.structure.OfAspectOperation"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579e36L, "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191df02L, "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a11bL, "jetbrains.mps.console.ideCommands.structure.RemoveGenSources"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, "jetbrains.mps.console.ideCommands.structure.StatCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191ddffL, "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand"));
+  private static final ConceptSwitchIndex index_846f5o_a0cb = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e74f88509L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb8L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afcebfef23L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b0L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b3L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579e36L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191df02L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a11bL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL), MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191ddffL)).seal();
 }

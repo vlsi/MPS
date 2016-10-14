@@ -33,6 +33,10 @@ public class MigrationScript_0 extends MigrationScriptBase {
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -42,7 +46,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       };
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763adda2L, "jetbrains.mps.lang.smodel.query.structure.ProjectScope_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763adda2L, "jetbrains.mps.lang.smodel.query.structure.ProjectScope_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -51,7 +55,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0xa721a59126bb908L, "jetbrains.mps.lang.smodel.query.structure.ProjectExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0xa721a59126bb908L, "jetbrains.mps.lang.smodel.query.structure.ProjectExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -60,7 +64,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -69,7 +73,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4c7a26b31bd03b59L, "jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4c7a26b31bd03b59L, "jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -78,7 +82,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f195a051bd9bddcL, "jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f195a051bd9bddcL, "jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -87,7 +91,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -96,7 +100,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x7417cca3eb1feca9L, "jetbrains.mps.lang.smodel.query.structure.PrintTextExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x7417cca3eb1feca9L, "jetbrains.mps.lang.smodel.query.structure.PrintTextExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -105,7 +109,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b2a9377L, "jetbrains.mps.lang.smodel.query.structure.PrintExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b2a9377L, "jetbrains.mps.lang.smodel.query.structure.PrintExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -114,7 +118,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b7db64fL, "jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b7db64fL, "jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -123,7 +127,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -132,7 +136,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -141,7 +145,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -150,7 +154,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, "jetbrains.mps.console.base.structure.AbstractPrintExpression"));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -159,7 +163,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old"));
+          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -168,7 +172,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression"));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old")));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -176,7 +180,6 @@ public class MigrationScript_0 extends MigrationScriptBase {
         }
       });
     }
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {
@@ -202,9 +205,9 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2__yield_zc5nt1_a0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._2__yield_zc5nt1_a0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763adda2L, "jetbrains.mps.lang.smodel.query.structure.ProjectScope_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763adda2L, "jetbrains.mps.lang.smodel.query.structure.ProjectScope_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -213,17 +216,17 @@ __switch__:
                           }
                         })).iterator();
                       case 3:
-                        if (!(this._2__yield_zc5nt1_a0a0c0a0d_it.hasNext())) {
+                        if (!(this._2__yield_zc5nt1_a0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 5;
                           break;
                         }
-                        this._2__yield_zc5nt1_a0a0c0a0d = this._2__yield_zc5nt1_a0a0c0a0d_it.next();
+                        this._2__yield_zc5nt1_a0a0c0a0e = this._2__yield_zc5nt1_a0a0c0a0e_it.next();
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        this._6__yield_zc5nt1_b0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._6__yield_zc5nt1_b0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0xa721a59126bb908L, "jetbrains.mps.lang.smodel.query.structure.ProjectExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0xa721a59126bb908L, "jetbrains.mps.lang.smodel.query.structure.ProjectExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -232,17 +235,17 @@ __switch__:
                           }
                         })).iterator();
                       case 7:
-                        if (!(this._6__yield_zc5nt1_b0a0c0a0d_it.hasNext())) {
+                        if (!(this._6__yield_zc5nt1_b0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 9;
                           break;
                         }
-                        this._6__yield_zc5nt1_b0a0c0a0d = this._6__yield_zc5nt1_b0a0c0a0d_it.next();
+                        this._6__yield_zc5nt1_b0a0c0a0e = this._6__yield_zc5nt1_b0a0c0a0e_it.next();
                         this.__CP__ = 8;
                         break;
                       case 9:
-                        this._10__yield_zc5nt1_c0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._10__yield_zc5nt1_c0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -251,17 +254,17 @@ __switch__:
                           }
                         })).iterator();
                       case 11:
-                        if (!(this._10__yield_zc5nt1_c0a0c0a0d_it.hasNext())) {
+                        if (!(this._10__yield_zc5nt1_c0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 13;
                           break;
                         }
-                        this._10__yield_zc5nt1_c0a0c0a0d = this._10__yield_zc5nt1_c0a0c0a0d_it.next();
+                        this._10__yield_zc5nt1_c0a0c0a0e = this._10__yield_zc5nt1_c0a0c0a0e_it.next();
                         this.__CP__ = 12;
                         break;
                       case 13:
-                        this._14__yield_zc5nt1_d0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._14__yield_zc5nt1_d0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4c7a26b31bd03b59L, "jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4c7a26b31bd03b59L, "jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -270,17 +273,17 @@ __switch__:
                           }
                         })).iterator();
                       case 15:
-                        if (!(this._14__yield_zc5nt1_d0a0c0a0d_it.hasNext())) {
+                        if (!(this._14__yield_zc5nt1_d0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 17;
                           break;
                         }
-                        this._14__yield_zc5nt1_d0a0c0a0d = this._14__yield_zc5nt1_d0a0c0a0d_it.next();
+                        this._14__yield_zc5nt1_d0a0c0a0e = this._14__yield_zc5nt1_d0a0c0a0e_it.next();
                         this.__CP__ = 16;
                         break;
                       case 17:
-                        this._18__yield_zc5nt1_e0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._18__yield_zc5nt1_e0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f195a051bd9bddcL, "jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f195a051bd9bddcL, "jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -289,17 +292,17 @@ __switch__:
                           }
                         })).iterator();
                       case 19:
-                        if (!(this._18__yield_zc5nt1_e0a0c0a0d_it.hasNext())) {
+                        if (!(this._18__yield_zc5nt1_e0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 21;
                           break;
                         }
-                        this._18__yield_zc5nt1_e0a0c0a0d = this._18__yield_zc5nt1_e0a0c0a0d_it.next();
+                        this._18__yield_zc5nt1_e0a0c0a0e = this._18__yield_zc5nt1_e0a0c0a0e_it.next();
                         this.__CP__ = 20;
                         break;
                       case 21:
-                        this._22__yield_zc5nt1_f0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._22__yield_zc5nt1_f0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -308,17 +311,17 @@ __switch__:
                           }
                         })).iterator();
                       case 23:
-                        if (!(this._22__yield_zc5nt1_f0a0c0a0d_it.hasNext())) {
+                        if (!(this._22__yield_zc5nt1_f0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 25;
                           break;
                         }
-                        this._22__yield_zc5nt1_f0a0c0a0d = this._22__yield_zc5nt1_f0a0c0a0d_it.next();
+                        this._22__yield_zc5nt1_f0a0c0a0e = this._22__yield_zc5nt1_f0a0c0a0e_it.next();
                         this.__CP__ = 24;
                         break;
                       case 25:
-                        this._26__yield_zc5nt1_g0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._26__yield_zc5nt1_g0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x7417cca3eb1feca9L, "jetbrains.mps.lang.smodel.query.structure.PrintTextExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x7417cca3eb1feca9L, "jetbrains.mps.lang.smodel.query.structure.PrintTextExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -327,17 +330,17 @@ __switch__:
                           }
                         })).iterator();
                       case 27:
-                        if (!(this._26__yield_zc5nt1_g0a0c0a0d_it.hasNext())) {
+                        if (!(this._26__yield_zc5nt1_g0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 29;
                           break;
                         }
-                        this._26__yield_zc5nt1_g0a0c0a0d = this._26__yield_zc5nt1_g0a0c0a0d_it.next();
+                        this._26__yield_zc5nt1_g0a0c0a0e = this._26__yield_zc5nt1_g0a0c0a0e_it.next();
                         this.__CP__ = 28;
                         break;
                       case 29:
-                        this._30__yield_zc5nt1_h0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._30__yield_zc5nt1_h0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b2a9377L, "jetbrains.mps.lang.smodel.query.structure.PrintExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b2a9377L, "jetbrains.mps.lang.smodel.query.structure.PrintExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -346,17 +349,17 @@ __switch__:
                           }
                         })).iterator();
                       case 31:
-                        if (!(this._30__yield_zc5nt1_h0a0c0a0d_it.hasNext())) {
+                        if (!(this._30__yield_zc5nt1_h0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 33;
                           break;
                         }
-                        this._30__yield_zc5nt1_h0a0c0a0d = this._30__yield_zc5nt1_h0a0c0a0d_it.next();
+                        this._30__yield_zc5nt1_h0a0c0a0e = this._30__yield_zc5nt1_h0a0c0a0e_it.next();
                         this.__CP__ = 32;
                         break;
                       case 33:
-                        this._34__yield_zc5nt1_i0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._34__yield_zc5nt1_i0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b7db64fL, "jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b7db64fL, "jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -365,17 +368,17 @@ __switch__:
                           }
                         })).iterator();
                       case 35:
-                        if (!(this._34__yield_zc5nt1_i0a0c0a0d_it.hasNext())) {
+                        if (!(this._34__yield_zc5nt1_i0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 37;
                           break;
                         }
-                        this._34__yield_zc5nt1_i0a0c0a0d = this._34__yield_zc5nt1_i0a0c0a0d_it.next();
+                        this._34__yield_zc5nt1_i0a0c0a0e = this._34__yield_zc5nt1_i0a0c0a0e_it.next();
                         this.__CP__ = 36;
                         break;
                       case 37:
-                        this._38__yield_zc5nt1_j0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._38__yield_zc5nt1_j0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -384,17 +387,17 @@ __switch__:
                           }
                         })).iterator();
                       case 39:
-                        if (!(this._38__yield_zc5nt1_j0a0c0a0d_it.hasNext())) {
+                        if (!(this._38__yield_zc5nt1_j0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 41;
                           break;
                         }
-                        this._38__yield_zc5nt1_j0a0c0a0d = this._38__yield_zc5nt1_j0a0c0a0d_it.next();
+                        this._38__yield_zc5nt1_j0a0c0a0e = this._38__yield_zc5nt1_j0a0c0a0e_it.next();
                         this.__CP__ = 40;
                         break;
                       case 41:
-                        this._42__yield_zc5nt1_k0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._42__yield_zc5nt1_k0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old")) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"));
+                            return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old"))) && SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression")));
                           }
                         }).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
@@ -406,17 +409,17 @@ __switch__:
                           }
                         })).iterator();
                       case 43:
-                        if (!(this._42__yield_zc5nt1_k0a0c0a0d_it.hasNext())) {
+                        if (!(this._42__yield_zc5nt1_k0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 45;
                           break;
                         }
-                        this._42__yield_zc5nt1_k0a0c0a0d = this._42__yield_zc5nt1_k0a0c0a0d_it.next();
+                        this._42__yield_zc5nt1_k0a0c0a0e = this._42__yield_zc5nt1_k0a0c0a0e_it.next();
                         this.__CP__ = 44;
                         break;
                       case 45:
-                        this._46__yield_zc5nt1_l0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._46__yield_zc5nt1_l0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old")) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"));
+                            return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old"))) && SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand")));
                           }
                         }).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
@@ -428,17 +431,17 @@ __switch__:
                           }
                         })).iterator();
                       case 47:
-                        if (!(this._46__yield_zc5nt1_l0a0c0a0d_it.hasNext())) {
+                        if (!(this._46__yield_zc5nt1_l0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 49;
                           break;
                         }
-                        this._46__yield_zc5nt1_l0a0c0a0d = this._46__yield_zc5nt1_l0a0c0a0d_it.next();
+                        this._46__yield_zc5nt1_l0a0c0a0e = this._46__yield_zc5nt1_l0a0c0a0e_it.next();
                         this.__CP__ = 48;
                         break;
                       case 49:
-                        this._50__yield_zc5nt1_m0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._50__yield_zc5nt1_m0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old")) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, "jetbrains.mps.console.base.structure.AbstractPrintExpression"));
+                            return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old"))) && SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, "jetbrains.mps.console.base.structure.AbstractPrintExpression")));
                           }
                         }).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
@@ -450,17 +453,17 @@ __switch__:
                           }
                         })).iterator();
                       case 51:
-                        if (!(this._50__yield_zc5nt1_m0a0c0a0d_it.hasNext())) {
+                        if (!(this._50__yield_zc5nt1_m0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 53;
                           break;
                         }
-                        this._50__yield_zc5nt1_m0a0c0a0d = this._50__yield_zc5nt1_m0a0c0a0d_it.next();
+                        this._50__yield_zc5nt1_m0a0c0a0e = this._50__yield_zc5nt1_m0a0c0a0e_it.next();
                         this.__CP__ = 52;
                         break;
                       case 53:
-                        this._54__yield_zc5nt1_n0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._54__yield_zc5nt1_n0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old"));
+                            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old")));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -469,17 +472,17 @@ __switch__:
                           }
                         })).iterator();
                       case 55:
-                        if (!(this._54__yield_zc5nt1_n0a0c0a0d_it.hasNext())) {
+                        if (!(this._54__yield_zc5nt1_n0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 57;
                           break;
                         }
-                        this._54__yield_zc5nt1_n0a0c0a0d = this._54__yield_zc5nt1_n0a0c0a0d_it.next();
+                        this._54__yield_zc5nt1_n0a0c0a0e = this._54__yield_zc5nt1_n0a0c0a0e_it.next();
                         this.__CP__ = 56;
                         break;
                       case 57:
-                        this._58__yield_zc5nt1_o0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._58__yield_zc5nt1_o0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old")) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression"));
+                            return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old"))) && SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression")));
                           }
                         }).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
@@ -491,72 +494,72 @@ __switch__:
                           }
                         })).iterator();
                       case 59:
-                        if (!(this._58__yield_zc5nt1_o0a0c0a0d_it.hasNext())) {
+                        if (!(this._58__yield_zc5nt1_o0a0c0a0e_it.hasNext())) {
                           this.__CP__ = 1;
                           break;
                         }
-                        this._58__yield_zc5nt1_o0a0c0a0d = this._58__yield_zc5nt1_o0a0c0a0d_it.next();
+                        this._58__yield_zc5nt1_o0a0c0a0e = this._58__yield_zc5nt1_o0a0c0a0e_it.next();
                         this.__CP__ = 60;
                         break;
                       case 6:
                         this.__CP__ = 3;
-                        this.yield(_2__yield_zc5nt1_a0a0c0a0d);
+                        this.yield(_2__yield_zc5nt1_a0a0c0a0e);
                         return true;
                       case 10:
                         this.__CP__ = 7;
-                        this.yield(_6__yield_zc5nt1_b0a0c0a0d);
+                        this.yield(_6__yield_zc5nt1_b0a0c0a0e);
                         return true;
                       case 14:
                         this.__CP__ = 11;
-                        this.yield(_10__yield_zc5nt1_c0a0c0a0d);
+                        this.yield(_10__yield_zc5nt1_c0a0c0a0e);
                         return true;
                       case 18:
                         this.__CP__ = 15;
-                        this.yield(_14__yield_zc5nt1_d0a0c0a0d);
+                        this.yield(_14__yield_zc5nt1_d0a0c0a0e);
                         return true;
                       case 22:
                         this.__CP__ = 19;
-                        this.yield(_18__yield_zc5nt1_e0a0c0a0d);
+                        this.yield(_18__yield_zc5nt1_e0a0c0a0e);
                         return true;
                       case 26:
                         this.__CP__ = 23;
-                        this.yield(_22__yield_zc5nt1_f0a0c0a0d);
+                        this.yield(_22__yield_zc5nt1_f0a0c0a0e);
                         return true;
                       case 30:
                         this.__CP__ = 27;
-                        this.yield(_26__yield_zc5nt1_g0a0c0a0d);
+                        this.yield(_26__yield_zc5nt1_g0a0c0a0e);
                         return true;
                       case 34:
                         this.__CP__ = 31;
-                        this.yield(_30__yield_zc5nt1_h0a0c0a0d);
+                        this.yield(_30__yield_zc5nt1_h0a0c0a0e);
                         return true;
                       case 38:
                         this.__CP__ = 35;
-                        this.yield(_34__yield_zc5nt1_i0a0c0a0d);
+                        this.yield(_34__yield_zc5nt1_i0a0c0a0e);
                         return true;
                       case 42:
                         this.__CP__ = 39;
-                        this.yield(_38__yield_zc5nt1_j0a0c0a0d);
+                        this.yield(_38__yield_zc5nt1_j0a0c0a0e);
                         return true;
                       case 46:
                         this.__CP__ = 43;
-                        this.yield(_42__yield_zc5nt1_k0a0c0a0d);
+                        this.yield(_42__yield_zc5nt1_k0a0c0a0e);
                         return true;
                       case 50:
                         this.__CP__ = 47;
-                        this.yield(_46__yield_zc5nt1_l0a0c0a0d);
+                        this.yield(_46__yield_zc5nt1_l0a0c0a0e);
                         return true;
                       case 54:
                         this.__CP__ = 51;
-                        this.yield(_50__yield_zc5nt1_m0a0c0a0d);
+                        this.yield(_50__yield_zc5nt1_m0a0c0a0e);
                         return true;
                       case 58:
                         this.__CP__ = 55;
-                        this.yield(_54__yield_zc5nt1_n0a0c0a0d);
+                        this.yield(_54__yield_zc5nt1_n0a0c0a0e);
                         return true;
                       case 61:
                         this.__CP__ = 59;
-                        this.yield(_58__yield_zc5nt1_o0a0c0a0d);
+                        this.yield(_58__yield_zc5nt1_o0a0c0a0e);
                         return true;
                       case 0:
                         this.__CP__ = 2;
@@ -612,36 +615,36 @@ __switch__:
                   } while (true);
                   return false;
                 }
-                private Problem _2__yield_zc5nt1_a0a0c0a0d;
-                private Iterator<Problem> _2__yield_zc5nt1_a0a0c0a0d_it;
-                private Problem _6__yield_zc5nt1_b0a0c0a0d;
-                private Iterator<Problem> _6__yield_zc5nt1_b0a0c0a0d_it;
-                private Problem _10__yield_zc5nt1_c0a0c0a0d;
-                private Iterator<Problem> _10__yield_zc5nt1_c0a0c0a0d_it;
-                private Problem _14__yield_zc5nt1_d0a0c0a0d;
-                private Iterator<Problem> _14__yield_zc5nt1_d0a0c0a0d_it;
-                private Problem _18__yield_zc5nt1_e0a0c0a0d;
-                private Iterator<Problem> _18__yield_zc5nt1_e0a0c0a0d_it;
-                private Problem _22__yield_zc5nt1_f0a0c0a0d;
-                private Iterator<Problem> _22__yield_zc5nt1_f0a0c0a0d_it;
-                private Problem _26__yield_zc5nt1_g0a0c0a0d;
-                private Iterator<Problem> _26__yield_zc5nt1_g0a0c0a0d_it;
-                private Problem _30__yield_zc5nt1_h0a0c0a0d;
-                private Iterator<Problem> _30__yield_zc5nt1_h0a0c0a0d_it;
-                private Problem _34__yield_zc5nt1_i0a0c0a0d;
-                private Iterator<Problem> _34__yield_zc5nt1_i0a0c0a0d_it;
-                private Problem _38__yield_zc5nt1_j0a0c0a0d;
-                private Iterator<Problem> _38__yield_zc5nt1_j0a0c0a0d_it;
-                private Problem _42__yield_zc5nt1_k0a0c0a0d;
-                private Iterator<Problem> _42__yield_zc5nt1_k0a0c0a0d_it;
-                private Problem _46__yield_zc5nt1_l0a0c0a0d;
-                private Iterator<Problem> _46__yield_zc5nt1_l0a0c0a0d_it;
-                private Problem _50__yield_zc5nt1_m0a0c0a0d;
-                private Iterator<Problem> _50__yield_zc5nt1_m0a0c0a0d_it;
-                private Problem _54__yield_zc5nt1_n0a0c0a0d;
-                private Iterator<Problem> _54__yield_zc5nt1_n0a0c0a0d_it;
-                private Problem _58__yield_zc5nt1_o0a0c0a0d;
-                private Iterator<Problem> _58__yield_zc5nt1_o0a0c0a0d_it;
+                private Problem _2__yield_zc5nt1_a0a0c0a0e;
+                private Iterator<Problem> _2__yield_zc5nt1_a0a0c0a0e_it;
+                private Problem _6__yield_zc5nt1_b0a0c0a0e;
+                private Iterator<Problem> _6__yield_zc5nt1_b0a0c0a0e_it;
+                private Problem _10__yield_zc5nt1_c0a0c0a0e;
+                private Iterator<Problem> _10__yield_zc5nt1_c0a0c0a0e_it;
+                private Problem _14__yield_zc5nt1_d0a0c0a0e;
+                private Iterator<Problem> _14__yield_zc5nt1_d0a0c0a0e_it;
+                private Problem _18__yield_zc5nt1_e0a0c0a0e;
+                private Iterator<Problem> _18__yield_zc5nt1_e0a0c0a0e_it;
+                private Problem _22__yield_zc5nt1_f0a0c0a0e;
+                private Iterator<Problem> _22__yield_zc5nt1_f0a0c0a0e_it;
+                private Problem _26__yield_zc5nt1_g0a0c0a0e;
+                private Iterator<Problem> _26__yield_zc5nt1_g0a0c0a0e_it;
+                private Problem _30__yield_zc5nt1_h0a0c0a0e;
+                private Iterator<Problem> _30__yield_zc5nt1_h0a0c0a0e_it;
+                private Problem _34__yield_zc5nt1_i0a0c0a0e;
+                private Iterator<Problem> _34__yield_zc5nt1_i0a0c0a0e_it;
+                private Problem _38__yield_zc5nt1_j0a0c0a0e;
+                private Iterator<Problem> _38__yield_zc5nt1_j0a0c0a0e_it;
+                private Problem _42__yield_zc5nt1_k0a0c0a0e;
+                private Iterator<Problem> _42__yield_zc5nt1_k0a0c0a0e_it;
+                private Problem _46__yield_zc5nt1_l0a0c0a0e;
+                private Iterator<Problem> _46__yield_zc5nt1_l0a0c0a0e_it;
+                private Problem _50__yield_zc5nt1_m0a0c0a0e;
+                private Iterator<Problem> _50__yield_zc5nt1_m0a0c0a0e_it;
+                private Problem _54__yield_zc5nt1_n0a0c0a0e;
+                private Iterator<Problem> _54__yield_zc5nt1_n0a0c0a0e_it;
+                private Problem _58__yield_zc5nt1_o0a0c0a0e;
+                private Iterator<Problem> _58__yield_zc5nt1_o0a0c0a0e_it;
               };
             }
           };

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,14 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.core.aspects.behaviour.BehaviorRegistryImpl;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
-import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -78,14 +81,37 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     INSTANCE = null;
   }
 
+  /**
+   * @deprecated It's odd to go from SAbstractConcept back to ConceptDescriptor. It's MPS implementation of SConcept that
+   *             deals with ConceptDescriptors to populate SAbstractConcept and client code shall not reverse this.
+   *             *
+   *             NOTE, THERE ARE NO USES left in MPS code, don't introduce a new one! We'll drop the method any time soon.
+   *             *
+   */
   @NotNull
+  @Deprecated
   public ConceptDescriptor getConceptDescriptor(@NotNull SAbstractConcept concept) {
-    return myStructureRegistry.getConceptDescriptor(concept);
+    SConceptId cid = MetaIdHelper.getConcept(concept);
+    if (cid == MetaIdFactory.INVALID_CONCEPT_ID) {
+      return new IllegalConceptDescriptor(cid, concept.getQualifiedName());
+    }
+    return getConceptDescriptor(cid);
   }
 
+  /**
+   * Looks up {@link ConceptDescriptor} for the given id. If none found,
+   * {@link IllegalConceptDescriptor} instance is returned, with {@link IllegalConceptDescriptor#getId()}
+   * equal to the one supplied.
+   *
+   * @param id identity of a concept (generally, shall not use MetaIdFactory.INVALID_CONCEPT_ID)
+   * @return never {@code null}
+   */
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
-    return myStructureRegistry.getConceptDescriptor(id);
+    // XXX shall I check for id == MetaIdFactory.INVALID_CONCEPT_ID?
+    // If yes, handle gracefully or assert !=
+    ConceptDescriptor cd = myStructureRegistry.getConceptDescriptor(id);
+    return cd == null ? new IllegalConceptDescriptor(id) : cd;
   }
 
   public ConceptPresentation getConceptProperties(@NotNull SAbstractConcept concept){

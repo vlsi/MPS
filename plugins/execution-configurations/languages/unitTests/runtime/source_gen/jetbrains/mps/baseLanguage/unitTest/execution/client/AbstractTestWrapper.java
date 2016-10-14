@@ -10,16 +10,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.util.List;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.execution.api.Java_Command;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
   @NotNull
@@ -46,7 +42,11 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @Nullable
   @Override
   public N getNode() {
-    return (N) ((SNodePointer) myNodePointer).resolve(myRepo);
+    return new ModelAccessHelper(myRepo).runReadAction(new Computable<N>() {
+      public N compute() {
+        return (N) ((SNodePointer) myNodePointer).resolve(myRepo);
+      }
+    });
   }
 
   @NotNull
@@ -89,8 +89,8 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @NotNull
   @Override
-  public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
-    return getDefaultRunParameters();
+  public TestParameters getTestRunParameters() {
+    return TestParameters.DEFAULT;
   }
 
   @Override
@@ -133,10 +133,5 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
       });
     }
     return myFqName;
-  }
-
-  public static Tuples._3<String, List<String>, List<String>> getDefaultRunParameters() {
-    List<String> startupPath = Java_Command.getClasspath(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)")));
-    return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor", ListSequence.fromList(new ArrayList<String>()), startupPath);
   }
 }

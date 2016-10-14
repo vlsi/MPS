@@ -306,6 +306,33 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="38NtPr_SSBg" role="3cqZAp">
+          <node concept="3clFbS" id="38NtPr_SSBh" role="3clFbx">
+            <node concept="3clFbF" id="38NtPr_SSBi" role="3cqZAp">
+              <node concept="d57v9" id="38NtPr_SSBj" role="3clFbG">
+                <node concept="37vLTw" id="38NtPr_SSBk" role="37vLTJ">
+                  <ref role="3cqZAo" node="1fzYukMfy3_" resolve="result" />
+                </node>
+                <node concept="Xl_RD" id="38NtPr_SSBl" role="37vLTx">
+                  <property role="Xl_RC" value="exact  (default = false)     exclude instances of descendant concepts\n" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="38NtPr_SSBm" role="3clFbw">
+            <node concept="3JPx81" id="38NtPr_SSBn" role="2OqNvi">
+              <node concept="3TUQnm" id="38NtPr_SSBo" role="25WWJ7">
+                <ref role="3TV0OU" to="3xdn:_BZ6vQW9PK" resolve="QueryParameterExact" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="38NtPr_SSBp" role="2Oq$k0">
+              <node concept="13iPFW" id="38NtPr_SSBq" role="2Oq$k0" />
+              <node concept="2qgKlT" id="38NtPr_SSBr" role="2OqNvi">
+                <ref role="37wK5l" node="3J6h25QXCDW" resolve="getSupportedParameters" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="1fzYukMfwEy" role="3cqZAp">
           <node concept="3clFbS" id="1fzYukMfwEz" role="3clFbx">
             <node concept="3clFbF" id="1fzYukMfMQL" role="3cqZAp">
@@ -549,6 +576,9 @@
               </node>
               <node concept="3TUQnm" id="30Cvt28KorN" role="HW$Y0">
                 <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              </node>
+              <node concept="3TUQnm" id="_BZ6vQWa0f" role="HW$Y0">
+                <ref role="3TV0OU" to="3xdn:_BZ6vQW9PK" resolve="QueryParameterExact" />
               </node>
             </node>
           </node>

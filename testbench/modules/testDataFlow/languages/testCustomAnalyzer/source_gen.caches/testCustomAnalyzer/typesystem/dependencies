@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramFactory" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisResult" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ConceptDataFlowModeId" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

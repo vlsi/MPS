@@ -61,6 +61,7 @@
     </language>
     <language id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring">
       <concept id="7953996722066252915" name="jetbrains.mps.lang.refactoring.structure.NodeOperation" flags="nn" index="50M6j" />
+      <concept id="7953996722066252923" name="jetbrains.mps.lang.refactoring.structure.ScopeOperation" flags="nn" index="50M6r" />
       <concept id="7953996722066256458" name="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" flags="nn" index="50NuE" />
       <concept id="4347648036456711197" name="jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault" flags="nn" index="29ebr7" />
       <concept id="1200932465350" name="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" flags="in" index="2t9MJh" />
@@ -111,6 +112,7 @@
         <reference id="7222148688691763792" name="finder" index="2$JaeB" />
       </concept>
       <concept id="2005690715325995353" name="jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults" flags="nn" index="zAVLd">
+        <child id="6366407517031970111" name="scope" index="2GiN3o" />
         <child id="6366407517031970110" name="queryNode" index="2GiN3p" />
         <child id="8150507060913099385" name="finder" index="1C5ry4" />
       </concept>
@@ -165,6 +167,10 @@
             <node concept="2OqwBi" id="3X$1g2TxRCv" role="2GiN3p">
               <node concept="50NuE" id="3X$1g2TxRCw" role="2Oq$k0" />
               <node concept="50M6j" id="3X$1g2TxRCx" role="2OqNvi" />
+            </node>
+            <node concept="2OqwBi" id="1KbO_aWRtpm" role="2GiN3o">
+              <node concept="50NuE" id="1KbO_aWRtaS" role="2Oq$k0" />
+              <node concept="50M6r" id="1KbO_aWRtEw" role="2OqNvi" />
             </node>
           </node>
         </node>

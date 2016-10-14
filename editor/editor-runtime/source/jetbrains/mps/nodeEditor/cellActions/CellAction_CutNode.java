@@ -33,7 +33,7 @@ public class CellAction_CutNode extends CellAction_CopyNode {
       return false;
     }
     SNode node = context.getSelectionManager().getSelection().getSelectedNodes().get(0);
-    if (SNodeOperations.getParent(node) == null) {
+    if (SNodeOperations.getParent(node) == null || context.getEditorComponent().getEditedNode() == node) {
       return false;
     }
     return true;

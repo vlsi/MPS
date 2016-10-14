@@ -208,6 +208,7 @@
     <group id="EditorPopup_ActionGroupnew" />
     <group id="EditorPopup_ActionGroupshowIn" />
     <group id="EditorPopup_ActionGroupstructure" />
+    <group id="EditorPopup_ActionGroupcopy" />
     <group id="EditorPopup_ActionGrouppaste" />
     <group id="EditorPopup_ActionGroupfolding" />
     <group id="EditorPopup_ActionGroupgoto" />
@@ -285,6 +286,7 @@
       <reference ref="EditorPopup_ActionGroupshowIn" />
       <reference ref="EditorPopup_ActionGroupstructure" />
       <separator />
+      <reference ref="EditorPopup_ActionGroupcopy" />
       <reference ref="EditorPopup_ActionGrouppaste" />
       <separator />
       <reference ref="EditorPopup_ActionGroupfolding" />

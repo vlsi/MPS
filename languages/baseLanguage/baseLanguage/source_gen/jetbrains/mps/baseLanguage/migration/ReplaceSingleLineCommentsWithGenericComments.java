@@ -36,6 +36,10 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
     return true;
   }
   public SNode execute(final SModule m) {
+    doExecute(m);
+    return null;
+  }
+  public void doExecute(final SModule m) {
     Iterable<SModel> models = ((Iterable<SModel>) m.getModels());
     Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
       public void visit(SModel model) {
@@ -43,7 +47,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
         // Remove meaningless empty text comment parts 
         ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && isEmptyString(trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")))) && ListSequence.fromList(SNodeOperations.getAllSiblings(it, false)).isNotEmpty();
+            return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && isEmptyString(trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0d(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")))) && ListSequence.fromList(SNodeOperations.getAllSiblings(it, false)).isNotEmpty();
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -68,7 +72,6 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
         }
       }
     });
-    return null;
   }
   @Override
   public Iterable<Problem> check(SModule m) {
@@ -79,7 +82,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"))).select(new ISelector<SNode, Problem>() {
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), false)).select(new ISelector<SNode, Problem>() {
         public Problem select(SNode it) {
           return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
         }
@@ -93,7 +96,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  public static String trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0c(String str) {
+  public static String trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0d(String str) {
     return (str == null ? null : str.trim());
   }
 }

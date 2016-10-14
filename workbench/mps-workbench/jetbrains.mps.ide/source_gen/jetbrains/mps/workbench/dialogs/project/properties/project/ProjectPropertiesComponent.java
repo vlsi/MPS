@@ -16,8 +16,11 @@ import javax.swing.ListSelectionModel;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.AnActionButton;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.project.ModulePath;
-import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import com.intellij.ui.IdeBorderFactory;
@@ -59,16 +62,23 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     decorator.setAddAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton button) {
-        ModulePath path = new ModulePathChooser().compute();
-        if (path != null) {
-          for (ModulePath p : ((ProjectPropertiesComponent.PathsListModel) list.getModel()).getPaths()) {
-            if (p.getPath().equals(path.getPath())) {
-              list.setSelectedValue(p, true);
-              return;
-            }
-          }
-          ((ProjectPropertiesComponent.PathsListModel) list.getModel()).addPath(path);
+        final TreeFileChooser chooser = new TreeFileChooser();
+        chooser.setExtensionFileFilter(MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LIBRARY, MPSExtentions.DOT_DEVKIT);
+        chooser.setInitialFile(VirtualFileUtils.toIFile(myProject.getProject().getBaseDir()));
+
+        final IFile file = chooser.showDialog();
+        if (file == null) {
+          return;
         }
+
+        ModulePath path = new ModulePath(file.toPath().toString());
+        for (ModulePath p : ((ProjectPropertiesComponent.PathsListModel) list.getModel()).getPaths()) {
+          if (p.getPath().equals(path.getPath())) {
+            list.setSelectedValue(p, true);
+            return;
+          }
+        }
+        ((ProjectPropertiesComponent.PathsListModel) list.getModel()).addPath(path);
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
       @Override

@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895905f3(jetbrains.mps.transformation.test.inputLang.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="tpm0" ref="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" />
@@ -124,7 +124,7 @@
         </node>
         <node concept="3F2HdR" id="hp5G0mR" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <ref role="1NtTu8" to="tpm0:hp5EZkO" />
+          <ref role="1NtTu8" to="tpm0:hp5EZkO" resolve="inputChild" />
           <node concept="2iRkQZ" id="i2IQRq0" role="2czzBx" />
         </node>
         <node concept="VPM3Z" id="hEU$PTv" role="3F10Kt">
@@ -178,7 +178,7 @@
           <node concept="3F2HdR" id="hvFVqf7" role="3EZMnx">
             <property role="2czwfN" value="false" />
             <property role="2czwfO" value="," />
-            <ref role="1NtTu8" to="tpm0:hvFV4pO" />
+            <ref role="1NtTu8" to="tpm0:hvFV4pO" resolve="inputChild" />
             <node concept="3F0ifn" id="hvFVvHI" role="2czzBI">
               <property role="3F0ifm" value=".." />
             </node>
@@ -247,7 +247,7 @@
           <node concept="3F2HdR" id="hzABkiS" role="3EZMnx">
             <property role="2czwfN" value="false" />
             <property role="2czwfO" value="," />
-            <ref role="1NtTu8" to="tpm0:hvFV4pO" />
+            <ref role="1NtTu8" to="tpm0:hvFV4pO" resolve="inputChild" />
             <node concept="3F0ifn" id="hzABkiT" role="2czzBI">
               <property role="3F0ifm" value=".." />
             </node>
@@ -328,7 +328,7 @@
           <node concept="3F2HdR" id="hzAMVQY" role="3EZMnx">
             <property role="2czwfN" value="false" />
             <property role="2czwfO" value="," />
-            <ref role="1NtTu8" to="tpm0:hvFV4pO" />
+            <ref role="1NtTu8" to="tpm0:hvFV4pO" resolve="inputChild" />
             <node concept="3F0ifn" id="hzAMVQZ" role="2czzBI">
               <property role="3F0ifm" value=".." />
             </node>
@@ -399,7 +399,7 @@
         <property role="3EZMnw" value="false" />
         <node concept="3XFhqQ" id="hA6V$Oc" role="3EZMnx" />
         <node concept="3F1sOY" id="hA6VAMr" role="3EZMnx">
-          <ref role="1NtTu8" to="tpm0:hA6V6dT" />
+          <ref role="1NtTu8" to="tpm0:hA6V6dT" resolve="statementList" />
         </node>
         <node concept="VPM3Z" id="hEU$PZC" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -415,7 +415,7 @@
     <node concept="3EZMnI" id="2S48fJgAlSd" role="2wV5jI">
       <node concept="l2Vlx" id="2S48fJgAlSe" role="2iSdaV" />
       <node concept="1iCGBv" id="2S48fJgAlSh" role="3EZMnx">
-        <ref role="1NtTu8" to="tpm0:2S48fJgAlSa" />
+        <ref role="1NtTu8" to="tpm0:2S48fJgAlSa" resolve="method" />
         <node concept="1sVBvm" id="2S48fJgAlSi" role="1sWHZn">
           <node concept="3F0A7n" id="2S48fJgAlSj" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -439,7 +439,7 @@
         <property role="3F0ifm" value="read" />
       </node>
       <node concept="1iCGBv" id="2S48fJgAlSs" role="3EZMnx">
-        <ref role="1NtTu8" to="tpm0:2S48fJgAlS8" />
+        <ref role="1NtTu8" to="tpm0:2S48fJgAlS8" resolve="declaration" />
         <node concept="1sVBvm" id="2S48fJgAlSt" role="1sWHZn">
           <node concept="3F0A7n" id="2S48fJgAlSu" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -469,7 +469,7 @@
         <property role="3F0ifm" value="extends" />
       </node>
       <node concept="1iCGBv" id="2S48fJgAlSG" role="3EZMnx">
-        <ref role="1NtTu8" to="tpm0:2S48fJgAlRX" />
+        <ref role="1NtTu8" to="tpm0:2S48fJgAlRX" resolve="extends" />
         <node concept="1sVBvm" id="2S48fJgAlSH" role="1sWHZn">
           <node concept="3F0A7n" id="2S48fJgAlSI" role="2wV5jI">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -486,7 +486,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="2S48fJgAlST" role="3EZMnx">
-        <ref role="1NtTu8" to="tpm0:2S48fJgAlSA" />
+        <ref role="1NtTu8" to="tpm0:2S48fJgAlSA" resolve="methods" />
         <node concept="l2Vlx" id="2S48fJgAlSU" role="2czzBx" />
         <node concept="pj6Ft" id="2S48fJgAlSV" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -528,7 +528,7 @@
       </node>
       <node concept="3F2HdR" id="2S48fJgAlTh" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <ref role="1NtTu8" to="tpm0:2S48fJgAlT0" />
+        <ref role="1NtTu8" to="tpm0:2S48fJgAlT0" resolve="params" />
         <node concept="l2Vlx" id="2S48fJgAlTi" role="2czzBx" />
       </node>
       <node concept="3F0ifn" id="2S48fJgAlTB" role="3EZMnx">
@@ -547,7 +547,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="2S48fJgAlTs" role="3EZMnx">
-        <ref role="1NtTu8" to="tpm0:2S48fJgAlS5" />
+        <ref role="1NtTu8" to="tpm0:2S48fJgAlS5" resolve="expressions" />
         <node concept="l2Vlx" id="2S48fJgAlTt" role="2czzBx" />
         <node concept="pj6Ft" id="2S48fJgAlTu" role="3F10Kt">
           <property role="VOm3f" value="true" />

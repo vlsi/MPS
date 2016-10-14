@@ -16,9 +16,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Level;
 
 /**
  * This is a map from 'Feature' to arbitrary value. Also it stores which features are ancestors of
@@ -120,6 +120,7 @@ public class FeatureForestMap<V> {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(FeatureForestMap.class);
   private void fireFeatureStateChanged(@NotNull Feature feature) {
     for (FeatureForestMapListener listener : ListSequence.fromList(copyListeners())) {
       try {
@@ -160,7 +161,6 @@ public class FeatureForestMap<V> {
       fireFeatureStateChanged(feature);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(FeatureForestMap.class);
   private static Throwable check_tcy57o_a0a0a0a0a0ab(Throwable checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getCause();

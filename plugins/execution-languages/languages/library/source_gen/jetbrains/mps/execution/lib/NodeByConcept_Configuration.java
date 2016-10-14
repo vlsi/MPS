@@ -17,12 +17,12 @@ import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeByConcept_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
@@ -88,6 +88,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       this.setNodeId(node.getNodeId().toString());
     }
   }
+  protected static Logger LOG = LogManager.getLogger(NodeByConcept_Configuration.class);
   @Override
   public NodeByConcept_Configuration clone() {
     NodeByConcept_Configuration clone = null;
@@ -134,7 +135,6 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     }
     return myEditorEx;
   }
-  protected static Logger LOG = LogManager.getLogger(NodeByConcept_Configuration.class);
   private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());

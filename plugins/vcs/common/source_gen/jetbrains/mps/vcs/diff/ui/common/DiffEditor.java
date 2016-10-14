@@ -46,7 +46,6 @@ public class DiffEditor implements EditorMessageOwner {
     myInspector = new InspectorEditorComponent(project.getRepository(), new EditorConfigurationBuilder().rightToLeft(isLeftEditor).build());
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
-        ec.setNoVirtualFile(true);
         EditorExtensionUtil.extendUsingProject(ec, project);
       }
     });
@@ -136,9 +135,7 @@ public class DiffEditor implements EditorMessageOwner {
   }
   public void dispose() {
     myMainEditorComponent.dispose();
-    myMainEditorComponent = null;
     myInspector.dispose();
-    myInspector = null;
   }
   private Iterable<EditorComponent> getEditorComponents() {
     return Sequence.fromArray(new EditorComponent[]{myMainEditorComponent, myInspector});

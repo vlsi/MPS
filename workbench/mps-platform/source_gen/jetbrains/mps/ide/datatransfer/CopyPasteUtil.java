@@ -31,6 +31,8 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import java.util.Collection;
 import jetbrains.mps.project.Project;
@@ -41,8 +43,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class CopyPasteUtil {
   public CopyPasteUtil() {
@@ -250,6 +250,7 @@ public final class CopyPasteUtil {
   public static List<SNode> getNodesFromClipboard(SModel model) {
     return CopyPasteUtil.getPasteNodeDataFromClipboard(model).getNodes();
   }
+  protected static Logger LOG = LogManager.getLogger(CopyPasteUtil.class);
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
@@ -397,7 +398,6 @@ public final class CopyPasteUtil {
     }
     return false;
   }
-  protected static Logger LOG = LogManager.getLogger(CopyPasteUtil.class);
   private static SModelReference check_lwiaog_c0a31a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();

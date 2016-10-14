@@ -118,7 +118,7 @@ public class ModuleGenerationHolder {
     };
 
     result = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
-    isSucessful = result.isSucessful();
+    isSucessful = result != null && result.isSucessful();
   }
   public boolean isBuildSucessful() {
     return isSucessful;

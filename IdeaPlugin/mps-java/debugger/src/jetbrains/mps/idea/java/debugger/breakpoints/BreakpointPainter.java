@@ -51,7 +51,7 @@ import org.jetbrains.annotations.Nullable;
   @Deprecated
   public static SNode getNodeForBreakpoint(BreakpointWithHighlighter breakpoint) {
     GeneratedSourcePosition gsp = getPosition(breakpoint);
-    return gsp.getNode() == null ? null : gsp.getNode().resolve(ProjectHelper.getProjectRepository(breakpoint.getProject()));
+    return gsp == null || gsp.getNode() == null ? null : gsp.getNode().resolve(ProjectHelper.getProjectRepository(breakpoint.getProject()));
   }
 
   private static GeneratedSourcePosition getPosition(BreakpointWithHighlighter breakpoint) {

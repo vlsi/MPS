@@ -2,7 +2,7 @@
 <model ref="r:ab9bdb28-46f4-4abc-86dd-ddf6694490af(testCustomAnalyzer.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -103,7 +103,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7ez5JvPhCVG" role="3EZMnx">
-          <ref role="1NtTu8" to="9cnx:7ez5JvPhCVm" />
+          <ref role="1NtTu8" to="9cnx:7ez5JvPhCVm" resolve="child" />
           <node concept="l2Vlx" id="7ez5JvPhCVH" role="2czzBx" />
           <node concept="pj6Ft" id="7ez5JvPhCVI" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -164,7 +164,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="68XlVg40drm" role="3EZMnx">
-          <ref role="1NtTu8" to="9cnx:68XlVg40dqX" />
+          <ref role="1NtTu8" to="9cnx:68XlVg40dqX" resolve="child" />
           <node concept="l2Vlx" id="68XlVg40drn" role="2czzBx" />
           <node concept="pj6Ft" id="68XlVg40dro" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -219,7 +219,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="68XlVg40dsb" role="3EZMnx">
-          <ref role="1NtTu8" to="9cnx:68XlVg40drU" />
+          <ref role="1NtTu8" to="9cnx:68XlVg40drU" resolve="child" />
           <node concept="lj46D" id="68XlVg40dsc" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>

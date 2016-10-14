@@ -2,7 +2,7 @@
 <model ref="r:2bfc79e0-0d9b-47c9-b525-e58fbef017f6(org.jetbrains.mps.samples.Constants.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="nd9w" ref="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)" />
@@ -74,7 +74,7 @@
         <property role="3F0ifm" value=":" />
       </node>
       <node concept="3F1sOY" id="1J7HMiRRGnz" role="3EZMnx">
-        <ref role="1NtTu8" to="nd9w:1J7HMiRRGnx" />
+        <ref role="1NtTu8" to="nd9w:1J7HMiRRGnx" resolve="initializer" />
       </node>
       <node concept="l2Vlx" id="1iYrdV1xxgw" role="2iSdaV" />
     </node>
@@ -89,7 +89,7 @@
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F2HdR" id="1iYrdV1y5_F" role="3EZMnx">
-        <ref role="1NtTu8" to="nd9w:1iYrdV1xxgC" />
+        <ref role="1NtTu8" to="nd9w:1iYrdV1xxgC" resolve="constants" />
         <node concept="2iRkQZ" id="1iYrdV1y5_G" role="2czzBx" />
         <node concept="lj46D" id="1iYrdV1y5_J" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -107,7 +107,7 @@
   <node concept="24kQdi" id="3tw0l3PakpB">
     <ref role="1XX52x" to="nd9w:3tw0l3Pakp_" resolve="ConstantReference" />
     <node concept="1iCGBv" id="3tw0l3PakpD" role="2wV5jI">
-      <ref role="1NtTu8" to="nd9w:3tw0l3PakpA" />
+      <ref role="1NtTu8" to="nd9w:3tw0l3PakpA" resolve="original" />
       <node concept="1sVBvm" id="3tw0l3PakpE" role="1sWHZn">
         <node concept="3F0A7n" id="3tw0l3PakpG" role="2wV5jI">
           <property role="1Intyy" value="true" />
@@ -120,7 +120,7 @@
     <ref role="1XX52x" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
     <node concept="3EZMnI" id="2lb0lXX1HJY" role="2wV5jI">
       <node concept="1iCGBv" id="2lb0lXX1HKq" role="3EZMnx">
-        <ref role="1NtTu8" to="nd9w:2lb0lXX1H8n" />
+        <ref role="1NtTu8" to="nd9w:2lb0lXX1H8n" resolve="targetSetOfConstants" />
         <node concept="1sVBvm" id="2lb0lXX1HKs" role="1sWHZn">
           <node concept="3F0A7n" id="2lb0lXX1HKA" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -139,7 +139,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="2lb0lXX1HKU" role="3EZMnx">
-        <ref role="1NtTu8" to="nd9w:3tw0l3PakpA" />
+        <ref role="1NtTu8" to="nd9w:3tw0l3PakpA" resolve="original" />
         <node concept="1sVBvm" id="2lb0lXX1HKW" role="1sWHZn">
           <node concept="3F0A7n" id="2lb0lXX1HL7" role="2wV5jI">
             <property role="1Intyy" value="true" />

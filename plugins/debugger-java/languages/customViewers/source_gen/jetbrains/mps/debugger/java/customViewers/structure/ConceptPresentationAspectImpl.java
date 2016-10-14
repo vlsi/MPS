@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_CanWrapHighLevelValue_ConceptFunction = new ConceptPresentationBuilder().create();
@@ -28,83 +25,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0n.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_CanWrapHighLevelValue_ConceptFunction;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CustomWatchable;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CustomWatchablesContainer;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_GetHighLevelValuePresentation_ConceptFunction;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_GetHighLevelWatchablesBlock_ConceptFunction;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_HighLevelCustomViewer;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_HighLevelValue_ConceptFunctionParameter;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_HighLevelWatchableCreator;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ToProcessMethod;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_WatchableListType;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_WatchableType;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_WatchablesListCreator;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.CanWrapHighLevelValue_ConceptFunction:
+        return props_CanWrapHighLevelValue_ConceptFunction;
+      case LanguageConceptSwitch.CustomWatchable:
+        return props_CustomWatchable;
+      case LanguageConceptSwitch.CustomWatchablesContainer:
+        return props_CustomWatchablesContainer;
+      case LanguageConceptSwitch.GetHighLevelValuePresentation_ConceptFunction:
+        return props_GetHighLevelValuePresentation_ConceptFunction;
+      case LanguageConceptSwitch.GetHighLevelWatchablesBlock_ConceptFunction:
+        return props_GetHighLevelWatchablesBlock_ConceptFunction;
+      case LanguageConceptSwitch.HighLevelCustomViewer:
+        return props_HighLevelCustomViewer;
+      case LanguageConceptSwitch.HighLevelValue_ConceptFunctionParameter:
+        return props_HighLevelValue_ConceptFunctionParameter;
+      case LanguageConceptSwitch.HighLevelWatchableCreator:
+        return props_HighLevelWatchableCreator;
+      case LanguageConceptSwitch.ToProcessMethod:
+        return props_ToProcessMethod;
+      case LanguageConceptSwitch.WatchableListType:
+        return props_WatchableListType;
+      case LanguageConceptSwitch.WatchableType:
+        return props_WatchableType;
+      case LanguageConceptSwitch.WatchablesListCreator:
+        return props_WatchablesListCreator;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbdbL, "jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b7665563ef3L, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbd2L, "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbd6L, "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ffbadL, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0xa01bb2d9f697c10L, "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x19926b3196c33bb3L, "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556944dL, "jetbrains.mps.debugger.java.customViewers.structure.WatchableType"), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x19926b3196c33bb2L, "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"));
 }

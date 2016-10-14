@@ -15,29 +15,37 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Igor Alshannikov
@@ -54,35 +62,82 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     }
     IOperationContext context = editorContext.getOperationContext();
 
-    List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
-    List<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
-    for (SubstituteAction a : actions) {
-      result.add(new NodeSubstituteActionWrapper(a) {
+    List<SubstituteAction> result;
+    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(getReplacementConcept(), editorContext.getRepository())) {
+      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, getReplacementConcept().getDeclarationNode(), this, context);
+      result = new ArrayList<SubstituteAction>(actions.size());
+      for (SubstituteAction a : actions) {
+        result.add(new NodeSubstituteActionWrapper(a) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            String selectedCellId = getSelectedCellId(context);
+            SNode result = super.substitute(context, pattern);
+            select(context, selectedCellId, result);
+            return result;
+          }
+        });
+      }
+    } else {
+      SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
+      SContainmentLink containmentLink = node.getContainmentLink();
+      assert containmentLink != null;
+      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
+      result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
         @Override
         public SNode substitute(@Nullable EditorContext context, String pattern) {
-          String selectedCellId = null;
-          if (context != null && context.getSelectedCell() != null) {
-            selectedCellId = context.getSelectedCell().getCellId();
+          String selectedCellId = getSelectedCellId(context);
+
+          super.substitute(context, pattern);
+          if (context != null) {
+            //hack to find substituted node
+            select(editorContext, selectedCellId, getNewNode(parent, editorContext));
           }
-
-          SNode result = super.substitute(context, pattern);
-
-          if (selectedCellId != null) {
-            EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
-            if (toSelect != null) {
-              context.flushEvents();
-              context.getSelectionManager().setSelection(toSelect);
-              if (context.getSelectedCell() instanceof EditorCell_Label) {
-                context.getSelectedCell().end();
-              }
-            }
-          }
-
-          return result;
+          return null;
         }
-      });
+      }).collect(Collectors.toList());
     }
     return result;
+  }
+
+  private SNode getNewNode(SNode parentNode, EditorContext editorContext) {
+    SNode result = editorContext.getSelectedNode();
+    if (result == null) {
+      return null;
+    }
+
+    SNode resultParent = result.getParent();
+
+    while (resultParent != null) {
+      if (resultParent == parentNode) {
+        return result;
+      }
+      result = resultParent;
+      resultParent = resultParent.getParent();
+    }
+    return null;
+  }
+
+
+  private void select(@Nullable EditorContext context, String selectedCellId, SNode result) {
+    if (selectedCellId != null && context != null && result != null) {
+      EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
+      if (toSelect != null) {
+        context.flushEvents();
+        context.getSelectionManager().setSelection(toSelect);
+        if (context.getSelectedCell() instanceof EditorCell_Label) {
+          context.getSelectedCell().end();
+        }
+      }
+    }
+  }
+
+  @Nullable
+  private String getSelectedCellId(@Nullable EditorContext context) {
+    String selectedCellId = null;
+    if (context != null && context.getSelectedCell() != null) {
+      selectedCellId = context.getSelectedCell().getCellId();
+    }
+    return selectedCellId;
   }
 
   @Deprecated

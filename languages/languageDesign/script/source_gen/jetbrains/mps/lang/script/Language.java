@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
+import jetbrains.mps.lang.script.findUsages.FindUsagesDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.script.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -22,7 +24,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.script.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)";
+  public static final String MODULE_REF = "0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)";
   public Language() {
   }
   @Override
@@ -63,6 +65,11 @@ public class Language extends LanguageRuntime {
         return (T) new EditorAspectDescriptorImpl();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor")) {
+      if (aspectClass == FindUsageAspectDescriptor.class) {
+        return (T) new FindUsagesDescriptor();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
       if (aspectClass == IntentionAspectDescriptor.class) {
         return (T) new IntentionsDescriptor();
@@ -83,6 +90,6 @@ public class Language extends LanguageRuntime {
         return (T) new TypesystemDescriptor();
       }
     }
-    return super.createAspect(aspectClass);
+    return null;
   }
 }

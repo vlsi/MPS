@@ -69,7 +69,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return withMakePlugin().withCorePlugin().withTestingPlugin().withJavaPlugin();
+    return withMakePlugin().withCorePlugin().withTestingPlugin();
   }
 
   public EnvironmentConfig withMakePlugin() {
@@ -98,6 +98,10 @@ public class EnvironmentConfig {
 
   public EnvironmentConfig withJavaPlugin() {
     return addPlugin("mpsjava", "jetbrains.mps.ide.java");
+  }
+
+  public EnvironmentConfig withMigrationPlugin() {
+    return addPlugin("migrationAssistant", "jetbrains.mps.ide.migration.assistant");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {

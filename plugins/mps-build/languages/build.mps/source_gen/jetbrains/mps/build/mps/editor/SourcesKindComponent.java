@@ -16,6 +16,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -44,7 +45,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     delete_sourcesKind.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SourcesKindComponent.BuildMps_Solution_generic_cellMenu_qubgco_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SourcesKindComponent.BuildMps_Solution_generic_cellMenu_qubgco_a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.addEditorCell(this.createConstant_qubgco_a0(editorContext, node));
     if (renderingCondition_qubgco_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_qubgco_b0(editorContext, node));
@@ -117,7 +118,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SourcesKindComponent.BuildMps_Solution_generic_cellMenu_qubgco_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SourcesKindComponent.BuildMps_Solution_generic_cellMenu_qubgco_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static boolean renderingCondition_qubgco_a2a(SNode node, EditorContext editorContext) {

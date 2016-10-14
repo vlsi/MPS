@@ -2522,6 +2522,12 @@
               <node concept="Xl_RD" id="55$LBuYmD0y" role="37wK5m">
                 <property role="Xl_RC" value="java-stub" />
               </node>
+              <node concept="Xl_RD" id="35GJQMDB4cd" role="37wK5m">
+                <property role="Xl_RC" value="util" />
+              </node>
+              <node concept="Xl_RD" id="4vEZpy3EAaI" role="37wK5m">
+                <property role="Xl_RC" value="vfs" />
+              </node>
               <node concept="3cpWs3" id="4J5nzKIHHyD" role="37wK5m">
                 <node concept="3cpWs3" id="4J5nzKIHJvF" role="3uHU7B">
                   <node concept="37vLTw" id="4J5nzKIHJMs" role="3uHU7w">
@@ -3205,12 +3211,13 @@
       <node concept="3Tm6S6" id="6m1MVDkVd36" role="1B3o_S" />
       <node concept="2ShNRf" id="6m1MVDkVd37" role="33vP2m">
         <node concept="1pGfFk" id="6m1MVDkVd38" role="2ShVmc">
-          <ref role="37wK5l" to="z1c4:~StandaloneMPSProject.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.ProjectLibraryManager)" resolve="StandaloneMPSProject" />
+          <ref role="37wK5l" to="z1c4:~StandaloneMPSProject.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.ProjectLibraryManager,jetbrains.mps.ide.vfs.ProjectRootListenerComponent)" resolve="StandaloneMPSProject" />
           <node concept="10M0yZ" id="7Psq8BycfpK" role="37wK5m">
             <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
             <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
           </node>
           <node concept="10Nm6u" id="XZsBAoNACb" role="37wK5m" />
+          <node concept="10Nm6u" id="1vlERrpaDgc" role="37wK5m" />
         </node>
       </node>
     </node>

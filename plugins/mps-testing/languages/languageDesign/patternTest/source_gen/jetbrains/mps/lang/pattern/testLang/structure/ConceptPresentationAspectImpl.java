@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ListValue = new ConceptPresentationBuilder().create();
@@ -23,58 +20,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0i.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ListValue;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_PatternTest;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_PropertyValue;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_TestListReference;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_TestPropertyVariableReference;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_TestVariableReference;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_VariableValue;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ListValue:
+        return props_ListValue;
+      case LanguageConceptSwitch.PatternTest:
+        return props_PatternTest;
+      case LanguageConceptSwitch.PropertyValue:
+        return props_PropertyValue;
+      case LanguageConceptSwitch.TestListReference:
+        return props_TestListReference;
+      case LanguageConceptSwitch.TestPropertyVariableReference:
+        return props_TestPropertyVariableReference;
+      case LanguageConceptSwitch.TestVariableReference:
+        return props_TestVariableReference;
+      case LanguageConceptSwitch.VariableValue:
+        return props_VariableValue;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614aL, "jetbrains.mps.lang.pattern.testLang.structure.ListValue"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, "jetbrains.mps.lang.pattern.testLang.structure.PatternTest"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614bL, "jetbrains.mps.lang.pattern.testLang.structure.TestListReference"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8cfebb8L, "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb11L, "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb0eL, "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"));
 }

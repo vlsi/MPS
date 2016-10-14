@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,83 +32,77 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /**
  * @author simon
  */
-class SmartReferenceSubstituteMenuItem implements SubstituteMenuItem {
+public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem {
   private String myMatchingText;
-  private final SNode myParentNode;
-  private final SNode myCurrentChild;
   private final SNode myReferentNode;
   private final SConcept mySmartConcept;
   private final SReferenceLink mySmartReference;
   private final ReferenceDescriptor myRefDescriptor;
 
   SmartReferenceSubstituteMenuItem(SNode referentNode, SNode parentNode, SNode currentChild, SConcept smartConcept,
-      SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor) {
+      SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor, EditorContext editorContext) {
+    super(smartConcept, parentNode, currentChild, editorContext);
     myReferentNode = referentNode;
-    myParentNode = parentNode;
-    myCurrentChild = currentChild;
     mySmartConcept = smartConcept;
     mySmartReference = smartReference;
     myRefDescriptor = descriptor;
   }
 
+  @Nullable
   @Override
-  public String getMatchingText(String pattern) {
+  public String getMatchingText(@NotNull String pattern) {
     if (myMatchingText == null) {
       myMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, false, true, false);
       if (myMatchingText == null) {
-        myMatchingText = getSmartMatchingText();
+        myMatchingText = getSmartMatchingText(false);
       }
     }
     return myMatchingText;
   }
 
-  private String getSmartMatchingText() {
-    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, true);
+  private String getSmartMatchingText(boolean visible) {
+    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, visible);
     if (ReferenceConceptUtil.hasSmartAlias(mySmartConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(mySmartConcept, referentMatchingText);
     }
     return referentMatchingText;
   }
 
+  @Nullable
   @Override
-  public String getDescriptionText(String pattern) {
+  public String getDescriptionText(@NotNull String pattern) {
     return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
   }
 
+  @Nullable
   @Override
-  public SNode createNode(String pattern) {
-    SNode childNode = NodeFactoryManager.createNode(mySmartConcept, myCurrentChild, myParentNode, myParentNode.getModel());
+  public SNode createNode(@NotNull String pattern) {
+    SNode childNode = NodeFactoryManager.createNode(mySmartConcept, getCurrentChild(), getParentNode(), getParentNode().getModel());
     SNodeAccessUtil.setReferenceTarget(childNode, mySmartReference, myReferentNode);
     return childNode;
   }
 
+  @Nullable
   @Override
-  public SAbstractConcept getOutputConcept() {
-    return mySmartConcept;
-  }
-
-  @Override
-  public SNode getType(String pattern) {
+  public SNode getType(@NotNull String pattern) {
     return null;
   }
 
+  @Nullable
   @Override
-  public boolean canExecute(String pattern) {
-    return true;
+  public IconResource getIcon(@NotNull String pattern) {
+    return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
   }
 
-  @Override
-  public IconResource getIcon(String pattern) {
-    SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(myReferentNode);
-    if (concept != null) {
-      return IconResourceUtil.getIconResourceForConcept(concept);
-    } else {
-      return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
+  SNode getReferentNode() {
+    return myReferentNode;
+  }
+
+  String getVisibleMatchingText() {
+    String visibleMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, true, true, false);
+    if (visibleMatchingText == null) {
+      visibleMatchingText = getSmartMatchingText(true);
     }
-  }
-
-  @Override
-  public boolean select(SNode createdNode, String pattern) {
-    return false;
+    return visibleMatchingText;
   }
 }

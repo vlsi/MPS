@@ -11,11 +11,11 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ReloadSession {
   private List<ReloadListener> myListeners = ListSequence.fromList(new ArrayList<ReloadListener>());
@@ -56,19 +56,20 @@ public class ReloadSession {
   }
 
   /*package*/ void updateStatus() {
-    this.myEmpty = Sequence.fromIterable(getParticipants()).all(new IWhereFilter<ReloadParticipant>() {
+    myEmpty = Sequence.fromIterable(getParticipants()).all(new IWhereFilter<ReloadParticipant>() {
       public boolean accept(ReloadParticipant it) {
         return it.isEmpty();
       }
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(ReloadSession.class);
   /*package*/ void doReload(final ProgressMonitor monitor) {
     assert !(myReloaded) : "Contract: do not call doReload twice on one reload session";
     myReloaded = true;
 
     final Iterable<ReloadParticipant> participants = getParticipants();
-    monitor.start("Reloading ...", Sequence.fromIterable(participants).count());
+    monitor.start("Reloading Files", Sequence.fromIterable(participants).count());
     long beginTime = System.nanoTime();
     try {
       if (LOG.isDebugEnabled()) {
@@ -102,8 +103,8 @@ public class ReloadSession {
       try {
         p = participantClass.newInstance();
         MapSequence.fromMap(myParticipants).put(participantClass, p);
-      } catch (IllegalAccessException e) {
-      } catch (InstantiationException e) {
+      } catch (IllegalAccessException ignored) {
+      } catch (InstantiationException ignored) {
       }
     }
     return (T) p;
@@ -112,15 +113,16 @@ public class ReloadSession {
   private Iterable<ReloadParticipant> getParticipants() {
     return MapSequence.fromMap(myParticipants).values();
   }
+
   private void fireReloadStarted() {
     for (ReloadListener rl : myListeners) {
       rl.reloadStarted();
     }
   }
+
   private void fireReloadFinished() {
     for (ReloadListener rl : myListeners) {
       rl.reloadFinished();
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ReloadSession.class);
 }

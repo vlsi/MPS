@@ -24,7 +24,7 @@ CONTENTS
 	samples.zip         sample projects (see at http://confluence.jetbrains.com/display/MPSD32/Fast+Track+to+MPS)
 
 SYSTEM REQUIREMENTS
-    To run JetBrains MPS you need JDK 6.0 or JDK 8.0.
+    To run JetBrains MPS you need JDK 8.0.
 
 HOW TO START
     1. Unpack the JetBrains MPS distribution file to whenever you wish to install the program.
@@ -54,7 +54,7 @@ HOW TO ADJUST JVM OPTIONS
 GETTING HELP AND REPORTING ISSUES
     For getting help you can visit the following locations:
     - home page http://www.jetbrains.com/mps/
-    - documentation http://confluence.jetbrains.net/display/MPSD32/MPS+User%27s+Guide
+    - documentation http://confluence.jetbrains.net/display/MPSD34/MPS+User%27s+Guide
     - JetBrains MPS space http://confluence.jetbrains.com/display/MPS/Welcome+to+JetBrains+MPS+Space
     - issue tracker http://www.jetbrains.net/tracker/issues/MPS
     - forum https://mps-support.jetbrains.com/hc/en-us/community/topics

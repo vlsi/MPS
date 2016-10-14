@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ConceptConstraints = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a72ce9037L, "defaultConcreteConcept")).icon(IconContainer.RESOURCE_a0a0a).create();
@@ -59,238 +57,95 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0sb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ConceptConstraints;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_ConceptParameter_ReferentSearchScope_enclosingNode;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ConstraintFunctionParameter_checkedNode;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_ConstraintFunctionParameter_childConcept;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_ConstraintFunctionParameter_childNode;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_ConstraintFunctionParameter_containingLink;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_ConstraintFunctionParameter_contextNode;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_ConstraintFunctionParameter_contextRole;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_ConstraintFunctionParameter_exists;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_ConstraintFunctionParameter_inEditor;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_ConstraintFunctionParameter_link;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_ConstraintFunctionParameter_linkTarget;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_ConstraintFunctionParameter_newReferentNode;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_ConstraintFunctionParameter_oldReferentNode;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_ConstraintFunctionParameter_parameterNode;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_ConstraintFunctionParameter_parentNode;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_ConstraintFunctionParameter_position;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_ConstraintFunctionParameter_referenceNode;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_ConstraintFunctionParameter_smartReference;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_ConstraintFunctionParameter_visible;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_ConstraintFunction_CanBeAChild;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_ConstraintFunction_CanBeAParent;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_ConstraintFunction_CanBeARoot;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ConstraintFunction_CanBeAnAncestor;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ConstraintFunction_GetAlternativeIcon;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_ConstraintFunction_GetInstanceIcon;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_ConstraintFunction_PropertyGetter;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_ConstraintFunction_PropertySetter;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_ConstraintFunction_PropertyValidator;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_ConstraintFunction_RefSetHandlerKeepsReference;
-          }
-          break;
-        case 30:
-          if (true) {
-            return props_ConstraintFunction_ReferentSearchScope_AbstractBase;
-          }
-          break;
-        case 31:
-          if (true) {
-            return props_ConstraintFunction_ReferentSearchScope_Factory;
-          }
-          break;
-        case 32:
-          if (true) {
-            return props_ConstraintFunction_ReferentSearchScope_Presentation;
-          }
-          break;
-        case 33:
-          if (true) {
-            return props_ConstraintFunction_ReferentSearchScope_Scope;
-          }
-          break;
-        case 34:
-          if (true) {
-            return props_ConstraintFunction_ReferentSearchScope_Validator;
-          }
-          break;
-        case 35:
-          if (true) {
-            return props_ConstraintFunction_ReferentSetHandler;
-          }
-          break;
-        case 36:
-          if (true) {
-            return props_ConstraintsFunctionParameter_node;
-          }
-          break;
-        case 37:
-          if (true) {
-            return props_ConstraintsFunctionParameter_propertyValue;
-          }
-          break;
-        case 38:
-          if (true) {
-            return props_InheritedNodeScopeFactory;
-          }
-          break;
-        case 39:
-          if (true) {
-            return props_NodeDefaultSearchScope;
-          }
-          break;
-        case 40:
-          if (true) {
-            return props_NodePropertyConstraint;
-          }
-          break;
-        case 41:
-          if (true) {
-            return props_NodeReferentConstraint;
-          }
-          break;
-        case 42:
-          if (true) {
-            return props_NodeScopeFactory;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ConceptConstraints:
+        return props_ConceptConstraints;
+      case LanguageConceptSwitch.ConceptParameter_ReferentSearchScope_enclosingNode:
+        return props_ConceptParameter_ReferentSearchScope_enclosingNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_checkedNode:
+        return props_ConstraintFunctionParameter_checkedNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_childConcept:
+        return props_ConstraintFunctionParameter_childConcept;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_childNode:
+        return props_ConstraintFunctionParameter_childNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_containingLink:
+        return props_ConstraintFunctionParameter_containingLink;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_contextNode:
+        return props_ConstraintFunctionParameter_contextNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_contextRole:
+        return props_ConstraintFunctionParameter_contextRole;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_exists:
+        return props_ConstraintFunctionParameter_exists;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_inEditor:
+        return props_ConstraintFunctionParameter_inEditor;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_link:
+        return props_ConstraintFunctionParameter_link;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_linkTarget:
+        return props_ConstraintFunctionParameter_linkTarget;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_newReferentNode:
+        return props_ConstraintFunctionParameter_newReferentNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_oldReferentNode:
+        return props_ConstraintFunctionParameter_oldReferentNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_parameterNode:
+        return props_ConstraintFunctionParameter_parameterNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_parentNode:
+        return props_ConstraintFunctionParameter_parentNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_position:
+        return props_ConstraintFunctionParameter_position;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_referenceNode:
+        return props_ConstraintFunctionParameter_referenceNode;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_smartReference:
+        return props_ConstraintFunctionParameter_smartReference;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_visible:
+        return props_ConstraintFunctionParameter_visible;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAChild:
+        return props_ConstraintFunction_CanBeAChild;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAParent:
+        return props_ConstraintFunction_CanBeAParent;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
+        return props_ConstraintFunction_CanBeARoot;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor:
+        return props_ConstraintFunction_CanBeAnAncestor;
+      case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
+        return props_ConstraintFunction_GetAlternativeIcon;
+      case LanguageConceptSwitch.ConstraintFunction_GetInstanceIcon:
+        return props_ConstraintFunction_GetInstanceIcon;
+      case LanguageConceptSwitch.ConstraintFunction_PropertyGetter:
+        return props_ConstraintFunction_PropertyGetter;
+      case LanguageConceptSwitch.ConstraintFunction_PropertySetter:
+        return props_ConstraintFunction_PropertySetter;
+      case LanguageConceptSwitch.ConstraintFunction_PropertyValidator:
+        return props_ConstraintFunction_PropertyValidator;
+      case LanguageConceptSwitch.ConstraintFunction_RefSetHandlerKeepsReference:
+        return props_ConstraintFunction_RefSetHandlerKeepsReference;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_AbstractBase:
+        return props_ConstraintFunction_ReferentSearchScope_AbstractBase;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Factory:
+        return props_ConstraintFunction_ReferentSearchScope_Factory;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Presentation:
+        return props_ConstraintFunction_ReferentSearchScope_Presentation;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope:
+        return props_ConstraintFunction_ReferentSearchScope_Scope;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Validator:
+        return props_ConstraintFunction_ReferentSearchScope_Validator;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSetHandler:
+        return props_ConstraintFunction_ReferentSetHandler;
+      case LanguageConceptSwitch.ConstraintsFunctionParameter_node:
+        return props_ConstraintsFunctionParameter_node;
+      case LanguageConceptSwitch.ConstraintsFunctionParameter_propertyValue:
+        return props_ConstraintsFunctionParameter_propertyValue;
+      case LanguageConceptSwitch.InheritedNodeScopeFactory:
+        return props_InheritedNodeScopeFactory;
+      case LanguageConceptSwitch.NodeDefaultSearchScope:
+        return props_NodeDefaultSearchScope;
+      case LanguageConceptSwitch.NodePropertyConstraint:
+        return props_NodePropertyConstraint;
+      case LanguageConceptSwitch.NodeReferentConstraint:
+        return props_NodeReferentConstraint;
+      case LanguageConceptSwitch.NodeScopeFactory:
+        return props_NodeScopeFactory;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0sb = buildConceptIndices(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL, "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_exists"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x118bd28275fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed447b91aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4488befL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a29ccL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4294f69L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c381baL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11db3f6ffbbL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x341b038f9307e5cfL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x13cd31e62ef65a72L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetInstanceIcon"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL, "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c7c69f5aeL, "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L, "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), MetaAdapterFactory.getInterfaceConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73aaL, "jetbrains.mps.lang.constraints.structure.NodeScopeFactory"));
 }

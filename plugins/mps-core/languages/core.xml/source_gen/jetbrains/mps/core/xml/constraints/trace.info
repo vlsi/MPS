@@ -15,7 +15,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,125,0" name="jetbrains.mps.core.xml.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,61,0" name="jetbrains.mps.core.xml.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)/1122581627194121462">

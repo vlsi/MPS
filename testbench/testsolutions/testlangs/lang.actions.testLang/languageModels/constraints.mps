@@ -86,7 +86,7 @@
             <node concept="3clFbC" id="4imALaSQf1Q" role="3uHU7w">
               <node concept="28GBK8" id="4imALaSQfip" role="3uHU7w">
                 <ref role="28GBKb" to="kxd5:1uvaauHSS7_" resolve="ActionTestSidetransformTestContainer" />
-                <ref role="28H3Ia" to="kxd5:4imALaSQ7Th" />
+                <ref role="28H3Ia" to="kxd5:4imALaSQ7Th" resolve="abstractChildConstrained" />
               </node>
               <node concept="oXsJc" id="4imALaSQeGP" role="3uHU7B" />
             </node>
@@ -117,7 +117,7 @@
             </node>
             <node concept="3clFbC" id="2KPNJVWKolS" role="3uHU7w">
               <node concept="28GBK8" id="2KPNJVWKolT" role="3uHU7w">
-                <ref role="28H3Ia" to="kxd5:2KPNJVWDl5f" />
+                <ref role="28H3Ia" to="kxd5:2KPNJVWDl5f" resolve="anotherAbstractChildConstrained" />
                 <ref role="28GBKb" to="kxd5:1uvaauHSS7_" resolve="ActionTestSidetransformTestContainer" />
               </node>
               <node concept="oXsJc" id="2KPNJVWKolU" role="3uHU7B" />

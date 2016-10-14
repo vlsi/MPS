@@ -1,3 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestConceptForMenuParameterizedByPrimitiveType_BehaviorDescriptor" file="TestConceptForMenuParameterizedByPrimitiveType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildBrother_BehaviorDescriptor" file="TestSubstituteChildBrother_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildSuper_BehaviorDescriptor" file="TestSubstituteChildSuper_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChild_BehaviorDescriptor" file="TestSubstituteChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteConceptChildToReference_BehaviorDescriptor" file="TestSubstituteConceptChildToReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteConceptToWrap_BehaviorDescriptor" file="TestSubstituteConceptToWrap_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteParentToReference_BehaviorDescriptor" file="TestSubstituteParentToReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteParent_BehaviorDescriptor" file="TestSubstituteParent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChild1_BehaviorDescriptor" file="TestSubstituteSubChild1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChild2_BehaviorDescriptor" file="TestSubstituteSubChild2_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChildSmartReference_BehaviorDescriptor" file="TestSubstituteSubChildSmartReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubConceptToWrap_BehaviorDescriptor" file="TestSubstituteSubConceptToWrap_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
 

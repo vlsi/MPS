@@ -276,7 +276,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   // fixme: remove, use #setModuleDescriptor instead
   @Deprecated
-  public void setLanguageDescriptor(final LanguageDescriptor moduleDescriptor) {
+  public void setLanguageDescriptor(@NotNull final LanguageDescriptor moduleDescriptor) {
     setModuleDescriptor(moduleDescriptor);
   }
 
@@ -296,7 +296,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public void rename(String newNamespace) {
+  public void rename(@NotNull String newNamespace) {
     for (Generator g : getGenerators()) {
       g.rename(newNamespace);
     }
@@ -339,6 +339,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return LanguageAspect.STRUCTURE.get(this);
   }
 
+  /**
+   * fixme why generator saves language??
+   * generator is contained in language it must be the other way around!
+   */
   @Override
   public void save() {
     super.save();
@@ -347,6 +351,11 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       gen.validateDependencyVersions();
     }
     if (isReadOnly()) return;
+
+    if (myLanguageDescriptor.getLoadException() != null){
+      return;
+    }
+
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
@@ -500,8 +509,15 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
 
     @Override
+    public Collection<SModuleReference> getDevKits(Language contextModule, SModel forModel) {
+      return Collections.singleton(BootstrapLanguages.getLanguageDesignDevKit());
+    }
+
+    @Override
     public Set<DevKit> getAutoImportedDevKits(Language contextModule, org.jetbrains.mps.openapi.model.SModel model) {
-      return Collections.singleton(BootstrapLanguages.generalDevKit());
+      // left just in case anyone uses MAIM.getAutoImportedDevKits(). Contemporary code relies on #getDevKits().
+      SModule dk = BootstrapLanguages.getLanguageDesignDevKit().resolve(contextModule.getRepository());
+      return dk instanceof DevKit ? Collections.singleton((DevKit) dk) : super.getAutoImportedDevKits(contextModule, model);
     }
   }
 }

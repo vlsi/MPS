@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -43,7 +44,7 @@ public class ModelReferenceFQName implements ConceptEditorComponent {
     } else {
       editorCell = this.createError_ho2vdo_a0(editorContext, node);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ModelReferenceFQName.ModelReferenceExpression_component_cellMenu_ho2vdo_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ModelReferenceFQName.ModelReferenceExpression_component_cellMenu_ho2vdo_a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
   private static boolean renderingCondition_ho2vdo_a0(SNode node, EditorContext editorContext) {

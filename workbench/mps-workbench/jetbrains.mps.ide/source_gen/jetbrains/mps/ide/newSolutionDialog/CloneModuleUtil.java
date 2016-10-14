@@ -39,6 +39,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.project.structure.modules.Dependency;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -48,10 +50,9 @@ import jetbrains.mps.util.PathConverters;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CloneModuleUtil {
 
@@ -106,7 +107,6 @@ public class CloneModuleUtil {
     Language targetLanguage = (Language) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(targetDescriptorFile), moduleOwner);
 
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
-    // fixme
     List<Tuples._2<AbstractModule, Iterable<ModelRootDescriptor>>> modelRootAddFutures = ListSequence.fromList(new ArrayList<Tuples._2<AbstractModule, Iterable<ModelRootDescriptor>>>());
 
     ListSequence.fromList(modelRootAddFutures).addElement(MultiTuple.<AbstractModule,Iterable<ModelRootDescriptor>>from(as_iwu1g5_a0a0a11a7(targetLanguage, AbstractModule.class), cloneModels(targetLanguage, sourceLanguage, cloneTypes, referenceUpdater)));
@@ -159,8 +159,8 @@ public class CloneModuleUtil {
     }
   }
 
-  private static Iterable<ModelRootDescriptor> cloneModels(AbstractModule targetModule, AbstractModule sourceModule, Map<ModelRoot, CloneType> cloneTypes,
-      ReferenceUpdater referenceUpdater) {
+  protected static Logger LOG = LogManager.getLogger(CloneModuleUtil.class);
+  public static Iterable<ModelRootDescriptor> cloneModels(AbstractModule targetModule, AbstractModule sourceModule, Map<ModelRoot, CloneType> cloneTypes, ReferenceUpdater referenceUpdater) {
     List<ModelRoot> targetModelRoots = ListSequence.fromList(new ArrayList<ModelRoot>());
 
     for (ModelRoot sourceModelRoot : Sequence.fromIterable(sourceModule.getModelRoots())) {
@@ -173,7 +173,7 @@ public class CloneModuleUtil {
         continue;
       }
 
-      ModelRoot result = as_iwu1g5_a0a0e0c0n(sourceModelRoot, ModelRootBase.class).cloneTo(targetModule, cloneType, referenceUpdater);
+      ModelRoot result = as_iwu1g5_a0a0e0c0o(sourceModelRoot, ModelRootBase.class).cloneTo(targetModule, cloneType, referenceUpdater);
 
       if (result == null) {
         if (LOG.isEnabledFor(Level.ERROR)) {
@@ -201,7 +201,7 @@ public class CloneModuleUtil {
     SolutionDescriptor targerDescriptor = new SolutionDescriptor();
     targerDescriptor.setNamespace(namespace);
     targerDescriptor.setId(ModuleId.regular());
-    if (descriptorFile.getParent().getChildren().size() > 1) { // TODO WHY?
+    if (descriptorFile.getParent().getChildren().size() > 1) {
       throw new IllegalStateException("Trying to clone a solution to a not empty directory:" + descriptorFile.getParent());
     }
 
@@ -224,7 +224,7 @@ public class CloneModuleUtil {
   }
 
   private static void cloneSolutionDescriptorInfo(SolutionDescriptor targetDescriptor, IFile targetDescriptorFile, SolutionDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
-    cloneModuleDescriptorInfo(targetDescriptor, sourceDescriptor);
+    cloneModuleDescriptorInfo(targetDescriptor, targetDescriptorFile, sourceDescriptor, sourceDescriptorFile);
 
     targetDescriptor.setKind(sourceDescriptor.getKind());
     targetDescriptor.setCompileInMPS(sourceDescriptor.getCompileInMPS());
@@ -232,7 +232,7 @@ public class CloneModuleUtil {
   }
 
   private static void cloneLanguageDescriptorInfo(LanguageDescriptor targetDescriptor, IFile targetDescriptorFile, LanguageDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
-    cloneModuleDescriptorInfo(targetDescriptor, sourceDescriptor);
+    cloneModuleDescriptorInfo(targetDescriptor, targetDescriptorFile, sourceDescriptor, sourceDescriptorFile);
 
     targetDescriptor.setLanguageVersion(sourceDescriptor.getLanguageVersion());
     targetDescriptor.setGenPath(PathConverters.forDescriptorFiles(targetDescriptorFile, sourceDescriptorFile).sourceToDestination(sourceDescriptor.getGenPath()));
@@ -250,18 +250,18 @@ public class CloneModuleUtil {
     for (GeneratorDescriptor sourceGenerator : ListSequence.fromList(sourceDescriptor.getGenerators())) {
       GeneratorDescriptor targetGenerator = new GeneratorDescriptor();
 
-      // similiar to Generator.generateGeneratorUID(Language) fixme
+      // similiar to Generator.generateGeneratorUID(Language) 
       String targetGeneratorUID = targetDescriptor.getNamespace() + "#" + SModel.generateUniqueId();
 
       targetGenerator.setGeneratorUID(targetGeneratorUID);
-      cloneGeneratorDescriptorInfo(targetGenerator, sourceGenerator);
+      cloneGeneratorDescriptorInfo(targetGenerator, targetDescriptorFile, sourceGenerator, sourceDescriptorFile);
 
       targetGenerators.add(targetGenerator);
     }
   }
 
-  private static void cloneGeneratorDescriptorInfo(GeneratorDescriptor targetDescriptor, GeneratorDescriptor sourceDescriptor) {
-    cloneModuleDescriptorInfo(targetDescriptor, sourceDescriptor);
+  private static void cloneGeneratorDescriptorInfo(GeneratorDescriptor targetDescriptor, IFile targetDescriptorFile, GeneratorDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
+    cloneModuleDescriptorInfo(targetDescriptor, targetDescriptorFile, sourceDescriptor, sourceDescriptorFile);
 
     targetDescriptor.setGenerateTemplates(sourceDescriptor.isGenerateTemplates());
     targetDescriptor.setReflectiveQueries(sourceDescriptor.isReflectiveQueries());
@@ -276,7 +276,10 @@ public class CloneModuleUtil {
     }
   }
 
-  private static void cloneModuleDescriptorInfo(ModuleDescriptor targetDescriptor, ModuleDescriptor sourceDescriptor) { // sourceDescriptor -> source
+  private static void cloneModuleDescriptorInfo(ModuleDescriptor targetDescriptor, IFile targetDescriptorFile, ModuleDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
+
+    PathConverter pathConverter = PathConverters.forDescriptorFiles(targetDescriptorFile, sourceDescriptorFile);
+
     targetDescriptor.setModuleVersion(sourceDescriptor.getModuleVersion());
     targetDescriptor.setUseTransientOutput(sourceDescriptor.isUseTransientOutput());
 
@@ -316,7 +319,6 @@ public class CloneModuleUtil {
     targetDescriptor.getModuleFacetDescriptors().addAll(sourceDescriptor.getModuleFacetDescriptors());
   }
 
-  protected static Logger LOG = LogManager.getLogger(CloneModuleUtil.class);
   private static <T> T as_iwu1g5_a3a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
@@ -329,7 +331,7 @@ public class CloneModuleUtil {
   private static <T> T as_iwu1g5_a0a0a4a12a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iwu1g5_a0a0e0c0n(Object o, Class<T> type) {
+  private static <T> T as_iwu1g5_a0a0e0c0o(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -7,13 +7,11 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Canvas = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Square = new ConceptPresentationBuilder().create();
@@ -21,48 +19,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0g.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_Canvas;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_Circle;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_ColorReference;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Shape;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_Square;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Canvas:
+        return props_Canvas;
+      case LanguageConceptSwitch.Circle:
+        return props_Circle;
+      case LanguageConceptSwitch.Color:
+        return props_Color;
+      case LanguageConceptSwitch.ColorReference:
+        return props_ColorReference;
+      case LanguageConceptSwitch.Shape:
+        return props_Shape;
+      case LanguageConceptSwitch.Square:
+        return props_Square;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, "jetbrains.mps.samples.Shapes.structure.ColorReference"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, "jetbrains.mps.samples.Shapes.structure.Shape"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"));
 }

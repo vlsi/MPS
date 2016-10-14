@@ -34,6 +34,9 @@ public class SampleDeclMigration extends MigrationScriptBase {
     return false;
   }
   public SNode execute(final SModule m) {
+    return doExecute(m);
+  }
+  public SNode doExecute(final SModule m) {
     // get all old instances in all models of the module 
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) m.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

@@ -2,7 +2,7 @@
 <model ref="r:c935d8a5-49e7-4ff8-b914-eca7564ee9ef(jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="a2l1" ref="r:edfc9800-75a5-4d91-810d-ab5fa36bac5b(jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure)" />
@@ -99,7 +99,7 @@
         <node concept="2iRfu4" id="5nqBR0spPyM" role="2iSdaV" />
         <node concept="3XFhqQ" id="5nqBR0spPyO" role="3EZMnx" />
         <node concept="3F2HdR" id="5nqBR0spfeF" role="3EZMnx">
-          <ref role="1NtTu8" to="a2l1:5nqBR0spfeu" />
+          <ref role="1NtTu8" to="a2l1:5nqBR0spfeu" resolve="weave" />
           <node concept="2iRkQZ" id="5nqBR0spfeG" role="2czzBx" />
         </node>
       </node>
@@ -110,7 +110,7 @@
         <node concept="2iRfu4" id="5nqBR0spPyQ" role="2iSdaV" />
         <node concept="3XFhqQ" id="5nqBR0spPyS" role="3EZMnx" />
         <node concept="3F2HdR" id="5nqBR0spfeL" role="3EZMnx">
-          <ref role="1NtTu8" to="a2l1:5nqBR0spfev" />
+          <ref role="1NtTu8" to="a2l1:5nqBR0spfev" resolve="weaveEach" />
           <node concept="2iRkQZ" id="5nqBR0spfeM" role="2czzBx" />
         </node>
       </node>
@@ -121,7 +121,7 @@
         <node concept="2iRfu4" id="5nqBR0sq22H" role="2iSdaV" />
         <node concept="3XFhqQ" id="5nqBR0sq22I" role="3EZMnx" />
         <node concept="3F2HdR" id="5nqBR0sq22J" role="3EZMnx">
-          <ref role="1NtTu8" to="a2l1:5nqBR0sq15I" />
+          <ref role="1NtTu8" to="a2l1:5nqBR0sq15I" resolve="weaveMany" />
           <node concept="2iRkQZ" id="5nqBR0sq22K" role="2czzBx" />
         </node>
       </node>
@@ -132,7 +132,7 @@
         <node concept="2iRfu4" id="5nqBR0sq22M" role="2iSdaV" />
         <node concept="3XFhqQ" id="5nqBR0sq22N" role="3EZMnx" />
         <node concept="3F2HdR" id="5nqBR0sq22O" role="3EZMnx">
-          <ref role="1NtTu8" to="a2l1:5nqBR0sq15J" />
+          <ref role="1NtTu8" to="a2l1:5nqBR0sq15J" resolve="weaveEachMany" />
           <node concept="2iRkQZ" id="5nqBR0sq22P" role="2czzBx" />
         </node>
       </node>

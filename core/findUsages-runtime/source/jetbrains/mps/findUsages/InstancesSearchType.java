@@ -16,6 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.util.CollectConsumer;
@@ -31,6 +32,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
@@ -44,7 +46,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
   public Set<SNode> search(Set<SAbstractConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
     assert !elements.contains(null);
 
-    CollectConsumer<SNode> consumer = new CollectConsumer(new HashSet<SNode>());
+    CollectConsumer<SNode> consumer = new CollectConsumer<>(new HashSet<SNode>());
     Collection<FindUsagesParticipant> participants = PersistenceFacade.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 5);
@@ -59,7 +61,16 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       }
       monitor.advance(1);
 
-      Collection<SModel> current = IterableUtil.asCollection(scope.getModels());
+      Collection<SModel> current = new LinkedHashSet<SModel>();
+      Collection<SModel> simpleSearch = new LinkedHashSet<SModel>();
+      for (SModel m : IterableUtil.asCollection(scope.getModels())) {
+        if (m instanceof EditableSModel && ((EditableSModel) m).isChanged()) {
+          simpleSearch.add(m);
+        } else {
+          current.add(m);
+        }
+      }
+
       for (FindUsagesParticipant participant : participants) {
         final Set<SModel> next = new HashSet<SModel>(current);
         participant.findInstances(current, queryConcepts, consumer, new Consumer<SModel>() {
@@ -74,10 +85,14 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
 
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
       subMonitor.start("", current.size());
+      showNoFastFindTipIfNeeded(current);
+      current.addAll(simpleSearch);
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
         FindUsagesUtil.collectInstances(m, queryConcepts, consumer);
-        if (monitor.isCanceled()) break;
+        if (monitor.isCanceled()) {
+          break;
+        }
         subMonitor.advance(1);
       }
       subMonitor.done();

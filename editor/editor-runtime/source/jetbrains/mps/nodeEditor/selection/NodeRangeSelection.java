@@ -213,7 +213,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     } else if (type == CellActionType.COMMENT) {
       CommentMultipleNodesAction action = new CommentMultipleNodesAction(getSelectedNodes());
       EditorContext editorContext = getEditorComponent().getEditorContext();
-      if (action.canExecute(editorContext)) {
+      if (canExecute(editorContext, action)) {
         action.execute(editorContext);
       }
     }
@@ -330,14 +330,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
         return;
       }
 
-      AbstractComputeRunnable<Boolean> canExecute = new AbstractComputeRunnable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return action.canExecute(editorContext);
-        }
-      };
-      editorContext.getRepository().getModelAccess().executeCommand(canExecute);
-      if (!canExecute.getResult()) {
+      if (!canExecute(editorContext, action)) {
         return;
       }
 
@@ -352,6 +345,17 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
         action.execute(editorContext);
       }
     }
+  }
+
+  private boolean canExecute(final EditorContext editorContext, final CellAction action) {
+    AbstractComputeRunnable<Boolean> canExecute = new AbstractComputeRunnable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return action.canExecute(editorContext);
+      }
+    };
+    editorContext.getRepository().getModelAccess().executeCommand(canExecute);
+    return canExecute.getResult();
   }
 
   private boolean selectNode(SNode node, boolean startPosition) {

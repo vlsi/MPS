@@ -23,6 +23,8 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import com.intellij.openapi.project.IndexNotReadyException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.apache.log4j.Level;
@@ -48,8 +50,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class LanguageEditorChecker extends BaseEditorChecker implements DisposableEditorChecker {
   private boolean myMessagesChanged = false;
@@ -101,6 +101,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
   private Set<EditorMessage> doCreateMessages(SNode node, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext, Cancellable cancellable) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     boolean inspector = editorComponent instanceof InspectorEditorComponent;
@@ -230,5 +231,4 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   public boolean needsUpdate(EditorComponent component) {
     return true;
   }
-  protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
 }

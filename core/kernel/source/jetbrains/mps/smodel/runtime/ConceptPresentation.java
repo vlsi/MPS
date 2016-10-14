@@ -37,11 +37,12 @@ public class ConceptPresentation {
   }
 
   public String getHelpUrl() {
-    return myHelpUrl;
+    return myHelpUrl == null ? "" : myHelpUrl;
   }
 
   public String getShortDescription() {
-    return myShortDescription;
+    // clients (SConceptAdapter) expect !null values. Not sure what's the right place to ensure this
+    return myShortDescription == null ? "" : myShortDescription;
   }
 
   public IconResource getIcon() {

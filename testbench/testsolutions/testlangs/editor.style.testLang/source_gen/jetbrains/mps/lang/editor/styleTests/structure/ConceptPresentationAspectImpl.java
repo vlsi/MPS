@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_HugePriorityStyle = new ConceptPresentationBuilder().create();
@@ -25,68 +22,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0k.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_HugePriorityStyle;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_LeafNode;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_NodeContainer;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_PriorityStyle;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_PriorityStyleCopy;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_TestConceptWithStyleAttributes;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_TestInheritedAttribute;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_TestSimpleAttribute;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_UnapplyPriorityStyleCopy;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.HugePriorityStyle:
+        return props_HugePriorityStyle;
+      case LanguageConceptSwitch.LeafNode:
+        return props_LeafNode;
+      case LanguageConceptSwitch.NodeContainer:
+        return props_NodeContainer;
+      case LanguageConceptSwitch.PriorityStyle:
+        return props_PriorityStyle;
+      case LanguageConceptSwitch.PriorityStyleCopy:
+        return props_PriorityStyleCopy;
+      case LanguageConceptSwitch.TestConceptWithStyleAttributes:
+        return props_TestConceptWithStyleAttributes;
+      case LanguageConceptSwitch.TestInheritedAttribute:
+        return props_TestInheritedAttribute;
+      case LanguageConceptSwitch.TestSimpleAttribute:
+        return props_TestSimpleAttribute;
+      case LanguageConceptSwitch.UnapplyPriorityStyleCopy:
+        return props_UnapplyPriorityStyleCopy;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0aL, "jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x38990895c164873aL, "jetbrains.mps.lang.editor.styleTests.structure.LeafNode"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a34c76L, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3689eL, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x5bb841570e741168L, "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a35eddL, "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0fL, "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"));
 }

@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -26,13 +28,21 @@ public class MappingLabelExtractor {
     for (SNode labelEntry : ListSequence.fromList(SLinkOperations.getChildren(debugNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, 0x35a02f6bfc9806c5L, "labels")))) {
       final String labelName = SPropertyOperations.getString(labelEntry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label"));
       for (SNode entry : ListSequence.fromList(SLinkOperations.getChildren(labelEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries")))) {
-        // reference to input node may not necessarily resolve as the transient input model amy have been already disposed 
+        if (SPropertyOperations.getBoolean(entry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x511a0d44c7f45537L, "isNewRoot"))) {
+          rv.addNewOutputNode(labelName, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806d5L, "outputNode"))).first(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L, 0x35a02f6bfc9806d3L, "node")).getNodeId());
+          continue;
+        }
+        // reference to input node may not necessarily exist or resolve, 
+        // for inputs from transient models we don't keep nodePtr, just NodeIdentity 
         final SNodeId inputNodeId;
-        if ((SLinkOperations.getTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode")) == null)) {
-          SReference ref = entry.getReference(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode"));
+        if ((SLinkOperations.getTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr")) != null)) {
+          // FIXME in fact, nodePtr likely to point to external model (either CP or completely 
+          //       independent one). MappingsMemento, however, is limited to SNodeId only, implying 
+          //       all ML's inputs come from the same model (node GeneratorMappings does not imply that). 
+          SReference ref = SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")).getReference(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr"));
           inputNodeId = ref.getTargetNodeId();
         } else {
-          inputNodeId = SLinkOperations.getTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806caL, "inputNode")).getNodeId();
+          inputNodeId = ((SNode) BHReflection.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node")), SMethodTrimmedId.create("instantiate", null, "7PoJpZpHuTR"), null)).getNodeId();
         }
         // output node shall resolve as it's from the same node as debugNode, it's checkpoint model, after all. 
         if (ListSequence.fromList(SLinkOperations.getChildren(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806d5L, "outputNode"))).count() == 1) {

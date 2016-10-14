@@ -1,107 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="QueriesGenerated.java">
-      <unit at="28,0,77,0" name="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated" />
+    <file name="ActionAspectDescriptorImpl.java">
+      <unit at="12,0,24,0" name="jetbrains.mps.debugger.java.privateMembers.actions.ActionAspectDescriptorImpl" />
     </file>
-  </root>
-  <root nodeRef="r:9693cb33-473b-4be0-90b5-49a4eae89013(jetbrains.mps.debugger.java.privateMembers.actions)/6113527081580345349">
     <file name="QueriesGenerated.java">
-      <node id="6113527081580345350" at="29,209,30,93" concept="5" />
-      <node id="6113527081580345350" at="31,5,32,226" concept="5" />
-      <node id="6113527081580345350" at="32,226,33,62" concept="5" />
-      <node id="1381111177093726991" at="39,53,40,276" concept="6" />
-      <node id="1381111177097950066" at="42,14,43,92" concept="5" />
-      <node id="1381111177098009841" at="45,45,46,188" concept="6" />
-      <node id="1381111177093789440" at="48,15,49,23" concept="6" />
-      <node id="6113527081580345400" at="55,98,56,301" concept="5" />
-      <node id="6113527081580345406" at="56,301,57,182" concept="1" />
-      <node id="6113527081580345413" at="57,182,58,30" concept="6" />
-      <node id="6113527081580345417" at="60,61,61,181" concept="6" />
-      <node id="6113527081580345350" at="63,68,64,48" concept="6" />
-      <node id="6113527081580345425" at="66,64,67,88" concept="6" />
-      <node id="6113527081580345350" at="73,5,74,18" concept="6" />
-      <node id="1381111177098009839" at="45,0,48,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6113527081580345350" at="60,0,63,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6113527081580345350" at="63,0,66,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6113527081580345350" at="66,0,69,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1381111177093726985" at="38,0,42,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1381111177098009834" at="43,92,48,15" concept="5" />
-      <node id="6113527081580345350" at="55,0,60,0" concept="4" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1381111177093726978" at="36,44,42,14" concept="5" />
-      <node id="6113527081580345350" at="36,0,51,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
-      <node id="6113527081580345350" at="53,48,69,15" concept="1" />
-      <node id="6113527081580345350" at="34,133,51,20" concept="5" />
-      <node id="6113527081580345350" at="52,34,70,11" concept="2" />
-      <node id="6113527081580345350" at="51,20,71,9" concept="3" />
-      <node id="6113527081580345350" at="33,62,72,7" concept="3" />
-      <node id="6113527081580345350" at="30,93,73,5" concept="0" />
-      <node id="6113527081580345350" at="29,0,76,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_6113527081580345350#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="1381111177093726990" at="39,53,40,276" />
-      <scope id="1381111177098009840" at="45,45,46,188" />
-      <scope id="6113527081580345416" at="60,61,61,181" />
-      <scope id="6113527081580345350" at="63,68,64,48" />
-      <scope id="6113527081580345424" at="66,64,67,88" />
-      <scope id="1381111177098009839" at="45,0,48,0">
-        <var name="it" id="1381111177098009839" />
-      </scope>
-      <scope id="6113527081580345399" at="55,98,58,30">
-        <var name="result" id="6113527081580345401" />
-      </scope>
-      <scope id="6113527081580345350" at="60,0,63,0">
-        <var name="pattern" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="63,0,66,0">
-        <var name="pattern" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="66,0,69,0">
-        <var name="pattern" id="6113527081580345350" />
-      </scope>
-      <scope id="1381111177093726985" at="38,0,42,0">
-        <var name="node" id="1381111177093726988" />
-      </scope>
-      <scope id="6113527081580345350" at="55,0,60,0">
-        <var name="model" id="6113527081580345350" />
-        <var name="parameterObject" id="6113527081580345350" />
-        <var name="pattern" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="36,44,49,23">
-        <var name="availableElements" id="1381111177097950067" />
-        <var name="seq" id="1381111177098009835" />
-        <var name="visibleClassifiers" id="1381111177093726979" />
-      </scope>
-      <scope id="6113527081580345350" at="36,0,51,0" />
-      <scope id="6113527081580345350" at="53,48,69,15" />
-      <scope id="6113527081580345350" at="52,34,70,11" />
-      <scope id="6113527081580345350" at="52,34,70,11">
-        <var name="item" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="34,133,71,9">
-        <var name="queryResult" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="31,5,72,7">
-        <var name="childConcept" id="6113527081580345350" />
-        <var name="outputConcept" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="29,209,74,18">
-        <var name="result" id="6113527081580345350" />
-      </scope>
-      <scope id="6113527081580345350" at="29,0,76,0">
-        <var name="_context" id="6113527081580345350" />
-        <var name="operationContext" id="6113527081580345350" />
-      </scope>
-      <unit id="1381111177098009839" at="44,86,48,13" name="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated$2" />
-      <unit id="1381111177093726982" at="37,52,42,13" name="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated$2" />
-      <unit id="6113527081580345350" at="54,57,69,13" name="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated$2" />
-      <unit id="6113527081580345350" at="35,42,51,9" name="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated$1" />
+      <unit at="6,0,8,0" name="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated" />
     </file>
   </root>
 </debug-info>

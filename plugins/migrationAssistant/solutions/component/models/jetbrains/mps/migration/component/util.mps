@@ -170,6 +170,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
@@ -621,7 +624,7 @@
                     <ref role="3cqZAo" node="6rIOn75YKN3" resolve="stepData" />
                   </node>
                   <node concept="3TrEf2" id="6rIOn75Z99p" role="2OqNvi">
-                    <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" />
+                    <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" resolve="data" />
                   </node>
                 </node>
               </node>
@@ -897,7 +900,7 @@
                         <ref role="2Gs0qQ" node="6rIOn7603gB" resolve="root" />
                       </node>
                       <node concept="3TrEf2" id="6rIOn765YOZ" role="2OqNvi">
-                        <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" />
+                        <ref role="3Tt5mk" to="gqi5:6rIOn75Yg8A" resolve="data" />
                       </node>
                     </node>
                   </node>
@@ -1393,13 +1396,23 @@
                 <property role="TrG5h" value="ver" />
                 <node concept="10Oyi0" id="79xDgbhe3Gy" role="1tU5fm" />
                 <node concept="2OqwBi" id="79xDgbhe3Gz" role="33vP2m">
-                  <node concept="37vLTw" id="79xDgbhe59r" role="2Oq$k0">
-                    <ref role="3cqZAo" node="79xDgbhe4ML" resolve="module" />
-                  </node>
                   <node concept="liA8E" id="79xDgbhe3G_" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage):int" resolve="getUsedLanguageVersion" />
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,boolean):int" resolve="getUsedLanguageVersion" />
                     <node concept="2GrUjf" id="79xDgbhe3GA" role="37wK5m">
                       <ref role="2Gs0qQ" node="79xDgbhe3Go" resolve="lang" />
+                    </node>
+                    <node concept="3clFbT" id="nNuoq5NbPY" role="37wK5m">
+                      <property role="3clFbU" value="false" />
+                    </node>
+                  </node>
+                  <node concept="1eOMI4" id="nNuoq5NeoG" role="2Oq$k0">
+                    <node concept="10QFUN" id="nNuoq5NcUJ" role="1eOMHV">
+                      <node concept="3uibUv" id="nNuoq5NdnB" role="10QFUM">
+                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                      </node>
+                      <node concept="37vLTw" id="79xDgbhe59r" role="10QFUP">
+                        <ref role="3cqZAo" node="79xDgbhe4ML" resolve="module" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1543,9 +1556,12 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="79xDgbhe3HC" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule):int" resolve="getDependencyVersion" />
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule,boolean):int" resolve="getDependencyVersion" />
                     <node concept="2GrUjf" id="79xDgbhe3HD" role="37wK5m">
                       <ref role="2Gs0qQ" node="79xDgbhe3Hl" resolve="dep" />
+                    </node>
+                    <node concept="3clFbT" id="nNuoq5Nf3R" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>
@@ -1666,6 +1682,7 @@
       </node>
       <node concept="3Tm1VV" id="79xDgbhe3y4" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2RCunBMpP3H" role="jymVt" />
     <node concept="2YIFZL" id="3UfGsecu9ay" role="jymVt">
       <property role="TrG5h" value="getModuleDependencies" />
       <property role="IEkAT" value="false" />
@@ -1695,6 +1712,7 @@
       </node>
       <node concept="3Tm1VV" id="3UfGsecu9aW" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2RCunBMpP3I" role="jymVt" />
     <node concept="2YIFZL" id="79xDgbhf49e" role="jymVt">
       <property role="TrG5h" value="getUsedLanguages" />
       <property role="IEkAT" value="false" />
@@ -2644,7 +2662,7 @@
                           <node concept="3clFbC" id="51adnVzVVEx" role="3clFbG">
                             <node concept="359W_D" id="51adnVzVVEy" role="3uHU7w">
                               <ref role="359W_E" to="tpee:hiAHcMF" resolve="AnnotationInstance" />
-                              <ref role="359W_F" to="tpee:hiAI5P0" />
+                              <ref role="359W_F" to="tpee:hiAI5P0" resolve="annotation" />
                             </node>
                             <node concept="2OqwBi" id="51adnVzVVEz" role="3uHU7B">
                               <node concept="37vLTw" id="51adnVzVVE$" role="2Oq$k0">

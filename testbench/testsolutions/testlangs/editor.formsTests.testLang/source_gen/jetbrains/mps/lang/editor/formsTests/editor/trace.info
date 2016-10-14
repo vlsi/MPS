@@ -59,7 +59,7 @@
       <unit at="14,0,57,0" name="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_5" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,56,0" name="jetbrains.mps.lang.editor.formsTests.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,35,0" name="jetbrains.mps.lang.editor.formsTests.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:c940a954-8fe9-4bec-8df2-8ea0ebeb1d02(jetbrains.mps.lang.editor.formsTests.editor)/5347446703374102184">

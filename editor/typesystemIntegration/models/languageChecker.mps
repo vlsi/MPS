@@ -2480,6 +2480,23 @@
                                       <node concept="3Tm1VV" id="4zbx9kG0nuC" role="1B3o_S" />
                                       <node concept="3cqZAl" id="4zbx9kG0nuD" role="3clF45" />
                                       <node concept="3clFbS" id="4zbx9kG0nuE" role="3clF47">
+                                        <node concept="3cpWs8" id="52L_vEWBaHX" role="3cqZAp">
+                                          <node concept="3cpWsn" id="52L_vEWBaHY" role="3cpWs9">
+                                            <property role="TrG5h" value="state" />
+                                            <node concept="3uibUv" id="52L_vEWBaHZ" role="1tU5fm">
+                                              <ref role="3uigEE" to="cj4x:~EditorComponentState" resolve="EditorComponentState" />
+                                            </node>
+                                            <node concept="2OqwBi" id="52L_vEWBbPj" role="33vP2m">
+                                              <node concept="37vLTw" id="52L_vEWBeBH" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="77jjuPIalUF" resolve="editorContext" />
+                                              </node>
+                                              <node concept="liA8E" id="52L_vEWBeIF" role="2OqNvi">
+                                                <ref role="37wK5l" to="cj4x:~EditorContext.getEditorComponentState():jetbrains.mps.openapi.editor.EditorComponentState" resolve="getEditorComponentState" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbH" id="52L_vEWBa1a" role="3cqZAp" />
                                         <node concept="3SKdUt" id="5za6mIwpIV" role="3cqZAp">
                                           <node concept="3SKdUq" id="5za6mIwpN7" role="3SKWNk">
                                             <property role="3SKdUp" value="in case this becomes a performance bottleneck, consider reusing the editor's typechecking context " />
@@ -2535,7 +2552,7 @@
                                           <node concept="3clFbS" id="77jjuPI7hAK" role="2LFqv$">
                                             <node concept="3cpWs8" id="77jjuPI7xEw" role="3cqZAp">
                                               <node concept="3cpWsn" id="77jjuPI7xEx" role="3cpWs9">
-                                                <property role="TrG5h" value="resolvedBySope" />
+                                                <property role="TrG5h" value="resolvedByScope" />
                                                 <node concept="10P_77" id="77jjuPI7xDH" role="1tU5fm" />
                                                 <node concept="2OqwBi" id="77jjuPI7xEy" role="33vP2m">
                                                   <node concept="2YIFZM" id="77jjuPI7xEz" role="2Oq$k0">
@@ -2559,6 +2576,25 @@
                                                 </node>
                                               </node>
                                             </node>
+                                            <node concept="3clFbH" id="52L_vEWBnbn" role="3cqZAp" />
+                                            <node concept="3clFbJ" id="52L_vEWBoMq" role="3cqZAp">
+                                              <node concept="3clFbS" id="52L_vEWBoMs" role="3clFbx">
+                                                <node concept="3clFbF" id="52L_vEWBsTI" role="3cqZAp">
+                                                  <node concept="37vLTI" id="52L_vEWBtaB" role="3clFbG">
+                                                    <node concept="3clFbT" id="52L_vEWBte3" role="37vLTx">
+                                                      <property role="3clFbU" value="true" />
+                                                    </node>
+                                                    <node concept="37vLTw" id="52L_vEWBsTH" role="37vLTJ">
+                                                      <ref role="3cqZAo" node="77jjuPIb4zY" resolve="doRecheckEditor" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                              <node concept="37vLTw" id="52L_vEWBpIM" role="3clFbw">
+                                                <ref role="3cqZAo" node="77jjuPI7xEx" resolve="resolvedByScope" />
+                                              </node>
+                                            </node>
+                                            <node concept="3clFbH" id="52L_vEWBq5T" role="3cqZAp" />
                                             <node concept="3cpWs8" id="77jjuPI7lsO" role="3cqZAp">
                                               <node concept="3cpWsn" id="77jjuPI7lsP" role="3cpWs9">
                                                 <property role="TrG5h" value="sourceNode" />
@@ -2694,7 +2730,7 @@
                                               </node>
                                               <node concept="3fqX7Q" id="77jjuPI7BKi" role="3clFbw">
                                                 <node concept="37vLTw" id="77jjuPI7C43" role="3fr31v">
-                                                  <ref role="3cqZAo" node="77jjuPI7xEx" resolve="resolvedBySope" />
+                                                  <ref role="3cqZAo" node="77jjuPI7xEx" resolve="resolvedByScope" />
                                                 </node>
                                               </node>
                                             </node>
@@ -2817,32 +2853,53 @@
                                             </node>
                                           </node>
                                         </node>
-                                        <node concept="3clFbH" id="77jjuPI97Ur" role="3cqZAp" />
-                                        <node concept="3clFbJ" id="4InNjD1KYbh" role="3cqZAp">
-                                          <node concept="3clFbS" id="4InNjD1KYbk" role="3clFbx">
-                                            <node concept="3SKdUt" id="4InNjD1KZAj" role="3cqZAp">
-                                              <node concept="3SKdUq" id="4InNjD1KZIY" role="3SKWNk">
-                                                <property role="3SKdUp" value="re-running next checker in force autofix mode" />
+                                        <node concept="3clFbH" id="52L_vEWBeK$" role="3cqZAp" />
+                                        <node concept="3clFbJ" id="52L_vEWBfBQ" role="3cqZAp">
+                                          <node concept="3clFbS" id="52L_vEWBfBS" role="3clFbx">
+                                            <node concept="3SKdUt" id="52L_vEWBhc$" role="3cqZAp">
+                                              <node concept="3SKdUq" id="52L_vEWBhcA" role="3SKWNk">
+                                                <property role="3SKdUp" value="Something has changed in the editor, restore the previous state to avoid selection jump if possible" />
                                               </node>
                                             </node>
-                                            <node concept="3clFbF" id="4InNjD1KYVi" role="3cqZAp">
-                                              <node concept="37vLTI" id="4InNjD1KZ4m" role="3clFbG">
-                                                <node concept="3clFbT" id="4InNjD1KZ6g" role="37vLTx">
-                                                  <property role="3clFbU" value="true" />
+                                            <node concept="3clFbF" id="52L_vEWBtjL" role="3cqZAp">
+                                              <node concept="2OqwBi" id="52L_vEWBtq9" role="3clFbG">
+                                                <node concept="37vLTw" id="52L_vEWBtjJ" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="77jjuPIalUF" resolve="editorContext" />
                                                 </node>
-                                                <node concept="37vLTw" id="4InNjD1KYVh" role="37vLTJ">
-                                                  <ref role="3cqZAo" node="4InNjD1KsBA" resolve="myForceAutofix" />
+                                                <node concept="liA8E" id="52L_vEWBtAM" role="2OqNvi">
+                                                  <ref role="37wK5l" to="cj4x:~EditorContext.restoreEditorComponentState(jetbrains.mps.openapi.editor.EditorComponentState):void" resolve="restoreEditorComponentState" />
+                                                  <node concept="37vLTw" id="52L_vEWBtE6" role="37wK5m">
+                                                    <ref role="3cqZAo" node="52L_vEWBaHY" resolve="state" />
+                                                  </node>
                                                 </node>
+                                              </node>
+                                            </node>
+                                            <node concept="3clFbH" id="52L_vEWBtKa" role="3cqZAp" />
+                                            <node concept="3clFbJ" id="4InNjD1KYbh" role="3cqZAp">
+                                              <node concept="3clFbS" id="4InNjD1KYbk" role="3clFbx">
+                                                <node concept="3SKdUt" id="4InNjD1KZAj" role="3cqZAp">
+                                                  <node concept="3SKdUq" id="4InNjD1KZIY" role="3SKWNk">
+                                                    <property role="3SKdUp" value="re-running next checker in force autofix mode" />
+                                                  </node>
+                                                </node>
+                                                <node concept="3clFbF" id="4InNjD1KYVi" role="3cqZAp">
+                                                  <node concept="37vLTI" id="4InNjD1KZ4m" role="3clFbG">
+                                                    <node concept="3clFbT" id="4InNjD1KZ6g" role="37vLTx">
+                                                      <property role="3clFbU" value="true" />
+                                                    </node>
+                                                    <node concept="37vLTw" id="4InNjD1KYVh" role="37vLTJ">
+                                                      <ref role="3cqZAo" node="4InNjD1KsBA" resolve="myForceAutofix" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                              <node concept="37vLTw" id="4InNjD1KYuj" role="3clFbw">
+                                                <ref role="3cqZAo" node="4InNjD1KSMX" resolve="wasForceAutofix" />
                                               </node>
                                             </node>
                                           </node>
-                                          <node concept="1Wc70l" id="77jjuPIbbSm" role="3clFbw">
-                                            <node concept="37vLTw" id="77jjuPIbcQh" role="3uHU7B">
-                                              <ref role="3cqZAo" node="77jjuPIb4zY" resolve="doRecheckEditor" />
-                                            </node>
-                                            <node concept="37vLTw" id="4InNjD1KYuj" role="3uHU7w">
-                                              <ref role="3cqZAo" node="4InNjD1KSMX" resolve="wasForceAutofix" />
-                                            </node>
+                                          <node concept="37vLTw" id="52L_vEWBh5x" role="3clFbw">
+                                            <ref role="3cqZAo" node="77jjuPIb4zY" resolve="doRecheckEditor" />
                                           </node>
                                         </node>
                                       </node>
@@ -3957,7 +4014,7 @@
       </node>
       <node concept="359W_D" id="3TJpIwQlqFF" role="33vP2m">
         <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="359W_F" to="tpck:4uZwTti3__2" />
+        <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
       </node>
     </node>
     <node concept="2tJIrI" id="3TJpIwQlqFG" role="jymVt" />

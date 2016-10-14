@@ -18,8 +18,7 @@ package jetbrains.mps.openapi.editor.cells;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
-import jetbrains.mps.openapi.editor.menus.transformation.MenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.annotations.NotNull;
@@ -237,9 +236,8 @@ public interface EditorCell {
   SubstituteInfo getSubstituteInfo();
 
   @Nullable
-  MenuLookup<TransformationMenu> getTransformationMenuLookup();
-
-  void setTransformationMenuLookup(@Nullable MenuLookup<TransformationMenu> transformationMenuLookup);
+  TransformationMenuLookup getTransformationMenuLookup();
+  void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup);
 
   /**
    * Renders the cell and its descendants as text.

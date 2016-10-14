@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,200,0" name="jetbrains.mps.build.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,91,0" name="jetbrains.mps.build.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)/1258644073389103233">
@@ -1589,7 +1589,7 @@
       <node id="927724900262213628" at="30,0,34,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
       <node id="927724900262213628" at="48,0,52,0" concept="4" trace="hasOwnValidator#()Z" />
       <node id="927724900262213628" at="52,0,57,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="7670275304420317564" at="60,148,65,183" concept="6" />
+      <node id="7670275304420317564" at="60,148,65,161" concept="6" />
       <node id="927724900262213628" at="60,0,67,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="927724900262213628" at="34,0,44,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
       <node id="927724900262213628" at="46,119,57,7" concept="2" />
@@ -1616,7 +1616,7 @@
         <var name="node" id="927724900262213628" />
         <var name="propertyValue" id="927724900262213628" />
       </scope>
-      <scope id="927724900262213630" at="60,148,65,183" />
+      <scope id="927724900262213630" at="60,148,65,161" />
       <scope id="927724900262213628" at="35,200,42,18">
         <var name="result" id="927724900262213628" />
       </scope>

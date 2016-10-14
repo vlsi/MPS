@@ -157,6 +157,7 @@
   <dependency className="jetbrains.mps.project.persistence.ProjectDescriptorPersistence" file="ProjectDescriptorPersistence.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
@@ -170,10 +171,10 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.vfs.path.Path" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Document" />

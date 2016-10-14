@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Map;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ApplyTo_Function = new ConceptPresentationBuilder().create();
@@ -46,173 +43,69 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
-    {
-      SAbstractConcept cncpt = c;
-      Integer preIndex = indices_lpa09p_a0fb.get(cncpt);
-      int switchIndex = (preIndex == null ? -1 : preIndex);
-      switch (switchIndex) {
-        case 0:
-          if (true) {
-            return props_ApplyTo_Function;
-          }
-          break;
-        case 1:
-          if (true) {
-            return props_CheckProperitesOperation;
-          }
-          break;
-        case 2:
-          if (true) {
-            return props_CheckProperties_Function;
-          }
-          break;
-        case 3:
-          if (true) {
-            return props_Configuration_Parameter;
-          }
-          break;
-        case 4:
-          if (true) {
-            return props_CreateEditor_Function;
-          }
-          break;
-        case 5:
-          if (true) {
-            return props_DeprecatedAnnotation;
-          }
-          break;
-        case 6:
-          if (true) {
-            return props_Dispose_Function;
-          }
-          break;
-        case 7:
-          if (true) {
-            return props_EditorExpression;
-          }
-          break;
-        case 8:
-          if (true) {
-            return props_EditorOperationCall;
-          }
-          break;
-        case 9:
-          if (true) {
-            return props_EditorOperationDeclaration;
-          }
-          break;
-        case 10:
-          if (true) {
-            return props_EditorPropertyDeclaration;
-          }
-          break;
-        case 11:
-          if (true) {
-            return props_EditorPropertyReference;
-          }
-          break;
-        case 12:
-          if (true) {
-            return props_GetEditorOperation;
-          }
-          break;
-        case 13:
-          if (true) {
-            return props_GridBagConstraints;
-          }
-          break;
-        case 14:
-          if (true) {
-            return props_IPersistentPropertyHolder;
-          }
-          break;
-        case 15:
-          if (true) {
-            return props_PersistentConfiguration;
-          }
-          break;
-        case 16:
-          if (true) {
-            return props_PersistentConfigurationAssistent;
-          }
-          break;
-        case 17:
-          if (true) {
-            return props_PersistentConfigurationMethod;
-          }
-          break;
-        case 18:
-          if (true) {
-            return props_PersistentConfigurationTemplate;
-          }
-          break;
-        case 19:
-          if (true) {
-            return props_PersistentConfigurationTemplateInitializer;
-          }
-          break;
-        case 20:
-          if (true) {
-            return props_PersistentConfigurationType;
-          }
-          break;
-        case 21:
-          if (true) {
-            return props_PersistentPropertyDeclaration;
-          }
-          break;
-        case 22:
-          if (true) {
-            return props_PersistentPropertyReferenceOperation;
-          }
-          break;
-        case 23:
-          if (true) {
-            return props_ReportConfigurationErrorStatement;
-          }
-          break;
-        case 24:
-          if (true) {
-            return props_ResetFrom_Function;
-          }
-          break;
-        case 25:
-          if (true) {
-            return props_SettingsEditor;
-          }
-          break;
-        case 26:
-          if (true) {
-            return props_SettingsEditorType;
-          }
-          break;
-        case 27:
-          if (true) {
-            return props_TemplateParameter;
-          }
-          break;
-        case 28:
-          if (true) {
-            return props_TemplateParameterReference;
-          }
-          break;
-        case 29:
-          if (true) {
-            return props_TemplatePersistentConfigurationType;
-          }
-          break;
-        default:
-      }
+    StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
+    switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ApplyTo_Function:
+        return props_ApplyTo_Function;
+      case LanguageConceptSwitch.CheckProperitesOperation:
+        return props_CheckProperitesOperation;
+      case LanguageConceptSwitch.CheckProperties_Function:
+        return props_CheckProperties_Function;
+      case LanguageConceptSwitch.Configuration_Parameter:
+        return props_Configuration_Parameter;
+      case LanguageConceptSwitch.CreateEditor_Function:
+        return props_CreateEditor_Function;
+      case LanguageConceptSwitch.DeprecatedAnnotation:
+        return props_DeprecatedAnnotation;
+      case LanguageConceptSwitch.Dispose_Function:
+        return props_Dispose_Function;
+      case LanguageConceptSwitch.EditorExpression:
+        return props_EditorExpression;
+      case LanguageConceptSwitch.EditorOperationCall:
+        return props_EditorOperationCall;
+      case LanguageConceptSwitch.EditorOperationDeclaration:
+        return props_EditorOperationDeclaration;
+      case LanguageConceptSwitch.EditorPropertyDeclaration:
+        return props_EditorPropertyDeclaration;
+      case LanguageConceptSwitch.EditorPropertyReference:
+        return props_EditorPropertyReference;
+      case LanguageConceptSwitch.GetEditorOperation:
+        return props_GetEditorOperation;
+      case LanguageConceptSwitch.GridBagConstraints:
+        return props_GridBagConstraints;
+      case LanguageConceptSwitch.IPersistentPropertyHolder:
+        return props_IPersistentPropertyHolder;
+      case LanguageConceptSwitch.PersistentConfiguration:
+        return props_PersistentConfiguration;
+      case LanguageConceptSwitch.PersistentConfigurationAssistent:
+        return props_PersistentConfigurationAssistent;
+      case LanguageConceptSwitch.PersistentConfigurationMethod:
+        return props_PersistentConfigurationMethod;
+      case LanguageConceptSwitch.PersistentConfigurationTemplate:
+        return props_PersistentConfigurationTemplate;
+      case LanguageConceptSwitch.PersistentConfigurationTemplateInitializer:
+        return props_PersistentConfigurationTemplateInitializer;
+      case LanguageConceptSwitch.PersistentConfigurationType:
+        return props_PersistentConfigurationType;
+      case LanguageConceptSwitch.PersistentPropertyDeclaration:
+        return props_PersistentPropertyDeclaration;
+      case LanguageConceptSwitch.PersistentPropertyReferenceOperation:
+        return props_PersistentPropertyReferenceOperation;
+      case LanguageConceptSwitch.ReportConfigurationErrorStatement:
+        return props_ReportConfigurationErrorStatement;
+      case LanguageConceptSwitch.ResetFrom_Function:
+        return props_ResetFrom_Function;
+      case LanguageConceptSwitch.SettingsEditor:
+        return props_SettingsEditor;
+      case LanguageConceptSwitch.SettingsEditorType:
+        return props_SettingsEditorType;
+      case LanguageConceptSwitch.TemplateParameter:
+        return props_TemplateParameter;
+      case LanguageConceptSwitch.TemplateParameterReference:
+        return props_TemplateParameterReference;
+      case LanguageConceptSwitch.TemplatePersistentConfigurationType:
+        return props_TemplatePersistentConfigurationType;
     }
-    throw new IllegalStateException();
+    return null;
   }
-  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
-    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
-    int counter = 0;
-    for (SAbstractConcept c : concepts) {
-      res.put(c, counter++);
-    }
-    return res;
-  }
-  private static final Map<SAbstractConcept, Integer> indices_lpa09p_a0fb = buildConceptIndices(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910129L, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011fL, "jetbrains.mps.execution.settings.structure.CheckProperitesOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910125L, "jetbrains.mps.execution.settings.structure.CheckProperties_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910390L, "jetbrains.mps.execution.settings.structure.Configuration_Parameter"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910106L, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010bL, "jetbrains.mps.execution.settings.structure.Dispose_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL, "jetbrains.mps.execution.settings.structure.EditorExpression"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, "jetbrains.mps.execution.settings.structure.EditorOperationCall"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910132L, "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L, "jetbrains.mps.execution.settings.structure.EditorPropertyReference"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x4a75ebd58602caa5L, "jetbrains.mps.execution.settings.structure.GetEditorOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb488L, "jetbrains.mps.execution.settings.structure.GridBagConstraints"), MetaAdapterFactory.getInterfaceConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910122L, "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), MetaAdapterFactory.getInterfaceConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001bL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L, "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910136L, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, "jetbrains.mps.execution.settings.structure.SettingsEditorType"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011aL, "jetbrains.mps.execution.settings.structure.TemplateParameter"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L, "jetbrains.mps.execution.settings.structure.TemplateParameterReference"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"));
 }
