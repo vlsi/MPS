@@ -29,31 +29,15 @@ import org.junit.runners.model.RunnerBuilder;
  * NB: the test which prints errors to output (apache Logger#error) is considered failed.
  * Further the level will be lowered so that any warning will fail the test.
  */
-@RunWith(PlatformTestSuite.class)
+@RunWith(InternalTestSuite.class)
 @Suite.SuiteClasses({
-    jetbrains.mps.environment.IdeaEnvironmentTest.class,
-    jetbrains.mps.classloading.DeploymentConcurrencyTest.class,
-    jetbrains.mps.workbench.ProjectCreationTest.class,
-    jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
-    jetbrains.mps.ide.vcs.test.merge.ChangesCalculationTest.class,
-    jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest.class,
-    jetbrains.mps.ide.vcs.test.merge.RootStatusTest.class,
-    jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Nodes.class,
-    //temporary disabled as after last enabling it is hanging builds, need more accurate waits
-//    jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model.class,
-    jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest.class,
-    jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
-    jetbrains.mps.vfs.VfsTest.class,
-    jetbrains.mps.generator.impl.plan.CheckpointModelTest.class,
-    jetbrains.mps.workbench.ProjectPlatformTest.class,
-    jetbrains.mps.ide.ModuleIDETests.class,
-    jetbrains.mps.ide.FSTests.class
+    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class
 })
-public class PlatformTestSuite extends OutputWatchingTestSuite {
+public class InternalTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time
   public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin());
 
-  public PlatformTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
+  public InternalTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
     super(aClass, builder);
   }
 }
