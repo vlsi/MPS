@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateQueryException;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
@@ -138,8 +139,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       throw ex;
     } catch(Throwable th) {
       // FIXME technically, this catch shall be inside DefaultQueryExecutionContext, where all such catch are kept. But there's no corresponding method in DQEC
-      generator.getLogger().error(getMappingNode(), "error executing condition (see exception)");
-      GenerationFailureException ex = new GenerationFailureException(th);
+      TemplateQueryException ex = new TemplateQueryException("error executing map config condition", th);
       ex.setTemplateModelLocation(getMappingNode());
       throw ex;
     }

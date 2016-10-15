@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateQueryException;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
@@ -319,14 +320,16 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   }
 
   /*package*/ static GenerationFailureException fromQueryAccessCode(IllegalQueryMethodException ex) {
-    // FIXME either shall not instantiate IQME with a message (otherwise thrown away) or shall use it in propagated GFE
-    // see also GFT(Throwable) cons for comment
-    return new GenerationFailureException(ex.getCause());
+    return new GenerationFailureException(ex.getMessage(), ex.getCause());
   }
 
-  /*package*/ static GenerationFailureException fromUserCode(InvocationTargetException ex) {
-    // FIXME shall throw distinct subclass of GFE to indicate error in user code
-    return new GenerationFailureException(ex.getCause());
+  /*package*/ static GenerationFailureException fromUserCode(String methodName, TemplateQueryContext ctx, InvocationTargetException ite) {
+    SNodeReference templateLocation = ctx.getTemplateReference();
+    String modelName = templateLocation == null || templateLocation.getModelReference() == null ? "<unknown>" : templateLocation.getModelReference().getModelName();
+    String msg = String.format("Generated method %s (template model %s) failed", methodName, modelName);
+    TemplateQueryException ex = new TemplateQueryException(msg, ite.getCause());
+    ex.setQueryContext(ctx);
+    return ex;
   }
 
   /*
@@ -374,7 +377,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, ctx, e);
       }
     }
 
@@ -446,7 +449,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -496,7 +499,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -508,7 +511,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -522,7 +525,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -536,7 +539,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -547,7 +550,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -559,7 +562,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -573,7 +576,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -588,7 +591,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -601,7 +604,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -614,7 +617,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -628,7 +631,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 
@@ -640,7 +643,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       } catch (IllegalQueryMethodException e) {
         throw fromQueryAccessCode(e);
       } catch (InvocationTargetException e) {
-        throw fromUserCode(e);
+        throw fromUserCode(myMethodName, context, e);
       }
     }
 

@@ -19,6 +19,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateQueryException;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
@@ -51,6 +52,14 @@ import java.util.Collection;
 
 /**
  * Default implementation that executes queries without any further activity.
+ *
+ * XXX Note, evaluate methods account for any trouble in user code, and wrap them with {@link TemplateQueryException}.
+ * However, {@link jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider} handles unexpected exceptions itself,
+ * while generated templates don't use this QEC at all. The only case when these catch() work is non-reflective queries, the one
+ * that we'd like to make primary (and, perhaps, only). See {@link jetbrains.mps.generator.impl.template.QueryExecutor} for
+ * considerations whether we shall keep QE/QEC indirection, or get another provider that would wrap non-reflective queries with
+ * try/catch and unexpected error handling (wrapping could be conditional). I lean towards a distinct provider as it gives
+ * more flexibility (can mix different wrappers) and fine-grained control for wrappers like performance tracer.
  * Evgeny Gryaznov, Feb 10, 2010
  */
 public class DefaultQueryExecutionContext implements QueryExecutionContext {
@@ -74,8 +83,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "condition of inline switch failed");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("condition of inline switch failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -86,8 +96,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "IF macro condition failed");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("IF macro condition failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -99,8 +110,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "cannot evaluate macro: mapping func failed");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("mapping function failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -111,8 +123,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "cannot evaluate macro: post-processing failed");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("post-processing query failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -124,8 +137,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate property value");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("failed to evaluate property value", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -137,8 +151,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate source node query");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("source node query failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -150,8 +165,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate query for template call argument");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("Query for template call argument failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -163,8 +179,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate VAR macro query");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("VAR macro query failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -176,8 +193,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate source nodes query");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("source nodes query failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -189,8 +207,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate INSERT macro query");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("INSERT macro query failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -202,8 +221,9 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.showErrorMessage(null, "failed to evaluate query for reference macro target");
-      throw new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("reference macro target query failed", t);
+      ex.setQueryContext(context);
+      throw ex;
     }
   }
 
@@ -234,8 +254,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "error applying reduction rule (see exception)");
-      GenerationFailureException ex = new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException("error applying reduction rule", t);
       ex.setTemplateContext(context);
       ex.setTemplateModelLocation(rule.getRuleNode());
       throw ex;
@@ -249,8 +268,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "error executing condition (see exception)");
-      GenerationFailureException ex = new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("error executing rule condition", t);
       ex.setTemplateContext(context);
       ex.setTemplateModelLocation(rule.getRuleNode());
       throw ex;
@@ -264,8 +282,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying root rule");
-      GenerationFailureException ex = new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException("unexpected exception when applying root rule", t);
       ex.setTemplateContext(context);
       ex.setTemplateModelLocation(rule.getRuleNode());
       throw ex;
@@ -279,8 +296,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      environment.getLogger().error(rule.getRuleNode(), "unexpected exception when applying create root rule");
-      GenerationFailureException ex = new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException("unexpected exception when applying create root rule", t);
       ex.setTemplateModelLocation(rule.getRuleNode());
       throw ex;
     }
@@ -293,8 +309,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying weaving rule");
-      GenerationFailureException ex = new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException("unexpected exception when applying weaving rule", t);
       ex.setTemplateContext(context);
       ex.setTemplateModelLocation(rule.getRuleNode());
       throw ex;
@@ -308,8 +323,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "cannot evaluate rule context query ", GeneratorUtil.describeInput(context));
-      GenerationFailureException ex = new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException("cannot evaluate rule context query", t);
       ex.setTemplateContext(context);
       ex.setTemplateModelLocation(rule.getRuleNode());
       throw ex;
@@ -323,8 +337,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      myGenerator.getLogger().error(mappingScript.getScriptNode(), String.format("error executing script %s (see exception)", mappingScript.getLongName()));
-      GenerationFailureException ex = new GenerationFailureException(t);
+      TemplateQueryException ex = new TemplateQueryException(String.format("error executing script %s", mappingScript.getLongName()), t);
       ex.setTemplateModelLocation(mappingScript.getScriptNode());
       throw ex;
     }
