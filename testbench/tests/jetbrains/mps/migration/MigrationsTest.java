@@ -63,7 +63,7 @@ public class MigrationsTest {
     List<ChangeSet> changes = LocalHistoryImpl.getInstanceImpl().getFacade().getChangeListInTests().getChangesInTests();
 
     int num = 6;
-    Assert.assertEquals(num, changes.size());
+    Assert.assertTrue("Changes: " + changes.size() + " num: " + num, changes.size() >= num); //additional migrations may appear from lang design languages
     Assert.assertEquals(MigrationsProgressWizardStep.FINISH_LABEL_TEXT, changes.get(0).getLabel());
     Assert.assertEquals(MigrationsProgressWizardStep.START_LABEL_TEXT, changes.get(num - 1).getLabel());
     for (int i = 1; i < num - 1; i++) {
