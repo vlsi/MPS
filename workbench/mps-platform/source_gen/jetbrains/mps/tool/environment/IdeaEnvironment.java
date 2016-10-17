@@ -14,11 +14,11 @@ import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.project.ProjectManager;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.util.Reference;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.vfs.DefaultCachingContext;
@@ -118,12 +118,24 @@ public class IdeaEnvironment extends EnvironmentBase {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
+        List<Project> openedProjects = new ArrayList<Project>(ProjectManager.getInstance().getOpenedProjects());
+        for (final Project project : openedProjects) {
+          if (project instanceof MPSProject) {
+            // MPSProject need to be disposed outside writeAction to prevent exception: 
+            // java.lang.IllegalStateException: Must not call closeProject() from under write action  
+            // because fireProjectClosing() listeners must have a chance to do something useful 
+            // TODO: find way to put MPSProject#dispose() under writeAction 
+            project.dispose();
+          } else {
+            ApplicationManager.getApplication().runWriteAction(new Runnable() {
+              public void run() {
+                project.dispose();
+              }
+            });
+          }
+        }
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-            List<Project> openedProjects = new ArrayList<Project>(ProjectManager.getInstance().getOpenedProjects());
-            for (Project project : openedProjects) {
-              project.dispose();
-            }
             myIdeaApplication.dispose();
           }
         });
