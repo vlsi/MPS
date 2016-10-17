@@ -253,7 +253,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private synchronized void postponeMigrationIfNeededOnModuleChange(Iterable<SModule> modules) {
     if (!(myMigrationQueued)) {
       Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-      if (myMigrationManager.isMigrationRequired(modules2Check)) {
+      if (myMigrationManager.importVersionsUpdateRequired(modules2Check) || myMigrationManager.isMigrationRequired(modules2Check)) {
         postponeMigration();
       }
     }
@@ -281,7 +281,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       }
     });
-    if (ListSequence.fromList(myMigrationManager.getModuleMigrationsToApply(modules2Check)).isNotEmpty()) {
+    if (myMigrationManager.importVersionsUpdateRequired(modules2Check) || ListSequence.fromList(myMigrationManager.getModuleMigrationsToApply(modules2Check)).isNotEmpty()) {
       postponeMigration();
     }
   }
@@ -304,39 +304,58 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
             restoreTipsState();
 
-            if (!(myMigrationManager.isMigrationRequired())) {
-              return;
-            }
-
-            boolean doMigration = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
-
-            // set flag to execute migration after startup 
-            // NOTE we need to set it here as in invokeLater it can  
-            // be executed when save session already passed, see MPS-22045 
-            myState.migrationRequired = doMigration;
-
-            if (!(doMigration)) {
-              return;
-            }
-
-            syncRefresh();
-            if (!(myMigrationManager.isMigrationRequired())) {
-              MigrationDialogUtil.showNoMigrationMessage(myProject);
-              return;
-            }
-
-            VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
+            final Wrappers._boolean importVersionsUpdateRequired = new Wrappers._boolean();
+            myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
               public void run() {
-                final Application application = ApplicationManager.getApplication();
-                application.invokeLater(new Runnable() {
+                importVersionsUpdateRequired.value = myMigrationManager.importVersionsUpdateRequired(allModules);
+              }
+            });
+            if (importVersionsUpdateRequired.value) {
+              boolean doResave = MigrationDialogUtil.showResaveConfirmation(myMpsProject);
+
+              if (doResave) {
+                syncRefresh();
+                myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
                   public void run() {
-                    application.getComponent(ReloadManager.class).flush();
-                    // reload project and start migration assist 
-                    ProjectManagerEx.getInstance().reloadProject(ideaProject);
+                    for (SModule module : Sequence.fromIterable(allModules)) {
+                      myMigrationManager.doUpdateImportVersions(module);
+                    }
                   }
                 });
               }
-            });
+            }
+
+            if (myMigrationManager.isMigrationRequired()) {
+              boolean doMigration = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
+
+              // set flag to execute migration after startup 
+              // NOTE we need to set it here as in invokeLater it can  
+              // be executed when save session already passed, see MPS-22045 
+              myState.migrationRequired = doMigration;
+
+              if (!(doMigration)) {
+                return;
+              }
+
+              syncRefresh();
+              if (!(myMigrationManager.isMigrationRequired())) {
+                MigrationDialogUtil.showNoMigrationMessage(myProject);
+                return;
+              }
+
+              VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
+                public void run() {
+                  final Application application = ApplicationManager.getApplication();
+                  application.invokeLater(new Runnable() {
+                    public void run() {
+                      application.getComponent(ReloadManager.class).flush();
+                      // reload project and start migration assist 
+                      ProjectManagerEx.getInstance().reloadProject(ideaProject);
+                    }
+                  });
+                }
+              });
+            }
           }
         });
       }

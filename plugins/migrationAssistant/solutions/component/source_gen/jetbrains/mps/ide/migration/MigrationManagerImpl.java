@@ -57,7 +57,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
   public boolean isMigrationRequired() {
     final Wrappers._boolean result = new Wrappers._boolean(false);
-    myMpsMproject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject);
         result.value = isMigrationRequired(modules);

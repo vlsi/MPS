@@ -97,6 +97,16 @@ public class MigrationDialogUtil {
     int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Migration Required", "Migrate", "Postpone", null);
     return result == Messages.YES;
   }
+
+  public static boolean showResaveConfirmation(MPSProject project) {
+    StringBuilder text = new StringBuilder();
+    text.append("Module descriptors needs to be changed.\n");
+    text.append("Would you like to resave all module descriptors?");
+
+    int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Resave Required", "Resave", "Postpone", null);
+    return result == Messages.YES;
+  }
+
   public static void showNoMigrationMessage(Project p) {
     Messages.showMessageDialog(p, "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
   }

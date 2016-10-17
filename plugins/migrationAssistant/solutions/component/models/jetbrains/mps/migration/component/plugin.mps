@@ -2,22 +2,22 @@
 <model ref="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" name="jetbrains.mps.lang.checkedName" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
-    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" name="jetbrains.mps.lang.checkedName" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <engage id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" />
   </languages>
   <imports>
@@ -147,6 +147,7 @@
       <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -2020,57 +2021,77 @@
             <node concept="10P_77" id="6KPfPAmPAZY" role="1tU5fm" />
           </node>
         </node>
-        <node concept="3clFbH" id="7FLry2XR4gs" role="3cqZAp" />
-        <node concept="3clFbF" id="2fg9H9N2fAp" role="3cqZAp">
-          <node concept="2OqwBi" id="2fg9H9N2gDv" role="3clFbG">
-            <node concept="2OqwBi" id="2fg9H9N2gp5" role="2Oq$k0">
-              <node concept="2OqwBi" id="2fg9H9N2fTu" role="2Oq$k0">
-                <node concept="2OqwBi" id="7FLry2XR2Gy" role="2Oq$k0">
-                  <node concept="2WthIp" id="7FLry2XR2G_" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="7FLry2XR2GB" role="2OqNvi">
-                    <ref role="2WH_rO" node="7FLry2XR1vG" resolve="mpsProject" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="2fg9H9N2go2" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+        <node concept="3cpWs8" id="6mZ0jO9ZCp9" role="3cqZAp">
+          <node concept="3cpWsn" id="6mZ0jO9ZCpa" role="3cpWs9">
+            <property role="TrG5h" value="component" />
+            <node concept="3uibUv" id="6mZ0jO9ZCp8" role="1tU5fm">
+              <ref role="3uigEE" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
+            </node>
+            <node concept="2OqwBi" id="6mZ0jO9ZCpb" role="33vP2m">
+              <node concept="2OqwBi" id="6mZ0jO9ZCpc" role="2Oq$k0">
+                <node concept="2WthIp" id="6mZ0jO9ZCpd" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6mZ0jO9ZCpe" role="2OqNvi">
+                  <ref role="2WH_rO" node="2UTM4$6j1gg" resolve="project" />
                 </node>
               </node>
-              <node concept="liA8E" id="2fg9H9N2gCu" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              <node concept="liA8E" id="6mZ0jO9ZCpf" role="2OqNvi">
+                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="6mZ0jO9ZCpg" role="37wK5m">
+                  <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
+                </node>
               </node>
             </node>
-            <node concept="liA8E" id="2fg9H9N2gWB" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
-              <node concept="1bVj0M" id="2fg9H9N2gZs" role="37wK5m">
-                <node concept="3clFbS" id="2fg9H9N2gZt" role="1bW5cS">
-                  <node concept="3clFbF" id="6KPfPAmPB9S" role="3cqZAp">
-                    <node concept="37vLTI" id="6KPfPAmPB9U" role="3clFbG">
-                      <node concept="2OqwBi" id="6KPfPAmPB03" role="37vLTx">
-                        <node concept="2OqwBi" id="7FLry2XReY1" role="2Oq$k0">
-                          <node concept="2OqwBi" id="7FLry2XR9uq" role="2Oq$k0">
-                            <node concept="2WthIp" id="7FLry2XR9ut" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="7FLry2XR9uv" role="2OqNvi">
-                              <ref role="2WH_rO" node="2UTM4$6j1gg" resolve="project" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="6mZ0jO9ZD4j" role="3cqZAp">
+          <node concept="1QHqEC" id="6mZ0jO9ZD4l" role="1QHqEI">
+            <node concept="3clFbS" id="6mZ0jO9ZD4n" role="1bW5cS">
+              <node concept="3clFbF" id="6mZ0jO9ZEDI" role="3cqZAp">
+                <node concept="37vLTI" id="6KPfPAmPB9U" role="3clFbG">
+                  <node concept="22lmx$" id="6mZ0jO9ZTs_" role="37vLTx">
+                    <node concept="2OqwBi" id="6mZ0jO9ZTHC" role="3uHU7w">
+                      <node concept="37vLTw" id="6mZ0jO9ZTA1" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6mZ0jO9ZCpa" resolve="component" />
+                      </node>
+                      <node concept="liA8E" id="6mZ0jO9ZTTa" role="2OqNvi">
+                        <ref role="37wK5l" to="bim2:2V3ml1v0OWM" resolve="importVersionsUpdateRequired" />
+                        <node concept="2YIFZM" id="6mZ0jO9ZU4k" role="37wK5m">
+                          <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                          <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
+                          <node concept="2OqwBi" id="6mZ0jO9ZUau" role="37wK5m">
+                            <node concept="2WthIp" id="6mZ0jO9ZUax" role="2Oq$k0" />
+                            <node concept="1DTwFV" id="6mZ0jO9ZUaz" role="2OqNvi">
+                              <ref role="2WH_rO" node="7FLry2XR1vG" resolve="mpsProject" />
                             </node>
                           </node>
-                          <node concept="liA8E" id="7FLry2XRfhO" role="2OqNvi">
-                            <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                            <node concept="3VsKOn" id="7FLry2XRfBM" role="37wK5m">
-                              <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6KPfPAmPB05" role="2OqNvi">
-                          <ref role="37wK5l" to="bim2:5SsFeroaac6" resolve="isMigrationRequired" />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="6KPfPAmPB9Y" role="37vLTJ">
-                        <ref role="3cqZAo" node="6KPfPAmPB02" resolve="migrationRequired" />
+                    </node>
+                    <node concept="2OqwBi" id="6KPfPAmPB03" role="3uHU7B">
+                      <node concept="37vLTw" id="6mZ0jO9ZCph" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6mZ0jO9ZCpa" resolve="component" />
+                      </node>
+                      <node concept="liA8E" id="6KPfPAmPB05" role="2OqNvi">
+                        <ref role="37wK5l" to="bim2:5SsFeroaac6" resolve="isMigrationRequired" />
                       </node>
                     </node>
                   </node>
+                  <node concept="37vLTw" id="6KPfPAmPB9Y" role="37vLTJ">
+                    <ref role="3cqZAo" node="6KPfPAmPB02" resolve="migrationRequired" />
+                  </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6mZ0jO9ZDTu" role="ukAjM">
+            <node concept="2OqwBi" id="6mZ0jO9ZDbc" role="2Oq$k0">
+              <node concept="2WthIp" id="6mZ0jO9ZDbf" role="2Oq$k0" />
+              <node concept="1DTwFV" id="6mZ0jO9ZDbh" role="2OqNvi">
+                <ref role="2WH_rO" node="7FLry2XR1vG" resolve="mpsProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6mZ0jO9ZEvR" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>
