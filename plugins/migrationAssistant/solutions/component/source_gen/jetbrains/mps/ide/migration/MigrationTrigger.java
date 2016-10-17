@@ -301,12 +301,14 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
+
+            restoreTipsState();
+
             if (!(myMigrationManager.isMigrationRequired())) {
               return;
             }
 
             boolean doMigration = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
-            restoreTipsState();
 
             // set flag to execute migration after startup 
             // NOTE we need to set it here as in invokeLater it can  
