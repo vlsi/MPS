@@ -18,7 +18,6 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -31,12 +30,11 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import com.intellij.openapi.application.ModalityState;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -44,6 +42,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -133,12 +132,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             public void run() {
               myState.migrationRequired = false;
 
-              myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
-                public void run() {
-                  updateVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
-                }
-              });
-
               final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, MigrationTrigger.this);
               // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
               boolean finished = wizard.showAndGet();
@@ -154,7 +147,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a0b0a0a0a0b0a3a52(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a52(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -188,15 +181,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       });
     }
-  }
-
-  public static void updateVersions(Iterable<SModule> modules) {
-    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule it) {
-        it.validateLanguageVersions();
-        it.validateDependencyVersions();
-      }
-    });
   }
 
   public void projectClosed() {
@@ -456,7 +440,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0k0a0a0a0b0a0a0a0b0a3a52(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a52(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

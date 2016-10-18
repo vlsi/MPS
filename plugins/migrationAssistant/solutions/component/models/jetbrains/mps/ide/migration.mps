@@ -1731,33 +1731,6 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="3clFbH" id="5EyPfg3xGa2" role="3cqZAp" />
-                                  <node concept="1QHqEM" id="7LVOmkXCl61" role="3cqZAp">
-                                    <node concept="2OqwBi" id="6mkTi9xHrIs" role="ukAjM">
-                                      <node concept="37vLTw" id="6mkTi9xHqUs" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-                                      </node>
-                                      <node concept="liA8E" id="6mkTi9xHsJ4" role="2OqNvi">
-                                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                                      </node>
-                                    </node>
-                                    <node concept="1QHqEC" id="7LVOmkXCl63" role="1QHqEI">
-                                      <node concept="3clFbS" id="7LVOmkXCl65" role="1bW5cS">
-                                        <node concept="3clFbF" id="1Ql1_c6MGLH" role="3cqZAp">
-                                          <node concept="1rXfSq" id="1Ql1_c6MGLF" role="3clFbG">
-                                            <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateVersions" />
-                                            <node concept="2YIFZM" id="1Ql1_c6ML2c" role="37wK5m">
-                                              <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
-                                              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
-                                              <node concept="37vLTw" id="1Ql1_c6ML2d" role="37wK5m">
-                                                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
                                   <node concept="3clFbH" id="7LVOmkXCkFk" role="3cqZAp" />
                                   <node concept="3cpWs8" id="5EyPfg3xGa3" role="3cqZAp">
                                     <node concept="3cpWsn" id="5EyPfg3xGa4" role="3cpWs9">
@@ -2095,69 +2068,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2tJIrI" id="1Ql1_c6N0gi" role="jymVt" />
-    <node concept="2YIFZL" id="1Ql1_c6N3AN" role="jymVt">
-      <property role="TrG5h" value="updateVersions" />
-      <property role="IEkAT" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3clFbS" id="1Ql1_c6METD" role="3clF47">
-        <node concept="3clFbF" id="1Ql1_c6METE" role="3cqZAp">
-          <node concept="2OqwBi" id="1Ql1_c6METF" role="3clFbG">
-            <node concept="2OqwBi" id="1Ql1_c6METG" role="2Oq$k0">
-              <node concept="UnYns" id="1Ql1_c6METJ" role="2OqNvi">
-                <node concept="3uibUv" id="1Ql1_c6METK" role="UnYnz">
-                  <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="1Ql1_c6MKUE" role="2Oq$k0">
-                <ref role="3cqZAo" node="1Ql1_c6MIHZ" resolve="modules" />
-              </node>
-            </node>
-            <node concept="2es0OD" id="1Ql1_c6METL" role="2OqNvi">
-              <node concept="1bVj0M" id="1Ql1_c6METM" role="23t8la">
-                <node concept="3clFbS" id="1Ql1_c6METN" role="1bW5cS">
-                  <node concept="3clFbF" id="1Ql1_c6METO" role="3cqZAp">
-                    <node concept="2OqwBi" id="1Ql1_c6METP" role="3clFbG">
-                      <node concept="37vLTw" id="1Ql1_c6METQ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1Ql1_c6METS" resolve="it" />
-                      </node>
-                      <node concept="liA8E" id="1Ql1_c6METR" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="6k8sMRJLY0D" role="3cqZAp">
-                    <node concept="2OqwBi" id="6k8sMRJLY3U" role="3clFbG">
-                      <node concept="37vLTw" id="6k8sMRJLY0B" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1Ql1_c6METS" resolve="it" />
-                      </node>
-                      <node concept="liA8E" id="6k8sMRJLYeg" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~AbstractModule.validateDependencyVersions():void" resolve="validateDependencyVersions" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="Rh6nW" id="1Ql1_c6METS" role="1bW2Oz">
-                  <property role="TrG5h" value="it" />
-                  <node concept="2jxLKc" id="1Ql1_c6METT" role="1tU5fm" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1Ql1_c6MIHZ" role="3clF46">
-        <property role="TrG5h" value="modules" />
-        <node concept="A3Dl8" id="1Ql1_c6MIHX" role="1tU5fm">
-          <node concept="3uibUv" id="1Ql1_c6MJQn" role="A3Ik2">
-            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="1Ql1_c6METY" role="3clF45" />
-      <node concept="3Tm1VV" id="1Ql1_c6N1GO" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1AzqgyAfh7n" role="jymVt" />
     <node concept="3clFb_" id="1AzqgyAfalv" role="jymVt">
