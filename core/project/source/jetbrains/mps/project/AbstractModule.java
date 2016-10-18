@@ -293,8 +293,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public void save() {
     assertCanChange();
-    validateLanguageVersions();
-    validateDependencyVersions();
     myChanged = false;
   }
 
