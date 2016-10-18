@@ -20,7 +20,13 @@ import java.util.HashMap;
 import com.intellij.openapi.keymap.KeymapManager;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jdom.Element;
+import jetbrains.mps.persistence.PersistenceUtil;
+import com.intellij.util.Base64Converter;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
+import jetbrains.mps.util.annotation.ToRemove;
+import com.intellij.util.xmlb.annotations.Tag;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -68,9 +74,16 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     initTabs();
   }
 
-  public BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
+  public BaseConsoleTab addConsoleTab(@Nullable final ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
     String title = check_xg3v07_a0a0t(tabState);
-    String history = check_xg3v07_a0b0t(tabState);
+    final Wrappers._T<Element> history = new Wrappers._T<Element>(check_xg3v07_a0b0t(check_xg3v07_a0a1a91(check_xg3v07_a0a0b0t(check_xg3v07_a0a0a1a91(tabState)))));
+    if (check_xg3v07_a0c0t(tabState) != null) {
+      myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          history.value = PersistenceUtil.saveModelToXml(PersistenceUtil.loadBinaryModel(Base64Converter.decode(tabState.history.getBytes())));
+        }
+      });
+    }
     if (icon == null) {
       icon = MPSIcons.ToolWindows.OpenTerminal_13x13;
     }
@@ -78,10 +91,10 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       title = "Console";
     }
     BaseConsoleTab tab;
-    if (check_xg3v07_a5a91(tabState)) {
-      tab = new OutputConsoleTab(myProject, this, title, history);
+    if (check_xg3v07_a6a91(tabState)) {
+      tab = new OutputConsoleTab(myProject, this, title, history.value);
     } else {
-      tab = new DialogConsoleTab(myProject, this, title, history);
+      tab = new DialogConsoleTab(myProject, this, title, history.value);
     }
     ListSequence.fromList(myTabs).addElement(tab);
     addTab(tab, title, icon, new IComponentDisposer<BaseConsoleTab>() {
@@ -120,7 +133,11 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   public static class TabState {
     public String title;
     public boolean isHistoryTab;
+    @Deprecated
+    @ToRemove(version = 3.5)
     public String history;
+    @Tag(value = "tab")
+    public Element historyXml;
   }
 
   public static class MyState {
@@ -166,10 +183,10 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
         break;
       }
       ConsoleTool.TabState tabState = new ConsoleTool.TabState();
-      tabState.history = tab.saveHistory();
+      tabState.historyXml = new Element("tab").addContent(tab.saveHistory());
       tabState.title = tab.getTitle();
       tabState.isHistoryTab = !(tab instanceof DialogConsoleTab);
-      if (tabState.history == null || tabState.title == null) {
+      if (tabState.historyXml == null || tabState.title == null) {
         break;
       }
       result.tabs.add(tabState);
@@ -183,13 +200,37 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     }
     return null;
   }
-  private static String check_xg3v07_a0b0t(ConsoleTool.TabState checkedDotOperand) {
+  private static Element check_xg3v07_a0b0t(Element checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.clone();
+    }
+    return null;
+  }
+  private static Element check_xg3v07_a0a1a91(List<Element> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.get(0);
+    }
+    return null;
+  }
+  private static List<Element> check_xg3v07_a0a0b0t(Element checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChildren();
+    }
+    return null;
+  }
+  private static Element check_xg3v07_a0a0a1a91(ConsoleTool.TabState checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.historyXml;
+    }
+    return null;
+  }
+  private static String check_xg3v07_a0c0t(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.history;
     }
     return null;
   }
-  private static boolean check_xg3v07_a5a91(ConsoleTool.TabState checkedDotOperand) {
+  private static boolean check_xg3v07_a6a91(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isHistoryTab;
     }

@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.Highlighter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Element;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NonNls;
@@ -80,7 +81,6 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -107,7 +107,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
 
   protected SNode myRoot;
 
-  public BaseConsoleTab(MPSProject project, ConsoleTool tool, String title, @Nullable String history) {
+  public BaseConsoleTab(MPSProject project, ConsoleTool tool, String title, @Nullable Element history) {
     super(false, true);
     myTool = tool;
     myTabTitle = title;
@@ -173,7 +173,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     }
   }
 
-  protected void initConsoleTab(@Nullable final String history) {
+  protected void initConsoleTab(@Nullable final Element history) {
     if (myProject.getModelAccess().canWrite()) {
       // non-undoable actions should not affect project files 
       throw new IllegalStateException();
@@ -404,15 +404,15 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     }
   }
 
-  protected abstract void loadHistory(String state);
+  protected abstract void loadHistory(Element state);
 
   @Nullable
-  public String saveHistory() {
-    final Wrappers._T<String> result = new Wrappers._T<String>(null);
+  public Element saveHistory() {
+    final Wrappers._T<Element> result = new Wrappers._T<Element>(null);
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
-          result.value = (myModel == null ? null : Base64Converter.encode(PersistenceUtil.saveBinaryModel(myModel)));
+          result.value = (myModel == null ? null : PersistenceUtil.saveModelToXml(myModel));
         } catch (Exception e) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Error on console model saving", e);
@@ -423,12 +423,12 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     return result.value;
   }
 
-  protected SModel loadHistoryModel(String state) {
+  protected SModel loadHistoryModel(Element state) {
     if (state == null) {
       return null;
     }
     try {
-      final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
+      final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadModelFromXml(state));
       ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(it.getConcept().isValid());
