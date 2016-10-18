@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MementoWithFS;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.PathUtil;
 import jetbrains.mps.util.ReferenceUpdater;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -252,8 +247,8 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   protected  boolean isInModuleDirectory() {
     AbstractModule module = (AbstractModule) getModule();
-    Path modelRootPath = UniPath.fromString(getContentRoot()).toAbsolute().toNormal().toSystemPath();
-    return module != null && modelRootPath.startsWith(module.getModuleSourceDir().toPath().toAbsolute().toNormal().toSystemPath());
+    Path modelRootPath = pathFrom(getContentRoot());
+    return module != null && modelRootPath.startsWith(getModuleDirPath(module));
   }
 
   @Override
@@ -262,23 +257,62 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
       throw new IllegalStateException("Can't clone model root that isn't attached to any module");
     }
 
-    AbstractModule sModule = (AbstractModule) getModule();
-    AbstractModule tModule = (AbstractModule) targetModule;
+    AbstractModule tModule = ((AbstractModule) targetModule);
+    AbstractModule sModule = ((AbstractModule) getModule());
 
-    final Memento targetMemento = new MementoImpl();
     final FileBasedModelRoot targetModelRoot = ((FileBasedModelRoot) PersistenceRegistry.getInstance().getModelRootFactory(getType()).create());
-
-    save(targetMemento);
-
-    if (cloneType == CloneType.CLONE) {
-      cloneContent(targetMemento, sModule, tModule);
-    }
     targetModelRoot.setModule(tModule);
-    targetModelRoot.load(targetMemento);
+
+    Path sourcePath = pathFrom(getContentRoot());
+    Path targetPath = evaluateTargetPath(sourcePath, getModuleDirPath(sModule), getModuleDirPath(tModule));
+
+    targetModelRoot.setContentRoot(targetPath.toString());
+
+    for (String kind : getSupportedFileKinds()) {
+      if (kind.equals(EXCLUDED)) continue;
+
+      Collection<String> targetFiles = new ArrayList<>();
+      for (String file : getFiles(kind)) {
+        Path sourceFilePath = pathFrom(file);
+
+        //FIXME use targetPath.resolve(sourcePath.relativize(sourceFilePath)) instead
+        String relativePath = sourceFilePath.toString().substring(sourcePath.toString().length()).replace(Path.UNIX_SEPARATOR_CHAR, Path.SYSTEM_SEPARATOR_CHAR);
+        Path targetFilePath = UniPath.fromString(targetPath.toString() + relativePath);
+
+        targetFiles.add(targetFilePath.toString());
+
+        IFileUtils.copyDirectoryContent(
+            sModule.getFileSystem().getFile(sourceFilePath.toString()),
+            tModule.getFileSystem().getFile(targetFilePath.toString())
+            );
+      }
+      targetModelRoot.addFiles(kind, targetFiles);
+    }
 
     loadClonedModelRootContent(targetModelRoot, referenceUpdater);
 
     return targetModelRoot;
+  }
+
+  @NotNull
+  private static UniPath getModuleDirPath(AbstractModule module) {
+    return module.getModuleSourceDir().toPath().toAbsolute().toNormal().toSystemPath();
+  }
+
+  @NotNull
+  private static UniPath pathFrom(String contentRoot) {
+    return UniPath.fromString(contentRoot).toAbsolute().toNormal().toSystemPath();
+  }
+
+
+  private static Path evaluateTargetPath(Path sourcePath, Path sourceModulePath, Path targetModulePath) {
+    if (sourcePath.startsWith(sourceModulePath)) {
+      //FIXME use targetModulePath.resolve(sourceModulePath.relativize(sourcePath)) instead
+      String relativePath = sourcePath.toString().substring(sourceModulePath.toString().length()).replace(Path.UNIX_SEPARATOR_CHAR, Path.SYSTEM_SEPARATOR_CHAR);
+      return UniPath.fromString(targetModulePath.toString() + relativePath);
+    }
+    // RS : where target model root should be located in this case?
+    return sourcePath;
   }
 
   protected Iterable<SModel> loadClonedModelRootContent(FileBasedModelRoot targetModelRoot, ReferenceUpdater referenceUpdater) {
@@ -291,52 +325,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
       referenceUpdater.addModelReferenceMapping(sourceModelIterator.next().getReference(), targetModelIterator.next().getReference());
     }
     return targetModels;
-  }
-
-  private static void cloneContent(Memento memento, final AbstractModule source, final AbstractModule target) {
-    final MacroHelper sMacroHelper = MacrosFactory.forModuleFile(getModuleFile(source));
-    final MacroHelper tMacroHelper =  MacrosFactory.forModuleFile(getModuleFile(target));
-
-    final jetbrains.mps.vfs.FileSystem sFileSystem = (jetbrains.mps.vfs.FileSystem) source.getFileSystem();
-    final jetbrains.mps.vfs.FileSystem tFileSystem = (jetbrains.mps.vfs.FileSystem) target.getFileSystem();
-
-
-    final String sContentPath = memento.get(FileBasedModelRoot.CONTENT_PATH);
-    final String tContentPath = tMacroHelper.expandPath(sMacroHelper.shrinkPath(sContentPath));
-
-    final IFile sContentFile = sFileSystem.getFile(sContentPath);
-    final IFile tContentFile = tFileSystem.getFile(tContentPath);
-
-    memento.put(FileBasedModelRoot.CONTENT_PATH, tContentPath);
-
-    for (Memento child : memento.getChildren()) {
-      String location = child.get(FileBasedModelRoot.LOCATION);
-      String path = child.get(FileBasedModelRoot.PATH);
-
-      IFile sSourceFile = null;
-      IFile tSourceFile = null;
-
-      if (location != null) {
-        sSourceFile = sContentFile.getDescendant(location);
-        tSourceFile = tContentFile.getDescendant(location);
-      }
-      if (path != null) {
-        String newPath = tMacroHelper.expandPath(sMacroHelper.shrinkPath(path));
-
-        sSourceFile = sFileSystem.getFile(path);
-        tSourceFile = tFileSystem.getFile(newPath);
-
-        child.put(FileBasedModelRoot.PATH, newPath);
-      }
-      IFileUtils.copyDirectoryContent(sSourceFile, tSourceFile);
-    }
-  }
-
-  protected static IFile getModuleFile(final AbstractModule module) {
-    if (module instanceof Generator) {
-      return ((Generator) module).getSourceLanguage().getDescriptorFile();
-    }
-    return module.getDescriptorFile();
   }
 
   @Override
