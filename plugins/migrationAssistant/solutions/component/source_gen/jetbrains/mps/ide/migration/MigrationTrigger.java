@@ -300,27 +300,29 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             if (importVersionsUpdateRequired.value) {
               boolean doResave = MigrationDialogUtil.showResaveConfirmation(myMpsProject);
 
-              if (doResave) {
-                syncRefresh();
-                ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Resaving Module Descriptors", false) {
-                  public void run(@NotNull ProgressIndicator progressIndicator) {
-                    ProgressMonitor progressMonitor = new ProgressMonitorAdapter(progressIndicator);
-                    progressMonitor.start("Saving...", Sequence.fromIterable(allModules).count());
-                    for (final SModule module : Sequence.fromIterable(allModules)) {
-                      progressMonitor.advance(1);
-                      WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
-                        public void run() {
-                          myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
-                            public void run() {
-                              myMigrationManager.doUpdateImportVersions(module);
-                            }
-                          });
-                        }
-                      });
-                    }
-                  }
-                });
+              if (!(doResave)) {
+                return;
               }
+
+              syncRefresh();
+              ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Resaving Module Descriptors", false) {
+                public void run(@NotNull ProgressIndicator progressIndicator) {
+                  ProgressMonitor progressMonitor = new ProgressMonitorAdapter(progressIndicator);
+                  progressMonitor.start("Saving...", Sequence.fromIterable(allModules).count());
+                  for (final SModule module : Sequence.fromIterable(allModules)) {
+                    progressMonitor.advance(1);
+                    WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+                      public void run() {
+                        myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+                          public void run() {
+                            myMigrationManager.doUpdateImportVersions(module);
+                          }
+                        });
+                      }
+                    });
+                  }
+                }
+              });
             }
 
             if (myMigrationManager.isMigrationRequired()) {

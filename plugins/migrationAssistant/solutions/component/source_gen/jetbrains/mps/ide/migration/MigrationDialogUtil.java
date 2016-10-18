@@ -100,8 +100,10 @@ public class MigrationDialogUtil {
 
   public static boolean showResaveConfirmation(MPSProject project) {
     StringBuilder text = new StringBuilder();
-    text.append("Module descriptors needs to be changed.\n");
-    text.append("Would you like to resave all module descriptors?");
+    text.append("Module descriptors needs to be updated.\n");
+    text.append("\nIn case the migration is postponed, this notification will not appear until the project is reopened.\n");
+
+    text.append("Would you like to resave all module descriptors immediately?");
 
     int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Resave Required", "Resave", "Postpone", null);
     return result == Messages.YES;
