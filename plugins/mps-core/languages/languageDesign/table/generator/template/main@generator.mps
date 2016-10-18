@@ -46,7 +46,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -58,7 +57,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -89,7 +87,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -97,7 +94,6 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -243,22 +239,7 @@
     <node concept="312cEu" id="5n_5JDhcGZ2" role="13RCb5">
       <property role="TrG5h" value="_context_class_" />
       <property role="1sVAO0" value="true" />
-      <node concept="312cEg" id="2gy8sgG6XUr" role="jymVt">
-        <property role="TrG5h" value="myNode" />
-        <node concept="3Tm6S6" id="2gy8sgG6XUs" role="1B3o_S" />
-        <node concept="3Tqbb2" id="2gy8sgG6Yt5" role="1tU5fm" />
-      </node>
       <node concept="3Tm1VV" id="5n_5JDhcH0W" role="1B3o_S" />
-      <node concept="3clFbW" id="4y_Zxzfsr1d" role="jymVt">
-        <node concept="3cqZAl" id="4y_Zxzfsr1e" role="3clF45" />
-        <node concept="3Tm1VV" id="4y_Zxzfsr1f" role="1B3o_S" />
-        <node concept="3clFbS" id="4y_Zxzfsr1g" role="3clF47">
-          <node concept="XkiVB" id="7PPVBLZsWEG" role="3cqZAp">
-            <ref role="37wK5l" to="qvne:3IQYjJJTK4k" resolve="AbstractCellFactory" />
-            <node concept="10Nm6u" id="7PPVBLZsWFj" role="37wK5m" />
-          </node>
-        </node>
-      </node>
       <node concept="3clFb_" id="5n_5JDhcGZn" role="jymVt">
         <property role="TrG5h" value="_cell_factory_method_" />
         <node concept="3uibUv" id="2WcEKA85d7$" role="3clF45">
@@ -344,8 +325,8 @@
                 <node concept="1rXfSq" id="7PPVBLZsWGl" role="37wK5m">
                   <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
                 </node>
-                <node concept="37vLTw" id="2gy8sgG7wtp" role="37wK5m">
-                  <ref role="3cqZAo" node="2gy8sgG6XUr" resolve="myNode" />
+                <node concept="37vLTw" id="7GOmDNDA5nJ" role="37wK5m">
+                  <ref role="3cqZAo" to="tpc3:7GOmDNDA2zg" resolve="myNode" />
                 </node>
                 <node concept="2OqwBi" id="7ripfiz4znL" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagT$RS" role="2Oq$k0">
@@ -353,8 +334,8 @@
                   </node>
                   <node concept="liA8E" id="7ripfiz4znN" role="2OqNvi">
                     <ref role="37wK5l" to="squ6:42Cv_c9rHCS" resolve="createTableModel" />
-                    <node concept="37vLTw" id="2gy8sgG7x1l" role="37wK5m">
-                      <ref role="3cqZAo" node="2gy8sgG6XUr" resolve="myNode" />
+                    <node concept="37vLTw" id="7GOmDNDA5Uy" role="37wK5m">
+                      <ref role="3cqZAo" to="tpc3:7GOmDNDA2zg" resolve="myNode" />
                     </node>
                     <node concept="1rXfSq" id="7PPVBLZsXdv" role="37wK5m">
                       <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
@@ -444,8 +425,8 @@
         </node>
         <node concept="3Tm6S6" id="5n_5JDhcH0V" role="1B3o_S" />
       </node>
-      <node concept="3uibUv" id="7PPVBLZsW90" role="1zkMxy">
-        <ref role="3uigEE" to="qvne:3IQYjJJTK3Q" resolve="AbstractCellFactory" />
+      <node concept="3uibUv" id="7GOmDND_Qp1" role="1zkMxy">
+        <ref role="3uigEE" to="tpc3:7GOmDNDyRby" resolve="CellFactoryContextClass" />
       </node>
     </node>
   </node>
