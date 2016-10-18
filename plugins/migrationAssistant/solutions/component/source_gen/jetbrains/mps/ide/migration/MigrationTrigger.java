@@ -45,6 +45,9 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.util.WaitForProgressToShow;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
@@ -315,10 +318,21 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
               if (doResave) {
                 syncRefresh();
-                myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
-                  public void run() {
-                    for (SModule module : Sequence.fromIterable(allModules)) {
-                      myMigrationManager.doUpdateImportVersions(module);
+                ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Resaving Module Descriptors", false) {
+                  public void run(@NotNull ProgressIndicator progressIndicator) {
+                    ProgressMonitor progressMonitor = new ProgressMonitorAdapter(progressIndicator);
+                    progressMonitor.start("Saving...", Sequence.fromIterable(allModules).count());
+                    for (final SModule module : Sequence.fromIterable(allModules)) {
+                      progressMonitor.advance(1);
+                      WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+                        public void run() {
+                          myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+                            public void run() {
+                              myMigrationManager.doUpdateImportVersions(module);
+                            }
+                          });
+                        }
+                      });
                     }
                   }
                 });

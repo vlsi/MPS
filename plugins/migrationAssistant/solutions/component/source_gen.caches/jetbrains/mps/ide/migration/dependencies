@@ -277,6 +277,7 @@
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.MigrationOutputUtil" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManagerImpl" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -311,6 +312,8 @@
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="com.intellij.util.WaitForProgressToShow" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
