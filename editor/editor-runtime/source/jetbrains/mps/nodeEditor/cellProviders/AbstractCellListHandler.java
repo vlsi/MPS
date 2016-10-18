@@ -31,7 +31,15 @@ import java.util.List;
 public abstract class AbstractCellListHandler {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will become private in the next release
+   */
+  @Deprecated
   protected SNode myOwnerNode;
+  /**
+   * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will become private in the next release
+   */
+  @Deprecated
   protected EditorContext myEditorContext;
   protected EditorCell_Collection myListEditorCell_Collection;
   protected String myElementRole;
@@ -46,7 +54,15 @@ public abstract class AbstractCellListHandler {
     return myEditorContext;
   }
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #getNode()} method
+   */
+  @Deprecated
   public SNode getOwner() {
+    return myOwnerNode;
+  }
+
+  protected SNode getNode() {
     return myOwnerNode;
   }
 
@@ -64,13 +80,43 @@ public abstract class AbstractCellListHandler {
     doInsertNode(nodeToInsert, anchorNode, insertBefore);
   }
 
-  public abstract EditorCell createNodeCell(EditorContext editorContext, SNode node);
+  public EditorCell createNodeCell(SNode node) {
+    // TODO: after MPS 3.5 make this method abstract
+    return createNodeCell(getEditorContext(), node);
+  }
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #createNodeCell(SNode)}
+   */
+  @Deprecated
+  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
+    return null;
+  }
+
+  protected EditorCell createSeparatorCell(SNode prevNode, SNode nextNode) {
+    return createSeparatorCell(getEditorContext(), prevNode, nextNode);
+  }
+
+  /**
+   * @deprecated since MPS 3.5 use {@link #createSeparatorCell(SNode, SNode)}
+   */
+  @Deprecated
   protected EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
     return null;
   }
 
-  protected abstract EditorCell createEmptyCell(EditorContext editorContext);
+  protected EditorCell createEmptyCell() {
+    // TODO: after MPS 3.5 make this method abstract
+    return createEmptyCell(getEditorContext());
+  }
+
+  /**
+   * @deprecated since MPS 3.5 use {@link #createEmptyCell()}
+   */
+  @Deprecated
+  protected EditorCell createEmptyCell(EditorContext editorContext) {
+    return null;
+  }
 
   public abstract SNode createNodeToInsert(EditorContext editorContext);
 
@@ -82,25 +128,41 @@ public abstract class AbstractCellListHandler {
     return createCells(editorContext, new CellLayout_Horizontal());
   }
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #createCells(CellLayout, boolean)}
+   */
+  @Deprecated
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout, boolean selectable) {
-    EditorCell_Collection cellsCollection = createCells(editorContext, cellLayout);
+    return createCells(cellLayout, selectable);
+  }
+
+  public EditorCell_Collection createCells(CellLayout cellLayout, boolean selectable) {
+    EditorCell_Collection cellsCollection = createCells(cellLayout);
     if (!selectable) {
       return cellsCollection;
     }
 
     // if the list compartment is selectable - create wrapping cell collection around it so
     // that actions intended to work for the list element do not work for the list owner.
-    EditorCell_Collection wrapperCell = EditorCell_Collection.create(editorContext, myOwnerNode, new CellLayout_Horizontal(), null);
+    EditorCell_Collection wrapperCell = EditorCell_Collection.create(getEditorContext(), getNode(), new CellLayout_Horizontal(), null);
     wrapperCell.setSelectable(true);
     wrapperCell.addEditorCell(cellsCollection);
     return wrapperCell;
   }
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #createCells(CellLayout)}
+   */
+  @Deprecated
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
-    myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
+    return createCells(cellLayout);
+  }
+
+  public EditorCell_Collection createCells(CellLayout cellLayout) {
+    myListEditorCell_Collection = EditorCell_Collection.create(getEditorContext(), getNode(), cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
-    createInnerCells(myOwnerNode, editorContext);
+    createInnerCells();
 
     // add insert/insert-before actions
     myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
@@ -109,18 +171,27 @@ public abstract class AbstractCellListHandler {
     return myListEditorCell_Collection;
   }
 
+  protected void createInnerCells() {
+    //TODO: after MPS 3.5 remove createInnerCells(SNode node, EditorContext editorContext) & inline it here.
+    createInnerCells(getNode(), getEditorContext());
+  }
+
+  /**
+   * @deprecated since MPS 3.5 use {@link #createInnerCells()}
+   */
+  @Deprecated
   protected void createInnerCells(SNode node, EditorContext editorContext) {
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
-      EditorCell emptyCell = createEmptyCell(editorContext);
+      EditorCell emptyCell = createEmptyCell();
       emptyCell.setRole(getElementRole());
       myListEditorCell_Collection.addEditorCell(emptyCell);
     } else {
       SNode prevNode = null;
       while (listNodes.hasNext()) {
         SNode nextNode = listNodes.next();
-        addSeparatorCell(editorContext, prevNode, nextNode);
-        myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, nextNode));
+        addSeparatorCell(prevNode, nextNode);
+        myListEditorCell_Collection.addEditorCell(createNodeCell(nextNode));
         prevNode = nextNode;
       }
     }
@@ -128,11 +199,11 @@ public abstract class AbstractCellListHandler {
 
   protected abstract List<? extends SNode> getNodesForList();
 
-  private void addSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+  private void addSeparatorCell(SNode prevNode, SNode nextNode) {
     if (prevNode == null) {
       return;
     }
-    EditorCell separatorCell = createSeparatorCell(editorContext, prevNode, nextNode);
+    EditorCell separatorCell = createSeparatorCell(prevNode, nextNode);
     if (separatorCell != null) {
       myListEditorCell_Collection.addEditorCell(separatorCell);
     }
