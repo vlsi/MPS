@@ -38,37 +38,40 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode) _quotation_createNode_290su0_a0b0b(), false, true, _info_12389875345);
     }
     if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(SLinkOperations.getTarget(mae, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ae5facL, "index")))) {
-      Object idxValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(SLinkOperations.getTarget(mae, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ae5facL, "index")), SNodeOperations.getModel(SLinkOperations.getTarget(mae, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ae5facL, "index"))).getModule());
-      final int index = (idxValue instanceof Integer ? ((Integer) idxValue).intValue() : -1);
-      {
-        final SNode tupleType = typeCheckingContext.typeOf(SLinkOperations.getTarget(mae, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ad5056L, "tuple")), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864035483", true);
-        typeCheckingContext.whenConcrete(tupleType, new Runnable() {
-          public void run() {
-            {
-              IMatchingPattern pattern_2aq6od_a0c0c0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"));
-              SNode coercedNode_2aq6od_a0c0c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(tupleType), pattern_2aq6od_a0c0c0);
-              if (coercedNode_2aq6od_a0c0c0 != null) {
-                if (!(index >= 0 && index < ListSequence.fromList(SLinkOperations.getChildren(coercedNode_2aq6od_a0c0c0, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, 0x1207158795cL, "componentType"))).count())) {
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", null, errorTarget);
-                }
-                if (index >= 0 && index < ListSequence.fromList(SLinkOperations.getChildren(coercedNode_2aq6od_a0c0c0, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, 0x1207158795cL, "componentType"))).count()) {
-                  List<SNode> mtypes = SLinkOperations.getChildren(coercedNode_2aq6od_a0c0c0, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, 0x1207158795cL, "componentType"));
-                  {
-                    SNode _nodeToCheck_1029348928467 = mae;
-                    EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864299354", 0, null);
-                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864289746", true), (SNode) ListSequence.fromList(mtypes).getElement(index), _info_12389875345);
+      if (SNodeOperations.getModel(mae) != null && SNodeOperations.getModel(mae).getModule() != null) {
+        Object idxValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(SLinkOperations.getTarget(mae, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ae5facL, "index")), SNodeOperations.getModel(mae).getModule());
+        final int index = (idxValue instanceof Integer ? ((Integer) idxValue).intValue() : -1);
+        {
+          final SNode tupleType = typeCheckingContext.typeOf(SLinkOperations.getTarget(mae, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, 0x12071ad5056L, "tuple")), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864035483", true);
+          typeCheckingContext.whenConcrete(tupleType, new Runnable() {
+            public void run() {
+              {
+                IMatchingPattern pattern_2aq6od_a0c0a0c0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"));
+                SNode coercedNode_2aq6od_a0c0a0c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(tupleType), pattern_2aq6od_a0c0a0c0);
+                if (coercedNode_2aq6od_a0c0a0c0 != null) {
+                  if (!(index >= 0 && index < ListSequence.fromList(SLinkOperations.getChildren(coercedNode_2aq6od_a0c0a0c0, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, 0x1207158795cL, "componentType"))).count())) {
+                    MessageTarget errorTarget = new NodeMessageTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", null, errorTarget);
                   }
-                }
-              } else {
-                {
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Indexed tuple expected", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "2608583337446226139", null, errorTarget);
+                  if (index >= 0 && index < ListSequence.fromList(SLinkOperations.getChildren(coercedNode_2aq6od_a0c0a0c0, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, 0x1207158795cL, "componentType"))).count()) {
+                    List<SNode> mtypes = SLinkOperations.getChildren(coercedNode_2aq6od_a0c0a0c0, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, 0x1207158795cL, "componentType"));
+                    {
+                      SNode _nodeToCheck_1029348928467 = mae;
+                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864299354", 0, null);
+                      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864289746", true), (SNode) ListSequence.fromList(mtypes).getElement(index), _info_12389875345);
+                    }
+                  }
+                } else {
+                  {
+                    MessageTarget errorTarget = new NodeMessageTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Indexed tuple expected", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "2608583337446226139", null, errorTarget);
+                  }
                 }
               }
             }
-          }
-        }, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864005360", false, false);
+          }, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864005360", false, false);
+        }
+
       }
     }
   }
