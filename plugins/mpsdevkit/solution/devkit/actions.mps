@@ -152,6 +152,7 @@
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
+        <property id="6785623076777470797" name="change" index="3hacHL" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
@@ -239,6 +240,8 @@
         <child id="1562714432501166206" name="keystroke" index="Zd501" />
       </concept>
       <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
+        <property id="8646726056720906098" name="isPluginXmlKeymap" index="Z2u3V" />
+        <property id="1562714432501166281" name="keymap" index="Zd52Q" />
         <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
       </concept>
       <concept id="471625927503601927" name="jetbrains.mps.lang.plugin.structure.NumberToolShortcut" flags="ng" index="15feLf">
@@ -405,7 +408,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -6594,9 +6597,6 @@
     <property role="TrG5h" value="TraceTool" />
     <property role="3GE5qa" value="typesystem" />
     <property role="2XNbzY" value="Typesystem Trace" />
-    <node concept="15feLf" id="1DmMCRRowfR" role="15cTzA">
-      <property role="15feLF" value="5" />
-    </node>
     <node concept="2xpOpl" id="6LGlhZW9EAz" role="uR5co">
       <node concept="3clFbS" id="6LGlhZW9EA$" role="2VODD2">
         <node concept="3clFbF" id="6LGlhZW9EBM" role="3cqZAp">
@@ -6978,6 +6978,9 @@
         <ref role="1PxDUh" to="l7us:~MPSIcons$ToolWindows" resolve="MPSIcons.ToolWindows" />
         <ref role="3cqZAo" to="l7us:~MPSIcons$ToolWindows.TypeTraceView" resolve="TypeTraceView" />
       </node>
+    </node>
+    <node concept="15feLf" id="1DmMCRRowfR" role="15cTzA">
+      <property role="15feLF" value="5" />
     </node>
   </node>
   <node concept="tC5Ba" id="7oAN7tz7$mO">
@@ -14742,6 +14745,82 @@
     <node concept="tT9cl" id="6gJrPYfWbTg" role="2f5YQi">
       <ref role="tU$_T" to="tprs:hyf4Jd1" resolve="SolutionActions" />
       <ref role="2f8Tey" to="tprs:6gJrPYfWcoC" resolve="find_usages" />
+    </node>
+  </node>
+  <node concept="Zd50a" id="1RsxAOl3Hay">
+    <property role="TrG5h" value="MacOSX105" />
+    <property role="Zd52Q" value="Mac OS X 10.5+" />
+    <property role="Z2u3V" value="false" />
+    <node concept="Zd509" id="1RsxAOl3Haz" role="Zd508">
+      <ref role="1bYAoF" node="1wPwVvaJhqe" resolve="GoToConceptDeclaration" />
+      <node concept="pLAjd" id="1RsxAOl3Ha$" role="Zd501">
+        <property role="pLAjf" value="VK_S" />
+        <property role="pLAjc" value="alt+shift" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="1RsxAOl3Hss" role="Zd508">
+      <ref role="1bYAoF" node="1oCHNhnjKXP" resolve="ImplementBehaviorMethod" />
+      <node concept="pLAjd" id="1RsxAOl3Hst" role="Zd501">
+        <property role="pLAjf" value="VK_I" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="1RsxAOl3HHj" role="Zd508">
+      <ref role="1bYAoF" node="1oCHNhnjKYD" resolve="OverrideBehaviorMethod" />
+      <node concept="pLAjd" id="1RsxAOl3HHk" role="Zd501">
+        <property role="pLAjf" value="VK_O" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="1RsxAOl3Hav">
+    <property role="TrG5h" value="MacOSX" />
+    <property role="Zd52Q" value="Mac OS X" />
+    <property role="Z2u3V" value="false" />
+    <node concept="Zd509" id="1RsxAOl3Haw" role="Zd508">
+      <ref role="1bYAoF" node="1wPwVvaJhqe" resolve="GoToConceptDeclaration" />
+      <node concept="pLAjd" id="1RsxAOl3Hax" role="Zd501">
+        <property role="pLAjf" value="VK_S" />
+        <property role="pLAjc" value="alt+shift" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="1RsxAOl3Hsq" role="Zd508">
+      <ref role="1bYAoF" node="1oCHNhnjKXP" resolve="ImplementBehaviorMethod" />
+      <node concept="pLAjd" id="1RsxAOl3Hsr" role="Zd501">
+        <property role="pLAjf" value="VK_I" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="1RsxAOl3$Gc">
+    <property role="TrG5h" value="DefaultForKDE" />
+    <property role="Zd52Q" value="Default for KDE" />
+    <property role="Z2u3V" value="false" />
+    <node concept="Zd509" id="1RsxAOl3$Gd" role="Zd508">
+      <ref role="1bYAoF" node="5r64_$Qz1mL" resolve="FindLanguageConceptsUsages" />
+      <node concept="pLAjd" id="1RsxAOl3$Ge" role="Zd501">
+        <property role="pLAjc" value="alt+shift" />
+        <property role="pLAjf" value="VK_8" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="1RsxAOl3$G9">
+    <property role="TrG5h" value="DefaultForGNOME" />
+    <property role="Zd52Q" value="Default for GNOME" />
+    <property role="Z2u3V" value="false" />
+    <node concept="Zd509" id="1RsxAOl3$Ga" role="Zd508">
+      <ref role="1bYAoF" node="5r64_$Qz1mL" resolve="FindLanguageConceptsUsages" />
+      <node concept="pLAjd" id="1RsxAOl3$Gb" role="Zd501">
+        <property role="pLAjc" value="alt+shift" />
+        <property role="pLAjf" value="VK_8" />
+        <property role="3hacHL" value="replace all" />
+      </node>
     </node>
   </node>
 </model>

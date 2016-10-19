@@ -1160,6 +1160,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1207318242772");
     b.prop("modifiers", 0x11919c665d5L, "1207318242773");
     b.prop("keycode", 0x11919c665d6L, "1207318242774");
+    b.prop("change", 0x5e2b603c8f03ab4dL, "6785623076777470797");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForKeyStrokeType() {

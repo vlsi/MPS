@@ -26,8 +26,11 @@ public final class KeyMapKeystroke__BehaviorDescriptor extends BaseBHDescriptor 
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getKeyStroke_idhEwIlzu = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getKeyStroke").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIlzu").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasRemoveOrReplaceAllModifiers_id4qYinf8$bKU = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasRemoveOrReplaceAllModifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qYinf8$bKU").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasRemove_id4qYinf8$eal = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasRemove").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qYinf8$eal").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasReplaceAll_id4qYinf8$enm = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasReplaceAll").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qYinf8$enm").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getKeyStroke_idhEwIlzu);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getKeyStroke_idhEwIlzu, hasRemoveOrReplaceAllModifiers_id4qYinf8$bKU, hasRemove_id4qYinf8$eal, hasReplaceAll_id4qYinf8$enm);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -44,6 +47,15 @@ public final class KeyMapKeystroke__BehaviorDescriptor extends BaseBHDescriptor 
       keyName = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x11919c665d6L, "keycode"));
     }
     return modifiers.replaceAll("\\+", " ") + " " + keyName;
+  }
+  /*package*/ static boolean hasRemoveOrReplaceAllModifiers_id4qYinf8$bKU(@NotNull SNode __thisNode__) {
+    return ((boolean) KeyMapKeystroke__BehaviorDescriptor.hasRemove_id4qYinf8$eal.invoke(__thisNode__)) || ((boolean) KeyMapKeystroke__BehaviorDescriptor.hasReplaceAll_id4qYinf8$enm.invoke(__thisNode__));
+  }
+  /*package*/ static boolean hasRemove_id4qYinf8$eal(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "remove", null);
+  }
+  /*package*/ static boolean hasReplaceAll_id4qYinf8$enm(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), "replace all", null);
   }
 
   /*package*/ KeyMapKeystroke__BehaviorDescriptor() {
@@ -64,6 +76,12 @@ public final class KeyMapKeystroke__BehaviorDescriptor extends BaseBHDescriptor 
     switch (methodIndex) {
       case 0:
         return (T) ((String) getKeyStroke_idhEwIlzu(node));
+      case 1:
+        return (T) ((Boolean) hasRemoveOrReplaceAllModifiers_id4qYinf8$bKU(node));
+      case 2:
+        return (T) ((Boolean) hasRemove_id4qYinf8$eal(node));
+      case 3:
+        return (T) ((Boolean) hasReplaceAll_id4qYinf8$enm(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
