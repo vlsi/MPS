@@ -111,19 +111,57 @@ public class PersistenceUtilTest extends CoreMpsTest {
 
   @Test
   public void binaryModelPersistence() {
-    Reference<SModel> original = new Reference<>();
-    original.set(createTestModel());
-    byte[] saved = PersistenceUtil.saveBinaryModel(original.get());
+    SModel original = createTestModel();
+    byte[] saved = PersistenceUtil.saveBinaryModel(original);
     SModel loaded = PersistenceUtil.loadBinaryModel(saved);
-    Assert.assertTrue(modelsEquals(original.get(), loaded));
+    Assert.assertTrue(modelsEquals(original, loaded));
+  }
+
+  @Test
+  public void doubleBinary() {
+    SModel original = createTestModel();
+    byte[] saved1 = PersistenceUtil.saveBinaryModel(original);
+    SModel loaded1 = PersistenceUtil.loadBinaryModel(saved1);
+    byte[] saved2 = PersistenceUtil.saveBinaryModel(loaded1);
+    SModel loaded2 = PersistenceUtil.loadBinaryModel(saved2);
+    Assert.assertTrue(modelsEquals(original, loaded2));
   }
 
   @Test
   public void xmlModelPersistence() {
-    Reference<SModel> original = new Reference<>();
-    original.set(createTestModel());
-    Element saved = PersistenceUtil.saveModelToXml(original.get());
+    SModel original = createTestModel();
+    Element saved = PersistenceUtil.saveModelToXml(original);
     SModel loaded = PersistenceUtil.loadModelFromXml(saved);
-    Assert.assertTrue(modelsEquals(original.get(), loaded));
+    Assert.assertTrue(modelsEquals(original, loaded));
+  }
+
+  @Test
+  public void doubleXml() {
+    SModel original = createTestModel();
+    Element saved1 = PersistenceUtil.saveModelToXml(original);
+    SModel loaded1 = PersistenceUtil.loadModelFromXml(saved1);
+    Element saved2 = PersistenceUtil.saveModelToXml(loaded1);
+    SModel loaded2 = PersistenceUtil.loadModelFromXml(saved2);
+    Assert.assertTrue(modelsEquals(original, loaded2));
+  }
+
+  @Test
+  public void binaryToXml() {
+    SModel original = createTestModel();
+    byte[] binary = PersistenceUtil.saveBinaryModel(original);
+    SModel loadedFromBinary = PersistenceUtil.loadBinaryModel(binary);
+    Element savedToXml = PersistenceUtil.saveModelToXml(loadedFromBinary);
+    SModel loadedFromXml = PersistenceUtil.loadModelFromXml(savedToXml);
+    Assert.assertTrue(modelsEquals(original, loadedFromXml));
+  }
+
+  @Test
+  public void xmlToBinary() {
+    SModel original = createTestModel();
+    Element xml = PersistenceUtil.saveModelToXml(original);
+    SModel loadedFromXml = PersistenceUtil.loadModelFromXml(xml);
+    byte[] savedToBinary = PersistenceUtil.saveBinaryModel(loadedFromXml);
+    SModel loadedFromBinary = PersistenceUtil.loadBinaryModel(savedToBinary);
+    Assert.assertTrue(modelsEquals(original, loadedFromBinary));
   }
 }
