@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
@@ -28,7 +29,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.JOptionPane;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +40,13 @@ import java.util.List;
  * Now it's up to caller to decide whether to {@link #prepare(SModelReference) prepare} the importer from distinct model access,
  * then, if {@link #affectsModuleDependencies()} necessary}, to show {@link #confirmModuleChanges(Component) confirmation}, and
  * eventually {@link #execute() execute} in command, although I admit resulting code would be ugly.
+ *
  * @author Alex Pyshkin
  * @author Artem Tikhomirov
  */
 public class ModelImporter {
   private final SModel myModel;
-  private final List<Entry> myImports = new ArrayList<Entry>();
+  private final List<Entry> myImports = new ArrayList<>();
 
   public ModelImporter(@NotNull SModel model) {
     myModel = model;
@@ -60,8 +61,8 @@ public class ModelImporter {
   }
 
   /**
-   * @return <code>true</code> if any model from {@link #prepare(SModelReference)} comes from a module not visible to that of our model,
-   *         <code>false</code> either if there's no module (i.e. nothing to affect) or all dependencies are visible.
+   * @return {@code true} if any model from {@link #prepare(SModelReference)} comes from a module not visible to that of our model,
+   * {@code false} either if there's no module (i.e. nothing to affect) or all dependencies are visible.
    */
   public boolean affectsModuleDependencies() {
     for (Entry e : myImports) {
@@ -105,13 +106,15 @@ public class ModelImporter {
     for (Entry e : myImports) {
       e.addImport(myModel);
     }
-    if (shallReload) {
-      ClassLoaderManager.getInstance().reloadModule(myModel.getModule());
+
+    // Reload has meaning only for reloadable modules. Import itself does not depend on module type of model.
+    if (shallReload && myModel.getModule() instanceof ReloadableModule) {
+      ((ReloadableModule) myModel.getModule()).reload();
     }
   }
 
   /**
-   * @return <code>true</code> if user confirmed changes in the module (or there's no need in such confirmation)
+   * @return {@code true} if user confirmed changes in the module (or there's no need in such confirmation)
    */
   public boolean confirmModuleChanges(Component parentComponent) {
     if (!affectsModuleDependencies()) {
@@ -126,14 +129,14 @@ public class ModelImporter {
       if (!e.affectsModule()) {
         continue;
       }
-      sb.append(String.format("Model <b>%s</b> is owned by module <b>%s</b> which is not imported.<br/>", e.myModelToImport.getName(), e.myModuleDep.getModuleName()));
+      sb.append(String.format("Model <b>%s</b> is owned by module <b>%s</b> which is not imported.<br/>",
+          e.myModelToImport.getName(), e.myModuleDep.getModuleName()));
     }
 
     final String msg = String.format("<html>%s<br/>Do you want to add module imports automatically?</html>", sb.toString());
     // ok / cancel is much better than yes/no. One would read 'no' as 'no module imports, but proceed with model import',
     // while 'cancel' suggests whole operation would stop, an it's the way rest of the code behaves
-    int res = JOptionPane.showConfirmDialog(parentComponent, msg, "Module import", JOptionPane.OK_CANCEL_OPTION);
-    return res == JOptionPane.OK_OPTION;
+    return Messages.showOkCancelDialog(parentComponent, msg, "Module Import", Messages.getQuestionIcon()) == Messages.OK;
   }
 
   private static class Entry {
@@ -165,7 +168,7 @@ public class ModelImporter {
 
     public void addImport(SModel model) {
       if (myModelToImport != null) {
-        ((SModelInternal) model).addModelImport(myModelToImport, false);
+        ((SModelInternal) model).addModelImport(myModelToImport);
       }
       if (myModuleDep != null && model.getModule() instanceof AbstractModule) {
         ((AbstractModule) model.getModule()).addDependency(myModuleDep, false);
