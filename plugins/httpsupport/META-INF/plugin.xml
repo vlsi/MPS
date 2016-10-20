@@ -11,6 +11,7 @@
     <httpRequestHandler implementation="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" />
   </extensions>
   <extensions defaultExtensionNs="org.jetbrains">
-    <customPortServerManager implementation="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager"/>
+    <customPortServerManager implementation="jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager"/>
+    <customPortServerManager implementation="jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager"/>
   </extensions>
 </idea-plugin>

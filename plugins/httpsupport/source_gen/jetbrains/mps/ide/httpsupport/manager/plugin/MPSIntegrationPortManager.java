@@ -6,9 +6,8 @@ import org.jetbrains.io.CustomPortServerManagerBase;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
-import org.jetbrains.ide.CustomPortServerManager;
 
-public class MPSRequestPortManager extends CustomPortServerManagerBase {
+public class MPSIntegrationPortManager extends CustomPortServerManagerBase {
 
   public static final int PORT_FIRST = 63330;
   public static final int PORT_LAST = 63340;
@@ -20,7 +19,7 @@ public class MPSRequestPortManager extends CustomPortServerManagerBase {
     return port;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MPSRequestPortManager.class);
+  protected static Logger LOG = LogManager.getLogger(MPSIntegrationPortManager.class);
   @Override
   public void cannotBind(Exception e, int port) {
     if (port >= PORT_LAST) {
@@ -40,6 +39,6 @@ public class MPSRequestPortManager extends CustomPortServerManagerBase {
   }
 
   public static int getCurrentPort() {
-    return CustomPortServerManager.EP_NAME.findExtension(MPSRequestPortManager.class).getPort();
+    return EP_NAME.findExtension(MPSIntegrationPortManager.class).getPort();
   }
 }

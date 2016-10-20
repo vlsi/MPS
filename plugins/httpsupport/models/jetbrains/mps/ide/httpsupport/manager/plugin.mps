@@ -124,7 +124,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1121,7 +1121,7 @@
     </node>
   </node>
   <node concept="312cEu" id="G$0uqqC2Yz">
-    <property role="TrG5h" value="MPSRequestPortManager" />
+    <property role="TrG5h" value="MPSIntegrationPortManager" />
     <node concept="2tJIrI" id="G$0uqqC9TY" role="jymVt" />
     <node concept="Wx3nA" id="G$0uqqCbZG" role="jymVt">
       <property role="2dlcS1" value="false" />
@@ -1311,15 +1311,14 @@
         <node concept="3clFbF" id="3Apdfsuk$Y" role="3cqZAp">
           <node concept="2OqwBi" id="3ApdfsumtJ" role="3clFbG">
             <node concept="2OqwBi" id="3ApdfsulCp" role="2Oq$k0">
-              <node concept="10M0yZ" id="3ApdfsuliL" role="2Oq$k0">
-                <ref role="1PxDUh" to="e5vs:~CustomPortServerManager" resolve="CustomPortServerManager" />
-                <ref role="3cqZAo" to="e5vs:~CustomPortServerManager.EP_NAME" resolve="EP_NAME" />
-              </node>
               <node concept="liA8E" id="3ApdfsulTQ" role="2OqNvi">
                 <ref role="37wK5l" to="9ti4:~ExtensionPointName.findExtension(java.lang.Class):java.lang.Object" resolve="findExtension" />
                 <node concept="3VsKOn" id="3ApdfsumbI" role="37wK5m">
-                  <ref role="3VsUkX" node="G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+                  <ref role="3VsUkX" node="G$0uqqC2Yz" resolve="MPSIntegrationPortManager" />
                 </node>
+              </node>
+              <node concept="37vLTw" id="3PMO5H7XnR9" role="2Oq$k0">
+                <ref role="3cqZAo" to="e5vs:~CustomPortServerManager.EP_NAME" resolve="EP_NAME" />
               </node>
             </node>
             <node concept="liA8E" id="3Apdfsun3b" role="2OqNvi">
@@ -1375,6 +1374,133 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3D_I_vuBX$8" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="3PMO5H7WIrG">
+    <property role="TrG5h" value="MPSInternalPortManager" />
+    <node concept="2tJIrI" id="3PMO5H7WKoB" role="jymVt" />
+    <node concept="Wx3nA" id="3PMO5H7WJ51" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="PORT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="3PMO5H7WJ52" role="1B3o_S" />
+      <node concept="10Oyi0" id="3PMO5H7WJ53" role="1tU5fm" />
+      <node concept="3cmrfG" id="3PMO5H7WJ54" role="33vP2m">
+        <property role="3cmrfH" value="63320" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3PMO5H7WJ59" role="jymVt" />
+    <node concept="3clFb_" id="3PMO5H7WJ5h" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPort" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="3PMO5H7WJ5i" role="1B3o_S" />
+      <node concept="10Oyi0" id="3PMO5H7WJ5j" role="3clF45" />
+      <node concept="3clFbS" id="3PMO5H7WJ5k" role="3clF47">
+        <node concept="3clFbF" id="3PMO5H7XtZA" role="3cqZAp">
+          <node concept="37vLTw" id="3PMO5H7XtZ_" role="3clFbG">
+            <ref role="3cqZAo" node="3PMO5H7WJ51" resolve="PORT" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3PMO5H7WJ5n" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3PMO5H7WJ5o" role="jymVt" />
+    <node concept="3clFb_" id="3PMO5H7WJ5p" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="cannotBind" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="3PMO5H7WJ5q" role="1B3o_S" />
+      <node concept="3cqZAl" id="3PMO5H7WJ5r" role="3clF45" />
+      <node concept="37vLTG" id="3PMO5H7WJ5s" role="3clF46">
+        <property role="TrG5h" value="e" />
+        <node concept="3uibUv" id="3PMO5H7WJ5t" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3PMO5H7WJ5u" role="3clF46">
+        <property role="TrG5h" value="port" />
+        <node concept="10Oyi0" id="3PMO5H7WJ5v" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="3PMO5H7WJ5w" role="3clF47">
+        <node concept="34ab3g" id="3PMO5H7WJ5z" role="3cqZAp">
+          <property role="35gtTG" value="error" />
+          <node concept="3cpWs3" id="3PMO5H7Xr4R" role="34bqiv">
+            <node concept="Xl_RD" id="3PMO5H7WJ5_" role="3uHU7w">
+              <property role="Xl_RC" value=". Internal HTTP Support Plugin features are disabled." />
+            </node>
+            <node concept="3cpWs3" id="3PMO5H7WJ5$" role="3uHU7B">
+              <node concept="Xl_RD" id="3PMO5H7WJ5G" role="3uHU7B">
+                <property role="Xl_RC" value="Cannot bind to port " />
+              </node>
+              <node concept="37vLTw" id="3PMO5H7Xr9E" role="3uHU7w">
+                <ref role="3cqZAo" node="3PMO5H7WJ5u" resolve="port" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3PMO5H7WJ61" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3PMO5H7WJ6d" role="jymVt" />
+    <node concept="3clFb_" id="3PMO5H7WJ6e" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isAvailableExternally" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="3PMO5H7WJ6f" role="1B3o_S" />
+      <node concept="10P_77" id="3PMO5H7WJ6g" role="3clF45" />
+      <node concept="3clFbS" id="3PMO5H7WJ6h" role="3clF47">
+        <node concept="3clFbF" id="3PMO5H7WJ6i" role="3cqZAp">
+          <node concept="3clFbT" id="3PMO5H7WJ6j" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3PMO5H7WJ6k" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3PMO5H7XyVz" role="jymVt" />
+    <node concept="2YIFZL" id="3PMO5H7Xzu$" role="jymVt">
+      <property role="TrG5h" value="isEnabled" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3PMO5H7XzuB" role="3clF47">
+        <node concept="3clFbF" id="3PMO5H7Xz_4" role="3cqZAp">
+          <node concept="2OqwBi" id="3PMO5H7X$d$" role="3clFbG">
+            <node concept="2OqwBi" id="3PMO5H7XzDH" role="2Oq$k0">
+              <node concept="37vLTw" id="3PMO5H7Xz_3" role="2Oq$k0">
+                <ref role="3cqZAo" to="e5vs:~CustomPortServerManager.EP_NAME" resolve="EP_NAME" />
+              </node>
+              <node concept="liA8E" id="3PMO5H7XzOv" role="2OqNvi">
+                <ref role="37wK5l" to="9ti4:~ExtensionPointName.findExtension(java.lang.Class):java.lang.Object" resolve="findExtension" />
+                <node concept="3VsKOn" id="3PMO5H7X$0_" role="37wK5m">
+                  <ref role="3VsUkX" node="3PMO5H7WIrG" resolve="MPSInternalPortManager" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="3PMO5H7X$sc" role="2OqNvi">
+              <ref role="37wK5l" to="iwnc:~CustomPortServerManagerBase.isBound():boolean" resolve="isBound" />
+            </node>
+          </node>
+          <node concept="15s5l7" id="3PMO5H7X$G7" role="lGtFl" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3PMO5H7Xz2m" role="1B3o_S" />
+      <node concept="10P_77" id="3PMO5H7XzpG" role="3clF45" />
+    </node>
+    <node concept="3Tm1VV" id="3PMO5H7WIrH" role="1B3o_S" />
+    <node concept="3uibUv" id="3PMO5H7WItJ" role="1zkMxy">
+      <ref role="3uigEE" to="iwnc:~CustomPortServerManagerBase" resolve="CustomPortServerManagerBase" />
+    </node>
   </node>
 </model>
 
