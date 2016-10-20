@@ -14,7 +14,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import io.netty.handler.codec.http.QueryStringEncoder;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class NodeReferenceURL_Action extends BaseAction {
@@ -50,7 +50,7 @@ public class NodeReferenceURL_Action extends BaseAction {
     CopyPasteUtil.copyTextToClipboard(buildRequest_njdhnr_a0a0a5(event.getData(MPSCommonDataKeys.NODE).getReference(), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
   }
   private static String buildRequest_njdhnr_a0a0a5(SNodeReference ref, Project project) {
-    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSRequestPortManager.getCurrentPort() + "/node_ref");
+    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSIntegrationPortManager.getCurrentPort() + "/node_ref");
 
     encoder.addParam("ref", PersistenceFacade.getInstance().asString(ref));
     encoder.addParam("project", project.getName());

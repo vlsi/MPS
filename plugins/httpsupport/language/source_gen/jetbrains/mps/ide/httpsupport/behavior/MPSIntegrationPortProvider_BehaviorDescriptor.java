@@ -9,7 +9,7 @@ package jetbrains.mps.ide.httpsupport.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class MPSPortProvider_BehaviorDescriptor {
+public class MPSIntegrationPortProvider_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

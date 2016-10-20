@@ -41,6 +41,10 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
+        <child id="1068498886297" name="rValue" index="37vLTx" />
+        <child id="1068498886295" name="lValue" index="37vLTJ" />
+      </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
@@ -59,6 +63,9 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -69,6 +76,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -165,6 +173,9 @@
       </concept>
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
+        <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
@@ -755,7 +766,7 @@
   </node>
   <node concept="13h7C7" id="40BYgt09_iO">
     <property role="3GE5qa" value="request" />
-    <ref role="13h7C2" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+    <ref role="13h7C2" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     <node concept="13i0hz" id="40BYgt09_iZ" role="13h7CS">
       <property role="TrG5h" value="getInitializedParameters" />
       <node concept="3Tm1VV" id="40BYgt09_j0" role="1B3o_S" />
@@ -883,7 +894,25 @@
       </node>
     </node>
     <node concept="13hLZK" id="40BYgt09_iP" role="13h7CW">
-      <node concept="3clFbS" id="40BYgt09_iQ" role="2VODD2" />
+      <node concept="3clFbS" id="40BYgt09_iQ" role="2VODD2">
+        <node concept="3clFbF" id="1_yOWEXc0Gq" role="3cqZAp">
+          <node concept="37vLTI" id="1_yOWEXc1g3" role="3clFbG">
+            <node concept="2ShNRf" id="1_yOWEXc1kc" role="37vLTx">
+              <node concept="3zrR0B" id="1_yOWEXc1iy" role="2ShVmc">
+                <node concept="3Tqbb2" id="1_yOWEXc1iz" role="3zrR0E">
+                  <ref role="ehGHo" to="ndib:3PMO5H7Xp0_" resolve="MPSInternalPortProvider" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1_yOWEXc0PS" role="37vLTJ">
+              <node concept="13iPFW" id="1_yOWEXc0Gp" role="2Oq$k0" />
+              <node concept="3TrEf2" id="1_yOWEXc0Xh" role="2OqNvi">
+                <ref role="3Tt5mk" to="ndib:6WBmrsjArpg" resolve="port" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="6frl3mWeCpM" role="13h7CS">
       <property role="TrG5h" value="getUniqueLocalContextReferencesInside" />
@@ -1292,7 +1321,7 @@
   </node>
   <node concept="13h7C7" id="6WBmrsjArnv">
     <property role="3GE5qa" value="request" />
-    <ref role="13h7C2" to="ndib:6WBmrsjAqQr" resolve="MPSPortProvider" />
+    <ref role="13h7C2" to="ndib:6WBmrsjAqQr" resolve="MPSIntegrationPortProvider" />
     <node concept="13hLZK" id="6WBmrsjArnw" role="13h7CW">
       <node concept="3clFbS" id="6WBmrsjArnx" role="2VODD2" />
     </node>
@@ -1306,7 +1335,7 @@
         <node concept="3clFbF" id="6WBmrsjArod" role="3cqZAp">
           <node concept="2YIFZM" id="6WBmrsjAroN" role="3clFbG">
             <ref role="37wK5l" to="4h87:3Apdfsuj$9" resolve="getCurrentPort" />
-            <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+            <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSIntegrationPortManager" />
           </node>
         </node>
       </node>
@@ -1336,6 +1365,29 @@
         </node>
       </node>
       <node concept="10Oyi0" id="6WBmrsjB3bK" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3PMO5H7Xp2i">
+    <property role="3GE5qa" value="request" />
+    <ref role="13h7C2" to="ndib:3PMO5H7Xp0_" resolve="MPSInternalPortProvider" />
+    <node concept="13hLZK" id="3PMO5H7Xp2j" role="13h7CW">
+      <node concept="3clFbS" id="3PMO5H7Xp2k" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3PMO5H7Xp2t" role="13h7CS">
+      <property role="TrG5h" value="getPort" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6WBmrsjA4L4" resolve="getPort" />
+      <node concept="3Tm1VV" id="3PMO5H7Xp2u" role="1B3o_S" />
+      <node concept="3clFbS" id="3PMO5H7Xp2x" role="3clF47">
+        <node concept="3clFbF" id="3PMO5H7Xp2K" role="3cqZAp">
+          <node concept="10M0yZ" id="3PMO5H7Xx_J" role="3clFbG">
+            <ref role="1PxDUh" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
+            <ref role="3cqZAo" to="4h87:3PMO5H7WJ51" resolve="PORT" />
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="3PMO5H7Xp2y" role="3clF45" />
     </node>
   </node>
 </model>

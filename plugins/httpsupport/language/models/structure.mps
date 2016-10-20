@@ -413,9 +413,9 @@
   <node concept="1TIwiD" id="6WBmrsjAqQr">
     <property role="EcuMT" value="8009469105144442267" />
     <property role="3GE5qa" value="request" />
-    <property role="TrG5h" value="MPSPortProvider" />
-    <property role="34LRSv" value="MPS port" />
-    <property role="R4oN_" value="current bound port by MPS" />
+    <property role="TrG5h" value="MPSIntegrationPortProvider" />
+    <property role="34LRSv" value="MPS Integration port" />
+    <property role="R4oN_" value="current bound port by MPS to integrate with YouTrack/TeamCity" />
     <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
   </node>
   <node concept="1TIwiD" id="6WBmrsjB3b2">
@@ -430,6 +430,14 @@
       <property role="TrG5h" value="portNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="3PMO5H7Xp0_">
+    <property role="EcuMT" value="4427830474126495781" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="MPSInternalPortProvider" />
+    <property role="34LRSv" value="MPS Internal Port" />
+    <property role="R4oN_" value="current bound port by MPS for internal features" />
+    <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
   </node>
 </model>
 

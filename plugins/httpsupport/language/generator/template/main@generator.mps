@@ -4839,11 +4839,21 @@
     </node>
     <node concept="3aamgX" id="6WBmrsjC11Z" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="ndib:6WBmrsjAqQr" resolve="MPSPortProvider" />
+      <ref role="30HIoZ" to="ndib:6WBmrsjAqQr" resolve="MPSIntegrationPortProvider" />
       <node concept="gft3U" id="6WBmrsjC12Z" role="1lVwrX">
         <node concept="2YIFZM" id="6WBmrsjC16t" role="gfFT$">
           <ref role="37wK5l" to="4h87:3Apdfsuj$9" resolve="getCurrentPort" />
-          <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSRequestPortManager" />
+          <ref role="1Pybhc" to="4h87:G$0uqqC2Yz" resolve="MPSIntegrationPortManager" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="3PMO5H7XVPQ" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="ndib:3PMO5H7Xp0_" resolve="MPSInternalPortProvider" />
+      <node concept="gft3U" id="3PMO5H7XVQX" role="1lVwrX">
+        <node concept="10M0yZ" id="3PMO5H7XVSQ" role="gfFT$">
+          <ref role="1PxDUh" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
+          <ref role="3cqZAo" to="4h87:3PMO5H7WJ51" resolve="PORT" />
         </node>
       </node>
     </node>

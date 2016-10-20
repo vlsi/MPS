@@ -16,13 +16,13 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class MPSPortProvider__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b71399ad9bL, "jetbrains.mps.ide.httpsupport.structure.MPSPortProvider");
+public final class MPSIntegrationPortProvider__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b71399ad9bL, "jetbrains.mps.ide.httpsupport.structure.MPSIntegrationPortProvider");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Integer> getPort_id6WBmrsjA4L4 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getPort").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6WBmrsjA4L4").registry(REGISTRY).build();
@@ -33,10 +33,10 @@ public final class MPSPortProvider__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   /*package*/ static int getPort_id6WBmrsjA4L4(@NotNull SNode __thisNode__) {
-    return MPSRequestPortManager.getCurrentPort();
+    return MPSIntegrationPortManager.getCurrentPort();
   }
 
-  /*package*/ MPSPortProvider__BehaviorDescriptor() {
+  /*package*/ MPSIntegrationPortProvider__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

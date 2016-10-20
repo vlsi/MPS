@@ -23,7 +23,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptHttpRequestParameter = createDescriptorForHttpRequestParameter();
   /*package*/ final ConceptDescriptor myConceptIDEAPlatformPortProvider = createDescriptorForIDEAPlatformPortProvider();
   /*package*/ final ConceptDescriptor myConceptIParameterConverter = createDescriptorForIParameterConverter();
-  /*package*/ final ConceptDescriptor myConceptMPSPortProvider = createDescriptorForMPSPortProvider();
+  /*package*/ final ConceptDescriptor myConceptMPSIntegrationPortProvider = createDescriptorForMPSIntegrationPortProvider();
+  /*package*/ final ConceptDescriptor myConceptMPSInternalPortProvider = createDescriptorForMPSInternalPortProvider();
   /*package*/ final ConceptDescriptor myConceptParameterConverterDeclaration = createDescriptorForParameterConverterDeclaration();
   /*package*/ final ConceptDescriptor myConceptParameterConverterReference = createDescriptorForParameterConverterReference();
   /*package*/ final ConceptDescriptor myConceptParameterInitializer = createDescriptorForParameterInitializer();
@@ -48,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDefaultValueFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIDEAPlatformPortProvider, myConceptIParameterConverter, myConceptMPSPortProvider, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptPort, myConceptPortProvider, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURLBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
+    return Arrays.asList(myConceptCanHandleRequestFunction, myConceptDefaultParameterConverter, myConceptDefaultValueFunction, myConceptDeserializeFunction, myConceptHandleRequestFunction, myConceptHttpRequestOperation, myConceptHttpRequestParameter, myConceptIDEAPlatformPortProvider, myConceptIParameterConverter, myConceptMPSIntegrationPortProvider, myConceptMPSInternalPortProvider, myConceptParameterConverterDeclaration, myConceptParameterConverterReference, myConceptParameterInitializer, myConceptPort, myConceptPortProvider, myConceptQueryParameter, myConceptQueryParameterReference, myConceptQueryPath, myConceptQuerySegment, myConceptRequestHandler, myConceptRequestType, myConceptRequestURLBuilderExpression, myConceptResponseSendOperation, myConceptSerializeFunction, myConceptSerializedValueParameter, myConceptValueToSerializeParameter);
   }
 
   @Override
@@ -73,8 +74,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptIDEAPlatformPortProvider;
       case LanguageConceptSwitch.IParameterConverter:
         return myConceptIParameterConverter;
-      case LanguageConceptSwitch.MPSPortProvider:
-        return myConceptMPSPortProvider;
+      case LanguageConceptSwitch.MPSIntegrationPortProvider:
+        return myConceptMPSIntegrationPortProvider;
+      case LanguageConceptSwitch.MPSInternalPortProvider:
+        return myConceptMPSInternalPortProvider;
       case LanguageConceptSwitch.ParameterConverterDeclaration:
         return myConceptParameterConverterDeclaration;
       case LanguageConceptSwitch.ParameterConverterReference:
@@ -190,12 +193,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/5111696079053501427");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForMPSPortProvider() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "MPSPortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b71399ad9bL);
+  private static ConceptDescriptor createDescriptorForMPSIntegrationPortProvider() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "MPSIntegrationPortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b71399ad9bL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.ide.httpsupport.structure.PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
     b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/8009469105144442267");
-    b.alias("MPS port");
+    b.alias("MPS Integration port");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMPSInternalPortProvider() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.ide.httpsupport", "MPSInternalPortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d72d05b47f59025L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.ide.httpsupport.structure.PortProvider", 0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L);
+    b.origin("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)/4427830474126495781");
+    b.alias("MPS Internal Port");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameterConverterDeclaration() {

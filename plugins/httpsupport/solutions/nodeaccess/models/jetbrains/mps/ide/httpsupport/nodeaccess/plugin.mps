@@ -305,7 +305,7 @@
         <property id="6886330673564897341" name="type" index="1W9R_Y" />
         <child id="6886330673564897343" name="buffer" index="1W9R_W" />
       </concept>
-      <concept id="8009469105144442267" name="jetbrains.mps.ide.httpsupport.structure.MPSPortProvider" flags="ng" index="1WJJgG" />
+      <concept id="8009469105144442267" name="jetbrains.mps.ide.httpsupport.structure.MPSIntegrationPortProvider" flags="ng" index="1WJJgG" />
       <concept id="4622937352052264727" name="jetbrains.mps.ide.httpsupport.structure.ParameterInitializer" flags="ng" index="1ZOzog">
         <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
         <child id="4622937352052264730" name="value" index="1ZOzot" />
@@ -1734,6 +1734,7 @@
             <ref role="1Pybhc" to="dp1x:5tGs5KqKfGH" resolve="CopyPasteUtil" />
             <node concept="1ZOzuk" id="6frl3mWcFa_" role="37wK5m">
               <ref role="1ZOzuT" node="2lt1tUBuq2$" resolve="NodeOpener" />
+              <node concept="1WJJgG" id="6WBmrsjBEYc" role="1WJIZB" />
               <node concept="1ZOzog" id="6frl3mWcG75" role="1ZOqJK">
                 <ref role="1ZOzov" node="21vgRr5xzVs" resolve="ref" />
                 <node concept="2OqwBi" id="6frl3mWcGOq" role="1ZOzot">
@@ -1759,7 +1760,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="1WJJgG" id="6WBmrsjBEYc" role="1WJIZB" />
             </node>
           </node>
         </node>
