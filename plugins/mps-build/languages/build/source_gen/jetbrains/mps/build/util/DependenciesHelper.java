@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.TransientModelsModule;
 
 public class DependenciesHelper {
@@ -38,22 +39,30 @@ public class DependenciesHelper {
     return macros;
   }
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
-    if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
-      if (genContext == null) {
-        throw new IllegalStateException("transient model is not expected");
-      }
-      SNode originalNode = genContext.getOriginalCopiedInputNode(node);
-      if ((originalNode != null)) {
-        if (SNodeOperations.getModel(originalNode).getModule() instanceof TransientModelsModule) {
-          genContext.showErrorMessage(node, "internal error: cannot get original node");
-          return null;
-        }
-        return originalNode;
-      } else {
-        genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");
-      }
+    if (SNodeOperations.getModel(node) == null) {
+      return node;
+    }
+
+    SModule module = SNodeOperations.getModel(node).getModule();
+    if (module != null && !((module instanceof TransientModelsModule))) {
+      return node;
+    }
+
+    if (genContext == null) {
+      throw new IllegalStateException("transient model is not expected");
+    }
+
+    SNode originalNode = genContext.getOriginalCopiedInputNode(node);
+    if ((originalNode == null)) {
+      genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");
       return null;
     }
-    return node;
+
+    if (SNodeOperations.getModel(originalNode).getModule() instanceof TransientModelsModule) {
+      genContext.showErrorMessage(node, "internal error: cannot get original node");
+      return null;
+    }
+
+    return originalNode;
   }
 }
