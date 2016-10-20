@@ -4983,6 +4983,12 @@
             <ref role="3bR37D" to="ffeo:ymnOULAU0H" resolve="jetbrains.mps.lang.test" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5jV4K6NYN86" role="3bR37C">
+          <node concept="3bR9La" id="5jV4K6NYN87" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbJb" resolve="MPS.Platform" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="55IIr" id="5leSqRbdC$J" role="auvoZ">
