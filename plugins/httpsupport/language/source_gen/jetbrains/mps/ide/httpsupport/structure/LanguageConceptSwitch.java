@@ -20,22 +20,23 @@ public final class LanguageConceptSwitch {
   public static final int IParameterConverter = 8;
   public static final int MPSIntegrationPortProvider = 9;
   public static final int MPSInternalPortProvider = 10;
-  public static final int ParameterConverterDeclaration = 11;
-  public static final int ParameterConverterReference = 12;
-  public static final int ParameterInitializer = 13;
-  public static final int Port = 14;
-  public static final int PortProvider = 15;
-  public static final int QueryParameter = 16;
-  public static final int QueryParameterReference = 17;
-  public static final int QueryPath = 18;
-  public static final int QuerySegment = 19;
-  public static final int RequestHandler = 20;
-  public static final int RequestType = 21;
-  public static final int RequestURLBuilderExpression = 22;
-  public static final int ResponseSendOperation = 23;
-  public static final int SerializeFunction = 24;
-  public static final int SerializedValueParameter = 25;
-  public static final int ValueToSerializeParameter = 26;
+  public static final int Node_getURLOperation = 11;
+  public static final int ParameterConverterDeclaration = 12;
+  public static final int ParameterConverterReference = 13;
+  public static final int ParameterInitializer = 14;
+  public static final int Port = 15;
+  public static final int PortProvider = 16;
+  public static final int QueryParameter = 17;
+  public static final int QueryParameterReference = 18;
+  public static final int QueryPath = 19;
+  public static final int QuerySegment = 20;
+  public static final int RequestHandler = 21;
+  public static final int RequestType = 22;
+  public static final int RequestURLBuilderExpression = 23;
+  public static final int ResponseSendOperation = 24;
+  public static final int SerializeFunction = 25;
+  public static final int SerializedValueParameter = 26;
+  public static final int ValueToSerializeParameter = 27;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x817e4e70961e4a95L, 0x98a115e9f32231f1L);
@@ -50,6 +51,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x46f064803fbdb3f3L, IParameterConverter);
     builder.put(0x6f2759b71399ad9bL, MPSIntegrationPortProvider);
     builder.put(0x3d72d05b47f59025L, MPSInternalPortProvider);
+    builder.put(0x1962d3cabd393132L, Node_getURLOperation);
     builder.put(0x3d1bb14fe8385046L, ParameterConverterDeclaration);
     builder.put(0x46f064803fbdb465L, ParameterConverterReference);
     builder.put(0x4027f9073ff5cf17L, ParameterInitializer);

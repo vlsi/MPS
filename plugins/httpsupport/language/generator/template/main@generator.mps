@@ -34,6 +34,7 @@
     <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
+    <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -239,6 +240,7 @@
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="7898029224680692134" name="description" index="2n97ot" />
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
@@ -371,6 +373,9 @@
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -429,6 +434,7 @@
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1162934736510" name="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" flags="nn" index="34jXtK" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="1lYeZD" id="2VC4eVXUJvI">
@@ -4803,6 +4809,96 @@
         <node concept="10M0yZ" id="3PMO5H7XVSQ" role="gfFT$">
           <ref role="1PxDUh" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
           <ref role="3cqZAo" to="4h87:3PMO5H7WJ51" resolve="PORT" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="bUwia" id="1_yOWEYQ0SO">
+    <property role="TrG5h" value="mapping_node_operation" />
+    <node concept="3aamgX" id="1_yOWEYQas6" role="3acgRq">
+      <ref role="30HIoZ" to="ndib:1_yOWEXej4M" resolve="Node_getURLOperation" />
+      <node concept="gft3U" id="1_yOWEXemR7" role="1lVwrX">
+        <node concept="2YIFZM" id="1_yOWEXeoms" role="gfFT$">
+          <ref role="1Pybhc" to="ciba:3OrGkZCn9ZQ" resolve="HttpSupportUtil" />
+          <ref role="37wK5l" to="ciba:1_yOWEXenNM" resolve="getURL" />
+          <node concept="10Nm6u" id="1_yOWEXeETz" role="37wK5m">
+            <node concept="29HgVG" id="1_yOWEXeFYZ" role="lGtFl">
+              <node concept="3NFfHV" id="1_yOWEXeFZp" role="3NFExx">
+                <node concept="3clFbS" id="1_yOWEXeFZq" role="2VODD2">
+                  <node concept="3clFbF" id="1_yOWEXeG2V" role="3cqZAp">
+                    <node concept="2OqwBi" id="1_yOWEXeGeU" role="3clFbG">
+                      <node concept="30H73N" id="1_yOWEXeG2U" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="1_yOWEYPAKf" role="2OqNvi">
+                        <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="7wGLu2UQx$$" role="3acgRq">
+      <property role="2n97ot" value="This rule duplicates similar rule from smodel's mc_main for SNodeOperations to allow this MC to run independently from smodel generator. This is required to ensure MAPPING_nodesOperation runs together with the rest of the editor (otherwise, if steps are separate,CellIdReferenceSelector.id couldn't get resolved)" />
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
+      <node concept="gft3U" id="7wGLu2UQVYE" role="1lVwrX">
+        <node concept="10Nm6u" id="7wGLu2UQWcg" role="gfFT$">
+          <node concept="29HgVG" id="7wGLu2UQWcq" role="lGtFl">
+            <node concept="3NFfHV" id="7wGLu2UQWcr" role="3NFExx">
+              <node concept="3clFbS" id="7wGLu2UQWcs" role="2VODD2">
+                <node concept="3clFbF" id="7wGLu2UQWcy" role="3cqZAp">
+                  <node concept="2OqwBi" id="7wGLu2UQWct" role="3clFbG">
+                    <node concept="3TrEf2" id="7wGLu2UQWcw" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                    </node>
+                    <node concept="30H73N" id="7wGLu2UQWcx" role="2Oq$k0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="7wGLu2UQ$X$" role="30HLyM">
+        <node concept="3clFbS" id="7wGLu2UQ$X_" role="2VODD2">
+          <node concept="3clFbF" id="7wGLu2UQPYY" role="3cqZAp">
+            <node concept="2OqwBi" id="7wGLu2UQNdE" role="3clFbG">
+              <node concept="2OqwBi" id="7wGLu2UQF9N" role="2Oq$k0">
+                <node concept="30H73N" id="7wGLu2UQF4K" role="2Oq$k0" />
+                <node concept="3TrEf2" id="7wGLu2UQFFd" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="7wGLu2UQNCI" role="2OqNvi">
+                <node concept="chp4Y" id="1_yOWEYQcQC" role="cj9EA">
+                  <ref role="cht4Q" to="ndib:1_yOWEXej4M" resolve="Node_getURLOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="avzCv" id="1_yOWEYQ1bm" role="avys_">
+      <node concept="3clFbS" id="1_yOWEYQ1bn" role="2VODD2">
+        <node concept="3clFbF" id="1_yOWEYQ1iy" role="3cqZAp">
+          <node concept="2OqwBi" id="1_yOWEYQ5Fk" role="3clFbG">
+            <node concept="2OqwBi" id="1_yOWEYQ2WF" role="2Oq$k0">
+              <node concept="2OqwBi" id="1_yOWEYQ20G" role="2Oq$k0">
+                <node concept="1iwH7S" id="1_yOWEYQ1P9" role="2Oq$k0" />
+                <node concept="1r8y6K" id="1_yOWEYQ2eN" role="2OqNvi" />
+              </node>
+              <node concept="2SmgA7" id="1_yOWEYQ3b8" role="2OqNvi">
+                <node concept="chp4Y" id="1_yOWEYQ3AO" role="1dBWTz">
+                  <ref role="cht4Q" to="ndib:1_yOWEXej4M" resolve="Node_getURLOperation" />
+                </node>
+              </node>
+            </node>
+            <node concept="3GX2aA" id="1_yOWEYQa8q" role="2OqNvi" />
+          </node>
         </node>
       </node>
     </node>

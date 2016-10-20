@@ -12,6 +12,11 @@ import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import io.netty.handler.codec.http.QueryStringEncoder;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class HttpSupportUtil {
 
@@ -69,4 +74,15 @@ public class HttpSupportUtil {
       return null;
     }
   }
+
+  public static String getURL(SNode node) {
+    return getURL(node.getReference());
+  }
+  public static String getURL(SNodeReference nodeRef) {
+    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSInternalPortManager.PORT + "/node");
+    encoder.addParam("ref", PersistenceFacade.getInstance().asString(nodeRef));
+    return encoder.toString();
+  }
+
+
 }

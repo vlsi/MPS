@@ -577,7 +577,7 @@
   </node>
   <node concept="24kQdi" id="40BYgsZXsUJ">
     <property role="3GE5qa" value="request" />
-    <ref role="1XX52x" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+    <ref role="1XX52x" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     <node concept="3EZMnI" id="40BYgsZXsUL" role="2wV5jI">
       <node concept="3F0ifn" id="40BYgsZXsUS" role="3EZMnx">
         <property role="3F0ifm" value="request URI for" />

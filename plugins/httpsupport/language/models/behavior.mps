@@ -20,6 +20,7 @@
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
     <import index="4h87" ref="r:05ff02e5-9836-4ae9-a454-eab43fa58c8f(jetbrains.mps.ide.httpsupport.manager.plugin)" />
+    <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1089,6 +1090,29 @@
         </node>
       </node>
       <node concept="10Oyi0" id="3PMO5H7Xp2y" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1_yOWEXejyy">
+    <ref role="13h7C2" to="ndib:1_yOWEXej4M" resolve="Node_getURLOperation" />
+    <node concept="13hLZK" id="1_yOWEXejyz" role="13h7CW">
+      <node concept="3clFbS" id="1_yOWEXejy$" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1_yOWEXejyX" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="applicableToNode" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpeu:1653mnvAgrs" resolve="applicableToNode" />
+      <node concept="3Tm1VV" id="1_yOWEXejyY" role="1B3o_S" />
+      <node concept="3clFbS" id="1_yOWEXejz3" role="3clF47">
+        <node concept="3clFbF" id="1_yOWEXejDX" role="3cqZAp">
+          <node concept="3clFbT" id="1_yOWEXejDW" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="1_yOWEXejz4" role="3clF45" />
     </node>
   </node>
 </model>

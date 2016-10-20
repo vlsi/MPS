@@ -1028,7 +1028,7 @@
     </node>
     <node concept="std77" id="qifh9t62LH" role="std7D">
       <node concept="std78" id="qifh9t62Md" role="std7y">
-        <property role="svBHv" value="node_ref" />
+        <property role="svBHv" value="node" />
       </node>
     </node>
   </node>
