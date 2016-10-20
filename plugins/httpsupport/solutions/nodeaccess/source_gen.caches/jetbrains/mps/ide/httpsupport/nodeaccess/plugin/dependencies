@@ -144,7 +144,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager" />
+    <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

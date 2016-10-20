@@ -54,6 +54,7 @@
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
@@ -70,6 +71,7 @@
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4$dB" />
+      <concept id="1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" flags="in" index="2ScWuX" />
       <concept id="1206092561075" name="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" flags="nn" index="3gHZIF" />
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
@@ -301,11 +303,11 @@
       <concept id="5111696079053507374" name="jetbrains.mps.ide.httpsupport.structure.DefaultParameterConverter" flags="ng" index="1TjqYI">
         <child id="5111696079053507400" name="parameterType" index="1TjqZ8" />
       </concept>
+      <concept id="4427830474126495781" name="jetbrains.mps.ide.httpsupport.structure.MPSInternalPortProvider" flags="ng" index="1UxO1Y" />
       <concept id="6886330673564897217" name="jetbrains.mps.ide.httpsupport.structure.ResponseSendOperation" flags="ng" index="1W9Qq2">
         <property id="6886330673564897341" name="type" index="1W9R_Y" />
         <child id="6886330673564897343" name="buffer" index="1W9R_W" />
       </concept>
-      <concept id="8009469105144442267" name="jetbrains.mps.ide.httpsupport.structure.MPSIntegrationPortProvider" flags="ng" index="1WJJgG" />
       <concept id="4622937352052264727" name="jetbrains.mps.ide.httpsupport.structure.ParameterInitializer" flags="ng" index="1ZOzog">
         <reference id="4622937352052264728" name="parameter" index="1ZOzov" />
         <child id="4622937352052264730" name="value" index="1ZOzot" />
@@ -1734,7 +1736,6 @@
             <ref role="1Pybhc" to="dp1x:5tGs5KqKfGH" resolve="CopyPasteUtil" />
             <node concept="1ZOzuk" id="6frl3mWcFa_" role="37wK5m">
               <ref role="1ZOzuT" node="2lt1tUBuq2$" resolve="NodeOpener" />
-              <node concept="1WJJgG" id="6WBmrsjBEYc" role="1WJIZB" />
               <node concept="1ZOzog" id="6frl3mWcG75" role="1ZOqJK">
                 <ref role="1ZOzov" node="21vgRr5xzVs" resolve="ref" />
                 <node concept="2OqwBi" id="6frl3mWcGOq" role="1ZOzot">
@@ -1760,7 +1761,18 @@
                   </node>
                 </node>
               </node>
+              <node concept="1UxO1Y" id="1_yOWEXeb1S" role="1WJIZB" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2ScWuX" id="1_yOWEXebar" role="tmbBb">
+      <node concept="3clFbS" id="1_yOWEXebas" role="2VODD2">
+        <node concept="3clFbF" id="1_yOWEXeckz" role="3cqZAp">
+          <node concept="2YIFZM" id="1_yOWEXecso" role="3clFbG">
+            <ref role="37wK5l" to="4h87:3PMO5H7Xzu$" resolve="isEnabled" />
+            <ref role="1Pybhc" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
           </node>
         </node>
       </node>

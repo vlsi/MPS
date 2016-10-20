@@ -6,15 +6,15 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import io.netty.handler.codec.http.QueryStringEncoder;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class NodeReferenceURL_Action extends BaseAction {
@@ -28,6 +28,14 @@ public class NodeReferenceURL_Action extends BaseAction {
   @Override
   public boolean isDumbAware() {
     return true;
+  }
+  @Override
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return MPSInternalPortManager.isEnabled();
+  }
+  @Override
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -47,10 +55,10 @@ public class NodeReferenceURL_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    CopyPasteUtil.copyTextToClipboard(buildRequest_njdhnr_a0a0a5(event.getData(MPSCommonDataKeys.NODE).getReference(), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+    CopyPasteUtil.copyTextToClipboard(buildRequest_njdhnr_a0a0a7(event.getData(MPSCommonDataKeys.NODE).getReference(), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
   }
-  private static String buildRequest_njdhnr_a0a0a5(SNodeReference ref, Project project) {
-    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSIntegrationPortManager.getCurrentPort() + "/node_ref");
+  private static String buildRequest_njdhnr_a0a0a7(SNodeReference ref, Project project) {
+    QueryStringEncoder encoder = new QueryStringEncoder("http://127.0.0.1:" + MPSInternalPortManager.PORT + "/node_ref");
 
     encoder.addParam("ref", PersistenceFacade.getInstance().asString(ref));
     encoder.addParam("project", project.getName());
