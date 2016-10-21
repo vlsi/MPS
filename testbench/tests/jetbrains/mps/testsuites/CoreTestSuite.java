@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.testsuites;
 
-import jetbrains.mps.compile.EclipseJavaCompilerTest;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
-import jetbrains.mps.vfs.path.CommonPathTest;
-import jetbrains.mps.vfs.path.UniPathTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
@@ -42,7 +39,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest.class,
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
-    EclipseJavaCompilerTest.class,
+    jetbrains.mps.compile.EclipseJavaCompilerTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,
@@ -58,13 +55,14 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
-    UniPathTest.class,
-    CommonPathTest.class,
+    jetbrains.mps.vfs.path.UniPathTest.class,
+    jetbrains.mps.vfs.path.CommonPathTest.class,
     jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
     jetbrains.mps.smodel.ModelImplementationTest.class,
     jetbrains.mps.smodel.ModelListenerTest.class,
     jetbrains.mps.smodel.ModelChangeListenerTest.class,
     jetbrains.mps.smodel.ModelUndoTest.class,
+    jetbrains.mps.persistence.PersistenceUtilTest.class,
     jetbrains.mps.text.TextAreaTest.class,
     jetbrains.mps.text.TextBufferTest.class,
     jetbrains.mps.generator.impl.plan.TemplateModelScanTest.class,

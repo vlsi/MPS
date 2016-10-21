@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Element;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -52,7 +53,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
   }
 
 
-  public DialogConsoleTab(MPSProject project, ConsoleTool tool, String title, @Nullable String history) {
+  public DialogConsoleTab(MPSProject project, ConsoleTool tool, String title, @Nullable Element history) {
     super(project, tool, title, history);
   }
 
@@ -215,7 +216,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
 
-  protected void loadHistory(@Nullable final String state) {
+  protected void loadHistory(@Nullable final Element state) {
     getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel loadedModel = loadHistoryModel(state);

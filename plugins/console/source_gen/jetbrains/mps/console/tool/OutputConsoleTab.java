@@ -4,6 +4,7 @@ package jetbrains.mps.console.tool;
 
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -20,11 +21,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class OutputConsoleTab extends BaseConsoleTab {
 
-  public OutputConsoleTab(MPSProject mpsProject, ConsoleTool tool, String title, @Nullable String history) {
+  public OutputConsoleTab(MPSProject mpsProject, ConsoleTool tool, String title, @Nullable Element history) {
     super(mpsProject, tool, title, history);
   }
 
-  protected void loadHistory(final String state) {
+  protected void loadHistory(final Element state) {
     getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel loadedModel = loadHistoryModel(state);
