@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -23,8 +23,6 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
-        <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
-        <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
         <reference id="1083241965437" name="defaultMember" index="Qgau1" />
         <child id="1083172003582" name="member" index="M5hS2" />
@@ -544,11 +542,6 @@
       <property role="TrG5h" value="keycode" />
       <property role="IQ2nx" value="1207318242774" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="5SFo3Mf0UHd" role="1TKVEl">
-      <property role="IQ2nx" value="6785623076777470797" />
-      <property role="TrG5h" value="change" />
-      <ref role="AX2Wp" node="5SFo3Mf0QpC" resolve="KeyMapChange" />
     </node>
   </node>
   <node concept="1TIwiD" id="h$$3T5C">
@@ -2312,18 +2305,13 @@
     <property role="EcuMT" value="7459370737647671570" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
-  <node concept="1TIwiD" id="qbzkx3HQ4_">
-    <property role="EcuMT" value="471625927503601957" />
+  <node concept="1TIwiD" id="qbzkx3HvA1">
+    <property role="EcuMT" value="471625927503509889" />
     <property role="3GE5qa" value="Tool" />
-    <property role="TrG5h" value="CustomToolShortcut" />
-    <ref role="1TJDcQ" node="qbzkx3HvA1" resolve="AbstractToolShortcut" />
-    <node concept="1TJgyj" id="qbzkx3HQmS" role="1TKVEi">
-      <property role="IQ2ns" value="471625927503603128" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20lbJX" value="1..n" />
-      <property role="20kJfa" value="changes" />
-      <ref role="20lvS9" node="qbzkx3SSja" resolve="AbstractToolKeystroke" />
-    </node>
+    <property role="TrG5h" value="AbstractToolShortcut" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="qbzkx3HQ47">
     <property role="EcuMT" value="471625927503601927" />
@@ -2335,6 +2323,19 @@
       <property role="IQ2nx" value="471625927503601955" />
       <property role="TrG5h" value="number" />
       <ref role="AX2Wp" node="hDjkga7" resolve="digit" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qbzkx3HQ4_">
+    <property role="EcuMT" value="471625927503601957" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="TrG5h" value="CustomToolShortcut" />
+    <ref role="1TJDcQ" node="qbzkx3HvA1" resolve="AbstractToolShortcut" />
+    <node concept="1TJgyj" id="qbzkx3HQmS" role="1TKVEi">
+      <property role="IQ2ns" value="471625927503603128" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1..n" />
+      <property role="20kJfa" value="changes" />
+      <ref role="20lvS9" node="qbzkx3SSja" resolve="AbstractToolKeystroke" />
     </node>
   </node>
   <node concept="1TIwiD" id="qbzkx3HQmK">
@@ -2362,29 +2363,6 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="qbzkx3HvA1">
-    <property role="EcuMT" value="471625927503509889" />
-    <property role="3GE5qa" value="Tool" />
-    <property role="TrG5h" value="AbstractToolShortcut" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="AxPO7" id="5SFo3Mf0QpC">
-    <property role="3GE5qa" value="Actions.Action" />
-    <property role="TrG5h" value="KeyMapChange" />
-    <property role="PDuV0" value="true" />
-    <property role="3lZH7k" value="derive_from_internal_value" />
-    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <node concept="M4N5e" id="5SFo3Mf0QpD" role="M5hS2">
-      <property role="1uS6qo" value="replace all" />
-      <property role="1uS6qv" value="replace all" />
-    </node>
-    <node concept="M4N5e" id="5SFo3Mf0QpE" role="M5hS2">
-      <property role="1uS6qo" value="remove" />
-      <property role="1uS6qv" value="remove" />
-    </node>
   </node>
 </model>
 

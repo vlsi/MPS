@@ -2,15 +2,15 @@
 <model ref="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -34,7 +34,6 @@
       <concept id="8817525066851790100" name="jetbrains.mps.lang.plugin.structure.KeyStrokeType" flags="in" index="35$S_0" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
@@ -65,7 +64,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -1727,101 +1726,6 @@
     <node concept="1YaCAy" id="4F0ra6ZrH0n" role="1YuTPh">
       <property role="TrG5h" value="unpinTabOp" />
       <ref role="1YaFvo" to="tp4k:4F0ra6ZrAu8" resolve="UnpinTabOperation" />
-    </node>
-  </node>
-  <node concept="18kY7G" id="4qYinf8ta2p">
-    <property role="TrG5h" value="check_KeyMapKeystrokeRemRepl" />
-    <property role="3GE5qa" value="Actions.Action" />
-    <node concept="3clFbS" id="4qYinf8ta2q" role="18ibNy">
-      <node concept="3cpWs8" id="5SFo3Mfc29p" role="3cqZAp">
-        <node concept="3cpWsn" id="5SFo3Mfc29s" role="3cpWs9">
-          <property role="TrG5h" value="simpleShortcutChange" />
-          <node concept="3Tqbb2" id="5SFo3Mfc29n" role="1tU5fm">
-            <ref role="ehGHo" to="tp4k:1mJS7WEAV1Q" resolve="SimpleShortcutChange" />
-          </node>
-          <node concept="2OqwBi" id="5SFo3Mfc2hZ" role="33vP2m">
-            <node concept="1YBJjd" id="5SFo3Mfc2aY" role="2Oq$k0">
-              <ref role="1YBMHb" node="4qYinf8ta2s" resolve="keyMapKeystroke" />
-            </node>
-            <node concept="2Xjw5R" id="5SFo3Mfc2Cc" role="2OqNvi">
-              <node concept="1xMEDy" id="5SFo3Mfc2Ce" role="1xVPHs">
-                <node concept="chp4Y" id="5SFo3Mfc2CH" role="ri$Ld">
-                  <ref role="cht4Q" to="tp4k:1mJS7WEAV1Q" resolve="SimpleShortcutChange" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbJ" id="5SFo3Mfc2Hx" role="3cqZAp">
-        <node concept="3clFbS" id="5SFo3Mfc2Hz" role="3clFbx">
-          <node concept="3cpWs6" id="5SFo3Mfc2Yk" role="3cqZAp" />
-        </node>
-        <node concept="22lmx$" id="5SFo3MfcMTq" role="3clFbw">
-          <node concept="3fqX7Q" id="6LEKREvG8FX" role="3uHU7w">
-            <node concept="2OqwBi" id="6LEKREvG8FZ" role="3fr31v">
-              <node concept="1YBJjd" id="6LEKREvG8G0" role="2Oq$k0">
-                <ref role="1YBMHb" node="4qYinf8ta2s" resolve="keyMapKeystroke" />
-              </node>
-              <node concept="2qgKlT" id="6LEKREvG8G1" role="2OqNvi">
-                <ref role="37wK5l" to="tp4s:4qYinf8$eal" resolve="hasRemove" />
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="5SFo3Mfcydl" role="3uHU7B">
-            <node concept="37vLTw" id="5SFo3Mfc2IZ" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SFo3Mfc29s" resolve="simpleShortcutChange" />
-            </node>
-            <node concept="3w_OXm" id="5SFo3MfcyuT" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbJ" id="4qYinf8ta2w" role="3cqZAp">
-        <node concept="3clFbS" id="4qYinf8ta2x" role="3clFbx">
-          <node concept="a7r0C" id="4qYinf8ta2y" role="3cqZAp">
-            <node concept="Xl_RD" id="4qYinf8ta2z" role="a7wSD">
-              <property role="Xl_RC" value="Adding 'remove' modificator for action is redundant if there is other action with 'replace all' modificator" />
-            </node>
-            <node concept="1YBJjd" id="4qYinf8tb_p" role="2OEOjV">
-              <ref role="1YBMHb" node="4qYinf8ta2s" resolve="keyMapKeystroke" />
-            </node>
-          </node>
-        </node>
-        <node concept="2OqwBi" id="5SFo3MfbOpZ" role="3clFbw">
-          <node concept="2OqwBi" id="5SFo3MfbLNS" role="2Oq$k0">
-            <node concept="37vLTw" id="5SFo3Mfc2Yn" role="2Oq$k0">
-              <ref role="3cqZAo" node="5SFo3Mfc29s" resolve="simpleShortcutChange" />
-            </node>
-            <node concept="3Tsc0h" id="5SFo3MfbMRS" role="2OqNvi">
-              <ref role="3TtcxE" to="tp4k:1mJS7WEAV1Y" resolve="keystroke" />
-            </node>
-          </node>
-          <node concept="2HwmR7" id="5SFo3MfbQ5I" role="2OqNvi">
-            <node concept="1bVj0M" id="5SFo3MfbQ5K" role="23t8la">
-              <node concept="3clFbS" id="5SFo3MfbQ5L" role="1bW5cS">
-                <node concept="3clFbF" id="5SFo3MfbQca" role="3cqZAp">
-                  <node concept="2OqwBi" id="5SFo3MfbQlS" role="3clFbG">
-                    <node concept="37vLTw" id="5SFo3MfbQc9" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5SFo3MfbQ5M" resolve="it" />
-                    </node>
-                    <node concept="2qgKlT" id="5SFo3MfbQFM" role="2OqNvi">
-                      <ref role="37wK5l" to="tp4s:4qYinf8$enm" resolve="hasReplaceAll" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="Rh6nW" id="5SFo3MfbQ5M" role="1bW2Oz">
-                <property role="TrG5h" value="it" />
-                <node concept="2jxLKc" id="5SFo3MfbQ5N" role="1tU5fm" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="4qYinf8ta2s" role="1YuTPh">
-      <property role="TrG5h" value="keyMapKeystroke" />
-      <ref role="1YaFvo" to="tp4k:h$pLAnk" resolve="KeyMapKeystroke" />
     </node>
   </node>
 </model>

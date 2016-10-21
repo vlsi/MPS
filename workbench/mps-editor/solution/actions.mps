@@ -2,15 +2,15 @@
 <model ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -83,7 +83,6 @@
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
-        <property id="6785623076777470797" name="change" index="3hacHL" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
@@ -1251,7 +1250,6 @@
       <node concept="pLAjd" id="31p$Bb$M55N" role="Zd501">
         <property role="pLAjf" value="VK_R" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2d892Y1PlYw" role="Zd508">
@@ -9972,7 +9970,6 @@
       <node concept="pLAjd" id="2HiVo5PaRdA" role="Zd501">
         <property role="pLAjf" value="VK_R" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2d892Y1Pm3B" role="Zd508">
@@ -10078,10 +10075,13 @@
     </node>
     <node concept="Zd509" id="2HiVo5PaRe0" role="Zd508">
       <ref role="1bYAoF" node="6KwcZ1G3Po2" resolve="SelectUp" />
-      <node concept="pLAjd" id="2HiVo5PaRe2" role="Zd501">
+      <node concept="pLAjd" id="2HiVo5PaRe1" role="Zd501">
         <property role="pLAjf" value="VK_UP" />
-        <property role="pLAjc" value="alt" />
-        <property role="3hacHL" value="replace all" />
+        <property role="pLAjc" value="ctrl" />
+      </node>
+      <node concept="pLAjd" id="2HiVo5PaRe2" role="Zd501">
+        <property role="pLAjf" value="VK_W" />
+        <property role="pLAjc" value="ctrl" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5PaRe3" role="Zd508">
@@ -10089,14 +10089,6 @@
       <node concept="pLAjd" id="2HiVo5PaRe4" role="Zd501">
         <property role="pLAjf" value="VK_N" />
         <property role="pLAjc" value="ctrl" />
-      </node>
-    </node>
-    <node concept="Zd509" id="32_EJN4gfmK" role="Zd508">
-      <ref role="1bYAoF" node="3hypUcHYaIV" resolve="DeleteLine" />
-      <node concept="pLAjd" id="32_EJN4gfmL" role="Zd501">
-        <property role="pLAjf" value="VK_BACK_SPACE" />
-        <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>

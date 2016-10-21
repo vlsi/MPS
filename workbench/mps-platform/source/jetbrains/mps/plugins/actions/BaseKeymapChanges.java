@@ -20,25 +20,22 @@ import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public abstract class BaseKeymapChanges {
   private static final Logger LOG = LogManager.getLogger(BaseKeymapChanges.class);
 
-  private static Map<Keymap, Set<String>> ourClearedActions = new THashMap<>();
-  private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<>();
+  private static Map<Keymap, Set<String>> ourClearedActions = new THashMap<Keymap, Set<String>>();
+  private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();
 
-  private Map<String, Set<Shortcut>> myAddedComplexShortcuts = new THashMap<>();
+  private Map<String, Set<Shortcut>> myAddedComplexShortcuts = new THashMap<String, Set<Shortcut>>();
 
-  private Map<String, Set<ShortcutWrapper>> mySimpleShortcuts = new THashMap<>();
-  private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<>();
+  private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
+  private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
 
   private Keymap myKeymap;
 
@@ -47,14 +44,10 @@ public abstract class BaseKeymapChanges {
   //shortId is an id w/o parameter ids
   public void parameterizedActionCreated(String shortId, String longId, Object... params) {
     Keymap keymap = getKeymap();
-    if (keymap == null) {
-      return;
-    }
+    if (keymap == null) return;
 
     Set<ComplexShortcut> complexShortcuts = myComplexShortcuts.get(shortId);
-    if (complexShortcuts == null) {
-      return;
-    }
+    if (complexShortcuts == null) return;
 
     for (ComplexShortcut cs : complexShortcuts) {
       for (Shortcut s : cs.getShortcutsFor(params)) {
@@ -62,7 +55,7 @@ public abstract class BaseKeymapChanges {
 
         Set<Shortcut> added = myAddedComplexShortcuts.get(longId);
         if (added == null) {
-          added = new THashSet<>();
+          added = new THashSet<Shortcut>();
           myAddedComplexShortcuts.put(longId, added);
         }
         added.add(s);
@@ -72,23 +65,19 @@ public abstract class BaseKeymapChanges {
 
   public final void init() {
     Keymap keymap = getKeymap();
-    if (keymap == null) {
-      return;
-    }
+    if (keymap == null) return;
 
-    for (Entry<String, Set<ShortcutWrapper>> e : mySimpleShortcuts.entrySet()) {
+    for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
       String key = e.getKey();
-      for (ShortcutWrapper s : e.getValue()) {
-        addShortcutToKeymap(key, keymap, s.myShortcut, s.myRemove, s.myReplaceAll);
+      for (Shortcut s : e.getValue()) {
+        addShortcutToKeymap(key, keymap, s);
       }
     }
   }
 
   public final void dispose() {
     Keymap keymap = getKeymap();
-    if (keymap == null) {
-      return;
-    }
+    if (keymap == null) return;
 
     //complex
     for (Entry<String, Set<Shortcut>> e : myAddedComplexShortcuts.entrySet()) {
@@ -100,10 +89,10 @@ public abstract class BaseKeymapChanges {
     myAddedComplexShortcuts.clear();
 
     //simple
-    for (Entry<String, Set<ShortcutWrapper>> e : mySimpleShortcuts.entrySet()) {
+    for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
       String key = e.getKey();
-      for (ShortcutWrapper s : e.getValue()) {
-        keymap.removeShortcut(key, s.myShortcut);
+      for (Shortcut s : e.getValue()) {
+        keymap.removeShortcut(key, s);
       }
     }
     mySimpleShortcuts.clear();
@@ -120,37 +109,25 @@ public abstract class BaseKeymapChanges {
     ourClearedActions.clear();
   }
 
-  protected void addSimpleShortcut(String id, ShortcutWrapper... s) {
-    Set<ShortcutWrapper> shortcuts = mySimpleShortcuts.get(id);
+  protected void addSimpleShortcut(String id, Shortcut... s) {
+    Set<Shortcut> shortcuts = mySimpleShortcuts.get(id);
     if (shortcuts == null) {
-      shortcuts = new THashSet<>();
+      shortcuts = new THashSet<Shortcut>();
       mySimpleShortcuts.put(id, shortcuts);
     }
     shortcuts.addAll(Arrays.asList(s));
   }
 
-  protected void addSimpleShortcut(String id, Shortcut... s) {
-    ShortcutWrapper[] sw = new ShortcutWrapper[s.length];
-    for (int i = 0; i < s.length; i++) {
-      sw[i] = new ShortcutWrapper(s[i]);
-    }
-    addSimpleShortcut(id, sw);
-  }
-
   protected void addComplexShortcut(String id, ComplexShortcut... s) {
     Set<ComplexShortcut> shortcuts = myComplexShortcuts.get(id);
     if (shortcuts == null) {
-      shortcuts = new THashSet<>();
+      shortcuts = new THashSet<ComplexShortcut>();
       myComplexShortcuts.put(id, shortcuts);
     }
     shortcuts.addAll(Arrays.asList(s));
   }
 
   private void addShortcutToKeymap(String longId, Keymap keymap, Shortcut s) {
-    addShortcutToKeymap(longId, keymap, s, false, false);
-  }
-
-  private void addShortcutToKeymap(String longId, Keymap keymap, Shortcut s, boolean remove, boolean replaceAll) {
     Shortcut[] oldShortcuts = keymap.getShortcuts(longId);
 
     boolean isClear = oldShortcuts.length == 0;
@@ -165,28 +142,19 @@ public abstract class BaseKeymapChanges {
 
     if (!isClear) {
       if (oldShortcuts.length != 0) {
-        myRemovedShortcuts.put(longId, new THashSet<>(Arrays.asList(oldShortcuts)));
+        myRemovedShortcuts.put(longId, new THashSet<Shortcut>(Arrays.asList(oldShortcuts)));
         keymap.removeAllActionShortcuts(longId);
       }
     }
 
     Set<String> actions = ourClearedActions.get(keymap);
     if (actions == null) {
-      actions = new THashSet<>();
+      actions = new THashSet<String>();
       ourClearedActions.put(keymap, actions);
     }
     actions.add(longId);
 
-    // Proceed as in class ActionManagerImpl in method processKeyboardShortcutNode
-    if (remove) {
-      keymap.removeShortcut(longId, s);
-    }
-    if (replaceAll) {
-      keymap.removeAllActionShortcuts(longId);
-    }
-    if (!remove) {
-      keymap.addShortcut(longId, s);
-    }
+    keymap.addShortcut(longId, s);
   }
 
   private Keymap getKeymap() {
@@ -214,22 +182,6 @@ public abstract class BaseKeymapChanges {
       public List<Shortcut> getShortcutsFor(Object... params) {
         return myShortcut;
       }
-    }
-  }
-
-  protected static class ShortcutWrapper {
-    public final Shortcut myShortcut;
-    public final boolean myRemove;
-    public final boolean myReplaceAll;
-
-    public ShortcutWrapper(Shortcut shortcut) {
-      this(shortcut, false, false);
-    }
-
-    public ShortcutWrapper(Shortcut shortcut, boolean remove, boolean replaceAll) {
-      myShortcut = shortcut;
-      myRemove = remove;
-      myReplaceAll = replaceAll;
     }
   }
 }

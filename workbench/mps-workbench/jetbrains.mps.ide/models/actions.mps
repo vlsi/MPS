@@ -11,7 +11,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
@@ -224,7 +224,6 @@
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
-        <property id="6785623076777470797" name="change" index="3hacHL" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
@@ -14033,7 +14032,6 @@
       <node concept="pLAjd" id="1ShaKemPYCr" role="Zd501">
         <property role="pLAjf" value="VK_H" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="3fhZBTghOOG" role="Zd508">
@@ -14041,7 +14039,6 @@
       <node concept="pLAjd" id="3fhZBTghOOH" role="Zd501">
         <property role="pLAjf" value="VK_H" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2hVwt5feBE3" role="Zd508">
@@ -14049,7 +14046,6 @@
       <node concept="pLAjd" id="2hVwt5feBE4" role="Zd501">
         <property role="pLAjf" value="VK_Q" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="1bYApB" id="73o9OgiF_r2" role="Zd508">
@@ -36138,21 +36134,11 @@
       <ref role="1bYAoF" node="6R$xsE24aki" resolve="NewElement" />
       <node concept="pLAjd" id="2HiVo5Pctgf" role="Zd501">
         <property role="pLAjf" value="VK_N" />
-        <property role="pLAjc" value="meta" />
+        <property role="pLAjc" value="ctrl+alt" />
       </node>
       <node concept="pLAjd" id="2HiVo5Pctgg" role="Zd501">
         <property role="pLAjf" value="VK_ENTER" />
         <property role="pLAjc" value="ctrl" />
-      </node>
-      <node concept="pLAjd" id="1RsxAOl3wEE" role="Zd501">
-        <property role="pLAjf" value="VK_INSERT" />
-        <property role="pLAjc" value="alt" />
-        <property role="3hacHL" value="remove" />
-      </node>
-      <node concept="pLAjd" id="1RsxAOl3wEW" role="Zd501">
-        <property role="pLAjf" value="VK_INSERT" />
-        <property role="pLAjc" value="ctrl+alt" />
-        <property role="3hacHL" value="remove" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5Pctgh" role="Zd508">
@@ -36160,7 +36146,10 @@
       <node concept="pLAjd" id="2HiVo5Pctgi" role="Zd501">
         <property role="pLAjf" value="VK_DELETE" />
         <property role="pLAjc" value="meta" />
-        <property role="3hacHL" value="replace all" />
+      </node>
+      <node concept="pLAjd" id="2HiVo5Pctom" role="Zd501">
+        <property role="pLAjf" value="VK_BACK_SPACE" />
+        <property role="pLAjc" value="meta" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5Pctgj" role="Zd508">
@@ -36168,7 +36157,6 @@
       <node concept="pLAjd" id="2HiVo5Pctgk" role="Zd501">
         <property role="pLAjf" value="VK_H" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5Pctgl" role="Zd508">
@@ -36176,7 +36164,6 @@
       <node concept="pLAjd" id="2HiVo5Pctgm" role="Zd501">
         <property role="pLAjf" value="VK_H" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="Zd509" id="2HiVo5Pctgn" role="Zd508">
@@ -36184,7 +36171,6 @@
       <node concept="pLAjd" id="2HiVo5Pctgo" role="Zd501">
         <property role="pLAjf" value="VK_Q" />
         <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
     <node concept="1bYApB" id="2HiVo5Pctgp" role="Zd508">
@@ -36207,29 +36193,6 @@
       <node concept="pLAjd" id="2HiVo5Pctgy" role="Zd501">
         <property role="pLAjf" value="VK_B" />
         <property role="pLAjc" value="ctrl" />
-      </node>
-    </node>
-    <node concept="Zd509" id="__m$GJJprk" role="Zd508">
-      <ref role="1bYAoF" node="3oS0mv1G9Wv" resolve="GoToRootNode" />
-      <node concept="pLAjd" id="__m$GJJprm" role="Zd501">
-        <property role="pLAjc" value="meta" />
-        <property role="pLAjf" value="VK_O" />
-      </node>
-    </node>
-    <node concept="Zd509" id="1RsxAOl2GsZ" role="Zd508">
-      <ref role="1bYAoF" node="3oS0mv1G9XO" resolve="GoToModel" />
-      <node concept="pLAjd" id="1RsxAOl2Gt0" role="Zd501">
-        <property role="pLAjf" value="VK_O" />
-        <property role="pLAjc" value="meta+shift" />
-        <property role="3hacHL" value="replace all" />
-      </node>
-    </node>
-    <node concept="Zd509" id="1RsxAOl3vcr" role="Zd508">
-      <ref role="1bYAoF" node="3oS0mv1G9YQ" resolve="GoToModule" />
-      <node concept="pLAjd" id="1RsxAOl3vcs" role="Zd501">
-        <property role="pLAjf" value="VK_O" />
-        <property role="pLAjc" value="meta+alt" />
-        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>

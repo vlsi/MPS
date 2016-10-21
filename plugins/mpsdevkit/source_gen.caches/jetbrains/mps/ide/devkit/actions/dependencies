@@ -264,20 +264,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.DefaultForGNOME_KeymapChanges" file="DefaultForGNOME_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.DefaultForKDE_KeymapChanges" file="DefaultForKDE_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
@@ -831,20 +817,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.MacOSX105_KeymapChanges" file="MacOSX105_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.MacOSX_KeymapChanges" file="MacOSX_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" file="Mpsdevkit_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -868,8 +840,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CellProperties_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ContributeModuleUsage_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CreateDefaultEditor_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DefaultForGNOME_KeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DefaultForKDE_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
@@ -895,8 +865,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewGenerator_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.MacOSX105_KeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.MacOSX_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />

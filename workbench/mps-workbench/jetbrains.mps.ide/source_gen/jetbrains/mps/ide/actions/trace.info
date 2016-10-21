@@ -7275,48 +7275,43 @@
     <file name="Mac_10_5_KeymapChanges.java">
       <node id="3121818631993911011" at="13,35,14,14" concept="14" />
       <node id="3121818631993911011" at="14,14,15,108" concept="6" />
-      <node id="3121818631993911011" at="15,108,16,119" concept="6" />
-      <node id="3121818631993911011" at="16,119,17,34" concept="14" />
-      <node id="3121818631993911011" at="17,34,18,149" concept="6" />
-      <node id="3121818631993911011" at="18,149,19,148" concept="6" />
-      <node id="3121818631993911011" at="19,148,20,232" concept="6" />
-      <node id="3121818631993911011" at="20,232,21,149" concept="6" />
-      <node id="3121818631993911011" at="21,149,22,154" concept="6" />
-      <node id="3121818631993911011" at="22,154,23,156" concept="6" />
-      <node id="3121818631993911011" at="23,156,24,146" concept="6" />
-      <node id="3121818631993911011" at="24,146,25,28" concept="14" />
-      <node id="3121818631993911011" at="25,28,26,162" concept="6" />
-      <node id="3121818631993911011" at="26,162,27,162" concept="6" />
-      <node id="3121818631993911011" at="27,162,28,15" concept="14" />
-      <node id="3121818631993911011" at="28,15,29,139" concept="6" />
-      <node id="3121818631993911011" at="31,29,32,28" concept="13" />
-      <node id="3121818631993911011" at="34,53,35,70" concept="13" />
-      <node id="3121818631993911011" at="40,62,41,57" concept="12" />
-      <node id="3121818631993938971" at="41,57,42,104" concept="6" />
-      <node id="3121818631993911011" at="42,104,43,21" concept="13" />
-      <node id="3121818631993911011" at="38,0,40,0" concept="4" trace="GoToBookmark_ShortcutChange_yfpb4i_g#()V" />
-      <node id="3121818631993911011" at="31,0,34,0" concept="11" trace="getScheme#()Ljava/lang/String;" />
-      <node id="3121818631993911011" at="34,0,37,0" concept="17" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
-      <node id="3121818631993911011" at="40,0,45,0" concept="11" trace="getShortcutsFor#(null)Ljava/util/List;" />
-      <node id="3121818631993911011" at="13,0,31,0" concept="4" trace="Mac_10_5_KeymapChanges#()V" />
-      <scope id="3121818631993911011" at="38,51,38,51" />
-      <scope id="3121818631993911011" at="31,29,32,28" />
-      <scope id="3121818631993911011" at="34,53,35,70" />
-      <scope id="3121818631993911011" at="38,0,40,0" />
-      <scope id="3121818631993911011" at="31,0,34,0" />
-      <scope id="3121818631993911011" at="34,0,37,0">
+      <node id="3121818631993911011" at="15,108,16,123" concept="6" />
+      <node id="3121818631993911011" at="16,123,17,129" concept="6" />
+      <node id="3121818631993911011" at="17,129,18,102" concept="6" />
+      <node id="3121818631993911011" at="18,102,19,104" concept="6" />
+      <node id="3121818631993911011" at="19,104,20,94" concept="6" />
+      <node id="3121818631993911011" at="20,94,21,28" concept="14" />
+      <node id="3121818631993911011" at="21,28,22,162" concept="6" />
+      <node id="3121818631993911011" at="22,162,23,15" concept="14" />
+      <node id="3121818631993911011" at="23,15,24,139" concept="6" />
+      <node id="3121818631993911011" at="26,29,27,28" concept="13" />
+      <node id="3121818631993911011" at="29,53,30,70" concept="13" />
+      <node id="3121818631993911011" at="35,62,36,57" concept="12" />
+      <node id="3121818631993938971" at="36,57,37,104" concept="6" />
+      <node id="3121818631993911011" at="37,104,38,21" concept="13" />
+      <node id="3121818631993911011" at="33,0,35,0" concept="4" trace="GoToBookmark_ShortcutChange_yfpb4i_g#()V" />
+      <node id="3121818631993911011" at="26,0,29,0" concept="11" trace="getScheme#()Ljava/lang/String;" />
+      <node id="3121818631993911011" at="29,0,32,0" concept="17" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
+      <node id="3121818631993911011" at="35,0,40,0" concept="11" trace="getShortcutsFor#(null)Ljava/util/List;" />
+      <node id="3121818631993911011" at="13,0,26,0" concept="4" trace="Mac_10_5_KeymapChanges#()V" />
+      <scope id="3121818631993911011" at="33,51,33,51" />
+      <scope id="3121818631993911011" at="26,29,27,28" />
+      <scope id="3121818631993911011" at="29,53,30,70" />
+      <scope id="3121818631993911011" at="33,0,35,0" />
+      <scope id="3121818631993911011" at="26,0,29,0" />
+      <scope id="3121818631993911011" at="29,0,32,0">
         <var name="stroke" id="3121818631993911011" />
       </scope>
-      <scope id="3121818631993911011" at="40,62,43,21">
+      <scope id="3121818631993911011" at="35,62,38,21">
         <var name="_result" id="3121818631993911011" />
       </scope>
-      <scope id="3121818631993911011" at="40,0,45,0">
+      <scope id="3121818631993911011" at="35,0,40,0">
         <var name="objects" id="3121818631993911011" />
       </scope>
-      <scope id="3121818631993911011" at="13,35,29,139" />
-      <scope id="3121818631993911011" at="13,0,31,0" />
-      <unit id="3121818631993911011" at="37,0,46,0" name="jetbrains.mps.ide.actions.Mac_10_5_KeymapChanges$GoToBookmark_ShortcutChange_yfpb4i_g" />
-      <unit id="3121818631993911011" at="12,0,47,0" name="jetbrains.mps.ide.actions.Mac_10_5_KeymapChanges" />
+      <scope id="3121818631993911011" at="13,35,24,139" />
+      <scope id="3121818631993911011" at="13,0,26,0" />
+      <unit id="3121818631993911011" at="32,0,41,0" name="jetbrains.mps.ide.actions.Mac_10_5_KeymapChanges$GoToBookmark_ShortcutChange_yfpb4i_g" />
+      <unit id="3121818631993911011" at="12,0,42,0" name="jetbrains.mps.ide.actions.Mac_10_5_KeymapChanges" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/3531023421907756759">
@@ -7707,42 +7702,41 @@
       <node id="3734045384533036331" at="14,14,15,108" concept="6" />
       <node id="3734045384533036331" at="15,108,16,119" concept="6" />
       <node id="3734045384533036331" at="16,119,17,97" concept="6" />
-      <node id="3734045384533036331" at="17,97,18,34" concept="14" />
-      <node id="3734045384533036331" at="18,34,19,154" concept="6" />
-      <node id="3734045384533036331" at="19,154,20,156" concept="6" />
-      <node id="3734045384533036331" at="20,156,21,146" concept="6" />
-      <node id="3734045384533036331" at="21,146,22,28" concept="14" />
-      <node id="3734045384533036331" at="22,28,23,162" concept="6" />
-      <node id="3734045384533036331" at="23,162,24,15" concept="14" />
-      <node id="3734045384533036331" at="24,15,25,131" concept="6" />
-      <node id="3734045384533036331" at="27,29,28,22" concept="13" />
-      <node id="3734045384533036331" at="30,53,31,70" concept="13" />
-      <node id="3734045384533036331" at="36,62,37,57" concept="12" />
-      <node id="7575217966414163354" at="37,57,38,104" concept="6" />
-      <node id="3734045384533036331" at="38,104,39,21" concept="13" />
-      <node id="3734045384533036331" at="34,0,36,0" concept="4" trace="GoToBookmark_ShortcutChange_tqv_g#()V" />
-      <node id="3734045384533036331" at="27,0,30,0" concept="11" trace="getScheme#()Ljava/lang/String;" />
-      <node id="3734045384533036331" at="30,0,33,0" concept="17" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
-      <node id="3734045384533036331" at="36,0,41,0" concept="11" trace="getShortcutsFor#(null)Ljava/util/List;" />
-      <node id="3734045384533036331" at="13,0,27,0" concept="4" trace="Mac_KeymapChanges#()V" />
-      <scope id="3734045384533036331" at="34,48,34,48" />
-      <scope id="3734045384533036331" at="27,29,28,22" />
-      <scope id="3734045384533036331" at="30,53,31,70" />
-      <scope id="3734045384533036331" at="34,0,36,0" />
-      <scope id="3734045384533036331" at="27,0,30,0" />
-      <scope id="3734045384533036331" at="30,0,33,0">
+      <node id="3734045384533036331" at="17,97,18,102" concept="6" />
+      <node id="3734045384533036331" at="18,102,19,104" concept="6" />
+      <node id="3734045384533036331" at="19,104,20,94" concept="6" />
+      <node id="3734045384533036331" at="20,94,21,28" concept="14" />
+      <node id="3734045384533036331" at="21,28,22,162" concept="6" />
+      <node id="3734045384533036331" at="22,162,23,15" concept="14" />
+      <node id="3734045384533036331" at="23,15,24,131" concept="6" />
+      <node id="3734045384533036331" at="26,29,27,22" concept="13" />
+      <node id="3734045384533036331" at="29,53,30,70" concept="13" />
+      <node id="3734045384533036331" at="35,62,36,57" concept="12" />
+      <node id="7575217966414163354" at="36,57,37,104" concept="6" />
+      <node id="3734045384533036331" at="37,104,38,21" concept="13" />
+      <node id="3734045384533036331" at="33,0,35,0" concept="4" trace="GoToBookmark_ShortcutChange_tqv_g#()V" />
+      <node id="3734045384533036331" at="26,0,29,0" concept="11" trace="getScheme#()Ljava/lang/String;" />
+      <node id="3734045384533036331" at="29,0,32,0" concept="17" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
+      <node id="3734045384533036331" at="35,0,40,0" concept="11" trace="getShortcutsFor#(null)Ljava/util/List;" />
+      <node id="3734045384533036331" at="13,0,26,0" concept="4" trace="Mac_KeymapChanges#()V" />
+      <scope id="3734045384533036331" at="33,48,33,48" />
+      <scope id="3734045384533036331" at="26,29,27,22" />
+      <scope id="3734045384533036331" at="29,53,30,70" />
+      <scope id="3734045384533036331" at="33,0,35,0" />
+      <scope id="3734045384533036331" at="26,0,29,0" />
+      <scope id="3734045384533036331" at="29,0,32,0">
         <var name="stroke" id="3734045384533036331" />
       </scope>
-      <scope id="3734045384533036331" at="36,62,39,21">
+      <scope id="3734045384533036331" at="35,62,38,21">
         <var name="_result" id="3734045384533036331" />
       </scope>
-      <scope id="3734045384533036331" at="36,0,41,0">
+      <scope id="3734045384533036331" at="35,0,40,0">
         <var name="objects" id="3734045384533036331" />
       </scope>
-      <scope id="3734045384533036331" at="13,30,25,131" />
-      <scope id="3734045384533036331" at="13,0,27,0" />
-      <unit id="3734045384533036331" at="33,0,42,0" name="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_g" />
-      <unit id="3734045384533036331" at="12,0,43,0" name="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
+      <scope id="3734045384533036331" at="13,30,24,131" />
+      <scope id="3734045384533036331" at="13,0,26,0" />
+      <unit id="3734045384533036331" at="32,0,41,0" name="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_g" />
+      <unit id="3734045384533036331" at="12,0,42,0" name="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/3858094006307618579">
