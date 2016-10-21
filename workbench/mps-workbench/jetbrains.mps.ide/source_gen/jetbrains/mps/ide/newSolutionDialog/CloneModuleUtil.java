@@ -43,6 +43,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.ModuleId;
@@ -173,16 +174,12 @@ public class CloneModuleUtil {
         continue;
       }
 
-      ModelRoot result = as_iwu1g5_a0a0e0c0o(sourceModelRoot, ModelRootBase.class).cloneTo(targetModule, cloneType, referenceUpdater);
+      ModelRootBase targetModelRoot = as_iwu1g5_a0a4a2a41(PersistenceFacade.getInstance().getModelRootFactory(sourceModelRoot.getType()).create(), ModelRootBase.class);
+      targetModelRoot.setModule(targetModule);
 
-      if (result == null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Can't clone model root " + sourceModelRoot + " to module" + targetModule + " (" + cloneType + ")");
-        }
-        continue;
-      }
+      as_iwu1g5_a0a7a2a41(sourceModelRoot, ModelRootBase.class).cloneTo(targetModelRoot, cloneType, referenceUpdater);
 
-      ListSequence.fromList(targetModelRoots).addElement(result);
+      ListSequence.fromList(targetModelRoots).addElement(targetModelRoot);
     }
 
     final List<ModelRootDescriptor> modelRootDescriptors = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
@@ -331,7 +328,10 @@ public class CloneModuleUtil {
   private static <T> T as_iwu1g5_a0a0a4a12a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iwu1g5_a0a0e0c0o(Object o, Class<T> type) {
+  private static <T> T as_iwu1g5_a0a4a2a41(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_iwu1g5_a0a7a2a41(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -4584,93 +4584,88 @@
               </node>
             </node>
             <node concept="3clFbH" id="67eMucIC7Y$" role="3cqZAp" />
-            <node concept="3cpWs8" id="4JrdruEsdni" role="3cqZAp">
-              <node concept="3cpWsn" id="4JrdruEsdnj" role="3cpWs9">
-                <property role="TrG5h" value="result" />
-                <node concept="3uibUv" id="67eMucIBSoT" role="1tU5fm">
-                  <ref role="3uigEE" to="dush:~ModelRoot" resolve="ModelRoot" />
+            <node concept="3cpWs8" id="60L3JX$M1bI" role="3cqZAp">
+              <node concept="3cpWsn" id="60L3JX$M1bJ" role="3cpWs9">
+                <property role="TrG5h" value="targetModelRoot" />
+                <node concept="3uibUv" id="60L3JX$M5GZ" role="1tU5fm">
+                  <ref role="3uigEE" to="ends:~ModelRootBase" resolve="ModelRootBase" />
                 </node>
-                <node concept="2OqwBi" id="67eMucIBY5r" role="33vP2m">
-                  <node concept="0kSF2" id="67eMucIBX$c" role="2Oq$k0">
-                    <node concept="3uibUv" id="67eMucIBXOl" role="0kSFW">
-                      <ref role="3uigEE" to="ends:~ModelRootBase" resolve="ModelRootBase" />
+                <node concept="0kSF2" id="60L3JX$MbcH" role="33vP2m">
+                  <node concept="3uibUv" id="60L3JX$MbcK" role="0kSFW">
+                    <ref role="3uigEE" to="ends:~ModelRootBase" resolve="ModelRootBase" />
+                  </node>
+                  <node concept="2OqwBi" id="60L3JX$M3tB" role="0kSFX">
+                    <node concept="2OqwBi" id="60L3JX$M1RH" role="2Oq$k0">
+                      <node concept="2YIFZM" id="60L3JX$M1La" role="2Oq$k0">
+                        <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                        <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                      </node>
+                      <node concept="liA8E" id="60L3JX$M24f" role="2OqNvi">
+                        <ref role="37wK5l" to="dush:~PersistenceFacade.getModelRootFactory(java.lang.String):org.jetbrains.mps.openapi.persistence.ModelRootFactory" resolve="getModelRootFactory" />
+                        <node concept="2OqwBi" id="60L3JX$M2wy" role="37wK5m">
+                          <node concept="2GrUjf" id="60L3JX$M2kU" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="7CyNnDpco8C" resolve="sourceModelRoot" />
+                          </node>
+                          <node concept="liA8E" id="60L3JX$M2Xs" role="2OqNvi">
+                            <ref role="37wK5l" to="dush:~ModelRoot.getType():java.lang.String" resolve="getType" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
-                    <node concept="2GrUjf" id="67eMucIBTgm" role="0kSFX">
-                      <ref role="2Gs0qQ" node="7CyNnDpco8C" resolve="sourceModelRoot" />
+                    <node concept="liA8E" id="60L3JX$M4F_" role="2OqNvi">
+                      <ref role="37wK5l" to="dush:~ModelRootFactory.create():org.jetbrains.mps.openapi.persistence.ModelRoot" resolve="create" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="67eMucIBYuZ" role="2OqNvi">
-                    <ref role="37wK5l" to="ends:~ModelRootBase.cloneTo(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.extapi.persistence.CloneType,jetbrains.mps.util.ReferenceUpdater):org.jetbrains.mps.openapi.persistence.ModelRoot" resolve="cloneTo" />
-                    <node concept="37vLTw" id="67eMucIBYXQ" role="37wK5m">
-                      <ref role="3cqZAo" node="7CyNnDpco5w" resolve="targetModule" />
-                    </node>
-                    <node concept="37vLTw" id="67eMucICuix" role="37wK5m">
-                      <ref role="3cqZAo" node="67eMucIC4Fb" resolve="cloneType" />
-                    </node>
-                    <node concept="37vLTw" id="67eMucICw0U" role="37wK5m">
-                      <ref role="3cqZAo" node="Yfka2$w2Vp" resolve="referenceUpdater" />
-                    </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="60L3JX$Mhby" role="3cqZAp">
+              <node concept="2OqwBi" id="60L3JX$MhCC" role="3clFbG">
+                <node concept="37vLTw" id="60L3JX$Mhbw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="60L3JX$M1bJ" resolve="targetModelRoot" />
+                </node>
+                <node concept="liA8E" id="60L3JX$MhU$" role="2OqNvi">
+                  <ref role="37wK5l" to="ends:~ModelRootBase.setModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="setModule" />
+                  <node concept="37vLTw" id="60L3JX$MitM" role="37wK5m">
+                    <ref role="3cqZAo" node="7CyNnDpco5w" resolve="targetModule" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="60L3JX$Mj4i" role="3cqZAp" />
+            <node concept="3clFbF" id="60L3JX$Mf3B" role="3cqZAp">
+              <node concept="2OqwBi" id="67eMucIBY5r" role="3clFbG">
+                <node concept="0kSF2" id="67eMucIBX$c" role="2Oq$k0">
+                  <node concept="3uibUv" id="67eMucIBXOl" role="0kSFW">
+                    <ref role="3uigEE" to="ends:~ModelRootBase" resolve="ModelRootBase" />
+                  </node>
+                  <node concept="2GrUjf" id="67eMucIBTgm" role="0kSFX">
+                    <ref role="2Gs0qQ" node="7CyNnDpco8C" resolve="sourceModelRoot" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="67eMucIBYuZ" role="2OqNvi">
+                  <ref role="37wK5l" to="ends:~ModelRootBase.cloneTo(org.jetbrains.mps.openapi.persistence.ModelRoot,jetbrains.mps.extapi.persistence.CloneType,jetbrains.mps.util.ReferenceUpdater):void" resolve="cloneTo" />
+                  <node concept="37vLTw" id="60L3JX$MdJ$" role="37wK5m">
+                    <ref role="3cqZAo" node="60L3JX$M1bJ" resolve="targetModelRoot" />
+                  </node>
+                  <node concept="37vLTw" id="67eMucICuix" role="37wK5m">
+                    <ref role="3cqZAo" node="67eMucIC4Fb" resolve="cloneType" />
+                  </node>
+                  <node concept="37vLTw" id="67eMucICw0U" role="37wK5m">
+                    <ref role="3cqZAo" node="Yfka2$w2Vp" resolve="referenceUpdater" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="3clFbH" id="4JrdruEsf6Z" role="3cqZAp" />
-            <node concept="3clFbJ" id="4JrdruEsfJs" role="3cqZAp">
-              <node concept="3clFbS" id="4JrdruEsfJu" role="3clFbx">
-                <node concept="34ab3g" id="4JrdruEsjvB" role="3cqZAp">
-                  <property role="35gtTG" value="error" />
-                  <node concept="3cpWs3" id="4JrdruEsJn3" role="34bqiv">
-                    <node concept="Xl_RD" id="4JrdruEsJFO" role="3uHU7w">
-                      <property role="Xl_RC" value=")" />
-                    </node>
-                    <node concept="3cpWs3" id="4JrdruEs_Az" role="3uHU7B">
-                      <node concept="3cpWs3" id="4JrdruEssY1" role="3uHU7B">
-                        <node concept="3cpWs3" id="4JrdruEss0T" role="3uHU7B">
-                          <node concept="3cpWs3" id="4JrdruEsoW9" role="3uHU7B">
-                            <node concept="3cpWs3" id="4JrdruEsjXw" role="3uHU7B">
-                              <node concept="Xl_RD" id="4JrdruEsjvD" role="3uHU7B">
-                                <property role="Xl_RC" value="Can't clone model root " />
-                              </node>
-                              <node concept="2GrUjf" id="4JrdruEsk2_" role="3uHU7w">
-                                <ref role="2Gs0qQ" node="7CyNnDpco8C" resolve="sourceModelRoot" />
-                              </node>
-                            </node>
-                            <node concept="Xl_RD" id="4JrdruEspfB" role="3uHU7w">
-                              <property role="Xl_RC" value=" to module" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="4JrdruEssmU" role="3uHU7w">
-                            <ref role="3cqZAo" node="7CyNnDpco5w" resolve="targetModule" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="4JrdruEs_Wm" role="3uHU7w">
-                          <property role="Xl_RC" value=" (" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="67eMucICtWH" role="3uHU7w">
-                        <ref role="3cqZAo" node="67eMucIC4Fb" resolve="cloneType" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3N13vt" id="4JrdruEsKFM" role="3cqZAp" />
-              </node>
-              <node concept="3clFbC" id="4JrdruEsjmW" role="3clFbw">
-                <node concept="10Nm6u" id="4JrdruEsjqq" role="3uHU7w" />
-                <node concept="37vLTw" id="4JrdruEsg1o" role="3uHU7B">
-                  <ref role="3cqZAo" node="4JrdruEsdnj" resolve="result" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="6HGqZkbc1EO" role="3cqZAp" />
             <node concept="3clFbF" id="2TQ6PDVx8Sj" role="3cqZAp">
               <node concept="2OqwBi" id="2TQ6PDVxa8u" role="3clFbG">
                 <node concept="37vLTw" id="2TQ6PDVx8Sh" role="2Oq$k0">
                   <ref role="3cqZAo" node="2TQ6PDVwJVW" resolve="targetModelRoots" />
                 </node>
                 <node concept="TSZUe" id="2TQ6PDVxbpE" role="2OqNvi">
-                  <node concept="37vLTw" id="67eMucICxbU" role="25WWJ7">
-                    <ref role="3cqZAo" node="4JrdruEsdnj" resolve="result" />
+                  <node concept="37vLTw" id="60L3JX$MgXq" role="25WWJ7">
+                    <ref role="3cqZAo" node="60L3JX$M1bJ" resolve="targetModelRoot" />
                   </node>
                 </node>
               </node>

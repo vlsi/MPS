@@ -359,12 +359,11 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public ModelRoot cloneTo(@NotNull SModule targetModule, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
+  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
     if (cloneType == CloneType.REUSE) {
       throw new IllegalArgumentException("Default model root doesn't support reuse");
     }
-
-    return super.cloneTo(targetModule, cloneType, referenceUpdater);
+    super.cloneTo(targetModelRoot, cloneType, referenceUpdater);
   }
 
   @Override

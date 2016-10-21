@@ -252,16 +252,15 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public ModelRoot cloneTo(@NotNull SModule targetModule, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
-    if (getModule() == null) {
-      throw new IllegalStateException("Can't clone model root that isn't attached to any module");
+  public void cloneTo(@NotNull ModelRoot tModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
+    if (getModule() == null || tModelRoot.getModule() == null) {
+      throw new IllegalStateException("Can't clone when model root isn't attached to any module");
     }
+    assert tModelRoot instanceof FileBasedModelRoot;
+    FileBasedModelRoot targetModelRoot = ((FileBasedModelRoot) tModelRoot);
 
-    AbstractModule tModule = ((AbstractModule) targetModule);
+    AbstractModule tModule = ((AbstractModule) targetModelRoot.getModule());
     AbstractModule sModule = ((AbstractModule) getModule());
-
-    final FileBasedModelRoot targetModelRoot = ((FileBasedModelRoot) PersistenceRegistry.getInstance().getModelRootFactory(getType()).create());
-    targetModelRoot.setModule(tModule);
 
     Path sourcePath = pathFrom(getContentRoot());
     Path targetPath = evaluateTargetPath(sourcePath, getModuleDirPath(sModule), getModuleDirPath(tModule));
@@ -290,8 +289,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     }
 
     loadClonedModelRootContent(targetModelRoot, referenceUpdater);
-
-    return targetModelRoot;
   }
 
   @NotNull

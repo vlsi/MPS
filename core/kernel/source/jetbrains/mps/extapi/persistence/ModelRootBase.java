@@ -187,23 +187,17 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   /**
-   * Clones this model root to <t>targetModule</t> by given <t>cloneType</t>, or
-   * returns <t>null</t>, if this model root doesn't provide cloning of given <t>cloneType</t>.
+   * Clones this model root content to <t>targetModelRoot</t> by given <t>cloneType</t>.
    *
-   * Note that returned model root is't attached to <t>targetModule</t>,
-   * so it should be done after all "after-clone" routines (e.g. updating references).
-   *
-   * @param targetModule target Module
+   * @param targetModelRoot target model root
    * @param cloneType type of cloning operation
    * @param referenceUpdater reference updater;
    *                         supposed workflow : you have several model roots to clone,
    *                         so you create {@linkplain ReferenceUpdater reference updater}, provide it for
    *                         each invocation of this method to collect reference that should be updated and
    *                         models where references should be updated, than invoke {@link ReferenceUpdater#adjust()}.
-   * @return clone of this model root, or <t>null</t>, if this model root can't be cloned.
    */
-  @Nullable
-  public abstract ModelRoot cloneTo(@NotNull SModule targetModule, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater);
+  public abstract void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater);
 
   @Override
   public String toString() {
