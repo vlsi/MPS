@@ -49,7 +49,7 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
 
   @Override
   public EditorCell createNodeCell(SNode node) {
-    return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
+    return getUpdateSession().updateChildNodeCell(node);
   }
 
   @Override

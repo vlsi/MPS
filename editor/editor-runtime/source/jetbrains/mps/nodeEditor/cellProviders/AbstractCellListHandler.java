@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellProviders;
 
+import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -23,12 +24,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.update.UpdateSession;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class AbstractCellListHandler {
+public abstract class AbstractCellListHandler implements EditorBuilderEnvironment {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
   /**
@@ -62,8 +65,18 @@ public abstract class AbstractCellListHandler {
     return myOwnerNode;
   }
 
-  protected SNode getNode() {
+  public SNode getNode() {
     return myOwnerNode;
+  }
+
+  @Override
+  public EditorCellFactory getCellFactory() {
+    return getEditorContext().getCellFactory();
+  }
+
+  @Override
+  public UpdateSession getUpdateSession() {
+    return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
   }
 
   public String getElementRole() {

@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.update.UpdateSession;
 
 public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment {
   @NotNull
@@ -25,5 +26,10 @@ public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment 
 
   public EditorCellFactory getCellFactory() {
     return myEditorContext.getCellFactory();
+  }
+
+  @Override
+  public UpdateSession getUpdateSession() {
+    return myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession();
   }
 }

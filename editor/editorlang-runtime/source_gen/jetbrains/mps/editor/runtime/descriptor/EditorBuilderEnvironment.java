@@ -5,9 +5,11 @@ package jetbrains.mps.editor.runtime.descriptor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.update.UpdateSession;
 
 public interface EditorBuilderEnvironment {
   EditorContext getEditorContext();
   SNode getNode();
   EditorCellFactory getCellFactory();
+  UpdateSession getUpdateSession();
 }

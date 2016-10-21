@@ -42,7 +42,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   protected void addPropertyCell(final SProperty property) {
     EditorCell_Property cell = new EditorCell_Property(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return getSNode().getProperty(property);
+        return getNode().getProperty(property);
       }
 
       public void setText(String s) {
@@ -51,7 +51,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
-    }, getSNode());
+    }, getNode());
     cell.setEditable(false);
     addCell(cell);
   }
@@ -59,8 +59,8 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   @Override
 
   protected void addChildCell(SContainmentLink link) {
-    for (SNode child : getSNode().getChildren(link)) {
-      EditorCell nodeCell = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
+    for (SNode child : getNode().getChildren(link)) {
+      EditorCell nodeCell = getUpdateSession().updateChildNodeCell(child);
       addCell(nodeCell);
       setIndent(nodeCell);
       addNewLine();
@@ -69,7 +69,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addReferenceCell(final SReferenceLink referenceLink) {
-    SReference reference = getSNode().getReference(referenceLink);
+    SReference reference = getNode().getReference(referenceLink);
     if (reference == null) {
       addLabel("<no target>");
       return;
@@ -78,7 +78,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     if (referentNode == null) {
       String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getName() + "?";
-      EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getSNode(), myErrorText);
+      EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getNode(), myErrorText);
       errorCell.setCellId("error_" + referenceLink.getName());
       addCell(errorCell);
       return;
@@ -86,13 +86,13 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     if (referentNode.getModel() == null) {
       LOG.error("Reference to node which is not inside model. Node: " + referentNode, referentNode);
     }
-    EditorCell cell = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+    EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
       @Override
       public EditorCell compute() {
         return createReferentEditorCell(getEditorContext(), referenceLink, referentNode);
       }
     }, referentNode, referenceLink.getName());
-    setSemanticNodeToCells(cell, getSNode());
+    setSemanticNodeToCells(cell, getNode());
     cell.setCellId("reference_" + referenceLink.getName());
     addCell(cell);
   }

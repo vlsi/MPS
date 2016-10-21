@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -26,7 +27,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.update.UpdateSession;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -38,7 +41,7 @@ import java.util.Iterator;
 /**
  * @author simon
  */
-public abstract class SingleRoleCellProvider {
+public abstract class SingleRoleCellProvider implements EditorBuilderEnvironment {
 
   protected final SContainmentLink myContainmentLink;
   /**
@@ -72,7 +75,7 @@ public abstract class SingleRoleCellProvider {
 
   @NotNull
   private EditorCell createChildCell_internal(SNode child, boolean isRealChild) {
-    EditorCell editorCell = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
+    EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
     setDeleteActions(child, isRealChild, editorCell, CellActionType.DELETE);
     setDeleteActions(child, isRealChild, editorCell, CellActionType.BACKSPACE);
     return editorCell;
@@ -160,12 +163,22 @@ public abstract class SingleRoleCellProvider {
     return AttributeOperations.getChildNodesAndAttributes(getNode(), myContainmentLink);
   }
 
-  protected SNode getNode() {
+  public SNode getNode() {
     return myOwnerNode;
   }
 
-  protected EditorContext getEditorContext() {
+  public EditorContext getEditorContext() {
     return myEditorContext;
+  }
+
+  @Override
+  public EditorCellFactory getCellFactory() {
+    return getEditorContext().getCellFactory();
+  }
+
+  @Override
+  public UpdateSession getUpdateSession() {
+    return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
   }
 }
 
