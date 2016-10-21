@@ -52,20 +52,35 @@
     <classNode dependClassName="org.apache.log4j.spi.Filter" />
     <classNode dependClassName="org.apache.log4j.spi.LoggingEvent" />
   </dependency>
-  <dependency className="tests.testPersistence.test.TestPersistence_Test" file="TestPersistence_Test.java">
+  <dependency className="tests.testPersistence.test.TestPersistenceHelper" file="TestPersistenceHelper.java">
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
-    <classNode dependClassName="jetbrains.mps.java.stub.JavaPackageNameStub" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="tests.testPersistence.test.TestOutputFilter" />
+  </dependency>
+  <dependency className="tests.testPersistence.test.TestPersistence_Test" file="TestPersistence_Test.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
+    <classNode dependClassName="jetbrains.mps.java.stub.JavaPackageNameStub" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -77,10 +92,11 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="tests.testPersistence.test.CollectCallback" />
     <classNode dependClassName="tests.testPersistence.test.ModelAssert" />
-    <classNode dependClassName="tests.testPersistence.test.TestOutputFilter" />
-    <classNode extendsClassName="junit.framework.TestCase" />
+    <classNode dependClassName="tests.testPersistence.test.TestPersistenceHelper" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
 </dependenciesRoot>
 

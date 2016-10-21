@@ -4392,15 +4392,6 @@
       <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
     </node>
   </node>
-  <node concept="lpD6F" id="3ofMfJ4Yh7N">
-    <node concept="2R4zua" id="3ofMfJ4Yh7O" role="2R4z3u">
-      <property role="2R4zub" value="tests.testPersistence" />
-      <property role="2R4zu8" value="f2f32c65-17db-4e68-ad2f-8b0e2554dbd6" />
-    </node>
-    <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
-      <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
-    </node>
-  </node>
   <node concept="lpD6F" id="7ez5JvPiiEK">
     <node concept="2R4zua" id="7ez5JvPiiGM" role="2R4z3u">
       <property role="2R4zub" value="analyzers.test" />

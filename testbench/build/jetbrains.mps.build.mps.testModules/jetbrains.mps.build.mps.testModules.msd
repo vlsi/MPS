@@ -12,6 +12,7 @@
     <dependency reexport="false">b3170ec7-82d9-4e10-a3f0-31baa75ffc0c(testSubtypingTest)</dependency>
     <dependency reexport="false">709a7100-da7a-45a1-948b-53fdd43f5421(jetbrains.mps.baseLanguage.closures.test)</dependency>
     <dependency reexport="false">4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d(tests.testDepViewer)</dependency>
+    <dependency reexport="false">f2f32c65-17db-4e68-ad2f-8b0e2554dbd6(tests.testPersistence)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="4" />
@@ -30,6 +31,7 @@
     <module reference="f4227833-0d14-4ab5-8560-70880fd9d5ef(testSubstituteType)" version="0" />
     <module reference="b3170ec7-82d9-4e10-a3f0-31baa75ffc0c(testSubtypingTest)" version="0" />
     <module reference="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d(tests.testDepViewer)" version="0" />
+    <module reference="f2f32c65-17db-4e68-ad2f-8b0e2554dbd6(tests.testPersistence)" version="0" />
   </dependencyVersions>
 </solution>
 

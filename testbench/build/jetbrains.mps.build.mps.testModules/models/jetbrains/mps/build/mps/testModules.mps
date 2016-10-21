@@ -10,6 +10,7 @@
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
     <import index="r9lu" ref="r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)" />
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
+    <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
   </imports>
   <registry>
     <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest">
@@ -46,6 +47,9 @@
     </node>
     <node concept="2Uj$md" id="Tb4Psnmic0" role="2Uj_Yd">
       <ref role="2Uj$mc" to="rv78:Tb4Psnmhc2" resolve="DepViewer" />
+    </node>
+    <node concept="2Uj$md" id="2cKUqfNXsQ_" role="2Uj_Yd">
+      <ref role="2Uj$mc" to="cpet:2cKUqfNXsQu" resolve="Persistence" />
     </node>
     <node concept="BaHAS" id="6DW_AMA$9QX" role="3cVaLd">
       <property role="BaHAW" value="jetbrains.mps.ide.build.tests.generatedTests" />
