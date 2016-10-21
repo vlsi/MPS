@@ -1098,30 +1098,6 @@
       <unit id="2151742525039069964" at="10,0,25,0" name="jetbrains.mps.ide.devkit.actions.DefaultForKDE_KeymapChanges" />
     </file>
   </root>
-  <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2151742525039104671">
-    <file name="MacOSX_KeymapChanges.java">
-      <node id="2151742525039104671" at="11,33,12,14" concept="12" />
-      <node id="2151742525039104671" at="12,14,13,34" concept="12" />
-      <node id="2151742525039104671" at="13,34,14,168" concept="5" />
-      <node id="2151742525039104671" at="14,168,15,164" concept="5" />
-      <node id="2151742525039104671" at="15,164,16,28" concept="12" />
-      <node id="2151742525039104671" at="16,28,17,15" concept="12" />
-      <node id="2151742525039104671" at="19,29,20,22" concept="11" />
-      <node id="2151742525039104671" at="22,53,23,70" concept="11" />
-      <node id="2151742525039104671" at="19,0,22,0" concept="9" trace="getScheme#()Ljava/lang/String;" />
-      <node id="2151742525039104671" at="22,0,25,0" concept="15" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
-      <node id="2151742525039104671" at="11,0,19,0" concept="3" trace="MacOSX_KeymapChanges#()V" />
-      <scope id="2151742525039104671" at="19,29,20,22" />
-      <scope id="2151742525039104671" at="22,53,23,70" />
-      <scope id="2151742525039104671" at="19,0,22,0" />
-      <scope id="2151742525039104671" at="22,0,25,0">
-        <var name="stroke" id="2151742525039104671" />
-      </scope>
-      <scope id="2151742525039104671" at="11,33,17,15" />
-      <scope id="2151742525039104671" at="11,0,19,0" />
-      <unit id="2151742525039104671" at="10,0,26,0" name="jetbrains.mps.ide.devkit.actions.MacOSX_KeymapChanges" />
-    </file>
-  </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2151742525039104674">
     <file name="MacOSX105_KeymapChanges.java">
       <node id="2151742525039104674" at="11,36,12,14" concept="12" />
@@ -3782,27 +3758,26 @@
       <node id="7162597690968047817" at="113,79,114,77" concept="5" />
       <node id="7162597690968047817" at="114,77,115,71" concept="5" />
       <node id="7162597690968047817" at="115,71,116,73" concept="5" />
-      <node id="7162597690968047817" at="116,73,117,70" concept="5" />
-      <node id="7162597690968047817" at="117,70,118,69" concept="5" />
-      <node id="7162597690968047817" at="118,69,119,15" concept="11" />
+      <node id="7162597690968047817" at="116,73,117,69" concept="5" />
+      <node id="7162597690968047817" at="117,69,118,15" concept="11" />
       <node id="7162597690968047817" at="26,0,28,0" concept="3" trace="Mpsdevkit_ApplicationPlugin#()V" />
       <node id="7162597690968047817" at="28,0,31,0" concept="9" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690968047817" at="111,0,121,0" concept="9" trace="initKeymaps#()Ljava/util/List;" />
+      <node id="7162597690968047817" at="111,0,120,0" concept="9" trace="initKeymaps#()Ljava/util/List;" />
       <node id="7162597690968047817" at="86,0,111,0" concept="9" trace="adjustRegularGroups#()V" />
       <node id="7162597690968047817" at="31,0,86,0" concept="9" trace="createGroups#()V" />
       <scope id="7162597690968047817" at="26,40,26,40" />
       <scope id="7162597690968047817" at="28,27,29,16" />
       <scope id="7162597690968047817" at="26,0,28,0" />
       <scope id="7162597690968047817" at="28,0,31,0" />
-      <scope id="7162597690968047817" at="111,48,119,15">
+      <scope id="7162597690968047817" at="111,48,118,15">
         <var name="res" id="7162597690968047817" />
       </scope>
-      <scope id="7162597690968047817" at="111,0,121,0" />
+      <scope id="7162597690968047817" at="111,0,120,0" />
       <scope id="7162597690968047817" at="86,37,109,93" />
       <scope id="7162597690968047817" at="86,0,111,0" />
       <scope id="7162597690968047817" at="31,30,84,45" />
       <scope id="7162597690968047817" at="31,0,86,0" />
-      <unit id="7162597690968047817" at="24,0,122,0" name="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
+      <unit id="7162597690968047817" at="24,0,121,0" name="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
     </file>
     <file name="Mpsdevkit_ProjectPlugin.java">
       <node id="7162597690968047817" at="16,70,17,54" concept="10" />

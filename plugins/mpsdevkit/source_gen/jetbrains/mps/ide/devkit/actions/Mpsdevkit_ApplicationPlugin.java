@@ -114,7 +114,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     ListSequence.fromList(res).addElement(new DefaultForKDE_KeymapChanges());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new MacOSX105_KeymapChanges());
-    ListSequence.fromList(res).addElement(new MacOSX_KeymapChanges());
     ListSequence.fromList(res).addElement(new Trace_KeymapChanges());
     return res;
   }

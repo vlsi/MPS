@@ -408,7 +408,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -14771,27 +14771,6 @@
       <ref role="1bYAoF" node="1oCHNhnjKYD" resolve="OverrideBehaviorMethod" />
       <node concept="pLAjd" id="1RsxAOl3HHk" role="Zd501">
         <property role="pLAjf" value="VK_O" />
-        <property role="pLAjc" value="ctrl" />
-        <property role="3hacHL" value="replace all" />
-      </node>
-    </node>
-  </node>
-  <node concept="Zd50a" id="1RsxAOl3Hav">
-    <property role="TrG5h" value="MacOSX" />
-    <property role="Zd52Q" value="Mac OS X" />
-    <property role="Z2u3V" value="false" />
-    <node concept="Zd509" id="1RsxAOl3Haw" role="Zd508">
-      <ref role="1bYAoF" node="1wPwVvaJhqe" resolve="GoToConceptDeclaration" />
-      <node concept="pLAjd" id="1RsxAOl3Hax" role="Zd501">
-        <property role="pLAjf" value="VK_S" />
-        <property role="pLAjc" value="alt+shift" />
-        <property role="3hacHL" value="replace all" />
-      </node>
-    </node>
-    <node concept="Zd509" id="1RsxAOl3Hsq" role="Zd508">
-      <ref role="1bYAoF" node="1oCHNhnjKXP" resolve="ImplementBehaviorMethod" />
-      <node concept="pLAjd" id="1RsxAOl3Hsr" role="Zd501">
-        <property role="pLAjf" value="VK_I" />
         <property role="pLAjc" value="ctrl" />
         <property role="3hacHL" value="replace all" />
       </node>
