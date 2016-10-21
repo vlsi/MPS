@@ -11,7 +11,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup";
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
   public static final String LABEL_ID_commonModule = ID + "commonModule";
-  public static final String LABEL_ID_delete = ID + "delete";
+  public static final String LABEL_ID_find_usages = ID + "find_usages";
   public GeneratorActions_ActionGroup() {
     super("GeneratorActions", ID);
     this.setIsInternal(false);
@@ -28,8 +28,9 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
       GeneratorActions_ActionGroup.this.addAction(action);
     }
+    GeneratorActions_ActionGroup.this.addSeparator();
     {
-      LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_delete);
+      LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_find_usages);
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();
       manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
       GeneratorActions_ActionGroup.this.addAction(action);

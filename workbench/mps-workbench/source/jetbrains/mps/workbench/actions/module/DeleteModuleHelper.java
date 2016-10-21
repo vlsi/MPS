@@ -19,9 +19,9 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -35,15 +35,16 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 public final class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
-  @NotNull private final MPSProject myProject;
-  private final static String NON_PROJECT_MODULES_MSG = "Non-project modules can only be deleted with files deletion enabled. The module %s will not be deleted";
+  @NotNull
+  private final MPSProject myProject;
+  private final static String NON_PROJECT_MODULES_MSG =
+      "Non-project modules can only be deleted with files deletion enabled. The module %s will not be deleted";
 
   public DeleteModuleHelper(@NotNull MPSProject project) {
     myProject = project;
@@ -118,7 +119,7 @@ public final class DeleteModuleHelper {
 
   private void checkNonProjectModules(List<SModule> modules, boolean deleteFiles) {
     if (!deleteFiles) {
-      for (Iterator<SModule> iterator = modules.iterator(); iterator.hasNext();) {
+      for (Iterator<SModule> iterator = modules.iterator(); iterator.hasNext(); ) {
         SModule module = iterator.next();
         SModule module0 = module;
         if (module instanceof Generator) {
@@ -143,6 +144,18 @@ public final class DeleteModuleHelper {
       myProject.save();
 // FIXME !!!!!!!!!!!!!!!!!!!!
 //      ((StandaloneMPSProject) project).update();
+    }
+
+    // TODO: remove after Generator will be moved it's own descriptor file
+    // Second parameter prevent exceptions after Generator extraction from Language
+    if (module instanceof Generator && ((Generator) module).getDescriptorFile() == null) {
+      // This logic was taken from DeleteGeneratorHelper#delete() method
+      final Language sourceLanguage = ((Generator) module).getSourceLanguage();
+      LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
+      languageDescriptor.getGenerators().remove(((Generator) module).getModuleDescriptor());
+      sourceLanguage.setModuleDescriptor(languageDescriptor);
+      sourceLanguage.reload();
+      sourceLanguage.save();
     }
   }
 

@@ -15,10 +15,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.util.IStatus;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.util.Status;
+import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
+import java.util.Collections;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public class DeleteGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -63,34 +65,39 @@ public class DeleteGenerator_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
-    DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
+    DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, true);
+    final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
 
-    DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
+    DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Generator", "<html>Are you sure you want to delete generator?<br>This operation is not undoable.</html>", safeOption, filesOption);
     dialog.show();
     if (!(dialog.isOK())) {
       return;
     }
 
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
+    final Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
+
     final DeleteGeneratorHelper butcher = new DeleteGeneratorHelper(((MPSProject) MapSequence.fromMap(_params).get("project")));
     butcher.safeDelete(safeOption.selected).deleteFiles(filesOption.selected);
-    modelAccess.executeCommandInEDT(new Runnable() {
+
+    final Wrappers._T<IStatus> s = new Wrappers._T<IStatus>(new Status.ERROR("Can't execute safety check"));
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
-        Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
-        final IStatus s = butcher.canDelete(generator);
-        if (s.isOk()) {
-          // this is needed since we reload language after deleting generator, see MPS-18743 
-          ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().saveAll();
-          butcher.delete(generator);
-        } else {
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              Messages.showErrorDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), s.getMessage(), "Deleting Generator");
-            }
-          });
-        }
+        s.value = butcher.canDelete(generator);
       }
     });
+
+    if (s.value.isOk()) {
+      // While don't support undo no need for command here 
+      modelAccess.runWriteAction(new Runnable() {
+        public void run() {
+          // Parameter safeDelete set to false, because safety has been already checked  
+          // and DeleteModuleHelper currently not allow to do it. 
+          new DeleteModuleHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(Collections.singletonList(((SModule) MapSequence.fromMap(_params).get("module"))), false, filesOption.selected);
+        }
+      });
+    } else {
+      Messages.showErrorDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), s.value.getMessage(), "Deleting Generator");
+    }
   }
 }
