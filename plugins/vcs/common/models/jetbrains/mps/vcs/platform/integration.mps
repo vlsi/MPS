@@ -10132,179 +10132,153 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="4qk_0lIs1ah" role="3cqZAp">
-          <node concept="2ShNRf" id="4qk_0lIs1ai" role="3cqZAk">
-            <node concept="YeOm9" id="4qk_0lIs1aj" role="2ShVmc">
-              <node concept="1Y3b0j" id="4qk_0lIs1ak" role="YeSDq">
-                <property role="2bfB8j" value="true" />
-                <property role="1sVAO0" value="false" />
-                <property role="1EXbeo" value="false" />
-                <ref role="1Y3XeK" to="dxuu:~AbstractAction" resolve="AbstractAction" />
-                <ref role="37wK5l" to="dxuu:~AbstractAction.&lt;init&gt;(java.lang.String)" resolve="AbstractAction" />
-                <node concept="3Tm1VV" id="4qk_0lIs1al" role="1B3o_S" />
-                <node concept="3clFb_" id="4qk_0lIs1am" role="jymVt">
-                  <property role="TrG5h" value="actionPerformed" />
-                  <property role="DiZV1" value="false" />
-                  <property role="od$2w" value="false" />
-                  <node concept="2AHcQZ" id="4qk_0lIs1an" role="2AJF6D">
-                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                  </node>
-                  <node concept="37vLTG" id="4qk_0lIs1ao" role="3clF46">
-                    <property role="TrG5h" value="e" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="4qk_0lIs1ap" role="1tU5fm">
-                      <ref role="3uigEE" to="hyam:~ActionEvent" resolve="ActionEvent" />
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="4qk_0lIs1aq" role="3clF47">
-                    <node concept="3clFbJ" id="4qk_0lIs1ar" role="3cqZAp">
-                      <node concept="3clFbC" id="4qk_0lIs1as" role="3clFbw">
-                        <node concept="37vLTw" id="4qk_0lIs1at" role="3uHU7B">
-                          <ref role="3cqZAo" node="4qk_0lIli9o" resolve="result" />
+        <node concept="3KaCP$" id="18Ub5ANGWgk" role="3cqZAp">
+          <node concept="37vLTw" id="18Ub5ANGY1i" role="3KbGdf">
+            <ref role="3cqZAo" node="4qk_0lIli9o" resolve="result" />
+          </node>
+          <node concept="3KbdKl" id="18Ub5ANHWUL" role="3KbHQx">
+            <node concept="Rm8GO" id="18Ub5ANHWUM" role="3Kbmr1">
+              <ref role="Rm8GQ" to="o8e1:~MergeResult.CANCEL" resolve="CANCEL" />
+              <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
+            </node>
+            <node concept="3clFbS" id="18Ub5ANHWUN" role="3Kbo56">
+              <node concept="3cpWs6" id="18Ub5ANHWUO" role="3cqZAp">
+                <node concept="2ShNRf" id="18Ub5ANHWUP" role="3cqZAk">
+                  <node concept="YeOm9" id="18Ub5ANHWUQ" role="2ShVmc">
+                    <node concept="1Y3b0j" id="18Ub5ANHWUR" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" to="dxuu:~AbstractAction" resolve="AbstractAction" />
+                      <ref role="37wK5l" to="dxuu:~AbstractAction.&lt;init&gt;(java.lang.String)" resolve="AbstractAction" />
+                      <node concept="3Tm1VV" id="18Ub5ANHWUS" role="1B3o_S" />
+                      <node concept="3clFb_" id="18Ub5ANHWUT" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="TrG5h" value="actionPerformed" />
+                        <property role="DiZV1" value="false" />
+                        <property role="od$2w" value="false" />
+                        <node concept="3Tm1VV" id="18Ub5ANHWUU" role="1B3o_S" />
+                        <node concept="3cqZAl" id="18Ub5ANHWUV" role="3clF45" />
+                        <node concept="37vLTG" id="18Ub5ANHWUW" role="3clF46">
+                          <property role="TrG5h" value="e" />
+                          <node concept="3uibUv" id="18Ub5ANHWUX" role="1tU5fm">
+                            <ref role="3uigEE" to="hyam:~ActionEvent" resolve="ActionEvent" />
+                          </node>
                         </node>
-                        <node concept="Rm8GO" id="4qk_0lIs1bi" role="3uHU7w">
-                          <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
-                          <ref role="Rm8GQ" to="o8e1:~MergeResult.CANCEL" resolve="CANCEL" />
-                        </node>
-                      </node>
-                      <node concept="9aQIb" id="4qk_0lIs1aN" role="9aQIa">
-                        <node concept="3clFbS" id="4qk_0lIs1aO" role="9aQI4">
-                          <node concept="3clFbJ" id="4qk_0lIs1aP" role="3cqZAp">
-                            <node concept="3clFbC" id="4qk_0lIy1TV" role="3clFbw">
-                              <node concept="37vLTw" id="4qk_0lIs1aR" role="3uHU7B">
-                                <ref role="3cqZAo" node="4qk_0lIli9o" resolve="result" />
-                              </node>
-                              <node concept="Rm8GO" id="4qk_0lIs1bn" role="3uHU7w">
-                                <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
-                                <ref role="Rm8GQ" to="o8e1:~MergeResult.RESOLVED" resolve="RESOLVED" />
-                              </node>
+                        <node concept="3clFbS" id="18Ub5ANHWUY" role="3clF47">
+                          <node concept="3clFbJ" id="18Ub5ANHWUZ" role="3cqZAp">
+                            <node concept="1rXfSq" id="18Ub5ANHWV0" role="3clFbw">
+                              <ref role="37wK5l" node="4qk_0lIsdhS" resolve="allowCancel" />
                             </node>
-                            <node concept="9aQIb" id="4qk_0lIs1aV" role="9aQIa">
-                              <node concept="3clFbS" id="4qk_0lIs1aW" role="9aQI4">
-                                <node concept="3SKdUt" id="4qk_0lIs1b4" role="3cqZAp">
-                                  <node concept="3SKdUq" id="4qk_0lIs1b3" role="3SKWNk">
-                                    <property role="3SKdUp" value="accept LEFT or RIGHT" />
+                            <node concept="3clFbS" id="18Ub5ANHWV1" role="3clFbx">
+                              <node concept="3clFbF" id="18Ub5ANHWV2" role="3cqZAp">
+                                <node concept="2OqwBi" id="18Ub5ANHWV3" role="3clFbG">
+                                  <node concept="37vLTw" id="18Ub5ANHWV4" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4qk_0lIs3Li" resolve="myMergeContext" />
                                   </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbS" id="4qk_0lIs1aU" role="3clFbx">
-                              <node concept="3clFbJ" id="4qk_0lIvgUV" role="3cqZAp">
-                                <node concept="3clFbS" id="4qk_0lIvgUX" role="3clFbx">
-                                  <node concept="3cpWs6" id="4qk_0lIvjAl" role="3cqZAp" />
-                                </node>
-                                <node concept="3fqX7Q" id="4qk_0lIvi6H" role="3clFbw">
-                                  <node concept="1eOMI4" id="4qk_0lIviJD" role="3fr31v">
-                                    <node concept="2OqwBi" id="4qk_0lIvi6J" role="1eOMHV">
-                                      <node concept="37vLTw" id="4qk_0lIvi6K" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="4qk_0lIoFF5" resolve="myPanel" />
-                                      </node>
-                                      <node concept="liA8E" id="4qk_0lIvi6L" role="2OqNvi">
-                                        <ref role="37wK5l" to="wenr:4qk_0lIurZq" resolve="saveResults" />
-                                      </node>
+                                  <node concept="liA8E" id="18Ub5ANHWV5" role="2OqNvi">
+                                    <ref role="37wK5l" to="o8e1:~MergeContext.finishMerge(com.intellij.diff.merge.MergeResult):void" resolve="finishMerge" />
+                                    <node concept="Rm8GO" id="18Ub5ANHWV6" role="37wK5m">
+                                      <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
+                                      <ref role="Rm8GQ" to="o8e1:~MergeResult.CANCEL" resolve="CANCEL" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="3SKdUt" id="4qk_0lIs1b8" role="3cqZAp">
-                            <node concept="3SKdUq" id="4qk_0lIs1b7" role="3SKWNk">
-                              <property role="3SKdUp" value="can't call finishMerge(LEFT/RIGHT) directly, as we want MergeRequest to keep final result untouched." />
-                            </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="18Ub5ANIcmJ" role="37wK5m">
+                        <ref role="3cqZAo" node="4qk_0lIs1aa" resolve="caption" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3KbdKl" id="18Ub5ANGYbL" role="3KbHQx">
+            <node concept="Rm8GO" id="18Ub5ANI0nJ" role="3Kbmr1">
+              <ref role="Rm8GQ" to="o8e1:~MergeResult.RESOLVED" resolve="RESOLVED" />
+              <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
+            </node>
+            <node concept="3clFbS" id="18Ub5ANGYbN" role="3Kbo56">
+              <node concept="3cpWs6" id="18Ub5ANH6Y_" role="3cqZAp">
+                <node concept="2ShNRf" id="18Ub5ANH95E" role="3cqZAk">
+                  <node concept="YeOm9" id="18Ub5ANHEyj" role="2ShVmc">
+                    <node concept="1Y3b0j" id="18Ub5ANHEym" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" to="dxuu:~AbstractAction" resolve="AbstractAction" />
+                      <ref role="37wK5l" to="dxuu:~AbstractAction.&lt;init&gt;(java.lang.String)" resolve="AbstractAction" />
+                      <node concept="3Tm1VV" id="18Ub5ANHEyn" role="1B3o_S" />
+                      <node concept="3clFb_" id="18Ub5ANHEyE" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="TrG5h" value="actionPerformed" />
+                        <property role="DiZV1" value="false" />
+                        <property role="od$2w" value="false" />
+                        <node concept="3Tm1VV" id="18Ub5ANHEyF" role="1B3o_S" />
+                        <node concept="3cqZAl" id="18Ub5ANHEyH" role="3clF45" />
+                        <node concept="37vLTG" id="18Ub5ANHEyI" role="3clF46">
+                          <property role="TrG5h" value="e" />
+                          <node concept="3uibUv" id="18Ub5ANHEyJ" role="1tU5fm">
+                            <ref role="3uigEE" to="hyam:~ActionEvent" resolve="ActionEvent" />
                           </node>
-                          <node concept="3SKdUt" id="4qk_0lIs1ba" role="3cqZAp">
-                            <node concept="3SKdUq" id="4qk_0lIs1b9" role="3SKWNk">
-                              <property role="3SKdUp" value="we can't just accept old byte[] content, because this could break model" />
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="4qk_0lIs1aX" role="3cqZAp">
-                            <node concept="2OqwBi" id="4qk_0lIs421" role="3clFbG">
-                              <node concept="37vLTw" id="4qk_0lIs420" role="2Oq$k0">
-                                <ref role="3cqZAo" node="4qk_0lIs3Li" resolve="myMergeContext" />
-                              </node>
-                              <node concept="liA8E" id="4qk_0lIs422" role="2OqNvi">
-                                <ref role="37wK5l" to="o8e1:~MergeContext.finishMerge(com.intellij.diff.merge.MergeResult):void" resolve="finishMerge" />
-                                <node concept="Rm8GO" id="4qk_0lIs1bw" role="37wK5m">
-                                  <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
-                                  <ref role="Rm8GQ" to="o8e1:~MergeResult.RESOLVED" resolve="RESOLVED" />
+                        </node>
+                        <node concept="3clFbS" id="18Ub5ANHEyK" role="3clF47">
+                          <node concept="3clFbJ" id="18Ub5ANHNzy" role="3cqZAp">
+                            <node concept="3clFbS" id="18Ub5ANHNz$" role="3clFbx">
+                              <node concept="3clFbF" id="18Ub5ANHSJk" role="3cqZAp">
+                                <node concept="2OqwBi" id="18Ub5ANHTDT" role="3clFbG">
+                                  <node concept="37vLTw" id="18Ub5ANHSJi" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4qk_0lIs3Li" resolve="myMergeContext" />
+                                  </node>
+                                  <node concept="liA8E" id="18Ub5ANHU4c" role="2OqNvi">
+                                    <ref role="37wK5l" to="o8e1:~MergeContext.finishMerge(com.intellij.diff.merge.MergeResult):void" resolve="finishMerge" />
+                                    <node concept="Rm8GO" id="18Ub5ANI26U" role="37wK5m">
+                                      <ref role="Rm8GQ" to="o8e1:~MergeResult.RESOLVED" resolve="RESOLVED" />
+                                      <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="4qk_0lIs1aw" role="3clFbx">
-                        <node concept="3clFbJ" id="4qk_0lIs1ax" role="3cqZAp">
-                          <node concept="3fqX7Q" id="4qk_0lIsfnw" role="3clFbw">
-                            <node concept="1rXfSq" id="4qk_0lIsfny" role="3fr31v">
-                              <ref role="37wK5l" node="4qk_0lIsdhS" resolve="allowCancel" />
-                            </node>
-                          </node>
-                          <node concept="3clFbS" id="4qk_0lIs1aI" role="3clFbx">
-                            <node concept="3cpWs6" id="4qk_0lIs1aJ" role="3cqZAp" />
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="4qk_0lIs1aK" role="3cqZAp">
-                          <node concept="2OqwBi" id="4qk_0lIs4df" role="3clFbG">
-                            <node concept="37vLTw" id="4qk_0lIs4de" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4qk_0lIs3Li" resolve="myMergeContext" />
-                            </node>
-                            <node concept="liA8E" id="4qk_0lIs4dg" role="2OqNvi">
-                              <ref role="37wK5l" to="o8e1:~MergeContext.finishMerge(com.intellij.diff.merge.MergeResult):void" resolve="finishMerge" />
-                              <node concept="Rm8GO" id="4qk_0lIs1c2" role="37wK5m">
-                                <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
-                                <ref role="Rm8GQ" to="o8e1:~MergeResult.CANCEL" resolve="CANCEL" />
+                            <node concept="2OqwBi" id="18Ub5ANI3Ug" role="3clFbw">
+                              <node concept="37vLTw" id="18Ub5ANI3Uh" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4qk_0lIoFF5" resolve="myPanel" />
+                              </node>
+                              <node concept="liA8E" id="18Ub5ANI3Ui" role="2OqNvi">
+                                <ref role="37wK5l" to="wenr:4qk_0lIurZq" resolve="saveResults" />
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                    </node>
-                  </node>
-                  <node concept="3Tm1VV" id="4qk_0lIs1b0" role="1B3o_S" />
-                  <node concept="3cqZAl" id="4qk_0lIs1b1" role="3clF45" />
-                </node>
-                <node concept="3clFb_" id="4qk_0lIwQkC" role="jymVt">
-                  <property role="1EzhhJ" value="false" />
-                  <property role="TrG5h" value="isEnabled" />
-                  <property role="DiZV1" value="false" />
-                  <property role="IEkAT" value="false" />
-                  <property role="od$2w" value="false" />
-                  <node concept="3Tm1VV" id="4qk_0lIwQkD" role="1B3o_S" />
-                  <node concept="10P_77" id="4qk_0lIwQkF" role="3clF45" />
-                  <node concept="3clFbS" id="4qk_0lIwQkH" role="3clF47">
-                    <node concept="3clFbF" id="4qk_0lIwSN3" role="3cqZAp">
-                      <node concept="22lmx$" id="4qk_0lIwUDX" role="3clFbG">
-                        <node concept="3clFbC" id="4qk_0lIwW9z" role="3uHU7w">
-                          <node concept="Rm8GO" id="4qk_0lIwXaW" role="3uHU7w">
-                            <ref role="Rm8GQ" to="o8e1:~MergeResult.RESOLVED" resolve="RESOLVED" />
-                            <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
-                          </node>
-                          <node concept="37vLTw" id="4qk_0lIwVxq" role="3uHU7B">
-                            <ref role="3cqZAo" node="4qk_0lIli9o" resolve="result" />
-                          </node>
-                        </node>
-                        <node concept="3clFbC" id="4qk_0lIwTsQ" role="3uHU7B">
-                          <node concept="37vLTw" id="4qk_0lIwSN2" role="3uHU7B">
-                            <ref role="3cqZAo" node="4qk_0lIli9o" resolve="result" />
-                          </node>
-                          <node concept="Rm8GO" id="4qk_0lIwUsf" role="3uHU7w">
-                            <ref role="Rm8GQ" to="o8e1:~MergeResult.CANCEL" resolve="CANCEL" />
-                            <ref role="1Px2BO" to="o8e1:~MergeResult" resolve="MergeResult" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="18Ub5ANIeLl" role="37wK5m">
+                        <ref role="3cqZAo" node="4qk_0lIs1aa" resolve="caption" />
                       </node>
                     </node>
                   </node>
-                  <node concept="2AHcQZ" id="4qk_0lIwQkI" role="2AJF6D">
-                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="4qk_0lIs1b2" role="37wK5m">
-                  <ref role="3cqZAo" node="4qk_0lIs1aa" resolve="caption" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="18Ub5ANH25i" role="3Kb1Dw">
+            <node concept="3SKdUt" id="18Ub5ANI7Y8" role="3cqZAp">
+              <node concept="3SKdUq" id="18Ub5ANI7Ya" role="3SKWNk">
+                <property role="3SKdUp" value="Accept LEFT or Accept RIGHT" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="18Ub5ANI9JR" role="3cqZAp">
+              <node concept="3SKdUq" id="18Ub5ANI9JS" role="3SKWNk">
+                <property role="3SKdUp" value="can't call finishMerge(LEFT/RIGHT) directly, as we probably want accept only one root" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="18Ub5ANI9JT" role="3cqZAp">
+              <node concept="3SKdUq" id="18Ub5ANI9JU" role="3SKWNk">
+                <property role="3SKdUp" value="we can't just accept old byte[] content, because this could break model" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="18Ub5ANH3P1" role="3cqZAp">
+              <node concept="10Nm6u" id="18Ub5ANH5eP" role="3cqZAk" />
             </node>
           </node>
         </node>
