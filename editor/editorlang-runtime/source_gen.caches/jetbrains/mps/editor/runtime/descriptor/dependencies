@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.editor.runtime.descriptor.AbstractCellFactory" file="AbstractCellFactory.java">
+  <dependency className="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" file="AbstractEditorBuilder.java">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCellFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment" />
+  </dependency>
+  <dependency className="jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment" file="EditorBuilderEnvironment.java">
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCellFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>
