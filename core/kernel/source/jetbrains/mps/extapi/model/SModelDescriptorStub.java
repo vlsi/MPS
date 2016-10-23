@@ -203,28 +203,24 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   public void deleteLanguageId(@NotNull SLanguage ref) {
     assertCanChange();
     getSModel().deleteLanguage(ref);
-    validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(Language language) {
     assertCanChange();
     new SModelLegacy(getSModel()).addLanguage(language);
-    validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(@NotNull SLanguage language) {
     assertCanChange();
     getSModel().addLanguage(language);
-    validateModuleLanguageVersions();
   }
 
   @Override
   public void setLanguageImportVersion(@NotNull SLanguage language, int version) {
     assertCanChange();
     getSModel().setLanguageImportVersion(language, version);
-    validateModuleLanguageVersions();
   }
 
   @Override
@@ -243,33 +239,12 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   public final void addDevKit(SModuleReference ref) {
     assertCanChange();
     getSModel().addDevKit(ref);
-    validateModuleLanguageVersions();
   }
 
   @Override
   public final void deleteDevKit(@NotNull SModuleReference ref) {
     assertCanChange();
     getSModel().deleteDevKit(ref);
-    validateModuleLanguageVersions();
-  }
-
-  /**
-   * todo: this is a temporary method helping to keep set of imported languages stored in module in sync with models
-   */
-  @Deprecated
-  private void validateModuleLanguageVersions() {
-    SModule module = getModule();
-    if (module != null && module instanceof AbstractModule) {
-      // this check is a hack needed for generation process where we do not have write access and getRepository() returns null
-      // but getModelDescriptor().getModule().getRepository() is MPSModuleRepository
-      if (getRepository() != null) {
-        // this check is for not to call validateLanguageVersions() where we do not have write access
-        // this can happen if isLoaded() is false, e. g. in textgen
-        if (getRepository().getModelAccess().canWrite()) {
-          ((AbstractModule) module).validateLanguageVersions();
-        }
-      }
-    }
   }
 
   @NotNull

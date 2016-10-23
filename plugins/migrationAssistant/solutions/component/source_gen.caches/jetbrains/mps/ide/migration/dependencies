@@ -267,15 +267,20 @@
     <classNode dependClassName="com.intellij.openapi.application.Application" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEventVisitorAdapter" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelsEventsCollector" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEventVisitor" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.MigrationOutputUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManagerImpl" />
@@ -286,6 +291,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.classloading.MPSClassesListenerAdapter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelLanguageEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.ide.GeneralSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -297,6 +303,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelDevKitEvent" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />

@@ -52,6 +52,13 @@ import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelsEventsCollector;
+import jetbrains.mps.smodel.event.SModelEventVisitor;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.annotations.Nullable;
@@ -82,6 +89,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private ProjectMigrationProperties myProperties;
 
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
+  private MigrationTrigger.MyModelListener myModelListener = new MigrationTrigger.MyModelListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
   private boolean myListenersAdded = false;
@@ -147,7 +155,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a52(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a62(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -376,8 +384,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   }
 
   private class MyRepoListener extends SRepositoryContentAdapter {
-    public MyRepoListener() {
-    }
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
@@ -401,11 +407,41 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       }
       postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
     }
+
+    @Override
+    protected void startListening(SModel model) {
+      super.startListening(model);
+      myModelListener.startListeningToModel(model);
+    }
+    @Override
+    protected void stopListening(SModel model) {
+      super.stopListening(model);
+      myModelListener.stopListeningToModel(model);
+    }
+  }
+
+  private class MyModelListener extends ModelsEventsCollector {
+    private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
+      @Override
+      public void visitLanguageEvent(SModelLanguageEvent event) {
+        postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(event.getModel().getModule()));
+      }
+      @Override
+      public void visitDevKitEvent(SModelDevKitEvent event) {
+        postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(event.getModel().getModule()));
+      }
+    };
+    @Override
+    protected void eventsHappened(List<SModelEvent> events) {
+      ListSequence.fromList(events).visitAll(new IVisitor<SModelEvent>() {
+        public void visit(SModelEvent it) {
+          it.accept(myVisitor);
+        }
+      });
+    }
   }
 
   private class MyClassesListener extends MPSClassesListenerAdapter {
-    public MyClassesListener() {
-    }
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
       postponeMigrationIfNeededOnLanguageReload(SetSequence.fromSet(modules).ofType(Language.class));
@@ -442,7 +478,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a52(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0i0a0a0a0b0a0a0a0b0a3a62(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
