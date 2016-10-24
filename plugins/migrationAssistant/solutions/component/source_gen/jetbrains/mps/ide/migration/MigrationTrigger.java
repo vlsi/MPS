@@ -422,13 +422,16 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private class MyModelListener extends ModelsEventsCollector {
     private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
+      private void updateModuleDescriptor(SModule module) {
+        myMigrationManager.doUpdateImportVersions(module);
+      }
       @Override
       public void visitLanguageEvent(SModelLanguageEvent event) {
-        postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(event.getModel().getModule()));
+        updateModuleDescriptor(event.getModel().getModule());
       }
       @Override
       public void visitDevKitEvent(SModelDevKitEvent event) {
-        postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(event.getModel().getModule()));
+        updateModuleDescriptor(event.getModel().getModule());
       }
     };
     @Override
