@@ -22,24 +22,24 @@
       <unit at="13,0,92,0" name="jetbrains.mps.baseLanguage.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="PasteWrappers.java">
-      <unit at="38,49,48,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$2" />
-      <unit at="49,49,59,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$3" />
-      <unit at="25,49,37,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$1" />
-      <unit at="60,49,72,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$4" />
-      <unit at="332,49,344,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$17" />
-      <unit at="345,49,359,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$18" />
-      <unit at="73,49,88,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$5" />
-      <unit at="89,49,104,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$6" />
-      <unit at="105,49,120,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$7" />
-      <unit at="121,49,136,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$8" />
-      <unit at="155,49,170,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$10" />
-      <unit at="137,49,154,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$9" />
-      <unit at="171,49,188,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$11" />
-      <unit at="189,49,206,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$12" />
-      <unit at="238,49,265,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$14" />
-      <unit at="207,49,237,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$13" />
-      <unit at="266,49,298,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$15" />
-      <unit at="299,49,331,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$null$16" />
+      <unit at="38,49,48,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$2" />
+      <unit at="49,49,59,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$3" />
+      <unit at="25,49,37,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$1" />
+      <unit at="60,49,72,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$4" />
+      <unit at="332,49,344,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$17" />
+      <unit at="345,49,359,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$18" />
+      <unit at="73,49,88,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$5" />
+      <unit at="89,49,104,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$6" />
+      <unit at="105,49,120,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$7" />
+      <unit at="121,49,136,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$8" />
+      <unit at="155,49,170,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$10" />
+      <unit at="137,49,154,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$9" />
+      <unit at="171,49,188,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$11" />
+      <unit at="189,49,206,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$12" />
+      <unit at="238,49,265,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$14" />
+      <unit at="207,49,237,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$13" />
+      <unit at="266,49,298,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$15" />
+      <unit at="299,49,331,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$16" />
       <unit at="22,0,363,0" name="jetbrains.mps.baseLanguage.actions.PasteWrappers" />
     </file>
     <file name="QueriesGenerated.java">
@@ -1007,8 +1007,8 @@
         <var name="member" id="6224545524879181012" />
         <var name="pattern" id="1296460694774881151" />
       </scope>
-      <unit id="6224545524898267583" at="25,77,29,5" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper$null$1" />
-      <unit id="3849351486103949421" at="36,230,40,5" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper$null$2" />
+      <unit id="6224545524898267583" at="25,77,29,5" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper$1" />
+      <unit id="3849351486103949421" at="36,230,40,5" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper$2" />
       <unit id="1296460694774881120" at="21,0,113,0" name="jetbrains.mps.baseLanguage.actions.IncompleteMemberHelper" />
     </file>
   </root>
@@ -1681,16 +1681,16 @@
         <var name="newNode" id="4920206213431828559" />
         <var name="sampleNode" id="4920206213431824990" />
       </scope>
-      <unit id="4920206213429823737" at="31,99,35,5" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$1" />
-      <unit id="4920206213431854462" at="41,284,45,7" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$2" />
-      <unit id="5310486143849880914" at="100,419,104,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$3" />
-      <unit id="5310486143849880925" at="104,26,108,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$4" />
-      <unit id="5310486143849880949" at="109,439,113,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$5" />
-      <unit id="5310486143849880960" at="113,26,117,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$6" />
-      <unit id="2442451895798503113" at="141,419,145,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$7" />
-      <unit id="2442451895798563103" at="145,26,149,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$8" />
-      <unit id="2442451895798587418" at="150,439,154,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$9" />
-      <unit id="2442451895798587429" at="154,26,158,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$null$10" />
+      <unit id="4920206213429823737" at="31,99,35,5" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$1" />
+      <unit id="4920206213431854462" at="41,284,45,7" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$2" />
+      <unit id="5310486143849880914" at="100,419,104,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$3" />
+      <unit id="5310486143849880925" at="104,26,108,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$4" />
+      <unit id="5310486143849880949" at="109,439,113,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$5" />
+      <unit id="5310486143849880960" at="113,26,117,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$6" />
+      <unit id="2442451895798503113" at="141,419,145,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$7" />
+      <unit id="2442451895798563103" at="145,26,149,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$8" />
+      <unit id="2442451895798587418" at="150,439,154,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$9" />
+      <unit id="2442451895798587429" at="154,26,158,11" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$10" />
       <unit id="4920206213429821380" at="24,0,254,0" name="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils" />
     </file>
   </root>
@@ -1868,8 +1868,8 @@
       <scope id="5948027493683148075" at="26,0,72,0">
         <var name="pastedNode" id="5948027493683148075" />
       </scope>
-      <unit id="8029744757020228986" at="28,248,32,5" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$null$1" />
-      <unit id="8029744757020496323" at="56,173,60,11" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$null$2" />
+      <unit id="8029744757020228986" at="28,248,32,5" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$1" />
+      <unit id="8029744757020496323" at="56,173,60,11" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$2" />
       <unit id="5948027493683148075" at="22,0,73,0" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1" />
     </file>
   </root>

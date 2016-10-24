@@ -487,7 +487,7 @@
       <scope id="9118878263582100185" at="56,0,78,0">
         <var name="refactoringContext" id="9118878263582100185" />
       </scope>
-      <unit id="5938312768538404215" at="38,74,53,5" name="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$null$1" />
+      <unit id="5938312768538404215" at="38,74,53,5" name="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$1" />
       <unit id="9118878263582100185" at="24,0,117,0" name="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" />
     </file>
     <file name="MakeFieldStatic_Target.java">

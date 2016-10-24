@@ -25,8 +25,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="1319,49,1329,7" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$null$1" />
-      <unit at="1358,60,1374,7" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$null$2" />
+      <unit at="1319,49,1329,7" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$1" />
+      <unit at="1358,60,1374,7" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$2" />
       <unit at="1536,0,1568,0" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
       <unit at="1568,0,1601,0" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
       <unit at="1378,0,1416,0" name="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
@@ -404,7 +404,7 @@
         <var name="status" id="1175517296787" />
         <var name="typeCheckingContext" id="1175517296787" />
       </scope>
-      <unit id="6460384142106875656" at="27,50,76,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_BaseAssignmentExpression_InferenceRule$null$1" />
+      <unit id="6460384142106875656" at="27,50,76,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_BaseAssignmentExpression_InferenceRule$1" />
       <unit id="1175517296787" at="18,0,101,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_BaseAssignmentExpression_InferenceRule" />
     </file>
   </root>
@@ -532,7 +532,7 @@
         <var name="typeCheckingContext" id="1175522835145" />
       </scope>
       <unit id="3096905448804004959" at="32,58,45,13" name="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule$1$1" />
-      <unit id="3096905448804004245" at="28,51,48,7" name="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule$null$1" />
+      <unit id="3096905448804004245" at="28,51,48,7" name="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule$1" />
       <unit id="1175522835145" at="17,0,67,0" name="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule" />
     </file>
   </root>
@@ -2878,15 +2878,15 @@
         <var name="throwables" id="1210182111348" />
         <var name="typeCheckingContext" id="1210182111329" />
       </scope>
-      <unit id="4460871289557451587" at="556,54,560,5" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$4" />
-      <unit id="4460871289557452695" at="584,66,588,17" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$5" />
-      <unit id="4460871289557452897" at="602,68,606,19" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$6" />
-      <unit id="4460871289557453764" at="619,72,623,23" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$7" />
-      <unit id="5380162141339274295" at="390,49,398,7" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$3" />
-      <unit id="1220347102532" at="336,67,350,19" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$2" />
+      <unit id="4460871289557451587" at="556,54,560,5" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$4" />
+      <unit id="4460871289557452695" at="584,66,588,17" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$5" />
+      <unit id="4460871289557452897" at="602,68,606,19" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$6" />
+      <unit id="4460871289557453764" at="619,72,623,23" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$7" />
+      <unit id="5380162141339274295" at="390,49,398,7" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$3" />
+      <unit id="1220347102532" at="336,67,350,19" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$2" />
       <unit id="1227876792379" at="82,23,162,13" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$1$1$1" />
       <unit id="1227876792379" at="80,19,164,9" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$1$1" />
-      <unit id="1227876792379" at="78,110,166,5" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$null$1" />
+      <unit id="1227876792379" at="78,110,166,5" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage$1" />
       <unit id="1176897069499" at="48,0,814,0" name="jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage" />
     </file>
   </root>
@@ -5800,7 +5800,7 @@
         <var name="status" id="1194623838236" />
         <var name="typeCheckingContext" id="1194623838236" />
       </scope>
-      <unit id="5449655299304737728" at="65,236,76,5" name="jetbrains.mps.baseLanguage.typesystem.typeof_AnonymousClass_InferenceRule$null$1" />
+      <unit id="5449655299304737728" at="65,236,76,5" name="jetbrains.mps.baseLanguage.typesystem.typeof_AnonymousClass_InferenceRule$1" />
       <unit id="1194623838236" at="35,0,150,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_AnonymousClass_InferenceRule" />
     </file>
   </root>
@@ -6157,7 +6157,7 @@
         <var name="status" id="1197029977451" />
         <var name="typeCheckingContext" id="1197029977451" />
       </scope>
-      <unit id="2635728088959155032" at="40,47,62,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_FieldReferenceOperation_InferenceRule$null$1" />
+      <unit id="2635728088959155032" at="40,47,62,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_FieldReferenceOperation_InferenceRule$1" />
       <unit id="1197029977451" at="24,0,83,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_FieldReferenceOperation_InferenceRule" />
     </file>
   </root>
@@ -6221,7 +6221,7 @@
         <var name="status" id="1197313434315" />
         <var name="typeCheckingContext" id="1197313434315" />
       </scope>
-      <unit id="1227876801253" at="35,145,39,7" name="jetbrains.mps.baseLanguage.typesystem.check_ConceptFunctionParameter_NonTypesystemRule$null$1" />
+      <unit id="1227876801253" at="35,145,39,7" name="jetbrains.mps.baseLanguage.typesystem.check_ConceptFunctionParameter_NonTypesystemRule$1" />
       <unit id="1197313434315" at="23,0,58,0" name="jetbrains.mps.baseLanguage.typesystem.check_ConceptFunctionParameter_NonTypesystemRule" />
     </file>
   </root>
@@ -6773,7 +6773,7 @@
         <var name="typeCheckingContext" id="1204056354664" />
       </scope>
       <unit id="3058438378413428023" at="158,58,177,19" name="jetbrains.mps.baseLanguage.typesystem.typeof_InstanceMethodCallOperation_InferenceRule$1$1" />
-      <unit id="4107091686347739849" at="68,47,200,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_InstanceMethodCallOperation_InferenceRule$null$1" />
+      <unit id="4107091686347739849" at="68,47,200,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_InstanceMethodCallOperation_InferenceRule$1" />
       <unit id="1204056354664" at="35,0,227,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_InstanceMethodCallOperation_InferenceRule" />
     </file>
   </root>
@@ -7587,7 +7587,7 @@
         <var name="status" id="1212689018464" />
         <var name="typeCheckingContext" id="1212689018464" />
       </scope>
-      <unit id="9033423951293505962" at="115,52,130,13" name="jetbrains.mps.baseLanguage.typesystem.typeof_IMethodCall_InferenceRule$null$1" />
+      <unit id="9033423951293505962" at="115,52,130,13" name="jetbrains.mps.baseLanguage.typesystem.typeof_IMethodCall_InferenceRule$1" />
       <unit id="1212689018464" at="30,0,170,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_IMethodCall_InferenceRule" />
     </file>
   </root>
@@ -7871,8 +7871,8 @@
         <var name="status" id="1212781547110" />
         <var name="typeCheckingContext" id="1212781547110" />
       </scope>
-      <unit id="2432481583491249969" at="55,206,59,5" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassCreator_InferenceRule$null$1" />
-      <unit id="4340163696365984464" at="93,231,104,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassCreator_InferenceRule$null$2" />
+      <unit id="2432481583491249969" at="55,206,59,5" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassCreator_InferenceRule$1" />
+      <unit id="4340163696365984464" at="93,231,104,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassCreator_InferenceRule$2" />
       <unit id="1212781547110" at="36,0,213,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassCreator_InferenceRule" />
     </file>
   </root>
@@ -8145,9 +8145,9 @@
       <scope id="1216647860300" at="30,0,113,0">
         <var name="node" id="1216647860300" />
       </scope>
-      <unit id="3021057898025376071" at="35,260,39,7" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$null$1" />
-      <unit id="7778014252725745937" at="41,239,45,9" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$null$2" />
-      <unit id="3791421401066043114" at="97,202,101,7" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$null$3" />
+      <unit id="3021057898025376071" at="35,260,39,7" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$1" />
+      <unit id="7778014252725745937" at="41,239,45,9" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$2" />
+      <unit id="3791421401066043114" at="97,202,101,7" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$3" />
       <unit id="1216647860300" at="23,0,117,0" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix" />
     </file>
   </root>
@@ -8517,7 +8517,7 @@
         <var name="status" id="1221637809819" />
         <var name="typeCheckingContext" id="1221637809819" />
       </scope>
-      <unit id="5311397501650826076" at="46,827,50,5" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassConcept_NonTypesystemRule$null$1" />
+      <unit id="5311397501650826076" at="46,827,50,5" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassConcept_NonTypesystemRule$1" />
       <unit id="1221637809819" at="25,0,78,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_ClassConcept_NonTypesystemRule" />
     </file>
   </root>
@@ -10195,11 +10195,11 @@
         <var name="status" id="1239631684045" />
         <var name="typeCheckingContext" id="1239631684045" />
       </scope>
-      <unit id="7970711249077252093" at="29,85,33,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$null$1" />
-      <unit id="1466384023878382079" at="37,288,41,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$null$2" />
-      <unit id="7970711249077252050" at="43,93,47,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$null$3" />
-      <unit id="6582171520145974381" at="48,101,52,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$null$4" />
-      <unit id="2359846675288216147" at="53,138,57,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$null$5" />
+      <unit id="7970711249077252093" at="29,85,33,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$1" />
+      <unit id="1466384023878382079" at="37,288,41,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$2" />
+      <unit id="7970711249077252050" at="43,93,47,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$3" />
+      <unit id="6582171520145974381" at="48,101,52,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$4" />
+      <unit id="2359846675288216147" at="53,138,57,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule$5" />
       <unit id="1239631684045" at="19,0,71,0" name="jetbrains.mps.baseLanguage.typesystem.check_FieldIsNeverUsedOrAssigned_NonTypesystemRule" />
     </file>
   </root>
@@ -10284,7 +10284,7 @@
         <var name="status" id="1239715048280" />
         <var name="typeCheckingContext" id="1239715048280" />
       </scope>
-      <unit id="8115179208171660073" at="32,53,52,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_AbstractUnaryNumberOperation_InferenceRule$null$1" />
+      <unit id="8115179208171660073" at="32,53,52,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_AbstractUnaryNumberOperation_InferenceRule$1" />
       <unit id="1239715048280" at="21,0,72,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_AbstractUnaryNumberOperation_InferenceRule" />
     </file>
   </root>
@@ -10718,7 +10718,7 @@
       </scope>
       <unit id="1387988544209571103" at="36,188,41,17" name="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$1$1$1" />
       <unit id="1387988544209571098" at="34,60,55,13" name="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$1$1" />
-      <unit id="1387988544209571096" at="30,53,58,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$null$1" />
+      <unit id="1387988544209571096" at="30,53,58,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$1" />
       <unit id="1387988544209571090" at="21,0,71,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule" />
     </file>
   </root>
@@ -11226,8 +11226,8 @@
         <var name="node2" id="185741718243562924" />
         <var name="status" id="185741718243562924" />
       </scope>
-      <unit id="185741718243692370" at="21,601,25,5" name="jetbrains.mps.baseLanguage.typesystem.ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule$null$1" />
-      <unit id="185741718243692381" at="25,202,29,5" name="jetbrains.mps.baseLanguage.typesystem.ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule$null$2" />
+      <unit id="185741718243692370" at="21,601,25,5" name="jetbrains.mps.baseLanguage.typesystem.ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule$1" />
+      <unit id="185741718243692381" at="25,202,29,5" name="jetbrains.mps.baseLanguage.typesystem.ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule$2" />
       <unit id="185741718243562924" at="17,0,52,0" name="jetbrains.mps.baseLanguage.typesystem.ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule" />
     </file>
   </root>
@@ -11472,9 +11472,9 @@
         <var name="status" id="1906502351318602269" />
         <var name="typeCheckingContext" id="1906502351318602269" />
       </scope>
-      <unit id="5182345811510089682" at="28,209,32,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule$null$1" />
-      <unit id="5182345811514307284" at="35,149,39,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule$null$2" />
-      <unit id="5182345811510123169" at="44,75,48,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule$null$3" />
+      <unit id="5182345811510089682" at="28,209,32,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule$1" />
+      <unit id="5182345811514307284" at="35,149,39,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule$2" />
+      <unit id="5182345811510123169" at="44,75,48,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule$3" />
       <unit id="1906502351318602269" at="22,0,72,0" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule" />
     </file>
   </root>
@@ -11988,10 +11988,10 @@
         <var name="status" id="210678645606745236" />
         <var name="typeCheckingContext" id="210678645606745236" />
       </scope>
-      <unit id="1879781745552372968" at="28,298,32,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$null$1" />
-      <unit id="8263928360993106287" at="32,23,36,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$null$2" />
+      <unit id="1879781745552372968" at="28,298,32,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$1" />
+      <unit id="8263928360993106287" at="32,23,36,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$2" />
       <unit id="1879781745551342048" at="38,341,42,11" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$3$1" />
-      <unit id="8263928360993128627" at="36,17,44,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$null$3" />
+      <unit id="8263928360993128627" at="36,17,44,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule$3" />
       <unit id="210678645606745236" at="23,0,84,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule" />
     </file>
   </root>
@@ -12298,8 +12298,8 @@
         <var name="status" id="2235632002330538635" />
         <var name="typeCheckingContext" id="2235632002330538635" />
       </scope>
-      <unit id="2235632002330851508" at="47,423,51,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededJavaImports_NonTypesystemRule$null$1" />
-      <unit id="2235632002330720130" at="51,20,56,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededJavaImports_NonTypesystemRule$null$2" />
+      <unit id="2235632002330851508" at="47,423,51,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededJavaImports_NonTypesystemRule$1" />
+      <unit id="2235632002330720130" at="51,20,56,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededJavaImports_NonTypesystemRule$2" />
       <unit id="2235632002330538635" at="38,0,139,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededJavaImports_NonTypesystemRule" />
     </file>
   </root>
@@ -12569,9 +12569,9 @@
         <var name="typeCheckingContext" id="2359846675283864901" />
         <var name="variableReference" id="2359846675283864901" />
       </scope>
-      <unit id="8129007564265948170" at="59,330,63,11" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule$null$1" />
-      <unit id="8129007564265948186" at="63,24,67,11" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule$null$2" />
-      <unit id="1855868101956489542" at="68,60,72,11" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule$null$3" />
+      <unit id="8129007564265948170" at="59,330,63,11" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule$1" />
+      <unit id="8129007564265948186" at="63,24,67,11" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule$2" />
+      <unit id="1855868101956489542" at="68,60,72,11" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule$3" />
       <unit id="2359846675283864901" at="27,0,106,0" name="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule" />
     </file>
   </root>
@@ -12698,7 +12698,7 @@
         <var name="status" id="2364881513287566301" />
         <var name="typeCheckingContext" id="2364881513287566301" />
       </scope>
-      <unit id="2364881513287728124" at="37,51,41,5" name="jetbrains.mps.baseLanguage.typesystem.check_ArrayLength_NonTypesystemRule$null$1" />
+      <unit id="2364881513287728124" at="37,51,41,5" name="jetbrains.mps.baseLanguage.typesystem.check_ArrayLength_NonTypesystemRule$1" />
       <unit id="2364881513287566301" at="25,0,69,0" name="jetbrains.mps.baseLanguage.typesystem.check_ArrayLength_NonTypesystemRule" />
     </file>
   </root>
@@ -12784,7 +12784,7 @@
         <var name="status" id="2557916264117500036" />
         <var name="typeCheckingContext" id="2557916264117500036" />
       </scope>
-      <unit id="2557916264118046403" at="26,355,33,7" name="jetbrains.mps.baseLanguage.typesystem.check_IfStatementBooleanConstantInCondition_NonTypesystemRule$null$1" />
+      <unit id="2557916264118046403" at="26,355,33,7" name="jetbrains.mps.baseLanguage.typesystem.check_IfStatementBooleanConstantInCondition_NonTypesystemRule$1" />
       <unit id="2557916264117500036" at="21,0,46,0" name="jetbrains.mps.baseLanguage.typesystem.check_IfStatementBooleanConstantInCondition_NonTypesystemRule" />
     </file>
   </root>
@@ -13849,8 +13849,8 @@
         <var name="typeCheckingContext" id="2970924421776812195" />
         <var name="typeVariableDeclaration" id="2970924421776812195" />
       </scope>
-      <unit id="2970924421777027465" at="24,124,28,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationDuplicateName_NonTypesystemRule$null$1" />
-      <unit id="2970924421777027483" at="28,15,32,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationDuplicateName_NonTypesystemRule$null$2" />
+      <unit id="2970924421777027465" at="24,124,28,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationDuplicateName_NonTypesystemRule$1" />
+      <unit id="2970924421777027483" at="28,15,32,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationDuplicateName_NonTypesystemRule$2" />
       <unit id="2970924421776812195" at="20,0,55,0" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationDuplicateName_NonTypesystemRule" />
     </file>
   </root>
@@ -14029,7 +14029,7 @@
         <var name="typeCheckingContext" id="3073231036166000665" />
         <var name="usingStatement" id="3073231036166000665" />
       </scope>
-      <unit id="3791421401065282679" at="46,134,50,7" name="jetbrains.mps.baseLanguage.typesystem.check_UsingStatement_NonTypesystemRule$null$1" />
+      <unit id="3791421401065282679" at="46,134,50,7" name="jetbrains.mps.baseLanguage.typesystem.check_UsingStatement_NonTypesystemRule$1" />
       <unit id="3073231036166000665" at="27,0,82,0" name="jetbrains.mps.baseLanguage.typesystem.check_UsingStatement_NonTypesystemRule" />
     </file>
   </root>
@@ -14280,9 +14280,9 @@
         <var name="references" id="7581428506283755659" />
         <var name="typeCheckingContext" id="7581428506283755614" />
       </scope>
-      <unit id="8129007564263430334" at="147,326,151,7" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil$null$1" />
-      <unit id="8129007564263430350" at="151,20,155,7" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil$null$2" />
-      <unit id="8129007564263430362" at="157,57,161,7" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil$null$3" />
+      <unit id="8129007564263430334" at="147,326,151,7" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil$1" />
+      <unit id="8129007564263430350" at="151,20,155,7" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil$2" />
+      <unit id="8129007564263430362" at="157,57,161,7" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil$3" />
       <unit id="3084663847510172787" at="31,0,181,0" name="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil" />
     </file>
   </root>
@@ -14529,9 +14529,9 @@
         <var name="typeCheckingContext" id="3151797052696836061" />
         <var name="varRef" id="3151797052696836061" />
       </scope>
-      <unit id="502936544108889491" at="55,105,59,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule$null$1" />
-      <unit id="5230012391903896993" at="106,270,110,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule$null$2" />
-      <unit id="5230012391904397707" at="142,256,146,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule$null$3" />
+      <unit id="502936544108889491" at="55,105,59,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule$1" />
+      <unit id="5230012391903896993" at="106,270,110,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule$2" />
+      <unit id="5230012391904397707" at="142,256,146,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule$3" />
       <unit id="3151797052696836061" at="32,0,177,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstant_NonTypesystemRule" />
     </file>
   </root>
@@ -15403,7 +15403,7 @@
         <var name="status" id="3759381730162150198" />
         <var name="typeCheckingContext" id="3759381730162150198" />
       </scope>
-      <unit id="8512491756795014532" at="66,50,70,9" name="jetbrains.mps.baseLanguage.typesystem.check_CaughtWasThrown_NonTypesystemRule$null$1" />
+      <unit id="8512491756795014532" at="66,50,70,9" name="jetbrains.mps.baseLanguage.typesystem.check_CaughtWasThrown_NonTypesystemRule$1" />
       <unit id="3759381730162150198" at="28,0,117,0" name="jetbrains.mps.baseLanguage.typesystem.check_CaughtWasThrown_NonTypesystemRule" />
     </file>
   </root>
@@ -15566,8 +15566,8 @@
         <var name="status" id="3791846458263577202" />
         <var name="typeCheckingContext" id="3791846458263577202" />
       </scope>
-      <unit id="5899025696847072466" at="115,206,119,7" name="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$null$1" />
-      <unit id="5899025696847072466" at="119,20,123,7" name="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$null$2" />
+      <unit id="5899025696847072466" at="115,206,119,7" name="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$1" />
+      <unit id="5899025696847072466" at="119,20,123,7" name="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$2" />
       <unit id="3791846458263577202" at="34,0,144,0" name="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule" />
     </file>
   </root>
@@ -15945,7 +15945,7 @@
         <var name="typeCheckingContext" id="3860149536565525475" />
       </scope>
       <unit id="3860149536565525520" at="36,167,41,11" name="jetbrains.mps.baseLanguage.typesystem.typeof_UnaryMinus_InferenceRule$1$1" />
-      <unit id="3860149536565525509" at="34,51,55,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_UnaryMinus_InferenceRule$null$1" />
+      <unit id="3860149536565525509" at="34,51,55,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_UnaryMinus_InferenceRule$1" />
       <unit id="3860149536565525475" at="22,0,75,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_UnaryMinus_InferenceRule" />
     </file>
   </root>
@@ -16402,7 +16402,7 @@
         <var name="status" id="4285773203938656490" />
         <var name="typeCheckingContext" id="4285773203938656490" />
       </scope>
-      <unit id="4285773203938754102" at="24,271,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_GetAccessor_NonTypesystemRule$null$1" />
+      <unit id="4285773203938754102" at="24,271,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_GetAccessor_NonTypesystemRule$1" />
       <unit id="4285773203938656490" at="20,0,45,0" name="jetbrains.mps.baseLanguage.typesystem.check_GetAccessor_NonTypesystemRule" />
     </file>
   </root>
@@ -16447,7 +16447,7 @@
         <var name="status" id="4285773203938781999" />
         <var name="typeCheckingContext" id="4285773203938781999" />
       </scope>
-      <unit id="4285773203938782131" at="24,271,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_SetAccessor_NonTypesystemRule$null$1" />
+      <unit id="4285773203938782131" at="24,271,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_SetAccessor_NonTypesystemRule$1" />
       <unit id="4285773203938781999" at="20,0,45,0" name="jetbrains.mps.baseLanguage.typesystem.check_SetAccessor_NonTypesystemRule" />
     </file>
   </root>
@@ -17138,7 +17138,7 @@
         <var name="status" id="4830624418866002372" />
         <var name="typeCheckingContext" id="4830624418866002372" />
       </scope>
-      <unit id="4830624418866323810" at="28,215,39,5" name="jetbrains.mps.baseLanguage.typesystem.check_BaseMethodDeclarationParameterUniqueNames_NonTypesystemRule$null$1" />
+      <unit id="4830624418866323810" at="28,215,39,5" name="jetbrains.mps.baseLanguage.typesystem.check_BaseMethodDeclarationParameterUniqueNames_NonTypesystemRule$1" />
       <unit id="4830624418866002372" at="23,0,51,0" name="jetbrains.mps.baseLanguage.typesystem.check_BaseMethodDeclarationParameterUniqueNames_NonTypesystemRule" />
     </file>
   </root>
@@ -17654,7 +17654,7 @@
       </scope>
       <unit id="4957392803029437221" at="31,188,36,17" name="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule$1$1$1" />
       <unit id="4957392803029437216" at="29,60,50,13" name="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule$1$1" />
-      <unit id="4957392803029437214" at="25,53,53,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule$null$1" />
+      <unit id="4957392803029437214" at="25,53,53,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule$1" />
       <unit id="4957392803029437211" at="19,0,66,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule" />
     </file>
   </root>
@@ -17913,7 +17913,7 @@
         <var name="status" id="498633765600365418" />
         <var name="typeCheckingContext" id="498633765600365418" />
       </scope>
-      <unit id="3136320261468365351" at="26,298,30,5" name="jetbrains.mps.baseLanguage.typesystem.check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule$null$1" />
+      <unit id="3136320261468365351" at="26,298,30,5" name="jetbrains.mps.baseLanguage.typesystem.check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule$1" />
       <unit id="498633765600365418" at="22,0,53,0" name="jetbrains.mps.baseLanguage.typesystem.check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule" />
     </file>
   </root>
@@ -18225,7 +18225,7 @@
         <var name="switchCase" id="5230012391939085018" />
         <var name="typeCheckingContext" id="5230012391939085018" />
       </scope>
-      <unit id="7699938177176554601" at="57,380,61,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstUnderSwitch_NonTypesystemRule$null$1" />
+      <unit id="7699938177176554601" at="57,380,61,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstUnderSwitch_NonTypesystemRule$1" />
       <unit id="5230012391939085018" at="26,0,86,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnqualifiedEnumConstUnderSwitch_NonTypesystemRule" />
     </file>
   </root>
@@ -18320,8 +18320,8 @@
         <var name="status" id="543449459583345868" />
         <var name="typeCheckingContext" id="543449459583345868" />
       </scope>
-      <unit id="2359846675288695562" at="22,335,26,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule$null$1" />
-      <unit id="2359846675288695573" at="26,19,30,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule$null$2" />
+      <unit id="2359846675288695562" at="22,335,26,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule$1" />
+      <unit id="2359846675288695573" at="26,19,30,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule$2" />
       <unit id="543449459583345868" at="17,0,44,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule" />
     </file>
   </root>
@@ -18389,9 +18389,9 @@
         <var name="status" id="543866787085512288" />
         <var name="typeCheckingContext" id="543866787085512288" />
       </scope>
-      <unit id="543866787085641417" at="29,200,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule$null$1" />
-      <unit id="543866787085650612" at="33,17,37,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule$null$2" />
-      <unit id="543866787085723149" at="37,20,44,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule$null$3" />
+      <unit id="543866787085641417" at="29,200,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule$1" />
+      <unit id="543866787085650612" at="33,17,37,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule$2" />
+      <unit id="543866787085723149" at="37,20,44,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule$3" />
       <unit id="543866787085512288" at="21,0,59,0" name="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule" />
     </file>
   </root>
@@ -18760,11 +18760,11 @@
         <var name="status" id="5569019188765049975" />
         <var name="typeCheckingContext" id="5569019188765049975" />
       </scope>
-      <unit id="4837286298389139211" at="51,451,55,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$null$1" />
-      <unit id="4837286298389139220" at="55,19,59,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$null$2" />
-      <unit id="4837286298389139242" at="60,230,64,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$null$3" />
-      <unit id="4837286298389139253" at="64,20,68,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$null$4" />
-      <unit id="4837286298389139262" at="68,19,72,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$null$5" />
+      <unit id="4837286298389139211" at="51,451,55,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$1" />
+      <unit id="4837286298389139220" at="55,19,59,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$2" />
+      <unit id="4837286298389139242" at="60,230,64,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$3" />
+      <unit id="4837286298389139253" at="64,20,68,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$4" />
+      <unit id="4837286298389139262" at="68,19,72,7" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule$5" />
       <unit id="5569019188765049975" at="32,0,168,0" name="jetbrains.mps.baseLanguage.typesystem.typeof_SuperMethodCall_InferenceRule" />
     </file>
   </root>
@@ -19416,7 +19416,7 @@
         <var name="staticMethodCall" id="5977092449933560379" />
         <var name="typeCheckingContext" id="5977092449933508151" />
       </scope>
-      <unit id="5977092449933510823" at="139,52,154,13" name="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil$null$1" />
+      <unit id="5977092449933510823" at="139,52,154,13" name="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil$1" />
       <unit id="5977092449931152541" at="32,0,185,0" name="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil" />
     </file>
   </root>
@@ -19732,7 +19732,7 @@
       <scope id="6468716278885421770" at="26,0,69,0">
         <var name="node" id="6468716278885421770" />
       </scope>
-      <unit id="6468716278888211849" at="38,130,51,5" name="jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix$null$1" />
+      <unit id="6468716278888211849" at="38,130,51,5" name="jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix$1" />
       <unit id="6468716278885421770" at="19,0,70,0" name="jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix" />
     </file>
   </root>
@@ -19879,8 +19879,8 @@
         <var name="status" id="6495695326613132490" />
         <var name="typeCheckingContext" id="6495695326613132490" />
       </scope>
-      <unit id="6495695326613151277" at="42,125,46,5" name="jetbrains.mps.baseLanguage.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule$null$1" />
-      <unit id="6495695326613151306" at="47,278,51,5" name="jetbrains.mps.baseLanguage.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule$null$2" />
+      <unit id="6495695326613151277" at="42,125,46,5" name="jetbrains.mps.baseLanguage.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule$1" />
+      <unit id="6495695326613151306" at="47,278,51,5" name="jetbrains.mps.baseLanguage.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule$2" />
       <unit id="6495695326613132490" at="25,0,69,0" name="jetbrains.mps.baseLanguage.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule" />
     </file>
   </root>
@@ -20139,15 +20139,15 @@
         <var name="typeCheckingContext" id="6640766779590517710" />
         <var name="variableDeclaration" id="6640766779590517710" />
       </scope>
-      <unit id="6640766779590752603" at="38,330,42,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$1" />
-      <unit id="6640766779600136125" at="42,17,46,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$2" />
-      <unit id="4400998065753045675" at="47,534,51,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$3" />
-      <unit id="4400998065753045686" at="51,17,55,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$4" />
-      <unit id="4400998065753090228" at="55,18,59,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$5" />
-      <unit id="6640766779590771324" at="65,44,69,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$6" />
-      <unit id="6640766779591065340" at="72,75,76,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$7" />
-      <unit id="6640766779591079553" at="78,47,82,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$9" />
-      <unit id="4914675704510890939" at="87,164,91,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$null$8" />
+      <unit id="6640766779590752603" at="38,330,42,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$1" />
+      <unit id="6640766779600136125" at="42,17,46,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$2" />
+      <unit id="4400998065753045675" at="47,534,51,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$3" />
+      <unit id="4400998065753045686" at="51,17,55,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$4" />
+      <unit id="4400998065753090228" at="55,18,59,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$5" />
+      <unit id="6640766779590771324" at="65,44,69,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$6" />
+      <unit id="6640766779591065340" at="72,75,76,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$7" />
+      <unit id="6640766779591079553" at="78,47,82,5" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$9" />
+      <unit id="4914675704510890939" at="87,164,91,7" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule$8" />
       <unit id="6640766779590517710" at="27,0,127,0" name="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule" />
     </file>
   </root>
@@ -20190,7 +20190,7 @@
       <scope id="6640766779592686124" at="24,0,40,0">
         <var name="node" id="6640766779592686124" />
       </scope>
-      <unit id="6640766779591423793" at="32,122,37,5" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix$null$1" />
+      <unit id="6640766779591423793" at="32,122,37,5" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix$1" />
       <unit id="6640766779592686124" at="17,0,41,0" name="jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix" />
     </file>
   </root>
@@ -20346,11 +20346,11 @@
         <var name="status" id="6654001062452780370" />
         <var name="typeCheckingContext" id="6654001062452780370" />
       </scope>
-      <unit id="3300216939609201994" at="31,265,35,7" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$null$1" />
-      <unit id="3300216939609202071" at="35,20,39,7" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$null$2" />
-      <unit id="3300216939609201946" at="39,19,43,7" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$null$3" />
-      <unit id="3300216939609202149" at="48,99,52,5" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$null$4" />
-      <unit id="3300216939609202516" at="54,66,58,5" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$null$5" />
+      <unit id="3300216939609201994" at="31,265,35,7" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$1" />
+      <unit id="3300216939609202071" at="35,20,39,7" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$2" />
+      <unit id="3300216939609201946" at="39,19,43,7" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$3" />
+      <unit id="3300216939609202149" at="48,99,52,5" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$4" />
+      <unit id="3300216939609202516" at="54,66,58,5" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$5" />
       <unit id="6654001062452780370" at="24,0,79,0" name="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" />
     </file>
   </root>
@@ -21790,7 +21790,7 @@
       </scope>
       <unit id="7430872850879060682" at="27,300,31,9" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededMethodTypeParameters_NonTypesystemRule$1$1" />
       <unit id="7430872850866089001" at="31,19,35,9" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededMethodTypeParameters_NonTypesystemRule$1$2" />
-      <unit id="7430872850865798319" at="25,231,43,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededMethodTypeParameters_NonTypesystemRule$null$1" />
+      <unit id="7430872850865798319" at="25,231,43,5" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededMethodTypeParameters_NonTypesystemRule$1" />
       <unit id="7430872850865620677" at="21,0,58,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnneededMethodTypeParameters_NonTypesystemRule" />
     </file>
   </root>
@@ -22447,7 +22447,7 @@
         <var name="expectedType" id="6460384142117029476" />
         <var name="expr" id="6460384142117029534" />
       </scope>
-      <unit id="576141512674002945" at="95,52,99,5" name="jetbrains.mps.baseLanguage.typesystem.CheckingUtil$null$1" />
+      <unit id="576141512674002945" at="95,52,99,5" name="jetbrains.mps.baseLanguage.typesystem.CheckingUtil$1" />
       <unit id="7970711249077251764" at="25,0,151,0" name="jetbrains.mps.baseLanguage.typesystem.CheckingUtil" />
     </file>
   </root>
@@ -22583,7 +22583,7 @@
         <var name="status" id="8187342170686159433" />
         <var name="typeCheckingContext" id="8187342170686159433" />
       </scope>
-      <unit id="8187342170686427343" at="24,368,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnonymousClassCreator_NonTypesystemRule$null$1" />
+      <unit id="8187342170686427343" at="24,368,33,5" name="jetbrains.mps.baseLanguage.typesystem.check_AnonymousClassCreator_NonTypesystemRule$1" />
       <unit id="8187342170686159433" at="20,0,45,0" name="jetbrains.mps.baseLanguage.typesystem.check_AnonymousClassCreator_NonTypesystemRule" />
     </file>
   </root>
@@ -22821,10 +22821,10 @@
         <var name="status" id="8263928360994498928" />
         <var name="typeCheckingContext" id="8263928360994498928" />
       </scope>
-      <unit id="9154098648325890043" at="29,112,33,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$null$1" />
-      <unit id="8263928360994499409" at="33,23,37,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$null$2" />
+      <unit id="9154098648325890043" at="29,112,33,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$1" />
+      <unit id="8263928360994499409" at="33,23,37,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$2" />
       <unit id="9154098648325945456" at="39,341,43,11" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$3$1" />
-      <unit id="9154098648325945443" at="37,17,45,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$null$3" />
+      <unit id="9154098648325945443" at="37,17,45,7" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$3" />
       <unit id="8263928360994498928" at="24,0,86,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule" />
     </file>
   </root>
@@ -22894,9 +22894,9 @@
         <var name="typeCheckingContext" id="8302934035192370548" />
         <var name="typeVariableDeclaration" id="8302934035192370548" />
       </scope>
-      <unit id="8302934035192773203" at="27,308,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule$null$1" />
-      <unit id="8302934035192773213" at="31,17,35,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule$null$2" />
-      <unit id="8302934035192773226" at="35,17,39,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule$null$3" />
+      <unit id="8302934035192773203" at="27,308,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule$1" />
+      <unit id="8302934035192773213" at="31,17,35,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule$2" />
+      <unit id="8302934035192773226" at="35,17,39,5" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule$3" />
       <unit id="8302934035192370548" at="23,0,61,0" name="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule" />
     </file>
   </root>
@@ -23103,7 +23103,7 @@
       <unit id="8302934035220882471" at="54,209,58,9" name="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule$1$2" />
       <unit id="3983029200620165587" at="61,239,65,13" name="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule$1$1$1" />
       <unit id="8302934035215399184" at="58,61,67,9" name="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule$1$1" />
-      <unit id="8302934035215292791" at="46,49,75,5" name="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule$null$1" />
+      <unit id="8302934035215292791" at="46,49,75,5" name="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule$1" />
       <unit id="8302934035213966312" at="28,0,99,0" name="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule" />
     </file>
   </root>
@@ -23253,10 +23253,10 @@
         <var name="status" id="8319647327702769215" />
         <var name="typeCheckingContext" id="8319647327702769215" />
       </scope>
-      <unit id="2654404125180583457" at="44,143,48,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$null$1" />
-      <unit id="2654404125180712687" at="48,20,52,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$null$2" />
-      <unit id="7469468981580452447" at="54,58,58,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$null$3" />
-      <unit id="1005490780641953407" at="72,65,76,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$null$4" />
+      <unit id="2654404125180583457" at="44,143,48,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$1" />
+      <unit id="2654404125180712687" at="48,20,52,7" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$2" />
+      <unit id="7469468981580452447" at="54,58,58,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$3" />
+      <unit id="1005490780641953407" at="72,65,76,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule$4" />
       <unit id="8319647327702769215" at="25,0,105,0" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule" />
     </file>
   </root>
@@ -23367,7 +23367,7 @@
         <var name="status" id="8421390612611890857" />
         <var name="typeCheckingContext" id="8421390612611890857" />
       </scope>
-      <unit id="2189527347366190125" at="35,132,39,5" name="jetbrains.mps.baseLanguage.typesystem.CheckExtendedClassIsImported_NonTypesystemRule$null$1" />
+      <unit id="2189527347366190125" at="35,132,39,5" name="jetbrains.mps.baseLanguage.typesystem.CheckExtendedClassIsImported_NonTypesystemRule$1" />
       <unit id="8421390612611890857" at="25,0,68,0" name="jetbrains.mps.baseLanguage.typesystem.CheckExtendedClassIsImported_NonTypesystemRule" />
     </file>
   </root>
@@ -23451,7 +23451,7 @@
         <var name="status" id="843236768047671205" />
         <var name="typeCheckingContext" id="843236768047671205" />
       </scope>
-      <unit id="1466384023878382016" at="45,286,49,9" name="jetbrains.mps.baseLanguage.typesystem.check_FinalFieldWasAssigned_NonTypesystemRule$null$1" />
+      <unit id="1466384023878382016" at="45,286,49,9" name="jetbrains.mps.baseLanguage.typesystem.check_FinalFieldWasAssigned_NonTypesystemRule$1" />
       <unit id="843236768047671205" at="25,0,77,0" name="jetbrains.mps.baseLanguage.typesystem.check_FinalFieldWasAssigned_NonTypesystemRule" />
     </file>
   </root>
@@ -23769,7 +23769,7 @@
         <var name="status" id="8620077627875074983" />
         <var name="typeCheckingContext" id="8620077627875074983" />
       </scope>
-      <unit id="8101436443850399692" at="50,286,54,17" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateMethods_NonTypesystemRule$null$1" />
+      <unit id="8101436443850399692" at="50,286,54,17" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateMethods_NonTypesystemRule$1" />
       <unit id="8620077627875074983" at="24,0,82,0" name="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateMethods_NonTypesystemRule" />
     </file>
   </root>
@@ -23871,7 +23871,7 @@
       <scope id="846214144116035573" at="17,0,58,0">
         <var name="expression" id="846214144116035647" />
       </scope>
-      <unit id="5439191097839093342" at="66,891,70,7" name="jetbrains.mps.baseLanguage.typesystem.ExpressionPresentationUtil$null$1" />
+      <unit id="5439191097839093342" at="66,891,70,7" name="jetbrains.mps.baseLanguage.typesystem.ExpressionPresentationUtil$1" />
       <unit id="8626468694784568551" at="16,0,79,0" name="jetbrains.mps.baseLanguage.typesystem.ExpressionPresentationUtil" />
     </file>
   </root>
@@ -23988,9 +23988,9 @@
         <var name="status" id="8715200951320925710" />
         <var name="typeCheckingContext" id="8715200951320925710" />
       </scope>
-      <unit id="8715200951321314067" at="27,215,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule$null$1" />
-      <unit id="8715200951321327540" at="31,17,35,5" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule$null$2" />
-      <unit id="8715200951321507454" at="35,20,47,5" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule$null$3" />
+      <unit id="8715200951321314067" at="27,215,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule$1" />
+      <unit id="8715200951321327540" at="31,17,35,5" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule$2" />
+      <unit id="8715200951321507454" at="35,20,47,5" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule$3" />
       <unit id="8715200951320925710" at="23,0,59,0" name="jetbrains.mps.baseLanguage.typesystem.check_InterfaceMethods_NonTypesystemRule" />
     </file>
   </root>
@@ -24082,7 +24082,7 @@
         <var name="status" id="8824315269745705181" />
         <var name="typeCheckingContext" id="8824315269745705181" />
       </scope>
-      <unit id="8824315269745705236" at="37,51,41,5" name="jetbrains.mps.baseLanguage.typesystem.check_ArrayClone_NonTypesystemRule$null$1" />
+      <unit id="8824315269745705236" at="37,51,41,5" name="jetbrains.mps.baseLanguage.typesystem.check_ArrayClone_NonTypesystemRule$1" />
       <unit id="8824315269745705181" at="25,0,69,0" name="jetbrains.mps.baseLanguage.typesystem.check_ArrayClone_NonTypesystemRule" />
     </file>
   </root>
@@ -24139,7 +24139,7 @@
         <var name="parameter_1" id="8899076737758859260" />
         <var name="parameter_2" id="8899076737758859260" />
       </scope>
-      <unit id="8899076737758859136" at="26,635,30,5" name="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix$null$1" />
+      <unit id="8899076737758859136" at="26,635,30,5" name="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix$1" />
       <unit id="8899076737758799632" at="21,0,51,0" name="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix" />
     </file>
   </root>
@@ -24190,7 +24190,7 @@
         <var name="status" id="8899076737758937250" />
         <var name="typeCheckingContext" id="8899076737758937250" />
       </scope>
-      <unit id="8899076737758937321" at="27,450,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule$null$1" />
+      <unit id="8899076737758937321" at="27,450,31,5" name="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule$1" />
       <unit id="8899076737758937250" at="23,0,52,0" name="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule" />
     </file>
   </root>
@@ -24624,7 +24624,7 @@
         <var name="typeCheckingContext" id="8960718351575897340" />
       </scope>
       <unit id="8960718351576666289" at="32,236,36,9" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateEnumConstantMethods_NonTypesystemRule$1$1" />
-      <unit id="8960718351576075062" at="29,208,45,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateEnumConstantMethods_NonTypesystemRule$null$1" />
+      <unit id="8960718351576075062" at="29,208,45,5" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateEnumConstantMethods_NonTypesystemRule$1" />
       <unit id="8960718351575897340" at="25,0,60,0" name="jetbrains.mps.baseLanguage.typesystem.check_DuplicateEnumConstantMethods_NonTypesystemRule" />
     </file>
   </root>
@@ -24993,10 +24993,10 @@
         <var name="status" id="9181921299218949582" />
         <var name="typeCheckingContext" id="9181921299218949582" />
       </scope>
-      <unit id="1472285356912873456" at="32,374,36,5" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$null$1" />
-      <unit id="1472285356915344362" at="38,239,42,5" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$null$2" />
-      <unit id="2067922812368734995" at="52,74,56,5" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$null$3" />
-      <unit id="1472285356915753043" at="65,70,69,7" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$null$4" />
+      <unit id="1472285356912873456" at="32,374,36,5" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$1" />
+      <unit id="1472285356915344362" at="38,239,42,5" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$2" />
+      <unit id="2067922812368734995" at="52,74,56,5" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$3" />
+      <unit id="1472285356915753043" at="65,70,69,7" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule$4" />
       <unit id="9181921299218949582" at="28,0,106,0" name="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule" />
     </file>
   </root>
@@ -25142,7 +25142,7 @@
         <var name="status" id="966837649712508218" />
         <var name="typeCheckingContext" id="966837649712508218" />
       </scope>
-      <unit id="966837649720956653" at="40,279,44,5" name="jetbrains.mps.baseLanguage.typesystem.check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule$null$1" />
+      <unit id="966837649720956653" at="40,279,44,5" name="jetbrains.mps.baseLanguage.typesystem.check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule$1" />
       <unit id="966837649712508218" at="23,0,69,0" name="jetbrains.mps.baseLanguage.typesystem.check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule" />
     </file>
   </root>

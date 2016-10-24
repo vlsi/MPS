@@ -640,7 +640,7 @@
         <var name="node" id="1200425321273" />
         <var name="scope" id="1200425321273" />
       </scope>
-      <unit id="3636996958059114128" at="51,92,55,7" name="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$null$1" />
+      <unit id="3636996958059114128" at="51,92,55,7" name="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
       <unit id="1200425321273" at="23,0,71,0" name="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
     </file>
   </root>
@@ -926,7 +926,7 @@
         <var name="node" id="1204121124763" />
         <var name="scope" id="1204121124763" />
       </scope>
-      <unit id="1227876797642" at="55,158,59,11" name="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$null$1" />
+      <unit id="1227876797642" at="55,158,59,11" name="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder$1" />
       <unit id="1204121124763" at="23,0,105,0" name="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
     </file>
   </root>
@@ -1540,10 +1540,10 @@
         <var name="node" id="4151347580001021181" />
         <var name="scope" id="4151347580001021181" />
       </scope>
-      <unit id="4151347580001030863" at="51,120,55,9" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$null$1" />
-      <unit id="4151347580001030936" at="55,24,59,9" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$null$2" />
-      <unit id="4717960406884169459" at="62,213,66,13" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$null$3" />
-      <unit id="4717960406884170478" at="66,28,70,13" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$null$4" />
+      <unit id="4151347580001030863" at="51,120,55,9" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$1" />
+      <unit id="4151347580001030936" at="55,24,59,9" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$2" />
+      <unit id="4717960406884169459" at="62,213,66,13" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$3" />
+      <unit id="4717960406884170478" at="66,28,70,13" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$4" />
       <unit id="4151347580001021181" at="24,0,79,0" name="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
     </file>
   </root>

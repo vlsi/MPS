@@ -36,7 +36,7 @@
       </scope>
       <scope id="6269300764715607370" at="79,94,84,17" />
       <scope id="6269300764715623925" at="182,100,187,158" />
-      <unit id="405327229897312634" at="183,275,187,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$null$4" />
+      <unit id="405327229897312634" at="183,275,187,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$4" />
     </file>
   </root>
   <root nodeRef="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)/1225277059687">
@@ -117,7 +117,7 @@
         <var name="it" id="4592826945243770140" />
       </scope>
       <scope id="2696770507970455346" at="26,108,31,7" />
-      <unit id="4592826945243770140" at="27,448,31,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$null$1" />
+      <unit id="4592826945243770140" at="27,448,31,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$1" />
     </file>
   </root>
   <root nodeRef="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)/1461424660015429883">
@@ -156,8 +156,8 @@
       </scope>
       <scope id="4592826945243771480" at="89,94,94,7" />
       <scope id="4592826945243771382" at="96,94,101,7" />
-      <unit id="4592826945243771489" at="90,234,94,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$null$2" />
-      <unit id="4592826945243771415" at="97,234,101,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$null$3" />
+      <unit id="4592826945243771489" at="90,234,94,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$2" />
+      <unit id="4592826945243771415" at="97,234,101,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$3" />
     </file>
   </root>
   <root nodeRef="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)/2696770507970455982">
@@ -198,7 +198,7 @@
       </scope>
       <scope id="6269300764714516442" at="109,94,114,17" />
       <scope id="6269300764714539681" at="189,100,197,155" />
-      <unit id="405327229898177386" at="193,275,197,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$null$5" />
+      <unit id="405327229898177386" at="193,275,197,5" name="jetbrains.mps.baseLanguage.generator.java.strings.QueriesGenerated$5" />
     </file>
   </root>
 </debug-info>
