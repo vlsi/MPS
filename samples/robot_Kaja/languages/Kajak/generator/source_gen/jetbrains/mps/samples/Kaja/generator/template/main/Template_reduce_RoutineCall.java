@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -38,7 +37,7 @@ public class Template_reduce_RoutineCall extends TemplateDeclarationBase {
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
         try {
-          environment.resolve((ReferenceResolver) new RefResolver(tnode2, myAssociationLinks[0], context1, new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701315"), "bar") {
+          environment.resolve(new RefResolver(tnode2, myAssociationLinks[0], context1, new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701315"), "bar") {
             @Override
             public Object resolve() {
               return QueriesGenerated.referenceMacro_GetReferent_3308300503039701316(createQueryContext());

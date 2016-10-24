@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateQueryException;
 import jetbrains.mps.generator.impl.query.CallArgumentQuery;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
@@ -40,9 +37,6 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -228,26 +222,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context) {
-    SNode function = RuleUtil.getReferenceMacro_GetReferent(refMacro);
-    if (function == null) {
-      getLog().error(refMacro.getReference(), "cannot evaluate reference macro: no function", GeneratorUtil.describeInput(context));
-      return null;
-    }
-
-    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function);
-    try {
-      final ReferenceMacroContext qctx =
-          new ReferenceMacroContext(context, outputNode, refMacro.getReference(), AttributeOperations.getLink(refMacro));
-      return invokeMethod(refMacro.getModel(), methodName, qctx);
-    } catch (Throwable t) {
-      getLog().handleException(t);
-      getLog().error(refMacro.getReference(), "cannot evaluate reference macro, exception was thrown", GeneratorUtil.describeInput(context));
-    }
-    return null;
-  }
-
-  @Override
   public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       return rule.apply(context);
@@ -346,16 +320,5 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public boolean isMultithreaded() {
     return myIsMultithread;
-  }
-
-
-  private IGeneratorLogger getLog() {
-    return myGenerator.getLogger();
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  private <T> T invokeMethod(SModel model, String methodName, TemplateQueryContext ctx) throws ClassNotFoundException, NoSuchMethodException {
-    return QueryMethodGenerated.invoke(methodName, null, ctx, model.getReference(), true);
   }
 }

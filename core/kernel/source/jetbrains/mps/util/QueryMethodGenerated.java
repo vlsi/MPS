@@ -25,6 +25,7 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -39,6 +40,15 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+/**
+ * @deprecated this is a legacy reflective approach to run generated code.
+ *             Contemporary approach is to use aspect interfaces and invoke respective methods through
+ *             regular Java APIs. In case you do need a reflective code, consider {@link QueryMethods} as
+ *             a replacement (instance, not static, with lifecycle control and no legacy arguments).
+ *             Once uses in actions.runtime are gone, we can drop the class.
+ */
+@Deprecated
+@ToRemove(version = 3.5)
 public class QueryMethodGenerated implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(QueryMethodGenerated.class);
 
