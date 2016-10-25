@@ -45,9 +45,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.util.WaitForProgressToShow;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.util.WaitForProgressToShow;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -315,9 +315,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 return;
               }
 
-              syncRefresh();
               ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Resaving Module Descriptors", false) {
                 public void run(@NotNull ProgressIndicator progressIndicator) {
+                  progressIndicator.setIndeterminate(true);
+                  WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+                    public void run() {
+                      syncRefresh();
+                    }
+                  });
+                  progressIndicator.setIndeterminate(false);
                   ProgressMonitor progressMonitor = new ProgressMonitorAdapter(progressIndicator);
                   progressMonitor.start("Saving...", Sequence.fromIterable(allModules).count());
                   for (final SModule module : Sequence.fromIterable(allModules)) {
