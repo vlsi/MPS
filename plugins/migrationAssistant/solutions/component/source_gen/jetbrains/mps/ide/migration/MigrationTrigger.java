@@ -32,6 +32,7 @@ import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -49,16 +50,16 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.util.WaitForProgressToShow;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.application.Application;
-import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.ide.platform.watching.ReloadListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.annotations.Nullable;
@@ -89,7 +90,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private ProjectMigrationProperties myProperties;
 
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
-  private MigrationTrigger.MyModelListener myModelListener = new MigrationTrigger.MyModelListener();
+  private MigrationTrigger.MyReloadListener myReloadListener = new MigrationTrigger.MyReloadListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
   private boolean myListenersAdded = false;
@@ -215,6 +216,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
     myClassLoaderManager.addClassesHandler(this.myClassesListener);
     myProperties.addListener(myPropertiesListener);
+    ReloadManager.getInstance().addReloadListener(myReloadListener);
   }
 
   private boolean removeListeners() {
@@ -224,6 +226,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myProperties.removeListener(myPropertiesListener);
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
+    ReloadManager.getInstance().removeReloadListener(myReloadListener);
     return false;
   }
 
@@ -383,66 +386,87 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     application.getComponent(ReloadManager.class).flush();
   }
 
+  private class MyReloadListener implements ReloadListener {
+    private boolean myUnderReload = false;
+    @Override
+    public void reloadStarted() {
+      myUnderReload = true;
+    }
+    @Override
+    public void reloadFinished() {
+      myUnderReload = false;
+    }
+    public boolean isIsUnderReload() {
+      return myUnderReload;
+    }
+  }
+
   private class MyRepoListener extends SRepositoryContentAdapter {
+    private void updateSingleModuleDescriptorSilently(SModule module) {
+      if (!(isProjectMigrateableModule(module))) {
+        return;
+      }
+      myMigrationManager.doUpdateImportVersions(module);
+    }
+    private void triggerOnModuleChanged(SModule module) {
+      if (!(isProjectMigrateableModule(module))) {
+        return;
+      }
+      if (!(myReloadListener.isIsUnderReload())) {
+        updateSingleModuleDescriptorSilently(module);
+      }
+      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+    }
+    private boolean isProjectMigrateableModule(@NotNull SModule module) {
+      return myMpsProject.isProjectModule(module) && MigrationsUtil.isModuleMigrateable(module);
+    }
+    private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
+      @Override
+      public void visitLanguageEvent(SModelLanguageEvent event) {
+        updateSingleModuleDescriptorSilently(event.getModel().getModule());
+      }
+      @Override
+      public void visitDevKitEvent(SModelDevKitEvent event) {
+        updateSingleModuleDescriptorSilently(event.getModel().getModule());
+      }
+    };
+    private ModelsEventsCollector myModelListener = new ModelsEventsCollector() {
+      @Override
+      protected void eventsHappened(List<SModelEvent> events) {
+        ListSequence.fromList(events).visitAll(new IVisitor<SModelEvent>() {
+          public void visit(SModelEvent it) {
+            it.accept(myVisitor);
+          }
+        });
+      }
+    };
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      if (!(myMpsProject.isProjectModule(module))) {
-        return;
-      }
-      if (!(MigrationsUtil.isModuleMigrateable(module))) {
-        return;
-      }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+      triggerOnModuleChanged(module);
     }
 
     @Override
-    public void moduleChanged(SModule module) {
+    public void moduleChanged(@NotNull SModule module) {
       super.moduleChanged(module);
-      if (!(myMpsProject.isProjectModule(module))) {
-        return;
-      }
-      if (!(MigrationsUtil.isModuleMigrateable(module))) {
-        return;
-      }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
+      triggerOnModuleChanged(module);
     }
-
     @Override
     protected void startListening(SModel model) {
       super.startListening(model);
-      myModelListener.startListeningToModel(model);
+      if (myMpsProject.isProjectModule(model.getModule())) {
+        myModelListener.startListeningToModel(model);
+      }
     }
     @Override
     protected void stopListening(SModel model) {
       super.stopListening(model);
-      myModelListener.stopListeningToModel(model);
+      if (myMpsProject.isProjectModule(model.getModule())) {
+        myModelListener.stopListeningToModel(model);
+      }
     }
   }
 
-  private class MyModelListener extends ModelsEventsCollector {
-    private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
-      private void updateModuleDescriptor(SModule module) {
-        myMigrationManager.doUpdateImportVersions(module);
-      }
-      @Override
-      public void visitLanguageEvent(SModelLanguageEvent event) {
-        updateModuleDescriptor(event.getModel().getModule());
-      }
-      @Override
-      public void visitDevKitEvent(SModelDevKitEvent event) {
-        updateModuleDescriptor(event.getModel().getModule());
-      }
-    };
-    @Override
-    protected void eventsHappened(List<SModelEvent> events) {
-      ListSequence.fromList(events).visitAll(new IVisitor<SModelEvent>() {
-        public void visit(SModelEvent it) {
-          it.accept(myVisitor);
-        }
-      });
-    }
-  }
 
   private class MyClassesListener extends MPSClassesListenerAdapter {
     @Override

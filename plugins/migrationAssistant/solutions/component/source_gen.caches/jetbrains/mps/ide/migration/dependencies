@@ -328,6 +328,7 @@
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationProperties" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadListener" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep" />
