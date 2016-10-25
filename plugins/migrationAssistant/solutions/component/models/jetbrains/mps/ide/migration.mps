@@ -11922,7 +11922,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="2V3ml1v8_WP" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.containsAll(java.util.Collection):boolean" resolve="containsAll" />
+                    <ref role="37wK5l" to="33ny:~Collection.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="37vLTw" id="2V3ml1v8_WQ" role="37wK5m">
                       <ref role="3cqZAo" node="2V3ml1v8_WD" resolve="devkits" />
                     </node>
@@ -12278,7 +12278,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="2V3ml1v6DJ7" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Collection.containsAll(java.util.Collection):boolean" resolve="containsAll" />
+                <ref role="37wK5l" to="33ny:~Collection.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="37vLTw" id="2V3ml1v6DJ8" role="37wK5m">
                   <ref role="3cqZAo" node="2V3ml1v6DI6" resolve="devkits" />
                 </node>
@@ -12296,9 +12296,19 @@
                 </node>
               </node>
             </node>
-            <node concept="3SKdUt" id="2V3ml1v6DJa" role="3cqZAp">
-              <node concept="3SKdUq" id="2V3ml1v6DJb" role="3SKWNk">
-                <property role="3SKdUp" value="intentionally no clean(), augmentation only, just in case there's anything vital already." />
+            <node concept="3clFbF" id="2utABIFvSIk" role="3cqZAp">
+              <node concept="2OqwBi" id="2utABIFvT_H" role="3clFbG">
+                <node concept="2OqwBi" id="2utABIFvT71" role="2Oq$k0">
+                  <node concept="37vLTw" id="2utABIFvSIi" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2V3ml1v4qrN" resolve="md" />
+                  </node>
+                  <node concept="liA8E" id="2utABIFvTea" role="2OqNvi">
+                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getUsedDevkits():java.util.Collection" resolve="getUsedDevkits" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="2utABIFvU6$" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Collection.clear():void" resolve="clear" />
+                </node>
               </node>
             </node>
             <node concept="3clFbF" id="2V3ml1v6DJc" role="3cqZAp">

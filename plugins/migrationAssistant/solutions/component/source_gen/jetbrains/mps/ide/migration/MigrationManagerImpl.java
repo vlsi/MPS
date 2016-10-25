@@ -103,7 +103,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       }
 
       Set<SModuleReference> devkits = abstractModule.collectLanguagesAndDevkits().devkits;
-      if (!(md.getUsedDevkits().containsAll(devkits))) {
+      if (!(md.getUsedDevkits().equals(devkits))) {
         return true;
       }
     }
@@ -137,9 +137,9 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }
 
     Set<SModuleReference> devkits = abstractModule.collectLanguagesAndDevkits().devkits;
-    if (!(md.getUsedDevkits().containsAll(devkits))) {
+    if (!(md.getUsedDevkits().equals(devkits))) {
       abstractModule.setChanged();
-      // intentionally no clean(), augmentation only, just in case there's anything vital already. 
+      md.getUsedDevkits().clear();
       md.getUsedDevkits().addAll(devkits);
     }
   }
