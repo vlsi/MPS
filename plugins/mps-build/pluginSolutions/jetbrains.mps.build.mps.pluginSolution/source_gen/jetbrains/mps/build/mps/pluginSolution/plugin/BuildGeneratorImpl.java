@@ -38,7 +38,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.RelativePathHelper;
 import java.util.Set;
 import java.util.LinkedHashSet;
@@ -89,7 +88,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
         EditableSModel targetModelDescriptor = ((EditableSModel) descriptor);
 
-        Iterable<SNode> result = createBuildScripts(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), getBasePath(), BuildGeneratorImpl.this.getModules());
+        Iterable<SNode> result = createBuildScripts(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.getModules());
         ((AbstractModule) targetModelDescriptor.getModule()).save();
         targetModelDescriptor.save();
         for (SNode node : Sequence.fromIterable(result)) {
@@ -210,7 +209,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return new ModuleRepositoryFacade(myProject).getModuleByName(text) == null;
   }
 
-  protected Iterable<SNode> createBuildScripts(SModel targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  protected Iterable<SNode> createBuildScripts(SModel targetModelDescriptor, String name, List<NodeData> selectedData) {
     // setup build project 
     SNode buildProject = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     SPropertyOperations.set(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
@@ -219,7 +218,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
     // internal base dir is a project base dir 
     try {
-      String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetModelDescriptor).makeRelative(getBasePath());
+      String relativeToModuleProjectPath = RelativePathHelper.forModule(targetModelDescriptor.getModule()).makeRelative(getBasePath());
       SPropertyOperations.set(buildProject, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x48387ebae1a07a23L, "internalBaseDirectory"), relativeToModuleProjectPath);
     } catch (RelativePathHelper.PathException e) {
       if (LOG.isEnabledFor(Level.WARN)) {

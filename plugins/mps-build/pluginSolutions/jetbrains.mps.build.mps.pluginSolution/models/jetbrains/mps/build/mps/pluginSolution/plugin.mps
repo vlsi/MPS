@@ -10816,9 +10816,6 @@
                             <ref role="1HBi2w" node="7$e6lgA3BiM" resolve="BuildGeneratorImpl" />
                           </node>
                         </node>
-                        <node concept="1rXfSq" id="OqYxEjxGa8" role="37wK5m">
-                          <ref role="37wK5l" node="OqYxEjwwox" resolve="getBasePath" />
-                        </node>
                         <node concept="2OqwBi" id="7xbAEiFOQEh" role="37wK5m">
                           <node concept="liA8E" id="7xbAEiFOQEi" role="2OqNvi">
                             <ref role="37wK5l" node="7$e6lgA3Bdn" resolve="getModules" />
@@ -12003,10 +12000,6 @@
         <property role="TrG5h" value="name" />
         <node concept="17QB3L" id="7$e6lgA3BuD" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="7$e6lgA3BuE" role="3clF46">
-        <property role="TrG5h" value="basedir" />
-        <node concept="17QB3L" id="7$e6lgA3BuF" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="7$e6lgA3BuG" role="3clF46">
         <property role="TrG5h" value="selectedData" />
         <node concept="_YKpA" id="7$e6lgA3BuH" role="1tU5fm">
@@ -12108,15 +12101,17 @@
                 <property role="TrG5h" value="relativeToModuleProjectPath" />
                 <node concept="17QB3L" id="7xbAEiFvuHu" role="1tU5fm" />
                 <node concept="2OqwBi" id="7xbAEiFvuHv" role="33vP2m">
-                  <node concept="2OqwBi" id="7xbAEiFvuHw" role="2Oq$k0">
-                    <node concept="2YIFZM" id="7xbAEiFvuHx" role="2Oq$k0">
-                      <ref role="1Pybhc" to="o3n2:4jjtc7WZOAv" resolve="Context" />
-                      <ref role="37wK5l" to="o3n2:4jjtc7WZTjd" resolve="defaultContext" />
-                    </node>
-                    <node concept="liA8E" id="7xbAEiFvuHy" role="2OqNvi">
-                      <ref role="37wK5l" to="o3n2:1AfwOXhJadN" resolve="getRelativePathHelper" />
-                      <node concept="37vLTw" id="281cAWYlq3e" role="37wK5m">
-                        <ref role="3cqZAo" node="7$e6lgA3BuA" resolve="targetModelDescriptor" />
+                  <node concept="2YIFZM" id="5PfFcOse1_A" role="2Oq$k0">
+                    <ref role="37wK5l" to="o3n2:5PfFcOsdSi$" resolve="forModule" />
+                    <ref role="1Pybhc" to="o3n2:5iAPpylXsc4" resolve="RelativePathHelper" />
+                    <node concept="2OqwBi" id="5PfFcOse3gV" role="37wK5m">
+                      <node concept="2JrnkZ" id="5PfFcOse35j" role="2Oq$k0">
+                        <node concept="37vLTw" id="5PfFcOse25O" role="2JrQYb">
+                          <ref role="3cqZAo" node="7$e6lgA3BuA" resolve="targetModelDescriptor" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5PfFcOse3zh" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                       </node>
                     </node>
                   </node>

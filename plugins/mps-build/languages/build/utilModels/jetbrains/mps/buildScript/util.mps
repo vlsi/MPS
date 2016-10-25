@@ -2,10 +2,10 @@
 <model ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)">
   <persistence version="9" />
   <languages>
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -238,6 +238,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -325,6 +328,7 @@
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
@@ -1114,87 +1118,12 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="1AfwOXhJaco" role="3cqZAp">
-          <node concept="22lmx$" id="13YBgBBRJEx" role="3clFbw">
-            <node concept="2OqwBi" id="13YBgBBRJET" role="3uHU7w">
-              <node concept="37vLTw" id="3GM_nagTwVo" role="2Oq$k0">
-                <ref role="3cqZAo" node="1AfwOXhJach" resolve="module" />
-              </node>
-              <node concept="liA8E" id="13YBgBBRJOS" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SModule.isPackaged():boolean" resolve="isPackaged" />
-              </node>
-            </node>
-            <node concept="22lmx$" id="1AfwOXhJad2" role="3uHU7B">
-              <node concept="3clFbC" id="1AfwOXhJacH" role="3uHU7B">
-                <node concept="10Nm6u" id="1AfwOXhJacK" role="3uHU7w" />
-                <node concept="37vLTw" id="3GM_nagTtUy" role="3uHU7B">
-                  <ref role="3cqZAo" node="1AfwOXhJach" resolve="module" />
-                </node>
-              </node>
-              <node concept="3clFbC" id="1AfwOXhJadl" role="3uHU7w">
-                <node concept="2OqwBi" id="1AfwOXhJac9" role="3uHU7B">
-                  <node concept="1eOMI4" id="voRWC5KuNW" role="2Oq$k0">
-                    <node concept="10QFUN" id="voRWC5KuNX" role="1eOMHV">
-                      <node concept="3uibUv" id="voRWC5KuNY" role="10QFUM">
-                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTxoj" role="10QFUP">
-                        <ref role="3cqZAo" node="1AfwOXhJach" resolve="module" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="1AfwOXhJacf" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
-                  </node>
-                </node>
-                <node concept="10Nm6u" id="1AfwOXhJado" role="3uHU7w" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="1AfwOXhJacp" role="3clFbx">
-            <node concept="3cpWs6" id="1AfwOXhJacL" role="3cqZAp">
-              <node concept="10Nm6u" id="1AfwOXhJafy" role="3cqZAk" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1AfwOXhJagZ" role="3cqZAp">
-          <node concept="3cpWsn" id="1AfwOXhJah0" role="3cpWs9">
-            <property role="TrG5h" value="basePath" />
-            <node concept="2OqwBi" id="1AfwOXhJah2" role="33vP2m">
-              <node concept="liA8E" id="1AfwOXhJah8" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
-              </node>
-              <node concept="2OqwBi" id="1AfwOXhJah3" role="2Oq$k0">
-                <node concept="liA8E" id="1AfwOXhJah7" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
-                </node>
-                <node concept="2OqwBi" id="1AfwOXhJah4" role="2Oq$k0">
-                  <node concept="1eOMI4" id="voRWC5KBg6" role="2Oq$k0">
-                    <node concept="10QFUN" id="voRWC5KBg7" role="1eOMHV">
-                      <node concept="3uibUv" id="voRWC5KBg8" role="10QFUM">
-                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTz7R" role="10QFUP">
-                        <ref role="3cqZAo" node="1AfwOXhJach" resolve="module" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="1AfwOXhJah6" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="17QB3L" id="1AfwOXhJahL" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="1AfwOXhJahb" role="3cqZAp">
-          <node concept="2ShNRf" id="1AfwOXhJahd" role="3cqZAk">
-            <node concept="1pGfFk" id="1AfwOXhJahf" role="2ShVmc">
-              <ref role="37wK5l" node="1AfwOXhIBBI" resolve="RelativePathHelper" />
-              <node concept="37vLTw" id="3GM_nagTyER" role="37wK5m">
-                <ref role="3cqZAo" node="1AfwOXhJah0" resolve="basePath" />
-              </node>
+        <node concept="3cpWs6" id="5PfFcOsdUik" role="3cqZAp">
+          <node concept="2YIFZM" id="5PfFcOsdVCO" role="3cqZAk">
+            <ref role="37wK5l" node="5PfFcOsdSi$" resolve="forModule" />
+            <ref role="1Pybhc" node="5iAPpylXsc4" resolve="RelativePathHelper" />
+            <node concept="37vLTw" id="5PfFcOsdW6G" role="37wK5m">
+              <ref role="3cqZAo" node="1AfwOXhJach" resolve="module" />
             </node>
           </node>
         </node>
@@ -3773,6 +3702,120 @@
         <node concept="17QB3L" id="1AfwOXhIBBO" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5PfFcOsdQSQ" role="jymVt" />
+    <node concept="2YIFZL" id="5PfFcOsdSi$" role="jymVt">
+      <property role="TrG5h" value="forModule" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5PfFcOsdSiB" role="3clF47">
+        <node concept="3clFbJ" id="5PfFcOsdT$3" role="3cqZAp">
+          <node concept="22lmx$" id="5PfFcOsdT$4" role="3clFbw">
+            <node concept="2OqwBi" id="5PfFcOsdT$5" role="3uHU7w">
+              <node concept="37vLTw" id="5PfFcOsdT$6" role="2Oq$k0">
+                <ref role="3cqZAo" node="5PfFcOsdSG4" resolve="module" />
+              </node>
+              <node concept="liA8E" id="5PfFcOsdT$7" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SModule.isPackaged():boolean" resolve="isPackaged" />
+              </node>
+            </node>
+            <node concept="22lmx$" id="5PfFcOsdT$8" role="3uHU7B">
+              <node concept="3clFbC" id="5PfFcOsdT$9" role="3uHU7B">
+                <node concept="10Nm6u" id="5PfFcOsdT$a" role="3uHU7w" />
+                <node concept="37vLTw" id="5PfFcOsdT$b" role="3uHU7B">
+                  <ref role="3cqZAo" node="5PfFcOsdSG4" resolve="module" />
+                </node>
+              </node>
+              <node concept="3clFbC" id="5PfFcOsdT$c" role="3uHU7w">
+                <node concept="2OqwBi" id="5PfFcOsdT$d" role="3uHU7B">
+                  <node concept="1eOMI4" id="5PfFcOsdT$e" role="2Oq$k0">
+                    <node concept="10QFUN" id="5PfFcOsdT$f" role="1eOMHV">
+                      <node concept="3uibUv" id="5PfFcOsdT$g" role="10QFUM">
+                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                      </node>
+                      <node concept="37vLTw" id="5PfFcOsdT$h" role="10QFUP">
+                        <ref role="3cqZAo" node="5PfFcOsdSG4" resolve="module" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5PfFcOsdT$i" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+                  </node>
+                </node>
+                <node concept="10Nm6u" id="5PfFcOsdT$j" role="3uHU7w" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="5PfFcOsdT$k" role="3clFbx">
+            <node concept="3cpWs6" id="5PfFcOsdT$l" role="3cqZAp">
+              <node concept="10Nm6u" id="5PfFcOsdT$m" role="3cqZAk" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5PfFcOsdT$n" role="3cqZAp">
+          <node concept="3cpWsn" id="5PfFcOsdT$o" role="3cpWs9">
+            <property role="TrG5h" value="basePath" />
+            <node concept="2OqwBi" id="5PfFcOsdT$p" role="33vP2m">
+              <node concept="liA8E" id="5PfFcOsdT$q" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+              </node>
+              <node concept="2OqwBi" id="5PfFcOsdT$r" role="2Oq$k0">
+                <node concept="liA8E" id="5PfFcOsdT$s" role="2OqNvi">
+                  <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
+                </node>
+                <node concept="2OqwBi" id="5PfFcOsdT$t" role="2Oq$k0">
+                  <node concept="1eOMI4" id="5PfFcOsdT$u" role="2Oq$k0">
+                    <node concept="10QFUN" id="5PfFcOsdT$v" role="1eOMHV">
+                      <node concept="3uibUv" id="5PfFcOsdT$w" role="10QFUM">
+                        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                      </node>
+                      <node concept="37vLTw" id="5PfFcOsdT$x" role="10QFUP">
+                        <ref role="3cqZAo" node="5PfFcOsdSG4" resolve="module" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5PfFcOsdT$y" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolve="getDescriptorFile" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="17QB3L" id="5PfFcOsdT$z" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5PfFcOsdT$$" role="3cqZAp">
+          <node concept="2ShNRf" id="5PfFcOsdT$_" role="3cqZAk">
+            <node concept="1pGfFk" id="5PfFcOsdT$A" role="2ShVmc">
+              <ref role="37wK5l" node="1AfwOXhIBBI" resolve="RelativePathHelper" />
+              <node concept="37vLTw" id="5PfFcOsdT$B" role="37wK5m">
+                <ref role="3cqZAo" node="5PfFcOsdT$o" resolve="basePath" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5PfFcOsdRWw" role="1B3o_S" />
+      <node concept="3uibUv" id="5PfFcOsdSCF" role="3clF45">
+        <ref role="3uigEE" node="5iAPpylXsc4" resolve="RelativePathHelper" />
+      </node>
+      <node concept="37vLTG" id="5PfFcOsdSG4" role="3clF46">
+        <property role="TrG5h" value="module" />
+        <node concept="3uibUv" id="5PfFcOsdSG3" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5PfFcOsdSG$" role="lGtFl">
+        <node concept="TZ5HA" id="5PfFcOsdSG_" role="TZ5H$">
+          <node concept="1dT_AC" id="5PfFcOsdSGA" role="1dT_Ay">
+            <property role="1dT_AB" value="Transition method to avoid uses of Context.defaultContext().getRelativePathHelper() when we know for sure module is not transient" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5PfFcOsdTnb" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5PfFcOsdReE" role="jymVt" />
     <node concept="3clFb_" id="5iAPpylXscy" role="jymVt">
       <property role="TrG5h" value="makeRelative" />
       <node concept="3uibUv" id="1AfwOXhJ4Fx" role="Sfmx6">
@@ -16431,7 +16474,7 @@
         </node>
         <node concept="2Gpval" id="5wKGSSp4ENg" role="3cqZAp">
           <node concept="1rXfSq" id="5wKGSSp85iM" role="2GsD0m">
-            <ref role="37wK5l" node="5wKGSSp7Zyr" resolve="getImmediateDependencies" />
+            <ref role="37wK5l" node="5wKGSSp7Zyr" resolve="getLocalDependencies" />
             <node concept="37vLTw" id="5wKGSSp85iN" role="37wK5m">
               <ref role="3cqZAo" node="5wKGSSp3HfJ" resolve="project" />
             </node>
@@ -16496,7 +16539,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="5wKGSSp7Zyr" role="jymVt">
-      <property role="TrG5h" value="getImmediateDependencies" />
+      <property role="TrG5h" value="getLocalDependencies" />
       <node concept="3Tm6S6" id="5wKGSSp7Zys" role="1B3o_S" />
       <node concept="A3Dl8" id="5wKGSSp7Zyt" role="3clF45">
         <node concept="3Tqbb2" id="5wKGSSp7Zyu" role="A3Ik2">
@@ -16543,22 +16586,10 @@
                         </node>
                         <node concept="3w_OXm" id="5wKGSSp7Zpk" role="2OqNvi" />
                       </node>
-                      <node concept="3fqX7Q" id="5wKGSSp7Zpl" role="3uHU7w">
-                        <node concept="2OqwBi" id="5wKGSSp7Zpm" role="3fr31v">
-                          <node concept="2OqwBi" id="5wKGSSp7Zpn" role="2Oq$k0">
-                            <node concept="37vLTw" id="2BHiRxgkWqD" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5wKGSSp7Zpu" resolve="it" />
-                            </node>
-                            <node concept="3TrEf2" id="5wKGSSp7Zpq" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3ior:4RPz6WoY4C$" resolve="script" />
-                            </node>
-                          </node>
-                          <node concept="2qgKlT" id="5wKGSSp7Zpr" role="2OqNvi">
-                            <ref role="37wK5l" to="vbkb:3_glsEmok8d" resolve="isPackaged" />
-                            <node concept="37vLTw" id="5AMYnRc0RU8" role="37wK5m">
-                              <ref role="3cqZAo" node="5AMYnRc0OCJ" resolve="myContext" />
-                            </node>
-                          </node>
+                      <node concept="1rXfSq" id="2AbGWt_FgGd" role="3uHU7w">
+                        <ref role="37wK5l" node="2AbGWt_F3XM" resolve="isProjectLocal" />
+                        <node concept="37vLTw" id="2AbGWt_FhDP" role="37wK5m">
+                          <ref role="3cqZAo" node="5wKGSSp7Zpu" resolve="it" />
                         </node>
                       </node>
                     </node>
@@ -16570,6 +16601,222 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2AbGWt_F4NW" role="jymVt" />
+    <node concept="3clFb_" id="2AbGWt_F3XM" role="jymVt">
+      <property role="TrG5h" value="isProjectLocal" />
+      <node concept="10P_77" id="2AbGWt_F6Dw" role="3clF45" />
+      <node concept="3Tm6S6" id="2AbGWt_F5Pd" role="1B3o_S" />
+      <node concept="3clFbS" id="2AbGWt_F3XQ" role="3clF47">
+        <node concept="3cpWs8" id="2AbGWt_Fobu" role="3cqZAp">
+          <node concept="3cpWsn" id="2AbGWt_Fobv" role="3cpWs9">
+            <property role="TrG5h" value="targetScriptModel" />
+            <node concept="H_c77" id="2AbGWt_Fobr" role="1tU5fm" />
+            <node concept="2OqwBi" id="2AbGWt_Fobw" role="33vP2m">
+              <node concept="2OqwBi" id="2AbGWt_Fobx" role="2Oq$k0">
+                <node concept="37vLTw" id="2AbGWt_Foby" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2AbGWt_FdBf" resolve="dep" />
+                </node>
+                <node concept="3TrEf2" id="2AbGWt_Fobz" role="2OqNvi">
+                  <ref role="3Tt5mk" to="3ior:4RPz6WoY4C$" resolve="script" />
+                </node>
+              </node>
+              <node concept="I4A8Y" id="2AbGWt_Fob$" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2AbGWt_FqgD" role="3cqZAp">
+          <node concept="3clFbS" id="2AbGWt_FqgF" role="3clFbx">
+            <node concept="3SKdUt" id="2AbGWt_FZ54" role="3cqZAp">
+              <node concept="3SKdUq" id="2AbGWt_FZ56" role="3SKWNk">
+                <property role="3SKdUp" value="&quot;local&quot; doesn't make sense unless there's location (i.e. my BP's model) to check againts" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2AbGWt_FrZT" role="3cqZAp">
+              <node concept="3clFbT" id="2AbGWt_Fs4f" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="22lmx$" id="2AbGWt_Frdt" role="3clFbw">
+            <node concept="3clFbC" id="2AbGWt_FqXJ" role="3uHU7B">
+              <node concept="37vLTw" id="2AbGWt_Fqxv" role="3uHU7B">
+                <ref role="3cqZAo" node="2AbGWt_Fobv" resolve="targetScriptModel" />
+              </node>
+              <node concept="10Nm6u" id="2AbGWt_Fr8H" role="3uHU7w" />
+            </node>
+            <node concept="3clFbC" id="2AbGWt_FrFP" role="3uHU7w">
+              <node concept="10Nm6u" id="2AbGWt_FrQe" role="3uHU7w" />
+              <node concept="2OqwBi" id="2AbGWt_FpfR" role="3uHU7B">
+                <node concept="37vLTw" id="2AbGWt_FoUt" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5wKGSSm1q9t" resolve="myProject" />
+                </node>
+                <node concept="I4A8Y" id="2AbGWt_FpDa" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2AbGWt_Fz1W" role="3cqZAp">
+          <node concept="3clFbS" id="2AbGWt_Fz1X" role="3clFbx">
+            <node concept="3SKdUt" id="2AbGWt_FBKy" role="3cqZAp">
+              <node concept="3SKdUq" id="2AbGWt_FBK$" role="3SKWNk">
+                <property role="3SKdUp" value="XXX what if we introduce per-root transformation, when one root (BuildProject) comes from transient model, while" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="2AbGWt_FDIv" role="3cqZAp">
+              <node concept="3SKdUq" id="2AbGWt_FDIx" role="3SKWNk">
+                <property role="3SKdUp" value="target comes from source? Guess, would need to rely on module.isPackaged check below" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2AbGWt_Fz1Y" role="3cqZAp">
+              <node concept="3clFbT" id="2AbGWt_Fz1Z" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="2AbGWt_Fz21" role="3clFbw">
+            <node concept="37vLTw" id="2AbGWt_Fz22" role="3uHU7B">
+              <ref role="3cqZAo" node="2AbGWt_Fobv" resolve="targetScriptModel" />
+            </node>
+            <node concept="2OqwBi" id="2AbGWt_Fz26" role="3uHU7w">
+              <node concept="37vLTw" id="2AbGWt_Fz27" role="2Oq$k0">
+                <ref role="3cqZAo" node="5wKGSSm1q9t" resolve="myProject" />
+              </node>
+              <node concept="I4A8Y" id="2AbGWt_Fz28" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2AbGWt_FGNA" role="3cqZAp">
+          <node concept="3cpWsn" id="2AbGWt_FGNB" role="3cpWs9">
+            <property role="TrG5h" value="targetScriptModule" />
+            <node concept="3uibUv" id="2AbGWt_FGNz" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+            </node>
+            <node concept="2OqwBi" id="2AbGWt_FGNC" role="33vP2m">
+              <node concept="2JrnkZ" id="2AbGWt_FGND" role="2Oq$k0">
+                <node concept="37vLTw" id="2AbGWt_FGNE" role="2JrQYb">
+                  <ref role="3cqZAo" node="2AbGWt_Fobv" resolve="targetScriptModel" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2AbGWt_FGNF" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2AbGWt_FvyH" role="3cqZAp">
+          <node concept="3clFbS" id="2AbGWt_FvyJ" role="3clFbx">
+            <node concept="3cpWs6" id="2AbGWt_FwHg" role="3cqZAp">
+              <node concept="3clFbT" id="2AbGWt_FxF5" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="2AbGWt_Fs9X" role="3clFbw">
+            <node concept="2OqwBi" id="2AbGWt_FtGY" role="3uHU7w">
+              <node concept="2JrnkZ" id="2AbGWt_Ftw3" role="2Oq$k0">
+                <node concept="2OqwBi" id="2AbGWt_FsMT" role="2JrQYb">
+                  <node concept="37vLTw" id="2AbGWt_FsvF" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5wKGSSm1q9t" resolve="myProject" />
+                  </node>
+                  <node concept="I4A8Y" id="2AbGWt_FsZO" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2AbGWt_Fu1o" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2AbGWt_FGNG" role="3uHU7B">
+              <ref role="3cqZAo" node="2AbGWt_FGNB" resolve="targetScriptModule" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2AbGWt_G415" role="3cqZAp">
+          <node concept="3SKdUq" id="2AbGWt_G417" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME add an option Module.isPackaged (to access it like node.model.module.isPackaged)" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2AbGWt_FQvt" role="3cqZAp">
+          <node concept="3fqX7Q" id="2AbGWt_FVDc" role="3cqZAk">
+            <node concept="2OqwBi" id="2AbGWt_FVDe" role="3fr31v">
+              <node concept="37vLTw" id="2AbGWt_FVDf" role="2Oq$k0">
+                <ref role="3cqZAo" node="2AbGWt_FGNB" resolve="targetScriptModule" />
+              </node>
+              <node concept="liA8E" id="2AbGWt_FVDg" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SModule.isPackaged():boolean" resolve="isPackaged" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2AbGWt_FdBf" role="3clF46">
+        <property role="TrG5h" value="dep" />
+        <node concept="3Tqbb2" id="2AbGWt_FdBe" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:4lbsKRp2c8w" resolve="BuildProjectDependency" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="2AbGWt_Feye" role="lGtFl">
+        <node concept="TZ5HA" id="2AbGWt_Feyf" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Feyg" role="1dT_Ay">
+            <property role="1dT_AB" value="Tell whether dependency points to a BP inside local MPS project, so that one" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_FfqU" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_FfqV" role="1dT_Ay">
+            <property role="1dT_AB" value="could expect generated build scripts present here, and invoke them as part of myProject build." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_Ffvt" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Ffvu" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_Ffr8" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Ffr9" role="1dT_Ay">
+            <property role="1dT_AB" value="XXX I got doubts why whole MPS project is treated as a scope. On one hand, we might have" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_Ffro" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Ffrp" role="1dT_Ay">
+            <property role="1dT_AB" value="scope limited to the model/module of myProject (and take anything else as 'external' dependency)," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_FfrE" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_FfrF" role="1dT_Ay">
+            <property role="1dT_AB" value="OTOH, with absence of project module deployment story, it's not clear whether scenario of" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_FfrY" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_FfrZ" role="1dT_Ay">
+            <property role="1dT_AB" value="two dependant build solutions inside single MPS project won't get broken. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_Ffsk" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Ffsl" role="1dT_Ay">
+            <property role="1dT_AB" value="According to BuildProject.isPackaged(), any BuildProject from non-packaged module is ok," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_FfsG" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_FfsH" role="1dT_Ay">
+            <property role="1dT_AB" value="as well as any BuildProject from transient module, provided we're inside generation (always true" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_FfuX" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_FfuY" role="1dT_Ay">
+            <property role="1dT_AB" value="for this particular class). This assumption doesn't seem to work well with" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_Fft6" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Fft7" role="1dT_Ay">
+            <property role="1dT_AB" value="checkpoint models of deployed build solutions, as they might get copied into transients," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2AbGWt_Ffty" role="TZ5H$">
+          <node concept="1dT_AC" id="2AbGWt_Fftz" role="1dT_Ay">
+            <property role="1dT_AB" value="depending on Generator runtime implementation, which is constantly changing." />
           </node>
         </node>
       </node>

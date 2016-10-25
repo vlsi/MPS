@@ -72,7 +72,6 @@
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoaderException" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
-    <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.core.platform.MPSCore" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

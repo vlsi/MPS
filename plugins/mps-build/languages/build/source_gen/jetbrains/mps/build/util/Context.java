@@ -17,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -85,11 +84,7 @@ public class Context {
     if (module instanceof TransientModelsModule) {
       return null;
     }
-    if (module == null || ((AbstractModule) module).getDescriptorFile() == null || module.isPackaged()) {
-      return null;
-    }
-    String basePath = ((AbstractModule) module).getDescriptorFile().getParent().getPath();
-    return new RelativePathHelper(basePath);
+    return RelativePathHelper.forModule(module);
   }
   public TemplateQueryContext getGenerationContext() {
     return myGenerationContext;

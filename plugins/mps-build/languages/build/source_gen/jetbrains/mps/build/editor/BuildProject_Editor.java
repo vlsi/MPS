@@ -226,7 +226,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_vny568_a1g0(SNode node, EditorContext editorContext) {
-    final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
+    final RelativePathHelper rph = RelativePathHelper.forModule(SNodeOperations.getModel(node).getModule());
     return rph != null;
   }
   private EditorCell createJComponent_vny568_a1g0(EditorContext editorContext, SNode node) {
@@ -238,7 +238,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static JComponent _QueryFunction_JComponent_vny568_a0b6a(final SNode node, final EditorContext editorContext) {
-    final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
+    final RelativePathHelper rph = RelativePathHelper.forModule(SNodeOperations.getModel(node).getModule());
     if (rph == null) {
       // never happens, see show if condition on outer cell 
       return null;
