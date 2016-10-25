@@ -173,12 +173,17 @@ public abstract class SingleRoleCellProvider implements EditorBuilderEnvironment
 
   @Override
   public EditorCellFactory getCellFactory() {
-    return getEditorContext().getCellFactory();
+    return getUpdateSession().getCellFactory();
   }
 
   @Override
   public UpdateSession getUpdateSession() {
     return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
+  }
+
+  protected EditorCell setCellContext(EditorCell cell) {
+    cell.setCellContext(getCellFactory().getCellContext());
+    return cell;
   }
 }
 

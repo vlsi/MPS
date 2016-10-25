@@ -145,4 +145,10 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected boolean filter(SNode childNode) {
     return true;
   }
+
+  protected void setInnerCellsContext() {
+    for (EditorCell cell : myListEditorCell_Collection) {
+      cell.setCellContext(getCellFactory().getCellContext());
+    }
+  }
 }

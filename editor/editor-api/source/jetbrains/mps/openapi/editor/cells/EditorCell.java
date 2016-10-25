@@ -237,6 +237,7 @@ public interface EditorCell {
 
   @Nullable
   TransformationMenuLookup getTransformationMenuLookup();
+
   void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup);
 
   /**
@@ -252,6 +253,14 @@ public interface EditorCell {
 
   void setCellContext(EditorCellContext cellContext);
 
+  /**
+   * Return non-null value for:
+   * - any "big" cell
+   * - "non-big" cell if the context was changed by it's parent (e.g. parent collection cell
+   * pushes down some additional hints)
+   *
+   * @return cellContext or null if no exact context was specified
+   */
   EditorCellContext getCellContext();
 
   void setReferenceCell(boolean isReference);

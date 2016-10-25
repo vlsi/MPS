@@ -131,7 +131,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     myEditorContext = editorContext;
     myNode = node;
     myNodeId = node == null ? null : node.getNodeId();
-    myCellContext = editorContext.getCellFactory().getCellContext();
   }
 
   @Override

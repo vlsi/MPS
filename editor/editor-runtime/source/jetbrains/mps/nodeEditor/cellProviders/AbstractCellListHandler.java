@@ -71,7 +71,7 @@ public abstract class AbstractCellListHandler implements EditorBuilderEnvironmen
 
   @Override
   public EditorCellFactory getCellFactory() {
-    return getEditorContext().getCellFactory();
+    return getUpdateSession().getCellFactory();
   }
 
   @Override

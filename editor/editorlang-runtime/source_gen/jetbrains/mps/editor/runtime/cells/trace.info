@@ -12,7 +12,7 @@
     <file name="BigCellUtil.java">
       <node id="269961672423375031" at="17,69,18,37" concept="3" />
       <node id="269961672423361050" at="19,27,20,18" concept="4" />
-      <node id="269961672423386594" at="22,535,23,18" concept="4" />
+      <node id="269961672423386594" at="22,513,23,18" concept="4" />
       <node id="269961672423361977" at="24,5,25,0" concept="5" />
       <node id="5299592197032535118" at="25,0,26,88" concept="3" />
       <node id="5424600205655627772" at="26,88,27,60" concept="0" />
@@ -28,7 +28,7 @@
       <node id="5299592197032537768" at="27,60,38,5" concept="7" />
       <node id="5299592197032500605" at="17,0,41,0" concept="6" trace="findBigCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="269961672423359695" at="19,27,20,18" />
-      <scope id="269961672423362605" at="22,535,23,18" />
+      <scope id="269961672423362605" at="22,513,23,18" />
       <scope id="5299592197032552908" at="30,40,31,24" />
       <scope id="5299592197032569409" at="34,96,35,71" />
       <scope id="5299592197032555252" at="33,54,36,9" />

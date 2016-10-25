@@ -87,6 +87,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     SProperty nameProperty = getNameProperty();
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
+    mainCellCollection.setCellContext(getCellFactory().getCellContext());
     addLabel(camelToLabel(myConcept.getName()));
     addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, FIRST_LABEL_BACKGROUND_COLOR);
     if (nameProperty != null) {
@@ -423,7 +424,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
 
   @Override
   public EditorCellFactory getCellFactory() {
-    return getEditorContext().getCellFactory();
+    return getUpdateSession().getCellFactory();
   }
 
   @Override

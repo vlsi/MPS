@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment {
   @NotNull
@@ -25,11 +27,17 @@ public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment 
   public abstract SNode getNode();
 
   public EditorCellFactory getCellFactory() {
-    return myEditorContext.getCellFactory();
+    return getUpdateSession().getCellFactory();
   }
 
   @Override
   public UpdateSession getUpdateSession() {
     return myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession();
+  }
+
+  protected void setCellContext(Iterable<EditorCell> cells) {
+    for (EditorCell cell : Sequence.fromIterable(cells)) {
+      cell.setCellContext(getCellFactory().getCellContext());
+    }
   }
 }

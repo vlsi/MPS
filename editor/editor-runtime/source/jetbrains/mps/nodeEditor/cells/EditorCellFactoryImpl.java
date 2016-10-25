@@ -112,11 +112,11 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     if (result == null) {
-      editor = concept.isAbstract() ? new DefaultInterfaceEditor() : AbstractDefaultEditor.createEditor(node);
+      editor = concept.isAbstract() ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
-
+    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
     result.setCellContext(getCellContext());
     return result;
   }
@@ -129,6 +129,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   public EditorCell createEditorComponentCell(SNode node, String editorComponentId) {
     ConceptEditorComponent editorComponent = loadEditorComponent(node, editorComponentId);
     EditorCell result = editorComponent.createEditorCell(myEditorContext, node);
+    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
     result.setCellContext(getCellContext());
     return result;
   }
@@ -216,6 +217,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private static class DefaultInterfaceEditor implements ConceptEditor {
+    private final EditorCellContext myCellContext;
+
+    public DefaultInterfaceEditor(EditorCellContext cellContext) {
+      myCellContext = cellContext;
+    }
+
     @NotNull
     @Override
     public Collection<String> getContextHints() {
@@ -226,6 +233,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       EditorCell_Error editorCell = new EditorCell_Error(context, node, "    ");
       editorCell.setBig(true);
+      editorCell.setCellContext(myCellContext);
       return editorCell;
     }
 
@@ -233,6 +241,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, SNodeOperations.getDebugText(node));
       editorCell.setBig(true);
+      editorCell.setCellContext(myCellContext);
       return editorCell;
     }
   }

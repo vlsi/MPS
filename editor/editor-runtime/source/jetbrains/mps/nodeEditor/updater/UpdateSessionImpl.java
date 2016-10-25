@@ -69,7 +69,6 @@ public class UpdateSessionImpl implements UpdateSession {
 
   private UpdateInfoIndex myUpdateInfoIndex;
   private UpdateInfoNode myCurrentUpdateInfo;
-  private EditorCellFactoryImpl myCellFactory;
 
   protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
@@ -138,20 +137,19 @@ public class UpdateSessionImpl implements UpdateSession {
   Pair<EditorCell, UpdateInfoIndex> performUpdate() {
     myCurrentUpdateInfo = new UpdateInfoNode(ReferencedNodeContext.createNodeContext(getNode()));
     EditorContext editorContext = getUpdater().getEditorContext();
-    editorContext.getCellFactory().pushCellContext();
+    getCellFactory().pushCellContext();
 
     Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
     try {
-      editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
+      getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
       if (explicitHintsForNode != null) {
-        editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+        getCellFactory().addCellContextHints(explicitHintsForNode);
       }
-      result.o1 =
-          EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), getCurrentContext(),
-              editorContext.isInspector());
+      result.o1 = EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), getCurrentContext(),
+          editorContext.isInspector());
     } finally {
-      editorContext.getCellFactory().popCellContext();
+      getCellFactory().popCellContext();
       result.o2 = new UpdateInfoIndex(myCurrentUpdateInfo);
       myCurrentUpdateInfo = null;
     }
@@ -213,8 +211,8 @@ public class UpdateSessionImpl implements UpdateSession {
     }
 
     final EditorContext editorContext = getUpdater().getEditorContext();
-    editorContext.getCellFactory().pushCellContext();
-    editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    getCellFactory().pushCellContext();
+    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
 
     final boolean isNodeAttribute = attributeKind == Node.class;
     if (isNodeAttribute) {
@@ -242,7 +240,7 @@ public class UpdateSessionImpl implements UpdateSession {
         }
       });
     } finally {
-      editorContext.getCellFactory().popCellContext();
+      getCellFactory().popCellContext();
       if (!isNodeAttribute) {
         myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
       }
@@ -260,13 +258,10 @@ public class UpdateSessionImpl implements UpdateSession {
     }
   }
 
+  @NotNull
   @Override
   public EditorCellFactory getCellFactory() {
-    if (myCellFactory == null) {
-      myCellFactory = new EditorCellFactoryImpl(getUpdater().getEditorContext());
-    }
-    return myCellFactory;
-
+    return getUpdater().getEditorContext().getCellFactory();
   }
 
   private ReferencedNodeContext getCurrentContext() {
@@ -295,14 +290,14 @@ public class UpdateSessionImpl implements UpdateSession {
   private <T> T runWithExplicitEditorHints(EditorContext editorContext, SNode node, Computable<T> cellCreator) {
     String[] explicitHintsForNode = getExplicitHintsForNode(node);
     if (explicitHintsForNode != null) {
-      editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+      getCellFactory().pushCellContext();
+      getCellFactory().addCellContextHints(explicitHintsForNode);
     }
     try {
       return cellCreator.compute();
     } finally {
       if (explicitHintsForNode != null) {
-        editorContext.getCellFactory().popCellContext();
+        getCellFactory().popCellContext();
       }
     }
   }

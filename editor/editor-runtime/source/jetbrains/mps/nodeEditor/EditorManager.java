@@ -30,7 +30,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
+import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -83,6 +85,23 @@ public class EditorManager {
     return myEditorContext;
   }
 
+  private Updater getUpdater() {
+    return getEditorContext().getEditorComponent().getUpdater();
+  }
+
+  // TODO: remove this method, use getUpdater()
+  private UpdaterImpl getUpdaterImpl() {
+    return (UpdaterImpl) getEditorContext().getEditorComponent().getUpdater();
+  }
+
+  private UpdateSession getUpdateSession() {
+    return getUpdater().getCurrentUpdateSession();
+  }
+
+  private EditorCellFactory getCellFactory() {
+    return getUpdateSession().getCellFactory();
+  }
+
   // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
   public EditorCell createRootCell(SNode node, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext, boolean isInspectorCell) {
     try {
@@ -130,8 +149,7 @@ public class EditorManager {
 
   public EditorCell createNodeRoleAttributeCell(SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
-    EditorCell attributeCell =
-        getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
+    EditorCell attributeCell = getUpdateSession().updateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
     // see a comment for isAttributedCell() method
     if (attributeCell == cellWithRole) {
       return cellWithRole;
@@ -140,8 +158,7 @@ public class EditorManager {
       attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
 
-    UpdaterImpl updater = (UpdaterImpl) getEditorContext().getEditorComponent().getUpdater();
-    UpdateSession updateSession = updater.getCurrentUpdateSession();
+    UpdaterImpl updater = getUpdaterImpl();
     Set<SNode> newAttributeCell_DependOn = new HashSet<SNode>();
     Set<SNode> attributeCell_DependOn = updater.getRelatedNodes(attributeCell);
     if (attributeCell_DependOn != null) {
@@ -168,7 +185,7 @@ public class EditorManager {
         newAttributeCell_RefTargetsDependsOn.addAll(readAccessListener.getRefTargetsToDependOn());
       }
     }
-    updateSession.registerDependencies(attributeCell, newAttributeCell_DependOn, newAttributeCell_RefTargetsDependsOn);
+    getUpdateSession().registerDependencies(attributeCell, newAttributeCell_DependOn, newAttributeCell_RefTargetsDependsOn);
 
     return attributeCell;
   }
@@ -249,12 +266,12 @@ public class EditorManager {
         }
       }
 
-      UpdaterImpl updater = (UpdaterImpl) getEditorContext().getEditorComponent().getUpdater();
+      UpdaterImpl updater = getUpdaterImpl();
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
       EditorCell oldCell = null;
       if (modifications != null) {
         oldCell = myContextToOldCellMap.peek().remove(refContext);
-        boolean nodeChanged = isNodeChanged(modifications, updater, oldCell, getEditorContext().getCellFactory().getCellContext());
+        boolean nodeChanged = isNodeChanged(modifications, updater, oldCell, getCellFactory().getCellContext());
 
         if (!nodeChanged) {
           if (oldCell != null) {
@@ -355,6 +372,7 @@ public class EditorManager {
         LOG.error("Failed to synchronize cell for node " + SNodeOperations.getDebugText(node), e);
         result = new EditorCell_Error(getEditorContext(), node, "!exception!:" + SNodeOperations.getDebugText(node));
         result.setBig(true);
+        result.setCellContext(getCellFactory().getCellContext());
       } finally {
         /**
          * Always adding cell's node to the set of dependencies of the corresponding cell.
@@ -380,7 +398,7 @@ public class EditorManager {
           result.putUserObject(BIG_CELL_CONTEXT, refContext);
           EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(result, node);
           if (unwrappedNodeBigCell != null) {
-            getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
+            getUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
           }
         }
       }
@@ -402,7 +420,7 @@ public class EditorManager {
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
-        nodeCell = getEditorContext().getCellFactory().createEditorCell(node, isInspectorCell);
+        nodeCell = getCellFactory().createEditorCell(node, isInspectorCell);
 
         if (!isAttributedCell(nodeCell)) {
           nodeCell = addSideTransformHintCell(nodeCell, node);
@@ -411,6 +429,7 @@ public class EditorManager {
         LOG.error("Failed to create cell for node " + SNodeOperations.getDebugText(node), e);
         nodeCell = new EditorCell_Error(getEditorContext(), node, "!exception!:" + SNodeOperations.getDebugText(node));
         nodeCell.setBig(true);
+        nodeCell.setCellContext(getCellFactory().getCellContext());
       } finally {
         /**
          * Always adding cell's node to the set of dependencies of the corresponding cell.
@@ -436,7 +455,7 @@ public class EditorManager {
           nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
           EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
           if (unwrappedNodeBigCell != null) {
-            getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
+            getUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
           }
           addNodeDependenciesToEditor(nodeCell, nodeAccessListener);
         }
@@ -515,13 +534,12 @@ public class EditorManager {
   }
 
   private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener) {
-    UpdateSession updateSession = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
-    updateSession.registerDependencies(cell, listener.getNodesToDependOn(), listener.getRefTargetsToDependOn());
+    getUpdateSession().registerDependencies(cell, listener.getNodesToDependOn(), listener.getRefTargetsToDependOn());
     for (Pair<SNodeReference, String> pair : listener.getDirtilyReadAccessedProperties()) {
-      updateSession.registerDirtyDependency(cell, pair);
+      getUpdateSession().registerDirtyDependency(cell, pair);
     }
     for (Pair<SNodeReference, String> pair : listener.getExistenceReadAccessProperties()) {
-      updateSession.registerExistenceDependency(cell, pair);
+      getUpdateSession().registerExistenceDependency(cell, pair);
     }
   }
 

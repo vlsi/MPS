@@ -5300,6 +5300,44 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="2zXaaLEql40" role="3cqZAp">
+            <node concept="2OqwBi" id="2zXaaLEqlvW" role="3clFbG">
+              <node concept="37vLTw" id="2zXaaLEql3Y" role="2Oq$k0">
+                <ref role="3cqZAo" node="4GrrhHoqGxV" resolve="editorCell" />
+              </node>
+              <node concept="liA8E" id="2zXaaLEqlYA" role="2OqNvi">
+                <ref role="37wK5l" to="f4zo:~EditorCell.setCellContext(jetbrains.mps.openapi.editor.cells.EditorCellContext):void" resolve="setCellContext" />
+                <node concept="2OqwBi" id="2zXaaLEqmQQ" role="37wK5m">
+                  <node concept="1rXfSq" id="2zXaaLEqmKe" role="2Oq$k0">
+                    <ref role="37wK5l" to="qvne:6OQfiPCHBjx" resolve="getCellFactory" />
+                  </node>
+                  <node concept="liA8E" id="2zXaaLEqmYJ" role="2OqNvi">
+                    <ref role="37wK5l" to="f4zo:~EditorCellFactory.getCellContext():jetbrains.mps.openapi.editor.cells.EditorCellContext" resolve="getCellContext" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="raruj" id="2zXaaLEqn2m" role="lGtFl" />
+            <node concept="1W57fq" id="2zXaaLEqngI" role="lGtFl">
+              <node concept="3IZrLx" id="2zXaaLEqngK" role="3IZSJc">
+                <node concept="3clFbS" id="2zXaaLEqngM" role="2VODD2">
+                  <node concept="3clFbF" id="2zXaaLEqnTv" role="3cqZAp">
+                    <node concept="2OqwBi" id="2zXaaLEqnTw" role="3clFbG">
+                      <node concept="1mIQ4w" id="2zXaaLEqnTx" role="2OqNvi">
+                        <node concept="chp4Y" id="2zXaaLEqnTy" role="cj9EA">
+                          <ref role="cht4Q" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="2zXaaLEqnTz" role="2Oq$k0">
+                        <node concept="1mfA1w" id="2zXaaLEqnT$" role="2OqNvi" />
+                        <node concept="30H73N" id="2zXaaLEqnT_" role="2Oq$k0" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="4GrrhHoqGyD" role="3cqZAp">
             <node concept="1niqFM" id="4GrrhHoqGyE" role="3clFbG">
               <property role="1npUBZ" value="class_CellActionMapDeclaration" />
@@ -5311,7 +5349,7 @@
                 <ref role="3cqZAo" to="tpc3:7GOmDNDA2zg" resolve="myNode" />
               </node>
               <node concept="1rXfSq" id="4GrrhHoqH$m" role="2U24H$">
-                <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
               </node>
               <node concept="3uibUv" id="4GrrhHoqGyI" role="32Mpfj">
                 <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />

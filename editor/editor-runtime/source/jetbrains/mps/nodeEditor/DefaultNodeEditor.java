@@ -38,6 +38,7 @@ public class DefaultNodeEditor implements ConceptEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell_error = new EditorCell_Error(editorContext, node, "no editor found");
     editorCell_error.setBig(true);
+    editorCell_error.setCellContext(editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().getCellFactory().getCellContext());
     return editorCell_error;
   }
 
@@ -50,6 +51,7 @@ public class DefaultNodeEditor implements ConceptEditor {
     public DefaultInspectorCell(@NotNull EditorContext editorContext, SNode node, String text, boolean editable) {
       super(editorContext, node, text, editable);
       setBig(true);
+      setCellContext(editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().getCellFactory().getCellContext());
     }
   }
 }
