@@ -114,8 +114,8 @@
              url="http://jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="4">
-      <build number="162.1616" version="3.4">
-        <message>JetBrains MPS 3.4 is available.</message>
+      <build number="162.1913" version="3.4.1">
+        <message>JetBrains MPS 3.4/1 is available.</message>
       </build>
     </channel>
 
@@ -123,8 +123,8 @@
              url="http://jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="4">
-      <build number="162.1616" version="3.4">
-        <message>JetBrains MPS 3.4 is available.</message>
+      <build number="162.1913" version="3.4.1">
+        <message>JetBrains MPS 3.4.1 is available.</message>
       </build>
     </channel>
 
