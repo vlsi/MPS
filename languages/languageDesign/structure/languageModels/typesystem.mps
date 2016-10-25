@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -181,6 +181,9 @@
       </concept>
       <concept id="1227096498176" name="jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget" flags="ng" index="2ODE4t">
         <reference id="1227096521710" name="propertyDeclaration" index="2ODJFN" />
+      </concept>
+      <concept id="1227096620180" name="jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget" flags="ng" index="2OE7Q9">
+        <reference id="1227096645744" name="linkDeclaration" index="2OEe5H" />
       </concept>
       <concept id="1227096774658" name="jetbrains.mps.lang.typesystem.structure.MessageStatement" flags="ng" index="2OEH$v">
         <child id="1227096802791" name="helginsIntention" index="2OEOjU" />
@@ -4094,6 +4097,59 @@
     <node concept="1YaCAy" id="2BJSfVLNFyJ" role="1YuTPh">
       <property role="TrG5h" value="linkToCheck" />
       <ref role="1YaFvo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="WyclBLqIoK">
+    <property role="TrG5h" value="check_Finals" />
+    <node concept="3clFbS" id="WyclBLqIoL" role="18ibNy">
+      <node concept="3clFbJ" id="WyclBLqOM8" role="3cqZAp">
+        <node concept="3clFbS" id="WyclBLqOMa" role="3clFbx">
+          <node concept="3cpWs6" id="WyclBLqPGL" role="3cqZAp" />
+        </node>
+        <node concept="2OqwBi" id="WyclBLqPb9" role="3clFbw">
+          <node concept="2OqwBi" id="WyclBLqOMy" role="2Oq$k0">
+            <node concept="1YBJjd" id="WyclBLqOMz" role="2Oq$k0">
+              <ref role="1YBMHb" node="WyclBLqIoN" resolve="c" />
+            </node>
+            <node concept="3TrEf2" id="WyclBLqOM$" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="WyclBLqPEk" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3clFbJ" id="WyclBLqPHa" role="3cqZAp">
+        <node concept="3clFbS" id="WyclBLqPHc" role="3clFbx">
+          <node concept="2MkqsV" id="WyclBLqURx" role="3cqZAp">
+            <node concept="Xl_RD" id="WyclBLqVjo" role="2MkJ7o">
+              <property role="Xl_RC" value="Can't extend a final concept" />
+            </node>
+            <node concept="1YBJjd" id="WyclBLqURI" role="2OEOjV">
+              <ref role="1YBMHb" node="WyclBLqIoN" resolve="c" />
+            </node>
+            <node concept="2OE7Q9" id="WyclBLqV90" role="2OEWyd">
+              <ref role="2OEe5H" to="tpce:f_TJDff" resolve="extends" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="WyclBLqQ6j" role="3clFbw">
+          <node concept="2OqwBi" id="WyclBLqPHG" role="2Oq$k0">
+            <node concept="1YBJjd" id="WyclBLqPHH" role="2Oq$k0">
+              <ref role="1YBMHb" node="WyclBLqIoN" resolve="c" />
+            </node>
+            <node concept="3TrEf2" id="WyclBLqPHI" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpce:f_TJDff" resolve="extends" />
+            </node>
+          </node>
+          <node concept="3TrcHB" id="WyclBLqQ_F" role="2OqNvi">
+            <ref role="3TsBF5" to="tpce:40UcGlRb7V7" resolve="final" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="WyclBLqIoN" role="1YuTPh">
+      <property role="TrG5h" value="c" />
+      <ref role="1YaFvo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
   </node>
 </model>
