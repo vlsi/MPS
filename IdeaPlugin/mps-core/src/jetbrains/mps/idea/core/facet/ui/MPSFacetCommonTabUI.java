@@ -55,6 +55,7 @@ public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
     myContext = context;
   }
 
+  @Override
   public void reset(MPSConfigurationBean data) {
     refreshSolutionDescriptorName();
     for (SModuleConfigurationTab tab : myTabs) {
@@ -71,12 +72,14 @@ public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
     mySolutionNamespace.setText(moduleName);
   }
 
+  @Override
   public void apply(MPSConfigurationBean data) {
     for (SModuleConfigurationTab tab : myTabs) {
       tab.apply(data);
     }
   }
 
+  @Override
   public boolean isModified(MPSConfigurationBean data) {
     for (SModuleConfigurationTab tab : myTabs) {
       if (tab.isModified(data)) {
@@ -86,6 +89,7 @@ public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
     return false;
   }
 
+  @Override
   public JPanel getRootPanel() {
     return rootPanel;
   }
@@ -102,17 +106,13 @@ public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
       @Override
       protected void doAddElements(final Set<SModuleReference> elementsToAdd) {
         super.doAddElements(elementsToAdd);
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            ModuleRuntimeLibrariesImporter.importForUsedLanguages(myContext, elementsToAdd);
-          }
-        });
+        ApplicationManager.getApplication().runWriteAction(
+          () -> ModuleRuntimeLibrariesImporter.importForUsedLanguages(myContext, elementsToAdd));
       }
     };
 
     // can not make it final and init in declaration since idea forms generator does not like it and put $$$setupUI$$$ call before setting the field
-    myTabs = new ArrayList<SModuleConfigurationTab>();
+    myTabs = new ArrayList<>();
     myTabs.add(mpsFacetSourcesTab);
     myTabs.add(mpsFacetPathsTab);
     myTabs.add(usedLanguagesTable);
@@ -120,15 +120,13 @@ public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
     tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, mpsFacetSourcesTab.getRootPanel(), null);
     tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, mpsFacetPathsTab.getRootPanel(), null);
     tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, usedLanguagesTable.getRootPanel(), null);
-    tabbedPane.addTab(MPSBundle.message("facet.devkits.tab.name"), MPSIcons.DEVKITS_TAB_ICON, new JPanel(), null);
 
     myCentralComponent = tabbedPane.getComponent();
   }
 
+  @Override
   public void onTabEntering() {
     refreshSolutionDescriptorName();
-    for (SModuleConfigurationTab tab : myTabs) {
-      tab.onTabEntering();
-    }
+    myTabs.forEach(SModuleConfigurationTab::onTabEntering);
   }
 }
