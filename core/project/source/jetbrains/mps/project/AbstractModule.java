@@ -316,6 +316,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (reexport && !dep.isReexport()) {
         dep.setReexport(true);
         dependenciesChanged();
+        fireChanged();
         setChanged();
       }
       return dep;
@@ -327,6 +328,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     descriptor.getDependencies().add(dep);
 
     dependenciesChanged();
+    fireChanged();
     setChanged();
     return dep;
   }
@@ -344,6 +346,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     descriptor.getDependencies().remove(dependency);
 
     dependenciesChanged();
+    fireChanged();
     setChanged();
   }
 
