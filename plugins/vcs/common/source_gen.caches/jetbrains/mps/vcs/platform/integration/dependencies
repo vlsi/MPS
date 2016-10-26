@@ -297,12 +297,17 @@
     <classNode extendsClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" file="OptimizeImportsCheckinHandler.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsConfiguration" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.CommitContext" />
     <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandlerFactory" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.RefreshableOnComponent" />
+    <classNode dependClassName="com.intellij.util.WaitForProgressToShow" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
@@ -316,6 +321,7 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.OptimizeImportsHelper" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
@@ -325,6 +331,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.PluginVCSManager" file="PluginVCSManager.java">

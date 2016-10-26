@@ -43,6 +43,7 @@
     <import index="jmi8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.util(MPS.IDEA/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="o8e1" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.diff.merge(MPS.IDEA/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2257,9 +2258,7 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="6HpunfUDluR" role="1B3o_S" />
-      <node concept="3uibUv" id="6HpunfUDqeo" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6IL1Wh7tEN6" role="1tU5fm" />
     </node>
     <node concept="Wx3nA" id="6HpunfUDPxf" role="jymVt">
       <property role="TrG5h" value="PARAM_INSPECTOR_SPLITTER_POSITION" />
@@ -2278,9 +2277,7 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="6HpunfUDPxl" role="1B3o_S" />
-      <node concept="3uibUv" id="6HpunfUDPxm" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6IL1Wh7tF3N" role="1tU5fm" />
     </node>
     <node concept="312cEg" id="2jv$fqwev73" role="jymVt">
       <property role="TrG5h" value="myProject" />
@@ -2733,6 +2730,31 @@
           </node>
         </node>
         <node concept="3clFbH" id="2jv$fqwev9M" role="3cqZAp" />
+        <node concept="3cpWs8" id="6IL1Wh7tQip" role="3cqZAp">
+          <node concept="3cpWsn" id="6IL1Wh7tQiq" role="3cpWs9">
+            <property role="TrG5h" value="modelAccess" />
+            <node concept="3uibUv" id="6IL1Wh7tQim" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="2OqwBi" id="6IL1Wh7tQir" role="33vP2m">
+              <node concept="2OqwBi" id="6IL1Wh7tQis" role="2Oq$k0">
+                <node concept="2YIFZM" id="6IL1Wh7tQit" role="2Oq$k0">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <node concept="37vLTw" id="6IL1Wh7tQiu" role="37wK5m">
+                    <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6IL1Wh7tQiv" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="liA8E" id="6IL1Wh7tQiw" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="2jv$fqwev9N" role="3cqZAp">
           <node concept="2OqwBi" id="2jv$fqwev9O" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuFiA" role="2Oq$k0">
@@ -2744,12 +2766,8 @@
                 <node concept="3clFbS" id="2jv$fqwev9S" role="1bW5cS">
                   <node concept="3clFbF" id="2jv$fqwev9T" role="3cqZAp">
                     <node concept="2OqwBi" id="2jv$fqwev9U" role="3clFbG">
-                      <node concept="2YIFZM" id="2jv$fqwev9V" role="2Oq$k0">
-                        <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                        <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                      </node>
                       <node concept="liA8E" id="2jv$fqwev9W" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
+                        <ref role="37wK5l" to="lui2:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
                         <node concept="1bVj0M" id="2jv$fqwev9X" role="37wK5m">
                           <node concept="3clFbS" id="2jv$fqwev9Y" role="1bW5cS">
                             <node concept="3clFbF" id="2jv$fqwev9Z" role="3cqZAp">
@@ -2759,6 +2777,9 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                      <node concept="37vLTw" id="6IL1Wh7tSke" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6IL1Wh7tQiq" resolve="modelAccess" />
                       </node>
                     </node>
                   </node>
@@ -4568,10 +4589,10 @@
             <node concept="2ShNRf" id="2jv$fqwevle" role="33vP2m">
               <node concept="1pGfFk" id="2jv$fqwevlf" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaz9" resolve="DiffEditor" />
-                <node concept="2YIFZM" id="5foWEVqQrTP" role="37wK5m">
+                <node concept="2YIFZM" id="6IL1Wh7tBCW" role="37wK5m">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
                   <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <node concept="37vLTw" id="2BHiRxeukuz" role="37wK5m">
+                  <node concept="37vLTw" id="6IL1Wh7tBCX" role="37wK5m">
                     <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
                   </node>
                 </node>
