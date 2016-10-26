@@ -11,6 +11,10 @@ import junit.framework.Assert;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import java.util.List;
+import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * This is test class for _supported_ persistences. 
@@ -53,4 +57,49 @@ public class TestPersistenceHelper {
   public String getDefaultExt() {
     return PersistenceRegistry.getInstance().getDefaultModelFactory().getFileExtension();
   }
+
+  public static <C> String assertListsEqual(List<C> expectedList, List<C> actualList, String name) {
+    return assertListsEqual(expectedList, actualList, new Comparator<C>() {
+      @Override
+      public int compare(C o1, C o2) {
+        return (o1.equals(o2) ? 0 : 1);
+      }
+    }, name);
+  }
+  public static <C> String assertListsEqual(List<C> expectedList, List<C> actualList, Comparator<C> comparator, String name) {
+    List<C> notFoundExpected = new ArrayList<C>();
+    List<C> notFoundActual = new ArrayList<C>();
+    for (C expected : expectedList) {
+      boolean found = false;
+      for (C actual : actualList) {
+        if (comparator.compare(actual, expected) == 0) {
+          found = true;
+          break;
+        }
+      }
+      if (!(found)) {
+        notFoundExpected.add(expected);
+      }
+    }
+    for (C actual : actualList) {
+      boolean found = false;
+      for (C expected : expectedList) {
+        if (comparator.compare(actual, expected) == 0) {
+          found = true;
+          break;
+        }
+      }
+      if (!(found)) {
+        notFoundActual.add(actual);
+      }
+    }
+    if (!(notFoundExpected.isEmpty())) {
+      return "Not found expected " + name + " " + Arrays.toString(notFoundExpected.toArray());
+    }
+    if (!(notFoundActual.isEmpty())) {
+      return "Not expected " + name + " " + Arrays.toString(notFoundActual.toArray());
+    }
+    return null;
+  }
+
 }

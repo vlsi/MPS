@@ -24,6 +24,22 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.extapi.model.SModelBase;
+import org.jetbrains.mps.openapi.model.SNode;
+import java.util.HashMap;
+import java.util.List;
+import jetbrains.mps.smodel.ImplicitImportsLegacyHolder;
+import java.util.Comparator;
+import java.util.Set;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.HashSet;
+import jetbrains.mps.util.IterableUtil;
+import java.util.Iterator;
+import jetbrains.mps.util.SNodeOperations;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.ArrayList;
+import java.util.Collections;
 
 @MPSLaunch
 public class TestPersistence_Test extends BaseTransformationTest {
@@ -91,7 +107,7 @@ public class TestPersistence_Test extends BaseTransformationTest {
         Assert.assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            ModelAssert.assertDeepModelEquals(helper.getTestModel().getSModel(), result.getModel());
+            TestBody.this.assertDeepModelEquals(helper.getTestModel().getSModel(), result.getModel());
           }
         });
         result.getModel().dispose();
@@ -120,7 +136,7 @@ public class TestPersistence_Test extends BaseTransformationTest {
         SModelBase upgradedModel = ((SModelBase) PersistenceUtil.loadModel(upgradedContent, helper.getDefaultExt()));
 
         // do test 
-        ModelAssert.assertDeepModelEquals(notUpgradedModel.getSModel(), upgradedModel.getSModel());
+        this.assertDeepModelEquals(notUpgradedModel.getSModel(), upgradedModel.getSModel());
 
         notUpgradedModel.getSModel().dispose();
         upgradedModel.getSModel().dispose();
@@ -128,5 +144,159 @@ public class TestPersistence_Test extends BaseTransformationTest {
     }
 
 
+    public void assertDeepModelEquals(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+      ModelAccess.instance().checkReadAccess();
+      this.assertSameImports(expectedModel, actualModel);
+      this.assertSameModelImports(expectedModel, actualModel);
+      this.assertSameLanguageAspects(expectedModel, actualModel);
+      this.assertSameNodesCollections("root", expectedModel.getRootNodes(), actualModel.getRootNodes());
+    }
+    public void assertSameNodesCollections(String objectName, Iterable<SNode> expected, Iterable<SNode> actual) {
+      HashMap<org.jetbrains.mps.openapi.model.SNodeId, SNode> actualIdToNodeMap = new HashMap<org.jetbrains.mps.openapi.model.SNodeId, SNode>();
+      for (SNode actualNode : actual) {
+        actualIdToNodeMap.put(actualNode.getNodeId(), actualNode);
+      }
+      for (SNode expectedNode : expected) {
+        org.jetbrains.mps.openapi.model.SNodeId rootId = expectedNode.getNodeId();
+        SNode actualNode = actualIdToNodeMap.get(rootId);
+        Assert.assertNotNull("Not found expected " + objectName + " " + expectedNode, actualNode);
+        this.assertDeepNodeEquals(expectedNode, actualNode);
+        actualIdToNodeMap.remove(rootId);
+      }
+      Assert.assertTrue("Found not expected " + objectName + " " + actualIdToNodeMap, actualIdToNodeMap.isEmpty());
+    }
+    public void assertSameModelImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+      TestPersistenceHelper.assertListsEqual(this.getImportedModelUIDs(expectedModel), this.getImportedModelUIDs(actualModel), "model import");
+    }
+    public void assertSameLanguageAspects(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+      List<jetbrains.mps.smodel.SModel.ImportElement> expectedLanguageAspects = expectedModel.getImplicitImportsSupport().getAdditionalModelVersions();
+      List<jetbrains.mps.smodel.SModel.ImportElement> actualLanguageAspects = actualModel.getImplicitImportsSupport().getAdditionalModelVersions();
+      for (jetbrains.mps.smodel.SModel.ImportElement expectedEl : expectedLanguageAspects) {
+        boolean found = false;
+        for (jetbrains.mps.smodel.SModel.ImportElement actualEl : actualLanguageAspects) {
+          if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
+            found = true;
+            break;
+          }
+        }
+        if (!(found)) {
+          Assert.fail("Not found expected language aspect " + expectedEl.getModelReference());
+        }
+      }
+      for (jetbrains.mps.smodel.SModel.ImportElement actualEl : actualLanguageAspects) {
+        boolean found = false;
+        for (jetbrains.mps.smodel.SModel.ImportElement expectedEl : expectedLanguageAspects) {
+          if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
+            found = true;
+            break;
+          }
+        }
+        if (!(found)) {
+          Assert.fail("Unexpected language aspect " + actualEl.getModelReference());
+        }
+      }
+    }
+    public void assertSameImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+      final ImplicitImportsLegacyHolder is1 = expectedModel.getImplicitImportsSupport();
+      final ImplicitImportsLegacyHolder is2 = actualModel.getImplicitImportsSupport();
+      is1.calculateImplicitImports();
+      is2.calculateImplicitImports();
+      TestPersistenceHelper.assertListsEqual(is1.getAdditionalModelVersions(), is2.getAdditionalModelVersions(), new Comparator<jetbrains.mps.smodel.SModel.ImportElement>() {
+        @Override
+        public int compare(jetbrains.mps.smodel.SModel.ImportElement import1, jetbrains.mps.smodel.SModel.ImportElement import2) {
+          return (import1.getModelReference().equals(import2.getModelReference()) ? 0 : 1);
+        }
+      }, "import");
+    }
+    public void assertDeepNodeEquals(SNode expectedNode, SNode actualNode) {
+      Assert.assertEquals(this.getErrorString("concept", expectedNode, actualNode), expectedNode.getConcept().getQualifiedName(), actualNode.getConcept().getQualifiedName());
+      this.assertPropertyEquals(expectedNode, actualNode);
+      this.assertReferenceEquals(expectedNode, actualNode);
+      this.assertDeepChildrenEquals(expectedNode, actualNode);
+    }
+    public void assertDeepChildrenEquals(SNode expectedNode, SNode actualNode) {
+      Set<SContainmentLink> roles = new HashSet<SContainmentLink>();
+      for (SNode child : expectedNode.getChildren()) {
+        roles.add(child.getContainmentLink());
+      }
+      for (SNode child : actualNode.getChildren()) {
+        roles.add(child.getContainmentLink());
+      }
+      for (SContainmentLink role : roles) {
+        Iterable<? extends SNode> expectedChildren = expectedNode.getChildren(role);
+        Iterable<? extends SNode> actualChildren = actualNode.getChildren(role);
+        int esize = IterableUtil.asCollection(expectedChildren).size();
+        int asize = IterableUtil.asCollection(actualChildren).size();
+        Assert.assertEquals(this.getErrorString("child count in role " + role, expectedNode, actualNode), esize, asize);
+        Iterator<? extends SNode> actualIterator = actualChildren.iterator();
+        for (SNode expectedChild : expectedChildren) {
+          SNode actualChild = actualIterator.next();
+          Assert.assertEquals(this.getErrorString("children in role " + role, expectedNode, actualNode), expectedChild.getNodeId(), actualChild.getNodeId());
+          this.assertDeepNodeEquals(expectedChild, actualChild);
+        }
+      }
+    }
+    public void assertPropertyEquals(SNode expectedNode, SNode actualNode) {
+      HashSet<String> propertes = new HashSet<String>();
+      propertes.addAll(IterableUtil.asCollection(expectedNode.getPropertyNames()));
+      propertes.addAll(IterableUtil.asCollection(actualNode.getPropertyNames()));
+      for (String key : propertes) {
+        String expectedProperty = SNodeOperations.getProperties(expectedNode).get(key);
+        String actualProperty = SNodeOperations.getProperties(actualNode).get(key);
+        Assert.assertEquals(this.getErrorString("property " + key, expectedNode, actualNode), expectedProperty, actualProperty);
+      }
+    }
+    public String getErrorString(String text, SNode expectedNode, SNode actualNode) {
+      return "Different " + text + " for nodes " + expectedNode + " and " + actualNode + ".";
+    }
+    public void assertReferenceEquals(SNode expectedNode, SNode actualNode) {
+      Set<String> roles = new HashSet<String>();
+      roles.addAll(SNodeOperations.getReferenceRoles(expectedNode));
+      roles.addAll(SNodeOperations.getReferenceRoles(actualNode));
+      Map<String, Set<SReference>> expRoleToReferenceMap = this.createRoleToReferenceMap(expectedNode);
+      Map<String, Set<SReference>> actRoleToReferenceMap = this.createRoleToReferenceMap(actualNode);
+      for (String role : roles) {
+        Assert.assertEquals(this.getErrorString("different number of referents in role " + role, expectedNode, actualNode), expRoleToReferenceMap.get(role).size(), actRoleToReferenceMap.get(role).size());
+        SReference expectedReference = expectedNode.getReference(role);
+        SReference actualReference = actualNode.getReference(role);
+        this.assertReferenceEquals(this.getErrorString("reference in role " + role, expectedNode, actualNode), expectedReference, actualReference);
+      }
+    }
+    public Map<String, Set<SReference>> createRoleToReferenceMap(SNode expectedNode) {
+      Map<String, Set<SReference>> expRoleToReferenceMap = new HashMap<String, Set<SReference>>();
+      for (SReference ref : expectedNode.getReferences()) {
+        if (expRoleToReferenceMap.get(ref.getRole()) == null) {
+          expRoleToReferenceMap.put(ref.getRole(), new HashSet<SReference>());
+        }
+        expRoleToReferenceMap.get(ref.getRole()).add(ref);
+      }
+      return expRoleToReferenceMap;
+    }
+    public void assertReferenceEquals(String errorString, SReference expectedReference, SReference actualReference) {
+      if (expectedReference == null) {
+        Assert.assertNull(errorString, actualReference);
+        return;
+      }
+      Assert.assertNotNull(errorString, actualReference);
+      // assertIdEqualsOrBothNull(errorString, expectedReference.getTargetNode(), actualReference.getTargetNode()); 
+      Assert.assertEquals(errorString, ((jetbrains.mps.smodel.SReference) expectedReference).getResolveInfo(), ((jetbrains.mps.smodel.SReference) actualReference).getResolveInfo());
+      Assert.assertEquals(errorString, expectedReference.getRole(), actualReference.getRole());
+      Assert.assertEquals(errorString, expectedReference.getTargetNodeId(), actualReference.getTargetNodeId());
+    }
+    public void assertIdEqualsOrBothNull(String errorString, SNode expectedNode, SNode actualNode) {
+      if (expectedNode == null) {
+        Assert.assertNull(errorString, actualNode);
+        return;
+      }
+      Assert.assertNotNull(errorString, actualNode);
+      Assert.assertEquals(errorString, expectedNode.getNodeId(), actualNode.getNodeId());
+    }
+    public List<SModelReference> getImportedModelUIDs(jetbrains.mps.smodel.SModel sModel) {
+      List<SModelReference> references = new ArrayList<SModelReference>();
+      for (jetbrains.mps.smodel.SModel.ImportElement importElement : sModel.importedModels()) {
+        references.add(importElement.getModelReference());
+      }
+      return Collections.unmodifiableList(references);
+    }
   }
 }
