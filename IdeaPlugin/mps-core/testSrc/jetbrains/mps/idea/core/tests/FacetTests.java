@@ -29,6 +29,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.util.ThrowableRunnable;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -38,6 +39,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -45,14 +47,22 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 public class FacetTests extends AbstractMPSFixtureTestCase {
+
+  private ModuleRepositoryFacade myModuleRepositoryFacade;
+
+  @Override
+  protected void setUp() throws Exception {
+    super.setUp();
+    myModuleRepositoryFacade = new ModuleRepositoryFacade(ProjectHelper.fromIdeaProject(myModule.getProject()));
+  }
 
   @Override
   protected void runTest() throws Throwable {
@@ -74,39 +84,34 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     assertTrue(myFacet.wasInitialized());
 
-    runModelRead(new Runnable() {
-      @Override
-      public void run() {
-        // Default Solution settings
-        Solution solution = myFacet.getSolution();
-        assertFalse(solution.getModelRoots().iterator().hasNext());
-        // JDK solution should be always returned as module dependencies for now
-        // Commented out: jdk is connected like a real module sdk, which is probably absent in this test environment
+    runModelRead(() -> {
+      // Default Solution settings
+      Solution solution = myFacet.getSolution();
+      assertFalse(solution.getModelRoots().iterator().hasNext());
+      // JDK solution should be always returned as module dependencies for now
+      // Commented out: jdk is connected like a real module sdk, which is probably absent in this test environment
 //    assertEquals(1, solution.getDependencies().size());
-        assertEmpty(solution.getUsedLanguagesReferences());
+      assertEmpty(myFacet.getConfiguration().getBean().getUsedLanguages());
 
-        assertEquals(getModuleHome() + "/src_gen", solution.getOutputPath().getPath());
+      assertEquals(getModuleHome() + "/src_gen", solution.getOutputPath().toPath().toString());
 
-        Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solution.getModuleReference(), Solution.class);
-        assertEquals(solution, repositorySolution);
-        assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
-      }
+      Solution repositorySolution = myModuleRepositoryFacade.getModule(solution.getModuleReference(), Solution.class);
+      assertEquals(solution, repositorySolution);
+      assertEquals(myModule.getName(), solution.getModuleDescriptor().getNamespace());
     });
   }
 
   public void testSolutionRemovedOnFacetDeletion() {
     SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      public void run() {
-        ModifiableFacetModel modifiableModel = FacetManager.getInstance(myModule).createModifiableModel();
-        MPSFacet mpsFacet = modifiableModel.getFacetByType(MPSFacetType.ID);
-        modifiableModel.removeFacet(mpsFacet);
-        modifiableModel.commit();
-      }
+    ApplicationManager.getApplication().runWriteAction(() -> {
+      ModifiableFacetModel modifiableModel = FacetManager.getInstance(myModule).createModifiableModel();
+      MPSFacet mpsFacet = modifiableModel.getFacetByType(MPSFacetType.ID);
+      modifiableModel.removeFacet(mpsFacet);
+      modifiableModel.commit();
     });
 
-    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
+    Solution repositorySolution = myModuleRepositoryFacade.getModule(solutionReference, Solution.class);
     assertNull(repositorySolution);
   }
 
@@ -114,16 +119,14 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
     SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      public void run() {
-        ModuleManager moduleManager = ModuleManager.getInstance(myModule.getProject());
-        ModifiableModuleModel modifiableModel = moduleManager.getModifiableModel();
-        modifiableModel.disposeModule(myModule);
-        modifiableModel.commit();
-      }
+    ApplicationManager.getApplication().runWriteAction(() -> {
+      ModuleManager moduleManager = ModuleManager.getInstance(myModule.getProject());
+      ModifiableModuleModel modifiableModel = moduleManager.getModifiableModel();
+      modifiableModel.disposeModule(myModule);
+      modifiableModel.commit();
     });
 
-    Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
+    Solution repositorySolution = myModuleRepositoryFacade.getModule(solutionReference, Solution.class);
     assertNull(repositorySolution);
   }
 
@@ -138,43 +141,45 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(modelRootPath);
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelRootPath);
-    configurationBean.setModelRoots(Arrays.<ModelRoot>asList(root));
+    configurationBean.setModelRoots(Collections.singletonList(root));
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    runModelRead(new Runnable() {
-      @Override
-      public void run() {
-        Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
-        assertEquals(myFacet.getSolution(), repositorySolution);
-        Iterable<ModelRoot> modelRoots = repositorySolution.getModelRoots();
+    runModelRead(() -> {
+      Solution repositorySolution = myModuleRepositoryFacade.getModule(solutionReference, Solution.class);
+      assertEquals(myFacet.getSolution(), repositorySolution);
+      Iterable<ModelRoot> modelRoots = repositorySolution.getModelRoots();
 
-        Iterator<ModelRoot> iterator = modelRoots.iterator();
-        assertTrue(iterator.hasNext());
-        ModelRoot theModelRoot = iterator.next();
-        assertFalse(iterator.hasNext());
-        assertEquals(modelRootDir.getPath(), ((DefaultModelRoot) theModelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next());
-      }
+      Iterator<ModelRoot> iterator = modelRoots.iterator();
+      assertTrue(iterator.hasNext());
+      ModelRoot theModelRoot = iterator.next();
+      assertFalse(iterator.hasNext());
+      assertEquals(modelRootDir.getPath(), ((DefaultModelRoot) theModelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next());
     });
 
     configurationBean = myFacet.getConfiguration().getBean();
-    configurationBean.setModelRoots(new ArrayList<ModelRoot>());
+    configurationBean.setModelRoots(new ArrayList<>());
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    runModelRead(new Runnable() {
-      @Override
-      public void run() {
-        Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solutionReference, Solution.class);
-        assertFalse(repositorySolution.getModelRoots().iterator().hasNext());
-      }
+    runModelRead(() -> {
+      Solution repositorySolution = myModuleRepositoryFacade.getModule(solutionReference, Solution.class);
+      assertFalse(repositorySolution.getModelRoots().iterator().hasNext());
     });
   }
 
+  /**
+   * This check does not have any meaning, because adding/removing language to facet itself is not affects anything.
+   * Language imports now moved to models.
+   *
+   * TODO: write test for add/remove used language to model
+   * */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void testAddRemoveUsedLanguage() throws InterruptedException {
-    Language baseLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class);
+    Language baseLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.baseLanguage");
     assertNotNull(baseLanguage);
-    Language editorLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.lang.editor", Language.class);
+    Language editorLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.lang.editor");
     assertNotNull(editorLanguage);
 
     String[] usedLanguageStrings = new String[]{baseLanguage.getModuleReference().toString(), editorLanguage.getModuleReference().toString()};
@@ -185,18 +190,15 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    runModelRead(new Runnable() {
-      @Override
-      public void run() {
-        Collection<SModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
-        Set<Language> solutionUsedLanguages = new HashSet<Language>();
-        for (SModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
-          solutionUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(solutionUsedLanguageRef, Language.class));
-        }
-        assertEquals(usedLanguages.length, solutionUsedLanguages.size());
-        for (Language usedLanguage : usedLanguages) {
-          assertTrue(solutionUsedLanguages.contains(usedLanguage));
-        }
+    runModelRead(() -> {
+      Collection<SModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
+      Set<Language> solutionUsedLanguages = new HashSet<>();
+      for (SModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
+        solutionUsedLanguages.add(myModuleRepositoryFacade.getModule(solutionUsedLanguageRef, Language.class));
+      }
+      assertEquals(usedLanguages.length, solutionUsedLanguages.size());
+      for (Language usedLanguage : usedLanguages) {
+        assertTrue(solutionUsedLanguages.contains(usedLanguage));
       }
     });
 
@@ -204,12 +206,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    runModelRead(new Runnable() {
-      @Override
-      public void run() {
-        assertEmpty(myFacet.getSolution().getUsedLanguagesReferences());
-      }
-    });
+    runModelRead(() -> assertEmpty(myFacet.getSolution().getUsedLanguagesReferences()));
   }
 
   public void testSetGeneratorOutputPath() throws InterruptedException {
@@ -219,7 +216,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    assertEquals(generatorOutputPath, myFacet.getSolution().getOutputPath().getPath());
+    assertEquals(generatorOutputPath, myFacet.getSolution().getOutputPath().toPath().toString());
   }
 
   public void testDefaultOutput() {
@@ -233,21 +230,13 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     final MPSFacet mpsFacet2 = addMPSFacet(module2);
 
     // todo: should be one big ModelAccess.runWriteAction() ?
-    Computable<List<SDependency>> getDependencies = new Computable<List<SDependency>>() {
-      @Override
-      public List<SDependency> compute() {
-        return IterableUtil.asList(mpsFacet2.getSolution().getDeclaredDependencies());
-      }
-    };
+    Computable<List<SDependency>> getDependencies = () -> IterableUtil.asList(mpsFacet2.getSolution().getDeclaredDependencies());
     int originalDependCount = runModelRead(getDependencies).size();
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
-        rootModel.addModuleOrderEntry(myModule);
-        rootModel.commit();
-      }
+    ApplicationManager.getApplication().runWriteAction(() -> {
+      ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
+      rootModel.addModuleOrderEntry(myModule);
+      rootModel.commit();
     });
     flushEDT();
 
@@ -262,18 +251,15 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     }
     assertTrue("Cross-Module dependency was not exposed in faced dependencies", found);
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
-        for (OrderEntry orderEntry : rootModel.getOrderEntries()) {
-          if (orderEntry instanceof ModuleOrderEntry && myModule.equals(((ModuleOrderEntry) orderEntry).getModule())) {
-            rootModel.removeOrderEntry(orderEntry);
-            break;
-          }
+    ApplicationManager.getApplication().runWriteAction(() -> {
+      ModifiableRootModel rootModel = ModuleRootManager.getInstance(module2).getModifiableModel();
+      for (OrderEntry orderEntry : rootModel.getOrderEntries()) {
+        if (orderEntry instanceof ModuleOrderEntry && myModule.equals(((ModuleOrderEntry) orderEntry).getModule())) {
+          rootModel.removeOrderEntry(orderEntry);
+          break;
         }
-        rootModel.commit();
       }
+      rootModel.commit();
     });
     flushEDT();
 
@@ -285,21 +271,18 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
   public void testUpdateNamespaceOnModuleRename() throws InterruptedException {
     final String newModuleName = "newModuleName__";
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ModifiableModuleModel modifiableModel = ModuleManager.getInstance(myModule.getProject()).getModifiableModel();
-        try {
-          modifiableModel.renameModule(myModule, newModuleName);
-        } catch (ModuleWithNameAlreadyExists moduleWithNameAlreadyExists) {
-          fail(moduleWithNameAlreadyExists.getMessage());
-        }
-        modifiableModel.commit();
+    ApplicationManager.getApplication().runWriteAction(() -> {
+      ModifiableModuleModel modifiableModel = ModuleManager.getInstance(myModule.getProject()).getModifiableModel();
+      try {
+        modifiableModel.renameModule(myModule, newModuleName);
+      } catch (ModuleWithNameAlreadyExists moduleWithNameAlreadyExists) {
+        fail(moduleWithNameAlreadyExists.getMessage());
       }
+      modifiableModel.commit();
     });
     flushEDT();
 
-    //In ModuleRenameHandler method resetFacet(MPSFacet) dispose parametr facet and return new instance
+    //In ModuleRenameHandler method resetFacet(MPSFacet) dispose parameter facet and return new instance
     myFacet = (MPSFacet) FacetManager.getInstance(myModule).getFacetByType(myFacet.getTypeId());
 
     assertEquals(newModuleName, myModule.getName());

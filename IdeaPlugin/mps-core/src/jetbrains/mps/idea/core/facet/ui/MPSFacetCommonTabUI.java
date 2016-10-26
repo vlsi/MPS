@@ -119,7 +119,7 @@ public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
 
     tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, mpsFacetSourcesTab.getRootPanel(), null);
     tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, mpsFacetPathsTab.getRootPanel(), null);
-    tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, usedLanguagesTable.getRootPanel(), null);
+    tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, usedLanguagesTable.getRootPanel(), "Deprecated. Does not affect anything.");
 
     myCentralComponent = tabbedPane.getComponent();
   }

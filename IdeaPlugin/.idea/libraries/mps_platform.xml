@@ -2,6 +2,7 @@
   <library name="mps-platform">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-platform.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-resources_en.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -94,6 +94,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.PluginsPathMacroCrutch</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.icons.GlobalIconManager</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>

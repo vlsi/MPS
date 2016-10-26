@@ -31,8 +31,8 @@ import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,8 +50,8 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   private final static Language LANGUAGE = MPSLanguage.INSTANCE;
 
   private static final String emptyString = "";
-  private PsiManager myManager;
-  private MPSNodeVirtualFile myNodeFile;
+  private final PsiManager myManager;
+  private final MPSNodeVirtualFile myNodeFile;
 
   public MPSNodeFileViewProvider(@NotNull PsiManager manager, @NotNull MPSNodeVirtualFile nodeFile) {
     super(manager, nodeFile, EVENT_SYSTEM_ENABLED, LANGUAGE);
@@ -96,25 +96,22 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   }
 
   @Override
-  public PsiFile getPsiInner(Language target) {
+  public PsiFile getPsiInner(@NotNull Language target) {
     // todo assert idea read
 
     if (target != getBaseLanguage()) {
       return null;
     }
 
-    Project p = ProjectHelper.toMPSProject(getManager().getProject());
+    Project p = ProjectHelper.fromIdeaProject(getManager().getProject());
     assert p != null;
     final SRepository repo = p.getRepository();
-    final Ref<PsiElement> result = new Ref<PsiElement>(null);
+    final Ref<PsiElement> result = new Ref<>(null);
     // todo use MPSNodeVirtualFile.getNode() (rewrite it to project repo)
-    repo.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode sNode = myNodeFile.getSNodePointer().resolve(repo);
-        if (sNode != null) {
-          result.set(MPSPsiProvider.getInstance(getManager().getProject()).getPsi(sNode));
-        }
+    repo.getModelAccess().runReadAction(() -> {
+      SNode sNode = myNodeFile.getSNodePointer().resolve(repo);
+      if (sNode != null) {
+        result.set(MPSPsiProvider.getInstance(getManager().getProject()).getPsi(sNode));
       }
     });
 
@@ -148,12 +145,12 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   }
 
   @Override
-  public boolean supportsIncrementalReparse(Language rootLanguage) {
+  public boolean supportsIncrementalReparse(@NotNull Language rootLanguage) {
     return false;
   }
 
   @Override
-  public void rootChanged(PsiFile psiFile) {
+  public void rootChanged(@NotNull PsiFile psiFile) {
   }
 
   @Override
@@ -183,25 +180,25 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
 
   @Nullable
   @Override
-  public PsiElement findElementAt(int offset, Language language) {
+  public PsiElement findElementAt(int offset, @NotNull Language language) {
     return null;
   }
 
   @Nullable
   @Override
-  public PsiElement findElementAt(int offset, Class<? extends Language> lang) {
+  public PsiElement findElementAt(int offset, @NotNull Class<? extends Language> lang) {
     return null;
   }
 
   @Nullable
   @Override
-  public PsiReference findReferenceAt(int offsetInElement, Language language) {
+  public PsiReference findReferenceAt(int offsetInElement, @NotNull Language language) {
     return null;
   }
 
   @NotNull
   @Override
-  public SingleRootFileViewProvider createCopy(VirtualFile copy) {
+  public SingleRootFileViewProvider createCopy(@NotNull VirtualFile copy) {
     if (!(copy instanceof MPSNodeVirtualFile)) {
       throw new IllegalStateException();
     }
@@ -218,11 +215,11 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
 
   @Nullable
   @Override
-  public <T> T getUserData(Key<T> key) {
+  public <T> T getUserData(@NotNull Key<T> key) {
     return null;
   }
 
   @Override
-  public <T> void putUserData(Key<T> key, T value) {
+  public <T> void putUserData(@NotNull Key<T> key, T value) {
   }
 }

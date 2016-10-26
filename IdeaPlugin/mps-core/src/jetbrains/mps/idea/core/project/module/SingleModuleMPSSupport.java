@@ -26,7 +26,6 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.messages.MessageKind;
@@ -68,28 +67,26 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport {
     assert modules.length == 1;
     final Module singleModule = modules[0];
 
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    final SRepository repository = mpsProject.getRepository();
-    if (repository == null) {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
+    if (mpsProject == null) {
       return;
     }
 
-    repository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        SolutionDescriptor solutionDescriptor = makeDescriptor(singleModule);
-        Solution solution = new SolutionIdea(singleModule, solutionDescriptor);
+    final SRepository repository = mpsProject.getRepository();
 
-        if (repository.getModule(solution.getModuleId()) != null) {
-          MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
-          return;
-        }
+    repository.getModelAccess().runWriteAction(() -> {
+      SolutionDescriptor solutionDescriptor = makeDescriptor(singleModule);
+      Solution solution = new SolutionIdea(singleModule, solutionDescriptor);
 
-        ((SRepositoryExt) repository).registerModule(solution, mpsProject);
-        mpsProject.addModule(solution);
-
-        mySolution = solution;
+      if (repository.getModule(solution.getModuleId()) != null) {
+        MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+        return;
       }
+
+      ((SRepositoryExt) repository).registerModule(solution, mpsProject);
+      mpsProject.addModule(solution);
+
+      mySolution = solution;
     });
   }
 
