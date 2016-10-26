@@ -18,8 +18,6 @@ package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.workbench.index.RootNodeNameIndex;
@@ -45,7 +43,7 @@ import java.util.Map;
 
   private static final Logger LOG = Logger.getLogger(AbstractSModelIndexer.class);
 
-  public static final String[] JAVA_CLASS_CONCEPTS = {
+  private static final String[] JAVA_CLASS_CONCEPTS = {
     "jetbrains.mps.baseLanguage.structure.Annotation",
     "jetbrains.mps.baseLanguage.structure.ClassConcept",
     "jetbrains.mps.baseLanguage.structure.EnumClass",
@@ -54,7 +52,7 @@ import java.util.Map;
     "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase",
   };
 
-  public static final String[] JAVA_METHOD_CONCEPTS = {
+  private static final String[] JAVA_METHOD_CONCEPTS = {
     "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration",
     "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration",
     "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration",
@@ -62,7 +60,7 @@ import java.util.Map;
     "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod",
   };
 
-  public static final String[] JAVA_FIELD_CONCEPTS = {
+  private static final String[] JAVA_FIELD_CONCEPTS = {
     "jetbrains.mps.baseLanguage.structure.FieldDeclaration",
     "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration",
   };
@@ -74,18 +72,17 @@ import java.util.Map;
   }
 
   protected void getJavaMethods(SModel sModel, Consumer<SNode> consumer) {
-    CollectConsumer<SNode> classes = new CollectConsumer<SNode>(new ArrayList<SNode>());
+    CollectConsumer<SNode> classes = new CollectConsumer<>(new ArrayList<>());
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, classes);
     }
-    ArrayList<SNode> methods = new ArrayList<SNode>();
     for (SNode cls : classes.getResult()) {
       collectJavaMethods(cls, consumer);
     }
   }
 
   protected void getJavaFields(SModel sModel, Consumer<SNode> consumer) {
-    CollectConsumer<SNode> classes = new CollectConsumer<SNode>(new ArrayList<SNode>());
+    CollectConsumer<SNode> classes = new CollectConsumer<>(new ArrayList<>());
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, classes);
     }
@@ -144,28 +141,23 @@ import java.util.Map;
 
   @NotNull
   @Override
-  public Map<String, Collection<E>> map(final FileContent inputData) {
-    Project mpsProject = ProjectHelper.toMPSProject(inputData.getProject());
-
-    final HashMap<String, Collection<E>> map = new HashMap<String, Collection<E>>();
+  public Map<String, Collection<E>> map(@NotNull final FileContent inputData) {
+    final HashMap<String, Collection<E>> map = new HashMap<>();
 
     try {
       final SModel model = RootNodeNameIndex.doModelParsing(inputData);
       final SModelReference modelRef = model.getReference();
-      getObjectsToIndex(model, new Consumer<S>() {
-        @Override
-        public void consume(S object) {
-          String[] keys = getKeys(model, object);
+      getObjectsToIndex(model, object -> {
+        String[] keys = getKeys(model, object);
 
-          for (String key : keys) {
-            Collection<E> collection = map.get(key);
-            if (collection == null) {
-              collection = new ArrayList<E>();
-              map.put(key, collection);
-            }
-
-            updateCollection(modelRef, object, collection);
+        for (String key : keys) {
+          Collection<E> collection = map.get(key);
+          if (collection == null) {
+            collection = new ArrayList<>();
+            map.put(key, collection);
           }
+
+          updateCollection(modelRef, object, collection);
         }
       });
     } catch (Exception e) {

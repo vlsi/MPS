@@ -18,7 +18,7 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiManager;
-import com.intellij.util.ArrayUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
@@ -30,6 +30,7 @@ public class MPSPsiEnum extends MPSPsiClass {
     super(id, concept, containingRole, manager);
   }
 
+  @NotNull
   @Override
   public PsiField[] getFields() {
     PsiField[] plainFields = super.getFields();

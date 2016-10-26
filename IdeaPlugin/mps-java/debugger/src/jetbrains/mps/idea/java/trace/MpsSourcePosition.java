@@ -33,9 +33,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -55,7 +53,7 @@ public class MpsSourcePosition extends SourcePosition {
     myNodePointer = position.getNode();
     myProject = project;
 
-    myNavigatable = new NodeNavigatable(ProjectHelper.toMPSProject(myProject), myNodePointer);
+    myNavigatable = new NodeNavigatable(ProjectHelper.fromIdeaProject(myProject), myNodePointer);
   }
 
   public MPSNodeVirtualFile getVirtualFile() {
@@ -64,12 +62,9 @@ public class MpsSourcePosition extends SourcePosition {
 
   public MPSNodeVirtualFile getRootVirtualFile() {
     final SRepository repo = ProjectHelper.getProjectRepository(myProject);
-    SNodeReference rootPointer = new ModelAccessHelper(repo).runReadAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode resolved = myNodePointer.resolve(repo);
-        return resolved == null ? null : resolved.getContainingRoot().getReference();
-      }
+    SNodeReference rootPointer = new ModelAccessHelper(repo).runReadAction(() -> {
+      SNode resolved = myNodePointer.resolve(repo);
+      return resolved == null ? null : resolved.getContainingRoot().getReference();
     });
     // FIXME [artem] I have no idea whether it's right to return VF of the node if it's not resolved, just decided that null
     //       would be worse, provided refactored code always had rootPointer (though it assumed myNodePointer always resolves).
@@ -153,12 +148,7 @@ public class MpsSourcePosition extends SourcePosition {
     // FIXME this is plain wrong. If you get a node, you're likely gonna access it,
     // hence, it's outer code responsibility to ensure read access.
     final SRepository repo = ProjectHelper.getProjectRepository(myProject);
-    return new ModelAccessHelper(repo).runReadAction(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        return myNodePointer.resolve(repo);
-      }
-    });
+    return new ModelAccessHelper(repo).runReadAction(() -> myNodePointer.resolve(repo));
   }
 
   @Nullable
@@ -168,17 +158,14 @@ public class MpsSourcePosition extends SourcePosition {
       return null;
     }
     final SRepository repo = ProjectHelper.getProjectRepository(project);
-    final boolean isSolutionIdea = new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        SNode node = sourcePosition.getNode().resolve(repo);
-        if (node == null) {
-          return false;
-        }
-        SModel modelDescriptor = node.getModel();
-        SModule module = modelDescriptor.getModule();
-        return module instanceof SolutionIdea;
+    final boolean isSolutionIdea = new ModelAccessHelper(repo).runReadAction(() -> {
+      SNode node = sourcePosition.getNode().resolve(repo);
+      if (node == null) {
+        return false;
       }
+      SModel modelDescriptor = node.getModel();
+      SModule module = modelDescriptor.getModule();
+      return module instanceof SolutionIdea;
     });
     return isSolutionIdea ? new MpsSourcePosition(sourcePosition, project) : null;
   }

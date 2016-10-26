@@ -33,8 +33,8 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -45,10 +45,8 @@ import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -56,7 +54,7 @@ import java.util.Set;
  * This class listens to package rename refactorings and updates the references to stub models that
  * were built from those packages. Package name changes => model reference changes. Both model imports and SReferences
  * must changed accordingly.
- *
+ * <p>
  * Created by danilla on 2/16/15.
  */
 public class PackageRenameListener implements RefactoringElementListenerProvider {
@@ -72,9 +70,9 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
     final Project project = pkg.getProject();
     DirectoryIndex dirIndex = DirectoryIndex.getInstance(project);
 
-    final Set<SModelReference> modelRefs = new HashSet<SModelReference>();
+    final Set<SModelReference> modelRefs = new HashSet<>();
 
-    for (PsiDirectory dir: pkg.getDirectories()) {
+    for (PsiDirectory dir : pkg.getDirectories()) {
       DirectoryInfo dirInfo = dirIndex.getInfoForFile(dir.getVirtualFile());
       Module module = dirInfo.getModule();
       if (module == null) continue;
@@ -85,50 +83,42 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
 
     if (modelRefs.isEmpty()) return null;
 
-    final Set<SModel> models = new HashSet<SModel>();
-    ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        models.addAll(FindUsagesFacade.getInstance().findModelUsages(
-          new ProjectScope(ProjectHelper.toMPSProject(project)),
-          modelRefs,
-          new EmptyProgressMonitor()
-        ));
-      }
-    });
+    final Set<SModel> models = new HashSet<>();
+    ProjectHelper.getModelAccess(project).runReadAction(() -> models.addAll(FindUsagesFacade.getInstance().findModelUsages(
+      new ProjectScope(ProjectHelper.fromIdeaProject(project)),
+      modelRefs,
+      new EmptyProgressMonitor()
+    )));
 
     if (models.isEmpty()) return null;
 
     return new RefactoringElementListener() {
       @Override
-      public void elementMoved(PsiElement newElement) {
+      public void elementMoved(@NotNull PsiElement newElement) {
       }
 
       @Override
-      public void elementRenamed(PsiElement newElement) {
+      public void elementRenamed(@NotNull PsiElement newElement) {
         final String newPkgName = ((PsiPackage) newElement).getQualifiedName();
         final SRepository repository = ProjectHelper.getProjectRepository(project);
-        repository.getModelAccess().executeCommand(new Runnable() {
-          @Override
-          public void run() {
-            for (SModel model : models) {
-              ModelImports modelImports = new ModelImports(model);
+        repository.getModelAccess().executeCommand(() -> {
+          for (SModel model : models) {
+            ModelImports modelImports = new ModelImports(model);
 
-              Map<SModelReference, SModelReference> changes = new HashMap<SModelReference, SModelReference>();
+            Map<SModelReference, SModelReference> changes = new HashMap<>();
 
-              for (SModelReference mref : modelImports.getImportedModels()) {
-                if (!modelRefs.contains(mref)) {
-                  continue;
-                }
-                SModule module = mref.getModuleReference().resolve(repository);
-                SModelReference newModelRef = new JavaPackageNameStub(newPkgName).asModelReference(module.getModuleReference());
-                modelImports.removeModelImport(mref);
-                modelImports.addModelImport(newModelRef);
-                changes.put(mref, newModelRef);
+            for (SModelReference mref : modelImports.getImportedModels()) {
+              if (!modelRefs.contains(mref)) {
+                continue;
               }
-
-              updateSReferences(model, changes);
+              SModule module = mref.getModuleReference().resolve(repository);
+              SModelReference newModelRef = new JavaPackageNameStub(newPkgName).asModelReference(module.getModuleReference());
+              modelImports.removeModelImport(mref);
+              modelImports.addModelImport(newModelRef);
+              changes.put(mref, newModelRef);
             }
+
+            updateSReferences(model, changes);
           }
         });
 
@@ -137,8 +127,8 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
   }
 
   private void updateSReferences(SModel model, Map<SModelReference, SModelReference> modelRefChange) {
-    for (SNode node: SNodeUtil.getDescendants(model)) {
-      for (SReference ref: node.getReferences()) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
+      for (SReference ref : node.getReferences()) {
         if (!(ref instanceof StaticReference)) {
           continue;
         }
