@@ -7,7 +7,7 @@
   <id>jetbrains.mps.ide.mpsmigration_34</id>
   <name>Migration 3.4</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
-  <version>3.4.1</version>
+  <version>3.4.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="145.1" until-build="163.1"/>
 

@@ -19,7 +19,7 @@
   <name>MPS Version Control support</name>
   <category>Custom Languages</category>
   <description>MPS Version Control support</description>
-  <version>3.4.1</version>
+  <version>3.4.2</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
   <idea-version since-build="145.1" until-build="163.1"/>
   <depends>jetbrains.mps.core</depends>
