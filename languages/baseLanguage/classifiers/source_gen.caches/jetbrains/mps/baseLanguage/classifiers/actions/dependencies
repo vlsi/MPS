@@ -18,7 +18,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteWrapper" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteWrapperContext" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

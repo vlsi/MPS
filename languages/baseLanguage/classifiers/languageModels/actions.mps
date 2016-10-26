@@ -15,6 +15,8 @@
     <import index="tp4h" ref="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" />
     <import index="tp4c" ref="r:00000000-0000-4000-0000-011c89590370(jetbrains.mps.baseLanguage.classifiers.editor)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -48,6 +50,10 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
+      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
+        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -89,6 +95,10 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -285,11 +295,6 @@
       <concept id="1197686869805" name="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" flags="nn" index="3rGOSV">
         <child id="1197687026896" name="keyType" index="3rHrn6" />
         <child id="1197687035757" name="valueType" index="3rHtpV" />
-      </concept>
-      <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
-      <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
-        <child id="1197932505799" name="map" index="3ElQJh" />
-        <child id="1197932525128" name="key" index="3ElVtu" />
       </concept>
     </language>
   </registry>
@@ -928,6 +933,83 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="WyclBL$sxb" role="3cqZAp">
+            <node concept="3cpWsn" id="WyclBL$sxc" role="3cpWs9">
+              <property role="TrG5h" value="typeParam" />
+              <node concept="3uibUv" id="WyclBL$swY" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                <node concept="3uibUv" id="WyclBL$sx1" role="11_B2D">
+                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="WyclBL$sxd" role="33vP2m">
+                <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
+                <ref role="37wK5l" to="w1kc:~CopyUtil.copy(java.util.List,java.util.Map):java.util.List" resolve="copy" />
+                <node concept="2OqwBi" id="WyclBL$sxe" role="37wK5m">
+                  <node concept="1ht04C" id="WyclBL$sxf" role="2Oq$k0" />
+                  <node concept="3Tsc0h" id="WyclBL$sxg" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:g96eVAe" resolve="typeVariableDeclaration" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="WyclBL$sxh" role="37wK5m">
+                  <ref role="3cqZAo" node="WyclBLxAcv" resolve="paramMapping" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="WyclBL$wBf" role="3cqZAp">
+            <node concept="3cpWsn" id="WyclBL$wBg" role="3cpWs9">
+              <property role="TrG5h" value="types" />
+              <node concept="3uibUv" id="WyclBL$wAW" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                <node concept="3uibUv" id="WyclBL$wAZ" role="11_B2D">
+                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="WyclBL$wBh" role="33vP2m">
+                <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
+                <ref role="37wK5l" to="w1kc:~CopyUtil.copy(java.util.List,java.util.Map):java.util.List" resolve="copy" />
+                <node concept="2OqwBi" id="WyclBL$wBi" role="37wK5m">
+                  <node concept="1ht04C" id="WyclBL$wBj" role="2Oq$k0" />
+                  <node concept="3Tsc0h" id="WyclBL$wBk" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="WyclBL$wBl" role="37wK5m">
+                  <ref role="3cqZAo" node="WyclBLxAcv" resolve="paramMapping" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="WyclBL$ygv" role="3cqZAp">
+            <node concept="3cpWsn" id="WyclBL$ygw" role="3cpWs9">
+              <property role="TrG5h" value="body" />
+              <node concept="3uibUv" id="WyclBL$yg9" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                <node concept="3uibUv" id="WyclBL$ygc" role="11_B2D">
+                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="WyclBL$ygx" role="33vP2m">
+                <ref role="37wK5l" to="w1kc:~CopyUtil.copy(java.util.List,java.util.Map):java.util.List" resolve="copy" />
+                <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
+                <node concept="2OqwBi" id="WyclBL$ygy" role="37wK5m">
+                  <node concept="2OqwBi" id="WyclBL$ygz" role="2Oq$k0">
+                    <node concept="1ht04C" id="WyclBL$yg$" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="WyclBL$yg_" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
+                    </node>
+                  </node>
+                  <node concept="3Tsc0h" id="WyclBL$ygA" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:fzcqZ_x" resolve="statement" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="WyclBL$ygB" role="37wK5m">
+                  <ref role="3cqZAo" node="WyclBLxAcv" resolve="paramMapping" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="WyclBLx6LA" role="3cqZAp">
             <node concept="2c44tf" id="WyclBLx6Ly" role="3clFbG">
               <node concept="2XrIbr" id="WyclBLx7b8" role="2c44tc">
@@ -936,60 +1018,8 @@
                   <property role="TrG5h" value="param" />
                   <node concept="10Oyi0" id="WyclBLx9oP" role="1tU5fm" />
                   <node concept="2c44t8" id="WyclBLxixb" role="lGtFl">
-                    <node concept="2OqwBi" id="WyclBLx_3D" role="2c44t1">
-                      <node concept="2OqwBi" id="WyclBLxoTN" role="2Oq$k0">
-                        <node concept="2OqwBi" id="WyclBLxj3D" role="2Oq$k0">
-                          <node concept="1ht04C" id="WyclBLxiAR" role="2Oq$k0" />
-                          <node concept="3Tsc0h" id="WyclBLxkpF" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
-                          </node>
-                        </node>
-                        <node concept="3$u5V9" id="WyclBLxwC2" role="2OqNvi">
-                          <node concept="1bVj0M" id="WyclBLxwC4" role="23t8la">
-                            <node concept="3clFbS" id="WyclBLxwC5" role="1bW5cS">
-                              <node concept="3cpWs8" id="WyclBLxEOS" role="3cqZAp">
-                                <node concept="3cpWsn" id="WyclBLxEOT" role="3cpWs9">
-                                  <property role="TrG5h" value="copy" />
-                                  <node concept="3Tqbb2" id="WyclBLxEOM" role="1tU5fm">
-                                    <ref role="ehGHo" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-                                  </node>
-                                  <node concept="2OqwBi" id="WyclBLxEOU" role="33vP2m">
-                                    <node concept="37vLTw" id="WyclBLxEOV" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="WyclBLxwC6" resolve="it" />
-                                    </node>
-                                    <node concept="1$rogu" id="WyclBLxEOW" role="2OqNvi" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbF" id="WyclBLxF8F" role="3cqZAp">
-                                <node concept="37vLTI" id="WyclBLxGbl" role="3clFbG">
-                                  <node concept="37vLTw" id="WyclBLxGq1" role="37vLTx">
-                                    <ref role="3cqZAo" node="WyclBLxEOT" resolve="copy" />
-                                  </node>
-                                  <node concept="3EllGN" id="WyclBLxFEQ" role="37vLTJ">
-                                    <node concept="37vLTw" id="WyclBLxFUS" role="3ElVtu">
-                                      <ref role="3cqZAo" node="WyclBLxwC6" resolve="it" />
-                                    </node>
-                                    <node concept="37vLTw" id="WyclBLxF8D" role="3ElQJh">
-                                      <ref role="3cqZAo" node="WyclBLxAcv" resolve="paramMapping" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbF" id="WyclBLxwMz" role="3cqZAp">
-                                <node concept="37vLTw" id="WyclBLxEOX" role="3clFbG">
-                                  <ref role="3cqZAo" node="WyclBLxEOT" resolve="copy" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="Rh6nW" id="WyclBLxwC6" role="1bW2Oz">
-                              <property role="TrG5h" value="it" />
-                              <node concept="2jxLKc" id="WyclBLxwC7" role="1tU5fm" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="ANE8D" id="WyclBLx_uP" role="2OqNvi" />
+                    <node concept="37vLTw" id="WyclBL$wBm" role="2c44t1">
+                      <ref role="3cqZAo" node="WyclBL$wBg" resolve="types" />
                     </node>
                   </node>
                 </node>
@@ -1025,23 +1055,8 @@
                       <property role="3SKdUp" value="body" />
                     </node>
                     <node concept="2c44t8" id="WyclBLx_GC" role="lGtFl">
-                      <node concept="2YIFZM" id="WyclBLxL1K" role="2c44t1">
-                        <ref role="37wK5l" to="w1kc:~CopyUtil.copyAndPreserveId(java.util.List,java.util.Map):java.util.List" resolve="copyAndPreserveId" />
-                        <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
-                        <node concept="2OqwBi" id="WyclBLxL1L" role="37wK5m">
-                          <node concept="2OqwBi" id="WyclBLxL1M" role="2Oq$k0">
-                            <node concept="1ht04C" id="WyclBLxL1N" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="WyclBLxL1O" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
-                            </node>
-                          </node>
-                          <node concept="3Tsc0h" id="WyclBLxL1P" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpee:fzcqZ_x" resolve="statement" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="WyclBLxL1Q" role="37wK5m">
-                          <ref role="3cqZAo" node="WyclBLxAcv" resolve="paramMapping" />
-                        </node>
+                      <node concept="37vLTw" id="WyclBL$ygC" role="2c44t1">
+                        <ref role="3cqZAo" node="WyclBL$ygw" resolve="body" />
                       </node>
                     </node>
                   </node>
@@ -1053,6 +1068,14 @@
                     <node concept="1ht04C" id="WyclBLxg_o" role="2Oq$k0" />
                     <node concept="3TrcHB" id="WyclBLxhM9" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="16euLQ" id="WyclBLyPZw" role="16eVyc">
+                  <property role="TrG5h" value="T" />
+                  <node concept="2c44t8" id="WyclBLyQz2" role="lGtFl">
+                    <node concept="37vLTw" id="WyclBL$sxi" role="2c44t1">
+                      <ref role="3cqZAo" node="WyclBL$sxc" resolve="typeParam" />
                     </node>
                   </node>
                 </node>
