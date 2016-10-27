@@ -25,7 +25,7 @@ public class TestPersistenceHelper {
   /**
    * should be changed to ModelPersistence.firstSupportedVersion
    */
-  public static final int START_PERSISTENCE_TEST_VERSION = 8;
+  public static final int START_PERSISTENCE_TEST_VERSION = 9;
 
   public TestOutputFilter filter = new TestOutputFilter() {
     @Override
