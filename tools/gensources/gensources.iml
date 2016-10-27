@@ -1032,6 +1032,14 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testClassLoading/languages/L2/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testClassLoading/languages/L2/generator/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/languages/TestLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/languages/TestLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/TestSolution_DefaultModelRoot/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/TestSolution_JavaClasses/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/testCloneModule/test_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/testCloneModule/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testCompilation">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" isTestSource="false" />
     </content>
