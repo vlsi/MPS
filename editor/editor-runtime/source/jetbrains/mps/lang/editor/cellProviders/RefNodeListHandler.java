@@ -148,7 +148,9 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   protected void setInnerCellsContext() {
     for (EditorCell cell : myListEditorCell_Collection) {
-      cell.setCellContext(getCellFactory().getCellContext());
+      if (cell.getCellContext() == null) {
+        cell.setCellContext(getCellFactory().getCellContext());
+      }
     }
   }
 }

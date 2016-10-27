@@ -32,6 +32,7 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
@@ -55,8 +56,13 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
+      </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -79,6 +85,10 @@
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -249,20 +259,35 @@
             <ref role="3cqZAo" node="5qiU$K_uae7" resolve="cells" />
           </node>
           <node concept="3clFbS" id="5qiU$K_uaoc" role="2LFqv$">
-            <node concept="3clFbF" id="5qiU$K_uas8" role="3cqZAp">
-              <node concept="2OqwBi" id="5qiU$K_uaxx" role="3clFbG">
-                <node concept="2GrUjf" id="5qiU$K_uas7" role="2Oq$k0">
-                  <ref role="2Gs0qQ" node="5qiU$K_uaoa" resolve="cell" />
+            <node concept="3clFbJ" id="340jx59b6HB" role="3cqZAp">
+              <node concept="3clFbS" id="340jx59b6HD" role="3clFbx">
+                <node concept="3clFbF" id="5qiU$K_uas8" role="3cqZAp">
+                  <node concept="2OqwBi" id="5qiU$K_uaxx" role="3clFbG">
+                    <node concept="2GrUjf" id="5qiU$K_uas7" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="5qiU$K_uaoa" resolve="cell" />
+                    </node>
+                    <node concept="liA8E" id="5qiU$K_uaCl" role="2OqNvi">
+                      <ref role="37wK5l" to="f4zo:~EditorCell.setCellContext(jetbrains.mps.openapi.editor.cells.EditorCellContext):void" resolve="setCellContext" />
+                      <node concept="2OqwBi" id="5qiU$K_ubiE" role="37wK5m">
+                        <node concept="1rXfSq" id="5qiU$K_ub2f" role="2Oq$k0">
+                          <ref role="37wK5l" node="34IzZrZuto8" resolve="getCellFactory" />
+                        </node>
+                        <node concept="liA8E" id="5qiU$K_ub$t" role="2OqNvi">
+                          <ref role="37wK5l" to="f4zo:~EditorCellFactory.getCellContext():jetbrains.mps.openapi.editor.cells.EditorCellContext" resolve="getCellContext" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node concept="liA8E" id="5qiU$K_uaCl" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell.setCellContext(jetbrains.mps.openapi.editor.cells.EditorCellContext):void" resolve="setCellContext" />
-                  <node concept="2OqwBi" id="5qiU$K_ubiE" role="37wK5m">
-                    <node concept="1rXfSq" id="5qiU$K_ub2f" role="2Oq$k0">
-                      <ref role="37wK5l" node="34IzZrZuto8" resolve="getCellFactory" />
-                    </node>
-                    <node concept="liA8E" id="5qiU$K_ub$t" role="2OqNvi">
-                      <ref role="37wK5l" to="f4zo:~EditorCellFactory.getCellContext():jetbrains.mps.openapi.editor.cells.EditorCellContext" resolve="getCellContext" />
-                    </node>
+              </node>
+              <node concept="3clFbC" id="340jx59b7je" role="3clFbw">
+                <node concept="10Nm6u" id="340jx59b7jW" role="3uHU7w" />
+                <node concept="2OqwBi" id="340jx59b6PP" role="3uHU7B">
+                  <node concept="2GrUjf" id="340jx59b6J9" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="5qiU$K_uaoa" resolve="cell" />
+                  </node>
+                  <node concept="liA8E" id="340jx59b71y" role="2OqNvi">
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getCellContext():jetbrains.mps.openapi.editor.cells.EditorCellContext" resolve="getCellContext" />
                   </node>
                 </node>
               </node>

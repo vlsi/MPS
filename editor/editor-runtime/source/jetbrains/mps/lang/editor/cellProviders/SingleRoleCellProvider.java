@@ -182,7 +182,9 @@ public abstract class SingleRoleCellProvider implements EditorBuilderEnvironment
   }
 
   protected EditorCell setCellContext(EditorCell cell) {
-    cell.setCellContext(getCellFactory().getCellContext());
+    if (cell.getCellContext() == null) {
+      cell.setCellContext(getCellFactory().getCellContext());
+    }
     return cell;
   }
 }

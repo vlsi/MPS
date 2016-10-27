@@ -37,7 +37,9 @@ public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment 
 
   protected void setCellContext(Iterable<EditorCell> cells) {
     for (EditorCell cell : Sequence.fromIterable(cells)) {
-      cell.setCellContext(getCellFactory().getCellContext());
+      if (cell.getCellContext() == null) {
+        cell.setCellContext(getCellFactory().getCellContext());
+      }
     }
   }
 }
