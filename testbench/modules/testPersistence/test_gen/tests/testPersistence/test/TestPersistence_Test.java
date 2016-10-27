@@ -6,22 +6,24 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import org.jetbrains.mps.openapi.model.SModel;
-import junit.framework.Assert;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
+import junit.framework.Assert;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.java.stub.JavaPackageNameStub;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import java.io.InputStream;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.persistence.ByteArrayInputSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,11 +46,6 @@ import java.util.Collections;
 @MPSLaunch
 public class TestPersistence_Test extends BaseTransformationTest {
   @Test
-  public void test_testPrecondition() throws Throwable {
-    initTest("${mps_home}", "r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)", false);
-    runTest("tests.testPersistence.test.TestPersistence_Test$TestBody", "test_testPrecondition", true);
-  }
-  @Test
   public void test_testLastVersionIndexing() throws Throwable {
     initTest("${mps_home}", "r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)", false);
     runTest("tests.testPersistence.test.TestPersistence_Test$TestBody", "test_testLastVersionIndexing", true);
@@ -66,14 +63,6 @@ public class TestPersistence_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_testPrecondition() throws Exception {
-      TestPersistenceHelper helper = new TestPersistenceHelper();
-      SModel model = helper.getTestModel();
-      Assert.assertTrue(model instanceof DefaultSModelDescriptor);
-
-      DefaultSModelDescriptor md = (DefaultSModelDescriptor) model;
-      Assert.assertEquals(md.getPersistenceVersion(), ModelPersistence.LAST_VERSION);
-    }
     public void test_testLastVersionIndexing() throws Exception {
       final TestPersistenceHelper helper = new TestPersistenceHelper();
       final CollectCallback c = new CollectCallback();
@@ -102,7 +91,17 @@ public class TestPersistence_Test extends BaseTransformationTest {
       for (int i = TestPersistenceHelper.START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
         PersistenceUtil.InMemoryStreamDataSource dataSource = new PersistenceUtil.InMemoryStreamDataSource();
         helper.saveModelInPersistence(md, dataSource, i);
-        final ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(i), dataSource, ModelLoadingState.FULLY_LOADED);
+        InputStream contentStream = dataSource.getContentAsStream();
+
+        byte[] content = null;
+        try {
+          int contentSize = contentStream.available();
+          content = new byte[contentSize];
+          contentStream.read(content);
+        } catch (IOException e) {
+          Assert.fail(e.getMessage());
+        }
+        final ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(i), new ByteArrayInputSource(content), ModelLoadingState.FULLY_LOADED);
 
         Assert.assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
         ModelAccess.instance().runReadAction(new Runnable() {
