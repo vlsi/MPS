@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CloneCapabilities;
 import jetbrains.mps.extapi.persistence.CloneType;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -38,10 +39,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SModelName;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -54,10 +52,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -83,42 +82,16 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<>();
     Map<String, String> options = new HashMap<>();
-    putModuleRefOption(options);
-
+    SModule module = getModule();
+    if (module != null) {
+      options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
+    }
     String contentHome = getContentRoot();
     for (String path : getFiles(SOURCE_ROOTS)) {
       String relativePath = contentHome != null ? makeRelative(contentHome, path) : null;
       collectModels(myFileSystem.getFile(path), "", relativePath, options, result);
     }
     return result;
-  }
-
-  /**
-   * Loads models (like {@link this#loadModels()}) and assigns new (generated) model IDs to loaded models.
-   * At the end of it, you get models that identical to models that located on the disk,
-   * except that that these models will have new model IDs.
-   *
-   * @return mapping between loaded model and their old model references.
-   */
-  public Map<SModelReference, SModel> loadModelsAndGenerateNewIds() {
-    Map<String, String> options = new HashMap<>();
-    Map<SModelReference, SModel> referenceMap = new HashMap<>();
-    putModuleRefOption(options);
-
-    String contentHome = getContentRoot();
-    for (String path : getFiles(SOURCE_ROOTS)) {
-      String relativePath = contentHome != null ? makeRelative(contentHome, path) : null;
-      collectModelsAndGenerateNewIds(myFileSystem.getFile(path), "", relativePath, options, referenceMap);
-    }
-
-    return referenceMap;
-  }
-
-  private void putModuleRefOption(Map<String, String> options) {
-    SModule module = getModule();
-    if (module != null) {
-      options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
-    }
   }
 
   protected static String makeRelative(String contentHome, String fullPath) {
@@ -181,34 +154,6 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   protected final void collectModels(IFile dir, String package_, String relativePath, Map<String, String> options, Collection<SModel> models) {
-    collectModelsImpl(dir, package_, relativePath, options, (factory, dataSource, opt) -> {
-      SModel model = factory.load(dataSource, Collections.unmodifiableMap(opt));
-      models.add(model);
-      return model;
-    });
-  }
-
-  protected final void collectModelsAndGenerateNewIds(IFile dir, String package_, String relativePath, Map<String, String> options, Map<SModelReference, SModel> refMap) {
-    collectModelsImpl(dir, package_, relativePath, options, (factory, dataSource, opt) -> {
-      SModelReference oldReference = factory.load(dataSource, Collections.unmodifiableMap(opt)).getReference();
-
-      SModule module = getModule();
-      SModuleReference moduleReference = module == null ? null : module.getModuleReference();
-      SModelReference newReference = PersistenceFacade.getInstance().createModelReference(moduleReference, jetbrains.mps.smodel.SModelId.generate(), oldReference.getModelName());
-
-      opt.put(ModelFactory.OPTION_NEWREF, newReference.toString());
-      SModel model = factory.load(dataSource, Collections.unmodifiableMap(opt));
-
-      assert Objects.equals(newReference, model.getReference());
-
-      refMap.put(oldReference, model);
-      opt.put(ModelFactory.OPTION_NEWREF, null);
-
-      return model;
-    });
-  }
-
-  private void collectModelsImpl(IFile dir, String package_, String relativePath, Map<String, String> options, ModelLoader loader) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) {
       return;
     }
@@ -235,8 +180,9 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
       options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
       try {
-        SModel model = loader.load(modelFactory, source, options);
+        SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
         ((SModelBase) model).setModelRoot(this);
+        models.add(model);
       } catch (UnsupportedDataSourceException ex) {
         /* model factory registration problem: ignore */
       } catch (IOException ex) {
@@ -248,8 +194,9 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     for (FolderModelFactory factory : PersistenceRegistry.getInstance().getFolderModelFactories()) {
       for (DataSource dataSource : factory.createDataSources(this, dir)) {
         try {
-          SModel model = loader.load(factory, dataSource, options);
+          SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
           ((SModelBase) model).setModelRoot(this);
+          models.add(model);
         } catch (IOException e) {
           // TODO report?
         }
@@ -261,11 +208,10 @@ public class DefaultModelRoot extends FileBasedModelRoot {
         String name = childDir.getName();
         String innerPackage = package_ != null && JavaNameUtil.isJavaIdentifier(name) ? (package_.isEmpty() ? name : package_ + "." + name) : null;
         String innerPath = combinePath(relativePath, name);
-        collectModelsImpl(childDir, innerPackage, innerPath, options, loader);
+        collectModels(childDir, innerPackage, innerPath, options, models);
       }
     }
   }
-
 
   protected final String combinePath(String left, String right) {
     if (left == null) {
@@ -360,52 +306,60 @@ public class DefaultModelRoot extends FileBasedModelRoot {
 
   @Override
   public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
-    if (cloneType == CloneType.REUSE) {
-      throw new IllegalArgumentException("Default model root doesn't support reuse");
+    assert targetModelRoot instanceof DefaultModelRoot;
+    DefaultModelRoot target = ((DefaultModelRoot) targetModelRoot);
+
+    AbstractModule tModule = ((AbstractModule) target.getModule());
+    AbstractModule sModule = ((AbstractModule) getModule());
+
+    assertNotNullModulesForCloning(target);
+    cloneDescriptionTo(target);
+
+    String sourceModuleName = sModule.getModuleName();
+    String targetModuleName = tModule.getModuleName();
+
+    Collection<String> sourceFiles = getFiles(SOURCE_ROOTS);
+    Collection<String> targetFiles = target.getFiles(SOURCE_ROOTS);
+
+    assert sourceFiles.size() ==  targetFiles.size();
+
+    Iterator<String> sfi = sourceFiles.iterator();
+    for (String targetFile : targetFiles) {
+      String sourceFile = sfi.next();
+
+      Collection<SModel> models = new HashSet<>();
+      collectModels(tModule.getFileSystem().getFile(sourceFile), "", makeRelative(getContentRoot(), sourceFile), new HashMap<>(), models);
+
+      ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+
+      for (SModel sourceModel : models) {
+        try {
+          String targetModelName = getClonedModelName(sourceModel.getModelName(), sourceModuleName, targetModuleName);
+          SModel targetModel = target.createModel(targetModelName, targetFile, null, factory);
+
+          targetModel.load();
+
+          CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
+          ((SModelBase) sourceModel).getSModel().copyPropertiesTo(((SModelBase) targetModel).getSModel());
+
+          referenceUpdater.addModelReferenceMapping(sourceModel.getReference(), targetModel.getReference());
+          referenceUpdater.addModelToAdjust(targetModel);
+
+          // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save();
+          ((EditableSModel) targetModel).setChanged(true);
+          ((EditableSModel) targetModel).save();
+        } catch (IOException e) {
+          // TODO
+        }
+      }
     }
-    super.cloneTo(targetModelRoot, cloneType, referenceUpdater);
   }
 
-  @Override
-  protected Iterable<SModel> loadClonedModelRootContent(FileBasedModelRoot targetModelRoot, ReferenceUpdater referenceUpdater) {
-    Map<SModelReference, SModel> models = ((DefaultModelRoot) targetModelRoot).loadModelsAndGenerateNewIds();
-
-    final String sourceName = getModule().getModuleName();
-    final String targetName = targetModelRoot.getModule().getModuleName();
-
-    models.forEach((oldReference, mdl) -> {
-      EditableSModelBase model = (EditableSModelBase) mdl;
-
-      // dirty hack
-      model.load();
-      model.updateTimestamp();
-
-      renamePrefix(model, sourceName, targetName);
-
-      referenceUpdater.addModelToAdjust(model);
-      referenceUpdater.addModelReferenceMapping(oldReference, model.getReference());
-
-      model.save();
-    });
-    return models.values();
-  }
-
-  private static void renamePrefix(EditableSModel model, String oldPrefix, String newPrefix) {
-    if (model.isReadOnly()) {
-      return;
+  private static String getClonedModelName(String oldName, String oldPrefix, String newPrefix) {
+    if (oldName.startsWith(oldPrefix)) {
+      return newPrefix + oldName.substring(oldPrefix.length());
+    } else {
+      return oldName;
     }
-    if (!(model.getName().getNamespace().startsWith(oldPrefix))) {
-      return;
-    }
-
-    SModelName newModelName = new SModelName(newPrefix + model.getName().getNamespace().substring(oldPrefix.length()), model.getName().getSimpleName(), model.getName().getStereotype());
-    model.rename(newModelName.getValue(), false);
-  }
-
-
-
-  private interface ModelLoader {
-
-    SModel load(ModelFactory factory, DataSource dataSource, Map<String, String> options) throws IOException;
   }
 }

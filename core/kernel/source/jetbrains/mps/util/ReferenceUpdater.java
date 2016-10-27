@@ -96,7 +96,10 @@ public final class ReferenceUpdater {
       }
       model.getRootNodes().forEach(this::updateReferences);
     });
-    models.forEach((sModel -> ((EditableSModel) sModel).save()));
+    models.forEach((sModel -> {
+      ((EditableSModel) sModel).setChanged(true);
+      ((EditableSModel) sModel).save();
+    }));
     adjusted = true;
   }
 

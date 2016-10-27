@@ -35,7 +35,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
@@ -48,7 +47,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Factory for models stored in .mps files.
@@ -96,17 +94,6 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
     try {
       header = pf.readHeader();
       assert header.getModelReference() != null : "wrong model: " + source.getLocation();
-
-      SModelReference loadedReference = header.getModelReference();
-      SModelReference modelReference = loadedReference;
-
-      String modelRef = options.get(ModelFactory.OPTION_NEWREF);
-      final boolean refChanged = modelRef != null;
-      if (refChanged) {
-        modelReference = PersistenceFacade.getInstance().createModelReference(modelRef);
-        header.setModelReference(modelReference);
-      }
-
       LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
 
       if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
@@ -114,12 +101,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
       }
 
       // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
-      final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header){
-        @Override
-        protected boolean shouldCorrectModelRef() {
-          return refChanged;
-        }
-      };
+      final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header);
+
       ModelLoadingState loadingLevel = null;
       if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
         // alternative to replace() method call (which is hacky) is to expose UpdateableModel field from LazyEditableSModelBase and use
@@ -130,14 +113,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
       } else if (options.containsKey(OPTION_INTERFACE_ONLY) && Boolean.parseBoolean(options.get(OPTION_INTERFACE_ONLY))) {
         loadingLevel = ModelLoadingState.INTERFACE_LOADED;
       }
-
       if (loadingLevel != null) {
         jetbrains.mps.smodel.SModel md = pf.readModel(header, loadingLevel).getModel();
-        if (refChanged) {
-          md.changeModelReference(modelReference);
-        } else {
-          assert Objects.equals(modelReference, loadedReference);
-        }
         rv.replace(md);
       }
       return rv;

@@ -110,7 +110,7 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
       mmiProvider = new RegularMetaModelInfo(header.getModelReference());
     }
     IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
-    return new ModelReader9Handler(header.createCopy(), readHelper);
+    return new ModelReader9Handler(header, readHelper);
   }
 
   @Override

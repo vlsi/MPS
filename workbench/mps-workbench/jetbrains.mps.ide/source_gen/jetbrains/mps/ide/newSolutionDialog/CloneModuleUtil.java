@@ -188,7 +188,6 @@ public class CloneModuleUtil {
       Memento targetMemento = new MementoImpl();
       targetModelRoot.save(targetMemento);
       ListSequence.fromList(modelRootDescriptors).addElement(new ModelRootDescriptor(targetModelRoot.getType(), targetMemento));
-      ((ModelRootBase) targetModelRoot).dispose();
     }
 
     return modelRootDescriptors;

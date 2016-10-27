@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.EqualUtil;
@@ -30,10 +29,10 @@ import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import sun.misc.IOUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -252,43 +251,76 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public void cloneTo(@NotNull ModelRoot tModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
-    if (getModule() == null || tModelRoot.getModule() == null) {
-      throw new IllegalStateException("Can't clone when model root isn't attached to any module");
-    }
-    assert tModelRoot instanceof FileBasedModelRoot;
-    FileBasedModelRoot targetModelRoot = ((FileBasedModelRoot) tModelRoot);
+  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
+    assert targetModelRoot instanceof FileBasedModelRoot;
+    FileBasedModelRoot target = ((FileBasedModelRoot) targetModelRoot);
 
-    AbstractModule tModule = ((AbstractModule) targetModelRoot.getModule());
+    AbstractModule tModule = ((AbstractModule) target.getModule());
     AbstractModule sModule = ((AbstractModule) getModule());
+
+    assertNotNullModulesForCloning(target);
+
+    cloneDescriptionTo(target);
+
+    for (String kind : getSupportedFileKinds()) {
+      Collection<String> sourceFiles = getFiles(kind);
+      Collection<String> targetFiles = target.getFiles(kind);
+
+      assert sourceFiles.size() ==  targetFiles.size();
+
+      Iterator<String> sfi = sourceFiles.iterator();
+      for (String targetFile : targetFiles) {
+        IFileUtils.copyDirectoryContent(
+            sModule.getFileSystem().getFile(sfi.next()),
+            tModule.getFileSystem().getFile(targetFile)
+        );
+      }
+    }
+
+    Iterator<SModel> sourceModelIterator = loadModels().iterator();
+
+    Iterable<SModel> targetModels = target.loadModels();
+    Iterator<SModel> targetModelIterator = targetModels.iterator();
+
+    while (sourceModelIterator.hasNext()) {
+      referenceUpdater.addModelReferenceMapping(sourceModelIterator.next().getReference(), targetModelIterator.next().getReference());
+    }
+  }
+
+  protected void assertNotNullModulesForCloning(@NotNull FileBasedModelRoot target) {
+    if (getModule() == null) {
+      throw new IllegalArgumentException("Can't clone content from model root (" + this + ") without module attached");
+    }
+    if (target.getModule() == null) {
+      throw new IllegalArgumentException("Can't clone content to model root (" + target + ") without module attached");
+    }
+  }
+
+  protected void cloneDescriptionTo(FileBasedModelRoot target) {
+    AbstractModule tModule = ((AbstractModule) target.getModule());
+    AbstractModule sModule = ((AbstractModule) getModule());
+
+    assert sModule != null;
+    assert tModule != null;
 
     Path sourcePath = pathFrom(getContentRoot());
     Path targetPath = evaluateTargetPath(sourcePath, getModuleDirPath(sModule), getModuleDirPath(tModule));
 
-    targetModelRoot.setContentRoot(targetPath.toString());
+    target.setContentRoot(targetPath.toString());
 
     for (String kind : getSupportedFileKinds()) {
-      if (kind.equals(EXCLUDED)) continue;
-
-      Collection<String> targetFiles = new ArrayList<>();
+      List<String> files = new ArrayList<>();
       for (String file : getFiles(kind)) {
         Path sourceFilePath = pathFrom(file);
 
         //FIXME use targetPath.resolve(sourcePath.relativize(sourceFilePath)) instead
         String relativePath = sourceFilePath.toString().substring(sourcePath.toString().length()).replace(Path.UNIX_SEPARATOR_CHAR, Path.SYSTEM_SEPARATOR_CHAR);
-        Path targetFilePath = UniPath.fromString(targetPath.toString() + relativePath);
+        Path targetFilePath = pathFrom(targetPath.toString() + relativePath);
 
-        targetFiles.add(targetFilePath.toString());
-
-        IFileUtils.copyDirectoryContent(
-            sModule.getFileSystem().getFile(sourceFilePath.toString()),
-            tModule.getFileSystem().getFile(targetFilePath.toString())
-            );
+        files.add(targetFilePath.toString());
       }
-      targetModelRoot.addFiles(kind, targetFiles);
+      target.addFiles(kind, files);
     }
-
-    loadClonedModelRootContent(targetModelRoot, referenceUpdater);
   }
 
   @NotNull
@@ -310,18 +342,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     }
     // RS : where target model root should be located in this case?
     return sourcePath;
-  }
-
-  protected Iterable<SModel> loadClonedModelRootContent(FileBasedModelRoot targetModelRoot, ReferenceUpdater referenceUpdater) {
-    Iterator<SModel> sourceModelIterator = loadModels().iterator();
-
-    Iterable<SModel> targetModels = targetModelRoot.loadModels();
-    Iterator<SModel> targetModelIterator = targetModels.iterator();
-
-    while (sourceModelIterator.hasNext()) {
-      referenceUpdater.addModelReferenceMapping(sourceModelIterator.next().getReference(), targetModelIterator.next().getReference());
-    }
-    return targetModels;
   }
 
   @Override

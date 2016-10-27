@@ -31,11 +31,6 @@ public interface ModelFactory {
   String OPTION_MODELNAME = "modelName";
 
   /**
-   * Value, that contains serialized model reference and indicates we need to assign this reference to loaded model.
-   */
-  String OPTION_NEWREF = "setNewReference" ;
-
-  /**
    * Boolean value, indicates we don't care to build complete model on load, rather read content as-is,
    * and tread loaded model as mere container for nodes, <code>SModelData</code>-like.
    * We use this mechanism from merge driver and various tools that are going to access nodes from
