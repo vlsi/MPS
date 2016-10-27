@@ -102,7 +102,7 @@ public class JavaForeignIdBuilder {
       packageName = "<default package>";
     }
 
-    SModelId modelId = SModelId.foreign(stereotype, mpsModuleId, packageName);
+    SModelId modelId = SModelId.foreign(stereotype, packageName);
 
     return new jetbrains.mps.smodel.SModelReference(null, modelId, packageName + "@" + stereotype);
   }
