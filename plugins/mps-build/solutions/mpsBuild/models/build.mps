@@ -16306,6 +16306,26 @@
                   </node>
                 </node>
               </node>
+              <node concept="28jJK3" id="1Beh1jPKfzi" role="39821P">
+                <node concept="398BVA" id="1Beh1jPKfzj" role="28jJRO">
+                  <ref role="398BVh" node="4tNwrSpaf08" resolve="mps_home" />
+                  <node concept="2Ry0Ak" id="1Beh1jPKfzk" role="iGT6I">
+                    <property role="2Ry0Am" value="workbench" />
+                    <node concept="2Ry0Ak" id="1Beh1jPKfzl" role="2Ry0An">
+                      <property role="2Ry0Am" value="mps-ui" />
+                      <node concept="2Ry0Ak" id="1Beh1jPKfzm" role="2Ry0An">
+                        <property role="2Ry0Am" value="source" />
+                        <node concept="2Ry0Ak" id="1Beh1jPKfzn" role="2Ry0An">
+                          <property role="2Ry0Am" value="META-INF" />
+                          <node concept="2Ry0Ak" id="1Beh1jPKf$a" role="2Ry0An">
+                            <property role="2Ry0Am" value="MPSUI.xml" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="28jJK3" id="35zoHQHRZ4f" role="39821P">
                 <node concept="398BVA" id="7XQqoCTkeOP" role="28jJRO">
                   <ref role="398BVh" node="4tNwrSpaf08" resolve="mps_home" />
@@ -16331,6 +16351,11 @@
                   <property role="1688n6" value="gi" />
                   <property role="1688n3" value="../../../workbench/mps-editor/source/META-INF/" />
                   <node concept="NbPM2" id="t7CJPgoGLT" role="1688n0" />
+                </node>
+                <node concept="1688n2" id="1Beh1jPKf$o" role="28jJR8">
+                  <property role="1688n6" value="gi" />
+                  <property role="1688n3" value="../../../workbench/mps-ui/source/META-INF/" />
+                  <node concept="NbPM2" id="1Beh1jPKf$p" role="1688n0" />
                 </node>
                 <node concept="1688n2" id="7XQqoCTlWKR" role="28jJR8">
                   <property role="1688n6" value="gi" />

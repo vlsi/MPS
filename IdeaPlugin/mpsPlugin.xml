@@ -82,6 +82,9 @@
           <replaceregex pattern="../../../workbench/mps-editor/source/META-INF/" replace="" flags="gi" />
         </tokenfilter>
         <tokenfilter>
+          <replaceregex pattern="../../../workbench/mps-ui/source/META-INF/" replace="" flags="gi" />
+        </tokenfilter>
+        <tokenfilter>
           <replaceregex pattern="../../../workbench/mps-ui/source_gen/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
         <tokenfilter>
@@ -102,6 +105,7 @@
       </fileset>
       <zipfileset file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" prefix="META-INF" />
+      <zipfileset file="${mps_home}/workbench/mps-ui/source/META-INF/MPSUI.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/idea-support.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/IdeaPlugin/mps-core/META-INF/intellij-ides-support.xml" prefix="META-INF" />
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
