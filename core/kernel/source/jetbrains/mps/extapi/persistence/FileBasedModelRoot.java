@@ -251,7 +251,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
+  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType) {
     assert targetModelRoot instanceof FileBasedModelRoot;
     FileBasedModelRoot target = ((FileBasedModelRoot) targetModelRoot);
 
@@ -275,15 +275,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
             tModule.getFileSystem().getFile(targetFile)
         );
       }
-    }
-
-    Iterator<SModel> sourceModelIterator = loadModels().iterator();
-
-    Iterable<SModel> targetModels = target.loadModels();
-    Iterator<SModel> targetModelIterator = targetModels.iterator();
-
-    while (sourceModelIterator.hasNext()) {
-      referenceUpdater.addModelReferenceMapping(sourceModelIterator.next().getReference(), targetModelIterator.next().getReference());
     }
   }
 

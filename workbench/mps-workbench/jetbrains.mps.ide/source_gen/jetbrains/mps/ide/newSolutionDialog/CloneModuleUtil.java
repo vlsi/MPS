@@ -18,42 +18,36 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.util.ReferenceUpdater;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
+import java.util.function.Consumer;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import org.jetbrains.mps.openapi.module.SDependency;
-import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.apache.log4j.Level;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import java.util.Collection;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.PathConverters;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.util.PathConverter;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.structure.modules.Dependency;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 
 public class CloneModuleUtil {
 
@@ -75,32 +69,29 @@ public class CloneModuleUtil {
     throw new IllegalArgumentException("Unknown module " + sourceModule.getModuleName());
   }
 
-  private static Solution createClonedSolution(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, Solution sourceSolution, Map<ModelRoot, CloneType> cloneTypes) {
+  private static Solution createClonedSolution(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, final Solution sourceSolution, Map<ModelRoot, CloneType> cloneTypes) {
     SolutionDescriptor targetDescriptor = createClonedSolutionDescriptor(namespace, targetDescriptorFile, sourceSolution);
 
     SolutionDescriptorPersistence.saveSolutionDescriptor(targetDescriptorFile, targetDescriptor, MacrosFactory.forModuleFile(targetDescriptorFile));
 
-    Solution targetSolution = (Solution) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(targetDescriptorFile), moduleOwner);
+    final Solution targetSolution = (Solution) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(targetDescriptorFile), moduleOwner);
+
+    cloneModels(targetSolution, sourceSolution, cloneTypes);
 
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
-    Iterable<ModelRootDescriptor> createdModelRootDescriptors = cloneModels(targetSolution, sourceSolution, cloneTypes, referenceUpdater);
+    referenceUpdater.addModuleToAdjust(sourceSolution, targetSolution, true);
     referenceUpdater.adjust();
 
-    targetDescriptor = targetSolution.getModuleDescriptor();
-    final Collection<ModelRootDescriptor> modelRootDescriptors = targetDescriptor.getModelRootDescriptors();
-    Sequence.fromIterable(createdModelRootDescriptors).visitAll(new IVisitor<ModelRootDescriptor>() {
-      public void visit(ModelRootDescriptor it) {
-        modelRootDescriptors.add(it);
+    targetSolution.getModels().forEach(new Consumer<SModel>() {
+      public void accept(SModel it) {
+        tryRenameModel(it, sourceSolution.getModuleName(), targetSolution.getModuleName());
       }
     });
-    targetSolution.setModuleDescriptor(targetDescriptor);
 
     return targetSolution;
   }
 
   private static Language createClonedLanguage(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, Language sourceLanguage, Map<ModelRoot, CloneType> cloneTypes) {
-    Map<SModuleReference, AbstractModule> moduleMapping = MapSequence.fromMap(new HashMap<SModuleReference, AbstractModule>());
-
     LanguageDescriptor targetDescriptor = createClonedLanguageDescriptor(namespace, targetDescriptorFile, sourceLanguage);
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(targetDescriptorFile, targetDescriptor, MacrosFactory.forModuleFile(targetDescriptorFile));
@@ -108,14 +99,9 @@ public class CloneModuleUtil {
     Language targetLanguage = (Language) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(targetDescriptorFile), moduleOwner);
 
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
-    List<Tuples._2<AbstractModule, Iterable<ModelRootDescriptor>>> modelRootAddFutures = ListSequence.fromList(new ArrayList<Tuples._2<AbstractModule, Iterable<ModelRootDescriptor>>>());
 
-    ListSequence.fromList(modelRootAddFutures).addElement(MultiTuple.<AbstractModule,Iterable<ModelRootDescriptor>>from(as_iwu1g5_a0a0a11a7(targetLanguage, AbstractModule.class), cloneModels(targetLanguage, sourceLanguage, cloneTypes, referenceUpdater)));
-    MapSequence.fromMap(moduleMapping).put(sourceLanguage.getModuleReference(), targetLanguage);
-
-    SLanguage targetSLanguage = MetaAdapterByDeclaration.getLanguage(targetLanguage);
-    SLanguage sourceSLanguage = MetaAdapterByDeclaration.getLanguage(sourceLanguage);
-    referenceUpdater.addUsedLanguagesMapping(sourceSLanguage, targetSLanguage);
+    cloneModels(targetLanguage, sourceLanguage, cloneTypes);
+    referenceUpdater.addModuleToAdjust(sourceLanguage, targetLanguage, true);
 
     Iterator<Generator> targetGenerators = targetLanguage.getGenerators().iterator();
     Iterator<Generator> sourceGenerators = sourceLanguage.getGenerators().iterator();
@@ -124,44 +110,26 @@ public class CloneModuleUtil {
       Generator targetGenerator = targetGenerators.next();
       Generator sourceGenerator = sourceGenerators.next();
 
-      MapSequence.fromMap(moduleMapping).put(sourceGenerator.getModuleReference(), targetGenerator);
-      ListSequence.fromList(modelRootAddFutures).addElement(MultiTuple.<AbstractModule,Iterable<ModelRootDescriptor>>from(as_iwu1g5_a0a0a4a12a7(targetGenerator, AbstractModule.class), cloneModels(targetGenerator, sourceGenerator, cloneTypes, referenceUpdater)));
+      cloneModels(targetGenerator, sourceGenerator, cloneTypes);
+      referenceUpdater.addModuleToAdjust(sourceGenerator, targetGenerator, true);
+    }
+    referenceUpdater.adjust();
+
+    for (SModel model : ListSequence.fromList(targetLanguage.getModels())) {
+      tryRenameModel(model, sourceLanguage.getModuleName(), targetLanguage.getModuleName());
     }
 
-    referenceUpdater.adjust();
-    resolveDependecies(moduleMapping);
-
-    for (Tuples._2<AbstractModule, Iterable<ModelRootDescriptor>> modelRootAddFuture : ListSequence.fromList(modelRootAddFutures)) {
-      ModuleDescriptor moduleDescriptor = modelRootAddFuture._0().getModuleDescriptor();
-      final Collection<ModelRootDescriptor> modelRootDescriptors = moduleDescriptor.getModelRootDescriptors();
-      Sequence.fromIterable(modelRootAddFuture._1()).visitAll(new IVisitor<ModelRootDescriptor>() {
-        public void visit(ModelRootDescriptor it) {
-          modelRootDescriptors.add(it);
-        }
-      });
-      modelRootAddFuture._0().setModuleDescriptor(moduleDescriptor);
+    for (Generator generator : CollectionSequence.fromCollection(targetLanguage.getGenerators())) {
+      for (SModel model : ListSequence.fromList(generator.getModels())) {
+        tryRenameModel(model, sourceLanguage.getModuleName(), targetLanguage.getModuleName());
+      }
     }
 
     return targetLanguage;
   }
 
-
-
-  private static void resolveDependecies(Map<SModuleReference, AbstractModule> moduleMapping) {
-    Iterable<AbstractModule> targetModules = MapSequence.fromMap(moduleMapping).values();
-    for (AbstractModule targetModule : Sequence.fromIterable(targetModules)) {
-      for (SDependency dependency : Sequence.fromIterable(targetModule.getDeclaredDependencies())) {
-        SModuleReference depReference = dependency.getTargetModule();
-        if (MapSequence.fromMap(moduleMapping).containsKey(depReference)) {
-          targetModule.removeDependency(new Dependency(depReference, dependency.getScope(), dependency.isReexport()));
-          targetModule.addDependency(MapSequence.fromMap(moduleMapping).get(depReference).getModuleReference(), dependency.isReexport());
-        }
-      }
-    }
-  }
-
   protected static Logger LOG = LogManager.getLogger(CloneModuleUtil.class);
-  public static Iterable<ModelRootDescriptor> cloneModels(AbstractModule targetModule, AbstractModule sourceModule, Map<ModelRoot, CloneType> cloneTypes, ReferenceUpdater referenceUpdater) {
+  public static void cloneModels(AbstractModule targetModule, AbstractModule sourceModule, Map<ModelRoot, CloneType> cloneTypes) {
     List<ModelRoot> targetModelRoots = ListSequence.fromList(new ArrayList<ModelRoot>());
 
     for (ModelRoot sourceModelRoot : Sequence.fromIterable(sourceModule.getModelRoots())) {
@@ -174,23 +142,22 @@ public class CloneModuleUtil {
         continue;
       }
 
-      ModelRootBase targetModelRoot = as_iwu1g5_a0a4a2a41(PersistenceFacade.getInstance().getModelRootFactory(sourceModelRoot.getType()).create(), ModelRootBase.class);
+      ModelRootBase targetModelRoot = as_iwu1g5_a0a4a2a01(PersistenceFacade.getInstance().getModelRootFactory(sourceModelRoot.getType()).create(), ModelRootBase.class);
       targetModelRoot.setModule(targetModule);
 
-      as_iwu1g5_a0a7a2a41(sourceModelRoot, ModelRootBase.class).cloneTo(targetModelRoot, cloneType, referenceUpdater);
+      as_iwu1g5_a0a7a2a01(sourceModelRoot, ModelRootBase.class).cloneTo(targetModelRoot, cloneType);
 
       ListSequence.fromList(targetModelRoots).addElement(targetModelRoot);
     }
 
-    final List<ModelRootDescriptor> modelRootDescriptors = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
-
+    ModuleDescriptor targetDescriptor = targetModule.getModuleDescriptor();
+    Collection<ModelRootDescriptor> modelRootDescriptors = targetDescriptor.getModelRootDescriptors();
     for (ModelRoot targetModelRoot : ListSequence.fromList(targetModelRoots)) {
       Memento targetMemento = new MementoImpl();
       targetModelRoot.save(targetMemento);
-      ListSequence.fromList(modelRootDescriptors).addElement(new ModelRootDescriptor(targetModelRoot.getType(), targetMemento));
+      modelRootDescriptors.add(new ModelRootDescriptor(targetModelRoot.getType(), targetMemento));
     }
-
-    return modelRootDescriptors;
+    targetModule.setModuleDescriptor(targetDescriptor);
   }
 
   private static SolutionDescriptor createClonedSolutionDescriptor(String namespace, IFile descriptorFile, Solution sourceSolution) {
@@ -220,7 +187,7 @@ public class CloneModuleUtil {
   }
 
   private static void cloneSolutionDescriptorInfo(SolutionDescriptor targetDescriptor, IFile targetDescriptorFile, SolutionDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
-    cloneModuleDescriptorInfo(targetDescriptor, targetDescriptorFile, sourceDescriptor, sourceDescriptorFile);
+    cloneModuleDescriptorInfo(targetDescriptor, sourceDescriptor);
 
     targetDescriptor.setKind(sourceDescriptor.getKind());
     targetDescriptor.setCompileInMPS(sourceDescriptor.getCompileInMPS());
@@ -228,7 +195,7 @@ public class CloneModuleUtil {
   }
 
   private static void cloneLanguageDescriptorInfo(LanguageDescriptor targetDescriptor, IFile targetDescriptorFile, LanguageDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
-    cloneModuleDescriptorInfo(targetDescriptor, targetDescriptorFile, sourceDescriptor, sourceDescriptorFile);
+    cloneModuleDescriptorInfo(targetDescriptor, sourceDescriptor);
 
     targetDescriptor.setLanguageVersion(sourceDescriptor.getLanguageVersion());
     targetDescriptor.setGenPath(PathConverters.forDescriptorFiles(targetDescriptorFile, sourceDescriptorFile).sourceToDestination(sourceDescriptor.getGenPath()));
@@ -247,17 +214,17 @@ public class CloneModuleUtil {
       GeneratorDescriptor targetGenerator = new GeneratorDescriptor();
 
       // similiar to Generator.generateGeneratorUID(Language) 
-      String targetGeneratorUID = targetDescriptor.getNamespace() + "#" + SModel.generateUniqueId();
+      String targetGeneratorUID = targetDescriptor.getNamespace() + "#" + jetbrains.mps.smodel.SModel.generateUniqueId();
 
       targetGenerator.setGeneratorUID(targetGeneratorUID);
-      cloneGeneratorDescriptorInfo(targetGenerator, targetDescriptorFile, sourceGenerator, sourceDescriptorFile);
+      cloneGeneratorDescriptorInfo(targetGenerator, sourceGenerator);
 
       targetGenerators.add(targetGenerator);
     }
   }
 
-  private static void cloneGeneratorDescriptorInfo(GeneratorDescriptor targetDescriptor, IFile targetDescriptorFile, GeneratorDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
-    cloneModuleDescriptorInfo(targetDescriptor, targetDescriptorFile, sourceDescriptor, sourceDescriptorFile);
+  private static void cloneGeneratorDescriptorInfo(GeneratorDescriptor targetDescriptor, GeneratorDescriptor sourceDescriptor) {
+    cloneModuleDescriptorInfo(targetDescriptor, sourceDescriptor);
 
     targetDescriptor.setGenerateTemplates(sourceDescriptor.isGenerateTemplates());
     targetDescriptor.setReflectiveQueries(sourceDescriptor.isReflectiveQueries());
@@ -272,9 +239,7 @@ public class CloneModuleUtil {
     }
   }
 
-  private static void cloneModuleDescriptorInfo(ModuleDescriptor targetDescriptor, IFile targetDescriptorFile, ModuleDescriptor sourceDescriptor, IFile sourceDescriptorFile) {
-
-    PathConverter pathConverter = PathConverters.forDescriptorFiles(targetDescriptorFile, sourceDescriptorFile);
+  private static void cloneModuleDescriptorInfo(ModuleDescriptor targetDescriptor, ModuleDescriptor sourceDescriptor) {
 
     targetDescriptor.setModuleVersion(sourceDescriptor.getModuleVersion());
     targetDescriptor.setUseTransientOutput(sourceDescriptor.isUseTransientOutput());
@@ -315,22 +280,26 @@ public class CloneModuleUtil {
     targetDescriptor.getModuleFacetDescriptors().addAll(sourceDescriptor.getModuleFacetDescriptors());
   }
 
+  private static void tryRenameModel(SModel model, String oldModuleName, String newModuleName) {
+    if (model instanceof EditableSModel) {
+      String newName = model.getName().getValue();
+      if (newName.startsWith(oldModuleName)) {
+        newName = newModuleName + newName.substring(oldModuleName.length());
+      }
+      ((EditableSModel) model).rename(newName, true);
+    }
+  }
+
   private static <T> T as_iwu1g5_a3a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static <T> T as_iwu1g5_a3a0a1a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iwu1g5_a0a0a11a7(Object o, Class<T> type) {
+  private static <T> T as_iwu1g5_a0a4a2a01(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_iwu1g5_a0a0a4a12a7(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_iwu1g5_a0a4a2a41(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_iwu1g5_a0a7a2a41(Object o, Class<T> type) {
+  private static <T> T as_iwu1g5_a0a7a2a01(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

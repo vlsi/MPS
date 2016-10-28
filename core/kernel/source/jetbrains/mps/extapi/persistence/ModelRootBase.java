@@ -191,13 +191,8 @@ public abstract class ModelRootBase implements ModelRoot {
    *
    * @param targetModelRoot target model root
    * @param cloneType type of cloning operation
-   * @param referenceUpdater reference updater;
-   *                         supposed workflow : you have several model roots to clone,
-   *                         so you create {@linkplain ReferenceUpdater reference updater}, provide it for
-   *                         each invocation of this method to collect reference that should be updated and
-   *                         models where references should be updated, than invoke {@link ReferenceUpdater#adjust()}.
    */
-  public abstract void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater);
+  public abstract void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType);
 
   @Override
   public String toString() {

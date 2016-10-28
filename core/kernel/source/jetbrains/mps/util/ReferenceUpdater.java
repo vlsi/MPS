@@ -15,100 +15,173 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 /**
- * Utility class that provides {@link SModelReference} updating in a group of models.
+ * Utility class that provides model/module reference updating in a group of models/modules.
  *
  * Expected workflow:
- * You collect models where you want update references by {@link #addModelToAdjust(SModel)},
- * and mappings between old and new references by {@link #addModelReferenceMapping(SModelReference, SModelReference)}.
+ * You collect models & modules where you want update references
+ * by {@link #addModelToAdjust(SModel, SModel)} and {@link #addModuleToAdjust(SModule, SModule, boolean)}.
  *
- * Than you invoke {@link #adjust} to replace all old references with new references in collected models.
- *
- * Also, you can use {@link #addUsedLanguagesMapping(SLanguage, SLanguage)} to update language imports in
- * collected models
+ * Than you invoke {@link #adjust()} to replace all old references with new references in collected models & modules.
  *
  * @author Radimir.Sorokin
+ *
+ * TODO supports languages updating (runtime modules, accessory models, etc.)
  */
-public final class ReferenceUpdater {
-  private final List<SModel> models = new ArrayList<>();
+public class ReferenceUpdater {
+  protected final List<SModule> myModules = new ArrayList<>();
+  protected final List<SModel> myModels = new ArrayList<>();
 
-  private final Map<SModelReference, SModelReference> referenceMap = new HashMap<>();
-  private final Map<SLanguage, SLanguage> usedLangMap = new HashMap<>();
+  protected final Map<SModuleReference, SModuleReference> myModuleReferenceMap = new HashMap<>();
+  protected final Map<SModelReference, SModelReference> myModelReferenceMap = new HashMap<>();
+  protected final Map<SLanguage, SLanguage> myUsedLanguagesMap = new HashMap<>();
 
   private boolean adjusted = false;
 
-  public void addModelToAdjust(@NotNull SModel model){
-    models.add(model);
-  }
-
-  public void addModelReferenceMapping(@NotNull SModelReference oldReference, @NotNull SModelReference newReference) {
+  /**
+   * Add {@code newModule} to adjust.
+   * After adjusting, other modules & models will refer to {@code newModule} instead of {@code oldModule}
+   *
+   * @param oldModule old module - others contain refs to it
+   * @param newModule new module - others will be contain refs to it
+   * @param updateModels true, if you want to update inner models too.
+   */
+  public void addModuleToAdjust(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
     assertNotAdjusted();
 
-    referenceMap.put(oldReference, newReference);
+    myModules.add(newModule);
+    myModuleReferenceMap.put(oldModule.getModuleReference(), newModule.getModuleReference());
+
+    if (oldModule instanceof Language && newModule instanceof Language) {
+      myUsedLanguagesMap.put(
+          MetaAdapterByDeclaration.getLanguage(((Language) oldModule)),
+          MetaAdapterByDeclaration.getLanguage(((Language) newModule))
+      );
+    }
+    if (updateModels) {
+      // FIXME SModule#getModels() doesn't guarantee any order
+      // FIXME So I assume that original models and cloned have same names
+      Iterable<SModel> newModels = getSortedModels(newModule.getModels());
+      Iterator<SModel> oldModels = getSortedModels(oldModule.getModels()).iterator();
+      for (SModel newModel : newModels) {
+        SModel oldModel = oldModels.next();
+
+        addModelToAdjustImpl(oldModel, newModel);
+      }
+    }
   }
 
-  public void addUsedLanguagesMapping(@NotNull SLanguage oldLanguage, @NotNull SLanguage newLanguage) {
-    assertNotAdjusted();
-
-    usedLangMap.put(oldLanguage, newLanguage);
+  private static List<SModel> getSortedModels(Iterable<SModel> models) {
+    return StreamSupport.stream(models.spliterator(), false)
+          .sorted(Comparator.comparing(model -> model.getName().getValue()))
+          .collect(Collectors.toList());
   }
 
   /**
-   * For each collected model:
-   * 1) replace all model references in model imports according to {@link #referenceMap}
-   * 2) replace all languages imports according to {@link #usedLangMap}
-   * 3) replace all model references in it's nodes according to {@link #referenceMap}
-   * 4) save it
+   * Add {@code newModel} to adjust if it is editable.
+   * After adjusting, other models will refer to {@code newModel} instead of {@code oldModel}
    *
+   * @param oldModel old model - other models contain refs to it
+   * @param newModel new model - other models will be contain refs to it
+   */
+  public void addModelToAdjust(@NotNull SModel oldModel, @NotNull SModel newModel) {
+    assertNotAdjusted();
+    addModelToAdjustImpl(oldModel, newModel);
+  }
+
+  /**
+   * For each collected module:
+   * 1) update all module dependencies according to {@link #myModuleReferenceMap}
+   *
+   * For each collected model:
+   * 1) update all model references in model imports according to {@link #myModelReferenceMap}
+   * 2) update all languages imports according to {@link #myUsedLanguagesMap}
+   * 3) update all model references in it's nodes according to {@link #myModelReferenceMap}
+   *
+   * It saves all models after references updating.
    * Note that after calling this method you can't use this instance to update references.
    */
   public void adjust() {
     assertNotAdjusted();
 
-    models.forEach(model -> {
+    myModules.forEach(module -> {
+        for (SDependency dependency : module.getDeclaredDependencies()) {
+          SModuleReference depReference = dependency.getTargetModule();
+          if (myModuleReferenceMap.containsKey(depReference)) {
+            ((AbstractModule) module).removeDependency(new Dependency(depReference, dependency.getScope(), dependency.isReexport()));
+            ((AbstractModule) module).addDependency(myModuleReferenceMap.get(depReference), dependency.isReexport());
+          }
+        }
+    });
+
+    myModels.forEach(model -> {
       SModelInternal modelInternal = (SModelInternal) model;
       for (SModelReference aImport: modelInternal.getModelImports()) {
-        if (referenceMap.containsKey(aImport)) {
+        if (myModelReferenceMap.containsKey(aImport)) {
           modelInternal.deleteModelImport(aImport);
-          modelInternal.addModelImport(referenceMap.get(aImport));
+          modelInternal.addModelImport(myModelReferenceMap.get(aImport));
         }
       }
       List<SLanguage> usedLanguages = new ArrayList<>(modelInternal.importedLanguageIds());
       for (SLanguage usedLanguage : usedLanguages) {
-        if (usedLangMap.containsKey(usedLanguage)) {
+        if (myUsedLanguagesMap.containsKey(usedLanguage)) {
           modelInternal.deleteLanguageId(usedLanguage);
-          modelInternal.addLanguage(usedLangMap.get(usedLanguage));
+          modelInternal.addLanguage(myUsedLanguagesMap.get(usedLanguage));
         }
       }
       model.getRootNodes().forEach(this::updateReferences);
     });
-    models.forEach((sModel -> {
-      ((EditableSModel) sModel).setChanged(true);
-      ((EditableSModel) sModel).save();
+    myModels.forEach((model -> {
+      ((EditableSModel) model).setChanged(true);
+      ((EditableSModel) model).save();
     }));
     adjusted = true;
   }
 
+  public List<SModule> getModules() {
+    return Collections.unmodifiableList(myModules);
+  }
+
   public List<SModel> getModels() {
-    return models;
+    return Collections.unmodifiableList(myModels);
+  }
+
+  protected void addModelToAdjustImpl(@NotNull SModel oldModel, @NotNull SModel newModel) {
+    if (!newModel.isReadOnly()) {
+      myModels.add(newModel);
+    }
+    myModelReferenceMap.put(oldModel.getReference(), newModel.getReference());
   }
 
   private void assertNotAdjusted() {
-    assert !adjusted : "These models have already adjusted";
+    assert !adjusted : "ReferenceUpdater instances can't be reused";
   }
 
   private void updateReferences(SNode node){
@@ -118,11 +191,11 @@ public final class ReferenceUpdater {
       }
       StaticReference reference = (StaticReference) ref;
       SModelReference targetSModelReference = reference.getTargetSModelReference();
-      if (referenceMap.containsKey(targetSModelReference)) {
+      if (myModelReferenceMap.containsKey(targetSModelReference)) {
         StaticReference newReference = new StaticReference(
             reference.getLink(),
             node,
-            referenceMap.get(targetSModelReference),
+            myModelReferenceMap.get(targetSModelReference),
             reference.getTargetNodeId(),
             reference.getResolveInfo()
         );

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CloneCapabilities;
 import jetbrains.mps.extapi.persistence.CloneType;
@@ -305,18 +306,14 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType, @NotNull ReferenceUpdater referenceUpdater) {
+  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType) {
     assert targetModelRoot instanceof DefaultModelRoot;
     DefaultModelRoot target = ((DefaultModelRoot) targetModelRoot);
 
     AbstractModule tModule = ((AbstractModule) target.getModule());
-    AbstractModule sModule = ((AbstractModule) getModule());
 
     assertNotNullModulesForCloning(target);
     cloneDescriptionTo(target);
-
-    String sourceModuleName = sModule.getModuleName();
-    String targetModuleName = tModule.getModuleName();
 
     Collection<String> sourceFiles = getFiles(SOURCE_ROOTS);
     Collection<String> targetFiles = target.getFiles(SOURCE_ROOTS);
@@ -327,6 +324,8 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     for (String targetFile : targetFiles) {
       String sourceFile = sfi.next();
 
+      tModule.getFileSystem().getFile(targetFile).mkdirs();
+
       Collection<SModel> models = new HashSet<>();
       collectModels(tModule.getFileSystem().getFile(sourceFile), "", makeRelative(getContentRoot(), sourceFile), new HashMap<>(), models);
 
@@ -334,32 +333,24 @@ public class DefaultModelRoot extends FileBasedModelRoot {
 
       for (SModel sourceModel : models) {
         try {
-          String targetModelName = getClonedModelName(sourceModel.getModelName(), sourceModuleName, targetModuleName);
-          SModel targetModel = target.createModel(targetModelName, targetFile, null, factory);
+          Map<String, String> opts = new HashMap<>();
+          DataSource targetModelDataSource = target.createSource(sourceModel.getName().getValue(), MPSExtentions.MODEL, targetFile, opts);
+          EditableSModelBase targetModel = ((EditableSModelBase) factory.create(targetModelDataSource, opts));
+          targetModel.setModelRoot(target);
+          targetModel.setModule(tModule);
 
           targetModel.load();
 
           CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
-          ((SModelBase) sourceModel).getSModel().copyPropertiesTo(((SModelBase) targetModel).getSModel());
-
-          referenceUpdater.addModelReferenceMapping(sourceModel.getReference(), targetModel.getReference());
-          referenceUpdater.addModelToAdjust(targetModel);
+          ((SModelBase) sourceModel).getSModel().copyPropertiesTo(targetModel.getSModel());
 
           // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save();
-          ((EditableSModel) targetModel).setChanged(true);
-          ((EditableSModel) targetModel).save();
+          targetModel.setChanged(true);
+          targetModel.save();
         } catch (IOException e) {
           // TODO
         }
       }
-    }
-  }
-
-  private static String getClonedModelName(String oldName, String oldPrefix, String newPrefix) {
-    if (oldName.startsWith(oldPrefix)) {
-      return newPrefix + oldName.substring(oldPrefix.length());
-    } else {
-      return oldName;
     }
   }
 }
