@@ -27,7 +27,7 @@ import java.util.Set;
  * Date: 4/24/13
  */
 public class EditorCellContextImpl implements EditorCellContext {
-  private Set<String> myHints = new HashSet<String>();
+  private final Set<String> myHints = new HashSet<>();
 
   public EditorCellContextImpl(EditorCellContext parentContext) {
     myHints.addAll(parentContext.getHints());
@@ -53,5 +53,22 @@ public class EditorCellContextImpl implements EditorCellContext {
     for (String hint : hints) {
       myHints.remove(hint);
     }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    EditorCellContextImpl that = (EditorCellContextImpl) o;
+    return myHints.equals(that.myHints);
+  }
+
+  @Override
+  public int hashCode() {
+    return myHints.hashCode();
   }
 }

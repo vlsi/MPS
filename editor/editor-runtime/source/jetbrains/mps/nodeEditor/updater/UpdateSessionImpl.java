@@ -69,6 +69,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
   private UpdateInfoIndex myUpdateInfoIndex;
   private UpdateInfoNode myCurrentUpdateInfo;
+  private EditorCellFactory myCellFactory;
 
   protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
@@ -261,7 +262,10 @@ public class UpdateSessionImpl implements UpdateSession {
   @NotNull
   @Override
   public EditorCellFactory getCellFactory() {
-    return getUpdater().getEditorContext().getCellFactory();
+    if (myCellFactory == null) {
+      myCellFactory = new EditorCellFactoryImpl(getUpdater().getEditorContext());
+    }
+    return myCellFactory;
   }
 
   private ReferencedNodeContext getCurrentContext() {
