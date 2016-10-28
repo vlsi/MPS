@@ -15,25 +15,28 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+
 /**
- * Each model root can be cloned by different ways,
- * so {@link CloneType} represents how model root should be cloned.
+ * Represents that {@link ModelRoot} can be cloned.
  *
  * @author Radimir.Sorokin
  */
-public enum CloneType {
+public interface CloneableModelRoot extends ModelRoot {
 
   /**
-   * Represents that model root should be cloned as independent copy.
-   * For example, {@link FileBasedModelRoot} will make a copy of each file on the disk,
-   * if <t>CLONE</t> is provided.
+   * Provides clone capabilities of <t>this</t> instance.
+   *
+   * @return instance clone capabilities
    */
-  CLONE,
+  @NotNull
+  CloneCapabilities getCloneCapabilities();
 
   /**
-   * Represents that model root content should be reused.
-   * For example, clone of {@link FileBasedModelRoot} instance will refers to same files on the disk
-   * (source paths in these model roots will be identical)
+   * Clones this model root content to <t>targetModelRoot</t>.
+   *
+   * @param targetModelRoot target model root
    */
-  REUSE
+  void cloneTo(@NotNull ModelRoot targetModelRoot);
 }

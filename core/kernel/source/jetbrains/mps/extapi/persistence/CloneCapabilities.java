@@ -15,83 +15,48 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.EnumMap;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Provides information of model root clone capabilities.
  *
  * Contract:
- * <t>modelRoot.getCloneCapabilities(cloneType)</t> must return true, if
- * <t>modelRoot.cloneTo(target, cloneType, referenceUpdater)</t> should return successfully cloned model root.
+ * {@code modelRoot.getCloneCapabilities().isCloneable()} must return true, if
+ * {@code modelRoot.cloneTo(target)} should successfully clone model root content to target.
  *
- * @see ModelRootBase#getCloneCapabilities()
+ * @see CloneableModelRoot#getCloneCapabilities()
  *
  * @author Radimir.Sorokin
  */
 public class CloneCapabilities {
 
-  private final Map<CloneType, Boolean> capabilties = new EnumMap<>(CloneType.class);
+  private final boolean myCloneable;
 
-  private String errorMessage;
+  @Nullable
+  private final String myErrorMessage;
 
-  /**
-   * Determines model root ability to be cloned by supplied {@link CloneType}.
-   *
-   * @param cloneType {@link CloneType} of possible cloning operation
-   * @return <t>true</t> if model root can be cloned by supplied {@link CloneType}, otherwise - <t>false</t>
-   */
-  public boolean isCloneable(@NotNull CloneType cloneType) {
-    Boolean res = capabilties.get(cloneType);
-
-    //returns false is res == null, unboxed value - otherwise
-    return res != null && res;
-  }
-
-  @NotNull
-  /**
-   * @return collection of all {@link CloneType} instances that model root can be cloned by.
-   */
-  public Collection<CloneType> getAllowedCloneTypes() {
-    return Arrays.stream(CloneType.values())
-        .filter(this::isCloneable)
-        .collect(Collectors.toSet());
+  public CloneCapabilities(boolean cloneable,@Nullable String errorMessage) {
+    myCloneable = cloneable;
+    myErrorMessage = errorMessage;
   }
 
   /**
-   * Sets model root ability to be cloned by supplied {@link CloneType}
+   * Determines model root ability to be cloned.
    *
-   * @param cloneType {@link CloneType} of possible cloning operation
-   * @param isCloneable <t>true</t> if model root can be cloned by supplied {@link CloneType}, otherwise - <t>false</t>
+   * @return <t>true</t> if model root can be cloned, otherwise - <t>false</t>
    */
-  public void setCloneable(@NotNull CloneType cloneType, boolean isCloneable) {
-    capabilties.put(cloneType, isCloneable);
+  public boolean isCloneable() {
+    return myCloneable;
   }
 
   /**
    * Returns error message.
-   * It supposed to be called when {@link this#getAllowedCloneTypes()} returns empty list
-   * to show error message that tells about why user operation is denied.
+   * It supposed to be called when {@link this#isCloneable()} ()} returns false.
    *
    * @return error message that represents why model root can't be cloned.
    */
   @Nullable
   public String getErrorMessage() {
-    return errorMessage;
-  }
-
-  /**
-   * Sets error message.
-   *
-   * @param errorMessage error message that represents why model root can't be cloned
-   */
-  public void setErrorMessage(@Nullable String errorMessage) {
-    this.errorMessage = errorMessage;
+    return myErrorMessage;
   }
 }

@@ -15,8 +15,8 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.extapi.persistence.CloneableModelRoot;
 import jetbrains.mps.extapi.persistence.CloneCapabilities;
-import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -77,10 +77,14 @@ public class CloneModule_Action extends BaseAction {
     Iterable<ModelRoot> roots = event.getData(MPSCommonDataKeys.MODULE).getModelRoots();
 
     for (ModelRoot root : Sequence.fromIterable(roots)) {
-      CloneCapabilities capabilities = ((ModelRootBase) root).getCloneCapabilities();
+      if (root instanceof CloneableModelRoot) {
+        CloneCapabilities capabilities = ((CloneableModelRoot) root).getCloneCapabilities();
 
-      if (capabilities.getAllowedCloneTypes().isEmpty()) {
-        ListSequence.fromList(nonCloneable).addElement(MultiTuple.<ModelRoot,String>from(root, capabilities.getErrorMessage()));
+        if (!(capabilities.isCloneable())) {
+          ListSequence.fromList(nonCloneable).addElement(MultiTuple.<ModelRoot,String>from(root, capabilities.getErrorMessage()));
+        }
+      } else {
+        ListSequence.fromList(nonCloneable).addElement(MultiTuple.<ModelRoot,String>from(root, "Clonning hasn't implemented for this model root"));
       }
     }
 

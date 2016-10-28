@@ -6,11 +6,11 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.newSolutionDialog.CloneModuleUtil;
-import jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings;
 import org.jetbrains.annotations.NonNls;
 
 public class CloneModuleDialog extends AbstractModuleCreationDialog {
@@ -25,10 +25,9 @@ public class CloneModuleDialog extends AbstractModuleCreationDialog {
     init();
   }
 
-
   @Override
   protected void runCreation() {
-    myResult = CloneModuleUtil.cloneModule(mySettings.getModuleName(), mySettings.getModuleLocation(), myProject, myModuleOriginal, as_lznhaw_a0e0a0a6(mySettings, CloneModuleSettings.class).getModelRootTypes(), getExtension());
+    myResult = CloneModuleUtil.cloneModule(mySettings.getModuleName(), mySettings.getModuleLocation(), myProject, myModuleOriginal, getExtension());
     ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
   }
 
@@ -54,8 +53,5 @@ public class CloneModuleDialog extends AbstractModuleCreationDialog {
   @Override
   protected String getDimensionServiceKey() {
     return CloneModuleDialog.class.getName();
-  }
-  private static <T> T as_lznhaw_a0e0a0a6(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

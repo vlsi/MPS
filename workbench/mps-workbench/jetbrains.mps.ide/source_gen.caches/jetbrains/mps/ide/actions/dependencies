@@ -309,7 +309,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.CloneCapabilities" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.CloneableModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
     <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog" />

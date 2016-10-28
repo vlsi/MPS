@@ -169,31 +169,6 @@ public abstract class ModelRootBase implements ModelRoot {
     }
   }
 
-  /**
-   * Returns {@link CloneCapabilities} of this model root.
-   *
-   * By default, model root doesn't support cloning,
-   * so returned {@link CloneCapabilities} instance will have no allowed {@link CloneType}'s
-   *
-   * If you implement custom model root and you want to support cloning for your model root,
-   * you should override this method.
-   *
-   * @return {@link CloneCapabilities} of this model root.
-   */
-  public CloneCapabilities getCloneCapabilities(){
-    CloneCapabilities capabilities = new CloneCapabilities();
-    capabilities.setErrorMessage("This model roots doesn't support cloning");
-    return capabilities;
-  }
-
-  /**
-   * Clones this model root content to <t>targetModelRoot</t> by given <t>cloneType</t>.
-   *
-   * @param targetModelRoot target model root
-   * @param cloneType type of cloning operation
-   */
-  public abstract void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType);
-
   @Override
   public String toString() {
     return "(" + getType() + ") " + getPresentation();

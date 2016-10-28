@@ -17,24 +17,13 @@ import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.io.File;
 import jetbrains.mps.vfs.IFileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.apache.log4j.Level;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import java.util.Map;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.extapi.persistence.CloneType;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CloneModule_Test extends TestCase {
   private static final String PROJECT_PATH = "../testbench/modules/testCloneModule/";
@@ -47,23 +36,9 @@ public class CloneModule_Test extends TestCase {
 
         String clonedSolutionName = originalSolution.getModuleName() + "_clone_default";
 
-        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, getCloneTypesToCloneAll(originalSolution.getModelRoots()), MPSExtentions.DOT_SOLUTION);
+        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, MPSExtentions.DOT_SOLUTION);
 
         Assert.assertEquals(clonedSolution.getModuleName(), clonedSolutionName);
-
-        checkModule(originalSolution);
-        checkModule(clonedSolution);
-      }
-    });
-  }
-  public void test_cloneSolution_StubsReuse() throws Exception {
-    executeUnderLock(new Runnable() {
-      public void run() {
-        Solution originalSolution = as_i3fixg_a0a0a0a0a0a0e(PersistenceFacade.getInstance().createModuleReference("8f96adf3-4f4a-468b-b857-347988bd14bd(TestSolution_JavaClasses)").resolve(project.getRepository()), Solution.class);
-
-        String clonedSolutionName = originalSolution.getModuleName() + "_clone_reuse";
-
-        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, getCloneTypesToReuseSources(originalSolution.getModelRoots()), MPSExtentions.DOT_SOLUTION);
 
         checkModule(originalSolution);
         checkModule(clonedSolution);
@@ -73,11 +48,11 @@ public class CloneModule_Test extends TestCase {
   public void test_cloneSolution_StubsClone() throws Exception {
     executeUnderLock(new Runnable() {
       public void run() {
-        Solution originalSolution = as_i3fixg_a0a0a0a0a0a0f(PersistenceFacade.getInstance().createModuleReference("8f96adf3-4f4a-468b-b857-347988bd14bd(TestSolution_JavaClasses)").resolve(project.getRepository()), Solution.class);
+        Solution originalSolution = as_i3fixg_a0a0a0a0a0a0e(PersistenceFacade.getInstance().createModuleReference("8f96adf3-4f4a-468b-b857-347988bd14bd(TestSolution_JavaClasses)").resolve(project.getRepository()), Solution.class);
 
-        String clonedSolutionName = originalSolution.getModuleName() + "_clone_hard";
+        String clonedSolutionName = originalSolution.getModuleName() + "_clone_stubs";
 
-        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, getCloneTypesToCloneAll(originalSolution.getModelRoots()), MPSExtentions.DOT_SOLUTION);
+        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, MPSExtentions.DOT_SOLUTION);
 
         checkModule(originalSolution);
         checkModule(clonedSolution);
@@ -87,11 +62,11 @@ public class CloneModule_Test extends TestCase {
   public void test_cloneLanguage() throws Exception {
     executeUnderLock(new Runnable() {
       public void run() {
-        Language originalLanguage = as_i3fixg_a0a0a0a0a0a0g(PersistenceFacade.getInstance().createModuleReference("d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)").resolve(project.getRepository()), Language.class);
+        Language originalLanguage = as_i3fixg_a0a0a0a0a0a0f(PersistenceFacade.getInstance().createModuleReference("d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)").resolve(project.getRepository()), Language.class);
 
         String clonedLanguageName = originalLanguage.getModuleName() + "_clone_language";
 
-        AbstractModule clonedLanguage = CloneModuleUtil.cloneModule(clonedLanguageName, clonedModelsDirectory.getDescendant(clonedLanguageName).toPath().toString(), project, originalLanguage, getCloneTypesToCloneAll(collectLanguageModelRoots(originalLanguage)), MPSExtentions.DOT_LANGUAGE);
+        AbstractModule clonedLanguage = CloneModuleUtil.cloneModule(clonedLanguageName, clonedModelsDirectory.getDescendant(clonedLanguageName).toPath().toString(), project, originalLanguage, MPSExtentions.DOT_LANGUAGE);
 
         checkModule(originalLanguage);
         checkModule(clonedLanguage);
@@ -116,6 +91,7 @@ public class CloneModule_Test extends TestCase {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(CloneModule_Test.class);
   public static void checkModule(AbstractModule module) {
     MessageCollectProcessor processor = new MessageCollectProcessor();
     ValidationUtil.validateModule(module, processor);
@@ -140,31 +116,6 @@ public class CloneModule_Test extends TestCase {
       }
     }, ModalityState.any());
   }
-
-  public static Map<ModelRoot, CloneType> getCloneTypesToCloneAll(Iterable<ModelRoot> roots) {
-    Map<ModelRoot, CloneType> res = MapSequence.fromMap(new HashMap<ModelRoot, CloneType>());
-    for (ModelRoot root : Sequence.fromIterable(roots)) {
-      MapSequence.fromMap(res).put(root, CloneType.CLONE);
-    }
-    return res;
-  }
-
-  public static Map<ModelRoot, CloneType> getCloneTypesToReuseSources(Iterable<ModelRoot> roots) {
-    Map<ModelRoot, CloneType> res = MapSequence.fromMap(new HashMap<ModelRoot, CloneType>());
-    for (ModelRoot root : Sequence.fromIterable(roots)) {
-      MapSequence.fromMap(res).put(root, (root.getType().equals("java_source_stubs") ? CloneType.REUSE : CloneType.CLONE));
-    }
-    return res;
-  }
-
-  public static Iterable<ModelRoot> collectLanguageModelRoots(Language language) {
-    List<ModelRoot> roots = ListSequence.fromListWithValues(new ArrayList<ModelRoot>(), language.getModelRoots());
-    for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
-      ListSequence.fromList(roots).addSequence(Sequence.fromIterable(generator.getModelRoots()));
-    }
-    return roots;
-  }
-  protected static Logger LOG = LogManager.getLogger(CloneModule_Test.class);
   private static <T> T as_i3fixg_a0a0a0a0a0a0d(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
@@ -172,9 +123,6 @@ public class CloneModule_Test extends TestCase {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static <T> T as_i3fixg_a0a0a0a0a0a0f(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_i3fixg_a0a0a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

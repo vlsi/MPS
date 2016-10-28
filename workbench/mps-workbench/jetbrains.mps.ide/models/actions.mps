@@ -43209,66 +43209,96 @@
             <ref role="3cqZAo" node="6B6bZkCFxHa" resolve="roots" />
           </node>
           <node concept="3clFbS" id="6B6bZkCF_Dg" role="2LFqv$">
-            <node concept="3cpWs8" id="7Mzx1PFRpgl" role="3cqZAp">
-              <node concept="3cpWsn" id="7Mzx1PFRpgm" role="3cpWs9">
-                <property role="TrG5h" value="capabilities" />
-                <node concept="3uibUv" id="67eMucID7Jv" role="1tU5fm">
-                  <ref role="3uigEE" to="ends:~CloneCapabilities" resolve="CloneCapabilities" />
-                </node>
-                <node concept="2OqwBi" id="7Mzx1PFRwr8" role="33vP2m">
-                  <node concept="1eOMI4" id="7Mzx1PFRwap" role="2Oq$k0">
-                    <node concept="10QFUN" id="7Mzx1PFRuxm" role="1eOMHV">
-                      <node concept="3uibUv" id="7Mzx1PFRuQZ" role="10QFUM">
-                        <ref role="3uigEE" to="ends:~ModelRootBase" resolve="ModelRootBase" />
-                      </node>
-                      <node concept="2GrUjf" id="7Mzx1PFRppB" role="10QFUP">
-                        <ref role="2Gs0qQ" node="6B6bZkCF_Dc" resolve="root" />
-                      </node>
+            <node concept="3clFbJ" id="2RhVBj9zzr0" role="3cqZAp">
+              <node concept="3clFbS" id="2RhVBj9zzr2" role="3clFbx">
+                <node concept="3cpWs8" id="7Mzx1PFRpgl" role="3cqZAp">
+                  <node concept="3cpWsn" id="7Mzx1PFRpgm" role="3cpWs9">
+                    <property role="TrG5h" value="capabilities" />
+                    <node concept="3uibUv" id="67eMucID7Jv" role="1tU5fm">
+                      <ref role="3uigEE" to="ends:~CloneCapabilities" resolve="CloneCapabilities" />
                     </node>
-                  </node>
-                  <node concept="liA8E" id="7Mzx1PFRwMZ" role="2OqNvi">
-                    <ref role="37wK5l" to="ends:~ModelRootBase.getCloneCapabilities():jetbrains.mps.extapi.persistence.CloneCapabilities" resolve="getCloneCapabilities" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="5oO1RGE9pN7" role="3cqZAp" />
-            <node concept="3clFbJ" id="5oO1RGE9pY7" role="3cqZAp">
-              <node concept="3clFbS" id="5oO1RGE9pY9" role="3clFbx">
-                <node concept="3clFbF" id="5oO1RGE9rLs" role="3cqZAp">
-                  <node concept="2OqwBi" id="5oO1RGE9sh_" role="3clFbG">
-                    <node concept="37vLTw" id="5oO1RGE9rLq" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6B6bZkCEZ54" resolve="nonCloneable" />
-                    </node>
-                    <node concept="TSZUe" id="5oO1RGE9uh2" role="2OqNvi">
-                      <node concept="1Ls8ON" id="7Mzx1PFRC3Q" role="25WWJ7">
-                        <node concept="2GrUjf" id="7Mzx1PFRCiD" role="1Lso8e">
-                          <ref role="2Gs0qQ" node="6B6bZkCF_Dc" resolve="root" />
-                        </node>
-                        <node concept="2OqwBi" id="7Mzx1PFRDcX" role="1Lso8e">
-                          <node concept="37vLTw" id="7Mzx1PFRCQ_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7Mzx1PFRpgm" resolve="capabilities" />
+                    <node concept="2OqwBi" id="7Mzx1PFRwr8" role="33vP2m">
+                      <node concept="1eOMI4" id="7Mzx1PFRwap" role="2Oq$k0">
+                        <node concept="10QFUN" id="7Mzx1PFRuxm" role="1eOMHV">
+                          <node concept="3uibUv" id="2RhVBj9zyMW" role="10QFUM">
+                            <ref role="3uigEE" to="ends:~CloneableModelRoot" resolve="CloneableModelRoot" />
                           </node>
-                          <node concept="liA8E" id="7Mzx1PFRDzz" role="2OqNvi">
-                            <ref role="37wK5l" to="ends:~CloneCapabilities.getErrorMessage():java.lang.String" resolve="getErrorMessage" />
+                          <node concept="2GrUjf" id="7Mzx1PFRppB" role="10QFUP">
+                            <ref role="2Gs0qQ" node="6B6bZkCF_Dc" resolve="root" />
                           </node>
                         </node>
                       </node>
+                      <node concept="liA8E" id="7Mzx1PFRwMZ" role="2OqNvi">
+                        <ref role="37wK5l" to="ends:~CloneableModelRoot.getCloneCapabilities():jetbrains.mps.extapi.persistence.CloneCapabilities" resolve="getCloneCapabilities" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="5oO1RGE9pN7" role="3cqZAp" />
+                <node concept="3clFbJ" id="5oO1RGE9pY7" role="3cqZAp">
+                  <node concept="3clFbS" id="5oO1RGE9pY9" role="3clFbx">
+                    <node concept="3clFbF" id="5oO1RGE9rLs" role="3cqZAp">
+                      <node concept="2OqwBi" id="5oO1RGE9sh_" role="3clFbG">
+                        <node concept="37vLTw" id="5oO1RGE9rLq" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6B6bZkCEZ54" resolve="nonCloneable" />
+                        </node>
+                        <node concept="TSZUe" id="5oO1RGE9uh2" role="2OqNvi">
+                          <node concept="1Ls8ON" id="7Mzx1PFRC3Q" role="25WWJ7">
+                            <node concept="2GrUjf" id="7Mzx1PFRCiD" role="1Lso8e">
+                              <ref role="2Gs0qQ" node="6B6bZkCF_Dc" resolve="root" />
+                            </node>
+                            <node concept="2OqwBi" id="7Mzx1PFRDcX" role="1Lso8e">
+                              <node concept="37vLTw" id="7Mzx1PFRCQ_" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7Mzx1PFRpgm" resolve="capabilities" />
+                              </node>
+                              <node concept="liA8E" id="7Mzx1PFRDzz" role="2OqNvi">
+                                <ref role="37wK5l" to="ends:~CloneCapabilities.getErrorMessage():java.lang.String" resolve="getErrorMessage" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3fqX7Q" id="6YEMIGJTORb" role="3clFbw">
+                    <node concept="2OqwBi" id="6YEMIGJTORd" role="3fr31v">
+                      <node concept="37vLTw" id="6YEMIGJTORe" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7Mzx1PFRpgm" resolve="capabilities" />
+                      </node>
+                      <node concept="liA8E" id="6YEMIGJTORf" role="2OqNvi">
+                        <ref role="37wK5l" to="ends:~CloneCapabilities.isCloneable():boolean" resolve="isCloneable" />
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="67eMucID8Qg" role="3clFbw">
-                <node concept="2OqwBi" id="67eMucID7Zv" role="2Oq$k0">
-                  <node concept="37vLTw" id="67eMucID7Tw" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7Mzx1PFRpgm" resolve="capabilities" />
-                  </node>
-                  <node concept="liA8E" id="67eMucID88z" role="2OqNvi">
-                    <ref role="37wK5l" to="ends:~CloneCapabilities.getAllowedCloneTypes():java.util.Collection" resolve="getAllowedCloneTypes" />
-                  </node>
+              <node concept="2ZW3vV" id="2RhVBj9zC34" role="3clFbw">
+                <node concept="3uibUv" id="2RhVBj9zC35" role="2ZW6by">
+                  <ref role="3uigEE" to="ends:~CloneableModelRoot" resolve="CloneableModelRoot" />
                 </node>
-                <node concept="liA8E" id="67eMucIDaMC" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
+                <node concept="2GrUjf" id="2RhVBj9zC36" role="2ZW6bz">
+                  <ref role="2Gs0qQ" node="6B6bZkCF_Dc" resolve="root" />
+                </node>
+              </node>
+              <node concept="9aQIb" id="2RhVBj9zCkH" role="9aQIa">
+                <node concept="3clFbS" id="2RhVBj9zCkI" role="9aQI4">
+                  <node concept="3clFbF" id="2RhVBj9zH8r" role="3cqZAp">
+                    <node concept="2OqwBi" id="2RhVBj9zHME" role="3clFbG">
+                      <node concept="37vLTw" id="2RhVBj9zH8q" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6B6bZkCEZ54" resolve="nonCloneable" />
+                      </node>
+                      <node concept="TSZUe" id="2RhVBj9zJJ7" role="2OqNvi">
+                        <node concept="1Ls8ON" id="2RhVBj9zKs$" role="25WWJ7">
+                          <node concept="2GrUjf" id="2RhVBj9zKE0" role="1Lso8e">
+                            <ref role="2Gs0qQ" node="6B6bZkCF_Dc" resolve="root" />
+                          </node>
+                          <node concept="Xl_RD" id="2RhVBj9zKTz" role="1Lso8e">
+                            <property role="Xl_RC" value="Clonning hasn't implemented for this model root" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

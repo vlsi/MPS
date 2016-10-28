@@ -45,7 +45,7 @@ import java.util.Map;
 /**
  * evgeny, 12/11/12
  */
-public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
+public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener, CloneableModelRoot {
   public static final String SOURCE_ROOTS = "sourceRoot";
   public static final String EXCLUDED = "excluded";
 
@@ -236,22 +236,20 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     update();
   }
 
-  @Override
-  public CloneCapabilities getCloneCapabilities() {
-    CloneCapabilities capabilities = new CloneCapabilities();
-    capabilities.setCloneable(CloneType.REUSE, true);
-    capabilities.setCloneable(CloneType.CLONE, isInModuleDirectory());
-    return capabilities;
-  }
-
   protected  boolean isInModuleDirectory() {
     AbstractModule module = (AbstractModule) getModule();
     Path modelRootPath = pathFrom(getContentRoot());
     return module != null && modelRootPath.startsWith(getModuleDirPath(module));
   }
 
+  @NotNull
   @Override
-  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType) {
+  public CloneCapabilities getCloneCapabilities() {
+    return new CloneCapabilities(true, null);
+  }
+
+  @Override
+  public void cloneTo(@NotNull ModelRoot targetModelRoot) {
     assert targetModelRoot instanceof FileBasedModelRoot;
     FileBasedModelRoot target = ((FileBasedModelRoot) targetModelRoot);
 

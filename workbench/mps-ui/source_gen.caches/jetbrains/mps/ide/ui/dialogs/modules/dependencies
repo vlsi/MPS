@@ -23,42 +23,11 @@
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings" file="CloneModuleSettings.java">
-    <classNode dependClassName="com.intellij.ui.BooleanTableCellEditor" />
-    <classNode dependClassName="com.intellij.ui.BooleanTableCellRenderer" />
-    <classNode dependClassName="com.intellij.ui.table.JBTable" />
-    <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JScrollPane" />
-    <classNode dependClassName="javax.swing.JTable" />
-    <classNode dependClassName="javax.swing.table.AbstractTableModel" />
-    <classNode dependClassName="javax.swing.table.DefaultTableCellRenderer" />
-    <classNode dependClassName="javax.swing.table.TableCellRenderer" />
-    <classNode dependClassName="javax.swing.table.TableColumn" />
-    <classNode dependClassName="javax.swing.table.TableModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.CloneCapabilities" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.CloneType" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" file="NewLanguageSettings.java">

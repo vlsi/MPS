@@ -4,9 +4,6 @@ package jetbrains.mps.ide.newSolutionDialog;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
-import java.util.Map;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.extapi.persistence.CloneType;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -29,10 +26,12 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.extapi.persistence.CloneableModelRoot;
 import org.apache.log4j.Level;
+import jetbrains.mps.extapi.persistence.CloneCapabilities;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -45,38 +44,39 @@ import jetbrains.mps.util.PathConverters;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.Dependency;
+import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 
 public class CloneModuleUtil {
 
-  public static AbstractModule cloneModule(String namespace, String rootPath, Project project, final AbstractModule sourceModule, final Map<ModelRoot, CloneType> cloneTypes, String extenstion) {
+  public static AbstractModule cloneModule(String namespace, String rootPath, Project project, final AbstractModule sourceModule, String extenstion) {
     return NewModuleUtil.createModule(extenstion, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<AbstractModule, String, IFile, Project>() {
       public AbstractModule invoke(String s, IFile f, Project p) {
-        return createClonedModule(s, f, p, sourceModule, cloneTypes);
+        return createClonedModule(s, f, p, sourceModule);
       }
     });
   }
 
-  private static AbstractModule createClonedModule(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, AbstractModule sourceModule, Map<ModelRoot, CloneType> cloneTypes) {
+  private static AbstractModule createClonedModule(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, AbstractModule sourceModule) {
     if (sourceModule instanceof Solution) {
-      return createClonedSolution(namespace, targetDescriptorFile, moduleOwner, as_iwu1g5_a3a0a0a3(sourceModule, Solution.class), cloneTypes);
+      return createClonedSolution(namespace, targetDescriptorFile, moduleOwner, as_iwu1g5_a3a0a0a3(sourceModule, Solution.class));
     }
     if (sourceModule instanceof Language) {
-      return createClonedLanguage(namespace, targetDescriptorFile, moduleOwner, as_iwu1g5_a3a0a1a3(sourceModule, Language.class), cloneTypes);
+      return createClonedLanguage(namespace, targetDescriptorFile, moduleOwner, as_iwu1g5_a3a0a1a3(sourceModule, Language.class));
     }
     throw new IllegalArgumentException("Unknown module " + sourceModule.getModuleName());
   }
 
-  private static Solution createClonedSolution(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, final Solution sourceSolution, Map<ModelRoot, CloneType> cloneTypes) {
+  private static Solution createClonedSolution(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, final Solution sourceSolution) {
     SolutionDescriptor targetDescriptor = createClonedSolutionDescriptor(namespace, targetDescriptorFile, sourceSolution);
 
     SolutionDescriptorPersistence.saveSolutionDescriptor(targetDescriptorFile, targetDescriptor, MacrosFactory.forModuleFile(targetDescriptorFile));
 
     final Solution targetSolution = (Solution) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(targetDescriptorFile), moduleOwner);
 
-    cloneModels(targetSolution, sourceSolution, cloneTypes);
+    cloneModels(targetSolution, sourceSolution);
 
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
     referenceUpdater.addModuleToAdjust(sourceSolution, targetSolution, true);
@@ -91,7 +91,7 @@ public class CloneModuleUtil {
     return targetSolution;
   }
 
-  private static Language createClonedLanguage(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, Language sourceLanguage, Map<ModelRoot, CloneType> cloneTypes) {
+  private static Language createClonedLanguage(String namespace, IFile targetDescriptorFile, MPSModuleOwner moduleOwner, Language sourceLanguage) {
     LanguageDescriptor targetDescriptor = createClonedLanguageDescriptor(namespace, targetDescriptorFile, sourceLanguage);
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(targetDescriptorFile, targetDescriptor, MacrosFactory.forModuleFile(targetDescriptorFile));
@@ -100,7 +100,7 @@ public class CloneModuleUtil {
 
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
 
-    cloneModels(targetLanguage, sourceLanguage, cloneTypes);
+    cloneModels(targetLanguage, sourceLanguage);
     referenceUpdater.addModuleToAdjust(sourceLanguage, targetLanguage, true);
 
     Iterator<Generator> targetGenerators = targetLanguage.getGenerators().iterator();
@@ -110,7 +110,7 @@ public class CloneModuleUtil {
       Generator targetGenerator = targetGenerators.next();
       Generator sourceGenerator = sourceGenerators.next();
 
-      cloneModels(targetGenerator, sourceGenerator, cloneTypes);
+      cloneModels(targetGenerator, sourceGenerator);
       referenceUpdater.addModuleToAdjust(sourceGenerator, targetGenerator, true);
     }
     referenceUpdater.adjust();
@@ -129,24 +129,29 @@ public class CloneModuleUtil {
   }
 
   protected static Logger LOG = LogManager.getLogger(CloneModuleUtil.class);
-  public static void cloneModels(AbstractModule targetModule, AbstractModule sourceModule, Map<ModelRoot, CloneType> cloneTypes) {
+  public static void cloneModels(AbstractModule targetModule, AbstractModule sourceModule) {
     List<ModelRoot> targetModelRoots = ListSequence.fromList(new ArrayList<ModelRoot>());
 
     for (ModelRoot sourceModelRoot : Sequence.fromIterable(sourceModule.getModelRoots())) {
 
-      CloneType cloneType = MapSequence.fromMap(cloneTypes).get(sourceModelRoot);
-      if (cloneType == null) {
+      if (!(sourceModelRoot instanceof CloneableModelRoot)) {
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Unspesified clone type for " + sourceModelRoot);
+          LOG.error("model root " + sourceModelRoot + " doesn't support clonning");
+        }
+        continue;
+      }
+      CloneCapabilities capabilities = ((CloneableModelRoot) sourceModelRoot).getCloneCapabilities();
+      if (!(capabilities.isCloneable())) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("model root " + sourceModelRoot + " doesn't support clonning : " + capabilities.getErrorMessage());
         }
         continue;
       }
 
-      ModelRootBase targetModelRoot = as_iwu1g5_a0a4a2a01(PersistenceFacade.getInstance().getModelRootFactory(sourceModelRoot.getType()).create(), ModelRootBase.class);
+      ModelRootBase targetModelRoot = (ModelRootBase) PersistenceFacade.getInstance().getModelRootFactory(sourceModelRoot.getType()).create();
+
       targetModelRoot.setModule(targetModule);
-
-      as_iwu1g5_a0a7a2a01(sourceModelRoot, ModelRootBase.class).cloneTo(targetModelRoot, cloneType);
-
+      ((CloneableModelRoot) sourceModelRoot).cloneTo(targetModelRoot);
       ListSequence.fromList(targetModelRoots).addElement(targetModelRoot);
     }
 
@@ -294,12 +299,6 @@ public class CloneModuleUtil {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static <T> T as_iwu1g5_a3a0a1a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_iwu1g5_a0a4a2a01(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_iwu1g5_a0a7a2a01(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

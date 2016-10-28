@@ -18,7 +18,6 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CloneCapabilities;
-import jetbrains.mps.extapi.persistence.CloneType;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
@@ -31,13 +30,11 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ReferenceUpdater;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -293,20 +290,15 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return result;
   }
 
+  @NotNull
   @Override
   public CloneCapabilities getCloneCapabilities() {
-    CloneCapabilities capabilities = new CloneCapabilities();
-    capabilities.setCloneable(CloneType.REUSE, false);
-    boolean isInModuleDirectory = isInModuleDirectory();
-    capabilities.setCloneable(CloneType.CLONE, isInModuleDirectory);
-    if (!isInModuleDirectory) {
-      capabilities.setErrorMessage("This model root outside module directory");
-    }
-    return capabilities;
+    boolean canBeCloned = isInModuleDirectory();
+    return new CloneCapabilities(canBeCloned, canBeCloned ? null : "This model root outside module directory");
   }
 
   @Override
-  public void cloneTo(@NotNull ModelRoot targetModelRoot, @NotNull CloneType cloneType) {
+  public void cloneTo(@NotNull ModelRoot targetModelRoot) {
     assert targetModelRoot instanceof DefaultModelRoot;
     DefaultModelRoot target = ((DefaultModelRoot) targetModelRoot);
 
