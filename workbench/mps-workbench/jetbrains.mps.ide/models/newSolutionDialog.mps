@@ -5914,8 +5914,18 @@
                   <node concept="37vLTw" id="omrkD37Jh" role="37wK5m">
                     <ref role="3cqZAo" node="omrkD30bo" resolve="newName" />
                   </node>
-                  <node concept="3clFbT" id="omrkD37S6" role="37wK5m">
-                    <property role="3clFbU" value="true" />
+                  <node concept="2ZW3vV" id="3dkH9x4AOGw" role="37wK5m">
+                    <node concept="3uibUv" id="3dkH9x4AOLB" role="2ZW6by">
+                      <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
+                    </node>
+                    <node concept="2OqwBi" id="3dkH9x4ANXe" role="2ZW6bz">
+                      <node concept="37vLTw" id="3dkH9x4ANP8" role="2Oq$k0">
+                        <ref role="3cqZAo" node="omrkD2YyO" resolve="model" />
+                      </node>
+                      <node concept="liA8E" id="3dkH9x4AOa$" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

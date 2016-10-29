@@ -48,6 +48,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 
 public class CloneModuleUtil {
 
@@ -291,7 +292,7 @@ public class CloneModuleUtil {
       if (newName.startsWith(oldModuleName)) {
         newName = newModuleName + newName.substring(oldModuleName.length());
       }
-      ((EditableSModel) model).rename(newName, true);
+      ((EditableSModel) model).rename(newName, model.getSource() instanceof FileDataSource);
     }
   }
 
