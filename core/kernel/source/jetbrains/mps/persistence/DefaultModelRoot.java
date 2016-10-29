@@ -111,18 +111,18 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   public SModel createModel(String modelName, String sourceRoot, Map<String, String> options, ModelFactory factory) throws IOException {
-    Map<String, String> opts = options != null ? options : new HashMap<String, String>();
-    DataSource source = factory instanceof FolderModelFactory
-        ? ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, opts)
-        : createSource(modelName, factory.getFileExtension(), sourceRoot, opts);
-    if (source == null) {
-      return null;
-    }
-    SModel model = factory.create(source, opts);
+    SModel model = createModelImpl(modelName, sourceRoot, options!= null ? options : new HashMap<>(), factory);
     ((SModelBase) model).setModelRoot(this);
     // TODO fix
     register(model);
     return model;
+  }
+
+  protected SModel createModelImpl(String modelName, String sourceRoot, Map<String, String> options, ModelFactory factory) throws IOException {
+    DataSource source = factory instanceof FolderModelFactory
+        ? ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, options)
+        : createSource(modelName, factory.getFileExtension(), sourceRoot, options);
+    return factory.create(source, options);
   }
 
   @Override
@@ -152,6 +152,20 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   protected final void collectModels(IFile dir, String package_, String relativePath, Map<String, String> options, Collection<SModel> models) {
+    walkModelRootData(dir, package_, relativePath, options, (factory, dataSource, opts) -> {
+      try {
+        SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
+        ((SModelBase) model).setModelRoot(this);
+        models.add(model);
+      } catch (UnsupportedDataSourceException ex) {
+        /* model factory registration problem: ignore */
+      } catch (IOException ex) {
+        // TODO report?
+      }
+    });
+  }
+
+  protected final void walkModelRootData(IFile dir, String package_, String relativePath, Map<String, String> options, ModelRootWalkListener walkListener) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) {
       return;
     }
@@ -177,27 +191,14 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       options.put(ModelFactory.OPTION_RELPATH, combinePath(relativePath, fileName));
       String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
       options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
-      try {
-        SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
-        ((SModelBase) model).setModelRoot(this);
-        models.add(model);
-      } catch (UnsupportedDataSourceException ex) {
-        /* model factory registration problem: ignore */
-      } catch (IOException ex) {
-        // TODO report?
-      }
+
+      walkListener.onDataSourceVisited(modelFactory, source, options);
     }
 
     options.put(ModelFactory.OPTION_RELPATH, relativePath);
     for (FolderModelFactory factory : PersistenceRegistry.getInstance().getFolderModelFactories()) {
       for (DataSource dataSource : factory.createDataSources(this, dir)) {
-        try {
-          SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
-          ((SModelBase) model).setModelRoot(this);
-          models.add(model);
-        } catch (IOException e) {
-          // TODO report?
-        }
+        walkListener.onDataSourceVisited(factory, dataSource, options);
       }
     }
 
@@ -206,7 +207,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
         String name = childDir.getName();
         String innerPackage = package_ != null && JavaNameUtil.isJavaIdentifier(name) ? (package_.isEmpty() ? name : package_ + "." + name) : null;
         String innerPath = combinePath(relativePath, name);
-        collectModels(childDir, innerPackage, innerPath, options, models);
+        walkModelRootData(childDir, innerPackage, innerPath, options, walkListener);
       }
     }
   }
@@ -302,6 +303,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     assert targetModelRoot instanceof DefaultModelRoot;
     DefaultModelRoot target = ((DefaultModelRoot) targetModelRoot);
 
+    AbstractModule sModule = ((AbstractModule) getModule());
     AbstractModule tModule = ((AbstractModule) target.getModule());
 
     assertNotNullModulesForCloning(target);
@@ -314,35 +316,41 @@ public class DefaultModelRoot extends FileBasedModelRoot {
 
     Iterator<String> sfi = sourceFiles.iterator();
     for (String targetFile : targetFiles) {
-      String sourceFile = sfi.next();
+      String sourceRoot = sfi.next();
 
       tModule.getFileSystem().getFile(targetFile).mkdirs();
 
-      Collection<SModel> models = new HashSet<>();
-      collectModels(tModule.getFileSystem().getFile(sourceFile), "", makeRelative(getContentRoot(), sourceFile), new HashMap<>(), models);
+      walkModelRootData(
+          tModule.getFileSystem().getFile(sourceRoot),
+          "",
+          makeRelative(getContentRoot(), sourceRoot),
+          new HashMap<>(),
+          (factory, dataSource, options) -> {
+            try {
+              options.put(ModelFactory.OPTION_MODULEREF, sModule.getModuleReference().toString());
+              SModel sourceModel = factory.load(dataSource, options);
 
-      ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+              options.put(ModelFactory.OPTION_MODULEREF, sModule.getModuleReference().toString());
+              EditableSModelBase targetModel = (EditableSModelBase) target.createModelImpl(sourceModel.getName().getValue(), sourceRoot, options, factory);
+              targetModel.setModelRoot(target);
+              targetModel.setModule(tModule);
 
-      for (SModel sourceModel : models) {
-        try {
-          Map<String, String> opts = new HashMap<>();
-          DataSource targetModelDataSource = target.createSource(sourceModel.getName().getValue(), MPSExtentions.MODEL, targetFile, opts);
-          EditableSModelBase targetModel = ((EditableSModelBase) factory.create(targetModelDataSource, opts));
-          targetModel.setModelRoot(target);
-          targetModel.setModule(tModule);
+              CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
+              ((SModelBase) sourceModel).getSModel().copyPropertiesTo(targetModel.getSModel());
 
-          targetModel.load();
-
-          CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
-          ((SModelBase) sourceModel).getSModel().copyPropertiesTo(targetModel.getSModel());
-
-          // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save();
-          targetModel.setChanged(true);
-          targetModel.save();
-        } catch (IOException e) {
-          // TODO
-        }
-      }
+              // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save();
+              targetModel.setChanged(true);
+              targetModel.save();
+            } catch (IOException e) {
+              // TODO
+            }
+          }
+      );
     }
+  }
+
+  protected interface ModelRootWalkListener{
+
+    void onDataSourceVisited(ModelFactory factory, DataSource dataSource, Map<String, String> options);
   }
 }
