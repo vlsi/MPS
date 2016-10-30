@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.structure)">
+<model ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.order.structure)">
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
@@ -52,7 +52,7 @@
       <property role="20kJfa" value="seq" />
       <property role="20lbJX" value="1..n" />
       <property role="IQ2ns" value="2450897840534683977" />
-      <ref role="20lvS9" node="283lDAXPS5b" resolve="OrderElement" />
+      <ref role="20lvS9" node="283lDAXPS5b" resolve="OrderElementReference" />
     </node>
     <node concept="PrWs8" id="283lDAXPS58" role="PzmwI">
       <ref role="PrY4T" node="283lDAXPS55" resolve="Order" />
@@ -81,7 +81,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="283lDAXPS5b">
-    <property role="TrG5h" value="OrderElement" />
+    <property role="TrG5h" value="OrderElementReference" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="2450897840534683979" />
     <property role="R5$K7" value="true" />

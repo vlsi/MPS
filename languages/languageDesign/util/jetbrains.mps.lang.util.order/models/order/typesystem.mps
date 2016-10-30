@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:f788c62b-42b4-4d31-be80-806bf92fccaf(jetbrains.mps.lang.util.typesystem)">
+<model ref="r:f788c62b-42b4-4d31-be80-806bf92fccaf(jetbrains.mps.lang.util.order.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
-    <import index="1po2" ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.structure)" implicit="true" />
-    <import index="6uiu" ref="r:5777900a-dedf-48c6-b3b8-5fd37f887019(jetbrains.mps.lang.util.behavior)" implicit="true" />
+    <import index="1po2" ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.order.structure)" implicit="true" />
+    <import index="6uiu" ref="r:5777900a-dedf-48c6-b3b8-5fd37f887019(jetbrains.mps.lang.util.order.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -108,7 +108,7 @@
               <node concept="2Xjw5R" id="1jgMklchA4j" role="2OqNvi">
                 <node concept="1xMEDy" id="1jgMklchA4k" role="1xVPHs">
                   <node concept="chp4Y" id="9GrxDU7kw3" role="ri$Ld">
-                    <ref role="cht4Q" to="1po2:283lDAXPS5b" resolve="OrderElement" />
+                    <ref role="cht4Q" to="1po2:283lDAXPS5b" resolve="OrderReference" />
                   </node>
                 </node>
               </node>

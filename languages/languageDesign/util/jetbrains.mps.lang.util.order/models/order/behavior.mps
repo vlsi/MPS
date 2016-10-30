@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:5777900a-dedf-48c6-b3b8-5fd37f887019(jetbrains.mps.lang.util.behavior)">
+<model ref="r:5777900a-dedf-48c6-b3b8-5fd37f887019(jetbrains.mps.lang.util.order.behavior)">
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
-    <import index="1po2" ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.structure)" implicit="true" />
+    <import index="1po2" ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.order.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" implicit="true" />
   </imports>
@@ -177,7 +177,7 @@
                     <node concept="2Xjw5R" id="2CFL3ni7A9O" role="2OqNvi">
                       <node concept="1xMEDy" id="2CFL3ni7A9P" role="1xVPHs">
                         <node concept="chp4Y" id="9GrxDU7lkq" role="ri$Ld">
-                          <ref role="cht4Q" to="1po2:283lDAXPS5b" resolve="OrderElement" />
+                          <ref role="cht4Q" to="1po2:283lDAXPS5b" resolve="OrderReference" />
                         </node>
                       </node>
                     </node>
@@ -271,7 +271,7 @@
       <node concept="37vLTG" id="9GrxDU7lRq" role="3clF46">
         <property role="TrG5h" value="elem" />
         <node concept="3Tqbb2" id="9GrxDU7lRr" role="1tU5fm">
-          <ref role="ehGHo" to="1po2:283lDAXPS5b" resolve="OrderElement" />
+          <ref role="ehGHo" to="1po2:283lDAXPS5b" resolve="OrderReference" />
         </node>
       </node>
       <node concept="10P_77" id="9GrxDU7lRs" role="3clF45" />
@@ -316,7 +316,7 @@
       <node concept="37vLTG" id="1jgMklchiOJ" role="3clF46">
         <property role="TrG5h" value="elem" />
         <node concept="3Tqbb2" id="1jgMklchiOK" role="1tU5fm">
-          <ref role="ehGHo" to="1po2:283lDAXPS5b" resolve="OrderElement" />
+          <ref role="ehGHo" to="1po2:283lDAXPS5b" resolve="OrderReference" />
         </node>
       </node>
     </node>
@@ -352,7 +352,7 @@
       <node concept="37vLTG" id="9GrxDU7quK" role="3clF46">
         <property role="TrG5h" value="elem" />
         <node concept="3Tqbb2" id="9GrxDU7quL" role="1tU5fm">
-          <ref role="ehGHo" to="1po2:283lDAXPS5b" resolve="OrderElement" />
+          <ref role="ehGHo" to="1po2:283lDAXPS5b" resolve="OrderReference" />
         </node>
       </node>
       <node concept="10P_77" id="9GrxDU7quM" role="3clF45" />
