@@ -10,9 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.concurrent.ConcurrentMap;
-import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -50,9 +48,7 @@ public class Context {
     }
     return new MacroHelper.MacroContext(buildProject, myGenerationContext).getMacros(buildProject);
   }
-  public String getBuildProjectName(SNode node) {
-    return SPropertyOperations.getString(getBuildProject(node), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-  }
+
   public String getTempPath(SNode node, String name, String... categories) {
     assert myGenerationContext != null;
 
@@ -69,13 +65,7 @@ public class Context {
     }
     return result;
   }
-  public String getBasePath_Local(SNode node) {
-    SNode buildProject = this.getBuildProject(node);
-    if ((buildProject == null)) {
-      return null;
-    }
-    return (String) BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, this);
-  }
+
   public RelativePathHelper getRelativePathHelper(@NotNull SModel model) {
     if (model.getModule() instanceof TransientModelsModule && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
