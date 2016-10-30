@@ -13,7 +13,6 @@
   <imports>
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
-    <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="vbkb" ref="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -24,7 +23,6 @@
     <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="80j5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
@@ -53,6 +51,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -254,7 +253,6 @@
         <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
@@ -792,27 +790,7 @@
         <node concept="H_c77" id="5FtnUVJQRsW" role="1tU5fm" />
       </node>
     </node>
-    <node concept="3clFb_" id="4Q0JLeVvAc1" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getBasePath_Local" />
-      <node concept="37vLTG" id="4Q0JLeVvAc2" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="4Q0JLeVvAc3" role="1tU5fm" />
-      </node>
-      <node concept="3Tm1VV" id="4Q0JLeVvAc4" role="1B3o_S" />
-      <node concept="17QB3L" id="4Q0JLeVvAc5" role="3clF45" />
-      <node concept="3clFbS" id="4Q0JLeVvAc6" role="3clF47">
-        <node concept="3clFbF" id="4Q0JLeVvAcv" role="3cqZAp">
-          <node concept="2YIFZM" id="4Q0JLeVvAdY" role="3clFbG">
-            <ref role="37wK5l" to="zkib:~CommonPaths.getBaseMPSPath():java.lang.String" resolve="getBaseMPSPath" />
-            <ref role="1Pybhc" to="zkib:~CommonPaths" resolve="CommonPaths" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4Q0JLeVvAc7" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
+    <node concept="2tJIrI" id="59lhIkII3Hc" role="jymVt" />
     <node concept="312cEu" id="5FtnUVJQP$G" role="jymVt">
       <property role="TrG5h" value="TestGenContext" />
       <property role="2bfB8j" value="false" />

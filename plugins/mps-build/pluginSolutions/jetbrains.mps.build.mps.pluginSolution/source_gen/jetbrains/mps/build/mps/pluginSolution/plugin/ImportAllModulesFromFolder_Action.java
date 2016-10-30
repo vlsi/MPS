@@ -14,17 +14,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
-import jetbrains.mps.build.util.Context;
-import jetbrains.mps.vfs.FileSystem;
-import org.apache.log4j.Level;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.util.Collection;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.build.mps.util.VisibleModules;
@@ -75,37 +70,24 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     }
     return true;
   }
-  protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-    final Wrappers._T<IFile> projectFolder = new Wrappers._T<IFile>(null);
-    final Wrappers._T<String> basePath = new Wrappers._T<String>(null);
-
-    modelAccess.runReadAction(new Runnable() {
-      public void run() {
-        basePath.value = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
-        if (basePath.value != null && isNotEmptyString(basePath.value)) {
-          projectFolder.value = FileSystem.getInstance().getFileByPath(basePath.value);
-        }
-      }
-    });
-    if (basePath.value == null) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("working directory is not available");
-      }
-      return;
-    }
-    if (projectFolder.value != null) {
-      chooser.setInitialFile(projectFolder.value);
+    // Resort to IDEA Project's file due to: 
+    // (a) don't want to use deprecated MPSProject.getProjectFile() 
+    // (b) don't want to know whether I need to take (grand-)parent of MPSProject's file to access project root 
+    VirtualFile baseDir = ((MPSProject) MapSequence.fromMap(_params).get("project")).getProject().getBaseDir();
+    IFile projectFolder = (baseDir == null ? null : VirtualFileUtils.toIFile(baseDir));
+    if (projectFolder != null) {
+      chooser.setInitialFile(projectFolder);
     }
     final IFile dir = chooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
     if (dir == null || !(dir.isDirectory())) {
       return;
     }
 
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
         Collection<ModulesMiner.ModuleHandle> modules = new ModulesMiner().collectModules(dir).getCollectedModules();
@@ -132,8 +114,5 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
       }
     });
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }
