@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,7 +25,7 @@ public class check_IdeaPlugin_Dependencies_NonTypesystemRule extends AbstractNon
   public check_IdeaPlugin_Dependencies_NonTypesystemRule() {
   }
   public void applyRule(final SNode plugin, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.getModel(plugin).getModule() instanceof TransientModelsModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(plugin)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(plugin)))) {
+    if (SNodeOperations.getModel(plugin).getModule() instanceof TransientSModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(plugin)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(plugin)))) {
       return;
     }
 

@@ -21,7 +21,7 @@
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/1392391688313307201">
     <file name="check_IdeaPlugin_Dependencies_NonTypesystemRule.java">
-      <node id="3562028609769848950" at="28,248,29,13" concept="8" />
+      <node id="3562028609769848950" at="28,243,29,13" concept="8" />
       <node id="3562028609769829357" at="30,5,31,0" concept="10" />
       <node id="1392391688313307240" at="31,0,32,83" concept="7" />
       <node id="1392391688313364576" at="34,39,35,204" concept="8" />
@@ -57,7 +57,7 @@
       <node id="1392391688313364564" at="32,83,51,5" concept="4" />
       <node id="1392391688313307201" at="27,0,70,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1392391688313307201" at="25,60,25,60" />
-      <scope id="3562028609769848949" at="28,248,29,13" />
+      <scope id="3562028609769848949" at="28,243,29,13" />
       <scope id="1392391688313364575" at="34,39,35,204" />
       <scope id="1392391688313364585" at="38,37,39,196" />
       <scope id="1392391688313364611" at="53,39,54,203" />
@@ -231,7 +231,7 @@
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/2531699772406302326">
     <file name="check_ModulesImport_NonTypesystemRule.java">
-      <node id="8757919848289156012" at="33,266,34,13" concept="8" />
+      <node id="8757919848289156012" at="33,261,34,13" concept="8" />
       <node id="8757919848289156013" at="35,5,36,0" concept="10" />
       <node id="2531699772406302612" at="36,0,37,62" concept="7" />
       <node id="2531699772406302671" at="37,62,38,22" concept="2" />
@@ -274,7 +274,7 @@
       <node id="2531699772406302527" at="51,0,79,5" concept="4" />
       <node id="2531699772406302326" at="32,0,81,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2531699772406302326" at="30,50,30,50" />
-      <scope id="8757919848289155924" at="33,266,34,13" />
+      <scope id="8757919848289155924" at="33,261,34,13" />
       <scope id="1500819558096418877" at="53,39,54,183" />
       <scope id="2531699772406321799" at="61,38,62,34" />
       <scope id="2531699772406302326" at="81,50,82,150" />
