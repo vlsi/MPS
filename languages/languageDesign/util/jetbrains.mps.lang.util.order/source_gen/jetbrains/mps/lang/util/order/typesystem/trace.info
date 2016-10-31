@@ -14,7 +14,7 @@
   <root nodeRef="r:f788c62b-42b4-4d31-be80-806bf92fccaf(jetbrains.mps.lang.util.order.typesystem)/2450897840534903557">
     <file name="check_Order_NonTypesystemRule.java">
       <node id="1499919975383982348" at="22,53,23,13" concept="5" />
-      <node id="1499919975383982360" at="25,296,26,13" concept="5" />
+      <node id="1499919975383982360" at="25,300,26,13" concept="5" />
       <node id="1499919975383986350" at="28,5,29,58" concept="4" />
       <node id="1499919975383986350" at="29,58,30,254" concept="4" />
       <node id="2450897840534903557" at="33,50,34,162" concept="5" />
@@ -30,7 +30,7 @@
       <node id="2450897840534903557" at="21,0,33,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="2450897840534903557" at="19,42,19,42" />
       <scope id="1499919975383982334" at="22,53,23,13" />
-      <scope id="1499919975383982349" at="25,296,26,13" />
+      <scope id="1499919975383982349" at="25,300,26,13" />
       <scope id="2450897840534903557" at="33,50,34,162" />
       <scope id="2450897840534903557" at="36,68,37,102" />
       <scope id="2450897840534903557" at="39,30,40,17" />

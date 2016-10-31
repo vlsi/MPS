@@ -11,7 +11,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Order = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrderDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OrderElementReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OrderParticipant = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OrderParticipantReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrderReference = new ConceptPresentationBuilder().create();
 
   @Override
@@ -23,8 +24,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Order;
       case LanguageConceptSwitch.OrderDeclaration:
         return props_OrderDeclaration;
-      case LanguageConceptSwitch.OrderElementReference:
-        return props_OrderElementReference;
+      case LanguageConceptSwitch.OrderParticipant:
+        return props_OrderParticipant;
+      case LanguageConceptSwitch.OrderParticipantReference:
+        return props_OrderParticipantReference;
       case LanguageConceptSwitch.OrderReference:
         return props_OrderReference;
     }

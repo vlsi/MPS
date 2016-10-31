@@ -47,9 +47,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.util.order.behavior.OrderElementReference_BehaviorDescriptor" file="OrderElementReference_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.util.order.behavior.OrderParticipantReference_BehaviorDescriptor" file="OrderParticipantReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.util.order.behavior.OrderParticipant_BehaviorDescriptor" file="OrderParticipant_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.lang.util.order.behavior.OrderReference_BehaviorDescriptor" file="OrderReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />

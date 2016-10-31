@@ -22,7 +22,7 @@ public class check_Order_NonTypesystemRule extends AbstractNonTypesystemRule_Run
     if ((SNodeOperations.getParent(order) == null)) {
       return;
     }
-    if ((boolean) Order__BehaviorDescriptor.presents_id1jgMklchcXk.invoke(order, SNodeOperations.getNodeAncestor(order, MetaAdapterFactory.getConcept(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd7814bL, "jetbrains.mps.lang.util.order.structure.OrderElementReference"), false, false))) {
+    if ((boolean) Order__BehaviorDescriptor.presents_id1jgMklchcXk.invoke(order, SNodeOperations.getNodeAncestor(order, MetaAdapterFactory.getInterfaceConcept(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x2085244dcb20c1dcL, "jetbrains.mps.lang.util.order.structure.OrderParticipant"), false, false))) {
       return;
     }
     {

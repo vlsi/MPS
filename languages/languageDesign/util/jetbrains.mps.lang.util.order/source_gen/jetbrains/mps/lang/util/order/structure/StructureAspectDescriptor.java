@@ -16,7 +16,8 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptOrder = createDescriptorForOrder();
   /*package*/ final ConceptDescriptor myConceptOrderDeclaration = createDescriptorForOrderDeclaration();
-  /*package*/ final ConceptDescriptor myConceptOrderElementReference = createDescriptorForOrderElementReference();
+  /*package*/ final ConceptDescriptor myConceptOrderParticipant = createDescriptorForOrderParticipant();
+  /*package*/ final ConceptDescriptor myConceptOrderParticipantReference = createDescriptorForOrderParticipantReference();
   /*package*/ final ConceptDescriptor myConceptOrderReference = createDescriptorForOrderReference();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -26,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptOrder, myConceptOrderDeclaration, myConceptOrderElementReference, myConceptOrderReference);
+    return Arrays.asList(myConceptOrder, myConceptOrderDeclaration, myConceptOrderParticipant, myConceptOrderParticipantReference, myConceptOrderReference);
   }
 
   @Override
@@ -37,8 +38,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptOrder;
       case LanguageConceptSwitch.OrderDeclaration:
         return myConceptOrderDeclaration;
-      case LanguageConceptSwitch.OrderElementReference:
-        return myConceptOrderElementReference;
+      case LanguageConceptSwitch.OrderParticipant:
+        return myConceptOrderParticipant;
+      case LanguageConceptSwitch.OrderParticipantReference:
+        return myConceptOrderParticipantReference;
       case LanguageConceptSwitch.OrderReference:
         return myConceptOrderReference;
       default:
@@ -66,11 +69,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("Order");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForOrderElementReference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.util.order", "OrderElementReference", 0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd7814bL);
+  private static ConceptDescriptor createDescriptorForOrderParticipant() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.util.order", "OrderParticipant", 0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x2085244dcb20c1dcL);
+    b.interface_();
+    b.origin("r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.order.structure)/2343319097655214556");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForOrderParticipantReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.util.order", "OrderParticipantReference", 0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd7814bL);
     b.class_(false, true, false);
     b.origin("r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.order.structure)/2450897840534683979");
-    b.associate("target", 0x22035699bdd7814cL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).origin("2450897840534683980").done();
+    b.associate("target", 0x22035699bdd7814cL).target(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x2085244dcb20c1dcL).optional(false).origin("2450897840534683980").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }

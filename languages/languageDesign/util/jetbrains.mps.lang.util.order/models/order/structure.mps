@@ -54,7 +54,7 @@
       <property role="20kJfa" value="seq" />
       <property role="20lbJX" value="1..n" />
       <property role="IQ2ns" value="2450897840534683977" />
-      <ref role="20lvS9" node="283lDAXPS5b" resolve="OrderElementReference" />
+      <ref role="20lvS9" node="283lDAXPS5b" resolve="OrderParticipantReference" />
     </node>
     <node concept="PrWs8" id="283lDAXPS58" role="PzmwI">
       <ref role="PrY4T" node="283lDAXPS55" resolve="Order" />
@@ -83,7 +83,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="283lDAXPS5b">
-    <property role="TrG5h" value="OrderElementReference" />
+    <property role="TrG5h" value="OrderParticipantReference" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="2450897840534683979" />
     <property role="R5$K7" value="true" />
@@ -93,8 +93,12 @@
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2450897840534683980" />
-      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      <ref role="20lvS9" node="22594Rb8c7s" resolve="OrderParticipant" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="22594Rb8c7s">
+    <property role="EcuMT" value="2343319097655214556" />
+    <property role="TrG5h" value="OrderParticipant" />
   </node>
 </model>
 

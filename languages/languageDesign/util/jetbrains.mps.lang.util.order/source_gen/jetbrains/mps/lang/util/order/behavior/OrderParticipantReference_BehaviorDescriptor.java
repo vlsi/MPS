@@ -9,7 +9,7 @@ package jetbrains.mps.lang.util.order.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public abstract class OrderElementReference_BehaviorDescriptor {
+public abstract class OrderParticipantReference_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

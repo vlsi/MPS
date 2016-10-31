@@ -11,14 +11,16 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int Order = 0;
   public static final int OrderDeclaration = 1;
-  public static final int OrderElementReference = 2;
-  public static final int OrderReference = 3;
+  public static final int OrderParticipant = 2;
+  public static final int OrderParticipantReference = 3;
+  public static final int OrderReference = 4;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L);
     builder.put(0x22035699bdd78145L, Order);
     builder.put(0x22035699bdd78147L, OrderDeclaration);
-    builder.put(0x22035699bdd7814bL, OrderElementReference);
+    builder.put(0x2085244dcb20c1dcL, OrderParticipant);
+    builder.put(0x22035699bdd7814bL, OrderParticipantReference);
     builder.put(0x22035699bdd79211L, OrderReference);
     myIndex = builder.seal();
   }

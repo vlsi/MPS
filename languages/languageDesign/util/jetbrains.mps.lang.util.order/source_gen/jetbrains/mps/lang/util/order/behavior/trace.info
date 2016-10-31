@@ -19,8 +19,11 @@
     <file name="OrderDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="OrderElementReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderElementReference_BehaviorDescriptor" />
+    <file name="OrderParticipantReference_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderParticipantReference_BehaviorDescriptor" />
+    </file>
+    <file name="OrderParticipant_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.util.order.behavior.OrderParticipant_BehaviorDescriptor" />
     </file>
     <file name="OrderReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.util.order.behavior.OrderReference_BehaviorDescriptor" />
@@ -38,7 +41,7 @@
       <node id="174635545557536477" at="35,0,36,0" concept="7" trace="getOrderDeclaration_id2CFL3ni7A9T" />
       <node id="174635545557536477" at="37,0,38,0" concept="7" trace="BH_METHODS" />
       <node id="3038738109029048924" at="42,94,43,13" concept="5" />
-      <node id="3038738109029048940" at="44,183,45,374" concept="2" />
+      <node id="3038738109029048940" at="44,183,45,378" concept="2" />
       <node id="3038738109029048921" at="46,12,47,168" concept="2" />
       <node id="3038738109029048933" at="48,5,49,57" concept="6" />
       <node id="1499919975383980873" at="53,39,54,184" concept="6" />
@@ -77,7 +80,7 @@
       <node id="174635545557536477" at="89,0,100,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="174635545557536477" at="71,0,88,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="174635545557536477" at="39,63,39,63" />
-      <scope id="3038738109029048910" at="44,183,45,374" />
+      <scope id="3038738109029048910" at="44,183,45,378" />
       <scope id="3038738109029048920" at="46,12,47,168" />
       <scope id="1499919975383980870" at="53,39,54,184" />
       <scope id="3038738109029048960" at="58,91,59,24" />

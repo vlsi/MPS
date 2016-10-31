@@ -107,8 +107,8 @@
               </node>
               <node concept="2Xjw5R" id="1jgMklchA4j" role="2OqNvi">
                 <node concept="1xMEDy" id="1jgMklchA4k" role="1xVPHs">
-                  <node concept="chp4Y" id="9GrxDU7kw3" role="ri$Ld">
-                    <ref role="cht4Q" to="1po2:283lDAXPS5b" resolve="OrderReference" />
+                  <node concept="chp4Y" id="22594Rb8c7t" role="ri$Ld">
+                    <ref role="cht4Q" to="1po2:22594Rb8c7s" resolve="OrderParticipant" />
                   </node>
                 </node>
               </node>
