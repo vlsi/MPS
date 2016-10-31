@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.aspects.OrderParticipant;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.util.Icon2IconResourceAdapter_Deprecated;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -30,7 +31,8 @@ import javax.swing.ImageIcon;
 import java.util.Collection;
 import java.util.Collections;
 
-public abstract class LanguageAspectDescriptor {
+//todo: make identifiers instead of names-as-identifiers
+public abstract class LanguageAspectDescriptor implements OrderParticipant<String> {
   private static final IconResource MODEL_ICON = new IconResource("/jetbrains/mps/smodel/language/model.png", LanguageAspectDescriptor.class);
 
   public abstract String getPresentableAspectName();
@@ -77,6 +79,17 @@ public abstract class LanguageAspectDescriptor {
       return MODEL_ICON;
     }
     return new Icon2IconResourceAdapter_Deprecated(icn);
+  }
+
+  @Override
+  public String getId() {
+    return getPresentableAspectName();
+  }
+
+  @Override
+  public int compareTo(OrderParticipant<String> o) {
+    //todo remove body after 3.5, needed for compilation compatibility
+    return 0;
   }
 
   @Nullable
