@@ -17,22 +17,27 @@ package jetbrains.mps.aspects;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class InOrderSorter<T> {
-  private List<OrderParticipant<T>> myItems;
+public class InOrderSorter<T extends OrderParticipant> {
+  private Collection<T> myItems;
 
-  public InOrderSorter(OrderParticipant<T>... items) {
+  public InOrderSorter(T... items) {
     myItems = Arrays.asList(items);
   }
 
-  public List<OrderParticipant<T>> sort() {
-    ArrayList<OrderParticipant<T>> sorted = new ArrayList<>(myItems);
-    Collections.sort(sorted, new Comparator<OrderParticipant<T>>() {
+  public InOrderSorter(Collection<T> items) {
+    myItems = items;
+  }
+
+  public List<T> sort() {
+    ArrayList<T> sorted = new ArrayList<>(myItems);
+    Collections.sort(sorted, new Comparator<T>() {
       @Override
-      public int compare(OrderParticipant<T> o1, OrderParticipant<T> o2) {
+      public int compare(T o1, T o2) {
         int r1 = o1.compareTo(o2);
         int r2 = o2.compareTo(o1);
 
