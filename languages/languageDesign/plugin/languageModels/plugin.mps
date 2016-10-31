@@ -755,6 +755,10 @@
       <property role="2V$B1T" value="f159adf4-3c93-40f9-9c5a-1f245a8697af" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.aspect" />
     </node>
+    <node concept="2V$Bhx" id="22594Rb6UY7" role="QG$2i">
+      <property role="2V$B1T" value="c9d137c4-3259-44f8-80ff-33ab2b506ee4" />
+      <property role="2V$B1Q" value="jetbrains.mps.lang.util.order" />
+    </node>
     <node concept="2V$Bhx" id="2LiUEk8oQ$y" role="QG$2o">
       <property role="2V$B1T" value="ef7bf5ac-d06c-4342-b11d-e42104eb9343" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.plugin.standalone" />

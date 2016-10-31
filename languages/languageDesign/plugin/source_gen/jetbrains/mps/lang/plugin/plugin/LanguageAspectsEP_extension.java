@@ -47,7 +47,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @NotNull
       public Collection<SLanguage> getMainLanguages() {
-        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"), MetaAdapterFactory.getLanguage(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet"), MetaAdapterFactory.getLanguage(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, "jetbrains.mps.lang.aspect"));
+        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"), MetaAdapterFactory.getLanguage(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet"), MetaAdapterFactory.getLanguage(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, "jetbrains.mps.lang.aspect"), MetaAdapterFactory.getLanguage(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, "jetbrains.mps.lang.util.order"));
       }
       @Nullable
       public LanguageAspectGenerator getGenerator() {
@@ -61,6 +61,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       public String getHelpUrl() {
         return "http://confluence.jetbrains.com/display/MPSD34/Plugin";
       }
+
 
 
 
