@@ -16,6 +16,7 @@
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
@@ -46,6 +47,7 @@
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="OrderDeclaration" />
     <property role="EcuMT" value="2450897840534683975" />
+    <property role="34LRSv" value="Order" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="283lDAXPS59" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

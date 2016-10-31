@@ -22,6 +22,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIAspectConcept = createDescriptorForIAspectConcept();
   /*package*/ final ConceptDescriptor myConceptLanguageAspectDescriptor = createDescriptorForLanguageAspectDescriptor();
   /*package*/ final ConceptDescriptor myConceptLanguageReference = createDescriptorForLanguageReference();
+  /*package*/ final ConceptDescriptor myConceptSimpleAspectOrderRef = createDescriptorForSimpleAspectOrderRef();
   /*package*/ final ConceptDescriptor myConceptSimpleLanguageAspectDescriptor = createDescriptorForSimpleLanguageAspectDescriptor();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -31,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAspectMethodDescriptor, myConceptGenerationDescriptor, myConceptGenerationDescriptor_ByInterface, myConceptGenerationDescriptor_Class, myConceptHelpURL, myConceptIAspectConcept, myConceptLanguageAspectDescriptor, myConceptLanguageReference, myConceptSimpleLanguageAspectDescriptor);
+    return Arrays.asList(myConceptAspectMethodDescriptor, myConceptGenerationDescriptor, myConceptGenerationDescriptor_ByInterface, myConceptGenerationDescriptor_Class, myConceptHelpURL, myConceptIAspectConcept, myConceptLanguageAspectDescriptor, myConceptLanguageReference, myConceptSimpleAspectOrderRef, myConceptSimpleLanguageAspectDescriptor);
   }
 
   @Override
@@ -54,6 +55,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLanguageAspectDescriptor;
       case LanguageConceptSwitch.LanguageReference:
         return myConceptLanguageReference;
+      case LanguageConceptSwitch.SimpleAspectOrderRef:
+        return myConceptSimpleAspectOrderRef;
       case LanguageConceptSwitch.SimpleLanguageAspectDescriptor:
         return myConceptSimpleLanguageAspectDescriptor;
       default:
@@ -129,6 +132,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)/3433054418424678522");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForSimpleAspectOrderRef() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.aspect", "SimpleAspectOrderRef", 0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x26c6e1a7a20d8efL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.util.order.structure.OrderElementReference", 0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd7814bL);
+    b.origin("r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)/174635545557784815");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSimpleLanguageAspectDescriptor() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.aspect", "SimpleLanguageAspectDescriptor", 0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L);
     b.class_(false, false, true);
@@ -141,6 +151,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("additionalLanguages", 0x54be5be5620c1b7dL).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L).optional(true).ordered(true).multiple(true).origin("6106419185511570301").done();
     b.aggregate("icon", 0x2fa4a8cdf0cff495L).target(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL).optional(true).ordered(true).multiple(false).origin("3433054418425083029").done();
     b.aggregate("httpHelpUrl", 0x47d8f9811b759b89L).target(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L).optional(true).ordered(true).multiple(false).origin("5177162104569174921").done();
+    b.aggregate("order", 0x2085244dcb121e81L).target(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd78145L).optional(true).ordered(true).multiple(false).origin("2343319097654255233").done();
     return b.create();
   }
 }
