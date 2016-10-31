@@ -12,6 +12,7 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="v4w5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.aspects(MPS.Core/)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -21,6 +22,7 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
     </language>
     <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl">
@@ -81,9 +83,12 @@
     <node concept="q3mfq" id="22594Rb62a0" role="QNr5C">
       <property role="TrG5h" value="compareTo" />
       <node concept="q3mfp" id="22594Rb62aM" role="q3mfl">
-        <property role="TrG5h" value="id" />
-        <node concept="3uibUv" id="22594Rb62b0" role="q3mfr">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        <property role="TrG5h" value="other" />
+        <node concept="3uibUv" id="22594Rb6G7Q" role="q3mfr">
+          <ref role="3uigEE" to="v4w5:~OrderParticipant" resolve="OrderParticipant" />
+          <node concept="3uibUv" id="22594Rb6LjH" role="11_B2D">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
         </node>
       </node>
       <node concept="10Oyi0" id="22594Rb62by" role="q3mfk" />

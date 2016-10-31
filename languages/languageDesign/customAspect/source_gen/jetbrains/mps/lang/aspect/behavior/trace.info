@@ -39,6 +39,9 @@
     <file name="LanguageReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.aspect.behavior.LanguageReference_BehaviorDescriptor" />
     </file>
+    <file name="SimpleAspectOrderRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.aspect.behavior.SimpleAspectOrderRef_BehaviorDescriptor" />
+    </file>
     <file name="SimpleLanguageAspectDescriptor_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.aspect.behavior.SimpleLanguageAspectDescriptor_BehaviorDescriptor" />
     </file>

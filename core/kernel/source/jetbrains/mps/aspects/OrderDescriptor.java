@@ -19,15 +19,15 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class OrderDescriptor implements Comparator<OrderParticipant> {
-  private List<OrderParticipant> myOrderData;
+public class OrderDescriptor<T> implements Comparator<T> {
+  private List<T> myOrderData;
 
-  public OrderDescriptor(OrderParticipant ... orderData) {
+  public OrderDescriptor(T ... orderData) {
     myOrderData = Arrays.asList(orderData);
   }
 
   @Override
-  public int compare(OrderParticipant d1, OrderParticipant d2) {
+  public int compare(T d1, T d2) {
     int i1 = myOrderData.indexOf(d1);
     int i2 = myOrderData.indexOf(d2);
 
