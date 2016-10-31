@@ -15,6 +15,6 @@
  */
 package jetbrains.mps.aspects;
 
-public interface OrderParticipant<T> extends Comparable<OrderParticipant<T>>{
+public interface OrderParticipant<T> extends Comparable<T>{
   T getId();
 }
