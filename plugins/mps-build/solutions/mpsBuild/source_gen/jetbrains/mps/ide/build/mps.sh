@@ -96,9 +96,9 @@ else
 fi
 JVM_ARGS=`cat "${MPS_VM_OPTIONS}" | tr '\n' ' ' | tr '\r' ' '`
 # 32 bit
-# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5031"
+# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041"
 # 64 bit
-# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5031"
+# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041"
 
 CLASSPATH=""
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/branding.jar
