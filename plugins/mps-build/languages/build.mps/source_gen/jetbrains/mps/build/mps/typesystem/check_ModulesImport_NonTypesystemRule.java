@@ -12,8 +12,6 @@ import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
-import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -39,7 +37,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
 
     PathConverter pathConverter = new PathConverter(buildProject);
 
-    String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, Context.defaultContext());
+    String workingDir = pathConverter.getWorkingDir();
     if ((workingDir == null || workingDir.length() == 0)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

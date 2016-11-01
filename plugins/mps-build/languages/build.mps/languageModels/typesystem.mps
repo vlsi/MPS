@@ -9,7 +9,6 @@
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
     <import index="tken" ref="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" />
     <import index="vbkb" ref="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" />
-    <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -488,16 +487,12 @@
       <node concept="3cpWs8" id="2cypSucdKvC" role="3cqZAp">
         <node concept="3cpWsn" id="2cypSucdKvD" role="3cpWs9">
           <property role="TrG5h" value="workingDir" />
-          <node concept="2OqwBi" id="2cypSucdKw3" role="33vP2m">
-            <node concept="1YBJjd" id="2cypSucdKvO" role="2Oq$k0">
-              <ref role="1YBMHb" node="2cypSucdKpT" resolve="buildProject" />
+          <node concept="2OqwBi" id="4WwUR8h$xrX" role="33vP2m">
+            <node concept="37vLTw" id="4WwUR8h$v4k" role="2Oq$k0">
+              <ref role="3cqZAo" node="6tgFcy$CwHA" resolve="pathConverter" />
             </node>
-            <node concept="2qgKlT" id="2cypSucdKw9" role="2OqNvi">
-              <ref role="37wK5l" to="vbkb:4jjtc7WZOyG" resolve="getBasePath" />
-              <node concept="2YIFZM" id="2L4pT56hSJZ" role="37wK5m">
-                <ref role="1Pybhc" to="o3n2:4jjtc7WZOAv" resolve="Context" />
-                <ref role="37wK5l" to="o3n2:4jjtc7WZTjd" resolve="defaultContext" />
-              </node>
+            <node concept="liA8E" id="4WwUR8h$xxP" role="2OqNvi">
+              <ref role="37wK5l" to="tken:4WwUR8h$ozx" resolve="getWorkingDir" />
             </node>
           </node>
           <node concept="17QB3L" id="2cypSucdKvE" role="1tU5fm" />

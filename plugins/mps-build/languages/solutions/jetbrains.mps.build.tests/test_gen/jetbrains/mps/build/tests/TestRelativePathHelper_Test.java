@@ -31,7 +31,7 @@ public class TestRelativePathHelper_Test extends TestCase {
     Assert.assertEquals("", new RelativePathHelper(scriptsFolder).makeRelative(scriptsFolder));
 
     // back 
-    Assert.assertEquals(scriptsFolder.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute(""));
+    Assert.assertEquals(RelativePathHelper.normalizePath(scriptsFolder, true), new RelativePathHelper(scriptsFolder).makeAbsolute(""));
 
     // 3 one level up 
     String oneUp = baseDir.getParentFile().getCanonicalPath();

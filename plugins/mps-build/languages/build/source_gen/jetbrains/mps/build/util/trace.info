@@ -1826,56 +1826,82 @@
   <root nodeRef="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)/6099797596647572228">
     <file name="RelativePathHelper.java">
       <node id="6099797596647605837" at="12,0,13,0" concept="6" trace="myBasePath" />
-      <node id="1841835149314652661" at="13,46,14,45" concept="5" />
+      <node id="1841835149314652661" at="13,46,14,47" concept="5" />
       <node id="6723782765629118741" at="22,105,23,18" concept="12" />
       <node id="6723782765629118743" at="24,5,25,90" concept="11" />
       <node id="6723782765629118756" at="25,90,26,44" concept="12" />
-      <node id="6099797596647572263" at="30,55,31,16" concept="12" />
-      <node id="1841835149314652669" at="32,5,33,78" concept="11" />
-      <node id="1841835149314774685" at="34,9,35,115" concept="12" />
-      <node id="1841835149314774688" at="36,28,37,70" concept="19" />
-      <node id="1841835149314654004" at="41,57,42,24" concept="12" />
-      <node id="1841835149314665826" at="43,5,44,45" concept="5" />
-      <node id="1841835149314665887" at="45,37,46,41" concept="5" />
-      <node id="1841835149314665709" at="47,5,48,47" concept="11" />
-      <node id="1841835149314774673" at="49,9,50,55" concept="12" />
-      <node id="1841835149314771712" at="51,28,52,70" concept="19" />
-      <node id="1841835149314794597" at="55,31,56,22" concept="12" />
-      <node id="1841835149314710252" at="59,59,60,28" concept="17" />
+      <node id="5701816003404087465" at="29,46,30,65" concept="12" />
+      <node id="6099797596647572263" at="34,55,35,16" concept="12" />
+      <node id="1841835149314652669" at="36,5,37,55" concept="11" />
+      <node id="5701816003402893866" at="38,44,39,55" concept="12" />
+      <node id="5701816003402917879" at="39,55,40,62" concept="13" />
+      <node id="5701816003402911781" at="41,5,42,123" concept="13" />
+      <node id="5701816003402914828" at="42,123,43,149" concept="13" />
+      <node id="5701816003403711977" at="43,149,44,148" concept="13" />
+      <node id="5701816003405642060" at="45,9,46,158" concept="12" />
+      <node id="1841835149314774688" at="47,28,48,70" concept="19" />
+      <node id="1841835149314654004" at="53,57,54,24" concept="12" />
+      <node id="1841835149314665826" at="55,5,56,48" concept="5" />
+      <node id="1841835149314665887" at="57,37,58,41" concept="5" />
+      <node id="5701816003402938854" at="59,44,60,41" concept="5" />
+      <node id="1841835149314665709" at="62,9,63,49" concept="11" />
+      <node id="1841835149314774673" at="63,49,64,58" concept="12" />
+      <node id="1841835149314771712" at="65,28,66,70" concept="19" />
+      <node id="1841835149314794597" at="70,31,71,22" concept="12" />
+      <node id="5701816003402821727" at="81,23,82,16" concept="5" />
+      <node id="2617896750899006668" at="83,5,84,35" concept="5" />
+      <node id="2617896750899006694" at="85,84,86,24" concept="5" />
+      <node id="5701816003402864864" at="87,5,88,16" concept="12" />
+      <node id="1841835149314710252" at="93,59,94,28" concept="17" />
       <node id="1841835149314652654" at="13,0,16,0" concept="3" trace="RelativePathHelper#(Ljava/lang/String;)V" />
       <node id="6723782765629118723" at="21,62,24,5" concept="9" />
-      <node id="6099797596647572261" at="29,87,32,5" concept="9" />
-      <node id="6099797596647572300" at="40,88,43,5" concept="9" />
-      <node id="1841835149314665853" at="44,45,47,5" concept="9" />
-      <node id="1841835149314794593" at="55,0,58,0" concept="10" trace="getBasePath#()Ljava/lang/String;" />
-      <node id="1841835149314710239" at="59,0,62,0" concept="3" trace="PathException#(Ljava/lang/Throwable;Ljava/lang/String;)V" />
-      <node id="1841835149314774676" at="33,78,38,5" concept="20" />
-      <node id="1841835149314771701" at="48,47,53,5" concept="20" />
+      <node id="5701816003404084515" at="29,0,32,0" concept="10" trace="isRelative#(Ljava/lang/String;)Z" />
+      <node id="6099797596647572261" at="33,87,36,5" concept="9" />
+      <node id="6099797596647572300" at="52,88,55,5" concept="9" />
+      <node id="1841835149314794593" at="70,0,73,0" concept="10" trace="getBasePath#()Ljava/lang/String;" />
+      <node id="5551764612445891453" at="80,69,83,5" concept="9" />
+      <node id="2617896750899006692" at="84,35,87,5" concept="9" />
+      <node id="1841835149314710239" at="93,0,96,0" concept="3" trace="PathException#(Ljava/lang/Throwable;Ljava/lang/String;)V" />
+      <node id="5701816003402876992" at="37,55,41,5" concept="9" />
+      <node id="1841835149314774676" at="44,148,49,5" concept="20" />
+      <node id="1841835149314665853" at="56,48,61,5" concept="9" />
+      <node id="1841835149314771701" at="61,5,67,5" concept="20" />
       <node id="6723782765629113508" at="20,0,28,0" concept="16" trace="forModule#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/build/util/RelativePathHelper;" />
-      <node id="6099797596647572258" at="29,0,40,0" concept="10" trace="makeRelative#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6099797596647572297" at="40,0,55,0" concept="10" trace="makeAbsolute#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1841835149314652658" at="13,46,14,45" />
+      <node id="2617896750899006664" at="80,0,90,0" concept="16" trace="normalizePath#(Ljava/lang/String;Z)Ljava/lang/String;" />
+      <node id="6099797596647572297" at="52,0,69,0" concept="10" trace="makeAbsolute#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6099797596647572258" at="33,0,51,0" concept="10" trace="makeRelative#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1841835149314652658" at="13,46,14,47" />
       <scope id="6723782765629118740" at="22,105,23,18" />
-      <scope id="6099797596647572262" at="30,55,31,16" />
-      <scope id="1841835149314774677" at="34,9,35,115" />
-      <scope id="1841835149314774679" at="36,0,37,70">
+      <scope id="5701816003404084518" at="29,46,30,65" />
+      <scope id="6099797596647572262" at="34,55,35,16" />
+      <scope id="1841835149314774677" at="45,9,46,158" />
+      <scope id="1841835149314774679" at="47,0,48,70">
         <var name="ex" id="1841835149314774680" />
       </scope>
-      <scope id="1841835149314774682" at="36,28,37,70" />
-      <scope id="6099797596647572301" at="41,57,42,24" />
-      <scope id="1841835149314665854" at="45,37,46,41" />
-      <scope id="1841835149314771702" at="49,9,50,55" />
-      <scope id="1841835149314771704" at="51,0,52,70">
+      <scope id="1841835149314774682" at="47,28,48,70" />
+      <scope id="6099797596647572301" at="53,57,54,24" />
+      <scope id="1841835149314665854" at="57,37,58,41" />
+      <scope id="5701816003402926334" at="59,44,60,41" />
+      <scope id="1841835149314771704" at="65,0,66,70">
         <var name="ex" id="1841835149314771705" />
       </scope>
-      <scope id="1841835149314771707" at="51,28,52,70" />
-      <scope id="1841835149314794596" at="55,31,56,22" />
-      <scope id="1841835149314710242" at="59,59,60,28" />
+      <scope id="1841835149314771707" at="65,28,66,70" />
+      <scope id="1841835149314794596" at="70,31,71,22" />
+      <scope id="5551764612445891454" at="81,23,82,16" />
+      <scope id="2617896750899006693" at="85,84,86,24" />
+      <scope id="1841835149314710242" at="93,59,94,28" />
+      <scope id="5701816003402876994" at="38,44,40,62" />
+      <scope id="1841835149314771702" at="62,9,64,58">
+        <var name="res" id="1841835149314665710" />
+      </scope>
       <scope id="1841835149314652654" at="13,0,16,0">
         <var name="basePath" id="1841835149314652659" />
       </scope>
-      <scope id="1841835149314794593" at="55,0,58,0" />
-      <scope id="1841835149314710239" at="59,0,62,0">
+      <scope id="5701816003404084515" at="29,0,32,0">
+        <var name="fullPath" id="5701816003404085873" />
+      </scope>
+      <scope id="1841835149314794593" at="70,0,73,0" />
+      <scope id="1841835149314710239" at="93,0,96,0">
         <var name="cause" id="1841835149314771714" />
         <var name="message" id="1841835149314710248" />
       </scope>
@@ -1885,20 +1911,23 @@
       <scope id="6723782765629113508" at="20,0,28,0">
         <var name="module" id="6723782765629115140" />
       </scope>
-      <scope id="6099797596647572260" at="29,87,38,5">
+      <scope id="2617896750899006667" at="80,69,88,16" />
+      <scope id="2617896750899006664" at="80,0,90,0">
+        <var name="addSlash" id="2617896750899006711" />
+        <var name="path" id="2617896750899006709" />
+      </scope>
+      <scope id="6099797596647572299" at="52,88,67,5" />
+      <scope id="6099797596647572260" at="33,87,49,5">
         <var name="normalized" id="1841835149314652670" />
       </scope>
-      <scope id="6099797596647572258" at="29,0,40,0">
-        <var name="fullPath" id="6099797596647572295" />
-      </scope>
-      <scope id="6099797596647572299" at="40,88,53,5">
-        <var name="res" id="1841835149314665710" />
-      </scope>
-      <scope id="6099797596647572297" at="40,0,55,0">
+      <scope id="6099797596647572297" at="52,0,69,0">
         <var name="shortPath" id="6099797596647572369" />
       </scope>
-      <unit id="1841835149314710237" at="58,0,63,0" name="jetbrains.mps.build.util.RelativePathHelper$PathException" />
-      <unit id="6099797596647572228" at="11,0,64,0" name="jetbrains.mps.build.util.RelativePathHelper" />
+      <scope id="6099797596647572258" at="33,0,51,0">
+        <var name="fullPath" id="6099797596647572295" />
+      </scope>
+      <unit id="1841835149314710237" at="92,0,97,0" name="jetbrains.mps.build.util.RelativePathHelper$PathException" />
+      <unit id="6099797596647572228" at="11,0,98,0" name="jetbrains.mps.build.util.RelativePathHelper" />
     </file>
   </root>
   <root nodeRef="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)/6354776497051832724">

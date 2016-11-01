@@ -121,6 +121,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -2429,18 +2432,14 @@
             <node concept="2YIFZM" id="1AfwOXhJ6lP" role="3clFbG">
               <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
               <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-              <node concept="2OqwBi" id="2ztZL6AGLDj" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTyuz" role="2Oq$k0">
+              <node concept="2YIFZM" id="4WwUR8h$i6s" role="37wK5m">
+                <ref role="37wK5l" to="o3n2:2hkCNA7Z0N8" resolve="normalizePath" />
+                <ref role="1Pybhc" to="o3n2:5iAPpylXsc4" resolve="RelativePathHelper" />
+                <node concept="37vLTw" id="4WwUR8h$ibT" role="37wK5m">
                   <ref role="3cqZAo" node="1AfwOXhII7Y" resolve="scriptsFolder" />
                 </node>
-                <node concept="liA8E" id="2ztZL6AGLDI" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                  <node concept="Xl_RD" id="2ztZL6AGLDJ" role="37wK5m">
-                    <property role="Xl_RC" value="\\" />
-                  </node>
-                  <node concept="Xl_RD" id="2ztZL6AGLDK" role="37wK5m">
-                    <property role="Xl_RC" value="/" />
-                  </node>
+                <node concept="3clFbT" id="4WwUR8h$ijq" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
               </node>
               <node concept="2OqwBi" id="1AfwOXhJ6lR" role="37wK5m">

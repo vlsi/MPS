@@ -11,7 +11,7 @@ import java.io.File;
 public class RelativePathHelper {
   private String myBasePath;
   public RelativePathHelper(String basePath) {
-    myBasePath = basePath.replace("\\", "/");
+    myBasePath = normalizePath(basePath, true);
   }
 
   /**
@@ -26,35 +26,69 @@ public class RelativePathHelper {
     return new RelativePathHelper(basePath);
   }
 
+  public boolean isRelative(String fullPath) {
+    return normalizePath(fullPath, false).startsWith(myBasePath);
+  }
+
   public String makeRelative(String fullPath) throws RelativePathHelper.PathException {
     if ((fullPath == null || fullPath.length() == 0)) {
       return "";
     }
-    String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
+    String normalized = normalizePath(fullPath, false);
+    if (normalized.startsWith(myBasePath)) {
+      return normalized.substring(myBasePath.length());
+      // XXX should I check for myBasePath == fullPath + '/'? 
+    }
+    // FIXME I'd like to have this class purely string/Path-based, without need to access FS or care about file existence. 
+    // However, present uses need refactoring before this may come true, left legacy code for a while. OTOH, getCanonicalPath is pure File operation 
+    // which doesn't check for existence and as such is tolerable here. It's FileUtil.getRelativePath that bugs me, as it checks for file existence 
     try {
-      return FileUtil.getRelativePath(normalized, (myBasePath.endsWith("/") ? myBasePath : myBasePath + "/"), "/");
+      return normalizePath(FileUtil.getRelativePath(new File(normalized).getCanonicalPath(), new File(myBasePath).getCanonicalPath(), File.separator), false);
     } catch (Exception ex) {
       throw new RelativePathHelper.PathException(ex, ex.getMessage());
     }
   }
+
   public String makeAbsolute(String shortPath) throws RelativePathHelper.PathException {
     if ((shortPath == null || shortPath.length() == 0)) {
       return myBasePath;
     }
-    shortPath = shortPath.replace("\\", "/");
+    shortPath = normalizePath(shortPath, false);
     if (shortPath.startsWith("./")) {
       shortPath = shortPath.substring(2);
+    } else if (shortPath.charAt(0) == '/') {
+      shortPath = shortPath.substring(1);
     }
-    File res = new File(myBasePath, shortPath);
     try {
-      return res.getCanonicalPath().replace("\\", "/");
+      File res = new File(myBasePath, shortPath);
+      return normalizePath(res.getCanonicalPath(), false);
     } catch (Exception ex) {
       throw new RelativePathHelper.PathException(ex, ex.getMessage());
     }
   }
+
   public String getBasePath() {
     return myBasePath;
   }
+
+
+  /**
+   * Translates backslashes in the path, if any, to regular slashed, and appends a trailing one if requested.
+   * Doesn't require file to exists, operates with strings only.
+   * Accepts null path, treats it as empty path; never returns null
+   */
+  public static String normalizePath(String path, boolean addSlash) {
+    if (path == null) {
+      path = "";
+    }
+    path = path.replace('\\', '/');
+    if (addSlash && (path.length() == 0 || path.charAt(path.length() - 1) != '/')) {
+      path = path + '/';
+    }
+    return path;
+  }
+
+
   public static class PathException extends Exception {
     public PathException(Throwable cause, String message) {
       super(message, cause);
