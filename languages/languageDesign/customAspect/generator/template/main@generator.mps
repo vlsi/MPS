@@ -254,7 +254,14 @@
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
+      <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
+        <child id="1177093586806" name="templateNode" index="gfFT$" />
+      </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
+      <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
+        <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
+        <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
+      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -267,6 +274,7 @@
       </concept>
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
       </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
@@ -2958,6 +2966,41 @@
       <node concept="q3mfm" id="3IvUXkeQMyr" role="3clF45">
         <ref role="q3mfh" to="90d:3zLwYDe0sv$" />
         <ref role="1QQUv3" node="3IvUXkeQMyo" resolve="get" />
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="6S7pXgvAHU9">
+    <property role="3GE5qa" value="simple" />
+    <property role="TrG5h" value="switchOrderId" />
+    <ref role="phYkn" to="tx4j:9GrxDU7xCe" resolve="switchOrderEntityId" />
+    <node concept="3aamgX" id="6S7pXgvAHUa" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="hfbu:9GrxDU8dzJ" resolve="SimpleAspectOrderRef" />
+      <node concept="gft3U" id="6S7pXgvAJQP" role="1lVwrX">
+        <node concept="Xl_RD" id="6S7pXgvAJQV" role="gfFT$">
+          <property role="Xl_RC" value="name" />
+          <node concept="17Uvod" id="6S7pXgvAJR3" role="lGtFl">
+            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+            <property role="2qtEX9" value="value" />
+            <node concept="3zFVjK" id="6S7pXgvAJR4" role="3zH0cK">
+              <node concept="3clFbS" id="6S7pXgvAJR5" role="2VODD2">
+                <node concept="3clFbF" id="6S7pXgvAJZ_" role="3cqZAp">
+                  <node concept="2OqwBi" id="6S7pXgvAKVQ" role="3clFbG">
+                    <node concept="2OqwBi" id="6S7pXgvAKd3" role="2Oq$k0">
+                      <node concept="30H73N" id="6S7pXgvAJZ$" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="6S7pXgvAKub" role="2OqNvi">
+                        <ref role="3Tt5mk" to="hfbu:9GrxDU8dJ1" resolve="target" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="6S7pXgvALjw" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
