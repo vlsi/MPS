@@ -143,7 +143,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     if (needsFetch) {
-      artifacts.needsFetch(__thisNode__);
+      builder.needsFetch(__thisNode__);
     }
   }
 

@@ -39,7 +39,7 @@ public final class BuildSource_JavaDependencyExternalJar__BehaviorDescriptor ext
   /*package*/ static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     Tuples._2<SNode, Boolean> artifact = BuildSource_JavaExternalJarRef__BehaviorDescriptor.getDependencyTarget_id4RsV8qJGJqY.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, 0x4ddcec86afb2f72aL, "extJar")), artifacts);
     if (artifact != null) {
-      artifacts.needsFetch(SNodeOperations.getParent(__thisNode__));
+      builder.needsFetch(SNodeOperations.getParent(__thisNode__));
       if ((boolean) artifact._1()) {
         builder.addWithContent(artifact._0());
       } else {

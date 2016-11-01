@@ -1703,11 +1703,11 @@
           <node concept="3clFbS" id="6PrCok1L_Hp" role="3clFbx">
             <node concept="3clFbF" id="6PrCok1LsAw" role="3cqZAp">
               <node concept="2OqwBi" id="6PrCok1LsAx" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxgm8wV" role="2Oq$k0">
-                  <ref role="3cqZAo" node="57YmpYyL8LS" resolve="artifacts" />
+                <node concept="37vLTw" id="4WwUR8hPdsw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="57YmpYyL8LU" resolve="builder" />
                 </node>
                 <node concept="liA8E" id="6PrCok1LsAz" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:5DY7s5F3YQa" resolve="needsFetch" />
+                  <ref role="37wK5l" to="o3n2:4WwUR8hO$pV" resolve="needsFetch" />
                   <node concept="13iPFW" id="2eDSGe9czlA" role="37wK5m" />
                 </node>
               </node>

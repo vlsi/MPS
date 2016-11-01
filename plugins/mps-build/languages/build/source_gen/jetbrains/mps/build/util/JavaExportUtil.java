@@ -67,7 +67,7 @@ public class JavaExportUtil {
       }
 
       if (ListSequence.fromList(result).isNotEmpty()) {
-        artifacts.needsFetch(contextNode);
+        builder.needsFetch(contextNode);
         for (Tuples._2<SNode, Boolean> pair : ListSequence.fromList(result)) {
           if ((boolean) pair._1()) {
             builder.addWithContent(pair._0());
@@ -81,7 +81,7 @@ public class JavaExportUtil {
 
     SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     if (artifact != null) {
-      artifacts.needsFetch(contextNode);
+      builder.needsFetch(contextNode);
       if (SNodeOperations.isInstanceOf(artifact, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde534f69bL, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"))) {
         ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(artifact, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde534f69bL, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
@@ -162,7 +162,7 @@ public class JavaExportUtil {
     }
 
     if (hasDependencies) {
-      artifacts.needsFetch(contextNode);
+      builder.needsFetch(contextNode);
     }
   }
   @Nullable

@@ -44,7 +44,7 @@ public final class BuildLayout_ImportContent__BehaviorDescriptor extends BaseBHD
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     if (SNodeOperations.isInstanceOf(artifact, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
-      artifacts.needsFetch(SNodeOperations.getNodeAncestorWhereConceptInList(__thisNode__, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout")}, false, false));
+      builder.needsFetch(SNodeOperations.getNodeAncestorWhereConceptInList(__thisNode__, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout")}, false, false));
       builder.addWithContent(artifact);
     }
   }

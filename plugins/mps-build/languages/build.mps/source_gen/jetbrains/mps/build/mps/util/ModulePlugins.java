@@ -61,7 +61,7 @@ public class ModulePlugins {
     final DependenciesHelper helper = new DependenciesHelper(myContext, myInitialProject);
     return Sequence.fromIterable(this.getDependency()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return DependenciesHelper.getOriginalNode(it, myContext);
+        return helper.getOriginalNode(it);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {

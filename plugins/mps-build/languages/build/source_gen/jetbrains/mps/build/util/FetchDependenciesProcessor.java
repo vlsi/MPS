@@ -81,6 +81,21 @@ public class FetchDependenciesProcessor {
       }
       helper.add(node, true, null);
     }
+
+    @Override
+    public void needsFetch(SNode node) {
+      // copied as is from VisibleArtifacts.needsFetch. VA has to become 'initialize once' container, 
+      // while this builder is intended for composing fetch state. 
+      if ((node == null)) {
+        return;
+      }
+      node = helper.getOriginalNode(node);
+      if ((node == null)) {
+        return;
+      }
+      helper.doFetch(node);
+    }
+
     private boolean check(SNode node) {
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));

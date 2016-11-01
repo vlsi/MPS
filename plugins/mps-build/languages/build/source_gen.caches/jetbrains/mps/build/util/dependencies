@@ -27,6 +27,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />

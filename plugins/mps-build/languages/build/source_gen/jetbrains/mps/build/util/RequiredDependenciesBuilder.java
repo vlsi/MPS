@@ -8,4 +8,5 @@ public interface RequiredDependenciesBuilder {
   void add(SNode node);
   void add(SNode node, Object artifactId);
   void addWithContent(SNode node);
+  void needsFetch(SNode node);
 }

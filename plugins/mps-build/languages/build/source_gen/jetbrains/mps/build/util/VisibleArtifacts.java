@@ -116,7 +116,7 @@ public class VisibleArtifacts {
     }
   }
   public SNode toOriginalNode(SNode node) {
-    return dependenciesHelper.getOriginalNode(node);
+    return (dependenciesHelper == null ? node : dependenciesHelper.getOriginalNode(node));
   }
   public SNode getProject() {
     return project;
@@ -137,19 +137,7 @@ public class VisibleArtifacts {
     }
     return result;
   }
-  public void needsFetch(SNode node) {
-    if ((node == null)) {
-      return;
-    }
-    node = toOriginalNode(node);
-    if ((node == null)) {
-      return;
-    }
-    if (dependenciesHelper == null) {
-      throw new IllegalStateException("needsFetch() should be called in generation context only");
-    }
-    dependenciesHelper.requiresFetch().put(node, "");
-  }
+
   public SNode findArtifact(Object id) {
     if (id == null) {
       return null;
@@ -165,6 +153,8 @@ public class VisibleArtifacts {
       }
       id = node;
     }
+    // Seems like findArtifact shall get extracted into distinct utility (or directly into DependenciesHelper) that would 
+    // take VisibleArtifacts+DH, and deal with dh.artifacts() there. VA otherwise doesn't need DH. 
     if (dependenciesHelper == null) {
       throw new IllegalStateException("findArtifact() should be called in generation context only: ");
     }
@@ -216,6 +206,7 @@ public class VisibleArtifacts {
   public TemplateQueryContext getGenContext() {
     return genContext;
   }
+
   public static VisibleArtifacts createFor(final SNode project) {
     assert !(SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule);
     return getFromCache(VisibleArtifacts.class, project, new _FunctionTypes._return_P0_E0<VisibleArtifacts>() {

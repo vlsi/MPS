@@ -1069,7 +1069,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container")) && BuildLayout_Container__BehaviorDescriptor.getAssembleSubTaskId_id450ejGzh8bO.invoke(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) != null;
   }
   public static boolean ifMacro_Condition_6520682027041189779(final IfMacroContext _context) {
-    return new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(_context.getNode()));
+    return new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).requiresFetch(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
   public static boolean ifMacro_Condition_8055294676438891194(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, 0xcdff0e1a96739c7L, "resourceSelectors"))).isEmpty();
@@ -1094,7 +1094,7 @@ public class QueriesGenerated {
     return Sequence.fromIterable(s).isNotEmpty();
   }
   public static boolean ifMacro_Condition_6520682027041156330(final IfMacroContext _context) {
-    return new DependenciesHelper(_context, _context.getNode()).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout"))));
+    return new DependenciesHelper(_context, _context.getNode()).requiresFetch(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout"))));
   }
   public static boolean ifMacro_Condition_6520682027041201801(final IfMacroContext _context) {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:dependency"))).isNotEmpty();
