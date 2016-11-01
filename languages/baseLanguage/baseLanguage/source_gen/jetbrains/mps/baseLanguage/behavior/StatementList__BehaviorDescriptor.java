@@ -147,6 +147,7 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   /*package*/ static List<SNode> getLocalVariableDeclarations_id7WLeqcv1izg(@NotNull SNode __thisNode__, String role, int index) {
+    assert index == 0 || index < ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).count();
     List<SNode> result = new ArrayList<SNode>();
 
     for (int num = 0; num < index; num++) {
