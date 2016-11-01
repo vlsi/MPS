@@ -4,8 +4,8 @@ package jetbrains.mps.build.util;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -16,12 +16,14 @@ public class DependenciesHelper {
   private final Map<Object, SNode> idToArtifactMap;
   private final Map<SNode, String> requiresFetch;
   protected final MacroHelper macros;
+  private final TemplateQueryContext myGenContext;
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
     this.contentLocationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "contentLocation");
     this.idToArtifactMap = GenerationUtil.<Object,SNode>getSessionMap(project, genContext, "IDToArtifact");
     this.macros = new MacroHelper.MacroContext(project, genContext).getMacros(project);
     this.requiresFetch = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "requiresFetch");
+    myGenContext = genContext;
   }
   public Map<SNode, String> locations() {
     return locationMap;
@@ -38,6 +40,11 @@ public class DependenciesHelper {
   public MacroHelper getMacroHelper() {
     return macros;
   }
+
+  public SNode getOriginalNode(SNode node) {
+    return getOriginalNode(node, myGenContext);
+  }
+
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
     if (SNodeOperations.getModel(node) == null) {
       return node;

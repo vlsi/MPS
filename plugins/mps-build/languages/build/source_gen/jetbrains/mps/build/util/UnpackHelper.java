@@ -25,12 +25,11 @@ public class UnpackHelper extends DependenciesHelper {
   private boolean evaluated = false;
   private final List<SNode> statements = new ArrayList<SNode>();
   private PathProvider myPathProvider;
-  private TemplateQueryContext genContext;
+
   public UnpackHelper(VisibleArtifacts visible, TemplateQueryContext genContext) {
     super(genContext, visible.getProject());
     this.visible = visible;
     this.myPathProvider = new PathProvider(genContext, visible.getProject());
-    this.genContext = genContext;
   }
   /*package*/ void add(SNode n, boolean withContent, Object artifactId) {
     if (withContent) {

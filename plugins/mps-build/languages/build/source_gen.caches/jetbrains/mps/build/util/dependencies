@@ -302,6 +302,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.util.VisibleArtifacts" file="VisibleArtifacts.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />

@@ -30,6 +30,7 @@ public class VisibleArtifacts {
   private final List<SNode> visibleArtifacts = new ArrayList<SNode>();
   private final List<SNode> visibleLayouts = new ArrayList<SNode>();
   protected DependenciesHelper dependenciesHelper;
+
   public VisibleArtifacts(SNode project, @Nullable TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
@@ -38,33 +39,26 @@ public class VisibleArtifacts {
       throw new IllegalArgumentException("cannot instantiate VisibleArtifacts for transient model without generation context");
     }
   }
-  public void collect() {
-    for (SNode dep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))) {
-      SNode layoutDependency = SNodeOperations.as(dep, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"));
-      if (layoutDependency == null) {
-        continue;
-      }
 
+  public void collect() {
+    for (SNode layoutDependency : SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"))) {
       SNode target = SLinkOperations.getTarget(layoutDependency, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a7L, "layout"));
       collectInExternalLayout(layoutDependency, target);
     }
-    for (SNode dep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))) {
-      SNode projectDependency = SNodeOperations.as(dep, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
-      if (projectDependency == null) {
-        continue;
-      }
-
+    for (SNode projectDependency : SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"))) {
       SNode target = SLinkOperations.getTarget(projectDependency, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"));
-      if (target == project) {
-        continue;
-      }
-
       collectInProject(projectDependency, target);
     }
     collectProjectArtifacts();
   }
+
+  @Nullable
+  public DependenciesHelper getDependenciesHelper() {
+    return dependenciesHelper;
+  }
+
   private void collectProjectArtifacts() {
-    SNode originalProject = SNodeOperations.cast(DependenciesHelper.getOriginalNode(project, genContext), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+    SNode originalProject = SNodeOperations.cast(toOriginalNode(project), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     collectInProject(SLinkOperations.getTarget(originalProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), originalProject);
   }
   protected void collectInProject(SNode parent, SNode target) {
@@ -122,10 +116,7 @@ public class VisibleArtifacts {
     }
   }
   public SNode toOriginalNode(SNode node) {
-    if (node == null) {
-      return null;
-    }
-    return DependenciesHelper.getOriginalNode(node, genContext);
+    return dependenciesHelper.getOriginalNode(node);
   }
   public SNode getProject() {
     return project;
@@ -216,6 +207,12 @@ public class VisibleArtifacts {
 
     return MultiTuple.<SNode,String>from((SNode) null, (String) null);
   }
+
+  /**
+   * 
+   * @deprecated VA shall not care about gencontext. There's no direct replacement for the method, just try not to use genContext
+   */
+  @Deprecated
   public TemplateQueryContext getGenContext() {
     return genContext;
   }
