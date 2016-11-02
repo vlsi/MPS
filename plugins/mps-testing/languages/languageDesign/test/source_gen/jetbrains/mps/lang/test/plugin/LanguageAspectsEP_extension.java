@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.aspects.OrderDescriptor;
-import jetbrains.mps.lang.structure.plugin.MPSAspects_Order;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
@@ -74,7 +73,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
 
 
-      private OrderDescriptor myOrderConstraints = new MPSAspects_Order();
+      private OrderDescriptor myOrderConstraints = new test_Order();
 
 
 

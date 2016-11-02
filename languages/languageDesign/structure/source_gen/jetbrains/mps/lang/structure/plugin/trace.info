@@ -24,9 +24,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/2415215581734104897">
     <file name="MPSAspects_Order.java">
-      <node id="2415215581734104897" at="8,29,9,194" concept="13" />
+      <node id="2415215581734104897" at="8,29,9,186" concept="13" />
       <node id="2415215581734104897" at="8,0,11,0" concept="2" trace="MPSAspects_Order#()V" />
-      <scope id="2415215581734104897" at="8,29,9,194" />
+      <scope id="2415215581734104897" at="8,29,9,186" />
       <scope id="2415215581734104897" at="8,0,11,0" />
       <unit id="2415215581734104897" at="7,0,12,0" name="jetbrains.mps.lang.structure.plugin.MPSAspects_Order" />
     </file>
@@ -125,7 +125,7 @@
       </scope>
       <scope id="3193873080290339088" at="32,41,99,6" />
       <scope id="3193873080290339088" at="32,0,101,0" />
-      <unit id="3193873080290339088" at="51,58,56,9" name="jetbrains.mps.lang.structure.plugin.LanguageAspectsEP_extension$2" />
+      <unit id="3193873080290339088" at="51,58,56,9" name="jetbrains.mps.lang.structure.plugin.LanguageAspectsEP_extension$1$1" />
       <unit id="3193873080290339088" at="33,15,99,5" name="jetbrains.mps.lang.structure.plugin.LanguageAspectsEP_extension$1" />
       <unit id="3193873080290339088" at="28,0,105,0" name="jetbrains.mps.lang.structure.plugin.LanguageAspectsEP_extension" />
     </file>

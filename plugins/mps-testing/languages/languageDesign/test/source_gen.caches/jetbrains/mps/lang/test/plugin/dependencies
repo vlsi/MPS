@@ -33,8 +33,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.MPSAspects_Order" />
     <classNode dependClassName="jetbrains.mps.lang.test.plugin.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.lang.test.plugin.test_Order" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -48,6 +48,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.plugin.test_Order" file="test_Order.java">
+    <classNode extendsClassName="jetbrains.mps.aspects.OrderDescriptor" />
   </dependency>
 </dependenciesRoot>
 

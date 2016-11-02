@@ -6,6 +6,6 @@ import jetbrains.mps.aspects.OrderDescriptor;
 
 public class MPSAspects_Order extends OrderDescriptor {
   public MPSAspects_Order() {
-    super("structure", "editor", "actions", "constraints", "behavior", "typesystem", "refactorings", "scripts", "intentions", "findUsages", "plugin", "dataFlow", "test", "textGen", "migration");
+    super("structure", "editor", "actions", "constraints", "behavior", "typesystem", "refactorings", "scripts", "intentions", "findUsages", "plugin", "dataFlow", "textGen", "migration");
   }
 }

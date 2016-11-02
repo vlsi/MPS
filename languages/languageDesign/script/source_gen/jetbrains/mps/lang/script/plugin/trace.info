@@ -106,7 +106,7 @@
       </scope>
       <scope id="3193873080290339088" at="32,41,95,6" />
       <scope id="3193873080290339088" at="32,0,97,0" />
-      <unit id="3193873080290339088" at="51,58,56,9" name="jetbrains.mps.lang.script.plugin.LanguageAspectsEP_extension$2" />
+      <unit id="3193873080290339088" at="51,58,56,9" name="jetbrains.mps.lang.script.plugin.LanguageAspectsEP_extension$1$1" />
       <unit id="3193873080290339088" at="33,15,95,5" name="jetbrains.mps.lang.script.plugin.LanguageAspectsEP_extension$1" />
       <unit id="3193873080290339088" at="28,0,101,0" name="jetbrains.mps.lang.script.plugin.LanguageAspectsEP_extension" />
     </file>

@@ -27,7 +27,6 @@
     <import index="sla8" ref="r:e9b03271-b52a-47ee-a82c-3d061109bb59(jetbrains.mps.lang.actions.plugin)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
-    <import index="rliy" ref="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)" />
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
@@ -1395,9 +1394,6 @@
     </node>
     <node concept="1SjbrP" id="264$spPfCco" role="2vPdvg">
       <ref role="2vPdvl" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
-    </node>
-    <node concept="1SjbrP" id="264$spPfCcY" role="2vPdvg">
-      <ref role="2vPdvl" to="rliy:2LiUEk8oQ$g" resolve="test" />
     </node>
     <node concept="1SjbrP" id="264$spPfYJw" role="2vPdvg">
       <ref role="2vPdvl" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
