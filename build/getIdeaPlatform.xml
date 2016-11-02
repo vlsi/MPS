@@ -58,6 +58,10 @@
   </target>
 
   <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">
+    <delete dir="../lib"/>
+    <delete dir="../plugins/cvsIntegration/lib"/>
+    <delete dir="../plugins/git4idea/lib"/>
+    <delete dir="../plugins/svn4idea/lib"/>
     <antcall target="force-resolve"/>
   </target>
 
