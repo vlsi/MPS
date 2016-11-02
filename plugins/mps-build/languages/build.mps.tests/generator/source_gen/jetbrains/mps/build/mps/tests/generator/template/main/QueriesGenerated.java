@@ -55,7 +55,7 @@ public class QueriesGenerated {
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String artifact = "mps-test-folder";
-    SNode mpsTestJar = helper.artifacts().get(artifact);
+    SNode mpsTestJar = helper.getArtifact(artifact);
     if ((mpsTestJar != null)) {
       return BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(mpsTestJar, helper, artifact);
     }

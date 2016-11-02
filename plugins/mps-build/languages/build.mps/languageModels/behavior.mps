@@ -3629,17 +3629,12 @@
             <node concept="3clFbJ" id="2TqXzNe_M6X" role="3cqZAp">
               <node concept="3clFbS" id="2TqXzNe_M6Y" role="3clFbx">
                 <node concept="3clFbF" id="2TqXzNe_6K0" role="3cqZAp">
-                  <node concept="2OqwBi" id="2TqXzNe_6KL" role="3clFbG">
-                    <node concept="2OqwBi" id="2TqXzNe_6Km" role="2Oq$k0">
-                      <node concept="37vLTw" id="3GM_nagTAUU" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                      </node>
-                      <node concept="liA8E" id="2TqXzNe_6Ks" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                      </node>
+                  <node concept="2OqwBi" id="2TqXzNe_6Km" role="3clFbG">
+                    <node concept="37vLTw" id="3GM_nagTAUU" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                     </node>
-                    <node concept="liA8E" id="2TqXzNe_6KR" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                    <node concept="liA8E" id="2TqXzNe_6Ks" role="2OqNvi">
+                      <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
                       <node concept="Xl_RD" id="2TqXzNe_6KS" role="37wK5m">
                         <property role="Xl_RC" value="ant-mps" />
                       </node>
@@ -3690,6 +3685,11 @@
                     <node concept="2Rxl7S" id="4ue92wT4WsX" role="2OqNvi" />
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="3h6igUoXF5R" role="3cqZAp">
+              <node concept="3SKdUq" id="3h6igUoXF5T" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME getVisibleJarsScope builds VisibleArtifacts once again" />
               </node>
             </node>
             <node concept="3cpWs8" id="4ue92wT4Wrb" role="3cqZAp">
@@ -3755,17 +3755,12 @@
                 <node concept="3clFbJ" id="2TqXzNe_M7u" role="3cqZAp">
                   <node concept="3clFbS" id="2TqXzNe_M7v" role="3clFbx">
                     <node concept="3clFbF" id="2TqXzNe_6Mb" role="3cqZAp">
-                      <node concept="2OqwBi" id="2TqXzNe_6Mc" role="3clFbG">
-                        <node concept="2OqwBi" id="2TqXzNe_6Md" role="2Oq$k0">
-                          <node concept="37vLTw" id="3GM_nagTwa4" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="2TqXzNe_6Mf" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                          </node>
+                      <node concept="2OqwBi" id="2TqXzNe_6Md" role="3clFbG">
+                        <node concept="37vLTw" id="3GM_nagTwa4" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                         </node>
-                        <node concept="liA8E" id="2TqXzNe_6Mg" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                        <node concept="liA8E" id="3h6igUoX4ia" role="2OqNvi">
+                          <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
                           <node concept="Xl_RD" id="2TqXzNe_6Mh" role="37wK5m">
                             <property role="Xl_RC" value="jdom" />
                           </node>
@@ -3855,17 +3850,12 @@
                 <node concept="3clFbJ" id="2TqXzNeAAAi" role="3cqZAp">
                   <node concept="3clFbS" id="2TqXzNeAAAj" role="3clFbx">
                     <node concept="3clFbF" id="2TqXzNeAAAk" role="3cqZAp">
-                      <node concept="2OqwBi" id="2TqXzNeAAAl" role="3clFbG">
-                        <node concept="2OqwBi" id="2TqXzNeAAAm" role="2Oq$k0">
-                          <node concept="37vLTw" id="3GM_nagTutF" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="2TqXzNeAAAo" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                          </node>
+                      <node concept="2OqwBi" id="2TqXzNeAAAm" role="3clFbG">
+                        <node concept="37vLTw" id="3GM_nagTutF" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                         </node>
-                        <node concept="liA8E" id="2TqXzNeAAAp" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                        <node concept="liA8E" id="3h6igUoX4U$" role="2OqNvi">
+                          <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
                           <node concept="Xl_RD" id="2TqXzNeAAAq" role="37wK5m">
                             <property role="Xl_RC" value="log4j" />
                           </node>
@@ -4072,17 +4062,12 @@
                     <node concept="3clFbJ" id="27eOSzOUT_k" role="3cqZAp">
                       <node concept="3clFbS" id="27eOSzOUT_l" role="3clFbx">
                         <node concept="3clFbF" id="27eOSzOW3hE" role="3cqZAp">
-                          <node concept="2OqwBi" id="27eOSzOW3iq" role="3clFbG">
-                            <node concept="2OqwBi" id="27eOSzOW3i0" role="2Oq$k0">
-                              <node concept="37vLTw" id="3GM_nagTABE" role="2Oq$k0">
-                                <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                              </node>
-                              <node concept="liA8E" id="27eOSzOW3i5" role="2OqNvi">
-                                <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                              </node>
+                          <node concept="2OqwBi" id="27eOSzOW3i0" role="3clFbG">
+                            <node concept="37vLTw" id="3GM_nagTABE" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                             </node>
-                            <node concept="liA8E" id="27eOSzOW3iw" role="2OqNvi">
-                              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                            <node concept="liA8E" id="3h6igUoX5k9" role="2OqNvi">
+                              <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
                               <node concept="2OqwBi" id="27eOSzOW3iR" role="37wK5m">
                                 <node concept="2GrUjf" id="7MPX9wYDoA_" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="7MPX9wYDljz" resolve="gentestDep" />

@@ -58,8 +58,8 @@ public final class BuildModuleTestsPlugin__BehaviorDescriptor extends BaseBHDesc
       SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((mpsTestJar != null)) {
         // specify explicitly what we need maybe? 
-        helper.artifacts().put("mps-test-folder", SNodeOperations.getParent(mpsTestJar));
-        helper.artifacts().put("mps-test", mpsTestJar);
+        helper.putArtifact("mps-test-folder", SNodeOperations.as(SNodeOperations.getParent(mpsTestJar), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")));
+        helper.putArtifact("mps-test", mpsTestJar);
         builder.add(mpsTestJar, mpsTestModule);
       }
     }

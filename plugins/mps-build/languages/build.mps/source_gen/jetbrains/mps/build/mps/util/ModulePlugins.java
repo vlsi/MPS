@@ -54,18 +54,15 @@ public class ModulePlugins {
     }
   }
   public Iterable<SNode> getDependency() {
+    // XXX here, usage suggests return value may list elements from transient (non-original) model 
     return myDependency;
   }
 
   public String[] getPluginPaths() {
     final DependenciesHelper helper = new DependenciesHelper(myContext, myInitialProject);
-    return Sequence.fromIterable(this.getDependency()).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return helper.getOriginalNode(it);
-      }
-    }).select(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(this.getDependency()).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        SNode layoutNode = helper.artifacts().get(it);
+        SNode layoutNode = helper.getArtifact(it);
         if ((layoutNode == null)) {
           return null;
         }

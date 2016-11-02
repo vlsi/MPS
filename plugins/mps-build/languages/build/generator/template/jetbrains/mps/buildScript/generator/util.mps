@@ -372,7 +372,7 @@
                   <ref role="3cqZAo" node="7B9bSSBGZa5" resolve="library" />
                 </node>
                 <node concept="3Tsc0h" id="5WtSFRWuQZ1" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:5gfUUDxhech" />
+                  <ref role="3TtcxE" to="3ior:5gfUUDxhech" resolve="elements" />
                 </node>
               </node>
               <node concept="3clFbS" id="5WtSFRWuQY_" role="2LFqv$">
@@ -415,7 +415,7 @@
                         <ref role="3cqZAo" node="5WtSFRWuR04" resolve="jcp" />
                       </node>
                       <node concept="3TrEf2" id="5WtSFRWuR1l" role="2OqNvi">
-                        <ref role="3Tt5mk" to="3ior:3elU8iQ7kMX" />
+                        <ref role="3Tt5mk" to="3ior:3elU8iQ7kMX" resolve="classpath" />
                       </node>
                     </node>
                   </node>
@@ -429,16 +429,11 @@
                           <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
                         </node>
                         <node concept="2OqwBi" id="5WtSFRWvgjA" role="33vP2m">
-                          <node concept="2OqwBi" id="5WtSFRWvgjk" role="2Oq$k0">
-                            <node concept="37vLTw" id="2BHiRxeuu3$" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
-                            </node>
-                            <node concept="liA8E" id="5WtSFRWvgjm" role="2OqNvi">
-                              <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                            </node>
+                          <node concept="37vLTw" id="2BHiRxeuu3$" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
                           </node>
                           <node concept="liA8E" id="5WtSFRWvgjG" role="2OqNvi">
-                            <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                            <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                             <node concept="2OqwBi" id="5WtSFRWuR2R" role="37wK5m">
                               <node concept="1PxgMI" id="5WtSFRWuR2x" role="2Oq$k0">
                                 <ref role="1m5ApE" to="3ior:15RAxQWZPkq" resolve="BuildSource_JavaJar" />
@@ -447,7 +442,7 @@
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5WtSFRWuR2X" role="2OqNvi">
-                                <ref role="3Tt5mk" to="3ior:3elU8iQ72fy" />
+                                <ref role="3Tt5mk" to="3ior:3elU8iQ72fy" resolve="path" />
                               </node>
                             </node>
                           </node>
@@ -497,7 +492,7 @@
                                           </node>
                                         </node>
                                         <node concept="3TrEf2" id="5WtSFRWvgl3" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="3ior:3elU8iQ72fy" />
+                                          <ref role="3Tt5mk" to="3ior:3elU8iQ72fy" resolve="path" />
                                         </node>
                                       </node>
                                       <node concept="2qgKlT" id="5WtSFRWvglr" role="2OqNvi">
@@ -566,11 +561,11 @@
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5WtSFRWvgmt" role="2OqNvi">
-                                <ref role="3Tt5mk" to="3ior:4RsV8qJHgQC" />
+                                <ref role="3Tt5mk" to="3ior:4RsV8qJHgQC" resolve="extJar" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="5WtSFRWvgmu" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3ior:4RsV8qJGJpd" />
+                              <ref role="3Tt5mk" to="3ior:4RsV8qJGJpd" resolve="jar" />
                             </node>
                           </node>
                         </node>
@@ -601,16 +596,11 @@
                                 <property role="1BlNFB" value="true" />
                                 <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                                 <node concept="2OqwBi" id="7B9bSSBH7gc" role="1m5AlR">
-                                  <node concept="2OqwBi" id="7B9bSSBH7gd" role="2Oq$k0">
-                                    <node concept="37vLTw" id="2BHiRxeumwR" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
-                                    </node>
-                                    <node concept="liA8E" id="7B9bSSBH7gf" role="2OqNvi">
-                                      <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                                    </node>
+                                  <node concept="37vLTw" id="2BHiRxeumwR" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
                                   </node>
                                   <node concept="liA8E" id="7B9bSSBH7gg" role="2OqNvi">
-                                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                                    <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                                     <node concept="2OqwBi" id="7B9bSSBH7gh" role="37wK5m">
                                       <node concept="1PxgMI" id="7B9bSSBH7gi" role="2Oq$k0">
                                         <ref role="1m5ApE" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
@@ -619,7 +609,7 @@
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="7B9bSSBH7gz" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" />
+                                        <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" resolve="path" />
                                       </node>
                                     </node>
                                   </node>
@@ -742,11 +732,11 @@
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5WtSFRWvgmF" role="2OqNvi">
-                                <ref role="3Tt5mk" to="3ior:4RsV8qJH_FU" />
+                                <ref role="3Tt5mk" to="3ior:4RsV8qJH_FU" resolve="extFolder" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="5WtSFRWvgmG" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3ior:4RsV8qJH_D0" />
+                              <ref role="3Tt5mk" to="3ior:4RsV8qJH_D0" resolve="folder" />
                             </node>
                           </node>
                         </node>
@@ -776,17 +766,12 @@
                               <node concept="1PxgMI" id="7B9bSSBH7g0" role="37vLTx">
                                 <property role="1BlNFB" value="true" />
                                 <ref role="1m5ApE" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
-                                <node concept="2OqwBi" id="7B9bSSBH7fG" role="1m5AlR">
-                                  <node concept="2OqwBi" id="7B9bSSBH7fh" role="2Oq$k0">
-                                    <node concept="37vLTw" id="2BHiRxeumx9" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
-                                    </node>
-                                    <node concept="liA8E" id="7B9bSSBH7fn" role="2OqNvi">
-                                      <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                                    </node>
+                                <node concept="2OqwBi" id="7B9bSSBH7fh" role="1m5AlR">
+                                  <node concept="37vLTw" id="2BHiRxeumx9" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
                                   </node>
-                                  <node concept="liA8E" id="7B9bSSBH7fM" role="2OqNvi">
-                                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                                  <node concept="liA8E" id="3h6igUp0tao" role="2OqNvi">
+                                    <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                                     <node concept="2OqwBi" id="4RsV8qJH_Fw" role="37wK5m">
                                       <node concept="1PxgMI" id="4RsV8qJH_Fx" role="2Oq$k0">
                                         <ref role="1m5ApE" to="3ior:1ZTcb8AgV3Z" resolve="BuildInputSingleFolder" />
@@ -795,7 +780,7 @@
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="7B9bSSBH7fO" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" />
+                                        <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" resolve="path" />
                                       </node>
                                     </node>
                                   </node>
@@ -944,16 +929,11 @@
                   <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
                 </node>
                 <node concept="2OqwBi" id="5bUGwboXCaZ" role="33vP2m">
-                  <node concept="2OqwBi" id="5bUGwboXCb0" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxeuB1a" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
-                    </node>
-                    <node concept="liA8E" id="5bUGwboXCb2" role="2OqNvi">
-                      <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                    </node>
+                  <node concept="37vLTw" id="2BHiRxeuB1a" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
                   </node>
                   <node concept="liA8E" id="5bUGwboXCb3" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                     <node concept="37vLTw" id="2BHiRxeufpd" role="37wK5m">
                       <ref role="3cqZAo" node="7B9bSSBGZa5" resolve="library" />
                     </node>
@@ -1027,7 +1007,7 @@
                                 </node>
                               </node>
                               <node concept="3Tsc0h" id="5bUGwboXCbE" role="2OqNvi">
-                                <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" />
+                                <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" resolve="children" />
                               </node>
                             </node>
                           </node>
@@ -1189,7 +1169,7 @@
                     <ref role="3cqZAo" node="5bUGwboXCcs" resolve="propertyNode" />
                   </node>
                   <node concept="3Tsc0h" id="3ml7vNTU8kj" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:3ml7vNTSbOv" />
+                    <ref role="3TtcxE" to="3ior:3ml7vNTSbOv" resolve="attrs" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="3ml7vNTUbfB" role="2OqNvi">
@@ -1329,7 +1309,7 @@
                     <ref role="3cqZAo" node="7B9bSSBH7jB" resolve="propertyNode" />
                   </node>
                   <node concept="3Tsc0h" id="3ml7vNTTZ4X" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:3ml7vNTSbOv" />
+                    <ref role="3TtcxE" to="3ior:3ml7vNTSbOv" resolve="attrs" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="3ml7vNTU20h" role="2OqNvi">
@@ -1359,7 +1339,7 @@
                     <ref role="3cqZAo" node="7B9bSSBH7jB" resolve="propertyNode" />
                   </node>
                   <node concept="3Tsc0h" id="3ml7vNTU3K1" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:3ml7vNTSbOv" />
+                    <ref role="3TtcxE" to="3ior:3ml7vNTSbOv" resolve="attrs" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="3ml7vNTU6Fl" role="2OqNvi">

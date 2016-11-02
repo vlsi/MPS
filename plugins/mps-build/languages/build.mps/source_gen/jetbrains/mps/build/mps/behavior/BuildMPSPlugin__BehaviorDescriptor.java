@@ -89,17 +89,18 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     if ((antMpsModule != null)) {
       SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((antMpsJar != null)) {
-        helper.artifacts().put("ant-mps", antMpsJar);
+        helper.putArtifact("ant-mps", antMpsJar);
         builder.add(antMpsJar, antMpsModule);
       }
 
       SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+      // FIXME getVisibleJarsScope builds VisibleArtifacts once again 
       Scope visibleJarsScope = ScopeUtil.getVisibleJarsScope(mpsCore);
       SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
       if ((jdom != null)) {
         SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if ((jdomJar != null)) {
-          helper.artifacts().put("jdom", jdomJar);
+          helper.putArtifact("jdom", jdomJar);
           builder.add(jdomJar, jdom);
         }
       }
@@ -107,7 +108,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
       if ((log4j != null)) {
         SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if ((log4jJar != null)) {
-          helper.artifacts().put("log4j", log4jJar);
+          helper.putArtifact("log4j", log4jJar);
           builder.add(log4jJar, log4j);
         }
       }
@@ -126,7 +127,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
         for (SNode gentestDep : Sequence.fromIterable(gentestDeps)) {
           SNode depLayoutNode = SNodeOperations.as(artifacts.findArtifact(gentestDep), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
           if (depLayoutNode != null) {
-            helper.artifacts().put(SPropertyOperations.getString(gentestDep, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), depLayoutNode);
+            helper.putArtifact(SPropertyOperations.getString(gentestDep, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), depLayoutNode);
             builder.add(depLayoutNode, gentestDep);
           }
         }

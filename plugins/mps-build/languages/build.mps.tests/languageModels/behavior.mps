@@ -1329,41 +1329,35 @@
                   </node>
                 </node>
                 <node concept="3clFbF" id="2TqXzNe_6K0" role="3cqZAp">
-                  <node concept="2OqwBi" id="2TqXzNe_6KL" role="3clFbG">
-                    <node concept="2OqwBi" id="2TqXzNe_6Km" role="2Oq$k0">
-                      <node concept="37vLTw" id="3GM_nagTAoO" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                      </node>
-                      <node concept="liA8E" id="2TqXzNe_6Ks" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                      </node>
+                  <node concept="2OqwBi" id="2TqXzNe_6Km" role="3clFbG">
+                    <node concept="37vLTw" id="3GM_nagTAoO" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                     </node>
-                    <node concept="liA8E" id="2TqXzNe_6KR" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                    <node concept="liA8E" id="3h6igUoXzjW" role="2OqNvi">
+                      <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
                       <node concept="Xl_RD" id="2TqXzNe_6KS" role="37wK5m">
                         <property role="Xl_RC" value="mps-test-folder" />
                       </node>
-                      <node concept="2OqwBi" id="akLgX4sT9B" role="37wK5m">
-                        <node concept="1mfA1w" id="akLgX4sUR5" role="2OqNvi" />
-                        <node concept="37vLTw" id="akLgX4sT30" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2TqXzNe_6JH" resolve="mpsTestJar" />
+                      <node concept="1PxgMI" id="3h6igUoZNuK" role="37wK5m">
+                        <property role="1BlNFB" value="true" />
+                        <ref role="1m5ApE" to="3ior:6qcrfIJF4LS" resolve="BuildLayout_Folder" />
+                        <node concept="2OqwBi" id="akLgX4sT9B" role="1m5AlR">
+                          <node concept="1mfA1w" id="akLgX4sUR5" role="2OqNvi" />
+                          <node concept="37vLTw" id="akLgX4sT30" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2TqXzNe_6JH" resolve="mpsTestJar" />
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3clFbF" id="akLgX4sVOP" role="3cqZAp">
-                  <node concept="2OqwBi" id="akLgX4sVOQ" role="3clFbG">
-                    <node concept="2OqwBi" id="akLgX4sVOR" role="2Oq$k0">
-                      <node concept="37vLTw" id="3GM_nagT$nY" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                      </node>
-                      <node concept="liA8E" id="akLgX4sVOT" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:5FtnUVJQGEG" resolve="artifacts" />
-                      </node>
+                  <node concept="2OqwBi" id="akLgX4sVOR" role="3clFbG">
+                    <node concept="37vLTw" id="3GM_nagT$nY" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                     </node>
-                    <node concept="liA8E" id="akLgX4sVOU" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                    <node concept="liA8E" id="3h6igUoXzVM" role="2OqNvi">
+                      <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
                       <node concept="Xl_RD" id="akLgX4sVOV" role="37wK5m">
                         <property role="Xl_RC" value="mps-test" />
                       </node>

@@ -23,7 +23,7 @@
       <node id="185990153991047070" at="53,68,54,41" concept="4" />
       <node id="3340252814672973529" at="55,5,56,74" concept="3" />
       <node id="3340252814672973536" at="56,74,57,40" concept="3" />
-      <node id="3340252814672973540" at="57,40,58,56" concept="3" />
+      <node id="3340252814672973540" at="57,40,58,52" concept="3" />
       <node id="3340252814672973622" at="59,31,60,117" concept="4" />
       <node id="185990153988635407" at="61,5,62,39" concept="4" />
       <node id="7206546315287699104" at="64,112,65,236" concept="3" />
@@ -54,7 +54,7 @@
       <node id="7459197473276628491" at="153,63,154,233" concept="3" />
       <node id="7459197473276628491" at="154,233,155,149" concept="0" />
       <node id="7459197473276628491" at="155,149,156,14" concept="4" />
-      <node id="3340252814672973549" at="58,56,61,5" concept="1" />
+      <node id="3340252814672973549" at="58,52,61,5" concept="1" />
       <node id="1880188600397202122" at="66,97,69,5" concept="1" />
       <node id="3944198881067741142" at="95,0,98,0" concept="2" trace="select#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4608161086085544697" at="102,0,105,0" concept="2" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />

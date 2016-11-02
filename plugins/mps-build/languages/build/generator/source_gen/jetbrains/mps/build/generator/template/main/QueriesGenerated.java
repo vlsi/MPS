@@ -666,13 +666,12 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode artifact = SNodeOperations.as(helper.getOriginalNode(((SNode) _context.getVariable("module"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
-    SNode layoutNode = helper.artifacts().get(artifact);
+    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("module")));
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
       return "???";
     }
-    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, artifact);
+    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, helper.getOriginalNode(((SNode) _context.getVariable("module"))));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       return "???";
@@ -689,7 +688,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(helper.getOriginalNode(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"))));
+    SNode layoutNode = helper.getArtifact(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path")));
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "file " + BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"))) + " was not found in the layout");
       return "???";
@@ -714,7 +713,7 @@ public class QueriesGenerated {
       layoutNode = SNodeOperations.as(helper.getOriginalNode(targetFile), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     } else {
       SNode sfile = SNodeOperations.as(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"));
-      layoutNode = helper.artifacts().get(helper.getOriginalNode((sfile != null ? SLinkOperations.getTarget(sfile, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")) : targetFile)));
+      layoutNode = helper.getArtifact((sfile != null ? SLinkOperations.getTarget(sfile, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")) : targetFile));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "file " + BuildSource_SingleFile__BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(targetFile) + " was not found in the layout");
         return "???";
@@ -740,7 +739,7 @@ public class QueriesGenerated {
       layoutNode = SNodeOperations.as(helper.getOriginalNode(targetFolder), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"));
-      layoutNode = helper.artifacts().get(helper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder)));
+      layoutNode = helper.getArtifact((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder) + " was not found in the layout");
         return "???";
@@ -788,7 +787,7 @@ public class QueriesGenerated {
       layoutNode = SNodeOperations.as(helper.getOriginalNode(targetFolder), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"));
-      layoutNode = helper.artifacts().get(helper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder)));
+      layoutNode = helper.getArtifact((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder) + " was not found in the layout");
         return "???";
@@ -1600,6 +1599,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode originalNode = SNodeOperations.as(helper.getOriginalNode(((SNode) _context.getVariable("library"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
 
+    // XXX JELH code assumes originalNode comes not from traniesnt model and doesn't translate (toOriginal) its content 
     return new JavaExternalLibraryHelper(helper, originalNode, _context).artifacts();
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481207044(final SourceSubstituteMacroNodesContext _context) {

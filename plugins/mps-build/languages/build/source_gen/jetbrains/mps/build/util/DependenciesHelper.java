@@ -8,6 +8,7 @@ import java.util.Set;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.TransientModelsModule;
 
@@ -32,8 +33,33 @@ public class DependenciesHelper {
   public Map<SNode, String> contentLocations() {
     return contentLocationMap;
   }
-  public Map<Object, SNode> artifacts() {
+
+  /*package*/ Map<Object, SNode> artifacts() {
     return idToArtifactMap;
+  }
+
+  public SNode getArtifact(String id) {
+    return SNodeOperations.as(idToArtifactMap.get(id), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+  }
+
+  public SNode getArtifact(SNode id) {
+    return SNodeOperations.as(idToArtifactMap.get(getOriginalNode(id)), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+  }
+
+  public SNode getArtifact(LocalSourcePathArtifact id) {
+    return SNodeOperations.as(idToArtifactMap.get(id), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+  }
+
+  public void putArtifact(String id, SNode artifact) {
+    idToArtifactMap.put(id, artifact);
+  }
+
+  public void putArtifact(SNode id, SNode artifact) {
+    idToArtifactMap.put(getOriginalNode(id), artifact);
+  }
+
+  public void putArtifact(LocalSourcePathArtifact id, SNode artifact) {
+    idToArtifactMap.put(id, artifact);
   }
 
   public boolean requiresFetch(SNode node) {

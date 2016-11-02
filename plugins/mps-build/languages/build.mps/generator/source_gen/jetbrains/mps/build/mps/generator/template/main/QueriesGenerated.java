@@ -19,8 +19,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.LocalArtifacts;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
+import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
@@ -113,9 +113,10 @@ public class QueriesGenerated {
       return "???";
     }
     final String pathText = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(_context.getNode());
+    // first, check if there's overriden location for the path 
     String result = ListSequence.fromList(SLinkOperations.getChildren(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x3c765492deb1ce79L, "jarLocations"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a2a41(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"))), pathText);
+        return eq_x583g4_a0a0a0a0a0a0a3a41(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"))), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -126,16 +127,11 @@ public class QueriesGenerated {
       return result;
     }
 
+    // if not, try to find matching path in the project's layout 
     LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
-    Tuples._2<SNode, String> location = outputFiles.getResource(_context.getNode());
-    if (location._0() == null) {
-      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
-      _context.showErrorMessage(_context.getNode(), "cannot find `" + jarName + "' in local layout");
-      return "???";
-    }
     SNode container = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._1();
     try {
-      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(location._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) + location._1();
+      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(_context.getNode());
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
       String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
       _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
@@ -185,12 +181,12 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode artifact = SNodeOperations.as(helper.getOriginalNode(((SNode) _context.getVariable("module"))), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
-    SNode layoutNode = helper.artifacts().get(artifact);
+    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("module")));
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
       return "???";
     }
+    SNode artifact = SNodeOperations.as(helper.getOriginalNode(((SNode) _context.getVariable("module"))), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, artifact);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -1294,9 +1290,9 @@ public class QueriesGenerated {
       return null;
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode path = SNodeOperations.cast(helper.getOriginalNode(((SNode) _context.getVariable("remotePath"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
-    SNode layoutNode = helper.artifacts().get(path);
+    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("remotePath")));
 
+    SNode path = SNodeOperations.cast(helper.getOriginalNode(((SNode) _context.getVariable("remotePath"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
     if (layoutNode == null) {
       StringBuilder suffix = new StringBuilder();
       SNode current = SNodeOperations.as(path, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
@@ -1306,7 +1302,7 @@ public class QueriesGenerated {
       }
       SNode containingRoot = SNodeOperations.getContainingRoot(path);
       while (current != null) {
-        SNode res = helper.artifacts().get(new LocalSourcePathArtifact(containingRoot, BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(current), true));
+        SNode res = helper.getArtifact(new LocalSourcePathArtifact(containingRoot, BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(current), true));
         if (res != null) {
           return MultiTuple.<SNode,String>from(SNodeOperations.as(res, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")), suffix.substring(1));
         }
@@ -1331,7 +1327,7 @@ public class QueriesGenerated {
     }
     DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     String artifact = "ant-mps";
-    SNode jmAntJar = helper.artifacts().get(artifact);
+    SNode jmAntJar = helper.getArtifact(artifact);
     if ((jmAntJar != null)) {
       return BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(jmAntJar, helper, artifact);
     }
@@ -1347,7 +1343,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3340252814673340855(final TemplateVarContext _context) {
     DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     String artifact = "jdom";
-    SNode jar = helper.artifacts().get(artifact);
+    SNode jar = helper.getArtifact(artifact);
     if ((jar != null)) {
       return BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(jar, helper, artifact);
     }
@@ -1363,7 +1359,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3340252814673341014(final TemplateVarContext _context) {
     DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     String artifact = "log4j";
-    SNode jar = helper.artifacts().get(artifact);
+    SNode jar = helper.getArtifact(artifact);
     if ((jar != null)) {
       return BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(jar, helper, artifact);
     }
@@ -1410,7 +1406,7 @@ public class QueriesGenerated {
     final DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     return Sequence.fromIterable(new RequiredPlugins(_context.getNode(), _context).getDependency()).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        SNode layoutNode = helper.artifacts().get(it);
+        SNode layoutNode = helper.getArtifact(it);
         if ((layoutNode == null)) {
           return null;
         }
@@ -1437,7 +1433,7 @@ public class QueriesGenerated {
     final DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     return Sequence.fromIterable(new RequiredPlugins(_context.getNode(), _context).getDependency()).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        SNode layoutNode = helper.artifacts().get(it);
+        SNode layoutNode = helper.getArtifact(it);
         if ((layoutNode == null)) {
           return null;
         }
@@ -1506,7 +1502,7 @@ public class QueriesGenerated {
     }
     return partitioner;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a2a41(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a3a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean isNotEmptyString(String str) {
