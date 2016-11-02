@@ -40,8 +40,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest.class,
     jetbrains.mps.ide.vcs.test.merge.RootStatusTest.class,
     jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Nodes.class,
-    //temporary disabled as after last enabling it is hanging builds, need more accurate waits
-//    jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model.class,
+    jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model.class,
     jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest.class,
     jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
     jetbrains.mps.vfs.VfsTest.class,
