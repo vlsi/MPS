@@ -27,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor;
 
 public class PastedNodeReference_Editor extends DefaultNodeEditor {
@@ -63,6 +64,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7k9x8q_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7k9x8q_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7k9x8q_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7k9x8q_d0a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_7k9x8q_a0a(EditorContext editorContext, SNode node) {
@@ -137,6 +139,21 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    if (true) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_7k9x8q_d0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_7k9x8q_d0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.UNDERLINED, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
