@@ -6,13 +6,14 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.util.order.behavior.Order__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.util.order.behavior.OrderDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.aspect.generator.template.util.NamingUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.util.order.behavior.Order__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -34,6 +35,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3433054418425100045(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+  }
+  public static Object propertyMacro_GetPropertyValue_2415215581734208401(final PropertyMacroContext _context) {
+    SNode order = Order__BehaviorDescriptor.getOrderDeclaration_id2CFL3ni7A9T.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2085244dcb121e81L, "order")));
+    return SNodeOperations.getModel(order).getName().getLongName() + "." + OrderDeclaration__BehaviorDescriptor.getGeneratedClassName_id2CFL3ni7zCY.invoke(order);
   }
   public static Object propertyMacro_GetPropertyValue_3433054418425198258(final PropertyMacroContext _context) {
     if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl")))) {
@@ -67,9 +72,6 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_7928419829770026436(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x22035699bdd7814bL, 0x22035699bdd7814cL, "target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-  }
-  public static Object referenceMacro_GetReferent_2343319097654787597(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(Order__BehaviorDescriptor.getOrderDeclaration_id2CFL3ni7A9T.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2085244dcb121e81L, "order"))), "map_OrderConstructor");
   }
   public static Object referenceMacro_GetReferent_7277057533220948432(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c6b2d0d258655f8L, 0x7ce2ed69c7e7de33L, "mainIntfcClass"));

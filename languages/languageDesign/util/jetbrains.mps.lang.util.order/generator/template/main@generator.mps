@@ -54,30 +54,21 @@
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
-        <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
-      <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
-        <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
-        <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
-      </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
-      <concept id="5133195082121471908" name="jetbrains.mps.lang.generator.structure.LabelMacro" flags="ln" index="2ZBi8u" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
-      </concept>
-      <concept id="1087833466690" name="jetbrains.mps.lang.generator.structure.NodeMacro" flags="lg" index="17VmuZ">
-        <reference id="1200912223215" name="mappingLabel" index="2rW$FS" />
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
@@ -110,11 +101,6 @@
   </registry>
   <node concept="bUwia" id="9GrxDU7ggJ">
     <property role="TrG5h" value="main" />
-    <node concept="2rT7sh" id="9GrxDU7iWs" role="2rTMjI">
-      <property role="TrG5h" value="map_OrderConstructor" />
-      <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-      <ref role="2rTdP9" to="1po2:283lDAXPS57" resolve="OrderDeclaration" />
-    </node>
     <node concept="3lhOvk" id="2CFL3ni6Z6o" role="3lj3bC">
       <ref role="3lhOvi" node="2CFL3ni6Z6l" resolve="GeneratedOrder" />
       <ref role="30HIoZ" to="1po2:283lDAXPS57" resolve="OrderDeclaration" />
@@ -123,13 +109,10 @@
   <node concept="312cEu" id="2CFL3ni6Z6l">
     <property role="TrG5h" value="GeneratedOrder" />
     <node concept="3clFbW" id="2CFL3ni7f28" role="jymVt">
-      <node concept="2ZBi8u" id="3xwsMyQkEyf" role="lGtFl">
-        <ref role="2rW$FS" node="9GrxDU7iWs" resolve="map_OrderConstructor" />
-      </node>
       <node concept="3Tm1VV" id="2CFL3ni7f2a" role="1B3o_S" />
       <node concept="3clFbS" id="2CFL3ni7f2b" role="3clF47">
         <node concept="XkiVB" id="2CFL3ni7jfz" role="3cqZAp">
-          <ref role="37wK5l" to="v4w5:~OrderDescriptor.&lt;init&gt;(jetbrains.mps.aspects.OrderParticipant...)" resolve="OrderDescriptor" />
+          <ref role="37wK5l" to="v4w5:~OrderDescriptor.&lt;init&gt;(java.lang.Object...)" resolve="OrderDescriptor" />
           <node concept="10Nm6u" id="9GrxDU7yYL" role="37wK5m">
             <node concept="1WS0z7" id="9GrxDU7yZD" role="lGtFl">
               <node concept="3JmXsc" id="9GrxDU7yZF" role="3Jn$fo">

@@ -42,7 +42,7 @@ public final class OrderDeclaration__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static String getGeneratedClassName_id2CFL3ni7zCY(@NotNull SNode __thisNode__) {
     String n;
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-      n = SPropertyOperations.getString(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x2085244dcb20c1dcL, "jetbrains.mps.lang.util.order.structure.OrderParticipant"), false, false), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      n = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, 0x2085244dcb20c1dcL, "jetbrains.mps.lang.util.order.structure.OrderParticipant"), false, false), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     } else {
       n = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
