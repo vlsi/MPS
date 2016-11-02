@@ -32,6 +32,10 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       public String getPresentableAspectName() {
         return "documentation";
       }
+      @Override
+      public String getId() {
+        return getPresentableAspectName();
+      }
       @NotNull
       public Collection<SModel> getAspectModels(final SModule language) {
         if (!((language instanceof Language))) {
@@ -41,7 +45,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             String fullName = it.getModelName();
-            return eq_ecu8yf_a0b0a0a0a0a0c0b0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
+            return eq_ecu8yf_a0b0a0a0a0a0c0c0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
           }
         }).ofType(SModel.class).toListSequence();
       }
@@ -55,8 +59,9 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public IconResource getIconResource() {
-        return IconContainer.RESOURCE_a0a4a0a0a1;
+        return IconContainer.RESOURCE_a0a5a0a0a1;
       }
+
 
 
 
@@ -82,7 +87,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
     };
   }
-  private static boolean eq_ecu8yf_a0b0a0a0a0a0c0b0a0a0b(Object a, Object b) {
+  private static boolean eq_ecu8yf_a0b0a0a0a0a0c0c0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

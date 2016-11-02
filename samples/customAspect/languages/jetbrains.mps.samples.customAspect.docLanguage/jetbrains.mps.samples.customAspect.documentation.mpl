@@ -78,6 +78,7 @@
         <module reference="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" version="1" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
         <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
+        <module reference="b19b2d23-1869-41e0-9ee6-8eaad9ffcd84(jetbrains.mps.lang.util.order#174635545557533742)" version="0" />
         <module reference="39b6594d-7cca-44f2-a797-b0ceaead0f42(jetbrains.mps.samples.customAspect.docLanguage#2897519568668508166)" version="0" />
         <module reference="22916f45-e98f-4433-9c1b-1b382cf5bd8d(jetbrains.mps.samples.customAspect.documentation)" version="0" />
         <module reference="dd209277-71c0-4f07-bfb3-3a07a1dce2ee(jetbrains.mps.samples.customAspect.documentation.runtime)" version="0" />
@@ -115,6 +116,7 @@
     <language slang="l:c72da2b9-7cce-4447-8389-f407dc1158b7:jetbrains.mps.lang.structure" version="3" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="0" />
+    <language slang="l:c9d137c4-3259-44f8-80ff-33ab2b506ee4:jetbrains.mps.lang.util" version="0" />
     <language slang="l:696c1165-4a59-463b-bc5d-902caab85dd0:jetbrains.mps.make.facet" version="0" />
     <language slang="l:95f8a3e6-f994-4ca0-a65e-763c9bae2d3b:jetbrains.mps.make.script" version="0" />
   </languageVersions>

@@ -104,6 +104,7 @@
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
         <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
         <module reference="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" version="0" />
+        <module reference="b19b2d23-1869-41e0-9ee6-8eaad9ffcd84(jetbrains.mps.lang.util.order#174635545557533742)" version="0" />
         <module reference="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" version="0" />
       </dependencyVersions>
       <mapping-priorities>

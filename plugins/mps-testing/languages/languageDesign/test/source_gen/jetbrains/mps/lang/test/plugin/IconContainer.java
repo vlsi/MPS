@@ -9,5 +9,5 @@ import jetbrains.mps.smodel.runtime.IconResource;
 public class IconContainer {
   protected static Icon ICON_a0a0 = IconUtil.getIcon("model.png");
   protected static Icon ICON_b0a0 = IconUtil.getIcon("junitTestMark.png");
-  protected static IconResource RESOURCE_a0a4a0a0a1 = new IconResource("tests.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a6a0a0a1 = new IconResource("tests.png", IconContainer.class);
 }
