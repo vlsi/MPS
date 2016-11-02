@@ -261,9 +261,9 @@
       <scope id="2707868692255548586" at="154,0,188,0">
         <var name="projectFile" id="2770012171664329480" />
       </scope>
-      <unit id="6450649963069039603" at="130,67,134,13" name="jetbrains.mps.tool.environment.IdeaEnvironment$2" />
-      <unit id="3202102901590959926" at="137,63,141,9" name="jetbrains.mps.tool.environment.IdeaEnvironment$2" />
-      <unit id="2847138267595941035" at="232,76,236,9" name="jetbrains.mps.tool.environment.IdeaEnvironment$1" />
+      <unit id="6450649963069039603" at="130,67,134,13" name="jetbrains.mps.tool.environment.IdeaEnvironment$1$1" />
+      <unit id="3202102901590959926" at="137,63,141,9" name="jetbrains.mps.tool.environment.IdeaEnvironment$1$2" />
+      <unit id="2847138267595941035" at="232,76,236,9" name="jetbrains.mps.tool.environment.IdeaEnvironment$PostStartupActivitiesWaiter$1" />
       <unit id="3193873080290452804" at="202,58,210,5" name="jetbrains.mps.tool.environment.IdeaEnvironment$3" />
       <unit id="6147466353444201157" at="165,58,178,5" name="jetbrains.mps.tool.environment.IdeaEnvironment$2" />
       <unit id="6450649963069039593" at="118,58,143,5" name="jetbrains.mps.tool.environment.IdeaEnvironment$1" />

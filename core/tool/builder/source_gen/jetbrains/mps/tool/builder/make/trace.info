@@ -132,7 +132,7 @@
       <scope id="8092479555022511159" at="66,0,111,0">
         <var name="makeSession" id="6705512905417041490" />
       </scope>
-      <unit id="8092479555022511428" at="102,40,106,9" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$2" />
+      <unit id="8092479555022511428" at="102,40,106,9" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1$1" />
       <unit id="8092479555022511202" at="72,15,109,5" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1" />
       <unit id="1169333190355797179" at="32,0,113,0" name="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration" />
     </file>
@@ -1579,16 +1579,16 @@
       <unit id="4108462526744011475" at="120,48,124,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$1" />
       <unit id="878521226301296443" at="158,75,162,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$2" />
       <unit id="878521226301296459" at="163,76,167,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$3" />
-      <unit id="878521226301296697" at="186,53,190,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$6" />
-      <unit id="878521226301296757" at="195,25,199,11" name="jetbrains.mps.tool.builder.make.GenTestWorker$6" />
-      <unit id="878521226301297452" at="281,111,285,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$9" />
-      <unit id="878521226301297472" at="286,107,290,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$9" />
-      <unit id="878521226301297481" at="290,25,294,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$9" />
-      <unit id="878521226301297493" at="294,25,298,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$9" />
+      <unit id="878521226301296697" at="186,53,190,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$5$1" />
+      <unit id="878521226301296757" at="195,25,199,11" name="jetbrains.mps.tool.builder.make.GenTestWorker$5$2" />
+      <unit id="878521226301297452" at="281,111,285,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$8$1" />
+      <unit id="878521226301297472" at="286,107,290,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$8$2" />
+      <unit id="878521226301297481" at="290,25,294,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$8$3" />
+      <unit id="878521226301297493" at="294,25,298,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$8$4" />
       <unit id="878521226301297516" at="302,79,306,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$9" />
-      <unit id="878521226301297002" at="626,17,631,7" name="jetbrains.mps.tool.builder.make.GenTestWorker$2" />
-      <unit id="1374711517442011064" at="230,52,239,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$7" />
-      <unit id="878521226301296966" at="615,19,624,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$1" />
+      <unit id="878521226301297002" at="626,17,631,7" name="jetbrains.mps.tool.builder.make.GenTestWorker$MyProgressMonitorBase$2" />
+      <unit id="1374711517442011064" at="230,52,239,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$6$1" />
+      <unit id="878521226301296966" at="615,19,624,9" name="jetbrains.mps.tool.builder.make.GenTestWorker$MyProgressMonitorBase$1" />
       <unit id="1719780477680312512" at="242,30,252,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$7" />
       <unit id="878521226301296839" at="169,31,180,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$4" />
       <unit id="1374711517442011052" at="228,29,241,5" name="jetbrains.mps.tool.builder.make.GenTestWorker$6" />

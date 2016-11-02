@@ -693,7 +693,7 @@
         <var name="wasReleased" id="5198178184416572493" />
       </scope>
       <scope id="5198178184416572488" at="140,0,176,0" />
-      <unit id="5198178184416572562" at="157,19,168,9" name="jetbrains.mps.core.tool.environment.classloading.JarLoader$1" />
+      <unit id="5198178184416572562" at="157,19,168,9" name="jetbrains.mps.core.tool.environment.classloading.JarLoader$MyResource$1" />
       <unit id="5198178184417292300" at="28,60,42,3" name="jetbrains.mps.core.tool.environment.classloading.JarLoader$1" />
       <unit id="5198178184416572443" at="129,0,182,0" name="jetbrains.mps.core.tool.environment.classloading.JarLoader$MyResource" />
       <unit id="5198178184416572441" at="19,0,183,0" name="jetbrains.mps.core.tool.environment.classloading.JarLoader" />

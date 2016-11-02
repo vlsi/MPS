@@ -329,8 +329,8 @@
       </scope>
       <unit id="2905662307328503335" at="41,69,45,5" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$1" />
       <unit id="2905662307328526032" at="56,25,60,5" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$2" />
-      <unit id="2905662307328587122" at="65,438,69,9" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$4" />
-      <unit id="2905662307328587122" at="69,22,73,9" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$4" />
+      <unit id="2905662307328587122" at="65,438,69,9" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$3$1" />
+      <unit id="2905662307328587122" at="69,22,73,9" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$3$2" />
       <unit id="730486742185319877" at="78,142,82,5" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$4" />
       <unit id="730486742185319877" at="82,18,86,5" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$5" />
       <unit id="730486742185323311" at="86,127,90,5" name="jetbrains.mps.lang.migration.util.MigrationsCheckUtil$6" />

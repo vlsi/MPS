@@ -66,7 +66,7 @@
         <var name="references" id="1213104844716" />
       </scope>
       <scope id="1213104844716" at="32,0,67,0" />
-      <unit id="1213104844716" at="43,19,62,9" name="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$2" />
+      <unit id="1213104844716" at="43,19,62,9" name="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1$1" />
       <unit id="1213104844716" at="35,149,64,5" name="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1" />
       <unit id="1213104844716" at="27,0,69,0" name="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints" />
     </file>
@@ -115,7 +115,7 @@
         <var name="references" id="3798371591902558756" />
       </scope>
       <scope id="3798371591902558756" at="31,0,63,0" />
-      <unit id="3798371591902558756" at="42,19,58,9" name="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints$2" />
+      <unit id="3798371591902558756" at="42,19,58,9" name="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints$1$1" />
       <unit id="3798371591902558756" at="34,151,60,5" name="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints$1" />
       <unit id="3798371591902558756" at="26,0,65,0" name="jetbrains.mps.lang.test.constraints.ScopesExpectedNode_Constraints" />
     </file>
@@ -184,8 +184,8 @@
         <var name="references" id="5449224527592362452" />
       </scope>
       <scope id="5449224527592362452" at="35,0,80,0" />
-      <unit id="5449224527592427011" at="53,23,72,13" name="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$3" />
-      <unit id="5449224527592362452" at="46,19,75,9" name="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$2" />
+      <unit id="5449224527592427011" at="53,23,72,13" name="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$1$1$1" />
+      <unit id="5449224527592362452" at="46,19,75,9" name="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$1$1" />
       <unit id="5449224527592362452" at="38,164,77,5" name="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints$1" />
       <unit id="5449224527592362452" at="30,0,82,0" name="jetbrains.mps.lang.test.constraints.ScopesTest_Constraints" />
     </file>

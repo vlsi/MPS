@@ -129,7 +129,7 @@
       <unit id="2771654749615680554" at="64,22,68,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$5" />
       <unit id="5091239957908814079" at="76,42,80,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$6" />
       <unit id="5091239957909170856" at="81,286,85,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$7" />
-      <unit id="5091239957909170874" at="87,32,91,11" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$9" />
+      <unit id="5091239957909170874" at="87,32,91,11" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$8$1" />
       <unit id="5091239957908851747" at="52,22,59,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$3" />
       <unit id="5091239957909170867" at="85,20,93,7" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources$8" />
       <unit id="5091239957908801103" at="28,0,105,0" name="jetbrains.mps.lang.plugin.migration.CopyPrefPageIconsToResources" />
@@ -235,7 +235,7 @@
       <unit id="6904920584772852995" at="45,287,49,7" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$2" />
       <unit id="6904920584772906277" at="61,42,65,7" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$4" />
       <unit id="6904920584772906285" at="66,294,70,7" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$5" />
-      <unit id="6904920584772935734" at="72,21,76,11" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$7" />
+      <unit id="6904920584772935734" at="72,21,76,11" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$6$1" />
       <unit id="6904920584772873671" at="49,22,54,7" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$3" />
       <unit id="6904920584772908750" at="70,20,78,7" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number$6" />
       <unit id="6904920584772662312" at="25,0,93,0" name="jetbrains.mps.lang.plugin.migration.BaseToolDeclaration_number" />

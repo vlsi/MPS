@@ -69,7 +69,7 @@
       </scope>
       <scope id="6781485246382121957" at="35,0,56,0" />
       <unit id="6781485246382121928" at="72,0,75,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant$MyState" />
-      <unit id="8801330827093839351" at="43,94,49,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
+      <unit id="8801330827093839351" at="43,94,49,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1$1" />
       <unit id="8801330827093839334" at="39,76,53,7" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1" />
       <unit id="6781485246382121925" at="28,0,76,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant" />
     </file>

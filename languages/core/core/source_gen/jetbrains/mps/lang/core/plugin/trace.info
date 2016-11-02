@@ -161,7 +161,7 @@
       </scope>
       <unit id="2503597298433879958" at="41,128,48,3" name="jetbrains.mps.lang.core.plugin.UpdateModelImports$1" />
       <unit id="2503597298434346832" at="31,0,39,0" name="jetbrains.mps.lang.core.plugin.UpdateModelImports$UpdateModelImports_extension" />
-      <unit id="2503597298435643808" at="67,46,76,9" name="jetbrains.mps.lang.core.plugin.UpdateModelImports$3" />
+      <unit id="2503597298435643808" at="67,46,76,9" name="jetbrains.mps.lang.core.plugin.UpdateModelImports$2$1" />
       <unit id="2503597298435643777" at="59,125,78,5" name="jetbrains.mps.lang.core.plugin.UpdateModelImports$2" />
       <unit id="2503597298432395305" at="29,0,115,0" name="jetbrains.mps.lang.core.plugin.UpdateModelImports" />
     </file>
@@ -505,10 +505,10 @@
       <unit id="3327932925619116501" at="159,42,163,7" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$3" />
       <unit id="3059832915519755104" at="171,62,175,11" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$4" />
       <unit id="1762976820112549703" at="217,59,221,5" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$6" />
-      <unit id="9088427053756744388" at="58,17,65,7" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$1" />
+      <unit id="9088427053756744388" at="58,17,65,7" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$UpdateReferencesParticipant$1" />
       <unit id="647583388922274045" at="46,0,54,0" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$UpdateReferencesParticipant_extension" />
       <unit id="5085963682937173225" at="129,0,137,0" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$MyMoveNodeRefactoringDataCollector" />
-      <unit id="1762976820112517881" at="200,48,209,11" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$6" />
+      <unit id="1762976820112517881" at="200,48,209,11" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$5$1" />
       <unit id="1762976820112517845" at="192,139,211,7" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$5" />
       <unit id="3327932925618671269" at="81,0,101,0" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$NamedNodeReference" />
       <unit id="9088427053756374946" at="102,0,122,0" name="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase$NodeData" />
@@ -648,8 +648,8 @@
       <unit id="5314439508689586072" at="76,127,80,9" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$3" />
       <unit id="5314439508689760697" at="45,119,52,3" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$1" />
       <unit id="5314439508689585913" at="35,0,43,0" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$RenameReferencesParticipant_extension" />
-      <unit id="5314439508689586176" at="92,52,103,15" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$6" />
-      <unit id="5314439508689586140" at="87,77,105,11" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$5" />
+      <unit id="5314439508689586176" at="92,52,103,15" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$4$1$1" />
+      <unit id="5314439508689586140" at="87,77,105,11" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$4$1" />
       <unit id="5314439508689586091" at="82,66,108,7" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant$4" />
       <unit id="5314439508689585911" at="33,0,118,0" name="jetbrains.mps.lang.core.plugin.RenameReferencesParticipant" />
     </file>
@@ -1453,24 +1453,24 @@
       </scope>
       <scope id="6648795410103939855" at="428,29,512,8" />
       <scope id="6648795410103939855" at="428,0,514,0" />
-      <unit id="2034046503361589571" at="361,71,365,23" name="jetbrains.mps.lang.core.plugin.Generate_Facet$4" />
-      <unit id="2034046503361623363" at="438,60,442,15" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="6648795410103940185" at="464,85,468,21" name="jetbrains.mps.lang.core.plugin.Generate_Facet$3" />
-      <unit id="7967442772395904895" at="469,101,473,21" name="jetbrains.mps.lang.core.plugin.Generate_Facet$3" />
-      <unit id="427659576753311974" at="222,142,229,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="2034046503361589563" at="359,61,367,19" name="jetbrains.mps.lang.core.plugin.Generate_Facet$3" />
-      <unit id="174872924217947615" at="445,62,454,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="6648795410103939705" at="239,17,250,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="8118537977657189970" at="495,142,506,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="6648795410103939806" at="356,56,369,15" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="3726864454705706819" at="462,113,477,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
-      <unit id="6648795410103939542" at="93,17,112,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
+      <unit id="2034046503361589571" at="361,71,365,23" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_preloadModels$1$1$1$1" />
+      <unit id="2034046503361623363" at="438,60,442,15" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1$1" />
+      <unit id="6648795410103940185" at="464,85,468,21" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1$3$1" />
+      <unit id="7967442772395904895" at="469,101,473,21" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1$3$2" />
+      <unit id="427659576753311974" at="222,142,229,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_configure$1$1" />
+      <unit id="2034046503361589563" at="359,61,367,19" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_preloadModels$1$1$1" />
+      <unit id="174872924217947615" at="445,62,454,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1$2" />
+      <unit id="6648795410103939705" at="239,17,250,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_configure$2" />
+      <unit id="8118537977657189970" at="495,142,506,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1$4" />
+      <unit id="6648795410103939806" at="356,56,369,15" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_preloadModels$1$1" />
+      <unit id="3726864454705706819" at="462,113,477,17" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1$3" />
+      <unit id="6648795410103939542" at="93,17,112,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_checkParameters$1" />
       <unit id="6648795410103939574" at="164,0,184,0" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_checkParameters$Variables" />
-      <unit id="6648795410103939783" at="343,17,376,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
+      <unit id="6648795410103939783" at="343,17,376,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_preloadModels$1" />
       <unit id="6648795410103939771" at="299,0,337,0" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_configure$Variables" />
-      <unit id="6648795410103939617" at="190,17,236,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
+      <unit id="6648795410103939617" at="190,17,236,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_configure$1" />
       <unit id="6648795410103939538" at="560,0,619,0" name="jetbrains.mps.lang.core.plugin.Generate_Facet$TargetProperties" />
-      <unit id="6648795410103939857" at="429,17,512,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
+      <unit id="6648795410103939857" at="429,17,512,7" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate$1" />
       <unit id="6648795410103939779" at="338,0,424,0" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_preloadModels" />
       <unit id="6648795410103939540" at="88,0,185,0" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_checkParameters" />
       <unit id="6648795410103939855" at="424,0,560,0" name="jetbrains.mps.lang.core.plugin.Generate_Facet$Target_generate" />
@@ -2225,21 +2225,21 @@
       </scope>
       <scope id="6648795410103966566" at="184,29,353,8" />
       <scope id="6648795410103966566" at="184,0,355,0" />
-      <unit id="36662593414080412" at="192,55,196,15" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$2" />
-      <unit id="4902420589286026706" at="212,101,216,15" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$2" />
-      <unit id="4059808464148339287" at="257,152,261,23" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$3" />
-      <unit id="706856211123273666" at="453,129,457,19" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$2" />
-      <unit id="4059808464148374547" at="321,71,327,17" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$2" />
-      <unit id="8755033715688718123" at="227,62,235,17" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$2" />
+      <unit id="36662593414080412" at="192,55,196,15" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1$1" />
+      <unit id="4902420589286026706" at="212,101,216,15" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1$2" />
+      <unit id="4059808464148339287" at="257,152,261,23" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1$4$1" />
+      <unit id="706856211123273666" at="453,129,457,19" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGenToMemory$1$1" />
+      <unit id="4059808464148374547" at="321,71,327,17" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1$5" />
+      <unit id="8755033715688718123" at="227,62,235,17" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1$3" />
       <unit id="8113369036793746799" at="165,0,179,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_configure$Parameters" />
-      <unit id="8113369036793723667" at="101,17,116,7" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$1" />
+      <unit id="8113369036793723667" at="101,17,116,7" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_configure$1" />
       <unit id="6648795410103966896" at="406,0,426,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$Parameters" />
       <unit id="6648795410103966565" at="541,0,584,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$TargetProperties" />
-      <unit id="6648795410103966909" at="432,17,493,7" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$1" />
-      <unit id="4440205851906013189" at="255,64,318,19" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$2" />
+      <unit id="6648795410103966909" at="432,17,493,7" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGenToMemory$1" />
+      <unit id="4440205851906013189" at="255,64,318,19" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1$4" />
       <unit id="8113369036793723665" at="96,0,180,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_configure" />
       <unit id="6648795410103966906" at="427,0,541,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGenToMemory" />
-      <unit id="6648795410103966568" at="185,17,353,7" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$1" />
+      <unit id="6648795410103966568" at="185,17,353,7" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen$1" />
       <unit id="6648795410103966566" at="180,0,427,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet$Target_textGen" />
       <unit id="6648795410103966565" at="70,0,585,0" name="jetbrains.mps.lang.core.plugin.TextGen_Facet" />
     </file>
@@ -2419,7 +2419,7 @@
       <unit id="6905339732004281774" at="72,127,76,13" name="jetbrains.mps.lang.core.plugin.RetainedUtil$5" />
       <unit id="6905339732004281795" at="78,119,82,11" name="jetbrains.mps.lang.core.plugin.RetainedUtil$6" />
       <unit id="6905339732004281815" at="84,117,88,9" name="jetbrains.mps.lang.core.plugin.RetainedUtil$7" />
-      <unit id="6905339732004281479" at="118,87,122,7" name="jetbrains.mps.lang.core.plugin.RetainedUtil$1" />
+      <unit id="6905339732004281479" at="118,87,122,7" name="jetbrains.mps.lang.core.plugin.RetainedUtil$RetainedFilesDelta$1" />
       <unit id="6905339732004281554" at="131,0,140,0" name="jetbrains.mps.lang.core.plugin.RetainedUtil$RetainedCachesDelta" />
       <unit id="6905339732004281417" at="99,0,131,0" name="jetbrains.mps.lang.core.plugin.RetainedUtil$RetainedFilesDelta" />
       <unit id="6905339732004281416" at="28,0,141,0" name="jetbrains.mps.lang.core.plugin.RetainedUtil" />

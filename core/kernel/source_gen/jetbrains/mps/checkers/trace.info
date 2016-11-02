@@ -297,7 +297,7 @@
         <var name="node" id="7390982340086718307" />
         <var name="repository" id="3678491607201772361" />
       </scope>
-      <unit id="1802459475176587764" at="81,17,90,7" name="jetbrains.mps.checkers.RefScopeChecker$1" />
+      <unit id="1802459475176587764" at="81,17,90,7" name="jetbrains.mps.checkers.RefScopeChecker$ResolveReferenceQuickFix$1" />
       <unit id="1802459475176587689" at="69,0,105,0" name="jetbrains.mps.checkers.RefScopeChecker$ResolveReferenceQuickFix" />
       <unit id="7390982340086718297" at="24,0,112,0" name="jetbrains.mps.checkers.RefScopeChecker" />
     </file>

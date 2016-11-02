@@ -810,7 +810,7 @@
         <var name="status" id="1202212837508" />
         <var name="typeCheckingContext" id="1202212837508" />
       </scope>
-      <unit id="4630580602659822632" at="45,75,49,11" name="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$2" />
+      <unit id="4630580602659822632" at="45,75,49,11" name="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1$1" />
       <unit id="4630580602659822616" at="42,130,54,7" name="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule$1" />
       <unit id="1202212837508" at="34,0,110,0" name="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule" />
     </file>

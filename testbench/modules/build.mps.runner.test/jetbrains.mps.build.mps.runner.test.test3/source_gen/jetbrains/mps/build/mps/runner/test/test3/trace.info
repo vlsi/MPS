@@ -22,7 +22,7 @@
       <scope id="1912033194715198458" at="14,0,22,0" />
       <scope id="138593292063249500" at="12,32,22,7" />
       <scope id="138593292063249494" at="12,0,24,0" />
-      <unit id="5349964674704758476" at="15,50,20,9" name="jetbrains.mps.build.mps.runner.test.test3.MainClass$2" />
+      <unit id="5349964674704758476" at="15,50,20,9" name="jetbrains.mps.build.mps.runner.test.test3.MainClass$1$1" />
       <unit id="1912033194715198458" at="13,41,22,5" name="jetbrains.mps.build.mps.runner.test.test3.MainClass$1" />
       <unit id="138593292063249461" at="11,0,25,0" name="jetbrains.mps.build.mps.runner.test.test3.MainClass" />
     </file>

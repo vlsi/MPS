@@ -222,9 +222,9 @@
         <var name="member" id="4391914101921809880" />
       </scope>
       <scope id="4391914101921870206" at="478,120,495,7" />
-      <unit id="1758937410082127539" at="481,829,485,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
-      <unit id="1758937410082127539" at="485,22,489,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
-      <unit id="1758937410082127549" at="489,19,493,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
+      <unit id="1758937410082127539" at="481,829,485,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$2$1" />
+      <unit id="1758937410082127539" at="485,22,489,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$2$2" />
+      <unit id="1758937410082127549" at="489,19,493,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$2$3" />
       <unit id="4391914101921809880" at="479,220,495,5" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$2" />
     </file>
   </root>
@@ -262,7 +262,7 @@
         <var name="errors" id="1987432259747992383" />
         <var name="module" id="4546754412408612263" />
       </scope>
-      <unit id="1987432259748160070" at="113,70,117,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$2" />
+      <unit id="1987432259748160070" at="113,70,117,9" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$1$1" />
       <unit id="5198027307802093397" at="498,244,502,5" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$3" />
       <unit id="1987432259748021993" at="111,45,119,5" name="jetbrains.mps.lang.migration.generator.template.main.QueriesGenerated$1" />
     </file>

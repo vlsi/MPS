@@ -1186,7 +1186,7 @@
       <scope id="8722937377469656247" at="53,0,84,0" />
       <unit id="8722937377469656506" at="107,43,116,5" name="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$2" />
       <unit id="8722937377469656276" at="57,45,72,5" name="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$1" />
-      <unit id="8722937377469656091" at="146,16,163,7" name="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$1" />
+      <unit id="8722937377469656091" at="146,16,163,7" name="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$MyTreeBuilder$1" />
       <unit id="8722937377469656079" at="143,0,180,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep$MyTreeBuilder" />
       <unit id="8722937377469656078" at="29,0,181,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" />
     </file>
@@ -1306,7 +1306,7 @@
         <var name="solution" id="8722937377469656828" />
       </scope>
       <scope id="8722937377469656822" at="61,0,84,0" />
-      <unit id="4933738972386755317" at="74,57,78,11" name="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep$2" />
+      <unit id="4933738972386755317" at="74,57,78,11" name="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep$1$1" />
       <unit id="8722937377469656865" at="67,69,80,7" name="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep$1" />
       <unit id="8722937377469656716" at="21,0,109,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" />
     </file>

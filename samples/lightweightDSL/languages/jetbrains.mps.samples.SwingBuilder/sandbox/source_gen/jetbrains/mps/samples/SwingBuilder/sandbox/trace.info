@@ -224,7 +224,7 @@
         <var name="transformers" id="941086956891203925" />
       </scope>
       <scope id="941086956891203925" at="27,0,50,0" />
-      <unit id="941086956891203925" at="35,57,42,9" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo$2" />
+      <unit id="941086956891203925" at="35,57,42,9" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo$1$1" />
       <unit id="941086956891203925" at="32,45,47,5" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo$1" />
       <unit id="941086956891203925" at="15,0,57,0" name="jetbrains.mps.samples.SwingBuilder.sandbox.Demo" />
     </file>

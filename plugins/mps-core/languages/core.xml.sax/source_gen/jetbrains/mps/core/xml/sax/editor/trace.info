@@ -83,7 +83,7 @@
         <var name="item" id="1741258697587120273" />
       </scope>
       <unit id="1741258697587120273" at="74,0,83,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParam_SubstituteMenu$SubstituteMenuPart_Subconcepts_b5jt4u_b" />
-      <unit id="1741258697587120273" at="45,17,65,7" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParam_SubstituteMenu$1" />
+      <unit id="1741258697587120273" at="45,17,65,7" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParam_SubstituteMenu$SubstituteMenuPart_Wrapper_b5jt4u_a$1" />
       <unit id="1741258697587120273" at="41,0,74,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParam_SubstituteMenu$SubstituteMenuPart_Wrapper_b5jt4u_a" />
       <unit id="1741258697587120273" at="31,0,84,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParam_SubstituteMenu" />
     </file>

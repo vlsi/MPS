@@ -224,8 +224,8 @@
       <unit id="2921823006583088303" at="161,0,170,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$CloseAction" />
       <unit id="613965280098045490" at="170,0,179,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$RerunAction" />
       <unit id="1360822408787132034" at="179,0,192,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$ToggleUsedLanguages" />
-      <unit id="8934832723728815551" at="127,72,141,9" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$3" />
-      <unit id="8934832723728866584" at="91,72,107,9" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$2" />
+      <unit id="8934832723728815551" at="127,72,141,9" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$2$1" />
+      <unit id="8934832723728866584" at="91,72,107,9" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$1$1" />
       <unit id="8294989614925457117" at="88,42,109,5" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$1" />
       <unit id="8294989614925457199" at="122,42,145,5" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel$2" />
       <unit id="8294989614925456943" at="36,0,193,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" />
@@ -355,7 +355,7 @@
       <scope id="8294989614925457285" at="60,0,99,0">
         <var name="event" id="8294989614925457288" />
       </scope>
-      <unit id="2034046503361586400" at="67,51,96,7" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree$1" />
+      <unit id="2034046503361586400" at="67,51,96,7" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree$MyTreeSelectionListener$1" />
       <unit id="8294989614925457278" at="57,0,100,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree$MyTreeSelectionListener" />
       <unit id="8294989614925457277" at="23,0,106,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" />
     </file>

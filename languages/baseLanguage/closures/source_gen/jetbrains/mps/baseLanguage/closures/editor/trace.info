@@ -5561,10 +5561,10 @@
       <scope id="1741258697587050898" at="67,0,81,0">
         <var name="_context" id="1741258697587050898" />
       </scope>
-      <unit id="1741258697587050922" at="46,58,50,7" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$1" />
-      <unit id="1741258697587050931" at="50,19,54,7" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$2" />
-      <unit id="1741258697587050988" at="71,60,75,9" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$1" />
-      <unit id="1741258697587050997" at="75,21,79,9" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$2" />
+      <unit id="1741258697587050922" at="46,58,50,7" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$1" />
+      <unit id="1741258697587050931" at="50,19,54,7" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$2" />
+      <unit id="1741258697587050988" at="71,60,75,9" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$SubstituteMenuPart_Parameterized_1dpywb_a0$1" />
+      <unit id="1741258697587050997" at="75,21,79,9" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$SubstituteMenuPart_Parameterized_1dpywb_a0$2" />
       <unit id="1741258697587050898" at="92,0,126,0" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$SubstituteMenuPart_Parameterized_1dpywb_a0$SubstituteMenuPart_Action_1dpywb_a0a$Item" />
       <unit id="1741258697587050898" at="81,0,127,0" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$SubstituteMenuPart_Parameterized_1dpywb_a0$SubstituteMenuPart_Action_1dpywb_a0a" />
       <unit id="1741258697587050898" at="61,0,129,0" name="jetbrains.mps.baseLanguage.closures.editor.subsitute_ClosureControlStatement$SubstituteMenuPart_Group_1dpywb_a$SubstituteMenuPart_Parameterized_1dpywb_a0" />

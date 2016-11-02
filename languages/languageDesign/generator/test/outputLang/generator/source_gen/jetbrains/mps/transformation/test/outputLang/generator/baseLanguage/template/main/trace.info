@@ -860,7 +860,7 @@
       <scope id="1209603916390" at="164,0,253,0">
         <var name="context" id="1209603916390" />
       </scope>
-      <unit id="1209603916390" at="107,32,112,9" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mapping_main$1" />
+      <unit id="1209603916390" at="107,32,112,9" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mapping_main$ReductionRule1$1" />
       <unit id="1209603916390" at="556,0,568,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mapping_main$RootMappingRule0" />
       <unit id="1209603916390" at="145,0,160,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mapping_main$ReductionRule3" />
       <unit id="1209603916390" at="254,0,270,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mapping_main$PatternRule0" />

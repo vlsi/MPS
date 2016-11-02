@@ -142,8 +142,8 @@
         <var name="editorContext" id="3986994675334573802" />
         <var name="node" id="3986994675334573802" />
       </scope>
-      <unit id="3986994675334573864" at="57,504,61,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$1" />
-      <unit id="3986994675334573883" at="62,56,66,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$2" />
+      <unit id="3986994675334573864" at="57,504,61,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$IntentionImplementation$1" />
+      <unit id="3986994675334573883" at="62,56,66,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$IntentionImplementation$2" />
       <unit id="3986994675334573802" at="48,0,74,0" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$IntentionImplementation" />
       <unit id="3986994675334573802" at="25,0,75,0" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" />
     </file>

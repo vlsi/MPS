@@ -35,7 +35,7 @@
         <var name="repository" id="6820996345400948503" />
       </scope>
       <scope id="6820996345400829081" at="27,0,43,0" />
-      <unit id="6820996345401222281" at="32,52,41,7" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test$1" />
+      <unit id="6820996345401222281" at="32,52,41,7" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test$TestBody$1" />
       <unit id="6820996345400829081" at="25,0,44,0" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test$TestBody" />
       <unit id="6820996345400829081" at="17,0,45,0" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_InapplicableRefactoring_CannotExecute_Test" />
     </file>
@@ -69,7 +69,7 @@
         <var name="repository" id="6820996345401023616" />
       </scope>
       <scope id="6820996345401023607" at="27,0,43,0" />
-      <unit id="6820996345401023625" at="32,52,41,7" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test$1" />
+      <unit id="6820996345401023625" at="32,52,41,7" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test$TestBody$1" />
       <unit id="6820996345401023607" at="25,0,44,0" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test$TestBody" />
       <unit id="6820996345401023607" at="17,0,45,0" name="jetbrains.mps.lang.editor.menus.extras.tests.RefactoringMenuItemBase_ApplicableRefactoring_CanExecute_Test" />
     </file>
@@ -134,8 +134,8 @@
         <var name="repository" id="6820996345401652556" />
       </scope>
       <scope id="6820996345401622063" at="33,0,55,0" />
-      <unit id="6820996345401628361" at="41,43,47,11" name="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test$2" />
-      <unit id="6820996345401675449" at="39,52,53,7" name="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test$1" />
+      <unit id="6820996345401628361" at="41,43,47,11" name="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test$TestBody$1$1" />
+      <unit id="6820996345401675449" at="39,52,53,7" name="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test$TestBody$1" />
       <unit id="6820996345401622063" at="31,0,56,0" name="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test$TestBody" />
       <unit id="6820996345401622063" at="23,0,57,0" name="jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test" />
     </file>
@@ -175,8 +175,8 @@
         <var name="repository" id="8874023590560440634" />
       </scope>
       <scope id="8874023590560440629" at="33,0,55,0" />
-      <unit id="8874023590560440649" at="41,43,47,11" name="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test$2" />
-      <unit id="8874023590560440642" at="39,52,53,7" name="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test$1" />
+      <unit id="8874023590560440649" at="41,43,47,11" name="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test$TestBody$1$1" />
+      <unit id="8874023590560440642" at="39,52,53,7" name="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test$TestBody$1" />
       <unit id="8874023590560440629" at="31,0,56,0" name="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test$TestBody" />
       <unit id="8874023590560440629" at="23,0,57,0" name="jetbrains.mps.lang.editor.menus.extras.tests.ApplicableIntention_IncludedInMenu_Test" />
     </file>
@@ -222,8 +222,8 @@
         <var name="repository" id="8874023590561015434" />
       </scope>
       <scope id="8874023590561015429" at="27,0,51,0" />
-      <unit id="8874023590561190788" at="34,32,42,11" name="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test$2" />
-      <unit id="8874023590561015443" at="32,52,49,7" name="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test$1" />
+      <unit id="8874023590561190788" at="34,32,42,11" name="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test$TestBody$1$1" />
+      <unit id="8874023590561015443" at="32,52,49,7" name="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test$TestBody$1" />
       <unit id="8874023590561015429" at="25,0,52,0" name="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test$TestBody" />
       <unit id="8874023590561015429" at="17,0,53,0" name="jetbrains.mps.lang.editor.menus.extras.tests.PluginActionMenuItemBase_InapplicableAction_CannotExecute_Test" />
     </file>

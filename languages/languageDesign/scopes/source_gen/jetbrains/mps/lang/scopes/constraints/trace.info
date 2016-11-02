@@ -60,8 +60,8 @@
         <var name="references" id="8077936094962945057" />
       </scope>
       <scope id="8077936094962945057" at="34,0,69,0" />
-      <unit id="3050821798734714010" at="55,25,61,15" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$3" />
-      <unit id="8077936094962945057" at="45,19,64,9" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$2" />
+      <unit id="3050821798734714010" at="55,25,61,15" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$1$1$1" />
+      <unit id="8077936094962945057" at="45,19,64,9" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$1$1" />
       <unit id="8077936094962945057" at="37,152,66,5" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints$1" />
       <unit id="8077936094962945057" at="29,0,71,0" name="jetbrains.mps.lang.scopes.constraints.ComeFromExpression_Constraints" />
     </file>

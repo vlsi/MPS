@@ -1367,7 +1367,7 @@
         <var name="editorContext" id="8625360827009795614" />
         <var name="node" id="8625360827009795614" />
       </scope>
-      <unit id="1125198461453670310" at="110,77,114,7" name="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor$1" />
+      <unit id="1125198461453670310" at="110,77,114,7" name="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor$NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0$1" />
       <unit id="1215507692910" at="74,0,103,0" name="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor$errorRefSingleRoleHandler_kzyi6r_b0" />
       <unit id="3345162962965684207" at="103,0,134,0" name="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor$NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0" />
       <unit id="1215507692910" at="43,0,189,0" name="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor" />
@@ -1821,7 +1821,7 @@
         <var name="editorContext" id="8625360827010308117" />
         <var name="node" id="8625360827010308117" />
       </scope>
-      <unit id="1125198461454053285" at="110,79,114,7" name="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor$1" />
+      <unit id="1125198461454053285" at="110,79,114,7" name="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor$NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0$1" />
       <unit id="1215515356354" at="74,0,103,0" name="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor$warningRefSingleRoleHandler_sh9o09_b0" />
       <unit id="1415327536915471976" at="103,0,134,0" name="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor$NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0" />
       <unit id="1215515356354" at="43,0,189,0" name="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor" />
@@ -7401,7 +7401,7 @@
         <var name="editorContext" id="2153278993334184496" />
         <var name="node" id="2153278993334184496" />
       </scope>
-      <unit id="2153278993334184459" at="106,81,110,7" name="jetbrains.mps.lang.test.editor.NodeInfoCheckOperation_Editor$1" />
+      <unit id="2153278993334184459" at="106,81,110,7" name="jetbrains.mps.lang.test.editor.NodeInfoCheckOperation_Editor$NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0$1" />
       <unit id="2153278993334184411" at="70,0,99,0" name="jetbrains.mps.lang.test.editor.NodeInfoCheckOperation_Editor$statementRefSingleRoleHandler_4bw08u_b0" />
       <unit id="2153278993334184418" at="99,0,129,0" name="jetbrains.mps.lang.test.editor.NodeInfoCheckOperation_Editor$NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0" />
       <unit id="2153278993334184411" at="42,0,150,0" name="jetbrains.mps.lang.test.editor.NodeInfoCheckOperation_Editor" />

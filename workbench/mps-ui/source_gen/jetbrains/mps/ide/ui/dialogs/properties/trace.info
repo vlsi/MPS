@@ -521,9 +521,9 @@
         <var name="tree" id="3995997045458704313" />
         <var name="value" id="3995997045458704315" />
       </scope>
-      <unit id="3995997045458704610" at="115,38,122,7" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$1" />
+      <unit id="3995997045458704610" at="115,38,122,7" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$CheckBoxNodeEditor$1" />
       <unit id="3995997045458704641" at="129,0,140,0" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$RootNodeData" />
-      <unit id="3995997045458704404" at="68,47,80,7" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$1" />
+      <unit id="3995997045458704404" at="68,47,80,7" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$CheckBoxNodeRenderer$1" />
       <unit id="3995997045458704706" at="157,0,170,0" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$ModelRefNodeData" />
       <unit id="3995997045458704733" at="170,0,183,0" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$NodeRefNodeData" />
       <unit id="3995997045458704664" at="140,0,157,0" name="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$GenRefNodeData" />

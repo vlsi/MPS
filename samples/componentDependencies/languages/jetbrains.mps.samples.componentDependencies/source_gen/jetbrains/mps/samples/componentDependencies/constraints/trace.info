@@ -52,8 +52,8 @@
         <var name="references" id="9095678365530422277" />
       </scope>
       <scope id="9095678365530422277" at="32,0,61,0" />
-      <unit id="9095678365530437347" at="50,23,54,13" name="jetbrains.mps.samples.componentDependencies.constraints.Dependency_Constraints$3" />
-      <unit id="9095678365530422277" at="43,19,56,9" name="jetbrains.mps.samples.componentDependencies.constraints.Dependency_Constraints$2" />
+      <unit id="9095678365530437347" at="50,23,54,13" name="jetbrains.mps.samples.componentDependencies.constraints.Dependency_Constraints$1$1$1" />
+      <unit id="9095678365530422277" at="43,19,56,9" name="jetbrains.mps.samples.componentDependencies.constraints.Dependency_Constraints$1$1" />
       <unit id="9095678365530422277" at="35,150,58,5" name="jetbrains.mps.samples.componentDependencies.constraints.Dependency_Constraints$1" />
       <unit id="9095678365530422277" at="27,0,63,0" name="jetbrains.mps.samples.componentDependencies.constraints.Dependency_Constraints" />
     </file>

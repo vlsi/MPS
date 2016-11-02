@@ -2488,15 +2488,15 @@
         <var name="editorContext" id="1239550778846" />
         <var name="node" id="1239550778846" />
       </scope>
-      <unit id="2912004279740652475" at="147,160,151,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$2" />
-      <unit id="2912004279740714720" at="491,168,495,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$2" />
-      <unit id="2912004279740714738" at="495,24,499,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$2" />
+      <unit id="2912004279740652475" at="147,160,151,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1a0$1$1" />
+      <unit id="2912004279740714720" at="491,168,495,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1b0$1$1" />
+      <unit id="2912004279740714738" at="495,24,499,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1b0$1$2" />
       <unit id="322547369016118909" at="222,0,229,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a" />
       <unit id="1262430001742033289" at="94,83,103,5" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$1" />
       <unit id="1262430001742033389" at="173,83,182,5" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$2" />
       <unit id="1239546792005" at="206,83,215,5" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$3" />
-      <unit id="2912004279740714694" at="489,85,506,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$1" />
-      <unit id="1239550778846" at="143,85,162,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$1" />
+      <unit id="2912004279740714694" at="489,85,506,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1b0$1" />
+      <unit id="1239550778846" at="143,85,162,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1a0$1" />
       <unit id="1239547301475" at="365,0,393,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1a0_0" />
       <unit id="1239883956209" at="413,0,442,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a2a0" />
       <unit id="2912004279740714497" at="478,0,513,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor$_Inline_2ojjgh_a1b0" />
@@ -3467,7 +3467,7 @@
       <scope id="1741258697587120925" at="61,0,70,0">
         <var name="_context" id="1741258697587120925" />
       </scope>
-      <unit id="1741258697587120989" at="64,318,68,9" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$1" />
+      <unit id="1741258697587120989" at="64,318,68,9" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0$1" />
       <unit id="1741258697587120925" at="81,0,118,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0$SubstituteMenuPart_Action_evf1f9_a0a$Item" />
       <unit id="1741258697587120925" at="70,0,119,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0$SubstituteMenuPart_Action_evf1f9_a0a" />
       <unit id="1741258697587120925" at="55,0,121,0" name="jetbrains.mps.baseLanguage.tuples.editor.namedTupleDeclaration_extends_Contribution$SubstituteMenuPart_Group_evf1f9_a$SubstituteMenuPart_Parameterized_evf1f9_a0" />
@@ -3622,9 +3622,9 @@
         <var name="parameter_1" id="1741258697587121166" />
         <var name="parameter_2" id="1741258697587121166" />
       </scope>
-      <unit id="1741258697587121074" at="55,265,59,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$1" />
-      <unit id="1741258697587121155" at="82,83,86,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$1" />
-      <unit id="1741258697587121175" at="87,198,91,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$2" />
+      <unit id="1741258697587121074" at="55,265,59,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$1" />
+      <unit id="1741258697587121155" at="82,83,86,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0$Item$1" />
+      <unit id="1741258697587121175" at="87,198,91,11" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0$Item$2" />
       <unit id="1741258697587121060" at="72,0,115,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0$Item" />
       <unit id="1741258697587121060" at="61,0,116,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a$SubstituteMenuPart_Action_4kfnt3_a0" />
       <unit id="1741258697587121060" at="46,0,118,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Contribution$SubstituteMenuPart_Parameterized_4kfnt3_a" />
@@ -3730,7 +3730,7 @@
       <scope id="1741258697587121223" at="47,0,56,0">
         <var name="_context" id="1741258697587121223" />
       </scope>
-      <unit id="1741258697587121237" at="50,265,54,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$1" />
+      <unit id="1741258697587121237" at="50,265,54,7" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a$1" />
       <unit id="1741258697587121223" at="67,0,101,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a$SubstituteMenuPart_Action_rx1mqb_a0$Item" />
       <unit id="1741258697587121223" at="56,0,102,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a$SubstituteMenuPart_Action_rx1mqb_a0" />
       <unit id="1741258697587121223" at="41,0,104,0" name="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Contribution$SubstituteMenuPart_Parameterized_rx1mqb_a" />

@@ -423,7 +423,7 @@
         <var name="_params" id="1699587386715264759" />
         <var name="event" id="1699587386715264759" />
       </scope>
-      <unit id="1227219557562" at="55,214,59,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action$2" />
+      <unit id="1227219557562" at="55,214,59,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action$1$1" />
       <unit id="1227218669094" at="95,82,99,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action$2" />
       <unit id="1227219557552" at="53,63,61,5" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action$1" />
       <unit id="1699587386715264759" at="28,0,114,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewCreateRootRule_Action" />
@@ -547,7 +547,7 @@
         <var name="_params" id="1699587386715296077" />
         <var name="event" id="1699587386715296077" />
       </scope>
-      <unit id="1227221178787" at="55,215,59,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action$2" />
+      <unit id="1227221178787" at="55,215,59,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action$1$1" />
       <unit id="1227221178658" at="95,82,99,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action$2" />
       <unit id="1227221178777" at="53,63,61,5" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action$1" />
       <unit id="1699587386715296077" at="28,0,115,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.NewRootMappingRule_Action" />
@@ -759,8 +759,8 @@
       <unit id="1227303582021" at="79,101,83,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$2" />
       <unit id="8056901375583091369" at="123,72,127,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$3" />
       <unit id="1227316931941" at="188,56,193,5" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$5" />
-      <unit id="1227316931925" at="135,23,183,13" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$6" />
-      <unit id="1227316931925" at="133,19,185,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$5" />
+      <unit id="1227316931925" at="135,23,183,13" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$4$1$1" />
+      <unit id="1227316931925" at="133,19,185,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$4$1" />
       <unit id="1227316931925" at="131,86,187,5" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$4" />
       <unit id="428466863025296200" at="35,0,199,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action" />
     </file>

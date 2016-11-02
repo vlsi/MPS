@@ -91,7 +91,7 @@
       <scope id="1876713722539579916" at="12,0,45,0">
         <var name="args" id="1876713722539579920" />
       </scope>
-      <unit id="774465993226016886" at="20,44,24,9" name="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$2" />
+      <unit id="774465993226016886" at="20,44,24,9" name="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1$1" />
       <unit id="6814978825597950761" at="13,19,40,5" name="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1" />
       <unit id="1876713722539579910" at="9,0,54,0" name="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" />
     </file>

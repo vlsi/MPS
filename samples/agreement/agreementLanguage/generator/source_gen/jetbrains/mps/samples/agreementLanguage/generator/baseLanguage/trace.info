@@ -269,10 +269,10 @@
       <scope id="1197659602871" at="262,114,310,24">
         <var name="events" id="1197659631629" />
       </scope>
-      <unit id="1227876792304" at="218,23,256,13" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$3" />
-      <unit id="1227876791691" at="268,23,306,13" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$4" />
-      <unit id="1227876792304" at="216,19,258,9" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$2" />
-      <unit id="1227876791691" at="266,19,308,9" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$3" />
+      <unit id="1227876792304" at="218,23,256,13" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$1$1$1" />
+      <unit id="1227876791691" at="268,23,306,13" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$2$1$1" />
+      <unit id="1227876792304" at="216,19,258,9" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$1$1" />
+      <unit id="1227876791691" at="266,19,308,9" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$2$1" />
       <unit id="1227876792304" at="214,55,260,5" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$1" />
       <unit id="1227876791691" at="264,55,310,5" name="jetbrains.mps.samples.agreementLanguage.generator.baseLanguage.QueriesGenerated$2" />
     </file>

@@ -232,8 +232,8 @@
       </scope>
       <unit id="3265844182377497337" at="42,398,46,5" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$1" />
       <unit id="3265844182377552171" at="46,15,50,5" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$2" />
-      <unit id="3265844182377587237" at="72,393,76,7" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$1" />
-      <unit id="3265844182377596886" at="76,22,80,7" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$2" />
+      <unit id="3265844182377587237" at="72,393,76,7" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$IntentionImplementation$1" />
+      <unit id="3265844182377596886" at="76,22,80,7" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$IntentionImplementation$2" />
       <unit id="3265844182377326076" at="62,0,87,0" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention$IntentionImplementation" />
       <unit id="3265844182377326076" at="25,0,88,0" name="jetbrains.mps.lang.migration.intentions.SetIdsInMoveMigrations_Intention" />
     </file>

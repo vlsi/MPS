@@ -907,8 +907,8 @@
       <scope id="1741258697587036329" at="41,0,56,0">
         <var name="_context" id="1741258697587036329" />
       </scope>
-      <unit id="1741258697587036351" at="68,306,72,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$1" />
-      <unit id="1741258697587036414" at="123,306,127,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$1" />
+      <unit id="1741258697587036351" at="68,306,72,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$TransformationMenuPart_Parameterized_qh3wu9_a1$1" />
+      <unit id="1741258697587036414" at="123,306,127,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$TransformationMenuPart_Parameterized_qh3wu9_a2$1" />
       <unit id="1741258697587036337" at="85,0,110,0" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$TransformationMenuPart_Parameterized_qh3wu9_a1$TransformationMenuPart_Action_qh3wu9_a0b$Item" />
       <unit id="1741258697587036400" at="140,0,165,0" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$TransformationMenuPart_Parameterized_qh3wu9_a2$TransformationMenuPart_Action_qh3wu9_a0c$Item" />
       <unit id="1741258697587036337" at="75,0,111,0" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestSidetransformAnotherAbstractChild_TransformationMenu$TransformationMenuPart_Parameterized_qh3wu9_a1$TransformationMenuPart_Action_qh3wu9_a0b" />
@@ -1198,7 +1198,7 @@
         <var name="_context" id="1741258697587036710" />
         <var name="item" id="1741258697587036710" />
       </scope>
-      <unit id="1741258697587036710" at="52,19,81,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection$1" />
+      <unit id="1741258697587036710" at="52,19,81,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection$SubstituteMenuPart_Group_pn01ee_a$SubstituteMenuPart_Wrapper_pn01ee_a0$1" />
       <unit id="1741258697587036710" at="48,0,90,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection$SubstituteMenuPart_Group_pn01ee_a$SubstituteMenuPart_Wrapper_pn01ee_a0" />
       <unit id="1741258697587036710" at="37,0,91,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection$SubstituteMenuPart_Group_pn01ee_a" />
       <unit id="1741258697587036710" at="29,0,92,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstituteDefaultSelection" />
@@ -1579,7 +1579,7 @@
         <var name="createdNode" id="1741258697587037575" />
         <var name="pattern" id="1741258697587037575" />
       </scope>
-      <unit id="1741258697587036999" at="72,278,76,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute$1" />
+      <unit id="1741258697587036999" at="72,278,76,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute$SubstituteMenuPart_Group_qp9nsj_a$SubstituteMenuPart_Parameterized_qp9nsj_a0$1" />
       <unit id="1741258697587036913" at="89,0,204,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute$SubstituteMenuPart_Group_qp9nsj_a$SubstituteMenuPart_Parameterized_qp9nsj_a0$SubstituteMenuPart_Action_qp9nsj_a0a$Item" />
       <unit id="1741258697587036913" at="78,0,205,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute$SubstituteMenuPart_Group_qp9nsj_a$SubstituteMenuPart_Parameterized_qp9nsj_a0$SubstituteMenuPart_Action_qp9nsj_a0a" />
       <unit id="1741258697587036913" at="56,0,207,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ParameterizedSubstitute$SubstituteMenuPart_Group_qp9nsj_a$SubstituteMenuPart_Parameterized_qp9nsj_a0" />
@@ -1644,7 +1644,7 @@
       <scope id="1741258697587037771" at="45,0,61,0">
         <var name="_context" id="1741258697587037771" />
       </scope>
-      <unit id="1741258697587037902" at="55,56,59,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute$1" />
+      <unit id="1741258697587037902" at="55,56,59,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute$SubstituteMenuPart_Group_1nroa3_a$SubstituteMenuPart_Concepts_1nroa3_a0$1" />
       <unit id="1741258697587037771" at="44,0,66,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute$SubstituteMenuPart_Group_1nroa3_a$SubstituteMenuPart_Concepts_1nroa3_a0" />
       <unit id="1741258697587037771" at="33,0,67,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute$SubstituteMenuPart_Group_1nroa3_a" />
       <unit id="1741258697587037771" at="25,0,68,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_ConceptSubstitute" />
@@ -1976,7 +1976,7 @@
         <var name="createdNode" id="1741258697587038784" />
         <var name="pattern" id="1741258697587038784" />
       </scope>
-      <unit id="1741258697587037916" at="48,30,59,7" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute$1" />
+      <unit id="1741258697587037916" at="48,30,59,7" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute$SubstituteMenuPart_Group_mw8afp_a$1" />
       <unit id="1741258697587037916" at="186,0,215,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute$SubstituteMenuPart_Group_mw8afp_a$SubstituteMenuPart_Action_mw8afp_b0$Item" />
       <unit id="1741258697587037916" at="179,0,216,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute$SubstituteMenuPart_Group_mw8afp_a$SubstituteMenuPart_Action_mw8afp_b0" />
       <unit id="1741258697587037916" at="223,0,275,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_SimpleItemSubstitute$SubstituteMenuPart_Group_mw8afp_a$SubstituteMenuPart_Action_mw8afp_c0$Item" />
@@ -2086,9 +2086,9 @@
       <scope id="1741258697587038942" at="42,0,64,0">
         <var name="_context" id="1741258697587038942" />
       </scope>
-      <unit id="1741258697587038942" at="45,22,50,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$1" />
-      <unit id="1741258697587038942" at="51,23,56,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$2" />
-      <unit id="1741258697587038942" at="57,23,62,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$3" />
+      <unit id="1741258697587038942" at="45,22,50,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$SubstituteMenuPart_Group_c1nwm3_a$1" />
+      <unit id="1741258697587038942" at="51,23,56,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$SubstituteMenuPart_Group_c1nwm3_a$2" />
+      <unit id="1741258697587038942" at="57,23,62,7" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$SubstituteMenuPart_Group_c1nwm3_a$3" />
       <unit id="1741258697587038942" at="69,0,78,0" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$SubstituteMenuPart_Group_c1nwm3_a$SubstituteMenuPart_IncludeMenu_c1nwm3_a0" />
       <unit id="1741258697587038942" at="78,0,87,0" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$SubstituteMenuPart_Group_c1nwm3_a$SubstituteMenuPart_IncludeMenu_c1nwm3_b0" />
       <unit id="1741258697587038942" at="87,0,96,0" name="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultAbstractChild_SubstituteMenu$SubstituteMenuPart_Group_c1nwm3_a$SubstituteMenuPart_IncludeMenu_c1nwm3_c0" />
@@ -2156,7 +2156,7 @@
       <scope id="1741258697587038943" at="46,0,53,0">
         <var name="_context" id="1741258697587038943" />
       </scope>
-      <unit id="1741258697587038943" at="47,272,51,9" name="jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart$1" />
+      <unit id="1741258697587038943" at="47,272,51,9" name="jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart$SubstituteMenuPart_Group_tbd9d5_a$SubstituteMenuPart_Subconcepts_tbd9d5_a0$1" />
       <unit id="1741258697587038943" at="45,0,61,0" name="jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart$SubstituteMenuPart_Group_tbd9d5_a$SubstituteMenuPart_Subconcepts_tbd9d5_a0" />
       <unit id="1741258697587038943" at="34,0,62,0" name="jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart$SubstituteMenuPart_Group_tbd9d5_a" />
       <unit id="1741258697587038943" at="26,0,66,0" name="jetbrains.mps.lang.actions.testLanguage.editor.RemoveByConditionPart" />
@@ -2451,7 +2451,7 @@
         <var name="_context" id="1741258697587039336" />
         <var name="item" id="1741258697587039336" />
       </scope>
-      <unit id="1741258697587039336" at="57,19,115,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute$1" />
+      <unit id="1741258697587039336" at="57,19,115,9" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute$SubstituteMenuPart_Group_n7g34w_a$SubstituteMenuPart_Wrapper_n7g34w_a0$1" />
       <unit id="1741258697587039336" at="53,0,124,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute$SubstituteMenuPart_Group_n7g34w_a$SubstituteMenuPart_Wrapper_n7g34w_a0" />
       <unit id="1741258697587039336" at="42,0,125,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute$SubstituteMenuPart_Group_n7g34w_a" />
       <unit id="1741258697587039336" at="34,0,126,0" name="jetbrains.mps.lang.actions.testLanguage.editor.AddMenuPart_WrapperSubstitute" />
@@ -2515,7 +2515,7 @@
       <scope id="1741258697587039656" at="46,0,53,0">
         <var name="_context" id="1741258697587039656" />
       </scope>
-      <unit id="1741258697587039656" at="47,272,51,9" name="jetbrains.mps.lang.actions.testLanguage.editor.RemovePart$1" />
+      <unit id="1741258697587039656" at="47,272,51,9" name="jetbrains.mps.lang.actions.testLanguage.editor.RemovePart$SubstituteMenuPart_Group_pkf68r_a$SubstituteMenuPart_Subconcepts_pkf68r_a0$1" />
       <unit id="1741258697587039656" at="45,0,61,0" name="jetbrains.mps.lang.actions.testLanguage.editor.RemovePart$SubstituteMenuPart_Group_pkf68r_a$SubstituteMenuPart_Subconcepts_pkf68r_a0" />
       <unit id="1741258697587039656" at="34,0,62,0" name="jetbrains.mps.lang.actions.testLanguage.editor.RemovePart$SubstituteMenuPart_Group_pkf68r_a" />
       <unit id="1741258697587039656" at="26,0,66,0" name="jetbrains.mps.lang.actions.testLanguage.editor.RemovePart" />

@@ -167,8 +167,8 @@
         <var name="program" id="7078910619969235725" />
       </scope>
       <scope id="7078910619969235707" at="46,0,60,0" />
-      <unit id="7078910619969309686" at="50,834,54,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$1" />
-      <unit id="7078910619969309686" at="54,20,58,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$2" />
+      <unit id="7078910619969309686" at="50,834,54,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody$1" />
+      <unit id="7078910619969309686" at="54,20,58,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody$2" />
       <unit id="7078910619969039925" at="38,0,63,0" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody" />
       <unit id="7078910619969039925" at="25,0,64,0" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test" />
     </file>

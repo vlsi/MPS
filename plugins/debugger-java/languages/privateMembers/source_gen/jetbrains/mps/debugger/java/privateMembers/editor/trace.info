@@ -114,8 +114,8 @@
       <scope id="1741258697587208457" at="48,0,65,0">
         <var name="_context" id="1741258697587208457" />
       </scope>
-      <unit id="1741258697587208509" at="58,80,62,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$2" />
-      <unit id="1741258697587208469" at="51,46,56,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$1" />
+      <unit id="1741258697587208509" at="58,80,62,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$2" />
+      <unit id="1741258697587208469" at="51,46,56,7" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$1" />
       <unit id="1741258697587208457" at="76,0,109,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$SubstituteMenuPart_Action_53df4d_a0$Item" />
       <unit id="1741258697587208457" at="65,0,110,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a$SubstituteMenuPart_Action_53df4d_a0" />
       <unit id="1741258697587208457" at="42,0,112,0" name="jetbrains.mps.debugger.java.privateMembers.editor.privateStaticAccess_Contribution$SubstituteMenuPart_Parameterized_53df4d_a" />
@@ -400,7 +400,7 @@
         <var name="node" id="5619723216767159064" />
       </scope>
       <unit id="5619723216767159088" at="185,0,189,0" name="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0" />
-      <unit id="6405552206789866675" at="193,362,197,7" name="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$1" />
+      <unit id="6405552206789866675" at="193,362,197,7" name="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0$1" />
       <unit id="5619723216767159066" at="173,0,185,0" name="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0" />
       <unit id="5619723216767159089" at="189,0,215,0" name="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0" />
       <unit id="5619723216767159059" at="79,0,107,0" name="jetbrains.mps.debugger.java.privateMembers.editor.PrivateStaticFieldReference_Editor$_Inline_62ivzp_a0a" />

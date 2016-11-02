@@ -1011,15 +1011,15 @@
       <unit id="7316415153790566758" at="130,38,135,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$6" />
       <unit id="7316415153790566800" at="140,49,145,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$7" />
       <unit id="7316415153790566814" at="146,61,151,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$8" />
-      <unit id="7316415153790567353" at="360,43,365,9" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
+      <unit id="7316415153790567353" at="360,43,365,9" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel$3" />
       <unit id="7316415153790566734" at="116,45,122,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$4" />
       <unit id="7316415153790566746" at="123,47,129,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$5" />
       <unit id="7316415153790566710" at="98,40,106,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
       <unit id="7316415153790566722" at="107,42,115,5" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$3" />
-      <unit id="7316415153790567253" at="292,55,310,9" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$1" />
+      <unit id="7316415153790567253" at="292,55,310,9" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel$1" />
       <unit id="7316415153790566404" at="377,0,398,0" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyDownIcon" />
       <unit id="7316415153790566438" at="398,0,419,0" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyUpIcon" />
-      <unit id="7316415153790567281" at="313,34,348,7" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$2" />
+      <unit id="7316415153790567281" at="313,34,348,7" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel$2" />
       <unit id="7316415153790566288" at="195,0,243,0" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MyTableModel" />
       <unit id="7316415153790566323" at="243,0,377,0" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog$MySortingTableModel" />
       <unit id="7316415153790566285" at="48,0,420,0" name="jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog" />

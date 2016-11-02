@@ -188,7 +188,7 @@
         <var name="references" id="43370322128310819" />
       </scope>
       <scope id="43370322128310819" at="32,0,61,0" />
-      <unit id="43370322128310819" at="43,19,56,9" name="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$2" />
+      <unit id="43370322128310819" at="43,19,56,9" name="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$1$1" />
       <unit id="43370322128310819" at="35,153,58,5" name="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
       <unit id="43370322128310819" at="27,0,63,0" name="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
     </file>

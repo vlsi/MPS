@@ -449,7 +449,7 @@
       <unit id="9073603541474867580" at="58,122,62,5" name="jetbrains.mps.ide.java.util.StubResolver$1" />
       <unit id="2354139374978876832" at="97,114,101,5" name="jetbrains.mps.ide.java.util.StubResolver$2" />
       <unit id="2354139374978876859" at="102,52,106,5" name="jetbrains.mps.ide.java.util.StubResolver$3" />
-      <unit id="6770603745029716120" at="155,88,159,13" name="jetbrains.mps.ide.java.util.StubResolver$5" />
+      <unit id="6770603745029716120" at="155,88,159,13" name="jetbrains.mps.ide.java.util.StubResolver$4$1" />
       <unit id="2742102018362199421" at="153,85,161,9" name="jetbrains.mps.ide.java.util.StubResolver$4" />
       <unit id="5778265495851109956" at="46,0,184,0" name="jetbrains.mps.ide.java.util.StubResolver" />
     </file>

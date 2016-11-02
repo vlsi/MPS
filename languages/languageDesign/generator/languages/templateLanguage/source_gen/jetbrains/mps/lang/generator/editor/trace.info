@@ -7359,8 +7359,8 @@
         <var name="node" id="1149868357716" />
         <var name="selectedNodes" id="1149868357716" />
       </scope>
-      <unit id="1227876803815" at="67,95,71,7" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$1" />
-      <unit id="1227876799090" at="81,110,85,7" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$2" />
+      <unit id="1227876803815" at="67,95,71,7" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0$1" />
+      <unit id="1227876799090" at="81,110,85,7" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0$2" />
       <unit id="1149868357716" at="92,0,132,0" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action1" />
       <unit id="1149868357716" at="132,0,175,0" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action2" />
       <unit id="1149868357716" at="175,0,218,0" name="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action3" />
@@ -14421,7 +14421,7 @@
       <scope id="1741258697587212710" at="27,0,35,0">
         <var name="_context" id="1741258697587212710" />
       </scope>
-      <unit id="1741258697587212710" at="47,241,51,9" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$1" />
+      <unit id="1741258697587212710" at="47,241,51,9" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_a$SubstituteMenuPart_Subconcepts_ygcyd4_a0$1" />
       <unit id="1741258697587212710" at="83,0,92,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_b$SubstituteMenuPart_Subconcepts_ygcyd4_b1" />
       <unit id="1741258697587212710" at="72,0,83,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_b$SubstituteMenuPart_Group_ygcyd4_a1" />
       <unit id="1741258697587212710" at="45,0,61,0" name="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu$SubstituteMenuPart_Group_ygcyd4_a$SubstituteMenuPart_Subconcepts_ygcyd4_a0" />
@@ -15655,7 +15655,7 @@
       <scope id="2265407187494399848" at="58,0,65,0">
         <var name="parameterObject" id="2265407187494399848" />
       </scope>
-      <unit id="8238245017085483953" at="31,256,35,7" name="jetbrains.mps.lang.generator.editor.replace_node_macro$1" />
+      <unit id="8238245017085483953" at="31,256,35,7" name="jetbrains.mps.lang.generator.editor.replace_node_macro$NodeMacro_generic_cellMenu_f12orh_a0$1" />
       <unit id="2265407187494399848" at="27,0,69,0" name="jetbrains.mps.lang.generator.editor.replace_node_macro$NodeMacro_generic_cellMenu_f12orh_a0" />
       <unit id="2265407187494399846" at="23,0,70,0" name="jetbrains.mps.lang.generator.editor.replace_node_macro" />
     </file>
@@ -19495,7 +19495,7 @@
         <var name="editorContext" id="5808518347809748947" />
         <var name="node" id="5808518347809748947" />
       </scope>
-      <unit id="5808518347809783051" at="169,85,179,7" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_InputNode_Editor$1" />
+      <unit id="5808518347809783051" at="169,85,179,7" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_InputNode_Editor$_Inline_6u0t67_a1a_0$1" />
       <unit id="5808518347809748971" at="81,0,97,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_InputNode_Editor$_Inline_6u0t67_a1a" />
       <unit id="5808518347809773356" at="144,0,192,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_InputNode_Editor$_Inline_6u0t67_a1a_0" />
       <unit id="5808518347809748947" at="28,0,193,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_InputNode_Editor" />

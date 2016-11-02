@@ -2026,7 +2026,7 @@
       <scope id="1741258697587063892" at="48,0,65,0">
         <var name="_context" id="1741258697587063892" />
       </scope>
-      <unit id="1741258697587063923" at="55,358,59,11" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ContextVarRef_SubstituteMenu$1" />
+      <unit id="1741258697587063923" at="55,358,59,11" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ContextVarRef_SubstituteMenu$SubstituteMenuPart_Parameterized_adcwvm_a$1" />
       <unit id="1741258697587063892" at="109,0,118,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ContextVarRef_SubstituteMenu$SubstituteMenuPart_Subconcepts_adcwvm_b" />
       <unit id="1741258697587063892" at="76,0,106,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ContextVarRef_SubstituteMenu$SubstituteMenuPart_Parameterized_adcwvm_a$SubstituteMenuPart_Action_adcwvm_a0$Item" />
       <unit id="1741258697587063892" at="65,0,107,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ContextVarRef_SubstituteMenu$SubstituteMenuPart_Parameterized_adcwvm_a$SubstituteMenuPart_Action_adcwvm_a0" />
@@ -2405,7 +2405,7 @@
         <var name="editorContext" id="2507865635201650193" />
         <var name="node" id="2507865635201650193" />
       </scope>
-      <unit id="2507865635201650201" at="75,85,84,7" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor$1" />
+      <unit id="2507865635201650201" at="75,85,84,7" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor$_Inline_h52dks_a0a$1" />
       <unit id="2507865635201650199" at="64,0,91,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor$_Inline_h52dks_a0a" />
       <unit id="2507865635201650193" at="29,0,92,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_Editor" />
     </file>

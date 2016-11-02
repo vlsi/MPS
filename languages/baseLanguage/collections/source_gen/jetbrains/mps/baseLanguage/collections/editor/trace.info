@@ -11327,23 +11327,23 @@
       <scope id="1741258697586932248" at="50,0,113,0">
         <var name="_context" id="1741258697586932248" />
       </scope>
-      <unit id="1741258697586932395" at="55,263,59,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$2" />
-      <unit id="1741258697586932443" at="64,269,68,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$3" />
-      <unit id="1741258697586932491" at="73,284,77,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$4" />
-      <unit id="1741258697586932299" at="82,269,86,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$5" />
-      <unit id="1741258697586932347" at="91,271,95,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$6" />
-      <unit id="1741258697586932248" at="98,21,102,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$6" />
-      <unit id="1741258697586932539" at="105,268,109,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$8" />
-      <unit id="1741258697586932689" at="139,164,143,13" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$2" />
-      <unit id="1741258697586932727" at="148,74,152,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$2" />
-      <unit id="1741258697586932782" at="152,22,156,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$3" />
-      <unit id="1741258697586932248" at="53,30,61,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$1" />
-      <unit id="1741258697586932248" at="62,36,70,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$2" />
-      <unit id="1741258697586932248" at="71,29,79,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$3" />
-      <unit id="1741258697586932248" at="80,36,88,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$4" />
-      <unit id="1741258697586932248" at="89,30,97,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$5" />
-      <unit id="1741258697586932248" at="103,30,111,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$7" />
-      <unit id="1741258697586932681" at="137,107,145,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$1" />
+      <unit id="1741258697586932395" at="55,263,59,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$1$1" />
+      <unit id="1741258697586932443" at="64,269,68,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$2$1" />
+      <unit id="1741258697586932491" at="73,284,77,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$3$1" />
+      <unit id="1741258697586932299" at="82,269,86,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$4$1" />
+      <unit id="1741258697586932347" at="91,271,95,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$5$1" />
+      <unit id="1741258697586932248" at="98,21,102,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$6" />
+      <unit id="1741258697586932539" at="105,268,109,11" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$7$1" />
+      <unit id="1741258697586932689" at="139,164,143,13" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$SubstituteMenuPart_Concepts_yjz63_a0$1$1" />
+      <unit id="1741258697586932727" at="148,74,152,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$SubstituteMenuPart_Concepts_yjz63_a0$2" />
+      <unit id="1741258697586932782" at="152,22,156,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$SubstituteMenuPart_Concepts_yjz63_a0$3" />
+      <unit id="1741258697586932248" at="53,30,61,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$1" />
+      <unit id="1741258697586932248" at="62,36,70,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$2" />
+      <unit id="1741258697586932248" at="71,29,79,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$3" />
+      <unit id="1741258697586932248" at="80,36,88,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$4" />
+      <unit id="1741258697586932248" at="89,30,97,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$5" />
+      <unit id="1741258697586932248" at="103,30,111,7" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$7" />
+      <unit id="1741258697586932681" at="137,107,145,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$SubstituteMenuPart_Concepts_yjz63_a0$1" />
       <unit id="1741258697586932248" at="122,0,163,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a$SubstituteMenuPart_Concepts_yjz63_a0" />
       <unit id="1741258697586932248" at="42,0,164,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType$SubstituteMenuPart_Group_yjz63_a" />
       <unit id="1741258697586932248" at="34,0,165,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_SequenceType" />
@@ -11455,12 +11455,12 @@
       <scope id="1741258697586932796" at="83,0,98,0">
         <var name="_context" id="1741258697586932796" />
       </scope>
-      <unit id="1741258697586932850" at="52,276,56,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$1" />
-      <unit id="1741258697586932867" at="56,22,60,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$2" />
-      <unit id="1741258697586932909" at="60,22,64,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$3" />
-      <unit id="1741258697586932974" at="84,274,88,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$1" />
-      <unit id="1741258697586932991" at="88,22,92,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$2" />
-      <unit id="1741258697586933033" at="92,22,96,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$3" />
+      <unit id="1741258697586932850" at="52,276,56,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_a$SubstituteMenuPart_Concepts_y5n1eq_a0$1" />
+      <unit id="1741258697586932867" at="56,22,60,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_a$SubstituteMenuPart_Concepts_y5n1eq_a0$2" />
+      <unit id="1741258697586932909" at="60,22,64,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_a$SubstituteMenuPart_Concepts_y5n1eq_a0$3" />
+      <unit id="1741258697586932974" at="84,274,88,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_b$SubstituteMenuPart_Concepts_y5n1eq_a1$1" />
+      <unit id="1741258697586932991" at="88,22,92,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_b$SubstituteMenuPart_Concepts_y5n1eq_a1$2" />
+      <unit id="1741258697586933033" at="92,22,96,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_b$SubstituteMenuPart_Concepts_y5n1eq_a1$3" />
       <unit id="1741258697586932796" at="104,0,115,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_c" />
       <unit id="1741258697586932796" at="50,0,71,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_a$SubstituteMenuPart_Concepts_y5n1eq_a0" />
       <unit id="1741258697586932796" at="82,0,103,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_IteratorType$SubstituteMenuPart_Group_y5n1eq_b$SubstituteMenuPart_Concepts_y5n1eq_a1" />
@@ -11576,9 +11576,9 @@
       <scope id="1741258697586933283" at="49,0,64,0">
         <var name="_context" id="1741258697586933283" />
       </scope>
-      <unit id="1741258697586933337" at="50,273,54,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$1" />
-      <unit id="1741258697586933354" at="54,22,58,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$2" />
-      <unit id="1741258697586933396" at="58,22,62,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$3" />
+      <unit id="1741258697586933337" at="50,273,54,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$SubstituteMenuPart_Group_ioydli_a$SubstituteMenuPart_Concepts_ioydli_a0$1" />
+      <unit id="1741258697586933354" at="54,22,58,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$SubstituteMenuPart_Group_ioydli_a$SubstituteMenuPart_Concepts_ioydli_a0$2" />
+      <unit id="1741258697586933396" at="58,22,62,9" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$SubstituteMenuPart_Group_ioydli_a$SubstituteMenuPart_Concepts_ioydli_a0$3" />
       <unit id="1741258697586933283" at="48,0,69,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$SubstituteMenuPart_Group_ioydli_a$SubstituteMenuPart_Concepts_ioydli_a0" />
       <unit id="1741258697586933283" at="38,0,70,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType$SubstituteMenuPart_Group_ioydli_a" />
       <unit id="1741258697586933283" at="30,0,71,0" name="jetbrains.mps.baseLanguage.collections.editor.substitute_IOperation_MappingType" />
@@ -11995,7 +11995,7 @@
       <scope id="1741258697587177383" at="54,0,63,0">
         <var name="_context" id="1741258697587177383" />
       </scope>
-      <unit id="1741258697587177383" at="57,20,61,7" name="jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform$1" />
+      <unit id="1741258697587177383" at="57,20,61,7" name="jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform$TransformationMenuPart_Group_ahju1d_a0$1" />
       <unit id="1741258697587177383" at="79,0,110,0" name="jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform$TransformationMenuPart_Group_ahju1d_a0$TransformationMenuPart_Action_ahju1d_a0a$Item" />
       <unit id="1741258697587177383" at="73,0,111,0" name="jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform$TransformationMenuPart_Group_ahju1d_a0$TransformationMenuPart_Action_ahju1d_a0a" />
       <unit id="1741258697587177383" at="52,0,112,0" name="jetbrains.mps.baseLanguage.collections.editor.BLC_rtansform$TransformationMenuPart_Group_ahju1d_a0" />
@@ -15063,7 +15063,7 @@
         <var name="node" id="7246115176735615083" />
         <var name="operationContext" id="7246115176735615083" />
       </scope>
-      <unit id="5686963296372870424" at="33,158,37,7" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$1" />
+      <unit id="5686963296372870424" at="33,158,37,7" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_qhej2e_a0$1" />
       <unit id="7246115176735615083" at="27,0,49,0" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_qhej2e_a0" />
       <unit id="7246115176735615080" at="23,0,50,0" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType" />
     </file>

@@ -2260,80 +2260,80 @@
       <unit id="1201785477030" at="622,32,639,5" name="jetbrains.mps.closures.test.YieldClosures_Test$13" />
       <unit id="1209325983791" at="731,32,748,5" name="jetbrains.mps.closures.test.YieldClosures_Test$15" />
       <unit id="1201519068369" at="230,32,249,5" name="jetbrains.mps.closures.test.YieldClosures_Test$5" />
-      <unit id="5997054828945109591" at="1645,23,1668,13" name="jetbrains.mps.closures.test.YieldClosures_Test$38" />
-      <unit id="1229086530164" at="1488,27,1515,17" name="jetbrains.mps.closures.test.YieldClosures_Test$36" />
-      <unit id="5997054828945109591" at="1643,19,1670,9" name="jetbrains.mps.closures.test.YieldClosures_Test$37" />
-      <unit id="1229428853863" at="1767,23,1794,13" name="jetbrains.mps.closures.test.YieldClosures_Test$40" />
+      <unit id="5997054828945109591" at="1645,23,1668,13" name="jetbrains.mps.closures.test.YieldClosures_Test$36$1$1" />
+      <unit id="1229086530164" at="1488,27,1515,17" name="jetbrains.mps.closures.test.YieldClosures_Test$33$1$1$1" />
+      <unit id="5997054828945109591" at="1643,19,1670,9" name="jetbrains.mps.closures.test.YieldClosures_Test$36$1" />
+      <unit id="1229428853863" at="1767,23,1794,13" name="jetbrains.mps.closures.test.YieldClosures_Test$38$1$1" />
       <unit id="3376587159404838392" at="1053,32,1084,5" name="jetbrains.mps.closures.test.YieldClosures_Test$21" />
-      <unit id="1229086530164" at="1486,23,1517,13" name="jetbrains.mps.closures.test.YieldClosures_Test$35" />
+      <unit id="1229086530164" at="1486,23,1517,13" name="jetbrains.mps.closures.test.YieldClosures_Test$33$1$1" />
       <unit id="5997054828945109591" at="1641,57,1672,5" name="jetbrains.mps.closures.test.YieldClosures_Test$36" />
-      <unit id="1229428853863" at="1765,19,1796,9" name="jetbrains.mps.closures.test.YieldClosures_Test$39" />
-      <unit id="1229087132438" at="1535,27,1568,17" name="jetbrains.mps.closures.test.YieldClosures_Test$37" />
-      <unit id="1229086530164" at="1484,55,1519,9" name="jetbrains.mps.closures.test.YieldClosures_Test$34" />
+      <unit id="1229428853863" at="1765,19,1796,9" name="jetbrains.mps.closures.test.YieldClosures_Test$38$1" />
+      <unit id="1229087132438" at="1535,27,1568,17" name="jetbrains.mps.closures.test.YieldClosures_Test$34$1$1$1" />
+      <unit id="1229086530164" at="1484,55,1519,9" name="jetbrains.mps.closures.test.YieldClosures_Test$33$1" />
       <unit id="1229428853863" at="1763,54,1798,5" name="jetbrains.mps.closures.test.YieldClosures_Test$38" />
-      <unit id="1229443175163" at="1817,23,1853,13" name="jetbrains.mps.closures.test.YieldClosures_Test$41" />
-      <unit id="1229087132438" at="1533,23,1570,13" name="jetbrains.mps.closures.test.YieldClosures_Test$36" />
+      <unit id="1229443175163" at="1817,23,1853,13" name="jetbrains.mps.closures.test.YieldClosures_Test$39$1$1" />
+      <unit id="1229087132438" at="1533,23,1570,13" name="jetbrains.mps.closures.test.YieldClosures_Test$34$1$1" />
       <unit id="1229086530158" at="1482,69,1521,5" name="jetbrains.mps.closures.test.YieldClosures_Test$33" />
-      <unit id="1229443175163" at="1815,19,1855,9" name="jetbrains.mps.closures.test.YieldClosures_Test$40" />
-      <unit id="1229087132438" at="1531,55,1572,9" name="jetbrains.mps.closures.test.YieldClosures_Test$35" />
-      <unit id="1229019599670" at="1230,23,1272,13" name="jetbrains.mps.closures.test.YieldClosures_Test$28" />
-      <unit id="1229019522329" at="1287,23,1329,13" name="jetbrains.mps.closures.test.YieldClosures_Test$30" />
+      <unit id="1229443175163" at="1815,19,1855,9" name="jetbrains.mps.closures.test.YieldClosures_Test$39$1" />
+      <unit id="1229087132438" at="1531,55,1572,9" name="jetbrains.mps.closures.test.YieldClosures_Test$34$1" />
+      <unit id="1229019599670" at="1230,23,1272,13" name="jetbrains.mps.closures.test.YieldClosures_Test$26$1$1" />
+      <unit id="1229019522329" at="1287,23,1329,13" name="jetbrains.mps.closures.test.YieldClosures_Test$28$1$1" />
       <unit id="1229443175163" at="1813,53,1857,5" name="jetbrains.mps.closures.test.YieldClosures_Test$39" />
       <unit id="1229087132432" at="1529,69,1574,5" name="jetbrains.mps.closures.test.YieldClosures_Test$34" />
-      <unit id="1229277702711" at="1584,23,1629,13" name="jetbrains.mps.closures.test.YieldClosures_Test$37" />
-      <unit id="1229019599670" at="1228,19,1274,9" name="jetbrains.mps.closures.test.YieldClosures_Test$27" />
-      <unit id="1229019522329" at="1285,19,1331,9" name="jetbrains.mps.closures.test.YieldClosures_Test$29" />
-      <unit id="1229277702711" at="1582,19,1631,9" name="jetbrains.mps.closures.test.YieldClosures_Test$36" />
+      <unit id="1229277702711" at="1584,23,1629,13" name="jetbrains.mps.closures.test.YieldClosures_Test$35$1$1" />
+      <unit id="1229019599670" at="1228,19,1274,9" name="jetbrains.mps.closures.test.YieldClosures_Test$26$1" />
+      <unit id="1229019522329" at="1285,19,1331,9" name="jetbrains.mps.closures.test.YieldClosures_Test$28$1" />
+      <unit id="1229277702711" at="1582,19,1631,9" name="jetbrains.mps.closures.test.YieldClosures_Test$35$1" />
       <unit id="1229019599670" at="1226,11,1276,5" name="jetbrains.mps.closures.test.YieldClosures_Test$26" />
       <unit id="1229019522329" at="1283,11,1333,5" name="jetbrains.mps.closures.test.YieldClosures_Test$28" />
-      <unit id="6473362057510545288" at="1973,23,2023,13" name="jetbrains.mps.closures.test.YieldClosures_Test$43" />
+      <unit id="6473362057510545288" at="1973,23,2023,13" name="jetbrains.mps.closures.test.YieldClosures_Test$41$1$1" />
       <unit id="1229277702711" at="1580,106,1633,5" name="jetbrains.mps.closures.test.YieldClosures_Test$35" />
-      <unit id="6473362057510545288" at="1971,19,2025,9" name="jetbrains.mps.closures.test.YieldClosures_Test$42" />
-      <unit id="1229019752410" at="1416,23,1471,13" name="jetbrains.mps.closures.test.YieldClosures_Test$34" />
-      <unit id="1229019676427" at="1344,23,1401,13" name="jetbrains.mps.closures.test.YieldClosures_Test$32" />
+      <unit id="6473362057510545288" at="1971,19,2025,9" name="jetbrains.mps.closures.test.YieldClosures_Test$41$1" />
+      <unit id="1229019752410" at="1416,23,1471,13" name="jetbrains.mps.closures.test.YieldClosures_Test$32$1$1" />
+      <unit id="1229019676427" at="1344,23,1401,13" name="jetbrains.mps.closures.test.YieldClosures_Test$30$1$1" />
       <unit id="6473362057510545288" at="1969,41,2027,5" name="jetbrains.mps.closures.test.YieldClosures_Test$41" />
-      <unit id="1210769642288" at="987,23,1046,13" name="jetbrains.mps.closures.test.YieldClosures_Test$22" />
-      <unit id="1229019752410" at="1414,19,1473,9" name="jetbrains.mps.closures.test.YieldClosures_Test$33" />
-      <unit id="1201534555460" at="359,23,420,13" name="jetbrains.mps.closures.test.YieldClosures_Test$10" />
-      <unit id="1229019676427" at="1342,19,1403,9" name="jetbrains.mps.closures.test.YieldClosures_Test$31" />
-      <unit id="1210769642288" at="985,19,1048,9" name="jetbrains.mps.closures.test.YieldClosures_Test$21" />
+      <unit id="1210769642288" at="987,23,1046,13" name="jetbrains.mps.closures.test.YieldClosures_Test$20$1$1" />
+      <unit id="1229019752410" at="1414,19,1473,9" name="jetbrains.mps.closures.test.YieldClosures_Test$32$1" />
+      <unit id="1201534555460" at="359,23,420,13" name="jetbrains.mps.closures.test.YieldClosures_Test$8$1$1" />
+      <unit id="1229019676427" at="1342,19,1403,9" name="jetbrains.mps.closures.test.YieldClosures_Test$30$1" />
+      <unit id="1210769642288" at="985,19,1048,9" name="jetbrains.mps.closures.test.YieldClosures_Test$20$1" />
       <unit id="1229019752410" at="1412,11,1475,5" name="jetbrains.mps.closures.test.YieldClosures_Test$32" />
-      <unit id="1201534555460" at="357,19,422,9" name="jetbrains.mps.closures.test.YieldClosures_Test$9" />
-      <unit id="1201535652936" at="444,23,509,13" name="jetbrains.mps.closures.test.YieldClosures_Test$12" />
+      <unit id="1201534555460" at="357,19,422,9" name="jetbrains.mps.closures.test.YieldClosures_Test$8$1" />
+      <unit id="1201535652936" at="444,23,509,13" name="jetbrains.mps.closures.test.YieldClosures_Test$10$1$1" />
       <unit id="1229019676427" at="1340,11,1405,5" name="jetbrains.mps.closures.test.YieldClosures_Test$30" />
       <unit id="1210769642288" at="983,11,1050,5" name="jetbrains.mps.closures.test.YieldClosures_Test$20" />
-      <unit id="8867458942910706579" at="1894,23,1961,13" name="jetbrains.mps.closures.test.YieldClosures_Test$42" />
+      <unit id="8867458942910706579" at="1894,23,1961,13" name="jetbrains.mps.closures.test.YieldClosures_Test$40$1$1" />
       <unit id="1201534555460" at="355,11,424,5" name="jetbrains.mps.closures.test.YieldClosures_Test$8" />
-      <unit id="1201535652936" at="442,19,511,9" name="jetbrains.mps.closures.test.YieldClosures_Test$11" />
-      <unit id="8867458942910706579" at="1892,19,1963,9" name="jetbrains.mps.closures.test.YieldClosures_Test$41" />
+      <unit id="1201535652936" at="442,19,511,9" name="jetbrains.mps.closures.test.YieldClosures_Test$10$1" />
+      <unit id="8867458942910706579" at="1892,19,1963,9" name="jetbrains.mps.closures.test.YieldClosures_Test$40$1" />
       <unit id="1201535652936" at="440,11,513,5" name="jetbrains.mps.closures.test.YieldClosures_Test$10" />
-      <unit id="1201439820459" at="148,23,223,13" name="jetbrains.mps.closures.test.YieldClosures_Test$6" />
+      <unit id="1201439820459" at="148,23,223,13" name="jetbrains.mps.closures.test.YieldClosures_Test$4$1$1" />
       <unit id="8867458942910706579" at="1890,34,1965,5" name="jetbrains.mps.closures.test.YieldClosures_Test$40" />
-      <unit id="1201433490822" at="44,23,120,13" name="jetbrains.mps.closures.test.YieldClosures_Test$4" />
-      <unit id="5997054828945109651" at="1679,23,1755,13" name="jetbrains.mps.closures.test.YieldClosures_Test$39" />
-      <unit id="1201439820459" at="146,19,225,9" name="jetbrains.mps.closures.test.YieldClosures_Test$5" />
-      <unit id="1201433490822" at="42,19,122,9" name="jetbrains.mps.closures.test.YieldClosures_Test$3" />
-      <unit id="1203355537892" at="535,23,615,13" name="jetbrains.mps.closures.test.YieldClosures_Test$14" />
-      <unit id="5997054828945109651" at="1677,19,1757,9" name="jetbrains.mps.closures.test.YieldClosures_Test$38" />
-      <unit id="1201785509884" at="643,23,724,13" name="jetbrains.mps.closures.test.YieldClosures_Test$16" />
+      <unit id="1201433490822" at="44,23,120,13" name="jetbrains.mps.closures.test.YieldClosures_Test$2$1$1" />
+      <unit id="5997054828945109651" at="1679,23,1755,13" name="jetbrains.mps.closures.test.YieldClosures_Test$37$1$1" />
+      <unit id="1201439820459" at="146,19,225,9" name="jetbrains.mps.closures.test.YieldClosures_Test$4$1" />
+      <unit id="1201433490822" at="42,19,122,9" name="jetbrains.mps.closures.test.YieldClosures_Test$2$1" />
+      <unit id="1203355537892" at="535,23,615,13" name="jetbrains.mps.closures.test.YieldClosures_Test$12$1$1" />
+      <unit id="5997054828945109651" at="1677,19,1757,9" name="jetbrains.mps.closures.test.YieldClosures_Test$37$1" />
+      <unit id="1201785509884" at="643,23,724,13" name="jetbrains.mps.closures.test.YieldClosures_Test$14$1$1" />
       <unit id="1201439820459" at="144,11,227,5" name="jetbrains.mps.closures.test.YieldClosures_Test$4" />
       <unit id="1201433490822" at="40,11,124,5" name="jetbrains.mps.closures.test.YieldClosures_Test$2" />
-      <unit id="1203355537892" at="533,19,617,9" name="jetbrains.mps.closures.test.YieldClosures_Test$13" />
+      <unit id="1203355537892" at="533,19,617,9" name="jetbrains.mps.closures.test.YieldClosures_Test$12$1" />
       <unit id="5997054828945109651" at="1675,81,1759,5" name="jetbrains.mps.closures.test.YieldClosures_Test$37" />
-      <unit id="1201785509884" at="641,19,726,9" name="jetbrains.mps.closures.test.YieldClosures_Test$15" />
-      <unit id="1201519088406" at="253,23,339,13" name="jetbrains.mps.closures.test.YieldClosures_Test$8" />
-      <unit id="6654551869131341513" at="875,23,962,13" name="jetbrains.mps.closures.test.YieldClosures_Test$20" />
+      <unit id="1201785509884" at="641,19,726,9" name="jetbrains.mps.closures.test.YieldClosures_Test$14$1" />
+      <unit id="1201519088406" at="253,23,339,13" name="jetbrains.mps.closures.test.YieldClosures_Test$6$1$1" />
+      <unit id="6654551869131341513" at="875,23,962,13" name="jetbrains.mps.closures.test.YieldClosures_Test$18$1$1" />
       <unit id="1203355537892" at="531,11,619,5" name="jetbrains.mps.closures.test.YieldClosures_Test$12" />
       <unit id="1201785509884" at="639,11,728,5" name="jetbrains.mps.closures.test.YieldClosures_Test$14" />
-      <unit id="1201519088406" at="251,19,341,9" name="jetbrains.mps.closures.test.YieldClosures_Test$7" />
-      <unit id="6654551869131341513" at="873,19,964,9" name="jetbrains.mps.closures.test.YieldClosures_Test$19" />
+      <unit id="1201519088406" at="251,19,341,9" name="jetbrains.mps.closures.test.YieldClosures_Test$6$1" />
+      <unit id="6654551869131341513" at="873,19,964,9" name="jetbrains.mps.closures.test.YieldClosures_Test$18$1" />
       <unit id="1201519088406" at="249,11,343,5" name="jetbrains.mps.closures.test.YieldClosures_Test$6" />
-      <unit id="1209326150938" at="752,23,846,13" name="jetbrains.mps.closures.test.YieldClosures_Test$18" />
+      <unit id="1209326150938" at="752,23,846,13" name="jetbrains.mps.closures.test.YieldClosures_Test$16$1$1" />
       <unit id="6654551869131341513" at="871,11,966,5" name="jetbrains.mps.closures.test.YieldClosures_Test$18" />
-      <unit id="1209326150938" at="750,19,848,9" name="jetbrains.mps.closures.test.YieldClosures_Test$17" />
+      <unit id="1209326150938" at="750,19,848,9" name="jetbrains.mps.closures.test.YieldClosures_Test$16$1" />
       <unit id="1209326150938" at="748,11,850,5" name="jetbrains.mps.closures.test.YieldClosures_Test$16" />
-      <unit id="3376587159404841515" at="1088,23,1203,13" name="jetbrains.mps.closures.test.YieldClosures_Test$24" />
-      <unit id="3376587159404841515" at="1086,19,1205,9" name="jetbrains.mps.closures.test.YieldClosures_Test$23" />
+      <unit id="3376587159404841515" at="1088,23,1203,13" name="jetbrains.mps.closures.test.YieldClosures_Test$22$1$1" />
+      <unit id="3376587159404841515" at="1086,19,1205,9" name="jetbrains.mps.closures.test.YieldClosures_Test$22$1" />
       <unit id="3376587159404841515" at="1084,11,1207,5" name="jetbrains.mps.closures.test.YieldClosures_Test$22" />
       <unit id="1201432919093" at="22,0,2074,0" name="jetbrains.mps.closures.test.YieldClosures_Test" />
     </file>
@@ -2879,19 +2879,19 @@
       <unit id="1201774088258" at="52,15,56,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$2" />
       <unit id="1201774129160" at="57,15,61,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$3" />
       <unit id="1201774552987" at="181,33,185,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
-      <unit id="1227876790689" at="24,23,47,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$3" />
-      <unit id="1201774158168" at="66,23,89,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$6" />
-      <unit id="1201774171138" at="98,23,121,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$7" />
-      <unit id="1227876790689" at="22,19,49,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$2" />
-      <unit id="1201774158168" at="64,19,91,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$5" />
-      <unit id="1201774171138" at="96,19,123,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$6" />
+      <unit id="1227876790689" at="24,23,47,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$1$1$1" />
+      <unit id="1201774158168" at="66,23,89,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$4$1$1" />
+      <unit id="1201774171138" at="98,23,121,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$5$1$1" />
+      <unit id="1227876790689" at="22,19,49,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$1$1" />
+      <unit id="1201774158168" at="64,19,91,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$4$1" />
+      <unit id="1201774171138" at="96,19,123,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$5$1" />
       <unit id="1227876790689" at="20,59,51,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$1" />
       <unit id="1201774158168" at="62,15,93,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$4" />
       <unit id="1201774171138" at="94,15,125,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$5" />
-      <unit id="1227876789544" at="144,23,175,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10" />
-      <unit id="1201777442241" at="189,23,220,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$12" />
-      <unit id="1227876789544" at="142,19,177,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
-      <unit id="1201777442241" at="187,19,222,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$11" />
+      <unit id="1227876789544" at="144,23,175,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$8$1$1" />
+      <unit id="1201777442241" at="189,23,220,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10$1$1" />
+      <unit id="1227876789544" at="142,19,177,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$8$1" />
+      <unit id="1201777442241" at="187,19,222,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10$1" />
       <unit id="1227876789544" at="140,59,179,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$8" />
       <unit id="1201777442241" at="185,11,224,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10" />
       <unit id="1201773926206" at="14,0,229,0" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test" />
@@ -2983,14 +2983,14 @@
         <var name="fun4" id="1201780042113" />
       </scope>
       <scope id="1201777876283" at="10,0,40,0" />
-      <unit id="1201777947111" at="13,19,17,9" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$2" />
-      <unit id="1201778635410" at="24,23,28,13" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$4" />
+      <unit id="1201777947111" at="13,19,17,9" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$1$1" />
+      <unit id="1201778635410" at="24,23,28,13" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$2$1$1" />
       <unit id="1201778761112" at="41,119,45,5" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$3" />
       <unit id="1201779035291" at="46,96,50,5" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$4" />
       <unit id="1201779071592" at="51,85,55,5" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$5" />
       <unit id="1201778902895" at="62,15,66,5" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$6" />
       <unit id="1201777932247" at="11,103,19,5" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$1" />
-      <unit id="1201778623496" at="22,19,30,9" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$3" />
+      <unit id="1201778623496" at="22,19,30,9" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$2$1" />
       <unit id="1201778621562" at="20,143,32,5" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$2" />
       <unit id="1201777863134" at="9,0,69,0" name="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test" />
     </file>
@@ -3545,7 +3545,7 @@
       <unit id="4073449185570422767" at="282,52,286,7" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$16" />
       <unit id="3294521177951870054" at="302,8,306,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$17" />
       <unit id="3294521177951977997" at="307,8,311,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$18" />
-      <unit id="811905832257259140" at="366,37,370,23" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$23" />
+      <unit id="811905832257259140" at="366,37,370,23" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$20$1$1$1" />
       <unit id="811905832257259151" at="386,68,390,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
       <unit id="1215520889970" at="422,15,426,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$23" />
       <unit id="1215526194217" at="429,15,433,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$24" />
@@ -3553,15 +3553,15 @@
       <unit id="1202778458188" at="26,21,31,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$1" />
       <unit id="1214828754112" at="164,23,171,7" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$8" />
       <unit id="4600621396854791262" at="396,30,403,7" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
-      <unit id="3294521177951978021" at="316,23,339,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
-      <unit id="3294521177951978021" at="314,19,341,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$20" />
-      <unit id="811905832257259120" at="354,23,381,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$22" />
-      <unit id="1203187295149" at="59,23,90,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$6" />
-      <unit id="1203270587979" at="107,23,138,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$7" />
+      <unit id="3294521177951978021" at="316,23,339,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$19$1$1" />
+      <unit id="3294521177951978021" at="314,19,341,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$19$1" />
+      <unit id="811905832257259120" at="354,23,381,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$20$1$1" />
+      <unit id="1203187295149" at="59,23,90,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$4$1$1" />
+      <unit id="1203270587979" at="107,23,138,13" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$5$1$1" />
       <unit id="3294521177951978021" at="312,8,343,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$19" />
-      <unit id="811905832257259120" at="352,19,383,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$21" />
-      <unit id="1203187295149" at="57,19,92,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$5" />
-      <unit id="1203270587979" at="105,19,140,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$6" />
+      <unit id="811905832257259120" at="352,19,383,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$20$1" />
+      <unit id="1203187295149" at="57,19,92,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$4$1" />
+      <unit id="1203270587979" at="105,19,140,9" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$5$1" />
       <unit id="811905832257259120" at="350,92,385,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$20" />
       <unit id="1203187295149" at="55,29,94,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$4" />
       <unit id="1203270587979" at="103,31,142,5" name="jetbrains.mps.closures.test.ClassifierAdapters_Test$5" />
@@ -3882,11 +3882,11 @@
       <scope id="6206193564525586749" at="77,0,122,0" />
       <unit id="1202834755155" at="17,18,21,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$1" />
       <unit id="1207147635846" at="27,10,31,7" name="jetbrains.mps.closures.test.ExternalReferences_Test$2" />
-      <unit id="6206193564525629206" at="99,38,103,23" name="jetbrains.mps.closures.test.ExternalReferences_Test$7" />
-      <unit id="6206193564527647395" at="127,24,131,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$6" />
-      <unit id="1202834881127" at="152,19,156,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
-      <unit id="1219840071907" at="166,12,170,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$9" />
-      <unit id="1202835091861" at="184,19,188,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$10" />
+      <unit id="6206193564525629206" at="99,38,103,23" name="jetbrains.mps.closures.test.ExternalReferences_Test$4$1$1$1" />
+      <unit id="6206193564527647395" at="127,24,131,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$5$1" />
+      <unit id="1202834881127" at="152,19,156,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$7$1" />
+      <unit id="1219840071907" at="166,12,170,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$8$1" />
+      <unit id="1202835091861" at="184,19,188,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$9$1" />
       <unit id="1237139671980" at="196,14,200,7" name="jetbrains.mps.closures.test.ExternalReferences_Test$10" />
       <unit id="9188746615686021948" at="204,42,208,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$11" />
       <unit id="7668669956905496038" at="213,39,217,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$12" />
@@ -3897,11 +3897,11 @@
       <unit id="6206193564527647385" at="124,16,134,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
       <unit id="1219840019849" at="162,21,173,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$8" />
       <unit id="1202835091852" at="177,21,190,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$9" />
-      <unit id="1207247582944" at="43,25,67,15" name="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
-      <unit id="1207247582944" at="41,21,69,11" name="jetbrains.mps.closures.test.ExternalReferences_Test$4" />
-      <unit id="6206193564525622571" at="83,23,114,13" name="jetbrains.mps.closures.test.ExternalReferences_Test$6" />
+      <unit id="1207247582944" at="43,25,67,15" name="jetbrains.mps.closures.test.ExternalReferences_Test$3$1$1" />
+      <unit id="1207247582944" at="41,21,69,11" name="jetbrains.mps.closures.test.ExternalReferences_Test$3$1" />
+      <unit id="6206193564525622571" at="83,23,114,13" name="jetbrains.mps.closures.test.ExternalReferences_Test$4$1$1" />
       <unit id="1207247582944" at="39,23,71,7" name="jetbrains.mps.closures.test.ExternalReferences_Test$3" />
-      <unit id="6206193564525622571" at="81,19,116,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$5" />
+      <unit id="6206193564525622571" at="81,19,116,9" name="jetbrains.mps.closures.test.ExternalReferences_Test$4$1" />
       <unit id="6206193564525622571" at="79,38,118,5" name="jetbrains.mps.closures.test.ExternalReferences_Test$4" />
       <unit id="1202834707004" at="14,0,247,0" name="jetbrains.mps.closures.test.ExternalReferences_Test" />
     </file>
@@ -3994,7 +3994,7 @@
         <var name="run" id="1213280660268" />
       </scope>
       <scope id="1213266208304" at="10,0,25,0" />
-      <unit id="1213280665212" at="15,12,19,9" name="jetbrains.mps.closures.test.ThisExpression_Test$2" />
+      <unit id="1213280665212" at="15,12,19,9" name="jetbrains.mps.closures.test.ThisExpression_Test$1$1" />
       <unit id="1213280665204" at="11,23,22,5" name="jetbrains.mps.closures.test.ThisExpression_Test$1" />
       <unit id="1213266193343" at="9,0,32,0" name="jetbrains.mps.closures.test.ThisExpression_Test" />
     </file>
@@ -4089,7 +4089,7 @@
       </scope>
       <scope id="1226351791138" at="11,0,26,0" />
       <unit id="7759808016291059449" at="28,23,32,5" name="jetbrains.mps.closures.test.FinalClosureParameter_Test$2" />
-      <unit id="1226351897872" at="15,25,20,9" name="jetbrains.mps.closures.test.FinalClosureParameter_Test$2" />
+      <unit id="1226351897872" at="15,25,20,9" name="jetbrains.mps.closures.test.FinalClosureParameter_Test$1$1" />
       <unit id="1226351812959" at="13,28,23,5" name="jetbrains.mps.closures.test.FinalClosureParameter_Test$1" />
       <unit id="1226351732110" at="10,0,41,0" name="jetbrains.mps.closures.test.FinalClosureParameter_Test" />
     </file>
@@ -4191,8 +4191,8 @@
       </scope>
       <scope id="2619154382620884872" at="13,0,21,0" />
       <scope id="2619154382620903389" at="21,0,30,0" />
-      <unit id="2619154382620884885" at="14,35,18,7" name="jetbrains.mps.closures.test.mps8150$1" />
-      <unit id="2619154382620906364" at="22,75,26,7" name="jetbrains.mps.closures.test.mps8150$2" />
+      <unit id="2619154382620884885" at="14,35,18,7" name="jetbrains.mps.closures.test.mps8150$Bar$1" />
+      <unit id="2619154382620906364" at="22,75,26,7" name="jetbrains.mps.closures.test.mps8150$Bar$2" />
       <unit id="2619154382620884856" at="31,0,35,0" name="jetbrains.mps.closures.test.mps8150$Qux" />
       <unit id="2619154382620884845" at="10,0,31,0" name="jetbrains.mps.closures.test.mps8150$Bar" />
       <unit id="2619154382620884837" at="7,0,36,0" name="jetbrains.mps.closures.test.mps8150" />
@@ -4310,7 +4310,7 @@
       </scope>
       <scope id="5501998944439577562" at="13,66,18,8" />
       <scope id="5501998944439577559" at="13,0,20,0" />
-      <unit id="5501998944440278196" at="14,59,18,7" name="jetbrains.mps.closures.test.MPS14653_helper$1" />
+      <unit id="5501998944440278196" at="14,59,18,7" name="jetbrains.mps.closures.test.MPS14653_helper$Context$1" />
       <unit id="5501998944439577548" at="10,0,24,0" name="jetbrains.mps.closures.test.MPS14653_helper$Context" />
       <unit id="5501998944439577540" at="7,0,25,0" name="jetbrains.mps.closures.test.MPS14653_helper" />
     </file>
@@ -4429,11 +4429,11 @@
       <scope id="5902225204490684995" at="12,0,91,0" />
       <scope id="5902225204490684991" at="10,47,122,7" />
       <scope id="5902225204490684988" at="10,0,124,0" />
-      <unit id="5902225204490685016" at="95,23,118,13" name="jetbrains.mps.closures.test.WhileBreak_Test$4" />
-      <unit id="5902225204490685016" at="93,19,120,9" name="jetbrains.mps.closures.test.WhileBreak_Test$3" />
+      <unit id="5902225204490685016" at="95,23,118,13" name="jetbrains.mps.closures.test.WhileBreak_Test$2$1$1" />
+      <unit id="5902225204490685016" at="93,19,120,9" name="jetbrains.mps.closures.test.WhileBreak_Test$2$1" />
       <unit id="5902225204490685016" at="91,11,122,5" name="jetbrains.mps.closures.test.WhileBreak_Test$2" />
-      <unit id="5902225204490684995" at="15,23,87,13" name="jetbrains.mps.closures.test.WhileBreak_Test$3" />
-      <unit id="5902225204490684995" at="13,19,89,9" name="jetbrains.mps.closures.test.WhileBreak_Test$2" />
+      <unit id="5902225204490684995" at="15,23,87,13" name="jetbrains.mps.closures.test.WhileBreak_Test$1$1$1" />
+      <unit id="5902225204490684995" at="13,19,89,9" name="jetbrains.mps.closures.test.WhileBreak_Test$1$1" />
       <unit id="5902225204490684995" at="11,33,91,5" name="jetbrains.mps.closures.test.WhileBreak_Test$1" />
       <unit id="5902225204490666277" at="9,0,127,0" name="jetbrains.mps.closures.test.WhileBreak_Test" />
     </file>
@@ -4618,7 +4618,7 @@
       <scope id="8662331813148184779" at="18,0,31,0">
         <var name="k" id="8662331813148184808" />
       </scope>
-      <unit id="8662331813148184790" at="22,10,27,7" name="jetbrains.mps.closures.test.MPS_18030$1" />
+      <unit id="8662331813148184790" at="22,10,27,7" name="jetbrains.mps.closures.test.MPS_18030$Subclass$1" />
       <unit id="8662331813148184778" at="17,0,32,0" name="jetbrains.mps.closures.test.MPS_18030$Subclass" />
       <unit id="8662331813148184763" at="9,0,33,0" name="jetbrains.mps.closures.test.MPS_18030" />
     </file>

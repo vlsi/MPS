@@ -548,7 +548,7 @@
         <var name="editorContext" id="3986501926311481757" />
         <var name="node" id="3986501926311481757" />
       </scope>
-      <unit id="3986501926311703213" at="74,41,82,11" name="jetbrains.mps.samples.SwingBuilder.editor.Panel_Editor$2" />
+      <unit id="3986501926311703213" at="74,41,82,11" name="jetbrains.mps.samples.SwingBuilder.editor.Panel_Editor$1$1" />
       <unit id="3986501926311509928" at="71,30,87,5" name="jetbrains.mps.samples.SwingBuilder.editor.Panel_Editor$1" />
       <unit id="5340361359451500714" at="101,0,136,0" name="jetbrains.mps.samples.SwingBuilder.editor.Panel_Editor$componentsListHandler_7uomxw_c0" />
       <unit id="5340361359451500714" at="146,0,191,0" name="jetbrains.mps.samples.SwingBuilder.editor.Panel_Editor$componentsListHandler_7uomxw_d0" />

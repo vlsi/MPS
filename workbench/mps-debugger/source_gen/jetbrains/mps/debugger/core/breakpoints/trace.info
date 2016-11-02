@@ -278,7 +278,7 @@
         <var name="y" id="4474271214083124326" />
       </scope>
       <unit id="2228821930962906004" at="159,56,167,5" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$2" />
-      <unit id="4474271214083124820" at="181,49,189,9" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$1" />
+      <unit id="4474271214083124820" at="181,49,189,9" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyLeftMarginMouseListener$1" />
       <unit id="4474271214083123731" at="193,0,205,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyEditorComponentCreateListener" />
       <unit id="4474271214083124341" at="91,89,104,5" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$1" />
       <unit id="4474271214083123747" at="169,0,193,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyLeftMarginMouseListener" />

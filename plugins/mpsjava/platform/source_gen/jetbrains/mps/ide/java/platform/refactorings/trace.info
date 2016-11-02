@@ -889,10 +889,10 @@
       <unit id="4507335185602803905" at="246,54,252,5" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$5" />
       <unit id="4507335185602804034" at="276,31,283,5" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$6" />
       <unit id="4507335185602802781" at="363,0,374,0" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$MyMethodDuplicatesProcessor" />
-      <unit id="4507335185602802877" at="387,53,398,7" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$1" />
+      <unit id="4507335185602802877" at="387,53,398,7" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$ChooseContainerPanel$1" />
       <unit id="2034046503373005939" at="347,68,359,7" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$10" />
-      <unit id="2034046503361560595" at="405,71,420,11" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$3" />
-      <unit id="4507335185602802948" at="401,52,422,7" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$2" />
+      <unit id="2034046503361560595" at="405,71,420,11" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$ChooseContainerPanel$2$1" />
+      <unit id="4507335185602802948" at="401,52,422,7" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$ChooseContainerPanel$2" />
       <unit id="4507335185602802819" at="374,0,439,0" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog$ChooseContainerPanel" />
       <unit id="4507335185602802780" at="51,0,440,0" name="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog" />
     </file>
@@ -1486,11 +1486,11 @@
       <scope id="4507335185602808988" at="69,0,92,0" />
       <unit id="4555165563093673068" at="57,85,61,5" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$1" />
       <unit id="2034046503361585134" at="94,52,98,5" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$2" />
-      <unit id="2034046503361561398" at="163,56,167,9" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$5" />
+      <unit id="2034046503361561398" at="163,56,167,9" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$4$1" />
       <unit id="4507335185602809157" at="106,48,112,5" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$3" />
-      <unit id="4317009991304269847" at="222,58,228,9" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$1" />
+      <unit id="4317009991304269847" at="222,58,228,9" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$PreviewAction$1" />
       <unit id="4317009991304269623" at="160,42,169,5" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$4" />
-      <unit id="1573200182286763735" at="176,56,186,9" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$6" />
+      <unit id="1573200182286763735" at="176,56,186,9" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$5$1" />
       <unit id="2034046503373008017" at="199,53,212,5" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$6" />
       <unit id="1573200182286567238" at="174,42,188,5" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$5" />
       <unit id="4507335185602809252" at="214,0,234,0" name="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog$PreviewAction" />
@@ -1839,8 +1839,8 @@
       <scope id="4507335185602817503" at="95,0,152,0" />
       <unit id="4507335185602817473" at="79,76,83,5" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$1" />
       <unit id="4507335185602817484" at="83,16,87,5" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$2" />
-      <unit id="4507335185602817618" at="118,336,122,9" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$4" />
-      <unit id="4507335185602817567" at="108,54,113,11" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$4" />
+      <unit id="4507335185602817618" at="118,336,122,9" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$3$2" />
+      <unit id="4507335185602817567" at="108,54,113,11" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$3$1" />
       <unit id="4507335185602817642" at="131,60,146,5" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$4" />
       <unit id="4507335185602817546" at="104,8,130,5" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog$3" />
       <unit id="4507335185602817336" at="43,0,159,0" name="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog" />

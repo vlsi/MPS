@@ -64,7 +64,7 @@
         <var name="m" id="8994852683961412078" />
       </scope>
       <unit id="229542206852116560" at="36,42,40,7" name="jetbrains.mps.console.ideCommands.migration.OfAspectCheckMigration$1" />
-      <unit id="1216353055130413145" at="43,32,47,11" name="jetbrains.mps.console.ideCommands.migration.OfAspectCheckMigration$3" />
+      <unit id="1216353055130413145" at="43,32,47,11" name="jetbrains.mps.console.ideCommands.migration.OfAspectCheckMigration$2$1" />
       <unit id="1216353055130387064" at="41,301,49,7" name="jetbrains.mps.console.ideCommands.migration.OfAspectCheckMigration$2" />
       <unit id="8994852683961412078" at="18,0,57,0" name="jetbrains.mps.console.ideCommands.migration.OfAspectCheckMigration" />
     </file>

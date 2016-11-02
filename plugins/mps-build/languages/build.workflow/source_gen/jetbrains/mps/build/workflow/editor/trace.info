@@ -698,7 +698,7 @@
         <var name="_context" id="1741258697587102856" />
         <var name="item" id="1741258697587102856" />
       </scope>
-      <unit id="1741258697587102856" at="40,17,60,7" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$1" />
+      <unit id="1741258697587102856" at="40,17,60,7" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$SubstituteMenuPart_Wrapper_bkb34x_a$1" />
       <unit id="1741258697587102856" at="36,0,69,0" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu$SubstituteMenuPart_Wrapper_bkb34x_a" />
       <unit id="1741258697587102856" at="28,0,70,0" name="jetbrains.mps.build.workflow.editor.BwfFileSet_SubstituteMenu" />
     </file>
@@ -789,9 +789,9 @@
         <var name="_context" id="1741258697587102918" />
         <var name="item" id="1741258697587102918" />
       </scope>
-      <unit id="1741258697587102918" at="76,246,80,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$1" />
+      <unit id="1741258697587102918" at="76,246,80,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Subconcepts_qn58zx_b$1" />
       <unit id="1741258697587102918" at="74,0,90,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Subconcepts_qn58zx_b" />
-      <unit id="1741258697587102918" at="45,17,65,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$1" />
+      <unit id="1741258697587102918" at="45,17,65,7" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Wrapper_qn58zx_a$1" />
       <unit id="1741258697587102918" at="41,0,74,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu$SubstituteMenuPart_Wrapper_qn58zx_a" />
       <unit id="1741258697587102918" at="32,0,94,0" name="jetbrains.mps.build.workflow.editor.BwfJavaDependency_SubstituteMenu" />
     </file>

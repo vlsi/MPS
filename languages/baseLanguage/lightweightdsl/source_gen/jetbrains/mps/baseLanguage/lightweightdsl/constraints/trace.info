@@ -89,8 +89,8 @@
         <var name="references" id="2141245758542223245" />
       </scope>
       <scope id="2141245758542223245" at="60,0,90,0" />
-      <unit id="2141245758542230954" at="78,23,83,13" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints$4" />
-      <unit id="2141245758542223245" at="71,19,85,9" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints$3" />
+      <unit id="2141245758542230954" at="78,23,83,13" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints$2$1$1" />
+      <unit id="2141245758542223245" at="71,19,85,9" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints$2$1" />
       <unit id="2141245758542223245" at="39,137,57,5" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints$1" />
       <unit id="2141245758542223245" at="63,153,87,5" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints$2" />
       <unit id="2141245758542223245" at="31,0,92,0" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.CustomMemberDescriptor_Constraints" />
@@ -254,9 +254,9 @@
         <var name="references" id="4800340801163247737" />
       </scope>
       <scope id="4800340801163247737" at="50,0,83,0" />
-      <unit id="2641476927090850632" at="68,23,76,13" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints$4" />
+      <unit id="2641476927090850632" at="68,23,76,13" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints$2$1$1" />
       <unit id="4800340801163247737" at="39,15,48,5" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints$1" />
-      <unit id="4800340801163247737" at="61,19,78,9" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints$3" />
+      <unit id="4800340801163247737" at="61,19,78,9" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints$2$1" />
       <unit id="4800340801163247737" at="53,164,80,5" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints$2" />
       <unit id="4800340801163247737" at="28,0,86,0" name="jetbrains.mps.baseLanguage.lightweightdsl.constraints.DSLDescriptor_Constraints" />
     </file>

@@ -770,10 +770,10 @@
       </scope>
       <unit id="491818086004857282" at="73,66,77,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$1" />
       <unit id="491818086004873638" at="92,56,96,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$2" />
-      <unit id="4474271214083125072" at="334,59,341,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$1" />
-      <unit id="4474271214083125019" at="304,47,314,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$1" />
-      <unit id="2882117562690114623" at="269,47,280,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$1" />
-      <unit id="2882117562690114690" at="284,47,295,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$2" />
+      <unit id="4474271214083125072" at="334,59,341,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MySessionChangeAdapter$1" />
+      <unit id="4474271214083125019" at="304,47,314,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MyBreakpointListener$1" />
+      <unit id="2882117562690114623" at="269,47,280,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MyBreakpointManagerListener$1" />
+      <unit id="2882117562690114690" at="284,47,295,7" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MyBreakpointManagerListener$2" />
       <unit id="4474271214083123819" at="317,0,329,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MyDebugSessionAdapter" />
       <unit id="4474271214083123835" at="329,0,344,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MySessionChangeAdapter" />
       <unit id="4474271214083123806" at="299,0,317,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent$MyBreakpointListener" />

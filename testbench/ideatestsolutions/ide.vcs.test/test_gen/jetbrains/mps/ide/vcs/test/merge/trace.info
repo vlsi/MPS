@@ -288,14 +288,14 @@
       <scope id="3907542737155192685" at="92,0,124,0" />
       <unit id="4885112185264938837" at="109,41,113,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$1" />
       <unit id="7232970427865381390" at="127,37,131,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$2" />
-      <unit id="2034046503361581266" at="175,80,179,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$5" />
-      <unit id="5876208808348863663" at="189,128,193,13" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$7" />
+      <unit id="2034046503361581266" at="175,80,179,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$4$1" />
+      <unit id="5876208808348863663" at="189,128,193,13" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$5$1$1" />
       <unit id="5339997938416552910" at="202,46,206,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$6" />
       <unit id="2529186725972990818" at="237,77,241,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$7" />
       <unit id="2529186725972990828" at="241,16,245,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$8" />
       <unit id="8885850892991152115" at="153,45,159,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$3" />
       <unit id="1602046681913031917" at="173,45,181,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$4" />
-      <unit id="5876208808348402929" at="186,80,196,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$6" />
+      <unit id="5876208808348402929" at="186,80,196,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$5$1" />
       <unit id="1602046681913037829" at="184,45,198,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase$5" />
       <unit id="3089989024970166387" at="60,0,270,0" name="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase" />
     </file>
@@ -556,7 +556,7 @@
       <scope id="8885850892997670282" at="151,0,176,0">
         <var name="changer" id="8885850892997672184" />
       </scope>
-      <unit id="1317392967216124151" at="163,81,167,9" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$10" />
+      <unit id="1317392967216124151" at="163,81,167,9" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$9$1" />
       <unit id="445606167100350697" at="179,90,183,5" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$11" />
       <unit id="445606167100350821" at="185,103,189,7" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$10" />
       <unit id="8885850892997677943" at="57,18,62,5" name="jetbrains.mps.ide.vcs.test.merge.MergeTest$1" />
@@ -979,10 +979,10 @@
       <unit id="2193727838071894665" at="34,30,38,5" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$1" />
       <unit id="2193727838071872892" at="44,30,48,5" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$2" />
       <unit id="2193727838071410895" at="55,30,59,5" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$3" />
-      <unit id="2193727838072822606" at="68,282,72,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$5" />
-      <unit id="2193727838072831190" at="73,282,77,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$5" />
-      <unit id="2193727838072841087" at="88,282,92,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$6" />
-      <unit id="2193727838072841107" at="93,282,97,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$6" />
+      <unit id="2193727838072822606" at="68,282,72,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$4$1" />
+      <unit id="2193727838072831190" at="73,282,77,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$4$2" />
+      <unit id="2193727838072841087" at="88,282,92,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$5$1" />
+      <unit id="2193727838072841107" at="93,282,97,9" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$5$2" />
       <unit id="2193727838073240834" at="106,30,110,5" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$6" />
       <unit id="2193727838073259913" at="116,30,120,5" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$7" />
       <unit id="2193727838073628310" at="126,30,130,5" name="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest$8" />
@@ -1190,11 +1190,11 @@
         <var name="expectedFileStatus" id="5364815602089923626" />
         <var name="file" id="5364815602089922117" />
       </scope>
-      <unit id="3907542737155282400" at="77,87,81,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$3" />
-      <unit id="599918025274818347" at="90,34,97,11" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$4" />
+      <unit id="3907542737155282400" at="77,87,81,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$2$1" />
+      <unit id="599918025274818347" at="90,34,97,11" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$3$1" />
       <unit id="3907542737155282392" at="75,25,83,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$2" />
-      <unit id="5364815602089924305" at="56,29,65,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$2" />
-      <unit id="5364815602089924277" at="42,60,55,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$2" />
+      <unit id="5364815602089924305" at="56,29,65,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$1$2" />
+      <unit id="5364815602089924277" at="42,60,55,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$1$1" />
       <unit id="599918025274815306" at="87,25,100,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$3" />
       <unit id="599918025274823000" at="129,0,142,0" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$MyReloadListener" />
       <unit id="5364815602089922589" at="39,25,71,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper$1" />
@@ -2048,11 +2048,11 @@
         <var name="oppositeChanges" id="4366166682335348669" />
       </scope>
       <scope id="4366166682335278585" at="49,0,80,0" />
-      <unit id="8885850892995305705" at="39,24,43,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$2" />
+      <unit id="8885850892995305705" at="39,24,43,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$1$1" />
       <unit id="4366166682335377406" at="53,124,57,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$2" />
-      <unit id="4366166682335348713" at="61,57,65,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$4" />
-      <unit id="4366166682335348690" at="65,24,69,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$4" />
-      <unit id="4366166682335377431" at="70,60,74,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$4" />
+      <unit id="4366166682335348713" at="61,57,65,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$3$1" />
+      <unit id="4366166682335348690" at="65,24,69,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$3$2" />
+      <unit id="4366166682335377431" at="70,60,74,9" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$3$3" />
       <unit id="8885850892995348051" at="82,68,89,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$4" />
       <unit id="8885850892995300168" at="37,63,45,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$1" />
       <unit id="4366166682335348697" at="58,20,77,5" name="jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest$3" />

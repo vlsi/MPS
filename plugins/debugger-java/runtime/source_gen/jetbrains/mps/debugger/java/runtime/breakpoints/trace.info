@@ -1105,8 +1105,8 @@
         <var name="project" id="4352118152439828413" />
         <var name="state" id="4352118152439828409" />
       </scope>
-      <unit id="4352118152439828138" at="188,47,193,7" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$2" />
-      <unit id="4352118152439828074" at="173,37,181,9" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$1" />
+      <unit id="4352118152439828138" at="188,47,193,7" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$2" />
+      <unit id="4352118152439828074" at="173,37,181,9" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$1" />
       <unit id="4352118152439827954" at="214,0,227,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$SuspendPolicy" />
       <unit id="4352118152439827950" at="160,0,228,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi" />
       <unit id="4352118152439827945" at="32,0,229,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider" />

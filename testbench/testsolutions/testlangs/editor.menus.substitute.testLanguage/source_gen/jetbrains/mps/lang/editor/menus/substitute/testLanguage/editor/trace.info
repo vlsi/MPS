@@ -1991,7 +1991,7 @@
         <var name="_context" id="8998492695587447825" />
         <var name="item" id="8998492695587447825" />
       </scope>
-      <unit id="8998492695587447825" at="68,14,76,7" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$1" />
+      <unit id="8998492695587447825" at="68,14,76,7" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_a$1" />
       <unit id="8998492695587447825" at="411,0,420,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_f$SubstituteMenuPart_Subconcepts_ddv2zo_a5" />
       <unit id="8998492695587447825" at="442,0,451,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_h$SubstituteMenuPart_IncludeMenu_ddv2zo_a7" />
       <unit id="8998492695587447825" at="462,0,471,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_i$SubstituteMenuPart_Subconcepts_ddv2zo_a8" />
@@ -2009,7 +2009,7 @@
       <unit id="8998492695587447825" at="193,0,253,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_b$SubstituteMenuPart_Parameterized_ddv2zo_a1" />
       <unit id="8998492695587447825" at="183,0,254,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_b" />
       <unit id="8998492695587447825" at="99,0,181,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_a$SubstituteMenuPart_Action_ddv2zo_a0$Item" />
-      <unit id="8998492695587447825" at="268,19,355,9" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$1" />
+      <unit id="8998492695587447825" at="268,19,355,9" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_c$SubstituteMenuPart_Wrapper_ddv2zo_a2$1" />
       <unit id="8998492695587447825" at="92,0,182,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_a$SubstituteMenuPart_Action_ddv2zo_a0" />
       <unit id="8998492695587447825" at="264,0,364,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_c$SubstituteMenuPart_Wrapper_ddv2zo_a2" />
       <unit id="8998492695587447825" at="254,0,365,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteChild_SubstituteMenu$SubstituteMenuPart_Group_ddv2zo_c" />

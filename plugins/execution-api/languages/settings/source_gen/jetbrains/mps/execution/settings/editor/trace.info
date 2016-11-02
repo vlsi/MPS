@@ -200,8 +200,8 @@
       <scope id="1741258697586930409" at="137,0,146,0">
         <var name="_context" id="1741258697586930409" />
       </scope>
-      <unit id="1741258697586930458" at="64,280,68,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$1" />
-      <unit id="1741258697586930630" at="140,272,144,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$1" />
+      <unit id="1741258697586930458" at="64,280,68,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0$1" />
+      <unit id="1741258697586930630" at="140,272,144,9" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b$SubstituteMenuPart_Parameterized_67nl4b_a1$1" />
       <unit id="1741258697586930409" at="81,0,117,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0$SubstituteMenuPart_Action_67nl4b_a0a$Item" />
       <unit id="1741258697586930409" at="157,0,193,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_b$SubstituteMenuPart_Parameterized_67nl4b_a1$SubstituteMenuPart_Action_67nl4b_a0b$Item" />
       <unit id="1741258697586930409" at="70,0,118,0" name="jetbrains.mps.execution.settings.editor.PersistentConfigurationType_Contribution$SubstituteMenuPart_Group_67nl4b_a$SubstituteMenuPart_Parameterized_67nl4b_a0$SubstituteMenuPart_Action_67nl4b_a0a" />

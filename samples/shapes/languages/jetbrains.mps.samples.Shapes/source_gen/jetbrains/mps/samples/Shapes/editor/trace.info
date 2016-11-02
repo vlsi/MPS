@@ -237,8 +237,8 @@
         <var name="editorContext" id="4001135958232477409" />
         <var name="node" id="4001135958232477409" />
       </scope>
-      <unit id="4001135958237781763" at="146,90,150,9" name="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$2" />
-      <unit id="4700561302085520709" at="157,90,162,9" name="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$2" />
+      <unit id="4001135958237781763" at="146,90,150,9" name="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$1$1" />
+      <unit id="4700561302085520709" at="157,90,162,9" name="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$1$2" />
       <unit id="4001135958232477414" at="140,15,165,5" name="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor$1" />
       <unit id="4001135958232231213" at="30,0,168,0" name="jetbrains.mps.samples.Shapes.editor.Circle_ShapePreview_Editor" />
     </file>
@@ -466,8 +466,8 @@
         <var name="editorContext" id="4001135958232518690" />
         <var name="node" id="4001135958232518690" />
       </scope>
-      <unit id="4001135958232518721" at="146,90,150,9" name="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$2" />
-      <unit id="4700561302085378962" at="157,90,162,9" name="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$2" />
+      <unit id="4001135958232518721" at="146,90,150,9" name="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$1$1" />
+      <unit id="4700561302085378962" at="157,90,162,9" name="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$1$2" />
       <unit id="4001135958232518695" at="140,15,166,5" name="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor$1" />
       <unit id="4001135958232512372" at="30,0,169,0" name="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor" />
     </file>

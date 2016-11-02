@@ -690,7 +690,7 @@
         <var name="_context" id="1741258697587173213" />
         <var name="item" id="1741258697587173213" />
       </scope>
-      <unit id="1741258697587173213" at="39,17,59,7" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_SubstituteMenu$1" />
+      <unit id="1741258697587173213" at="39,17,59,7" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_SubstituteMenu$SubstituteMenuPart_Wrapper_udt3cr_a$1" />
       <unit id="1741258697587173213" at="35,0,68,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_SubstituteMenu$SubstituteMenuPart_Wrapper_udt3cr_a" />
       <unit id="1741258697587173213" at="27,0,69,0" name="jetbrains.mps.samples.Kaja.editor.EmptyLine_SubstituteMenu" />
     </file>

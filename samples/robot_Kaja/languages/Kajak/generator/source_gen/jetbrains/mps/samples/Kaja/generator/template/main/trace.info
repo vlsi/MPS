@@ -2574,7 +2574,7 @@
       <scope id="3308300503039700896" at="120,103,136,7">
         <var name="roots" id="3308300503039970270" />
       </scope>
-      <unit id="3308300503039970405" at="124,371,128,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$3" />
+      <unit id="3308300503039970405" at="124,371,128,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$2$1" />
       <unit id="3308300503039970441" at="130,20,136,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$3" />
       <unit id="3308300503039970368" at="122,47,130,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$2" />
     </file>
@@ -3034,14 +3034,14 @@
         <var name="script" id="4394627182935102052" />
       </scope>
       <scope id="4394627182935101792" at="145,103,195,7" />
-      <unit id="4394627182935102185" at="148,408,152,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$6" />
-      <unit id="4394627182935114952" at="166,270,170,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$8" />
-      <unit id="4394627182935115109" at="170,32,174,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$8" />
-      <unit id="4394627182935203429" at="181,270,185,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$8" />
-      <unit id="4394627182935203552" at="185,32,189,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$8" />
-      <unit id="4394627182935203331" at="179,55,191,13" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$7" />
-      <unit id="4394627182935102414" at="160,60,176,13" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$7" />
-      <unit id="4394627182935102221" at="154,60,193,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$6" />
+      <unit id="4394627182935102185" at="148,408,152,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$1" />
+      <unit id="4394627182935114952" at="166,270,170,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2$1$1" />
+      <unit id="4394627182935115109" at="170,32,174,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2$1$2" />
+      <unit id="4394627182935203429" at="181,270,185,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2$2$1" />
+      <unit id="4394627182935203552" at="185,32,189,17" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2$2$2" />
+      <unit id="4394627182935203331" at="179,55,191,13" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2$2" />
+      <unit id="4394627182935102414" at="160,60,176,13" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2$1" />
+      <unit id="4394627182935102221" at="154,60,193,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5$2" />
       <unit id="4394627182935102052" at="146,224,195,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5" />
     </file>
     <file name="Script_MoveLibraryRoutineDefinitions.java">

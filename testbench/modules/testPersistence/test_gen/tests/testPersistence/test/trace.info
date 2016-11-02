@@ -448,9 +448,9 @@
       </scope>
       <scope id="2535783480591573022" at="86,0,115,0" />
       <scope id="2535783480591578116" at="115,0,144,0" />
-      <unit id="7626086600842559757" at="107,49,111,9" name="tests.testPersistence.test.TestPersistence_Test$2" />
-      <unit id="1090488322151898551" at="203,117,208,7" name="tests.testPersistence.test.TestPersistence_Test$3" />
-      <unit id="3895553186366461436" at="69,47,79,7" name="tests.testPersistence.test.TestPersistence_Test$1" />
+      <unit id="7626086600842559757" at="107,49,111,9" name="tests.testPersistence.test.TestPersistence_Test$TestBody$2" />
+      <unit id="1090488322151898551" at="203,117,208,7" name="tests.testPersistence.test.TestPersistence_Test$TestBody$3" />
+      <unit id="3895553186366461436" at="69,47,79,7" name="tests.testPersistence.test.TestPersistence_Test$TestBody$1" />
       <unit id="2535783480591520870" at="64,0,301,0" name="tests.testPersistence.test.TestPersistence_Test$TestBody" />
       <unit id="2535783480591520870" at="46,0,302,0" name="tests.testPersistence.test.TestPersistence_Test" />
     </file>

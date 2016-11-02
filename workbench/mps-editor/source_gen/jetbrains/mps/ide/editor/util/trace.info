@@ -171,9 +171,9 @@
         <var name="node" id="2808756344206463621" />
         <var name="relativePoint" id="2808756344206465166" />
       </scope>
-      <unit id="2034046503361622287" at="62,90,66,13" name="jetbrains.mps.ide.editor.util.GoToHelper$4" />
+      <unit id="2034046503361622287" at="62,90,66,13" name="jetbrains.mps.ide.editor.util.GoToHelper$2$1$1" />
       <unit id="1616056205645497137" at="44,66,53,5" name="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-      <unit id="1616056205645501054" at="59,70,68,9" name="jetbrains.mps.ide.editor.util.GoToHelper$3" />
+      <unit id="1616056205645501054" at="59,70,68,9" name="jetbrains.mps.ide.editor.util.GoToHelper$2$1" />
       <unit id="2808756344206270606" at="56,42,70,5" name="jetbrains.mps.ide.editor.util.GoToHelper$2" />
       <unit id="2808756344206283880" at="31,0,76,0" name="jetbrains.mps.ide.editor.util.GoToHelper" />
     </file>

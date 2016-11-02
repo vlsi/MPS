@@ -182,8 +182,8 @@
         <var name="rootCell" id="2112659629360604436" />
       </scope>
       <scope id="2112659629360604431" at="24,0,45,0" />
-      <unit id="2112659629360713217" at="34,90,38,11" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$2" />
-      <unit id="8041297453111221043" at="32,39,41,7" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$1" />
+      <unit id="2112659629360713217" at="34,90,38,11" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody$1$1" />
+      <unit id="8041297453111221043" at="32,39,41,7" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody$1" />
       <unit id="2112659629360604431" at="22,0,46,0" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody" />
       <unit id="2112659629360604431" at="14,0,47,0" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test" />
     </file>

@@ -912,8 +912,8 @@
         <var name="editorContext" id="1216334426557" />
         <var name="node" id="1216334426557" />
       </scope>
-      <unit id="9080025156919276869" at="74,67,86,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$1" />
-      <unit id="9080025156919276831" at="86,13,102,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$2" />
+      <unit id="9080025156919276869" at="74,67,86,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$IntentionImplementation$1" />
+      <unit id="9080025156919276831" at="86,13,102,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$IntentionImplementation$2" />
       <unit id="1216334426557" at="60,0,109,0" name="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention$IntentionImplementation" />
       <unit id="1216334426557" at="31,0,110,0" name="jetbrains.mps.lang.generator.intentions.NewTemplateInRootMappingRule_Intention" />
     </file>
@@ -1020,8 +1020,8 @@
         <var name="editorContext" id="1216337594117" />
         <var name="node" id="1216337594117" />
       </scope>
-      <unit id="6727473024018749769" at="73,67,84,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$1" />
-      <unit id="6727473024018749725" at="84,13,100,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$2" />
+      <unit id="6727473024018749769" at="73,67,84,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$IntentionImplementation$1" />
+      <unit id="6727473024018749725" at="84,13,100,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$IntentionImplementation$2" />
       <unit id="1216337594117" at="59,0,107,0" name="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention$IntentionImplementation" />
       <unit id="1216337594117" at="30,0,108,0" name="jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention" />
     </file>
@@ -3073,7 +3073,7 @@
         <var name="editorContext" id="9092065972411421046" />
         <var name="node" id="9092065972411421046" />
       </scope>
-      <unit id="9092065972411475735" at="67,110,71,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$1" />
+      <unit id="9092065972411475735" at="67,110,71,7" name="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$IntentionImplementation$1" />
       <unit id="9092065972411421046" at="58,0,79,0" name="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention$IntentionImplementation" />
       <unit id="9092065972411421046" at="23,0,80,0" name="jetbrains.mps.lang.generator.intentions.NewTemplateFragment_Intention" />
     </file>

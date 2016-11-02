@@ -1707,7 +1707,7 @@
         <var name="event" id="2808756344206305969" />
       </scope>
       <unit id="1616056205645252210" at="123,90,127,5" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$2" />
-      <unit id="4424432534975432" at="113,127,118,9" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$2" />
+      <unit id="4424432534975432" at="113,127,118,9" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$1$1" />
       <unit id="2808756344206306091" at="110,42,120,5" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$1" />
       <unit id="2808756344206305969" at="43,0,151,0" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" />
     </file>
@@ -1873,12 +1873,12 @@
         <var name="_params" id="2808756344206306210" />
         <var name="event" id="2808756344206306210" />
       </scope>
-      <unit id="2808756344206306313" at="135,92,139,15" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$4" />
-      <unit id="2808756344206306329" at="140,91,144,15" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$4" />
-      <unit id="2808756344206306348" at="146,378,150,19" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$5" />
-      <unit id="2808756344206306339" at="144,31,152,15" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$4" />
+      <unit id="2808756344206306313" at="135,92,139,15" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$2$1$1" />
+      <unit id="2808756344206306329" at="140,91,144,15" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$2$1$2" />
+      <unit id="2808756344206306348" at="146,378,150,19" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$2$1$3$1" />
+      <unit id="2808756344206306339" at="144,31,152,15" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$2$1$3" />
       <unit id="4424432534895129" at="115,34,124,5" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$1" />
-      <unit id="4424432534911862" at="131,38,155,9" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$3" />
+      <unit id="4424432534911862" at="131,38,155,9" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$2$1" />
       <unit id="2808756344206306277" at="128,42,157,5" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action$2" />
       <unit id="2808756344206306210" at="45,0,163,0" name="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" />
     </file>
@@ -2590,7 +2590,7 @@
       <scope id="6207253590664823382" at="35,0,91,0" />
       <unit id="6207253590664823394" at="37,60,41,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction$1" />
       <unit id="6207253590664823468" at="42,54,46,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction$2" />
-      <unit id="6207253590664823581" at="68,85,72,11" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction$5" />
+      <unit id="6207253590664823581" at="68,85,72,11" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction$4$1" />
       <unit id="6207253590664823491" at="47,59,55,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction$3" />
       <unit id="6207253590664823568" at="65,57,88,7" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction$4" />
       <unit id="6207253590664784098" at="22,0,93,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodInEnumConstantAction" />
@@ -5017,7 +5017,7 @@
         <var name="event" id="7111916581652591322" />
       </scope>
       <unit id="7712522392792695920" at="87,133,91,5" name="jetbrains.mps.ide.java.actions.GenerateGetters_Action$1" />
-      <unit id="7712522392792695758" at="131,98,135,9" name="jetbrains.mps.ide.java.actions.GenerateGetters_Action$3" />
+      <unit id="7712522392792695758" at="131,98,135,9" name="jetbrains.mps.ide.java.actions.GenerateGetters_Action$2$1" />
       <unit id="7712522392792695604" at="126,94,137,5" name="jetbrains.mps.ide.java.actions.GenerateGetters_Action$2" />
       <unit id="7111916581652591322" at="33,0,195,0" name="jetbrains.mps.ide.java.actions.GenerateGetters_Action" />
     </file>
@@ -5400,8 +5400,8 @@
         <var name="parameter_4" id="8088355969405300799" />
       </scope>
       <unit id="7712522392792696548" at="85,173,89,5" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action$1" />
-      <unit id="7712522392792722734" at="137,100,141,9" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action$3" />
-      <unit id="7712522392792722757" at="141,100,145,9" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action$3" />
+      <unit id="7712522392792722734" at="137,100,141,9" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action$2$1" />
+      <unit id="7712522392792722757" at="141,100,145,9" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action$2$2" />
       <unit id="7712522392792696233" at="131,94,147,5" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action$2" />
       <unit id="7111916581652591619" at="33,0,288,0" name="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action" />
     </file>
@@ -5914,7 +5914,7 @@
         <var name="parameter_4" id="3411184316472432975" />
       </scope>
       <unit id="7712522392792696162" at="87,133,91,5" name="jetbrains.mps.ide.java.actions.GenerateSetters_Action$1" />
-      <unit id="7712522392792696044" at="133,98,137,9" name="jetbrains.mps.ide.java.actions.GenerateSetters_Action$3" />
+      <unit id="7712522392792696044" at="133,98,137,9" name="jetbrains.mps.ide.java.actions.GenerateSetters_Action$2$1" />
       <unit id="7712522392792696029" at="128,94,139,5" name="jetbrains.mps.ide.java.actions.GenerateSetters_Action$2" />
       <unit id="7111916581652592453" at="33,0,225,0" name="jetbrains.mps.ide.java.actions.GenerateSetters_Action" />
     </file>
@@ -6262,7 +6262,7 @@
         <var name="event" id="7111916581652592773" />
       </scope>
       <unit id="7111916581652593067" at="53,289,57,5" name="jetbrains.mps.ide.java.actions.GenerateToString_Action$1" />
-      <unit id="7111916581652592805" at="98,302,102,9" name="jetbrains.mps.ide.java.actions.GenerateToString_Action$3" />
+      <unit id="7111916581652592805" at="98,302,102,9" name="jetbrains.mps.ide.java.actions.GenerateToString_Action$2$1" />
       <unit id="4424432534837222" at="96,123,104,5" name="jetbrains.mps.ide.java.actions.GenerateToString_Action$2" />
       <unit id="7111916581652592773" at="35,0,264,0" name="jetbrains.mps.ide.java.actions.GenerateToString_Action" />
     </file>
@@ -6718,7 +6718,7 @@
       <scope id="8838506468326692846" at="33,0,91,0" />
       <unit id="7644867599579805554" at="35,53,39,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$1" />
       <unit id="7644867599579812764" at="40,54,44,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$2" />
-      <unit id="8838506468326692966" at="67,85,71,11" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$5" />
+      <unit id="8838506468326692966" at="67,85,71,11" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$4$1" />
       <unit id="8838506468326692877" at="45,59,54,5" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$3" />
       <unit id="8838506468326692953" at="64,57,88,7" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction$4" />
       <unit id="8838506468326692836" at="22,0,92,0" name="jetbrains.mps.ide.java.actions.OverrideImplementMethodAction" />
@@ -7827,7 +7827,7 @@
       <unit id="9126454250600099614" at="42,63,46,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$1" />
       <unit id="3464535278051991433" at="52,97,57,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$2" />
       <unit id="9126454250600099586" at="28,0,36,0" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$MoveStaticMethod_extension" />
-      <unit id="9088427053763560875" at="63,184,90,9" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$4" />
+      <unit id="9088427053763560875" at="63,184,90,9" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$3$1" />
       <unit id="512885590562305989" at="61,64,92,5" name="jetbrains.mps.ide.java.actions.MoveStaticMethod$3" />
       <unit id="9126454250600098577" at="26,0,96,0" name="jetbrains.mps.ide.java.actions.MoveStaticMethod" />
     </file>

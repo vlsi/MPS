@@ -55,7 +55,7 @@
         <var name="references" id="1213104840262" />
       </scope>
       <scope id="1213104840262" at="30,0,56,0" />
-      <unit id="1213104840262" at="41,19,51,9" name="jetbrains.mps.lang.smodel.constraints.SPropertyAccess_Constraints$2" />
+      <unit id="1213104840262" at="41,19,51,9" name="jetbrains.mps.lang.smodel.constraints.SPropertyAccess_Constraints$1$1" />
       <unit id="1213104840262" at="33,146,53,5" name="jetbrains.mps.lang.smodel.constraints.SPropertyAccess_Constraints$1" />
       <unit id="1213104840262" at="25,0,58,0" name="jetbrains.mps.lang.smodel.constraints.SPropertyAccess_Constraints" />
     </file>
@@ -151,9 +151,9 @@
         <var name="references" id="1213104840560" />
       </scope>
       <scope id="1213104840560" at="38,0,108,0" />
-      <unit id="5570334447681475023" at="82,200,86,13" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$3" />
-      <unit id="3068087098248347545" at="90,339,94,15" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$3" />
-      <unit id="1213104840560" at="49,19,103,9" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$2" />
+      <unit id="5570334447681475023" at="82,200,86,13" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$1$1$1" />
+      <unit id="3068087098248347545" at="90,339,94,15" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$1$1$2" />
+      <unit id="1213104840560" at="49,19,103,9" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$1$1" />
       <unit id="1213104840560" at="41,158,105,5" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints$1" />
       <unit id="1213104840560" at="33,0,110,0" name="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints" />
     </file>
@@ -209,8 +209,8 @@
         <var name="references" id="1213104847488" />
       </scope>
       <scope id="1213104847488" at="34,0,70,0" />
-      <unit id="1226360999134" at="55,58,59,13" name="jetbrains.mps.lang.smodel.constraints.SLinkAccess_Constraints$3" />
-      <unit id="1213104847488" at="45,19,65,9" name="jetbrains.mps.lang.smodel.constraints.SLinkAccess_Constraints$2" />
+      <unit id="1226360999134" at="55,58,59,13" name="jetbrains.mps.lang.smodel.constraints.SLinkAccess_Constraints$1$1$1" />
+      <unit id="1213104847488" at="45,19,65,9" name="jetbrains.mps.lang.smodel.constraints.SLinkAccess_Constraints$1$1" />
       <unit id="1213104847488" at="37,142,67,5" name="jetbrains.mps.lang.smodel.constraints.SLinkAccess_Constraints$1" />
       <unit id="1213104847488" at="29,0,72,0" name="jetbrains.mps.lang.smodel.constraints.SLinkAccess_Constraints" />
     </file>
@@ -252,7 +252,7 @@
         <var name="references" id="1213104847805" />
       </scope>
       <scope id="1213104847805" at="29,0,55,0" />
-      <unit id="1213104847805" at="40,19,50,9" name="jetbrains.mps.lang.smodel.constraints.Node_IsRoleOperation_Constraints$2" />
+      <unit id="1213104847805" at="40,19,50,9" name="jetbrains.mps.lang.smodel.constraints.Node_IsRoleOperation_Constraints$1$1" />
       <unit id="1213104847805" at="32,150,52,5" name="jetbrains.mps.lang.smodel.constraints.Node_IsRoleOperation_Constraints$1" />
       <unit id="1213104847805" at="24,0,57,0" name="jetbrains.mps.lang.smodel.constraints.Node_IsRoleOperation_Constraints" />
     </file>
@@ -303,8 +303,8 @@
         <var name="references" id="1213104855756" />
       </scope>
       <scope id="1213104855756" at="34,0,66,0" />
-      <unit id="1227876797133" at="51,58,55,13" name="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_Constraints$3" />
-      <unit id="1213104855756" at="45,19,61,9" name="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_Constraints$2" />
+      <unit id="1227876797133" at="51,58,55,13" name="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_Constraints$1$1$1" />
+      <unit id="1213104855756" at="45,19,61,9" name="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_Constraints$1$1" />
       <unit id="1213104855756" at="37,142,63,5" name="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_Constraints$1" />
       <unit id="1213104855756" at="29,0,68,0" name="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_Constraints" />
     </file>
@@ -351,7 +351,7 @@
         <var name="references" id="1213104857023" />
       </scope>
       <scope id="1213104857023" at="32,0,63,0" />
-      <unit id="1213104857023" at="43,19,58,9" name="jetbrains.mps.lang.smodel.constraints.EnumMemberReference_Constraints$2" />
+      <unit id="1213104857023" at="43,19,58,9" name="jetbrains.mps.lang.smodel.constraints.EnumMemberReference_Constraints$1$1" />
       <unit id="1213104857023" at="35,148,60,5" name="jetbrains.mps.lang.smodel.constraints.EnumMemberReference_Constraints$1" />
       <unit id="1213104857023" at="27,0,65,0" name="jetbrains.mps.lang.smodel.constraints.EnumMemberReference_Constraints" />
     </file>
@@ -396,7 +396,7 @@
         <var name="references" id="1213104859120" />
       </scope>
       <scope id="1213104859120" at="29,0,58,0" />
-      <unit id="1213104859120" at="40,19,53,9" name="jetbrains.mps.lang.smodel.constraints.LinkRefQualifier_Constraints$2" />
+      <unit id="1213104859120" at="40,19,53,9" name="jetbrains.mps.lang.smodel.constraints.LinkRefQualifier_Constraints$1$1" />
       <unit id="1213104859120" at="32,142,55,5" name="jetbrains.mps.lang.smodel.constraints.LinkRefQualifier_Constraints$1" />
       <unit id="1213104859120" at="24,0,60,0" name="jetbrains.mps.lang.smodel.constraints.LinkRefQualifier_Constraints" />
     </file>
@@ -436,7 +436,7 @@
         <var name="references" id="1219363770439" />
       </scope>
       <scope id="1219363770439" at="28,0,54,0" />
-      <unit id="1219363770439" at="39,19,49,9" name="jetbrains.mps.lang.smodel.constraints.NodeRefExpression_Constraints$2" />
+      <unit id="1219363770439" at="39,19,49,9" name="jetbrains.mps.lang.smodel.constraints.NodeRefExpression_Constraints$1$1" />
       <unit id="1219363770439" at="31,150,51,5" name="jetbrains.mps.lang.smodel.constraints.NodeRefExpression_Constraints$1" />
       <unit id="1219363770439" at="23,0,56,0" name="jetbrains.mps.lang.smodel.constraints.NodeRefExpression_Constraints" />
     </file>
@@ -487,8 +487,8 @@
         <var name="references" id="1221169539542" />
       </scope>
       <scope id="1221169539542" at="34,0,66,0" />
-      <unit id="1227876801033" at="51,58,55,13" name="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints$3" />
-      <unit id="1221169539542" at="45,19,61,9" name="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints$2" />
+      <unit id="1227876801033" at="51,58,55,13" name="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints$1$1$1" />
+      <unit id="1221169539542" at="45,19,61,9" name="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints$1$1" />
       <unit id="1221169539542" at="37,151,63,5" name="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints$1" />
       <unit id="1221169539542" at="29,0,68,0" name="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints" />
     </file>
@@ -573,7 +573,7 @@
         <var name="references" id="1226361213114" />
       </scope>
       <scope id="1226361213114" at="30,0,55,0" />
-      <unit id="1226361213114" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.LinkRefExpression_Constraints$2" />
+      <unit id="1226361213114" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.LinkRefExpression_Constraints$1$1" />
       <unit id="1226361213114" at="33,153,52,5" name="jetbrains.mps.lang.smodel.constraints.LinkRefExpression_Constraints$1" />
       <unit id="1226361213114" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.LinkRefExpression_Constraints" />
     </file>
@@ -618,7 +618,7 @@
         <var name="references" id="1240148885571" />
       </scope>
       <scope id="1240148885571" at="30,0,59,0" />
-      <unit id="1240148885571" at="41,19,54,9" name="jetbrains.mps.lang.smodel.constraints.SEnum_MemberOperation_Constraints$2" />
+      <unit id="1240148885571" at="41,19,54,9" name="jetbrains.mps.lang.smodel.constraints.SEnum_MemberOperation_Constraints$1$1" />
       <unit id="1240148885571" at="33,144,56,5" name="jetbrains.mps.lang.smodel.constraints.SEnum_MemberOperation_Constraints$1" />
       <unit id="1240148885571" at="25,0,61,0" name="jetbrains.mps.lang.smodel.constraints.SEnum_MemberOperation_Constraints" />
     </file>
@@ -658,7 +658,7 @@
         <var name="references" id="1240930364461" />
       </scope>
       <scope id="1240930364461" at="28,0,54,0" />
-      <unit id="1240930364461" at="39,19,49,9" name="jetbrains.mps.lang.smodel.constraints.SEnumOperationInvocation_Constraints$2" />
+      <unit id="1240930364461" at="39,19,49,9" name="jetbrains.mps.lang.smodel.constraints.SEnumOperationInvocation_Constraints$1$1" />
       <unit id="1240930364461" at="31,153,51,5" name="jetbrains.mps.lang.smodel.constraints.SEnumOperationInvocation_Constraints$1" />
       <unit id="1240930364461" at="23,0,56,0" name="jetbrains.mps.lang.smodel.constraints.SEnumOperationInvocation_Constraints" />
     </file>
@@ -830,7 +830,7 @@
         <var name="references" id="1828409047608048473" />
       </scope>
       <scope id="1828409047608048473" at="28,0,54,0" />
-      <unit id="1828409047608048473" at="39,19,49,9" name="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints$2" />
+      <unit id="1828409047608048473" at="39,19,49,9" name="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints$1$1" />
       <unit id="1828409047608048473" at="31,160,51,5" name="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints$1" />
       <unit id="1828409047608048473" at="23,0,56,0" name="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints" />
     </file>
@@ -875,8 +875,8 @@
         <var name="references" id="1883223317721107061" />
       </scope>
       <scope id="1883223317721107061" at="31,0,60,0" />
-      <unit id="1883223317721107082" at="45,277,49,13" name="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_Constraints$3" />
-      <unit id="1883223317721107061" at="42,19,55,9" name="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_Constraints$2" />
+      <unit id="1883223317721107082" at="45,277,49,13" name="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_Constraints$1$1$1" />
+      <unit id="1883223317721107061" at="42,19,55,9" name="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_Constraints$1$1" />
       <unit id="1883223317721107061" at="34,171,57,5" name="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_Constraints$1" />
       <unit id="1883223317721107061" at="26,0,62,0" name="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_Constraints" />
     </file>
@@ -915,7 +915,7 @@
         <var name="references" id="2644386474301431884" />
       </scope>
       <scope id="2644386474301431884" at="30,0,55,0" />
-      <unit id="2644386474301431884" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.LinkIdRefExpression_Constraints$2" />
+      <unit id="2644386474301431884" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.LinkIdRefExpression_Constraints$1$1" />
       <unit id="2644386474301431884" at="33,163,52,5" name="jetbrains.mps.lang.smodel.constraints.LinkIdRefExpression_Constraints$1" />
       <unit id="2644386474301431884" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.LinkIdRefExpression_Constraints" />
     </file>
@@ -954,7 +954,7 @@
         <var name="references" id="2644386474302392176" />
       </scope>
       <scope id="2644386474302392176" at="30,0,55,0" />
-      <unit id="2644386474302392176" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.PropertyIdRefExpression_Constraints$2" />
+      <unit id="2644386474302392176" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.PropertyIdRefExpression_Constraints$1$1" />
       <unit id="2644386474302392176" at="33,167,52,5" name="jetbrains.mps.lang.smodel.constraints.PropertyIdRefExpression_Constraints$1" />
       <unit id="2644386474302392176" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.PropertyIdRefExpression_Constraints" />
     </file>
@@ -1017,7 +1017,7 @@
         <var name="references" id="2788452359611883845" />
       </scope>
       <scope id="2788452359611883845" at="30,0,71,0" />
-      <unit id="2788452359611883845" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.LinkAttributeQualifier_Constraints$2" />
+      <unit id="2788452359611883845" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.LinkAttributeQualifier_Constraints$1$1" />
       <unit id="2788452359611883845" at="33,164,68,5" name="jetbrains.mps.lang.smodel.constraints.LinkAttributeQualifier_Constraints$1" />
       <unit id="2788452359611883845" at="25,0,73,0" name="jetbrains.mps.lang.smodel.constraints.LinkAttributeQualifier_Constraints" />
     </file>
@@ -1080,7 +1080,7 @@
         <var name="references" id="2788452359611885032" />
       </scope>
       <scope id="2788452359611885032" at="30,0,71,0" />
-      <unit id="2788452359611885032" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.PropertyAttributeQualifier_Constraints$2" />
+      <unit id="2788452359611885032" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.PropertyAttributeQualifier_Constraints$1$1" />
       <unit id="2788452359611885032" at="33,164,68,5" name="jetbrains.mps.lang.smodel.constraints.PropertyAttributeQualifier_Constraints$1" />
       <unit id="2788452359611885032" at="25,0,73,0" name="jetbrains.mps.lang.smodel.constraints.PropertyAttributeQualifier_Constraints" />
     </file>
@@ -1119,7 +1119,7 @@
         <var name="references" id="2788452359612124352" />
       </scope>
       <scope id="2788452359612124352" at="31,0,56,0" />
-      <unit id="2788452359612124352" at="42,19,51,9" name="jetbrains.mps.lang.smodel.constraints.PropertyQualifier_Constraints$2" />
+      <unit id="2788452359612124352" at="42,19,51,9" name="jetbrains.mps.lang.smodel.constraints.PropertyQualifier_Constraints$1$1" />
       <unit id="2788452359612124352" at="34,156,53,5" name="jetbrains.mps.lang.smodel.constraints.PropertyQualifier_Constraints$1" />
       <unit id="2788452359612124352" at="26,0,58,0" name="jetbrains.mps.lang.smodel.constraints.PropertyQualifier_Constraints" />
     </file>
@@ -1161,7 +1161,7 @@
         <var name="references" id="2788452359612124485" />
       </scope>
       <scope id="2788452359612124485" at="31,0,57,0" />
-      <unit id="2788452359612124485" at="42,19,52,9" name="jetbrains.mps.lang.smodel.constraints.LinkQualifier_Constraints$2" />
+      <unit id="2788452359612124485" at="42,19,52,9" name="jetbrains.mps.lang.smodel.constraints.LinkQualifier_Constraints$1$1" />
       <unit id="2788452359612124485" at="34,152,54,5" name="jetbrains.mps.lang.smodel.constraints.LinkQualifier_Constraints$1" />
       <unit id="2788452359612124485" at="26,0,59,0" name="jetbrains.mps.lang.smodel.constraints.LinkQualifier_Constraints" />
     </file>
@@ -1320,7 +1320,7 @@
         <var name="references" id="5253134957341833007" />
       </scope>
       <scope id="5253134957341833007" at="30,0,55,0" />
-      <unit id="5253134957341833007" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.LinkNameRefExpression_Constraints$2" />
+      <unit id="5253134957341833007" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.LinkNameRefExpression_Constraints$1$1" />
       <unit id="5253134957341833007" at="33,163,52,5" name="jetbrains.mps.lang.smodel.constraints.LinkNameRefExpression_Constraints$1" />
       <unit id="5253134957341833007" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.LinkNameRefExpression_Constraints" />
     </file>
@@ -1359,7 +1359,7 @@
         <var name="references" id="5253134957341870624" />
       </scope>
       <scope id="5253134957341870624" at="30,0,55,0" />
-      <unit id="5253134957341870624" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints$2" />
+      <unit id="5253134957341870624" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints$1$1" />
       <unit id="5253134957341870624" at="33,167,52,5" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints$1" />
       <unit id="5253134957341870624" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints" />
     </file>
@@ -1422,7 +1422,7 @@
         <var name="references" id="5534894399153286998" />
       </scope>
       <scope id="5534894399153286998" at="30,0,71,0" />
-      <unit id="5534894399153286998" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints$2" />
+      <unit id="5534894399153286998" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints$1$1" />
       <unit id="5534894399153286998" at="33,162,68,5" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints$1" />
       <unit id="5534894399153286998" at="25,0,73,0" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints" />
     </file>
@@ -1525,7 +1525,7 @@
         <var name="references" id="6407023681583036864" />
       </scope>
       <scope id="6407023681583036864" at="30,0,71,0" />
-      <unit id="6407023681583036864" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.NodeAttributeQualifier_Constraints$2" />
+      <unit id="6407023681583036864" at="41,19,66,9" name="jetbrains.mps.lang.smodel.constraints.NodeAttributeQualifier_Constraints$1$1" />
       <unit id="6407023681583036864" at="33,164,68,5" name="jetbrains.mps.lang.smodel.constraints.NodeAttributeQualifier_Constraints$1" />
       <unit id="6407023681583036864" at="25,0,73,0" name="jetbrains.mps.lang.smodel.constraints.NodeAttributeQualifier_Constraints" />
     </file>
@@ -1656,8 +1656,8 @@
         <var name="references" id="6973815483245710659" />
       </scope>
       <scope id="6973815483245710659" at="33,0,67,0" />
-      <unit id="3778812090360868318" at="53,25,59,15" name="jetbrains.mps.lang.smodel.constraints.EnumMemberValueRefExpression_Constraints$3" />
-      <unit id="6973815483245710659" at="44,19,62,9" name="jetbrains.mps.lang.smodel.constraints.EnumMemberValueRefExpression_Constraints$2" />
+      <unit id="3778812090360868318" at="53,25,59,15" name="jetbrains.mps.lang.smodel.constraints.EnumMemberValueRefExpression_Constraints$1$1$1" />
+      <unit id="6973815483245710659" at="44,19,62,9" name="jetbrains.mps.lang.smodel.constraints.EnumMemberValueRefExpression_Constraints$1$1" />
       <unit id="6973815483245710659" at="36,154,64,5" name="jetbrains.mps.lang.smodel.constraints.EnumMemberValueRefExpression_Constraints$1" />
       <unit id="6973815483245710659" at="28,0,69,0" name="jetbrains.mps.lang.smodel.constraints.EnumMemberValueRefExpression_Constraints" />
     </file>
@@ -1696,7 +1696,7 @@
         <var name="references" id="7292653286930772283" />
       </scope>
       <scope id="7292653286930772283" at="30,0,55,0" />
-      <unit id="7292653286930772283" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints$2" />
+      <unit id="7292653286930772283" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints$1$1" />
       <unit id="7292653286930772283" at="33,156,52,5" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints$1" />
       <unit id="7292653286930772283" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints" />
     </file>
@@ -1823,7 +1823,7 @@
         <var name="references" id="8405512791876074475" />
       </scope>
       <scope id="8405512791876074475" at="50,0,75,0" />
-      <unit id="8405512791876074475" at="61,19,70,9" name="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$2" />
+      <unit id="8405512791876074475" at="61,19,70,9" name="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$1$1" />
       <unit id="8405512791876074475" at="53,152,72,5" name="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$1" />
       <unit id="8405512791876074475" at="31,0,101,0" name="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints" />
     </file>

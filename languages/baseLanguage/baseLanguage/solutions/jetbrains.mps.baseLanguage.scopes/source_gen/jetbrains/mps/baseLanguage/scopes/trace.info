@@ -357,7 +357,7 @@
         <var name="contextNode" id="8483743094179640732" />
         <var name="refText" id="8483743094179640734" />
       </scope>
-      <unit id="3050821798733938960" at="39,80,43,9" name="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope$3" />
+      <unit id="3050821798733938960" at="39,80,43,9" name="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope$2$1" />
       <unit id="3050821798733905762" at="28,22,33,5" name="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope$1" />
       <unit id="3050821798733939045" at="37,89,45,5" name="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope$2" />
       <unit id="3024565449487117567" at="24,0,94,0" name="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope" />
@@ -2935,9 +2935,9 @@
       <scope id="9000162595163958689" at="124,0,154,0">
         <var name="contextNode" id="9000162595163958696" />
       </scope>
-      <unit id="7591712603959569234" at="41,270,45,11" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$2" />
-      <unit id="7591712603959634122" at="46,53,50,11" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$2" />
-      <unit id="7708004186056151468" at="146,58,150,9" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$7" />
+      <unit id="7591712603959569234" at="41,270,45,11" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$1$1" />
+      <unit id="7591712603959634122" at="46,53,50,11" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$1$2" />
+      <unit id="7708004186056151468" at="146,58,150,9" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$6$1" />
       <unit id="229277139747455775" at="57,15,62,5" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$2" />
       <unit id="229277139747465759" at="117,15,122,5" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$5" />
       <unit id="8483743094179640644" at="106,15,112,5" name="jetbrains.mps.baseLanguage.scopes.ClassifierScopes$4" />

@@ -399,7 +399,7 @@
         <var name="item" id="1741258697586939322" />
       </scope>
       <unit id="1741258697586939322" at="72,0,81,0" name="jetbrains.mps.console.base.editor.Command_SubstituteMenu$SubstituteMenuPart_Subconcepts_2t0axy_b" />
-      <unit id="1741258697586939322" at="42,17,63,7" name="jetbrains.mps.console.base.editor.Command_SubstituteMenu$1" />
+      <unit id="1741258697586939322" at="42,17,63,7" name="jetbrains.mps.console.base.editor.Command_SubstituteMenu$SubstituteMenuPart_Wrapper_2t0axy_a$1" />
       <unit id="1741258697586939322" at="38,0,72,0" name="jetbrains.mps.console.base.editor.Command_SubstituteMenu$SubstituteMenuPart_Wrapper_2t0axy_a" />
       <unit id="1741258697586939322" at="29,0,82,0" name="jetbrains.mps.console.base.editor.Command_SubstituteMenu" />
     </file>
@@ -1808,7 +1808,7 @@
         <var name="editorContext" id="8710322537167984223" />
         <var name="node" id="8710322537167984223" />
       </scope>
-      <unit id="8710322537167984223" at="111,85,120,7" name="jetbrains.mps.console.base.editor.PastedNodeReference_Editor$1" />
+      <unit id="8710322537167984223" at="111,85,120,7" name="jetbrains.mps.console.base.editor.PastedNodeReference_Editor$_Inline_7k9x8q_a1a0$1" />
       <unit id="5872110852615929517" at="145,83,154,5" name="jetbrains.mps.console.base.editor.PastedNodeReference_Editor$1" />
       <unit id="8710322537167983273" at="100,0,132,0" name="jetbrains.mps.console.base.editor.PastedNodeReference_Editor$_Inline_7k9x8q_a1a0" />
       <unit id="5842059399443118722" at="32,0,164,0" name="jetbrains.mps.console.base.editor.PastedNodeReference_Editor" />

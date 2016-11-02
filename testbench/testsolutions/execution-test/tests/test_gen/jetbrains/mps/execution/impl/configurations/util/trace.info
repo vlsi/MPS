@@ -55,7 +55,7 @@
         <var name="model" id="4154239884395881352" />
         <var name="nodes" id="6339244025082286272" />
       </scope>
-      <unit id="6339244025082286250" at="31,243,35,11" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper$2" />
+      <unit id="6339244025082286250" at="31,243,35,11" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper$1$1" />
       <unit id="6339244025082286232" at="28,31,40,5" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper$1" />
       <unit id="8410090958587088828" at="19,0,47,0" name="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper" />
     </file>

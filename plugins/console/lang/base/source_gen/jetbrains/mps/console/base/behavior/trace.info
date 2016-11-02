@@ -269,8 +269,8 @@
         <var name="console" id="4374601616592181627" />
         <var name="context" id="4374601616592181625" />
       </scope>
-      <unit id="4110587197470667499" at="71,69,85,19" name="jetbrains.mps.console.base.behavior.GeneratedCommand__BehaviorDescriptor$3" />
-      <unit id="1868797401535268429" at="58,39,95,9" name="jetbrains.mps.console.base.behavior.GeneratedCommand__BehaviorDescriptor$2" />
+      <unit id="4110587197470667499" at="71,69,85,19" name="jetbrains.mps.console.base.behavior.GeneratedCommand__BehaviorDescriptor$1$1$1" />
+      <unit id="1868797401535268429" at="58,39,95,9" name="jetbrains.mps.console.base.behavior.GeneratedCommand__BehaviorDescriptor$1$1" />
       <unit id="1868797401535606491" at="51,66,97,5" name="jetbrains.mps.console.base.behavior.GeneratedCommand__BehaviorDescriptor$1" />
       <unit id="1769790395579662700" at="38,0,148,0" name="jetbrains.mps.console.base.behavior.GeneratedCommand__BehaviorDescriptor" />
     </file>

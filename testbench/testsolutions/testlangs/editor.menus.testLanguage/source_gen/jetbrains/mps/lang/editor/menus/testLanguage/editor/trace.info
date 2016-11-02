@@ -361,9 +361,9 @@
       <scope id="5239313638630261294" at="43,0,57,0">
         <var name="_context" id="5239313638630261294" />
       </scope>
-      <unit id="5239313638630261294" at="46,14,50,7" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$1" />
-      <unit id="5239313638630261294" at="51,14,55,7" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$2" />
-      <unit id="5239313638630261294" at="71,16,75,9" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$1" />
+      <unit id="5239313638630261294" at="46,14,50,7" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$TransformationMenuPart_Group_foze4d_a0$1" />
+      <unit id="5239313638630261294" at="51,14,55,7" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$TransformationMenuPart_Group_foze4d_a0$2" />
+      <unit id="5239313638630261294" at="71,16,75,9" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$TransformationMenuPart_Group_foze4d_a0$TransformationMenuPart_Group_foze4d_a0a$1" />
       <unit id="5239313638630261294" at="88,0,107,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$TransformationMenuPart_Group_foze4d_a0$TransformationMenuPart_Group_foze4d_a0a$TransformationMenuPart_Action_foze4d_a0a0$Item" />
       <unit id="5239313638630261294" at="82,0,108,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$TransformationMenuPart_Group_foze4d_a0$TransformationMenuPart_Group_foze4d_a0a$TransformationMenuPart_Action_foze4d_a0a0" />
       <unit id="5239313638630261294" at="66,0,109,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.WithNestedVariables$TransformationMenuPart_Group_foze4d_a0$TransformationMenuPart_Group_foze4d_a0a" />
@@ -835,9 +835,9 @@
         <var name="_context" id="8477852555557899241" />
       </scope>
       <unit id="8477852555557899241" at="111,0,140,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$TransformationMenuPart_Parameterized_ud82js_a0$TransformationMenuPart_Action_ud82js_a0a$Item" />
-      <unit id="8477852555557930482" at="62,27,93,17" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$3" />
-      <unit id="8477852555557930482" at="60,23,95,13" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$2" />
-      <unit id="8477852555557930482" at="58,40,97,9" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$1" />
+      <unit id="8477852555557930482" at="62,27,93,17" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$TransformationMenuPart_Parameterized_ud82js_a0$1$1$1" />
+      <unit id="8477852555557930482" at="60,23,95,13" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$TransformationMenuPart_Parameterized_ud82js_a0$1$1" />
+      <unit id="8477852555557930482" at="58,40,97,9" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$TransformationMenuPart_Parameterized_ud82js_a0$1" />
       <unit id="8477852555557899241" at="101,0,141,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$TransformationMenuPart_Parameterized_ud82js_a0$TransformationMenuPart_Action_ud82js_a0a" />
       <unit id="8477852555557899241" at="43,0,142,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType$TransformationMenuPart_Parameterized_ud82js_a0" />
       <unit id="8477852555557899240" at="26,0,143,0" name="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType" />

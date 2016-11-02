@@ -52,7 +52,7 @@
         <var name="references" id="3220955710218065205" />
       </scope>
       <scope id="3220955710218065205" at="29,0,57,0" />
-      <unit id="3220955710218065205" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.PropertyPatternVariableReference_Constraints$2" />
+      <unit id="3220955710218065205" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.PropertyPatternVariableReference_Constraints$1$1" />
       <unit id="3220955710218065205" at="32,159,54,5" name="jetbrains.mps.lang.migration.constraints.PropertyPatternVariableReference_Constraints$1" />
       <unit id="3220955710218065205" at="24,0,59,0" name="jetbrains.mps.lang.migration.constraints.PropertyPatternVariableReference_Constraints" />
     </file>
@@ -96,7 +96,7 @@
         <var name="references" id="3220955710218443160" />
       </scope>
       <scope id="3220955710218443160" at="29,0,57,0" />
-      <unit id="3220955710218443160" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.LinkPatternVariableReference_Constraints$2" />
+      <unit id="3220955710218443160" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.LinkPatternVariableReference_Constraints$1$1" />
       <unit id="3220955710218443160" at="32,159,54,5" name="jetbrains.mps.lang.migration.constraints.LinkPatternVariableReference_Constraints$1" />
       <unit id="3220955710218443160" at="24,0,59,0" name="jetbrains.mps.lang.migration.constraints.LinkPatternVariableReference_Constraints" />
     </file>
@@ -140,7 +140,7 @@
         <var name="references" id="6129256022887940367" />
       </scope>
       <scope id="6129256022887940367" at="29,0,57,0" />
-      <unit id="6129256022887940367" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.ListPatternVariableReference_Constraints$2" />
+      <unit id="6129256022887940367" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.ListPatternVariableReference_Constraints$1$1" />
       <unit id="6129256022887940367" at="32,159,54,5" name="jetbrains.mps.lang.migration.constraints.ListPatternVariableReference_Constraints$1" />
       <unit id="6129256022887940367" at="24,0,59,0" name="jetbrains.mps.lang.migration.constraints.ListPatternVariableReference_Constraints" />
     </file>
@@ -184,7 +184,7 @@
         <var name="references" id="7153805464398835594" />
       </scope>
       <scope id="7153805464398835594" at="29,0,57,0" />
-      <unit id="7153805464398835594" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.DataDependencyReference_Constraints$2" />
+      <unit id="7153805464398835594" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.DataDependencyReference_Constraints$1$1" />
       <unit id="7153805464398835594" at="32,162,54,5" name="jetbrains.mps.lang.migration.constraints.DataDependencyReference_Constraints$1" />
       <unit id="7153805464398835594" at="24,0,59,0" name="jetbrains.mps.lang.migration.constraints.DataDependencyReference_Constraints" />
     </file>
@@ -228,7 +228,7 @@
         <var name="references" id="7527743013695059103" />
       </scope>
       <scope id="7527743013695059103" at="29,0,57,0" />
-      <unit id="7527743013695059103" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.NodePatternVariableReference_Constraints$2" />
+      <unit id="7527743013695059103" at="40,19,52,9" name="jetbrains.mps.lang.migration.constraints.NodePatternVariableReference_Constraints$1$1" />
       <unit id="7527743013695059103" at="32,159,54,5" name="jetbrains.mps.lang.migration.constraints.NodePatternVariableReference_Constraints$1" />
       <unit id="7527743013695059103" at="24,0,59,0" name="jetbrains.mps.lang.migration.constraints.NodePatternVariableReference_Constraints" />
     </file>

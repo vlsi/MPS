@@ -156,7 +156,7 @@
         <var name="rootNode" id="2235828751986250725" />
       </scope>
       <unit id="7447844298215483834" at="80,124,85,7" name="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer$2" />
-      <unit id="2235828751986250994" at="123,72,132,11" name="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer$4" />
+      <unit id="2235828751986250994" at="123,72,132,11" name="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer$3$1" />
       <unit id="1026705162298941813" at="52,52,62,5" name="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer$1" />
       <unit id="2235828751986250956" at="121,42,134,7" name="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer$3" />
       <unit id="2235828751986250607" at="32,0,138,0" name="jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer.MethodCallsFixer" />

@@ -74,7 +74,7 @@
         <var name="references" id="1213104844334" />
       </scope>
       <scope id="1213104844334" at="37,0,76,0" />
-      <unit id="1213104844334" at="48,19,71,9" name="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$2" />
+      <unit id="1213104844334" at="48,19,71,9" name="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$1$1" />
       <unit id="1213104844334" at="40,144,73,5" name="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints$1" />
       <unit id="1213104844334" at="32,0,78,0" name="jetbrains.mps.baseLanguage.classifiers.constraints.IMemberOperation_Constraints" />
     </file>
@@ -147,7 +147,7 @@
         <var name="references" id="1213107438049" />
       </scope>
       <scope id="1213107438049" at="45,0,70,0" />
-      <unit id="1213107438049" at="56,19,65,9" name="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$2" />
+      <unit id="1213107438049" at="56,19,65,9" name="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$1$1" />
       <unit id="1213107438049" at="48,148,67,5" name="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints$1" />
       <unit id="1213107438049" at="26,0,76,0" name="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints" />
     </file>
@@ -196,8 +196,8 @@
         <var name="references" id="1216915253694" />
       </scope>
       <scope id="1216915253694" at="33,0,64,0" />
-      <unit id="1227876796072" at="48,71,52,13" name="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$3" />
-      <unit id="1216915253694" at="44,19,59,9" name="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$2" />
+      <unit id="1227876796072" at="48,71,52,13" name="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1$1$1" />
+      <unit id="1216915253694" at="44,19,59,9" name="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1$1" />
       <unit id="1216915253694" at="36,148,61,5" name="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints$1" />
       <unit id="1216915253694" at="28,0,66,0" name="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierType_Constraints" />
     </file>

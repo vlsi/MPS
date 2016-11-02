@@ -999,8 +999,8 @@
       <unit id="5962538236230423186" at="290,77,294,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$4" />
       <unit id="8096943980416761899" at="306,65,310,7" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$5" />
       <unit id="4652592318748335738" at="358,84,362,7" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$6" />
-      <unit id="5867320353744002956" at="210,23,280,13" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$5" />
-      <unit id="5867320353744002956" at="208,19,282,9" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$4" />
+      <unit id="5867320353744002956" at="210,23,280,13" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$3$1$1" />
+      <unit id="5867320353744002956" at="208,19,282,9" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$3$1" />
       <unit id="5867320353744002956" at="206,41,284,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage$3" />
       <unit id="4652592318748335691" at="46,0,427,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     </file>
@@ -1538,7 +1538,7 @@
       <scope id="4652592318748337800" at="52,0,81,0" />
       <unit id="4652592318748338072" at="36,42,40,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$1" />
       <unit id="4652592318748338104" at="45,50,49,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$2" />
-      <unit id="2034046503361589798" at="72,140,76,11" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$4" />
+      <unit id="2034046503361589798" at="72,140,76,11" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$3$1" />
       <unit id="4652592318748338180" at="121,117,129,7" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$4" />
       <unit id="2034046503361589782" at="68,45,79,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator$3" />
       <unit id="4652592318748337778" at="29,0,149,0" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" />
@@ -1742,7 +1742,7 @@
       </scope>
       <unit id="4652592318748338406" at="47,62,51,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$1" />
       <unit id="4652592318748338460" at="55,62,59,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$2" />
-      <unit id="4652592318748338618" at="110,53,114,9" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$4" />
+      <unit id="4652592318748338618" at="110,53,114,9" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$3$1" />
       <unit id="4652592318748338645" at="119,62,123,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$4" />
       <unit id="4652592318748338674" at="129,62,133,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$5" />
       <unit id="4652592318748338612" at="108,62,116,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditor$3" />
@@ -1989,9 +1989,9 @@
         <var name="otherDiffEditor" id="4609968354342350560" />
         <var name="thisDiffEditor" id="4609968354342347005" />
       </scope>
-      <unit id="4652592318748339002" at="114,56,118,7" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$1" />
+      <unit id="4652592318748339002" at="114,56,118,7" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$MyViewportChangeListener$1" />
       <unit id="4609968354342322383" at="129,62,133,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$2" />
-      <unit id="2034046503361611095" at="87,47,100,7" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$1" />
+      <unit id="2034046503361611095" at="87,47,100,7" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$MyCellSelectionListener$1" />
       <unit id="4652592318748338978" at="103,0,122,0" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$MyViewportChangeListener" />
       <unit id="4652592318748338926" at="82,0,103,0" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$MyCellSelectionListener" />
       <unit id="4330388937158577859" at="43,45,80,5" name="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup$1" />
@@ -2457,7 +2457,7 @@
       <unit id="4652592318748339441" at="98,87,102,11" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$7" />
       <unit id="4652592318748339497" at="112,58,116,5" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$8" />
       <unit id="4652592318748339591" at="165,60,169,5" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$10" />
-      <unit id="2034046503361626845" at="283,47,287,7" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$1" />
+      <unit id="2034046503361626845" at="283,47,287,7" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$TreeNode$1" />
       <unit id="4652592318748339119" at="205,0,210,0" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$PackageTreeNode" />
       <unit id="8694267608197378123" at="57,24,64,5" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$2" />
       <unit id="2034046503361591685" at="144,45,151,5" name="jetbrains.mps.vcs.diff.ui.common.DiffModelTree$9" />
@@ -3072,7 +3072,7 @@
       <scope id="4652592318748340853" at="144,0,189,0">
         <var name="previous" id="4652592318748340855" />
       </scope>
-      <unit id="4652592318748340621" at="64,38,68,9" name="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$3" />
+      <unit id="4652592318748340621" at="64,38,68,9" name="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$2$1" />
       <unit id="4652592318748340635" at="71,144,75,5" name="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$3" />
       <unit id="4652592318748340648" at="75,22,79,5" name="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$4" />
       <unit id="4652592318748340686" at="86,58,90,7" name="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser$5" />
@@ -3268,7 +3268,7 @@
       <scope id="739457190729189660" at="32,0,45,0" />
       <unit id="3477558405266190215" at="18,56,18,79" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$1" />
       <unit id="739457190729183618" at="51,67,55,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
-      <unit id="2418333796570314305" at="35,32,41,9" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
+      <unit id="2418333796570314305" at="35,32,41,9" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2$1" />
       <unit id="5837303828188495132" at="33,39,43,5" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
       <unit id="739457190729183512" at="61,0,105,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />
       <unit id="739457190729175664" at="17,0,106,0" name="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />

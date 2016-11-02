@@ -982,7 +982,7 @@
       <unit id="653763136285346347" at="145,200,149,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$1" />
       <unit id="3473830552709780110" at="174,118,178,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$3" />
       <unit id="9101534317544078090" at="195,140,199,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$4" />
-      <unit id="2034046503361561197" at="223,110,227,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$7" />
+      <unit id="2034046503361561197" at="223,110,227,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$5$1$1" />
       <unit id="5786223774279751821" at="246,152,250,7" name="jetbrains.mps.vcs.annotate.AnnotationColumn$6" />
       <unit id="7306828316422020860" at="303,101,307,7" name="jetbrains.mps.vcs.annotate.AnnotationColumn$8" />
       <unit id="391337651435690172" at="319,123,323,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$9" />
@@ -993,25 +993,25 @@
       <unit id="4207419944012141828" at="434,55,438,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$15" />
       <unit id="8054337884878055984" at="485,43,489,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$17" />
       <unit id="4527744427438192197" at="570,56,574,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$20" />
-      <unit id="7392461296859311836" at="635,104,639,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
-      <unit id="7590932940322108565" at="641,73,645,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
-      <unit id="7590932940322108599" at="648,68,652,15" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
-      <unit id="1275709410184091313" at="699,66,703,15" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
-      <unit id="7392461296859492441" at="706,64,710,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
+      <unit id="7392461296859311836" at="635,104,639,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1$2" />
+      <unit id="7590932940322108565" at="641,73,645,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1$3" />
+      <unit id="7590932940322108599" at="648,68,652,15" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1$4" />
+      <unit id="1275709410184091313" at="699,66,703,15" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1$6" />
+      <unit id="7392461296859492441" at="706,64,710,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1$1" />
       <unit id="8411107316628745598" at="520,50,525,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$18" />
       <unit id="1396967583415229234" at="530,52,536,7" name="jetbrains.mps.vcs.annotate.AnnotationColumn$19" />
-      <unit id="2034046503361561192" at="221,49,229,9" name="jetbrains.mps.vcs.annotate.AnnotationColumn$6" />
+      <unit id="2034046503361561192" at="221,49,229,9" name="jetbrains.mps.vcs.annotate.AnnotationColumn$5$1" />
       <unit id="8095616227190806544" at="162,58,171,7" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
       <unit id="2034046503361581951" at="439,45,448,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$16" />
       <unit id="6443510961568829313" at="254,44,264,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$7" />
-      <unit id="9065923666345146204" at="681,136,692,15" name="jetbrains.mps.vcs.annotate.AnnotationColumn$2" />
+      <unit id="9065923666345146204" at="681,136,692,15" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1$5" />
       <unit id="775786118952886429" at="716,0,729,0" name="jetbrains.mps.vcs.annotate.AnnotationColumn$MyEditorComponentCreateListener" />
       <unit id="8595271971828691750" at="218,43,232,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$5" />
       <unit id="8595271971828756397" at="589,0,605,0" name="jetbrains.mps.vcs.annotate.AnnotationColumn$MyDifferenceListener" />
-      <unit id="8595271971828756899" at="366,23,406,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$13" />
-      <unit id="8595271971828756899" at="364,19,408,9" name="jetbrains.mps.vcs.annotate.AnnotationColumn$12" />
+      <unit id="8595271971828756899" at="366,23,406,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$11$1$1" />
+      <unit id="8595271971828756899" at="364,19,408,9" name="jetbrains.mps.vcs.annotate.AnnotationColumn$11$1" />
       <unit id="8595271971828756899" at="362,15,410,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$11" />
-      <unit id="5841940560826287357" at="619,44,713,7" name="jetbrains.mps.vcs.annotate.AnnotationColumn$1" />
+      <unit id="5841940560826287357" at="619,44,713,7" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction$1" />
       <unit id="5841940560826277241" at="605,0,716,0" name="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction" />
       <unit id="309173295241373953" at="121,0,772,0" name="jetbrains.mps.vcs.annotate.AnnotationColumn" />
     </file>
@@ -1406,7 +1406,7 @@
         <var name="column" id="7744421503924585226" />
         <var name="fileAnnotation" id="7744421503924771305" />
       </scope>
-      <unit id="7744421503924676705" at="82,106,88,7" name="jetbrains.mps.vcs.annotate.VcsRevisionRange$1" />
+      <unit id="7744421503924676705" at="82,106,88,7" name="jetbrains.mps.vcs.annotate.VcsRevisionRange$HiglightAction$1" />
       <unit id="7744421503924805772" at="38,12,45,5" name="jetbrains.mps.vcs.annotate.VcsRevisionRange$1" />
       <unit id="7744421503924585247" at="63,0,101,0" name="jetbrains.mps.vcs.annotate.VcsRevisionRange$HiglightAction" />
       <unit id="7744421503924576834" at="19,0,102,0" name="jetbrains.mps.vcs.annotate.VcsRevisionRange" />
@@ -1589,7 +1589,7 @@
         <var name="editorComponent" id="1217350330249447355" />
       </scope>
       <unit id="1217350330249447510" at="96,94,100,5" name="jetbrains.mps.vcs.annotate.AnnotationHelper$1" />
-      <unit id="1217350330249447641" at="138,96,143,11" name="jetbrains.mps.vcs.annotate.AnnotationHelper$3" />
+      <unit id="1217350330249447641" at="138,96,143,11" name="jetbrains.mps.vcs.annotate.AnnotationHelper$2$1" />
       <unit id="1217350330249447564" at="113,43,146,5" name="jetbrains.mps.vcs.annotate.AnnotationHelper$2" />
       <unit id="8955628568092674522" at="39,0,176,0" name="jetbrains.mps.vcs.annotate.AnnotationHelper" />
     </file>
@@ -1681,8 +1681,8 @@
       <scope id="8955628568092675853" at="15,0,95,0">
         <var name="_this" id="8955628568092675853" />
       </scope>
-      <unit id="8955628568092676100" at="20,23,89,13" name="jetbrains.mps.vcs.annotate.EditorUtils$3" />
-      <unit id="8955628568092676100" at="18,19,91,9" name="jetbrains.mps.vcs.annotate.EditorUtils$2" />
+      <unit id="8955628568092676100" at="20,23,89,13" name="jetbrains.mps.vcs.annotate.EditorUtils$1$1$1" />
+      <unit id="8955628568092676100" at="18,19,91,9" name="jetbrains.mps.vcs.annotate.EditorUtils$1$1" />
       <unit id="8955628568092676100" at="16,15,93,5" name="jetbrains.mps.vcs.annotate.EditorUtils$1" />
       <unit id="8955628568092675853" at="12,0,96,0" name="jetbrains.mps.vcs.annotate.EditorUtils" />
     </file>

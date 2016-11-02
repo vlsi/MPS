@@ -572,8 +572,8 @@
       <scope id="4972886494893402112" at="76,106,122,30" />
       <scope id="4972886494893402109" at="75,0,124,0" />
       <unit id="4972886494893402352" at="129,88,133,7" name="jetbrains.mps.util.LongestCommonSubsequenceFinder$2" />
-      <unit id="4972886494893402205" at="87,25,110,15" name="jetbrains.mps.util.LongestCommonSubsequenceFinder$3" />
-      <unit id="4972886494893402205" at="85,21,112,11" name="jetbrains.mps.util.LongestCommonSubsequenceFinder$2" />
+      <unit id="4972886494893402205" at="87,25,110,15" name="jetbrains.mps.util.LongestCommonSubsequenceFinder$1$1$1" />
+      <unit id="4972886494893402205" at="85,21,112,11" name="jetbrains.mps.util.LongestCommonSubsequenceFinder$1$1" />
       <unit id="4972886494893402205" at="83,118,114,7" name="jetbrains.mps.util.LongestCommonSubsequenceFinder$1" />
       <unit id="4972886494893373483" at="17,0,138,0" name="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
     </file>

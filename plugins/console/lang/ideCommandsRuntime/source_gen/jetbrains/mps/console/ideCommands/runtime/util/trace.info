@@ -320,28 +320,28 @@
         <var name="project" id="2840424593984145280" />
         <var name="wholeProject" id="5198027307802751468" />
       </scope>
-      <unit id="6899521598741864015" at="57,232,61,11" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$2" />
-      <unit id="587413522924735965" at="69,129,73,17" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$3" />
-      <unit id="6899521598742970031" at="75,25,79,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$2" />
-      <unit id="2849748491601982471" at="86,91,90,11" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$2" />
-      <unit id="6899521598743456755" at="92,89,96,9" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$2" />
+      <unit id="6899521598741864015" at="57,232,61,11" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1$1" />
+      <unit id="587413522924735965" at="69,129,73,17" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1$2$1" />
+      <unit id="6899521598742970031" at="75,25,79,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1$3" />
+      <unit id="2849748491601982471" at="86,91,90,11" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1$4" />
+      <unit id="6899521598743456755" at="92,89,96,9" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1$5" />
       <unit id="2270132903213485426" at="99,35,103,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$2" />
-      <unit id="2840424593937400002" at="113,229,117,11" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$4" />
+      <unit id="2840424593937400002" at="113,229,117,11" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$3$1" />
       <unit id="2840424593938849083" at="121,57,125,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$4" />
       <unit id="2840424593937444658" at="125,20,129,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$5" />
-      <unit id="2840424593984283977" at="139,48,143,9" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$7" />
-      <unit id="3873902603894479214" at="152,57,156,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
-      <unit id="3873902603894505895" at="156,28,160,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
-      <unit id="3873902603894541536" at="163,57,167,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
-      <unit id="3873902603894541546" at="167,28,171,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
-      <unit id="8110477789512794004" at="178,60,182,15" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
-      <unit id="8110477789512794014" at="182,30,186,15" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
+      <unit id="2840424593984283977" at="139,48,143,9" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$1" />
+      <unit id="3873902603894479214" at="152,57,156,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2$1" />
+      <unit id="3873902603894505895" at="156,28,160,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2$2" />
+      <unit id="3873902603894541536" at="163,57,167,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2$3" />
+      <unit id="3873902603894541546" at="167,28,171,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2$4" />
+      <unit id="8110477789512794004" at="178,60,182,15" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2$5" />
+      <unit id="8110477789512794014" at="182,30,186,15" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2$6" />
       <unit id="9149301274755624380" at="224,97,229,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$8" />
-      <unit id="587413522924427135" at="67,77,75,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$2" />
+      <unit id="587413522924427135" at="67,77,75,13" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1$2" />
       <unit id="2840424593938149480" at="108,63,120,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$3" />
       <unit id="2840424593983234568" at="192,84,211,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$7" />
       <unit id="2849748491601986330" at="52,63,98,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$1" />
-      <unit id="2840424593984283985" at="143,24,189,9" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$7" />
+      <unit id="2840424593984283985" at="143,24,189,9" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6$2" />
       <unit id="5198027307802833516" at="134,63,191,5" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil$6" />
       <unit id="5582028874772041165" at="49,0,251,0" name="jetbrains.mps.console.ideCommands.runtime.util.IdeCommandUtil" />
     </file>

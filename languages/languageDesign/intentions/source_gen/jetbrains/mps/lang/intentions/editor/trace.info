@@ -223,7 +223,7 @@
         <var name="editorContext" id="1240319640305" />
         <var name="node" id="1240319640305" />
       </scope>
-      <unit id="1240319640311" at="126,19,147,9" name="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$2" />
+      <unit id="1240319640311" at="126,19,147,9" name="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$1$1" />
       <unit id="1240319640305" at="124,40,149,5" name="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$1" />
       <unit id="1240319625734" at="87,0,119,0" name="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$paramTypeSingleRoleHandler_yfw6cj_c0a" />
       <unit id="1240319625734" at="32,0,159,0" name="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor" />
@@ -1026,7 +1026,7 @@
       <scope id="1741258697587120409" at="34,0,48,0">
         <var name="_context" id="1741258697587120409" />
       </scope>
-      <unit id="1741258697587120498" at="42,58,46,7" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$1" />
+      <unit id="1741258697587120498" at="42,58,46,7" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$SubstituteMenuPart_Concepts_bxx1tv_a$1" />
       <unit id="1741258697587120409" at="33,0,53,0" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution$SubstituteMenuPart_Concepts_bxx1tv_a" />
       <unit id="1741258697587120409" at="22,0,54,0" name="jetbrains.mps.lang.intentions.editor.parameter_Contribution" />
     </file>

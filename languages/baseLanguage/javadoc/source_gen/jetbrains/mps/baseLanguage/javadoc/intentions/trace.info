@@ -900,7 +900,7 @@
         <var name="editorContext" id="8362517669643823244" />
         <var name="node" id="8362517669643823244" />
       </scope>
-      <unit id="5383422241791431797" at="63,239,67,7" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention$1" />
+      <unit id="5383422241791431797" at="63,239,67,7" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention$IntentionImplementation$1" />
       <unit id="8362517669643823244" at="53,0,74,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention$IntentionImplementation" />
       <unit id="8362517669643823244" at="24,0,75,0" name="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention" />
     </file>

@@ -660,7 +660,7 @@
         <var name="_params" id="1683977858888862718" />
         <var name="event" id="1683977858888862718" />
       </scope>
-      <unit id="711809809630454443" at="87,62,91,11" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$2" />
+      <unit id="711809809630454443" at="87,62,91,11" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$1$1" />
       <unit id="944342063932931113" at="78,40,94,5" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action$1" />
       <unit id="1683977858888862718" at="23,0,97,0" name="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
     </file>
@@ -1317,7 +1317,7 @@
         <var name="_params" id="2191995028863072555" />
         <var name="event" id="2191995028863072555" />
       </scope>
-      <unit id="2034046503373004630" at="54,55,58,9" name="jetbrains.mps.ide.devkit.actions.ReloadAll_Action$2" />
+      <unit id="2034046503373004630" at="54,55,58,9" name="jetbrains.mps.ide.devkit.actions.ReloadAll_Action$1$1" />
       <unit id="2191995028863072564" at="49,42,60,5" name="jetbrains.mps.ide.devkit.actions.ReloadAll_Action$1" />
       <unit id="2191995028863072555" at="21,0,63,0" name="jetbrains.mps.ide.devkit.actions.ReloadAll_Action" />
     </file>
@@ -3072,7 +3072,7 @@
         <var name="_params" id="3465865320786305485" />
         <var name="event" id="3465865320786305485" />
       </scope>
-      <unit id="3465865320786305525" at="83,96,87,9" name="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action$2" />
+      <unit id="3465865320786305525" at="83,96,87,9" name="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action$1$1" />
       <unit id="8889694110855176015" at="95,34,100,5" name="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action$2" />
       <unit id="6352952732713663012" at="79,34,89,5" name="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action$1" />
       <unit id="6352952732713687279" at="109,35,123,5" name="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action$3" />
@@ -3361,7 +3361,7 @@
         <var name="intention" id="6783372269475797261" />
       </scope>
       <unit id="6783372269476676771" at="44,11,49,5" name="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$2" />
-      <unit id="6783372269476417504" at="31,54,42,9" name="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$2" />
+      <unit id="6783372269476417504" at="31,54,42,9" name="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$1$1" />
       <unit id="6783372269476408386" at="27,30,44,5" name="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$1" />
       <unit id="4403068512914877423" at="22,0,54,0" name="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl" />
     </file>

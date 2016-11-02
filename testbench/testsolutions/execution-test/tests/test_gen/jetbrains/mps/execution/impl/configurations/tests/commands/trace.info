@@ -174,9 +174,9 @@
         <var name="expectedSysErr" id="8128243960970298458" />
         <var name="process" id="8128243960970298456" />
       </scope>
-      <unit id="2034046503361578133" at="46,243,50,11" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
-      <unit id="2034046503361578119" at="43,51,53,7" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$1" />
-      <unit id="8128243960970298364" at="62,45,77,7" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
+      <unit id="2034046503361578133" at="46,243,50,11" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody$1$1" />
+      <unit id="2034046503361578119" at="43,51,53,7" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody$1" />
+      <unit id="8128243960970298364" at="62,45,77,7" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody$2" />
       <unit id="8128243960970298272" at="39,0,96,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody" />
       <unit id="8128243960970298272" at="31,0,97,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test" />
     </file>

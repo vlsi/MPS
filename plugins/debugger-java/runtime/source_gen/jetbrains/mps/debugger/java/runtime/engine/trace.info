@@ -456,10 +456,10 @@
         <var name="semaphore" id="4352118152439833806" />
       </scope>
       <scope id="4352118152439833801" at="149,0,203,0" />
-      <unit id="4352118152439833939" at="185,45,189,15" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$5" />
+      <unit id="4352118152439833939" at="185,45,189,15" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$3$1$1" />
       <unit id="4352118152439833946" at="196,11,200,5" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$4" />
       <unit id="4352118152439833834" at="154,39,161,5" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$2" />
-      <unit id="4352118152439833925" at="181,41,191,11" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$4" />
+      <unit id="4352118152439833925" at="181,41,191,11" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$3$1" />
       <unit id="4352118152439833743" at="122,44,137,7" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$1" />
       <unit id="4352118152439833402" at="332,0,350,0" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$RunsAfterProcessStarted" />
       <unit id="4352118152439833863" at="162,35,196,5" name="jetbrains.mps.debugger.java.runtime.engine.VmCreator$3" />
@@ -880,7 +880,7 @@
       <unit id="8961922059449033794" at="229,60,233,5" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager$1" />
       <unit id="8961922059449033903" at="259,110,265,5" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager$2" />
       <unit id="8961922059449033930" at="268,110,274,5" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager$3" />
-      <unit id="8961922059449033052" at="288,27,297,7" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager$1" />
+      <unit id="8961922059449033052" at="288,27,297,7" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager$MyDebugProcessListener$1" />
       <unit id="8961922059449033007" at="276,0,300,0" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager$MyDebugProcessListener" />
       <unit id="8961922059449033006" at="48,0,301,0" name="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     </file>

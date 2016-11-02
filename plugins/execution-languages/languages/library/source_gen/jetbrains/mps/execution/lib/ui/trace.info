@@ -234,12 +234,12 @@
       </scope>
       <scope id="1240470842553499029" at="48,24,120,7" />
       <scope id="1240470842553499026" at="48,0,122,0" />
-      <unit id="2034046503361579953" at="65,152,69,17" name="jetbrains.mps.execution.lib.ui.NodeChooser$4" />
+      <unit id="2034046503361579953" at="65,152,69,17" name="jetbrains.mps.execution.lib.ui.NodeChooser$1$1$1$1" />
       <unit id="1240470842553498977" at="172,57,176,5" name="jetbrains.mps.execution.lib.ui.NodeChooser$3" />
-      <unit id="2034046503361607068" at="79,56,86,11" name="jetbrains.mps.execution.lib.ui.NodeChooser$2" />
-      <unit id="2034046503361579943" at="63,58,71,13" name="jetbrains.mps.execution.lib.ui.NodeChooser$3" />
-      <unit id="2403604400355317272" at="61,46,73,9" name="jetbrains.mps.execution.lib.ui.NodeChooser$2" />
-      <unit id="2034046503361580178" at="105,49,118,9" name="jetbrains.mps.execution.lib.ui.NodeChooser$3" />
+      <unit id="2034046503361607068" at="79,56,86,11" name="jetbrains.mps.execution.lib.ui.NodeChooser$1$2" />
+      <unit id="2034046503361579943" at="63,58,71,13" name="jetbrains.mps.execution.lib.ui.NodeChooser$1$1$1" />
+      <unit id="2403604400355317272" at="61,46,73,9" name="jetbrains.mps.execution.lib.ui.NodeChooser$1$1" />
+      <unit id="2034046503361580178" at="105,49,118,9" name="jetbrains.mps.execution.lib.ui.NodeChooser$2$1" />
       <unit id="2865394311375337290" at="91,23,120,5" name="jetbrains.mps.execution.lib.ui.NodeChooser$2" />
       <unit id="1240470842553499036" at="49,26,89,5" name="jetbrains.mps.execution.lib.ui.NodeChooser$1" />
       <unit id="1240470842553498753" at="43,0,203,0" name="jetbrains.mps.execution.lib.ui.NodeChooser" />
@@ -583,8 +583,8 @@
         <var name="p0" id="1895567659272475103" />
       </scope>
       <unit id="1895567659272474921" at="130,65,134,7" name="jetbrains.mps.execution.lib.ui.ListPanel$2" />
-      <unit id="1895567659272475043" at="178,54,182,7" name="jetbrains.mps.execution.lib.ui.ListPanel$1" />
-      <unit id="1895567659272475145" at="212,58,216,11" name="jetbrains.mps.execution.lib.ui.ListPanel$1" />
+      <unit id="1895567659272475043" at="178,54,182,7" name="jetbrains.mps.execution.lib.ui.ListPanel$MyListAddAction$1" />
+      <unit id="1895567659272475145" at="212,58,216,11" name="jetbrains.mps.execution.lib.ui.ListPanel$MyListRemoveAction$1" />
       <unit id="1895567659272474891" at="120,76,125,7" name="jetbrains.mps.execution.lib.ui.ListPanel$1" />
       <unit id="1895567659272474946" at="146,0,161,0" name="jetbrains.mps.execution.lib.ui.ListPanel$MyAbstractListModel" />
       <unit id="1895567659272475109" at="202,0,235,0" name="jetbrains.mps.execution.lib.ui.ListPanel$MyListRemoveAction" />
@@ -777,8 +777,8 @@
         <var name="model" id="8278380780105899740" />
       </scope>
       <unit id="8278380780105899576" at="40,98,44,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$1" />
-      <unit id="8278380780105899711" at="59,58,63,11" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$3" />
-      <unit id="8278380780105899762" at="78,69,90,9" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$4" />
+      <unit id="8278380780105899711" at="59,58,63,11" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$2$1" />
+      <unit id="8278380780105899762" at="78,69,90,9" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$3$1" />
       <unit id="8278380780105899663" at="51,80,66,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$2" />
       <unit id="8278380780105899754" at="76,91,92,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$3" />
       <unit id="8278380780105899520" at="30,0,95,0" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser" />

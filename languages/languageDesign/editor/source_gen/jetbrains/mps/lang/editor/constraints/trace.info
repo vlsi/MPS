@@ -57,7 +57,7 @@
         <var name="references" id="1213104840151" />
       </scope>
       <scope id="1213104840151" at="29,0,57,0" />
-      <unit id="1213104840151" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$2" />
+      <unit id="1213104840151" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$1$1" />
       <unit id="1213104840151" at="32,151,54,5" name="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$1" />
       <unit id="1213104840151" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints" />
     </file>
@@ -102,7 +102,7 @@
         <var name="references" id="1213104846218" />
       </scope>
       <scope id="1213104846218" at="30,0,58,0" />
-      <unit id="1213104846218" at="41,19,53,9" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints$2" />
+      <unit id="1213104846218" at="41,19,53,9" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints$1$1" />
       <unit id="1213104846218" at="33,157,55,5" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints$1" />
       <unit id="1213104846218" at="25,0,60,0" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_Constraints" />
     </file>
@@ -155,8 +155,8 @@
         <var name="references" id="1213104846421" />
       </scope>
       <scope id="1213104846421" at="34,0,67,0" />
-      <unit id="1227880682110" at="52,58,56,13" name="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints$3" />
-      <unit id="1213104846421" at="45,19,62,9" name="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints$2" />
+      <unit id="1227880682110" at="52,58,56,13" name="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints$1$1$1" />
+      <unit id="1213104846421" at="45,19,62,9" name="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints$1$1" />
       <unit id="1213104846421" at="37,157,64,5" name="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints$1" />
       <unit id="1213104846421" at="29,0,69,0" name="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_Constraints" />
     </file>
@@ -270,7 +270,7 @@
         <var name="references" id="1213104846625" />
       </scope>
       <scope id="1213104846625" at="30,0,57,0" />
-      <unit id="1213104846625" at="41,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints$2" />
+      <unit id="1213104846625" at="41,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints$1$1" />
       <unit id="1213104846625" at="33,157,54,5" name="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints$1" />
       <unit id="1213104846625" at="25,0,59,0" name="jetbrains.mps.lang.editor.constraints.CellModel_Property_Constraints" />
     </file>
@@ -315,7 +315,7 @@
         <var name="references" id="1213104855916" />
       </scope>
       <scope id="1213104855916" at="30,0,58,0" />
-      <unit id="1213104855916" at="41,19,53,9" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_Constraints$2" />
+      <unit id="1213104855916" at="41,19,53,9" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_Constraints$1$1" />
       <unit id="1213104855916" at="33,157,55,5" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_Constraints$1" />
       <unit id="1213104855916" at="25,0,60,0" name="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_Constraints" />
     </file>
@@ -360,7 +360,7 @@
         <var name="references" id="1213104856673" />
       </scope>
       <scope id="1213104856673" at="30,0,58,0" />
-      <unit id="1213104856673" at="41,19,53,9" name="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_Constraints$2" />
+      <unit id="1213104856673" at="41,19,53,9" name="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_Constraints$1$1" />
       <unit id="1213104856673" at="33,157,55,5" name="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_Constraints$1" />
       <unit id="1213104856673" at="25,0,60,0" name="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_Constraints" />
     </file>
@@ -421,8 +421,8 @@
         <var name="references" id="1213104860417" />
       </scope>
       <scope id="1213104860417" at="34,0,66,0" />
-      <unit id="1227880682151" at="51,58,55,13" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints$3" />
-      <unit id="1213104860417" at="45,19,61,9" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints$2" />
+      <unit id="1227880682151" at="51,58,55,13" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints$1$1$1" />
+      <unit id="1213104860417" at="45,19,61,9" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints$1$1" />
       <unit id="1213104860417" at="37,157,63,5" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints$1" />
       <unit id="1213104860417" at="29,0,68,0" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_Constraints" />
     </file>
@@ -475,8 +475,8 @@
         <var name="references" id="1213104860579" />
       </scope>
       <scope id="1213104860579" at="34,0,67,0" />
-      <unit id="1227880682067" at="52,58,56,13" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints$3" />
-      <unit id="1213104860579" at="45,19,62,9" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints$2" />
+      <unit id="1227880682067" at="52,58,56,13" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints$1$1$1" />
+      <unit id="1213104860579" at="45,19,62,9" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints$1$1" />
       <unit id="1213104860579" at="37,157,64,5" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints$1" />
       <unit id="1213104860579" at="29,0,69,0" name="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_Constraints" />
     </file>
@@ -574,7 +574,7 @@
         <var name="references" id="1216381238253" />
       </scope>
       <scope id="1216381238253" at="30,0,57,0" />
-      <unit id="1216381238253" at="41,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_Constraints$2" />
+      <unit id="1216381238253" at="41,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_Constraints$1$1" />
       <unit id="1216381238253" at="33,146,54,5" name="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_Constraints$1" />
       <unit id="1216381238253" at="25,0,59,0" name="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_Constraints" />
     </file>
@@ -835,7 +835,7 @@
         <var name="references" id="1227861662670" />
       </scope>
       <scope id="1227861662670" at="30,0,57,0" />
-      <unit id="1227861662670" at="41,19,52,9" name="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints$2" />
+      <unit id="1227861662670" at="41,19,52,9" name="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints$1$1" />
       <unit id="1227861662670" at="33,142,54,5" name="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints$1" />
       <unit id="1227861662670" at="25,0,59,0" name="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints" />
     </file>
@@ -931,7 +931,7 @@
         <var name="references" id="1630016958697344100" />
       </scope>
       <scope id="1630016958697344100" at="32,0,63,0" />
-      <unit id="1630016958697344100" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints$2" />
+      <unit id="1630016958697344100" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints$1$1" />
       <unit id="1630016958697344100" at="35,166,60,5" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints$1" />
       <unit id="1630016958697344100" at="27,0,65,0" name="jetbrains.mps.lang.editor.constraints.IMenu_Default_Constraints" />
     </file>
@@ -978,7 +978,7 @@
         <var name="references" id="1630016958697347701" />
       </scope>
       <scope id="1630016958697347701" at="32,0,63,0" />
-      <unit id="1630016958697347701" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints$2" />
+      <unit id="1630016958697347701" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints$1$1" />
       <unit id="1630016958697347701" at="35,166,60,5" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints$1" />
       <unit id="1630016958697347701" at="27,0,65,0" name="jetbrains.mps.lang.editor.constraints.IMenu_Named_Constraints" />
     </file>
@@ -1059,7 +1059,7 @@
         <var name="references" id="1630016958698374830" />
       </scope>
       <scope id="1630016958698374830" at="29,0,57,0" />
-      <unit id="1630016958698374830" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints$2" />
+      <unit id="1630016958698374830" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints$1$1" />
       <unit id="1630016958698374830" at="32,155,54,5" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints$1" />
       <unit id="1630016958698374830" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.IMenuReference_Default_Constraints" />
     </file>
@@ -1106,7 +1106,7 @@
         <var name="references" id="1630016958698440087" />
       </scope>
       <scope id="1630016958698440087" at="27,0,58,0" />
-      <unit id="1630016958698440087" at="38,19,53,9" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_Named_Constraints$2" />
+      <unit id="1630016958698440087" at="38,19,53,9" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_Named_Constraints$1$1" />
       <unit id="1630016958698440087" at="30,152,55,5" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_Named_Constraints$1" />
       <unit id="1630016958698440087" at="22,0,60,0" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuReference_Named_Constraints" />
     </file>
@@ -1308,9 +1308,9 @@
       </scope>
       <scope id="1873972548978313577" at="40,59,73,6" />
       <scope id="1873972548978313577" at="39,0,75,0" />
-      <unit id="7609778533465765374" at="53,82,57,9" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$2" />
-      <unit id="7609778533465637881" at="57,21,61,9" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$2" />
-      <unit id="7609778533465842735" at="61,25,65,9" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$2" />
+      <unit id="7609778533465765374" at="53,82,57,9" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$1$1" />
+      <unit id="7609778533465637881" at="57,21,61,9" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$1$2" />
+      <unit id="7609778533465842735" at="61,25,65,9" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$1$3" />
       <unit id="1873972548978313577" at="41,15,73,5" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints$1" />
       <unit id="1873972548978313577" at="30,0,77,0" name="jetbrains.mps.lang.editor.constraints.IStyle_Constraints" />
     </file>
@@ -1354,7 +1354,7 @@
         <var name="references" id="2314756748950088815" />
       </scope>
       <scope id="2314756748950088815" at="29,0,57,0" />
-      <unit id="2314756748950088815" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.TransformationMenuVariableReference_Constraints$2" />
+      <unit id="2314756748950088815" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.TransformationMenuVariableReference_Constraints$1$1" />
       <unit id="2314756748950088815" at="32,155,54,5" name="jetbrains.mps.lang.editor.constraints.TransformationMenuVariableReference_Constraints$1" />
       <unit id="2314756748950088815" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.TransformationMenuVariableReference_Constraints" />
     </file>
@@ -1442,8 +1442,8 @@
         <var name="references" id="4088952938557443050" />
       </scope>
       <scope id="4088952938557443050" at="36,0,72,0" />
-      <unit id="4088952938557578322" at="59,100,63,15" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$3" />
-      <unit id="4088952938557443050" at="47,19,67,9" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$2" />
+      <unit id="4088952938557578322" at="59,100,63,15" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$1$1$1" />
+      <unit id="4088952938557443050" at="47,19,67,9" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$1$1" />
       <unit id="4088952938557443050" at="39,157,69,5" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$1" />
       <unit id="4088952938557443050" at="31,0,74,0" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints" />
     </file>
@@ -1490,7 +1490,7 @@
         <var name="references" id="4202667662394333180" />
       </scope>
       <scope id="4202667662394333180" at="27,0,58,0" />
-      <unit id="4202667662394333180" at="38,19,53,9" name="jetbrains.mps.lang.editor.constraints.TransformationMenuReference_Named_Constraints$2" />
+      <unit id="4202667662394333180" at="38,19,53,9" name="jetbrains.mps.lang.editor.constraints.TransformationMenuReference_Named_Constraints$1$1" />
       <unit id="4202667662394333180" at="30,152,55,5" name="jetbrains.mps.lang.editor.constraints.TransformationMenuReference_Named_Constraints$1" />
       <unit id="4202667662394333180" at="22,0,60,0" name="jetbrains.mps.lang.editor.constraints.TransformationMenuReference_Named_Constraints" />
     </file>
@@ -1534,7 +1534,7 @@
         <var name="references" id="4323500428148828478" />
       </scope>
       <scope id="4323500428148828478" at="29,0,57,0" />
-      <unit id="4323500428148828478" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$2" />
+      <unit id="4323500428148828478" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$1$1" />
       <unit id="4323500428148828478" at="32,150,54,5" name="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$1" />
       <unit id="4323500428148828478" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints" />
     </file>
@@ -1578,7 +1578,7 @@
         <var name="references" id="4510086454767559154" />
       </scope>
       <scope id="4510086454767559154" at="29,0,57,0" />
-      <unit id="4510086454767559154" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$2" />
+      <unit id="4510086454767559154" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$1$1" />
       <unit id="4510086454767559154" at="32,167,54,5" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$1" />
       <unit id="4510086454767559154" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints" />
     </file>
@@ -1638,9 +1638,9 @@
         <var name="references" id="5120245198449804925" />
       </scope>
       <scope id="5120245198449804925" at="36,0,75,0" />
-      <unit id="5120245198450071265" at="57,164,61,15" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$3" />
-      <unit id="5120245198450096535" at="62,25,67,15" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$3" />
-      <unit id="5120245198449804925" at="47,19,70,9" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$2" />
+      <unit id="5120245198450071265" at="57,164,61,15" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$1$1$1" />
+      <unit id="5120245198450096535" at="62,25,67,15" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$1$1$2" />
+      <unit id="5120245198449804925" at="47,19,70,9" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$1$1" />
       <unit id="5120245198449804925" at="39,152,72,5" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints$1" />
       <unit id="5120245198449804925" at="31,0,77,0" name="jetbrains.mps.lang.editor.constraints.TransformationMenuPart_IncludeSubstituteMenu_Constraints" />
     </file>
@@ -1888,7 +1888,7 @@
         <var name="references" id="609408910514948654" />
       </scope>
       <scope id="609408910514948654" at="32,0,63,0" />
-      <unit id="609408910514948654" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints$2" />
+      <unit id="609408910514948654" at="43,19,58,9" name="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints$1$1" />
       <unit id="609408910514948654" at="35,156,60,5" name="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints$1" />
       <unit id="609408910514948654" at="27,0,65,0" name="jetbrains.mps.lang.editor.constraints.AbstractComponent_Constraints" />
     </file>
@@ -1986,7 +1986,7 @@
         <var name="references" id="6524522039911214607" />
       </scope>
       <scope id="6524522039911214607" at="29,0,57,0" />
-      <unit id="6524522039911214607" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuVariableReference_Constraints$2" />
+      <unit id="6524522039911214607" at="40,19,52,9" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuVariableReference_Constraints$1$1" />
       <unit id="6524522039911214607" at="32,155,54,5" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuVariableReference_Constraints$1" />
       <unit id="6524522039911214607" at="24,0,59,0" name="jetbrains.mps.lang.editor.constraints.SubstituteMenuVariableReference_Constraints" />
     </file>

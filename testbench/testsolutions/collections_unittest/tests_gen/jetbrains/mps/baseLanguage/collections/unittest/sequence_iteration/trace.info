@@ -317,16 +317,16 @@
       </scope>
       <scope id="1165451039404" at="78,0,148,0" />
       <scope id="1165597014964" at="212,0,283,0" />
-      <unit id="1224596675511" at="22,23,61,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
-      <unit id="1224596674692" at="155,23,195,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$5" />
-      <unit id="1224596675511" at="20,19,63,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2" />
-      <unit id="1224596675280" at="85,23,129,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
-      <unit id="1224596674692" at="153,19,197,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
-      <unit id="1224596674578" at="220,23,264,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$6" />
+      <unit id="1224596675511" at="22,23,61,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$1$1$1" />
+      <unit id="1224596674692" at="155,23,195,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3$1$1" />
+      <unit id="1224596675511" at="20,19,63,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$1$1" />
+      <unit id="1224596675280" at="85,23,129,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2$1$1" />
+      <unit id="1224596674692" at="153,19,197,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3$1" />
+      <unit id="1224596674578" at="220,23,264,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4$1$1" />
       <unit id="1224596675511" at="18,51,65,5" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$1" />
-      <unit id="1224596675280" at="83,19,131,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
+      <unit id="1224596675280" at="83,19,131,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2$1" />
       <unit id="1224596674692" at="151,51,199,5" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$3" />
-      <unit id="1224596674578" at="218,19,266,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$5" />
+      <unit id="1224596674578" at="218,19,266,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4$1" />
       <unit id="1224596675280" at="81,51,133,5" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$2" />
       <unit id="1224596674578" at="216,51,268,5" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
       <unit id="1165449350640" at="13,0,284,0" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1" />
@@ -409,8 +409,8 @@
         <var name="ss" id="1165600539963" />
       </scope>
       <scope id="1165600539956" at="15,0,78,0" />
-      <unit id="1224596675062" at="21,23,60,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$3" />
-      <unit id="1224596675062" at="19,19,62,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$2" />
+      <unit id="1224596675062" at="21,23,60,13" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$1$1$1" />
+      <unit id="1224596675062" at="19,19,62,9" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$1$1" />
       <unit id="1224596675062" at="17,51,64,5" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2$1" />
       <unit id="1165600539955" at="12,0,79,0" name="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration2" />
     </file>

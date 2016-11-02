@@ -161,10 +161,10 @@
       </scope>
       <scope id="1165597541289" at="79,0,129,0" />
       <scope id="1165526644939" at="28,0,79,0" />
-      <unit id="1224596674627" at="33,23,64,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$3" />
-      <unit id="1224596674658" at="84,23,115,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$4" />
-      <unit id="1224596674627" at="31,19,66,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2" />
-      <unit id="1224596674658" at="82,19,117,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$3" />
+      <unit id="1224596674627" at="33,23,64,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$1$1$1" />
+      <unit id="1224596674658" at="84,23,115,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2$1$1" />
+      <unit id="1224596674627" at="31,19,66,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$1$1" />
+      <unit id="1224596674658" at="82,19,117,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2$1" />
       <unit id="1224596674627" at="29,50,68,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$1" />
       <unit id="1224596674658" at="80,50,119,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2" />
       <unit id="1165526591424" at="16,0,148,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1" />
@@ -324,8 +324,8 @@
         <var name="intS" id="1172256827203" />
       </scope>
       <scope id="1172256778150" at="16,0,60,0" />
-      <unit id="1224596675028" at="21,23,52,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test$3" />
-      <unit id="1224596675028" at="19,19,54,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test$2" />
+      <unit id="1224596675028" at="21,23,52,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test$1$1$1" />
+      <unit id="1224596675028" at="19,19,54,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test$1$1" />
       <unit id="1224596675028" at="17,54,56,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test$1" />
       <unit id="1172256754301" at="15,0,69,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test" />
     </file>
@@ -431,10 +431,10 @@
         <var name="s4" id="1205789128066" />
       </scope>
       <scope id="1176938681926" at="13,0,110,0" />
-      <unit id="1224596674916" at="18,23,49,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$3" />
-      <unit id="1224596674538" at="58,23,89,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$4" />
-      <unit id="1224596674916" at="16,19,51,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$2" />
-      <unit id="1224596674538" at="56,19,91,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$3" />
+      <unit id="1224596674916" at="18,23,49,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$1$1$1" />
+      <unit id="1224596674538" at="58,23,89,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$2$1$1" />
+      <unit id="1224596674916" at="16,19,51,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$1$1" />
+      <unit id="1224596674538" at="56,19,91,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$2$1" />
       <unit id="1224596674916" at="14,52,53,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$1" />
       <unit id="1224596674538" at="54,52,93,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test$2" />
       <unit id="1176938643518" at="12,0,111,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test" />
@@ -586,8 +586,8 @@
       <unit id="1224596676054" at="102,64,106,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$5" />
       <unit id="1224596676081" at="107,64,111,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$6" />
       <unit id="1224596675969" at="113,52,117,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$7" />
-      <unit id="1224596675102" at="49,23,96,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$6" />
-      <unit id="1224596675102" at="47,19,98,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$5" />
+      <unit id="1224596675102" at="49,23,96,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$4$1$1" />
+      <unit id="1224596675102" at="47,19,98,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$4$1" />
       <unit id="1224596675102" at="45,38,100,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test$4" />
       <unit id="1178898648960" at="16,0,130,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test" />
     </file>
@@ -1194,38 +1194,38 @@
       <scope id="1224596674414" at="118,0,180,0" />
       <scope id="1224596674414" at="116,40,180,8" />
       <scope id="1224596674414" at="116,0,182,0" />
-      <unit id="1224596674248" at="431,21,454,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$11" />
-      <unit id="1224596674248" at="429,17,456,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$10" />
-      <unit id="1224596675328" at="463,21,490,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$12" />
-      <unit id="1224596675249" at="247,21,278,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$7" />
+      <unit id="1224596674248" at="431,21,454,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$9$1$1" />
+      <unit id="1224596674248" at="429,17,456,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$9$1" />
+      <unit id="1224596675328" at="463,21,490,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$10$1$1" />
+      <unit id="1224596675249" at="247,21,278,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$5$1$1" />
       <unit id="1224596674248" at="427,63,458,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$9" />
-      <unit id="1224596675328" at="461,17,492,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$11" />
-      <unit id="1224596675218" at="499,21,530,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$13" />
-      <unit id="1224596675249" at="245,17,280,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$6" />
-      <unit id="1224596674504" at="387,21,422,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$10" />
+      <unit id="1224596675328" at="461,17,492,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$10$1" />
+      <unit id="1224596675218" at="499,21,530,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$11$1$1" />
+      <unit id="1224596675249" at="245,17,280,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$5$1" />
+      <unit id="1224596674504" at="387,21,422,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$8$1$1" />
       <unit id="1224596675328" at="459,64,494,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$10" />
-      <unit id="1224596675218" at="497,17,532,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$12" />
-      <unit id="1224596674826" at="71,21,110,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$4" />
+      <unit id="1224596675218" at="497,17,532,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$11$1" />
+      <unit id="1224596674826" at="71,21,110,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$2$1$1" />
       <unit id="1224596675249" at="243,65,282,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$5" />
-      <unit id="1224596675476" at="339,21,378,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$9" />
-      <unit id="1224596674504" at="385,17,424,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$9" />
+      <unit id="1224596675476" at="339,21,378,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$7$1$1" />
+      <unit id="1224596674504" at="385,17,424,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$8$1" />
       <unit id="1224596675218" at="495,65,534,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$11" />
-      <unit id="1224596675182" at="19,21,62,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$3" />
-      <unit id="1224596674826" at="69,17,112,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$3" />
-      <unit id="1224596674352" at="287,21,330,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$8" />
-      <unit id="1224596675476" at="337,17,380,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$8" />
+      <unit id="1224596675182" at="19,21,62,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$1$1$1" />
+      <unit id="1224596674826" at="69,17,112,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$2$1" />
+      <unit id="1224596674352" at="287,21,330,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$6$1$1" />
+      <unit id="1224596675476" at="337,17,380,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$7$1" />
       <unit id="1224596674504" at="383,66,426,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$8" />
-      <unit id="1224596675182" at="17,17,64,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$2" />
+      <unit id="1224596675182" at="17,17,64,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$1$1" />
       <unit id="1224596674826" at="67,67,114,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$2" />
-      <unit id="1224596674352" at="285,17,332,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$7" />
+      <unit id="1224596674352" at="285,17,332,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$6$1" />
       <unit id="1224596675476" at="335,67,382,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$7" />
       <unit id="1224596675182" at="15,68,66,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$1" />
-      <unit id="1224596674462" at="187,21,238,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$6" />
+      <unit id="1224596674462" at="187,21,238,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$4$1$1" />
       <unit id="1224596674352" at="283,68,334,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$6" />
-      <unit id="1224596674462" at="185,17,240,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$5" />
-      <unit id="1224596674414" at="119,21,178,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$5" />
+      <unit id="1224596674462" at="185,17,240,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$4$1" />
+      <unit id="1224596674414" at="119,21,178,11" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$3$1$1" />
       <unit id="1224596674462" at="183,70,242,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$4" />
-      <unit id="1224596674414" at="117,17,180,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$4" />
+      <unit id="1224596674414" at="117,17,180,7" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$3$1" />
       <unit id="1224596674414" at="115,72,182,3" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test$3" />
       <unit id="1180974291460" at="14,0,603,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.NaiveSetOperations_Test" />
     </file>
@@ -1328,10 +1328,10 @@
         <var name="s3" id="1181072957067" />
       </scope>
       <scope id="1181072889623" at="15,0,110,0" />
-      <unit id="1224596674996" at="20,23,51,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$3" />
-      <unit id="1224596674277" at="60,23,91,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$4" />
-      <unit id="1224596674996" at="18,19,53,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$2" />
-      <unit id="1224596674277" at="58,19,93,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$3" />
+      <unit id="1224596674996" at="20,23,51,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$1$1$1" />
+      <unit id="1224596674277" at="60,23,91,13" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$2$1$1" />
+      <unit id="1224596674996" at="18,19,53,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$1$1" />
+      <unit id="1224596674277" at="58,19,93,9" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$2$1" />
       <unit id="1224596674996" at="16,52,55,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$1" />
       <unit id="1224596674277" at="56,52,95,5" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test$2" />
       <unit id="1181072883581" at="14,0,111,0" name="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test" />

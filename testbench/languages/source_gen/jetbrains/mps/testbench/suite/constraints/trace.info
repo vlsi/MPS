@@ -46,7 +46,7 @@
         <var name="references" id="1280144168199457725" />
       </scope>
       <scope id="1280144168199457725" at="29,0,54,0" />
-      <unit id="1280144168199457725" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$2" />
+      <unit id="1280144168199457725" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1$1" />
       <unit id="1280144168199457725" at="32,153,51,5" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1" />
       <unit id="1280144168199457725" at="24,0,56,0" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints" />
     </file>
@@ -85,7 +85,7 @@
         <var name="references" id="1280144168199519457" />
       </scope>
       <scope id="1280144168199519457" at="27,0,52,0" />
-      <unit id="1280144168199519457" at="38,19,47,9" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$2" />
+      <unit id="1280144168199519457" at="38,19,47,9" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1$1" />
       <unit id="1280144168199519457" at="30,156,49,5" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1" />
       <unit id="1280144168199519457" at="22,0,54,0" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints" />
     </file>
@@ -155,7 +155,7 @@
         <var name="references" id="4504141816188599490" />
       </scope>
       <scope id="4504141816188599490" at="29,0,54,0" />
-      <unit id="4504141816188599490" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$2" />
+      <unit id="4504141816188599490" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1$1" />
       <unit id="4504141816188599490" at="32,153,51,5" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1" />
       <unit id="4504141816188599490" at="24,0,56,0" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints" />
     </file>

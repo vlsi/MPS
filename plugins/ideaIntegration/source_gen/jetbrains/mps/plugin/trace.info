@@ -244,7 +244,7 @@
       </scope>
       <scope id="8159985527862575757" at="115,0,165,0" />
       <unit id="8611316981187585587" at="168,58,173,7" name="jetbrains.mps.plugin.PluginStateWidget$3" />
-      <unit id="8611316981187585402" at="49,72,58,11" name="jetbrains.mps.plugin.PluginStateWidget$2" />
+      <unit id="8611316981187585402" at="49,72,58,11" name="jetbrains.mps.plugin.PluginStateWidget$1$1" />
       <unit id="8611316981187550176" at="74,15,83,5" name="jetbrains.mps.plugin.PluginStateWidget$2" />
       <unit id="8611316981187585787" at="208,0,218,0" name="jetbrains.mps.plugin.PluginStateWidget$MyTimer" />
       <unit id="8611316981187585664" at="184,0,208,0" name="jetbrains.mps.plugin.PluginStateWidget$State" />
@@ -583,7 +583,7 @@
         <var name="methodName" id="8632185942131071523" />
         <var name="parameterCount" id="8632185942131071525" />
       </scope>
-      <unit id="9184997660524409611" at="166,71,170,9" name="jetbrains.mps.plugin.MPSProjectIDEHandler$6" />
+      <unit id="9184997660524409611" at="166,71,170,9" name="jetbrains.mps.plugin.MPSProjectIDEHandler$5$1" />
       <unit id="8632185942131071513" at="136,50,147,5" name="jetbrains.mps.plugin.MPSProjectIDEHandler$4" />
       <unit id="8632185942131071376" at="54,8,67,5" name="jetbrains.mps.plugin.MPSProjectIDEHandler$1" />
       <unit id="1071422968910417106" at="111,50,124,5" name="jetbrains.mps.plugin.MPSProjectIDEHandler$3" />

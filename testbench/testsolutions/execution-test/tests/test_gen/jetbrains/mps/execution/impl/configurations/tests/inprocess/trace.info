@@ -75,7 +75,7 @@
         <var name="failure" id="107428392343534794" />
         <var name="success" id="107428392343534791" />
       </scope>
-      <unit id="107428392343534714" at="67,53,72,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$1" />
+      <unit id="107428392343534714" at="67,53,72,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody$1" />
       <unit id="107428392343534654" at="43,0,88,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody" />
       <unit id="107428392343534654" at="34,0,89,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test" />
     </file>
@@ -169,7 +169,7 @@
         <var name="failure" id="6339244025082257436" />
         <var name="success" id="6339244025082257433" />
       </scope>
-      <unit id="6339244025082257356" at="76,53,81,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$1" />
+      <unit id="6339244025082257356" at="76,53,81,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody$1" />
       <unit id="6339244025082257302" at="48,0,105,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody" />
       <unit id="6339244025082257302" at="34,0,106,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test" />
     </file>
@@ -270,9 +270,9 @@
       <scope id="6339244025082286079" at="58,0,107,0">
         <var name="testNodes" id="6339244025082286210" />
       </scope>
-      <unit id="8410090958587136981" at="108,10,112,7" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$3" />
-      <unit id="6339244025082286133" at="70,53,75,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$1" />
-      <unit id="6339244025083155910" at="80,39,86,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$2" />
+      <unit id="8410090958587136981" at="108,10,112,7" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody$3" />
+      <unit id="6339244025082286133" at="70,53,75,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody$1" />
+      <unit id="6339244025083155910" at="80,39,86,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody$2" />
       <unit id="6339244025082286079" at="49,0,115,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody" />
       <unit id="6339244025082286079" at="40,0,116,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test" />
     </file>

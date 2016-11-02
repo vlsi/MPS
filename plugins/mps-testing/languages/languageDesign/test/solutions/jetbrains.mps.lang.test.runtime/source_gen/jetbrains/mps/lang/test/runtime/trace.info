@@ -582,10 +582,10 @@
       <unit id="6965998111421732012" at="364,38,368,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$9" />
       <unit id="1289877718943972917" at="305,37,310,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$7" />
       <unit id="1455266293622514782" at="83,41,92,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$1" />
-      <unit id="1455266293622515881" at="217,54,226,9" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$6" />
+      <unit id="1455266293622515881" at="217,54,226,9" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$5$1" />
       <unit id="1532267208578178835" at="196,51,206,7" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$4" />
       <unit id="1455266293622515873" at="215,41,228,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$5" />
-      <unit id="5279737977595136574" at="158,54,174,9" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$4" />
+      <unit id="5279737977595136574" at="158,54,174,9" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$3$1" />
       <unit id="1455266293622715440" at="156,41,176,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$3" />
       <unit id="2034046503373002970" at="118,50,141,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$2" />
       <unit id="1225981767950" at="59,0,395,0" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -1663,11 +1663,11 @@
         <var name="keyStrokes" id="6270156512829307201" />
       </scope>
       <unit id="6270156512829460226" at="32,116,36,5" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$1" />
-      <unit id="6270156512828702158" at="107,53,119,11" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$4" />
+      <unit id="6270156512828702158" at="107,53,119,11" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$3$1" />
       <unit id="5279737977595033077" at="123,47,135,7" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$4" />
       <unit id="2190660024126948419" at="105,47,121,7" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$3" />
-      <unit id="6270156512829307212" at="45,23,92,13" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$4" />
-      <unit id="6270156512829307212" at="43,19,94,9" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$3" />
+      <unit id="6270156512829307212" at="45,23,92,13" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$2$1$1" />
+      <unit id="6270156512829307212" at="43,19,94,9" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$2$1" />
       <unit id="6270156512829307212" at="41,80,96,5" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher$2" />
       <unit id="6270156512828616345" at="24,0,178,0" name="jetbrains.mps.lang.test.runtime.KeyEventsDispatcher" />
     </file>
@@ -2015,9 +2015,9 @@
         <var name="projectTest" id="7107617965856386050" />
         <var name="runInCommand" id="7107617965856386059" />
       </scope>
-      <unit id="4701684462952594575" at="179,71,183,11" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$4" />
+      <unit id="4701684462952594575" at="179,71,183,11" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$3$1" />
       <unit id="1455266293622679860" at="177,43,185,7" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$3" />
-      <unit id="5381842087838308608" at="83,58,94,11" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$2" />
+      <unit id="5381842087838308608" at="83,58,94,11" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$1$1" />
       <unit id="2034046503361585176" at="155,64,168,5" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$2" />
       <unit id="5381842087838308598" at="81,65,96,7" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner$1" />
       <unit id="7107617965856250727" at="38,0,269,0" name="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />

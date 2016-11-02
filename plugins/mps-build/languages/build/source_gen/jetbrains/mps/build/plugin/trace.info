@@ -282,10 +282,10 @@
       </scope>
       <scope id="3647894154989314685" at="64,29,130,8" />
       <scope id="3647894154989314685" at="64,0,132,0" />
-      <unit id="3647894154989908954" at="108,98,112,17" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
-      <unit id="3647894154990059536" at="118,63,123,15" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
+      <unit id="3647894154989908954" at="108,98,112,17" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles$1$1" />
+      <unit id="3647894154990059536" at="118,63,123,15" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles$1$2" />
       <unit id="4243675727097083061" at="175,0,186,0" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$TargetProperties" />
-      <unit id="3647894154989314687" at="65,17,130,7" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$1" />
+      <unit id="3647894154989314687" at="65,17,130,7" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles$1" />
       <unit id="3647894154989314685" at="60,0,175,0" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$Target_copyFiles" />
       <unit id="4243675727097083061" at="36,0,187,0" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet" />
     </file>

@@ -1484,7 +1484,7 @@
         <var name="editorContext" id="6626851894249711938" />
         <var name="node" id="6626851894249711938" />
       </scope>
-      <unit id="6626851894249712484" at="167,85,176,7" name="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor$1" />
+      <unit id="6626851894249712484" at="167,85,176,7" name="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor$_Inline_hr8njl_a1a$1" />
       <unit id="6626851894249712482" at="156,0,183,0" name="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor$_Inline_hr8njl_a1a" />
       <unit id="6626851894249712472" at="82,0,113,0" name="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor$_Inline_hr8njl_a2a" />
       <unit id="6626851894249711938" at="26,0,184,0" name="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor" />

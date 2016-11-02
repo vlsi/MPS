@@ -396,8 +396,8 @@
         <var name="_params" id="7064627997011532320" />
         <var name="event" id="7064627997011532320" />
       </scope>
-      <unit id="2034046503361593570" at="80,109,84,15" name="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$2" />
-      <unit id="2034046503361593577" at="84,29,88,15" name="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$2" />
+      <unit id="2034046503361593570" at="80,109,84,15" name="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$1$1" />
+      <unit id="2034046503361593577" at="84,29,88,15" name="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$1$2" />
       <unit id="2034046503361593560" at="78,107,90,11" name="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$1" />
       <unit id="7064627997011532320" at="32,0,97,0" name="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" />
     </file>

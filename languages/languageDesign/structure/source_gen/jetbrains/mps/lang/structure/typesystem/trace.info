@@ -186,8 +186,8 @@
         <var name="status" id="1212181746947" />
         <var name="typeCheckingContext" id="1212181746947" />
       </scope>
-      <unit id="1227876791987" at="42,23,82,13" name="jetbrains.mps.lang.structure.typesystem.check_LinkDeclaration_NonTypesystemRule$3" />
-      <unit id="1227876791987" at="40,19,84,9" name="jetbrains.mps.lang.structure.typesystem.check_LinkDeclaration_NonTypesystemRule$2" />
+      <unit id="1227876791987" at="42,23,82,13" name="jetbrains.mps.lang.structure.typesystem.check_LinkDeclaration_NonTypesystemRule$1$1$1" />
+      <unit id="1227876791987" at="40,19,84,9" name="jetbrains.mps.lang.structure.typesystem.check_LinkDeclaration_NonTypesystemRule$1$1" />
       <unit id="1227876791987" at="38,80,86,5" name="jetbrains.mps.lang.structure.typesystem.check_LinkDeclaration_NonTypesystemRule$1" />
       <unit id="1212181746947" at="28,0,121,0" name="jetbrains.mps.lang.structure.typesystem.check_LinkDeclaration_NonTypesystemRule" />
     </file>
@@ -1439,9 +1439,9 @@
         <var name="typeCheckingContext" id="7805928457373101234" />
       </scope>
       <unit id="1447401809585265827" at="32,242,36,5" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$1" />
-      <unit id="7805928457373141101" at="50,116,54,9" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$3" />
-      <unit id="1447401809584872607" at="62,286,66,9" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$3" />
-      <unit id="1447401809583290074" at="81,93,85,11" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$3" />
+      <unit id="7805928457373141101" at="50,116,54,9" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$2$1" />
+      <unit id="1447401809584872607" at="62,286,66,9" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$2$2" />
+      <unit id="1447401809583290074" at="81,93,85,11" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$2$3" />
       <unit id="7805928457373127164" at="47,221,94,5" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule$2" />
       <unit id="7805928457373101234" at="24,0,121,0" name="jetbrains.mps.lang.structure.typesystem.check_EnumerationDataTypeDeclaration_NonTypesystemRule" />
     </file>

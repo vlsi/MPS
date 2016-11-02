@@ -1946,7 +1946,7 @@
         <var name="_context" id="1741258697587201536" />
         <var name="item" id="1741258697587201536" />
       </scope>
-      <unit id="1741258697587201536" at="39,17,59,7" name="jetbrains.mps.build.editor.BuildSource_JavaFiles_SubstituteMenu$1" />
+      <unit id="1741258697587201536" at="39,17,59,7" name="jetbrains.mps.build.editor.BuildSource_JavaFiles_SubstituteMenu$SubstituteMenuPart_Wrapper_xmzx4c_a$1" />
       <unit id="1741258697587201536" at="35,0,68,0" name="jetbrains.mps.build.editor.BuildSource_JavaFiles_SubstituteMenu$SubstituteMenuPart_Wrapper_xmzx4c_a" />
       <unit id="1741258697587201536" at="27,0,69,0" name="jetbrains.mps.build.editor.BuildSource_JavaFiles_SubstituteMenu" />
     </file>
@@ -2003,7 +2003,7 @@
         <var name="_context" id="1741258697587201596" />
         <var name="item" id="1741258697587201596" />
       </scope>
-      <unit id="1741258697587201596" at="39,17,59,7" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryCP_SubstituteMenu$1" />
+      <unit id="1741258697587201596" at="39,17,59,7" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryCP_SubstituteMenu$SubstituteMenuPart_Wrapper_2ut3s4_a$1" />
       <unit id="1741258697587201596" at="35,0,68,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryCP_SubstituteMenu$SubstituteMenuPart_Wrapper_2ut3s4_a" />
       <unit id="1741258697587201596" at="27,0,69,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryCP_SubstituteMenu" />
     </file>
@@ -2156,7 +2156,7 @@
         <var name="_context" id="1741258697587201746" />
         <var name="item" id="1741258697587201746" />
       </scope>
-      <unit id="1741258697587201746" at="39,17,59,7" name="jetbrains.mps.build.editor.BuildSource_JavaDependencyJar_SubstituteMenu$1" />
+      <unit id="1741258697587201746" at="39,17,59,7" name="jetbrains.mps.build.editor.BuildSource_JavaDependencyJar_SubstituteMenu$SubstituteMenuPart_Wrapper_90rflc_a$1" />
       <unit id="1741258697587201746" at="35,0,68,0" name="jetbrains.mps.build.editor.BuildSource_JavaDependencyJar_SubstituteMenu$SubstituteMenuPart_Wrapper_90rflc_a" />
       <unit id="1741258697587201746" at="27,0,69,0" name="jetbrains.mps.build.editor.BuildSource_JavaDependencyJar_SubstituteMenu" />
     </file>
@@ -2376,8 +2376,8 @@
       <scope id="1741258697587201806" at="130,0,148,0">
         <var name="pattern" id="1741258697587201806" />
       </scope>
-      <unit id="1741258697587201806" at="46,22,50,7" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$1" />
-      <unit id="1741258697587201806" at="51,24,55,7" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$2" />
+      <unit id="1741258697587201806" at="46,22,50,7" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$SubstituteMenuPart_Group_aabwkk_a$1" />
+      <unit id="1741258697587201806" at="51,24,55,7" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$SubstituteMenuPart_Group_aabwkk_a$2" />
       <unit id="1741258697587201806" at="180,0,189,0" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$SubstituteMenuPart_Group_aabwkk_a$SubstituteMenuPart_Group_aabwkk_c0$SubstituteMenuPart_Subconcepts_aabwkk_a2a" />
       <unit id="1741258697587201806" at="170,0,190,0" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$SubstituteMenuPart_Group_aabwkk_a$SubstituteMenuPart_Group_aabwkk_c0" />
       <unit id="1741258697587201806" at="79,0,104,0" name="jetbrains.mps.build.editor.BuildLayout_JarManifest_Part_SubstituteMenu$SubstituteMenuPart_Group_aabwkk_a$SubstituteMenuPart_Group_aabwkk_a0$SubstituteMenuPart_Action_aabwkk_a0a$Item" />
@@ -2542,7 +2542,7 @@
         <var name="_context" id="1741258697587202289" />
         <var name="item" id="1741258697587202289" />
       </scope>
-      <unit id="1741258697587202289" at="40,17,60,7" name="jetbrains.mps.build.editor.BuildString_SubstituteMenu$1" />
+      <unit id="1741258697587202289" at="40,17,60,7" name="jetbrains.mps.build.editor.BuildString_SubstituteMenu$SubstituteMenuPart_Wrapper_q01vp8_a$1" />
       <unit id="1741258697587202289" at="36,0,69,0" name="jetbrains.mps.build.editor.BuildString_SubstituteMenu$SubstituteMenuPart_Wrapper_q01vp8_a" />
       <unit id="1741258697587202289" at="28,0,70,0" name="jetbrains.mps.build.editor.BuildString_SubstituteMenu" />
     </file>
@@ -2714,8 +2714,8 @@
       <scope id="1741258697587202513" at="143,0,166,0">
         <var name="pattern" id="1741258697587202513" />
       </scope>
-      <unit id="1741258697587202383" at="62,79,66,7" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$1" />
-      <unit id="1741258697587202393" at="66,20,70,7" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$2" />
+      <unit id="1741258697587202383" at="62,79,66,7" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$SubstituteMenuPart_Parameterized_fvo6kj_a$1" />
+      <unit id="1741258697587202393" at="66,20,70,7" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$SubstituteMenuPart_Parameterized_fvo6kj_a$2" />
       <unit id="1741258697587202349" at="168,0,177,0" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$SubstituteMenuPart_Subconcepts_fvo6kj_c" />
       <unit id="1741258697587202349" at="83,0,119,0" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$SubstituteMenuPart_Parameterized_fvo6kj_a$SubstituteMenuPart_Action_fvo6kj_a0$Item" />
       <unit id="1741258697587202349" at="129,0,167,0" name="jetbrains.mps.build.editor.BuildStringPart_SubstituteMenu$SubstituteMenuPart_Action_fvo6kj_b$Item" />
@@ -2792,7 +2792,7 @@
         <var name="item" id="1741258697587202670" />
       </scope>
       <unit id="1741258697587202670" at="72,0,81,0" name="jetbrains.mps.build.editor.BuildVariableMacroInitValue_SubstituteMenu$SubstituteMenuPart_Subconcepts_8kfjf0_b" />
-      <unit id="1741258697587202670" at="43,17,63,7" name="jetbrains.mps.build.editor.BuildVariableMacroInitValue_SubstituteMenu$1" />
+      <unit id="1741258697587202670" at="43,17,63,7" name="jetbrains.mps.build.editor.BuildVariableMacroInitValue_SubstituteMenu$SubstituteMenuPart_Wrapper_8kfjf0_a$1" />
       <unit id="1741258697587202670" at="39,0,72,0" name="jetbrains.mps.build.editor.BuildVariableMacroInitValue_SubstituteMenu$SubstituteMenuPart_Wrapper_8kfjf0_a" />
       <unit id="1741258697587202670" at="30,0,82,0" name="jetbrains.mps.build.editor.BuildVariableMacroInitValue_SubstituteMenu" />
     </file>
@@ -4272,8 +4272,8 @@
         <var name="node" id="2896281290945209188" />
         <var name="operationContext" id="2896281290945209188" />
       </scope>
-      <unit id="5348779743639263764" at="154,74,158,7" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$1" />
-      <unit id="5348779743639223987" at="162,51,166,7" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$2" />
+      <unit id="5348779743639263764" at="154,74,158,7" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0$1" />
+      <unit id="5348779743639223987" at="162,51,166,7" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0$2" />
       <unit id="2539347366864648270" at="61,0,90,0" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$archivePathSingleRoleHandler_4z471d_a0" />
       <unit id="2896281290945209188" at="145,0,182,0" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0" />
       <unit id="2539347366864648270" at="107,0,145,0" name="jetbrains.mps.build.editor.BuildSourceArchiveRelativePath_Editor$compositePartSingleRoleHandler_4z471d_c0" />
@@ -9076,7 +9076,7 @@
         <var name="editorContext" id="5248329904287759710" />
         <var name="node" id="5248329904287759710" />
       </scope>
-      <unit id="5248329904287759716" at="26,19,34,9" name="jetbrains.mps.build.editor.BuildInputResourceSet_Editor$2" />
+      <unit id="5248329904287759716" at="26,19,34,9" name="jetbrains.mps.build.editor.BuildInputResourceSet_Editor$1$1" />
       <unit id="5248329904287759710" at="24,40,36,5" name="jetbrains.mps.build.editor.BuildInputResourceSet_Editor$1" />
       <unit id="5248329904287739120" at="19,0,46,0" name="jetbrains.mps.build.editor.BuildInputResourceSet_Editor" />
     </file>
@@ -15119,7 +15119,7 @@
         <var name="editorContext" id="7389400916848144621" />
         <var name="node" id="7389400916848144621" />
       </scope>
-      <unit id="7389400916848144627" at="23,19,31,9" name="jetbrains.mps.build.editor.BuildMacro_Editor$2" />
+      <unit id="7389400916848144627" at="23,19,31,9" name="jetbrains.mps.build.editor.BuildMacro_Editor$1$1" />
       <unit id="7389400916848144621" at="21,40,33,5" name="jetbrains.mps.build.editor.BuildMacro_Editor$1" />
       <unit id="7389400916848144619" at="16,0,43,0" name="jetbrains.mps.build.editor.BuildMacro_Editor" />
     </file>
@@ -17614,7 +17614,7 @@
         <var name="editorContext" id="9184644532456529072" />
         <var name="node" id="9184644532456529072" />
       </scope>
-      <unit id="9184644532456529078" at="23,19,31,9" name="jetbrains.mps.build.editor.BuildLayout_CopyHandler_Editor$2" />
+      <unit id="9184644532456529078" at="23,19,31,9" name="jetbrains.mps.build.editor.BuildLayout_CopyHandler_Editor$1$1" />
       <unit id="9184644532456529072" at="21,40,33,5" name="jetbrains.mps.build.editor.BuildLayout_CopyHandler_Editor$1" />
       <unit id="9184644532456508468" at="16,0,43,0" name="jetbrains.mps.build.editor.BuildLayout_CopyHandler_Editor" />
     </file>

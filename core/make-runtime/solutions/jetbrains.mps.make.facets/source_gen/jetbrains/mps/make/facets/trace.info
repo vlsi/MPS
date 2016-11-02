@@ -578,21 +578,21 @@
       </scope>
       <scope id="525295658369136956" at="70,29,132,8" />
       <scope id="525295658369136956" at="70,0,134,0" />
-      <unit id="525295658369137005" at="87,112,91,21" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137014" at="91,33,95,21" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137058" at="104,120,108,21" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137067" at="108,33,112,21" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137128" at="289,49,293,17" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137033" at="97,44,103,21" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137085" at="114,52,120,21" name="jetbrains.mps.make.facets.Make_Facet$3" />
-      <unit id="525295658369137117" at="269,17,280,7" name="jetbrains.mps.make.facets.Make_Facet$1" />
+      <unit id="525295658369137005" at="87,112,91,21" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1$1" />
+      <unit id="525295658369137014" at="91,33,95,21" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1$2" />
+      <unit id="525295658369137058" at="104,120,108,21" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1$4" />
+      <unit id="525295658369137067" at="108,33,112,21" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1$5" />
+      <unit id="525295658369137128" at="289,49,293,17" name="jetbrains.mps.make.facets.Make_Facet$Target_make$2$1" />
+      <unit id="525295658369137033" at="97,44,103,21" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1$3" />
+      <unit id="525295658369137085" at="114,52,120,21" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1$6" />
+      <unit id="525295658369137117" at="269,17,280,7" name="jetbrains.mps.make.facets.Make_Facet$Target_make$1" />
       <unit id="525295658369136957" at="185,0,199,0" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$Parameters" />
-      <unit id="8118537977657133390" at="205,17,219,7" name="jetbrains.mps.make.facets.Make_Facet$1" />
+      <unit id="8118537977657133390" at="205,17,219,7" name="jetbrains.mps.make.facets.Make_Facet$Target_cleanup$1" />
       <unit id="525295658369137145" at="349,0,363,0" name="jetbrains.mps.make.facets.Make_Facet$Target_make$Parameters" />
-      <unit id="525295658369137119" at="283,17,299,7" name="jetbrains.mps.make.facets.Make_Facet$2" />
-      <unit id="525295658369136987" at="84,65,123,17" name="jetbrains.mps.make.facets.Make_Facet$2" />
+      <unit id="525295658369137119" at="283,17,299,7" name="jetbrains.mps.make.facets.Make_Facet$Target_make$2" />
+      <unit id="525295658369136987" at="84,65,123,17" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1$1" />
       <unit id="525295658369136955" at="364,0,403,0" name="jetbrains.mps.make.facets.Make_Facet$TargetProperties" />
-      <unit id="525295658369136962" at="71,17,132,7" name="jetbrains.mps.make.facets.Make_Facet$1" />
+      <unit id="525295658369136962" at="71,17,132,7" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile$1" />
       <unit id="8118537977657133388" at="200,0,264,0" name="jetbrains.mps.make.facets.Make_Facet$Target_cleanup" />
       <unit id="525295658369137115" at="264,0,364,0" name="jetbrains.mps.make.facets.Make_Facet$Target_make" />
       <unit id="525295658369136956" at="66,0,200,0" name="jetbrains.mps.make.facets.Make_Facet$Target_reconcile" />
@@ -1115,18 +1115,18 @@
       </scope>
       <scope id="6648795410103967258" at="226,29,294,8" />
       <scope id="6648795410103967258" at="226,0,296,0" />
-      <unit id="4540922014355237441" at="92,139,96,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
-      <unit id="4540922014355237533" at="96,27,100,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
-      <unit id="2034046503361627810" at="113,55,117,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
-      <unit id="6946934958910527738" at="241,55,245,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
-      <unit id="4902420589294421591" at="250,85,254,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
-      <unit id="6946934958911613662" at="273,105,277,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
-      <unit id="3820214475025018159" at="104,53,111,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$2" />
+      <unit id="4540922014355237441" at="92,139,96,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile$1$1" />
+      <unit id="4540922014355237533" at="96,27,100,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile$1$2" />
+      <unit id="2034046503361627810" at="113,55,117,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile$1$4" />
+      <unit id="6946934958910527738" at="241,55,245,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_auxCompile$1$1" />
+      <unit id="4902420589294421591" at="250,85,254,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_auxCompile$1$2" />
+      <unit id="6946934958911613662" at="273,105,277,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_auxCompile$1$3" />
+      <unit id="3820214475025018159" at="104,53,111,15" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile$1$3" />
       <unit id="6648795410103967472" at="347,0,367,0" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_auxCompile$Parameters" />
       <unit id="6648795410103967254" at="195,0,221,0" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile$Parameters" />
       <unit id="6648795410103967073" at="368,0,419,0" name="jetbrains.mps.make.facets.JavaCompile_Facet$TargetProperties" />
-      <unit id="6648795410103967078" at="80,17,142,7" name="jetbrains.mps.make.facets.JavaCompile_Facet$1" />
-      <unit id="6648795410103967262" at="227,17,294,7" name="jetbrains.mps.make.facets.JavaCompile_Facet$1" />
+      <unit id="6648795410103967078" at="80,17,142,7" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile$1" />
+      <unit id="6648795410103967262" at="227,17,294,7" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_auxCompile$1" />
       <unit id="6648795410103967258" at="222,0,368,0" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_auxCompile" />
       <unit id="6648795410103967074" at="75,0,222,0" name="jetbrains.mps.make.facets.JavaCompile_Facet$Target_compile" />
       <unit id="6648795410103967073" at="50,0,420,0" name="jetbrains.mps.make.facets.JavaCompile_Facet" />
@@ -1296,10 +1296,10 @@
       </scope>
       <scope id="6648795410103987946" at="58,29,84,8" />
       <scope id="6648795410103987946" at="58,0,86,0" />
-      <unit id="1488384656848153304" at="66,101,70,15" name="jetbrains.mps.make.facets.ReloadClasses_Facet$2" />
-      <unit id="4555842806672775724" at="73,54,77,15" name="jetbrains.mps.make.facets.ReloadClasses_Facet$2" />
+      <unit id="1488384656848153304" at="66,101,70,15" name="jetbrains.mps.make.facets.ReloadClasses_Facet$Target_reloadClasses$1$1" />
+      <unit id="4555842806672775724" at="73,54,77,15" name="jetbrains.mps.make.facets.ReloadClasses_Facet$Target_reloadClasses$1$2" />
       <unit id="6648795410103987945" at="132,0,143,0" name="jetbrains.mps.make.facets.ReloadClasses_Facet$TargetProperties" />
-      <unit id="6648795410103987948" at="59,17,84,7" name="jetbrains.mps.make.facets.ReloadClasses_Facet$1" />
+      <unit id="6648795410103987948" at="59,17,84,7" name="jetbrains.mps.make.facets.ReloadClasses_Facet$Target_reloadClasses$1" />
       <unit id="6648795410103987946" at="54,0,132,0" name="jetbrains.mps.make.facets.ReloadClasses_Facet$Target_reloadClasses" />
       <unit id="6648795410103987945" at="30,0,144,0" name="jetbrains.mps.make.facets.ReloadClasses_Facet" />
     </file>

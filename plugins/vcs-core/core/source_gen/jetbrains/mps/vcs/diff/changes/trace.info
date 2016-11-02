@@ -88,8 +88,8 @@
         <var name="model" id="5505786199853653521" />
         <var name="nodeCopier" id="5505786199853653524" />
       </scope>
-      <unit id="5505786199853653260" at="44,35,48,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$1" />
-      <unit id="5505786199853653271" at="48,11,52,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$2" />
+      <unit id="5505786199853653260" at="44,35,48,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType$1" />
+      <unit id="5505786199853653271" at="48,11,52,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType$2" />
       <unit id="5505786199853651271" at="43,0,63,0" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType" />
       <unit id="2241895627641426680" at="12,0,64,0" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     </file>

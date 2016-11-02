@@ -1204,12 +1204,12 @@
         <var name="_params" id="1215889139721" />
         <var name="event" id="1215889139721" />
       </scope>
-      <unit id="7671826542797292199" at="67,68,70,11" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$2" />
-      <unit id="8695989578372699489" at="75,55,79,15" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$3" />
-      <unit id="7671826542797292246" at="89,55,93,15" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$3" />
+      <unit id="7671826542797292199" at="67,68,70,11" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1$1" />
+      <unit id="8695989578372699489" at="75,55,79,15" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1$2$1" />
+      <unit id="7671826542797292246" at="89,55,93,15" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1$3$1" />
       <unit id="7671826542797318496" at="102,56,107,5" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$2" />
-      <unit id="8695989578372693383" at="73,64,81,11" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$2" />
-      <unit id="7671826542797292241" at="87,68,95,11" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$2" />
+      <unit id="8695989578372693383" at="73,64,81,11" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1$2" />
+      <unit id="7671826542797292241" at="87,68,95,11" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1$3" />
       <unit id="7671826542797268559" at="62,32,101,5" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1" />
       <unit id="1215889139721" at="26,0,110,0" name="jetbrains.mps.ide.actions.OptimizeProjectImports_Action" />
     </file>
@@ -2922,7 +2922,7 @@
       <unit id="2325045834927137910" at="45,114,49,5" name="jetbrains.mps.ide.actions.DeleteNode_Action$1" />
       <unit id="2325045834927150259" at="87,114,91,5" name="jetbrains.mps.ide.actions.DeleteNode_Action$2" />
       <unit id="1419465757272943253" at="95,114,99,5" name="jetbrains.mps.ide.actions.DeleteNode_Action$3" />
-      <unit id="1419465757272810572" at="116,97,120,9" name="jetbrains.mps.ide.actions.DeleteNode_Action$5" />
+      <unit id="1419465757272810572" at="116,97,120,9" name="jetbrains.mps.ide.actions.DeleteNode_Action$4$1" />
       <unit id="2325045834927131972" at="123,146,127,5" name="jetbrains.mps.ide.actions.DeleteNode_Action$5" />
       <unit id="1419465757272810559" at="114,77,122,5" name="jetbrains.mps.ide.actions.DeleteNode_Action$4" />
       <unit id="1229266351427" at="30,0,136,0" name="jetbrains.mps.ide.actions.DeleteNode_Action" />
@@ -3614,13 +3614,13 @@
         <var name="_params" id="1236348386008" />
         <var name="event" id="1236348386008" />
       </scope>
-      <unit id="5199578212049393662" at="93,68,96,11" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$3" />
+      <unit id="5199578212049393662" at="93,68,96,11" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$2$1" />
       <unit id="3542521394190621426" at="45,46,49,5" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$1" />
-      <unit id="288193919682826390" at="114,55,118,15" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$4" />
-      <unit id="8695989578372739289" at="100,55,105,15" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$4" />
+      <unit id="288193919682826390" at="114,55,118,15" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$2$3$1" />
+      <unit id="8695989578372739289" at="100,55,105,15" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$2$2$1" />
       <unit id="288193919682826417" at="127,56,132,5" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$3" />
-      <unit id="288193919682826385" at="112,68,120,11" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$3" />
-      <unit id="8695989578372730713" at="98,64,107,11" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$3" />
+      <unit id="288193919682826385" at="112,68,120,11" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$2$3" />
+      <unit id="8695989578372730713" at="98,64,107,11" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$2$2" />
       <unit id="288193919682826275" at="86,32,126,5" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action$2" />
       <unit id="1236348386008" at="30,0,135,0" name="jetbrains.mps.ide.actions.OptimizeModelImports_Action" />
     </file>
@@ -3750,12 +3750,12 @@
         <var name="_params" id="1236349476737" />
         <var name="event" id="1236349476737" />
       </scope>
-      <unit id="288193919682794998" at="80,68,83,11" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$2" />
-      <unit id="6352952732700699667" at="108,55,112,15" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$3" />
+      <unit id="288193919682794998" at="80,68,83,11" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1$1" />
+      <unit id="6352952732700699667" at="108,55,112,15" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1$3$1" />
       <unit id="6786116183996998848" at="121,56,126,5" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$2" />
-      <unit id="5111630953419785156" at="89,57,97,17" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$3" />
-      <unit id="288193919682793639" at="106,68,114,11" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$2" />
-      <unit id="3594574169073645451" at="87,66,99,13" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$2" />
+      <unit id="5111630953419785156" at="89,57,97,17" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1$2$1" />
+      <unit id="288193919682793639" at="106,68,114,11" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1$3" />
+      <unit id="3594574169073645451" at="87,66,99,13" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1$2" />
       <unit id="288193919682794951" at="74,32,120,5" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1" />
       <unit id="1236349476737" at="30,0,129,0" name="jetbrains.mps.ide.actions.OptimizeModuleImports_Action" />
     </file>
@@ -4387,7 +4387,7 @@
       <unit id="9054606037493939171" at="120,95,124,5" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action$3" />
       <unit id="9054606037493939180" at="124,17,128,5" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action$4" />
       <unit id="9054606037493939224" at="134,96,138,5" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action$5" />
-      <unit id="9054606037493534614" at="77,105,97,9" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action$2" />
+      <unit id="9054606037493534614" at="77,105,97,9" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action$1$1" />
       <unit id="9054606037493534585" at="73,42,99,5" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action$1" />
       <unit id="1366167984387690229" at="42,0,191,0" name="jetbrains.mps.ide.actions.CalcClassifiersInRootsStatistic_Action" />
     </file>
@@ -5021,7 +5021,7 @@
         <var name="methods" id="1818770337282920208" />
       </scope>
       <scope id="1818770337282874389" at="33,0,87,0" />
-      <unit id="1818770337282928773" at="61,85,65,11" name="jetbrains.mps.ide.actions.OverrideConceptMethodsAction$4" />
+      <unit id="1818770337282928773" at="61,85,65,11" name="jetbrains.mps.ide.actions.OverrideConceptMethodsAction$3$1" />
       <unit id="1818770337282920247" at="47,52,52,5" name="jetbrains.mps.ide.actions.OverrideConceptMethodsAction$2" />
       <unit id="2034046503361578250" at="38,49,45,5" name="jetbrains.mps.ide.actions.OverrideConceptMethodsAction$1" />
       <unit id="5074773015936226050" at="59,57,84,7" name="jetbrains.mps.ide.actions.OverrideConceptMethodsAction$3" />
@@ -5729,7 +5729,7 @@
         <var name="projectPath" id="2003512433031647955" />
         <var name="targetNode" id="2003512433031647958" />
       </scope>
-      <unit id="2003512433031648109" at="88,102,94,9" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action$2" />
+      <unit id="2003512433031648109" at="88,102,94,9" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action$1$1" />
       <unit id="2003512433031648097" at="84,8,96,5" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action$1" />
       <unit id="2003512433031647705" at="29,0,157,0" name="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action" />
     </file>
@@ -6308,7 +6308,7 @@
         <var name="model" id="2557058267217525651" />
         <var name="node" id="2557058267217516634" />
       </scope>
-      <unit id="6549907336953386979" at="66,34,69,9" name="jetbrains.mps.ide.actions.FindUsagesHelper$3" />
+      <unit id="6549907336953386979" at="66,34,69,9" name="jetbrains.mps.ide.actions.FindUsagesHelper$2$1" />
       <unit id="5938312768540041334" at="52,34,57,5" name="jetbrains.mps.ide.actions.FindUsagesHelper$1" />
       <unit id="5938312768540050150" at="87,34,93,5" name="jetbrains.mps.ide.actions.FindUsagesHelper$3" />
       <unit id="6549907336953186549" at="63,34,72,5" name="jetbrains.mps.ide.actions.FindUsagesHelper$2" />
@@ -6428,7 +6428,7 @@
         <var name="_params" id="2589658255268083871" />
         <var name="event" id="2589658255268083871" />
       </scope>
-      <unit id="3812855676554060515" at="79,62,83,11" name="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$2" />
+      <unit id="3812855676554060515" at="79,62,83,11" name="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$1$1" />
       <unit id="6352952732703408057" at="71,115,87,5" name="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$1" />
       <unit id="2589658255268083871" at="21,0,107,0" name="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
     </file>
@@ -6550,7 +6550,7 @@
         <var name="_params" id="2589658255268083877" />
         <var name="event" id="2589658255268083877" />
       </scope>
-      <unit id="3812855676554060557" at="94,62,98,11" name="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$2" />
+      <unit id="3812855676554060557" at="94,62,98,11" name="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$1$1" />
       <unit id="6352952732700235741" at="85,35,102,5" name="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$1" />
       <unit id="2589658255268083877" at="27,0,116,0" name="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
     </file>
@@ -7186,8 +7186,8 @@
       <unit id="2941496348503811761" at="81,50,86,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$2" />
       <unit id="2941496348503414671" at="52,136,59,3" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$1" />
       <unit id="5883753008207004942" at="43,0,51,0" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$UpdateDependentModelsRefactoringParticipant_extension" />
-      <unit id="9163025738078139938" at="97,50,106,13" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$5" />
-      <unit id="2941496348504953845" at="92,85,108,9" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$4" />
+      <unit id="9163025738078139938" at="97,50,106,13" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$3$1$1" />
+      <unit id="2941496348504953845" at="92,85,108,9" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$3$1" />
       <unit id="2941496348503859295" at="88,56,111,5" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant$3" />
       <unit id="2941496348503197695" at="41,0,136,0" name="jetbrains.mps.ide.actions.UpdateDependentModelsRefactoringParticipant" />
     </file>
@@ -7643,7 +7643,7 @@
       </scope>
       <unit id="5913981448346387373" at="58,44,62,5" name="jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action$1" />
       <unit id="3616898894718121659" at="93,68,97,5" name="jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action$2" />
-      <unit id="3616898894718121738" at="121,131,125,11" name="jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action$4" />
+      <unit id="3616898894718121738" at="121,131,125,11" name="jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action$3$1" />
       <unit id="3616898894718121699" at="102,45,154,5" name="jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action$3" />
       <unit id="3616898894718121639" at="38,0,157,0" name="jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action" />
     </file>
@@ -7848,7 +7848,7 @@
         <var name="event" id="3858094006307618579" />
       </scope>
       <unit id="3812855676554056465" at="88,58,92,7" name="jetbrains.mps.ide.actions.NewFile_Action$2" />
-      <unit id="5049109624534713769" at="74,63,81,9" name="jetbrains.mps.ide.actions.NewFile_Action$2" />
+      <unit id="5049109624534713769" at="74,63,81,9" name="jetbrains.mps.ide.actions.NewFile_Action$1$1" />
       <unit id="3858094006307874087" at="60,35,84,5" name="jetbrains.mps.ide.actions.NewFile_Action$1" />
       <unit id="3858094006307618579" at="23,0,96,0" name="jetbrains.mps.ide.actions.NewFile_Action" />
     </file>
@@ -7954,7 +7954,7 @@
         <var name="event" id="3858094006307618582" />
       </scope>
       <unit id="3812855676554056481" at="92,58,96,7" name="jetbrains.mps.ide.actions.NewDirectory_Action$2" />
-      <unit id="5049109624534672914" at="78,63,85,9" name="jetbrains.mps.ide.actions.NewDirectory_Action$2" />
+      <unit id="5049109624534672914" at="78,63,85,9" name="jetbrains.mps.ide.actions.NewDirectory_Action$1$1" />
       <unit id="3858094006307790583" at="64,35,88,5" name="jetbrains.mps.ide.actions.NewDirectory_Action$1" />
       <unit id="3858094006307618582" at="23,0,100,0" name="jetbrains.mps.ide.actions.NewDirectory_Action" />
     </file>
@@ -8584,13 +8584,13 @@
         <var name="_params" id="4006758004392312921" />
         <var name="event" id="4006758004392312921" />
       </scope>
-      <unit id="1050125497003819901" at="135,116,139,13" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$3" />
-      <unit id="1050125497003819922" at="140,83,144,13" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$3" />
-      <unit id="1050125497003819938" at="144,26,148,13" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$3" />
-      <unit id="4006758004392427782" at="166,66,170,9" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$3" />
-      <unit id="4006758004392427870" at="170,21,174,9" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$3" />
+      <unit id="1050125497003819901" at="135,116,139,13" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$1$1$1" />
+      <unit id="1050125497003819922" at="140,83,144,13" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$1$1$2" />
+      <unit id="1050125497003819938" at="144,26,148,13" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$1$1$3" />
+      <unit id="4006758004392427782" at="166,66,170,9" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$2$1" />
+      <unit id="4006758004392427870" at="170,21,174,9" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$2$2" />
       <unit id="4006758004392427480" at="161,58,183,5" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$2" />
-      <unit id="1050125497003819750" at="96,160,152,9" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$2" />
+      <unit id="1050125497003819750" at="96,160,152,9" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$1$1" />
       <unit id="1050125497003254894" at="91,27,155,5" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action$1" />
       <unit id="4006758004392312921" at="53,0,188,0" name="jetbrains.mps.ide.actions.FindUnusedAndDeprecatedConcepts_Action" />
     </file>
@@ -9175,10 +9175,10 @@
         <var name="_params" id="4998818250317603956" />
         <var name="event" id="4998818250317603956" />
       </scope>
-      <unit id="4998818250317625998" at="82,125,87,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$3" />
-      <unit id="4998818250317610927" at="97,131,102,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$3" />
-      <unit id="4998818250317610918" at="95,60,104,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$2" />
-      <unit id="5938312768539888954" at="79,38,89,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$2" />
+      <unit id="4998818250317625998" at="82,125,87,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$1$1" />
+      <unit id="4998818250317610927" at="97,131,102,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$2$1" />
+      <unit id="4998818250317610918" at="95,60,104,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$2" />
+      <unit id="5938312768539888954" at="79,38,89,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$1" />
       <unit id="4998818250317610756" at="73,42,106,5" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1" />
       <unit id="4998818250317603956" at="36,0,109,0" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action" />
     </file>
@@ -10259,7 +10259,7 @@
         <var name="event" id="5533671870987188872" />
       </scope>
       <unit id="944342063937013769" at="149,34,153,5" name="jetbrains.mps.ide.actions.PasteNode_Action$2" />
-      <unit id="1071422968910407103" at="136,104,141,11" name="jetbrains.mps.ide.actions.PasteNode_Action$2" />
+      <unit id="1071422968910407103" at="136,104,141,11" name="jetbrains.mps.ide.actions.PasteNode_Action$1$1" />
       <unit id="8490755084402450014" at="110,40,145,5" name="jetbrains.mps.ide.actions.PasteNode_Action$1" />
       <unit id="5533671870987188872" at="35,0,169,0" name="jetbrains.mps.ide.actions.PasteNode_Action" />
     </file>
@@ -10773,7 +10773,7 @@
         <var name="_params" id="629814680568915653" />
         <var name="event" id="629814680568915653" />
       </scope>
-      <unit id="5013162914354630624" at="118,120,122,9" name="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$3" />
+      <unit id="5013162914354630624" at="118,120,122,9" name="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$2$1" />
       <unit id="1238749669243667992" at="87,145,93,5" name="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$1" />
       <unit id="1238749669243710131" at="112,99,126,5" name="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$2" />
       <unit id="629814680568915653" at="33,0,166,0" name="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action" />
@@ -10909,7 +10909,7 @@
         <var name="_params" id="640843604926244916" />
         <var name="event" id="640843604926244916" />
       </scope>
-      <unit id="279286349826312168" at="109,48,115,9" name="jetbrains.mps.ide.actions.NewRuntimeModule_Action$2" />
+      <unit id="279286349826312168" at="109,48,115,9" name="jetbrains.mps.ide.actions.NewRuntimeModule_Action$1$1" />
       <unit id="2777079932569212912" at="103,21,117,5" name="jetbrains.mps.ide.actions.NewRuntimeModule_Action$1" />
       <unit id="640843604926244916" at="33,0,120,0" name="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
     </file>
@@ -11303,7 +11303,7 @@
       <unit id="670386341911976107" at="115,55,127,5" name="jetbrains.mps.ide.actions.ShowImplementationComponent$1" />
       <unit id="670386341911975672" at="186,0,201,0" name="jetbrains.mps.ide.actions.ShowImplementationComponent$BackAction" />
       <unit id="670386341911975720" at="201,0,216,0" name="jetbrains.mps.ide.actions.ShowImplementationComponent$ForwardAction" />
-      <unit id="670386341911975809" at="224,51,241,7" name="jetbrains.mps.ide.actions.ShowImplementationComponent$1" />
+      <unit id="670386341911975809" at="224,51,241,7" name="jetbrains.mps.ide.actions.ShowImplementationComponent$ShowSourceAction$1" />
       <unit id="670386341911975584" at="166,0,186,0" name="jetbrains.mps.ide.actions.ShowImplementationComponent$ImplementationNode" />
       <unit id="670386341911975772" at="216,0,244,0" name="jetbrains.mps.ide.actions.ShowImplementationComponent$ShowSourceAction" />
       <unit id="670386341911975581" at="50,0,245,0" name="jetbrains.mps.ide.actions.ShowImplementationComponent" />
@@ -11676,7 +11676,7 @@
       </scope>
       <unit id="6981599660810342956" at="50,44,54,5" name="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$1" />
       <unit id="6981599660810445236" at="85,68,89,5" name="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$2" />
-      <unit id="5171773620272399644" at="109,131,113,11" name="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$4" />
+      <unit id="5171773620272399644" at="109,131,113,11" name="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$3$1" />
       <unit id="5938312768539670256" at="94,45,142,5" name="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action$3" />
       <unit id="6981599660810253824" at="35,0,145,0" name="jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action" />
     </file>
@@ -12351,8 +12351,8 @@
         <var name="_params" id="7397015581138491059" />
         <var name="event" id="7397015581138491059" />
       </scope>
-      <unit id="944342063937535121" at="125,48,129,13" name="jetbrains.mps.ide.actions.ShowImplementations_Action$3" />
-      <unit id="769782316345007742" at="122,332,132,9" name="jetbrains.mps.ide.actions.ShowImplementations_Action$2" />
+      <unit id="944342063937535121" at="125,48,129,13" name="jetbrains.mps.ide.actions.ShowImplementations_Action$1$1$1" />
+      <unit id="769782316345007742" at="122,332,132,9" name="jetbrains.mps.ide.actions.ShowImplementations_Action$1$1" />
       <unit id="944342063937395111" at="117,40,137,5" name="jetbrains.mps.ide.actions.ShowImplementations_Action$1" />
       <unit id="7397015581138491059" at="35,0,140,0" name="jetbrains.mps.ide.actions.ShowImplementations_Action" />
     </file>
@@ -12587,7 +12587,7 @@
       <unit id="7696205113829128603" at="144,18,148,5" name="jetbrains.mps.ide.actions.SetNodePackage_Action$6" />
       <unit id="7696205113829128627" at="148,17,152,5" name="jetbrains.mps.ide.actions.SetNodePackage_Action$7" />
       <unit id="6239673855080561556" at="159,49,163,5" name="jetbrains.mps.ide.actions.SetNodePackage_Action$8" />
-      <unit id="6239673855080561540" at="166,54,170,9" name="jetbrains.mps.ide.actions.SetNodePackage_Action$10" />
+      <unit id="6239673855080561540" at="166,54,170,9" name="jetbrains.mps.ide.actions.SetNodePackage_Action$9$1" />
       <unit id="944342063931688357" at="109,34,114,5" name="jetbrains.mps.ide.actions.SetNodePackage_Action$2" />
       <unit id="6239673855080561526" at="163,21,172,5" name="jetbrains.mps.ide.actions.SetNodePackage_Action$9" />
       <unit id="944342063931766656" at="121,40,132,5" name="jetbrains.mps.ide.actions.SetNodePackage_Action$3" />
@@ -13029,7 +13029,7 @@
         <var name="_params" id="8047970061511569310" />
         <var name="event" id="8047970061511569310" />
       </scope>
-      <unit id="8047970061512587184" at="122,121,126,9" name="jetbrains.mps.ide.actions.MoveModel_Action$3" />
+      <unit id="8047970061512587184" at="122,121,126,9" name="jetbrains.mps.ide.actions.MoveModel_Action$2$1" />
       <unit id="8047970061512579405" at="103,117,109,5" name="jetbrains.mps.ide.actions.MoveModel_Action$1" />
       <unit id="4669701099662694655" at="118,257,139,5" name="jetbrains.mps.ide.actions.MoveModel_Action$2" />
       <unit id="8047970061511569310" at="36,0,142,0" name="jetbrains.mps.ide.actions.MoveModel_Action" />
@@ -13627,21 +13627,21 @@
         <var name="fromProjectPane" id="8321617901826003093" />
         <var name="safe" id="8321617901826003075" />
       </scope>
-      <unit id="6242416087951969728" at="53,53,57,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$2" />
-      <unit id="685239734824896460" at="88,59,92,15" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5" />
-      <unit id="685239734824897950" at="95,64,99,19" name="jetbrains.mps.ide.actions.DeleteNodesHelper$6" />
+      <unit id="6242416087951969728" at="53,53,57,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$1$1" />
+      <unit id="685239734824896460" at="88,59,92,15" name="jetbrains.mps.ide.actions.DeleteNodesHelper$3$1$1" />
+      <unit id="685239734824897950" at="95,64,99,19" name="jetbrains.mps.ide.actions.DeleteNodesHelper$3$1$2$1" />
       <unit id="944342063934300942" at="110,55,114,7" name="jetbrains.mps.ide.actions.DeleteNodesHelper$4" />
-      <unit id="7207185148941987179" at="148,123,152,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$7" />
-      <unit id="6352952732700052919" at="176,65,180,17" name="jetbrains.mps.ide.actions.DeleteNodesHelper$8" />
+      <unit id="7207185148941987179" at="148,123,152,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5$1$2" />
+      <unit id="6352952732700052919" at="176,65,180,17" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5$2$1$1" />
       <unit id="6242416087951969711" at="50,64,59,5" name="jetbrains.mps.ide.actions.DeleteNodesHelper$1" />
-      <unit id="6485928238834888789" at="92,31,101,15" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5" />
-      <unit id="3632174704715773761" at="173,83,183,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$7" />
-      <unit id="3632174704715695920" at="171,60,185,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$6" />
+      <unit id="6485928238834888789" at="92,31,101,15" name="jetbrains.mps.ide.actions.DeleteNodesHelper$3$1$2" />
+      <unit id="3632174704715773761" at="173,83,183,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5$2$1" />
+      <unit id="3632174704715695920" at="171,60,185,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5$2" />
       <unit id="5037333854281800990" at="65,53,81,5" name="jetbrains.mps.ide.actions.DeleteNodesHelper$2" />
-      <unit id="6485928238834888773" at="85,86,103,11" name="jetbrains.mps.ide.actions.DeleteNodesHelper$4" />
-      <unit id="7207185148941976062" at="124,64,142,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$7" />
+      <unit id="6485928238834888773" at="85,86,103,11" name="jetbrains.mps.ide.actions.DeleteNodesHelper$3$1" />
+      <unit id="7207185148941976062" at="124,64,142,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5$1$1" />
       <unit id="944342063930695413" at="82,52,107,5" name="jetbrains.mps.ide.actions.DeleteNodesHelper$3" />
-      <unit id="944342063931001496" at="122,56,164,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$6" />
+      <unit id="944342063931001496" at="122,56,164,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5$1" />
       <unit id="5037333854281775346" at="118,42,187,5" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5" />
       <unit id="8321617901826003055" at="40,0,190,0" name="jetbrains.mps.ide.actions.DeleteNodesHelper" />
     </file>
@@ -13803,8 +13803,8 @@
         <var name="_params" id="8671835029167053045" />
         <var name="event" id="8671835029167053045" />
       </scope>
-      <unit id="9054606037493043419" at="72,83,76,13" name="jetbrains.mps.ide.actions.CalcSNodeStatistic_Action$3" />
-      <unit id="9054606037493030183" at="66,105,102,9" name="jetbrains.mps.ide.actions.CalcSNodeStatistic_Action$2" />
+      <unit id="9054606037493043419" at="72,83,76,13" name="jetbrains.mps.ide.actions.CalcSNodeStatistic_Action$1$1$1" />
+      <unit id="9054606037493030183" at="66,105,102,9" name="jetbrains.mps.ide.actions.CalcSNodeStatistic_Action$1$1" />
       <unit id="9054606037493046222" at="62,42,104,5" name="jetbrains.mps.ide.actions.CalcSNodeStatistic_Action$1" />
       <unit id="8671835029167053045" at="29,0,120,0" name="jetbrains.mps.ide.actions.CalcSNodeStatistic_Action" />
     </file>
@@ -14024,7 +14024,7 @@
         <var name="_params" id="901628894098107140" />
         <var name="event" id="901628894098107140" />
       </scope>
-      <unit id="3204722788426265545" at="95,19,102,9" name="jetbrains.mps.ide.actions.FindConceptInstances_Action$2" />
+      <unit id="3204722788426265545" at="95,19,102,9" name="jetbrains.mps.ide.actions.FindConceptInstances_Action$1$1" />
       <unit id="3204722788425846624" at="90,8,104,5" name="jetbrains.mps.ide.actions.FindConceptInstances_Action$1" />
       <unit id="901628894098107140" at="28,0,133,0" name="jetbrains.mps.ide.actions.FindConceptInstances_Action" />
     </file>
@@ -14188,7 +14188,7 @@
       <scope id="965654005418338549" at="31,0,86,0">
         <var name="event" id="965654005418338549" />
       </scope>
-      <unit id="7018451870009505177" at="60,72,65,11" name="jetbrains.mps.ide.actions.GoByReference_ActionGroup$2" />
+      <unit id="7018451870009505177" at="60,72,65,11" name="jetbrains.mps.ide.actions.GoByReference_ActionGroup$1$1" />
       <unit id="4359715074118932686" at="55,52,79,7" name="jetbrains.mps.ide.actions.GoByReference_ActionGroup$1" />
       <unit id="965654005418338549" at="23,0,93,0" name="jetbrains.mps.ide.actions.GoByReference_ActionGroup" />
     </file>

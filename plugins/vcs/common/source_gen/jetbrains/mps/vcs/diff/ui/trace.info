@@ -146,11 +146,11 @@
       </scope>
       <unit id="3425763466219069329" at="31,80,35,5" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$1" />
       <unit id="3425763466219071110" at="36,80,40,5" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$2" />
-      <unit id="3425763466219069461" at="71,57,75,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$1" />
-      <unit id="3425763466219116874" at="89,84,93,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$2" />
-      <unit id="3425763466219094091" at="94,54,98,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$2" />
+      <unit id="3425763466219069461" at="71,57,75,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonRevert$1" />
+      <unit id="3425763466219116874" at="89,84,93,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1$1" />
+      <unit id="3425763466219094091" at="94,54,98,11" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1$2" />
       <unit id="3425763466219069430" at="65,0,78,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonRevert" />
-      <unit id="3425763466219088063" at="84,57,101,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$1" />
+      <unit id="3425763466219088063" at="84,57,101,7" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply$1" />
       <unit id="3425763466219088032" at="78,0,104,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter$MyButtonApply" />
       <unit id="3425763466219069294" at="25,0,106,0" name="jetbrains.mps.vcs.diff.ui.StructDiffButtonsPainter" />
     </file>
@@ -1038,15 +1038,15 @@
       <unit id="6410246949269566203" at="88,63,92,5" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$2" />
       <unit id="6410246949269566526" at="169,52,173,7" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$5" />
       <unit id="6410246949269566832" at="240,49,244,5" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$7" />
-      <unit id="6410246949269566979" at="281,133,285,13" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$2" />
-      <unit id="6410246949269567011" at="293,149,297,13" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$2" />
-      <unit id="6410246949269567044" at="300,60,304,13" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$2" />
+      <unit id="6410246949269566979" at="281,133,285,13" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$ModelDifferenceTree$1$1" />
+      <unit id="6410246949269567011" at="293,149,297,13" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$ModelDifferenceTree$1$2" />
+      <unit id="6410246949269567044" at="300,60,304,13" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$ModelDifferenceTree$1$3" />
       <unit id="6410246949269566218" at="93,64,99,5" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$3" />
       <unit id="6410246949269566133" at="78,64,87,5" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$1" />
       <unit id="3886270286612838858" at="140,66,151,5" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$4" />
       <unit id="6410246949269566909" at="255,0,269,0" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$MyGoToNeighbourRootActions" />
       <unit id="6410246949269566600" at="200,65,219,5" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$6" />
-      <unit id="6410246949269566963" at="278,54,309,9" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$1" />
+      <unit id="6410246949269566963" at="278,54,309,9" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$ModelDifferenceTree$1" />
       <unit id="6410246949269566938" at="270,0,347,0" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer$ModelDifferenceTree" />
       <unit id="6410246949269566016" at="52,0,348,0" name="jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer" />
     </file>
@@ -1329,7 +1329,7 @@
         <var name="y" id="8733553229778920121" />
       </scope>
       <unit id="8733553229778920136" at="29,80,33,5" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$1" />
-      <unit id="2034046503373005833" at="61,57,66,7" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$1" />
+      <unit id="2034046503373005833" at="61,57,66,7" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$MyButton$1" />
       <unit id="8733553229778920081" at="55,0,69,0" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter$MyButton" />
       <unit id="8733553229778920021" at="20,0,70,0" name="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
     </file>

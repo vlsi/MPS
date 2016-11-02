@@ -205,7 +205,7 @@
       <scope id="742486944792820991" at="31,0,55,0">
         <var name="mpsProject" id="7881115362294352287" />
       </scope>
-      <unit id="2034046503361579798" at="36,75,40,9" name="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
+      <unit id="2034046503361579798" at="36,75,40,9" name="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$1$1" />
       <unit id="2034046503361589101" at="57,79,62,5" name="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
       <unit id="742486944792821118" at="103,42,113,5" name="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$3" />
       <unit id="2034046503361579783" at="33,50,53,5" name="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$1" />

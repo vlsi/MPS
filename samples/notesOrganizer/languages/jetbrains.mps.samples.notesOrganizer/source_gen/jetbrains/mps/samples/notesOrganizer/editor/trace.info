@@ -1944,12 +1944,12 @@
         <var name="node" id="3892287256989674457" />
       </scope>
       <unit id="3892287256989553944" at="149,34,153,5" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$1" />
-      <unit id="3892287256989171285" at="159,39,163,9" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$3" />
+      <unit id="3892287256989171285" at="159,39,163,9" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$2$1" />
       <unit id="3892287256989818213" at="176,34,180,5" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$3" />
       <unit id="3892287256989741352" at="186,236,190,5" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$4" />
-      <unit id="3892287256989937901" at="266,788,270,7" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$1" />
-      <unit id="3892287256989937901" at="301,788,305,7" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$1" />
-      <unit id="3892287256989836245" at="199,39,204,9" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$6" />
+      <unit id="3892287256989937901" at="266,788,270,7" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$notesListHandler_uvqhkl_i0$1" />
+      <unit id="3892287256989937901" at="301,788,305,7" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$RangeSelectionFilter_uvqhkl_i0$1" />
+      <unit id="3892287256989836245" at="199,39,204,9" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$5$1" />
       <unit id="3892287256989065489" at="156,33,165,5" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$2" />
       <unit id="3892287256989813593" at="197,43,206,5" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$5" />
       <unit id="8908453262579867233" at="296,0,314,0" name="jetbrains.mps.samples.notesOrganizer.editor.Notes_Editor$RangeSelectionFilter_uvqhkl_i0" />

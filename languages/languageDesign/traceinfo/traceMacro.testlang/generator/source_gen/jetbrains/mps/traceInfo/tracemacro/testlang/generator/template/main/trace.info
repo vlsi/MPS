@@ -153,7 +153,7 @@
       <scope id="7980748436587788164" at="44,0,96,0">
         <var name="context" id="7980748436587788164" />
       </scope>
-      <unit id="7980748436587788164" at="110,32,115,9" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$1" />
+      <unit id="7980748436587788164" at="110,32,115,9" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$ReductionRule1$1" />
       <unit id="7980748436587788164" at="97,0,121,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$ReductionRule1" />
       <unit id="7980748436587788164" at="40,0,97,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$ReductionRule0" />
       <unit id="7980748436587788164" at="29,0,126,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main" />

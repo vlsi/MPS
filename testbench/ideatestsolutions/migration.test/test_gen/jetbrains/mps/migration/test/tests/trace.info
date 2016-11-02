@@ -168,8 +168,8 @@
       <unit id="7515888994212303897" at="87,123,91,5" name="jetbrains.mps.migration.test.tests.Migrations_Test$6" />
       <unit id="7515888994212296210" at="92,124,96,5" name="jetbrains.mps.migration.test.tests.Migrations_Test$7" />
       <unit id="7515888994212305084" at="97,124,101,5" name="jetbrains.mps.migration.test.tests.Migrations_Test$8" />
-      <unit id="2382269936788903695" at="113,54,117,7" name="jetbrains.mps.migration.test.tests.Migrations_Test$1" />
-      <unit id="650079422456601073" at="126,62,130,7" name="jetbrains.mps.migration.test.tests.Migrations_Test$2" />
+      <unit id="2382269936788903695" at="113,54,117,7" name="jetbrains.mps.migration.test.tests.Migrations_Test$MockModule$1" />
+      <unit id="650079422456601073" at="126,62,130,7" name="jetbrains.mps.migration.test.tests.Migrations_Test$MockModule$2" />
       <unit id="4752694844829823356" at="134,0,149,0" name="jetbrains.mps.migration.test.tests.Migrations_Test$MockMigrationScript" />
       <unit id="6393689836352689168" at="104,0,133,0" name="jetbrains.mps.migration.test.tests.Migrations_Test$MockModule" />
       <unit id="5467862202907103055" at="38,0,150,0" name="jetbrains.mps.migration.test.tests.Migrations_Test" />
@@ -236,7 +236,7 @@
         <var name="value1" id="8423788195543154291" />
       </scope>
       <scope id="8150591076113153069" at="30,0,63,0" />
-      <unit id="8423788195542778079" at="41,147,45,9" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$2" />
+      <unit id="8423788195542778079" at="41,147,45,9" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$1$1" />
       <unit id="8423788195543264367" at="52,63,57,5" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$2" />
       <unit id="8423788195543111123" at="35,63,47,5" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$1" />
       <unit id="8150591076113040395" at="26,0,72,0" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test" />

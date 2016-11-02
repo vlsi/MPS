@@ -1000,7 +1000,7 @@
         <var name="dumbFactory" id="2629213608913572266" />
       </scope>
       <scope id="2629213608913565443" at="64,0,81,0" />
-      <unit id="2629213608913750183" at="71,19,77,9" name="jetbrains.mps.tool.environment.MpsEnvironment$2" />
+      <unit id="2629213608913750183" at="71,19,77,9" name="jetbrains.mps.tool.environment.MpsEnvironment$1$1" />
       <unit id="2629213608913572289" at="68,78,79,5" name="jetbrains.mps.tool.environment.MpsEnvironment$1" />
       <unit id="7413225496542996633" at="23,0,124,0" name="jetbrains.mps.tool.environment.MpsEnvironment" />
     </file>

@@ -112,7 +112,7 @@
         <var name="references" id="1545517825663202140" />
       </scope>
       <scope id="1545517825663202140" at="29,0,57,0" />
-      <unit id="1545517825663202140" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildSource_JavaDependencyLibrary_Constraints$2" />
+      <unit id="1545517825663202140" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildSource_JavaDependencyLibrary_Constraints$1$1" />
       <unit id="1545517825663202140" at="32,155,54,5" name="jetbrains.mps.build.constraints.BuildSource_JavaDependencyLibrary_Constraints$1" />
       <unit id="1545517825663202140" at="24,0,59,0" name="jetbrains.mps.build.constraints.BuildSource_JavaDependencyLibrary_Constraints" />
     </file>
@@ -173,7 +173,7 @@
         <var name="references" id="1659807394254261086" />
       </scope>
       <scope id="1659807394254261086" at="31,0,67,0" />
-      <unit id="1659807394254261086" at="42,19,62,9" name="jetbrains.mps.build.constraints.BuildSource_JavaModuleOptions_Constraints$2" />
+      <unit id="1659807394254261086" at="42,19,62,9" name="jetbrains.mps.build.constraints.BuildSource_JavaModuleOptions_Constraints$1$1" />
       <unit id="1659807394254261086" at="34,162,64,5" name="jetbrains.mps.build.constraints.BuildSource_JavaModuleOptions_Constraints$1" />
       <unit id="1659807394254261086" at="26,0,72,0" name="jetbrains.mps.build.constraints.BuildSource_JavaModuleOptions_Constraints" />
     </file>
@@ -334,7 +334,7 @@
         <var name="references" id="2591537044435952571" />
       </scope>
       <scope id="2591537044435952571" at="45,0,73,0" />
-      <unit id="2591537044435952571" at="56,19,68,9" name="jetbrains.mps.build.constraints.BuildLayout_CompileOutputOf_Constraints$2" />
+      <unit id="2591537044435952571" at="56,19,68,9" name="jetbrains.mps.build.constraints.BuildLayout_CompileOutputOf_Constraints$1$1" />
       <unit id="2591537044435952571" at="48,154,70,5" name="jetbrains.mps.build.constraints.BuildLayout_CompileOutputOf_Constraints$1" />
       <unit id="2591537044435952571" at="26,0,79,0" name="jetbrains.mps.build.constraints.BuildLayout_CompileOutputOf_Constraints" />
     </file>
@@ -476,7 +476,7 @@
         <var name="references" id="4903714810883713094" />
       </scope>
       <scope id="4903714810883713094" at="29,0,57,0" />
-      <unit id="4903714810883713094" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints$2" />
+      <unit id="4903714810883713094" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints$1$1" />
       <unit id="4903714810883713094" at="32,153,54,5" name="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints$1" />
       <unit id="4903714810883713094" at="24,0,59,0" name="jetbrains.mps.build.constraints.BuildVarRefStringPart_Constraints" />
     </file>
@@ -663,8 +663,8 @@
         <var name="references" id="5610619299013068362" />
       </scope>
       <scope id="5610619299013068362" at="34,0,89,0" />
-      <unit id="5610619299013225656" at="74,27,79,17" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$3" />
-      <unit id="5610619299013068362" at="45,19,84,9" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$2" />
+      <unit id="5610619299013225656" at="74,27,79,17" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1$1$1" />
+      <unit id="5610619299013068362" at="45,19,84,9" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1$1" />
       <unit id="5610619299013068362" at="37,154,86,5" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints$1" />
       <unit id="5610619299013068362" at="29,0,91,0" name="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints" />
     </file>
@@ -738,7 +738,7 @@
         <var name="references" id="5610619299014309454" />
       </scope>
       <scope id="5610619299014309454" at="35,0,85,0" />
-      <unit id="5610619299014309454" at="46,19,80,9" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarRef_Constraints$2" />
+      <unit id="5610619299014309454" at="46,19,80,9" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarRef_Constraints$1$1" />
       <unit id="5610619299014309454" at="38,151,82,5" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarRef_Constraints$1" />
       <unit id="5610619299014309454" at="30,0,87,0" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarRef_Constraints" />
     </file>
@@ -812,7 +812,7 @@
         <var name="references" id="5610619299014531655" />
       </scope>
       <scope id="5610619299014531655" at="35,0,85,0" />
-      <unit id="5610619299014531655" at="46,19,80,9" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarFolderRef_Constraints$2" />
+      <unit id="5610619299014531655" at="46,19,80,9" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarFolderRef_Constraints$1$1" />
       <unit id="5610619299014531655" at="38,154,82,5" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarFolderRef_Constraints$1" />
       <unit id="5610619299014531655" at="30,0,87,0" name="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarFolderRef_Constraints" />
     </file>
@@ -1159,7 +1159,7 @@
         <var name="references" id="7181125477683417258" />
       </scope>
       <scope id="7181125477683417258" at="29,0,57,0" />
-      <unit id="7181125477683417258" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints$2" />
+      <unit id="7181125477683417258" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints$1$1" />
       <unit id="7181125477683417258" at="32,154,54,5" name="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints$1" />
       <unit id="7181125477683417258" at="24,0,59,0" name="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints" />
     </file>
@@ -1214,7 +1214,7 @@
         <var name="references" id="7389400916848182167" />
       </scope>
       <scope id="7389400916848182167" at="31,0,67,0" />
-      <unit id="7389400916848182167" at="42,19,62,9" name="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints$2" />
+      <unit id="7389400916848182167" at="42,19,62,9" name="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints$1$1" />
       <unit id="7389400916848182167" at="34,153,64,5" name="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints$1" />
       <unit id="7389400916848182167" at="26,0,69,0" name="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints" />
     </file>
@@ -1322,7 +1322,7 @@
         <var name="references" id="7753544965996878818" />
       </scope>
       <scope id="7753544965996878818" at="31,0,67,0" />
-      <unit id="7753544965996878818" at="42,19,62,9" name="jetbrains.mps.build.constraints.BuildLayout_FilesOf_Constraints$2" />
+      <unit id="7753544965996878818" at="42,19,62,9" name="jetbrains.mps.build.constraints.BuildLayout_FilesOf_Constraints$1$1" />
       <unit id="7753544965996878818" at="34,155,64,5" name="jetbrains.mps.build.constraints.BuildLayout_FilesOf_Constraints$1" />
       <unit id="7753544965996878818" at="26,0,69,0" name="jetbrains.mps.build.constraints.BuildLayout_FilesOf_Constraints" />
     </file>
@@ -1443,7 +1443,7 @@
         <var name="references" id="8258189873530167542" />
       </scope>
       <scope id="8258189873530167542" at="29,0,57,0" />
-      <unit id="8258189873530167542" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints$2" />
+      <unit id="8258189873530167542" at="40,19,52,9" name="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints$1$1" />
       <unit id="8258189873530167542" at="32,154,54,5" name="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints$1" />
       <unit id="8258189873530167542" at="24,0,59,0" name="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints" />
     </file>
@@ -1517,7 +1517,7 @@
         <var name="references" id="841011766565773812" />
       </scope>
       <scope id="841011766565773812" at="34,0,84,0" />
-      <unit id="841011766565773812" at="45,19,79,9" name="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints$2" />
+      <unit id="841011766565773812" at="45,19,79,9" name="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints$1$1" />
       <unit id="841011766565773812" at="37,152,81,5" name="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints$1" />
       <unit id="841011766565773812" at="29,0,86,0" name="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints" />
     </file>

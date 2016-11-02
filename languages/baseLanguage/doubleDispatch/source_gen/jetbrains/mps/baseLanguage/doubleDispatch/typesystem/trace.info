@@ -310,10 +310,10 @@
       <scope id="7139749370070336230" at="43,0,107,0" />
       <unit id="3112508579548408982" at="36,101,40,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$1" />
       <unit id="7139749370071243000" at="66,62,70,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$2" />
-      <unit id="35825318242990931" at="87,87,91,11" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$4" />
-      <unit id="8480956156622018207" at="121,80,125,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$1" />
-      <unit id="3166734731676047563" at="144,52,148,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$2" />
-      <unit id="3166734731676047553" at="148,20,152,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$3" />
+      <unit id="35825318242990931" at="87,87,91,11" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$3$1" />
+      <unit id="8480956156622018207" at="121,80,125,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$ClassMethodGroup$1" />
+      <unit id="3166734731676047563" at="144,52,148,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$ClassMethodGroup$2" />
+      <unit id="3166734731676047553" at="148,20,152,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$ClassMethodGroup$3" />
       <unit id="35825318242939195" at="85,79,93,7" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$3" />
       <unit id="8480956156622214759" at="155,0,169,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$Error" />
       <unit id="6855443792548948758" at="107,0,155,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$ClassMethodGroup" />
@@ -685,8 +685,8 @@
       </scope>
       <unit id="3166734731696040562" at="28,365,32,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$2" />
       <unit id="3813896760028535886" at="32,213,36,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$1" />
-      <unit id="35825318244939944" at="47,23,109,13" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$5" />
-      <unit id="35825318244939944" at="45,19,111,9" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$4" />
+      <unit id="35825318244939944" at="47,23,109,13" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$3$1$1" />
+      <unit id="35825318244939944" at="45,19,111,9" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$3$1" />
       <unit id="35825318244939944" at="43,55,113,5" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$3" />
       <unit id="6855443792548949391" at="21,0,145,0" name="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil" />
     </file>

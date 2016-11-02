@@ -72,9 +72,9 @@
         <var name="references" id="338341484719580003" />
       </scope>
       <scope id="338341484719580003" at="36,0,78,0" />
-      <unit id="338341484719584488" at="58,323,62,17" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$4" />
-      <unit id="338341484719584480" at="58,27,68,17" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$3" />
-      <unit id="338341484719580003" at="47,19,73,9" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$2" />
+      <unit id="338341484719584488" at="58,323,62,17" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$1$1$1$1" />
+      <unit id="338341484719584480" at="58,27,68,17" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$1$1$1" />
+      <unit id="338341484719580003" at="47,19,73,9" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$1$1" />
       <unit id="338341484719580003" at="39,164,75,5" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$1" />
       <unit id="338341484719580003" at="31,0,80,0" name="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints" />
     </file>
@@ -173,9 +173,9 @@
         <var name="references" id="849077997121906173" />
       </scope>
       <scope id="849077997121906173" at="50,0,88,0" />
-      <unit id="5166971494091006127" at="70,309,74,15" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$4" />
-      <unit id="2747663997858037852" at="70,25,80,15" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$3" />
-      <unit id="849077997121906173" at="61,19,83,9" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$2" />
+      <unit id="5166971494091006127" at="70,309,74,15" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$1$1$1$1" />
+      <unit id="2747663997858037852" at="70,25,80,15" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$1$1$1" />
+      <unit id="849077997121906173" at="61,19,83,9" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$1$1" />
       <unit id="849077997121906173" at="53,166,85,5" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$1" />
       <unit id="849077997121906173" at="31,0,94,0" name="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints" />
     </file>

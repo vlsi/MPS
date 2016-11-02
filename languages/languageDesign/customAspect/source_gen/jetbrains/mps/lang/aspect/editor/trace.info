@@ -2403,7 +2403,7 @@
         <var name="editorContext" id="5177162104569118181" />
         <var name="node" id="5177162104569118181" />
       </scope>
-      <unit id="5177162104569486933" at="62,49,66,9" name="jetbrains.mps.lang.aspect.editor.HelpURL_Editor$2" />
+      <unit id="5177162104569486933" at="62,49,66,9" name="jetbrains.mps.lang.aspect.editor.HelpURL_Editor$1$1" />
       <unit id="1572311180462136147" at="59,25,68,5" name="jetbrains.mps.lang.aspect.editor.HelpURL_Editor$1" />
       <unit id="8974276187400029900" at="24,0,73,0" name="jetbrains.mps.lang.aspect.editor.HelpURL_Editor" />
     </file>

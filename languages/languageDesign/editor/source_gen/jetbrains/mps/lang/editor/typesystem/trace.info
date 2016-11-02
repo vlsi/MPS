@@ -2729,7 +2729,7 @@
       </scope>
       <unit id="6246554009628995222" at="58,304,62,5" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$1" />
       <unit id="6246554009626402554" at="81,306,85,9" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$2" />
-      <unit id="6246554009628608088" at="87,528,91,13" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$4" />
+      <unit id="6246554009628608088" at="87,528,91,13" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$3$1" />
       <unit id="6246554009630101019" at="102,621,106,11" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$4" />
       <unit id="6246554009630311164" at="106,28,110,11" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$5" />
       <unit id="6246554009628035200" at="85,21,93,9" name="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$3" />

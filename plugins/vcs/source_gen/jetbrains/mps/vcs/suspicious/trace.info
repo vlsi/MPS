@@ -229,9 +229,9 @@
       <scope id="4093906047203395781" at="82,0,148,0">
         <var name="tasks" id="4093906047203395784" />
       </scope>
-      <unit id="248271724923233817" at="113,59,118,9" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
+      <unit id="248271724923233817" at="113,59,118,9" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3$1" />
       <unit id="4213817562888239050" at="141,56,146,5" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
-      <unit id="2034046503373010383" at="131,59,137,9" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
+      <unit id="2034046503373010383" at="131,59,137,9" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3$2" />
       <unit id="4093906047203395741" at="67,42,76,5" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$1" />
       <unit id="4093906047203395595" at="174,0,187,0" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$MyTaskQueue" />
       <unit id="4213817562888239088" at="87,46,109,5" name="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$2" />

@@ -480,7 +480,7 @@
         <var name="editorContext" id="2838654975957155511" />
         <var name="node" id="2838654975957155511" />
       </scope>
-      <unit id="8134325418310264578" at="64,85,73,7" name="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor$1" />
+      <unit id="8134325418310264578" at="64,85,73,7" name="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor$_Inline_mfrs1f_a0a$1" />
       <unit id="2838654975957155517" at="53,0,80,0" name="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor$_Inline_mfrs1f_a0a" />
       <unit id="2838654975957155511" at="22,0,81,0" name="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor" />
     </file>

@@ -4579,9 +4579,9 @@
         <var name="model" id="1336894855161740363" />
         <var name="shortcutChange" id="896260991092529106" />
       </scope>
-      <unit id="9194797657543439477" at="55,292,59,11" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$2" />
-      <unit id="1336894855161714558" at="68,231,72,15" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$2" />
-      <unit id="1336894855161714569" at="72,30,80,15" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$2" />
+      <unit id="9194797657543439477" at="55,292,59,11" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$1$1" />
+      <unit id="1336894855161714558" at="68,231,72,15" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$1$2" />
+      <unit id="1336894855161714569" at="72,30,80,15" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$1$3" />
       <unit id="1336894855161763162" at="51,48,98,5" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor$1" />
       <unit id="1336894855161718456" at="38,0,149,0" name="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange__BehaviorDescriptor" />
     </file>

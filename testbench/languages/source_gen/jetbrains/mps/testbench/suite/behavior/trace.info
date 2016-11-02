@@ -647,9 +647,9 @@
         <var name="node" id="2956932267233324561" />
         <var name="parameters" id="2956932267233324561" />
       </scope>
-      <unit id="1178539434126757486" at="63,1034,67,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$2" />
+      <unit id="1178539434126757486" at="63,1034,67,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$1$1" />
       <unit id="4089647634160960799" at="69,18,73,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$2" />
-      <unit id="8756160028287889836" at="78,227,82,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$4" />
+      <unit id="8756160028287889836" at="78,227,82,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$3$1" />
       <unit id="1514755338275795365" at="84,17,88,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$4" />
       <unit id="4089647634160960736" at="61,275,69,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$1" />
       <unit id="8756160028287794490" at="76,116,84,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor$3" />
@@ -843,13 +843,13 @@
       <scope id="2956932267233336804" at="58,0,80,0">
         <var name="__thisNode__" id="2956932267233336804" />
       </scope>
-      <unit id="4089647634160960848" at="64,204,68,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$2" />
-      <unit id="1178539434126757447" at="68,205,72,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$2" />
+      <unit id="4089647634160960848" at="64,204,68,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$1$2" />
+      <unit id="1178539434126757447" at="68,205,72,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$1$1" />
       <unit id="4089647634160991442" at="74,18,78,5" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$2" />
-      <unit id="1280144168199457850" at="85,120,89,13" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$5" />
-      <unit id="1280144168199457833" at="89,23,93,13" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$5" />
+      <unit id="1280144168199457850" at="85,120,89,13" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$3$1$1" />
+      <unit id="1280144168199457833" at="89,23,93,13" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$3$1$2" />
       <unit id="4089647634160960832" at="62,275,74,5" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$1" />
-      <unit id="8756160028287949034" at="83,227,95,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$4" />
+      <unit id="8756160028287949034" at="83,227,95,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$3$1" />
       <unit id="8756160028287949023" at="81,116,97,5" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor$3" />
       <unit id="2956932267233336804" at="38,0,174,0" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor" />
     </file>

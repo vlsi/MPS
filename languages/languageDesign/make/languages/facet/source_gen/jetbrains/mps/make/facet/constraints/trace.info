@@ -151,11 +151,11 @@
         <var name="references" id="119022571402207414" />
       </scope>
       <scope id="119022571402207414" at="54,0,103,0" />
-      <unit id="8756160028286577364" at="78,702,82,17" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$4" />
-      <unit id="8756160028286577364" at="82,30,86,17" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$4" />
-      <unit id="8756160028286577351" at="86,29,90,17" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$4" />
-      <unit id="8756160028286281778" at="76,326,92,13" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$3" />
-      <unit id="119022571402207414" at="65,19,98,9" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$2" />
+      <unit id="8756160028286577364" at="78,702,82,17" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1$1$1$1" />
+      <unit id="8756160028286577364" at="82,30,86,17" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1$1$1$2" />
+      <unit id="8756160028286577351" at="86,29,90,17" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1$1$1$3" />
+      <unit id="8756160028286281778" at="76,326,92,13" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1$1$1" />
+      <unit id="119022571402207414" at="65,19,98,9" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1$1" />
       <unit id="119022571402207414" at="57,148,100,5" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints$1" />
       <unit id="119022571402207414" at="35,0,123,0" name="jetbrains.mps.make.facet.constraints.ResourceClassifierType_Constraints" />
     </file>
@@ -194,7 +194,7 @@
         <var name="references" id="1919086248986845080" />
       </scope>
       <scope id="1919086248986845080" at="27,0,52,0" />
-      <unit id="1919086248986845080" at="38,19,47,9" name="jetbrains.mps.make.facet.constraints.NamedFacetReference_Constraints$2" />
+      <unit id="1919086248986845080" at="38,19,47,9" name="jetbrains.mps.make.facet.constraints.NamedFacetReference_Constraints$1$1" />
       <unit id="1919086248986845080" at="30,153,49,5" name="jetbrains.mps.make.facet.constraints.NamedFacetReference_Constraints$1" />
       <unit id="1919086248986845080" at="22,0,54,0" name="jetbrains.mps.make.facet.constraints.NamedFacetReference_Constraints" />
     </file>
@@ -256,10 +256,10 @@
         <var name="references" id="3344436107830239602" />
       </scope>
       <scope id="3344436107830239602" at="32,0,71,0" />
-      <unit id="2974008768272091508" at="48,228,52,13" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$3" />
-      <unit id="2974008768272108162" at="52,226,56,13" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$3" />
-      <unit id="8994051335328971774" at="56,227,60,13" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$3" />
-      <unit id="3344436107830239602" at="43,19,66,9" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$2" />
+      <unit id="2974008768272091508" at="48,228,52,13" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$1$1$1" />
+      <unit id="2974008768272108162" at="52,226,56,13" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$1$1$2" />
+      <unit id="8994051335328971774" at="56,227,60,13" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$1$1$3" />
+      <unit id="3344436107830239602" at="43,19,66,9" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$1$1" />
       <unit id="3344436107830239602" at="35,154,68,5" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints$1" />
       <unit id="3344436107830239602" at="27,0,73,0" name="jetbrains.mps.make.facet.constraints.ForeignParametersExpression_Constraints" />
     </file>
@@ -435,9 +435,9 @@
         <var name="references" id="6447445394688555034" />
       </scope>
       <scope id="6447445394688555034" at="32,0,66,0" />
-      <unit id="6311899720723075827" at="47,123,51,13" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$3" />
-      <unit id="6311899720722996146" at="51,25,55,13" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$3" />
-      <unit id="6447445394688555034" at="43,19,61,9" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$2" />
+      <unit id="6311899720723075827" at="47,123,51,13" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$1$1$1" />
+      <unit id="6311899720722996146" at="51,25,55,13" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$1$1$2" />
+      <unit id="6447445394688555034" at="43,19,61,9" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$1$1" />
       <unit id="6447445394688555034" at="35,153,63,5" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints$1" />
       <unit id="6447445394688555034" at="27,0,68,0" name="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_Constraints" />
     </file>
@@ -482,8 +482,8 @@
         <var name="references" id="7854369758457864776" />
       </scope>
       <scope id="7854369758457864776" at="32,0,61,0" />
-      <unit id="7854369758457974860" at="46,331,50,13" name="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints$3" />
-      <unit id="7854369758457864776" at="43,19,56,9" name="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints$2" />
+      <unit id="7854369758457974860" at="46,331,50,13" name="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints$1$1$1" />
+      <unit id="7854369758457864776" at="43,19,56,9" name="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints$1$1" />
       <unit id="7854369758457864776" at="35,157,58,5" name="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints$1" />
       <unit id="7854369758457864776" at="27,0,63,0" name="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints" />
     </file>
@@ -543,9 +543,9 @@
         <var name="references" id="8351679702044320298" />
       </scope>
       <scope id="8351679702044320298" at="31,0,64,0" />
-      <unit id="6311899720719712260" at="45,123,49,13" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$3" />
-      <unit id="6311899720719693288" at="49,25,53,13" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$3" />
-      <unit id="8351679702044320298" at="42,19,59,9" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$2" />
+      <unit id="6311899720719712260" at="45,123,49,13" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$1$1$1" />
+      <unit id="6311899720719693288" at="49,25,53,13" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$1$1$2" />
+      <unit id="8351679702044320298" at="42,19,59,9" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$1$1" />
       <unit id="8351679702044320298" at="34,153,61,5" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints$1" />
       <unit id="8351679702044320298" at="26,0,66,0" name="jetbrains.mps.make.facet.constraints.RelatedFacetReference_Constraints" />
     </file>
@@ -593,8 +593,8 @@
         <var name="references" id="8351679702044331811" />
       </scope>
       <scope id="8351679702044331811" at="32,0,62,0" />
-      <unit id="6311899720722089435" at="47,70,51,13" name="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints$3" />
-      <unit id="8351679702044331811" at="43,19,57,9" name="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints$2" />
+      <unit id="6311899720722089435" at="47,70,51,13" name="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints$1$1$1" />
+      <unit id="8351679702044331811" at="43,19,57,9" name="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints$1$1" />
       <unit id="8351679702044331811" at="35,157,59,5" name="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints$1" />
       <unit id="8351679702044331811" at="27,0,64,0" name="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints" />
     </file>

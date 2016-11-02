@@ -852,14 +852,14 @@
         <var name="debugSession" id="671562190169411272" />
       </scope>
       <scope id="671562190169411504" at="147,0,165,0" />
-      <unit id="1137554513386390794" at="154,139,158,13" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$9" />
+      <unit id="1137554513386390794" at="154,139,158,13" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7$1$1" />
       <unit id="671562190169411444" at="118,54,123,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$5" />
       <unit id="671562190169411201" at="238,0,243,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$IWatchListener" />
       <unit id="2034046503373004793" at="64,51,70,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$2" />
-      <unit id="6658728357875280000" at="103,85,109,11" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$5" />
-      <unit id="6658728357877099370" at="135,39,142,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7" />
+      <unit id="6658728357875280000" at="103,85,109,11" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$4$1" />
+      <unit id="6658728357877099370" at="135,39,142,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$6$1" />
       <unit id="2034046503373003407" at="76,51,84,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$3" />
-      <unit id="6658728357875239980" at="151,44,161,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$8" />
+      <unit id="6658728357875239980" at="151,44,161,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7$1" />
       <unit id="8197435796639315649" at="133,53,144,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$6" />
       <unit id="8197435796639315542" at="100,63,112,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$4" />
       <unit id="671562190169411221" at="243,0,256,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$WatchAdapter" />

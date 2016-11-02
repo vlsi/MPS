@@ -96,8 +96,8 @@
       </scope>
       <scope id="2620437876317548394" at="26,0,35,0" />
       <scope id="8054806207102341446" at="45,0,54,0" />
-      <unit id="2202165082743257109" at="28,69,32,7" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$1" />
-      <unit id="8054806207102341454" at="47,69,51,7" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$1" />
+      <unit id="2202165082743257109" at="28,69,32,7" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$MissingMigrationScriptProblem$1" />
+      <unit id="8054806207102341454" at="47,69,51,7" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$MissingRefactoringLogProblem$1" />
       <unit id="8054806207102331606" at="18,0,36,0" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$MissingMigrationScriptProblem" />
       <unit id="8054806207102341420" at="37,0,55,0" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem$MissingRefactoringLogProblem" />
       <unit id="2620437876317548374" at="12,0,61,0" name="jetbrains.mps.ide.migration.check.MissingMigrationProblem" />
@@ -456,11 +456,11 @@
         <var name="progressCallback" id="7772642625670033463" />
       </scope>
       <unit id="4355467922915267745" at="60,15,64,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$1" />
-      <unit id="3884388847867926361" at="136,57,140,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$3" />
+      <unit id="3884388847867926361" at="136,57,140,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$2$2" />
       <unit id="1287322040319329334" at="185,83,189,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$4" />
       <unit id="6179322598892735627" at="252,76,256,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$6" />
-      <unit id="3203719742591130511" at="259,46,263,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$8" />
-      <unit id="1315974995649713007" at="263,24,267,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$8" />
+      <unit id="3203719742591130511" at="259,46,263,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$7$1" />
+      <unit id="1315974995649713007" at="263,24,267,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$7$2" />
       <unit id="5071438569186057921" at="274,52,278,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$8" />
       <unit id="5071438569186101626" at="278,50,282,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$9" />
       <unit id="5071438569186264739" at="294,73,298,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$10" />
@@ -468,9 +468,9 @@
       <unit id="3884388847867831965" at="145,63,150,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$3" />
       <unit id="1315974995649697071" at="256,20,269,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$7" />
       <unit id="3305737716456468247" at="196,68,236,7" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$5" />
-      <unit id="3884388847867926323" at="79,27,131,17" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$5" />
-      <unit id="3884388847867926323" at="77,23,133,13" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$4" />
-      <unit id="3884388847867926323" at="75,92,135,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$3" />
+      <unit id="3884388847867926323" at="79,27,131,17" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$2$1$1$1" />
+      <unit id="3884388847867926323" at="77,23,133,13" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$2$1$1" />
+      <unit id="3884388847867926323" at="75,92,135,9" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$2$1" />
       <unit id="3884388847867926299" at="72,108,142,5" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil$2" />
       <unit id="3875289449857686106" at="55,0,308,0" name="jetbrains.mps.ide.migration.check.MigrationCheckUtil" />
     </file>
@@ -749,7 +749,7 @@
       <unit id="161347901259063151" at="31,97,35,5" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$1" />
       <unit id="161347901259079991" at="35,17,39,5" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$2" />
       <unit id="4261196804042948923" at="54,46,58,5" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$4" />
-      <unit id="5785495490417445393" at="67,56,71,9" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$6" />
+      <unit id="5785495490417445393" at="67,56,71,9" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$5$1" />
       <unit id="1697163102215652460" at="73,20,77,5" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$6" />
       <unit id="6423044698582424064" at="45,31,51,5" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$3" />
       <unit id="5785495490417442007" at="65,68,73,5" name="jetbrains.mps.ide.migration.check.MigrationOutputUtil$5" />

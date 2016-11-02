@@ -2309,11 +2309,11 @@
       </scope>
       <unit id="7588821453558531475" at="33,86,37,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$1" />
       <unit id="7588821453558562199" at="37,17,41,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$2" />
-      <unit id="7588821453558759188" at="44,475,48,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
+      <unit id="7588821453558759188" at="44,475,48,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$3$1" />
       <unit id="7588821453551149652" at="59,175,63,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
       <unit id="7588821453551287963" at="70,148,74,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$5" />
-      <unit id="7588821453551424502" at="82,441,86,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
-      <unit id="7588821453551424502" at="86,22,90,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
+      <unit id="7588821453551424502" at="82,441,86,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6$1" />
+      <unit id="7588821453551424502" at="86,22,90,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6$2" />
       <unit id="7588821453551539161" at="92,28,96,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
       <unit id="7588821453558611214" at="41,17,50,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$3" />
       <unit id="7588821453551370266" at="80,85,92,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6" />

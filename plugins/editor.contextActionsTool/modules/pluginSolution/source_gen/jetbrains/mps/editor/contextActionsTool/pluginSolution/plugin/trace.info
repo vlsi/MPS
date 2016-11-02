@@ -1249,11 +1249,11 @@
         <var name="selection" id="8532164657612699468" />
       </scope>
       <unit id="8532164657612804985" at="36,58,40,3" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$1" />
-      <unit id="7951930939826753892" at="86,73,90,15" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$4" />
-      <unit id="7951930939826785208" at="90,26,94,15" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$4" />
-      <unit id="8532164657612699554" at="97,46,101,11" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$3" />
+      <unit id="7951930939826753892" at="86,73,90,15" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$2$1$1" />
+      <unit id="7951930939826785208" at="90,26,94,15" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$2$1$2" />
+      <unit id="8532164657612699554" at="97,46,101,11" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$2$2" />
       <unit id="4736696158598703455" at="140,95,144,9" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$3" />
-      <unit id="8532164657612699524" at="83,71,96,11" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$3" />
+      <unit id="8532164657612699524" at="83,71,96,11" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$2$1" />
       <unit id="8532164657612977376" at="155,0,180,0" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$ProjectSelectionListener" />
       <unit id="8532164657612699493" at="69,66,108,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController$2" />
       <unit id="8532164657612696776" at="28,0,201,0" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ToolController" />
@@ -1508,7 +1508,7 @@
       <unit id="8645458101910562213" at="72,133,76,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$1" />
       <unit id="8645458101910562246" at="81,75,85,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$2" />
       <unit id="8645458101910562257" at="85,17,89,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$3" />
-      <unit id="8645458101910562290" at="96,68,100,9" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$5" />
+      <unit id="8645458101910562290" at="96,68,100,9" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$4$1" />
       <unit id="8645458101910562307" at="102,17,106,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$5" />
       <unit id="8645458101910562283" at="94,92,102,5" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil$4" />
       <unit id="8645458101910550049" at="19,0,116,0" name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.ContextActionsUtil" />

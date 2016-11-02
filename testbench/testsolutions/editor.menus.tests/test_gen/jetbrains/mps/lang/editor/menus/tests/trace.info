@@ -440,7 +440,7 @@
         <var name="items" id="6202297022023746457" />
       </scope>
       <scope id="6202297022023746454" at="27,0,38,0" />
-      <unit id="6202297022023746468" at="32,125,36,7" name="jetbrains.mps.lang.editor.menus.tests.LoadNamedMenu_Test$1" />
+      <unit id="6202297022023746468" at="32,125,36,7" name="jetbrains.mps.lang.editor.menus.tests.LoadNamedMenu_Test$TestBody$1" />
       <unit id="6202297022023746454" at="25,0,39,0" name="jetbrains.mps.lang.editor.menus.tests.LoadNamedMenu_Test$TestBody" />
       <unit id="6202297022023746454" at="17,0,40,0" name="jetbrains.mps.lang.editor.menus.tests.LoadNamedMenu_Test" />
     </file>
@@ -514,7 +514,7 @@
         <var name="items" id="6436886136983309478" />
       </scope>
       <scope id="6436886136983309262" at="26,0,37,0" />
-      <unit id="6436886136983317309" at="31,129,35,7" name="jetbrains.mps.lang.editor.menus.tests.LoadDefaultMenu_Test$1" />
+      <unit id="6436886136983317309" at="31,129,35,7" name="jetbrains.mps.lang.editor.menus.tests.LoadDefaultMenu_Test$TestBody$1" />
       <unit id="6436886136983309262" at="24,0,38,0" name="jetbrains.mps.lang.editor.menus.tests.LoadDefaultMenu_Test$TestBody" />
       <unit id="6436886136983309262" at="16,0,39,0" name="jetbrains.mps.lang.editor.menus.tests.LoadDefaultMenu_Test" />
     </file>
@@ -560,7 +560,7 @@
         <var name="items" id="7552401496952061545" />
       </scope>
       <scope id="7552401496952053104" at="26,0,36,0" />
-      <unit id="7552401496952102643" at="30,109,34,7" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test$1" />
+      <unit id="7552401496952102643" at="30,109,34,7" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test$TestBody$1" />
       <unit id="7552401496952053104" at="24,0,37,0" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test$TestBody" />
       <unit id="7552401496952053104" at="16,0,38,0" name="jetbrains.mps.lang.editor.menus.tests.ActionLookup_SubconceptDefinesAMenuWithoutSuperconceptsLocation_Test" />
     </file>

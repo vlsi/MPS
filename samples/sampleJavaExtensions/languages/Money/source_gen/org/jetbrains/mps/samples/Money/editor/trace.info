@@ -113,9 +113,9 @@
       <scope id="1741258697587187363" at="85,0,107,0">
         <var name="pattern" id="1741258697587187363" />
       </scope>
-      <unit id="1741258697587187376" at="72,294,76,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$1" />
-      <unit id="1741258697587187409" at="87,294,91,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$2" />
-      <unit id="1741258697587187418" at="92,64,96,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$3" />
+      <unit id="1741258697587187376" at="72,294,76,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0$Item$1" />
+      <unit id="1741258697587187409" at="87,294,91,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0$Item$2" />
+      <unit id="1741258697587187418" at="92,64,96,9" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0$Item$3" />
       <unit id="1741258697587187363" at="62,0,115,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0$Item" />
       <unit id="1741258697587187363" at="56,0,116,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution$TransformationMenuPart_Action_h87bp2_a0" />
       <unit id="1741258697587187359" at="36,0,117,0" name="org.jetbrains.mps.samples.Money.editor.makeMoneyFromInteger_Contribution" />

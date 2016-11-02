@@ -637,8 +637,8 @@
       <unit id="5085852630255834543" at="164,34,168,5" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$2" />
       <unit id="1313411005110800055" at="176,19,182,9" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$3" />
       <unit id="1313411005110724758" at="184,19,190,9" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$4" />
-      <unit id="3803058104706952814" at="121,59,131,19" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$3" />
-      <unit id="5085852630258410255" at="92,53,135,13" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$2" />
+      <unit id="3803058104706952814" at="121,59,131,19" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$1$1$1" />
+      <unit id="5085852630258410255" at="92,53,135,13" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$1$1" />
       <unit id="5085852630258410232" at="87,37,139,9" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer$1" />
       <unit id="5085852630254873851" at="50,0,233,0" name="jetbrains.mps.vcs.platform.integration.ModelMergeViewer" />
     </file>
@@ -1122,12 +1122,12 @@
       <unit id="7075964554776736553" at="78,58,82,5" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$2" />
       <unit id="9149550512572794235" at="106,62,110,7" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$3" />
       <unit id="8695149241390625412" at="111,104,115,7" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$4" />
-      <unit id="9149550512572038925" at="186,31,190,11" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$1" />
-      <unit id="8695149241389792345" at="191,108,195,11" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$2" />
+      <unit id="9149550512572038925" at="186,31,190,11" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$ModelConflictResolver$1" />
+      <unit id="8695149241389792345" at="191,108,195,11" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$ModelConflictResolver$2" />
       <unit id="3360601499477960201" at="290,41,300,5" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$5" />
-      <unit id="7075964554776910204" at="244,38,257,17" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$5" />
-      <unit id="1696385799665095058" at="242,49,260,13" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$4" />
-      <unit id="1696385799664976057" at="210,31,239,11" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$3" />
+      <unit id="7075964554776910204" at="244,38,257,17" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$ModelConflictResolver$4$1" />
+      <unit id="1696385799665095058" at="242,49,260,13" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$ModelConflictResolver$4" />
+      <unit id="1696385799664976057" at="210,31,239,11" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$ModelConflictResolver$3" />
       <unit id="7075964554776830358" at="128,0,279,0" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil$ModelConflictResolver" />
       <unit id="7075964554776710007" at="53,0,304,0" name="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil" />
     </file>
@@ -1481,12 +1481,12 @@
       <unit id="3408442363877889724" at="112,63,116,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$2" />
       <unit id="3408442363877631264" at="119,82,123,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$3" />
       <unit id="1444496069592541166" at="256,66,260,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
-      <unit id="2034046503373005225" at="199,61,204,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
+      <unit id="2034046503373005225" at="199,61,204,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7$2" />
       <unit id="899038469128966842" at="81,37,89,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$1" />
-      <unit id="7788464498752623175" at="189,75,197,9" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
-      <unit id="5567467659001798892" at="206,68,214,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
+      <unit id="7788464498752623175" at="189,75,197,9" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7$1" />
+      <unit id="5567467659001798892" at="206,68,214,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7$3" />
       <unit id="3408442363877675434" at="123,20,132,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$4" />
-      <unit id="6444884150137186281" at="140,152,150,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$6" />
+      <unit id="6444884150137186281" at="140,152,150,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$5$1" />
       <unit id="7788464498752623240" at="287,0,300,0" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$DiskMemoryConflictVersion" />
       <unit id="899038469128756686" at="135,37,154,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$5" />
       <unit id="7788464498752623167" at="180,58,217,5" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />

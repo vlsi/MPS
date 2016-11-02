@@ -405,8 +405,8 @@
       <unit id="1822803054816900549" at="166,49,170,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$9" />
       <unit id="1822803054816931639" at="174,49,178,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$10" />
       <unit id="1822803054817829436" at="189,69,193,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$11" />
-      <unit id="1822803054819270609" at="250,109,254,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$14" />
-      <unit id="1822803054819270653" at="263,111,267,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$15" />
+      <unit id="1822803054819270609" at="250,109,254,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$13$1" />
+      <unit id="1822803054819270653" at="263,111,267,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$14$1" />
       <unit id="1822803054819270742" at="284,53,288,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$15" />
       <unit id="642093153354309360" at="69,70,74,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$1" />
       <unit id="1822803054816117821" at="75,38,82,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent$2" />
@@ -527,8 +527,8 @@
       <scope id="1895567659271608028" at="48,0,100,0">
         <var name="progress" id="8273686447602169236" />
       </scope>
-      <unit id="1895567659271608114" at="86,104,90,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$3" />
-      <unit id="1895567659271608103" at="90,25,94,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$3" />
+      <unit id="1895567659271608114" at="86,104,90,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2$1" />
+      <unit id="1895567659271608103" at="90,25,94,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2$2" />
       <unit id="8928180329700464602" at="52,44,62,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$1" />
       <unit id="8928180329700473126" at="66,46,76,7" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$3" />
       <unit id="1423104411234692401" at="82,46,97,7" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2" />
@@ -1340,8 +1340,8 @@
         <var name="mpsProject" id="4847853483690481029" />
         <var name="strings" id="6062668769034855364" />
       </scope>
-      <unit id="6062668769034855385" at="40,23,102,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils$3" />
-      <unit id="6062668769034855385" at="38,19,104,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils$2" />
+      <unit id="6062668769034855385" at="40,23,102,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils$1$1$1" />
+      <unit id="6062668769034855385" at="38,19,104,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils$1$1" />
       <unit id="6062668769034855385" at="36,58,106,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils$1" />
       <unit id="6062668769034855273" at="29,0,131,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils" />
     </file>
@@ -1630,7 +1630,7 @@
         <var name="configuration" id="6062668769034855773" />
         <var name="project" id="6062668769034855775" />
       </scope>
-      <unit id="270189043069382553" at="198,51,202,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes$2" />
+      <unit id="270189043069382553" at="198,51,202,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes$1$1" />
       <unit id="4023783813282458490" at="194,42,204,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes$1" />
       <unit id="6062668769034855735" at="29,0,217,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" />
     </file>

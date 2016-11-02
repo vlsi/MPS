@@ -1571,8 +1571,8 @@
       <scope id="1741258697587053520" at="47,0,66,0">
         <var name="_context" id="1741258697587053520" />
       </scope>
-      <unit id="1741258697587053520" at="60,32,64,7" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$2" />
-      <unit id="1741258697587053520" at="50,30,59,7" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$1" />
+      <unit id="1741258697587053520" at="60,32,64,7" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$SubstituteMenuPart_Group_c574em_a$2" />
+      <unit id="1741258697587053520" at="50,30,59,7" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$SubstituteMenuPart_Group_c574em_a$1" />
       <unit id="1741258697587053520" at="97,0,140,0" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$SubstituteMenuPart_Group_c574em_a$SubstituteMenuPart_Parameterized_c574em_a0$SubstituteMenuPart_Action_c574em_a0a$Item" />
       <unit id="1741258697587053520" at="86,0,141,0" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$SubstituteMenuPart_Group_c574em_a$SubstituteMenuPart_Parameterized_c574em_a0$SubstituteMenuPart_Action_c574em_a0a" />
       <unit id="1741258697587053520" at="75,0,143,0" name="jetbrains.mps.baseLanguage.classifiers.editor.SubstituteMembersInsideOfClassifier_Contribution$SubstituteMenuPart_Group_c574em_a$SubstituteMenuPart_Parameterized_c574em_a0" />

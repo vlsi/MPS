@@ -118,7 +118,7 @@
         <var name="title" id="4577525712681046221" />
       </scope>
       <unit id="4577525712681046275" at="32,47,37,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$1" />
-      <unit id="4577525712681046303" at="42,60,47,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$3" />
+      <unit id="4577525712681046303" at="42,60,47,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$2$1" />
       <unit id="4577525712681046291" at="39,32,49,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$2" />
       <unit id="4577525712681046198" at="18,0,73,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog" />
     </file>
@@ -203,10 +203,10 @@
       <scope id="5600062460044309387" at="19,0,72,0">
         <var name="provider" id="5600062460044309390" />
       </scope>
-      <unit id="5600062460044309452" at="37,60,42,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
-      <unit id="5600062460044309506" at="58,60,63,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$3" />
-      <unit id="5600062460044309474" at="46,60,52,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
-      <unit id="5600062460044309421" at="26,60,33,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
+      <unit id="5600062460044309452" at="37,60,42,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1$2" />
+      <unit id="5600062460044309506" at="58,60,63,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2$1" />
+      <unit id="5600062460044309474" at="46,60,52,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1$3" />
+      <unit id="5600062460044309421" at="26,60,33,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1$1" />
       <unit id="5600062460044309495" at="55,32,65,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
       <unit id="5600062460044309408" at="23,36,54,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1" />
       <unit id="5600062460044309378" at="16,0,85,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel" />
@@ -642,9 +642,9 @@
       <unit id="7704359791231500630" at="164,0,167,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$EvaluationModelNode" />
       <unit id="2034046503361607150" at="93,47,97,7" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$1" />
       <unit id="7406771907178598564" at="159,0,164,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$EvaluationState" />
-      <unit id="7406771907178599489" at="280,32,285,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$1" />
+      <unit id="7406771907178599489" at="280,32,285,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ErrorTreeNode$1" />
       <unit id="7406771907178598591" at="176,0,184,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$EvaluationInProgressState" />
-      <unit id="6647443673251181321" at="202,42,210,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$1" />
+      <unit id="6647443673251181321" at="202,42,210,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ResultState$1" />
       <unit id="7406771907178598576" at="167,0,176,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$InitializedState" />
       <unit id="4120145653580383632" at="319,0,329,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$InitialTreeNode" />
       <unit id="7704359791231501369" at="216,0,227,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ResultState$MyWatchableNode" />
@@ -898,13 +898,13 @@
         <var name="model" id="7406771907178600268" />
       </scope>
       <unit id="7406771907178600438" at="140,0,143,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$IErrorTextListener" />
-      <unit id="3196684409400996682" at="169,60,174,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
-      <unit id="612015978684721007" at="180,60,185,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$3" />
+      <unit id="3196684409400996682" at="169,60,174,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter$2" />
+      <unit id="612015978684721007" at="180,60,185,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter$3" />
       <unit id="7406771907178600278" at="95,28,101,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
       <unit id="7406771907178600309" at="104,28,110,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$3" />
-      <unit id="3196684409400996596" at="154,60,163,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
+      <unit id="3196684409400996596" at="154,60,163,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter$1" />
       <unit id="7406771907178600340" at="113,28,123,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$4" />
-      <unit id="8197435796639340602" at="65,69,84,11" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
+      <unit id="8197435796639340602" at="65,69,84,11" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1$1" />
       <unit id="1520732075331891376" at="58,8,92,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
       <unit id="3196684409401005392" at="143,0,189,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter" />
       <unit id="7406771907178600108" at="30,0,208,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />

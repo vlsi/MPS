@@ -84,8 +84,8 @@
         <var name="searchScope" id="1171652495568972199" />
         <var name="selectedOptions" id="7544716099134948204" />
       </scope>
-      <unit id="6517473530479135308" at="30,53,34,9" name="jetbrains.mps.refactoring.participant.RecursiveParticipant$1" />
-      <unit id="1943523877288524681" at="38,52,42,11" name="jetbrains.mps.refactoring.participant.RecursiveParticipant$2" />
+      <unit id="6517473530479135308" at="30,53,34,9" name="jetbrains.mps.refactoring.participant.RecursiveParticipant$RecursiveParticipantApplied$1" />
+      <unit id="1943523877288524681" at="38,52,42,11" name="jetbrains.mps.refactoring.participant.RecursiveParticipant$RecursiveParticipantApplied$2" />
       <unit id="1171652495568792968" at="18,0,52,0" name="jetbrains.mps.refactoring.participant.RecursiveParticipant$RecursiveParticipantApplied" />
       <unit id="1171652495569015565" at="14,0,53,0" name="jetbrains.mps.refactoring.participant.RecursiveParticipant" />
     </file>
@@ -365,14 +365,14 @@
         <var name="repository" id="6405599828489606111" />
         <var name="session" id="6405599828489606113" />
       </scope>
-      <unit id="8609501485359821569" at="76,101,80,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$1" />
+      <unit id="8609501485359821569" at="76,101,80,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$KeepOldNodes$1" />
       <unit id="4331048896013469583" at="84,0,88,0" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$Change" />
       <unit id="1109674566558372295" at="97,0,101,0" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$ParticipantStateFactory" />
-      <unit id="1109674566555975964" at="138,67,142,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$1" />
-      <unit id="1943523877288181787" at="145,96,149,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$2" />
-      <unit id="1943523877287283178" at="155,96,159,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$3" />
-      <unit id="1943523877287873443" at="168,45,172,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$4" />
-      <unit id="6782235080031150286" at="184,62,188,11" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$5" />
+      <unit id="1109674566555975964" at="138,67,142,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$ParticipantApplied$1" />
+      <unit id="1943523877288181787" at="145,96,149,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$ParticipantApplied$2" />
+      <unit id="1943523877287283178" at="155,96,159,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$ParticipantApplied$3" />
+      <unit id="1943523877287873443" at="168,45,172,7" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$ParticipantApplied$4" />
+      <unit id="6782235080031150286" at="184,62,188,11" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$ParticipantApplied$5" />
       <unit id="6517473530483141004" at="89,0,96,0" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$PersistentRefactoringParticipant" />
       <unit id="1109674566552838377" at="102,0,110,0" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$CollectingParticipantStateFactory" />
       <unit id="1109674566556319070" at="111,0,119,0" name="jetbrains.mps.refactoring.participant.RefactoringParticipant$DeserializingParticipantStateFactory" />

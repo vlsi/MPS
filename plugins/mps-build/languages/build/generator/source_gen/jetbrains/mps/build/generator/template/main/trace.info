@@ -1202,8 +1202,8 @@
       <unit id="6110835142617992421" at="1410,406,1414,5" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$15" />
       <unit id="6110835142617992421" at="1414,18,1418,5" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$16" />
       <unit id="8055294676438890345" at="1424,423,1428,5" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$17" />
-      <unit id="8055294676438890765" at="1432,214,1436,9" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$19" />
-      <unit id="8055294676438890840" at="1436,22,1440,9" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$19" />
+      <unit id="8055294676438890765" at="1432,214,1436,9" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$18$1" />
+      <unit id="8055294676438890840" at="1436,22,1440,9" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$18$2" />
       <unit id="8055294676438891311" at="1452,262,1456,5" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$19" />
       <unit id="7926701909975671919" at="1459,226,1463,5" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$20" />
       <unit id="8654221991637384294" at="1472,228,1476,5" name="jetbrains.mps.build.generator.template.main.QueriesGenerated$21" />

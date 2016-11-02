@@ -1919,7 +1919,7 @@
         <var name="status" id="1178287491281" />
         <var name="typeCheckingContext" id="1178287491281" />
       </scope>
-      <unit id="2930785965020102451" at="67,57,75,17" name="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$2" />
+      <unit id="2930785965020102451" at="67,57,75,17" name="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$1$1" />
       <unit id="1186061035207" at="35,48,91,9" name="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$1" />
       <unit id="1178287491281" at="21,0,151,0" name="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule" />
     </file>

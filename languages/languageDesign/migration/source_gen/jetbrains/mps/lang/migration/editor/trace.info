@@ -3098,7 +3098,7 @@
         <var name="editorContext" id="7431903976166107720" />
         <var name="node" id="7431903976166107720" />
       </scope>
-      <unit id="3194280909367711031" at="85,85,94,7" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_Editor$1" />
+      <unit id="3194280909367711031" at="85,85,94,7" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_Editor$_Inline_ni94rq_a2a$1" />
       <unit id="7431903976166108400" at="74,0,101,0" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_Editor$_Inline_ni94rq_a2a" />
       <unit id="7431903976166107720" at="25,0,111,0" name="jetbrains.mps.lang.migration.editor.DirectNodeReference_Editor" />
     </file>

@@ -705,15 +705,15 @@
       <unit id="1500819558096520628" at="101,280,105,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$6" />
       <unit id="4267986820121093135" at="105,18,109,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$7" />
       <unit id="1692280246134543138" at="112,314,116,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$8" />
-      <unit id="4267986820121124872" at="128,398,132,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$10" />
+      <unit id="4267986820121124872" at="128,398,132,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$9$1" />
       <unit id="4267986820121125038" at="140,281,144,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$10" />
-      <unit id="4267986820121125117" at="152,398,156,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$12" />
+      <unit id="4267986820121125117" at="152,398,156,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$11$1" />
       <unit id="1500819558096512013" at="165,256,169,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$12" />
-      <unit id="1500819558096520559" at="176,213,180,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$14" />
-      <unit id="1500819558096520559" at="180,22,184,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$14" />
-      <unit id="1500819558096520349" at="193,265,197,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$15" />
-      <unit id="4893243730880707943" at="205,311,209,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$16" />
-      <unit id="4893243730880707943" at="209,22,213,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$16" />
+      <unit id="1500819558096520559" at="176,213,180,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$13$1" />
+      <unit id="1500819558096520559" at="180,22,184,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$13$2" />
+      <unit id="1500819558096520349" at="193,265,197,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$14$1" />
+      <unit id="4893243730880707943" at="205,311,209,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$15$1" />
+      <unit id="4893243730880707943" at="209,22,213,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$15$2" />
       <unit id="4893243730881069273" at="252,62,256,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$22" />
       <unit id="4893243730881069273" at="256,18,260,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$23" />
       <unit id="4893243730881077590" at="264,269,268,7" name="jetbrains.mps.build.mps.util.MPSModulesClosure$16" />
@@ -722,8 +722,8 @@
       <unit id="8886979122628505895" at="277,20,281,7" name="jetbrains.mps.build.mps.util.MPSModulesClosure$19" />
       <unit id="4893243730881166262" at="285,265,289,7" name="jetbrains.mps.build.mps.util.MPSModulesClosure$20" />
       <unit id="4893243730881251230" at="289,19,293,7" name="jetbrains.mps.build.mps.util.MPSModulesClosure$21" />
-      <unit id="7525356604724002265" at="427,219,431,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$25" />
-      <unit id="7525356604724002280" at="431,22,435,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$25" />
+      <unit id="7525356604724002265" at="427,219,431,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$24$1" />
+      <unit id="7525356604724002280" at="431,22,435,9" name="jetbrains.mps.build.mps.util.MPSModulesClosure$24$2" />
       <unit id="2761855734068904103" at="443,135,447,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$25" />
       <unit id="7525356604724002329" at="447,188,451,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$26" />
       <unit id="4267986820121124739" at="126,92,134,5" name="jetbrains.mps.build.mps.util.MPSModulesClosure$9" />
@@ -1134,8 +1134,8 @@
       <unit id="7391870795497065509" at="84,171,88,7" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$2" />
       <unit id="5970181360960744938" at="99,215,103,5" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$3" />
       <unit id="2761855734069038033" at="115,389,119,5" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$4" />
-      <unit id="8567544756204742053" at="154,235,158,9" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$1" />
-      <unit id="8567544756204742053" at="158,22,162,9" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$2" />
+      <unit id="8567544756204742053" at="154,235,158,9" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Node$1" />
+      <unit id="8567544756204742053" at="158,22,162,9" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Node$2" />
       <unit id="2761855734069308480" at="173,0,206,0" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Chunk" />
       <unit id="2761855734069308494" at="122,0,172,0" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Node" />
       <unit id="2761855734069308238" at="29,0,207,0" name="jetbrains.mps.build.mps.util.MPSModulesPartitioner" />

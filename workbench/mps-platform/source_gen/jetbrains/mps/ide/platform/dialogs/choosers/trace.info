@@ -244,8 +244,8 @@
       <scope id="3443324735214106044" at="80,0,92,0">
         <var name="b" id="3443324735214106047" />
       </scope>
-      <unit id="3806555399652872302" at="72,17,78,7" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$1" />
-      <unit id="3443324735214113815" at="82,73,90,7" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$2" />
+      <unit id="3806555399652872302" at="72,17,78,7" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement$1" />
+      <unit id="3443324735214113815" at="82,73,90,7" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement$2" />
       <unit id="890761188649874964" at="50,0,101,0" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement" />
       <unit id="890761188649854308" at="24,0,102,0" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" />
     </file>

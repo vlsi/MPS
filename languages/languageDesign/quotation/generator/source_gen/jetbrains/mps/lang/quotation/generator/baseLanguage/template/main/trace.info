@@ -5323,16 +5323,16 @@
       <scope id="5756354288100412635" at="375,0,586,0">
         <var name="context" id="5756354288100412635" />
       </scope>
-      <unit id="5756354288100412635" at="83,44,88,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$1" />
-      <unit id="5756354288100412635" at="131,48,136,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$2" />
-      <unit id="5756354288100412635" at="195,44,200,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$1" />
-      <unit id="5756354288100412635" at="285,44,290,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$1" />
-      <unit id="5756354288100412635" at="392,44,397,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$1" />
-      <unit id="5756354288100412635" at="462,48,467,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$2" />
-      <unit id="5756354288100412635" at="612,44,617,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$1" />
-      <unit id="5756354288100412635" at="660,48,665,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$2" />
-      <unit id="5756354288100412635" at="762,52,767,29" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$1" />
-      <unit id="5756354288100412635" at="858,40,863,17" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$2" />
+      <unit id="5756354288100412635" at="83,44,88,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule0$1" />
+      <unit id="5756354288100412635" at="131,48,136,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule0$2" />
+      <unit id="5756354288100412635" at="195,44,200,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule1$1" />
+      <unit id="5756354288100412635" at="285,44,290,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule2$1" />
+      <unit id="5756354288100412635" at="392,44,397,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule3$1" />
+      <unit id="5756354288100412635" at="462,48,467,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule3$2" />
+      <unit id="5756354288100412635" at="612,44,617,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule4$1" />
+      <unit id="5756354288100412635" at="660,48,665,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule4$2" />
+      <unit id="5756354288100412635" at="762,52,767,29" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule7$1" />
+      <unit id="5756354288100412635" at="858,40,863,17" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule7$2" />
       <unit id="5756354288100412635" at="699,0,714,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule5" />
       <unit id="5756354288100412635" at="714,0,729,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule6" />
       <unit id="5756354288100412635" at="966,0,1026,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_value$ReductionRule9" />
@@ -5734,11 +5734,11 @@
       <scope id="5756354288101501092" at="50,0,202,0">
         <var name="context" id="5756354288101501092" />
       </scope>
-      <unit id="5756354288101501092" at="75,52,80,29" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$1" />
-      <unit id="5756354288101501092" at="131,56,136,33" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$2" />
-      <unit id="5756354288101501092" at="182,40,187,17" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$3" />
-      <unit id="5756354288101501092" at="227,44,232,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$1" />
-      <unit id="5756354288101501092" at="271,44,276,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$2" />
+      <unit id="5756354288101501092" at="75,52,80,29" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule0$1" />
+      <unit id="5756354288101501092" at="131,56,136,33" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule0$2" />
+      <unit id="5756354288101501092" at="182,40,187,17" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule0$3" />
+      <unit id="5756354288101501092" at="227,44,232,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule1$1" />
+      <unit id="5756354288101501092" at="271,44,276,21" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule1$2" />
       <unit id="5756354288101501092" at="203,0,298,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule1" />
       <unit id="5756354288101501092" at="46,0,203,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child$ReductionRule0" />
       <unit id="5756354288101501092" at="26,0,302,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Switch_NodeBuilder_child" />
@@ -5840,7 +5840,7 @@
       <scope id="8274572146452539018" at="52,0,97,0">
         <var name="context" id="8274572146452539018" />
       </scope>
-      <unit id="8274572146452539018" at="61,36,66,13" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mapping_preprocess$1" />
+      <unit id="8274572146452539018" at="61,36,66,13" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mapping_preprocess$ReductionRule0$1" />
       <unit id="8274572146452539018" at="44,0,98,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mapping_preprocess$ReductionRule0" />
       <unit id="8274572146452539018" at="29,0,100,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mapping_preprocess" />
     </file>

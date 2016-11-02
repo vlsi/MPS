@@ -1462,23 +1462,23 @@
         <var name="nodes" id="2364881513290584098" />
         <var name="progress" id="3068863004119157524" />
       </scope>
-      <unit id="3356342729943954738" at="175,52,179,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$3" />
+      <unit id="3356342729943954738" at="175,52,179,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$2$1" />
       <unit id="1933699688962456700" at="215,59,219,7" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$3" />
       <unit id="1933699688963382137" at="223,67,227,7" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$4" />
       <unit id="1933699688963893860" at="230,52,234,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$5" />
       <unit id="5285105605098552137" at="236,56,240,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$6" />
-      <unit id="5285105605106394946" at="244,269,248,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$8" />
-      <unit id="5285105605116694538" at="256,217,260,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$10" />
-      <unit id="5285105605121902143" at="280,303,284,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$10" />
-      <unit id="5285105605120863380" at="285,307,289,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$10" />
-      <unit id="5285105605123205147" at="299,303,303,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$11" />
-      <unit id="5285105605123205168" at="304,307,308,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$11" />
+      <unit id="5285105605106394946" at="244,269,248,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$7$1" />
+      <unit id="5285105605116694538" at="256,217,260,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$8$1$1" />
+      <unit id="5285105605121902143" at="280,303,284,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$9$1" />
+      <unit id="5285105605120863380" at="285,307,289,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$9$2" />
+      <unit id="5285105605123205147" at="299,303,303,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$10$1" />
+      <unit id="5285105605123205168" at="304,307,308,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$10$2" />
       <unit id="5285105605113585816" at="314,57,318,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$11" />
       <unit id="1933699688959886253" at="390,41,394,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$12" />
       <unit id="1508813892200793423" at="431,25,435,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$14" />
-      <unit id="2364881513287728124" at="466,59,470,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$16" />
-      <unit id="8824315269748243937" at="492,59,496,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$16" />
-      <unit id="3356719807428400900" at="604,51,608,11" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$19" />
+      <unit id="2364881513287728124" at="466,59,470,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$15$1" />
+      <unit id="8824315269748243937" at="492,59,496,13" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$15$2" />
+      <unit id="3356719807428400900" at="604,51,608,11" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$18$1" />
       <unit id="4812116028889659380" at="698,385,702,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$19" />
       <unit id="3151797052701005726" at="743,380,747,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$20" />
       <unit id="2235632002330851508" at="823,423,827,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$21" />
@@ -1496,7 +1496,7 @@
       <unit id="5285105605117546857" at="276,65,293,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$9" />
       <unit id="5285105605123205126" at="295,61,312,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$10" />
       <unit id="1508813892200793375" at="410,36,427,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$13" />
-      <unit id="5285105605116694524" at="254,269,272,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$9" />
+      <unit id="5285105605116694524" at="254,269,272,9" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$8$1" />
       <unit id="3068863004119346748" at="553,38,572,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$16" />
       <unit id="5285105605108144779" at="252,51,274,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$8" />
       <unit id="3356342729947469445" at="161,42,202,5" name="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$2" />
@@ -3207,7 +3207,7 @@
       <unit id="3785279249724321051" at="258,206,262,7" name="jetbrains.mps.ide.java.newparser.ASTConverter$3" />
       <unit id="82598906801070235" at="266,225,270,5" name="jetbrains.mps.ide.java.newparser.ASTConverter$4" />
       <unit id="5432817038142958545" at="441,143,445,5" name="jetbrains.mps.ide.java.newparser.ASTConverter$5" />
-      <unit id="5432817038138117147" at="982,53,986,7" name="jetbrains.mps.ide.java.newparser.ASTConverter$1" />
+      <unit id="5432817038138117147" at="982,53,986,7" name="jetbrains.mps.ide.java.newparser.ASTConverter$State$1" />
       <unit id="2606592023504250188" at="1038,0,1049,0" name="jetbrains.mps.ide.java.newparser.ASTConverter$ASTConverterWithState" />
       <unit id="2606592023504715705" at="967,0,1038,0" name="jetbrains.mps.ide.java.newparser.ASTConverter$State" />
       <unit id="3493766494546486454" at="77,0,1233,0" name="jetbrains.mps.ide.java.newparser.ASTConverter" />

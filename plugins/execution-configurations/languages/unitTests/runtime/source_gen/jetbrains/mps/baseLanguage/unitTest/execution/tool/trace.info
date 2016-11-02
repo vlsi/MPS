@@ -1363,8 +1363,8 @@
       <unit id="3575782568432722607" at="122,0,125,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$IMessage" />
       <unit id="3575782568432723431" at="54,37,58,7" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$1" />
       <unit id="3575782568432723485" at="64,37,68,7" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$2" />
-      <unit id="3575782568432722841" at="196,73,200,9" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$1" />
-      <unit id="3575782568432723224" at="324,202,328,15" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$1" />
+      <unit id="3575782568432722841" at="196,73,200,9" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$CompositeMessage$1" />
+      <unit id="3575782568432723224" at="324,202,328,15" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$MethodMessage$1" />
       <unit id="3575782568432723310" at="354,0,368,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$TestMessage" />
       <unit id="3575782568432722870" at="206,0,226,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$RootMessage" />
       <unit id="3575782568432722935" at="227,0,251,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent$ClassMessage" />
@@ -1482,7 +1482,7 @@
         <var name="total" id="3575782568432723803" />
       </scope>
       <unit id="3575782568432723720" at="46,35,51,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine$1" />
-      <unit id="3575782568432723928" at="89,60,98,9" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine$3" />
+      <unit id="3575782568432723928" at="89,60,98,9" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine$2$1" />
       <unit id="3575782568432723914" at="86,15,100,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine$2" />
       <unit id="3575782568432723662" at="21,0,103,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine" />
     </file>

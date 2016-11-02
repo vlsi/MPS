@@ -285,7 +285,7 @@
       </scope>
       <scope id="2282909602806523726" at="206,0,220,0" />
       <scope id="2521183994567837298" at="118,0,134,0" />
-      <unit id="2282909602806523757" at="211,407,215,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$1" />
+      <unit id="2282909602806523757" at="211,407,215,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody$1" />
       <unit id="2282909602806268536" at="100,0,255,0" name="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody" />
       <unit id="2282909602806268536" at="22,0,256,0" name="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test" />
     </file>
@@ -563,36 +563,36 @@
       <scope id="7199441945722555925" at="150,0,182,0" />
       <scope id="416617593863839726" at="58,47,116,20" />
       <scope id="416617593863839726" at="58,0,118,0" />
-      <unit id="7199441945722528139" at="61,418,65,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$1" />
-      <unit id="7199441945722528139" at="65,20,69,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$2" />
-      <unit id="7199441945722530797" at="70,422,74,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$3" />
-      <unit id="7199441945722530800" at="75,418,79,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$4" />
-      <unit id="7199441945722530800" at="79,20,83,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$5" />
-      <unit id="7199441945722530813" at="84,422,88,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$6" />
-      <unit id="7199441945722533455" at="89,418,93,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$7" />
-      <unit id="7199441945722533455" at="93,20,97,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$8" />
-      <unit id="416617593863863684" at="98,422,102,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$9" />
-      <unit id="416617593863863695" at="103,418,107,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$10" />
-      <unit id="416617593863863695" at="107,20,111,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$11" />
-      <unit id="416617593863863704" at="112,422,116,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$12" />
-      <unit id="7199441945722546688" at="121,419,125,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$13" />
-      <unit id="7199441945722546688" at="125,20,129,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$14" />
-      <unit id="7551657168186611719" at="130,652,134,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$15" />
-      <unit id="7551657168186611719" at="134,20,138,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$16" />
-      <unit id="7551657168186611737" at="139,423,143,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$17" />
-      <unit id="7551657168186616986" at="144,868,148,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$18" />
-      <unit id="7199441945722555941" at="153,419,157,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$19" />
-      <unit id="7199441945722555941" at="157,20,161,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$20" />
-      <unit id="7199441945722555983" at="162,864,166,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$21" />
-      <unit id="7199441945722555983" at="166,20,170,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$22" />
-      <unit id="7199441945722556015" at="171,656,175,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$23" />
-      <unit id="7199441945722556063" at="176,1280,180,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$24" />
-      <unit id="6109315219758592391" at="187,507,191,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$25" />
-      <unit id="6109315219758592391" at="191,20,195,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$26" />
-      <unit id="34342663958922859" at="200,869,204,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$27" />
-      <unit id="34342663958922859" at="204,20,208,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$28" />
-      <unit id="3246402855336138753" at="213,1077,217,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$29" />
-      <unit id="278471160714203836" at="223,51,227,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$30" />
+      <unit id="7199441945722528139" at="61,418,65,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$1" />
+      <unit id="7199441945722528139" at="65,20,69,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$2" />
+      <unit id="7199441945722530797" at="70,422,74,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$3" />
+      <unit id="7199441945722530800" at="75,418,79,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$4" />
+      <unit id="7199441945722530800" at="79,20,83,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$5" />
+      <unit id="7199441945722530813" at="84,422,88,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$6" />
+      <unit id="7199441945722533455" at="89,418,93,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$7" />
+      <unit id="7199441945722533455" at="93,20,97,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$8" />
+      <unit id="416617593863863684" at="98,422,102,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$9" />
+      <unit id="416617593863863695" at="103,418,107,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$10" />
+      <unit id="416617593863863695" at="107,20,111,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$11" />
+      <unit id="416617593863863704" at="112,422,116,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$12" />
+      <unit id="7199441945722546688" at="121,419,125,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$13" />
+      <unit id="7199441945722546688" at="125,20,129,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$14" />
+      <unit id="7551657168186611719" at="130,652,134,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$15" />
+      <unit id="7551657168186611719" at="134,20,138,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$16" />
+      <unit id="7551657168186611737" at="139,423,143,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$17" />
+      <unit id="7551657168186616986" at="144,868,148,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$18" />
+      <unit id="7199441945722555941" at="153,419,157,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$19" />
+      <unit id="7199441945722555941" at="157,20,161,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$20" />
+      <unit id="7199441945722555983" at="162,864,166,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$21" />
+      <unit id="7199441945722555983" at="166,20,170,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$22" />
+      <unit id="7199441945722556015" at="171,656,175,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$23" />
+      <unit id="7199441945722556063" at="176,1280,180,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$24" />
+      <unit id="6109315219758592391" at="187,507,191,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$25" />
+      <unit id="6109315219758592391" at="191,20,195,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$26" />
+      <unit id="34342663958922859" at="200,869,204,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$27" />
+      <unit id="34342663958922859" at="204,20,208,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$28" />
+      <unit id="3246402855336138753" at="213,1077,217,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$29" />
+      <unit id="278471160714203836" at="223,51,227,7" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody$30" />
       <unit id="278471160714179981" at="56,0,230,0" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody" />
       <unit id="278471160714179981" at="23,0,231,0" name="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test" />
     </file>

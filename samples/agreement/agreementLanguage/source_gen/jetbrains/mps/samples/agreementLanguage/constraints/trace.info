@@ -49,7 +49,7 @@
         <var name="references" id="1214253504159" />
       </scope>
       <scope id="1214253504159" at="29,0,55,0" />
-      <unit id="1214253504159" at="40,19,50,9" name="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$2" />
+      <unit id="1214253504159" at="40,19,50,9" name="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$1$1" />
       <unit id="1214253504159" at="32,143,52,5" name="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints$1" />
       <unit id="1214253504159" at="24,0,57,0" name="jetbrains.mps.samples.agreementLanguage.constraints.ValueReference_Constraints" />
     </file>
@@ -91,7 +91,7 @@
         <var name="references" id="1214253593082" />
       </scope>
       <scope id="1214253593082" at="30,0,56,0" />
-      <unit id="1214253593082" at="41,19,51,9" name="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints$2" />
+      <unit id="1214253593082" at="41,19,51,9" name="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints$1$1" />
       <unit id="1214253593082" at="33,151,53,5" name="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints$1" />
       <unit id="1214253593082" at="25,0,58,0" name="jetbrains.mps.samples.agreementLanguage.constraints.EventVariableReference_Constraints" />
     </file>

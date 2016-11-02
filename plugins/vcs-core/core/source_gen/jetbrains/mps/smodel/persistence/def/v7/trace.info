@@ -706,16 +706,16 @@
         <var name="tagName" id="286176397450364062" />
       </scope>
       <unit id="286176397450364062" at="112,0,115,0" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ChildHandler" />
-      <unit id="286176397450364062" at="178,38,183,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$1" />
-      <unit id="286176397450364062" at="187,38,192,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$2" />
-      <unit id="286176397450364062" at="196,38,201,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$3" />
-      <unit id="286176397450364062" at="205,38,210,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$4" />
-      <unit id="286176397450364062" at="214,38,219,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$5" />
-      <unit id="286176397450364062" at="305,38,310,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$1" />
-      <unit id="286176397450364062" at="333,38,338,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$1" />
-      <unit id="286176397450364062" at="386,38,391,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$1" />
-      <unit id="286176397450364062" at="395,38,400,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$2" />
-      <unit id="286176397450364062" at="404,38,409,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$3" />
+      <unit id="286176397450364062" at="178,38,183,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler$1" />
+      <unit id="286176397450364062" at="187,38,192,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler$2" />
+      <unit id="286176397450364062" at="196,38,201,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler$3" />
+      <unit id="286176397450364062" at="205,38,210,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler$4" />
+      <unit id="286176397450364062" at="214,38,219,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ModelElementHandler$5" />
+      <unit id="286176397450364062" at="305,38,310,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$RootsElementHandler$1" />
+      <unit id="286176397450364062" at="333,38,338,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$RootContentElementHandler$1" />
+      <unit id="286176397450364062" at="386,38,391,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$NodeElementHandler$1" />
+      <unit id="286176397450364062" at="395,38,400,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$NodeElementHandler$2" />
+      <unit id="286176397450364062" at="404,38,409,9" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$NodeElementHandler$3" />
       <unit id="286176397450364062" at="263,0,272,0" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$PersistenceElementHandler" />
       <unit id="286176397450364062" at="272,0,281,0" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$Module_referenceElementHandler" />
       <unit id="286176397450364062" at="281,0,299,0" name="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler$ImportElementHandler" />
@@ -1333,11 +1333,11 @@
       </scope>
       <unit id="5797832288566425370" at="97,0,100,0" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$ChildHandler" />
       <unit id="5797832288566425370" at="298,0,302,0" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NullElementHandler" />
-      <unit id="5797832288566425370" at="175,38,180,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$1" />
-      <unit id="5797832288566425370" at="205,38,210,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$1" />
-      <unit id="5797832288566425370" at="235,38,240,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$1" />
-      <unit id="5797832288566425370" at="244,38,249,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$2" />
-      <unit id="5797832288566425370" at="253,38,258,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$3" />
+      <unit id="5797832288566425370" at="175,38,180,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$RootsElementHandler$1" />
+      <unit id="5797832288566425370" at="205,38,210,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$RootContentElementHandler$1" />
+      <unit id="5797832288566425370" at="235,38,240,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NodeElementHandler$1" />
+      <unit id="5797832288566425370" at="244,38,249,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NodeElementHandler$2" />
+      <unit id="5797832288566425370" at="253,38,258,9" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$NodeElementHandler$3" />
       <unit id="5797832288566425370" at="280,0,289,0" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$PropertyElementHandler" />
       <unit id="5797832288566425370" at="289,0,298,0" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$LinkElementHandler" />
       <unit id="5797832288566425370" at="169,0,190,0" name="jetbrains.mps.smodel.persistence.def.v7.LineToContentMapReader7Handler$RootsElementHandler" />

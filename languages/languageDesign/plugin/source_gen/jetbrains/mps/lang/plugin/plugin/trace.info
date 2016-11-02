@@ -290,11 +290,11 @@
       </scope>
       <scope id="1670948443106462369" at="64,29,120,8" />
       <scope id="1670948443106462369" at="64,0,122,0" />
-      <unit id="1675754527182057070" at="96,75,104,27" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$2" />
-      <unit id="1670948443106485492" at="84,71,94,25" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$2" />
+      <unit id="1675754527182057070" at="96,75,104,27" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml$1$2" />
+      <unit id="1670948443106485492" at="84,71,94,25" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml$1$1" />
       <unit id="834312300517864417" at="173,0,187,0" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml$Parameters" />
       <unit id="1675754527181903316" at="191,0,216,0" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$TargetProperties" />
-      <unit id="1670948443106462371" at="65,17,120,7" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$1" />
+      <unit id="1670948443106462371" at="65,17,120,7" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml$1" />
       <unit id="1670948443106462369" at="60,0,191,0" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet$Target_copyPluginXml" />
       <unit id="1675754527181903316" at="36,0,217,0" name="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet" />
     </file>
@@ -382,7 +382,7 @@
       </scope>
       <scope id="3193873080290339088" at="30,41,87,6" />
       <scope id="3193873080290339088" at="30,0,89,0" />
-      <unit id="3193873080290339088" at="41,58,46,9" name="jetbrains.mps.lang.plugin.plugin.LanguageAspectsEP_extension$2" />
+      <unit id="3193873080290339088" at="41,58,46,9" name="jetbrains.mps.lang.plugin.plugin.LanguageAspectsEP_extension$1$1" />
       <unit id="3193873080290339088" at="31,15,87,5" name="jetbrains.mps.lang.plugin.plugin.LanguageAspectsEP_extension$1" />
       <unit id="3193873080290339088" at="26,0,93,0" name="jetbrains.mps.lang.plugin.plugin.LanguageAspectsEP_extension" />
     </file>

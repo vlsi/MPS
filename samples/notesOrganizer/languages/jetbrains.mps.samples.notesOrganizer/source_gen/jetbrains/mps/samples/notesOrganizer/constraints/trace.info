@@ -66,9 +66,9 @@
         <var name="references" id="3892287256988699831" />
       </scope>
       <scope id="3892287256988699831" at="35,0,68,0" />
-      <unit id="3892287256988701031" at="53,226,57,13" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$4" />
-      <unit id="3892287256988701013" at="53,23,61,13" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$3" />
-      <unit id="3892287256988699831" at="46,19,63,9" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$2" />
+      <unit id="3892287256988701031" at="53,226,57,13" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$1$1$1$1" />
+      <unit id="3892287256988701013" at="53,23,61,13" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$1$1$1" />
+      <unit id="3892287256988699831" at="46,19,63,9" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$1$1" />
       <unit id="3892287256988699831" at="38,153,65,5" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints$1" />
       <unit id="3892287256988699831" at="30,0,73,0" name="jetbrains.mps.samples.notesOrganizer.constraints.NoteMetaInfo_Constraints" />
     </file>

@@ -55,7 +55,7 @@
       <scope id="1741258697586929252" at="34,0,41,0">
         <var name="_context" id="1741258697586929252" />
       </scope>
-      <unit id="1741258697586929252" at="35,265,39,7" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$1" />
+      <unit id="1741258697586929252" at="35,265,39,7" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$SubstituteMenuPart_Subconcepts_aj0y4j_a$1" />
       <unit id="1741258697586929252" at="33,0,49,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu$SubstituteMenuPart_Subconcepts_aj0y4j_a" />
       <unit id="1741258697586929252" at="25,0,50,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberModifier_SubstituteMenu" />
     </file>
@@ -285,9 +285,9 @@
       <scope id="1741258697586929256" at="194,0,204,0">
         <var name="pattern" id="1741258697586929256" />
       </scope>
-      <unit id="1741258697586929373" at="75,327,79,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$1" />
-      <unit id="1741258697586929532" at="136,327,140,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$1" />
-      <unit id="1741258697586929662" at="197,327,201,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$1" />
+      <unit id="1741258697586929373" at="75,327,79,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_a$SubstituteMenuPart_Action_hyz1k2_a0$Item$1" />
+      <unit id="1741258697586929532" at="136,327,140,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_b$SubstituteMenuPart_Action_hyz1k2_a1$Item$1" />
+      <unit id="1741258697586929662" at="197,327,201,11" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_c$SubstituteMenuPart_Action_hyz1k2_a2$Item$1" />
       <unit id="1741258697586929256" at="65,0,101,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_a$SubstituteMenuPart_Action_hyz1k2_a0$Item" />
       <unit id="1741258697586929256" at="126,0,162,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_b$SubstituteMenuPart_Action_hyz1k2_a1$Item" />
       <unit id="1741258697586929256" at="187,0,226,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.ClassLikeMembers_Contribution$SubstituteMenuPart_Parameterized_hyz1k2_c$SubstituteMenuPart_Action_hyz1k2_a2$Item" />
@@ -2697,7 +2697,7 @@
         <var name="editorContext" id="366312049567573772" />
         <var name="node" id="366312049567573772" />
       </scope>
-      <unit id="366312049567692166" at="31,19,42,9" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberPlaceholder_Editor$2" />
+      <unit id="366312049567692166" at="31,19,42,9" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberPlaceholder_Editor$1$1" />
       <unit id="366312049567573772" at="29,40,44,5" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberPlaceholder_Editor$1" />
       <unit id="6478870542308704512" at="24,0,58,0" name="jetbrains.mps.baseLanguage.lightweightdsl.editor.MemberPlaceholder_Editor" />
     </file>

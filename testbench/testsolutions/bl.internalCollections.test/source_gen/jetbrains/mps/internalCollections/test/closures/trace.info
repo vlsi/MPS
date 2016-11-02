@@ -846,40 +846,40 @@
       <unit id="1226320183950" at="567,44,571,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$17" />
       <unit id="3343985444902959889" at="572,77,576,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$18" />
       <unit id="7797065405157468549" at="652,20,659,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
-      <unit id="7797065405157468600" at="625,23,648,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$22" />
-      <unit id="1203688904920" at="28,23,55,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
-      <unit id="1203688860713" at="69,23,96,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
-      <unit id="1204739142390" at="110,23,137,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
-      <unit id="1224754206491" at="149,23,176,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
-      <unit id="1241363026344" at="584,23,611,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
-      <unit id="7797065405157468600" at="623,19,650,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$21" />
-      <unit id="1203688904920" at="26,19,57,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2" />
-      <unit id="1203688860713" at="67,19,98,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
-      <unit id="1204739142390" at="108,19,139,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
-      <unit id="1224754206491" at="147,19,178,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
-      <unit id="1241363026344" at="582,19,613,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$20" />
+      <unit id="7797065405157468600" at="625,23,648,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$20$1$1" />
+      <unit id="1203688904920" at="28,23,55,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$1$1$1" />
+      <unit id="1203688860713" at="69,23,96,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2$1$1" />
+      <unit id="1204739142390" at="110,23,137,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3$1$1" />
+      <unit id="1224754206491" at="149,23,176,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4$1$1" />
+      <unit id="1241363026344" at="584,23,611,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$19$1$1" />
+      <unit id="7797065405157468600" at="623,19,650,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$20$1" />
+      <unit id="1203688904920" at="26,19,57,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$1$1" />
+      <unit id="1203688860713" at="67,19,98,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2$1" />
+      <unit id="1204739142390" at="108,19,139,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3$1" />
+      <unit id="1224754206491" at="147,19,178,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4$1" />
+      <unit id="1241363026344" at="582,19,613,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$19$1" />
       <unit id="7797065405157468600" at="621,46,652,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$20" />
       <unit id="1203688904920" at="24,48,59,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$1" />
       <unit id="1203688860713" at="65,91,100,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$2" />
       <unit id="1204739142390" at="106,80,141,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$3" />
       <unit id="1224754206491" at="145,80,180,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$4" />
       <unit id="1241363026344" at="580,129,615,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$19" />
-      <unit id="1224754206523" at="314,23,359,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
-      <unit id="1224754206604" at="369,23,414,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
-      <unit id="1224497017169" at="424,23,469,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
-      <unit id="1224497117765" at="479,23,524,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$12" />
-      <unit id="1224754206523" at="312,19,361,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
-      <unit id="1224754206604" at="367,19,416,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
-      <unit id="1224497017169" at="422,19,471,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
-      <unit id="1224497117765" at="477,19,526,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$11" />
-      <unit id="1224754206559" at="188,23,240,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
-      <unit id="1224451389695" at="250,23,302,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
+      <unit id="1224754206523" at="314,23,359,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7$1$1" />
+      <unit id="1224754206604" at="369,23,414,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8$1$1" />
+      <unit id="1224497017169" at="424,23,469,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9$1$1" />
+      <unit id="1224497117765" at="479,23,524,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10$1$1" />
+      <unit id="1224754206523" at="312,19,361,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7$1" />
+      <unit id="1224754206604" at="367,19,416,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8$1" />
+      <unit id="1224497017169" at="422,19,471,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9$1" />
+      <unit id="1224497117765" at="477,19,526,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10$1" />
+      <unit id="1224754206559" at="188,23,240,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5$1$1" />
+      <unit id="1224451389695" at="250,23,302,13" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6$1$1" />
       <unit id="1224754206523" at="310,80,363,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
       <unit id="1224754206604" at="365,81,418,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$8" />
       <unit id="1224497017169" at="420,81,473,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$9" />
       <unit id="1224497117765" at="475,81,528,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$10" />
-      <unit id="1224754206559" at="186,19,242,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
-      <unit id="1224451389695" at="248,19,304,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$7" />
+      <unit id="1224754206559" at="186,19,242,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5$1" />
+      <unit id="1224451389695" at="248,19,304,9" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6$1" />
       <unit id="1224754206559" at="184,81,244,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$5" />
       <unit id="1224451389695" at="246,82,306,5" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test$6" />
       <unit id="1203688720943" at="21,0,663,0" name="jetbrains.mps.internalCollections.test.closures.Mapper_Test" />
@@ -989,10 +989,10 @@
       <unit id="1204129169614" at="51,17,55,5" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$3" />
       <unit id="1204797574898" at="59,76,63,5" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$4" />
       <unit id="1204797574875" at="94,17,98,5" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$6" />
-      <unit id="1204129169626" at="24,23,47,13" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$4" />
-      <unit id="1204797574888" at="67,23,90,13" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$7" />
-      <unit id="1204129169626" at="22,19,49,9" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$3" />
-      <unit id="1204797574888" at="65,19,92,9" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$6" />
+      <unit id="1204129169626" at="24,23,47,13" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$2$1$1" />
+      <unit id="1204797574888" at="67,23,90,13" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$5$1$1" />
+      <unit id="1204129169626" at="22,19,49,9" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$2$1" />
+      <unit id="1204797574888" at="65,19,92,9" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$5$1" />
       <unit id="1204129169626" at="20,21,51,5" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$2" />
       <unit id="1204797574888" at="63,21,94,5" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test$5" />
       <unit id="1204111028494" at="14,0,102,0" name="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test" />
@@ -1358,11 +1358,11 @@
       <unit id="1225716422692" at="113,76,117,5" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$9" />
       <unit id="1241362847983" at="121,129,125,5" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$10" />
       <unit id="7797065405157461030" at="131,43,135,5" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$11" />
-      <unit id="8943341749646453256" at="158,118,162,9" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$14" />
+      <unit id="8943341749646453256" at="158,118,162,9" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$13$1" />
       <unit id="7797065405157460986" at="135,20,142,5" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$12" />
       <unit id="8943341749646434181" at="156,112,164,5" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$13" />
-      <unit id="1225716463484" at="80,23,103,13" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$9" />
-      <unit id="1225716463484" at="78,19,105,9" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$8" />
+      <unit id="1225716463484" at="80,23,103,13" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$7$1$1" />
+      <unit id="1225716463484" at="78,19,105,9" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$7$1" />
       <unit id="1225716463484" at="76,54,107,5" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test$7" />
       <unit id="1204285379459" at="22,0,167,0" name="jetbrains.mps.internalCollections.test.closures.SelectTest_Test" />
     </file>
@@ -2133,13 +2133,13 @@
       <unit id="1235567714048" at="214,59,218,5" name="jetbrains.mps.internalCollections.test.closures.Find_Test$16" />
       <unit id="1235567749451" at="220,60,224,5" name="jetbrains.mps.internalCollections.test.closures.Find_Test$17" />
       <unit id="1235567758243" at="225,59,229,5" name="jetbrains.mps.internalCollections.test.closures.Find_Test$18" />
-      <unit id="1235567641055" at="176,23,199,13" name="jetbrains.mps.internalCollections.test.closures.Find_Test$15" />
-      <unit id="1235567641055" at="174,19,201,9" name="jetbrains.mps.internalCollections.test.closures.Find_Test$14" />
+      <unit id="1235567641055" at="176,23,199,13" name="jetbrains.mps.internalCollections.test.closures.Find_Test$13$1$1" />
+      <unit id="1235567641055" at="174,19,201,9" name="jetbrains.mps.internalCollections.test.closures.Find_Test$13$1" />
       <unit id="1235567641055" at="172,55,203,5" name="jetbrains.mps.internalCollections.test.closures.Find_Test$13" />
-      <unit id="1225728713280" at="20,23,60,13" name="jetbrains.mps.internalCollections.test.closures.Find_Test$3" />
-      <unit id="1235567193960" at="100,23,140,13" name="jetbrains.mps.internalCollections.test.closures.Find_Test$9" />
-      <unit id="1225728713280" at="18,19,62,9" name="jetbrains.mps.internalCollections.test.closures.Find_Test$2" />
-      <unit id="1235567193960" at="98,19,142,9" name="jetbrains.mps.internalCollections.test.closures.Find_Test$8" />
+      <unit id="1225728713280" at="20,23,60,13" name="jetbrains.mps.internalCollections.test.closures.Find_Test$1$1$1" />
+      <unit id="1235567193960" at="100,23,140,13" name="jetbrains.mps.internalCollections.test.closures.Find_Test$7$1$1" />
+      <unit id="1225728713280" at="18,19,62,9" name="jetbrains.mps.internalCollections.test.closures.Find_Test$1$1" />
+      <unit id="1235567193960" at="98,19,142,9" name="jetbrains.mps.internalCollections.test.closures.Find_Test$7$1" />
       <unit id="1225728713280" at="16,54,64,5" name="jetbrains.mps.internalCollections.test.closures.Find_Test$1" />
       <unit id="1235567193960" at="96,54,144,5" name="jetbrains.mps.internalCollections.test.closures.Find_Test$7" />
       <unit id="1225728681796" at="14,0,237,0" name="jetbrains.mps.internalCollections.test.closures.Find_Test" />
@@ -2660,11 +2660,11 @@
         <var name="test" id="5192201647735776401" />
       </scope>
       <scope id="5192201647735776246" at="11,0,106,0" />
-      <unit id="5192201647735776424" at="31,41,66,31" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$6" />
-      <unit id="5192201647735776424" at="29,37,68,27" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$5" />
-      <unit id="5192201647735776424" at="27,62,70,23" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$4" />
-      <unit id="5192201647735776407" at="16,23,99,13" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$3" />
-      <unit id="5192201647735776407" at="14,19,101,9" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$2" />
+      <unit id="5192201647735776424" at="31,41,66,31" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1$1$1$1$1$1" />
+      <unit id="5192201647735776424" at="29,37,68,27" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1$1$1$1$1" />
+      <unit id="5192201647735776424" at="27,62,70,23" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1$1$1$1" />
+      <unit id="5192201647735776407" at="16,23,99,13" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1$1$1" />
+      <unit id="5192201647735776407" at="14,19,101,9" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1$1" />
       <unit id="5192201647735776407" at="12,53,103,5" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1" />
       <unit id="5192201647735776239" at="10,0,109,0" name="jetbrains.mps.internalCollections.test.closures.Advanced_Test" />
     </file>

@@ -602,7 +602,7 @@
       </scope>
       <unit id="9116864641331682404" at="81,234,85,5" name="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$1" />
       <unit id="349040528368103660" at="120,31,124,5" name="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$3" />
-      <unit id="2034046503361625855" at="96,61,116,9" name="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$3" />
+      <unit id="2034046503361625855" at="96,61,116,9" name="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$2$1" />
       <unit id="2034046503361625849" at="94,101,118,5" name="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$2" />
       <unit id="1833497744616771108" at="37,0,131,0" name="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action" />
     </file>
@@ -818,9 +818,9 @@
         <var name="_params" id="2843918448603437232" />
         <var name="event" id="2843918448603437232" />
       </scope>
-      <unit id="9093884364910647930" at="55,200,59,9" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$2" />
-      <unit id="9093884364910660794" at="59,25,63,9" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$2" />
-      <unit id="2843918448603437253" at="63,21,67,9" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$2" />
+      <unit id="9093884364910647930" at="55,200,59,9" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$1$1" />
+      <unit id="9093884364910660794" at="59,25,63,9" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$1$2" />
+      <unit id="2843918448603437253" at="63,21,67,9" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$1$3" />
       <unit id="967904411518176977" at="53,83,70,5" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$1" />
       <unit id="2843918448603437232" at="26,0,81,0" name="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action" />
     </file>

@@ -278,7 +278,7 @@
         <var name="editorContext" id="2882388703616228635" />
         <var name="node" id="2882388703616228635" />
       </scope>
-      <unit id="2882388703616283560" at="74,19,111,9" name="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$2" />
+      <unit id="2882388703616283560" at="74,19,111,9" name="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$1$1" />
       <unit id="2882388703616228635" at="72,36,113,5" name="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$1" />
       <unit id="2882388703616228151" at="29,0,122,0" name="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor" />
     </file>
@@ -1199,9 +1199,9 @@
         <var name="editorContext" id="7483705179651268810" />
         <var name="node" id="7483705179651268810" />
       </scope>
-      <unit id="6645285158565208820" at="165,27,195,17" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$4" />
-      <unit id="3417144755649161913" at="162,23,197,13" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$3" />
-      <unit id="7483705179651268867" at="79,19,214,9" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$2" />
+      <unit id="6645285158565208820" at="165,27,195,17" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$1$1$1$1" />
+      <unit id="3417144755649161913" at="162,23,197,13" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$1$1$1" />
+      <unit id="7483705179651268867" at="79,19,214,9" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$1$1" />
       <unit id="7483705179651268810" at="77,36,216,5" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$1" />
       <unit id="7483705179651268326" at="34,0,222,0" name="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor" />
     </file>
@@ -1825,7 +1825,7 @@
         <var name="editorContext" id="7651593722933678122" />
         <var name="node" id="7651593722933678122" />
       </scope>
-      <unit id="4550201027691224956" at="24,19,24,561" name="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$2" />
+      <unit id="4550201027691224956" at="24,19,24,561" name="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$1$1" />
       <unit id="7651593722933678122" at="22,36,26,5" name="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$1" />
       <unit id="7651593722933678120" at="17,0,33,0" name="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor" />
     </file>

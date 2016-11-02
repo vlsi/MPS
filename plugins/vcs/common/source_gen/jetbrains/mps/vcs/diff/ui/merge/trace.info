@@ -389,7 +389,7 @@
         <var name="titles" id="2657001694096388925" />
       </scope>
       <unit id="2657001694096388646" at="84,28,88,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane$1" />
-      <unit id="2657001694096388733" at="101,49,105,9" name="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane$3" />
+      <unit id="2657001694096388733" at="101,49,105,9" name="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane$2$1" />
       <unit id="2657001694096389010" at="168,55,172,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane$4" />
       <unit id="2657001694096389158" at="210,61,214,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane$5" />
       <unit id="2657001694096389178" at="216,115,220,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane$6" />
@@ -1015,11 +1015,11 @@
       <unit id="2657001694103488970" at="365,19,369,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$17" />
       <unit id="2657001694103488996" at="369,23,373,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$18" />
       <unit id="2657001694103489026" at="379,71,383,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$19" />
-      <unit id="2657001694103489232" at="449,35,453,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$1" />
-      <unit id="2657001694103489304" at="463,206,467,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$2" />
-      <unit id="2657001694103489325" at="469,69,473,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$3" />
-      <unit id="2657001694103489422" at="489,53,493,11" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$4" />
-      <unit id="2657001694103489442" at="497,72,501,11" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$5" />
+      <unit id="2657001694103489232" at="449,35,453,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$MergeModelsTree$1" />
+      <unit id="2657001694103489304" at="463,206,467,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$MergeModelsTree$2" />
+      <unit id="2657001694103489325" at="469,69,473,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$MergeModelsTree$3" />
+      <unit id="2657001694103489422" at="489,53,493,11" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$MergeModelsTree$4" />
+      <unit id="2657001694103489442" at="497,72,501,11" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$MergeModelsTree$5" />
       <unit id="3587066204655429069" at="100,45,105,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$2" />
       <unit id="2034046503373008815" at="390,55,395,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$20" />
       <unit id="859771510723425123" at="207,66,213,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeModelsPanel$7" />
@@ -1233,7 +1233,7 @@
       </scope>
       <unit id="708166622413811559" at="29,180,33,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$1" />
       <unit id="708166622413811581" at="34,124,38,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$2" />
-      <unit id="2034046503373010848" at="55,57,60,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$1" />
+      <unit id="2034046503373010848" at="55,57,60,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$MyButton$1" />
       <unit id="708166622413811460" at="47,0,63,0" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$MyButton" />
       <unit id="708166622413811400" at="19,0,64,0" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter" />
     </file>

@@ -1891,7 +1891,7 @@
       <scope id="5938312768538925726" at="31,0,36,0" />
       <scope id="2345623147105465521" at="27,51,36,9" />
       <scope id="2345623147105465521" at="26,0,38,0" />
-      <unit id="5938312768538925726" at="30,88,36,7" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$1" />
+      <unit id="5938312768538925726" at="30,88,36,7" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody$1" />
       <unit id="2345623147105465521" at="24,0,39,0" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
       <unit id="2345623147105465521" at="16,0,40,0" name="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test" />
     </file>

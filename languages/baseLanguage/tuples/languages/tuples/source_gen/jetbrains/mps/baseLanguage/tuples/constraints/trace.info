@@ -66,8 +66,8 @@
         <var name="references" id="1239575916907" />
       </scope>
       <scope id="1239575916907" at="32,0,61,0" />
-      <unit id="2912004279740772204" at="46,506,50,13" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$3" />
-      <unit id="1239575916907" at="43,19,56,9" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$2" />
+      <unit id="2912004279740772204" at="46,506,50,13" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$1$1$1" />
+      <unit id="1239575916907" at="43,19,56,9" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$1$1" />
       <unit id="1239575916907" at="35,158,58,5" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$1" />
       <unit id="1239575916907" at="27,0,63,0" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints" />
     </file>
@@ -170,9 +170,9 @@
         <var name="references" id="1239576894334" />
       </scope>
       <scope id="1239576894334" at="69,0,99,0" />
-      <unit id="2912004279740772177" at="84,302,88,13" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$4" />
+      <unit id="2912004279740772177" at="84,302,88,13" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$2$1$1" />
       <unit id="1239576894334" at="56,138,66,5" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$1" />
-      <unit id="1239576894334" at="80,19,94,9" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$3" />
+      <unit id="1239576894334" at="80,19,94,9" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$2$1" />
       <unit id="1239576894334" at="72,147,96,5" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$2" />
       <unit id="1239576894334" at="34,0,105,0" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints" />
     </file>
@@ -335,7 +335,7 @@
         <var name="references" id="1652220223504359701" />
       </scope>
       <scope id="1652220223504359701" at="28,0,53,0" />
-      <unit id="1652220223504359701" at="39,19,48,9" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_Constraints$2" />
+      <unit id="1652220223504359701" at="39,19,48,9" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_Constraints$1$1" />
       <unit id="1652220223504359701" at="31,148,50,5" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_Constraints$1" />
       <unit id="1652220223504359701" at="23,0,55,0" name="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_Constraints" />
     </file>

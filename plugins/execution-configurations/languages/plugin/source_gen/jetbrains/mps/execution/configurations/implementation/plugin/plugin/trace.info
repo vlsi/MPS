@@ -814,9 +814,9 @@
         <var name="environment" id="33324785354130501" />
         <var name="project" id="33324785354130501" />
       </scope>
-      <unit id="33324785354799865" at="75,57,79,11" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$2" />
-      <unit id="2640006856203720301" at="73,60,81,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$1" />
-      <unit id="4337072726661637579" at="104,60,124,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$2" />
+      <unit id="33324785354799865" at="75,57,79,11" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$DeployPlugins_BeforeTask_RunTask$1$1" />
+      <unit id="2640006856203720301" at="73,60,81,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$DeployPlugins_BeforeTask_RunTask$1" />
+      <unit id="4337072726661637579" at="104,60,124,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$DeployPlugins_BeforeTask_RunTask$2" />
       <unit id="33324785354130501" at="53,0,138,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask$DeployPlugins_BeforeTask_RunTask" />
       <unit id="33324785354130501" at="41,0,139,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask" />
     </file>
@@ -930,8 +930,8 @@
         <var name="environment" id="4283566179238991813" />
         <var name="project" id="4283566179238991813" />
       </scope>
-      <unit id="4283566179239140778" at="47,57,51,11" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask$2" />
-      <unit id="4283566179239140772" at="45,60,53,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask$1" />
+      <unit id="4283566179239140778" at="47,57,51,11" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask$MakeDeployScripts_BeforeTask_RunTask$1$1" />
+      <unit id="4283566179239140772" at="45,60,53,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask$MakeDeployScripts_BeforeTask_RunTask$1" />
       <unit id="4283566179238991813" at="28,0,66,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask$MakeDeployScripts_BeforeTask_RunTask" />
       <unit id="4283566179238991813" at="17,0,67,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask" />
     </file>

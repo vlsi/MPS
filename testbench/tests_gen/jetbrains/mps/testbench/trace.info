@@ -510,11 +510,11 @@
         <var name="orig" id="3416062119153932839" />
         <var name="revd" id="3416062119153932841" />
       </scope>
-      <unit id="5294074698114021992" at="111,53,115,9" name="jetbrains.mps.testbench.ModuleGenerationHolder$2" />
+      <unit id="5294074698114021992" at="111,53,115,9" name="jetbrains.mps.testbench.ModuleGenerationHolder$1$1" />
       <unit id="3767231643656643804" at="274,90,278,5" name="jetbrains.mps.testbench.ModuleGenerationHolder$5" />
       <unit id="3767231643656643813" at="278,21,282,5" name="jetbrains.mps.testbench.ModuleGenerationHolder$6" />
-      <unit id="5680799519293372188" at="288,121,292,9" name="jetbrains.mps.testbench.ModuleGenerationHolder$8" />
-      <unit id="5680799519293372197" at="292,21,296,9" name="jetbrains.mps.testbench.ModuleGenerationHolder$8" />
+      <unit id="5680799519293372188" at="288,121,292,9" name="jetbrains.mps.testbench.ModuleGenerationHolder$7$1" />
+      <unit id="5680799519293372197" at="292,21,296,9" name="jetbrains.mps.testbench.ModuleGenerationHolder$7$2" />
       <unit id="3416062119153994971" at="168,89,175,7" name="jetbrains.mps.testbench.ModuleGenerationHolder$2" />
       <unit id="3416062119153995013" at="176,89,183,7" name="jetbrains.mps.testbench.ModuleGenerationHolder$3" />
       <unit id="6607750055058549114" at="259,52,268,5" name="jetbrains.mps.testbench.ModuleGenerationHolder$4" />

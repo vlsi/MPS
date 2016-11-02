@@ -2205,11 +2205,11 @@
       </scope>
       <scope id="877422884702866849" at="88,10,243,7" />
       <unit id="877422884702842719" at="85,0,88,0" name="jetbrains.mps.baseLanguage.math.runtime.Interval$IteratorFactory" />
-      <unit id="877422884702866960" at="92,19,117,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$2" />
-      <unit id="877422884702867028" at="123,19,148,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$3" />
-      <unit id="877422884702867096" at="154,19,179,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$4" />
-      <unit id="877422884702867162" at="185,19,210,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$5" />
-      <unit id="877422884702867225" at="216,19,241,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$6" />
+      <unit id="877422884702866960" at="92,19,117,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$1$1" />
+      <unit id="877422884702867028" at="123,19,148,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$2$1" />
+      <unit id="877422884702867096" at="154,19,179,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$3$1" />
+      <unit id="877422884702867162" at="185,19,210,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$4$1" />
+      <unit id="877422884702867225" at="216,19,241,9" name="jetbrains.mps.baseLanguage.math.runtime.Interval$5$1" />
       <unit id="877422884702866857" at="89,50,119,5" name="jetbrains.mps.baseLanguage.math.runtime.Interval$1" />
       <unit id="877422884702866878" at="120,45,150,5" name="jetbrains.mps.baseLanguage.math.runtime.Interval$2" />
       <unit id="877422884702866899" at="151,46,181,5" name="jetbrains.mps.baseLanguage.math.runtime.Interval$3" />

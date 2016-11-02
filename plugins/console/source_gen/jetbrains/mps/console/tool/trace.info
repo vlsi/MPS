@@ -1277,27 +1277,27 @@
       <scope id="4914591330906788051" at="478,43,540,6" />
       <scope id="4914591330906788048" at="478,0,542,0" />
       <unit id="4176612323165936630" at="431,137,435,7" name="jetbrains.mps.console.tool.BaseConsoleTab$6" />
-      <unit id="328850564587494307" at="533,25,537,11" name="jetbrains.mps.console.tool.BaseConsoleTab$10" />
-      <unit id="8162894946400558058" at="585,70,590,9" name="jetbrains.mps.console.tool.BaseConsoleTab$13" />
-      <unit id="9008866792797021915" at="235,69,241,9" name="jetbrains.mps.console.tool.BaseConsoleTab$5" />
-      <unit id="5178865282957948554" at="498,73,504,17" name="jetbrains.mps.console.tool.BaseConsoleTab$12" />
+      <unit id="328850564587494307" at="533,25,537,11" name="jetbrains.mps.console.tool.BaseConsoleTab$9$2" />
+      <unit id="8162894946400558058" at="585,70,590,9" name="jetbrains.mps.console.tool.BaseConsoleTab$12$1" />
+      <unit id="9008866792797021915" at="235,69,241,9" name="jetbrains.mps.console.tool.BaseConsoleTab$4$1" />
+      <unit id="5178865282957948554" at="498,73,504,17" name="jetbrains.mps.console.tool.BaseConsoleTab$9$1$1$1" />
       <unit id="8162894946400607263" at="214,66,221,5" name="jetbrains.mps.console.tool.BaseConsoleTab$3" />
-      <unit id="659388009543659122" at="572,69,579,13" name="jetbrains.mps.console.tool.BaseConsoleTab$13" />
-      <unit id="1083035892705182372" at="182,65,191,9" name="jetbrains.mps.console.tool.BaseConsoleTab$3" />
+      <unit id="659388009543659122" at="572,69,579,13" name="jetbrains.mps.console.tool.BaseConsoleTab$11$1$1" />
+      <unit id="1083035892705182372" at="182,65,191,9" name="jetbrains.mps.console.tool.BaseConsoleTab$2$1" />
       <unit id="8251307538231034266" at="554,50,563,5" name="jetbrains.mps.console.tool.BaseConsoleTab$10" />
       <unit id="7287617939140904239" at="583,11,592,5" name="jetbrains.mps.console.tool.BaseConsoleTab$12" />
       <unit id="9008866792796992719" at="233,40,243,5" name="jetbrains.mps.console.tool.BaseConsoleTab$4" />
       <unit id="7538089231784120885" at="411,65,421,5" name="jetbrains.mps.console.tool.BaseConsoleTab$5" />
       <unit id="7538089231777682886" at="465,15,475,5" name="jetbrains.mps.console.tool.BaseConsoleTab$8" />
-      <unit id="5178865282957785519" at="496,122,506,13" name="jetbrains.mps.console.tool.BaseConsoleTab$11" />
-      <unit id="8162894946400538415" at="570,118,581,9" name="jetbrains.mps.console.tool.BaseConsoleTab$12" />
+      <unit id="5178865282957785519" at="496,122,506,13" name="jetbrains.mps.console.tool.BaseConsoleTab$9$1$1" />
+      <unit id="8162894946400538415" at="570,118,581,9" name="jetbrains.mps.console.tool.BaseConsoleTab$11$1" />
       <unit id="7538089231777682220" at="146,24,159,5" name="jetbrains.mps.console.tool.BaseConsoleTab$1" />
       <unit id="1083035892705009281" at="180,114,193,5" name="jetbrains.mps.console.tool.BaseConsoleTab$2" />
       <unit id="4176612323166022616" at="435,22,449,7" name="jetbrains.mps.console.tool.BaseConsoleTab$7" />
-      <unit id="5178865282957777432" at="493,39,508,9" name="jetbrains.mps.console.tool.BaseConsoleTab$10" />
+      <unit id="5178865282957777432" at="493,39,508,9" name="jetbrains.mps.console.tool.BaseConsoleTab$9$1" />
       <unit id="7287617939140817021" at="564,460,583,5" name="jetbrains.mps.console.tool.BaseConsoleTab$11" />
       <unit id="7538089231777683430" at="329,0,357,0" name="jetbrains.mps.console.tool.BaseConsoleTab$ExecuteClosureAction" />
-      <unit id="8162894946400630943" at="367,68,396,7" name="jetbrains.mps.console.tool.BaseConsoleTab$1" />
+      <unit id="8162894946400630943" at="367,68,396,7" name="jetbrains.mps.console.tool.BaseConsoleTab$MyPasteProvider$1" />
       <unit id="7538089231777683454" at="358,0,405,0" name="jetbrains.mps.console.tool.BaseConsoleTab$MyPasteProvider" />
       <unit id="7538089231777682905" at="479,15,540,5" name="jetbrains.mps.console.tool.BaseConsoleTab$9" />
       <unit id="4914591330900787311" at="98,0,647,0" name="jetbrains.mps.console.tool.BaseConsoleTab" />
@@ -1609,12 +1609,12 @@
         <var name="event" id="7538089231777683209" />
       </scope>
       <unit id="2893936025731806889" at="130,11,134,5" name="jetbrains.mps.console.tool.DialogConsoleTab$4" />
-      <unit id="2108296889951697202" at="224,50,228,9" name="jetbrains.mps.console.tool.DialogConsoleTab$6" />
+      <unit id="2108296889951697202" at="224,50,228,9" name="jetbrains.mps.console.tool.DialogConsoleTab$5$1" />
       <unit id="1423104411234877698" at="94,67,99,5" name="jetbrains.mps.console.tool.DialogConsoleTab$1" />
       <unit id="7538089231777682856" at="113,69,119,5" name="jetbrains.mps.console.tool.DialogConsoleTab$2" />
       <unit id="2893936025731773577" at="123,22,130,5" name="jetbrains.mps.console.tool.DialogConsoleTab$3" />
       <unit id="7538089231777682823" at="102,0,111,0" name="jetbrains.mps.console.tool.DialogConsoleTab$ExecuteAction" />
-      <unit id="8716503117852577723" at="143,56,152,7" name="jetbrains.mps.console.tool.DialogConsoleTab$1" />
+      <unit id="8716503117852577723" at="143,56,152,7" name="jetbrains.mps.console.tool.DialogConsoleTab$ClearAction$1" />
       <unit id="6243883726569188381" at="220,69,238,5" name="jetbrains.mps.console.tool.DialogConsoleTab$5" />
       <unit id="7538089231777683160" at="137,0,156,0" name="jetbrains.mps.console.tool.DialogConsoleTab$ClearAction" />
       <unit id="7538089231777683319" at="192,0,218,0" name="jetbrains.mps.console.tool.DialogConsoleTab$NextCmdAction" />

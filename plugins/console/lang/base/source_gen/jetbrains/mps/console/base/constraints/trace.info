@@ -45,7 +45,7 @@
         <var name="references" id="328850564594282261" />
       </scope>
       <scope id="328850564594282261" at="25,0,46,0" />
-      <unit id="328850564594282261" at="32,19,41,9" name="jetbrains.mps.console.base.constraints.NodeReferenceString_Constraints$2" />
+      <unit id="328850564594282261" at="32,19,41,9" name="jetbrains.mps.console.base.constraints.NodeReferenceString_Constraints$1$1" />
       <unit id="328850564594282261" at="28,153,43,5" name="jetbrains.mps.console.base.constraints.NodeReferenceString_Constraints$1" />
       <unit id="328850564594282261" at="20,0,47,0" name="jetbrains.mps.console.base.constraints.NodeReferenceString_Constraints" />
     </file>
@@ -79,7 +79,7 @@
         <var name="references" id="328850564594334290" />
       </scope>
       <scope id="328850564594334290" at="25,0,46,0" />
-      <unit id="328850564594334290" at="32,19,41,9" name="jetbrains.mps.console.base.constraints.PastedNodeReference_Constraints$2" />
+      <unit id="328850564594334290" at="32,19,41,9" name="jetbrains.mps.console.base.constraints.PastedNodeReference_Constraints$1$1" />
       <unit id="328850564594334290" at="28,153,43,5" name="jetbrains.mps.console.base.constraints.PastedNodeReference_Constraints$1" />
       <unit id="328850564594334290" at="20,0,47,0" name="jetbrains.mps.console.base.constraints.PastedNodeReference_Constraints" />
     </file>
@@ -192,9 +192,9 @@
         <var name="references" id="6928665434433926636" />
       </scope>
       <scope id="6928665434433926636" at="35,0,78,0" />
-      <unit id="6928665434435581571" at="61,42,65,13" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$4" />
-      <unit id="6928665434438211135" at="61,23,71,13" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$3" />
-      <unit id="6928665434433926636" at="46,19,73,9" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$2" />
+      <unit id="6928665434435581571" at="61,42,65,13" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$1$1$1$1" />
+      <unit id="6928665434438211135" at="61,23,71,13" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$1$1$1" />
+      <unit id="6928665434433926636" at="46,19,73,9" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$1$1" />
       <unit id="6928665434433926636" at="38,155,75,5" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints$1" />
       <unit id="6928665434433926636" at="30,0,80,0" name="jetbrains.mps.console.base.constraints.HelpConceptReference_Constraints" />
     </file>

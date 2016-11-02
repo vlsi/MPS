@@ -108,12 +108,12 @@
         <var name="result" id="8634171685214412106" />
       </scope>
       <scope id="2304492758936032145" at="33,0,88,0" />
-      <unit id="1891402444881801230" at="46,73,50,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$2" />
-      <unit id="8634171685214378755" at="58,235,62,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$3" />
-      <unit id="8634171685214444577" at="74,411,78,13" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$5" />
+      <unit id="1891402444881801230" at="46,73,50,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$1$1" />
+      <unit id="8634171685214378755" at="58,235,62,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$2$1" />
+      <unit id="8634171685214444577" at="74,411,78,13" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$3$1$1" />
       <unit id="1891402444881711180" at="44,47,52,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$1" />
       <unit id="1891402444881821365" at="56,47,64,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$2" />
-      <unit id="8634171685214220726" at="71,100,80,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$4" />
+      <unit id="8634171685214220726" at="71,100,80,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$3$1" />
       <unit id="1912033194715263585" at="69,41,82,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$3" />
       <unit id="2304492758936015027" at="28,0,102,0" name="jetbrains.mps.build.mps.runner.test.test4.MainClass" />
     </file>

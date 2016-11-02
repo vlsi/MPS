@@ -665,7 +665,7 @@
       </scope>
       <scope id="3310779261129403176" at="100,0,131,0" />
       <unit id="2024340988248532370" at="71,330,75,5" name="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$1" />
-      <unit id="966120346905089641" at="86,147,90,11" name="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$3" />
+      <unit id="966120346905089641" at="86,147,90,11" name="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2$1" />
       <unit id="4842378213273504519" at="162,62,169,5" name="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$4" />
       <unit id="4842378213273245643" at="175,62,182,5" name="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$5" />
       <unit id="4727318612211906949" at="143,49,155,5" name="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$3" />

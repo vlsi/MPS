@@ -341,7 +341,7 @@
       </scope>
       <scope id="5239595863285690522" at="88,41,141,5" />
       <scope id="5239595863285690522" at="87,0,143,0" />
-      <unit id="52693210515597171" at="114,93,118,15" name="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler$2" />
+      <unit id="52693210515597171" at="114,93,118,15" name="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler$1$1" />
       <unit id="5239595863285782212" at="102,54,135,7" name="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler$1" />
       <unit id="5239595863285690522" at="30,0,144,0" name="jetbrains.mps.ide.httpsupport.nodeaccess.plugin.JavaFileOpener_RequestHandler" />
     </file>

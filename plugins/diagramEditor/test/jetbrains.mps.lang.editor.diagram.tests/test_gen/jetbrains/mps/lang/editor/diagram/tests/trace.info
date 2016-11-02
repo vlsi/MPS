@@ -189,8 +189,8 @@
         <var name="nodeDecoratorView" id="8637675947033349107" />
       </scope>
       <scope id="141381309807570241" at="34,0,60,0" />
-      <unit id="1560508619094753193" at="39,47,43,7" name="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$1" />
-      <unit id="8637675947033361691" at="50,106,54,7" name="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$2" />
+      <unit id="1560508619094753193" at="39,47,43,7" name="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody$1" />
+      <unit id="8637675947033361691" at="50,106,54,7" name="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody$2" />
       <unit id="141381309807570241" at="32,0,61,0" name="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody" />
       <unit id="141381309807570241" at="24,0,62,0" name="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test" />
     </file>
@@ -237,8 +237,8 @@
         <var name="portDecoratorView" id="8637675947033226397" />
       </scope>
       <scope id="1560508619094015367" at="34,0,62,0" />
-      <unit id="1560508619094843924" at="38,47,42,7" name="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$1" />
-      <unit id="8637675947033301922" at="52,106,56,7" name="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$2" />
+      <unit id="1560508619094843924" at="38,47,42,7" name="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$TestBody$1" />
+      <unit id="8637675947033301922" at="52,106,56,7" name="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$TestBody$2" />
       <unit id="1560508619094015367" at="32,0,63,0" name="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$TestBody" />
       <unit id="1560508619094015367" at="24,0,64,0" name="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test" />
     </file>
@@ -311,7 +311,7 @@
         <var name="descendantMapper" id="1560508619094539123" />
       </scope>
       <scope id="1560508619094462934" at="27,0,42,0" />
-      <unit id="1560508619094539126" at="31,47,35,7" name="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test$1" />
+      <unit id="1560508619094539126" at="31,47,35,7" name="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test$TestBody$1" />
       <unit id="1560508619094462934" at="25,0,43,0" name="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test$TestBody" />
       <unit id="1560508619094462934" at="17,0,44,0" name="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test" />
     </file>
@@ -355,8 +355,8 @@
         <var name="node" id="1560508619094826345" />
       </scope>
       <scope id="1638882350373384592" at="34,0,59,0" />
-      <unit id="1560508619094826348" at="38,47,42,7" name="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$1" />
-      <unit id="7634868377612971672" at="50,107,54,7" name="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$2" />
+      <unit id="1560508619094826348" at="38,47,42,7" name="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$TestBody$1" />
+      <unit id="7634868377612971672" at="50,107,54,7" name="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$TestBody$2" />
       <unit id="1638882350373384592" at="32,0,60,0" name="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$TestBody" />
       <unit id="1638882350373384592" at="24,0,61,0" name="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test" />
     </file>
@@ -426,7 +426,7 @@
         <var name="descendantMapper" id="2278461409092628332" />
       </scope>
       <scope id="2278461409091838098" at="33,0,56,0" />
-      <unit id="2278461409092628338" at="44,47,51,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$1" />
+      <unit id="2278461409092628338" at="44,47,51,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$TestBody$1" />
       <unit id="2278461409091838098" at="31,0,57,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$TestBody" />
       <unit id="2278461409091838098" at="23,0,58,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test" />
     </file>
@@ -476,7 +476,7 @@
       </scope>
       <scope id="2278461409093519741" at="27,51,42,0" />
       <scope id="2278461409093519741" at="26,0,44,0" />
-      <unit id="2278461409094182556" at="29,103,33,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$1" />
+      <unit id="2278461409094182556" at="29,103,33,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody$1" />
       <unit id="2278461409093519741" at="24,0,45,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
       <unit id="2278461409093519741" at="16,0,46,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
     </file>
@@ -899,9 +899,9 @@
         <var name="descendantMapper" id="8041297453110553859" />
       </scope>
       <scope id="8041297453110598744" at="32,0,57,0" />
-      <unit id="8041297453111307834" at="37,51,41,11" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$2" />
-      <unit id="8041297453111247731" at="45,47,52,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$2" />
-      <unit id="8041297453111221043" at="35,39,43,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$1" />
+      <unit id="8041297453111307834" at="37,51,41,11" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody$1$1" />
+      <unit id="8041297453111247731" at="45,47,52,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody$2" />
+      <unit id="8041297453111221043" at="35,39,43,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody$1" />
       <unit id="8041297453110598744" at="30,0,58,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody" />
       <unit id="8041297453110598744" at="22,0,59,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test" />
     </file>
@@ -1096,7 +1096,7 @@
         <var name="descendantMapper" id="1560508619094548467" />
       </scope>
       <scope id="83003444452611279" at="27,0,42,0" />
-      <unit id="1560508619094548470" at="31,47,35,7" name="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test$1" />
+      <unit id="1560508619094548470" at="31,47,35,7" name="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test$TestBody$1" />
       <unit id="83003444452611279" at="25,0,43,0" name="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test$TestBody" />
       <unit id="83003444452611279" at="17,0,44,0" name="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test" />
     </file>
@@ -1124,7 +1124,7 @@
         <var name="descendantMapper" id="1560508619094544036" />
       </scope>
       <scope id="83003444452667991" at="27,0,41,0" />
-      <unit id="1560508619094544039" at="31,47,35,7" name="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test$1" />
+      <unit id="1560508619094544039" at="31,47,35,7" name="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test$TestBody$1" />
       <unit id="83003444452667991" at="25,0,42,0" name="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test$TestBody" />
       <unit id="83003444452667991" at="17,0,43,0" name="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test" />
     </file>

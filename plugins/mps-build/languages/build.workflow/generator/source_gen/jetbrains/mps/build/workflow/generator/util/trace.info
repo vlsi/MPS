@@ -503,7 +503,7 @@
       <unit id="6921753234511818182" at="141,231,145,9" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$6" />
       <unit id="7926701909975654262" at="165,435,169,7" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$7" />
       <unit id="1692280246134755830" at="192,39,196,5" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$8" />
-      <unit id="6647099934206976286" at="214,235,218,11" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$1" />
+      <unit id="6647099934206976286" at="214,235,218,11" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$Module$1" />
       <unit id="2219920121494329672" at="42,213,52,5" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$1" />
       <unit id="4755209551904421660" at="202,0,234,0" name="jetbrains.mps.build.workflow.generator.util.CycleHelper$Module" />
       <unit id="4755209551904406840" at="32,0,238,0" name="jetbrains.mps.build.workflow.generator.util.CycleHelper" />

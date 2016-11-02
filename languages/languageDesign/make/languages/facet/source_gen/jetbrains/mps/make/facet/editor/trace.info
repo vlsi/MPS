@@ -783,10 +783,10 @@
       <scope id="1741258697587108642" at="47,0,70,0">
         <var name="_context" id="1741258697587108642" />
       </scope>
-      <unit id="1741258697587108673" at="52,222,56,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$1" />
-      <unit id="1741258697587108687" at="56,220,60,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$2" />
-      <unit id="1741258697587108698" at="60,21,64,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$3" />
-      <unit id="1741258697587108707" at="64,23,68,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$4" />
+      <unit id="1741258697587108673" at="52,222,56,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$1" />
+      <unit id="1741258697587108687" at="56,220,60,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$2" />
+      <unit id="1741258697587108698" at="60,21,64,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$3" />
+      <unit id="1741258697587108707" at="64,23,68,7" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$4" />
       <unit id="1741258697587108642" at="81,0,117,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$SubstituteMenuPart_Action_gb3jz3_a0$Item" />
       <unit id="1741258697587108642" at="70,0,118,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a$SubstituteMenuPart_Action_gb3jz3_a0" />
       <unit id="1741258697587108642" at="41,0,120,0" name="jetbrains.mps.make.facet.editor.ForeignParameters$SubstituteMenuPart_Parameterized_gb3jz3_a" />
@@ -937,13 +937,13 @@
       <scope id="1741258697587108850" at="58,0,114,0">
         <var name="_context" id="1741258697587108850" />
       </scope>
-      <unit id="1741258697587108877" at="62,257,66,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$1" />
+      <unit id="1741258697587108877" at="62,257,66,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$1" />
       <unit id="1741258697587108850" at="159,0,168,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Subconcepts_70edxa_b" />
       <unit id="1741258697587108850" at="125,0,156,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$SubstituteMenuPart_Action_70edxa_a0$Item" />
-      <unit id="1741258697587108891" at="70,25,108,15" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$4" />
-      <unit id="1741258697587108891" at="68,21,110,11" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$3" />
+      <unit id="1741258697587108891" at="70,25,108,15" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$2$1$1" />
+      <unit id="1741258697587108891" at="68,21,110,11" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$2$1" />
       <unit id="1741258697587108850" at="114,0,157,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$SubstituteMenuPart_Action_70edxa_a0" />
-      <unit id="1741258697587108891" at="66,23,112,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$2" />
+      <unit id="1741258697587108891" at="66,23,112,7" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a$2" />
       <unit id="1741258697587108850" at="52,0,159,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu$SubstituteMenuPart_Parameterized_70edxa_a" />
       <unit id="1741258697587108850" at="42,0,169,0" name="jetbrains.mps.make.facet.editor.TargetDependency_SubstituteMenu" />
     </file>

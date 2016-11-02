@@ -409,10 +409,10 @@
         <var name="editorContext" id="1171743928471867551" />
         <var name="node" id="1171743928471867551" />
       </scope>
-      <unit id="1171743928471867473" at="66,299,70,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$2" />
-      <unit id="1171743928471867509" at="74,223,78,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$2" />
-      <unit id="1171743928471867566" at="111,299,115,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$3" />
-      <unit id="1171743928471867602" at="119,227,123,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$3" />
+      <unit id="1171743928471867473" at="66,299,70,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$1$1" />
+      <unit id="1171743928471867509" at="74,223,78,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$1$2" />
+      <unit id="1171743928471867566" at="111,299,115,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$2$1" />
+      <unit id="1171743928471867602" at="119,227,123,9" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$2$2" />
       <unit id="1171743928471867458" at="64,83,90,5" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$1" />
       <unit id="1171743928471867551" at="109,83,135,5" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$2" />
       <unit id="1171743928471867455" at="33,0,159,0" name="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint" />
@@ -7468,11 +7468,11 @@
       <scope id="1510095204162258770" at="86,0,104,0">
         <var name="pattern" id="1510095204162258770" />
       </scope>
-      <unit id="896260991092262519" at="79,486,83,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$1" />
-      <unit id="1510095204162487240" at="88,269,92,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$2" />
-      <unit id="1510095204162538425" at="98,418,102,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$3" />
-      <unit id="896260991091593005" at="135,486,139,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$1" />
-      <unit id="6362712118339818148" at="145,250,149,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$2" />
+      <unit id="896260991092262519" at="79,486,83,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a0$Item$1" />
+      <unit id="1510095204162487240" at="88,269,92,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a0$Item$2" />
+      <unit id="1510095204162538425" at="98,418,102,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a0$Item$3" />
+      <unit id="896260991091593005" at="135,486,139,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a1$Item$1" />
+      <unit id="6362712118339818148" at="145,250,149,9" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a1$Item$2" />
       <unit id="1510095204162272376" at="113,0,153,0" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a1$Item" />
       <unit id="1510095204162272376" at="107,0,154,0" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a1" />
       <unit id="1510095204162258770" at="58,0,106,0" name="jetbrains.mps.lang.plugin.editor.ActionDeclaration_TransformationMenu$TransformationMenuPart_Action_xfq2dd_a0$Item" />
@@ -10250,14 +10250,14 @@
       <scope id="1131989153476127540" at="233,0,268,0">
         <var name="pattern" id="1131989153476127540" />
       </scope>
-      <unit id="896260991090205362" at="149,480,153,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$1" />
-      <unit id="1510095204161236462" at="172,264,176,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$2" />
-      <unit id="1510095204161236481" at="176,25,180,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$3" />
-      <unit id="1510095204161236493" at="180,21,184,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$4" />
-      <unit id="896260991090979885" at="226,480,230,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$1" />
-      <unit id="1131989153476138732" at="249,264,253,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$2" />
-      <unit id="1131989153476138751" at="253,25,257,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$3" />
-      <unit id="1131989153476138763" at="257,21,261,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$4" />
+      <unit id="896260991090205362" at="149,480,153,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a1$Item$1" />
+      <unit id="1510095204161236462" at="172,264,176,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a1$Item$2" />
+      <unit id="1510095204161236481" at="176,25,180,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a1$Item$3" />
+      <unit id="1510095204161236493" at="180,21,184,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a1$Item$4" />
+      <unit id="896260991090979885" at="226,480,230,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a2$Item$1" />
+      <unit id="1131989153476138732" at="249,264,253,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a2$Item$2" />
+      <unit id="1131989153476138751" at="253,25,257,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a2$Item$3" />
+      <unit id="1131989153476138763" at="257,21,261,9" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a2$Item$4" />
       <unit id="2575712215223698358" at="63,0,87,0" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a0$Item" />
       <unit id="2575712215223698358" at="94,0,119,0" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_b0$Item" />
       <unit id="2575712215223698358" at="57,0,88,0" name="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_TransformationMenu$TransformationMenuPart_Action_ue7icm_a0" />
@@ -13046,9 +13046,9 @@
         <var name="_context" id="471625927507090144" />
         <var name="item" id="471625927507090144" />
       </scope>
-      <unit id="471625927507090144" at="44,245,48,7" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu$1" />
+      <unit id="471625927507090144" at="44,245,48,7" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu$SubstituteMenuPart_Subconcepts_7ty2v0_a$1" />
       <unit id="471625927507090144" at="42,0,58,0" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu$SubstituteMenuPart_Subconcepts_7ty2v0_a" />
-      <unit id="471625927507090144" at="62,17,81,7" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu$1" />
+      <unit id="471625927507090144" at="62,17,81,7" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu$SubstituteMenuPart_Wrapper_7ty2v0_b$1" />
       <unit id="471625927507090144" at="58,0,90,0" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu$SubstituteMenuPart_Wrapper_7ty2v0_b" />
       <unit id="471625927507090144" at="33,0,99,0" name="jetbrains.mps.lang.plugin.editor.AbstractToolShortcut_SubstituteMenu" />
     </file>

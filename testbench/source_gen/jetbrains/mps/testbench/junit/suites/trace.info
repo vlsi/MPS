@@ -368,7 +368,7 @@
         <var name="notFounded" id="4052780437579009241" />
         <var name="unExpected" id="4052780437579009239" />
       </scope>
-      <unit id="1594630302364453606" at="48,308,52,13" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
+      <unit id="1594630302364453606" at="48,308,52,13" name="jetbrains.mps.testbench.junit.suites.ScopesTest$1$1" />
       <unit id="1594630302364055148" at="41,52,58,5" name="jetbrains.mps.testbench.junit.suites.ScopesTest$1" />
       <unit id="3798371591902428451" at="113,45,134,5" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
       <unit id="4052780437579008133" at="35,0,137,0" name="jetbrains.mps.testbench.junit.suites.ScopesTest" />
@@ -1040,9 +1040,9 @@
       <scope id="9170334376387870501" at="161,0,192,0" />
       <scope id="9170334376387870459" at="127,0,160,0" />
       <scope id="3310907803989838805" at="91,0,126,0" />
-      <unit id="3310907803990901625" at="79,85,83,11" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$3" />
-      <unit id="6364329826686789518" at="115,85,119,11" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$4" />
-      <unit id="577174139999543523" at="98,50,107,11" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$4" />
+      <unit id="3310907803990901625" at="79,85,83,11" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$2$1" />
+      <unit id="6364329826686789518" at="115,85,119,11" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$3$2" />
+      <unit id="577174139999543523" at="98,50,107,11" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$3$1" />
       <unit id="3890231013090393780" at="68,80,87,5" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$2" />
       <unit id="3890231013090422030" at="39,80,60,5" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$1" />
       <unit id="3890231013090469608" at="166,80,189,5" name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure$5" />

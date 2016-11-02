@@ -60,7 +60,7 @@
         <var name="references" id="2687243112287755361" />
       </scope>
       <scope id="2687243112287755361" at="30,0,58,0" />
-      <unit id="2687243112287755361" at="41,19,53,9" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints$2" />
+      <unit id="2687243112287755361" at="41,19,53,9" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints$1$1" />
       <unit id="2687243112287755361" at="33,155,55,5" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints$1" />
       <unit id="2687243112287755361" at="25,0,60,0" name="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints" />
     </file>
@@ -104,7 +104,7 @@
         <var name="references" id="3990190717072399938" />
       </scope>
       <scope id="3990190717072399938" at="29,0,57,0" />
-      <unit id="3990190717072399938" at="40,19,52,9" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$2" />
+      <unit id="3990190717072399938" at="40,19,52,9" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$1$1" />
       <unit id="3990190717072399938" at="32,155,54,5" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints$1" />
       <unit id="3990190717072399938" at="24,0,59,0" name="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints" />
     </file>

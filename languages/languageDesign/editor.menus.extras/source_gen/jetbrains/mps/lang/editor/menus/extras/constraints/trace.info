@@ -83,8 +83,8 @@
         <var name="references" id="4736696158596338898" />
       </scope>
       <scope id="4736696158596338898" at="34,0,70,0" />
-      <unit id="4736696158596368399" at="52,23,63,13" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Intention_Constraints$3" />
-      <unit id="4736696158596338898" at="45,19,65,9" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Intention_Constraints$2" />
+      <unit id="4736696158596368399" at="52,23,63,13" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Intention_Constraints$1$1$1" />
+      <unit id="4736696158596338898" at="45,19,65,9" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Intention_Constraints$1$1" />
       <unit id="4736696158596338898" at="37,157,67,5" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Intention_Constraints$1" />
       <unit id="4736696158596338898" at="29,0,84,0" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Intention_Constraints" />
     </file>
@@ -166,8 +166,8 @@
         <var name="references" id="4736696158596470769" />
       </scope>
       <scope id="4736696158596470769" at="34,0,70,0" />
-      <unit id="4736696158596471268" at="52,23,63,13" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Refactoring_Constraints$3" />
-      <unit id="4736696158596470769" at="45,19,65,9" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Refactoring_Constraints$2" />
+      <unit id="4736696158596471268" at="52,23,63,13" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Refactoring_Constraints$1$1$1" />
+      <unit id="4736696158596470769" at="45,19,65,9" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Refactoring_Constraints$1$1" />
       <unit id="4736696158596470769" at="37,159,67,5" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Refactoring_Constraints$1" />
       <unit id="4736696158596470769" at="29,0,90,0" name="jetbrains.mps.lang.editor.menus.extras.constraints.TransformationMenuPart_Refactoring_Constraints" />
     </file>

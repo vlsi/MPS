@@ -630,7 +630,7 @@
       </scope>
       <unit id="2034046503361595363" at="26,50,30,5" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$1" />
       <unit id="6188135140808769462" at="32,40,36,5" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$2" />
-      <unit id="2556458257919161526" at="56,108,60,7" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$1" />
+      <unit id="2556458257919161526" at="56,108,60,7" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$MyHierarchyTree$1" />
       <unit id="6188135140809447965" at="47,0,75,0" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$MyHierarchyTree" />
       <unit id="6188135140808769438" at="20,0,76,0" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" />
     </file>

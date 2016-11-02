@@ -969,7 +969,7 @@
       <scope id="1741258697587114154" at="50,0,60,0">
         <var name="_context" id="1741258697587114154" />
       </scope>
-      <unit id="1741258697587114173" at="54,60,58,7" name="jetbrains.mps.testbench.suite.editor.SolutionRef_SubstituteMenu$1" />
+      <unit id="1741258697587114173" at="54,60,58,7" name="jetbrains.mps.testbench.suite.editor.SolutionRef_SubstituteMenu$SubstituteMenuPart_Parameterized_omknhr_a$1" />
       <unit id="1741258697587114154" at="105,0,114,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_SubstituteMenu$SubstituteMenuPart_Subconcepts_omknhr_b" />
       <unit id="1741258697587114154" at="71,0,102,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_SubstituteMenu$SubstituteMenuPart_Parameterized_omknhr_a$SubstituteMenuPart_Action_omknhr_a0$Item" />
       <unit id="1741258697587114154" at="60,0,103,0" name="jetbrains.mps.testbench.suite.editor.SolutionRef_SubstituteMenu$SubstituteMenuPart_Parameterized_omknhr_a$SubstituteMenuPart_Action_omknhr_a0" />
@@ -1083,7 +1083,7 @@
       <scope id="1741258697587114301" at="56,0,66,0">
         <var name="_context" id="1741258697587114301" />
       </scope>
-      <unit id="1741258697587114323" at="60,118,64,7" name="jetbrains.mps.testbench.suite.editor.TestCaseRef_SubstituteMenu$1" />
+      <unit id="1741258697587114323" at="60,118,64,7" name="jetbrains.mps.testbench.suite.editor.TestCaseRef_SubstituteMenu$SubstituteMenuPart_Parameterized_dnvvk3_a$1" />
       <unit id="1741258697587114301" at="118,0,127,0" name="jetbrains.mps.testbench.suite.editor.TestCaseRef_SubstituteMenu$SubstituteMenuPart_Subconcepts_dnvvk3_b" />
       <unit id="1741258697587114301" at="77,0,115,0" name="jetbrains.mps.testbench.suite.editor.TestCaseRef_SubstituteMenu$SubstituteMenuPart_Parameterized_dnvvk3_a$SubstituteMenuPart_Action_dnvvk3_a0$Item" />
       <unit id="1741258697587114301" at="66,0,116,0" name="jetbrains.mps.testbench.suite.editor.TestCaseRef_SubstituteMenu$SubstituteMenuPart_Parameterized_dnvvk3_a$SubstituteMenuPart_Action_dnvvk3_a0" />

@@ -106,8 +106,8 @@
         <var name="references" id="1550313277221324861" />
       </scope>
       <scope id="1550313277221324861" at="42,0,102,0" />
-      <unit id="6235310215814037767" at="56,23,88,13" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$3" />
-      <unit id="1550313277221324861" at="53,19,97,9" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$2" />
+      <unit id="6235310215814037767" at="56,23,88,13" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$1$1$1" />
+      <unit id="1550313277221324861" at="53,19,97,9" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$1$1" />
       <unit id="1550313277221324861" at="45,158,99,5" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints$1" />
       <unit id="1550313277221324861" at="37,0,104,0" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_Constraints" />
     </file>
@@ -318,7 +318,7 @@
         <var name="references" id="5431167396203858786" />
       </scope>
       <scope id="5431167396203858786" at="29,0,55,0" />
-      <unit id="5431167396203858786" at="40,19,50,9" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_Constraints$2" />
+      <unit id="5431167396203858786" at="40,19,50,9" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_Constraints$1$1" />
       <unit id="5431167396203858786" at="32,155,52,5" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_Constraints$1" />
       <unit id="5431167396203858786" at="24,0,57,0" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_Constraints" />
     </file>
@@ -427,7 +427,7 @@
         <var name="references" id="7685333756920187171" />
       </scope>
       <scope id="7685333756920187171" at="53,0,102,0" />
-      <unit id="7685333756920187171" at="64,19,97,9" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$2" />
+      <unit id="7685333756920187171" at="64,19,97,9" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$1$1" />
       <unit id="7685333756920187171" at="56,158,99,5" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints$1" />
       <unit id="7685333756920187171" at="34,0,108,0" name="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints" />
     </file>

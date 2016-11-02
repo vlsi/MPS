@@ -317,8 +317,8 @@
       <scope id="8269230326124799177" at="53,0,106,0" />
       <unit id="8269230326124799229" at="108,104,112,5" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$2" />
       <unit id="8269230326124799261" at="113,85,117,5" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$3" />
-      <unit id="8269230326124799194" at="59,23,99,13" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$3" />
-      <unit id="8269230326124799194" at="57,19,101,9" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$2" />
+      <unit id="8269230326124799194" at="59,23,99,13" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$1$1$1" />
+      <unit id="8269230326124799194" at="57,19,101,9" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$1$1" />
       <unit id="8269230326124799194" at="55,87,103,5" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$1" />
       <unit id="8269230326124799045" at="30,0,128,0" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test" />
     </file>

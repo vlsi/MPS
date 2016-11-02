@@ -121,7 +121,7 @@
       </scope>
       <scope id="1213104840673" at="68,0,94,0" />
       <unit id="1213104840673" at="43,15,52,5" name="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints$1" />
-      <unit id="1213104840673" at="79,19,89,9" name="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints$3" />
+      <unit id="1213104840673" at="79,19,89,9" name="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints$2$1" />
       <unit id="1213104840673" at="71,143,91,5" name="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints$2" />
       <unit id="1213104840673" at="29,0,101,0" name="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints" />
     </file>
@@ -288,12 +288,12 @@
         <var name="properties" id="1213104841300" />
       </scope>
       <scope id="1213104841300" at="38,0,104,0" />
-      <unit id="1227876796982" at="128,95,135,15" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$7" />
+      <unit id="1227876796982" at="128,95,135,15" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$5$1$1" />
       <unit id="1213104841300" at="41,148,51,5" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$1" />
       <unit id="1213104841300" at="52,135,62,5" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$2" />
       <unit id="1213104841300" at="63,142,81,5" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$3" />
       <unit id="1213104841300" at="82,137,101,5" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$4" />
-      <unit id="1213104841300" at="115,19,143,9" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$6" />
+      <unit id="1213104841300" at="115,19,143,9" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$5$1" />
       <unit id="1213104841300" at="107,151,145,5" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints$5" />
       <unit id="1213104841300" at="33,0,153,0" name="jetbrains.mps.lang.structure.constraints.LinkDeclaration_Constraints" />
     </file>
@@ -386,7 +386,7 @@
         <var name="references" id="1213104847155" />
       </scope>
       <scope id="1213104847155" at="70,0,96,0" />
-      <unit id="1213104847155" at="81,19,91,9" name="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints$3" />
+      <unit id="1213104847155" at="81,19,91,9" name="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints$2$1" />
       <unit id="1213104847155" at="54,150,67,5" name="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints$1" />
       <unit id="1213104847155" at="73,149,93,5" name="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints$2" />
       <unit id="1213104847155" at="32,0,102,0" name="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_Constraints" />

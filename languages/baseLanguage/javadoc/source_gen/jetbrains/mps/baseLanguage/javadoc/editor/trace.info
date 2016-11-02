@@ -280,7 +280,7 @@
       <scope id="1741258697587168111" at="98,0,145,0">
         <var name="pattern" id="1741258697587168111" />
       </scope>
-      <unit id="1741258697587168269" at="117,262,121,13" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$1" />
+      <unit id="1741258697587168269" at="117,262,121,13" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1$TransformationMenuPart_Action_rifg0n_a0b$Item$1" />
       <unit id="1741258697587168111" at="85,0,148,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1$TransformationMenuPart_Action_rifg0n_a0b$Item" />
       <unit id="1741258697587168111" at="75,0,149,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1$TransformationMenuPart_Action_rifg0n_a0b" />
       <unit id="1741258697587168111" at="53,0,150,0" name="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_TransformationMenu$TransformationMenuPart_Parameterized_rifg0n_a1" />
@@ -3047,7 +3047,7 @@
       <scope id="4831334526949972752" at="33,0,47,0">
         <var name="editorContext" id="4831334526949972752" />
       </scope>
-      <unit id="6352952732699451436" at="52,72,57,7" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyCommentLine$1" />
+      <unit id="6352952732699451436" at="52,72,57,7" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyCommentLine$EmptyCommentLine_Action0$1" />
       <unit id="4831334526949972752" at="26,0,63,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyCommentLine$EmptyCommentLine_Action0" />
       <unit id="4831334526949972752" at="18,0,64,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyCommentLine" />
     </file>
@@ -3250,7 +3250,7 @@
         <var name="editorContext" id="4948473272651335371" />
         <var name="node" id="4948473272651335371" />
       </scope>
-      <unit id="5383422241791431797" at="101,242,105,7" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_Editor$1" />
+      <unit id="5383422241791431797" at="101,242,105,7" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_Editor$EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a$1" />
       <unit id="4948473272651335378" at="45,0,52,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_Editor$ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a" />
       <unit id="6978502240660979890" at="52,0,59,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_Editor$ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a" />
       <unit id="6978502240660904055" at="59,0,66,0" name="jetbrains.mps.baseLanguage.javadoc.editor.EmptyBlockDocTag_Editor$ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a" />
@@ -6742,7 +6742,7 @@
       <scope id="7983358747940873985" at="33,0,47,0">
         <var name="editorContext" id="7983358747940873985" />
       </scope>
-      <unit id="7983358747941111078" at="52,72,58,7" name="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine$1" />
+      <unit id="7983358747941111078" at="52,72,58,7" name="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine$InsertAnEmptyCommentLine_Action0$1" />
       <unit id="7983358747940873985" at="26,0,65,0" name="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine$InsertAnEmptyCommentLine_Action0" />
       <unit id="7983358747940873985" at="18,0,66,0" name="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine" />
     </file>

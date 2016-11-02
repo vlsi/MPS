@@ -661,28 +661,28 @@
       <scope id="1224426935386" at="144,0,268,0" />
       <unit id="6622338713620360967" at="529,77,533,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$8" />
       <unit id="1755721451847566529" at="536,118,540,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$9" />
-      <unit id="1227357299652" at="317,23,348,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$7" />
-      <unit id="1227357299652" at="315,19,350,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$6" />
+      <unit id="1227357299652" at="317,23,348,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$5$1$1" />
+      <unit id="1227357299652" at="315,19,350,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$5$1" />
       <unit id="1227357299652" at="313,54,352,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$5" />
-      <unit id="5661972054203104901" at="474,23,513,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$9" />
-      <unit id="8922320523046634510" at="547,23,586,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$12" />
-      <unit id="1206980058977" at="45,23,85,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$3" />
-      <unit id="1224754206362" at="97,23,137,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$4" />
-      <unit id="1224426952758" at="149,23,189,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$5" />
-      <unit id="5661972054203104901" at="472,19,515,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$8" />
-      <unit id="8922320523046634510" at="545,19,588,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$11" />
-      <unit id="1206980058977" at="43,19,87,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$2" />
-      <unit id="1224754206362" at="95,19,139,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$3" />
-      <unit id="1224426952758" at="147,19,191,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$4" />
+      <unit id="5661972054203104901" at="474,23,513,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$7$1$1" />
+      <unit id="8922320523046634510" at="547,23,586,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$10$1$1" />
+      <unit id="1206980058977" at="45,23,85,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$1$1$1" />
+      <unit id="1224754206362" at="97,23,137,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$2$1$1" />
+      <unit id="1224426952758" at="149,23,189,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$3$1$1" />
+      <unit id="5661972054203104901" at="472,19,515,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$7$1" />
+      <unit id="8922320523046634510" at="545,19,588,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$10$1" />
+      <unit id="1206980058977" at="43,19,87,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$1$1" />
+      <unit id="1224754206362" at="95,19,139,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$2$1" />
+      <unit id="1224426952758" at="147,19,191,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$3$1" />
       <unit id="5661972054203104901" at="470,52,517,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$7" />
       <unit id="8922320523046634510" at="543,36,590,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$10" />
       <unit id="1206980058977" at="41,32,89,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$1" />
       <unit id="1224754206362" at="93,53,141,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$2" />
       <unit id="1224426952758" at="145,53,193,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$3" />
-      <unit id="1237215821439" at="373,23,431,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$8" />
-      <unit id="1224497695055" at="201,23,261,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$6" />
-      <unit id="1237215821439" at="371,19,433,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$7" />
-      <unit id="1224497695055" at="199,19,263,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$5" />
+      <unit id="1237215821439" at="373,23,431,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$6$1$1" />
+      <unit id="1224497695055" at="201,23,261,13" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$4$1$1" />
+      <unit id="1237215821439" at="371,19,433,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$6$1" />
+      <unit id="1224497695055" at="199,19,263,9" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$4$1" />
       <unit id="1237215821439" at="369,53,435,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$6" />
       <unit id="1224497695055" at="197,54,265,5" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test$4" />
       <unit id="1204981976497" at="24,0,593,0" name="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test" />
@@ -788,8 +788,8 @@
         <var name="test" id="1237784447483" />
       </scope>
       <scope id="1237784090911" at="42,0,94,0" />
-      <unit id="1237784457556" at="47,23,87,13" name="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test$3" />
-      <unit id="1237784457556" at="45,19,89,9" name="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test$2" />
+      <unit id="1237784457556" at="47,23,87,13" name="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test$1$1$1" />
+      <unit id="1237784457556" at="45,19,89,9" name="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test$1$1" />
       <unit id="1237784457556" at="43,54,91,5" name="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test$1" />
       <unit id="1205754253671" at="17,0,103,0" name="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test" />
     </file>
@@ -909,8 +909,8 @@
         <var name="seq" id="7999094521537096522" />
       </scope>
       <scope id="7999094521537096377" at="39,0,119,0" />
-      <unit id="7999094521537096528" at="44,23,112,13" name="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$3" />
-      <unit id="7999094521537096528" at="42,19,114,9" name="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$2" />
+      <unit id="7999094521537096528" at="44,23,112,13" name="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$1$1$1" />
+      <unit id="7999094521537096528" at="42,19,114,9" name="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$1$1" />
       <unit id="7999094521537096528" at="40,53,116,5" name="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$1" />
       <unit id="1205777714960" at="17,0,120,0" name="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test" />
     </file>
@@ -1490,8 +1490,8 @@
       <unit id="6312172641078882048" at="316,77,320,5" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$2" />
       <unit id="6312172641078882145" at="323,64,327,5" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$3" />
       <unit id="6312172641078882300" at="327,73,331,5" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$4" />
-      <unit id="6312172641078801210" at="269,23,309,13" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$3" />
-      <unit id="6312172641078801210" at="267,19,311,9" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$2" />
+      <unit id="6312172641078801210" at="269,23,309,13" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$1$1$1" />
+      <unit id="6312172641078801210" at="267,19,311,9" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$1$1" />
       <unit id="6312172641078801210" at="265,56,313,5" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test$1" />
       <unit id="1205942757641" at="31,0,413,0" name="jetbrains.mps.internalCollections.test.basicOperations.List_Test" />
     </file>
@@ -2271,14 +2271,14 @@
         <var name="test4" id="1228845350484" />
       </scope>
       <scope id="1228831476048" at="22,0,218,0" />
-      <unit id="1228831476070" at="28,23,66,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$3" />
-      <unit id="1228844803610" at="76,23,114,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$4" />
-      <unit id="1228838312636" at="125,23,163,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$5" />
-      <unit id="1228845350490" at="173,23,211,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$6" />
-      <unit id="1228831476070" at="26,19,68,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$2" />
-      <unit id="1228844803610" at="74,19,116,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$3" />
-      <unit id="1228838312636" at="123,19,165,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$4" />
-      <unit id="1228845350490" at="171,19,213,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$5" />
+      <unit id="1228831476070" at="28,23,66,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$1$1$1" />
+      <unit id="1228844803610" at="76,23,114,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$2$1$1" />
+      <unit id="1228838312636" at="125,23,163,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$3$1$1" />
+      <unit id="1228845350490" at="173,23,211,13" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$4$1$1" />
+      <unit id="1228831476070" at="26,19,68,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$1$1" />
+      <unit id="1228844803610" at="74,19,116,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$2$1" />
+      <unit id="1228838312636" at="123,19,165,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$3$1" />
+      <unit id="1228845350490" at="171,19,213,9" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$4$1" />
       <unit id="1228831476070" at="24,54,70,5" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$1" />
       <unit id="1228844803610" at="72,55,118,5" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$2" />
       <unit id="1228838312636" at="121,54,167,5" name="jetbrains.mps.internalCollections.test.basicOperations.Array_Test$3" />

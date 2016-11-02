@@ -129,8 +129,8 @@
         <var name="event" id="442258911877362796" />
       </scope>
       <unit id="8510857365141938388" at="42,65,46,5" name="jetbrains.mps.migration.component.plugin.RunMigration$1" />
-      <unit id="8510857365141912505" at="56,94,60,15" name="jetbrains.mps.migration.component.plugin.RunMigration$4" />
-      <unit id="8510857365141910640" at="54,68,62,11" name="jetbrains.mps.migration.component.plugin.RunMigration$3" />
+      <unit id="8510857365141912505" at="56,94,60,15" name="jetbrains.mps.migration.component.plugin.RunMigration$2$1$1" />
+      <unit id="8510857365141910640" at="54,68,62,11" name="jetbrains.mps.migration.component.plugin.RunMigration$2$1" />
       <unit id="2106197219109756080" at="47,42,69,5" name="jetbrains.mps.migration.component.plugin.RunMigration$2" />
       <unit id="442258911877355780" at="23,0,72,0" name="jetbrains.mps.migration.component.plugin.RunMigration" />
     </file>
@@ -420,7 +420,7 @@
         <var name="_params" id="5785495490416619810" />
         <var name="event" id="5785495490416619810" />
       </scope>
-      <unit id="5785495490417533523" at="59,49,63,9" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action$2" />
+      <unit id="5785495490417533523" at="59,49,63,9" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action$1$1" />
       <unit id="5785495490417533520" at="57,56,65,5" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action$1" />
       <unit id="5785495490416619810" at="23,0,68,0" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action" />
     </file>
@@ -524,7 +524,7 @@
         <var name="_params" id="6423044698579322261" />
         <var name="event" id="6423044698579322261" />
       </scope>
-      <unit id="6423044698582317160" at="68,49,72,9" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action$2" />
+      <unit id="6423044698582317160" at="68,49,72,9" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action$1$1" />
       <unit id="6423044698582317157" at="66,56,74,5" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action$1" />
       <unit id="6423044698579322261" at="28,0,77,0" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action" />
     </file>
@@ -696,12 +696,12 @@
         <var name="event" id="6423044698579330206" />
       </scope>
       <unit id="8331819490991709085" at="76,100,80,5" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$1" />
-      <unit id="6423044698581822941" at="155,107,159,19" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$5" />
-      <unit id="6423044698581786681" at="98,37,150,27" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$7" />
-      <unit id="6423044698581786681" at="96,33,152,23" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$6" />
-      <unit id="6423044698581786681" at="94,99,154,19" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$5" />
-      <unit id="8331819490991709153" at="91,111,161,15" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$4" />
-      <unit id="8331819490991709150" at="89,68,163,11" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$3" />
+      <unit id="6423044698581822941" at="155,107,159,19" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$2" />
+      <unit id="6423044698581786681" at="98,37,150,27" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$1$1$1" />
+      <unit id="6423044698581786681" at="96,33,152,23" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$1$1" />
+      <unit id="6423044698581786681" at="94,99,154,19" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$1" />
+      <unit id="8331819490991709153" at="91,111,161,15" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1" />
+      <unit id="8331819490991709150" at="89,68,163,11" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1" />
       <unit id="8331819490991709109" at="82,42,170,5" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2" />
       <unit id="6423044698579330206" at="40,0,179,0" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
     </file>
@@ -864,12 +864,12 @@
         <var name="event" id="6423044698579343489" />
       </scope>
       <unit id="27144618445169875" at="73,100,77,5" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$1" />
-      <unit id="6423044698581740000" at="151,62,155,19" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$5" />
-      <unit id="6423044698581722597" at="94,37,146,27" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$7" />
-      <unit id="6423044698581722597" at="92,33,148,23" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$6" />
-      <unit id="6423044698581722597" at="90,99,150,19" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$5" />
-      <unit id="27144618445169940" at="87,111,157,15" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$4" />
-      <unit id="27144618445169937" at="85,68,159,11" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$3" />
+      <unit id="6423044698581740000" at="151,62,155,19" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$2" />
+      <unit id="6423044698581722597" at="94,37,146,27" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1$1$1" />
+      <unit id="6423044698581722597" at="92,33,148,23" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1$1" />
+      <unit id="6423044698581722597" at="90,99,150,19" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1" />
+      <unit id="27144618445169940" at="87,111,157,15" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1" />
+      <unit id="27144618445169937" at="85,68,159,11" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1" />
       <unit id="27144618445169894" at="78,42,166,5" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2" />
       <unit id="6423044698579343489" at="37,0,169,0" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" />
     </file>
@@ -998,8 +998,8 @@
         <var name="_params" id="6423044698581900943" />
         <var name="event" id="6423044698581900943" />
       </scope>
-      <unit id="7073978993253841517" at="65,109,69,13" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$3" />
-      <unit id="7073978993253841514" at="63,66,71,9" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$2" />
+      <unit id="7073978993253841517" at="65,109,69,13" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$1$1$1" />
+      <unit id="7073978993253841514" at="63,66,71,9" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$1$1" />
       <unit id="7073978993253823618" at="59,42,73,5" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$1" />
       <unit id="6423044698581900943" at="20,0,89,0" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" />
     </file>

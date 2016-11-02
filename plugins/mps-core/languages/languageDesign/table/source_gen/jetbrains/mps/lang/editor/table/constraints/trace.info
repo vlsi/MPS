@@ -110,12 +110,12 @@
         <var name="references" id="6216065619544939788" />
       </scope>
       <scope id="6216065619544939788" at="33,0,113,0" />
-      <unit id="6216065619544941667" at="47,278,51,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-      <unit id="6216065619544944300" at="71,278,75,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
-      <unit id="6216065619544946267" at="98,492,102,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$5" />
-      <unit id="6216065619544939788" at="44,19,57,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
-      <unit id="6216065619544939788" at="68,19,81,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-      <unit id="6216065619544939788" at="92,19,108,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
+      <unit id="6216065619544941667" at="47,278,51,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1$1$1" />
+      <unit id="6216065619544944300" at="71,278,75,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2$1$1" />
+      <unit id="6216065619544946267" at="98,492,102,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3$1$1" />
+      <unit id="6216065619544939788" at="44,19,57,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1$1" />
+      <unit id="6216065619544939788" at="68,19,81,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2$1" />
+      <unit id="6216065619544939788" at="92,19,108,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3$1" />
       <unit id="6216065619544939788" at="36,171,59,5" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
       <unit id="6216065619544939788" at="60,166,83,5" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
       <unit id="6216065619544939788" at="84,172,110,5" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />

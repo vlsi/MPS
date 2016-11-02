@@ -24204,8 +24204,8 @@
         <var name="editorContext" id="41341772584542913" />
         <var name="node" id="1239461471094" />
       </scope>
-      <unit id="41341772583370776" at="47,40,51,11" name="jetbrains.mps.lang.editor.editor.SelectImageFileButton$2" />
-      <unit id="2034046503373010926" at="69,41,73,11" name="jetbrains.mps.lang.editor.editor.SelectImageFileButton$2" />
+      <unit id="41341772583370776" at="47,40,51,11" name="jetbrains.mps.lang.editor.editor.SelectImageFileButton$1$1" />
+      <unit id="2034046503373010926" at="69,41,73,11" name="jetbrains.mps.lang.editor.editor.SelectImageFileButton$1$2" />
       <unit id="1239461758142" at="38,23,76,5" name="jetbrains.mps.lang.editor.editor.SelectImageFileButton$1" />
       <unit id="1239461406724" at="28,0,79,0" name="jetbrains.mps.lang.editor.editor.SelectImageFileButton" />
     </file>
@@ -26249,9 +26249,9 @@
       <scope id="1741258697587150505" at="65,0,76,0">
         <var name="_context" id="1741258697587150505" />
       </scope>
-      <unit id="1741258697587150565" at="66,520,70,11" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$1" />
-      <unit id="1741258697587150606" at="70,26,74,11" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$2" />
-      <unit id="1741258697587150505" at="42,22,47,7" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$1" />
+      <unit id="1741258697587150565" at="66,520,70,11" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$SubstituteMenuPart_Group_fvfxl9_a$SubstituteMenuPart_Group_fvfxl9_a0$SubstituteMenuPart_Concepts_fvfxl9_a0a$1" />
+      <unit id="1741258697587150606" at="70,26,74,11" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$SubstituteMenuPart_Group_fvfxl9_a$SubstituteMenuPart_Group_fvfxl9_a0$SubstituteMenuPart_Concepts_fvfxl9_a0a$2" />
+      <unit id="1741258697587150505" at="42,22,47,7" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$SubstituteMenuPart_Group_fvfxl9_a$1" />
       <unit id="1741258697587150505" at="92,0,101,0" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$SubstituteMenuPart_Group_fvfxl9_a$SubstituteMenuPart_Group_fvfxl9_b0$SubstituteMenuPart_Subconcepts_fvfxl9_a1a" />
       <unit id="1741258697587150505" at="64,0,81,0" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$SubstituteMenuPart_Group_fvfxl9_a$SubstituteMenuPart_Group_fvfxl9_a0$SubstituteMenuPart_Concepts_fvfxl9_a0a" />
       <unit id="1741258697587150505" at="82,0,102,0" name="jetbrains.mps.lang.editor.editor.TransformationLocation_SubstituteMenu$SubstituteMenuPart_Group_fvfxl9_a$SubstituteMenuPart_Group_fvfxl9_b0" />
@@ -27134,8 +27134,8 @@
       <scope id="1741258697587150618" at="40,0,67,0">
         <var name="_context" id="1741258697587150618" />
       </scope>
-      <unit id="1741258697587152856" at="748,78,752,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$1" />
-      <unit id="1741258697587152868" at="752,19,756,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$2" />
+      <unit id="1741258697587152856" at="748,78,752,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$SubstituteMenuPart_Parameterized_le0q3j_t$1" />
+      <unit id="1741258697587152868" at="752,19,756,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$SubstituteMenuPart_Parameterized_le0q3j_t$2" />
       <unit id="1741258697587150618" at="808,0,817,0" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$SubstituteMenuPart_Subconcepts_le0q3j_u" />
       <unit id="1741258697587150618" at="485,0,508,0" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$SubstituteMenuPart_Action_le0q3j_m$Item" />
       <unit id="1741258697587150618" at="516,0,539,0" name="jetbrains.mps.lang.editor.editor.EditorCellModel_SubstituteMenu$SubstituteMenuPart_Action_le0q3j_n$Item" />
@@ -27330,7 +27330,7 @@
         <var name="_context" id="1741258697587153143" />
         <var name="item" id="1741258697587153143" />
       </scope>
-      <unit id="1741258697587153143" at="40,17,58,7" name="jetbrains.mps.lang.editor.editor.StyleClassReferenceList_SubstituteMenu$1" />
+      <unit id="1741258697587153143" at="40,17,58,7" name="jetbrains.mps.lang.editor.editor.StyleClassReferenceList_SubstituteMenu$SubstituteMenuPart_Wrapper_cyyevv_a$1" />
       <unit id="1741258697587153143" at="36,0,67,0" name="jetbrains.mps.lang.editor.editor.StyleClassReferenceList_SubstituteMenu$SubstituteMenuPart_Wrapper_cyyevv_a" />
       <unit id="1741258697587153143" at="28,0,76,0" name="jetbrains.mps.lang.editor.editor.StyleClassReferenceList_SubstituteMenu" />
     </file>
@@ -27443,7 +27443,7 @@
       <scope id="1741258697587153197" at="48,0,68,0">
         <var name="_context" id="1741258697587153197" />
       </scope>
-      <unit id="1741258697587153258" at="62,51,66,7" name="jetbrains.mps.lang.editor.editor.SubstituteAbstractStyledTextOperation_Contribution$1" />
+      <unit id="1741258697587153258" at="62,51,66,7" name="jetbrains.mps.lang.editor.editor.SubstituteAbstractStyledTextOperation_Contribution$SubstituteMenuPart_Parameterized_86ir5e_a$1" />
       <unit id="1741258697587153197" at="79,0,117,0" name="jetbrains.mps.lang.editor.editor.SubstituteAbstractStyledTextOperation_Contribution$SubstituteMenuPart_Parameterized_86ir5e_a$SubstituteMenuPart_Action_86ir5e_a0$Item" />
       <unit id="1741258697587153197" at="68,0,118,0" name="jetbrains.mps.lang.editor.editor.SubstituteAbstractStyledTextOperation_Contribution$SubstituteMenuPart_Parameterized_86ir5e_a$SubstituteMenuPart_Action_86ir5e_a0" />
       <unit id="1741258697587153197" at="42,0,120,0" name="jetbrains.mps.lang.editor.editor.SubstituteAbstractStyledTextOperation_Contribution$SubstituteMenuPart_Parameterized_86ir5e_a" />
@@ -27994,11 +27994,11 @@
       <scope id="1741258697587153981" at="71,0,96,0">
         <var name="_context" id="1741258697587153981" />
       </scope>
-      <unit id="1741258697587154049" at="73,265,77,11" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$1" />
-      <unit id="1741258697587154073" at="80,65,84,13" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$2" />
-      <unit id="1741258697587154094" at="86,100,90,11" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$3" />
-      <unit id="1741258697587154136" at="90,25,94,11" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$4" />
-      <unit id="1741258697587153981" at="48,22,53,7" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$1" />
+      <unit id="1741258697587154049" at="73,265,77,11" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_a0$SubstituteMenuPart_Concepts_97h82d_a0a$1" />
+      <unit id="1741258697587154073" at="80,65,84,13" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_a0$SubstituteMenuPart_Concepts_97h82d_a0a$2" />
+      <unit id="1741258697587154094" at="86,100,90,11" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_a0$SubstituteMenuPart_Concepts_97h82d_a0a$3" />
+      <unit id="1741258697587154136" at="90,25,94,11" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_a0$SubstituteMenuPart_Concepts_97h82d_a0a$4" />
+      <unit id="1741258697587153981" at="48,22,53,7" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$1" />
       <unit id="1741258697587153981" at="112,0,121,0" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_b0$SubstituteMenuPart_Subconcepts_97h82d_a1a" />
       <unit id="1741258697587153981" at="102,0,122,0" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_b0" />
       <unit id="1741258697587153981" at="70,0,101,0" name="jetbrains.mps.lang.editor.editor.TransformationFeature_SubstituteMenu$SubstituteMenuPart_Group_97h82d_a$SubstituteMenuPart_Group_97h82d_a0$SubstituteMenuPart_Concepts_97h82d_a0a" />
@@ -40912,20 +40912,20 @@
       <scope id="7271390537055656095" at="390,0,446,0">
         <var name="pattern" id="7271390537055656095" />
       </scope>
-      <unit id="381764939115263042" at="134,443,138,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$1" />
-      <unit id="8887077936721894494" at="167,365,171,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$1" />
-      <unit id="8887077936721894512" at="173,77,177,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$2" />
-      <unit id="8887077936726792764" at="179,147,183,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$3" />
-      <unit id="381764939118298527" at="258,60,262,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$1" />
-      <unit id="381764939119502880" at="287,356,291,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$1" />
-      <unit id="381764939114399051" at="402,367,406,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$1" />
-      <unit id="2241725268986132432" at="418,358,422,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$3" />
-      <unit id="8222073419154001634" at="515,273,519,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$1" />
-      <unit id="7157083426840768482" at="547,273,551,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$2" />
-      <unit id="7157083426840812900" at="552,100,556,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$3" />
-      <unit id="381764939118653507" at="408,79,416,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$2" />
-      <unit id="381764939119293033" at="293,72,311,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$2" />
-      <unit id="2241725268986132450" at="424,74,442,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$4" />
+      <unit id="381764939115263042" at="134,443,138,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_b0$Item$1" />
+      <unit id="8887077936721894494" at="167,365,171,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_c0$1" />
+      <unit id="8887077936721894512" at="173,77,177,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_c0$2" />
+      <unit id="8887077936726792764" at="179,147,183,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_c0$3" />
+      <unit id="381764939118298527" at="258,60,262,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_d0$Item$1" />
+      <unit id="381764939119502880" at="287,356,291,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_e0$1" />
+      <unit id="381764939114399051" at="402,367,406,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_f0$Item$1" />
+      <unit id="2241725268986132432" at="418,358,422,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_f0$Item$3" />
+      <unit id="8222073419154001634" at="515,273,519,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_h0$Item$1" />
+      <unit id="7157083426840768482" at="547,273,551,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_h0$Item$2" />
+      <unit id="7157083426840812900" at="552,100,556,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_h0$Item$3" />
+      <unit id="381764939118653507" at="408,79,416,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_f0$Item$2" />
+      <unit id="381764939119293033" at="293,72,311,7" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_e0$2" />
+      <unit id="2241725268986132450" at="424,74,442,9" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_f0$Item$4" />
       <unit id="7271390537055656095" at="197,0,217,0" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_c0$TransformationMenuPart_Action_puymhi_a2a$Item" />
       <unit id="7271390537055656095" at="74,0,99,0" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Action_puymhi_a0$Item" />
       <unit id="7271390537055656095" at="187,0,218,0" name="jetbrains.mps.lang.editor.editor.EditorCellModel_TransformationMenu$TransformationMenuPart_Parameterized_puymhi_c0$TransformationMenuPart_Action_puymhi_a2a" />
@@ -45324,7 +45324,7 @@
         <var name="parameter_5" id="8222073419153865232" />
         <var name="parameter_6" id="8222073419153865232" />
       </scope>
-      <unit id="8222073419154568059" at="108,55,112,7" name="jetbrains.mps.lang.editor.editor.BinaryOperationEditorBuilder$1" />
+      <unit id="8222073419154568059" at="108,55,112,7" name="jetbrains.mps.lang.editor.editor.BinaryOperationEditorBuilder$BuilderResult$1" />
       <unit id="8222073419154130339" at="102,0,137,0" name="jetbrains.mps.lang.editor.editor.BinaryOperationEditorBuilder$BuilderResult" />
       <unit id="8222073419153858381" at="27,0,623,0" name="jetbrains.mps.lang.editor.editor.BinaryOperationEditorBuilder" />
     </file>

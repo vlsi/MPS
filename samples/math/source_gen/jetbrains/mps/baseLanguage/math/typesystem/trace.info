@@ -811,8 +811,8 @@
         <var name="status" id="1237103998148" />
         <var name="typeCheckingContext" id="1237103998148" />
       </scope>
-      <unit id="1418611629041884900" at="46,221,51,17" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule$3" />
-      <unit id="1418611629041884895" at="44,60,65,13" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule$2" />
+      <unit id="1418611629041884900" at="46,221,51,17" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule$1$1$1" />
+      <unit id="1418611629041884895" at="44,60,65,13" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule$1$1" />
       <unit id="1418611629041884893" at="40,53,68,7" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule$1" />
       <unit id="1237103998148" at="22,0,109,0" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule" />
     </file>
@@ -2172,7 +2172,7 @@
         <var name="status" id="1238328643050" />
         <var name="typeCheckingContext" id="1238328643050" />
       </scope>
-      <unit id="1238426914994" at="43,56,64,15" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_ComplexLiteral_InferenceRule$2" />
+      <unit id="1238426914994" at="43,56,64,15" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_ComplexLiteral_InferenceRule$1$1" />
       <unit id="1238420360413" at="38,48,87,7" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_ComplexLiteral_InferenceRule$1" />
       <unit id="1238328643050" at="20,0,100,0" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_ComplexLiteral_InferenceRule" />
     </file>
@@ -2824,8 +2824,8 @@
         <var name="status" id="1238943151392" />
         <var name="typeCheckingContext" id="1238943151392" />
       </scope>
-      <unit id="8613885519962201032" at="100,181,105,17" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_BinaryOperationMathContext_InferenceRule$3" />
-      <unit id="8613885519962201027" at="48,60,129,13" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_BinaryOperationMathContext_InferenceRule$2" />
+      <unit id="8613885519962201032" at="100,181,105,17" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_BinaryOperationMathContext_InferenceRule$1$1$1" />
+      <unit id="8613885519962201027" at="48,60,129,13" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_BinaryOperationMathContext_InferenceRule$1$1" />
       <unit id="8613885519962201025" at="44,53,132,7" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_BinaryOperationMathContext_InferenceRule$1" />
       <unit id="1238943151392" at="25,0,201,0" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_BinaryOperationMathContext_InferenceRule" />
     </file>
@@ -3067,7 +3067,7 @@
         <var name="status" id="1418611629042596899" />
         <var name="typeCheckingContext" id="1418611629042596899" />
       </scope>
-      <unit id="5359814223490060125" at="30,61,68,13" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_LinearSolveOperation_InferenceRule$2" />
+      <unit id="5359814223490060125" at="30,61,68,13" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_LinearSolveOperation_InferenceRule$1$1" />
       <unit id="5359814223490060106" at="26,55,71,7" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_LinearSolveOperation_InferenceRule$1" />
       <unit id="1418611629042596899" at="20,0,84,0" name="jetbrains.mps.baseLanguage.math.typesystem.typeof_LinearSolveOperation_InferenceRule" />
     </file>

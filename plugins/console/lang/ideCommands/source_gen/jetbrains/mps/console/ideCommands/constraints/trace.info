@@ -99,9 +99,9 @@
         <var name="references" id="5582028874769074512" />
       </scope>
       <scope id="5582028874769074512" at="49,0,85,0" />
-      <unit id="5582028874769074530" at="68,476,72,15" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$3" />
-      <unit id="5582028874769074540" at="72,28,76,15" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$3" />
-      <unit id="5582028874769074512" at="60,19,80,9" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$2" />
+      <unit id="5582028874769074530" at="68,476,72,15" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$1$1$1" />
+      <unit id="5582028874769074540" at="72,28,76,15" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$1$1$2" />
+      <unit id="5582028874769074512" at="60,19,80,9" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$1$1" />
       <unit id="5582028874769074512" at="52,159,82,5" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints$1" />
       <unit id="5582028874769074512" at="30,0,91,0" name="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints" />
     </file>
@@ -171,8 +171,8 @@
         <var name="references" id="5932042262275697744" />
       </scope>
       <scope id="5932042262275697744" at="35,0,79,0" />
-      <unit id="8994852683961373075" at="67,79,71,15" name="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints$3" />
-      <unit id="5932042262275697744" at="58,19,74,9" name="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints$2" />
+      <unit id="8994852683961373075" at="67,79,71,15" name="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints$1$1$1" />
+      <unit id="5932042262275697744" at="58,19,74,9" name="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints$1$1" />
       <unit id="5932042262275697744" at="38,163,76,5" name="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints$1" />
       <unit id="5932042262275697744" at="30,0,81,0" name="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints" />
     </file>

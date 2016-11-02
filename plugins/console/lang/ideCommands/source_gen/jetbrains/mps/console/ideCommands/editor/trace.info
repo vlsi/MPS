@@ -1226,7 +1226,7 @@
         <var name="editorContext" id="5582028874769074432" />
         <var name="node" id="5582028874769074432" />
       </scope>
-      <unit id="5582028874769074437" at="73,85,82,7" name="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor$1" />
+      <unit id="5582028874769074437" at="73,85,82,7" name="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor$_Inline_ifpjgt_a0a$1" />
       <unit id="5582028874769074436" at="62,0,89,0" name="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor$_Inline_ifpjgt_a0a" />
       <unit id="5582028874769074432" at="99,0,128,0" name="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor$valueSingleRoleHandler_ifpjgt_c0" />
       <unit id="5582028874769074432" at="29,0,129,0" name="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor" />

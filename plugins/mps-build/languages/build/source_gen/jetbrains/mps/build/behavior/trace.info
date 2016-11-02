@@ -517,7 +517,7 @@
         <var name="__thisNode__" id="1065091787191627086" />
       </scope>
       <unit id="2389279258816198742" at="41,220,45,5" name="jetbrains.mps.build.behavior.BuildSource_JavaModule__BehaviorDescriptor$1" />
-      <unit id="2389279258816604722" at="47,391,51,9" name="jetbrains.mps.build.behavior.BuildSource_JavaModule__BehaviorDescriptor$3" />
+      <unit id="2389279258816604722" at="47,391,51,9" name="jetbrains.mps.build.behavior.BuildSource_JavaModule__BehaviorDescriptor$2$1" />
       <unit id="2389279258816507762" at="45,21,53,5" name="jetbrains.mps.build.behavior.BuildSource_JavaModule__BehaviorDescriptor$2" />
       <unit id="1065091787191627086" at="29,0,103,0" name="jetbrains.mps.build.behavior.BuildSource_JavaModule__BehaviorDescriptor" />
     </file>

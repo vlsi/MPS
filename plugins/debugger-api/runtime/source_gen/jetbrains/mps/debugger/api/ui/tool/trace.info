@@ -173,7 +173,7 @@
         <var name="console" id="4474271214083120457" />
         <var name="ui" id="4474271214083120455" />
       </scope>
-      <unit id="2850299710592986626" at="128,54,136,7" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$1" />
+      <unit id="2850299710592986626" at="128,54,136,7" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$MyRunContentDescriptor$1" />
       <unit id="4474271214083120248" at="121,0,149,0" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder$MyRunContentDescriptor" />
       <unit id="4474271214083120245" at="42,0,150,0" name="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" />
     </file>

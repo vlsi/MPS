@@ -713,8 +713,8 @@
       <unit id="3894227536043450861" at="103,42,107,5" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$2" />
       <unit id="3894227536043500330" at="107,20,111,5" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$3" />
       <unit id="4263252858386477655" at="114,35,119,5" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$4" />
-      <unit id="3894227536043377004" at="58,23,98,13" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$3" />
-      <unit id="3894227536043377004" at="56,19,100,9" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$2" />
+      <unit id="3894227536043377004" at="58,23,98,13" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$1$1$1" />
+      <unit id="3894227536043377004" at="56,19,100,9" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$1$1" />
       <unit id="3894227536043377004" at="54,50,102,5" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor$1" />
       <unit id="3894227536041893272" at="38,0,178,0" name="jetbrains.mps.console.ideCommands.behavior.ClickableGenerator__BehaviorDescriptor" />
     </file>

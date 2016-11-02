@@ -544,11 +544,11 @@
       <unit id="2182758403694683922" at="66,15,70,5" name="jetbrains.mps.tool.gentest.plugin.TestCollector$5" />
       <unit id="2182758403694683967" at="76,115,80,5" name="jetbrains.mps.tool.gentest.plugin.TestCollector$6" />
       <unit id="2182758403694683988" at="80,15,84,5" name="jetbrains.mps.tool.gentest.plugin.TestCollector$7" />
-      <unit id="2182758403694684019" at="89,209,93,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$9" />
-      <unit id="2182758403694684056" at="101,118,105,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$10" />
-      <unit id="2182758403694684089" at="113,97,117,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$11" />
-      <unit id="2182758403694684122" at="125,97,129,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$12" />
-      <unit id="2182758403694684155" at="137,97,141,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$13" />
+      <unit id="2182758403694684019" at="89,209,93,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$8$1" />
+      <unit id="2182758403694684056" at="101,118,105,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$9$1" />
+      <unit id="2182758403694684089" at="113,97,117,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$10$1" />
+      <unit id="2182758403694684122" at="125,97,129,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$11$1" />
+      <unit id="2182758403694684155" at="137,97,141,9" name="jetbrains.mps.tool.gentest.plugin.TestCollector$12$1" />
       <unit id="1381111177099375592" at="154,303,158,5" name="jetbrains.mps.tool.gentest.plugin.TestCollector$13" />
       <unit id="1381111177099482366" at="163,303,167,5" name="jetbrains.mps.tool.gentest.plugin.TestCollector$14" />
       <unit id="2182758403694684011" at="87,73,95,5" name="jetbrains.mps.tool.gentest.plugin.TestCollector$8" />
@@ -874,10 +874,10 @@
       </scope>
       <scope id="3705898146943254774" at="69,29,110,8" />
       <scope id="3705898146943254774" at="69,0,112,0" />
-      <unit id="7226636334567097805" at="84,34,90,19" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$2" />
+      <unit id="7226636334567097805" at="84,34,90,19" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$Target_diff$1$1" />
       <unit id="3705898146943254947" at="163,0,183,0" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$Target_diff$Parameters" />
       <unit id="3705898146943254769" at="184,0,213,0" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$TargetProperties" />
-      <unit id="3705898146943254776" at="70,17,110,7" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$1" />
+      <unit id="3705898146943254776" at="70,17,110,7" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$Target_diff$1" />
       <unit id="3705898146943254774" at="65,0,184,0" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet$Target_diff" />
       <unit id="3705898146943254769" at="41,0,214,0" name="jetbrains.mps.tool.gentest.plugin.Diff_Facet" />
     </file>
@@ -1222,11 +1222,11 @@
       </scope>
       <scope id="8852346936509659263" at="141,29,175,8" />
       <scope id="8852346936509659263" at="141,0,177,0" />
-      <unit id="2034046503361624282" at="75,57,80,17" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$2" />
+      <unit id="2034046503361624282" at="75,57,80,17" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_collectTest$1$1" />
       <unit id="8852346936509691323" at="225,0,239,0" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_runTests$Parameters" />
-      <unit id="8852346936509564331" at="66,17,89,7" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$1" />
+      <unit id="8852346936509564331" at="66,17,89,7" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_collectTest$1" />
       <unit id="8852346936509564326" at="240,0,265,0" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$TargetProperties" />
-      <unit id="8852346936509659265" at="142,17,175,7" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$1" />
+      <unit id="8852346936509659265" at="142,17,175,7" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_runTests$1" />
       <unit id="8852346936509564329" at="61,0,137,0" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_collectTest" />
       <unit id="8852346936509659263" at="137,0,240,0" name="jetbrains.mps.tool.gentest.plugin.Test_Facet$Target_runTests" />
       <unit id="8852346936509564326" at="36,0,266,0" name="jetbrains.mps.tool.gentest.plugin.Test_Facet" />

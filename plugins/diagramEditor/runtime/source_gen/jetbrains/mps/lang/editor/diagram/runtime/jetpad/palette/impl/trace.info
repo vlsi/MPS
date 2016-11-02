@@ -160,8 +160,8 @@
       <scope id="7882925886018588605" at="45,26,72,17" />
       <scope id="121824560294466211" at="44,34,74,19" />
       <scope id="121824560294466208" at="44,0,76,0" />
-      <unit id="121824560294466283" at="57,77,61,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction$3" />
-      <unit id="6780054776344103287" at="65,78,69,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction$3" />
+      <unit id="121824560294466283" at="57,77,61,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction$2$1" />
+      <unit id="6780054776344103287" at="65,78,69,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction$2$2" />
       <unit id="121824560294466143" at="35,15,42,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction$1" />
       <unit id="121824560294466219" at="46,72,72,7" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction$2" />
       <unit id="121824560294466113" at="20,0,78,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationAction" />
@@ -249,7 +249,7 @@
         <var name="setConnectorCallback" id="639949279720498785" />
       </scope>
       <unit id="4394877045818040231" at="47,119,51,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup$1" />
-      <unit id="639949279732119570" at="68,50,75,9" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup$3" />
+      <unit id="639949279732119570" at="68,50,75,9" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup$2$1" />
       <unit id="639949279720498801" at="66,15,78,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup$2" />
       <unit id="4394877045818040154" at="30,0,83,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup" />
     </file>
@@ -366,8 +366,8 @@
       <scope id="7882925886018643824" at="55,26,93,17" />
       <scope id="4394877045818107937" at="54,34,95,19" />
       <scope id="4394877045818107934" at="54,0,97,0" />
-      <unit id="7882925886021958614" at="77,77,81,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$4" />
-      <unit id="6780054776343286065" at="85,78,89,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$4" />
+      <unit id="7882925886021958614" at="77,77,81,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$3$1" />
+      <unit id="6780054776343286065" at="85,78,89,11" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$3$2" />
       <unit id="718530200790693737" at="56,72,68,7" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$2" />
       <unit id="7882925886021698659" at="34,15,52,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$1" />
       <unit id="718530200790693796" at="68,43,93,7" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationAction$3" />

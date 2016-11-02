@@ -3155,10 +3155,10 @@
         <var name="it" id="9109410030988327159" />
       </scope>
       <scope id="9109410030988204399" at="3014,120,3035,7" />
-      <unit id="9109410030988357118" at="3017,208,3021,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$41" />
-      <unit id="9109410030988357118" at="3021,22,3025,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$41" />
-      <unit id="9109410030988361591" at="3025,211,3029,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$41" />
-      <unit id="9109410030988361591" at="3029,22,3033,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$41" />
+      <unit id="9109410030988357118" at="3017,208,3021,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$40$1" />
+      <unit id="9109410030988357118" at="3021,22,3025,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$40$2" />
+      <unit id="9109410030988361591" at="3025,211,3029,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$40$3" />
+      <unit id="9109410030988361591" at="3029,22,3033,9" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$40$4" />
       <unit id="9109410030988327159" at="3015,248,3035,5" name="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated$40" />
     </file>
   </root>

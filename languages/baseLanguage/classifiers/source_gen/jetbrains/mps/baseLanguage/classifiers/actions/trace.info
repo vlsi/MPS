@@ -136,7 +136,7 @@
       <scope id="1827366433118293701" at="37,55,53,19">
         <var name="imd" id="1827366433118313393" />
       </scope>
-      <unit id="1827366433121036220" at="48,446,52,9" name="jetbrains.mps.baseLanguage.classifiers.actions.PasteWrappers$2" />
+      <unit id="1827366433121036220" at="48,446,52,9" name="jetbrains.mps.baseLanguage.classifiers.actions.PasteWrappers$1$1" />
     </file>
   </root>
 </debug-info>

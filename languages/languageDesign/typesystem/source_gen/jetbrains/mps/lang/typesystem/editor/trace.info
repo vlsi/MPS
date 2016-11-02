@@ -15984,7 +15984,7 @@
         <var name="item" id="1741258697587166609" />
       </scope>
       <unit id="1741258697587166609" at="72,0,81,0" name="jetbrains.mps.lang.typesystem.editor.TypeClause_SubstituteMenu$SubstituteMenuPart_Subconcepts_zbskfb_b" />
-      <unit id="1741258697587166609" at="43,17,63,7" name="jetbrains.mps.lang.typesystem.editor.TypeClause_SubstituteMenu$1" />
+      <unit id="1741258697587166609" at="43,17,63,7" name="jetbrains.mps.lang.typesystem.editor.TypeClause_SubstituteMenu$SubstituteMenuPart_Wrapper_zbskfb_a$1" />
       <unit id="1741258697587166609" at="39,0,72,0" name="jetbrains.mps.lang.typesystem.editor.TypeClause_SubstituteMenu$SubstituteMenuPart_Wrapper_zbskfb_a" />
       <unit id="1741258697587166609" at="30,0,82,0" name="jetbrains.mps.lang.typesystem.editor.TypeClause_SubstituteMenu" />
     </file>
@@ -16443,7 +16443,7 @@
       <scope id="1741258697587243116" at="98,0,111,0">
         <var name="pattern" id="1741258697587243116" />
       </scope>
-      <unit id="1741258697587243135" at="68,58,72,7" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$1" />
+      <unit id="1741258697587243135" at="68,58,72,7" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$1" />
       <unit id="1741258697587243116" at="85,0,119,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$TransformationMenuPart_Action_hjeljm_a0a$Item" />
       <unit id="1741258697587243116" at="75,0,120,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0$TransformationMenuPart_Action_hjeljm_a0a" />
       <unit id="1741258697587243116" at="56,0,121,0" name="jetbrains.mps.lang.typesystem.editor._Helgins_RT_Contribution$TransformationMenuPart_Parameterized_hjeljm_a0" />
@@ -17213,7 +17213,7 @@
         <var name="editorContext" id="4778346850551695627" />
         <var name="node" id="4778346850551695627" />
       </scope>
-      <unit id="4778346850551686230" at="76,40,85,7" name="jetbrains.mps.lang.typesystem.editor.InequationReference_Editor$1" />
+      <unit id="4778346850551686230" at="76,40,85,7" name="jetbrains.mps.lang.typesystem.editor.InequationReference_Editor$_Inline_boi5ax_a0a$1" />
       <unit id="4778346850551685844" at="58,0,118,0" name="jetbrains.mps.lang.typesystem.editor.InequationReference_Editor$_Inline_boi5ax_a0a" />
       <unit id="4778346850551666965" at="27,0,119,0" name="jetbrains.mps.lang.typesystem.editor.InequationReference_Editor" />
     </file>

@@ -239,14 +239,14 @@
       </scope>
       <scope id="1172667126985" at="13,0,71,0" />
       <scope id="1172667364856" at="71,0,129,0" />
-      <unit id="1224596674739" at="18,23,58,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3" />
-      <unit id="1224596674862" at="76,23,116,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$4" />
-      <unit id="1224596675141" at="134,23,174,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$5" />
-      <unit id="1224596675396" at="189,23,229,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$6" />
-      <unit id="1224596674739" at="16,19,60,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$2" />
-      <unit id="1224596674862" at="74,19,118,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3" />
-      <unit id="1224596675141" at="132,19,176,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$4" />
-      <unit id="1224596675396" at="187,19,231,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$5" />
+      <unit id="1224596674739" at="18,23,58,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$1$1$1" />
+      <unit id="1224596674862" at="76,23,116,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$2$1$1" />
+      <unit id="1224596675141" at="134,23,174,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3$1$1" />
+      <unit id="1224596675396" at="189,23,229,13" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$4$1$1" />
+      <unit id="1224596674739" at="16,19,60,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$1$1" />
+      <unit id="1224596674862" at="74,19,118,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$2$1" />
+      <unit id="1224596675141" at="132,19,176,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3$1" />
+      <unit id="1224596675396" at="187,19,231,9" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$4$1" />
       <unit id="1224596674739" at="14,51,62,5" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$1" />
       <unit id="1224596674862" at="72,51,120,5" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$2" />
       <unit id="1224596675141" at="130,51,178,5" name="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3" />

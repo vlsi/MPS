@@ -210,8 +210,8 @@
       </scope>
       <unit id="834555255520141654" at="68,135,72,5" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$1" />
       <unit id="6435164937170791901" at="119,134,123,7" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$2" />
-      <unit id="6435164937171803802" at="146,124,150,11" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$4" />
-      <unit id="6435164937171772610" at="129,41,140,11" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$4" />
+      <unit id="6435164937171803802" at="146,124,150,11" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$3$2" />
+      <unit id="6435164937171772610" at="129,41,140,11" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$3$1" />
       <unit id="6435164937171414383" at="127,58,152,7" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$3" />
       <unit id="6845384137766004712" at="33,0,162,0" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action" />
     </file>

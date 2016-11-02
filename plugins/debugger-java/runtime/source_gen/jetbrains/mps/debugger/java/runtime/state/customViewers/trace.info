@@ -396,8 +396,8 @@
         <var name="watchables" id="7129857096177050748" />
       </scope>
       <scope id="948222233230584398" at="42,0,63,0" />
-      <unit id="7129857096177050795" at="49,66,53,9" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$1" />
-      <unit id="7129857096177050806" at="53,20,57,9" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$2" />
+      <unit id="7129857096177050795" at="49,66,53,9" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$JavaObjectValue$1" />
+      <unit id="7129857096177050806" at="53,20,57,9" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$JavaObjectValue$2" />
       <unit id="6957207478384132580" at="38,0,64,0" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$JavaObjectValue" />
       <unit id="6108369403997858554" at="64,0,104,0" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$JavaField" />
       <unit id="7129857096177041157" at="26,0,105,0" name="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory" />

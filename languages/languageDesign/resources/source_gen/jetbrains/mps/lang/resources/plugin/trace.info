@@ -278,15 +278,15 @@
       </scope>
       <scope id="6648795410103988026" at="78,29,168,8" />
       <scope id="6648795410103988026" at="78,0,170,0" />
-      <unit id="6641743975990406393" at="97,98,101,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-      <unit id="8130203123066612537" at="112,98,116,27" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-      <unit id="6641743975990406382" at="95,89,103,21" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
+      <unit id="6641743975990406393" at="97,98,101,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$1$1$1" />
+      <unit id="8130203123066612537" at="112,98,116,27" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$1$2$1" />
+      <unit id="6641743975990406382" at="95,89,103,21" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$1$1" />
       <unit id="6648795410103988025" at="216,0,227,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$TargetProperties" />
-      <unit id="6648795410103988215" at="140,66,157,21" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
-      <unit id="6641743975990914573" at="138,65,159,17" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$2" />
-      <unit id="831924260440479738" at="106,242,128,23" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
-      <unit id="6641743975990233561" at="93,57,131,17" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$2" />
-      <unit id="6648795410103988032" at="79,17,168,7" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$1" />
+      <unit id="6648795410103988215" at="140,66,157,21" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$2$1" />
+      <unit id="6641743975990914573" at="138,65,159,17" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$2" />
+      <unit id="831924260440479738" at="106,242,128,23" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$1$2" />
+      <unit id="6641743975990233561" at="93,57,131,17" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1$1" />
+      <unit id="6648795410103988032" at="79,17,168,7" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries$1" />
       <unit id="6648795410103988026" at="74,0,216,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries" />
       <unit id="6648795410103988025" at="50,0,228,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet" />
     </file>

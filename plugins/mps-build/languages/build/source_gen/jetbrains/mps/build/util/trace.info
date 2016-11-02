@@ -174,7 +174,7 @@
       <scope id="1224588814561861374" at="42,0,63,0">
         <var name="prefix" id="1224588814561861378" />
       </scope>
-      <unit id="1959421118255915108" at="46,48,50,9" name="jetbrains.mps.build.util.DescendantsScope$2" />
+      <unit id="1959421118255915108" at="46,48,50,9" name="jetbrains.mps.build.util.DescendantsScope$1$1" />
       <unit id="1224588814561861952" at="56,48,61,5" name="jetbrains.mps.build.util.DescendantsScope$2" />
       <unit id="1224588814561861673" at="44,103,52,5" name="jetbrains.mps.build.util.DescendantsScope$1" />
       <unit id="1224588814561866575" at="105,15,113,5" name="jetbrains.mps.build.util.DescendantsScope$3" />
@@ -1004,8 +1004,8 @@
         <var name="importDeclarations" id="3767587139141109796" />
       </scope>
       <unit id="3767587139141108861" at="69,18,73,5" name="jetbrains.mps.build.util.ScopeUtil$6" />
-      <unit id="1446021890180364833" at="112,86,116,7" name="jetbrains.mps.build.util.ScopeUtil$1" />
-      <unit id="2867287323691293465" at="187,84,191,7" name="jetbrains.mps.build.util.ScopeUtil$1" />
+      <unit id="1446021890180364833" at="112,86,116,7" name="jetbrains.mps.build.util.ScopeUtil$VisibleArtifactsScope$1" />
+      <unit id="2867287323691293465" at="187,84,191,7" name="jetbrains.mps.build.util.ScopeUtil$TransformingScope$1" />
       <unit id="1224588814561825178" at="46,15,51,5" name="jetbrains.mps.build.util.ScopeUtil$2" />
       <unit id="3767587139141108823" at="54,63,59,5" name="jetbrains.mps.build.util.ScopeUtil$3" />
       <unit id="3767587139141108847" at="59,18,64,5" name="jetbrains.mps.build.util.ScopeUtil$4" />

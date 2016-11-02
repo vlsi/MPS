@@ -134,7 +134,7 @@
       <unit id="1233082194732490267" at="51,19,55,7" name="declarations.migration.MigrateDeclarations$3" />
       <unit id="1233082194732499714" at="55,19,59,7" name="declarations.migration.MigrateDeclarations$4" />
       <unit id="1233082194732490267" at="59,18,63,7" name="declarations.migration.MigrateDeclarations$5" />
-      <unit id="1233082194732490267" at="66,52,70,11" name="declarations.migration.MigrateDeclarations$7" />
+      <unit id="1233082194732490267" at="66,52,70,11" name="declarations.migration.MigrateDeclarations$6$1" />
       <unit id="1233082194732490267" at="63,29,72,7" name="declarations.migration.MigrateDeclarations$6" />
       <unit id="1233082194732500533" at="28,0,103,0" name="declarations.migration.MigrateDeclarations" />
     </file>

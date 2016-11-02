@@ -1627,7 +1627,7 @@
         <var name="item" id="1741258697587176020" />
       </scope>
       <unit id="1741258697587176020" at="72,0,81,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSource_SubstituteMenu$SubstituteMenuPart_Subconcepts_9gk0sa_b" />
-      <unit id="1741258697587176020" at="43,17,63,7" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSource_SubstituteMenu$1" />
+      <unit id="1741258697587176020" at="43,17,63,7" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSource_SubstituteMenu$SubstituteMenuPart_Wrapper_9gk0sa_a$1" />
       <unit id="1741258697587176020" at="39,0,72,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSource_SubstituteMenu$SubstituteMenuPart_Wrapper_9gk0sa_a" />
       <unit id="1741258697587176020" at="30,0,82,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSource_SubstituteMenu" />
     </file>

@@ -367,18 +367,18 @@
         <var name="theReference" id="2906110183022440151" />
       </scope>
       <scope id="2906110183022440078" at="183,0,217,0" />
-      <unit id="2906110183022230106" at="89,956,93,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$1" />
-      <unit id="2906110183022321809" at="101,854,105,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$2" />
-      <unit id="2906110183022332693" at="113,564,117,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$3" />
-      <unit id="2906110183022397787" at="117,20,121,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$4" />
-      <unit id="2906110183022365946" at="122,312,126,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$5" />
-      <unit id="2906110183022411217" at="134,1284,138,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$6" />
-      <unit id="6404411205049619220" at="147,287,151,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$7" />
-      <unit id="2906110183022425090" at="152,285,156,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$8" />
-      <unit id="2906110183022425166" at="156,22,160,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$9" />
-      <unit id="2906110183022432372" at="173,329,177,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$10" />
-      <unit id="2906110183022440101" at="198,302,202,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$11" />
-      <unit id="2906110183022440135" at="206,324,210,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$12" />
+      <unit id="2906110183022230106" at="89,956,93,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$1" />
+      <unit id="2906110183022321809" at="101,854,105,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$2" />
+      <unit id="2906110183022332693" at="113,564,117,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$3" />
+      <unit id="2906110183022397787" at="117,20,121,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$4" />
+      <unit id="2906110183022365946" at="122,312,126,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$5" />
+      <unit id="2906110183022411217" at="134,1284,138,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$6" />
+      <unit id="6404411205049619220" at="147,287,151,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$7" />
+      <unit id="2906110183022425090" at="152,285,156,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$8" />
+      <unit id="2906110183022425166" at="156,22,160,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$9" />
+      <unit id="2906110183022432372" at="173,329,177,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$10" />
+      <unit id="2906110183022440101" at="198,302,202,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$11" />
+      <unit id="2906110183022440135" at="206,324,210,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody$12" />
       <unit id="2906110183022219806" at="72,0,239,0" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody" />
       <unit id="2906110183022219806" at="24,0,240,0" name="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test" />
     </file>
@@ -562,9 +562,9 @@
         <var name="unspecifiedChildren" id="9203425869796418392" />
       </scope>
       <scope id="2166349271756548523" at="92,0,110,0" />
-      <unit id="2906110183022478464" at="70,616,74,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$1" />
-      <unit id="2906110183022478533" at="86,616,90,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$2" />
-      <unit id="9203425869796418406" at="100,305,104,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$3" />
+      <unit id="2906110183022478464" at="70,616,74,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody$1" />
+      <unit id="2906110183022478533" at="86,616,90,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody$2" />
+      <unit id="9203425869796418406" at="100,305,104,7" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody$3" />
       <unit id="8758390115028789531" at="64,0,152,0" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody" />
       <unit id="8758390115028789531" at="21,0,153,0" name="jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test" />
     </file>

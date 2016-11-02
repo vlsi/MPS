@@ -105,7 +105,7 @@
         <var name="editorContext" id="1193396656620" />
         <var name="node" id="1193396656620" />
       </scope>
-      <unit id="1227876798261" at="74,459,78,7" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention$1" />
+      <unit id="1227876798261" at="74,459,78,7" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention$IntentionImplementation$1" />
       <unit id="1193396656620" at="55,0,87,0" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention$IntentionImplementation" />
       <unit id="1193396656620" at="26,0,88,0" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention" />
     </file>
@@ -493,7 +493,7 @@
         <var name="editorContext" id="2442451895696290638" />
         <var name="node" id="2442451895696290638" />
       </scope>
-      <unit id="2442451895696358801" at="65,439,69,7" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForeachStatementToForEach_Intention$1" />
+      <unit id="2442451895696358801" at="65,439,69,7" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForeachStatementToForEach_Intention$IntentionImplementation$1" />
       <unit id="2442451895696290638" at="48,0,78,0" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForeachStatementToForEach_Intention$IntentionImplementation" />
       <unit id="2442451895696290638" at="25,0,79,0" name="jetbrains.mps.baseLanguage.collections.intentions.ConvertForeachStatementToForEach_Intention" />
     </file>

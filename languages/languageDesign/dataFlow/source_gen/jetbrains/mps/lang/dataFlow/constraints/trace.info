@@ -127,7 +127,7 @@
         <var name="references" id="1213104855807" />
       </scope>
       <scope id="1213104855807" at="32,0,60,0" />
-      <unit id="1213104855807" at="43,19,55,9" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$2" />
+      <unit id="1213104855807" at="43,19,55,9" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1$1" />
       <unit id="1213104855807" at="35,143,57,5" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints$1" />
       <unit id="1213104855807" at="27,0,62,0" name="jetbrains.mps.lang.dataFlow.constraints.LabelPosition_Constraints" />
     </file>

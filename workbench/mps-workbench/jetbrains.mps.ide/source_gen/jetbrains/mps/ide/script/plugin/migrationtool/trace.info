@@ -289,9 +289,9 @@
       <unit id="7316415153790562183" at="82,36,87,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$2" />
       <unit id="754691077499813605" at="103,56,108,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$3" />
       <unit id="1653942859672051211" at="158,26,163,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$6" />
-      <unit id="7316415153790563173" at="193,60,199,9" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$9" />
+      <unit id="7316415153790563173" at="193,60,199,9" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$8$1" />
       <unit id="7316415153790562346" at="190,33,201,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$8" />
-      <unit id="7316415153790563085" at="171,46,184,9" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$8" />
+      <unit id="7316415153790563085" at="171,46,184,9" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$7$1" />
       <unit id="7316415153790562320" at="168,54,186,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$7" />
       <unit id="754691077499835931" at="112,15,135,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView$4" />
       <unit id="7316415153790558500" at="46,0,216,0" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsView" />
@@ -406,10 +406,10 @@
         <var name="scope" id="7316415153790564935" />
         <var name="scripts" id="7316415153790564932" />
       </scope>
-      <unit id="8817954235657276080" at="61,107,65,13" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$3" />
+      <unit id="8817954235657276080" at="61,107,65,13" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$1$1$1" />
       <unit id="7316415153790565121" at="88,36,94,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$2" />
-      <unit id="7316415153790565065" at="66,64,80,13" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$3" />
-      <unit id="7316415153790565021" at="53,46,82,9" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$2" />
+      <unit id="7316415153790565065" at="66,64,80,13" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$1$1$2" />
+      <unit id="7316415153790565021" at="53,46,82,9" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$1$1" />
       <unit id="7316415153790564970" at="50,56,84,5" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool$1" />
       <unit id="7316415153790561714" at="31,0,108,0" name="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool" />
     </file>

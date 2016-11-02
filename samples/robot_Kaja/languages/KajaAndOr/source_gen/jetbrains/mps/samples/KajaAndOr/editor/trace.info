@@ -211,7 +211,7 @@
       <scope id="1741258697587098602" at="41,0,50,0">
         <var name="_context" id="1741258697587098602" />
       </scope>
-      <unit id="1741258697587098611" at="44,260,48,7" name="jetbrains.mps.samples.KajaAndOr.editor.LogicalOperator_SubstituteMenu$1" />
+      <unit id="1741258697587098611" at="44,260,48,7" name="jetbrains.mps.samples.KajaAndOr.editor.LogicalOperator_SubstituteMenu$SubstituteMenuPart_Parameterized_vciz2d_a$1" />
       <unit id="1741258697587098602" at="61,0,93,0" name="jetbrains.mps.samples.KajaAndOr.editor.LogicalOperator_SubstituteMenu$SubstituteMenuPart_Parameterized_vciz2d_a$SubstituteMenuPart_Action_vciz2d_a0$Item" />
       <unit id="1741258697587098602" at="50,0,94,0" name="jetbrains.mps.samples.KajaAndOr.editor.LogicalOperator_SubstituteMenu$SubstituteMenuPart_Parameterized_vciz2d_a$SubstituteMenuPart_Action_vciz2d_a0" />
       <unit id="1741258697587098602" at="35,0,96,0" name="jetbrains.mps.samples.KajaAndOr.editor.LogicalOperator_SubstituteMenu$SubstituteMenuPart_Parameterized_vciz2d_a" />
@@ -466,7 +466,7 @@
       <scope id="1741258697587184756" at="64,0,73,0">
         <var name="_context" id="1741258697587184756" />
       </scope>
-      <unit id="1741258697587184767" at="67,260,71,7" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Looking_Contribution$1" />
+      <unit id="1741258697587184767" at="67,260,71,7" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Looking_Contribution$TransformationMenuPart_Parameterized_tmm9j9_a0$1" />
       <unit id="1741258697587184756" at="84,0,116,0" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Looking_Contribution$TransformationMenuPart_Parameterized_tmm9j9_a0$TransformationMenuPart_Action_tmm9j9_a0a$Item" />
       <unit id="1741258697587184756" at="74,0,117,0" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Looking_Contribution$TransformationMenuPart_Parameterized_tmm9j9_a0$TransformationMenuPart_Action_tmm9j9_a0a" />
       <unit id="1741258697587184756" at="56,0,118,0" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Looking_Contribution$TransformationMenuPart_Parameterized_tmm9j9_a0" />
@@ -564,7 +564,7 @@
       <scope id="1741258697587184840" at="63,0,72,0">
         <var name="_context" id="1741258697587184840" />
       </scope>
-      <unit id="1741258697587184851" at="66,260,70,7" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Contribution$1" />
+      <unit id="1741258697587184851" at="66,260,70,7" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Contribution$TransformationMenuPart_Parameterized_ry9dqf_a0$1" />
       <unit id="1741258697587184840" at="83,0,115,0" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Contribution$TransformationMenuPart_Parameterized_ry9dqf_a0$TransformationMenuPart_Action_ry9dqf_a0a$Item" />
       <unit id="1741258697587184840" at="73,0,116,0" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Contribution$TransformationMenuPart_Parameterized_ry9dqf_a0$TransformationMenuPart_Action_ry9dqf_a0a" />
       <unit id="1741258697587184840" at="55,0,117,0" name="jetbrains.mps.samples.KajaAndOr.editor.AndOrTransforms_Contribution$TransformationMenuPart_Parameterized_ry9dqf_a0" />

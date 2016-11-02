@@ -173,7 +173,7 @@
         <var name="onNodeSetUp" id="6658728357875196754" />
         <var name="session" id="846214144115226860" />
       </scope>
-      <unit id="7456817383698547817" at="69,39,73,9" name="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer$3" />
+      <unit id="7456817383698547817" at="69,39,73,9" name="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer$2$1" />
       <unit id="846214144113961749" at="93,15,98,5" name="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer$3" />
       <unit id="9172312269976661816" at="103,73,108,5" name="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer$4" />
       <unit id="944342063945193020" at="59,35,65,5" name="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer$1" />
