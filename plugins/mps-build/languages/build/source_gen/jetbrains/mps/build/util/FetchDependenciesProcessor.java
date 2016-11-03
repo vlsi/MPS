@@ -82,7 +82,7 @@ public class FetchDependenciesProcessor {
       }
       if (!(checkArtifactId(artifactId))) {
         // false is possible only when artifactId is SNode from transient model 
-        artifactId = artifacts.getLookup().toOriginalNode((SNode) artifactId);
+        artifactId = helper.getOriginalNode((SNode) artifactId);
       }
       helper.add(node, false, artifactId);
     }
@@ -109,10 +109,6 @@ public class FetchDependenciesProcessor {
     }
 
     private boolean check(SNode node) {
-      if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
-        genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
-        return false;
-      }
       if (!(artifacts.contains(node))) {
         genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;

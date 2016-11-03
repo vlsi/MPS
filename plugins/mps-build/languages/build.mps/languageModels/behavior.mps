@@ -274,9 +274,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -4058,23 +4066,32 @@
                     </node>
                     <node concept="3clFbJ" id="27eOSzOUT_k" role="3cqZAp">
                       <node concept="3clFbS" id="27eOSzOUT_l" role="3clFbx">
-                        <node concept="3clFbF" id="27eOSzOW3hE" role="3cqZAp">
-                          <node concept="2OqwBi" id="27eOSzOW3i0" role="3clFbG">
-                            <node concept="37vLTw" id="3GM_nagTABE" role="2Oq$k0">
-                              <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                            </node>
-                            <node concept="liA8E" id="3h6igUoX5k9" role="2OqNvi">
-                              <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
-                              <node concept="2OqwBi" id="27eOSzOW3iR" role="37wK5m">
-                                <node concept="2GrUjf" id="7MPX9wYDoA_" role="2Oq$k0">
-                                  <ref role="2Gs0qQ" node="7MPX9wYDljz" resolve="gentestDep" />
-                                </node>
-                                <node concept="3TrcHB" id="27eOSzOW3iX" role="2OqNvi">
-                                  <ref role="3TsBF5" to="kdzh:hS0KzPOSqb" resolve="uuid" />
-                                </node>
+                        <node concept="3SKdUt" id="D5uFEIK2XS" role="3cqZAp">
+                          <node concept="3SKdUq" id="D5uFEIK2XU" role="3SKWNk">
+                            <property role="3SKdUp" value="FIXME what's the purpose of uuid string to node mapping here? I didn't find any use" />
+                          </node>
+                        </node>
+                        <node concept="1X3_iC" id="2mkTG0HkPLC" role="lGtFl">
+                          <property role="3V$3am" value="statement" />
+                          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                          <node concept="3clFbF" id="27eOSzOW3hE" role="8Wnug">
+                            <node concept="2OqwBi" id="27eOSzOW3i0" role="3clFbG">
+                              <node concept="37vLTw" id="3GM_nagTABE" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                               </node>
-                              <node concept="37vLTw" id="3GM_nagTxjT" role="37wK5m">
-                                <ref role="3cqZAo" node="27eOSzOUT_8" resolve="depLayoutNode" />
+                              <node concept="liA8E" id="3h6igUoX5k9" role="2OqNvi">
+                                <ref role="37wK5l" to="o3n2:4WwUR8hW0t5" resolve="putArtifact" />
+                                <node concept="2OqwBi" id="27eOSzOW3iR" role="37wK5m">
+                                  <node concept="2GrUjf" id="7MPX9wYDoA_" role="2Oq$k0">
+                                    <ref role="2Gs0qQ" node="7MPX9wYDljz" resolve="gentestDep" />
+                                  </node>
+                                  <node concept="3TrcHB" id="27eOSzOW3iX" role="2OqNvi">
+                                    <ref role="3TsBF5" to="kdzh:hS0KzPOSqb" resolve="uuid" />
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="3GM_nagTxjT" role="37wK5m">
+                                  <ref role="3cqZAo" node="27eOSzOUT_8" resolve="depLayoutNode" />
+                                </node>
                               </node>
                             </node>
                           </node>
