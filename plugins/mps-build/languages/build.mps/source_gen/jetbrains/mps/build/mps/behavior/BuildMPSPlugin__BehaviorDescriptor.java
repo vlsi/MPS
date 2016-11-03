@@ -69,7 +69,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     final SNode project = artifacts.getProject();
 
     // fetch required plugins 
-    RequiredPlugins plugins = new RequiredPlugins(project, artifacts.getGenContext());
+    RequiredPlugins plugins = new RequiredPlugins(project, builder.getGenContext());
     plugins.collectDependencies();
     for (SNode plugin : Sequence.fromIterable(plugins.getDependency()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -83,8 +83,8 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     }
 
     // fetch stuff for ant task classpath 
-    DependenciesHelper helper = artifacts.getDependenciesHelper();
-    SNode originalProject = SNodeOperations.as(artifacts.toOriginalNode(project), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+    DependenciesHelper helper = new DependenciesHelper(builder.getGenContext(), project);
+    SNode originalProject = SNodeOperations.as(helper.getOriginalNode(project), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     SNode antMpsModule = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(originalProject, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", ((int) 0)).resolve(originalProject, "ant-mps"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((antMpsModule != null)) {
       SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));

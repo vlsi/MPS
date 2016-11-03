@@ -89,7 +89,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode path : ListSequence.fromList(requiredJars)) {
-      Tuples._2<SNode, String> resource = artifacts.getResource(SNodeOperations.cast(artifacts.toOriginalNode(path), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")));
+      Tuples._2<SNode, String> resource = artifacts.getResource(path);
       SNode artifact = SNodeOperations.as(resource._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (artifact != null) {
         if (isNotEmptyString(resource._1())) {

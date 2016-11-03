@@ -28,7 +28,8 @@ public class JavaExportUtil {
     }
 
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(library), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
+    // FIXME why should I care to get original here? 
+    SNode target = SNodeOperations.as(artifacts.getLookup().toOriginalNode(library), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
     if (target == null || SNodeOperations.getModel(target).getModule() instanceof TransientModelsModule) {
       // problem with transient models, already reported 
       return;
@@ -55,10 +56,14 @@ public class JavaExportUtil {
             ListSequence.fromList(result).addElement(requiredJar);
           }
         } else if (SNodeOperations.isInstanceOf(classpath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"))) {
-          SNode requiredJarFolder = requireJarFolder(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, 0x4ddcec86afb65afaL, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder")), contextNode);
-          if (requiredJarFolder != null) {
-            ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(requiredJarFolder, true));
+          SNode folder = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, 0x4ddcec86afb65afaL, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder"));
+          if (SNodeOperations.getContainingRoot(folder) != SNodeOperations.getContainingRoot(contextNode)) {
+            SNode requiredJarFolder = requireJarFolder(artifacts, folder);
+            if (requiredJarFolder != null) {
+              ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(requiredJarFolder, true));
+            }
           }
+
         } else {
           // fatal, unknown element 
           ListSequence.fromList(result).clear();
@@ -99,12 +104,10 @@ public class JavaExportUtil {
       }
     }
   }
-  public static void requireModule(VisibleArtifacts artifacts, SNode module, SNode contextNode, RequiredDependenciesBuilder builder) {
-
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(module), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
+  public static void requireModule(VisibleArtifacts artifacts, SNode target, SNode contextNode, RequiredDependenciesBuilder builder) {
 
     // dependencies closure 
-    JavaModulesClosure closure = new JavaModulesClosure(artifacts.getGenContext(), target).closure(true);
+    JavaModulesClosure closure = new JavaModulesClosure(target).closure(true);
 
     // searh for artifacts 
     Iterable<SNode> required = Sequence.fromIterable(((Iterable<SNode>) closure.getModules())).concat(Sequence.fromIterable(((Iterable<SNode>) closure.getJars())).select(new ISelector<SNode, SNode>() {
@@ -154,7 +157,7 @@ public class JavaExportUtil {
         continue;
       }
 
-      SNode folderNode = requireJarFolder(artifacts, extJarInFolder._0(), contextNode);
+      SNode folderNode = requireJarFolder(artifacts, extJarInFolder._0());
       if (folderNode != null) {
         builder.addWithContent(folderNode);
         hasDependencies = true;
@@ -171,17 +174,16 @@ public class JavaExportUtil {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jar), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afa57ad2L, "jetbrains.mps.build.structure.BuildSource_SingleFile"));
-    if (target == null) {
+    if (jar == null) {
       return null;
     }
 
     SNode artifact = null;
     boolean withContent = false;
-    if (SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(target), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-    } else if (SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
-      Tuples._2<SNode, String> resource = artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")));
+    if (SNodeOperations.isInstanceOf(jar, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
+      artifact = SNodeOperations.as(artifacts.findArtifact(jar), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+    } else if (SNodeOperations.isInstanceOf(jar, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
+      Tuples._2<SNode, String> resource = artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(jar, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")));
       artifact = SNodeOperations.as(resource._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       withContent = isNotEmptyString(resource._1());
     }
@@ -191,24 +193,14 @@ public class JavaExportUtil {
     return MultiTuple.<SNode,Boolean>from(artifact, withContent);
   }
   @Nullable
-  public static SNode requireJarFolder(VisibleArtifacts artifacts, SNode jarFolder, SNode contextNode) {
-    if (SNodeOperations.getContainingRoot(jarFolder) == SNodeOperations.getContainingRoot(contextNode)) {
-      return null;
-    }
-
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jarFolder), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb659d7L, "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
-    if (target == null) {
-      return null;
-    }
-
+  public static SNode requireJarFolder(VisibleArtifacts artifacts, SNode jarFolder) {
     SNode artifact = null;
-    if (SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"))) {
-      artifact = SNodeOperations.as(artifacts.findArtifact(target), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
-    } else if (SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"))) {
-      artifact = SNodeOperations.as(artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")))._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+    if (SNodeOperations.isInstanceOf(jarFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"))) {
+      artifact = SNodeOperations.as(artifacts.findArtifact(jarFolder), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+    } else if (SNodeOperations.isInstanceOf(jarFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"))) {
+      artifact = SNodeOperations.as(artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(jarFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")))._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
     }
     return artifact;
-
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

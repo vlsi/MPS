@@ -19,6 +19,7 @@ public class DependenciesHelper {
   private final Set<SNode> requiresFetch;
   protected final MacroHelper macros;
   private final TemplateQueryContext myGenContext;
+
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
     this.contentLocationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "contentLocation");
@@ -27,6 +28,11 @@ public class DependenciesHelper {
     this.requiresFetch = GenerationUtil.getSessionSet(project, genContext, "requiresFetch");
     myGenContext = genContext;
   }
+
+  public TemplateQueryContext getGenContext() {
+    return myGenContext;
+  }
+
   public Map<SNode, String> locations() {
     return locationMap;
   }

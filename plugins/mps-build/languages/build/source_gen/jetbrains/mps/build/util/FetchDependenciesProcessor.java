@@ -26,8 +26,14 @@ public class FetchDependenciesProcessor {
     this.project = project;
   }
   public void process() {
-    VisibleArtifacts artifacts = new VisibleArtifacts(project, genContext);
-    artifacts.collect();
+    VisibleArtifacts artifacts = new VisibleArtifacts(project) {
+
+      @Override
+      protected ArtifactLookup createLookup() {
+        return new ArtifactLookup(this, new DependenciesHelper(FetchDependenciesProcessor.this.genContext, project));
+      }
+    };
+    artifacts.collect(false);
     UnpackHelper helper = new UnpackHelper(artifacts, genContext);
     for (SNode dep : SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L, "jetbrains.mps.build.structure.BuildExternalDependency"), false, new SAbstractConcept[]{})) {
       BuildExternalDependency__BehaviorDescriptor.fetchDependencies_id57YmpYyL8F1.invoke(dep, artifacts, new FetchDependenciesProcessor.RequiredDependenciesBuilderImpl(artifacts, dep, helper));
@@ -56,6 +62,12 @@ public class FetchDependenciesProcessor {
       this.dep = dep;
       this.helper = helper;
     }
+
+    @Override
+    public TemplateQueryContext getGenContext() {
+      return helper.getGenContext();
+    }
+
     @Override
     public void add(SNode node) {
       if (!(check(node))) {
@@ -70,7 +82,7 @@ public class FetchDependenciesProcessor {
       }
       if (!(checkArtifactId(artifactId))) {
         // false is possible only when artifactId is SNode from transient model 
-        artifactId = artifacts.toOriginalNode((SNode) artifactId);
+        artifactId = artifacts.getLookup().toOriginalNode((SNode) artifactId);
       }
       helper.add(node, false, artifactId);
     }

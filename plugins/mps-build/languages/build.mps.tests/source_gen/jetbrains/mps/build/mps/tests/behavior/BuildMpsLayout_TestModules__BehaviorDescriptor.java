@@ -57,7 +57,7 @@ public final class BuildMpsLayout_TestModules__BehaviorDescriptor extends BaseBH
   }
   /*package*/ static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     SNode project = artifacts.getProject();
-    TemplateQueryContext genContext = artifacts.getGenContext();
+    TemplateQueryContext genContext = builder.getGenContext();
 
     // fetch required plugins 
     // we may want to have an option about that? 
@@ -69,12 +69,7 @@ public final class BuildMpsLayout_TestModules__BehaviorDescriptor extends BaseBH
       }
     }), new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).runtimeClosure());
     for (SNode plugin : Sequence.fromIterable(plugins.getDependency())) {
-      SNode pluginArtifact;
-      if (SNodeOperations.getContainingRoot(__thisNode__) != SNodeOperations.getContainingRoot(plugin)) {
-        pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-      } else {
-        pluginArtifact = SNodeOperations.as(artifacts.findArtifact(artifacts.toOriginalNode(plugin)), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-      }
+      SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (pluginArtifact != null) {
         builder.add(pluginArtifact, plugin);
       }

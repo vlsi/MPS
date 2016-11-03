@@ -2593,8 +2593,8 @@
                         <node concept="3cpWs8" id="5Qhm_YR9a45" role="3cqZAp">
                           <node concept="3cpWsn" id="5Qhm_YR9a46" role="3cpWs9">
                             <property role="TrG5h" value="outputFiles" />
-                            <node concept="3uibUv" id="3JTAYY5eUWS" role="1tU5fm">
-                              <ref role="3uigEE" to="o3n2:3JTAYY5eUVl" resolve="LocalArtifacts" />
+                            <node concept="3uibUv" id="7eQOMx88rBR" role="1tU5fm">
+                              <ref role="3uigEE" to="o3n2:450ejGzgHe7" resolve="VisibleArtifacts" />
                             </node>
                             <node concept="1LFfDK" id="5Qhm_YR9a48" role="33vP2m">
                               <node concept="3cmrfG" id="5Qhm_YR9a49" role="1LF_Uc">
@@ -3053,16 +3053,15 @@
                   <node concept="3cpWs8" id="xR55uUrL3h" role="3cqZAp">
                     <node concept="3cpWsn" id="xR55uUrL3i" role="3cpWs9">
                       <property role="TrG5h" value="output" />
-                      <node concept="3uibUv" id="3JTAYY5eUW1" role="1tU5fm">
-                        <ref role="3uigEE" to="o3n2:3JTAYY5eUVl" resolve="LocalArtifacts" />
+                      <node concept="3uibUv" id="7eQOMx88ghP" role="1tU5fm">
+                        <ref role="3uigEE" to="o3n2:450ejGzgHe7" resolve="VisibleArtifacts" />
                       </node>
                       <node concept="2ShNRf" id="xR55uUrL6D" role="33vP2m">
                         <node concept="1pGfFk" id="xR55uUrL6F" role="2ShVmc">
-                          <ref role="37wK5l" to="o3n2:3JTAYY5eUVG" resolve="LocalArtifacts" />
+                          <ref role="37wK5l" to="o3n2:450ejGzgHe9" resolve="VisibleArtifacts" />
                           <node concept="37vLTw" id="3GM_nagTtD9" role="37wK5m">
                             <ref role="3cqZAo" node="xR55uUrLLp" resolve="project" />
                           </node>
-                          <node concept="1iwH7S" id="xR55uUrLjT" role="37wK5m" />
                         </node>
                       </node>
                     </node>
@@ -3073,7 +3072,10 @@
                         <ref role="3cqZAo" node="xR55uUrL3i" resolve="output" />
                       </node>
                       <node concept="liA8E" id="xR55uUrLkj" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:xR55uUrL1r" resolve="collectOutputArtifacts" />
+                        <ref role="37wK5l" to="o3n2:450ejGzgMJM" resolve="collect" />
+                        <node concept="3clFbT" id="7eQOMx88pdd" role="37wK5m">
+                          <property role="3clFbU" value="true" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3094,8 +3096,8 @@
                 </node>
               </node>
               <node concept="1LlUBW" id="xR55uUrTz_" role="2jfP_h">
-                <node concept="3uibUv" id="3JTAYY5eUW0" role="1Lm7xW">
-                  <ref role="3uigEE" to="o3n2:3JTAYY5eUVl" resolve="LocalArtifacts" />
+                <node concept="3uibUv" id="7eQOMx88pV_" role="1Lm7xW">
+                  <ref role="3uigEE" to="o3n2:450ejGzgHe7" resolve="VisibleArtifacts" />
                 </node>
                 <node concept="3Tqbb2" id="xR55uUrTOR" role="1Lm7xW">
                   <ref role="ehGHo" to="3ior:6qcrfIJF7Yq" resolve="BuildLayout_Jar" />

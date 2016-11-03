@@ -1182,19 +1182,8 @@
                   </node>
                   <node concept="liA8E" id="5_Qf$NeTgbD" role="2OqNvi">
                     <ref role="37wK5l" to="o3n2:7zkpphtGydj" resolve="getResource" />
-                    <node concept="1PxgMI" id="3BUsTklM62d" role="37wK5m">
-                      <ref role="1m5ApE" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-                      <node concept="2OqwBi" id="3BUsTklM2Nr" role="1m5AlR">
-                        <node concept="37vLTw" id="3BUsTklM1de" role="2Oq$k0">
-                          <ref role="3cqZAo" node="57YmpYyL8LS" resolve="artifacts" />
-                        </node>
-                        <node concept="liA8E" id="3BUsTklM3Vi" role="2OqNvi">
-                          <ref role="37wK5l" to="o3n2:450ejGzgOyP" resolve="toOriginalNode" />
-                          <node concept="2GrUjf" id="3BUsTklM4Y0" role="37wK5m">
-                            <ref role="2Gs0qQ" node="3PtN$74IyYy" resolve="path" />
-                          </node>
-                        </node>
-                      </node>
+                    <node concept="2GrUjf" id="7eQOMx7YOdS" role="37wK5m">
+                      <ref role="2Gs0qQ" node="3PtN$74IyYy" resolve="path" />
                     </node>
                   </node>
                 </node>
@@ -3404,12 +3393,12 @@
                 <node concept="37vLTw" id="3GM_nagTs2p" role="37wK5m">
                   <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
                 </node>
-                <node concept="2OqwBi" id="57NqmbchhoR" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxgm9Q7" role="2Oq$k0">
-                    <ref role="3cqZAo" node="27eOSzOUT_S" resolve="artifacts" />
+                <node concept="2OqwBi" id="7eQOMx82LoY" role="37wK5m">
+                  <node concept="37vLTw" id="7eQOMx82LoZ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="27eOSzOUT_U" resolve="builder" />
                   </node>
-                  <node concept="liA8E" id="57NqmbchhoT" role="2OqNvi">
-                    <ref role="37wK5l" to="o3n2:75uV$1s08Ae" resolve="getGenContext" />
+                  <node concept="liA8E" id="7eQOMx82Lp0" role="2OqNvi">
+                    <ref role="37wK5l" to="o3n2:7eQOMx82$Ev" resolve="getGenContext" />
                   </node>
                 </node>
               </node>
@@ -3527,12 +3516,20 @@
             <node concept="3uibUv" id="3ag$5R8Sr$m" role="1tU5fm">
               <ref role="3uigEE" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
             </node>
-            <node concept="2OqwBi" id="4WwUR8hKRSK" role="33vP2m">
-              <node concept="37vLTw" id="4WwUR8hKRGy" role="2Oq$k0">
-                <ref role="3cqZAo" node="27eOSzOUT_S" resolve="artifacts" />
-              </node>
-              <node concept="liA8E" id="4WwUR8hKSbH" role="2OqNvi">
-                <ref role="37wK5l" to="o3n2:4WwUR8hFoM7" resolve="getDependenciesHelper" />
+            <node concept="2ShNRf" id="7eQOMx81OJu" role="33vP2m">
+              <node concept="1pGfFk" id="7eQOMx81P2v" role="2ShVmc">
+                <ref role="37wK5l" to="o3n2:41__iZjkZ0Y" resolve="DependenciesHelper" />
+                <node concept="2OqwBi" id="7eQOMx81Pg8" role="37wK5m">
+                  <node concept="37vLTw" id="7eQOMx82LeN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="27eOSzOUT_U" resolve="builder" />
+                  </node>
+                  <node concept="liA8E" id="7eQOMx81Pup" role="2OqNvi">
+                    <ref role="37wK5l" to="o3n2:7eQOMx82$Ev" resolve="getGenContext" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="7eQOMx81PCx" role="37wK5m">
+                  <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
+                </node>
               </node>
             </node>
           </node>
@@ -3547,11 +3544,11 @@
               <property role="1BlNFB" value="true" />
               <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
               <node concept="2OqwBi" id="4WwUR8hKStu" role="1m5AlR">
-                <node concept="37vLTw" id="4WwUR8hLdvq" role="2Oq$k0">
-                  <ref role="3cqZAo" node="27eOSzOUT_S" resolve="artifacts" />
+                <node concept="37vLTw" id="7eQOMx7YMgb" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
                 </node>
                 <node concept="liA8E" id="4WwUR8hKSHG" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:450ejGzgOyP" resolve="toOriginalNode" />
+                  <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
                   <node concept="37vLTw" id="4WwUR8hKSJe" role="37wK5m">
                     <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
                   </node>

@@ -7781,7 +7781,6 @@
                     <node concept="2ShNRf" id="75uV$1s06cl" role="2Oq$k0">
                       <node concept="1pGfFk" id="75uV$1s06cm" role="2ShVmc">
                         <ref role="37wK5l" to="o3n2:6PrCok1L_G9" resolve="JavaModulesClosure" />
-                        <node concept="1iwH7S" id="75uV$1s06cn" role="37wK5m" />
                         <node concept="30H73N" id="75uV$1s08A9" role="37wK5m" />
                       </node>
                     </node>

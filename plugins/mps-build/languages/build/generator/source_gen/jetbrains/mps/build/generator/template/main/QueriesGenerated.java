@@ -1709,7 +1709,7 @@ public class QueriesGenerated {
     return val;
   }
   public static Object insertMacro_varValue_5979287180587467220(final TemplateVarContext _context) {
-    return new JavaModulesClosure(_context, _context.getNode()).closure(false);
+    return new JavaModulesClosure(_context.getNode()).closure(false);
   }
   public static Object insertMacro_varValue_1659807394254873141(final TemplateVarContext _context) {
     SNode options = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, 0x1708d207f21880faL, "options")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, 0x1708d207f214252bL, "compileOptions"));

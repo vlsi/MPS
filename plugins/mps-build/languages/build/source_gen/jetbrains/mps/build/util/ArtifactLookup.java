@@ -4,8 +4,8 @@ package jetbrains.mps.build.util;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -25,6 +25,11 @@ public class ArtifactLookup {
     myArtifacts = artifacts;
     myDependencyHelper = helper;
   }
+
+  public SNode toOriginalNode(SNode node) {
+    return (myDependencyHelper == null ? node : myDependencyHelper.getOriginalNode(node));
+  }
+
   public Tuples._2<SNode, String> getResource(SNode path) {
     SNode result = findArtifact(path);
     if (result != null) {
@@ -60,7 +65,7 @@ public class ArtifactLookup {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement")) && myArtifacts.parent(SNodeOperations.as(node, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"))) != null) {
         return SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
       }
-      node = myArtifacts.toOriginalNode(node);
+      node = toOriginalNode(node);
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes: " + node);
       }
@@ -71,7 +76,6 @@ public class ArtifactLookup {
       return result;
     }
     for (SNode artifact : myArtifacts.getArtifacts()) {
-      assert !(SNodeOperations.getModel(artifact).getModule() instanceof TransientModelsModule);
       if ((boolean) BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(artifact, id)) {
         cache(id, artifact);
         return artifact;
@@ -92,22 +96,22 @@ public class ArtifactLookup {
       return;
     }
     if (id instanceof String) {
-      myDependencyHelper.putArtifact(as_arca2u_a0a0a0b0l(id, String.class), element);
+      myDependencyHelper.putArtifact(as_arca2u_a0a0a0b0o(id, String.class), element);
     } else if (id instanceof LocalSourcePathArtifact) {
-      myDependencyHelper.putArtifact(as_arca2u_a0a0a0a1a11(id, LocalSourcePathArtifact.class), element);
+      myDependencyHelper.putArtifact(as_arca2u_a0a0a0a1a41(id, LocalSourcePathArtifact.class), element);
     } else if (id instanceof SNode) {
-      myDependencyHelper.putArtifact(as_arca2u_a0a0a0b1a11(id, SNode.class), element);
+      myDependencyHelper.putArtifact(as_arca2u_a0a0a0b1a41(id, SNode.class), element);
     } else {
       throw new IllegalStateException("Unexpected way to identify artifacts:" + String.valueOf(id));
     }
   }
-  private static <T> T as_arca2u_a0a0a0b0l(Object o, Class<T> type) {
+  private static <T> T as_arca2u_a0a0a0b0o(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_arca2u_a0a0a0a1a11(Object o, Class<T> type) {
+  private static <T> T as_arca2u_a0a0a0a1a41(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_arca2u_a0a0a0b1a11(Object o, Class<T> type) {
+  private static <T> T as_arca2u_a0a0a0b1a41(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
