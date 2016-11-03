@@ -203,31 +203,33 @@
     <file name="CommandHolder_Constraints.java">
       <node id="7820875636624865058" at="16,38,17,157" concept="10" />
       <node id="7820875636624865058" at="21,46,22,16" concept="6" />
-      <node id="7820875636624865058" at="25,169,26,84" concept="5" />
-      <node id="7820875636624865058" at="26,84,27,0" concept="7" />
+      <node id="7820875636624865058" at="25,199,26,102" concept="5" />
+      <node id="7820875636624865058" at="26,102,27,0" concept="7" />
       <node id="7820875636624865058" at="28,51,29,71" concept="2" />
       <node id="7820875636624865058" at="30,5,31,0" concept="7" />
       <node id="7820875636624865058" at="31,0,32,18" concept="6" />
-      <node id="427659576753534775" at="34,139,35,210" concept="6" />
+      <node id="427659576753534775" at="34,169,35,210" concept="6" />
       <node id="7820875636624865058" at="37,0,38,0" concept="8" trace="canBeAncesctorBreakingPoint" />
       <node id="7820875636624865058" at="16,0,19,0" concept="1" trace="CommandHolder_Constraints#()V" />
       <node id="7820875636624865058" at="27,0,30,5" concept="3" />
-      <node id="7820875636624865058" at="34,0,37,0" concept="9" trace="static_canBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="7820875636624865058" at="34,0,37,0" concept="9" trace="static_canBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="7820875636624865058" at="20,0,24,0" concept="4" trace="hasOwnCanBeAncestorMethod#()Z" />
-      <node id="7820875636624865058" at="24,0,34,0" concept="4" trace="canBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="7820875636624865058" at="24,0,34,0" concept="4" trace="canBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
       <scope id="7820875636624865058" at="16,38,17,157" />
       <scope id="7820875636624865058" at="21,46,22,16" />
       <scope id="7820875636624865058" at="28,51,29,71" />
-      <scope id="7820875636624865127" at="34,139,35,210" />
+      <scope id="7820875636624865127" at="34,169,35,210" />
       <scope id="7820875636624865058" at="16,0,19,0" />
       <scope id="7820875636624865058" at="34,0,37,0">
         <var name="childConcept" id="7820875636624865058" />
         <var name="childNode" id="7820875636624865058" />
+        <var name="link" id="7820875636624865058" />
         <var name="node" id="7820875636624865058" />
         <var name="operationContext" id="7820875636624865058" />
+        <var name="parentNode" id="7820875636624865058" />
       </scope>
       <scope id="7820875636624865058" at="20,0,24,0" />
-      <scope id="7820875636624865058" at="25,169,32,18">
+      <scope id="7820875636624865058" at="25,199,32,18">
         <var name="result" id="7820875636624865058" />
       </scope>
       <scope id="7820875636624865058" at="24,0,34,0">
@@ -235,7 +237,9 @@
         <var name="childConcept" id="7820875636624865058" />
         <var name="childNode" id="7820875636624865058" />
         <var name="context" id="7820875636624865058" />
+        <var name="link" id="7820875636624865058" />
         <var name="node" id="7820875636624865058" />
+        <var name="parentNode" id="7820875636624865058" />
       </scope>
       <unit id="7820875636624865058" at="15,0,39,0" name="jetbrains.mps.console.base.constraints.CommandHolder_Constraints" />
     </file>
