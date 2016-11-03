@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -64,6 +62,6 @@ public class CanBeParentPredicate implements Predicate<SAbstractConcept> {
       return true;
     }
     return (myLinkDeclarationNode == null || ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null)) &&
-        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, null);
+        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, myLinkDeclarationNode, null);
   }
 }

@@ -1984,6 +1984,18 @@
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
+      <node concept="37vLTG" id="w$6yAnqAR4" role="3clF46">
+        <property role="TrG5h" value="parentNode" />
+        <node concept="3uibUv" id="w$6yAnqAR5" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="w$6yAnqAR6" role="3clF46">
+        <property role="TrG5h" value="link" />
+        <node concept="3uibUv" id="w$6yAnqAR7" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
       <node concept="37vLTG" id="6s7bPiw2DvE" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="6s7bPiw2DvF" role="1tU5fm">
@@ -2014,6 +2026,12 @@
               </node>
               <node concept="37vLTw" id="2BHiRxgmP3o" role="37wK5m">
                 <ref role="3cqZAo" node="7QCjWMIaL2Z" resolve="childConcept" />
+              </node>
+              <node concept="37vLTw" id="w$6yAnr5R4" role="37wK5m">
+                <ref role="3cqZAo" node="w$6yAnqAR4" resolve="parentNode" />
+              </node>
+              <node concept="37vLTw" id="w$6yAnr6gn" role="37wK5m">
+                <ref role="3cqZAo" node="w$6yAnqAR6" resolve="link" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm9FE" role="37wK5m">
                 <ref role="3cqZAo" node="6s7bPiw2DvE" resolve="context" />
@@ -3540,6 +3558,18 @@
       <node concept="37vLTG" id="7QCjWMIaL8x" role="3clF46">
         <property role="TrG5h" value="childConcept" />
         <node concept="3uibUv" id="7QCjWMIaL8Z" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="w$6yAnqwVn" role="3clF46">
+        <property role="TrG5h" value="parentNode" />
+        <node concept="3uibUv" id="w$6yAnqwVo" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="w$6yAnqwVp" role="3clF46">
+        <property role="TrG5h" value="link" />
+        <node concept="3uibUv" id="w$6yAnqwVq" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>

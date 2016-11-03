@@ -37,8 +37,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.Icon;
-
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   private final SAbstractConcept myConcept;
 
@@ -55,8 +53,12 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   @ToRemove(version = 3.4)
   @Override
   public SConceptId getConceptId() {
-    if (myConcept instanceof SInterfaceConceptAdapterById) return ((SInterfaceConceptAdapterById) myConcept).getId();
-    if (myConcept instanceof SConceptAdapterById) return ((SConceptAdapterById) myConcept).getId();
+    if (myConcept instanceof SInterfaceConceptAdapterById) {
+      return ((SInterfaceConceptAdapterById) myConcept).getId();
+    }
+    if (myConcept instanceof SConceptAdapterById) {
+      return ((SConceptAdapterById) myConcept).getId();
+    }
     return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
@@ -71,7 +73,8 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
@@ -81,12 +84,20 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return false;
+  }
+
+  @Override
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 

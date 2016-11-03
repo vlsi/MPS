@@ -147,7 +147,7 @@ public class ChildSubstituteActionsHelper {
       }
 
       if (linkDeclaration != null && !ModelConstraints.canBeParent(parentNode, conceptNode, linkDeclaration, null, null) ||
-          !ModelConstraints.canBeAncestor(parentNode, null, conceptNode, null)) {
+          !ModelConstraints.canBeAncestor(parentNode, null, conceptNode, linkDeclaration, null)) {
         it.remove();
       }
     }

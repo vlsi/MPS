@@ -5255,7 +5255,7 @@
                                   </node>
                                   <node concept="2YIFZM" id="2KPNJVWzxgp" role="3uHU7w">
                                     <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                                    <ref role="37wK5l" to="ykok:~ModelConstraints.canBeAncestor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeAncestor" />
+                                    <ref role="37wK5l" to="ykok:~ModelConstraints.canBeAncestor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeAncestor" />
                                     <node concept="37vLTw" id="2KPNJVWzxgq" role="37wK5m">
                                       <ref role="3cqZAo" node="2KPNJVWsp$B" resolve="parent" />
                                     </node>
@@ -5284,6 +5284,9 @@
                                           </node>
                                         </node>
                                       </node>
+                                    </node>
+                                    <node concept="37vLTw" id="3HN3q8nb$JY" role="37wK5m">
+                                      <ref role="3cqZAo" node="2KPNJVWsCgP" resolve="containingLink" />
                                     </node>
                                     <node concept="10Nm6u" id="2KPNJVWzxgB" role="37wK5m" />
                                   </node>
@@ -5936,7 +5939,7 @@
                                               </node>
                                               <node concept="2YIFZM" id="2KPNJVW$ica" role="3uHU7w">
                                                 <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                                                <ref role="37wK5l" to="ykok:~ModelConstraints.canBeAncestor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeAncestor" />
+                                                <ref role="37wK5l" to="ykok:~ModelConstraints.canBeAncestor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeAncestor" />
                                                 <node concept="37vLTw" id="2KPNJVW$icb" role="37wK5m">
                                                   <ref role="3cqZAo" node="2KPNJVW$ibF" resolve="parent" />
                                                 </node>
@@ -5965,6 +5968,9 @@
                                                       </node>
                                                     </node>
                                                   </node>
+                                                </node>
+                                                <node concept="37vLTw" id="3HN3q8nbxVI" role="37wK5m">
+                                                  <ref role="3cqZAo" node="2KPNJVW$ibL" resolve="containingLink" />
                                                 </node>
                                                 <node concept="10Nm6u" id="2KPNJVW$ico" role="37wK5m" />
                                               </node>

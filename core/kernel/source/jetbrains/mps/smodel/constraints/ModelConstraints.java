@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -31,7 +30,6 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -66,17 +64,29 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
 public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
-  // canBe* section
-  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept,
+  /**
+   * @deprecated since MPS 3.4 use {@link #canBeAncestor(SNode, SNode, SNode, SNode, CheckingNodeContext)}
+   */
+  @Deprecated
+  public static boolean canBeAncestor(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull SNode childConcept,
       @Nullable CheckingNodeContext checkingNodeContext) {
-    SNode currentNode = node;
+    return canBeAncestor(parentNode, childNode, childConcept, null, checkingNodeContext);
+  }
 
-    IOperationContext context = getOperationContext(getModule(node));
+  // canBe* section
+  public static boolean canBeAncestor(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull SNode childConcept, SNode containmentLink,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    // TODO: make containmentLink @NotNull and expose this parameter inside canBeAncestor constraint in MPS DSL.
+    // TODO: For now I did not expose it because editor is calling this method with null containmentLink from time
+    // TODO: to time -> additional refactoring is required in editor framework in order to achieve it.
+    SNode currentNode = parentNode;
+
+    IOperationContext context = getOperationContext(getModule(parentNode));
 
     while (currentNode != null) {
       ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(currentNode.getConcept());
 
-      if (!descriptor.canBeAncestor(currentNode, childNode, childConcept, context, checkingNodeContext)) {
+      if (!descriptor.canBeAncestor(currentNode, childNode, childConcept, parentNode, containmentLink, context, checkingNodeContext)) {
         return false;
       }
 
@@ -86,10 +96,10 @@ public class ModelConstraints {
     return true;
   }
 
-  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept,
-      @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept, @NotNull SNode parent,
+      @NotNull SNode containmentLink, @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(ancestor.getConcept());
-    return descriptor.canBeAncestor(ancestor, descendant, childConcept, getOperationContext(getModule(ancestor)), checkingNodeContext);
+    return descriptor.canBeAncestor(ancestor, descendant, childConcept, parent, containmentLink, getOperationContext(getModule(ancestor)), checkingNodeContext);
   }
 
   public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
@@ -184,7 +194,8 @@ public class ModelConstraints {
   }
 
   @NotNull
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable SContainmentLink link, int index, @NotNull SConcept smartConcept, SRepository repository) {
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable SContainmentLink link, int index,
+      @NotNull SConcept smartConcept, SRepository repository) {
     SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
     if (smartReference == null) {
       return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());

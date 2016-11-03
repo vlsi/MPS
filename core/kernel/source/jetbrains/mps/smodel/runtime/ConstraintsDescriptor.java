@@ -20,16 +20,12 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.Icon;
 
 public interface ConstraintsDescriptor {
   @Deprecated
@@ -49,6 +45,14 @@ public interface ConstraintsDescriptor {
   boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
+  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext);
+
+  /**
+   * @deprecated since MPS 3.4 use {@link #canBeAncestor(SNode, SNode, SNode, SNode, SNode, IOperationContext, CheckingNodeContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
@@ -75,7 +79,7 @@ public interface ConstraintsDescriptor {
   ReferenceScopeProvider getDefaultScopeProvider();
 
   @Nullable
-  // by convention inheritance for this methods not works
+    // by convention inheritance for this methods not works
   IconResource getInstanceIcon(SNode node);
 
   SAbstractConcept getDefaultConcreteConcept();
