@@ -24,8 +24,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -42,35 +41,31 @@ public abstract class NodeNavigatable implements Navigatable {
   public NodeNavigatable(@NotNull SNodeReference node, @NotNull Project project) {
     myNode = node;
     myProject = project;
-    myItemPresentation = new NodePointerPresentation(node);
-    myTextPresentation = myItemPresentation.getPresentableText();
-    final SRepository repo = ProjectHelper.getProjectRepository(project);
-    myRootNode = new ModelAccessHelper(repo).runReadAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode targetNode = myNode.resolve(repo);
-        return targetNode == null ? null : targetNode.getContainingRoot().getReference();
-      }
+
+    final SRepository repository = ProjectHelper.fromIdeaProject(project).getRepository();
+    final ModelAccessHelper modelAccessHelper = new ModelAccessHelper(repository);
+
+    myTextPresentation = modelAccessHelper.runReadAction(() -> {
+      final SNode resolve = node.resolve(repository);
+      return resolve == null ? node.toString() : NodePresentationUtil.matchingText(resolve);
     });
-    myFile = myRootNode == null ? null : NodeVirtualFileSystem.getInstance().getFileFor(repo, myRootNode);
+
+    myRootNode = modelAccessHelper.runReadAction(() -> {
+      SNode targetNode = myNode.resolve(repository);
+      return targetNode == null ? null : targetNode.getContainingRoot().getReference();
+    });
+    myFile = myRootNode == null ? null : NodeVirtualFileSystem.getInstance().getFileFor(repository, myRootNode);
   }
 
   @Override
   public void navigate(final boolean focus) {
-    ProjectHelper.getModelAccess(myProject).runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (canNavigate()) {
-          // FIXME openEditor doesn't require writeInEDT any longer, perhaps, canNavigate() could live without it as well
-          //       Need to check subclasses and uses, whether there's need in openEditor being public, if isValid/canNavigate require idea/model read/write
-          openEditor(focus);
-        }
-      }
-    });
+    if (canNavigate()) {
+      openEditor(focus);
+    }
   }
 
-  public void openEditor(boolean focus) {
-    new EditorNavigator(ProjectHelper.toMPSProject(myProject)).shallFocus(focus).selectIfChild().open(myNode);
+  private void openEditor(boolean focus) {
+    new EditorNavigator(ProjectHelper.fromIdeaProject(myProject)).shallFocus(focus).selectIfChild().open(myNode);
   }
 
   public abstract boolean isValid();

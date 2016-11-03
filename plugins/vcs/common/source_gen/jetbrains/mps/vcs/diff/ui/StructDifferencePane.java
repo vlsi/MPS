@@ -166,7 +166,7 @@ public class StructDifferencePane {
     }
   }
   private DiffEditor addEditor(int index, SModel model, SNodeId nodeId, String title) {
-    final DiffEditor result = new DiffEditor(ProjectHelper.toMPSProject(myProject), model.getNode(nodeId), title, index == 0);
+    final DiffEditor result = new DiffEditor(ProjectHelper.fromIdeaProject(myProject), model.getNode(nodeId), title, index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ? 5 : 0), 5, (index == 2 ? 5 : 0)), 0, 0);
     myTopPanel.add(result.getTopComponent(), gbc);

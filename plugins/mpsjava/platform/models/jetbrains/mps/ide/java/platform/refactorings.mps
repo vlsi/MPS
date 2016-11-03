@@ -6921,9 +6921,7 @@
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLkTgJ" role="1B3o_S" />
-      <node concept="3uibUv" id="5$tYEQLkTgL" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6IL1Wh7vLjm" role="3clF45" />
       <node concept="2AHcQZ" id="5$tYEQLkTgM" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
@@ -7753,10 +7751,10 @@
                                         <ref role="1Pybhc" to="89o2:7nrhK3uHecP" resolve="MethodRefactoringUtils" />
                                         <ref role="37wK5l" to="89o2:7nrhK3uHefw" resolve="findMethodUsages" />
                                         <node concept="2OqwBi" id="psC2_anow6" role="37wK5m">
-                                          <node concept="2YIFZM" id="psC2_annsu" role="2Oq$k0">
-                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                          <node concept="2YIFZM" id="6IL1Wh7vCK0" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
                                             <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                            <node concept="1rXfSq" id="psC2_ano5N" role="37wK5m">
+                                            <node concept="1rXfSq" id="6IL1Wh7vCK1" role="37wK5m">
                                               <ref role="37wK5l" to="xygl:~Task.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                             </node>
                                           </node>
@@ -7987,10 +7985,10 @@
                                       <node concept="liA8E" id="3JD6rrJwcZY" role="2OqNvi">
                                         <ref role="37wK5l" node="3UdhnxHuoDA" resolve="appendProblems" />
                                         <node concept="2OqwBi" id="6o1U_cwzbnU" role="37wK5m">
-                                          <node concept="2YIFZM" id="6o1U_cwz9xA" role="2Oq$k0">
-                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                          <node concept="2YIFZM" id="6IL1Wh7vDz_" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
                                             <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                            <node concept="1rXfSq" id="6o1U_cwz50I" role="37wK5m">
+                                            <node concept="1rXfSq" id="6IL1Wh7vDzA" role="37wK5m">
                                               <ref role="37wK5l" to="xygl:~Task.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                             </node>
                                           </node>

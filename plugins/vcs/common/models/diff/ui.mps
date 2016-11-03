@@ -1423,7 +1423,7 @@
                     <ref role="3cqZAo" node="1DUTkFD84KJ" resolve="root" />
                   </node>
                   <node concept="3Tsc0h" id="1DUTkFD8GHv" role="2OqNvi">
-                    <ref role="3TtcxE" to="e4tq:444ZSQ068oQ" />
+                    <ref role="3TtcxE" to="e4tq:444ZSQ068oQ" resolve="language" />
                   </node>
                 </node>
               </node>
@@ -1447,7 +1447,7 @@
                 </node>
                 <node concept="2OqwBi" id="1DUTkFD8RrE" role="2Oq$k0">
                   <node concept="3Tsc0h" id="1DUTkFD8Vpf" role="2OqNvi">
-                    <ref role="3TtcxE" to="e4tq:444ZSQ068oS" />
+                    <ref role="3TtcxE" to="e4tq:444ZSQ068oS" resolve="languageEngagedOnGeneration" />
                   </node>
                   <node concept="37vLTw" id="1DUTkFD8RrF" role="2Oq$k0">
                     <ref role="3cqZAo" node="1DUTkFD84KJ" resolve="root" />
@@ -1482,7 +1482,7 @@
                 </node>
                 <node concept="2OqwBi" id="1DUTkFD8Svk" role="2Oq$k0">
                   <node concept="3Tsc0h" id="1DUTkFD8W4a" role="2OqNvi">
-                    <ref role="3TtcxE" to="e4tq:444ZSQ068oV" />
+                    <ref role="3TtcxE" to="e4tq:444ZSQ068oV" resolve="devkit" />
                   </node>
                   <node concept="37vLTw" id="1DUTkFD8Svl" role="2Oq$k0">
                     <ref role="3cqZAo" node="1DUTkFD84KJ" resolve="root" />
@@ -1524,7 +1524,7 @@
                 </node>
                 <node concept="2OqwBi" id="1DUTkFD8WAD" role="2Oq$k0">
                   <node concept="3Tsc0h" id="1DUTkFD8Ywg" role="2OqNvi">
-                    <ref role="3TtcxE" to="e4tq:444ZSQ068oZ" />
+                    <ref role="3TtcxE" to="e4tq:444ZSQ068oZ" resolve="import" />
                   </node>
                   <node concept="37vLTw" id="1DUTkFD8WAF" role="2Oq$k0">
                     <ref role="3cqZAo" node="1DUTkFD84KJ" resolve="root" />
@@ -2176,7 +2176,7 @@
                   </node>
                   <node concept="2OqwBi" id="6fx930y9OW0" role="2Oq$k0">
                     <node concept="3Tsc0h" id="6fx930y9OW1" role="2OqNvi">
-                      <ref role="3TtcxE" to="e4tq:444ZSQ068oQ" />
+                      <ref role="3TtcxE" to="e4tq:444ZSQ068oQ" resolve="language" />
                     </node>
                     <node concept="37vLTw" id="6fx930y9OW2" role="2Oq$k0">
                       <ref role="3cqZAo" node="6fx930y8aKF" resolve="root" />
@@ -2321,7 +2321,7 @@
                   </node>
                   <node concept="2OqwBi" id="6fx930yaiuA" role="2Oq$k0">
                     <node concept="3Tsc0h" id="6fx930yal4O" role="2OqNvi">
-                      <ref role="3TtcxE" to="e4tq:444ZSQ068oS" />
+                      <ref role="3TtcxE" to="e4tq:444ZSQ068oS" resolve="languageEngagedOnGeneration" />
                     </node>
                     <node concept="37vLTw" id="6fx930yaiuC" role="2Oq$k0">
                       <ref role="3cqZAo" node="6fx930y8aKF" resolve="root" />
@@ -2466,7 +2466,7 @@
                   </node>
                   <node concept="2OqwBi" id="6fx930yapdu" role="2Oq$k0">
                     <node concept="3Tsc0h" id="6fx930yarZX" role="2OqNvi">
-                      <ref role="3TtcxE" to="e4tq:444ZSQ068oV" />
+                      <ref role="3TtcxE" to="e4tq:444ZSQ068oV" resolve="devkit" />
                     </node>
                     <node concept="37vLTw" id="6fx930yapdw" role="2Oq$k0">
                       <ref role="3cqZAo" node="6fx930y8aKF" resolve="root" />
@@ -2610,7 +2610,7 @@
                   </node>
                   <node concept="2OqwBi" id="6fx930ya_n8" role="2Oq$k0">
                     <node concept="3Tsc0h" id="6fx930yaFhY" role="2OqNvi">
-                      <ref role="3TtcxE" to="e4tq:444ZSQ068oZ" />
+                      <ref role="3TtcxE" to="e4tq:444ZSQ068oZ" resolve="import" />
                     </node>
                     <node concept="37vLTw" id="6fx930ya_na" role="2Oq$k0">
                       <ref role="3cqZAo" node="6fx930y8aKF" resolve="root" />
@@ -7306,9 +7306,7 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="42UviMImjCM" role="1B3o_S" />
-      <node concept="3uibUv" id="42UviMImjCN" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6IL1Wh7tWPU" role="1tU5fm" />
     </node>
     <node concept="Wx3nA" id="42UviMImjCO" role="jymVt">
       <property role="TrG5h" value="PARAM_INSPECTOR_SPLITTER_POSITION" />
@@ -7327,9 +7325,7 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="42UviMImjCU" role="1B3o_S" />
-      <node concept="3uibUv" id="42UviMImjCV" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6IL1Wh7tWZk" role="1tU5fm" />
     </node>
     <node concept="312cEg" id="42UviMImjCW" role="jymVt">
       <property role="TrG5h" value="myProject" />
@@ -8603,10 +8599,10 @@
             <node concept="2ShNRf" id="42UviMImjLN" role="33vP2m">
               <node concept="1pGfFk" id="42UviMImjLO" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaz9" resolve="DiffEditor" />
-                <node concept="2YIFZM" id="42UviMImjLR" role="37wK5m">
+                <node concept="2YIFZM" id="6IL1Wh7tY6F" role="37wK5m">
+                  <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
                   <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <node concept="37vLTw" id="42UviMImjLS" role="37wK5m">
+                  <node concept="37vLTw" id="6IL1Wh7tY6G" role="37wK5m">
                     <ref role="3cqZAo" node="42UviMImjCW" resolve="myProject" />
                   </node>
                 </node>

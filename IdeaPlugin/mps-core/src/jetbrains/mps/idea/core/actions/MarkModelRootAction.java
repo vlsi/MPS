@@ -50,7 +50,7 @@ public class MarkModelRootAction extends AnAction {
     assert mpsFacet != null;
 
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
-    List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
+    List<ModelRoot> modelRoots = new ArrayList<>(configurationBean.getModelRoots());
     for (VirtualFile vFile : vFiles) {
       DefaultModelRoot root = new DefaultModelRoot();
       String path = VirtualFileManager.extractPath(vFile.getUrl());

@@ -94,6 +94,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.PluginsPathMacroCrutch</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.icons.GlobalIconManager</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -104,16 +107,7 @@
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
-    <!-- next 3 components were copied from MPSUI.xml. Could I use xi:include xpointer(components/project-components) instead? -->
-    <component>
-      <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
-    </component>
+    <xi:include href="../../../workbench/mps-ui/source/META-INF/MPSUI.xml" xpointer="xpointer(/components/project-components/*)"/>
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
@@ -144,8 +138,7 @@
   </project-components>
 
   <extensionPoints>
-    <!-- copied from recently created MPSUI.xml; consider splitting it into MPSUIplatfrom.xml and workbench -->
-    <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
+    <xi:include href="../../../workbench/mps-ui/source/META-INF/MPSUI.xml" xpointer="xpointer(/components/extensionPoints/*)"/>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor"
                     beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.modelTemplateProvider"

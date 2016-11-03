@@ -69,6 +69,9 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
     </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsWorkbench/lib/mps-resources_en.jar"/>
+    </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
@@ -132,6 +135,10 @@
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
     <ant antfile="${base_dir}/build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
+    <ant antfile="${base_dir}/build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
