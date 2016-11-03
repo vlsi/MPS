@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -34,6 +35,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * This class captures persistence and editing aspects of SModule. Client code shall not use this class
@@ -342,6 +344,57 @@ public class ModuleDescriptor {
     myModuleVersion = stream.readInt();
 
     if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
+  }
+
+
+  public void cloneTo(ModuleDescriptor target, PathConverter converter) {
+    target.setModuleVersion(getModuleVersion());
+    target.setUseTransientOutput(isUseTransientOutput());
+
+    Collection<Dependency> sourceDependencies = getDependencies();
+    Collection<Dependency> targetDependencies = target.getDependencies();
+
+    Map<SModuleReference, Integer> sourceDependencyVersions = getDependencyVersions();
+    Map<SModuleReference, Integer> targetDependencyVersions = target.getDependencyVersions();
+
+    targetDependencies.clear();
+    targetDependencyVersions.clear();
+
+    for (Dependency dependency : sourceDependencies) {
+      SModuleReference moduleRef = dependency.getModuleRef();
+      targetDependencies.add(dependency.getCopy());
+      targetDependencyVersions.put(moduleRef, sourceDependencyVersions.get(moduleRef));
+    }
+
+    target.getLanguageVersions().clear();
+    target.getLanguageVersions().putAll(getLanguageVersions());
+
+    target.getUsedDevkits().clear();
+    target.getUsedDevkits().addAll(getUsedDevkits());
+
+    target.getSourcePaths().clear();
+    target.getSourcePaths().addAll(
+        getSourcePaths()
+            .stream()
+            .map(converter::sourceToDestination)
+            .collect(Collectors.toList())
+    );
+
+    target.getAdditionalJavaStubPaths().clear();
+    target.getAdditionalJavaStubPaths().addAll(
+        getAdditionalJavaStubPaths()
+            .stream()
+            .map(converter::sourceToDestination)
+            .collect(Collectors.toList())
+    );
+
+    target.getModuleFacetDescriptors().clear();
+    target.getModuleFacetDescriptors().addAll(
+        getModuleFacetDescriptors()
+            .stream()
+            .map(source -> new ModuleFacetDescriptor(source.getType(), source.getMemento().copy()))
+            .collect(Collectors.toList())
+    );
   }
 
   /**

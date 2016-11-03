@@ -31,6 +31,7 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="3pb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.table(MPS.IDEA/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
+    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1744,8 +1745,8 @@
       <property role="TrG5h" value="myModuleOriginal" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tmbuc" id="3rnI4tGswL6" role="1B3o_S" />
-      <node concept="3uibUv" id="2RhVBj9A20C" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+      <node concept="3uibUv" id="4udloDWjnkr" role="1tU5fm">
+        <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
       </node>
     </node>
     <node concept="2tJIrI" id="6$$uXBqk8II" role="jymVt" />
@@ -1807,8 +1808,8 @@
       </node>
       <node concept="37vLTG" id="3rnI4tGsAIu" role="3clF46">
         <property role="TrG5h" value="moduleOriginal" />
-        <node concept="3uibUv" id="2RhVBj9A2sI" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+        <node concept="3uibUv" id="4udloDWjnPD" role="1tU5fm">
+          <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
         </node>
       </node>
     </node>
@@ -1890,8 +1891,8 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3rnI4tGsQdS" role="1B3o_S" />
-      <node concept="3uibUv" id="2RhVBj9A2JO" role="3clF45">
-        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+      <node concept="3uibUv" id="4udloDWjo9w" role="3clF45">
+        <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
       </node>
     </node>
     <node concept="3Tm1VV" id="3rnI4tGssj5" role="1B3o_S" />

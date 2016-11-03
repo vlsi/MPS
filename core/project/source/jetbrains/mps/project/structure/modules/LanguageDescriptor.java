@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;
@@ -155,6 +158,40 @@ public class LanguageDescriptor extends ModuleDescriptor {
     }
 
     if (stream.readByte() != 0x1e) throw new IOException("bad stream");
+  }
+
+
+
+  @Override
+  public void cloneTo(ModuleDescriptor t, PathConverter converter) {
+    assert t instanceof LanguageDescriptor;
+    LanguageDescriptor target = (LanguageDescriptor) t;
+    super.cloneTo(target, converter);
+
+    target.setLanguageVersion(getLanguageVersion());
+    target.setGenPath(converter.sourceToDestination(getGenPath()));
+
+    target.getAccessoryModels().clear();
+    target.getAccessoryModels().addAll(getAccessoryModels());
+
+    target.getRuntimeModules().clear();
+    target.getRuntimeModules().addAll(getRuntimeModules());
+
+    target.getExtendedLanguages().clear();
+    target.getExtendedLanguages().addAll(getExtendedLanguages());
+
+    target.getGenerators().clear();
+    target.getGenerators().addAll(
+        getGenerators()
+            .stream()
+            .map(sourceGenerator -> {
+              GeneratorDescriptor targetGenerator = new GeneratorDescriptor();
+              targetGenerator.setGeneratorUID(target.getNamespace() + "#" + SModel.generateUniqueId());
+              sourceGenerator.cloneTo(targetGenerator, converter);
+              return targetGenerator;
+            })
+            .collect(Collectors.toList())
+    );
   }
 
   public int getLanguageVersion() {

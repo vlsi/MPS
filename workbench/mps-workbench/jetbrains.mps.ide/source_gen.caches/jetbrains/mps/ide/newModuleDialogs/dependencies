@@ -17,7 +17,8 @@
   <dependency className="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog" file="CloneModuleDialog.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.CloneModuleUtil" />
+    <classNode dependClassName="jetbrains.mps.extapi.module.CloneableSModule" />
+    <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryExt" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
@@ -25,6 +26,10 @@
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.util.ReferenceUpdater" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />

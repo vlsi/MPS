@@ -17,6 +17,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.StaticReference;
@@ -70,21 +71,22 @@ public class ReferenceUpdater {
    * After adjusting, other modules & models will refer to {@code newModule} instead of {@code oldModule}
    *
    * @param oldModule old module - others contain refs to it
-   * @param newModule new module - others will be contain refs to it
+   * @param newModule new module - others will contain refs to it
    * @param updateModels true, if you want to update inner models too.
    */
   public void addModuleToAdjust(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
     assertNotAdjusted();
+    addModuleToAdjustImpl(oldModule, newModule, updateModels);
 
+    if (oldModule instanceof Language && newModule instanceof Language) {
+      addLanguageToAdjustImpl((Language) oldModule, (Language) newModule, updateModels);
+    }
+  }
+
+  protected void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
     myModules.add(newModule);
     myModuleReferenceMap.put(oldModule.getModuleReference(), newModule.getModuleReference());
 
-    if (oldModule instanceof Language && newModule instanceof Language) {
-      myUsedLanguagesMap.put(
-          MetaAdapterByDeclaration.getLanguage(((Language) oldModule)),
-          MetaAdapterByDeclaration.getLanguage(((Language) newModule))
-      );
-    }
     if (updateModels) {
       // FIXME SModule#getModels() doesn't guarantee any order
       // FIXME So I assume that original models and cloned have same names
@@ -95,6 +97,17 @@ public class ReferenceUpdater {
 
         addModelToAdjustImpl(oldModel, newModel);
       }
+    }
+  }
+
+  protected void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage, boolean updateModels) {
+    myUsedLanguagesMap.put(
+        MetaAdapterByDeclaration.getLanguage(oldLanguage),
+        MetaAdapterByDeclaration.getLanguage(newLanguage)
+    );
+    Iterator<Generator> newGeneratorIt = newLanguage.getGenerators().iterator();
+    for (Generator oldGenerator : oldLanguage.getGenerators()) {
+      addModuleToAdjustImpl(oldGenerator, newGeneratorIt.next(), updateModels);
     }
   }
 

@@ -6,24 +6,19 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.extapi.module.CloneableSModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
-import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.extapi.persistence.CloneableModelRoot;
-import jetbrains.mps.extapi.persistence.CloneCapabilities;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.util.ModelRootCloneUtil;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog;
 import jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CloneModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +34,7 @@ public class CloneModule_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1;
+    return event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && event.getData(MPSCommonDataKeys.MODULE) instanceof CloneableSModule;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -72,30 +67,17 @@ public class CloneModule_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<Tuples._2<ModelRoot, String>> nonCloneable = ListSequence.fromList(new ArrayList<Tuples._2<ModelRoot, String>>());
 
-    Iterable<ModelRoot> roots = event.getData(MPSCommonDataKeys.MODULE).getModelRoots();
+    Map<ModelRoot, String> nonCloneable = ModelRootCloneUtil.collectCloneErrorMessages(event.getData(MPSCommonDataKeys.MODULE).getModelRoots());
 
-    for (ModelRoot root : Sequence.fromIterable(roots)) {
-      if (root instanceof CloneableModelRoot) {
-        CloneCapabilities capabilities = ((CloneableModelRoot) root).getCloneCapabilities();
-
-        if (!(capabilities.isCloneable())) {
-          ListSequence.fromList(nonCloneable).addElement(MultiTuple.<ModelRoot,String>from(root, capabilities.getErrorMessage()));
-        }
-      } else {
-        ListSequence.fromList(nonCloneable).addElement(MultiTuple.<ModelRoot,String>from(root, "Clonning hasn't implemented for this model root"));
-      }
-    }
-
-    if (ListSequence.fromList(nonCloneable).isNotEmpty()) {
+    if (!(nonCloneable.isEmpty())) {
       Messages.showErrorDialog(CloneModule_Action.this.getErrorMessage(nonCloneable, event), "Module can't be cloned");
       return;
     }
 
-    String virtualFolder = as_i0xx9i_a0a0i0h(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class).getFolderFor(event.getData(MPSCommonDataKeys.MODULE));
+    String virtualFolder = as_i0xx9i_a0a0f0h(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class).getFolderFor(event.getData(MPSCommonDataKeys.MODULE));
 
-    AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a01a7(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class));
+    AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a7a7(event.getData(MPSCommonDataKeys.MODULE), CloneableSModule.class));
     dialog.show();
 
     SModule result = dialog.getModule();
@@ -107,26 +89,26 @@ public class CloneModule_Action extends BaseAction {
     ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
     projectPane.selectModule(result, false);
   }
-  private String getErrorMessage(Iterable<Tuples._2<ModelRoot, String>> roots, final AnActionEvent event) {
+  private String getErrorMessage(Map<ModelRoot, String> roots, final AnActionEvent event) {
     StringBuilder sb = new StringBuilder();
     sb.append("<html><body>");
     sb.append("Can't clone module with non-cloneable model roots: \n");
     sb.append("<ul>");
-    for (Tuples._2<ModelRoot, String> root : Sequence.fromIterable(roots)) {
+    for (IMapping<ModelRoot, String> root : MapSequence.fromMap(roots)) {
       sb.append("<li>");
-      sb.append(root._0());
+      sb.append(root.key());
       sb.append(" - ");
-      sb.append(root._1());
+      sb.append(root.value());
       sb.append("\n");
     }
     sb.append("</ul>");
     sb.append("</body></html>");
     return sb.toString();
   }
-  private static <T> T as_i0xx9i_a0a0i0h(Object o, Class<T> type) {
+  private static <T> T as_i0xx9i_a0a0f0h(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_i0xx9i_a2a0a01a7(Object o, Class<T> type) {
+  private static <T> T as_i0xx9i_a2a0a7a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -17,13 +17,16 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
+import jetbrains.mps.extapi.module.CloneableSModule;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -37,7 +40,9 @@ import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.ModelRootCloneUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.PathConverters;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
@@ -55,6 +60,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.io.File;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -66,7 +72,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Set;
 
-public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
+public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule, CloneableSModule<Language> {
 
   private static final Logger LOG = LogManager.getLogger(Language.class);
 
@@ -448,6 +454,31 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   protected void collectMandatoryFacetTypes(Set<String> types) {
     super.collectMandatoryFacetTypes(types);
     types.add(TestsFacet.FACET_TYPE);
+  }
+
+  @Nullable
+  @Override
+  public Language clone(String targetRoot, String targetNamespace) {
+    LanguageDescriptor targetDescriptor = new LanguageDescriptor();
+    IFile targetDescriptorFile = getFileSystem().getFile(targetRoot + File.separator + targetNamespace + MPSExtentions.DOT_LANGUAGE);
+
+    targetDescriptor.setId(ModuleId.regular());
+    targetDescriptor.setNamespace(targetNamespace);
+    getModuleDescriptor().cloneTo(targetDescriptor, PathConverters.forDescriptorFiles(targetDescriptorFile, getDescriptorFile()));
+    LanguageDescriptorPersistence.saveLanguageDescriptor(targetDescriptorFile, targetDescriptor, MacrosFactory.forModuleFile(targetDescriptorFile));
+
+    Language targetLanguage = new Language(targetDescriptor, targetDescriptorFile);
+    ModelRootCloneUtil.cloneModelRootsTo(getModelRoots(), targetLanguage);
+
+    Iterator<Generator> targetGenerators = targetLanguage.getGenerators().iterator();
+    for (Generator generator : getGenerators()) {
+      Generator targetGenerator = targetGenerators.next();
+      ModelRootCloneUtil.cloneModelRootsTo(generator.getModelRoots(), targetGenerator);
+    }
+
+    //FIXME rename models here
+
+    return targetLanguage;
   }
 
   @Override

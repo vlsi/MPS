@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class GeneratorDescriptor extends ModuleDescriptor {
   private String myGeneratorUID;
@@ -128,5 +130,26 @@ public class GeneratorDescriptor extends ModuleDescriptor {
       rule.load(stream);
       myPriorityRules.add(rule);
     }
+  }
+
+  @Override
+  public void cloneTo(ModuleDescriptor t, PathConverter converter) {
+    assert t instanceof GeneratorDescriptor;
+    GeneratorDescriptor target = (GeneratorDescriptor) t;
+    super.cloneTo(target, converter);
+
+    target.setGenerateTemplates(isGenerateTemplates());
+    target.setReflectiveQueries(isReflectiveQueries());
+
+    target.getDepGenerators().clear();
+    target.getDepGenerators().addAll(getDepGenerators());
+
+    target.getPriorityRules().clear();
+    target.getPriorityRules().addAll(
+        getPriorityRules()
+            .stream()
+            .map(MappingPriorityRule::getCopy)
+            .collect(Collectors.toList())
+    );
   }
 }

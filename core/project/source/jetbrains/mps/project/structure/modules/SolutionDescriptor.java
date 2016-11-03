@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 
@@ -72,4 +73,14 @@ public class SolutionDescriptor extends ModuleDescriptor {
     myCompileInMPS = stream.readBoolean();
   }
 
+  @Override
+  public void cloneTo(ModuleDescriptor t, PathConverter converter) {
+    assert t instanceof SolutionDescriptor;
+    SolutionDescriptor target = (SolutionDescriptor) t;
+    super.cloneTo(target, converter);
+
+    target.setKind(getKind());
+    target.setCompileInMPS(getCompileInMPS());
+    target.setOutputPath(converter.sourceToDestination(getOutputPath()));
+  }
 }

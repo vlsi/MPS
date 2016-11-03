@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.SDependencyImpl;
@@ -640,7 +641,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     fireModuleRenamed(oldRef);
   }
 
-  protected void renameModels(String oldName, String newName, boolean moveModels) {
+  public void renameModels(String oldName, String newName, boolean moveModels) {
     //if module name is a prefix of it's model's name - rename the model, too
     for (SModel m : getModels()) {
       if (m.isReadOnly()) continue;
@@ -650,7 +651,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       SModelName newModelName = new SModelName(
           newName + m.getName().getNamespace().substring(oldName.length()),
           m.getName().getSimpleName(), m.getName().getStereotype());
-      ((EditableSModel) m).rename(newModelName.getValue(), moveModels);
+      ((EditableSModel) m).rename(newModelName.getValue(), moveModels && m.getSource() instanceof FileDataSource);
     }
   }
 
