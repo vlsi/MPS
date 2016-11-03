@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
@@ -28,10 +29,13 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -164,77 +168,84 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return myConcept;
   }
 
+  @Deprecated
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext) {
-    if (canBeChildDescriptor == null) {
-      return true;
-    }
-    if (canBeChildDescriptor == this) {
-      // in new version it's impossible! - canBeChild in this case overriden!
-      return canBeChild(operationContext, parentNode, link, childConcept, checkingNodeContext);
-    }
-    return canBeChildDescriptor.canBeChild(node, parentNode, link, childConcept, operationContext, checkingNodeContext);
-  }
-
-  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
-    throw new UnsupportedOperationException();
+    return canBeChild(node, parentNode, MetaAdapterByDeclaration.getConcept(childConcept), MetaAdapterByDeclaration.getContainmentLink(link), operationContext,
+        checkingNodeContext);
   }
 
   @Override
-  public boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(@Nullable SNode node, @NotNull SNode parentNode, @NotNull SAbstractConcept childConcept, SContainmentLink link,
+      IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (canBeChildDescriptor == null) {
+      return true;
+    }
+    // FIXME remove it after 3.5
+    if (hasOwnCanBeChildMethod()) {
+      return canBeChild(node, parentNode, link == null ? null : link.getDeclarationNode(), childConcept.getDeclarationNode(), operationContext, checkingNodeContext);
+    }
+    return canBeChildDescriptor.canBeChild(node, parentNode, childConcept, link, operationContext, checkingNodeContext);
+  }
+
+  @Override
+  public boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeRootDescriptor == null) {
       return true;
     }
-    if (canBeRootDescriptor == this) {
-      // in new version it's impossible! - canBeChild in this case overriden!
+    //FIXME remove it after 3.5
+    if (hasOwnCanBeRootMethod()) {
       return canBeRoot(operationContext, model, checkingNodeContext);
     }
     return canBeRootDescriptor.canBeRoot(model, operationContext, checkingNodeContext);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   public boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
     throw new UnsupportedOperationException();
   }
 
+  @Deprecated
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeParent(node, childNode, MetaAdapterByDeclaration.getConcept(childConcept), MetaAdapterByDeclaration.getContainmentLink(link), operationContext,
+        checkingNodeContext);
+  }
+
+  @Override
+  public boolean canBeParent(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, SContainmentLink link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeParentDescriptor == null) {
       return true;
     }
-    if (canBeParentDescriptor == this) {
-      // in new version it's impossible! - canBeParent in this case overriden!
-      return canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
+    // FIXME remove it after 3.5
+    if (hasOwnCanBeParentMethod()) {
+      return canBeParent(node, childNode, childConcept.getDeclarationNode(), link.getDeclarationNode(), operationContext, checkingNodeContext);
     }
     return canBeParentDescriptor.canBeParent(node, childNode, childConcept, link, operationContext, checkingNodeContext);
   }
 
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link,
+  @Deprecated
+  @Override
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
-    throw new UnsupportedOperationException();
+    return canBeAncestor(node, childNode, MetaAdapterByDeclaration.getConcept(childConcept), operationContext, checkingNodeContext);
   }
 
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
+  public boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeAncestorDescriptor == null) {
       return true;
     }
-    if (canBeAncestorDescriptor == this) {
-      // in new version it's impossible! - canBeParent in this case overriden!
-      return canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
+    // FIXME remove it after 3.5
+    if (hasOwnCanBeAncestorMethod()) {
+      return canBeAncestor(node, childNode, childConcept.getDeclarationNode(), operationContext, checkingNodeContext);
     }
     return canBeAncestorDescriptor.canBeAncestor(node, childNode, childConcept, operationContext, checkingNodeContext);
-  }
-
-  public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
-    throw new UnsupportedOperationException();
   }
 
   public PropertyConstraintsDescriptor getProperty(SProperty property) {

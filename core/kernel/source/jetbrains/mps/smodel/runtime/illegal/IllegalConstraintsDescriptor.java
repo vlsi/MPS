@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -53,7 +54,7 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
@@ -64,6 +65,24 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
 
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    return false;
+  }
+
+  @Override
+  public boolean canBeChild(@Nullable SNode node, @NotNull SNode parentNode, @NotNull SAbstractConcept childConcept, SContainmentLink link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return false;
+  }
+
+  @Override
+  public boolean canBeParent(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, SContainmentLink link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return false;
+  }
+
+  @Override
+  public boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 

@@ -65,7 +65,7 @@ public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
   // canBe* section
-  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept,
+  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept,
       @Nullable CheckingNodeContext checkingNodeContext) {
     SNode currentNode = node;
 
@@ -84,23 +84,23 @@ public class ModelConstraints {
     return true;
   }
 
-  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept,
+  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SAbstractConcept childConcept,
       @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(ancestor.getConcept());
     return descriptor.canBeAncestor(ancestor, descendant, childConcept, getOperationContext(getModule(ancestor)), checkingNodeContext);
   }
 
-  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
-      @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeParent(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept,
+      @NotNull SContainmentLink link, @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(parentNode.getConcept());
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
-  public static boolean canBeChild(SAbstractConcept concept, SNode parentNode, SNode link, @Nullable SNode childNode,
-      @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeChild(@Nullable SNode childNode, @NotNull SNode parentNode, @NotNull SAbstractConcept childConcept,
+      /*TODO make @NotNull*/ SContainmentLink link, @Nullable CheckingNodeContext checkingNodeContext) {
     SModule module = getModule(parentNode);
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(concept);
-    return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(childConcept);
+    return descriptor.canBeChild(childNode, parentNode, childConcept, link, getOperationContext(module), checkingNodeContext);
   }
 
   public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model) {
@@ -115,6 +115,36 @@ public class ModelConstraints {
 
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(concept);
     return descriptor.canBeRoot(model, getOperationContext(getModule(model)), null);
+  }
+
+  //deprecated canBe*
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeAncestor(node, childNode, MetaAdapterByDeclaration.getConcept(childConcept), checkingNodeContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeAncestorDirect(ancestor, descendant, MetaAdapterByDeclaration.getConcept(childConcept), checkingNodeContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeParent(parentNode, childNode, MetaAdapterByDeclaration.getConcept(childConcept), MetaAdapterByDeclaration.getContainmentLink(link),
+        checkingNodeContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeChild(SAbstractConcept childConcept, SNode parentNode, SNode link, @Nullable SNode childNode,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeChild(childNode, parentNode, childConcept, link == null ? null : MetaAdapterByDeclaration.getContainmentLink(link), checkingNodeContext);
   }
 
   // scopes part
