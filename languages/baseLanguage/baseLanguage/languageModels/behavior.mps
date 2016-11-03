@@ -267,7 +267,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -69329,6 +69329,63 @@
           <property role="x79VB" value="a newly created initialized node of {@code commentConcept}" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="7plk_f0weY0">
+    <ref role="13h7C2" to="tpee:fIZW3s0" resolve="InstanceOfExpression" />
+    <node concept="13i0hz" id="5HgiwiAyQol" role="13h7CS">
+      <property role="TrG5h" value="getSyntacticallyLeftSideExpression" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="1wHCnsn590c" resolve="getSyntacticallyLeftSideExpression" />
+      <node concept="3Tm1VV" id="5HgiwiAyQom" role="1B3o_S" />
+      <node concept="3clFbS" id="5HgiwiAyQou" role="3clF47">
+        <node concept="3clFbF" id="5HgiwiAyX$t" role="3cqZAp">
+          <node concept="2OqwBi" id="5HgiwiAyXB0" role="3clFbG">
+            <node concept="13iPFW" id="5HgiwiAyX$s" role="2Oq$k0" />
+            <node concept="3TrEf2" id="7plk_f0wfbs" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:fIZW68o" resolve="leftExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5HgiwiAyQov" role="3clF45">
+        <ref role="ehGHo" to="tpee:fz3vP1J" resolve="Expression" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="5HgiwiAyY2K" role="13h7CS">
+      <property role="TrG5h" value="setSyntacticallyLeftSideExpression" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="1wHCnsn58ZK" resolve="setSyntacticallyLeftSideExpression" />
+      <node concept="3Tm1VV" id="5HgiwiAyY2L" role="1B3o_S" />
+      <node concept="3clFbS" id="5HgiwiAyY33" role="3clF47">
+        <node concept="3clFbF" id="5HgiwiAyY7p" role="3cqZAp">
+          <node concept="2OqwBi" id="5HgiwiAyYJx" role="3clFbG">
+            <node concept="2OqwBi" id="5HgiwiAyY9C" role="2Oq$k0">
+              <node concept="13iPFW" id="5HgiwiAyY7j" role="2Oq$k0" />
+              <node concept="3TrEf2" id="7plk_f0wfnC" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:fIZW68o" resolve="leftExpression" />
+              </node>
+            </node>
+            <node concept="2oxUTD" id="5HgiwiAyZiD" role="2OqNvi">
+              <node concept="37vLTw" id="5HgiwiAyZkK" role="2oxUTC">
+                <ref role="3cqZAo" node="5HgiwiAyY34" resolve="expr" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5HgiwiAyY34" role="3clF46">
+        <property role="TrG5h" value="expr" />
+        <node concept="3Tqbb2" id="5HgiwiAyY35" role="1tU5fm">
+          <ref role="ehGHo" to="tpee:fz3vP1J" resolve="Expression" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="5HgiwiAyY36" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="7plk_f0weY1" role="13h7CW">
+      <node concept="3clFbS" id="7plk_f0weY2" role="2VODD2" />
     </node>
   </node>
 </model>
