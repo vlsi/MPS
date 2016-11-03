@@ -1251,56 +1251,66 @@
       <ref role="13i0hy" node="5WvH$QO9bva" resolve="execute" />
       <node concept="3Tm1VV" id="2SpVAIqosoY" role="1B3o_S" />
       <node concept="3clFbS" id="2SpVAIqosp6" role="3clF47">
-        <node concept="3clFbF" id="2SpVAIqospF" role="3cqZAp">
-          <node concept="2OqwBi" id="2SpVAIqosv2" role="3clFbG">
-            <node concept="37vLTw" id="2SpVAIqospE" role="2Oq$k0">
-              <ref role="3cqZAo" node="2SpVAIqospb" resolve="beforeCallback" />
-            </node>
-            <node concept="liA8E" id="2SpVAIqosRS" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
-            </node>
-          </node>
-        </node>
-        <node concept="1QHqEO" id="3$bJkrVyw$N" role="3cqZAp">
-          <node concept="1QHqEC" id="3$bJkrVyw$P" role="1QHqEI">
-            <node concept="3clFbS" id="3$bJkrVyw$R" role="1bW5cS">
-              <node concept="3clFbF" id="2SpVAIqoun$" role="3cqZAp">
-                <node concept="2OqwBi" id="2SpVAIqouuA" role="3clFbG">
-                  <node concept="13iPFW" id="2SpVAIqouny" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="2SpVAIqow2r" role="2OqNvi">
-                    <ref role="37wK5l" node="2SpVAIqougW" resolve="doExecute" />
-                    <node concept="37vLTw" id="2SpVAIqow4n" role="37wK5m">
-                      <ref role="3cqZAo" node="2SpVAIqosp7" resolve="context" />
+        <node concept="3clFbF" id="6m6q652O0PJ" role="3cqZAp">
+          <node concept="2YIFZM" id="6m6q652O0VM" role="3clFbG">
+            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+            <node concept="1bVj0M" id="6m6q652O0WR" role="37wK5m">
+              <node concept="3clFbS" id="6m6q652O0WS" role="1bW5cS">
+                <node concept="3clFbF" id="2SpVAIqospF" role="3cqZAp">
+                  <node concept="2OqwBi" id="2SpVAIqosv2" role="3clFbG">
+                    <node concept="37vLTw" id="2SpVAIqospE" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2SpVAIqospb" resolve="beforeCallback" />
                     </node>
-                    <node concept="37vLTw" id="2SpVAIqowo5" role="37wK5m">
-                      <ref role="3cqZAo" node="2SpVAIqosp9" resolve="console" />
+                    <node concept="liA8E" id="2SpVAIqosRS" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1QHqEO" id="3$bJkrVyw$N" role="3cqZAp">
+                  <node concept="1QHqEC" id="3$bJkrVyw$P" role="1QHqEI">
+                    <node concept="3clFbS" id="3$bJkrVyw$R" role="1bW5cS">
+                      <node concept="3clFbF" id="2SpVAIqoun$" role="3cqZAp">
+                        <node concept="2OqwBi" id="2SpVAIqouuA" role="3clFbG">
+                          <node concept="13iPFW" id="2SpVAIqouny" role="2Oq$k0" />
+                          <node concept="2qgKlT" id="2SpVAIqow2r" role="2OqNvi">
+                            <ref role="37wK5l" node="2SpVAIqougW" resolve="doExecute" />
+                            <node concept="37vLTw" id="2SpVAIqow4n" role="37wK5m">
+                              <ref role="3cqZAo" node="2SpVAIqosp7" resolve="context" />
+                            </node>
+                            <node concept="37vLTw" id="2SpVAIqowo5" role="37wK5m">
+                              <ref role="3cqZAo" node="2SpVAIqosp9" resolve="console" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="1eZSuKdWSK3" role="ukAjM">
+                    <node concept="2OqwBi" id="1eZSuKdWSBM" role="2Oq$k0">
+                      <node concept="37vLTw" id="1eZSuKdWSAs" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2SpVAIqosp7" resolve="context" />
+                      </node>
+                      <node concept="liA8E" id="1eZSuKdWSJt" role="2OqNvi">
+                        <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1eZSuKdWT39" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="2SpVAIqosSV" role="3cqZAp">
+                  <node concept="2OqwBi" id="2SpVAIqosYz" role="3clFbG">
+                    <node concept="37vLTw" id="2SpVAIqoxKV" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2SpVAIqowRi" resolve="afterCallback" />
+                    </node>
+                    <node concept="liA8E" id="2SpVAIqotnL" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
                     </node>
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1eZSuKdWSK3" role="ukAjM">
-            <node concept="2OqwBi" id="1eZSuKdWSBM" role="2Oq$k0">
-              <node concept="37vLTw" id="1eZSuKdWSAs" role="2Oq$k0">
-                <ref role="3cqZAo" node="2SpVAIqosp7" resolve="context" />
-              </node>
-              <node concept="liA8E" id="1eZSuKdWSJt" role="2OqNvi">
-                <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1eZSuKdWT39" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2SpVAIqosSV" role="3cqZAp">
-          <node concept="2OqwBi" id="2SpVAIqosYz" role="3clFbG">
-            <node concept="37vLTw" id="2SpVAIqoxKV" role="2Oq$k0">
-              <ref role="3cqZAo" node="2SpVAIqowRi" resolve="afterCallback" />
-            </node>
-            <node concept="liA8E" id="2SpVAIqotnL" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
             </node>
           </node>
         </node>
