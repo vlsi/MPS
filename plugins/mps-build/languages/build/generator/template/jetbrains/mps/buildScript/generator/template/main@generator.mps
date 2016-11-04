@@ -358,14 +358,19 @@
         <child id="1195158608805" name="conditionFunction" index="150hEN" />
         <child id="1195158637244" name="caseConsequence" index="150oIE" />
       </concept>
+      <concept id="1225228973247" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" flags="in" index="15lBmy" />
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
+      <concept id="1184690432998" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" flags="nn" index="3l3mFP" />
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
+      </concept>
+      <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
+        <child id="1225229330048" name="postMapperFunction" index="15mYut" />
       </concept>
       <concept id="1195499912406" name="jetbrains.mps.lang.generator.structure.MappingScript" flags="lg" index="1pmfR0">
         <property id="1195595592106" name="scriptKind" index="1v3f2W" />
@@ -5508,21 +5513,90 @@
                                 </node>
                                 <node concept="liA8E" id="6xi_VFTNEyw" role="2OqNvi">
                                   <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                                  <node concept="2OqwBi" id="4WwUR8hGHLM" role="37wK5m">
-                                    <node concept="37vLTw" id="4WwUR8hGHvG" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="6xi_VFTNEyj" resolve="helper" />
+                                  <node concept="2OqwBi" id="4WwUR8hGRfu" role="37wK5m">
+                                    <node concept="30H73N" id="4WwUR8hGQSW" role="2Oq$k0" />
+                                    <node concept="3TrEf2" id="4WwUR8hGRBv" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
                                     </node>
-                                    <node concept="liA8E" id="4WwUR8hGIwB" role="2OqNvi">
-                                      <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                                      <node concept="2OqwBi" id="4WwUR8hGRfu" role="37wK5m">
-                                        <node concept="30H73N" id="4WwUR8hGQSW" role="2Oq$k0" />
-                                        <node concept="3TrEf2" id="4WwUR8hGRBv" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="6v0AQVT6cEJ" role="3cqZAp">
+                            <node concept="3clFbS" id="6v0AQVT6cEL" role="3clFbx">
+                              <node concept="3SKdUt" id="6v0AQVT8CYc" role="3cqZAp">
+                                <node concept="3SKdUq" id="6v0AQVT8CYe" role="3SKWNk">
+                                  <property role="3SKdUp" value="See aliases MC, where BuildLayout_File, recorded in locations, is wrapped with BuildLayout_Copy" />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="6v0AQVT8Dp1" role="3cqZAp">
+                                <node concept="3SKdUq" id="6v0AQVT8Dp3" role="3SKWNk">
+                                  <property role="3SKdUp" value="MAP-SRC in BuildLayout_File's rule, default case." />
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="6v0AQVT6lDl" role="3cqZAp">
+                                <node concept="37vLTI" id="6v0AQVT6mZT" role="3clFbG">
+                                  <node concept="2OqwBi" id="6v0AQVT6oIQ" role="37vLTx">
+                                    <node concept="2OqwBi" id="6v0AQVT6nHJ" role="2Oq$k0">
+                                      <node concept="37vLTw" id="6v0AQVT6no$" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="6xi_VFTNEyj" resolve="helper" />
+                                      </node>
+                                      <node concept="liA8E" id="6v0AQVT6oc6" role="2OqNvi">
+                                        <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
+                                      </node>
+                                    </node>
+                                    <node concept="liA8E" id="6v0AQVT6pNw" role="2OqNvi">
+                                      <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                                      <node concept="2OqwBi" id="6v0AQVT6qzX" role="37wK5m">
+                                        <node concept="2JrnkZ" id="6v0AQVT6qzY" role="2Oq$k0">
+                                          <node concept="2OqwBi" id="6v0AQVT6qzZ" role="2JrQYb">
+                                            <node concept="30H73N" id="6v0AQVT6q$0" role="2Oq$k0" />
+                                            <node concept="3TrEf2" id="6v0AQVT6q$1" role="2OqNvi">
+                                              <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="liA8E" id="6v0AQVT6q$2" role="2OqNvi">
+                                          <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                                          <node concept="Xl_RD" id="6v0AQVT6q$3" role="37wK5m">
+                                            <property role="Xl_RC" value="location-key" />
+                                          </node>
                                         </node>
                                       </node>
                                     </node>
                                   </node>
+                                  <node concept="37vLTw" id="6v0AQVT6lDj" role="37vLTJ">
+                                    <ref role="3cqZAo" node="6xi_VFTNEyq" resolve="val" />
+                                  </node>
                                 </node>
+                              </node>
+                            </node>
+                            <node concept="1Wc70l" id="6v0AQVT6etk" role="3clFbw">
+                              <node concept="3y3z36" id="6v0AQVT6kR0" role="3uHU7w">
+                                <node concept="10Nm6u" id="6v0AQVT6lgP" role="3uHU7w" />
+                                <node concept="2OqwBi" id="6v0AQVT6iic" role="3uHU7B">
+                                  <node concept="2JrnkZ" id="6v0AQVT6hLV" role="2Oq$k0">
+                                    <node concept="2OqwBi" id="6v0AQVT6fdg" role="2JrQYb">
+                                      <node concept="30H73N" id="6v0AQVT6eOA" role="2Oq$k0" />
+                                      <node concept="3TrEf2" id="6v0AQVT6fJm" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="6v0AQVT6iP2" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                                    <node concept="Xl_RD" id="6v0AQVT6kpw" role="37wK5m">
+                                      <property role="Xl_RC" value="location-key" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbC" id="6v0AQVT6dIc" role="3uHU7B">
+                                <node concept="37vLTw" id="6v0AQVT6d2_" role="3uHU7B">
+                                  <ref role="3cqZAo" node="6xi_VFTNEyq" resolve="val" />
+                                </node>
+                                <node concept="10Nm6u" id="6v0AQVT6e5a" role="3uHU7w" />
                               </node>
                             </node>
                           </node>
@@ -6021,18 +6095,10 @@
                                 </node>
                                 <node concept="liA8E" id="4RsV8qJCbIb" role="2OqNvi">
                                   <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                                  <node concept="2OqwBi" id="4WwUR8hGTvA" role="37wK5m">
-                                    <node concept="37vLTw" id="4WwUR8hGTdy" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="4RsV8qJCbHY" resolve="helper" />
-                                    </node>
-                                    <node concept="liA8E" id="4WwUR8hGUe5" role="2OqNvi">
-                                      <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                                      <node concept="2OqwBi" id="4WwUR8hGVbo" role="37wK5m">
-                                        <node concept="30H73N" id="4WwUR8hGUOS" role="2Oq$k0" />
-                                        <node concept="3TrEf2" id="4WwUR8hGVER" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="3ior:4RsV8qJBXHl" resolve="target" />
-                                        </node>
-                                      </node>
+                                  <node concept="2OqwBi" id="4WwUR8hGVbo" role="37wK5m">
+                                    <node concept="30H73N" id="4WwUR8hGUOS" role="2Oq$k0" />
+                                    <node concept="3TrEf2" id="4WwUR8hGVER" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="3ior:4RsV8qJBXHl" resolve="target" />
                                     </node>
                                   </node>
                                 </node>
@@ -12668,18 +12734,10 @@
                       </node>
                       <node concept="liA8E" id="4RsV8qJCbLn" role="2OqNvi">
                         <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                        <node concept="2OqwBi" id="4WwUR8hHD56" role="37wK5m">
-                          <node concept="37vLTw" id="4WwUR8hHCM_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4RsV8qJCbLa" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="4WwUR8hHDYS" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                            <node concept="2OqwBi" id="4WwUR8hHEY3" role="37wK5m">
-                              <node concept="30H73N" id="4WwUR8hHEB1" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="4WwUR8hHFIg" role="2OqNvi">
-                                <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
-                              </node>
-                            </node>
+                        <node concept="2OqwBi" id="4WwUR8hHEY3" role="37wK5m">
+                          <node concept="30H73N" id="4WwUR8hHEB1" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="4WwUR8hHFIg" role="2OqNvi">
+                            <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -13265,18 +13323,10 @@
                       </node>
                       <node concept="liA8E" id="4RsV8qJCbN2" role="2OqNvi">
                         <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                        <node concept="2OqwBi" id="4WwUR8hH$XN" role="37wK5m">
-                          <node concept="37vLTw" id="4WwUR8hH$Gc" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4RsV8qJCbMP" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="4WwUR8hH_Ou" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                            <node concept="2OqwBi" id="4RsV8qJCbN4" role="37wK5m">
-                              <node concept="30H73N" id="4RsV8qJCbN5" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="4RsV8qJCbNu" role="2OqNvi">
-                                <ref role="3Tt5mk" to="3ior:4RsV8qJBXHl" resolve="target" />
-                              </node>
-                            </node>
+                        <node concept="2OqwBi" id="4RsV8qJCbN4" role="37wK5m">
+                          <node concept="30H73N" id="4RsV8qJCbN5" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="4RsV8qJCbNu" role="2OqNvi">
+                            <ref role="3Tt5mk" to="3ior:4RsV8qJBXHl" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -14842,38 +14892,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs8" id="5WtSFRWvgh0" role="3cqZAp">
-                <node concept="3cpWsn" id="5WtSFRWvgh1" role="3cpWs9">
-                  <property role="TrG5h" value="originalNode" />
-                  <node concept="3Tqbb2" id="5WtSFRWvgh2" role="1tU5fm">
-                    <ref role="ehGHo" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
-                  </node>
-                  <node concept="1PxgMI" id="5WtSFRWvghj" role="33vP2m">
-                    <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
-                    <node concept="2OqwBi" id="4WwUR8hHrhh" role="1m5AlR">
-                      <node concept="37vLTw" id="4WwUR8hHqNs" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5bUGwboXCaQ" resolve="helper" />
-                      </node>
-                      <node concept="liA8E" id="4WwUR8hHsEm" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                        <node concept="2OqwBi" id="5WtSFRWvgh4" role="37wK5m">
-                          <node concept="1iwH7S" id="5WtSFRWvgh5" role="2Oq$k0" />
-                          <node concept="3cR$yn" id="5WtSFRWvgh6" role="2OqNvi">
-                            <ref role="3cRzXn" node="5bUGwboXCd0" resolve="library" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="7B9bSSBH76_" role="3cqZAp" />
-              <node concept="3SKdUt" id="3h6igUp0sme" role="3cqZAp">
-                <node concept="3SKdUq" id="3h6igUp0smg" role="3SKWNk">
-                  <property role="3SKdUp" value="XXX JELH code assumes originalNode comes not from traniesnt model and doesn't translate (toOriginal) its content" />
-                </node>
-              </node>
               <node concept="3clFbF" id="7B9bSSBH75p" role="3cqZAp">
                 <node concept="2OqwBi" id="7B9bSSBH7bL" role="3clFbG">
                   <node concept="2ShNRf" id="7B9bSSBH7bM" role="2Oq$k0">
@@ -14882,8 +14900,11 @@
                       <node concept="37vLTw" id="3GM_nagTuuV" role="37wK5m">
                         <ref role="3cqZAo" node="5bUGwboXCaQ" resolve="helper" />
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTtfd" role="37wK5m">
-                        <ref role="3cqZAo" node="5WtSFRWvgh1" resolve="originalNode" />
+                      <node concept="2OqwBi" id="5WtSFRWvgh4" role="37wK5m">
+                        <node concept="1iwH7S" id="5WtSFRWvgh5" role="2Oq$k0" />
+                        <node concept="3cR$yn" id="5WtSFRWvgh6" role="2OqNvi">
+                          <ref role="3cRzXn" node="5bUGwboXCd0" resolve="library" />
+                        </node>
                       </node>
                       <node concept="1iwH7S" id="7B9bSSBH7bQ" role="37wK5m" />
                     </node>
@@ -16218,18 +16239,10 @@
                             </node>
                             <node concept="liA8E" id="1mpssCUBLOH" role="2OqNvi">
                               <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                              <node concept="2OqwBi" id="4WwUR8hGn8O" role="37wK5m">
-                                <node concept="37vLTw" id="4WwUR8hGmwj" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1mpssCUBLOw" resolve="helper" />
-                                </node>
-                                <node concept="liA8E" id="4WwUR8hGoe4" role="2OqNvi">
-                                  <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                                  <node concept="2OqwBi" id="4WwUR8hGqKk" role="37wK5m">
-                                    <node concept="30H73N" id="4WwUR8hGq3n" role="2Oq$k0" />
-                                    <node concept="3TrEf2" id="4WwUR8hGruH" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
-                                    </node>
-                                  </node>
+                              <node concept="2OqwBi" id="4WwUR8hGqKk" role="37wK5m">
+                                <node concept="30H73N" id="4WwUR8hGq3n" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="4WwUR8hGruH" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="3ior:IFRVVI4P3O" resolve="target" />
                                 </node>
                               </node>
                             </node>
@@ -16709,6 +16722,61 @@
                 </node>
               </node>
             </node>
+            <node concept="1pdMLZ" id="6v0AQVT4vzL" role="lGtFl">
+              <node concept="15lBmy" id="6v0AQVT4vDu" role="15mYut">
+                <node concept="3clFbS" id="6v0AQVT4vDv" role="2VODD2">
+                  <node concept="3SKdUt" id="6v0AQVT8EGv" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8EGx" role="3SKWNk">
+                      <property role="3SKdUp" value="HACK. At the moment, DependenciesHelper is populated with locations, with " />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="6v0AQVT8EM2" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8EM4" role="3SKWNk">
+                      <property role="3SKdUp" value="inputNode (BuildLayout_File) serving as a key. Here, the file gets replaced with" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="6v0AQVT8ERD" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8ERF" role="3SKWNk">
+                      <property role="3SKdUp" value="BuildLayout_Copy, and incoming references (like BuildLayout_Import in another project) " />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="6v0AQVT8F0c" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8F0d" role="3SKWNk">
+                      <property role="3SKdUp" value="get re-routed to this node. However, once that import is processed, there's nothing in DH.locations()" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="6v0AQVT8Fbs" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8Fbu" role="3SKWNk">
+                      <property role="3SKdUp" value="that match its target (it's outputNode, BL_Copy at the time). To workaround, I record original location" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="6v0AQVT8Fhf" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8Fhh" role="3SKWNk">
+                      <property role="3SKdUp" value="key here with the new target node, and use it from main.BuildLayout_Import template." />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="6v0AQVT8IUA" role="3cqZAp">
+                    <node concept="3SKdUq" id="6v0AQVT8IUC" role="3SKWNk">
+                      <property role="3SKdUp" value="Prior to the removal of transient models this used to work as every lookup was done using origin node." />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6v0AQVT5Lxi" role="3cqZAp">
+                    <node concept="2OqwBi" id="6v0AQVT5O45" role="3clFbG">
+                      <node concept="2JrnkZ" id="6v0AQVT5NQ9" role="2Oq$k0">
+                        <node concept="3l3mFP" id="6v0AQVT5Lxg" role="2JrQYb" />
+                      </node>
+                      <node concept="liA8E" id="6v0AQVT5Om2" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
+                        <node concept="Xl_RD" id="6v0AQVT5Otl" role="37wK5m">
+                          <property role="Xl_RC" value="location-key" />
+                        </node>
+                        <node concept="30H73N" id="6v0AQVT5OAs" role="37wK5m" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -17045,19 +17113,11 @@
                             <node concept="37vLTw" id="3GM_nagT$eE" role="37vLTJ">
                               <ref role="3cqZAo" node="j1Y_zp$NPn" resolve="layoutNode" />
                             </node>
-                            <node concept="1PxgMI" id="j1Y_zp$NPu" role="37vLTx">
+                            <node concept="1PxgMI" id="6v0AQVT7s6T" role="37vLTx">
                               <property role="1BlNFB" value="true" />
                               <ref role="1m5ApE" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
-                              <node concept="2OqwBi" id="4WwUR8hHj$Q" role="1m5AlR">
-                                <node concept="37vLTw" id="4WwUR8hHj4z" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="j1Y_zp$NPg" resolve="helper" />
-                                </node>
-                                <node concept="liA8E" id="4WwUR8hHkfr" role="2OqNvi">
-                                  <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                                  <node concept="37vLTw" id="4WwUR8hHlcU" role="37wK5m">
-                                    <ref role="3cqZAo" node="j1Y_zp$NOP" resolve="targetFolder" />
-                                  </node>
-                                </node>
+                              <node concept="37vLTw" id="4WwUR8hHlcU" role="1m5AlR">
+                                <ref role="3cqZAo" node="j1Y_zp$NOP" resolve="targetFolder" />
                               </node>
                             </node>
                           </node>

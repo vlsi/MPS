@@ -11155,33 +11155,16 @@
                           <ref role="ehGHo" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
                         </node>
                         <node concept="2OqwBi" id="3Iy_$1rTp0O" role="33vP2m">
-                          <node concept="2OqwBi" id="3Iy_$1rTp0P" role="2Oq$k0">
+                          <node concept="2OqwBi" id="1kg6UhZxX_h" role="2Oq$k0">
                             <node concept="2OqwBi" id="3Iy_$1rTp0Q" role="2Oq$k0">
                               <node concept="30H73N" id="3Iy_$1rTp0R" role="2Oq$k0" />
                               <node concept="3Tsc0h" id="3Iy_$1rTp0S" role="2OqNvi">
                                 <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
                               </node>
                             </node>
-                            <node concept="3zZkjj" id="3Iy_$1rTp0T" role="2OqNvi">
-                              <node concept="1bVj0M" id="3Iy_$1rTp0U" role="23t8la">
-                                <node concept="3clFbS" id="3Iy_$1rTp0V" role="1bW5cS">
-                                  <node concept="3clFbF" id="3Iy_$1rTp0W" role="3cqZAp">
-                                    <node concept="2OqwBi" id="3Iy_$1rTp0X" role="3clFbG">
-                                      <node concept="37vLTw" id="3Iy_$1rTp0Y" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="3Iy_$1rTp11" resolve="it" />
-                                      </node>
-                                      <node concept="1mIQ4w" id="3Iy_$1rTp0Z" role="2OqNvi">
-                                        <node concept="chp4Y" id="3Iy_$1rTp10" role="cj9EA">
-                                          <ref role="cht4Q" to="kdzh:3Iy_$1rrNGr" resolve="BuildMps_GeneratorOptions" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="Rh6nW" id="3Iy_$1rTp11" role="1bW2Oz">
-                                  <property role="TrG5h" value="it" />
-                                  <node concept="2jxLKc" id="3Iy_$1rTp12" role="1tU5fm" />
-                                </node>
+                            <node concept="v3k3i" id="1kg6UhZy06m" role="2OqNvi">
+                              <node concept="chp4Y" id="1kg6UhZy0lv" role="v3oSu">
+                                <ref role="cht4Q" to="kdzh:3Iy_$1rrNGr" resolve="BuildMps_GeneratorOptions" />
                               </node>
                             </node>
                           </node>
@@ -11275,9 +11258,7 @@
                           </node>
                           <node concept="3clFbF" id="3Iy_$1rU9rH" role="3cqZAp">
                             <node concept="37vLTI" id="3Iy_$1rUatd" role="3clFbG">
-                              <node concept="3clFbT" id="3Iy_$1rUaDN" role="37vLTx">
-                                <property role="3clFbU" value="false" />
-                              </node>
+                              <node concept="3clFbT" id="3Iy_$1rUaDN" role="37vLTx" />
                               <node concept="2OqwBi" id="3Iy_$1rU9yH" role="37vLTJ">
                                 <node concept="37vLTw" id="3Iy_$1rU9rG" role="2Oq$k0">
                                   <ref role="3cqZAo" node="3Iy_$1rTqqd" resolve="defaults" />
