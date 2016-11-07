@@ -40,7 +40,7 @@ public final class BuildProjectDependency__BehaviorDescriptor extends BaseBHDesc
   /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     String location = "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}";
     helper.locations().put(__thisNode__, location);
-    helper.contentLocations().put(__thisNode__, location);
+    helper.putContentLocation(__thisNode__, location);
   }
   /*package*/ static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
     return helper.locations().get(__thisNode__);

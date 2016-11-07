@@ -103,7 +103,7 @@ public class JavaExternalLibraryHelper {
 
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pe : ListSequence.fromList(artifacts).distinct()) {
-      String val = helper.locations().get(pe);
+      String val = helper.getLocation(pe);
       if (val == null) {
         genContext.showErrorMessage(pe, "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
         continue;
@@ -113,7 +113,7 @@ public class JavaExternalLibraryHelper {
       ListSequence.fromList(result).addElement(propertyNode);
     }
     for (SNode pe : jarContainers) {
-      String val = helper.contentLocations().get(pe);
+      String val = helper.getContentLocation(pe);
       if (val == null) {
         genContext.showErrorMessage(pe, "no content location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(pe) + " (unsupported layout element)");
         continue;

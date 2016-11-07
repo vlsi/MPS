@@ -694,7 +694,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "file " + BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"))) + " was not found in the layout");
       return "???";
     }
-    String val = helper.locations().get(layoutNode);
+    String val = helper.getLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for jar " + BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"))));
       return "???";
@@ -702,6 +702,8 @@ public class QueriesGenerated {
     return val;
   }
   public static Object propertyMacro_GetPropertyValue_6859736767834590113(final PropertyMacroContext _context) {
+    // XXX in fact, targetFile is not necessarily BuildSource_SingleFile. It could be 
+    // BuildLayout_Copy at generation time due to syntax sugar(?) processing in aliases MC. 
     SNode targetFile = ((SNode) _context.getVariable("jar"));
     SNode project = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (project == null) {
@@ -711,7 +713,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode;
     if (SNodeOperations.isInstanceOf(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
-      layoutNode = SNodeOperations.as(helper.getOriginalNode(targetFile), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      layoutNode = SNodeOperations.as(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     } else {
       SNode sfile = SNodeOperations.as(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"));
       layoutNode = helper.getArtifact((sfile != null ? SLinkOperations.getTarget(sfile, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")) : targetFile));
@@ -720,7 +722,7 @@ public class QueriesGenerated {
         return "???";
       }
     }
-    String val = helper.locations().get(layoutNode);
+    String val = helper.getLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for jar " + BuildSource_SingleFile__BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(targetFile));
       return "???";
@@ -737,7 +739,7 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode;
     if (SNodeOperations.isInstanceOf(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"))) {
-      layoutNode = SNodeOperations.as(helper.getOriginalNode(targetFolder), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+      layoutNode = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"));
       layoutNode = helper.getArtifact((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder));
@@ -746,7 +748,7 @@ public class QueriesGenerated {
         return "???";
       }
     }
-    String val = helper.contentLocations().get(layoutNode);
+    String val = helper.getContentLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder));
       return "???";
@@ -760,7 +762,7 @@ public class QueriesGenerated {
       return "";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
+    String val = helper.getLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"))));
       return "";
@@ -1646,7 +1648,7 @@ public class QueriesGenerated {
     // that match its target (it's outputNode, BL_Copy at the time). To workaround, I record original location 
     // key here with the new target node, and use it from main.BuildLayout_Import template. 
     // Prior to the removal of transient models this used to work as every lookup was done using origin node. 
-    _context.getOutputNode().putUserObject("location-key", _context.getNode());
+    DependenciesHelper.preserveLocations(_context.getNode(), _context.getOutputNode());
   }
   public static void mappingScript_CodeBlock_809559803149973643(final MappingScriptContext _context) {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")))) {
@@ -1697,12 +1699,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
-    if (val == null && SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")).getUserObject("location-key") != null) {
-      // See aliases MC, where BuildLayout_File, recorded in locations, is wrapped with BuildLayout_Copy 
-      // MAP-SRC in BuildLayout_File's rule, default case. 
-      val = helper.locations().get(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")).getUserObject("location-key"));
-    }
+    String val = helper.getLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"))));
     }
@@ -1715,7 +1712,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.contentLocations().get(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
+    String val = helper.getContentLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target"))));
     }
@@ -1771,7 +1768,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
+    String val = helper.getLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"))));
     } else if ((boolean) BuildLayout_Node__BehaviorDescriptor.isFolder_id1bWeed$oPYW.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")))) {
@@ -1797,7 +1794,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.contentLocations().get(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
+    String val = helper.getContentLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no content location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target"))));
     }

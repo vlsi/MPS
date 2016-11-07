@@ -52,13 +52,13 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
     SNode parent = helper.parent(__thisNode__);
     String parentLocation = helper.contentLocations().get(parent);
     String zipLocation = parentLocation + "/" + BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper.getMacroHelper());
-    helper.locations().put(__thisNode__, zipLocation);
+    helper.putLocation(__thisNode__, zipLocation);
 
     if (helper.isContentRequired(__thisNode__)) {
       String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "deps", SPropertyOperations.getString(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       helper.emit(_quotation_createNode_20awhq_a0a1a5a0(tempPath));
       helper.emit(_quotation_createNode_20awhq_a0a2a5a0(zipLocation, tempPath));
-      helper.contentLocations().put(__thisNode__, tempPath);
+      helper.putContentLocation(__thisNode__, tempPath);
     }
   }
   /*package*/ static boolean isFile_id1bWeed$oPZ2(@NotNull SNode __thisNode__) {

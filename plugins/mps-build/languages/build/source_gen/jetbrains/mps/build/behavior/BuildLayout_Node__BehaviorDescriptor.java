@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -49,17 +49,17 @@ public final class BuildLayout_Node__BehaviorDescriptor extends BaseBHDescriptor
     return false;
   }
   /*package*/ static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
-    return helper.locations().get(__thisNode__);
+    return helper.getLocation(__thisNode__);
   }
   /*package*/ static void appendName_id1bWeed$ownT(@NotNull SNode __thisNode__, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
       sb.append("/");
     }
-    sb.append((SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+    sb.append((SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__)) != null ? SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__)) : SNodeOperations.getConcept(__thisNode__).getName()));
   }
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     StringBuilder sb = new StringBuilder();
-    BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), __thisNode__, sb);
+    BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")), __thisNode__, sb);
     return sb.toString();
   }
   /*package*/ static boolean isFolder_id1bWeed$oPYW(@NotNull SNode __thisNode__) {
@@ -71,7 +71,7 @@ public final class BuildLayout_Node__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static void appendName_internal_id1bWeed$oEMe(@NotNull SAbstractConcept __thisConcept__, SNode node, StringBuilder sb) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
     if (parent != null) {
-      BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), parent, sb);
+      BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")), parent, sb);
     }
     BuildLayout_PathElement__BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
   }

@@ -334,7 +334,7 @@
           <node concept="3cpWsn" id="7B9bSSBH76O" role="3cpWs9">
             <property role="TrG5h" value="artifacts" />
             <node concept="2I9FWS" id="7B9bSSBH76P" role="1tU5fm">
-              <ref role="2I9WkF" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+              <ref role="2I9WkF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
             </node>
             <node concept="2ShNRf" id="7B9bSSBH76R" role="33vP2m">
               <node concept="2T8Vx0" id="7B9bSSBH76X" role="2ShVmc">
@@ -426,7 +426,7 @@
                       <node concept="3cpWsn" id="5WtSFRWuR1V" role="3cpWs9">
                         <property role="TrG5h" value="jarArtifact" />
                         <node concept="3Tqbb2" id="5WtSFRWuR1W" role="1tU5fm">
-                          <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+                          <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                         </node>
                         <node concept="2OqwBi" id="5WtSFRWvgjA" role="33vP2m">
                           <node concept="37vLTw" id="2BHiRxeuu3$" role="2Oq$k0">
@@ -926,7 +926,7 @@
               <node concept="3cpWsn" id="5bUGwboXCaX" role="3cpWs9">
                 <property role="TrG5h" value="layoutNode" />
                 <node concept="3Tqbb2" id="5bUGwboXCaY" role="1tU5fm">
-                  <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+                  <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                 </node>
                 <node concept="2OqwBi" id="5bUGwboXCaZ" role="33vP2m">
                   <node concept="37vLTw" id="2BHiRxeuB1a" role="2Oq$k0">
@@ -1085,16 +1085,11 @@
                 <property role="TrG5h" value="val" />
                 <node concept="17QB3L" id="5bUGwboXCc2" role="1tU5fm" />
                 <node concept="2OqwBi" id="5bUGwboXCc3" role="33vP2m">
-                  <node concept="2OqwBi" id="5bUGwboXCc4" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxeuE3d" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
-                    </node>
-                    <node concept="liA8E" id="5bUGwboXCc6" role="2OqNvi">
-                      <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-                    </node>
+                  <node concept="37vLTw" id="2BHiRxeuE3d" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
                   </node>
                   <node concept="liA8E" id="5bUGwboXCc7" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
                     <node concept="37vLTw" id="3GM_nagTBB2" role="37wK5m">
                       <ref role="3cqZAo" node="5bUGwboXCcJ" resolve="pe" />
                     </node>
@@ -1208,7 +1203,7 @@
           <node concept="3cpWsn" id="5bUGwboXCcJ" role="1Duv9x">
             <property role="TrG5h" value="pe" />
             <node concept="3Tqbb2" id="5bUGwboXCcK" role="1tU5fm">
-              <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+              <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
             </node>
           </node>
           <node concept="2OqwBi" id="1VeJpqZpW$0" role="1DdaDG">
@@ -1225,16 +1220,11 @@
                 <property role="TrG5h" value="val" />
                 <node concept="17QB3L" id="7B9bSSBH7jd" role="1tU5fm" />
                 <node concept="2OqwBi" id="7B9bSSBH7je" role="33vP2m">
-                  <node concept="2OqwBi" id="7B9bSSBH7jf" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxeuRNG" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
-                    </node>
-                    <node concept="liA8E" id="7B9bSSBH7jh" role="2OqNvi">
-                      <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                    </node>
+                  <node concept="37vLTw" id="2BHiRxeuRNG" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
                   </node>
                   <node concept="liA8E" id="7B9bSSBH7ji" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
                     <node concept="37vLTw" id="3GM_nagT$Pw" role="37wK5m">
                       <ref role="3cqZAo" node="7B9bSSBH7jY" resolve="pe" />
                     </node>

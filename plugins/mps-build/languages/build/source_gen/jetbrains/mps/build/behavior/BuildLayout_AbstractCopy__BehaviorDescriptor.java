@@ -47,7 +47,7 @@ public final class BuildLayout_AbstractCopy__BehaviorDescriptor extends BaseBHDe
         String lastSegment = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, helper.getMacroHelper());
         if (lastSegment != null) {
           String fileLocation = parentLocation + "/" + lastSegment;
-          helper.locations().put(__thisNode__, fileLocation);
+          helper.putLocation(__thisNode__, fileLocation);
         }
       }
     }

@@ -55,7 +55,7 @@ public final class BuildMpsLayout_PluginDescriptor__BehaviorDescriptor extends B
     if (artifactId instanceof jetbrains.mps.smodel.SNode) {
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"))) {
-        return helper.locations().get(__thisNode__) + "/../..";
+        return helper.getLocation(__thisNode__) + "/../..";
       }
     }
     return ((String) BuildLayout_Node__BehaviorDescriptor.location_id6b4RkXS8sT2.invokeSpecial(__thisNode__, helper, artifactId));
@@ -64,11 +64,11 @@ public final class BuildMpsLayout_PluginDescriptor__BehaviorDescriptor extends B
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       sb.append("/");
     }
-    sb.append(BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
+    sb.append(BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));
   }
   /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
-    String parentLocation = helper.contentLocations().get(helper.parent(__thisNode__));
-    helper.locations().put(__thisNode__, parentLocation + "/" + BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor").getDeclarationNode())));
+    String parentLocation = helper.getContentLocation(helper.parent(__thisNode__));
+    helper.putLocation(__thisNode__, parentLocation + "/" + BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));
   }
   /*package*/ static String pluginXml_idQkG2t1cwfm(@NotNull SAbstractConcept __thisConcept__) {
     return "plugin.xml";

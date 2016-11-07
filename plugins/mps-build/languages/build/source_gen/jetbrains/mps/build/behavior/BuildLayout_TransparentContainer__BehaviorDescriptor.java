@@ -40,9 +40,9 @@ public final class BuildLayout_TransparentContainer__BehaviorDescriptor extends 
   }
   /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(__thisNode__);
-    String parentLocation = helper.contentLocations().get(parent);
-    helper.locations().put(__thisNode__, parentLocation);
-    helper.contentLocations().put(__thisNode__, parentLocation);
+    String parentLocation = helper.getContentLocation(parent);
+    helper.putLocation(__thisNode__, parentLocation);
+    helper.putContentLocation(__thisNode__, parentLocation);
   }
 
   /*package*/ BuildLayout_TransparentContainer__BehaviorDescriptor() {

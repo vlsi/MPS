@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -242,6 +243,9 @@
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="6973815483243445083" name="jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression" flags="nn" index="3f7Wdw">
         <reference id="6973815483243565416" name="member" index="3f7u_j" />
@@ -413,16 +417,11 @@
             <property role="TrG5h" value="parentLocation" />
             <node concept="17QB3L" id="5FtnUVJQe2J" role="1tU5fm" />
             <node concept="2OqwBi" id="5FtnUVJQe2K" role="33vP2m">
-              <node concept="2OqwBi" id="5FtnUVJQe2L" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgmOfv" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7a7y9hgby$t" resolve="helper" />
-                </node>
-                <node concept="liA8E" id="5FtnUVJQe2N" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                </node>
+              <node concept="37vLTw" id="2BHiRxgmOfv" role="2Oq$k0">
+                <ref role="3cqZAo" node="7a7y9hgby$t" resolve="helper" />
               </node>
               <node concept="liA8E" id="5FtnUVJQe2O" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
                 <node concept="37vLTw" id="3GM_nagTyya" role="37wK5m">
                   <ref role="3cqZAo" node="5FtnUVJQe2B" resolve="parent" />
                 </node>
@@ -464,16 +463,11 @@
         </node>
         <node concept="3clFbF" id="5FtnUVJQe33" role="3cqZAp">
           <node concept="2OqwBi" id="5FtnUVJQe34" role="3clFbG">
-            <node concept="2OqwBi" id="5FtnUVJQe35" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxgmKqX" role="2Oq$k0">
-                <ref role="3cqZAo" node="7a7y9hgby$t" resolve="helper" />
-              </node>
-              <node concept="liA8E" id="5FtnUVJQe37" role="2OqNvi">
-                <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-              </node>
+            <node concept="37vLTw" id="2BHiRxgmKqX" role="2Oq$k0">
+              <ref role="3cqZAo" node="7a7y9hgby$t" resolve="helper" />
             </node>
             <node concept="liA8E" id="5FtnUVJQe38" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <ref role="37wK5l" to="o3n2:6BqTkGEZu3e" resolve="putLocation" />
               <node concept="13iPFW" id="5FtnUVJQe39" role="37wK5m" />
               <node concept="37vLTw" id="3GM_nagTsJp" role="37wK5m">
                 <ref role="3cqZAo" node="5FtnUVJQe2R" resolve="languageLocation" />
@@ -546,16 +540,11 @@
                 <property role="TrG5h" value="languageLocation" />
                 <node concept="17QB3L" id="7YI57w72c1_" role="1tU5fm" />
                 <node concept="2OqwBi" id="7YI57w72cD9" role="33vP2m">
-                  <node concept="2OqwBi" id="7YI57w72cDa" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxglbnY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7YI57w6ZEO4" resolve="helper" />
-                    </node>
-                    <node concept="liA8E" id="7YI57w72cDc" role="2OqNvi">
-                      <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-                    </node>
+                  <node concept="37vLTw" id="2BHiRxglbnY" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7YI57w6ZEO4" resolve="helper" />
                   </node>
                   <node concept="liA8E" id="7YI57w72cDd" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
                     <node concept="13iPFW" id="7YI57w72cDe" role="37wK5m" />
                   </node>
                 </node>
@@ -1902,16 +1891,11 @@
         </node>
         <node concept="3clFbF" id="6bGbH3SvTLQ" role="3cqZAp">
           <node concept="2OqwBi" id="6bGbH3SvTM8" role="3clFbG">
-            <node concept="2OqwBi" id="41__iZjl74n" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxghf_l" role="2Oq$k0">
-                <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
-              </node>
-              <node concept="liA8E" id="41__iZjl74t" role="2OqNvi">
-                <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-              </node>
+            <node concept="37vLTw" id="2BHiRxghf_l" role="2Oq$k0">
+              <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
             </node>
             <node concept="liA8E" id="6bGbH3SvTMd" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <ref role="37wK5l" to="o3n2:6BqTkGEZu3e" resolve="putLocation" />
               <node concept="13iPFW" id="6bGbH3SvTMe" role="37wK5m" />
               <node concept="37vLTw" id="3GM_nagTxbE" role="37wK5m">
                 <ref role="3cqZAo" node="5FtnUVJQbzA" resolve="folderLocation" />
@@ -1921,16 +1905,11 @@
         </node>
         <node concept="3clFbF" id="5FtnUVJQbzN" role="3cqZAp">
           <node concept="2OqwBi" id="5FtnUVJQbzO" role="3clFbG">
-            <node concept="2OqwBi" id="5FtnUVJQbzP" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxgm6wu" role="2Oq$k0">
-                <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
-              </node>
-              <node concept="liA8E" id="5FtnUVJQbzR" role="2OqNvi">
-                <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-              </node>
+            <node concept="37vLTw" id="2BHiRxgm6wu" role="2Oq$k0">
+              <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
             </node>
             <node concept="liA8E" id="5FtnUVJQbzS" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <ref role="37wK5l" to="o3n2:6BqTkGF5CSc" resolve="putContentLocation" />
               <node concept="13iPFW" id="5FtnUVJQbzT" role="37wK5m" />
               <node concept="37vLTw" id="3GM_nagTyCc" role="37wK5m">
                 <ref role="3cqZAo" node="5FtnUVJQbzA" resolve="folderLocation" />
@@ -1942,53 +1921,16 @@
           <node concept="2GrKxI" id="1VeJpqZpQOn" role="2Gsz3X">
             <property role="TrG5h" value="ic" />
           </node>
-          <node concept="2OqwBi" id="1VeJpqZpQSE" role="2GsD0m">
-            <node concept="2OqwBi" id="1VeJpqZpQPb" role="2Oq$k0">
-              <node concept="2OqwBi" id="1VeJpqZpQOJ" role="2Oq$k0">
-                <node concept="13iPFW" id="1VeJpqZpQOq" role="2Oq$k0" />
-                <node concept="3Tsc0h" id="1VeJpqZpQOP" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" resolve="children" />
-                </node>
-              </node>
-              <node concept="3zZkjj" id="1VeJpqZpQPh" role="2OqNvi">
-                <node concept="1bVj0M" id="1VeJpqZpQPi" role="23t8la">
-                  <node concept="3clFbS" id="1VeJpqZpQPj" role="1bW5cS">
-                    <node concept="3clFbF" id="1VeJpqZpQPm" role="3cqZAp">
-                      <node concept="2OqwBi" id="1VeJpqZpQPG" role="3clFbG">
-                        <node concept="37vLTw" id="2BHiRxglJQT" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1VeJpqZpQPk" resolve="it" />
-                        </node>
-                        <node concept="1mIQ4w" id="1VeJpqZpQPM" role="2OqNvi">
-                          <node concept="chp4Y" id="1VeJpqZpQPO" role="cj9EA">
-                            <ref role="cht4Q" to="3ior:4RsV8qJBXHj" resolve="BuildLayout_ImportContent" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="Rh6nW" id="1VeJpqZpQPk" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
-                    <node concept="2jxLKc" id="1VeJpqZpQPl" role="1tU5fm" />
-                  </node>
-                </node>
+          <node concept="2OqwBi" id="3g2FLTviyqM" role="2GsD0m">
+            <node concept="2OqwBi" id="1VeJpqZpQOJ" role="2Oq$k0">
+              <node concept="13iPFW" id="1VeJpqZpQOq" role="2Oq$k0" />
+              <node concept="3Tsc0h" id="1VeJpqZpQOP" role="2OqNvi">
+                <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" resolve="children" />
               </node>
             </node>
-            <node concept="3$u5V9" id="1VeJpqZpQSK" role="2OqNvi">
-              <node concept="1bVj0M" id="1VeJpqZpQSL" role="23t8la">
-                <node concept="3clFbS" id="1VeJpqZpQSM" role="1bW5cS">
-                  <node concept="3clFbF" id="1VeJpqZpQSP" role="3cqZAp">
-                    <node concept="1PxgMI" id="1VeJpqZpQTb" role="3clFbG">
-                      <ref role="1m5ApE" to="3ior:4RsV8qJBXHj" resolve="BuildLayout_ImportContent" />
-                      <node concept="37vLTw" id="2BHiRxgm8ze" role="1m5AlR">
-                        <ref role="3cqZAo" node="1VeJpqZpQSN" resolve="it" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="Rh6nW" id="1VeJpqZpQSN" role="1bW2Oz">
-                  <property role="TrG5h" value="it" />
-                  <node concept="2jxLKc" id="1VeJpqZpQSO" role="1tU5fm" />
-                </node>
+            <node concept="v3k3i" id="3g2FLTvi_9F" role="2OqNvi">
+              <node concept="chp4Y" id="3g2FLTvi_he" role="v3oSu">
+                <ref role="cht4Q" to="3ior:4RsV8qJBXHj" resolve="BuildLayout_ImportContent" />
               </node>
             </node>
           </node>
@@ -2020,87 +1962,97 @@
                     <property role="3SKdUp" value="note: if node is imported directly - do not override its original location" />
                   </node>
                 </node>
-                <node concept="3clFbJ" id="1VeJpqZqiTM" role="3cqZAp">
-                  <node concept="3clFbS" id="1VeJpqZqiTN" role="3clFbx">
-                    <node concept="3clFbF" id="1VeJpqZpQTh" role="3cqZAp">
-                      <node concept="2OqwBi" id="1VeJpqZpQU1" role="3clFbG">
-                        <node concept="2OqwBi" id="1VeJpqZpQTB" role="2Oq$k0">
-                          <node concept="37vLTw" id="2BHiRxgm8c8" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="1VeJpqZpQTG" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-                          </node>
+                <node concept="3clFbJ" id="52jUAvyQ$z" role="3cqZAp">
+                  <node concept="3clFbS" id="52jUAvyQ$$" role="3clFbx">
+                    <node concept="3clFbF" id="52jUAvyQ$_" role="3cqZAp">
+                      <node concept="2OqwBi" id="52jUAvyQ$A" role="3clFbG">
+                        <node concept="37vLTw" id="2BHiRxghiNU" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
                         </node>
-                        <node concept="liA8E" id="1VeJpqZpQU7" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-                          <node concept="37vLTw" id="3GM_nagT$eR" role="37wK5m">
-                            <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                        <node concept="liA8E" id="52jUAvyQ$B" role="2OqNvi">
+                          <ref role="37wK5l" to="o3n2:6BqTkGEZu3e" resolve="putLocation" />
+                          <node concept="1PxgMI" id="6BqTkGFietk" role="37wK5m">
+                            <property role="1BlNFB" value="true" />
+                            <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                            <node concept="37vLTw" id="6BqTkGFietl" role="1m5AlR">
+                              <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                            </node>
                           </node>
-                          <node concept="37vLTw" id="3GM_nagTswE" role="37wK5m">
+                          <node concept="37vLTw" id="3GM_nagTwkI" role="37wK5m">
                             <ref role="3cqZAo" node="5FtnUVJQbzA" resolve="folderLocation" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3fqX7Q" id="1VeJpqZqiUI" role="3clFbw">
-                    <node concept="2OqwBi" id="1VeJpqZqiUJ" role="3fr31v">
-                      <node concept="2OqwBi" id="1VeJpqZqiUK" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxgmiZL" role="2Oq$k0">
+                  <node concept="1Wc70l" id="6BqTkGFic8t" role="3clFbw">
+                    <node concept="3clFbC" id="6BqTkGFi9oB" role="3uHU7w">
+                      <node concept="10Nm6u" id="6BqTkGFi9oO" role="3uHU7w" />
+                      <node concept="2OqwBi" id="52jUAvyQ$C" role="3uHU7B">
+                        <node concept="37vLTw" id="2BHiRxgm8zY" role="2Oq$k0">
                           <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
                         </node>
-                        <node concept="liA8E" id="1VeJpqZqiUM" role="2OqNvi">
-                          <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
+                        <node concept="liA8E" id="52jUAvyQ$D" role="2OqNvi">
+                          <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
+                          <node concept="1PxgMI" id="6BqTkGFie8B" role="37wK5m">
+                            <property role="1BlNFB" value="true" />
+                            <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                            <node concept="37vLTw" id="3GM_nagTtH4" role="1m5AlR">
+                              <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                            </node>
+                          </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="1VeJpqZqiUN" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
-                        <node concept="37vLTw" id="3GM_nagTzKW" role="37wK5m">
-                          <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                    </node>
+                    <node concept="2OqwBi" id="6BqTkGFicMy" role="3uHU7B">
+                      <node concept="37vLTw" id="6BqTkGFihk0" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                      </node>
+                      <node concept="1mIQ4w" id="6BqTkGFidpv" role="2OqNvi">
+                        <node concept="chp4Y" id="6BqTkGFidB1" role="cj9EA">
+                          <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbJ" id="1VeJpqZqiUQ" role="3cqZAp">
-                  <node concept="3clFbS" id="1VeJpqZqiUR" role="3clFbx">
-                    <node concept="3clFbF" id="1VeJpqZpTbx" role="3cqZAp">
-                      <node concept="2OqwBi" id="1VeJpqZpTch" role="3clFbG">
-                        <node concept="2OqwBi" id="1VeJpqZpTbR" role="2Oq$k0">
-                          <node concept="37vLTw" id="2BHiRxglQzu" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="1VeJpqZpTbW" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                          </node>
+                <node concept="3clFbJ" id="52jUAvyQ$E" role="3cqZAp">
+                  <node concept="3clFbS" id="52jUAvyQ$F" role="3clFbx">
+                    <node concept="3clFbF" id="52jUAvyQ$G" role="3cqZAp">
+                      <node concept="2OqwBi" id="52jUAvyQ$H" role="3clFbG">
+                        <node concept="37vLTw" id="2BHiRxgkZYx" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
                         </node>
-                        <node concept="liA8E" id="1VeJpqZpTcm" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-                          <node concept="37vLTw" id="3GM_nagTrFn" role="37wK5m">
+                        <node concept="liA8E" id="52jUAvyQ$I" role="2OqNvi">
+                          <ref role="37wK5l" to="o3n2:6BqTkGF5CSc" resolve="putContentLocation" />
+                          <node concept="37vLTw" id="3GM_nagTyx1" role="37wK5m">
                             <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
                           </node>
-                          <node concept="37vLTw" id="3GM_nagTrHk" role="37wK5m">
+                          <node concept="37vLTw" id="3GM_nagT$XV" role="37wK5m">
                             <ref role="3cqZAo" node="5FtnUVJQbzA" resolve="folderLocation" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3fqX7Q" id="1VeJpqZqiUU" role="3clFbw">
-                    <node concept="2OqwBi" id="1VeJpqZqiVF" role="3fr31v">
-                      <node concept="2OqwBi" id="1VeJpqZqiVh" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxglMIb" role="2Oq$k0">
+                  <node concept="1Wc70l" id="6BqTkGFif1P" role="3clFbw">
+                    <node concept="2OqwBi" id="6BqTkGFifd4" role="3uHU7B">
+                      <node concept="37vLTw" id="6BqTkGFif3Z" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                      </node>
+                      <node concept="3x8VRR" id="6BqTkGFifp4" role="2OqNvi" />
+                    </node>
+                    <node concept="3clFbC" id="6BqTkGFia4W" role="3uHU7w">
+                      <node concept="10Nm6u" id="6BqTkGFia73" role="3uHU7w" />
+                      <node concept="2OqwBi" id="1VeJpqZqiVF" role="3uHU7B">
+                        <node concept="37vLTw" id="2BHiRxgmKJG" role="2Oq$k0">
                           <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
                         </node>
-                        <node concept="liA8E" id="1VeJpqZqiVm" role="2OqNvi">
-                          <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="1VeJpqZqiVL" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
-                        <node concept="37vLTw" id="3GM_nagTsjf" role="37wK5m">
-                          <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                        <node concept="liA8E" id="1VeJpqZqiVL" role="2OqNvi">
+                          <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
+                          <node concept="37vLTw" id="3GM_nagTzE8" role="37wK5m">
+                            <ref role="3cqZAo" node="1VeJpqZpTaQ" resolve="node" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -2348,16 +2300,11 @@
                         <node concept="3cpWs3" id="5Y_X_gYZqLC" role="33vP2m">
                           <node concept="3cpWs3" id="5Y_X_gYZqLD" role="3uHU7B">
                             <node concept="2OqwBi" id="5Y_X_gYZqLE" role="3uHU7B">
-                              <node concept="2OqwBi" id="5Y_X_gYZqLF" role="2Oq$k0">
-                                <node concept="37vLTw" id="5Y_X_gYZqLG" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6b4RkXS8Dnq" resolve="helper" />
-                                </node>
-                                <node concept="liA8E" id="5Y_X_gYZqLH" role="2OqNvi">
-                                  <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-                                </node>
+                              <node concept="37vLTw" id="5Y_X_gYZqLG" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6b4RkXS8Dnq" resolve="helper" />
                               </node>
                               <node concept="liA8E" id="5Y_X_gYZqLI" role="2OqNvi">
-                                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                                <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
                                 <node concept="13iPFW" id="5Y_X_gYZqLJ" role="37wK5m" />
                               </node>
                             </node>
@@ -2502,16 +2449,11 @@
               <node concept="3clFbS" id="7cOEBlPPwhE" role="3clFbx">
                 <node concept="3cpWs6" id="7cOEBlPPwib" role="3cqZAp">
                   <node concept="2OqwBi" id="7cOEBlPPwid" role="3cqZAk">
-                    <node concept="2OqwBi" id="7cOEBlPPwie" role="2Oq$k0">
-                      <node concept="37vLTw" id="2BHiRxgmr6N" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6b4RkXS8Dnq" resolve="helper" />
-                      </node>
-                      <node concept="liA8E" id="7cOEBlPPwig" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-                      </node>
+                    <node concept="37vLTw" id="2BHiRxgmr6N" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6b4RkXS8Dnq" resolve="helper" />
                     </node>
                     <node concept="liA8E" id="7cOEBlPPwih" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
                       <node concept="13iPFW" id="7cOEBlPPwii" role="37wK5m" />
                     </node>
                   </node>
@@ -4978,16 +4920,11 @@
                       <property role="Xl_RC" value="/../.." />
                     </node>
                     <node concept="2OqwBi" id="7cOEBlPPz3q" role="3uHU7B">
-                      <node concept="2OqwBi" id="7cOEBlPPz3r" role="2Oq$k0">
-                        <node concept="37vLTw" id="2BHiRxglJUb" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7cOEBlPPwi$" resolve="helper" />
-                        </node>
-                        <node concept="liA8E" id="7cOEBlPPz3t" role="2OqNvi">
-                          <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-                        </node>
+                      <node concept="37vLTw" id="2BHiRxglJUb" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7cOEBlPPwi$" resolve="helper" />
                       </node>
                       <node concept="liA8E" id="7cOEBlPPz3u" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                        <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
                         <node concept="13iPFW" id="7cOEBlPPz3v" role="37wK5m" />
                       </node>
                     </node>
@@ -5089,8 +5026,8 @@
                 <node concept="2qgKlT" id="L_Hr3kEsjc" role="2OqNvi">
                   <ref role="37wK5l" node="QkG2t1cwfm" resolve="pluginXml" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kEsjd" role="2Oq$k0">
-                  <ref role="3TV0OU" to="kdzh:5HVSRHdV$dW" resolve="BuildMpsLayout_PluginDescriptor" />
+                <node concept="35c_gC" id="52jUAvyMlO" role="2Oq$k0">
+                  <ref role="35c_gD" to="kdzh:5HVSRHdV$dW" resolve="BuildMpsLayout_PluginDescriptor" />
                 </node>
               </node>
             </node>
@@ -5123,16 +5060,11 @@
             <property role="TrG5h" value="parentLocation" />
             <node concept="17QB3L" id="7UAfeVQUcaE" role="1tU5fm" />
             <node concept="2OqwBi" id="7UAfeVQUcaF" role="33vP2m">
-              <node concept="2OqwBi" id="7UAfeVQUcaG" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgmajX" role="2Oq$k0">
-                  <ref role="3cqZAo" node="QkG2t1cwfC" resolve="helper" />
-                </node>
-                <node concept="liA8E" id="7UAfeVQUcaI" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                </node>
+              <node concept="37vLTw" id="2BHiRxgmajX" role="2Oq$k0">
+                <ref role="3cqZAo" node="QkG2t1cwfC" resolve="helper" />
               </node>
               <node concept="liA8E" id="7UAfeVQUcaJ" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
                 <node concept="2OqwBi" id="QkG2t1cwfZ" role="37wK5m">
                   <node concept="37vLTw" id="2BHiRxgmaTA" role="2Oq$k0">
                     <ref role="3cqZAo" node="QkG2t1cwfC" resolve="helper" />
@@ -5148,24 +5080,19 @@
         </node>
         <node concept="3clFbF" id="7UAfeVQUcbd" role="3cqZAp">
           <node concept="2OqwBi" id="7UAfeVQUcbe" role="3clFbG">
-            <node concept="2OqwBi" id="7UAfeVQUcbf" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxglnlW" role="2Oq$k0">
-                <ref role="3cqZAo" node="QkG2t1cwfC" resolve="helper" />
-              </node>
-              <node concept="liA8E" id="7UAfeVQUcbh" role="2OqNvi">
-                <ref role="37wK5l" to="o3n2:41__iZjkZl4" resolve="locations" />
-              </node>
+            <node concept="37vLTw" id="2BHiRxglnlW" role="2Oq$k0">
+              <ref role="3cqZAo" node="QkG2t1cwfC" resolve="helper" />
             </node>
             <node concept="liA8E" id="7UAfeVQUcbi" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <ref role="37wK5l" to="o3n2:6BqTkGEZu3e" resolve="putLocation" />
               <node concept="13iPFW" id="7UAfeVQUcbj" role="37wK5m" />
               <node concept="3cpWs3" id="QkG2t1cwfU" role="37wK5m">
                 <node concept="2OqwBi" id="L_Hr3kErZ3" role="3uHU7w">
                   <node concept="2qgKlT" id="L_Hr3kErZ4" role="2OqNvi">
                     <ref role="37wK5l" node="QkG2t1cwfm" resolve="pluginXml" />
                   </node>
-                  <node concept="3TUQnm" id="L_Hr3kErZ5" role="2Oq$k0">
-                    <ref role="3TV0OU" to="kdzh:5HVSRHdV$dW" resolve="BuildMpsLayout_PluginDescriptor" />
+                  <node concept="35c_gC" id="52jUAvyLjA" role="2Oq$k0">
+                    <ref role="35c_gD" to="kdzh:5HVSRHdV$dW" resolve="BuildMpsLayout_PluginDescriptor" />
                   </node>
                 </node>
                 <node concept="3cpWs3" id="QkG2t1cwfV" role="3uHU7B">

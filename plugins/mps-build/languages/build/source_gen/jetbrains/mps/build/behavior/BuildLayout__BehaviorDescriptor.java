@@ -52,10 +52,10 @@ public final class BuildLayout__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(__thisNode__);
     if (parent == null) {
-      helper.contentLocations().put(__thisNode__, "${build.layout}");
+      helper.putContentLocation(__thisNode__, "${build.layout}");
     } else {
-      String parentLocation = helper.contentLocations().get(parent);
-      helper.contentLocations().put(__thisNode__, parentLocation);
+      String parentLocation = helper.getContentLocation(parent);
+      helper.putContentLocation(__thisNode__, parentLocation);
     }
   }
 

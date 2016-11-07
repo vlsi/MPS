@@ -51,20 +51,18 @@ public final class BuildLayout_Folder__BehaviorDescriptor extends BaseBHDescript
   }
   /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(__thisNode__);
-    String parentLocation = helper.contentLocations().get(parent);
+    String parentLocation = helper.getContentLocation(parent);
     String folderLocation = parentLocation + "/" + BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper.getMacroHelper());
-    helper.locations().put(__thisNode__, folderLocation);
-    helper.contentLocations().put(__thisNode__, folderLocation);
+    helper.putLocation(__thisNode__, folderLocation);
+    helper.putContentLocation(__thisNode__, folderLocation);
     for (SNode ic : Sequence.fromIterable(BuildLayout_Folder__BehaviorDescriptor.getImportContentChildren_id675BBdHStY4.invoke(__thisNode__))) {
-      SNode node = SNodeOperations.as(SLinkOperations.getTarget(ic, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
-      if ((node != null)) {
-        // note: if node is imported directly - do not override its original location 
-        if (!(helper.locations().containsKey(node))) {
-          helper.locations().put(node, folderLocation);
-        }
-        if (!(helper.contentLocations().containsKey(node))) {
-          helper.contentLocations().put(node, folderLocation);
-        }
+      SNode node = SLinkOperations.getTarget(ic, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target"));
+      // note: if node is imported directly - do not override its original location 
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")) && helper.getLocation(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) == null) {
+        helper.putLocation(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")), folderLocation);
+      }
+      if ((node != null) && helper.getContentLocation(node) == null) {
+        helper.putContentLocation(node, folderLocation);
       }
     }
   }

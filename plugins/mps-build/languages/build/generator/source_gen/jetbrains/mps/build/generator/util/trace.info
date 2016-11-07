@@ -58,13 +58,13 @@
       <node id="8775597636506120693" at="98,16,99,66" concept="4" />
       <node id="8775597636506121293" at="102,5,103,0" concept="12" />
       <node id="8775597636506121297" at="103,0,104,71" concept="9" />
-      <node id="5979287180587467520" at="105,66,106,46" concept="9" />
+      <node id="5979287180587467520" at="105,66,106,42" concept="9" />
       <node id="5979287180587467531" at="107,24,108,165" concept="4" />
       <node id="5979287180587467543" at="108,165,109,17" concept="3" />
       <node id="5979287180587467547" at="110,7,111,255" concept="9" />
       <node id="3861025227901795314" at="111,255,112,258" concept="4" />
       <node id="5979287180587467562" at="112,258,113,61" concept="4" />
-      <node id="8775597636506121419" at="115,36,116,53" concept="9" />
+      <node id="8775597636506121419" at="115,36,116,49" concept="9" />
       <node id="8775597636506121430" at="117,24,118,173" concept="4" />
       <node id="8775597636506121442" at="118,173,119,17" concept="3" />
       <node id="8775597636506121446" at="120,7,121,255" concept="9" />
@@ -106,8 +106,8 @@
       <node id="8775597636506121034" at="63,16,66,11" concept="0" />
       <node id="8775597636506121053" at="70,211,73,11" concept="7" />
       <node id="8775597636506120959" at="76,16,79,11" concept="0" />
-      <node id="5979287180587467529" at="106,46,110,7" concept="7" />
-      <node id="8775597636506121428" at="116,53,120,7" concept="7" />
+      <node id="5979287180587467529" at="106,42,110,7" concept="7" />
+      <node id="8775597636506121428" at="116,49,120,7" concept="7" />
       <node id="8775597636506088047" at="31,0,36,0" concept="2" trace="JavaExternalLibraryHelper#(Ljetbrains/mps/build/util/DependenciesHelper;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
       <node id="6853883513540408109" at="80,14,85,9" concept="0" />
       <node id="5979287180587467490" at="95,14,100,9" concept="7" />

@@ -41,14 +41,14 @@ public final class BuildMpsLayout_ModuleJars__BehaviorDescriptor extends BaseBHD
 
   /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(__thisNode__);
-    String parentLocation = helper.contentLocations().get(parent);
+    String parentLocation = helper.getContentLocation(parent);
     String languageLocation = parentLocation + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".jar";
-    helper.locations().put(__thisNode__, languageLocation);
+    helper.putLocation(__thisNode__, languageLocation);
   }
   /*package*/ static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
-      String languageLocation = helper.locations().get(__thisNode__);
+      String languageLocation = helper.getLocation(__thisNode__);
 
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
         return languageLocation.substring(0, languageLocation.length() - ".jar".length()) + "-generator.jar";

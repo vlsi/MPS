@@ -33,11 +33,55 @@ public class DependenciesHelper {
     return myGenContext;
   }
 
+  /**
+   * 
+   * @deprecated use appropriate accessors instead
+   */
+  @Deprecated
   public Map<SNode, String> locations() {
     return locationMap;
   }
+
+  public void putLocation(SNode layoutNode, String location) {
+    locationMap.put(layoutNode, location);
+    layoutNode.putUserObject("location", location);
+  }
+
+  public String getLocation(SNode layoutNode) {
+    String rv = locationMap.get(layoutNode);
+    if (rv == null && layoutNode.getUserObject("location") != null) {
+      // See aliases MC, where BuildLayout_File, recorded in locations, is wrapped with BuildLayout_Copy 
+      // MAP-SRC in BuildLayout_File's rule, default case. 
+      rv = (String) layoutNode.getUserObject("location");
+    }
+    return rv;
+  }
+
+  /**
+   * 
+   * @deprecated use appropriate accessors instead
+   */
+  @Deprecated
   public Map<SNode, String> contentLocations() {
     return contentLocationMap;
+  }
+
+  public void putContentLocation(SNode node, String location) {
+    contentLocationMap.put(node, location);
+    node.putUserObject("content-location", location);
+  }
+
+  public String getContentLocation(SNode n) {
+    String rv = contentLocationMap.get(n);
+    if (rv == null) {
+      rv = (String) n.getUserObject("content-location");
+    }
+    return rv;
+  }
+
+  public static void preserveLocations(SNode from, SNode to) {
+    to.putUserObject("location", from.getUserObject("location"));
+    to.putUserObject("content-location", from.getUserObject("content-location"));
   }
 
   /*package*/ Map<Object, SNode> artifacts() {
