@@ -46,21 +46,21 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
 
     if (parentNode != null) {
       component.addDependency(parentNode);
-    }
-    if (SNodeOperations.getConcept(parentNode).isValid()) {
-      final SContainmentLink link = node.getContainmentLink();
-      if (link == null) {
-        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parentNode).getName(), null);
-        return;
-      }
-      boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
-        public Boolean invoke() {
-          return ModelConstraints.canBeChild(node, parentNode, nodeConcept, link, checkingNodeContext);
+      if (SNodeOperations.getConcept(parentNode).isValid()) {
+        final SContainmentLink link = node.getContainmentLink();
+        if (link == null) {
+          component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parentNode).getName(), null);
+          return;
         }
-      });
-      if (!(canBeChild)) {
-        SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(node, "Node " + node + " cannot be child of node " + SNodeOperations.getParent(node), rule);
+        boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+          public Boolean invoke() {
+            return ModelConstraints.canBeChild(node, parentNode, nodeConcept, link, checkingNodeContext);
+          }
+        });
+        if (!(canBeChild)) {
+          SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
+          component.addError(node, "Node " + node + " cannot be child of node " + SNodeOperations.getParent(node), rule);
+        }
       }
     }
 
