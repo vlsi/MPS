@@ -372,6 +372,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   });
                 }
               });
+            } else {
+              resetMigrationQueuedFlag();
             }
           }
         });
