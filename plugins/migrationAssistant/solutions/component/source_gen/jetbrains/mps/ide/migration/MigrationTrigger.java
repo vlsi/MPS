@@ -292,6 +292,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     final Project ideaProject = myProject;
     final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
     saveAndSetTipsState();
+    myMigrationQueued = true;
 
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
@@ -379,8 +380,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         });
       }
     });
-
-    myMigrationQueued = true;
   }
 
   private void syncRefresh() {

@@ -2827,6 +2827,16 @@
             <ref role="37wK5l" node="7lByCvUzmBj" resolve="saveAndSetTipsState" />
           </node>
         </node>
+        <node concept="3clFbF" id="1AzqgyAh8Pk" role="3cqZAp">
+          <node concept="37vLTI" id="1AzqgyAh93m" role="3clFbG">
+            <node concept="3clFbT" id="1AzqgyAh95I" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="37vLTw" id="1AzqgyAh8Pi" role="37vLTJ">
+              <ref role="3cqZAo" node="1AzqgyAfdcG" resolve="myMigrationQueued" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="74bMoPcGnVj" role="3cqZAp" />
         <node concept="3SKdUt" id="1AzqgyAfnWu" role="3cqZAp">
           <node concept="3SKdUq" id="1AzqgyAfnY6" role="3SKWNk">
@@ -3127,15 +3137,6 @@
                             </node>
                             <node concept="3clFbH" id="4OwAxHKudf" role="3cqZAp" />
                             <node concept="3clFbJ" id="oS3y_vltfF" role="3cqZAp">
-                              <node concept="9aQIb" id="2utABIFy_uQ" role="9aQIa">
-                                <node concept="3clFbS" id="2utABIFy_uR" role="9aQI4">
-                                  <node concept="3clFbF" id="2utABIFyAr0" role="3cqZAp">
-                                    <node concept="1rXfSq" id="2utABIFyAqZ" role="3clFbG">
-                                      <ref role="37wK5l" node="7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
                               <node concept="2OqwBi" id="oS3y_vltfM" role="3clFbw">
                                 <node concept="37vLTw" id="oS3y_vltfN" role="2Oq$k0">
                                   <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationManager" />
@@ -3316,6 +3317,15 @@
                                   </node>
                                 </node>
                               </node>
+                              <node concept="9aQIb" id="2utABIFy_uQ" role="9aQIa">
+                                <node concept="3clFbS" id="2utABIFy_uR" role="9aQI4">
+                                  <node concept="3clFbF" id="2utABIFyAr0" role="3cqZAp">
+                                    <node concept="1rXfSq" id="2utABIFyAqZ" role="3clFbG">
+                                      <ref role="37wK5l" node="7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -3324,17 +3334,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="1AzqgyAhdFu" role="3cqZAp" />
-        <node concept="3clFbF" id="1AzqgyAh8Pk" role="3cqZAp">
-          <node concept="37vLTI" id="1AzqgyAh93m" role="3clFbG">
-            <node concept="3clFbT" id="1AzqgyAh95I" role="37vLTx">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="37vLTw" id="1AzqgyAh8Pi" role="37vLTJ">
-              <ref role="3cqZAo" node="1AzqgyAfdcG" resolve="myMigrationQueued" />
             </node>
           </node>
         </node>
