@@ -304,18 +304,26 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             restoreTipsState();
 
             final Wrappers._boolean importVersionsUpdateRequired = new Wrappers._boolean();
+            final Wrappers._boolean migrationRequired = new Wrappers._boolean();
+
             myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
               public void run() {
                 importVersionsUpdateRequired.value = myMigrationManager.importVersionsUpdateRequired(allModules);
+                migrationRequired.value = myMigrationManager.isMigrationRequired();
               }
             });
-            if (importVersionsUpdateRequired.value) {
-              boolean doResave = MigrationDialogUtil.showResaveConfirmation(myMpsProject);
 
-              if (!(doResave)) {
-                return;
-              }
+            boolean resave;
+            boolean migrate;
+            if (migrationRequired.value) {
+              migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager, importVersionsUpdateRequired.value);
+              resave = importVersionsUpdateRequired.value && migrate;
+            } else {
+              migrate = false;
+              resave = MigrationDialogUtil.showResaveConfirmation(myMpsProject);
+            }
 
+            if (resave) {
               ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Resaving Module Descriptors", false) {
                 public void run(@NotNull ProgressIndicator progressIndicator) {
                   progressIndicator.setIndeterminate(true);
@@ -343,17 +351,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               });
             }
 
-            if (myMigrationManager.isMigrationRequired()) {
-              boolean doMigration = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
+            if (migrate) {
 
               // set flag to execute migration after startup 
               // NOTE we need to set it here as in invokeLater it can  
               // be executed when save session already passed, see MPS-22045 
-              myState.migrationRequired = doMigration;
-
-              if (!(doMigration)) {
-                return;
-              }
+              myState.migrationRequired = true;
 
               syncRefresh();
               if (!(myMigrationManager.isMigrationRequired())) {
@@ -374,6 +377,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 }
               });
             } else {
+              // if project is to be reloaded, not resetting migrationQueued flag until reload 
               resetMigrationQueuedFlag();
             }
           }
