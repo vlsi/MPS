@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -34,14 +35,18 @@ public final class InterpretedCommand__BehaviorDescriptor extends BaseBHDescript
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id5WvH$QO9bva(@NotNull final SNode __thisNode__, final ConsoleContext context, final ConsoleStream console, Runnable beforeCallback, Runnable afterCallback) {
-    beforeCallback.run();
-    context.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
+  /*package*/ static void execute_id5WvH$QO9bva(@NotNull final SNode __thisNode__, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        InterpretedCommand__BehaviorDescriptor.doExecute_id2SpVAIqougW.invoke(__thisNode__, context, console);
+        beforeCallback.run();
+        context.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            InterpretedCommand__BehaviorDescriptor.doExecute_id2SpVAIqougW.invoke(__thisNode__, context, console);
+          }
+        });
+        afterCallback.run();
       }
     });
-    afterCallback.run();
   }
 
   /*package*/ InterpretedCommand__BehaviorDescriptor() {
