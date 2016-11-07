@@ -7229,7 +7229,7 @@
             <node concept="liA8E" id="4OwAxHLNll" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="4OwAxHLNlm" role="37wK5m">
-                <property role="Xl_RC" value="Module descriptors needs to be updated.\n" />
+                <property role="Xl_RC" value="Module descriptors need to be updated. The update will change many files.\n" />
               </node>
             </node>
           </node>
@@ -7242,7 +7242,7 @@
             <node concept="liA8E" id="2l12vg6VuMT" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="2l12vg6VuMU" role="37wK5m">
-                <property role="Xl_RC" value="\nIn case the migration is postponed, this notification will not appear until the project is reopened.\n" />
+                <property role="Xl_RC" value="\nIf you postpone the update, this notification will not appear until the project is reopened.\n" />
               </node>
             </node>
           </node>
@@ -7256,7 +7256,7 @@
             <node concept="liA8E" id="4OwAxHLNpr" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="4OwAxHLNps" role="37wK5m">
-                <property role="Xl_RC" value="Would you like to resave all module descriptors immediately?" />
+                <property role="Xl_RC" value="Would you like to update module descriptors immediately?" />
               </node>
             </node>
           </node>
@@ -7286,7 +7286,7 @@
                 </node>
               </node>
               <node concept="Xl_RD" id="4OwAxHLNpC" role="37wK5m">
-                <property role="Xl_RC" value="Resave Required" />
+                <property role="Xl_RC" value="Modules Update Required" />
               </node>
               <node concept="Xl_RD" id="4OwAxHLNpD" role="37wK5m">
                 <property role="Xl_RC" value="Resave" />
