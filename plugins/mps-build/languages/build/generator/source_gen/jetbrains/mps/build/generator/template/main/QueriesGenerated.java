@@ -1673,7 +1673,7 @@ public class QueriesGenerated {
     ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode path) {
         DependenciesHelper helper = new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(path, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false));
-        helper.contentLocations().put(helper.getOriginalNode(path), BuildSourceArchiveRelativePath__BehaviorDescriptor.calculateUnpackPath_idBHdWlMbKE2.invoke(path, Context.defaultContext(_context)));
+        helper.putContentLocation(path, BuildSourceArchiveRelativePath__BehaviorDescriptor.calculateUnpackPath_idBHdWlMbKE2.invoke(path, Context.defaultContext(_context)));
       }
     });
   }

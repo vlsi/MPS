@@ -3490,20 +3490,8 @@
             <node concept="3Tqbb2" id="2TqXzNe_JWY" role="1tU5fm">
               <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
             </node>
-            <node concept="1PxgMI" id="2TqXzNe_JYh" role="33vP2m">
-              <property role="1BlNFB" value="true" />
-              <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-              <node concept="2OqwBi" id="4WwUR8hKStu" role="1m5AlR">
-                <node concept="37vLTw" id="7eQOMx7YMgb" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                </node>
-                <node concept="liA8E" id="4WwUR8hKSHG" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                  <node concept="37vLTw" id="4WwUR8hKSJe" role="37wK5m">
-                    <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
-                  </node>
-                </node>
-              </node>
+            <node concept="37vLTw" id="52jUAvL9OC" role="33vP2m">
+              <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
             </node>
           </node>
         </node>
@@ -3636,20 +3624,55 @@
             </node>
             <node concept="3SKdUt" id="3h6igUoXF5R" role="3cqZAp">
               <node concept="3SKdUq" id="3h6igUoXF5T" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME getVisibleJarsScope builds VisibleArtifacts once again" />
+                <property role="3SKdUp" value="1. ScopeUtil.getVisibleJarsScope builds VisibleArtifacts once again" />
               </node>
             </node>
-            <node concept="3cpWs8" id="4ue92wT4Wrb" role="3cqZAp">
-              <node concept="3cpWsn" id="4ue92wT4Wrc" role="3cpWs9">
+            <node concept="3SKdUt" id="52jUAvULBp" role="3cqZAp">
+              <node concept="3SKdUq" id="52jUAvULBr" role="3SKWNk">
+                <property role="3SKdUp" value="2. With switch to transient models to build artifacts, scope returned from the" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="52jUAvULX6" role="3cqZAp">
+              <node concept="3SKdUq" id="52jUAvULX8" role="3SKWNk">
+                <property role="3SKdUp" value="method didn't resolve artifacts in the form IDEA::whatever (for tranient models," />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="52jUAvUM9U" role="3cqZAp">
+              <node concept="3SKdUq" id="52jUAvUM9W" role="3SKWNk">
+                <property role="3SKdUp" value="there was modelplusimported scope" />
+              </node>
+            </node>
+            <node concept="1X3_iC" id="52jUAvQrw0" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4ue92wT4Wrb" role="8Wnug">
+                <node concept="3cpWsn" id="4ue92wT4Wrc" role="3cpWs9">
+                  <property role="TrG5h" value="visibleJarsScope" />
+                  <node concept="3uibUv" id="4ue92wT4Wrd" role="1tU5fm">
+                    <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+                  </node>
+                  <node concept="2YIFZM" id="4ue92wT4Wre" role="33vP2m">
+                    <ref role="37wK5l" to="o3n2:5WMFzVNueXI" resolve="getVisibleJarsScope" />
+                    <ref role="1Pybhc" to="o3n2:3h9a8EwPwtb" resolve="ScopeUtil" />
+                    <node concept="37vLTw" id="3GM_nagTvWa" role="37wK5m">
+                      <ref role="3cqZAo" node="4ue92wT4WsS" resolve="mpsCore" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="52jUAvQrFL" role="3cqZAp">
+              <node concept="3cpWsn" id="52jUAvQrFM" role="3cpWs9">
                 <property role="TrG5h" value="visibleJarsScope" />
-                <node concept="3uibUv" id="4ue92wT4Wrd" role="1tU5fm">
+                <node concept="3uibUv" id="52jUAvQrFN" role="1tU5fm">
                   <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                 </node>
-                <node concept="2YIFZM" id="4ue92wT4Wre" role="33vP2m">
-                  <ref role="37wK5l" to="o3n2:5WMFzVNueXI" resolve="getVisibleJarsScope" />
-                  <ref role="1Pybhc" to="o3n2:3h9a8EwPwtb" resolve="ScopeUtil" />
-                  <node concept="37vLTw" id="3GM_nagTvWa" role="37wK5m">
-                    <ref role="3cqZAo" node="4ue92wT4WsS" resolve="mpsCore" />
+                <node concept="2ShNRf" id="52jUAvQsk1" role="33vP2m">
+                  <node concept="1pGfFk" id="52jUAvQv42" role="2ShVmc">
+                    <ref role="37wK5l" to="o3n2:2vaDE4tApJu" resolve="ScopeUtil.VisibleJarsScope" />
+                    <node concept="37vLTw" id="52jUAvQv5F" role="37wK5m">
+                      <ref role="3cqZAo" node="27eOSzOUT_S" resolve="artifacts" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3659,8 +3682,8 @@
                 <property role="TrG5h" value="jdom" />
                 <node concept="3Tqbb2" id="2TqXzNeAA_P" role="1tU5fm" />
                 <node concept="2OqwBi" id="2TqXzNeAA_Q" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTycc" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4ue92wT4Wrc" resolve="visibleJarsScope" />
+                  <node concept="37vLTw" id="52jUAvQv7q" role="2Oq$k0">
+                    <ref role="3cqZAo" node="52jUAvQrFM" resolve="visibleJarsScope" />
                   </node>
                   <node concept="liA8E" id="2TqXzNeAA_T" role="2OqNvi">
                     <ref role="37wK5l" to="o8zo:3fifI_xCtP3" resolve="resolve" />
@@ -3754,8 +3777,8 @@
                 <property role="TrG5h" value="log4j" />
                 <node concept="3Tqbb2" id="2TqXzNeAA_Z" role="1tU5fm" />
                 <node concept="2OqwBi" id="2TqXzNeAAA0" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTsl4" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4ue92wT4Wrc" resolve="visibleJarsScope" />
+                  <node concept="37vLTw" id="52jUAvQvem" role="2Oq$k0">
+                    <ref role="3cqZAo" node="52jUAvQrFM" resolve="visibleJarsScope" />
                   </node>
                   <node concept="liA8E" id="2TqXzNeAAA3" role="2OqNvi">
                     <ref role="37wK5l" to="o8zo:3fifI_xCtP3" resolve="resolve" />

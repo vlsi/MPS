@@ -83,7 +83,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
 
     // fetch stuff for ant task classpath 
     DependenciesHelper helper = new DependenciesHelper(builder.getGenContext(), project);
-    SNode originalProject = SNodeOperations.as(helper.getOriginalNode(project), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+    SNode originalProject = project;
     SNode antMpsModule = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(originalProject, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", ((int) 0)).resolve(originalProject, "ant-mps"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((antMpsModule != null)) {
       SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
@@ -93,8 +93,11 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
       }
 
       SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-      // FIXME getVisibleJarsScope builds VisibleArtifacts once again 
-      Scope visibleJarsScope = ScopeUtil.getVisibleJarsScope(mpsCore);
+      // 1. ScopeUtil.getVisibleJarsScope builds VisibleArtifacts once again 
+      // 2. With switch to transient models to build artifacts, scope returned from the 
+      // method didn't resolve artifacts in the form IDEA::whatever (for tranient models, 
+      // there was modelplusimported scope 
+      Scope visibleJarsScope = new ScopeUtil.VisibleJarsScope(artifacts);
       SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
       if ((jdom != null)) {
         SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));

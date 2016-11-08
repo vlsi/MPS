@@ -1559,10 +1559,10 @@
   <root nodeRef="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)/715289236985580031">
     <file name="QueriesGenerated.java">
       <node id="8563603456895454903" at="1674,37,1675,262" concept="6" />
-      <node id="8563603456895454916" at="1675,262,1676,200" concept="2" />
+      <node id="8563603456895454916" at="1675,262,1676,172" concept="2" />
       <node id="715289236985580094" at="1674,0,1678,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="715289236985580038" at="1672,102,1678,7" concept="2" />
-      <scope id="715289236985580095" at="1674,37,1676,200">
+      <scope id="715289236985580095" at="1674,37,1676,172">
         <var name="helper" id="8563603456895454904" />
       </scope>
       <scope id="715289236985580094" at="1674,0,1678,0">
