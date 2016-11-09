@@ -39,6 +39,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.plugin.behavior.OrderConstraints__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.typesystem.MnemonicChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
@@ -668,14 +669,15 @@ public class QueriesGenerated {
     return Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x7c92abce86abbd8fL, "icon"))) != null;
   }
   public static boolean ifMacro_Condition_1215866113039(final IfMacroContext _context) {
-    if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x11b1742d216L, "mnemonic")) == null) {
+    if (isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x11b1742d216L, "mnemonic")))) {
       return false;
-    } else
-    if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x11b1742d216L, "mnemonic")).equals("")) {
-      return false;
-    } else {
-      return true;
     }
+    String err = MnemonicChecker.check(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x1189e8d9a59L, "caption")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x11b1742d216L, "mnemonic")));
+    if (err != null) {
+      _context.showErrorMessage(_context.getNode(), err);
+      return false;
+    }
+    return true;
   }
   public static boolean ifMacro_Condition_1205681795854(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x1181d58b8d3L, "updateBlock")), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b833c6a5L, "jetbrains.mps.lang.plugin.structure.IsApplicableBlock"));
@@ -1597,6 +1599,9 @@ public class QueriesGenerated {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
   private static boolean eq_x583g4_a0a0ph(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -1659,9 +1664,6 @@ public class QueriesGenerated {
   }
   private static boolean neq_x583g4_a0c0a0c0a0a0a0a0b0un(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
   private static SNode _quotation_createNode_x583g4_a0a0a0a1a0a373() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
