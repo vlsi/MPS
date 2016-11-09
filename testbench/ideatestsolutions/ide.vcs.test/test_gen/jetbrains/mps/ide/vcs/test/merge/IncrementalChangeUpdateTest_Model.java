@@ -118,12 +118,14 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     ourEnvironment.flushAllEvents();
 
     CurrentDifference newModelDiff = CurrentDifferenceRegistry.getInstance(myIdeaProject).getCurrentDifference(newModel.value);
-    newModelDiff.setEnabled(true);
 
     VirtualFile vf = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) newModel.value.getSource()).getFile());
     myWaitHelper.waitForFileStatusChange(vf, FileStatus.UNKNOWN);
+
+    newModelDiff.setEnabled(true);
+
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a01a4(newModelDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a21a4(newModelDiff.getChangeSet())).isEmpty());
 
     ourProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
@@ -182,7 +184,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     }
     return null;
   }
-  private static List<ModelChange> check_2jv4hj_a0a01a4(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_2jv4hj_a0a21a4(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
