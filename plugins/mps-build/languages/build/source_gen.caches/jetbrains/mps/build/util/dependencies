@@ -51,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.LocalSourcePathArtifact" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

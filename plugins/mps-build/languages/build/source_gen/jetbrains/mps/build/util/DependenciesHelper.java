@@ -8,6 +8,7 @@ import java.util.Set;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -44,7 +45,9 @@ public class DependenciesHelper {
 
   public void putLocation(SNode layoutNode, String location) {
     locationMap.put(layoutNode, location);
-    layoutNode.putUserObject("location", location);
+    if (SNodeOperations.getModel(layoutNode) instanceof TransientSModel) {
+      layoutNode.putUserObject("location", location);
+    }
   }
 
   public String getLocation(SNode layoutNode) {
@@ -68,7 +71,9 @@ public class DependenciesHelper {
 
   public void putContentLocation(SNode node, String location) {
     contentLocationMap.put(node, location);
-    node.putUserObject("content-location", location);
+    if (SNodeOperations.getModel(node) instanceof TransientSModel) {
+      node.putUserObject("content-location", location);
+    }
   }
 
   public String getContentLocation(SNode n) {
@@ -80,6 +85,8 @@ public class DependenciesHelper {
   }
 
   public static void preserveLocations(SNode from, SNode to) {
+    // this method is invoked from generation for specific usecases (wrap of a File wuth Copy), hence we expect nodes to be free-floating/transient, never from a regular model 
+    assert SNodeOperations.getModel(to) == null || SNodeOperations.getModel(to) instanceof TransientSModel;
     to.putUserObject("location", from.getUserObject("location"));
     to.putUserObject("content-location", from.getUserObject("content-location"));
   }
