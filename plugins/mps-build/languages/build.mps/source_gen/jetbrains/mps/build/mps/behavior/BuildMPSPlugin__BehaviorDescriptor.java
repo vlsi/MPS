@@ -29,12 +29,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.build.util.ScopeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -102,17 +102,35 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
       if ((jdom != null)) {
         SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if ((jdomJar != null)) {
-          helper.putArtifact("jdom", jdomJar);
-          builder.add(jdomJar, jdom);
         }
       }
       SNode log4j = visibleJarsScope.resolve(mpsCore, "IDEA::lib/log4j.jar");
       if ((log4j != null)) {
         SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if ((log4jJar != null)) {
-          helper.putArtifact("log4j", log4jJar);
-          builder.add(log4jJar, log4j);
         }
+      }
+    }
+    SNode jdomLib = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(project, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary").getDeclarationNode(), "parts", ((int) 0)).resolve(project, "jdom-lib"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
+    if (jdomLib != null) {
+      SNode jdomJarRef = SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(jdomLib, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"))).first(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, 0x3395e884b61d4cbdL, "classpath")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar"));
+      // FIXME in fact, BuildLayout_FileStub (jdomJarRef.jar) is never BuildLayout_Node, but PathElement, and findArtifact() does nothing for PathElement, simply return as is 
+      // so the cast here is a (design?) defect. Just got no idea what's the right way to fix it. 
+      SNode jdomArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(jdomJarRef, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      if (jdomArtifact != null) {
+        helper.putArtifact("jdom", jdomArtifact);
+        // FIXME artifact id is of no use, imo, why do we pass it there? 
+        builder.add(jdomArtifact, jdomLib);
+      }
+    }
+    SNode log4jLib = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(project, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary").getDeclarationNode(), "parts", ((int) 0)).resolve(project, "log4j-lib"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
+    if (log4jLib != null) {
+      SNode log4jJarRef = SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(log4jLib, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"))).first(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, 0x3395e884b61d4cbdL, "classpath")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar"));
+      // FIXME see above, jdomJar 
+      SNode log4jArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(log4jJarRef, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      if (log4jArtifact != null) {
+        helper.putArtifact("log4j", log4jArtifact);
+        builder.add(log4jArtifact, log4jLib);
       }
     }
 
