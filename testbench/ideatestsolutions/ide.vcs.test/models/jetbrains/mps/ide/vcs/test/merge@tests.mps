@@ -71,6 +71,7 @@
     <import index="sxph" ref="r:f9cefa7f-7dcc-422d-acd3-c452503bcca5(jetbrains.mps.ide.vcs.test.testdiff2)" />
     <import index="rjhh" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:org.junit(Testbench/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -307,7 +308,6 @@
       </concept>
       <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
-      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
         <child id="1184951007469" name="componentType" index="3$_nBY" />
         <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
@@ -7138,6 +7138,9 @@
       <property role="TrG5h" value="myWaitCompleted" />
       <node concept="3Tm6S6" id="3oUomEoN5m9" role="1B3o_S" />
       <node concept="10P_77" id="3oUomEoN5mb" role="1tU5fm" />
+      <node concept="3clFbT" id="5YeG5fEm0oX" role="33vP2m">
+        <property role="3clFbU" value="true" />
+      </node>
     </node>
     <node concept="312cEg" id="3Lj0jv7EEkd" role="jymVt">
       <property role="TrG5h" value="myWaitLock" />
@@ -7618,6 +7621,11 @@
             <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
           </node>
           <node concept="3clFbS" id="4DNDPQS2L0z" role="1HWHxc">
+            <node concept="1gVbGN" id="5YeG5fEm1bv" role="3cqZAp">
+              <node concept="37vLTw" id="5YeG5fEm1nC" role="1gVkn0">
+                <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+              </node>
+            </node>
             <node concept="3clFbF" id="3oUomEoN5mr" role="3cqZAp">
               <node concept="37vLTI" id="3oUomEoN5mt" role="3clFbG">
                 <node concept="3clFbT" id="3oUomEoN5mw" role="37vLTx">
@@ -7638,26 +7646,13 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="2$JKZl" id="3oUomEoN5mE" role="3cqZAp">
-          <node concept="3clFbT" id="56cvcsnEi$l" role="2$JKZa">
-            <property role="3clFbU" value="true" />
-          </node>
-          <node concept="3clFbS" id="3oUomEoN5mH" role="2LFqv$">
-            <node concept="1HWtB8" id="3oUomEoN5mI" role="3cqZAp">
-              <node concept="37vLTw" id="2BHiRxeuxRY" role="1HWFw0">
-                <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
-              </node>
-              <node concept="3clFbS" id="3oUomEoN5mK" role="1HWHxc">
-                <node concept="3clFbJ" id="56cvcsnEiAO" role="3cqZAp">
-                  <node concept="3clFbS" id="56cvcsnEiAQ" role="3clFbx">
-                    <node concept="3zACq4" id="56cvcsnEiD1" role="3cqZAp" />
-                  </node>
-                  <node concept="37vLTw" id="56cvcsnEiCa" role="3clFbw">
-                    <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
-                  </node>
+            <node concept="2$JKZl" id="3oUomEoN5mE" role="3cqZAp">
+              <node concept="3fqX7Q" id="5YeG5fElPpr" role="2$JKZa">
+                <node concept="37vLTw" id="5YeG5fEm0gL" role="3fr31v">
+                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
                 </node>
+              </node>
+              <node concept="3clFbS" id="3oUomEoN5mH" role="2LFqv$">
                 <node concept="SfApY" id="3oUomEoN5mL" role="3cqZAp">
                   <node concept="3clFbS" id="3oUomEoN5mM" role="SfCbr">
                     <node concept="3clFbF" id="3oUomEoN5mN" role="3cqZAp">
@@ -7715,6 +7710,13 @@
             <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
           </node>
           <node concept="3clFbS" id="3oUomEoN5n7" role="1HWHxc">
+            <node concept="1gVbGN" id="5YeG5fEm1AC" role="3cqZAp">
+              <node concept="3fqX7Q" id="5YeG5fEm1GX" role="1gVkn0">
+                <node concept="37vLTw" id="5YeG5fEm1Q_" role="3fr31v">
+                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="3oUomEoN5n8" role="3cqZAp">
               <node concept="37vLTI" id="3oUomEoN5n9" role="3clFbG">
                 <node concept="3clFbT" id="3oUomEoN5na" role="37vLTx">

@@ -17,7 +17,7 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 
 public class ChangesManagerTestWaitHelper {
-  private boolean myWaitCompleted;
+  private boolean myWaitCompleted = true;
   private final Object myWaitLock = new Object();
 
   private Project myProject;
@@ -102,14 +102,10 @@ public class ChangesManagerTestWaitHelper {
 
   private void waitForSomething(Runnable waitScheduling) {
     synchronized (myWaitLock) {
+      assert myWaitCompleted;
       myWaitCompleted = false;
       waitScheduling.run();
-    }
-    while (true) {
-      synchronized (myWaitLock) {
-        if (myWaitCompleted) {
-          break;
-        }
+      while (!(myWaitCompleted)) {
         try {
           myWaitLock.wait();
         } catch (InterruptedException e) {
@@ -121,6 +117,7 @@ public class ChangesManagerTestWaitHelper {
 
   private void waitCompleted() {
     synchronized (myWaitLock) {
+      assert !(myWaitCompleted);
       myWaitCompleted = true;
       myWaitLock.notify();
     }
