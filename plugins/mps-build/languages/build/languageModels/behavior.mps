@@ -12571,24 +12571,12 @@
             <property role="TrG5h" value="unpackPath" />
             <node concept="17QB3L" id="7ro1Zzt$ckN" role="1tU5fm" />
             <node concept="2OqwBi" id="7ro1Zzt$ckO" role="33vP2m">
-              <node concept="2OqwBi" id="7ro1Zzt$ckP" role="2Oq$k0">
-                <node concept="37vLTw" id="3GM_nagTxc6" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7ro1Zzt$ckB" resolve="helper" />
-                </node>
-                <node concept="liA8E" id="7ro1Zzt$ckR" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                </node>
+              <node concept="37vLTw" id="3GM_nagTxc6" role="2Oq$k0">
+                <ref role="3cqZAo" node="7ro1Zzt$ckB" resolve="helper" />
               </node>
               <node concept="liA8E" id="7ro1Zzt$ckS" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                <node concept="2YIFZM" id="7ro1Zzt$ckT" role="37wK5m">
-                  <ref role="37wK5l" to="o3n2:5FtnUVJQfvo" resolve="getOriginalNode" />
-                  <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
-                  <node concept="13iPFW" id="7ro1Zzt$ckU" role="37wK5m" />
-                  <node concept="37vLTw" id="3GM_nagTBg_" role="37wK5m">
-                    <ref role="3cqZAo" node="7ro1Zzt$ckh" resolve="generationContext" />
-                  </node>
-                </node>
+                <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
+                <node concept="13iPFW" id="1nx006HmdQx" role="37wK5m" />
               </node>
             </node>
           </node>
