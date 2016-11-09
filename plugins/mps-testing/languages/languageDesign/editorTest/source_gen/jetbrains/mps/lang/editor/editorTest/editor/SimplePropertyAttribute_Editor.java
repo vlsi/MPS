@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 public class SimplePropertyAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -32,7 +32,7 @@ public class SimplePropertyAttribute_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedPropertyCell_4slcfv_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class, node);
+    EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().getAttributedCell(AttributeKind.PROPERTY, node);
     return editorCell;
   }
 }

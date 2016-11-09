@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -42,7 +42,7 @@ public class UnconditionalOverrideAnnotation_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_hs6qma_a0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
+    EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().getAttributedCell(AttributeKind.NODE, node);
     return editorCell;
   }
   private EditorCell createConstant_hs6qma_b0(EditorContext editorContext, SNode node) {

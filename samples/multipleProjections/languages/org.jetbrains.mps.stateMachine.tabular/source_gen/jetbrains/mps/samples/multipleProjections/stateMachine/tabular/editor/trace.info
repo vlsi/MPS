@@ -390,17 +390,16 @@
       <node id="6116389717690943767" at="32,42,33,28" concept="2" />
       <node id="6116389717690943767" at="33,28,34,73" concept="2" />
       <node id="6116389717690943767" at="34,73,35,57" concept="7" />
-      <node id="6116389717690943767" at="35,57,36,59" concept="7" />
-      <node id="6116389717690943767" at="37,35,38,82" concept="7" />
-      <node id="6116389717690943767" at="38,82,39,94" concept="8" />
-      <node id="6116389717690943767" at="40,10,41,22" concept="8" />
+      <node id="6116389717690943767" at="36,35,37,82" concept="7" />
+      <node id="6116389717690943767" at="37,82,38,112" concept="8" />
+      <node id="6116389717690943767" at="39,10,40,22" concept="8" />
       <node id="6116389717690936835" at="23,0,26,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6116389717690936835" at="18,0,23,0" concept="6" trace="getContextHints#()Ljava/util/Collection;" />
-      <node id="6116389717690943767" at="36,59,41,22" concept="5" />
-      <node id="6116389717690943767" at="26,0,43,0" concept="6" trace="createProperty_79dw0u_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6116389717690943767" at="35,57,40,22" concept="5" />
+      <node id="6116389717690943767" at="26,0,42,0" concept="6" trace="createProperty_79dw0u_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="6116389717690936835" at="20,47,21,26" />
       <scope id="6116389717690936835" at="23,79,24,61" />
-      <scope id="6116389717690943767" at="37,35,39,94">
+      <scope id="6116389717690943767" at="36,35,38,112">
         <var name="manager" id="6116389717690943767" />
       </scope>
       <scope id="6116389717690936835" at="23,0,26,0">
@@ -408,17 +407,16 @@
         <var name="node" id="6116389717690936835" />
       </scope>
       <scope id="6116389717690936835" at="18,0,23,0" />
-      <scope id="6116389717690943767" at="26,87,41,22">
+      <scope id="6116389717690943767" at="26,87,40,22">
         <var name="attributeConcept" id="6116389717690943767" />
-        <var name="attributeKind" id="6116389717690943767" />
         <var name="editorCell" id="6116389717690943767" />
         <var name="provider" id="6116389717690943767" />
       </scope>
-      <scope id="6116389717690943767" at="26,0,43,0">
+      <scope id="6116389717690943767" at="26,0,42,0">
         <var name="editorContext" id="6116389717690943767" />
         <var name="node" id="6116389717690943767" />
       </scope>
-      <unit id="6116389717690936835" at="16,0,44,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_Editor" />
+      <unit id="6116389717690936835" at="16,0,43,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_Editor" />
     </file>
   </root>
   <root nodeRef="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)/9061800511630182561">
@@ -435,17 +433,16 @@
       <node id="9061800511630189495" at="32,42,33,28" concept="2" />
       <node id="9061800511630189495" at="33,28,34,73" concept="2" />
       <node id="9061800511630189495" at="34,73,35,57" concept="7" />
-      <node id="9061800511630189495" at="35,57,36,59" concept="7" />
-      <node id="9061800511630189495" at="37,35,38,82" concept="7" />
-      <node id="9061800511630189495" at="38,82,39,94" concept="8" />
-      <node id="9061800511630189495" at="40,10,41,22" concept="8" />
+      <node id="9061800511630189495" at="36,35,37,82" concept="7" />
+      <node id="9061800511630189495" at="37,82,38,112" concept="8" />
+      <node id="9061800511630189495" at="39,10,40,22" concept="8" />
       <node id="9061800511630182561" at="23,0,26,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="9061800511630182561" at="18,0,23,0" concept="6" trace="getContextHints#()Ljava/util/Collection;" />
-      <node id="9061800511630189495" at="36,59,41,22" concept="5" />
-      <node id="9061800511630189495" at="26,0,43,0" concept="6" trace="createProperty_o24u2i_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="9061800511630189495" at="35,57,40,22" concept="5" />
+      <node id="9061800511630189495" at="26,0,42,0" concept="6" trace="createProperty_o24u2i_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="9061800511630182561" at="20,47,21,26" />
       <scope id="9061800511630182561" at="23,79,24,61" />
-      <scope id="9061800511630189495" at="37,35,39,94">
+      <scope id="9061800511630189495" at="36,35,38,112">
         <var name="manager" id="9061800511630189495" />
       </scope>
       <scope id="9061800511630182561" at="23,0,26,0">
@@ -453,17 +450,16 @@
         <var name="node" id="9061800511630182561" />
       </scope>
       <scope id="9061800511630182561" at="18,0,23,0" />
-      <scope id="9061800511630189495" at="26,87,41,22">
+      <scope id="9061800511630189495" at="26,87,40,22">
         <var name="attributeConcept" id="9061800511630189495" />
-        <var name="attributeKind" id="9061800511630189495" />
         <var name="editorCell" id="9061800511630189495" />
         <var name="provider" id="9061800511630189495" />
       </scope>
-      <scope id="9061800511630189495" at="26,0,43,0">
+      <scope id="9061800511630189495" at="26,0,42,0">
         <var name="editorContext" id="9061800511630189495" />
         <var name="node" id="9061800511630189495" />
       </scope>
-      <unit id="9061800511630182561" at="16,0,44,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.State_hidden_Editor" />
+      <unit id="9061800511630182561" at="16,0,43,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.State_hidden_Editor" />
     </file>
   </root>
 </debug-info>

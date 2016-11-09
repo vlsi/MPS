@@ -194,6 +194,18 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SimpleNodeHidingAttribute_BehaviorDescriptor" file="SimpleNodeHidingAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SimpleNode_BehaviorDescriptor" file="SimpleNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SimpleNodesContainer_BehaviorDescriptor" file="SimpleNodesContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyAttribute_BehaviorDescriptor" file="SimplePropertyAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

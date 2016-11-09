@@ -27,8 +27,8 @@
       <node id="2442780630506669289" at="37,40,38,34" concept="0" />
       <node id="2442780630506669289" at="38,34,39,22" concept="3" />
       <node id="2442780630506669407" at="41,98,42,80" concept="2" />
-      <node id="2442780630506669407" at="42,80,43,101" concept="2" />
-      <node id="2442780630506669407" at="43,101,44,22" concept="3" />
+      <node id="2442780630506669407" at="42,80,43,146" concept="2" />
+      <node id="2442780630506669407" at="43,146,44,22" concept="3" />
       <node id="2442780630506669141" at="20,0,23,0" concept="1" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2442780630506669407" at="41,0,46,0" concept="1" trace="createAttributedNodeCell_d9lcwr_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2442780630506669141" at="23,0,31,0" concept="1" trace="createCollection_d9lcwr_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
