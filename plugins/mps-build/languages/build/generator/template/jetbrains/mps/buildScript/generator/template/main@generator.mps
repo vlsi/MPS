@@ -15025,6 +15025,21 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3SKdUt" id="42PYVEWFxLx" role="3cqZAp">
+                            <node concept="3SKdUq" id="42PYVEWFxLz" role="3SKWNk">
+                              <property role="3SKdUp" value="it's the only use of helper.getOriginalNode outside of j.m.build.util package, and is somewhat legal," />
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="42PYVEWFyhw" role="3cqZAp">
+                            <node concept="3SKdUq" id="42PYVEWFyhy" role="3SKWNk">
+                              <property role="3SKdUp" value="as we still expect artifactId to come from original model (though do the translation ourselves in DH.getArtifact())" />
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="42PYVEWFzxF" role="3cqZAp">
+                            <node concept="3SKdUq" id="42PYVEWFzxH" role="3SKWNk">
+                              <property role="3SKdUp" value="Just don't want to deal with this code right now, need to return to artifactId concept anyway." />
+                            </node>
+                          </node>
                           <node concept="3cpWs8" id="4bEwduI83kh" role="3cqZAp">
                             <node concept="3cpWsn" id="4bEwduI83ki" role="3cpWs9">
                               <property role="TrG5h" value="val" />

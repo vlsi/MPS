@@ -672,6 +672,9 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
       return "???";
     }
+    // it's the only use of helper.getOriginalNode outside of j.m.build.util package, and is somewhat legal, 
+    // as we still expect artifactId to come from original model (though do the translation ourselves in DH.getArtifact()) 
+    // Just don't want to deal with this code right now, need to return to artifactId concept anyway. 
     String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, helper.getOriginalNode(((SNode) _context.getVariable("module"))));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));

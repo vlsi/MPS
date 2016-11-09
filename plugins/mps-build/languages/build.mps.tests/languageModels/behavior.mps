@@ -1138,29 +1138,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2TqXzNe_JWW" role="3cqZAp">
-          <node concept="3cpWsn" id="2TqXzNe_JWX" role="3cpWs9">
-            <property role="TrG5h" value="originalProject" />
-            <node concept="3Tqbb2" id="2TqXzNe_JWY" role="1tU5fm">
-              <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-            </node>
-            <node concept="1PxgMI" id="2TqXzNe_JYh" role="33vP2m">
-              <property role="1BlNFB" value="true" />
-              <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-              <node concept="2OqwBi" id="4WwUR8hKYGo" role="1m5AlR">
-                <node concept="37vLTw" id="7eQOMx7YVww" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3ag$5R8SrzL" resolve="helper" />
-                </node>
-                <node concept="liA8E" id="4WwUR8hKYWt" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
-                  <node concept="37vLTw" id="4WwUR8hKYXY" role="37wK5m">
-                    <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="2TqXzNe_6HN" role="3cqZAp">
           <node concept="3cpWsn" id="2TqXzNe_6HO" role="3cpWs9">
             <property role="TrG5h" value="mpsTestModule" />
@@ -1172,8 +1149,8 @@
               <ref role="1m5ApE" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
               <node concept="2OqwBi" id="2TqXzNe_6HQ" role="1m5AlR">
                 <node concept="2OqwBi" id="2TqXzNe_6HR" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTzCv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2TqXzNe_JWX" resolve="originalProject" />
+                  <node concept="37vLTw" id="42PYVEWFvWq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
                   </node>
                   <node concept="2qgKlT" id="2TqXzNe_6HT" role="2OqNvi">
                     <ref role="37wK5l" to="tpcu:6GEzh_Hz_wK" resolve="getScope" />
@@ -1191,8 +1168,8 @@
                 </node>
                 <node concept="liA8E" id="2TqXzNe_6HW" role="2OqNvi">
                   <ref role="37wK5l" to="o8zo:3fifI_xCtP3" resolve="resolve" />
-                  <node concept="37vLTw" id="3GM_nagTzjk" role="37wK5m">
-                    <ref role="3cqZAo" node="2TqXzNe_JWX" resolve="originalProject" />
+                  <node concept="37vLTw" id="42PYVEWFvWr" role="37wK5m">
+                    <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
                   </node>
                   <node concept="Xl_RD" id="2TqXzNe_6HY" role="37wK5m">
                     <property role="Xl_RC" value="mps-test" />

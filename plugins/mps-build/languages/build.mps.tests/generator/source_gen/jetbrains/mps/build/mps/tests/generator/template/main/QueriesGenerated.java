@@ -127,11 +127,7 @@ public class QueriesGenerated {
     });
   }
   public static Object insertMacro_varValue_4608161086082556980(final TemplateVarContext _context) {
-    return Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:closure")).getAllModules()).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(DependenciesHelper.getOriginalNode(it, _context), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
-      }
-    });
+    return ((MPSModulesClosure) _context.getVariable("var:closure")).getAllModules();
   }
   public static Object insertMacro_varValue_4005526075833130408(final TemplateVarContext _context) {
     return new MPSModulesClosure(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x3f496e80bd8ef370L, "modules"))).translate(new ITranslator2<SNode, SNode>() {
