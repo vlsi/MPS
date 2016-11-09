@@ -164,6 +164,7 @@
         <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
+      <concept id="7667708318090725848" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem" flags="ln" index="1Bsynf" />
       <concept id="7991336459489871999" name="jetbrains.mps.lang.editor.structure.IOutputConceptSubstituteMenuPart" flags="ng" index="3EoQpk">
         <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
@@ -2256,7 +2257,7 @@
         <property role="3F0ifm" value="@attributeWithChildren(" />
       </node>
       <node concept="3F2HdR" id="nH9mMU35KM" role="3EZMnx">
-        <ref role="1NtTu8" to="68nn:nH9mMU35J5" resolve="expressions" />
+        <ref role="1NtTu8" to="68nn:nH9mMU35J5" resolve="children" />
         <node concept="lj46D" id="nH9mMU35KN" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -2281,9 +2282,63 @@
   </node>
   <node concept="24kQdi" id="53lOj_WYUPj">
     <property role="3GE5qa" value="attributes.completion" />
-    <ref role="1XX52x" to="68nn:53lOj_WYUPg" resolve="BaseAttributeChild" />
+    <ref role="1XX52x" to="68nn:53lOj_WYUPg" resolve="AttributeChild" />
     <node concept="PMmxH" id="53lOj_WYUPl" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3r66m91DWOH">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1XX52x" to="68nn:3r66m91DWO2" resolve="SimpleNode" />
+    <node concept="3F0ifn" id="3r66m91DWOJ" role="2wV5jI">
+      <property role="3F0ifm" value="simpleNode" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3r66m91DZ86">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1XX52x" to="68nn:3r66m91DWO3" resolve="SimpleNodeHidingAttribute" />
+    <node concept="3F0ifn" id="3r66m91DZ88" role="2wV5jI">
+      <property role="3F0ifm" value="node hiding attribute" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3r66m91DZ8q">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1XX52x" to="68nn:3r66m91DWOs" resolve="SimpleNodesContainer" />
+    <node concept="3EZMnI" id="3r66m91DZ8s" role="2wV5jI">
+      <node concept="3F0ifn" id="3r66m91DZ8y" role="3EZMnx">
+        <property role="3F0ifm" value="simpleNode:" />
+        <node concept="ljvvj" id="3r66m91DZ8z" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="3r66m91DZ8$" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:3r66m91DZ8d" resolve="simpleNode" />
+        <node concept="lj46D" id="3r66m91DZ8_" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="3r66m91DZ8A" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="3r66m91DZ8u" role="2iSdaV" />
+      <node concept="3F0ifn" id="3r66m91DZ8N" role="3EZMnx">
+        <property role="3F0ifm" value="anotherNode:" />
+        <node concept="ljvvj" id="3r66m91DZ8O" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="3r66m91DZ8P" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:3r66m91DZ8f" resolve="anotherNode" />
+        <node concept="lj46D" id="3r66m91DZ8Q" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="3r66m91DZ8R" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="1Bsynf" id="3r66m91ELZY" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
     </node>
   </node>
 </model>

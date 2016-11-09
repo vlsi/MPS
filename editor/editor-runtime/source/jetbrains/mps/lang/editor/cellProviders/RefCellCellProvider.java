@@ -20,7 +20,6 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
@@ -31,6 +30,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
@@ -106,7 +106,12 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   // gets a kind of attributes possibly hanging on this provider's role
   @Override
   public Class getRoleAttributeClass() {
-    return AttributeKind.Reference.class;
+    return jetbrains.mps.nodeEditor.attribute.AttributeKind.Reference.class;
+  }
+
+  @Override
+  public AttributeKind getRoleAttributeKind() {
+    return AttributeKind.REFERENCE;
   }
 
   @Override

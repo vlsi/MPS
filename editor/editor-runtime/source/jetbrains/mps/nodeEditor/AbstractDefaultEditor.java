@@ -18,8 +18,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind.Node;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -30,6 +28,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -238,19 +237,18 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   private void addAttributedEntity() {
     if (AttributeOperations.isNodeAttribute(mySNode)) {
-      addAttributedCell("attributed node:", Node.class);
+      addAttributedCell("attributed node:", AttributeKind.NODE);
     } else if (AttributeOperations.isPropertyAttribute(mySNode)) {
-      addAttributedCell("attributed property:", AttributeKind.Property.class);
+      addAttributedCell("attributed property:", AttributeKind.PROPERTY);
     } else if (AttributeOperations.isLinkAttribute(mySNode)) {
-      addAttributedCell("attributed reference:", AttributeKind.Reference.class);
+      addAttributedCell("attributed reference:", AttributeKind.REFERENCE);
     }
   }
 
-  private void addAttributedCell(String label, Class attributeKind) {
+  private void addAttributedCell(String label, AttributeKind attributeKind) {
     addLabel(label);
     addNewLine();
-    EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(attributeKind, mySNode);
+    EditorCell editorCell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().getAttributedCell(attributeKind, mySNode);
     addCell(editorCell);
     addNewLine();
   }

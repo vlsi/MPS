@@ -102,5 +102,21 @@
       <unit id="3447504547919057591" at="10,0,28,0" name="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test" />
     </file>
   </root>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3946870033235963940">
+    <file name="UpdateHidingAttribute_Test.java">
+      <node id="3946870033235963940" at="13,61,14,107" concept="0" />
+      <node id="3946870033235963940" at="14,107,15,108" concept="0" />
+      <node id="3946870033235963940" at="21,51,22,72" concept="0" />
+      <node id="3946870033236067070" at="22,72,23,69" concept="0" />
+      <node id="3946870033235963940" at="12,0,17,0" concept="1" trace="test_UpdateHidingAttribute#()V" />
+      <node id="3946870033235963940" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3946870033235963940" at="13,61,15,108" />
+      <scope id="3946870033235963940" at="21,51,23,69" />
+      <scope id="3946870033235963940" at="12,0,17,0" />
+      <scope id="3946870033235963940" at="20,0,25,0" />
+      <unit id="3946870033235963940" at="18,0,26,0" name="jetbrains.mps.lang.editor.attribues.UpdateHidingAttribute_Test$TestBody" />
+      <unit id="3946870033235963940" at="10,0,27,0" name="jetbrains.mps.lang.editor.attribues.UpdateHidingAttribute_Test" />
+    </file>
+  </root>
 </debug-info>
 

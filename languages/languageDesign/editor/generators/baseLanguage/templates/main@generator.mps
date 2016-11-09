@@ -84,6 +84,7 @@
     <import index="v95p" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus(MPS.Editor/)" />
     <import index="5b0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.presentation(MPS.Core/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
+    <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -5593,18 +5594,34 @@
               <node concept="3uibUv" id="5Hr2i_R333i" role="1tU5fm">
                 <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
               </node>
-              <node concept="2OqwBi" id="h_XJaJ2" role="33vP2m">
-                <node concept="liA8E" id="h_XJaJ3" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorManager.getCurrentAttributedCellWithRole(java.lang.Class,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getCurrentAttributedCellWithRole" />
-                  <node concept="3VsKOn" id="5Hr2i_R3aK$" role="37wK5m">
-                    <ref role="3VsUkX" to="mqtv:~AttributeKind$Property" resolve="AttributeKind.Property" />
+              <node concept="2OqwBi" id="3$nF7DEifwR" role="33vP2m">
+                <node concept="2OqwBi" id="3$nF7DEifwS" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3$nF7DEifwT" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3$nF7DEifwU" role="2Oq$k0">
+                      <node concept="37vLTw" id="3$nF7DEifwV" role="2Oq$k0">
+                        <ref role="3cqZAo" node="gw_fALi" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="3$nF7DEifwW" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="3$nF7DEifwX" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="2cGAH1Ss4Na" role="37wK5m">
-                    <ref role="3cqZAo" node="gw_fALk" resolve="node" />
+                  <node concept="liA8E" id="3$nF7DEifwY" role="2OqNvi">
+                    <ref role="37wK5l" to="22ra:~Updater.getCurrentUpdateSession():jetbrains.mps.openapi.editor.update.UpdateSession" resolve="getCurrentUpdateSession" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTxZi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="gypQZhp" resolve="manager" />
+                <node concept="liA8E" id="3$nF7DEifwZ" role="2OqNvi">
+                  <ref role="37wK5l" to="22ra:~UpdateSession.getAttributedCell(jetbrains.mps.openapi.editor.update.AttributeKind,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getAttributedCell" />
+                  <node concept="Rm8GO" id="3$nF7DEifN$" role="37wK5m">
+                    <ref role="Rm8GQ" to="22ra:~AttributeKind.PROPERTY" resolve="PROPERTY" />
+                    <ref role="1Px2BO" to="22ra:~AttributeKind" resolve="AttributeKind" />
+                  </node>
+                  <node concept="37vLTw" id="3$nF7DEifx1" role="37wK5m">
+                    <ref role="3cqZAo" node="gw_fALk" resolve="node" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -5697,18 +5714,34 @@
               <node concept="3uibUv" id="7E4vrCMk2jX" role="1tU5fm">
                 <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
               </node>
-              <node concept="2OqwBi" id="h_XJ9_R" role="33vP2m">
-                <node concept="liA8E" id="h_XJ9_S" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorManager.getCurrentAttributedCellWithRole(java.lang.Class,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getCurrentAttributedCellWithRole" />
-                  <node concept="3VsKOn" id="7E4vrCMk05s" role="37wK5m">
-                    <ref role="3VsUkX" to="mqtv:~AttributeKind$Reference" resolve="AttributeKind.Reference" />
+              <node concept="2OqwBi" id="3$nF7DEgUo6" role="33vP2m">
+                <node concept="2OqwBi" id="3$nF7DEgU67" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3$nF7DEgTBg" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3$nF7DEgTkl" role="2Oq$k0">
+                      <node concept="37vLTw" id="3$nF7DEgSRh" role="2Oq$k0">
+                        <ref role="3cqZAo" node="gywzUQH" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="3$nF7DEgTxn" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="3$nF7DEgTP8" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="2cGAH1Ss4eu" role="37wK5m">
-                    <ref role="3cqZAo" node="gywzUQJ" resolve="node" />
+                  <node concept="liA8E" id="3$nF7DEgUfP" role="2OqNvi">
+                    <ref role="37wK5l" to="22ra:~Updater.getCurrentUpdateSession():jetbrains.mps.openapi.editor.update.UpdateSession" resolve="getCurrentUpdateSession" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTzOe" role="2Oq$k0">
-                  <ref role="3cqZAo" node="gywzUQV" resolve="manager" />
+                <node concept="liA8E" id="3$nF7DEgUEU" role="2OqNvi">
+                  <ref role="37wK5l" to="22ra:~UpdateSession.getAttributedCell(jetbrains.mps.openapi.editor.update.AttributeKind,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getAttributedCell" />
+                  <node concept="Rm8GO" id="3$nF7DEgYav" role="37wK5m">
+                    <ref role="1Px2BO" to="22ra:~AttributeKind" resolve="AttributeKind" />
+                    <ref role="Rm8GQ" to="22ra:~AttributeKind.REFERENCE" resolve="REFERENCE" />
+                  </node>
+                  <node concept="37vLTw" id="3$nF7DEgYmO" role="37wK5m">
+                    <ref role="3cqZAo" node="gywzUQJ" resolve="node" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -6578,22 +6611,6 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="4KFVuabug8m" role="3cqZAp">
-            <node concept="3cpWsn" id="4KFVuabug8n" role="3cpWs9">
-              <property role="TrG5h" value="attributeKind" />
-              <node concept="3uibUv" id="4KFVuabug8o" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-              </node>
-              <node concept="2OqwBi" id="4KFVuabug8p" role="33vP2m">
-                <node concept="liA8E" id="4KFVuabug8q" role="2OqNvi">
-                  <ref role="37wK5l" to="emqf:~CellProviderWithRole.getRoleAttributeClass():java.lang.Class" resolve="getRoleAttributeClass" />
-                </node>
-                <node concept="37vLTw" id="4KFVuabuh7T" role="2Oq$k0">
-                  <ref role="3cqZAo" node="g_Cet49" resolve="provider" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbJ" id="4KFVuabug8s" role="3cqZAp">
             <node concept="3cpWs6" id="4KFVuabug8t" role="9aQIa">
               <node concept="37vLTw" id="4KFVuabuhB5" role="3cqZAk">
@@ -6617,19 +6634,24 @@
                 </node>
               </node>
               <node concept="3cpWs6" id="4KFVuabug8_" role="3cqZAp">
-                <node concept="2OqwBi" id="4KFVuabug8A" role="3cqZAk">
-                  <node concept="37vLTw" id="4KFVuabug8B" role="2Oq$k0">
+                <node concept="2OqwBi" id="7JyXXoD3okL" role="3cqZAk">
+                  <node concept="37vLTw" id="7JyXXoD3nlp" role="2Oq$k0">
                     <ref role="3cqZAo" node="4KFVuabug8x" resolve="manager" />
                   </node>
-                  <node concept="liA8E" id="4KFVuabug8C" role="2OqNvi">
-                    <ref role="37wK5l" to="exr9:~EditorManager.createNodeRoleAttributeCell(org.jetbrains.mps.openapi.model.SNode,java.lang.Class,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
-                    <node concept="37vLTw" id="4KFVuabug8D" role="37wK5m">
+                  <node concept="liA8E" id="7JyXXoD3oTG" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorManager.createNodeRoleAttributeCell(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.update.AttributeKind,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
+                    <node concept="37vLTw" id="7JyXXoD3p5q" role="37wK5m">
                       <ref role="3cqZAo" node="g_CeiMv" resolve="attributeConcept" />
                     </node>
-                    <node concept="37vLTw" id="4KFVuabug8E" role="37wK5m">
-                      <ref role="3cqZAo" node="4KFVuabug8n" resolve="attributeKind" />
+                    <node concept="2OqwBi" id="7JyXXoD3pGG" role="37wK5m">
+                      <node concept="37vLTw" id="7JyXXoD3piI" role="2Oq$k0">
+                        <ref role="3cqZAo" node="g_Cet49" resolve="provider" />
+                      </node>
+                      <node concept="liA8E" id="7JyXXoD3pSe" role="2OqNvi">
+                        <ref role="37wK5l" to="emqf:~CellProviderWithRole.getRoleAttributeKind():jetbrains.mps.openapi.editor.update.AttributeKind" resolve="getRoleAttributeKind" />
+                      </node>
                     </node>
-                    <node concept="37vLTw" id="4KFVuabuhA$" role="37wK5m">
+                    <node concept="37vLTw" id="7JyXXoD3qg0" role="37wK5m">
                       <ref role="3cqZAo" node="g_CeiMo" resolve="editorCell" />
                     </node>
                   </node>
@@ -7612,18 +7634,34 @@
               <node concept="3uibUv" id="5Hr2i_R0fI9" role="1tU5fm">
                 <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
               </node>
-              <node concept="2OqwBi" id="h_XJb5O" role="33vP2m">
-                <node concept="liA8E" id="5Hr2i_R03F4" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorManager.getCurrentAttributedCellWithRole(java.lang.Class,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getCurrentAttributedCellWithRole" />
-                  <node concept="3VsKOn" id="5Hr2i_R0dvl" role="37wK5m">
-                    <ref role="3VsUkX" to="mqtv:~AttributeKind$Node" resolve="AttributeKind.Node" />
+              <node concept="2OqwBi" id="3$nF7DEieEF" role="33vP2m">
+                <node concept="2OqwBi" id="3$nF7DEieEG" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3$nF7DEieEH" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3$nF7DEieEI" role="2Oq$k0">
+                      <node concept="37vLTw" id="3$nF7DEieEJ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="gISvERA" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="3$nF7DEieEK" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="3$nF7DEieEL" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="4eyXwxUs1vF" role="37wK5m">
-                    <ref role="3cqZAo" node="gISvERC" resolve="node" />
+                  <node concept="liA8E" id="3$nF7DEieEM" role="2OqNvi">
+                    <ref role="37wK5l" to="22ra:~Updater.getCurrentUpdateSession():jetbrains.mps.openapi.editor.update.UpdateSession" resolve="getCurrentUpdateSession" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="3GM_nagTsol" role="2Oq$k0">
-                  <ref role="3cqZAo" node="gISvERO" resolve="manager" />
+                <node concept="liA8E" id="3$nF7DEieEN" role="2OqNvi">
+                  <ref role="37wK5l" to="22ra:~UpdateSession.getAttributedCell(jetbrains.mps.openapi.editor.update.AttributeKind,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getAttributedCell" />
+                  <node concept="Rm8GO" id="3$nF7DEieWZ" role="37wK5m">
+                    <ref role="Rm8GQ" to="22ra:~AttributeKind.NODE" resolve="NODE" />
+                    <ref role="1Px2BO" to="22ra:~AttributeKind" resolve="AttributeKind" />
+                  </node>
+                  <node concept="37vLTw" id="3$nF7DEieEP" role="37wK5m">
+                    <ref role="3cqZAo" node="gISvERC" resolve="node" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -16457,22 +16495,6 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="i0tV1F7" role="3cqZAp">
-            <node concept="3cpWsn" id="i0tV1F8" role="3cpWs9">
-              <property role="TrG5h" value="attributeKind" />
-              <node concept="3uibUv" id="i0tXVZk" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-              </node>
-              <node concept="2OqwBi" id="i0tV1Fa" role="33vP2m">
-                <node concept="liA8E" id="i0tV1Fc" role="2OqNvi">
-                  <ref role="37wK5l" to="emqf:~CellProviderWithRole.getRoleAttributeClass():java.lang.Class" resolve="getRoleAttributeClass" />
-                </node>
-                <node concept="37vLTw" id="3GM_nagTsrs" role="2Oq$k0">
-                  <ref role="3cqZAo" node="i0tV1C_" resolve="provider" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbJ" id="i0tV1Fd" role="3cqZAp">
             <node concept="3y3z36" id="i0tV1Fe" role="3clFbw">
               <node concept="10Nm6u" id="i0tV1Ff" role="3uHU7w" />
@@ -16497,19 +16519,24 @@
                 </node>
               </node>
               <node concept="3cpWs6" id="i0tV1Ft" role="3cqZAp">
-                <node concept="2OqwBi" id="i0tV1Fu" role="3cqZAk">
-                  <node concept="37vLTw" id="3GM_nagTtVd" role="2Oq$k0">
+                <node concept="2OqwBi" id="7JyXXoD2SVn" role="3cqZAk">
+                  <node concept="37vLTw" id="7JyXXoD2SVo" role="2Oq$k0">
                     <ref role="3cqZAo" node="i0tV1Fp" resolve="manager" />
                   </node>
-                  <node concept="liA8E" id="i0tV1Fw" role="2OqNvi">
-                    <ref role="37wK5l" to="exr9:~EditorManager.createNodeRoleAttributeCell(org.jetbrains.mps.openapi.model.SNode,java.lang.Class,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
-                    <node concept="37vLTw" id="3GM_nagTtIT" role="37wK5m">
+                  <node concept="liA8E" id="7JyXXoD2SVp" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorManager.createNodeRoleAttributeCell(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.update.AttributeKind,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
+                    <node concept="37vLTw" id="7JyXXoD2SVq" role="37wK5m">
                       <ref role="3cqZAo" node="i0tV1F2" resolve="attributeConcept" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTBXc" role="37wK5m">
-                      <ref role="3cqZAo" node="i0tV1F8" resolve="attributeKind" />
+                    <node concept="2OqwBi" id="7JyXXoD2SVr" role="37wK5m">
+                      <node concept="37vLTw" id="7JyXXoD2SVs" role="2Oq$k0">
+                        <ref role="3cqZAo" node="i0tV1C_" resolve="provider" />
+                      </node>
+                      <node concept="liA8E" id="7JyXXoD2SVt" role="2OqNvi">
+                        <ref role="37wK5l" to="emqf:~CellProviderWithRole.getRoleAttributeKind():jetbrains.mps.openapi.editor.update.AttributeKind" resolve="getRoleAttributeKind" />
+                      </node>
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTsAx" role="37wK5m">
+                    <node concept="37vLTw" id="7JyXXoD2SVu" role="37wK5m">
                       <ref role="3cqZAo" node="i0tV1ET" resolve="editorCell" />
                     </node>
                   </node>

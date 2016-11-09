@@ -18,6 +18,7 @@ package jetbrains.mps.openapi.editor.update;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -92,19 +93,41 @@ public interface UpdateSession {
   EditorCell updateChildNodeCell(SNode node);
 
   /**
-   * Should be called as a part of incremental update of EditorCells tree represented
-   * inside associated EditorComponent only.
-   * <p/>
-   * Can be called to create cell representing property or reference attribute while
-   * building cell for the corresponding property/reference. As a result just create
-   * cell for the property/reference can be wrapped by corresponding attribute cell.
-   *
-   * @param attributeKind - jetbrains.mps.nodeEditor.attribute.AttributeKind inner classes.
-   * @param cellWithRole  - cell to be attributed
-   * @param roleAttribute - node representing property or reference attribute
-   * @return updated EditorCell representing a cell for property/reference attribute
+   * @deprecated since MPS3.4 use {@link #updateAttributeCell(AttributeKind, EditorCell, SNode)}
    */
+  @Deprecated
   EditorCell updateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
+
+  /**
+   * Updating the {@link EditorCell} representing some attribute (see {@link AttributeKind}).
+   * Attributed cell (representing complete node/or property/..) should be already updated and
+   * passed as a parameter of this method call.
+   * <p>
+   * The update process for the attribute node may include attributed cell into the constructed
+   * tree of editor cells. In this case attributed cell will be accessed by calling
+   * {@link #getAttributedCell(AttributeKind, SNode)} method.
+   *
+   * @param attributeKind  - specification of the attribute kind
+   * @param attributedCell - cell representing attributed node/property/..
+   * @param attribute      - node representing attribute
+   * @return updated EditorCell representing a cell for node/property/reference attribute
+   */
+  EditorCell updateAttributeCell(AttributeKind attributeKind, EditorCell attributedCell, SNode attribute);
+
+  /**
+   * May be called to access attributed cell of specified attribute kind while building
+   * the cell for the node of attribute. Returned cell is expected to be inserted into
+   * sub-tree of {@link EditorCell}s, created for the node of attribute.
+   * <p>
+   * This method should be called as a sub-sequence of {@link #updateAttributeCell(AttributeKind, EditorCell, SNode)}
+   * method in order to access second parameter ({@link EditorCell}) from there.
+   *
+   * @param attributeKind - parameter specifying the type of attributed cell to access
+   * @param attribute     - node used to create error cell if corresponding attributed cell was not found
+   * @return attributed EditorCell or error cell if such cell was not found.
+   */
+  @NotNull
+  EditorCell getAttributedCell(AttributeKind attributeKind, SNode attribute);
 
   /**
    * Should be called as a part of incremental update of EditorCells tree represented

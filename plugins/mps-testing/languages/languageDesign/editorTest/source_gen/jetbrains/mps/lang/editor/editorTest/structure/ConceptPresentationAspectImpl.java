@@ -46,6 +46,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SelectionChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SelectionContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SideTranformWrapper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleNode = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleNodeHidingAttribute = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleNodesContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SimplePropertyAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SimplePropertyContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubBlock = new ConceptPresentationBuilder().create();
@@ -141,32 +144,38 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 36:
         return props_SideTranformWrapper;
       case 37:
-        return props_SimplePropertyAttribute;
+        return props_SimpleNode;
       case 38:
-        return props_SimplePropertyContainer;
+        return props_SimpleNodeHidingAttribute;
       case 39:
-        return props_StubBlock;
+        return props_SimpleNodesContainer;
       case 40:
-        return props_StyleChild;
+        return props_SimplePropertyAttribute;
       case 41:
-        return props_StyleParent;
+        return props_SimplePropertyContainer;
       case 42:
-        return props_SubstMiddlewareChild;
+        return props_StubBlock;
       case 43:
-        return props_SubstTestAbstractChild;
+        return props_StyleChild;
       case 44:
-        return props_SubstTestBooleanPropertyChild;
+        return props_StyleParent;
       case 45:
-        return props_SubstTestEnumPropertyChild;
+        return props_SubstMiddlewareChild;
       case 46:
-        return props_SubstTestRoot;
+        return props_SubstTestAbstractChild;
       case 47:
-        return props_TestBlockList;
+        return props_SubstTestBooleanPropertyChild;
       case 48:
-        return props_VariableDeclarationBlock;
+        return props_SubstTestEnumPropertyChild;
       case 49:
-        return props_VariableDeclarationReference;
+        return props_SubstTestRoot;
       case 50:
+        return props_TestBlockList;
+      case 51:
+        return props_VariableDeclarationBlock;
+      case 52:
+        return props_VariableDeclarationReference;
+      case 53:
         return props_VerticalLayoutBlockList;
     }
     throw new IllegalStateException("Unknown concept " + c);
