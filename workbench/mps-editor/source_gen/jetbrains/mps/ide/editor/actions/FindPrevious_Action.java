@@ -18,7 +18,7 @@ public class FindPrevious_Action extends BaseAction {
     super("Find Previous", "Repeat the last Find operation in reverse direction", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
-    this.setMnemonic("V".charAt(0));
+    this.setMnemonic("v".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

@@ -18,7 +18,7 @@ public class Find_Action extends BaseAction {
     super("Find...", "Find a string in active editor", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
-    this.setMnemonic("f".charAt(0));
+    this.setMnemonic("F".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

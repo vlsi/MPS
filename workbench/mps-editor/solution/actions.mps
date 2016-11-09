@@ -10103,7 +10103,6 @@
     </node>
   </node>
   <node concept="sE7Ow" id="3Ps9wDHYw7A">
-    <property role="ngHcd" value="f" />
     <property role="1WHSii" value="Find a string in active editor" />
     <property role="fJN8o" value="true" />
     <property role="TrG5h" value="Find" />
@@ -10111,6 +10110,7 @@
     <property role="2uzpH1" value="Find..." />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
     <property role="1teQrl" value="true" />
+    <property role="ngHcd" value="F" />
     <node concept="tnohg" id="3Ps9wDHYw7B" role="tncku">
       <node concept="3clFbS" id="3Ps9wDHYw7C" role="2VODD2">
         <node concept="3clFbF" id="3Ps9wDHYw7D" role="3cqZAp">
@@ -10199,7 +10199,6 @@
     </node>
   </node>
   <node concept="sE7Ow" id="3Ps9wDHYw8a">
-    <property role="ngHcd" value="V" />
     <property role="1WHSii" value="Repeat the last Find operation in reverse direction" />
     <property role="fJN8o" value="true" />
     <property role="TrG5h" value="FindPrevious" />
@@ -10207,6 +10206,7 @@
     <property role="2uzpH1" value="Find Previous" />
     <property role="3GE5qa" value="Menu.MainMenu.SearchActions" />
     <property role="1teQrl" value="true" />
+    <property role="ngHcd" value="v" />
     <node concept="tnohg" id="3Ps9wDHYw8b" role="tncku">
       <node concept="3clFbS" id="3Ps9wDHYw8c" role="2VODD2">
         <node concept="3clFbF" id="3Ps9wDHYw8d" role="3cqZAp">
