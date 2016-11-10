@@ -46,7 +46,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 1:
         return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_checkedNode_SubstituteMenu());
       case 2:
-        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConcept_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childConceptNode_SubstituteMenu());
       case 3:
         return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_childNode_SubstituteMenu());
       case 4:
@@ -60,7 +60,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 8:
         return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_inEditor_SubstituteMenu());
       case 9:
-        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_link_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkNode_SubstituteMenu());
       case 10:
         return Collections.<SubstituteMenu>singletonList(new ConstraintFunctionParameter_linkTarget_SubstituteMenu());
       case 11:

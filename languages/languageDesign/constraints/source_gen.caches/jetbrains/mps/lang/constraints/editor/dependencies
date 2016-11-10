@@ -60,7 +60,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_childConcept_SubstituteMenu" file="ConstraintFunctionParameter_childConcept_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_childConceptNode_SubstituteMenu" file="ConstraintFunctionParameter_childConceptNode_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -130,7 +130,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTarget_SubstituteMenu" file="ConstraintFunctionParameter_linkTarget_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkNode_SubstituteMenu" file="ConstraintFunctionParameter_linkNode_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_link_SubstituteMenu" file="ConstraintFunctionParameter_link_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTarget_SubstituteMenu" file="ConstraintFunctionParameter_linkTarget_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -264,15 +264,15 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConceptParameter_ReferentSearchScope_enclosingNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_checkedNode_SubstituteMenu" />
-    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_childConcept_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_childConceptNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_childNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_containingLink_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_contextNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_contextRole_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_exists_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_inEditor_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTarget_SubstituteMenu" />
-    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_link_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_newReferentNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_oldReferentNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_parameterNode_SubstituteMenu" />

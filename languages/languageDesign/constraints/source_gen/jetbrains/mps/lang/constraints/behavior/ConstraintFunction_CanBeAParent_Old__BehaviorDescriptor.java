@@ -25,8 +25,8 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public final class ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d05239254e6415aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
+public final class ConstraintFunction_CanBeAParent_Old__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent_Old");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> usesParameterObjectFor_idhEwIGRw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObjectFor").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRw").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
@@ -43,17 +43,18 @@ public final class ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor extend
   }
   /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
     List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1203001236505"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1147468365020"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "6738154313879680265"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "4303308395523096213"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622753914"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1203009604308"));
     return result;
   }
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
-    return _quotation_createNode_3sojbo_a0a2();
+    return _quotation_createNode_ly8kfn_a0a2();
   }
 
-  /*package*/ ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor() {
+  /*package*/ ConstraintFunction_CanBeAParent_Old__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -103,7 +104,7 @@ public final class ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor extend
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_3sojbo_a0a2() {
+  private static SNode _quotation_createNode_ly8kfn_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"), null, null, false);

@@ -22,11 +22,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConstraintFunction_PropertySetter__BehaviorDescriptor = new ConstraintFunction_PropertySetter__BehaviorDescriptor();
   private final BHDescriptor myNodeDefaultSearchScope__BehaviorDescriptor = new NodeDefaultSearchScope__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_ReferentSetHandler__BehaviorDescriptor = new ConstraintFunction_ReferentSetHandler__BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeAChild__BehaviorDescriptor = new ConstraintFunction_CanBeAChild__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAChild_Old__BehaviorDescriptor = new ConstraintFunction_CanBeAChild_Old__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_parentNode__BehaviorDescriptor = new ConstraintFunctionParameter_parentNode__BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeAParent__BehaviorDescriptor = new ConstraintFunction_CanBeAParent__BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_childConcept__BehaviorDescriptor = new ConstraintFunctionParameter_childConcept__BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_link__BehaviorDescriptor = new ConstraintFunctionParameter_link__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAParent_Old__BehaviorDescriptor = new ConstraintFunction_CanBeAParent_Old__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_childConceptNode__BehaviorDescriptor = new ConstraintFunctionParameter_childConceptNode__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_linkNode__BehaviorDescriptor = new ConstraintFunctionParameter_linkNode__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_PropertyValidator__BehaviorDescriptor = new ConstraintFunction_PropertyValidator__BehaviorDescriptor();
   private final BHDescriptor myConceptConstraints__BehaviorDescriptor = new ConceptConstraints__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_CanBeARoot__BehaviorDescriptor = new ConstraintFunction_CanBeARoot__BehaviorDescriptor();
@@ -36,16 +36,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor = new ConstraintFunction_GetAlternativeIcon__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_childConcept__BehaviorDescriptor = new ConstraintFunctionParameter_childConcept__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_link__BehaviorDescriptor = new ConstraintFunctionParameter_link__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_inEditor__BehaviorDescriptor = new ConstraintFunctionParameter_inEditor__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_contextRole__BehaviorDescriptor = new ConstraintFunctionParameter_contextRole__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_exists__BehaviorDescriptor = new ConstraintFunctionParameter_exists__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_position__BehaviorDescriptor = new ConstraintFunctionParameter_position__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor = new ConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAChild__BehaviorDescriptor = new ConstraintFunction_CanBeAChild__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAParent__BehaviorDescriptor = new ConstraintFunction_CanBeAParent__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor = new ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_childNode__BehaviorDescriptor = new ConstraintFunctionParameter_childNode__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_visible__BehaviorDescriptor = new ConstraintFunctionParameter_visible__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_smartReference__BehaviorDescriptor = new ConstraintFunctionParameter_smartReference__BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor = new ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAnAncestor_Old__BehaviorDescriptor = new ConstraintFunction_CanBeAnAncestor_Old__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_contextNode__BehaviorDescriptor = new ConstraintFunctionParameter_contextNode__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
@@ -54,7 +59,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0mb.index(cncpt)) {
+    switch (index_846f5o_a0rb.index(cncpt)) {
       case 0:
         return myConceptConstraints__BehaviorDescriptor;
       case 1:
@@ -64,70 +69,80 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 3:
         return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
       case 4:
-        return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
+        return myConstraintFunctionParameter_childConceptNode__BehaviorDescriptor;
       case 5:
-        return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
+        return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
       case 6:
-        return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
+        return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
       case 7:
-        return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
+        return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
       case 8:
-        return myConstraintFunctionParameter_exists__BehaviorDescriptor;
+        return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
       case 9:
-        return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
+        return myConstraintFunctionParameter_exists__BehaviorDescriptor;
       case 10:
-        return myConstraintFunctionParameter_link__BehaviorDescriptor;
+        return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
       case 11:
-        return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
+        return myConstraintFunctionParameter_link__BehaviorDescriptor;
       case 12:
-        return myConstraintFunctionParameter_position__BehaviorDescriptor;
+        return myConstraintFunctionParameter_linkNode__BehaviorDescriptor;
       case 13:
-        return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
+        return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
       case 14:
-        return myConstraintFunctionParameter_visible__BehaviorDescriptor;
+        return myConstraintFunctionParameter_position__BehaviorDescriptor;
       case 15:
-        return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
+        return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
       case 16:
-        return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
+        return myConstraintFunctionParameter_visible__BehaviorDescriptor;
       case 17:
-        return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
+        return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
       case 18:
-        return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
+        return myConstraintFunction_CanBeAChild_Old__BehaviorDescriptor;
       case 19:
-        return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
+        return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
       case 20:
-        return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
+        return myConstraintFunction_CanBeAParent_Old__BehaviorDescriptor;
       case 21:
-        return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
+        return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
       case 22:
-        return myConstraintFunction_PropertySetter__BehaviorDescriptor;
+        return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
       case 23:
-        return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
+        return myConstraintFunction_CanBeAnAncestor_Old__BehaviorDescriptor;
       case 24:
-        return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
+        return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
       case 25:
-        return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
+        return myConstraintFunction_GetInstanceIcon__BehaviorDescriptor;
       case 26:
-        return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
+        return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
       case 27:
-        return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
+        return myConstraintFunction_PropertySetter__BehaviorDescriptor;
       case 28:
-        return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
+        return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
       case 29:
-        return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
+        return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
       case 30:
-        return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
       case 31:
-        return myConstraintsFunctionParameter_node__BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
       case 32:
-        return myNodeDefaultSearchScope__BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
       case 33:
-        return myNodePropertyConstraint__BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
       case 34:
+        return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
+      case 35:
+        return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
+      case 36:
+        return myConstraintsFunctionParameter_node__BehaviorDescriptor;
+      case 37:
+        return myNodeDefaultSearchScope__BehaviorDescriptor;
+      case 38:
+        return myNodePropertyConstraint__BehaviorDescriptor;
+      case 39:
         return myNodeReferentConstraint__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0mb = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c381baL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11db3f6ffbbL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x341b038f9307e5cfL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x13cd31e62ef65a72L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0rb = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3bb86c2f921c3e95L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3bb86c2f92200404L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d05239254e52247L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c381baL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d05239254e630abL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11db3f6ffbbL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d05239254e6415aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x341b038f9307e5cfL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x13cd31e62ef65a72L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L), MetaIdFactory.conceptId(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL)).seal();
 }

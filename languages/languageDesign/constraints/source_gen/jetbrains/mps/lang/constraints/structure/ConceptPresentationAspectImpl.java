@@ -14,6 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConceptParameter_ReferentSearchScope_enclosingNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_checkedNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_childConcept = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_childConceptNode = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_childNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_containingLink = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_contextNode = new ConceptPresentationBuilder().create();
@@ -21,6 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstraintFunctionParameter_exists = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_inEditor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_link = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_linkNode = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_linkTarget = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_newReferentNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_oldReferentNode = new ConceptPresentationBuilder().create();
@@ -31,9 +33,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstraintFunctionParameter_smartReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_visible = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunction_CanBeAChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAChild_Old = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ConstraintFunction_CanBeAParent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAParent_Old = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ConstraintFunction_CanBeARoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor_Old = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ConstraintFunction_GetAlternativeIcon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunction_GetInstanceIcon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunction_PropertyGetter = new ConceptPresentationBuilder().create();
@@ -67,6 +72,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunctionParameter_checkedNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childConcept:
         return props_ConstraintFunctionParameter_childConcept;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_childConceptNode:
+        return props_ConstraintFunctionParameter_childConceptNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childNode:
         return props_ConstraintFunctionParameter_childNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_containingLink:
@@ -81,6 +88,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunctionParameter_inEditor;
       case LanguageConceptSwitch.ConstraintFunctionParameter_link:
         return props_ConstraintFunctionParameter_link;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_linkNode:
+        return props_ConstraintFunctionParameter_linkNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_linkTarget:
         return props_ConstraintFunctionParameter_linkTarget;
       case LanguageConceptSwitch.ConstraintFunctionParameter_newReferentNode:
@@ -101,12 +110,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunctionParameter_visible;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAChild:
         return props_ConstraintFunction_CanBeAChild;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAChild_Old:
+        return props_ConstraintFunction_CanBeAChild_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAParent:
         return props_ConstraintFunction_CanBeAParent;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAParent_Old:
+        return props_ConstraintFunction_CanBeAParent_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
         return props_ConstraintFunction_CanBeARoot;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor:
         return props_ConstraintFunction_CanBeAnAncestor;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor_Old:
+        return props_ConstraintFunction_CanBeAnAncestor_Old;
       case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
         return props_ConstraintFunction_GetAlternativeIcon;
       case LanguageConceptSwitch.ConstraintFunction_GetInstanceIcon:
