@@ -6228,12 +6228,29 @@
           <node concept="1pdMLZ" id="3g2FLTviX8A" role="lGtFl">
             <node concept="15lBmy" id="3g2FLTviXFi" role="15mYut">
               <node concept="3clFbS" id="3g2FLTviXFj" role="2VODD2">
-                <node concept="3clFbF" id="52jUAvz6eh" role="3cqZAp">
-                  <node concept="2YIFZM" id="52jUAvz6ZB" role="3clFbG">
-                    <ref role="37wK5l" to="o3n2:52jUAvz5nw" resolve="preserveLocations" />
-                    <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
-                    <node concept="30H73N" id="52jUAvz73E" role="37wK5m" />
-                    <node concept="3l3mFP" id="52jUAvz7nb" role="37wK5m" />
+                <node concept="3clFbF" id="7o9H8C3yDHh" role="3cqZAp">
+                  <node concept="2OqwBi" id="7o9H8C3yLP9" role="3clFbG">
+                    <node concept="2ShNRf" id="7o9H8C3yDHd" role="2Oq$k0">
+                      <node concept="1pGfFk" id="7o9H8C3yIFw" role="2ShVmc">
+                        <ref role="37wK5l" to="o3n2:41__iZjkZ0Y" resolve="DependenciesHelper" />
+                        <node concept="1iwH7S" id="7o9H8C3yIFV" role="37wK5m" />
+                        <node concept="2OqwBi" id="7o9H8C3yIRM" role="37wK5m">
+                          <node concept="30H73N" id="7o9H8C3yIGK" role="2Oq$k0" />
+                          <node concept="2Xjw5R" id="7o9H8C3yJbo" role="2OqNvi">
+                            <node concept="1xMEDy" id="7o9H8C3yJbq" role="1xVPHs">
+                              <node concept="chp4Y" id="7o9H8C3yJci" role="ri$Ld">
+                                <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="7o9H8C3yM3b" role="2OqNvi">
+                      <ref role="37wK5l" to="o3n2:7o9H8C3yJPp" resolve="preserveLocations" />
+                      <node concept="30H73N" id="7o9H8C3yNcr" role="37wK5m" />
+                      <node concept="3l3mFP" id="7o9H8C3yNtJ" role="37wK5m" />
+                    </node>
                   </node>
                 </node>
               </node>

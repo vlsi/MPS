@@ -16652,12 +16652,29 @@
                       <property role="3SKdUp" value="Prior to the removal of transient models this used to work as every lookup was done using origin node." />
                     </node>
                   </node>
-                  <node concept="3clFbF" id="52jUAvBDE2" role="3cqZAp">
-                    <node concept="2YIFZM" id="52jUAvBDQ7" role="3clFbG">
-                      <ref role="37wK5l" to="o3n2:52jUAvz5nw" resolve="preserveLocations" />
-                      <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
-                      <node concept="30H73N" id="52jUAvBEcT" role="37wK5m" />
-                      <node concept="3l3mFP" id="52jUAvBG1w" role="37wK5m" />
+                  <node concept="3clFbF" id="7o9H8C3yDHh" role="3cqZAp">
+                    <node concept="2OqwBi" id="7o9H8C3yLP9" role="3clFbG">
+                      <node concept="2ShNRf" id="7o9H8C3yDHd" role="2Oq$k0">
+                        <node concept="1pGfFk" id="7o9H8C3yIFw" role="2ShVmc">
+                          <ref role="37wK5l" to="o3n2:41__iZjkZ0Y" resolve="DependenciesHelper" />
+                          <node concept="1iwH7S" id="7o9H8C3yIFV" role="37wK5m" />
+                          <node concept="2OqwBi" id="7o9H8C3yIRM" role="37wK5m">
+                            <node concept="30H73N" id="7o9H8C3yIGK" role="2Oq$k0" />
+                            <node concept="2Xjw5R" id="7o9H8C3yJbo" role="2OqNvi">
+                              <node concept="1xMEDy" id="7o9H8C3yJbq" role="1xVPHs">
+                                <node concept="chp4Y" id="7o9H8C3yJci" role="ri$Ld">
+                                  <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="7o9H8C3yM3b" role="2OqNvi">
+                        <ref role="37wK5l" to="o3n2:7o9H8C3yJPp" resolve="preserveLocations" />
+                        <node concept="30H73N" id="7o9H8C3yNcr" role="37wK5m" />
+                        <node concept="3l3mFP" id="7o9H8C3yNtJ" role="37wK5m" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -17119,16 +17136,11 @@
                         <property role="TrG5h" value="val" />
                         <node concept="17QB3L" id="j1Y_zp$NQk" role="1tU5fm" />
                         <node concept="2OqwBi" id="j1Y_zp$NQl" role="33vP2m">
-                          <node concept="2OqwBi" id="j1Y_zp$NQm" role="2Oq$k0">
-                            <node concept="37vLTw" id="3GM_nagTwAa" role="2Oq$k0">
-                              <ref role="3cqZAo" node="j1Y_zp$NPg" resolve="helper" />
-                            </node>
-                            <node concept="liA8E" id="j1Y_zp$NQo" role="2OqNvi">
-                              <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                            </node>
+                          <node concept="37vLTw" id="3GM_nagTwAa" role="2Oq$k0">
+                            <ref role="3cqZAo" node="j1Y_zp$NPg" resolve="helper" />
                           </node>
                           <node concept="liA8E" id="j1Y_zp$NQp" role="2OqNvi">
-                            <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                            <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
                             <node concept="37vLTw" id="3GM_nagTxRH" role="37wK5m">
                               <ref role="3cqZAo" node="j1Y_zp$NPn" resolve="layoutNode" />
                             </node>

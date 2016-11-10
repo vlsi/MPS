@@ -799,7 +799,7 @@ public class QueriesGenerated {
         return "???";
       }
     }
-    String val = helper.contentLocations().get(layoutNode);
+    String val = helper.getContentLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder));
       return "???";
@@ -1651,7 +1651,7 @@ public class QueriesGenerated {
     // that match its target (it's outputNode, BL_Copy at the time). To workaround, I record original location 
     // key here with the new target node, and use it from main.BuildLayout_Import template. 
     // Prior to the removal of transient models this used to work as every lookup was done using origin node. 
-    DependenciesHelper.preserveLocations(_context.getNode(), _context.getOutputNode());
+    new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).preserveLocations(_context.getNode(), _context.getOutputNode());
   }
   public static void mappingScript_CodeBlock_809559803149973643(final MappingScriptContext _context) {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")))) {

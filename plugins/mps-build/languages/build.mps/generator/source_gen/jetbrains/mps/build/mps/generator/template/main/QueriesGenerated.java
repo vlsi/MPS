@@ -1190,7 +1190,7 @@ public class QueriesGenerated {
     });
   }
   public static void mapSrcMacro_post_mapper_3747750384908360402(final MapSrcMacroPostProcContext _context) {
-    DependenciesHelper.preserveLocations(_context.getNode(), _context.getOutputNode());
+    new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).preserveLocations(_context.getNode(), _context.getOutputNode());
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_2413798559262849243(final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());

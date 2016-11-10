@@ -1832,16 +1832,11 @@
             <property role="TrG5h" value="parentLocation" />
             <node concept="17QB3L" id="6bGbH3SvTLJ" role="1tU5fm" />
             <node concept="2OqwBi" id="41__iZjl72t" role="33vP2m">
-              <node concept="2OqwBi" id="41__iZjl726" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxghiCc" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
-                </node>
-                <node concept="liA8E" id="41__iZjl72c" role="2OqNvi">
-                  <ref role="37wK5l" to="o3n2:41__iZjkZlc" resolve="contentLocations" />
-                </node>
+              <node concept="37vLTw" id="2BHiRxghiCc" role="2Oq$k0">
+                <ref role="3cqZAo" node="6bGbH3SvRri" resolve="helper" />
               </node>
               <node concept="liA8E" id="41__iZjl72z" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
                 <node concept="37vLTw" id="3GM_nagTtbQ" role="37wK5m">
                   <ref role="3cqZAo" node="6bGbH3SvRrs" resolve="parent" />
                 </node>
@@ -3891,6 +3886,16 @@
             <node concept="3x8VRR" id="2TqXzNe_6Iw" role="2OqNvi" />
           </node>
         </node>
+        <node concept="3SKdUt" id="7o9H8C3xIAf" role="3cqZAp">
+          <node concept="3SKdUq" id="7o9H8C3xIAh" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME consider JavaExternalLibraryHelper re-use " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7o9H8C3xJRz" role="3cqZAp">
+          <node concept="3SKdUq" id="7o9H8C3xJR_" role="3SKWNk">
+            <property role="3SKdUp" value="XXX isn't it odd to populate DependenciesHelper here, and not in unpack?" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="T86AKN1Xzs" role="3cqZAp">
           <node concept="3cpWsn" id="T86AKN1Xzt" role="3cpWs9">
             <property role="TrG5h" value="jdomLib" />
@@ -3972,16 +3977,6 @@
                     <ref role="3Tt5mk" to="3ior:4RsV8qJHgQC" resolve="extJar" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3SKdUt" id="T86AKN6WC7" role="3cqZAp">
-              <node concept="3SKdUq" id="T86AKN6WC9" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME in fact, BuildLayout_FileStub (jdomJarRef.jar) is never BuildLayout_Node, but PathElement, and findArtifact() does nothing for PathElement, simply return as is" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="T86AKN6YdQ" role="3cqZAp">
-              <node concept="3SKdUq" id="T86AKN6YdS" role="3SKWNk">
-                <property role="3SKdUp" value="so the cast here is a (design?) defect. Just got no idea what's the right way to fix it." />
               </node>
             </node>
             <node concept="3cpWs8" id="T86AKN2h1p" role="3cqZAp">
@@ -4148,11 +4143,6 @@
                     <ref role="3Tt5mk" to="3ior:4RsV8qJHgQC" resolve="extJar" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3SKdUt" id="T86AKN72bz" role="3cqZAp">
-              <node concept="3SKdUq" id="T86AKN72b_" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME see above, jdomJar" />
               </node>
             </node>
             <node concept="3cpWs8" id="T86AKN2kKO" role="3cqZAp">

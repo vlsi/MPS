@@ -64,6 +64,7 @@ public class UnpackHelper extends DependenciesHelper {
 
     for (SNode n : required) {
       Collection<Object> artifacts = artifactIds.get(n);
+      // FIXME artifacts parameter is never used, what's its purpose, after all? 
       BuildLayout_PathElement__BehaviorDescriptor.unpack_id6bGbH3Svq6g.invoke(n, this, (artifacts != null ? artifacts : Collections.emptyList()));
     }
   }

@@ -7,9 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.extapi.model.TransientSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.TransientModelsModule;
 
@@ -20,6 +22,9 @@ public class DependenciesHelper {
   private final Set<SNode> requiresFetch;
   protected final MacroHelper macros;
   private final TemplateQueryContext myGenContext;
+  private final SNode myProject;
+  private final String myLocationKey;
+  private final String myContentLocationKey;
 
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
@@ -28,6 +33,9 @@ public class DependenciesHelper {
     this.macros = new MacroHelper.MacroContext(project, genContext).getMacros(project);
     this.requiresFetch = GenerationUtil.getSessionSet(project, genContext, "requiresFetch");
     myGenContext = genContext;
+    myProject = project;
+    myLocationKey = "location:" + SModelOperations.getModelName(SNodeOperations.getModel(project)) + '/' + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    myContentLocationKey = "contentLocation:" + SModelOperations.getModelName(SNodeOperations.getModel(project)) + '/' + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 
   public TemplateQueryContext getGenContext() {
@@ -45,50 +53,41 @@ public class DependenciesHelper {
 
   public void putLocation(SNode layoutNode, String location) {
     locationMap.put(layoutNode, location);
-    if (SNodeOperations.getModel(layoutNode) instanceof TransientSModel) {
-      layoutNode.putUserObject("location", location);
+    if (isFromTransformedModel(layoutNode)) {
+      layoutNode.putUserObject(myLocationKey, location);
     }
   }
 
   public String getLocation(SNode layoutNode) {
     String rv = locationMap.get(layoutNode);
-    if (rv == null && layoutNode.getUserObject("location") != null) {
+    if (rv == null) {
       // See aliases MC, where BuildLayout_File, recorded in locations, is wrapped with BuildLayout_Copy 
       // MAP-SRC in BuildLayout_File's rule, default case. 
-      rv = (String) layoutNode.getUserObject("location");
+      rv = (String) layoutNode.getUserObject(myLocationKey);
     }
     return rv;
   }
 
-  /**
-   * 
-   * @deprecated use appropriate accessors instead
-   */
-  @Deprecated
-  public Map<SNode, String> contentLocations() {
-    return contentLocationMap;
-  }
-
   public void putContentLocation(SNode node, String location) {
     contentLocationMap.put(node, location);
-    if (SNodeOperations.getModel(node) instanceof TransientSModel) {
-      node.putUserObject("content-location", location);
+    if (isFromTransformedModel(node)) {
+      node.putUserObject(myContentLocationKey, location);
     }
   }
 
   public String getContentLocation(SNode n) {
     String rv = contentLocationMap.get(n);
     if (rv == null) {
-      rv = (String) n.getUserObject("content-location");
+      rv = (String) n.getUserObject(myContentLocationKey);
     }
     return rv;
   }
 
-  public static void preserveLocations(SNode from, SNode to) {
+  public void preserveLocations(SNode from, SNode to) {
     // this method is invoked from generation for specific usecases (wrap of a File wuth Copy), hence we expect nodes to be free-floating/transient, never from a regular model 
     assert SNodeOperations.getModel(to) == null || SNodeOperations.getModel(to) instanceof TransientSModel;
-    to.putUserObject("location", from.getUserObject("location"));
-    to.putUserObject("content-location", from.getUserObject("content-location"));
+    to.putUserObject(myLocationKey, from.getUserObject(myLocationKey));
+    to.putUserObject(myContentLocationKey, from.getUserObject(myContentLocationKey));
   }
 
   /*package*/ Map<Object, SNode> artifacts() {
@@ -128,6 +127,21 @@ public class DependenciesHelper {
   }
   public MacroHelper getMacroHelper() {
     return macros;
+  }
+
+  /**
+   * Check if layout node comes from build project being transformed, or the one being transformed along with it, i.e. if we CAN and NEED to associate
+   * location values with it. Layout nodes are not necessarily belong to the generated project, an import from external
+   * ayout brings foreign nodes, which can't get changed if they come from another model, non-transient, and the value associated would affect 
+   * any dependant project until the model is unloaded.
+   * If an external node comes from another project from the same model (few projects may get transformed simultaneously), we need to record location
+   * that is specific to each project (given projects A, B and C in a single model, where B and C re-use artifacts declared in A, layout nodes of A shall
+   * keep distinct locations for project B and C).
+   */
+  private boolean isFromTransformedModel(SNode n) {
+    SNode ancestorProject = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
+    // ancestorProject could be null for a layout node from external layout root 
+    return ancestorProject == myProject || (SNodeOperations.getModel(n) == SNodeOperations.getModel(myProject) && SNodeOperations.getModel(n) instanceof TransientSModel);
   }
 
   public SNode getOriginalNode(SNode node) {
