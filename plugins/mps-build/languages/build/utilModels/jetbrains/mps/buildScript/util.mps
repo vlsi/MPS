@@ -342,12 +342,21 @@
       <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
         <child id="5858074156537516440" name="return" index="x79VK" />
+        <child id="8465538089690917625" name="param" index="TUOzN" />
+      </concept>
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
@@ -6260,6 +6269,11 @@
       <node concept="3Tm6S6" id="7o9H8C3y56V" role="1B3o_S" />
       <node concept="17QB3L" id="7o9H8C3y56W" role="1tU5fm" />
     </node>
+    <node concept="312cEg" id="4_YGhOEl4SV" role="jymVt">
+      <property role="TrG5h" value="myLayoutRelativeKey" />
+      <node concept="3Tm6S6" id="4_YGhOEl4SW" role="1B3o_S" />
+      <node concept="17QB3L" id="4_YGhOEl61P" role="1tU5fm" />
+    </node>
     <node concept="2tJIrI" id="7eQOMx82sC7" role="jymVt" />
     <node concept="3clFbW" id="41__iZjkZ0Y" role="jymVt">
       <node concept="3Tm1VV" id="41__iZjkZ10" role="1B3o_S" />
@@ -6483,6 +6497,42 @@
                   <ref role="3cqZAo" node="41__iZjkZ1k" resolve="project" />
                 </node>
                 <node concept="3TrcHB" id="7o9H8C3ydbN" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4_YGhOEl8Zn" role="3cqZAp">
+          <node concept="37vLTI" id="4_YGhOEl8Zo" role="3clFbG">
+            <node concept="37vLTw" id="4_YGhOElalM" role="37vLTJ">
+              <ref role="3cqZAo" node="4_YGhOEl4SV" resolve="myLayoutRelativeKey" />
+            </node>
+            <node concept="3cpWs3" id="4_YGhOEl8Zq" role="37vLTx">
+              <node concept="3cpWs3" id="4_YGhOEl8Zr" role="3uHU7B">
+                <node concept="3cpWs3" id="4_YGhOEl8Zs" role="3uHU7B">
+                  <node concept="Xl_RD" id="4_YGhOEl8Zt" role="3uHU7B">
+                    <property role="Xl_RC" value="layout-relative:" />
+                  </node>
+                  <node concept="2OqwBi" id="4_YGhOEl8Zu" role="3uHU7w">
+                    <node concept="2OqwBi" id="4_YGhOEl8Zv" role="2Oq$k0">
+                      <node concept="37vLTw" id="4_YGhOEl8Zw" role="2Oq$k0">
+                        <ref role="3cqZAo" node="41__iZjkZ1k" resolve="project" />
+                      </node>
+                      <node concept="I4A8Y" id="4_YGhOEl8Zx" role="2OqNvi" />
+                    </node>
+                    <node concept="LkI2h" id="4_YGhOEl8Zy" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="1Xhbcc" id="4_YGhOEl8Zz" role="3uHU7w">
+                  <property role="1XhdNS" value="/" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4_YGhOEl8Z$" role="3uHU7w">
+                <node concept="37vLTw" id="4_YGhOEl8Z_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="41__iZjkZ1k" resolve="project" />
+                </node>
+                <node concept="3TrcHB" id="4_YGhOEl8ZA" role="2OqNvi">
                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
@@ -6940,6 +6990,158 @@
         <node concept="3Tqbb2" id="7o9H8C3yJQ3" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="7o9H8C3yJQ5" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4_YGhOEkZVN" role="jymVt" />
+    <node concept="3clFb_" id="4_YGhOEl2zc" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="putLayoutRelativePath" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="4_YGhOElbmn" role="3clF46">
+        <property role="TrG5h" value="layoutNode" />
+        <node concept="3Tqbb2" id="4_YGhOElbmo" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4_YGhOElcmA" role="3clF46">
+        <property role="TrG5h" value="key" />
+        <node concept="3Tqbb2" id="4_YGhOEldmV" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="4_YGhOEldnE" role="3clF46">
+        <property role="TrG5h" value="location" />
+        <node concept="17QB3L" id="4_YGhOEleo0" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="4_YGhOEl2zf" role="3clF47">
+        <node concept="3SKdUt" id="4_YGhOElgp$" role="3cqZAp">
+          <node concept="3SKdUq" id="4_YGhOElgpA" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME shall respect layoutNode as there are chances to have same 'key' (e.g. BuildMps_AbstractModule) exposed through" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4_YGhOElLRS" role="3cqZAp">
+          <node concept="3SKdUq" id="4_YGhOElLRU" role="3SKWNk">
+            <property role="3SKdUp" value="different layout nodes, just left simplest possible variant to test and get further" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4_YGhOEleEI" role="3cqZAp">
+          <node concept="2OqwBi" id="4_YGhOElfjL" role="3clFbG">
+            <node concept="2JrnkZ" id="4_YGhOElfc8" role="2Oq$k0">
+              <node concept="37vLTw" id="4_YGhOEleEH" role="2JrQYb">
+                <ref role="3cqZAo" node="4_YGhOElcmA" resolve="key" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4_YGhOElfvC" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
+              <node concept="37vLTw" id="4_YGhOElfRR" role="37wK5m">
+                <ref role="3cqZAo" node="4_YGhOEl4SV" resolve="myLayoutRelativeKey" />
+              </node>
+              <node concept="37vLTw" id="4_YGhOElg1M" role="37wK5m">
+                <ref role="3cqZAo" node="4_YGhOEldnE" resolve="location" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4_YGhOEl1pm" role="1B3o_S" />
+      <node concept="3cqZAl" id="4_YGhOEl2y7" role="3clF45" />
+      <node concept="P$JXv" id="4_YGhOEll7p" role="lGtFl">
+        <node concept="TUZQ0" id="4_YGhOEll7s" role="TUOzN">
+          <property role="TUZQ4" value="artifact, likely from getArtifact()" />
+          <node concept="zr_55" id="4_YGhOEll7u" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOElbmn" resolve="layoutNode" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4_YGhOEll7v" role="TUOzN">
+          <property role="TUZQ4" value="node that has a path relative to layoutNode, likely from the same model as layoutNode" />
+          <node concept="zr_55" id="4_YGhOEll7x" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOElcmA" resolve="key" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4_YGhOEll7y" role="TUOzN">
+          <property role="TUZQ4" value="path for the key node" />
+          <node concept="zr_55" id="4_YGhOEll7$" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOEldnE" resolve="location" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4_YGhOEloym" role="TZ5H$">
+          <node concept="1dT_AC" id="4_YGhOEloyn" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+          <node concept="1dT_AA" id="4_YGhOEloy$" role="1dT_Ay">
+            <node concept="92FcH" id="4_YGhOEloyM" role="qph3F">
+              <node concept="TZ5HA" id="4_YGhOEloyO" role="2XjZqd" />
+              <node concept="VXe0Z" id="4_YGhOElA2P" role="92FcQ">
+                <ref role="VXe0S" node="3h6igUoZq0X" resolve="getArtifact" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="4_YGhOEloyz" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4_YGhOElgr2" role="jymVt" />
+    <node concept="3clFb_" id="4_YGhOEliVA" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getLayoutRelativePath" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="4_YGhOElk6t" role="3clF46">
+        <property role="TrG5h" value="layoutNode" />
+        <node concept="3Tqbb2" id="4_YGhOElk6u" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4_YGhOElk6v" role="3clF46">
+        <property role="TrG5h" value="key" />
+        <node concept="3Tqbb2" id="4_YGhOElk6w" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="4_YGhOEliVD" role="3clF47">
+        <node concept="3SKdUt" id="4_YGhOElMMA" role="3cqZAp">
+          <node concept="3SKdUq" id="4_YGhOElMMC" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME see putLayoutRelativePath for details" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4_YGhOElM4z" role="3cqZAp">
+          <node concept="10QFUN" id="4_YGhOElPaW" role="3clFbG">
+            <node concept="2OqwBi" id="4_YGhOElMv6" role="10QFUP">
+              <node concept="2JrnkZ" id="4_YGhOElMm5" role="2Oq$k0">
+                <node concept="37vLTw" id="4_YGhOElM4y" role="2JrQYb">
+                  <ref role="3cqZAo" node="4_YGhOElk6v" resolve="key" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4_YGhOElM_l" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
+                <node concept="37vLTw" id="4_YGhOElMF1" role="37wK5m">
+                  <ref role="3cqZAo" node="4_YGhOEl4SV" resolve="myLayoutRelativeKey" />
+                </node>
+              </node>
+            </node>
+            <node concept="17QB3L" id="4_YGhOElPaX" role="10QFUM" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4_YGhOElhJK" role="1B3o_S" />
+      <node concept="17QB3L" id="4_YGhOEliUu" role="3clF45" />
+      <node concept="P$JXv" id="4_YGhOElC$h" role="lGtFl">
+        <node concept="TUZQ0" id="4_YGhOElC$k" role="TUOzN">
+          <property role="TUZQ4" value="artifact, likely the one from getArtifact() call, from a model the moment DH was initialized" />
+          <node concept="zr_55" id="4_YGhOElC$m" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOElk6t" resolve="layoutNode" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4_YGhOElC$n" role="TUOzN">
+          <property role="TUZQ4" value="node with path relative to layoutNode, may come from a model other than that of layoutNode (i.e. later transient), and might be different from the key in putLayoutRelativePath()" />
+          <node concept="zr_55" id="4_YGhOElC$p" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOElk6v" resolve="key" />
+          </node>
+        </node>
+        <node concept="x79VA" id="4_YGhOElC$q" role="x79VK">
+          <property role="x79VB" value="location path for the key node, if any" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3h6igUp8yJN" role="jymVt" />
     <node concept="3clFb_" id="5FtnUVJQGEG" role="jymVt">

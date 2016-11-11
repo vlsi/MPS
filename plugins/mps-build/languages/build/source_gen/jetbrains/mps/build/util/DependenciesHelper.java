@@ -25,6 +25,7 @@ public class DependenciesHelper {
   private final SNode myProject;
   private final String myLocationKey;
   private final String myContentLocationKey;
+  private String myLayoutRelativeKey;
 
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
@@ -36,6 +37,7 @@ public class DependenciesHelper {
     myProject = project;
     myLocationKey = "location:" + SModelOperations.getModelName(SNodeOperations.getModel(project)) + '/' + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     myContentLocationKey = "contentLocation:" + SModelOperations.getModelName(SNodeOperations.getModel(project)) + '/' + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    myLayoutRelativeKey = "layout-relative:" + SModelOperations.getModelName(SNodeOperations.getModel(project)) + '/' + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
 
   public TemplateQueryContext getGenContext() {
@@ -88,6 +90,30 @@ public class DependenciesHelper {
     assert SNodeOperations.getModel(to) == null || SNodeOperations.getModel(to) instanceof TransientSModel;
     to.putUserObject(myLocationKey, from.getUserObject(myLocationKey));
     to.putUserObject(myContentLocationKey, from.getUserObject(myContentLocationKey));
+  }
+
+  /**
+   * {@link jetbrains.mps.build.util.DependenciesHelper#getArtifact(SNode) }
+   * 
+   * @param layoutNode artifact, likely from getArtifact()
+   * @param key node that has a path relative to layoutNode, likely from the same model as layoutNode
+   * @param location path for the key node
+   */
+  public void putLayoutRelativePath(SNode layoutNode, SNode key, String location) {
+    // FIXME shall respect layoutNode as there are chances to have same 'key' (e.g. BuildMps_AbstractModule) exposed through 
+    // different layout nodes, just left simplest possible variant to test and get further 
+    key.putUserObject(myLayoutRelativeKey, location);
+  }
+
+  /**
+   * 
+   * @param layoutNode artifact, likely the one from getArtifact() call, from a model the moment DH was initialized
+   * @param key node with path relative to layoutNode, may come from a model other than that of layoutNode (i.e. later transient), and might be different from the key in putLayoutRelativePath()
+   * @return location path for the key node, if any
+   */
+  public String getLayoutRelativePath(SNode layoutNode, SNode key) {
+    // FIXME see putLayoutRelativePath for details 
+    return (String) key.getUserObject(myLayoutRelativeKey);
   }
 
   /*package*/ Map<Object, SNode> artifacts() {
