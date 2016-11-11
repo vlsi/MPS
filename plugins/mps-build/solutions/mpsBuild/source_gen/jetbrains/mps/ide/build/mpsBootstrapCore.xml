@@ -4543,7 +4543,7 @@
   
   <target name="makeDependents" />
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-annotations, fetchDependencies">
+  <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-annotations">
     <mkdir dir="${build.tmp}/java.modules.cycle.1" />
     <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" encoding="utf8" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -4561,7 +4561,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.mps-logging" depends="java.compile.mps-annotations, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.mps-logging" depends="java.compile.mps-annotations, java.compile.java.modules.cycle.1">
     <mkdir dir="${mps_home}/core/logging/source" />
     <mkdir dir="${build.tmp}/java/out/mps-logging" />
     <javac2 destdir="${build.tmp}/java/out/mps-logging" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4602,7 +4602,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-messaging" depends="java.compile.mps-annotations, java.compile.mps-logging, fetchDependencies">
+  <target name="java.compile.mps-messaging" depends="java.compile.mps-annotations, java.compile.mps-logging">
     <mkdir dir="${mps_home}/core/mps-messaging" />
     <mkdir dir="${build.tmp}/java/out/mps-messaging" />
     <javac2 destdir="${build.tmp}/java/out/mps-messaging" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4623,7 +4623,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-boot-util" depends="java.compile.mps-annotations, java.compile.mps-logging, fetchDependencies">
+  <target name="java.compile.mps-boot-util" depends="java.compile.mps-annotations, java.compile.mps-logging">
     <mkdir dir="${mps_home}/startup/startup-util/source" />
     <mkdir dir="${build.tmp}/java/out/mps-boot-util" />
     <javac2 destdir="${build.tmp}/java/out/mps-boot-util" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4674,7 +4674,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-collections" depends="java.compile.mps-closures, fetchDependencies">
+  <target name="java.compile.mps-collections" depends="java.compile.mps-closures">
     <mkdir dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-collections" />
     <javac2 destdir="${build.tmp}/java/out/mps-collections" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4692,7 +4692,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-openapi" depends="java.compile.mps-annotations, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.mps-openapi" depends="java.compile.mps-annotations, java.compile.java.modules.cycle.1">
     <mkdir dir="${mps_home}/core/openapi/source" />
     <mkdir dir="${build.tmp}/java/out/mps-openapi" />
     <javac2 destdir="${build.tmp}/java/out/mps-openapi" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4715,7 +4715,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.java.modules.cycle.2" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-debuginfo-api, fetchDependencies">
+  <target name="java.compile.java.modules.cycle.2" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-debuginfo-api">
     <mkdir dir="${build.tmp}/java.modules.cycle.2" />
     <javac destdir="${build.tmp}/java.modules.cycle.2" fork="true" encoding="utf8" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -4770,7 +4770,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.mps-behavior-runtime" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-behavior-runtime" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${mps_home}/core/aspects/behavior/behavior-runtime/source" />
     <mkdir dir="${build.tmp}/java/out/mps-behavior-runtime" />
     <javac2 destdir="${build.tmp}/java/out/mps-behavior-runtime" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4804,7 +4804,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-behavior-api" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-behavior-api" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${mps_home}/core/aspects/behavior/behavior-api/source" />
     <mkdir dir="${build.tmp}/java/out/mps-behavior-api" />
     <javac2 destdir="${build.tmp}/java/out/mps-behavior-api" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -4838,7 +4838,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-kernel" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-kernel" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${build.tmp}/java/out/mps-kernel" />
     <javac2 destdir="${build.tmp}/java/out/mps-kernel" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -4901,7 +4901,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.vfs" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.util-core, fetchDependencies">
+  <target name="java.compile.vfs" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.util-core">
     <mkdir dir="${build.tmp}/java/out/vfs" />
     <javac2 destdir="${build.tmp}/java/out/vfs" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -4923,7 +4923,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-core-components" depends="java.compile.mps-annotations, fetchDependencies">
+  <target name="java.compile.mps-core-components" depends="java.compile.mps-annotations">
     <mkdir dir="${build.tmp}/java/out/mps-core-components" />
     <javac2 destdir="${build.tmp}/java/out/mps-core-components" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -4939,7 +4939,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-core" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, fetchDependencies">
+  <target name="java.compile.mps-core" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt">
     <mkdir dir="${build.tmp}/java/out/mps-core" />
     <javac2 destdir="${build.tmp}/java/out/mps-core" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -4976,7 +4976,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.java.modules.cycle.3" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, fetchDependencies">
+  <target name="java.compile.java.modules.cycle.3" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator">
     <mkdir dir="${build.tmp}/java.modules.cycle.3" />
     <javac destdir="${build.tmp}/java.modules.cycle.3" fork="true" encoding="utf8" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -5016,7 +5016,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.mps-make-rt" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, java.compile.java.modules.cycle.3, fetchDependencies">
+  <target name="java.compile.mps-make-rt" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, java.compile.java.modules.cycle.3">
     <mkdir dir="${build.tmp}/java/out/mps-make-rt" />
     <javac2 destdir="${build.tmp}/java/out/mps-make-rt" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5063,7 +5063,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.kernel-resources" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, java.compile.java.modules.cycle.3, fetchDependencies">
+  <target name="java.compile.kernel-resources" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, java.compile.java.modules.cycle.3">
     <mkdir dir="${build.tmp}/java/out/kernel-resources" />
     <javac2 destdir="${build.tmp}/java/out/kernel-resources" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5100,7 +5100,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-debuginfo-api" depends="java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, fetchDependencies">
+  <target name="java.compile.mps-debuginfo-api" depends="java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel">
     <mkdir dir="${build.tmp}/java/out/mps-debuginfo-api" />
     <javac2 destdir="${build.tmp}/java/out/mps-debuginfo-api" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5127,7 +5127,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-generator" depends="java.compile.mps-debuginfo-api, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-generator" depends="java.compile.mps-debuginfo-api, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${build.tmp}/java/out/mps-generator" />
     <javac2 destdir="${build.tmp}/java/out/mps-generator" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5165,7 +5165,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-project" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-project" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${build.tmp}/java/out/mps-project" />
     <javac2 destdir="${build.tmp}/java/out/mps-project" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5196,7 +5196,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-textgen" depends="java.compile.mps-debuginfo-api, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-textgen" depends="java.compile.mps-debuginfo-api, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${build.tmp}/java/out/mps-textgen" />
     <javac2 destdir="${build.tmp}/java/out/mps-textgen" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5228,7 +5228,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-smodel" depends="java.compile.mps-core-components, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, fetchDependencies">
+  <target name="java.compile.mps-smodel" depends="java.compile.mps-core-components, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.vfs, java.compile.util-core">
     <mkdir dir="${build.tmp}/java/out/mps-smodel" />
     <javac2 destdir="${build.tmp}/java/out/mps-smodel" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5252,7 +5252,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.util-core" depends="java.compile.mps-annotations, java.compile.mps-openapi, fetchDependencies">
+  <target name="java.compile.util-core" depends="java.compile.mps-annotations, java.compile.mps-openapi">
     <mkdir dir="${build.tmp}/java/out/util-core" />
     <javac2 destdir="${build.tmp}/java/out/util-core" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5271,7 +5271,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-persistence" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-persistence" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.java.modules.cycle.2">
     <mkdir dir="${mps_home}/core/persistence/source" />
     <mkdir dir="${mps_home}/core/persistence/source_gen" />
     <mkdir dir="${mps_home}/core/java-stub/source" />
@@ -5314,7 +5314,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-migration" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, fetchDependencies">
+  <target name="java.compile.mps-migration" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence">
     <mkdir dir="${build.tmp}/java/out/mps-migration" />
     <javac2 destdir="${build.tmp}/java/out/mps-migration" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5355,7 +5355,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-editor-api" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, fetchDependencies">
+  <target name="java.compile.mps-editor-api" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel">
     <mkdir dir="${mps_home}/editor/editor-api/source" />
     <mkdir dir="${build.tmp}/java/out/mps-editor-api" />
     <javac2 destdir="${build.tmp}/java/out/mps-editor-api" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -5392,7 +5392,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-editorlang-runtime" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editor-api, fetchDependencies">
+  <target name="java.compile.mps-editorlang-runtime" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editor-api">
     <mkdir dir="${mps_home}/editor/editorlang-runtime/source" />
     <mkdir dir="${mps_home}/editor/editorlang-runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-editorlang-runtime" />
@@ -5433,7 +5433,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.ant-mps" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, fetchDependencies">
+  <target name="java.compile.ant-mps" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment">
     <mkdir dir="${mps_home}/core/tool/common/source_gen" />
     <mkdir dir="${mps_home}/core/tool/ant/source_gen" />
     <mkdir dir="${build.tmp}/java/out/ant-mps" />
@@ -5462,7 +5462,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-environment" depends="java.compile.mps-project, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, fetchDependencies">
+  <target name="java.compile.mps-environment" depends="java.compile.mps-project, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt">
     <mkdir dir="${mps_home}/core/tool/environment/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-environment" />
     <javac2 destdir="${build.tmp}/java/out/mps-environment" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -5506,7 +5506,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-tool" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-generator, fetchDependencies">
+  <target name="java.compile.mps-tool" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-generator">
     <mkdir dir="${mps_home}/core/tool/builder/source_gen" />
     <mkdir dir="${mps_home}/core/tool/common/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-tool" />
@@ -5557,7 +5557,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.platform" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-core-components, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-debuginfo-api, java.compile.mps-textgen, fetchDependencies">
+  <target name="java.compile.platform" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-core-components, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-debuginfo-api, java.compile.mps-textgen">
     <mkdir dir="${build.tmp}/java/out/platform" />
     <javac2 destdir="${build.tmp}/java/out/platform" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5596,7 +5596,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, java.compile.platform, java.compile.mps-environment, java.compile.mps-migration, fetchDependencies">
+  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, java.compile.platform, java.compile.mps-environment, java.compile.mps-migration">
     <mkdir dir="${build.tmp}/java/out/mps-platform" />
     <javac2 destdir="${build.tmp}/java/out/mps-platform" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5654,7 +5654,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-ui" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-debuginfo-api, fetchDependencies">
+  <target name="java.compile.mps-ui" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-debuginfo-api">
     <mkdir dir="${mps_home}/workbench/mps-ui/source" />
     <mkdir dir="${mps_home}/workbench/mps-ui/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-ui" />
@@ -5727,7 +5727,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-debugger" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, fetchDependencies">
+  <target name="java.compile.mps-debugger" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor">
     <mkdir dir="${mps_home}/workbench/mps-debugger/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-debugger" />
     <javac2 destdir="${build.tmp}/java/out/mps-debugger" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -5777,7 +5777,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-editor" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-ui, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-icons, fetchDependencies">
+  <target name="java.compile.mps-editor" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-ui, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-icons">
     <mkdir dir="${build.tmp}/java/out/mps-editor" />
     <javac2 destdir="${build.tmp}/java/out/mps-editor" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5843,7 +5843,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-test" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-tool, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, fetchDependencies">
+  <target name="java.compile.mps-test" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-tool, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform">
     <mkdir dir="${build.tmp}/java/out/mps-test" />
     <javac2 destdir="${build.tmp}/java/out/mps-test" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -5889,7 +5889,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.mps.runner.runtime" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-platform, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.mps-tool, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.mps.runner.runtime" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-core, java.compile.mps-persistence, java.compile.platform, java.compile.mps-environment, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-platform, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.mps-tool">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.runtime" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.runtime" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -9508,7 +9508,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.menus.extras.runtime" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-debuginfo-api, java.compile.mps-textgen, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.editor.menus.extras.runtime" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-debuginfo-api, java.compile.mps-textgen">
     <mkdir dir="${mps_home}/languages/languageDesign/editor.menus.extras/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.extras.runtime" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.menus.extras.runtime" fork="false" encoding="utf8" includeantruntime="false" debug="true">
