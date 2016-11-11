@@ -16,6 +16,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.constraints.DefaultClassifierFieldDeclaration_Constraints" file="DefaultClassifierFieldDeclaration_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -83,6 +84,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.constraints.SuperClassifierExpresson_Constraints" file="SuperClassifierExpresson_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -96,6 +98,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.constraints.ThisClassifierExpression_Constraints" file="ThisClassifierExpression_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />

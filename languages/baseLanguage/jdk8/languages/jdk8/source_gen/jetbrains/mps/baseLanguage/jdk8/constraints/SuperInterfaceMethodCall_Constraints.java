@@ -42,7 +42,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -110,7 +110,8 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:cdd73e8d-6dad-4dc5-a775-85eb769628e7(jetbrains.mps.baseLanguage.jdk8.constraints)", "2043122710974594130");

@@ -34,7 +34,7 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -74,7 +74,8 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "6496299201655590931");

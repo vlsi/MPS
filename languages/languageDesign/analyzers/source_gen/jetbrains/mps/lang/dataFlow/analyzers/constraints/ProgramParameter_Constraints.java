@@ -23,7 +23,7 @@ public class ProgramParameter_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -31,7 +31,8 @@ public class ProgramParameter_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")) && SNodeOperations.hasRole(ListSequence.fromList(SNodeOperations.getNodeAncestors(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), true)).last(), MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x449938e788ee338aL, "actions"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "3727642986272245366");

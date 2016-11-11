@@ -23,7 +23,7 @@ public class ThisEditorNodeExpression_Constraints extends BaseConstraintsDescrip
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -31,7 +31,8 @@ public class ThisEditorNodeExpression_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getNodeAncestorsWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery")}, true) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1220375669567134127");

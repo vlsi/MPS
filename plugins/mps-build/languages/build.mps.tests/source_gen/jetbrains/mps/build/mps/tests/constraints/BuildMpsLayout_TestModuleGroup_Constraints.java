@@ -38,7 +38,7 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -80,7 +80,8 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "8574011380873424208");

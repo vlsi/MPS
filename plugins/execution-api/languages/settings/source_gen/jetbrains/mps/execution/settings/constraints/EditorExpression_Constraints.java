@@ -39,7 +39,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -76,7 +76,8 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), true, false) != null);
   }
   private static SNode createTemplatePersistentConfigurationType_lq9qwe_b0a0a0a0a0a0() {

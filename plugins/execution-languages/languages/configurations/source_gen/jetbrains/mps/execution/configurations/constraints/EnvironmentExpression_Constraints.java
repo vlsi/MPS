@@ -22,7 +22,7 @@ public class EnvironmentExpression_Constraints extends BaseConstraintsDescriptor
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -30,7 +30,8 @@ public class EnvironmentExpression_Constraints extends BaseConstraintsDescriptor
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x220f4a2c4aff4248L, "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction"), true, false) != null) || (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5532ce3cbd91002cL, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "33324785353658740");

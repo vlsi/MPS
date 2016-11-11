@@ -24,7 +24,7 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -38,7 +38,7 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+    boolean result = staticCanBeAParent_Old(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -46,10 +46,12 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
   }
-  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))) {
       return false;
     }

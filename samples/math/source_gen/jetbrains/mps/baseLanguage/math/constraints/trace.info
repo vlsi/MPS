@@ -151,36 +151,36 @@
     <file name="MatrixIndexWildcard_Constraints.java">
       <node id="964810815943407926" at="17,44,18,169" concept="10" />
       <node id="964810815943407926" at="22,43,23,16" concept="6" />
-      <node id="964810815943407926" at="26,200,27,96" concept="5" />
-      <node id="964810815943407926" at="27,96,28,0" concept="7" />
+      <node id="964810815943407926" at="26,200,27,99" concept="5" />
+      <node id="964810815943407926" at="27,99,28,0" concept="7" />
       <node id="964810815943407926" at="29,51,30,67" concept="2" />
       <node id="964810815943407926" at="31,5,32,0" concept="7" />
       <node id="964810815943407926" at="32,0,33,18" concept="6" />
-      <node id="964810815943408825" at="36,223,37,19" concept="6" />
-      <node id="964810815943408830" at="38,12,39,221" concept="5" />
-      <node id="964810815943408843" at="39,221,40,402" concept="6" />
-      <node id="964810815943407926" at="43,0,44,0" concept="8" trace="canBeChildBreakingPoint" />
+      <node id="964810815943408825" at="37,223,38,19" concept="6" />
+      <node id="964810815943408830" at="39,12,40,221" concept="5" />
+      <node id="964810815943408843" at="40,221,41,402" concept="6" />
+      <node id="964810815943407926" at="44,0,45,0" concept="8" trace="canBeChildBreakingPoint" />
       <node id="964810815943407926" at="17,0,20,0" concept="1" trace="MatrixIndexWildcard_Constraints#()V" />
       <node id="964810815943407926" at="28,0,31,5" concept="3" />
-      <node id="964810815943408828" at="38,10,41,5" concept="0" />
+      <node id="964810815943408828" at="39,10,42,5" concept="0" />
       <node id="964810815943407926" at="21,0,25,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
-      <node id="964810815943408815" at="35,148,41,5" concept="3" />
-      <node id="964810815943407926" at="35,0,43,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="964810815943408815" at="36,152,42,5" concept="3" />
+      <node id="964810815943407926" at="35,0,44,0" concept="9" trace="staticCanBeAChild_Old#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="964810815943407926" at="25,0,35,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
       <scope id="964810815943407926" at="17,44,18,169" />
       <scope id="964810815943407926" at="22,43,23,16" />
       <scope id="964810815943407926" at="29,51,30,67" />
-      <scope id="964810815943408816" at="36,223,37,19" />
-      <scope id="964810815943408829" at="38,12,40,402">
+      <scope id="964810815943408816" at="37,223,38,19" />
+      <scope id="964810815943408829" at="39,12,41,402">
         <var name="expr" id="964810815943408831" />
       </scope>
       <scope id="964810815943407926" at="17,0,20,0" />
       <scope id="964810815943407926" at="21,0,25,0" />
-      <scope id="964810815943407928" at="35,148,41,5" />
+      <scope id="964810815943407928" at="36,152,42,5" />
       <scope id="964810815943407926" at="26,200,33,18">
         <var name="result" id="964810815943407926" />
       </scope>
-      <scope id="964810815943407926" at="35,0,43,0">
+      <scope id="964810815943407926" at="35,0,44,0">
         <var name="childConcept" id="964810815943407926" />
         <var name="link" id="964810815943407926" />
         <var name="node" id="964810815943407926" />
@@ -195,7 +195,7 @@
         <var name="operationContext" id="964810815943407926" />
         <var name="parentNode" id="964810815943407926" />
       </scope>
-      <unit id="964810815943407926" at="16,0,45,0" name="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints" />
+      <unit id="964810815943407926" at="16,0,46,0" name="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints" />
     </file>
   </root>
   <root nodeRef="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)/964810815943559912">

@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
@@ -56,8 +57,8 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
   @Override
-  public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeARoot(model, context);
+  public boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = staticCanBeARoot(model, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
@@ -91,7 +92,7 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
+  private static boolean staticCanBeARoot(SModel model, final IOperationContext operationContext) {
     return SModuleOperations.isAspect(model, "structure") || SModelStereotype.isGeneratorModel(model);
   }
   private static SNodePointer breakingNode_8geshg_a0a0a0a0a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216515363");

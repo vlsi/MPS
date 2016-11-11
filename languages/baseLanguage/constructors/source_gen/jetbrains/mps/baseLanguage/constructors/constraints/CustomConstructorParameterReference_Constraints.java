@@ -36,7 +36,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -50,7 +50,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
   }
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+    boolean result = staticCanBeAParent_Old(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -92,10 +92,12 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return true;
   }
-  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return true;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369207575");

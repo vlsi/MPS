@@ -12,6 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.doubleDispatch.constraints.DispatchModifier_Constraints" file="DispatchModifier_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

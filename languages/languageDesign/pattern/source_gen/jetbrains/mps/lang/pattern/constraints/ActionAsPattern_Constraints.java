@@ -24,7 +24,7 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+    boolean result = staticCanBeAParent_Old(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -32,7 +32,8 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, 0x3d3ef1fc1814cb59L, "action"))) {
       return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1815d960L, "jetbrains.mps.lang.pattern.structure.ActionStatement"));
     }

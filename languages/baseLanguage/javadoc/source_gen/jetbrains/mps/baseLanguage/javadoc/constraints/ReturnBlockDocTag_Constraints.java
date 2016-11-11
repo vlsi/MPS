@@ -25,7 +25,7 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -33,7 +33,8 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-  public static boolean static_canBeAChild(final SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(final SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (!(SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")))) {
       return false;
     }

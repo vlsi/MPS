@@ -18,6 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.query.constraints.QueryParameter_Constraints" file="QueryParameter_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

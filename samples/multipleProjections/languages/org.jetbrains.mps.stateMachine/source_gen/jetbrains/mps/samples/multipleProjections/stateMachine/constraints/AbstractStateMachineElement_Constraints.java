@@ -22,7 +22,7 @@ public class AbstractStateMachineElement_Constraints extends BaseConstraintsDesc
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -30,7 +30,8 @@ public class AbstractStateMachineElement_Constraints extends BaseConstraintsDesc
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3337c730-5e29-47e4-8453-e911897300b4(jetbrains.mps.samples.multipleProjections.stateMachine.constraints)", "7943979732673457902");

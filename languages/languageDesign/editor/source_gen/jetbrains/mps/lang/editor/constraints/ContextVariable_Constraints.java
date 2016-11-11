@@ -27,7 +27,7 @@ public class ContextVariable_Constraints extends BaseConstraintsDescriptor {
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -35,7 +35,8 @@ public class ContextVariable_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SConcept cc = (SConcept) SNodeOperations.asSConcept(childConcept);
     final SAbstractConcept providerConcept = ContextVariable__BehaviorDescriptor.getProviderConcept_idaxxf7pcCKs.invoke(SNodeOperations.asSConcept(cc));
     return providerConcept != null && ListSequence.fromList(SNodeOperations.getNodeAncestors(parentNode, null, true)).any(new IWhereFilter<SNode>() {

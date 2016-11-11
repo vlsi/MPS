@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints" file="BuildMpsLayout_TestModuleGroup_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -28,6 +29,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints" file="BuildMpsLayout_TestModule_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -52,6 +54,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints" file="BuildMpsLayout_TestModules_Constraints.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
