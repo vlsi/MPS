@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
@@ -63,7 +63,7 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "6694311595176645018"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5ce6f8ed8648519aL, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

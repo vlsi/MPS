@@ -24,7 +24,7 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
   public check_UnqualifiedStaticFieldReference_NonTypesystemRule() {
   }
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(varRef)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")))) {
+    if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(varRef)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")))) {
       return;
     }
 
@@ -37,7 +37,7 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
       return;
     }
 
-    Scope varScope = Scope.getScope(varRef, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode());
+    Scope varScope = Scope.getScope(varRef, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     if (varScope.contains(target)) {
       // it's ok, no need to worry 
       return;

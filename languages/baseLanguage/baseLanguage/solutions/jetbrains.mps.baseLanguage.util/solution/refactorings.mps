@@ -434,9 +434,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -13608,8 +13605,8 @@
         <node concept="3clFbJ" id="7l_6fisOrcg" role="3cqZAp">
           <node concept="2OqwBi" id="7j7euajlZCN" role="3clFbw">
             <node concept="2YIFZM" id="7j7euajlZBS" role="2Oq$k0">
-              <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+              <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
               <node concept="2YIFZM" id="7j7euajlZBY" role="37wK5m">
                 <ref role="37wK5l" to="o8zo:3fifI_xCtPZ" resolve="parent" />
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
@@ -13620,8 +13617,8 @@
               <node concept="37vLTw" id="2BHiRxglrEL" role="37wK5m">
                 <ref role="3cqZAo" node="3u7EY3u25m_" resolve="node" />
               </node>
-              <node concept="3TUQnm" id="7j7euajlZCq" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
+              <node concept="35c_gC" id="EB2Sz2Sr$i" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
               </node>
             </node>
             <node concept="liA8E" id="7j7euajlZCU" role="2OqNvi">
@@ -18391,7 +18388,7 @@
             </node>
             <node concept="2YIFZM" id="3bmz3KN2vl3" role="33vP2m">
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-              <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
+              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
               <node concept="37vLTw" id="3bmz3KN2vl4" role="37wK5m">
                 <ref role="3cqZAo" node="7nrhK3uHfap" resolve="statement" />
               </node>
@@ -18404,8 +18401,8 @@
                 </node>
                 <node concept="2bSWHS" id="3bmz3KN2vl8" role="2OqNvi" />
               </node>
-              <node concept="3TUQnm" id="3bmz3KN2vl9" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
+              <node concept="35c_gC" id="EB2Sz2RNUw" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
               </node>
             </node>
           </node>

@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -45,7 +44,7 @@ public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SNodeOperations.getNode("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)", "5617550519002745375"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

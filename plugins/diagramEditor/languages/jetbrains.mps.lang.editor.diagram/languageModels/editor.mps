@@ -397,6 +397,9 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -1932,11 +1935,11 @@
               </node>
               <node concept="2YIFZM" id="1wEcoXjJky1" role="33vP2m">
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
+                <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
                 <node concept="3bvxqY" id="1wEcoXjJkyq" role="37wK5m" />
                 <node concept="1yR$tW" id="1wEcoXjJkyr" role="37wK5m" />
-                <node concept="3TUQnm" id="1wEcoXjJky4" role="37wK5m">
-                  <ref role="3TV0OU" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+                <node concept="35c_gC" id="EB2Sz2SONG" role="37wK5m">
+                  <ref role="35c_gD" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                 </node>
               </node>
             </node>
@@ -2081,12 +2084,12 @@
                 <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
               </node>
               <node concept="2YIFZM" id="1wEcoXjJk$Q" role="33vP2m">
-                <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+                <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
                 <node concept="3bvxqY" id="1wEcoXjJk_f" role="37wK5m" />
                 <node concept="1yR$tW" id="1wEcoXjJk_g" role="37wK5m" />
-                <node concept="3TUQnm" id="1wEcoXjJk$T" role="37wK5m">
-                  <ref role="3TV0OU" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+                <node concept="35c_gC" id="EB2Sz2SOpE" role="37wK5m">
+                  <ref role="35c_gD" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
                 </node>
               </node>
             </node>

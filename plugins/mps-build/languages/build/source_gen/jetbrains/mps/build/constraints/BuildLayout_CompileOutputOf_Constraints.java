@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDescriptor {
@@ -61,7 +61,7 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SNodeOperations.getNode("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)", "2591537044435828007"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd27L, "jetbrains.mps.build.structure.BuildSource_CompilablePart"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

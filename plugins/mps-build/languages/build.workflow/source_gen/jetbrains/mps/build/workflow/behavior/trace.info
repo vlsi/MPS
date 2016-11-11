@@ -748,9 +748,9 @@
     <file name="BwfSubTask__BehaviorDescriptor.java">
       <node id="3961775458390497598" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="3961775458390497598" at="28,0,29,0" concept="8" trace="REGISTRY" />
-      <node id="3961775458390497598" at="30,0,31,0" concept="8" trace="getScope_id3fifI_xCJOQ" />
+      <node id="3961775458390497598" at="30,0,31,0" concept="8" trace="getScope_id52_Geb4QDV$" />
       <node id="3961775458390497598" at="32,0,33,0" concept="8" trace="BH_METHODS" />
-      <node id="3961775458390497644" at="38,185,39,96" concept="5" />
+      <node id="3961775458390497644" at="38,164,39,96" concept="5" />
       <node id="3961775458390497859" at="40,26,41,45" concept="5" />
       <node id="3961775458390497847" at="44,49,45,37" concept="6" />
       <node id="3961775458390497626" at="49,5,50,16" concept="6" />
@@ -758,7 +758,7 @@
       <node id="3961775458390497598" at="58,114,59,21" concept="1" />
       <node id="3961775458390497598" at="63,114,64,49" concept="5" />
       <node id="3961775458390497598" at="65,26,66,56" concept="12" />
-      <node id="3961775458390497598" at="69,13,70,104" concept="6" />
+      <node id="3961775458390497598" at="69,13,70,115" concept="6" />
       <node id="3961775458390497598" at="71,14,72,58" concept="12" />
       <node id="3961775458390497598" at="77,128,78,49" concept="5" />
       <node id="3961775458390497598" at="79,26,80,56" concept="12" />
@@ -778,15 +778,15 @@
       <node id="3961775458390497598" at="67,5,73,5" concept="11" />
       <node id="3961775458390497655" at="39,96,48,7" concept="3" />
       <node id="3961775458390497598" at="76,0,87,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <node id="3961775458390497617" at="37,105,49,5" concept="3" />
+      <node id="3961775458390497617" at="37,116,49,5" concept="3" />
       <node id="3961775458390497598" at="62,0,75,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <node id="3961775458390497598" at="37,0,52,0" concept="9" trace="getScope_id3fifI_xCJOQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="3961775458390497598" at="37,0,52,0" concept="9" trace="getScope_id52_Geb4QDV$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <scope id="3961775458390497598" at="34,63,34,63" />
       <scope id="3961775458390497839" at="44,49,45,37" />
       <scope id="3961775458390497598" at="53,48,54,20" />
       <scope id="3961775458390497598" at="58,114,59,21" />
       <scope id="3961775458390497598" at="65,26,66,56" />
-      <scope id="3961775458390497598" at="69,13,70,104" />
+      <scope id="3961775458390497598" at="69,13,70,115" />
       <scope id="3961775458390497598" at="71,14,72,58" />
       <scope id="3961775458390497598" at="79,26,80,56" />
       <scope id="3961775458390497598" at="83,14,84,58" />
@@ -812,7 +812,7 @@
       <scope id="3961775458390497598" at="77,128,85,5">
         <var name="methodIndex" id="3961775458390497598" />
       </scope>
-      <scope id="3961775458390497619" at="38,185,48,7">
+      <scope id="3961775458390497619" at="38,164,48,7">
         <var name="scope" id="3961775458390497645" />
       </scope>
       <scope id="3961775458390497598" at="63,114,73,5">
@@ -823,7 +823,7 @@
         <var name="method" id="3961775458390497598" />
         <var name="parameters" id="3961775458390497598" />
       </scope>
-      <scope id="3961775458390497603" at="37,105,50,16" />
+      <scope id="3961775458390497603" at="37,116,50,16" />
       <scope id="3961775458390497598" at="62,0,75,0">
         <var name="method" id="3961775458390497598" />
         <var name="node" id="3961775458390497598" />
@@ -831,8 +831,8 @@
       </scope>
       <scope id="3961775458390497598" at="37,0,52,0">
         <var name="__thisNode__" id="3961775458390497598" />
-        <var name="child" id="3961775458390497606" />
-        <var name="kind" id="3961775458390497604" />
+        <var name="child" id="767594943503000168" />
+        <var name="kind" id="767594943503000166" />
       </scope>
       <unit id="3961775458390497833" at="42,19,47,9" name="jetbrains.mps.build.workflow.behavior.BwfSubTask__BehaviorDescriptor$1" />
       <unit id="3961775458390497598" at="26,0,100,0" name="jetbrains.mps.build.workflow.behavior.BwfSubTask__BehaviorDescriptor" />

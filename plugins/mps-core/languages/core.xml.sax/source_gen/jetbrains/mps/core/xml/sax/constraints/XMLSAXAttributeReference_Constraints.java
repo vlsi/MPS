@@ -75,7 +75,7 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SNodeOperations.getNode("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)", "2264311582634140363"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

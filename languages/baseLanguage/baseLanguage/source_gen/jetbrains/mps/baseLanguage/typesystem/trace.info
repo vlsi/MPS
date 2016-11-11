@@ -14542,7 +14542,7 @@
       <node id="3151797052699686251" at="28,5,29,39" concept="12" />
       <node id="3151797052700041722" at="30,202,31,13" concept="13" />
       <node id="3151797052699686265" at="32,5,33,0" concept="15" />
-      <node id="1812280377806414751" at="33,0,34,267" concept="12" />
+      <node id="1812280377806414751" at="33,0,34,246" concept="12" />
       <node id="276116881027784014" at="35,36,36,13" concept="13" />
       <node id="1812280377806424718" at="38,45,39,13" concept="13" />
       <node id="1812280377806301402" at="40,5,41,0" concept="15" />
@@ -14559,7 +14559,7 @@
       <node id="3151797052703959690" at="22,0,24,0" concept="3" trace="check_UnqualifiedStaticCall_NonTypesystemRule#()V" />
       <node id="3151797052699686244" at="25,196,28,5" concept="10" />
       <node id="3151797052699686257" at="29,39,32,5" concept="10" />
-      <node id="276116881027783410" at="34,267,37,5" concept="10" />
+      <node id="276116881027783410" at="34,246,37,5" concept="10" />
       <node id="1812280377806420611" at="37,5,40,5" concept="10" />
       <node id="3151797052703959690" at="54,0,57,0" concept="11" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="3151797052703959690" at="57,0,60,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -17990,14 +17990,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/4988876389104043061">
     <file name="check_UnqualifiedStaticFieldReference_NonTypesystemRule.java">
-      <node id="5720123378804533472" at="27,263,28,13" concept="13" />
+      <node id="5720123378804533472" at="27,252,28,13" concept="13" />
       <node id="5720123378804458365" at="29,5,30,0" concept="15" />
       <node id="4988876389104060650" at="30,0,31,190" concept="12" />
       <node id="4988876389104060660" at="32,44,33,13" concept="13" />
       <node id="4988876389104060665" at="34,5,35,39" concept="12" />
       <node id="4988876389104060673" at="36,201,37,13" concept="13" />
       <node id="6789800444984725832" at="38,5,39,0" concept="15" />
-      <node id="6789800444984683869" at="39,0,40,219" concept="12" />
+      <node id="6789800444984683869" at="39,0,40,198" concept="12" />
       <node id="6789800444984710610" at="41,36,42,35" concept="14" />
       <node id="6789800444984705007" at="42,35,43,13" concept="13" />
       <node id="6789800444985569896" at="44,5,45,0" concept="15" />
@@ -18022,12 +18022,12 @@
       <node id="4988876389104043061" at="62,0,65,0" concept="11" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4988876389104043061" at="65,0,68,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4988876389104043061" at="68,0,71,0" concept="11" trace="overrides#()Z" />
-      <node id="6789800444984691373" at="40,219,44,5" concept="10" />
+      <node id="6789800444984691373" at="40,198,44,5" concept="10" />
       <node id="4988876389104060746" at="54,259,59,7" concept="1" />
       <node id="4988876389104060746" at="51,0,60,5" concept="1" />
       <node id="4988876389104043061" at="26,0,62,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4988876389104043061" at="24,68,24,68" />
-      <scope id="5720123378804460266" at="27,263,28,13" />
+      <scope id="5720123378804460266" at="27,252,28,13" />
       <scope id="4988876389104060659" at="32,44,33,13" />
       <scope id="4988876389104060672" at="36,201,37,13" />
       <scope id="4988876389104043061" at="62,50,63,156" />
@@ -20259,8 +20259,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6654001062452780370">
     <file name="CheckVariableDoubling_NonTypesystemRule.java">
-      <node id="893319872200366914" at="27,137,28,277" concept="12" />
-      <node id="3300216939609170041" at="28,277,29,37" concept="12" />
+      <node id="893319872200366914" at="27,137,28,256" concept="12" />
+      <node id="3300216939609170041" at="28,256,29,37" concept="12" />
       <node id="3300216939609202000" at="32,41,33,198" concept="13" />
       <node id="3300216939609202077" at="36,39,37,190" concept="13" />
       <node id="3300216939609201948" at="40,41,41,364" concept="13" />

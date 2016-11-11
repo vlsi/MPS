@@ -347,6 +347,9 @@
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
@@ -5333,7 +5336,7 @@
                     </node>
                     <node concept="2YIFZM" id="37YPOYhWSUG" role="33vP2m">
                       <ref role="1Pybhc" to="35tq:~Scope" resolve="Scope" />
-                      <ref role="37wK5l" to="35tq:~Scope.getScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.scope.Scope" resolve="getScope" />
+                      <ref role="37wK5l" to="35tq:~Scope.getScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.scope.Scope" resolve="getScope" />
                       <node concept="2OqwBi" id="37YPOYhWSUH" role="37wK5m">
                         <node concept="37vLTw" id="2BHiRxghg_6" role="2Oq$k0">
                           <ref role="3cqZAo" node="59r$iG97NUL" resolve="_context" />
@@ -5358,25 +5361,22 @@
                           <ref role="37wK5l" to="ze1i:~ReferenceConstraintsContext.getPosition():int" resolve="getPosition" />
                         </node>
                       </node>
-                      <node concept="3B5_sB" id="5VcKDTTjEFK" role="37wK5m">
-                        <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                        <node concept="1ZhdrF" id="5VcKDTTjETI" role="lGtFl">
-                          <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1219352745532/1219352800908" />
-                          <property role="2qtEX8" value="referentNode" />
-                          <node concept="3$xsQk" id="5VcKDTTjETJ" role="3$ytzL">
-                            <node concept="3clFbS" id="5VcKDTTjETK" role="2VODD2">
-                              <node concept="3clFbF" id="5VcKDTTjEW1" role="3cqZAp">
-                                <node concept="2OqwBi" id="37YPOYhWSUZ" role="3clFbG">
-                                  <node concept="1PxgMI" id="37YPOYhWSV0" role="2Oq$k0">
+                      <node concept="35c_gC" id="EB2Sz2NpZu" role="37wK5m">
+                        <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                        <node concept="1ZhdrF" id="EB2Sz2Nqi1" role="lGtFl">
+                          <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+                          <property role="2qtEX8" value="conceptDeclaration" />
+                          <node concept="3$xsQk" id="EB2Sz2Nqi2" role="3$ytzL">
+                            <node concept="3clFbS" id="EB2Sz2Nqi3" role="2VODD2">
+                              <node concept="3clFbF" id="EB2Sz2NqHE" role="3cqZAp">
+                                <node concept="2OqwBi" id="EB2Sz2NuVn" role="3clFbG">
+                                  <node concept="1PxgMI" id="EB2Sz2NtA8" role="2Oq$k0">
                                     <ref role="1m5ApE" to="tp1t:7ipADkTf7eM" resolve="InheritedNodeScopeFactory" />
-                                    <node concept="2OqwBi" id="37YPOYhWSV1" role="1m5AlR">
-                                      <node concept="1iwH7S" id="37YPOYhWSV2" role="2Oq$k0" />
-                                      <node concept="3cR$yn" id="37YPOYhWSV3" role="2OqNvi">
-                                        <ref role="3cRzXn" node="59r$iG97Ntm" resolve="factory" />
-                                      </node>
+                                    <node concept="v3LJS" id="EB2Sz2NqHD" role="1m5AlR">
+                                      <ref role="v3LJV" node="59r$iG97Ntm" resolve="factory" />
                                     </node>
                                   </node>
-                                  <node concept="3TrEf2" id="37YPOYhWSV4" role="2OqNvi">
+                                  <node concept="3TrEf2" id="EB2Sz2NvCi" role="2OqNvi">
                                     <ref role="3Tt5mk" to="tp1t:7ipADkTf7eN" resolve="kind" />
                                   </node>
                                 </node>

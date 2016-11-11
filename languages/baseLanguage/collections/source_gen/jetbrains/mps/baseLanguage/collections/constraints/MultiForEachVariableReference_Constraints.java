@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -45,7 +44,7 @@ public class MultiForEachVariableReference_Constraints extends BaseConstraintsDe
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "9042586985346099736"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea18L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

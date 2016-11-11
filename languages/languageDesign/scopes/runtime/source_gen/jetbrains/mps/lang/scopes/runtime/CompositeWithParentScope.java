@@ -4,8 +4,9 @@ package jetbrains.mps.lang.scopes.runtime;
 
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.scope.CompositeScope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -13,16 +14,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CompositeWithParentScope {
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope#from(Scope, SNode, SAbstractConcept) } instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static Scope from(Scope original, SNode node, SNode kind) {
     // todo: from? 
     Scope nextScope = Scope.getScope(Scope.parent(node), node, kind);
     return (nextScope == null ? original : new CompositeScope(original, nextScope));
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope#from(SNode, SNode, SAbstractConcept) } instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static Scope from(Iterable<SNode> elements, SNode node, SNode kind) {
-    return (elements != null ? from(new NamedElementsScope(elements), node, kind) : parentScope(node, kind));
+    return (elements != null ? from(new NamedElementsScope(elements), node, kind) : ScopeUtils.parentScope(node, kind));
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope#from(SNode, SNode, SAbstractConcept) } instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static Scope from(SNode element, SNode node, SNode kind) {
-    return ((element != null) ? from(new NamedElementsScope(element), node, kind) : parentScope(node, kind));
+    return ((element != null) ? from(new NamedElementsScope(element), node, kind) : ScopeUtils.parentScope(node, kind));
   }
   @Deprecated
   @ToRemove(version = 3.4)
@@ -34,7 +53,16 @@ public class CompositeWithParentScope {
       }
     }, node, kind);
   }
-  public static Scope parentScope(SNode node, SNode kind) {
-    return Scope.getScope(Scope.parent(node), node, kind);
+  public static Scope from(Scope original, SNode node, SAbstractConcept kind) {
+    // todo: from? 
+    Scope nextScope = ScopeUtils.parentScope(node, kind);
+    return (nextScope == null ? original : new CompositeScope(original, nextScope));
   }
+  public static Scope from(Iterable<SNode> elements, SNode node, SAbstractConcept kind) {
+    return (elements != null ? from(new NamedElementsScope(elements), node, kind) : ScopeUtils.parentScope(node, kind));
+  }
+  public static Scope from(SNode element, SNode node, SAbstractConcept kind) {
+    return ((element != null) ? from(new NamedElementsScope(element), node, kind) : ScopeUtils.parentScope(node, kind));
+  }
+
 }

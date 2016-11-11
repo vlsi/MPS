@@ -674,9 +674,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -9102,7 +9099,7 @@
               </node>
               <node concept="2YIFZM" id="1wEcoXjJD$Q" role="33vP2m">
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
+                <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
                 <node concept="3K4zz7" id="1wEcoXjJD$R" role="37wK5m">
                   <node concept="1yR$tW" id="1wEcoXjJD_y" role="3K4E3e" />
                   <node concept="3bvxqY" id="1wEcoXjJD_x" role="3K4GZi" />
@@ -9112,8 +9109,8 @@
                   </node>
                 </node>
                 <node concept="10Nm6u" id="1wEcoXjJD$X" role="37wK5m" />
-                <node concept="3TUQnm" id="1wEcoXjJD$Y" role="37wK5m">
-                  <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                <node concept="35c_gC" id="EB2Sz2Ss_S" role="37wK5m">
+                  <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                 </node>
               </node>
             </node>

@@ -46,7 +46,7 @@ public class BuildMpsLayout_ModuleJars_Constraints extends BaseConstraintsDescri
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope outer = Scope.getScope(Scope.parent(_context.getContextNode()), _context.getContextNode(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module").getDeclarationNode());
+              Scope outer = Scope.getScope(Scope.parent(_context.getContextNode()), _context.getContextNode(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
               return (outer == null ? null : new FilteringScope(outer) {
                 @Override
                 public boolean isExcluded(SNode node) {

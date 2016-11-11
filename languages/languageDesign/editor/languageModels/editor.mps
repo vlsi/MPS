@@ -23726,12 +23726,12 @@
                 <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
               </node>
               <node concept="2YIFZM" id="1wEcoXjJtv9" role="33vP2m">
-                <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+                <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
                 <node concept="3bvxqY" id="1wEcoXjJtvG" role="37wK5m" />
                 <node concept="1yR$tW" id="1wEcoXjJtvH" role="37wK5m" />
-                <node concept="3TUQnm" id="1wEcoXjJtvc" role="37wK5m">
-                  <ref role="3TV0OU" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
+                <node concept="35c_gC" id="EB2Sz2SLTf" role="37wK5m">
+                  <ref role="35c_gD" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
                 </node>
               </node>
             </node>

@@ -26464,7 +26464,7 @@
       <node id="1741258697587150618" at="727,66,728,50" concept="8" />
       <node id="1741258697587152752" at="730,85,731,39" concept="8" />
       <node id="1741258697587150618" at="738,100,739,159" concept="8" />
-      <node id="1741258697587152838" at="743,87,744,269" concept="7" />
+      <node id="1741258697587152838" at="743,87,744,248" concept="7" />
       <node id="1741258697587152850" at="745,26,746,39" concept="8" />
       <node id="1741258697587152858" at="749,39,750,194" concept="8" />
       <node id="1741258697587152870" at="753,41,754,28" concept="8" />
@@ -26492,7 +26492,7 @@
       <node id="1741258697587150618" at="642,0,645,0" concept="6" trace="canExecute_internal#(Ljava/lang/String;Z)Z" />
       <node id="1741258697587150618" at="686,0,689,0" concept="6" trace="canExecute_internal#(Ljava/lang/String;Z)Z" />
       <node id="1741258697587150618" at="730,0,733,0" concept="6" trace="canExecute_internal#(Ljava/lang/String;Z)Z" />
-      <node id="1741258697587152845" at="744,269,747,7" concept="5" />
+      <node id="1741258697587152845" at="744,248,747,7" concept="5" />
       <node id="1741258697587152856" at="749,0,752,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587152868" at="753,0,756,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1741258697587150618" at="760,0,763,0" concept="1" trace="SubstituteMenuPart_Action_le0q3j_a91#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

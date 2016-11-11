@@ -4,6 +4,7 @@ package jetbrains.mps.lang.scopes.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.scope.Scope;
 
 public class ScopeUtils {
@@ -18,10 +19,27 @@ public class ScopeUtils {
   public static boolean comeFrom(String expectedRole, SNode thisNode, String role, int index) {
     return expectedRole.equals(role);
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.ScopeUtils#parentScope(SNode, SAbstractConcept) } instead
+   */
+  @Deprecated
   public static Scope parentScope(SNode node, SNode kind) {
     return Scope.getScope(Scope.parent(node), node, kind);
   }
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.ScopeUtils#lazyParentScope(SNode, SAbstractConcept) } instead
+   */
+  @Deprecated
   public static Scope lazyParentScope(SNode node, SNode kind) {
+    return new LazyParentScope(node, SNodeOperations.asSConcept(kind));
+  }
+  public static Scope parentScope(SNode node, SAbstractConcept kind) {
+    return Scope.getScope(Scope.parent(node), node, kind);
+  }
+  public static Scope lazyParentScope(SNode node, SAbstractConcept kind) {
     return new LazyParentScope(node, kind);
   }
+
 }

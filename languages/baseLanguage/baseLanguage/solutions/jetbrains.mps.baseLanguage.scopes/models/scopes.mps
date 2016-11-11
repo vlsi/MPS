@@ -474,9 +474,6 @@
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -16110,8 +16107,8 @@
           <node concept="1rXfSq" id="4hiugqysqNM" role="3cqZAk">
             <ref role="37wK5l" node="vVNmRdKsAh" resolve="filterByConceptScope" />
             <node concept="2YIFZM" id="gVddlT4NA6" role="37wK5m">
-              <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
               <node concept="37vLTw" id="2BHiRxghg87" role="37wK5m">
                 <ref role="3cqZAo" node="gVddlT4OnU" resolve="contextNode" />
               </node>
@@ -16121,8 +16118,8 @@
               <node concept="37vLTw" id="2BHiRxgm9ac" role="37wK5m">
                 <ref role="3cqZAo" node="gVddlT4OnZ" resolve="position" />
               </node>
-              <node concept="3TUQnm" id="gVddlT4Ocs" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
+              <node concept="35c_gC" id="EB2Sz2RCFd" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
               </node>
             </node>
             <node concept="37vLTw" id="vVNmRdKvWU" role="37wK5m">
@@ -16179,8 +16176,8 @@
           <node concept="1rXfSq" id="4hiugqysqPq" role="3cqZAk">
             <ref role="37wK5l" node="vVNmRdKsAh" resolve="filterByConceptScope" />
             <node concept="2YIFZM" id="vVNmRdKvWX" role="37wK5m">
-              <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
               <node concept="37vLTw" id="2BHiRxgm9Kc" role="37wK5m">
                 <ref role="3cqZAo" node="vVNmRdKs_D" resolve="contextNode" />
               </node>
@@ -16190,8 +16187,8 @@
               <node concept="37vLTw" id="2BHiRxgmtys" role="37wK5m">
                 <ref role="3cqZAo" node="vVNmRdKs_J" resolve="position" />
               </node>
-              <node concept="3TUQnm" id="vVNmRdKvX1" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
+              <node concept="35c_gC" id="EB2Sz2RCKY" role="37wK5m">
+                <ref role="35c_gD" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
               </node>
             </node>
             <node concept="37vLTw" id="vVNmRdKvX2" role="37wK5m">

@@ -121,7 +121,7 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
+      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4656991770397278586" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole" flags="nn" index="$OBgH" />
@@ -130,7 +130,7 @@
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="1213100494875" name="referent" index="1Mr941" />
-        <child id="1213106463729" name="canBeChild" index="1MLUbF" />
+        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
         <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
@@ -159,6 +159,9 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -175,9 +178,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -215,7 +215,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="7rX0uLRY4Dj" role="1Mr941">
-      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" />
+      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" resolve="module" />
       <node concept="13QW63" id="7rX0uLRYOZE" role="1N6uqs">
         <node concept="3clFbS" id="7rX0uLRYOZG" role="2VODD2">
           <node concept="3clFbF" id="7rX0uLRZ9a7" role="3cqZAp">
@@ -228,12 +228,12 @@
                   <node concept="3Tm1VV" id="7rX0uLRZ9vn" role="1B3o_S" />
                   <node concept="2YIFZM" id="7rX0uLRZ682" role="37wK5m">
                     <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                    <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
+                    <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
                     <node concept="2rP1CM" id="7rX0uLRZ6db" role="37wK5m" />
                     <node concept="$OBgH" id="3umvbTBImKK" role="37wK5m" />
                     <node concept="$OBjv" id="7rX0uLRZ6qw" role="37wK5m" />
-                    <node concept="3TUQnm" id="7rX0uLRZ92z" role="37wK5m">
-                      <ref role="3TV0OU" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+                    <node concept="35c_gC" id="EB2Sz2RPBl" role="37wK5m">
+                      <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="7rX0uLRZ9M1" role="jymVt">
@@ -306,7 +306,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="3umvbTB_ti4" role="1Mr941">
-      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdG" />
+      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdG" resolve="group" />
       <node concept="13QW63" id="3umvbTB_tiO" role="1N6uqs">
         <node concept="3clFbS" id="3umvbTB_tiQ" role="2VODD2">
           <node concept="3clFbF" id="3umvbTB_tRT" role="3cqZAp">
@@ -319,12 +319,12 @@
                   <node concept="3Tm1VV" id="3umvbTB_tRY" role="1B3o_S" />
                   <node concept="2YIFZM" id="3umvbTB_tRZ" role="37wK5m">
                     <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                    <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
+                    <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
                     <node concept="2rP1CM" id="3umvbTB_tS0" role="37wK5m" />
                     <node concept="$OBgH" id="3umvbTBIqB2" role="37wK5m" />
                     <node concept="$OBjv" id="3umvbTB_tS2" role="37wK5m" />
-                    <node concept="3TUQnm" id="3umvbTB_tS3" role="37wK5m">
-                      <ref role="3TV0OU" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
+                    <node concept="35c_gC" id="EB2Sz2RORZ" role="37wK5m">
+                      <ref role="35c_gD" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="3umvbTB_tS4" role="jymVt">
@@ -378,7 +378,7 @@
                             </node>
                             <node concept="2OqwBi" id="3umvbTB_xPk" role="2Oq$k0">
                               <node concept="3Tsc0h" id="3umvbTB_zUa" role="2OqNvi">
-                                <ref role="3TtcxE" to="kdzh:1jjYQYSgYJu" />
+                                <ref role="3TtcxE" to="kdzh:1jjYQYSgYJu" resolve="modules" />
                               </node>
                               <node concept="1PxgMI" id="3umvbTB_tSg" role="2Oq$k0">
                                 <ref role="1m5ApE" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
@@ -534,7 +534,7 @@
                   <node concept="nLn13" id="5D0zVz8102O" role="1m5AlR" />
                 </node>
                 <node concept="3Tsc0h" id="5D0zVz8102$" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                  <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                 </node>
               </node>
               <node concept="2HwmR7" id="5D0zVz8102_" role="2OqNvi">

@@ -78,7 +78,7 @@ public class ResolveUnknownUtil {
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveLocalCall(final SNode x) {
     final Wrappers._T<SNode> call = new Wrappers._T<SNode>(null);
 
-    Scope methodsScope = Scope.getScope(SNodeOperations.getParent(x), x, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration").getDeclarationNode());
+    Scope methodsScope = Scope.getScope(SNodeOperations.getParent(x), x, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
 
     if (methodsScope == null) {
       return null;
@@ -312,7 +312,7 @@ public class ResolveUnknownUtil {
     return dotExpr;
   }
   public static SNode tryFirstTokenAsVarRef(SNode x) {
-    Scope scope = Scope.getScope(SNodeOperations.getParent(x), x, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode());
+    Scope scope = Scope.getScope(SNodeOperations.getParent(x), x, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     if (scope == null) {
       // TODO make it more informative 
       return null;

@@ -183,6 +183,9 @@
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -193,9 +196,6 @@
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -277,12 +277,12 @@
                 <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
               </node>
               <node concept="2YIFZM" id="1wEcoXjJ555" role="33vP2m">
-                <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+                <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
                 <node concept="3bvxqY" id="1wEcoXjJ55u" role="37wK5m" />
                 <node concept="1yR$tW" id="1wEcoXjJ55v" role="37wK5m" />
-                <node concept="3TUQnm" id="1wEcoXjJ558" role="37wK5m">
-                  <ref role="3TV0OU" to="tpee:7c4zijk9vdu" resolve="SuperInerfaceKind" />
+                <node concept="35c_gC" id="7PeWMFMTb47" role="37wK5m">
+                  <ref role="35c_gD" to="tpee:7c4zijk9vdu" resolve="SuperInerfaceKind" />
                 </node>
               </node>
             </node>

@@ -213,7 +213,7 @@
       <node id="1741258697587052859" at="37,140,38,102" concept="1" />
       <node id="1741258697587052859" at="38,102,39,18" concept="6" />
       <node id="1741258697587052859" at="44,100,45,165" concept="6" />
-      <node id="1741258697587052866" at="49,87,50,267" concept="5" />
+      <node id="1741258697587052866" at="49,87,50,246" concept="5" />
       <node id="1741258697587052875" at="51,26,52,39" concept="6" />
       <node id="1741258697587052889" at="55,39,56,182" concept="6" />
       <node id="1741258697587052859" at="61,0,62,0" concept="2" trace="myParameterObject" />
@@ -230,7 +230,7 @@
       <node id="1741258697587052926" at="95,64,96,196" concept="6" />
       <node id="1741258697587052964" at="100,67,101,96" concept="6" />
       <node id="1741258697587052859" at="31,0,34,0" concept="0" trace="SuperInterfaceMethodCall_Contribution#()V" />
-      <node id="1741258697587052873" at="50,267,53,7" concept="3" />
+      <node id="1741258697587052873" at="50,246,53,7" concept="3" />
       <node id="1741258697587052887" at="55,0,58,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587052859" at="62,0,65,0" concept="0" trace="SubstituteMenuPart_Action_73nkqx_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1741258697587052859" at="87,62,90,11" concept="3" />

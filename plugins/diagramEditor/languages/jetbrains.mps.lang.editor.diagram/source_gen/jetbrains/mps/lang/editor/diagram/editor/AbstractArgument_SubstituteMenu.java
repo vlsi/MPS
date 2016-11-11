@@ -48,7 +48,7 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      Scope linkDeclarationScope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration").getDeclarationNode());
+      Scope linkDeclarationScope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
       if (linkDeclarationScope == null) {
         return Collections.emptyList();
       }
@@ -121,7 +121,7 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      Scope propertyDeclarationScope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration").getDeclarationNode());
+      Scope propertyDeclarationScope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
       if (propertyDeclarationScope == null) {
         return Collections.emptyList();
       }

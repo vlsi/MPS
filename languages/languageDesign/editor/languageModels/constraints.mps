@@ -179,11 +179,11 @@
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="1148934636683" name="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" flags="nn" index="21POm0" />
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
+      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
-      <concept id="1203001093456" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" flags="in" index="osYL8" />
-      <concept id="1203001236505" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" flags="nn" index="otxO1" />
-      <concept id="1203009604308" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" flags="nn" index="oXsJc" />
+      <concept id="1203001093456" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent_Old" flags="in" index="osYL8" />
+      <concept id="1203001236505" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConceptNode" flags="nn" index="otxO1" />
+      <concept id="1203009604308" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkNode" flags="nn" index="oXsJc" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4656991770397278586" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole" flags="nn" index="$OBgH" />
       <concept id="4656991770397278600" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position" flags="nn" index="$OBjv" />
@@ -210,8 +210,8 @@
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
-        <child id="1213106463729" name="canBeChild" index="1MLUbF" />
-        <child id="1213106478122" name="canBeParent" index="1MLXOK" />
+        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
+        <child id="1213106478122" name="canBeParent_Old" index="1MLXOK" />
       </concept>
       <concept id="1148684180339" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" flags="in" index="1MUpDS" />
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -304,9 +304,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -2156,8 +2153,8 @@
               <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
             </node>
             <node concept="2YIFZM" id="2YuxGLzugEL" role="33vP2m">
-              <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
               <node concept="37vLTw" id="2YuxGLzuhmK" role="37wK5m">
                 <ref role="3cqZAo" node="2YuxGLzugYG" resolve="contextNode" />
               </node>
@@ -2167,8 +2164,8 @@
               <node concept="37vLTw" id="2YuxGLzui6v" role="37wK5m">
                 <ref role="3cqZAo" node="2YuxGLzuhIG" resolve="position" />
               </node>
-              <node concept="3TUQnm" id="2YuxGLzugEP" role="37wK5m">
-                <ref role="3TV0OU" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+              <node concept="35c_gC" id="EB2Sz2RQ64" role="37wK5m">
+                <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
               </node>
             </node>
           </node>

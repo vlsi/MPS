@@ -135,7 +135,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_6551427688186219815(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
-  public static Object referenceMacro_GetReferent_6831048720710020719(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_767594943501673602(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getVariable("factory")), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L, "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory")), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L, 0x74999a95393c73b3L, "kind"));
   }
   public static boolean ifMacro_Condition_7294282772021338867(final IfMacroContext _context) {
