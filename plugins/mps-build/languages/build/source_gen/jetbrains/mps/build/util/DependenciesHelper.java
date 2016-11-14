@@ -12,8 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.extapi.model.TransientSModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.generator.TransientModelsModule;
 
 public class DependenciesHelper {
   private final Map<SNode, String> locationMap;
@@ -175,12 +173,12 @@ public class DependenciesHelper {
   }
 
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
-    if (SNodeOperations.getModel(node) == null) {
-      return node;
-    }
-
-    SModule module = SNodeOperations.getModel(node).getModule();
-    if (module != null && !((module instanceof TransientModelsModule))) {
+    // node.model could be legitimately == null for a node from transient model which is already disposed. 
+    // however, we need to answer its original node anyway, or the whole build process would fail:  
+    // RequiredPlugins records transient nodes and getArtifact(node<>) needs to find out original node of that node. 
+    // If generation doesn't keep transient models (or uses in-place transformation), check for node.model==null here 
+    // would effectively prevent from using getArtifacts(recordedTransientNode). 
+    if (SNodeOperations.getModel(node) != null && !((SNodeOperations.getModel(node) instanceof TransientSModel))) {
       return node;
     }
 
@@ -191,11 +189,6 @@ public class DependenciesHelper {
     SNode originalNode = genContext.getOriginalCopiedInputNode(node);
     if ((originalNode == null)) {
       genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");
-      return null;
-    }
-
-    if (SNodeOperations.getModel(originalNode).getModule() instanceof TransientModelsModule) {
-      genContext.showErrorMessage(node, "internal error: cannot get original node");
       return null;
     }
 

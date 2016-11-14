@@ -7612,44 +7612,29 @@
       <node concept="3Tqbb2" id="5FtnUVJQfwi" role="3clF45" />
       <node concept="3Tm1VV" id="5FtnUVJQfvq" role="1B3o_S" />
       <node concept="3clFbS" id="5FtnUVJQfvr" role="3clF47">
-        <node concept="3clFbJ" id="2cKUqfNWDyM" role="3cqZAp">
-          <node concept="3clFbS" id="2cKUqfNWDyO" role="3clFbx">
-            <node concept="3cpWs6" id="2cKUqfNWFsY" role="3cqZAp">
-              <node concept="37vLTw" id="2cKUqfNWFsZ" role="3cqZAk">
-                <ref role="3cqZAo" node="5FtnUVJQfw8" resolve="node" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="7vl8NbTd9_A" role="3clFbw">
-            <node concept="2OqwBi" id="2cKUqfNWDLi" role="3uHU7B">
-              <node concept="37vLTw" id="2cKUqfNWDC9" role="2Oq$k0">
-                <ref role="3cqZAo" node="5FtnUVJQfw8" resolve="node" />
-              </node>
-              <node concept="I4A8Y" id="2cKUqfNWDTc" role="2OqNvi" />
-            </node>
-            <node concept="10Nm6u" id="2cKUqfNWEbp" role="3uHU7w" />
+        <node concept="3SKdUt" id="4sk9Ub5yaPs" role="3cqZAp">
+          <node concept="3SKdUq" id="4sk9Ub5yaPu" role="3SKWNk">
+            <property role="3SKdUp" value="node.model could be legitimately == null for a node from transient model which is already disposed." />
           </node>
         </node>
-        <node concept="3clFbH" id="2cKUqfNWGnR" role="3cqZAp" />
-        <node concept="3cpWs8" id="2cKUqfNWFHu" role="3cqZAp">
-          <node concept="3cpWsn" id="2cKUqfNWFHv" role="3cpWs9">
-            <property role="TrG5h" value="module" />
-            <node concept="3uibUv" id="2cKUqfNWFHp" role="1tU5fm">
-              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-            </node>
-            <node concept="2OqwBi" id="2cKUqfNWFHw" role="33vP2m">
-              <node concept="liA8E" id="2cKUqfNWFHx" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-              </node>
-              <node concept="2JrnkZ" id="2cKUqfNWFHy" role="2Oq$k0">
-                <node concept="2OqwBi" id="2cKUqfNWFHz" role="2JrQYb">
-                  <node concept="37vLTw" id="2cKUqfNWFH$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5FtnUVJQfw8" resolve="node" />
-                  </node>
-                  <node concept="I4A8Y" id="2cKUqfNWFH_" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
+        <node concept="3SKdUt" id="4sk9Ub5yeQL" role="3cqZAp">
+          <node concept="3SKdUq" id="4sk9Ub5yeQN" role="3SKWNk">
+            <property role="3SKdUp" value="however, we need to answer its original node anyway, or the whole build process would fail: " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4sk9Ub5yhRl" role="3cqZAp">
+          <node concept="3SKdUq" id="4sk9Ub5yhRm" role="3SKWNk">
+            <property role="3SKdUp" value="RequiredPlugins records transient nodes and getArtifact(node&lt;&gt;) needs to find out original node of that node." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4sk9Ub5ygQ7" role="3cqZAp">
+          <node concept="3SKdUq" id="4sk9Ub5yt08" role="3SKWNk">
+            <property role="3SKdUp" value="If generation doesn't keep transient models (or uses in-place transformation), check for node.model==null here" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4sk9Ub5yubu" role="3cqZAp">
+          <node concept="3SKdUq" id="4sk9Ub5yubw" role="3SKWNk">
+            <property role="3SKdUp" value="would effectively prevent from using getArtifacts(recordedTransientNode)." />
           </node>
         </node>
         <node concept="3clFbJ" id="2cKUqfNWGzR" role="3cqZAp">
@@ -7664,18 +7649,24 @@
             <node concept="3fqX7Q" id="2cKUqfNWGZd" role="3uHU7w">
               <node concept="1eOMI4" id="2cKUqfNWGZf" role="3fr31v">
                 <node concept="2ZW3vV" id="2cKUqfNWHu0" role="1eOMHV">
-                  <node concept="3uibUv" id="2cKUqfNWHxC" role="2ZW6by">
-                    <ref role="3uigEE" to="ap4t:~TransientModelsModule" resolve="TransientModelsModule" />
+                  <node concept="3uibUv" id="4sk9Ub5teG8" role="2ZW6by">
+                    <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
                   </node>
-                  <node concept="37vLTw" id="2cKUqfNWH0B" role="2ZW6bz">
-                    <ref role="3cqZAo" node="2cKUqfNWFHv" resolve="module" />
+                  <node concept="2OqwBi" id="4sk9Ub5tdTX" role="2ZW6bz">
+                    <node concept="37vLTw" id="4sk9Ub5tdEs" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5FtnUVJQfw8" resolve="node" />
+                    </node>
+                    <node concept="I4A8Y" id="4sk9Ub5te2f" role="2OqNvi" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="3y3z36" id="2cKUqfNWGPe" role="3uHU7B">
-              <node concept="37vLTw" id="2cKUqfNWGEN" role="3uHU7B">
-                <ref role="3cqZAo" node="2cKUqfNWFHv" resolve="module" />
+              <node concept="2OqwBi" id="4sk9Ub5tcIg" role="3uHU7B">
+                <node concept="37vLTw" id="4sk9Ub5tcBk" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5FtnUVJQfw8" resolve="node" />
+                </node>
+                <node concept="I4A8Y" id="4sk9Ub5tcP0" role="2OqNvi" />
               </node>
               <node concept="10Nm6u" id="2cKUqfNWGTc" role="3uHU7w" />
             </node>
@@ -7750,47 +7741,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2cKUqfNWILZ" role="3cqZAp" />
-        <node concept="3clFbJ" id="7B9bSSBHkGH" role="3cqZAp">
-          <node concept="2ZW3vV" id="3nCzltNmdTe" role="3clFbw">
-            <node concept="3uibUv" id="3nCzltNmdTf" role="2ZW6by">
-              <ref role="3uigEE" to="ap4t:~TransientModelsModule" resolve="TransientModelsModule" />
-            </node>
-            <node concept="2OqwBi" id="3nCzltNmdTg" role="2ZW6bz">
-              <node concept="liA8E" id="3nCzltNmdTh" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-              </node>
-              <node concept="2JrnkZ" id="3nCzltNmdTi" role="2Oq$k0">
-                <node concept="2OqwBi" id="3nCzltNmdTj" role="2JrQYb">
-                  <node concept="37vLTw" id="3GM_nagTARQ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5FtnUVJQfvC" resolve="originalNode" />
-                  </node>
-                  <node concept="I4A8Y" id="3nCzltNmdTl" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="7B9bSSBHkGI" role="3clFbx">
-            <node concept="3clFbF" id="7B9bSSBHkI0" role="3cqZAp">
-              <node concept="2OqwBi" id="7B9bSSBHkI1" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxghiz2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5FtnUVJQfwb" resolve="genContext" />
-                </node>
-                <node concept="2k5nB$" id="7B9bSSBHkI3" role="2OqNvi">
-                  <node concept="Xl_RD" id="7B9bSSBHkI4" role="2k5Stb">
-                    <property role="Xl_RC" value="internal error: cannot get original node" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxghfKw" role="2k6f33">
-                    <ref role="3cqZAo" node="5FtnUVJQfw8" resolve="node" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="7B9bSSBHnx8" role="3cqZAp">
-              <node concept="10Nm6u" id="7B9bSSBHnxa" role="3cqZAk" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2cKUqfNWJeC" role="3cqZAp" />
         <node concept="3cpWs6" id="5FtnUVJQfvK" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTzVb" role="3cqZAk">
             <ref role="3cqZAo" node="5FtnUVJQfvC" resolve="originalNode" />
