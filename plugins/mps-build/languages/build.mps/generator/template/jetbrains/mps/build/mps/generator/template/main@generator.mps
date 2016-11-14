@@ -187,6 +187,9 @@
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
     </language>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
       <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
@@ -276,14 +279,22 @@
       </concept>
       <concept id="5015072279636592410" name="jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery" flags="in" index="2jfdEK" />
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
+      <concept id="1168559512253" name="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" flags="lg" index="j$LIH">
+        <child id="1169669152123" name="generatorMessage" index="1lHHLF" />
+      </concept>
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
+        <child id="1226355936225" name="nullInputMessage" index="28wCFW" />
+        <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
         <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
+      </concept>
+      <concept id="5005282049925926521" name="jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression" flags="nn" index="v3LJS">
+        <reference id="5005282049925926522" name="parameter" index="v3LJV" />
       </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
@@ -293,6 +304,7 @@
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="7898029224680692134" name="description" index="2n97ot" />
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
@@ -328,6 +340,10 @@
       </concept>
       <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
       <concept id="1184690432998" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" flags="nn" index="3l3mFP" />
+      <concept id="1169670156577" name="jetbrains.mps.lang.generator.structure.GeneratorMessage" flags="lg" index="1lLz0L">
+        <property id="1169670173015" name="messageText" index="1lLB17" />
+        <property id="1169670356567" name="messageType" index="1lMjX7" />
+      </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
         <child id="1225229330048" name="postMapperFunction" index="15mYut" />
       </concept>
@@ -343,7 +359,9 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
-      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
+      </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167756221419" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue" flags="nn" index="3zGtF$" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -1084,18 +1102,10 @@
                 </node>
                 <node concept="5jKBG" id="7a7y9hgbR6s" role="lGtFl">
                   <ref role="v9R2y" node="7a7y9hgbR50" resolve="reduceMPSModule" />
-                  <node concept="1UUvTB" id="7a7y9hgbR6t" role="v9R3O">
-                    <node concept="1UU6SM" id="7a7y9hgbR6u" role="1UU7Ll">
-                      <node concept="3clFbS" id="7a7y9hgbR6v" role="2VODD2">
-                        <node concept="3clFbF" id="7a7y9hgbR7a" role="3cqZAp">
-                          <node concept="2OqwBi" id="4j_Rh$ItR98" role="3clFbG">
-                            <node concept="30H73N" id="3GUVQpJnGuB" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="4j_Rh$ItR9r" role="2OqNvi">
-                              <ref role="3Tt5mk" to="kdzh:4j_Rh$ItR7g" resolve="targetModule" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                  <node concept="2OqwBi" id="4j_Rh$ItR98" role="v9R3O">
+                    <node concept="30H73N" id="3GUVQpJnGuB" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="4j_Rh$ItR9r" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:4j_Rh$ItR7g" resolve="targetModule" />
                     </node>
                   </node>
                   <node concept="3NFfHV" id="7a7y9hgbUj4" role="5jGum">
@@ -1820,18 +1830,10 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="1UUvTB" id="5WMFzVNuUkM" role="v9R3O">
-                    <node concept="1UU6SM" id="5WMFzVNuUkN" role="1UU7Ll">
-                      <node concept="3clFbS" id="5WMFzVNuUkO" role="2VODD2">
-                        <node concept="3clFbF" id="5WMFzVNuUlE" role="3cqZAp">
-                          <node concept="2OqwBi" id="4j_Rh$IuX$5" role="3clFbG">
-                            <node concept="30H73N" id="5WMFzVNuUlA" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="4j_Rh$IuX$e" role="2OqNvi">
-                              <ref role="3Tt5mk" to="kdzh:4j_Rh$ItR9v" resolve="targetPath" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                  <node concept="2OqwBi" id="4j_Rh$IuX$5" role="v9R3O">
+                    <node concept="30H73N" id="5WMFzVNuUlA" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="4j_Rh$IuX$e" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:4j_Rh$ItR9v" resolve="targetPath" />
                     </node>
                   </node>
                 </node>
@@ -4903,6 +4905,7 @@
   </node>
   <node concept="13MO4I" id="7a7y9hgbR50">
     <property role="TrG5h" value="reduceMPSModule" />
+    <ref role="3gUMe" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
     <node concept="1N15co" id="4bEwduI83eM" role="1s_3oS">
       <property role="TrG5h" value="module" />
       <node concept="3Tqbb2" id="4bEwduI83eO" role="1N15GL">
@@ -4917,6 +4920,46 @@
         <node concept="1W57fq" id="7a7y9hgbR56" role="lGtFl">
           <node concept="3IZrLx" id="7a7y9hgbR57" role="3IZSJc">
             <node concept="3clFbS" id="7a7y9hgbR58" role="2VODD2">
+              <node concept="3SKdUt" id="4gIjTorylXM" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorylXO" role="3SKWNk">
+                  <property role="3SKdUp" value="XXX I've got no idea why we restrict to modules from the same project, technically" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorymhL" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorymhN" role="3SKWNk">
+                  <property role="3SKdUp" value="any module from the same model could be referenced here with BS_JavaDependencyModule" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryw6W" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryw6Y" role="3SKWNk">
+                  <property role="3SKdUp" value="as it's done for dependencies to regular BuildSource_JavaModule at the template's call site (main, MpsModule-&gt;JavaModule)" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorywG6" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorywG8" role="3SKWNk">
+                  <property role="3SKdUp" value="With current approach, it looks odd to see e.g. mpsDevkit@5_0, where its solutions got translated to JavaModule and depend from" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorywUM" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorywUN" role="3SKWNk">
+                  <property role="3SKdUp" value="mpsBootstrapCore and mpsTesting languages via classpath element, while dependencies to mpsBootstrapCore's java modules (e.g. openapi, kernel)" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryxad" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryxae" role="3SKWNk">
+                  <property role="3SKdUp" value="are plain BuildSource_JavaModule references." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryAvE" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryAvG" role="3SKWNk">
+                  <property role="3SKdUp" value="OTOH, if we move towards partial model regeneration, we might need to reconsider assumptions like 'same model/root' and always rely on x-model" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryARj" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryARl" role="3SKWNk">
+                  <property role="3SKdUp" value="reference restore mechanism (i.e. go on with BS_JavaModule and let generator restore the reference)." />
+                </node>
+              </node>
               <node concept="3clFbF" id="4bEwduI83hH" role="3cqZAp">
                 <node concept="3clFbC" id="4bEwduI83in" role="3clFbG">
                   <node concept="2OqwBi" id="4bEwduI83j4" role="3uHU7w">
@@ -5015,7 +5058,7 @@
                             <node concept="3cpWsn" id="4bEwduI83jK" role="3cpWs9">
                               <property role="TrG5h" value="layoutNode" />
                               <node concept="3Tqbb2" id="4bEwduI83jL" role="1tU5fm">
-                                <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+                                <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                               </node>
                               <node concept="2OqwBi" id="4bEwduI83jM" role="33vP2m">
                                 <node concept="37vLTw" id="3GM_nagTtD6" role="2Oq$k0">
@@ -5102,27 +5145,6 @@
                           </node>
                           <node concept="3clFbJ" id="4bEwduI83kq" role="3cqZAp">
                             <node concept="3clFbS" id="4bEwduI83kr" role="3clFbx">
-                              <node concept="3cpWs8" id="1pudlo0in$T" role="3cqZAp">
-                                <node concept="3cpWsn" id="1pudlo0in$U" role="3cpWs9">
-                                  <property role="TrG5h" value="xxx" />
-                                  <node concept="17QB3L" id="1pudlo0in$S" role="1tU5fm" />
-                                  <node concept="2OqwBi" id="1pudlo0in$V" role="33vP2m">
-                                    <node concept="37vLTw" id="1pudlo0in$W" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="4bEwduI83jD" resolve="helper" />
-                                    </node>
-                                    <node concept="liA8E" id="1pudlo0in$X" role="2OqNvi">
-                                      <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
-                                      <node concept="1PxgMI" id="1pudlo0in$Y" role="37wK5m">
-                                        <property role="1BlNFB" value="true" />
-                                        <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                                        <node concept="37vLTw" id="1pudlo0in$Z" role="1m5AlR">
-                                          <ref role="3cqZAo" node="4bEwduI83jK" resolve="layoutNode" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
                               <node concept="3clFbF" id="4bEwduI83ks" role="3cqZAp">
                                 <node concept="2OqwBi" id="4bEwduI83kt" role="3clFbG">
                                   <node concept="1iwH7S" id="4bEwduI83ku" role="2Oq$k0" />
@@ -5248,6 +5270,7 @@
   </node>
   <node concept="13MO4I" id="5WMFzVNuUen">
     <property role="TrG5h" value="reduceExternalJar" />
+    <ref role="3gUMe" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
     <node concept="1N15co" id="5WMFzVNuUep" role="1s_3oS">
       <property role="TrG5h" value="remotePath" />
       <node concept="3Tqbb2" id="5WMFzVNuUer" role="1N15GL">
@@ -5326,7 +5349,7 @@
                 <node concept="3cpWsn" id="5WMFzVNuUhs" role="3cpWs9">
                   <property role="TrG5h" value="layoutNode" />
                   <node concept="3Tqbb2" id="5WMFzVNuUht" role="1tU5fm">
-                    <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+                    <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                   </node>
                   <node concept="2OqwBi" id="5WMFzVNuUhu" role="33vP2m">
                     <node concept="37vLTw" id="3GM_nagTz9x" role="2Oq$k0">
@@ -5398,9 +5421,9 @@
                               <ref role="3cqZAo" node="7zkpphtG_U8" resolve="suffix" />
                             </node>
                             <node concept="liA8E" id="7zkpphtG_UH" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                              <node concept="Xl_RD" id="7zkpphtG_UI" role="37wK5m">
-                                <property role="Xl_RC" value="/" />
+                              <ref role="37wK5l" to="wyt6:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
+                              <node concept="1Xhbcc" id="6SWwlQhUaz1" role="37wK5m">
+                                <property role="1XhdNS" value="/" />
                               </node>
                             </node>
                           </node>
@@ -5463,7 +5486,7 @@
                         <node concept="3cpWsn" id="4VmJU8hycc6" role="3cpWs9">
                           <property role="TrG5h" value="res" />
                           <node concept="3Tqbb2" id="4VmJU8hycc7" role="1tU5fm">
-                            <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+                            <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                           </node>
                           <node concept="2OqwBi" id="4VmJU8hycc8" role="33vP2m">
                             <node concept="37vLTw" id="3GM_nagTwZs" role="2Oq$k0">
@@ -5498,12 +5521,8 @@
                         <node concept="3clFbS" id="7zkpphtG_Iy" role="3clFbx">
                           <node concept="3cpWs6" id="7zkpphtGB_F" role="3cqZAp">
                             <node concept="1Ls8ON" id="7zkpphtGB_H" role="3cqZAk">
-                              <node concept="1PxgMI" id="4VmJU8hyccn" role="1Lso8e">
-                                <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                                <node concept="37vLTw" id="3GM_nagT_cN" role="1m5AlR">
-                                  <ref role="3cqZAo" node="4VmJU8hycc6" resolve="res" />
-                                </node>
+                              <node concept="37vLTw" id="3GM_nagT_cN" role="1Lso8e">
+                                <ref role="3cqZAo" node="4VmJU8hycc6" resolve="res" />
                               </node>
                               <node concept="2OqwBi" id="4VmJU8hyCOt" role="1Lso8e">
                                 <node concept="37vLTw" id="3GM_nagTv95" role="2Oq$k0">
@@ -5550,12 +5569,12 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="7zkpphtGBCl" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~StringBuilder.insert(int,java.lang.CharSequence):java.lang.StringBuilder" resolve="insert" />
+                            <ref role="37wK5l" to="wyt6:~StringBuilder.insert(int,char):java.lang.StringBuilder" resolve="insert" />
                             <node concept="3cmrfG" id="7zkpphtGBCm" role="37wK5m">
                               <property role="3cmrfH" value="0" />
                             </node>
-                            <node concept="Xl_RD" id="7zkpphtGBCC" role="37wK5m">
-                              <property role="Xl_RC" value="/" />
+                            <node concept="1Xhbcc" id="6SWwlQhUe0t" role="37wK5m">
+                              <property role="1XhdNS" value="/" />
                             </node>
                           </node>
                         </node>
@@ -5628,39 +5647,86 @@
                     </node>
                   </node>
                   <node concept="3cpWs6" id="5WMFzVNuUhS" role="3cqZAp">
-                    <node concept="10Nm6u" id="5WMFzVNuUlJ" role="3cqZAk" />
-                  </node>
-                </node>
-                <node concept="22lmx$" id="5WMFzVNuUlT" role="3clFbw">
-                  <node concept="3clFbC" id="5WMFzVNuUhU" role="3uHU7B">
-                    <node concept="37vLTw" id="3GM_nagTy1j" role="3uHU7B">
-                      <ref role="3cqZAo" node="5WMFzVNuUhs" resolve="layoutNode" />
-                    </node>
-                    <node concept="10Nm6u" id="5WMFzVNuUhV" role="3uHU7w" />
-                  </node>
-                  <node concept="3fqX7Q" id="5WMFzVNuUlW" role="3uHU7w">
-                    <node concept="2OqwBi" id="5WMFzVNuUmd" role="3fr31v">
-                      <node concept="37vLTw" id="3GM_nagTrZX" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5WMFzVNuUhs" resolve="layoutNode" />
-                      </node>
-                      <node concept="1mIQ4w" id="5WMFzVNuUmj" role="2OqNvi">
-                        <node concept="chp4Y" id="35zoHQHS8T3" role="cj9EA">
-                          <ref role="cht4Q" to="3ior:7UAfeVQUc3H" resolve="BuildLayout_File" />
+                    <node concept="1Ls8ON" id="4gIjTorzEdX" role="3cqZAk">
+                      <node concept="10Nm6u" id="4gIjTorzG5z" role="1Lso8e" />
+                      <node concept="2OqwBi" id="4gIjTorzFc5" role="1Lso8e">
+                        <node concept="2OqwBi" id="4gIjTorzFc6" role="2Oq$k0">
+                          <node concept="1iwH7S" id="4gIjTorzFc7" role="2Oq$k0" />
+                          <node concept="3cR$yn" id="4gIjTorzFc8" role="2OqNvi">
+                            <ref role="3cRzXn" node="5WMFzVNuUep" resolve="remotePath" />
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="4gIjTorzFc9" role="2OqNvi">
+                          <ref role="37wK5l" to="vbkb:4Kip2_918YF" resolve="getRelativePath" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
+                <node concept="3clFbC" id="5WMFzVNuUhU" role="3clFbw">
+                  <node concept="37vLTw" id="3GM_nagTy1j" role="3uHU7B">
+                    <ref role="3cqZAo" node="5WMFzVNuUhs" resolve="layoutNode" />
+                  </node>
+                  <node concept="10Nm6u" id="5WMFzVNuUhV" role="3uHU7w" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzJN9" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzKoE" role="3SKWNk">
+                  <property role="3SKdUp" value="Since our layout nodes are pre-collected from transient models at a distinct step, we can't use them as reference targets for newly created dependencies," />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzLx3" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzLx4" role="3SKWNk">
+                  <property role="3SKdUp" value="and need to replace them with strings/classpath elements. Guess, the origin of the issue is that external jar dependency element may reference layout node," />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzOXk" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzOXm" role="3SKWNk">
+                  <property role="3SKdUp" value="which breaks the idea of BL being description of build parts, and dependency direction from BL to the part, not vice versa." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzRSE" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzRSG" role="3SKWNk">
+                  <property role="3SKdUp" value="Even though this BL dependencies are often look reasonable and point to external layout nodes, I feel this part of build story is inconsistent, perhaps" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzT3N" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzT3P" role="3SKWNk">
+                  <property role="3SKdUp" value="'java library' element shall get jars assigned with layout rather than reference layout node with extenal jar? OTOH, it's not clear what to do if I don't want " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzUf0" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzUf2" role="3SKWNk">
+                  <property role="3SKdUp" value="to include jar into layout, but would like to depend from it for compilation/build time?" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzVVD" role="3cqZAp" />
+              <node concept="3SKdUt" id="4gIjTorzX6Y" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzX70" role="3SKWNk">
+                  <property role="3SKdUp" value="Here's small discrepancy, for a _SingleFolder node, getContentLocation is invoked inside switch_ExternalJar, while for _SingleFile I do getLocation" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTorzYP1" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTorzYP3" role="3SKWNk">
+                  <property role="3SKdUp" value="here right away. It's only to save extra DependenciesHelper initialization and to stay with existing two-element tuple." />
+                </node>
               </node>
               <node concept="3clFbF" id="4VmJU8hyc5E" role="3cqZAp">
                 <node concept="1Ls8ON" id="4VmJU8hyc5F" role="3clFbG">
-                  <node concept="1PxgMI" id="5WMFzVNuUmm" role="1Lso8e">
-                    <ref role="1m5ApE" to="3ior:7UAfeVQUc3H" resolve="BuildLayout_File" />
-                    <node concept="37vLTw" id="3GM_nagTB0m" role="1m5AlR">
-                      <ref role="3cqZAo" node="5WMFzVNuUhs" resolve="layoutNode" />
+                  <node concept="37vLTw" id="3GM_nagTB0m" role="1Lso8e">
+                    <ref role="3cqZAo" node="5WMFzVNuUhs" resolve="layoutNode" />
+                  </node>
+                  <node concept="2OqwBi" id="4gIjTorzxh0" role="1Lso8e">
+                    <node concept="37vLTw" id="4gIjTorzw6I" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5WMFzVNuUhl" resolve="helper" />
+                    </node>
+                    <node concept="liA8E" id="4gIjTorzy4w" role="2OqNvi">
+                      <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
+                      <node concept="37vLTw" id="4gIjTorzz7A" role="37wK5m">
+                        <ref role="3cqZAo" node="5WMFzVNuUhs" resolve="layoutNode" />
+                      </node>
                     </node>
                   </node>
-                  <node concept="10Nm6u" id="4VmJU8hyc5J" role="1Lso8e" />
                 </node>
               </node>
             </node>
@@ -5672,167 +5738,38 @@
             <node concept="17QB3L" id="4VmJU8hyc4k" role="1Lm7xW" />
           </node>
         </node>
-        <node concept="1W57fq" id="5WMFzVNuX3R" role="lGtFl">
-          <node concept="3IZrLx" id="5WMFzVNuX3S" role="3IZSJc">
-            <node concept="3clFbS" id="5WMFzVNuX3T" role="2VODD2">
-              <node concept="3clFbF" id="qtEXbwQVCj" role="3cqZAp">
-                <node concept="1Wc70l" id="qtEXbwQWU3" role="3clFbG">
-                  <node concept="1eOMI4" id="qtEXbwQXfq" role="3uHU7w">
-                    <node concept="2OqwBi" id="qtEXbwQXvX" role="1eOMHV">
-                      <node concept="1LFfDK" id="qtEXbwQXvY" role="2Oq$k0">
-                        <node concept="3cmrfG" id="qtEXbwQXvZ" role="1LF_Uc">
-                          <property role="3cmrfH" value="0" />
-                        </node>
-                        <node concept="2OqwBi" id="qtEXbwQXw0" role="1LFl5Q">
-                          <node concept="1iwH7S" id="qtEXbwQXw1" role="2Oq$k0" />
-                          <node concept="1bhEwm" id="qtEXbwQXw2" role="2OqNvi">
-                            <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="1mIQ4w" id="qtEXbwQXw3" role="2OqNvi">
-                        <node concept="chp4Y" id="qtEXbwQXw4" role="cj9EA">
-                          <ref role="cht4Q" to="3ior:4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
-                        </node>
-                      </node>
-                    </node>
+        <node concept="1sPUBX" id="4gIjTorzg6n" role="lGtFl">
+          <property role="34cw8o" value="Switch takes BL_Node instance" />
+          <ref role="v9R2y" node="4gIjTorxzAe" resolve="switch_ExternalJar" />
+          <node concept="3NFfHV" id="4gIjTorzhn8" role="1sPUBK">
+            <node concept="3clFbS" id="4gIjTorzhn9" role="2VODD2">
+              <node concept="3clFbF" id="4gIjTorzhqu" role="3cqZAp">
+                <node concept="1LFfDK" id="4gIjTorzj4U" role="3clFbG">
+                  <node concept="3cmrfG" id="4gIjTorzjJC" role="1LF_Uc">
+                    <property role="3cmrfH" value="0" />
                   </node>
-                  <node concept="1eOMI4" id="qtEXbwQWdD" role="3uHU7B">
-                    <node concept="3y3z36" id="qtEXbwQzEo" role="1eOMHV">
-                      <node concept="10Nm6u" id="qtEXbwQ$6n" role="3uHU7w" />
-                      <node concept="2OqwBi" id="qtEXbwQyHa" role="3uHU7B">
-                        <node concept="1iwH7S" id="qtEXbwQyrj" role="2Oq$k0" />
-                        <node concept="1bhEwm" id="qtEXbwQz4s" role="2OqNvi">
-                          <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                        </node>
-                      </node>
+                  <node concept="2OqwBi" id="4gIjTorzh_I" role="1LFl5Q">
+                    <node concept="1iwH7S" id="4gIjTorzhqt" role="2Oq$k0" />
+                    <node concept="1bhEwm" id="4gIjTorzhL0" role="2OqNvi">
+                      <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="gft3U" id="4VmJU8hyc3l" role="UU_$l">
-            <node concept="3tkPu6" id="4VmJU8hyc3n" role="gfFT$">
-              <property role="3tkGrO" value="aaa.jar" />
-              <node concept="3yqFqT" id="4VmJU8hyc3p" role="3tkHdp">
-                <ref role="3yqFr6" node="1ZTcb8AhlOL" />
-                <node concept="1ZhdrF" id="4VmJU8hyc3q" role="lGtFl">
-                  <property role="2qtEX8" value="folder" />
-                  <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014531647/5610619299014531648" />
-                  <node concept="3$xsQk" id="4VmJU8hyc3r" role="3$ytzL">
-                    <node concept="3clFbS" id="4VmJU8hyc3s" role="2VODD2">
-                      <node concept="3clFbF" id="4VmJU8hyc9e" role="3cqZAp">
-                        <node concept="1PxgMI" id="4VmJU8hycbu" role="3clFbG">
-                          <ref role="1m5ApE" to="3ior:4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
-                          <node concept="1LFfDK" id="4VmJU8hycaq" role="1m5AlR">
-                            <node concept="3cmrfG" id="4VmJU8hycat" role="1LF_Uc">
-                              <property role="3cmrfH" value="0" />
-                            </node>
-                            <node concept="2OqwBi" id="4VmJU8hyc9$" role="1LFl5Q">
-                              <node concept="1iwH7S" id="4VmJU8hyc9f" role="2Oq$k0" />
-                              <node concept="1bhEwm" id="4VmJU8hyc9D" role="2OqNvi">
-                                <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="17Uvod" id="4VmJU8hyc3t" role="lGtFl">
-                <property role="2qtEX9" value="suffix" />
-                <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/342830306171203038/342830306171239596" />
-                <node concept="3zFVjK" id="4VmJU8hyc3u" role="3zH0cK">
-                  <node concept="3clFbS" id="4VmJU8hyc3v" role="2VODD2">
-                    <node concept="3clFbF" id="4VmJU8hyc7X" role="3cqZAp">
-                      <node concept="1LFfDK" id="4VmJU8hyc9a" role="3clFbG">
-                        <node concept="3cmrfG" id="4VmJU8hyc9d" role="1LF_Uc">
-                          <property role="3cmrfH" value="1" />
-                        </node>
-                        <node concept="2OqwBi" id="4VmJU8hyc8j" role="1LFl5Q">
-                          <node concept="1iwH7S" id="4VmJU8hyc7Y" role="2Oq$k0" />
-                          <node concept="1bhEwm" id="4VmJU8hyc8p" role="2OqNvi">
-                            <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="1W57fq" id="4VmJU8hyc6B" role="lGtFl">
-                <node concept="3IZrLx" id="4VmJU8hyc6C" role="3IZSJc">
-                  <node concept="3clFbS" id="4VmJU8hyc6D" role="2VODD2">
-                    <node concept="3clFbF" id="qtEXbwR519" role="3cqZAp">
-                      <node concept="1Wc70l" id="qtEXbwR701" role="3clFbG">
-                        <node concept="1eOMI4" id="qtEXbwR6vS" role="3uHU7B">
-                          <node concept="3y3z36" id="qtEXbwR5NX" role="1eOMHV">
-                            <node concept="10Nm6u" id="qtEXbwR5VE" role="3uHU7w" />
-                            <node concept="2OqwBi" id="qtEXbwR58G" role="3uHU7B">
-                              <node concept="1iwH7S" id="qtEXbwR517" role="2Oq$k0" />
-                              <node concept="1bhEwm" id="qtEXbwR5kA" role="2OqNvi">
-                                <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="1eOMI4" id="qtEXbwR7mD" role="3uHU7w">
-                          <node concept="2OqwBi" id="qtEXbwR7mE" role="1eOMHV">
-                            <node concept="1LFfDK" id="qtEXbwR7mF" role="2Oq$k0">
-                              <node concept="3cmrfG" id="qtEXbwR7mG" role="1LF_Uc">
-                                <property role="3cmrfH" value="0" />
-                              </node>
-                              <node concept="2OqwBi" id="qtEXbwR7mH" role="1LFl5Q">
-                                <node concept="1iwH7S" id="qtEXbwR7mI" role="2Oq$k0" />
-                                <node concept="1bhEwm" id="qtEXbwR7mJ" role="2OqNvi">
-                                  <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="1mIQ4w" id="qtEXbwR7mK" role="2OqNvi">
-                              <node concept="chp4Y" id="qtEXbwR7mL" role="cj9EA">
-                                <ref role="cht4Q" to="3ior:4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
+          <node concept="30H73N" id="4gIjTorzklG" role="v9R3O" />
+          <node concept="1LFfDK" id="4gIjTorzkLY" role="v9R3O">
+            <node concept="3cmrfG" id="4gIjTorzltz" role="1LF_Uc">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="3_TokI" id="4gIjTorzkmd" role="1LFl5Q">
+              <ref role="1bhEwk" node="5WMFzVNuX3s" resolve="target" />
             </node>
           </node>
         </node>
         <node concept="3yrxFa" id="4RsV8qJGWio" role="3yrxIG">
           <ref role="3yrxFb" node="5WMFzVNuUbm" />
-          <node concept="1ZhdrF" id="4RsV8qJGWip" role="lGtFl">
-            <property role="2qtEX8" value="jar" />
-            <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014309452/5610619299014309453" />
-            <node concept="3$xsQk" id="4RsV8qJGWiq" role="3$ytzL">
-              <node concept="3clFbS" id="4RsV8qJGWir" role="2VODD2">
-                <node concept="3clFbF" id="5WMFzVNuX3w" role="3cqZAp">
-                  <node concept="1PxgMI" id="4VmJU8hyc5$" role="3clFbG">
-                    <ref role="1m5ApE" to="3ior:7UAfeVQUc3H" resolve="BuildLayout_File" />
-                    <node concept="1LFfDK" id="4VmJU8hyc53" role="1m5AlR">
-                      <node concept="3cmrfG" id="4VmJU8hyc56" role="1LF_Uc">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="2OqwBi" id="5WMFzVNuX3K" role="1LFl5Q">
-                        <node concept="1iwH7S" id="5WMFzVNuX3x" role="2Oq$k0" />
-                        <node concept="1bhEwm" id="5WMFzVNuX3P" role="2OqNvi">
-                          <ref role="1bhEwl" node="5WMFzVNuX3s" resolve="target" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>
@@ -14613,10 +14550,14 @@
                                   <property role="Xl_RC" value="(bootstrap cycle) " />
                                 </node>
                                 <node concept="2OqwBi" id="6qlcPcvcrxN" role="3uHU7w">
-                                  <node concept="2GrUjf" id="6qlcPcvcrxu" role="2Oq$k0">
-                                    <ref role="2Gs0qQ" node="6qlcPcvcrwI" resolve="c" />
+                                  <node concept="1PxgMI" id="4sk9Ub5aMDu" role="2Oq$k0">
+                                    <property role="1BlNFB" value="true" />
+                                    <ref role="1m5ApE" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+                                    <node concept="2GrUjf" id="6qlcPcvcrxu" role="1m5AlR">
+                                      <ref role="2Gs0qQ" node="6qlcPcvcrwI" resolve="c" />
+                                    </node>
                                   </node>
-                                  <node concept="3TrcHB" id="6qlcPcvcrxS" role="2OqNvi">
+                                  <node concept="3TrcHB" id="4sk9Ub5aOr3" role="2OqNvi">
                                     <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                   </node>
                                 </node>
@@ -15182,6 +15123,294 @@
           <node concept="raruj" id="2Wb4ucKrRJE" role="lGtFl" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="4gIjTorxzAe">
+    <property role="TrG5h" value="switch_ExternalJar" />
+    <node concept="1N15co" id="4gIjTorx$sy" role="1s_3oS">
+      <property role="TrG5h" value="currentModule" />
+      <node concept="3Tqbb2" id="4gIjTory6xx" role="1N15GL">
+        <ref role="ehGHo" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+      </node>
+    </node>
+    <node concept="1N15co" id="4gIjTory6xI" role="1s_3oS">
+      <property role="TrG5h" value="jarPath" />
+      <node concept="17QB3L" id="4gIjTory6ye" role="1N15GL" />
+    </node>
+    <node concept="3aamgX" id="4gIjTorx$so" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="This switch is invoked for BuildLayout_Node, hence only BuildLayout_File, _FileStub, _Jar and their subclasses are expected here" />
+      <ref role="30HIoZ" to="3ior:4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
+      <node concept="14YyZ8" id="4gIjTory6yj" role="1lVwrX">
+        <node concept="gft3U" id="4gIjTory6Lj" role="14YRTM">
+          <node concept="2GhqfE" id="4gIjTory8u4" role="gfFT$">
+            <node concept="3yrxFa" id="4gIjTory9kc" role="3yrxIG">
+              <ref role="3yrxFb" node="5WMFzVNuUbm" />
+              <node concept="1ZhdrF" id="4gIjTorycy4" role="lGtFl">
+                <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014309452/5610619299014309453" />
+                <property role="2qtEX8" value="jar" />
+                <node concept="3$xsQk" id="4gIjTorycy5" role="3$ytzL">
+                  <node concept="3clFbS" id="4gIjTorycy6" role="2VODD2">
+                    <node concept="3clFbF" id="4gIjTorydty" role="3cqZAp">
+                      <node concept="30H73N" id="4gIjTorydtx" role="3clFbG" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="14ZrTv" id="4gIjTory6yp" role="14ZwWg">
+          <node concept="30G5F_" id="4gIjTory6yq" role="150hEN">
+            <node concept="3clFbS" id="4gIjTory6yr" role="2VODD2">
+              <node concept="3SKdUt" id="4gIjToryy0A" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryy0B" role="3SKWNk">
+                  <property role="3SKdUp" value="FIXME the only reason I check for same project, not same model here" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryyqm" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryyqo" role="3SKWNk">
+                  <property role="3SKdUp" value="is that to introduce least possible change now. Once I've got this functional," />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryyVp" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryyVr" role="3SKWNk">
+                  <property role="3SKdUp" value="shall get back and refactor this condition, as well as inspiring match in reduceMPSModule." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryA5K" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryA5M" role="3SKWNk">
+                  <property role="3SKdUp" value="Check comment in the IF macro there for extra insight." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryE_F" role="3cqZAp" />
+              <node concept="3SKdUt" id="4gIjTory_sw" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTory_sy" role="3SKWNk">
+                  <property role="3SKdUp" value="For the time being, for any layout node not from the same project (even from the same model," />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjTory_MD" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjTory_MF" role="3SKWNk">
+                  <property role="3SKdUp" value="i.e. being transformed simultaneously), take jar classpath element directly (like reduceMPSModule " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryBcq" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryBcr" role="3SKWNk">
+                  <property role="3SKdUp" value="does for dependencies between MpsModules). The problem with external jar is that BuildLayout_Node" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryByA" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryByC" role="3SKWNk">
+                  <property role="3SKdUp" value="comes from a different transformation step (now we collect them in a pre-processing script in a distinct " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryBKf" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryBKg" role="3SKWNk">
+                  <property role="3SKdUp" value="step (e.g @2_0), hence reference macro (@4_1-&gt;@5_0) yields a stale target) and generation fails unless " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryBZw" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryBZx" role="3SKWNk">
+                  <property role="3SKdUp" value="transient models are turned on." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryEiw" role="3cqZAp" />
+              <node concept="3SKdUt" id="4gIjToryESU" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryESW" role="3SKWNk">
+                  <property role="3SKdUp" value="In fact, this condition would never be true, provided BL_File comes from DependenciesHelper artifacts" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4gIjToryFz_" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryFzB" role="3SKWNk">
+                  <property role="3SKdUp" value="that are collected at distinct step, however, I'd like to keep both alternatives for completeness." />
+                </node>
+              </node>
+              <node concept="3clFbF" id="4gIjToryz7s" role="3cqZAp">
+                <node concept="3y3z36" id="4gIjTory$mW" role="3clFbG">
+                  <node concept="2OqwBi" id="4gIjTory$Hw" role="3uHU7w">
+                    <node concept="30H73N" id="4gIjTory$uV" role="2Oq$k0" />
+                    <node concept="2Rxl7S" id="4gIjTory_8u" role="2OqNvi" />
+                  </node>
+                  <node concept="2OqwBi" id="4gIjToryzrm" role="3uHU7B">
+                    <node concept="v3LJS" id="4gIjToryz7q" role="2Oq$k0">
+                      <ref role="v3LJV" node="4gIjTorx$sy" resolve="currentModule" />
+                    </node>
+                    <node concept="2Rxl7S" id="4gIjToryzVf" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="gft3U" id="4gIjTorydDk" role="150oIE">
+            <node concept="3di3y" id="4gIjToryezf" role="gfFT$">
+              <node concept="2pNNFK" id="4gIjToryezh" role="2IxjH2">
+                <property role="2pNNFO" value="fileset" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="4gIjToryezl" role="2pNNFR">
+                  <property role="2pNUuO" value="file" />
+                  <node concept="2pMdtt" id="4gIjToryfpu" role="2pMdts">
+                    <property role="2pMdty" value="aaa.jar" />
+                    <node concept="17Uvod" id="4gIjToryfpw" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="4gIjToryfpx" role="3zH0cK">
+                        <node concept="3clFbS" id="4gIjToryfpy" role="2VODD2">
+                          <node concept="3clFbF" id="4gIjToryDbI" role="3cqZAp">
+                            <node concept="v3LJS" id="4gIjToryDbH" role="3clFbG">
+                              <ref role="v3LJV" node="4gIjTory6xI" resolve="jarPath" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="4gIjTorx$ss" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="This switch is invoked for BuildLayout_Node, only subclasses from layout hierarchy are expected here" />
+      <ref role="30HIoZ" to="3ior:4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
+      <node concept="14YyZ8" id="4gIjTory6E0" role="1lVwrX">
+        <node concept="14ZrTv" id="4gIjTory6E6" role="14ZwWg">
+          <node concept="30G5F_" id="4gIjTory6E7" role="150hEN">
+            <node concept="3clFbS" id="4gIjTory6E8" role="2VODD2">
+              <node concept="3SKdUt" id="4gIjToryDZh" role="3cqZAp">
+                <node concept="3SKdUq" id="4gIjToryDZj" role="3SKWNk">
+                  <property role="3SKdUp" value="see above for the explanation" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="4gIjToryDIs" role="3cqZAp">
+                <node concept="3y3z36" id="4gIjToryDIt" role="3clFbG">
+                  <node concept="2OqwBi" id="4gIjToryDIu" role="3uHU7w">
+                    <node concept="30H73N" id="4gIjToryDIv" role="2Oq$k0" />
+                    <node concept="2Rxl7S" id="4gIjToryDIw" role="2OqNvi" />
+                  </node>
+                  <node concept="2OqwBi" id="4gIjToryDIx" role="3uHU7B">
+                    <node concept="v3LJS" id="4gIjToryDIy" role="2Oq$k0">
+                      <ref role="v3LJV" node="4gIjTorx$sy" resolve="currentModule" />
+                    </node>
+                    <node concept="2Rxl7S" id="4gIjToryDIz" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="gft3U" id="4gIjTorylgD" role="150oIE">
+            <node concept="3di3y" id="4gIjTorylgE" role="gfFT$">
+              <node concept="2pNNFK" id="4gIjTorylgF" role="2IxjH2">
+                <property role="2pNNFO" value="fileset" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="4gIjTorylgG" role="2pNNFR">
+                  <property role="2pNUuO" value="dir" />
+                  <node concept="2pMdtt" id="4gIjTorylgH" role="2pMdts">
+                    <property role="2pMdty" value="dir" />
+                    <node concept="17Uvod" id="4gIjTorylgI" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="4gIjTorylgJ" role="3zH0cK">
+                        <node concept="3clFbS" id="4gIjTorylgK" role="2VODD2">
+                          <node concept="3clFbF" id="4gIjToryFMQ" role="3cqZAp">
+                            <node concept="2OqwBi" id="4gIjToryKc0" role="3clFbG">
+                              <node concept="2ShNRf" id="4gIjToryFMO" role="2Oq$k0">
+                                <node concept="1pGfFk" id="4gIjToryHxS" role="2ShVmc">
+                                  <ref role="37wK5l" to="o3n2:41__iZjkZ0Y" resolve="DependenciesHelper" />
+                                  <node concept="1iwH7S" id="4gIjToryHFK" role="37wK5m" />
+                                  <node concept="2OqwBi" id="4gIjToryIZQ" role="37wK5m">
+                                    <node concept="v3LJS" id="4gIjToryIHk" role="2Oq$k0">
+                                      <ref role="v3LJV" node="4gIjTorx$sy" resolve="currentModule" />
+                                    </node>
+                                    <node concept="2Xjw5R" id="4gIjToryJvl" role="2OqNvi">
+                                      <node concept="1xMEDy" id="4gIjToryJvn" role="1xVPHs">
+                                        <node concept="chp4Y" id="4gIjToryJMA" role="ri$Ld">
+                                          <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="4gIjToryK_A" role="2OqNvi">
+                                <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
+                                <node concept="30H73N" id="4gIjToryL4q" role="37wK5m" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="4gIjTorylpJ" role="2pNNFR">
+                  <property role="2pNUuO" value="includes" />
+                  <node concept="2pMdtt" id="4gIjTorylpS" role="2pMdts">
+                    <property role="2pMdty" value="aaa.jar" />
+                    <node concept="17Uvod" id="4gIjTorylpU" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="4gIjTorylpV" role="3zH0cK">
+                        <node concept="3clFbS" id="4gIjTorylpW" role="2VODD2">
+                          <node concept="3clFbF" id="4gIjTorylyp" role="3cqZAp">
+                            <node concept="v3LJS" id="4gIjTorylyo" role="3clFbG">
+                              <ref role="v3LJV" node="4gIjTory6xI" resolve="jarPath" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="gft3U" id="4gIjTorygtj" role="14YRTM">
+          <node concept="3tkPu6" id="4gIjTorygtr" role="gfFT$">
+            <property role="3tkGrO" value="aaa.jar" />
+            <node concept="3yqFqT" id="4gIjToryjak" role="3tkHdp">
+              <ref role="3yqFr6" node="1ZTcb8AhlOL" />
+              <node concept="1ZhdrF" id="4gIjToryjdO" role="lGtFl">
+                <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014531647/5610619299014531648" />
+                <property role="2qtEX8" value="folder" />
+                <node concept="3$xsQk" id="4gIjToryjdP" role="3$ytzL">
+                  <node concept="3clFbS" id="4gIjToryjdQ" role="2VODD2">
+                    <node concept="3clFbF" id="4gIjToryjht" role="3cqZAp">
+                      <node concept="30H73N" id="4gIjToryjhs" role="3clFbG" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="17Uvod" id="4gIjTorykCY" role="lGtFl">
+              <property role="P4ACc" value="798100da-4f0a-421a-b991-71f8c50ce5d2/342830306171203038/342830306171239596" />
+              <property role="2qtEX9" value="suffix" />
+              <node concept="3zFVjK" id="4gIjTorykCZ" role="3zH0cK">
+                <node concept="3clFbS" id="4gIjTorykD0" role="2VODD2">
+                  <node concept="3clFbF" id="4gIjTorykQB" role="3cqZAp">
+                    <node concept="v3LJS" id="4gIjTorykQA" role="3clFbG">
+                      <ref role="v3LJV" node="4gIjTory6xI" resolve="jarPath" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="j$LIH" id="4gIjToryfyE" role="jxRDz">
+      <node concept="1lLz0L" id="4gIjToryfyP" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="External jar shall be single file inside an optional folder" />
+      </node>
+    </node>
+    <node concept="1lLz0L" id="4gIjToryfyR" role="28wCFW">
+      <property role="1lMjX7" value="error" />
+      <property role="1lLB17" value="Path not found in the project's layout" />
     </node>
   </node>
 </model>

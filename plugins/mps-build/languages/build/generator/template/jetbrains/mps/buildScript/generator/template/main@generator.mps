@@ -8837,18 +8837,10 @@
       <ref role="30HIoZ" to="3ior:4lbsKRp1TRe" resolve="BuildSource_JavaDependencyLibrary" />
       <node concept="j$656" id="4bEwduI7Vqa" role="1lVwrX">
         <ref role="v9R2y" node="5bUGwboXCab" resolve="reduceLibrary" />
-        <node concept="1UUvTB" id="4bEwduI7Vqb" role="v9R3O">
-          <node concept="1UU6SM" id="4bEwduI7Vqc" role="1UU7Ll">
-            <node concept="3clFbS" id="4bEwduI7Vqd" role="2VODD2">
-              <node concept="3clFbF" id="4bEwduI7Vqe" role="3cqZAp">
-                <node concept="2OqwBi" id="4bEwduI7Vqw" role="3clFbG">
-                  <node concept="30H73N" id="4bEwduI7Vqf" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="4bEwduI83eI" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3ior:4lbsKRp1TRf" resolve="library" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="2OqwBi" id="4bEwduI7Vqw" role="v9R3O">
+          <node concept="30H73N" id="4bEwduI7Vqf" role="2Oq$k0" />
+          <node concept="3TrEf2" id="4bEwduI83eI" role="2OqNvi">
+            <ref role="3Tt5mk" to="3ior:4lbsKRp1TRf" resolve="library" />
           </node>
         </node>
       </node>
@@ -8858,18 +8850,10 @@
       <ref role="30HIoZ" to="3ior:2oUTXgLA9qB" resolve="BuildSource_JavaDependencyModule" />
       <node concept="j$656" id="4bEwduI83lW" role="1lVwrX">
         <ref role="v9R2y" node="4bEwduI83eJ" resolve="reduceModule" />
-        <node concept="1UUvTB" id="4bEwduI83lX" role="v9R3O">
-          <node concept="1UU6SM" id="4bEwduI83lY" role="1UU7Ll">
-            <node concept="3clFbS" id="4bEwduI83lZ" role="2VODD2">
-              <node concept="3clFbF" id="4bEwduI83m0" role="3cqZAp">
-                <node concept="2OqwBi" id="4bEwduI83mi" role="3clFbG">
-                  <node concept="30H73N" id="4bEwduI83m1" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="4bEwduI83mo" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3ior:2oUTXgLA9qE" resolve="module" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="2OqwBi" id="4bEwduI83mi" role="v9R3O">
+          <node concept="30H73N" id="4bEwduI83m1" role="2Oq$k0" />
+          <node concept="3TrEf2" id="4bEwduI83mo" role="2OqNvi">
+            <ref role="3Tt5mk" to="3ior:2oUTXgLA9qE" resolve="module" />
           </node>
         </node>
       </node>
@@ -8879,18 +8863,10 @@
       <ref role="30HIoZ" to="3ior:3elU8iQ65L0" resolve="BuildSource_JavaDependencyJar" />
       <node concept="j$656" id="75uV$1s0ehC" role="1lVwrX">
         <ref role="v9R2y" node="75uV$1s0c5v" resolve="reduceJar" />
-        <node concept="1UUvTB" id="75uV$1s0ehD" role="v9R3O">
-          <node concept="1UU6SM" id="75uV$1s0ehE" role="1UU7Ll">
-            <node concept="3clFbS" id="75uV$1s0ehF" role="2VODD2">
-              <node concept="3clFbF" id="75uV$1s0ehG" role="3cqZAp">
-                <node concept="2OqwBi" id="75uV$1s0ehW" role="3clFbG">
-                  <node concept="30H73N" id="75uV$1s0ehH" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="75uV$1s0ei2" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3ior:3elU8iQ65L1" resolve="jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="2OqwBi" id="75uV$1s0ehW" role="v9R3O">
+          <node concept="30H73N" id="75uV$1s0ehH" role="2Oq$k0" />
+          <node concept="3TrEf2" id="75uV$1s0ei2" role="2OqNvi">
+            <ref role="3Tt5mk" to="3ior:3elU8iQ65L1" resolve="jar" />
           </node>
         </node>
       </node>
@@ -8899,23 +8875,15 @@
       <ref role="30HIoZ" to="3ior:5WMFzVNtKRk" resolve="BuildSource_JavaDependencyExternalJar" />
       <node concept="j$656" id="5WMFzVNtSIm" role="1lVwrX">
         <ref role="v9R2y" node="5WMFzVNtSIe" resolve="reduceExternalJar" />
-        <node concept="1UUvTB" id="5WMFzVNtSKr" role="v9R3O">
-          <node concept="1UU6SM" id="5WMFzVNtSKs" role="1UU7Ll">
-            <node concept="3clFbS" id="5WMFzVNtSKt" role="2VODD2">
-              <node concept="3clFbF" id="5WMFzVNtSKu" role="3cqZAp">
-                <node concept="2OqwBi" id="4RsV8qJGWk3" role="3clFbG">
-                  <node concept="2OqwBi" id="5WMFzVNtSKI" role="2Oq$k0">
-                    <node concept="30H73N" id="5WMFzVNtSKv" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="4RsV8qJGWjN" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:4RsV8qJGJsE" resolve="extJar" />
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="4RsV8qJGWk9" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3ior:4RsV8qJGJpd" resolve="jar" />
-                  </node>
-                </node>
-              </node>
+        <node concept="2OqwBi" id="4RsV8qJGWk3" role="v9R3O">
+          <node concept="2OqwBi" id="5WMFzVNtSKI" role="2Oq$k0">
+            <node concept="30H73N" id="5WMFzVNtSKv" role="2Oq$k0" />
+            <node concept="3TrEf2" id="4RsV8qJGWjN" role="2OqNvi">
+              <ref role="3Tt5mk" to="3ior:4RsV8qJGJsE" resolve="extJar" />
             </node>
+          </node>
+          <node concept="3TrEf2" id="4RsV8qJGWk9" role="2OqNvi">
+            <ref role="3Tt5mk" to="3ior:4RsV8qJGJpd" resolve="jar" />
           </node>
         </node>
       </node>
@@ -8924,37 +8892,21 @@
       <ref role="30HIoZ" to="3ior:j1Y_zp$ERu" resolve="BuildSource_JavaDependencyExternalJarInFolder" />
       <node concept="j$656" id="j1Y_zp$NOr" role="1lVwrX">
         <ref role="v9R2y" node="j1Y_zp$NO_" resolve="reduceExternalJarInFolder" />
-        <node concept="1UUvTB" id="j1Y_zp$NOs" role="v9R3O">
-          <node concept="1UU6SM" id="j1Y_zp$NOt" role="1UU7Ll">
-            <node concept="3clFbS" id="j1Y_zp$NOu" role="2VODD2">
-              <node concept="3clFbF" id="j1Y_zp$NOv" role="3cqZAp">
-                <node concept="2OqwBi" id="j1Y_zp$NOw" role="3clFbG">
-                  <node concept="2OqwBi" id="j1Y_zp$NOx" role="2Oq$k0">
-                    <node concept="30H73N" id="j1Y_zp$NOy" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="j1Y_zp$NRj" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:j1Y_zp$M$1" resolve="extFolder" />
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="j1Y_zp$NRl" role="2OqNvi">
-                    <ref role="3Tt5mk" to="3ior:4RsV8qJH_D0" resolve="folder" />
-                  </node>
-                </node>
-              </node>
+        <node concept="2OqwBi" id="j1Y_zp$NOw" role="v9R3O">
+          <node concept="2OqwBi" id="j1Y_zp$NOx" role="2Oq$k0">
+            <node concept="30H73N" id="j1Y_zp$NOy" role="2Oq$k0" />
+            <node concept="3TrEf2" id="j1Y_zp$NRj" role="2OqNvi">
+              <ref role="3Tt5mk" to="3ior:j1Y_zp$M$1" resolve="extFolder" />
             </node>
           </node>
+          <node concept="3TrEf2" id="j1Y_zp$NRl" role="2OqNvi">
+            <ref role="3Tt5mk" to="3ior:4RsV8qJH_D0" resolve="folder" />
+          </node>
         </node>
-        <node concept="1UUvTB" id="j1Y_zp$NRn" role="v9R3O">
-          <node concept="1UU6SM" id="j1Y_zp$NRo" role="1UU7Ll">
-            <node concept="3clFbS" id="j1Y_zp$NRp" role="2VODD2">
-              <node concept="3clFbF" id="j1Y_zp$NRq" role="3cqZAp">
-                <node concept="2OqwBi" id="j1Y_zp$NRM" role="3clFbG">
-                  <node concept="30H73N" id="j1Y_zp$NRt" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="j1Y_zp$NRS" role="2OqNvi">
-                    <ref role="3TsBF5" to="3ior:j1Y_zp$NMG" resolve="suffix" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="2OqwBi" id="j1Y_zp$NRM" role="v9R3O">
+          <node concept="30H73N" id="j1Y_zp$NRt" role="2Oq$k0" />
+          <node concept="3TrcHB" id="j1Y_zp$NRS" role="2OqNvi">
+            <ref role="3TsBF5" to="3ior:j1Y_zp$NMG" resolve="suffix" />
           </node>
         </node>
       </node>
