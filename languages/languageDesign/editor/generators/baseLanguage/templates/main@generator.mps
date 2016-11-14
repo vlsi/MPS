@@ -1149,6 +1149,11 @@
       </node>
       <node concept="3Tm1VV" id="h9AO$oz" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="3MtSE7vorI2" role="jymVt">
+      <node concept="1sPUBX" id="3MtSE7vosT5" role="lGtFl">
+        <ref role="v9R2y" node="3MtSE7vot0z" resolve="additionalEditorDescriptorMembers" />
+      </node>
+    </node>
     <node concept="17Uvod" id="fXklEG2" role="lGtFl">
       <property role="2qtEX9" value="name" />
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -2656,6 +2661,11 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3MtSE7vouhQ" role="jymVt">
+      <node concept="1sPUBX" id="3MtSE7vovmR" role="lGtFl">
+        <ref role="v9R2y" node="3MtSE7vou8q" resolve="additionalEditorComponentDescriptorMembers" />
       </node>
     </node>
     <node concept="17Uvod" id="fXMS7RZ" role="lGtFl">
@@ -6042,7 +6052,7 @@
                     <ref role="3cqZAo" node="7GOmDNDA2zg" resolve="myNode" />
                   </node>
                   <node concept="1rXfSq" id="7VRiLsftgVR" role="37wK5m">
-                    <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                    <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                   </node>
                 </node>
               </node>
@@ -6384,7 +6394,7 @@
                 <node concept="liA8E" id="3dYY$_sKB2f" role="2OqNvi">
                   <ref role="37wK5l" to="exr9:~AbstractCellProvider.createEditorCell(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createEditorCell" />
                   <node concept="1rXfSq" id="7VRiLsftisH" role="37wK5m">
-                    <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                    <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTtE4" role="2Oq$k0">
@@ -6440,7 +6450,7 @@
                   <node concept="1pGfFk" id="2csR5Duk0Cx" role="2ShVmc">
                     <ref role="37wK5l" to="6lvu:~CompositeSubstituteInfo.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.nodeEditor.cellMenu.CellContext,jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt[])" resolve="CompositeSubstituteInfo" />
                     <node concept="1rXfSq" id="7VRiLsftiK4" role="37wK5m">
-                      <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                     </node>
                     <node concept="2OqwBi" id="2csR5Duk0Cz" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagTxpJ" role="2Oq$k0">
@@ -6580,7 +6590,7 @@
                     <ref role="1Pybhc" to="exr9:~EditorManager" resolve="EditorManager" />
                     <ref role="37wK5l" to="exr9:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
                     <node concept="1rXfSq" id="7VRiLsftjtD" role="37wK5m">
-                      <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -16076,7 +16086,7 @@
                     <ref role="3cqZAo" node="7GOmDNDA2zg" resolve="myNode" />
                   </node>
                   <node concept="1rXfSq" id="3t7S8MKRk8J" role="37wK5m">
-                    <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                    <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                   </node>
                 </node>
               </node>
@@ -16232,7 +16242,7 @@
                           </node>
                         </node>
                         <node concept="1rXfSq" id="3t7S8MKRl$K" role="37wK5m">
-                          <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                          <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                         </node>
                         <node concept="3clFb_" id="2R2hSf2pK5_" role="jymVt">
                           <property role="TrG5h" value="doCommitImpl" />
@@ -16334,7 +16344,7 @@
                     <ref role="1Pybhc" to="g51k:~EditorCell_Property" resolve="EditorCell_Property" />
                     <ref role="37wK5l" to="g51k:~EditorCell_Property.create(jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.nodeEditor.cells.ModelAccessor,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Property" resolve="create" />
                     <node concept="1rXfSq" id="3t7S8MKRmr4" role="37wK5m">
-                      <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                     </node>
                     <node concept="37vLTw" id="3GM_nagTtcQ" role="37wK5m">
                       <ref role="3cqZAo" node="3dYY$_sKB2s" resolve="modelAccessor" />
@@ -16411,7 +16421,7 @@
                       <node concept="1pGfFk" id="6SY7HUx4gf9" role="2ShVmc">
                         <ref role="37wK5l" to="6lvu:~CompositeSubstituteInfo.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.nodeEditor.cellMenu.CellContext,jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt[])" resolve="CompositeSubstituteInfo" />
                         <node concept="1rXfSq" id="3t7S8MKRmxA" role="37wK5m">
-                          <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                          <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                         </node>
                         <node concept="2OqwBi" id="6SY7HUx4gzz" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTzW4" role="2Oq$k0">
@@ -16600,7 +16610,7 @@
                     <ref role="37wK5l" to="exr9:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
                     <ref role="1Pybhc" to="exr9:~EditorManager" resolve="EditorManager" />
                     <node concept="1rXfSq" id="3t7S8MKRn0H" role="37wK5m">
-                      <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                     </node>
                   </node>
                 </node>
@@ -16682,7 +16692,7 @@
                 <ref role="1Pybhc" to="g51k:~EditorCell_Property" resolve="EditorCell_Property" />
                 <ref role="37wK5l" to="g51k:~EditorCell_Property.create(jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.nodeEditor.cells.ModelAccessor,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Property" resolve="create" />
                 <node concept="1rXfSq" id="3t7S8MKATG3" role="37wK5m">
-                  <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                  <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                 </node>
                 <node concept="2ShNRf" id="hPHqW$I" role="37wK5m">
                   <node concept="YeOm9" id="hPHrG$p" role="2ShVmc">
@@ -19786,7 +19796,7 @@
                   <node concept="1pGfFk" id="7GOmDNDTWvA" role="2ShVmc">
                     <ref role="37wK5l" to="6lvu:~CompositeSubstituteInfo.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,jetbrains.mps.nodeEditor.cellMenu.CellContext,jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt[])" resolve="CompositeSubstituteInfo" />
                     <node concept="1rXfSq" id="7GOmDNDTZQB" role="37wK5m">
-                      <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                      <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                     </node>
                     <node concept="2ShNRf" id="7GOmDNDTWvC" role="37wK5m">
                       <node concept="1pGfFk" id="7GOmDNDTWvD" role="2ShVmc">
@@ -39946,6 +39956,16 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="jVnub" id="3MtSE7vot0z">
+    <property role="3GE5qa" value="editorComponents" />
+    <property role="TrG5h" value="additionalEditorDescriptorMembers" />
+    <node concept="b5Tf3" id="S8Y8ZKFcUL" role="jxRDz" />
+  </node>
+  <node concept="jVnub" id="3MtSE7vou8q">
+    <property role="3GE5qa" value="editorComponents" />
+    <property role="TrG5h" value="additionalEditorComponentDescriptorMembers" />
+    <node concept="b5Tf3" id="$sKni3JyYv" role="jxRDz" />
   </node>
 </model>
 
