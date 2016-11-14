@@ -247,6 +247,12 @@ public interface EditorCell {
    */
   TextBuilder renderText();
 
+  /**
+   * Marking current cell as "big" cell - the top-most cell available in the editor for associated node.
+   * Note: all big cells are expected to hold non-null {@link EditorCellContext} see {@link #getCellContext()}
+   *
+   * @param big true if this cell is "big" one
+   */
   void setBig(boolean big);
 
   boolean isBig();
