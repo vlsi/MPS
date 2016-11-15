@@ -542,29 +542,8 @@
         </node>
       </node>
     </node>
-    <node concept="PiPfp" id="6S1jmf0xDFH" role="3989C9">
-      <property role="TrG5h" value="core-libraries" />
-      <node concept="25yagZ" id="4RsV8qJHuxL" role="PiKyV">
-        <node concept="3yqu4x" id="4RsV8qJHuxM" role="25yagT">
-          <node concept="3yrxFa" id="4RsV8qJHuZr" role="3yqu4I">
-            <ref role="3yrxFb" node="6eCuTcwOX1W" />
-          </node>
-        </node>
-      </node>
-      <node concept="25yagZ" id="4RsV8qJHuxO" role="PiKyV">
-        <node concept="3yqu4x" id="4RsV8qJHuxP" role="25yagT">
-          <node concept="3yrxFa" id="4RsV8qJHuZs" role="3yqu4I">
-            <ref role="3yrxFb" node="6eCuTcwOX20" />
-          </node>
-        </node>
-      </node>
-      <node concept="25yagZ" id="4Xk_ETUiRLB" role="PiKyV">
-        <node concept="3yqu4x" id="4Xk_ETUiRLz" role="25yagT">
-          <node concept="3yrxFa" id="4Xk_ETUiSG4" role="3yqu4I">
-            <ref role="3yrxFb" node="4Xk_ETUiPTn" />
-          </node>
-        </node>
-      </node>
+    <node concept="PiPfp" id="4PRDOPWOqXM" role="3989C9">
+      <property role="TrG5h" value="diffutils" />
       <node concept="25yagZ" id="3elU8iQ7qBL" role="PiKyV">
         <node concept="2HycW7" id="3elU8iQ7qBM" role="25yagT">
           <node concept="398BVA" id="3elU8iQ7qBO" role="25ysHA">
@@ -575,6 +554,16 @@
                 <property role="2Ry0Am" value="diffutils-1.2.1.jar" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="PiPfp" id="6S1jmf0xDFH" role="3989C9">
+      <property role="TrG5h" value="trove4j" />
+      <node concept="25yagZ" id="4RsV8qJHuxL" role="PiKyV">
+        <node concept="3yqu4x" id="4RsV8qJHuxM" role="25yagT">
+          <node concept="3yrxFa" id="4RsV8qJHuZr" role="3yqu4I">
+            <ref role="3yrxFb" node="6eCuTcwOX1W" />
           </node>
         </node>
       </node>
@@ -789,10 +778,6 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1s0vtrwURQP" resolve="mps-annotations" />
       </node>
-      <node concept="2sjeV3" id="6NgXkpBjPQ0" role="nCB5Z">
-        <property role="2a2d0E" value="true" />
-        <ref role="2sjeV2" node="6NgXkpBjPcZ" resolve="jdom-lib" />
-      </node>
       <node concept="2GAZfH" id="1H905DlDRAK" role="398b2p">
         <node concept="TIC1d" id="1H905DlDRAL" role="2GAZfG">
           <node concept="398BVA" id="1H905DlDRAN" role="TIC6M">
@@ -808,13 +793,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="nCB5N" id="7FonrDkm$8u" role="nCB5Z">
-        <ref role="nCB5Y" node="1s0vtrwUPV$" resolve="mps-logging" />
-      </node>
-      <node concept="2sjeV3" id="1H905DlDRAR" role="nCB5Z">
-        <property role="2a2d0E" value="true" />
-        <ref role="2sjeV2" node="6S1jmf0xDFH" resolve="core-libraries" />
       </node>
     </node>
     <node concept="398b33" id="6e4RFSGTAMz" role="3989C9">
@@ -1088,6 +1066,17 @@
       <node concept="nCB5N" id="7G$QnBJF_O6" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="5d$B_bnZPNh" resolve="mps-boot-util" />
+      </node>
+      <node concept="2sjeV3" id="6NgXkpBjPQ0" role="nCB5Z">
+        <property role="2a2d0E" value="true" />
+        <ref role="2sjeV2" node="6NgXkpBjPcZ" resolve="jdom-lib" />
+      </node>
+      <node concept="2sjeV3" id="5WR0ub2I5Ro" role="nCB5Z">
+        <property role="2a2d0E" value="true" />
+        <ref role="2sjeV2" node="6S1jmf0xDFH" resolve="trove4j" />
+      </node>
+      <node concept="2sjeV3" id="4PRDOPWOvzO" role="nCB5Z">
+        <ref role="2sjeV2" node="4PRDOPWOqXM" resolve="diffutils" />
       </node>
     </node>
     <node concept="398b33" id="7FonrDkmRHZ" role="3989C9">
@@ -1467,6 +1456,9 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1s0vtrwURQP" resolve="mps-annotations" />
       </node>
+      <node concept="2sjeV3" id="4YAukiuqFBv" role="nCB5Z">
+        <ref role="2sjeV2" node="6S1jmf0xDFH" resolve="trove4j" />
+      </node>
       <node concept="398b2D" id="3vjn6$4rsZi" role="398b2p">
         <node concept="398BVA" id="3vjn6$4rsZj" role="398b2C">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
@@ -1496,6 +1488,9 @@
       </node>
       <node concept="nCB5N" id="6xpZJctuZEn" role="nCB5Z">
         <ref role="nCB5Y" node="6S1jmf0xEsq" resolve="mps-closures" />
+      </node>
+      <node concept="2sjeV3" id="4PRDOPWO8_D" role="nCB5Z">
+        <ref role="2sjeV2" node="1s0vtrx9SbK" resolve="asm-all" />
       </node>
       <node concept="2GAZfH" id="3dkXFAFl0SO" role="398b2p">
         <node concept="TIC1d" id="3dkXFAFl0SM" role="2GAZfG">
@@ -1980,6 +1975,9 @@
       <node concept="2sjeV3" id="5bUGwboXw99" role="nCB5Z">
         <property role="2a2d0E" value="true" />
         <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
+      </node>
+      <node concept="2sjeV3" id="4PRDOPWNZKO" role="nCB5Z">
+        <ref role="2sjeV2" node="1s0vtrx9SbK" resolve="asm-all" />
       </node>
       <node concept="nCB5N" id="3cAdGiIRUk_" role="nCB5Z">
         <ref role="nCB5Y" node="3cAdGiIRUkj" resolve="mps-editor-api" />
@@ -2527,9 +2525,6 @@
             <node concept="1bldCd" id="1OSlDLmrG9E" role="39821P">
               <ref role="3$exzV" node="1TaHNgiIbIQ" resolve="MPS.Core" />
             </node>
-            <node concept="1bldCd" id="60rt_c8PQCC" role="39821P">
-              <ref role="3$exzV" node="1TaHNgiHrmy" resolve="jetbrains.mps.java.stub" />
-            </node>
           </node>
           <node concept="3_J27D" id="IFRVVI696F" role="Nbhlr">
             <node concept="3Mxwew" id="IFRVVI696G" role="3MwsjC">
@@ -3047,18 +3042,6 @@
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZS" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
-            <node concept="3yLZsm" id="3LQl9buHK6Z" role="3yL2VB">
-              <property role="3yLZsk" value="/lib/guava-11.0.1.jar" />
-              <node concept="398BVA" id="3LQl9buHK71" role="3yLZsn">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3LQl9buHK72" role="iGT6I">
-                  <property role="2Ry0Am" value="lib" />
-                  <node concept="2Ry0Ak" id="3LQl9buHK73" role="2Ry0An">
-                    <property role="2Ry0Am" value="guava-11.0.1.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZX" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6LbI" resolve="jetbrains.mps.lang.textGen" />
@@ -13819,6 +13802,19 @@
           <node concept="3bR9La" id="15ea5h00GgS" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4PRDOPWOxA7" role="3bR37C">
+          <node concept="1BurEX" id="4PRDOPWOxA8" role="1SiIV1">
+            <node concept="398BVA" id="4PRDOPWOxA1" role="1BurEY">
+              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="4PRDOPWOxA2" role="iGT6I">
+                <property role="2Ry0Am" value="lib" />
+                <node concept="2Ry0Ak" id="4PRDOPWOxA3" role="2Ry0An">
+                  <property role="2Ry0Am" value="diffutils-1.2.1.jar" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

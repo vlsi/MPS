@@ -19,8 +19,6 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
-    <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -28,7 +26,6 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
-    <import index="2o" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:difflib(MPS.Core/)" />
     <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
     <import index="rzt1" ref="r:128708be-e37c-484b-b372-892904c802d9(jetbrains.mps.tool.builder.unittest)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -38,6 +35,7 @@
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
+    <import index="2o" ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7/java:difflib(jetbrains.mps.tool.gentest/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -3169,7 +3167,7 @@
                                     <ref role="3cqZAo" node="1TaHNgiI6sf" resolve="meth" />
                                   </node>
                                   <node concept="3TrEf2" id="2wdLO7KfSsC" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                                    <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
                                   </node>
                                 </node>
                               </node>
@@ -3312,7 +3310,7 @@
                                     <ref role="3cqZAo" node="1TaHNgiI6th" resolve="meth" />
                                   </node>
                                   <node concept="3TrEf2" id="2wdLO7Kf$tZ" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                                    <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
                                   </node>
                                 </node>
                               </node>
@@ -3383,7 +3381,7 @@
                           <ref role="3cqZAo" node="1TaHNgiI6tZ" resolve="hasann" />
                         </node>
                         <node concept="3Tsc0h" id="1TaHNgiI6tL" role="2OqNvi">
-                          <ref role="3TtcxE" to="tpee:hiAJF2X" />
+                          <ref role="3TtcxE" to="tpee:hiAJF2X" resolve="annotation" />
                         </node>
                       </node>
                       <node concept="2HwmR7" id="1TaHNgiI6tM" role="2OqNvi">
@@ -3399,7 +3397,7 @@
                                     <ref role="3cqZAo" node="1TaHNgiI6tV" resolve="anninst" />
                                   </node>
                                   <node concept="3TrEf2" id="1TaHNgiI6tU" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tpee:hiAI5P0" />
+                                    <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
                                   </node>
                                 </node>
                               </node>
@@ -3470,7 +3468,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1TaHNgiI6ue" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="1TaHNgiI6uf" role="2OqNvi">
@@ -3571,7 +3569,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1TaHNgiI6uK" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="1TaHNgiI6uL" role="2OqNvi">
@@ -3669,7 +3667,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1TaHNgiI6vh" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="1TaHNgiI6vi" role="2OqNvi">
@@ -3767,7 +3765,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1TaHNgiI6vM" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                            <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="1TaHNgiI6vN" role="2OqNvi">

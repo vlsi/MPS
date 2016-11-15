@@ -4,9 +4,15 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
     </modelRoot>
+    <modelRoot contentPath="${mps_home}/lib" type="java_classes">
+      <sourceRoot location="diffutils-1.2.1.jar" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators />
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/lib/diffutils-1.2.1.jar" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
