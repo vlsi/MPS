@@ -641,6 +641,9 @@
               <property role="2Ry0Am" value="core" />
               <node concept="2Ry0Ak" id="1s0vtrwUXkb" role="2Ry0An">
                 <property role="2Ry0Am" value="mps-annotations" />
+                <node concept="2Ry0Ak" id="4Ys_fYXz_Af" role="2Ry0An">
+                  <property role="2Ry0Am" value="source" />
+                </node>
               </node>
             </node>
           </node>
@@ -657,6 +660,9 @@
               <property role="2Ry0Am" value="core" />
               <node concept="2Ry0Ak" id="1s0vtrwV1KU" role="2Ry0An">
                 <property role="2Ry0Am" value="mps-messaging" />
+                <node concept="2Ry0Ak" id="4Ys_fYXz_Ak" role="2Ry0An">
+                  <property role="2Ry0Am" value="source" />
+                </node>
               </node>
             </node>
           </node>

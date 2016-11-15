@@ -4553,12 +4553,12 @@
   </target>
   
   <target name="java.compile.mps-annotations">
-    <mkdir dir="${mps_home}/core/mps-annotations" />
+    <mkdir dir="${mps_home}/core/mps-annotations/source" />
     <mkdir dir="${build.tmp}/java/out/mps-annotations" />
     <javac2 destdir="${build.tmp}/java/out/mps-annotations" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/core/mps-annotations" />
+        <path location="${mps_home}/core/mps-annotations/source" />
       </src>
       <classpath>
         <path refid="path.java.library.annotations-lib" />
@@ -4566,17 +4566,17 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-annotations">
-      <fileset dir="${mps_home}/core/mps-annotations" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/mps-annotations/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="java.compile.mps-messaging" depends="java.compile.mps-annotations, java.compile.mps-logging">
-    <mkdir dir="${mps_home}/core/mps-messaging" />
+    <mkdir dir="${mps_home}/core/mps-messaging/source" />
     <mkdir dir="${build.tmp}/java/out/mps-messaging" />
     <javac2 destdir="${build.tmp}/java/out/mps-messaging" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/core/mps-messaging" />
+        <path location="${mps_home}/core/mps-messaging/source" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
@@ -4587,7 +4587,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-messaging">
-      <fileset dir="${mps_home}/core/mps-messaging" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/mps-messaging/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
