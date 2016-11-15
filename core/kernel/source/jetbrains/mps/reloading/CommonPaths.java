@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,7 +215,10 @@ public final class CommonPaths {
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
     addIfExists(result, "lib/ecj-4.5.2.jar");
-    addIfExists(result, "lib/diffutils-1.2.1.jar");
+    // if you are going to add guava.jar back, please tell Artem the reason and add it to idea jars, instead.
+    //
+    // asm-all(MPS.Core) is in use from j.m.ide.platform and j.m.java.stub solutions
+    // XXX likely, shall expose this jar directly from solution rather than making it available as part of MPS.Core
     addIfExists(result, "lib/asm-all.jar");
   }
 

@@ -2,7 +2,6 @@
 <solution name="jetbrains.mps.java.stub" uuid="b55d8dfc-0d9d-43d5-886d-c644e7083bff" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="jetbrains" />
       <sourceRoot location="models" />
     </modelRoot>
   </models>
