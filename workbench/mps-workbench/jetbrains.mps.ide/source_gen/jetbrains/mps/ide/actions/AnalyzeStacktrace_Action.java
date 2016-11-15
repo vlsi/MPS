@@ -23,7 +23,7 @@ public class AnalyzeStacktrace_Action extends BaseAction {
     super("Analyze Stacktrace...", "Open console with the navigation stacktrace", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
-    this.setMnemonic("s".charAt(0));
+    this.setMnemonic("S".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

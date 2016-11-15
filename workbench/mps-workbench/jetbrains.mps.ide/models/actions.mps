@@ -38903,13 +38903,13 @@
     </node>
   </node>
   <node concept="sE7Ow" id="3EnpNH2zGit">
-    <property role="ngHcd" value="s" />
     <property role="1WHSii" value="Open console with the navigation stacktrace" />
     <property role="TrG5h" value="AnalyzeStacktrace" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Analyze Stacktrace..." />
     <property role="3GE5qa" value="analyzeTrace" />
     <property role="1teQrl" value="true" />
+    <property role="ngHcd" value="S" />
     <node concept="2ScWuX" id="3EnpNH2zGiu" role="tmbBb">
       <node concept="3clFbS" id="3EnpNH2zGiv" role="2VODD2">
         <node concept="3clFbJ" id="3EnpNH2zGiw" role="3cqZAp">
