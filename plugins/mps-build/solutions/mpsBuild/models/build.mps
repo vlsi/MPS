@@ -831,9 +831,6 @@
       <node concept="nCB5N" id="6e4RFSGTM4s" role="nCB5Z">
         <ref role="nCB5Y" node="6e4RFSGTIz7" resolve="mps-behavior-api" />
       </node>
-      <node concept="nCB5N" id="6e4RFSGTN8g" role="nCB5Z">
-        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
-      </node>
     </node>
     <node concept="398b33" id="6e4RFSGTIz7" role="3989C9">
       <property role="TrG5h" value="mps-behavior-api" />
@@ -1427,6 +1424,9 @@
       <node concept="nCB5N" id="1s0vtrwV6ja" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1s0vtrwURQP" resolve="mps-annotations" />
+      </node>
+      <node concept="2sjeV3" id="4EZl5JbWaYq" role="nCB5Z">
+        <ref role="2sjeV2" node="6S1jmf0xDFH" resolve="trove4j" />
       </node>
       <node concept="nCB5N" id="7FonrDkn4fs" role="nCB5Z">
         <property role="1Sh$E4" value="true" />

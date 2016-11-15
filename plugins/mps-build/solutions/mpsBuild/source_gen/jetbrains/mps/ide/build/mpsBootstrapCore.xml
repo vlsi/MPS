@@ -5262,6 +5262,7 @@
         <pathelement path="${build.tmp}/java/out/util-core" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
+        <path refid="path.java.library.trove4j" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
