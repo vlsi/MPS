@@ -418,8 +418,11 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4155486055398308291(final PropertyMacroContext _context) {
     return GenUtil.saveListVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0]);
   }
-  public static Object propertyMacro_GetPropertyValue_5448983161209989862(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5898456405536876912(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, 0x11055b6dd7bL, "generatorMessage")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c67157L, "messageText"));
+  }
+  public static Object propertyMacro_GetPropertyValue_5898456405536884428(final PropertyMacroContext _context) {
+    return _context.createUniqueName("ex", null);
   }
   public static Object propertyMacro_GetPropertyValue_1147906725605420839(final PropertyMacroContext _context) {
     return GenUtil.saveListVar(_context, _context.getNode(), ++((int[]) _context.getVariable("varindex"))[0]);
@@ -1063,7 +1066,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8961331321403206158(final ReferenceMacroContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
-  public static Object referenceMacro_GetReferent_6553698511994325700(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5898456405536876871(final ReferenceMacroContext _context) {
     if (SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, 0x11055b6dd7bL, "generatorMessage")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "error", "info")) {
       return "error";
     }
@@ -1660,10 +1663,10 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_8961331321403206165(final IfMacroContext _context) {
     return !("context".equals(((String) _context.getVariable("contextVar"))));
   }
-  public static boolean ifMacro_Condition_5363042723710946852(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5898456405536876900(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, 0x11055b6dd7bL, "generatorMessage")) != null);
   }
-  public static boolean ifMacro_Condition_5448983161209996304(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5898456405536876921(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, 0x11055b6dd7bL, "generatorMessage")) != null);
   }
   public static boolean ifMacro_Condition_3846207671016008933(final IfMacroContext _context) {

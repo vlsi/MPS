@@ -680,21 +680,23 @@
       <node id="8371596541809075904" at="23,41,24,199" concept="9" />
       <node id="8371596541809075904" at="26,45,27,199" concept="9" />
       <node id="8371596541809075904" at="29,62,30,34" concept="9" />
-      <node id="8371596541809075904" at="32,199,33,106" concept="14" />
+      <node id="8371596541809075904" at="32,199,33,138" concept="8" />
+      <node id="8371596541809075904" at="33,138,34,37" concept="3" />
+      <node id="8371596541809075904" at="34,37,35,223" concept="3" />
+      <node id="8371596541809075904" at="35,223,36,15" concept="14" />
       <node id="8371596541809075904" at="21,0,23,0" concept="1" trace="Switch_better_switch3#()V" />
-      <node id="8371596541809075904" at="35,0,37,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
+      <node id="8371596541809075904" at="38,0,40,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
       <node id="8371596541809075904" at="23,0,26,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="8371596541809075904" at="26,0,29,0" concept="7" trace="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="8371596541809075904" at="29,0,32,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
-      <node id="8371596541809075904" at="32,0,35,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="8371596541809075904" at="32,0,38,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="8371596541809075904" at="21,34,21,34" />
-      <scope id="8371596541809075904" at="35,125,35,125" />
+      <scope id="8371596541809075904" at="38,125,38,125" />
       <scope id="8371596541809075904" at="23,41,24,199" />
       <scope id="8371596541809075904" at="26,45,27,199" />
       <scope id="8371596541809075904" at="29,62,30,34" />
-      <scope id="8371596541809075904" at="32,199,33,106" />
       <scope id="8371596541809075904" at="21,0,23,0" />
-      <scope id="8371596541809075904" at="35,0,37,0">
+      <scope id="8371596541809075904" at="38,0,40,0">
         <var name="context" id="8371596541809075904" />
         <var name="environment" id="8371596541809075904" />
         <var name="templateSwitch" id="8371596541809075904" />
@@ -702,13 +704,16 @@
       <scope id="8371596541809075904" at="23,0,26,0" />
       <scope id="8371596541809075904" at="26,0,29,0" />
       <scope id="8371596541809075904" at="29,0,32,0" />
-      <scope id="8371596541809075904" at="32,0,35,0">
+      <scope id="8371596541809075904" at="32,199,36,15">
+        <var name="ex_a" id="8371596541809075904" />
+      </scope>
+      <scope id="8371596541809075904" at="32,0,38,0">
         <var name="context" id="8371596541809075904" />
         <var name="environment" id="8371596541809075904" />
         <var name="mappingLabel" id="8371596541809075904" />
         <var name="templateSwitch" id="8371596541809075904" />
       </scope>
-      <unit id="8371596541809075904" at="19,0,38,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switch_better_switch3" />
+      <unit id="8371596541809075904" at="19,0,41,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switch_better_switch3" />
     </file>
   </root>
 </debug-info>
