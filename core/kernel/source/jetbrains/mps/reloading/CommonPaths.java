@@ -215,10 +215,9 @@ public final class CommonPaths {
     addIfExists(result, "lib/trove4j.jar");
     addIfExists(result, "lib/jdom.jar");
     addIfExists(result, "lib/ecj-4.5.2.jar");
-    // if you are going to add guava.jar back, please tell Artem the reason and add it to idea jars, instead.
-    //
-    // asm-all(MPS.Core) is in use from j.m.ide.platform and j.m.java.stub solutions
-    // XXX likely, shall expose this jar directly from solution rather than making it available as part of MPS.Core
+    addIfExists(result, "lib/guava-19.0.jar");
+    addIfExists(result, "lib/xstream-1.4.8.jar");
+    addIfExists(result, "lib/diffutils-1.2.1.jar");
     addIfExists(result, "lib/asm-all.jar");
   }
 
