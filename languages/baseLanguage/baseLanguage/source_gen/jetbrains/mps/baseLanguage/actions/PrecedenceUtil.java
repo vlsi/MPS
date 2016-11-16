@@ -159,6 +159,9 @@ public class PrecedenceUtil {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(expression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return PrecedenceUtil.Precedence.DOT_EXPRESSION;
     }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(expression), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"))) {
+      return PrecedenceUtil.Precedence.DOT_EXPRESSION;
+    }
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(expression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(expression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"))) {
       return PrecedenceUtil.Precedence.POSTFIX_EXPRESSIONS;
     }

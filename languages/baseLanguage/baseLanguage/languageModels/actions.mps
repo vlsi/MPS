@@ -22843,6 +22843,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="7GXmJMN4oJ9" role="3cqZAp">
+          <node concept="3clFbS" id="7GXmJMN4oJa" role="3clFbx">
+            <node concept="3cpWs6" id="7GXmJMN4oJb" role="3cqZAp">
+              <node concept="Rm8GO" id="7GXmJMN4oJc" role="3cqZAk">
+                <ref role="1Px2BO" node="18ik2d67I23" resolve="PrecedenceUtil.Precedence" />
+                <ref role="Rm8GQ" node="18ik2d67I29" resolve="DOT_EXPRESSION" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7GXmJMN4oJd" role="3clFbw">
+            <node concept="37vLTw" id="7GXmJMN4oJe" role="2Oq$k0">
+              <ref role="3cqZAo" node="18ik2d67mQJ" resolve="expression" />
+            </node>
+            <node concept="2Zo12i" id="7GXmJMN4oJf" role="2OqNvi">
+              <node concept="chp4Y" id="7GXmJMN4pG4" role="2Zo12j">
+                <ref role="cht4Q" to="tp25:gEJrngP" resolve="SemanticDowncastExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="w4320ilG1p" role="3cqZAp">
           <node concept="3clFbS" id="w4320ilG1q" role="3clFbx">
             <node concept="3cpWs6" id="w4320ilG1r" role="3cqZAp">
