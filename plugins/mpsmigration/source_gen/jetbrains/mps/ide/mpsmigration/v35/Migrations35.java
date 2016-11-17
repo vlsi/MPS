@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Migrations35 implements ApplicationComponent {
-  private final ProjectMigration[] myMigrations = new ProjectMigration[]{new EditorGeneratorRefactoring()};
+  private final ProjectMigration[] myMigrations = new ProjectMigration[]{new RemoveHistoryFiles(), new EditorGeneratorRefactoring()};
 
 
   @Override

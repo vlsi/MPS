@@ -28,7 +28,6 @@ public class MPSExtentions {
   public static final String MODEL_BINARY = "mpb";
   public static final String MODEL_ROOT = "mpsr";
   public static final String MODEL_HEADER = "model";
-  public static final String REFACTORINGS = "history";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
   public static final String IDEA_PROJECT = "mpr";
@@ -45,7 +44,6 @@ public class MPSExtentions {
   public static final String DOT_MODEL = "." + MODEL;
   public static final String DOT_MODEL_ROOT = "." + MODEL_ROOT;
   public static final String DOT_MODEL_HEADER = "." + MODEL_HEADER;
-  public static final String DOT_REFACTORINGS = "." + REFACTORINGS;
   public static final String DOT_JAVAFILE = "." + JAVAFILE;
   public static final String DOT_CLASSFILE = "." + CLASSFILE;
   public static final String DOT_IDEAWORKSPACE = "." + IDEAWORKSPACE;
