@@ -193,14 +193,8 @@ public class ValidationUtil {
       return;
     }
 
-    if (model instanceof InvalidSModel) {
-      Iterable<SModel.Problem> problems = model.getProblems();
-      if (!problems.iterator().hasNext()) {
-        processor.process(new ValidationProblem(Severity.ERROR, "Couldn't read model"));
-        return;
-      }
-
-      for (SModel.Problem m : problems) {
+    if (model.getProblems().iterator().hasNext()) {
+      for (SModel.Problem m : model.getProblems()) {
         if (!m.isError()) {
           continue;
         }
