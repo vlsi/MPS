@@ -171,6 +171,15 @@ public class DynamicReference extends SReferenceBase {
     }
   }
 
+  @Override
+  public SNodeReference getTargetNodeReference() {
+    SNode targetNode = getTargetNode_internal();
+    if (targetNode == null) {
+      return new SNodePointer(null);
+    }
+    return targetNode.getReference();
+  }
+
   private void reportErrorWithOrigin(String message) {
     Set<DynamicReference> refs = currentlySourceNodeLogged.get();
     try {
