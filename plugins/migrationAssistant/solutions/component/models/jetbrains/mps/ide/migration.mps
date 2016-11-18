@@ -4694,6 +4694,18 @@
           </node>
         </node>
         <node concept="3clFbH" id="5fy1Xi0jpgN" role="3cqZAp" />
+        <node concept="3cpWs8" id="53RrckW3uD1" role="3cqZAp">
+          <node concept="3cpWsn" id="53RrckW3uD2" role="3cpWs9">
+            <property role="TrG5h" value="current" />
+            <node concept="3uibUv" id="53RrckW3uD0" role="1tU5fm">
+              <ref role="3uigEE" to="bd8o:~ModalityState" resolve="ModalityState" />
+            </node>
+            <node concept="2YIFZM" id="53RrckW3uD3" role="33vP2m">
+              <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+              <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="WEmn41A9bH" role="3cqZAp">
           <node concept="2OqwBi" id="WEmn41A9IP" role="3clFbG">
             <node concept="2YIFZM" id="WEmn41A9ti" role="2Oq$k0">
@@ -4739,9 +4751,8 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="2YIFZM" id="4rKakk1sR21" role="37wK5m">
-                                    <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
-                                    <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
+                                  <node concept="37vLTw" id="53RrckW3uD5" role="37wK5m">
+                                    <ref role="3cqZAo" node="53RrckW3uD2" resolve="current" />
                                   </node>
                                 </node>
                               </node>
@@ -4753,9 +4764,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="2YIFZM" id="4rKakk1sQNo" role="37wK5m">
-                <ref role="37wK5l" to="bd8o:~ModalityState.current():com.intellij.openapi.application.ModalityState" resolve="current" />
-                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+              <node concept="37vLTw" id="53RrckW3uD4" role="37wK5m">
+                <ref role="3cqZAo" node="53RrckW3uD2" resolve="current" />
               </node>
             </node>
           </node>

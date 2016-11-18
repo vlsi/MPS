@@ -33,9 +33,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.application.ModalityState;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
 
@@ -146,6 +146,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   protected void doNextAction() {
     super.doNextAction();
 
+    final ModalityState current = ModalityState.current();
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         ((MigrationWizardStep) getCurrentStepObject()).autostart(new _FunctionTypes._void_P0_E0() {
@@ -154,11 +155,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               public void run() {
                 updateStep();
               }
-            }, ModalityState.current());
+            }, current);
           }
         });
       }
-    }, ModalityState.current());
+    }, current);
   }
 
   @Override
