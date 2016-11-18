@@ -9,12 +9,14 @@ import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.persistence.DataSource;
-import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class RemoveHistoryFiles extends BaseProjectMigration {
@@ -23,6 +25,7 @@ public class RemoveHistoryFiles extends BaseProjectMigration {
   }
   @Override
   public boolean doExecute(Project project) {
+    // remove all *.history files under DefaultModelRoots 
     {
       final SearchScope scope = CommandUtil.createScope(project);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -30,29 +33,31 @@ public class RemoveHistoryFiles extends BaseProjectMigration {
           return scope;
         }
       };
-      Iterable<IFile> modelFiles = Sequence.fromIterable(CommandUtil.models(CommandUtil.createConsoleScope(null, false, context))).ofType(SModelBase.class).select(new ISelector<SModelBase, DataSource>() {
-        public DataSource select(SModelBase it) {
-          return it.getSource();
+      Iterable<IFile> histFiles = Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ModelRoot>() {
+        public Iterable<ModelRoot> translate(AbstractModule it) {
+          return it.getModelRoots();
         }
-      }).ofType(FileDataSource.class).select(new ISelector<FileDataSource, IFile>() {
-        public IFile select(FileDataSource it) {
-          return it.getFile();
+      }).ofType(DefaultModelRoot.class).select(new ISelector<DefaultModelRoot, IFile>() {
+        public IFile select(DefaultModelRoot it) {
+          return FileSystem.getInstance().getFile(it.getContentRoot());
         }
       }).where(new IWhereFilter<IFile>() {
         public boolean accept(IFile it) {
-          return it.getName().endsWith(MPSExtentions.DOT_MODEL);
+          return it != null;
+        }
+      }).translate(new ITranslator2<IFile, IFile>() {
+        public Iterable<IFile> translate(IFile it) {
+          return IFileUtils.getAllFiles(it);
+        }
+      }).where(new IWhereFilter<IFile>() {
+        public boolean accept(IFile it) {
+          return !(it.isDirectory()) && it.getName().endsWith(".history");
         }
       });
-      Sequence.fromIterable(modelFiles).visitAll(new IVisitor<IFile>() {
-        public void visit(IFile it) {
 
-          String name = it.getName();
-          String histName = name.substring(0, name.lastIndexOf(MPSExtentions.DOT_MODEL)) + ".history";
-          IFile histFile = it.getParent().getDescendant(histName);
-          if (histFile == null) {
-            return;
-          }
-          histFile.delete();
+      Sequence.fromIterable(histFiles).visitAll(new IVisitor<IFile>() {
+        public void visit(IFile it) {
+          it.delete();
         }
       });
     }
