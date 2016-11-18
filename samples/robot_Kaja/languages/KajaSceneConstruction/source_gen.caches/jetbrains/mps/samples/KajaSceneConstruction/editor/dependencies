@@ -109,7 +109,6 @@
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.samples.KajaSceneConstruction.editor.Position_ComponentBuilder_a" file="Position_ComponentBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

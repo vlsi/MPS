@@ -8,7 +8,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ConstantValue_EditorBuilder_a" file="ConstantValue_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenStyleClass" />
@@ -163,7 +162,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticInnerClassExpression_InspectorBuilder_a" file="ExtractStaticInnerClassExpression_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -216,7 +214,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethodExpression_InspectorBuilder_a" file="ExtractStaticMethodExpression_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -240,7 +237,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_EditorBuilder_a" file="ExtractStaticMethod_CallExpression_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodCallStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseMethodParameterInformationQuery" />
@@ -269,7 +265,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantExpression_EditorBuilder_a" file="ExtractToConstantExpression_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />
@@ -296,7 +291,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantExpression_InspectorBuilder_a" file="ExtractToConstantExpression_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -320,7 +314,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantRefExpression_EditorBuilder_a" file="ExtractToConstantRefExpression_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -371,7 +364,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_EditorBuilder_a" file="InternalAnonymousClass_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
@@ -437,7 +429,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalClassCreator_EditorBuilder_a" file="InternalClassCreator_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass" />
@@ -525,7 +516,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_EditorBuilder_a" file="InternalClassifierType_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass" />
@@ -595,7 +585,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_EditorBuilder_a" file="InternalNewExpression_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass" />
@@ -652,7 +641,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalPartialFieldReference_EditorBuilder_a" file="InternalPartialFieldReference_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleClass" />
@@ -693,7 +681,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalPartialInstanceMethodCall_EditorBuilder_a" file="InternalPartialInstanceMethodCall_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleClass" />
@@ -738,7 +725,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalStaticFieldReference_EditorBuilder_a" file="InternalStaticFieldReference_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet.InternalNameStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -762,7 +748,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_EditorBuilder_a" file="InternalStaticMethodCall_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BracketStyleClass" />
@@ -807,7 +792,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalSuperMethodCallOperation_EditorBuilder_a" file="InternalSuperMethodCallOperation_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.DotStyleClass" />
@@ -870,7 +854,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalTypedStaticFieldReference_EditorBuilder_a" file="InternalTypedStaticFieldReference_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet.InternalNameStyleClass" />
@@ -902,7 +885,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.InternalVariableReference_EditorBuilder_a" file="InternalVariableReference_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -1000,7 +982,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.WeakClassReference_EditorBuilder_a" file="WeakClassReference_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass" />

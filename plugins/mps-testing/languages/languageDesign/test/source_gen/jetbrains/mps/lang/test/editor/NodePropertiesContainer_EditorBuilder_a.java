@@ -13,7 +13,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.AnnotationStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -71,7 +71,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
   private EditorCell createAttributedNodeCell_ow7a4w_b0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
   private EditorCell createRefNodeList_ow7a4w_c0() {

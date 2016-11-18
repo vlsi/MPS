@@ -26,7 +26,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.Antiquotation_EditorBuilder_a" file="Antiquotation_EditorBuilder_a.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -147,7 +146,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.ListAntiquotation_EditorBuilder_a" file="ListAntiquotation_EditorBuilder_a.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -231,7 +229,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_EditorBuilder_a" file="NodeBuilderInitLink_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorStyleClass" />
@@ -285,7 +282,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_EditorBuilder_a" file="NodeBuilderInitProperty_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorStyleClass" />
@@ -359,7 +355,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_EditorBuilder_a" file="NodeBuilderNode_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenStyleClass" />
@@ -428,7 +423,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_EditorBuilder_a" file="NodeBuilderRef_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -516,7 +510,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_EditorBuilder_a" file="PropertyAntiquotation_EditorBuilder_a.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -668,7 +661,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_EditorBuilder_a" file="ReferenceAntiquotation_EditorBuilder_a.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

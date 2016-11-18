@@ -111,10 +111,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.setCellId("property_tag");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_EditorBuilder_a.SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0(), new SideTransformAnchorTagStyleClassItem_EditorBuilder_a.SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }

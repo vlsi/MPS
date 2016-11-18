@@ -36,7 +36,7 @@ public interface ConstraintsDescriptor {
   boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
+  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
   PropertyConstraintsDescriptor getProperty(SProperty property);
@@ -47,7 +47,7 @@ public interface ConstraintsDescriptor {
   ReferenceScopeProvider getDefaultScopeProvider();
 
   @Nullable
-  // by convention inheritance for this methods not works
+    // by convention inheritance for this methods not works
   IconResource getInstanceIcon(SNode node);
 
   // FIXME why default_CONCRETE_concept is SAbstractConcept? Need to check generated code and make sure it's SConcept at generation time

@@ -124,10 +124,9 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_EditorBuilder_a.SubstituteMenuReference_Default_generic_cellMenu_h77kbg_a0c0(), new SubstituteMenuReference_Default_EditorBuilder_a.SubstituteMenuReference_Default_concept_cellMenu_h77kbg_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -174,10 +173,9 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
       editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
         EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+        return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
       } else
       return editorCell;
     }

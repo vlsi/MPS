@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -58,7 +58,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   }
   private EditorCell createAttributedNodeCell_z4bce9_a0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
   private EditorCell createConstant_z4bce9_b0() {

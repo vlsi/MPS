@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class TemplateFragment_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -80,10 +80,9 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -133,10 +132,9 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
         EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+        return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
       } else
       return editorCell;
     }
@@ -146,7 +144,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedNodeCell_73o0fl_c0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));

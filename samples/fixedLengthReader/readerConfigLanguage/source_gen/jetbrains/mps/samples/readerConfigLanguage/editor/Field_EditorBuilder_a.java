@@ -56,10 +56,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setCellId("property_start");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -81,10 +80,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setCellId("property_end");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -106,10 +104,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }

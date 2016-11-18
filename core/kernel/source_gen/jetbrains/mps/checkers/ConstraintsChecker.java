@@ -50,27 +50,28 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
     final SConcept nodeConcept = node.getConcept();
     final SNode nodeConceptNode = SNodeOperations.getConceptDeclaration(node);
+    final SNode parent = SNodeOperations.getParent(node);
+    final SNode containingLink = SNodeOperations.getContainingLinkDeclaration(node);
+
     ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(nodeConcept);
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
-    if (SNodeOperations.getParent(node) != null) {
-      component.addDependency(SNodeOperations.getParent(node));
+    if (parent != null) {
+      component.addDependency(parent);
     }
-    if (SNodeOperations.getParent(node) != null && SNodeOperations.getParent(node).getConcept().isValid()) {
-      final SNode link = SNodeOperations.getContainingLinkDeclaration(node);
-      if (link == null) {
-        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(SNodeOperations.getParent(node)).getQualifiedName(), null);
+    if (parent != null && parent.getConcept().isValid()) {
+      if (containingLink == null) {
+        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getQualifiedName(), null);
         return;
       }
-      final SNode parent = SNodeOperations.getParent(node);
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeChild(nodeConcept, parent, link, node, checkingNodeContext);
+          return ModelConstraints.canBeChild(nodeConcept, parent, containingLink, node, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(node, "Node " + node + " cannot be child of node " + SNodeOperations.getParent(node), rule);
+        component.addError(node, "Node " + node + " cannot be child of node " + parent, rule);
       }
     }
 
@@ -108,10 +109,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
 
     if (nodeConceptNode != null) {
-      for (final Wrappers._T<SNode> ancestor = new Wrappers._T<SNode>(SNodeOperations.getParent(node)); ancestor.value != null; ancestor.value = SNodeOperations.getParent(ancestor.value)) {
+      for (final Wrappers._T<SNode> ancestor = new Wrappers._T<SNode>(parent); ancestor.value != null; ancestor.value = SNodeOperations.getParent(ancestor.value)) {
         boolean canBeAncestor = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
           public Boolean invoke() {
-            return ModelConstraints.canBeAncestorDirect(ancestor.value, node, nodeConceptNode, checkingNodeContext);
+            return ModelConstraints.canBeAncestorDirect(ancestor.value, node, nodeConceptNode, parent, containingLink, checkingNodeContext);
           }
         });
         if (!(canBeAncestor)) {

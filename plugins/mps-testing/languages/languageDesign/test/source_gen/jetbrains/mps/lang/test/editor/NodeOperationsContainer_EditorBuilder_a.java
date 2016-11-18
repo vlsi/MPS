@@ -17,7 +17,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet.NodeOperationStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -87,7 +87,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   }
   private EditorCell createAttributedNodeCell_62u4bw_c0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
   private EditorCell createRefNodeList_62u4bw_d0() {

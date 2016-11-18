@@ -53,10 +53,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   private ConstraintsDescriptor defaultScopeProviderDescriptor;
 
-  private final ConcurrentHashMap<SProperty, PropertyConstraintsDescriptor> propertiesConstraints =
-      new ConcurrentHashMap<SProperty, PropertyConstraintsDescriptor>();
-  private final ConcurrentHashMap<SReferenceLink, ReferenceConstraintsDescriptor> referencesConstraints =
-      new ConcurrentHashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
+  private final ConcurrentHashMap<SProperty, PropertyConstraintsDescriptor> propertiesConstraints = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<SReferenceLink, ReferenceConstraintsDescriptor> referencesConstraints = new ConcurrentHashMap<>();
 
   public BaseConstraintsDescriptor(SAbstractConcept concept) {
     this.myConcept = concept;
@@ -170,17 +168,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     if (canBeChildDescriptor == null) {
       return true;
     }
-    if (canBeChildDescriptor == this) {
-      // in new version it's impossible! - canBeChild in this case overriden!
-      return canBeChild(operationContext, parentNode, link, childConcept, checkingNodeContext);
-    }
+    assert canBeChildDescriptor != this : "canBeChild in this case overridden";
     return canBeChildDescriptor.canBeChild(node, parentNode, link, childConcept, operationContext, checkingNodeContext);
-  }
-
-  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
-    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -206,35 +195,18 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     if (canBeParentDescriptor == null) {
       return true;
     }
-    if (canBeParentDescriptor == this) {
-      // in new version it's impossible! - canBeParent in this case overriden!
-      return canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
-    }
+    assert canBeParentDescriptor != this : "canBeParent in this case overridden";
     return canBeParentDescriptor.canBeParent(node, childNode, childConcept, link, operationContext, checkingNodeContext);
   }
 
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
-    throw new UnsupportedOperationException();
-  }
-
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext,
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeAncestorDescriptor == null) {
       return true;
     }
-    if (canBeAncestorDescriptor == this) {
-      // in new version it's impossible! - canBeParent in this case overriden!
-      return canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
-    }
-    return canBeAncestorDescriptor.canBeAncestor(node, childNode, childConcept, operationContext, checkingNodeContext);
-  }
-
-  public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
-    // compatibility method, should be overriden
-    throw new UnsupportedOperationException();
+    assert canBeAncestorDescriptor != this : "canBeAncestor in this case overridden";
+    return canBeAncestorDescriptor.canBeAncestor(node, childNode, childConcept, parentNode, link, operationContext, checkingNodeContext);
   }
 
   public PropertyConstraintsDescriptor getProperty(SProperty property) {

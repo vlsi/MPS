@@ -13,7 +13,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class ThreadSafe_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -54,7 +54,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedNodeCell_ly4xkq_b0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
 }

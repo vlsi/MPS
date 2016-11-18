@@ -110,10 +110,9 @@ import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem__BehaviorDescrip
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_EditorBuilder_a.BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0(), new BooleanStyleSheetItem_EditorBuilder_a.BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }

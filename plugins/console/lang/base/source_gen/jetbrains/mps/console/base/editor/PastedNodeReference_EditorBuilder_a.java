@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor;
 
 /*package*/ class PastedNodeReference_EditorBuilder_a extends AbstractEditorBuilder {
@@ -80,6 +81,7 @@ import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescripto
     editorCell.addEditorCell(createConstant_7k9x8q_a0a());
     editorCell.addEditorCell(createRefCell_7k9x8q_b0a());
     editorCell.addEditorCell(createConstant_7k9x8q_c0a());
+    editorCell.addEditorCell(createConstant_7k9x8q_d0a());
     return editorCell;
   }
   private EditorCell createConstant_7k9x8q_a0a() {
@@ -107,10 +109,9 @@ import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescripto
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -177,6 +178,21 @@ import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescripto
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
+    if (true) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_7k9x8q_d0a() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_7k9x8q_d0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.UNDERLINED, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

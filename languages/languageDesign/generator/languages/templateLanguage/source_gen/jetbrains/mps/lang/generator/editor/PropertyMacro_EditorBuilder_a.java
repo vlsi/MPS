@@ -19,7 +19,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.macroDescriptionTex
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyleClass;
 
 /*package*/ class PropertyMacro_EditorBuilder_a extends AbstractEditorBuilder {
@@ -78,10 +78,9 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -90,7 +89,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
   }
   private EditorCell createAttributedPropertyCell_y5igai_c0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.PROPERTY, myNode);
     Style style = new StyleImpl();
     new nodeUnderMacroStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

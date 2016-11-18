@@ -26,7 +26,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.properties.editor.PropertiesComment_EditorBuilder_a" file="PropertiesComment_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.properiesSS_StyleSheet.CommentStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -51,7 +50,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.properties.editor.PropertiesDeclaration_EditorBuilder_a" file="PropertiesDeclaration_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.properiesSS_StyleSheet.KeyStyleClass" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.properiesSS_StyleSheet.SeparatorStyleClass" />
@@ -103,7 +101,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.properties.editor.PropertiesFile_EditorBuilder_a" file="PropertiesFile_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

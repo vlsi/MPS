@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.attribute;
+package jetbrains.mps.openapi.editor.update;
 
+/**
+ * This enumeration should be used to identify the type of Attribute for the MPS editor framework.
+ * <p>
+ * User: shatalin
+ * Date: 08/11/2016
+ */
 public enum AttributeKind {
-  NODE, REFERENCE, CHILD, PROPERTY, NOTHING;
-
-  //todo temp for compatibility
-  public static class Node {}
-  public static class Reference {}
-  public static class Child {}
-  public static class Property {}
-  public static class Nothing {}
+  NODE, REFERENCE, CHILD, PROPERTY;
 }

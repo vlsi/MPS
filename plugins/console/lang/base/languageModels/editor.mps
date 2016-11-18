@@ -161,6 +161,7 @@
         <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <reference id="1139959269582" name="actionMap" index="1ERwB7" />
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
@@ -456,6 +457,7 @@
     <ref role="1XX52x" to="eynw:54jax8WyvDY" resolve="PastedNodeReference" />
     <node concept="1QoScp" id="55XVrlFSRUw" role="2wV5jI">
       <property role="1QpmdY" value="true" />
+      <property role="1cu_pB" value="0" />
       <node concept="pkWqt" id="55XVrlFSRUx" role="3e4ffs">
         <node concept="3clFbS" id="55XVrlFSRUy" role="2VODD2">
           <node concept="3clFbF" id="55XVrlFSRUz" role="3cqZAp">
@@ -494,6 +496,7 @@
         <property role="Vb096" value="yellow" />
       </node>
       <node concept="3EZMnI" id="7zxi3b30Fm9" role="1QoS34">
+        <property role="1cu_pB" value="0" />
         <node concept="3F0ifn" id="7zxi3b30JZf" role="3EZMnx">
           <property role="3F0ifm" value=" " />
           <node concept="11LMrY" id="7zxi3b30XvW" role="3F10Kt">
@@ -544,6 +547,7 @@
         </node>
         <node concept="3F0ifn" id="7zxi3b30K0r" role="3EZMnx">
           <property role="3F0ifm" value=" " />
+          <property role="1cu_pB" value="1" />
           <node concept="11L4FC" id="7zxi3b30Xu1" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -555,6 +559,21 @@
           </node>
           <node concept="VPxyj" id="7zxi3b30K13" role="3F10Kt">
             <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7kDrb6hkRJO" role="3EZMnx">
+          <property role="3F0ifm" value="" />
+          <node concept="11L4FC" id="7kDrb6hkROn" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="11LMrY" id="7kDrb6hkRQw" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="VPM3Z" id="7kDrb6hkRSG" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="VQ3r3" id="7kDrb6hlojD" role="3F10Kt">
+            <property role="2USNnj" value="2" />
           </node>
         </node>
         <node concept="2iRfu4" id="7zxi3b30Rgf" role="2iSdaV" />

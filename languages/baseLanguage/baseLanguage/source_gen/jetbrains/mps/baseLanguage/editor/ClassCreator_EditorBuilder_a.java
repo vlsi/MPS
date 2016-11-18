@@ -98,10 +98,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "jetbrains.mps.baseLanguage.editor.ClassCreator_ApplySideTransforms"));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new ClassCreator_EditorBuilder_a.ReplaceWith_DefaultClassCreator_cellMenu_53xyyk_a0b0(), new ClassCreator_EditorBuilder_a.ClassCreator_constructorDeclaration_cellMenu_53xyyk_b0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }

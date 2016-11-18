@@ -38,7 +38,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.JavaDocSty
 import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class FieldDocComment_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -511,7 +511,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedNodeCell_c4imx1_g0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
 }

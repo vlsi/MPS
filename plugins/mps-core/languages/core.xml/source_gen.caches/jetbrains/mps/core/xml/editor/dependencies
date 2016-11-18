@@ -81,7 +81,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlAttribute_EditorBuilder_a" file="XmlAttribute_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlBaseAttribute__BehaviorDescriptor" />
@@ -239,7 +238,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlCDATA_EditorBuilder_a" file="XmlCDATA_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -264,7 +262,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlCharRefValue_EditorBuilder_a" file="XmlCharRefValue_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlAttrCharRefValueStyleClass" />
@@ -301,7 +298,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlCharRef_EditorBuilder_a" file="XmlCharRef_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlCharRefStyleClass" />
@@ -327,7 +323,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlCommentLine_EditorBuilder_a" file="XmlCommentLine_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlCommentStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -465,7 +460,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlDeclaration_EditorBuilder_a" file="XmlDeclaration_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlAttributeNameStyleClass" />
@@ -494,7 +488,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlDoctypeDeclaration_EditorBuilder_a" file="XmlDoctypeDeclaration_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
@@ -563,7 +556,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlElement_EditorBuilder_a" file="XmlElement_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlElement__BehaviorDescriptor" />
@@ -635,7 +627,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlEntityRefValue_EditorBuilder_a" file="XmlEntityRefValue_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -681,7 +672,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlEntityRef_EditorBuilder_a" file="XmlEntityRef_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -716,7 +706,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlExternalId_EditorBuilder_a" file="XmlExternalId_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.ExternalIdMenu" />
@@ -751,7 +740,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlFile_EditorBuilder_a" file="XmlFile_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -808,7 +796,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlProcessingInstruction_EditorBuilder_a" file="XmlProcessingInstruction_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlPIDataStyleClass" />
@@ -927,7 +914,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlTextValue_EditorBuilder_a" file="XmlTextValue_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlAttributeValueStyleClass" />
@@ -987,7 +973,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlText_EditorBuilder_a" file="XmlText_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -1110,7 +1095,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlWhitespace_EditorBuilder_a" file="XmlWhitespace_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

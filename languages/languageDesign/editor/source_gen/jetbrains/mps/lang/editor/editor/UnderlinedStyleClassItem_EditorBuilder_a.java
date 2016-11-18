@@ -102,10 +102,9 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     editorCell.setCellId("property_underlined");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new UnderlinedStyleClassItem_EditorBuilder_a.UnderlinedStyleClassItem_underlined_cellMenu_4fi5xp_a0c0(), new UnderlinedStyleClassItem_EditorBuilder_a.UnderlinedStyleClassItem_generic_cellMenu_4fi5xp_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }

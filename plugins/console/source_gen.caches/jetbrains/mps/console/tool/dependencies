@@ -51,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleUtil" />
     <classNode dependClassName="jetbrains.mps.console.tool._Adapters" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
@@ -71,6 +72,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.datatransfer.NodePaster" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -30,6 +29,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeLegacy;
@@ -86,10 +86,9 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return AttributeOperations.getPropertyAttributes(getSNode(), myPropertyName);
   }
 
-  // gets a kind of attributes possibly hanging on this provider's role
   @Override
-  public Class getRoleAttributeClass() {
-    return AttributeKind.Property.class;
+  public AttributeKind getRoleAttributeKind() {
+    return AttributeKind.PROPERTY;
   }
 
   @Override

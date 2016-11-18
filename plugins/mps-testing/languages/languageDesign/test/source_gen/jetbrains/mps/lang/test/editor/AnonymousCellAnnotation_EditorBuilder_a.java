@@ -14,7 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet.EditorOperationStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class AnonymousCellAnnotation_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -67,7 +67,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedNodeCell_ql48ef_c0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;
   }
   private EditorCell createConstant_ql48ef_d0() {

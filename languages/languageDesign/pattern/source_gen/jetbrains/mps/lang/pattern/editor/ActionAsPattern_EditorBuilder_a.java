@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class ActionAsPattern_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -151,7 +151,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedNodeCell_x7b2gi_d0a() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     editorCell.getStyle().putAll(style);
@@ -174,7 +174,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedNodeCell_x7b2gi_a1a() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.DRAW_BRACKETS, true);

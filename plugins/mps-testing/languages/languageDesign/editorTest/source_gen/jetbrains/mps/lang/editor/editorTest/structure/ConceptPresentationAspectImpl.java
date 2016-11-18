@@ -46,6 +46,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SelectionChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SelectionContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SideTranformWrapper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleNode = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleNodeHidingAttribute = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleNodesContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SimplePropertyAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SimplePropertyContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubBlock = new ConceptPresentationBuilder().create();
@@ -140,6 +143,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SelectionContainer;
       case LanguageConceptSwitch.SideTranformWrapper:
         return props_SideTranformWrapper;
+      case LanguageConceptSwitch.SimpleNode:
+        return props_SimpleNode;
+      case LanguageConceptSwitch.SimpleNodeHidingAttribute:
+        return props_SimpleNodeHidingAttribute;
+      case LanguageConceptSwitch.SimpleNodesContainer:
+        return props_SimpleNodesContainer;
       case LanguageConceptSwitch.SimplePropertyAttribute:
         return props_SimplePropertyAttribute;
       case LanguageConceptSwitch.SimplePropertyContainer:

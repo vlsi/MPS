@@ -79,6 +79,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -390,6 +392,8 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
               paster.pasteWithRemove(myEditor.getSelectedNodes());
             }
             TemporaryModels.getInstance().addMissingImports(myModel);
+            myEditor.getUpdater().flushModelEvents();
+            SelectionUtil.selectLabelCellAnSetCaret(myEditor.getEditorContext(), refContainer, SelectionManager.LAST_CELL, -1);
           } else {
             check_6q36mf_a0a0e0a0a5ec_0(myDefaultPasteProvider, context);
           }

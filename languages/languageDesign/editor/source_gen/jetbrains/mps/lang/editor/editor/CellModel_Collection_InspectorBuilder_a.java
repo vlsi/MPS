@@ -193,10 +193,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -243,10 +242,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.setCellId("property_usesFolding");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_Collection_InspectorBuilder_a.CellModel_Collection_usesFolding_cellMenu_cvgoyj_a0a1c3a(), new CellModel_Collection_InspectorBuilder_a.CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }
@@ -343,10 +341,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.setCellId("property_collapseByDefault");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_Collection_InspectorBuilder_a.CellModel_Collection_collapseByDefault_cellMenu_cvgoyj_a0a1d3a(), new CellModel_Collection_InspectorBuilder_a.CellModel_Collection_generic_cellMenu_cvgoyj_b0a1d3a(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
   }

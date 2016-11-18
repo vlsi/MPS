@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class DefaultReferenceAttribute_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -48,7 +48,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
   }
   private EditorCell createAttributedLinkCell_nltvu5_b0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.REFERENCE, myNode);
     return editorCell;
   }
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -31,6 +30,7 @@ import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -67,8 +67,6 @@ public class EditorManager {
   private Deque<Map<ReferencedNodeContext, EditorCell>> myContextToOldCellMap = new LinkedList<Map<ReferencedNodeContext, EditorCell>>();
   private boolean myCreatingInspectedCell = false;
 
-  private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
-  private Deque<EditorCell> myAttributedCells = new LinkedList<EditorCell>();
   private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   @Nullable
@@ -147,9 +145,9 @@ public class EditorManager {
     }
   }
 
-  public EditorCell createNodeRoleAttributeCell(SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
+  public EditorCell createNodeRoleAttributeCell(SNode roleAttribute, AttributeKind attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
-    EditorCell attributeCell = getUpdateSession().updateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
+    EditorCell attributeCell = getUpdateSession().updateAttributeCell(attributeKind, cellWithRole, roleAttribute);
     // see a comment for isAttributedCell() method
     if (attributeCell == cellWithRole) {
       return cellWithRole;
@@ -178,7 +176,7 @@ public class EditorManager {
     if (cellWithRole_RefTargetsDependsOn != null) {
       newAttributeCell_RefTargetsDependsOn.addAll(cellWithRole_RefTargetsDependsOn);
     }
-    if (attributeKind != AttributeKind.Node.class) {
+    if (attributeKind != AttributeKind.NODE) {
       NodeReadAccessInEditorListener readAccessListener = NodeReadAccessCasterInEditor.getReadAccessListener();
       if (readAccessListener != null) {
         newAttributeCell_DependOn.addAll(readAccessListener.getNodesToDependOn());
@@ -188,55 +186,6 @@ public class EditorManager {
     getUpdateSession().registerDependencies(attributeCell, newAttributeCell_DependOn, newAttributeCell_RefTargetsDependsOn);
 
     return attributeCell;
-  }
-
-  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
-  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, ReferencedNodeContext refContext,
-      List<Pair<SNode, SNodeReference>> modifications) {
-    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
-    if (stack == null) {
-      stack = new Stack<EditorCell>();
-      myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
-    }
-    stack.push(cellWithRole);
-
-    // For the compatibility with Attribute concept editor.
-    // If the editor for sub-concept of Attribute was not specified then default one will be used, so
-    // providing the possibility to always call getCurrentAttributedCellWithRole() with AttributeKind.Node.class
-    // specified as a parameter.
-    Stack<EditorCell> nodeAttributeStack = null;
-    if (attributeKind != AttributeKind.Node.class) {
-      nodeAttributeStack = myAttributedClassesToAttributedCellStacksMap.get(AttributeKind.Node.class);
-      if (nodeAttributeStack == null) {
-        nodeAttributeStack = new Stack<EditorCell>();
-        myAttributedClassesToAttributedCellStacksMap.put(AttributeKind.Node.class, nodeAttributeStack);
-      }
-      nodeAttributeStack.push(cellWithRole);
-    }
-    myAttributedCells.addLast(cellWithRole);
-    EditorCell result = createEditorCell(modifications, refContext);
-    myAttributedCells.removeLast();
-    EditorCell cellWithRolePopped = stack.pop();
-    LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
-    if (nodeAttributeStack != null) {
-      cellWithRolePopped = nodeAttributeStack.pop();
-      LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
-    }
-    return result;
-  }
-
-  @NotNull
-  public EditorCell getCurrentAttributedCellWithRole(Class attributeKind, SNode node) {
-    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
-    if (stack == null) {
-      stack = new Stack<EditorCell>();
-      myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
-    }
-    EditorCell result = stack.isEmpty() ? null : stack.peek();
-    if (result == null) {
-      result = new EditorCell_Error(getEditorContext(), node, "<attributed cell not found>");
-    }
-    return result;
   }
 
   protected boolean areAttributesShown() {
@@ -261,7 +210,7 @@ public class EditorManager {
 
             SNode poppedAttribute = myAttributesStack.pop();
             LOG.assertLog(poppedAttribute == attribute, "Assertion failed.");
-            return createNodeRoleAttributeCell(attribute, AttributeKind.Node.class, nodeCell);
+            return createNodeRoleAttributeCell(attribute, AttributeKind.NODE, nodeCell);
           }
         }
       }
@@ -358,14 +307,14 @@ public class EditorManager {
       final SNode node = refContext.getNode();
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
-        if (!isAttributedCell(editorCell)) {
+        if (!isAttributedCell(editorCell, refContext)) {
           editorCell = removeSideTransformHintCell(editorCell);
         }
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
         editorCell.synchronize();
         result = editorCell;
 
-        if (!isAttributedCell(result)) {
+        if (!isAttributedCell(result, refContext)) {
           result = addSideTransformHintCell(result, node);
         }
       } catch (Throwable e) {
@@ -394,7 +343,7 @@ public class EditorManager {
         nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         addNodeDependenciesToEditor(result, nodeAccessListener);
-        if (!isAttributedCell(result)) {
+        if (!isAttributedCell(result, refContext)) {
           result.putUserObject(BIG_CELL_CONTEXT, refContext);
           EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(result, node);
           if (unwrappedNodeBigCell != null) {
@@ -422,7 +371,7 @@ public class EditorManager {
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
         nodeCell = getCellFactory().createEditorCell(node, isInspectorCell);
 
-        if (!isAttributedCell(nodeCell)) {
+        if (!isAttributedCell(nodeCell, refContext)) {
           nodeCell = addSideTransformHintCell(nodeCell, node);
         }
       } catch (Throwable e) {
@@ -451,7 +400,7 @@ public class EditorManager {
         nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         assert nodeCell != null;
-        if (!isAttributedCell(nodeCell)) {
+        if (!isAttributedCell(nodeCell, refContext)) {
           nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
           EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
           if (unwrappedNodeBigCell != null) {
@@ -529,8 +478,8 @@ public class EditorManager {
    * This method is used to determine if the result of the generated attribute editor execution is equals to original cell of the
    * attributed node.
    */
-  private boolean isAttributedCell(@NotNull EditorCell nodeCell) {
-    return myAttributedCells.peekLast() == nodeCell;
+  private boolean isAttributedCell(@NotNull EditorCell nodeCell, @NotNull ReferencedNodeContext refContext) {
+    return refContext.isNodeAttribute() && nodeCell.getSNode() != refContext.getNode();
   }
 
   private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener) {

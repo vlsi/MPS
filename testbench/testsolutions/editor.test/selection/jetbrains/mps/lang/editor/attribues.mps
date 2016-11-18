@@ -67,6 +67,12 @@
       <concept id="3447504547918837138" name="jetbrains.mps.lang.editor.editorTest.structure.Composition" flags="ng" index="3bUgEc">
         <child id="3447504547918837407" name="children" index="3bUgA1" />
       </concept>
+      <concept id="3946870033235823874" name="jetbrains.mps.lang.editor.editorTest.structure.SimpleNode" flags="ng" index="1Rothw" />
+      <concept id="3946870033235823875" name="jetbrains.mps.lang.editor.editorTest.structure.SimpleNodeHidingAttribute" flags="ng" index="1Rothx" />
+      <concept id="3946870033235823900" name="jetbrains.mps.lang.editor.editorTest.structure.SimpleNodesContainer" flags="ng" index="1RothY">
+        <child id="3946870033235833359" name="anotherNode" index="1RouHH" />
+        <child id="3946870033235833357" name="simpleNode" index="1RouHJ" />
+      </concept>
     </language>
   </registry>
   <node concept="LiM7Y" id="2ZnZLV$gtnW">
@@ -321,6 +327,42 @@
       </node>
       <node concept="2TK7Tu" id="2ZnZLV$g_b5" role="3cqZAp">
         <property role="2TTd_B" value="," />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3r66m91Ev0$">
+    <property role="TrG5h" value="UpdateHidingAttribute" />
+    <node concept="1RothY" id="3r66m91Ev1u" role="LiRBU">
+      <node concept="1Rothw" id="3r66m91Ev1C" role="1RouHJ">
+        <node concept="1Rothx" id="3r66m91ELTs" role="lGtFl" />
+      </node>
+      <node concept="LIFWc" id="3r66m91ES8U" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_anotherNode" />
+      </node>
+    </node>
+    <node concept="1RothY" id="3r66m91ES94" role="LiZbd">
+      <node concept="1Rothw" id="3r66m91ES95" role="1RouHJ">
+        <node concept="1Rothx" id="3r66m91ES96" role="lGtFl" />
+      </node>
+      <node concept="1Rothw" id="3r66m91ES9s" role="1RouHH">
+        <node concept="LIFWc" id="3r66m91ES9I" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="10" />
+          <property role="p6zMs" value="10" />
+          <property role="LIFWd" value="Constant_p2ghwc_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3r66m91ESc0" role="LjaKd">
+      <node concept="2HxZob" id="3r66m91ESbY" role="3cqZAp">
+        <node concept="1iFQzN" id="3r66m91EScc" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
       </node>
     </node>
   </node>

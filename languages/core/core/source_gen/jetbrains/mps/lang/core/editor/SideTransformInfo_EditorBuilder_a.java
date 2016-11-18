@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class SideTransformInfo_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
   private EditorCell createAttributedNodeCell_l4s2w4_a() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, myNode);
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     return editorCell;

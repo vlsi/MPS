@@ -24,7 +24,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildLayout_ToBinaryCopyProcessor_InspectorBuilder_a" file="BuildLayout_ToBinaryCopyProcessor_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -68,7 +67,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsAspect_EditorBuilder_a" file="BuildMpsAspect_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass" />
@@ -116,7 +114,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleJars_EditorBuilder_a" file="BuildMpsLayout_ModuleJars_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass" />
@@ -153,7 +150,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleJars_InspectorBuilder_a" file="BuildMpsLayout_ModuleJars_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -191,7 +187,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_EditorBuilder_a" file="BuildMpsLayout_ModuleSources_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.outputLayoutStyleClass" />
@@ -221,7 +216,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleSources_InspectorBuilder_a" file="BuildMpsLayout_ModuleSources_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -248,7 +242,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleXml_CustomJarLocation_EditorBuilder_a" file="BuildMpsLayout_ModuleXml_CustomJarLocation_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -278,7 +271,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleXml_EditorBuilder_a" file="BuildMpsLayout_ModuleXml_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -333,7 +325,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_PluginDescriptor_EditorBuilder_a" file="BuildMpsLayout_PluginDescriptor_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -359,7 +350,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_Plugin_EditorBuilder_a" file="BuildMpsLayout_Plugin_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.outputLayoutStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -385,7 +375,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_Plugin_InspectorBuilder_a" file="BuildMpsLayout_Plugin_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -574,7 +563,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Branding_EditorBuilder_a" file="BuildMps_Branding_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -615,7 +603,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_EditorBuilder_a" file="BuildMps_DevKitExportLanguage_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -641,7 +628,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportSolution_EditorBuilder_a" file="BuildMps_DevKitExportSolution_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -687,7 +673,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_DevKitRef_EditorBuilder_a" file="BuildMps_DevKitRef_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -713,7 +698,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_DevKit_EditorBuilder_a" file="BuildMps_DevKit_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -757,7 +741,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_DevKit_InspectorBuilder_a" file="BuildMps_DevKit_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -823,7 +806,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_GeneratorOptions_EditorBuilder_a" file="BuildMps_GeneratorOptions_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.projectPartKeywordStyleClass" />
@@ -852,7 +834,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Generator_EditorBuilder_a" file="BuildMps_Generator_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.projectPartKeywordStyleClass" />
@@ -897,7 +878,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Generator_InspectorBuilder_a" file="BuildMps_Generator_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor" />
@@ -949,7 +929,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Group_EditorBuilder_a" file="BuildMps_Group_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.projectPartKeywordStyleClass" />
@@ -1005,7 +984,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginDependency_EditorBuilder_a" file="BuildMps_IdeaPluginDependency_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1030,7 +1008,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroupCustomModule_EditorBuilder_a" file="BuildMps_IdeaPluginGroupCustomModule_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1055,7 +1032,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroup_EditorBuilder_a" file="BuildMps_IdeaPluginGroup_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -1127,7 +1103,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginModule_EditorBuilder_a" file="BuildMps_IdeaPluginModule_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1149,7 +1124,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginModule_InspectorBuilder_a" file="BuildMps_IdeaPluginModule_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1201,7 +1175,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginVendor_EditorBuilder_a" file="BuildMps_IdeaPluginVendor_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -1234,7 +1207,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_IdeaPlugin_EditorBuilder_a" file="BuildMps_IdeaPlugin_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -1281,7 +1253,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Language_EditorBuilder_a" file="BuildMps_Language_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -1325,7 +1296,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Language_InspectorBuilder_a" file="BuildMps_Language_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -1365,7 +1335,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_EditorBuilder_a" file="BuildMps_ModuleDependencyExtendLanguage_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1422,7 +1391,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_EditorBuilder_a" file="BuildMps_ModuleDependencyOnDevKit_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1447,7 +1415,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_EditorBuilder_a" file="BuildMps_ModuleDependencyOnJavaModule_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.delete_javaDepReexport" />
@@ -1477,7 +1444,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_EditorBuilder_a" file="BuildMps_ModuleDependencyOnModule_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.build.mps.editor.delete_moduleDepReexport" />
@@ -1508,7 +1474,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_EditorBuilder_a" file="BuildMps_ModuleDependencyUseLanguage_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1578,7 +1543,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleJavaSource_InspectorBuilder_a" file="BuildMps_ModuleJavaSource_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1661,7 +1625,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_EditorBuilder_a" file="BuildMps_ModuleSolutionRuntime_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1799,7 +1762,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Solution_EditorBuilder_a" file="BuildMps_Solution_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -1845,7 +1807,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Solution_InspectorBuilder_a" file="BuildMps_Solution_InspectorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass" />
@@ -2002,7 +1963,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.GeneratorInternal_String_EditorBuilder_a" file="GeneratorInternal_String_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -2026,7 +1986,6 @@
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.SourcesKindComponent_ComponentBuilder_a" file="SourcesKindComponent_ComponentBuilder_a.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

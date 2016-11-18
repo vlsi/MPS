@@ -48,7 +48,8 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
@@ -58,12 +59,14 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 

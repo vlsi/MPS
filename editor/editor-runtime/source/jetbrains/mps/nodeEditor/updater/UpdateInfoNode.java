@@ -35,7 +35,7 @@ class UpdateInfoNode {
 
   private final ReferencedNodeContext myContext;
   private UpdateInfoNode myParent;
-  private final Collection<UpdateInfoNode> myChildren = new ArrayList<UpdateInfoNode>();
+  private final Collection<UpdateInfoNode> myChildren = new ArrayList<>();
 
   UpdateInfoNode(ReferencedNodeContext context) {
     myContext = context;
@@ -56,7 +56,7 @@ class UpdateInfoNode {
     myChildren.remove(child);
   }
 
-  private void attachNewParent(@NotNull UpdateInfoNode parent) {
+  protected void attachNewParent(@NotNull UpdateInfoNode parent) {
     assert myParent == null;
     myParent = parent;
     parent.addChild(this);
@@ -72,42 +72,27 @@ class UpdateInfoNode {
   }
 
   @NotNull
-  UpdateInfoNode replace(@NotNull UpdateInfoNode updateInfoNode) {
-    assert updateInfoNode.getParent() == null;
-    if (getParent() != null) {
-      updateInfoNode.attachNewParent(detachFromParent());
-    }
-    if (updateInfoNode.getContext().isNodeAttribute()) {
-      SNode attributedNode = updateInfoNode.getContext().getNode().getParent();
-      if (attributedNode != null) {
-        for (UpdateInfoNode childInfo : updateInfoNode.getChildren()) {
-          if (childInfo.getContext().getNode() == attributedNode) {
-            LOG.error("Invalid child UpdateInfoNode (node: " + attributedNode + "<" + attributedNode.getConcept() +
-                ">) present in UpdateInfoNode for node attribute: (node: " + updateInfoNode.getContext().getNode() + "<" +
-                updateInfoNode.getContext().getNode().getConcept() + ">)", new Throwable());
-          }
-        }
-      } else {
-        LOG.error(
-            "Attributed node expected, but is null (node: " + updateInfoNode.getContext().getNode() + "<" + updateInfoNode.getContext().getNode().getConcept() +
-                ">", new Throwable());
-      }
+  UpdateInfoNode replace(@NotNull UpdateInfoNode replacement) {
+    assert replacement.getParent() == null;
+    validateBeforeReplace(replacement);
 
-      for (UpdateInfoNode childInfo : new ArrayList<UpdateInfoNode>(getChildren())) {
-        childInfo.detachFromParent();
-        childInfo.attachNewParent(updateInfoNode);
-      }
+    if (getParent() != null) {
+      replacement.attachNewParent(detachFromParent());
     }
-    return updateInfoNode;
+
+    return replacement;
+  }
+
+  protected void validateBeforeReplace(UpdateInfoNode replacement) {
+    // In case of node attribute, we create separate sub-class of this class: UpdateInfoNodeAttribute
+    assert !getContext().isNodeAttribute();
+    assert !replacement.getContext().isNodeAttribute();
   }
 
   @NotNull
-  UpdateInfoNode insertNewParent(@NotNull UpdateInfoNode attributeUpdateInfo) {
-    if (getParent() != null) {
-      attributeUpdateInfo.attachNewParent(detachFromParent());
-    }
-    attachNewParent(attributeUpdateInfo);
-    return attributeUpdateInfo;
+  UpdateInfoNode replaceByNodeAttributeInfo(@NotNull ReferencedNodeContext context) {
+    assert context.isNodeAttribute();
+    return new UpdateInfoNodeAttribute(context);
   }
 
   @NotNull
@@ -138,4 +123,67 @@ class UpdateInfoNode {
       child.calculateSize(analyzer);
     }
   }
+
+  void keepAttributedInfo() {
+  }
+
+  private class UpdateInfoNodeAttribute extends UpdateInfoNode {
+    private boolean myAttributeInfoKept;
+
+    private UpdateInfoNodeAttribute(ReferencedNodeContext context) {
+      super(context);
+      if (UpdateInfoNode.this.getParent() != null) {
+        attachNewParent(UpdateInfoNode.this.detachFromParent());
+      }
+    }
+
+    @NotNull
+    @Override
+    UpdateInfoNode replace(@NotNull UpdateInfoNode replacement) {
+      super.replace(replacement);
+
+      if (((UpdateInfoNodeAttribute) replacement).myAttributeInfoKept) {
+        keepAttributedInfo();
+      }
+      for (UpdateInfoNode childInfo : new ArrayList<>(getChildren())) {
+        childInfo.detachFromParent();
+        childInfo.attachNewParent(replacement);
+      }
+      return replacement;
+    }
+
+    @Override
+    void keepAttributedInfo() {
+      if (myAttributeInfoKept) {
+        return;
+      }
+      UpdateInfoNode.this.attachNewParent(this);
+      myAttributeInfoKept = true;
+    }
+
+    @Override
+    protected void validateBeforeReplace(UpdateInfoNode replacement) {
+      // UpdateInfoNodeAttribute may be replaced only by UpdateInfoNodeAttribute
+      assert replacement instanceof UpdateInfoNodeAttribute;
+
+      SNode attributedNode = replacement.getContext().getNode().getParent();
+      if (attributedNode != null) {
+        // For node attributes, in case of reusing UpdateInfoNodeAttribute:
+        //
+        // UpdateInfoNode of the attributed node should be reused as well.
+        // In accordance with current updater logic, at this moment it should
+        // be already removed from the list of children of the reused
+        // UpdateInfoNodeAttribute for the attribute.
+        replacement.getChildren().stream().filter(ci -> ci.getContext().getNode() == attributedNode).findFirst().ifPresent(ci -> LOG.error(
+            "Invalid child UpdateInfoNode (node: " + attributedNode + "<" + attributedNode.getConcept() +
+                ">) present in UpdateInfoNode for node attribute: (node: " + replacement.getContext().getNode() + "<" +
+                replacement.getContext().getNode().getConcept() + ">)", new Throwable()));
+      } else {
+        LOG.error(
+            "Attributed node expected, but is null (node: " + replacement.getContext().getNode() + "<" + replacement.getContext().getNode().getConcept() + ">",
+            new Throwable());
+      }
+    }
+  }
 }
+

@@ -54,8 +54,8 @@
       <node id="2870455723671203621" at="45,34,46,34" concept="1" />
       <node id="2870455723671203621" at="46,34,47,22" concept="5" />
       <node id="2870455723671203627" at="49,59,50,85" concept="4" />
-      <node id="2870455723671203627" at="50,85,51,103" concept="4" />
-      <node id="2870455723671203627" at="51,103,52,22" concept="5" />
+      <node id="2870455723671203627" at="50,85,51,93" concept="4" />
+      <node id="2870455723671203627" at="51,93,52,22" concept="5" />
       <node id="2870455723671203561" at="16,0,18,0" concept="2" trace="myNode" />
       <node id="2870455723671203561" at="30,0,33,0" concept="3" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2870455723671203561" at="19,0,23,0" concept="0" trace="DefaultNodeAttribute_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -116,8 +116,8 @@
       <node id="2870455723671203645" at="45,34,46,34" concept="1" />
       <node id="2870455723671203645" at="46,34,47,22" concept="5" />
       <node id="2870455723671203651" at="49,63,50,85" concept="4" />
-      <node id="2870455723671203651" at="50,85,51,107" concept="4" />
-      <node id="2870455723671203651" at="51,107,52,22" concept="5" />
+      <node id="2870455723671203651" at="50,85,51,97" concept="4" />
+      <node id="2870455723671203651" at="51,97,52,22" concept="5" />
       <node id="2870455723671203636" at="16,0,18,0" concept="2" trace="myNode" />
       <node id="2870455723671203636" at="30,0,33,0" concept="3" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2870455723671203636" at="19,0,23,0" concept="0" trace="DefaultPropertyAttribute_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -178,8 +178,8 @@
       <node id="2870455723671203672" at="45,34,46,34" concept="1" />
       <node id="2870455723671203672" at="46,34,47,22" concept="5" />
       <node id="2870455723671203682" at="49,59,50,85" concept="4" />
-      <node id="2870455723671203682" at="50,85,51,108" concept="4" />
-      <node id="2870455723671203682" at="51,108,52,22" concept="5" />
+      <node id="2870455723671203682" at="50,85,51,98" concept="4" />
+      <node id="2870455723671203682" at="51,98,52,22" concept="5" />
       <node id="2870455723671203660" at="16,0,18,0" concept="2" trace="myNode" />
       <node id="2870455723671203660" at="30,0,33,0" concept="3" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2870455723671203660" at="19,0,23,0" concept="0" trace="DefaultReferenceAttribute_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />

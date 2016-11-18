@@ -69,17 +69,16 @@
       <node id="1252378774017430338" at="104,63,105,42" concept="1" />
       <node id="1252378774017430338" at="105,42,106,73" concept="1" />
       <node id="1252378774017430338" at="106,73,107,57" concept="5" />
-      <node id="1252378774017430338" at="107,57,108,59" concept="5" />
-      <node id="1252378774017430338" at="109,35,110,87" concept="5" />
-      <node id="1252378774017430338" at="110,87,111,94" concept="6" />
-      <node id="1252378774017430338" at="112,10,113,22" concept="6" />
-      <node id="1252378774017460277" at="115,49,116,94" concept="5" />
-      <node id="1252378774017460277" at="116,94,117,47" concept="1" />
-      <node id="1252378774017460277" at="117,47,118,34" concept="5" />
-      <node id="1252378774017460277" at="118,34,119,54" concept="1" />
-      <node id="1252378774017460277" at="119,54,120,40" concept="1" />
-      <node id="1252378774017460277" at="120,40,121,34" concept="1" />
-      <node id="1252378774017460277" at="121,34,122,22" concept="6" />
+      <node id="1252378774017430338" at="108,35,109,87" concept="5" />
+      <node id="1252378774017430338" at="109,87,110,112" concept="6" />
+      <node id="1252378774017430338" at="111,10,112,22" concept="6" />
+      <node id="1252378774017460277" at="114,49,115,94" concept="5" />
+      <node id="1252378774017460277" at="115,94,116,47" concept="1" />
+      <node id="1252378774017460277" at="116,47,117,34" concept="5" />
+      <node id="1252378774017460277" at="117,34,118,54" concept="1" />
+      <node id="1252378774017460277" at="118,54,119,40" concept="1" />
+      <node id="1252378774017460277" at="119,40,120,34" concept="1" />
+      <node id="1252378774017460277" at="120,34,121,22" concept="6" />
       <node id="1252378774017430323" at="27,0,29,0" concept="2" trace="myNode" />
       <node id="1252378774017430323" at="41,0,44,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1252378774017430323" at="61,0,64,0" concept="0" trace="wrappedSingleRoleHandler_h38hy6_a0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -90,13 +89,13 @@
       <node id="1252378774017430323" at="56,0,60,0" concept="4" trace="createRefNode_h38hy6_a0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1252378774017430323" at="35,0,40,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1252378774017430323" at="64,0,69,0" concept="4" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="1252378774017430338" at="108,59,113,22" concept="3" />
+      <node id="1252378774017430338" at="107,57,112,22" concept="3" />
       <node id="1252378774017430323" at="69,0,77,0" concept="4" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="1252378774017430323" at="77,0,85,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="1252378774017460277" at="115,0,124,0" concept="4" trace="createConstant_h38hy6_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1252378774017460277" at="114,0,123,0" concept="4" trace="createConstant_h38hy6_d0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1252378774017460265" at="89,0,99,0" concept="4" trace="createConstant_h38hy6_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1252378774017430323" at="45,0,56,0" concept="4" trace="createCollection_h38hy6_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="1252378774017430338" at="99,0,115,0" concept="4" trace="createProperty_h38hy6_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1252378774017430338" at="99,0,114,0" concept="4" trace="createProperty_h38hy6_c0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1252378774017430323" at="37,26,38,18" />
       <scope id="1252378774017430323" at="41,39,42,39" />
       <scope id="1252378774017430323" at="61,121,62,49" />
@@ -107,7 +106,7 @@
       <scope id="1252378774017430323" at="56,48,58,33">
         <var name="provider" id="1252378774017430323" />
       </scope>
-      <scope id="1252378774017430338" at="109,35,111,94">
+      <scope id="1252378774017430338" at="108,35,110,112">
         <var name="manager" id="1252378774017430338" />
       </scope>
       <scope id="1252378774017430323" at="41,0,44,0" />
@@ -133,7 +132,7 @@
         <var name="editorCell" id="1252378774017430323" />
       </scope>
       <scope id="1252378774017430323" at="69,70,75,7" />
-      <scope id="1252378774017460277" at="115,49,122,22">
+      <scope id="1252378774017460277" at="114,49,121,22">
         <var name="editorCell" id="1252378774017460277" />
         <var name="style" id="1252378774017460277" />
       </scope>
@@ -149,18 +148,17 @@
       <scope id="1252378774017430323" at="45,50,54,22">
         <var name="editorCell" id="1252378774017430323" />
       </scope>
-      <scope id="1252378774017460277" at="115,0,124,0" />
+      <scope id="1252378774017460277" at="114,0,123,0" />
       <scope id="1252378774017460265" at="89,0,99,0" />
       <scope id="1252378774017430323" at="45,0,56,0" />
-      <scope id="1252378774017430338" at="99,49,113,22">
+      <scope id="1252378774017430338" at="99,49,112,22">
         <var name="attributeConcept" id="1252378774017430338" />
-        <var name="attributeKind" id="1252378774017430338" />
         <var name="editorCell" id="1252378774017430338" />
         <var name="provider" id="1252378774017430338" />
       </scope>
-      <scope id="1252378774017430338" at="99,0,115,0" />
+      <scope id="1252378774017430338" at="99,0,114,0" />
       <unit id="1252378774017430323" at="60,0,89,0" name="testWrappedType.editor.TypeWithUnits_EditorBuilder_a$wrappedSingleRoleHandler_h38hy6_a0" />
-      <unit id="1252378774017430323" at="26,0,125,0" name="testWrappedType.editor.TypeWithUnits_EditorBuilder_a" />
+      <unit id="1252378774017430323" at="26,0,124,0" name="testWrappedType.editor.TypeWithUnits_EditorBuilder_a" />
     </file>
   </root>
 </debug-info>

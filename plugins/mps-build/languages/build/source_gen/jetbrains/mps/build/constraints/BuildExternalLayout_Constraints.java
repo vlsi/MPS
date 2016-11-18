@@ -36,8 +36,8 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAnAncestor(node, childNode, childConcept, parentNode, link, context);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeAncesctorBreakingPoint);
@@ -48,7 +48,7 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return false;
   }
-  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
+  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, SNode parentNode, SNode link, final IOperationContext operationContext) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
       return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0c8fbL, "jetbrains.mps.build.structure.BuildLayout_PureNode"));
     }
