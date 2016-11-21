@@ -23,13 +23,6 @@ import jetbrains.mps.lang.aspect.behavior.LanguageAspectDescriptor__BehaviorDesc
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.template.MappingScriptContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
@@ -194,19 +187,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !((SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"))));
-      }
-    });
-  }
-  public static void mappingScript_CodeBlock_8273960561238395269(final MappingScriptContext _context) {
-    final SModel origModel = _context.getOriginalInputModel();
-    Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects()).where(new IWhereFilter<LanguageAspectDescriptor>() {
-      public boolean accept(LanguageAspectDescriptor it) {
-        return it.getAspectModels(origModel.getModule()).contains(origModel) && it.getGenerator() != null;
-      }
-    }).visitAll(new IVisitor<LanguageAspectDescriptor>() {
-      public void visit(LanguageAspectDescriptor it) {
-        SNode descriptor = it.getGenerator().generateDescriptor(it.getAspectModels(origModel.getModule()));
-        SModelOperations.addRootNode(_context.getModel(), descriptor);
       }
     });
   }

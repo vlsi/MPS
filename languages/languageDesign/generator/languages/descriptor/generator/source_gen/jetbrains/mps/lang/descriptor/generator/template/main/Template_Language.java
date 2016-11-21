@@ -800,29 +800,20 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
                 // TODO validate child 
               }
               {
-                Collection<SNode> tlist90 = null;
-                final Iterable<SNode> copyListInput90 = QueriesGenerated.sourceNodesQuery_5735715048356169572(new SourceSubstituteMacroNodesContext(context37, copySrcListMacro_ko6gu6_b0a0a1a2a1a9a1a41a4a4));
-                tlist90 = environment.copyNodes(copyListInput90, copySrcListMacro_ko6gu6_b0a0a1a2a1a9a1a41a4a4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5735715048356163404", context37);
-                for (SNode child91 : TemplateUtil.asNotNull(tlist90)) {
-                  tnode82.addChild(myAggregationLinks[8], child91);
-                }
-                // TODO validate child 
-              }
-              {
-                final SNode tnode92 = environment.createOutputNode(myConcepts[15]);
+                final SNode tnode90 = environment.createOutputNode(myConcepts[15]);
                 try {
                   TemplateContext context41 = context37.subContext();
                   {
-                    final SNode tnode93 = environment.createOutputNode(myConcepts[23]);
+                    final SNode tnode91 = environment.createOutputNode(myConcepts[23]);
                     try {
                     } finally {
                     }
-                    tnode92.addChild(myAggregationLinks[12], tnode93);
+                    tnode90.addChild(myAggregationLinks[12], tnode91);
                     // TODO validate child 
                   }
                 } finally {
                 }
-                tnode82.addChild(myAggregationLinks[8], tnode92);
+                tnode82.addChild(myAggregationLinks[8], tnode90);
                 // TODO validate child 
               }
             } finally {
@@ -831,12 +822,12 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
             // TODO validate child 
           }
           {
-            final SNode tnode94 = environment.createOutputNode(myConcepts[11]);
+            final SNode tnode92 = environment.createOutputNode(myConcepts[11]);
             try {
-              tnode94.setReference(myAssociationLinks[1], SReference.create(myAssociationLinks[1], tnode94, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode92.setReference(myAssociationLinks[1], SReference.create(myAssociationLinks[1], tnode92, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
-            tnode74.addChild(myAggregationLinks[9], tnode94);
+            tnode74.addChild(myAggregationLinks[9], tnode92);
             // TODO validate child 
           }
         } finally {
@@ -955,5 +946,4 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
   private static SNodePointer loopMacroRef_ko6gu6_b0a0a1a1a1a9a1a41a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761783825");
   private static SNodePointer varMacroRef_ko6gu6_b0a0a3a2a1a1a9a1a41a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761783845");
   private static SNodePointer templateSwitchNodeNoInput_ko6gu6_a0a0c0g0c0b0b0j0b0o0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761786951");
-  private static SNodePointer copySrcListMacro_ko6gu6_b0a0a1a2a1a9a1a41a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5735715048356169570");
 }
