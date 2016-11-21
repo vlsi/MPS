@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -122,7 +121,7 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
-    SModel containerModel = myContainerModel.resolve(MPSModuleRepository.getInstance());
+    SModel containerModel = myContainerModel.resolve(myDebuggerRepository);
 
     SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);
