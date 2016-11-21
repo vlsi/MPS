@@ -24,7 +24,6 @@ import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -34,8 +33,7 @@ import java.util.Collection;
 public class IconManager {
   public static Icon getIconForIHolder(IHolder holder) {
     if (holder instanceof NodeHolder) {
-      SNode node = ((NodeHolder) holder).getObject();
-      return node == null ? null : jetbrains.mps.ide.icons.IconManager.getIconFor(node);
+      return IdeIcons.DEFAULT_NODE_ICON;
     } else if (holder instanceof ModelHolder) {
       return IdeIcons.MODEL_ICON;
     } else if (holder instanceof ModelsHolder) {

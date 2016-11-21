@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,21 +18,19 @@ package jetbrains.mps.ide.findusages.model.holders;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class NodeHolder implements IHolder<SNode> {
+public class NodeHolder implements IHolder<SNodeReference> {
   private static final String NODE = "node";
   private static final String REF = "ref";
+  private static final String CAPTION = "title";
 
   private SNodeReference myNodePointer;
-  private SRepository myRepository; // FIXME won't need once we return SNodeReference, not SNode
+  private String myTitle; // can be null
 
   public NodeHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
@@ -40,25 +38,18 @@ public class NodeHolder implements IHolder<SNode> {
 
   public NodeHolder(@NotNull SNode node) {
     myNodePointer = node.getReference();
-    myRepository = node.getModel() == null ? null : node.getModel().getRepository();
+    myTitle = node.getPresentation();
   }
 
   @Override
-  public SNode getObject() {
-    final SRepository r = myRepository == null ? MPSModuleRepository.getInstance() : myRepository;
-    // runReadAction is here, not outside as this class needs to be refactored to return SNodeReference, not SNode
-    // and once refactored, readAccess would be gone.
-    final ResolveNodeRef c = new ResolveNodeRef(myNodePointer, r);
-    r.getModelAccess().runReadAction(c);
-    return c.getResult();
+  public SNodeReference getObject() {
+    return myNodePointer;
   }
 
   @Override
   @NotNull
   public String getCaption() {
-    SNode node = getObject();
-    if (node == null) return "<null>";
-    return node.toString();
+    return myTitle == null ? myNodePointer.toString() : myTitle;
   }
 
   @Override
@@ -69,32 +60,16 @@ public class NodeHolder implements IHolder<SNode> {
     }
 
     myNodePointer = PersistenceFacade.getInstance().createNodeReference(nodeXML.getAttributeValue(REF));
-    myRepository = project.getRepository();
+    myTitle = nodeXML.getAttributeValue(CAPTION);
   }
 
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
-
-    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == null) {
-      throw new CantSaveSomethingException("node is null");
-    }
-
     Element nodeXML = new Element(NODE);
-    nodeXML.setAttribute(REF, myNodePointer.toString());
+    nodeXML.setAttribute(REF, PersistenceFacade.getInstance().asString(myNodePointer));
+    if (myTitle != null) {
+      nodeXML.setAttribute(CAPTION, myTitle);
+    }
     element.addContent(nodeXML);
-  }
-
-  private static class ResolveNodeRef extends AbstractComputeRunnable<SNode> {
-    private final SNodeReference myNodeReference;
-    private final SRepository myWhere;
-
-    public ResolveNodeRef(@NotNull SNodeReference nodeReference, @NotNull SRepository where) {
-      myNodeReference = nodeReference;
-      myWhere = where;
-    }
-    @Override
-    protected SNode compute() {
-      return myNodeReference.resolve(myWhere);
-    }
   }
 }
