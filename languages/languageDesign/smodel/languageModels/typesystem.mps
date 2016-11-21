@@ -11978,5 +11978,31 @@
       <ref role="1YaFvo" to="tp25:4JM1Q3lfSBE" resolve="SConceptTypeLiteral" />
     </node>
   </node>
+  <node concept="1YbPZF" id="6w_7fBrSm6w">
+    <property role="TrG5h" value="typeof_Node_ContainingLinkOperation" />
+    <property role="3GE5qa" value="operation.node" />
+    <node concept="3clFbS" id="6w_7fBrSm6x" role="18ibNy">
+      <node concept="1Z5TYs" id="6w_7fBrSm6y" role="3cqZAp">
+        <node concept="mw_s8" id="6w_7fBrSm6z" role="1ZfhKB">
+          <node concept="2c44tf" id="6w_7fBrSmC3" role="mwGJk">
+            <node concept="3uibUv" id="6w_7fBrSmEr" role="2c44tc">
+              <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="6w_7fBrSm6A" role="1ZfhK$">
+          <node concept="1Z2H0r" id="6w_7fBrSm6B" role="mwGJk">
+            <node concept="1YBJjd" id="6w_7fBrSm6C" role="1Z2MuG">
+              <ref role="1YBMHb" node="6w_7fBrSm6D" resolve="op" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6w_7fBrSm6D" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tp25:6w_7fBrSjZW" resolve="Node_ContainingLinkOperation" />
+    </node>
+  </node>
 </model>
 

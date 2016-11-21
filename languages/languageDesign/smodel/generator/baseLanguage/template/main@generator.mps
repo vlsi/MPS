@@ -3792,6 +3792,36 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="6w_7fBrSmI$" role="3acgRq">
+      <ref role="30HIoZ" to="tp25:6w_7fBrSjZW" resolve="Node_ContainingLinkOperation" />
+      <node concept="gft3U" id="6w_7fBrSmI_" role="1lVwrX">
+        <node concept="2OqwBi" id="6w_7fBrSxkv" role="gfFT$">
+          <node concept="2ShNRf" id="6w_7fBrSpIS" role="2Oq$k0">
+            <node concept="1pGfFk" id="6w_7fBrSx5Y" role="2ShVmc">
+              <ref role="37wK5l" to="w1kc:~SNode.&lt;init&gt;(org.jetbrains.mps.openapi.language.SConcept)" resolve="SNode" />
+              <node concept="10Nm6u" id="6w_7fBrSxtH" role="37wK5m" />
+            </node>
+            <node concept="29HgVG" id="6w_7fBrSxuw" role="lGtFl">
+              <node concept="3NFfHV" id="6w_7fBrSxuU" role="3NFExx">
+                <node concept="3clFbS" id="6w_7fBrSxuV" role="2VODD2">
+                  <node concept="3clFbF" id="6w_7fBrSmIF" role="3cqZAp">
+                    <node concept="2OqwBi" id="6w_7fBrSmIG" role="3clFbG">
+                      <node concept="30H73N" id="6w_7fBrSmIH" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6w_7fBrSmII" role="2OqNvi">
+                        <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="liA8E" id="6w_7fBrSxti" role="2OqNvi">
+            <ref role="37wK5l" to="w1kc:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="1GPSoCqeOZP" role="3acgRq">
       <ref role="30HIoZ" to="tp25:1GPSoCqeMMq" resolve="Node_GetContainingRoleOperation" />
       <node concept="gft3U" id="1GPSoCqeOZR" role="1lVwrX">

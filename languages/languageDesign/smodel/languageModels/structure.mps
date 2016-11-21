@@ -1636,6 +1636,10 @@
     <property role="34LRSv" value="containingLink" />
     <property role="EcuMT" value="5820409030208923287" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="asaX9" id="6w_7fBrSjZU" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="Use &quot;link&quot; operation. Remove after 3.5" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1GPSoCqeMMq">
     <property role="R5$K7" value="false" />
@@ -1648,7 +1652,7 @@
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
     <node concept="asaX9" id="7cdZoO_MeDD" role="lGtFl">
       <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="use SNode.getContainmentLink() method" />
+      <property role="YLQ7P" value="use SNode.getContainmentLink() method or &quot;link&quot; operation after 3.5" />
     </node>
   </node>
   <node concept="1TIwiD" id="38ovo3PI8w0">
@@ -2723,6 +2727,16 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6w_7fBrSjZW">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="Node_ContainingLinkOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="operation.node" />
+    <property role="34LRSv" value="link" />
+    <property role="EcuMT" value="7504436213544206332" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
 </model>
 

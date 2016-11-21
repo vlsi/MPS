@@ -93,6 +93,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodePointerExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeRefExpression = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Node_ConceptMethodCall = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, 0x27990abcdcff2f1dL, "directCall")).create();
+  private final ConceptPresentation props_Node_ContainingLinkOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_CopyOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_DeleteOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_DetachOperation = new ConceptPresentationBuilder().create();
@@ -102,7 +103,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Node_GetChildrenAndChildAttributesOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetChildrenOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetConceptOperation = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_Node_GetContainingLinkOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Node_GetContainingLinkOperation = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Node_GetContainingRoleOperation = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Node_GetContainingRootOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetDescendantsOperation = new ConceptPresentationBuilder().create();
@@ -354,6 +355,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeRefExpression;
       case LanguageConceptSwitch.Node_ConceptMethodCall:
         return props_Node_ConceptMethodCall;
+      case LanguageConceptSwitch.Node_ContainingLinkOperation:
+        return props_Node_ContainingLinkOperation;
       case LanguageConceptSwitch.Node_CopyOperation:
         return props_Node_CopyOperation;
       case LanguageConceptSwitch.Node_DeleteOperation:
