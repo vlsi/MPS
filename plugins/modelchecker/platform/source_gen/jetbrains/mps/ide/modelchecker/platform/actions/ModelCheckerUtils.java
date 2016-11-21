@@ -12,18 +12,15 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ModelCheckerUtils {
+public final class ModelCheckerUtils {
   private ModelCheckerUtils() {
   }
+
   public static List<SModel> getModelDescriptors(SModule module) {
     List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
@@ -42,16 +39,7 @@ public class ModelCheckerUtils {
     }
     return modelDescrpitors;
   }
-  public static List<SModel> getModelDescriptors(Iterable<SModule> modules) {
-    List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModule module : Sequence.fromIterable(modules)) {
-      ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(module)));
-    }
-    return modelDescrpitors;
-  }
-  public static List<SModel> getModelDescriptors(Project project) {
-    return getModelDescriptors(project.getProjectModules());
-  }
+
   public static int getIssueCountForSeverity(@NotNull SearchResults<ModelCheckerIssue> issues, @Nullable String severity) {
     if (severity == null) {
       return 0;
@@ -63,8 +51,5 @@ public class ModelCheckerUtils {
       }
     }
     return issueCount;
-  }
-  public static boolean isDeclaredLink(SNode linkDeclaration, boolean child) {
-    return ((linkDeclaration != null) && child ? SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference") : SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference"));
   }
 }

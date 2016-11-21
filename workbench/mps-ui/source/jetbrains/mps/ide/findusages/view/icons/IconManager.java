@@ -19,8 +19,6 @@ import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -42,10 +40,6 @@ public class IconManager {
       return IdeIcons.MODEL_ICON;
     } else if (holder instanceof ModelsHolder) {
       return IdeIcons.MODEL_ICON;
-    } else if (holder instanceof ModuleHolder) {
-      return jetbrains.mps.ide.icons.IconManager.getIconFor(((ModuleHolder) holder).getObject());
-    } else if (holder instanceof ModulesHolder) {
-      return IdeIcons.SOLUTION_ICON;
     } else if (holder instanceof VoidHolder) {
       return ((VoidHolder) holder).getIcon();
     }
