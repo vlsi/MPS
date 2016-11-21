@@ -27,7 +27,6 @@
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="frkw" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi(JDK-tools/)" />
@@ -571,7 +570,10 @@
                       </node>
                       <node concept="2ShNRf" id="1KUoCiqb5ZY" role="33vP2m">
                         <node concept="1pGfFk" id="1KUoCiqb5ZZ" role="2ShVmc">
-                          <ref role="37wK5l" to="i1lu:IYmOvntYf9" resolve="EvaluationModule" />
+                          <ref role="37wK5l" to="i1lu:5$fHs$AvHaI" resolve="EvaluationModule" />
+                          <node concept="37vLTw" id="3OkcvSSChIQ" role="37wK5m">
+                            <ref role="3cqZAo" node="3YA7anLNAIb" resolve="repository" />
+                          </node>
                         </node>
                       </node>
                     </node>

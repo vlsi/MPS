@@ -63,7 +63,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     assert repository instanceof SRepositoryExt;
     repository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        EvaluationModule module = new EvaluationModule();
+        EvaluationModule module = new EvaluationModule(repository);
         ((SRepositoryExt) repository).registerModule(module, myDebugSession.getProject());
         myContainerModuleRef = module.getModuleReference();
       }

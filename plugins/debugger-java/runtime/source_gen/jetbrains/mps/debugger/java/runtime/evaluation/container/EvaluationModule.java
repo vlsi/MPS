@@ -11,8 +11,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
@@ -40,16 +38,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
   private final SRepository myRepository;
-
-  /**
-   * 
-   * @deprecated please provide a repository at the constructioni
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public EvaluationModule() {
-    this(MPSModuleRepository.getInstance());
-  }
 
   public EvaluationModule(@NotNull SRepository repo) {
     setModuleReference(new ModuleReference("Evaluation Container Module ", ModuleId.regular()));
