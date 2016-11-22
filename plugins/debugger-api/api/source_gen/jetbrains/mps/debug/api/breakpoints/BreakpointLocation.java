@@ -33,6 +33,7 @@ public class BreakpointLocation {
     myTargetCodeLocation = new NodeTraceInfo(node, TraceInfoCache.getInstance().get(node.getModel()));
   }
 
+  @NotNull
   public SNodeReference getNodePointer() {
     return myTargetCodeLocation.getNode();
   }
