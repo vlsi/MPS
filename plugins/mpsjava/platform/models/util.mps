@@ -1133,7 +1133,7 @@
                           </node>
                           <node concept="359W_D" id="3IB1iu7ngDv" role="37wK5m">
                             <ref role="359W_E" to="tpee:fzclF80" resolve="StatementList" />
-                            <ref role="359W_F" to="tpee:fzcqZ_x" />
+                            <ref role="359W_F" to="tpee:fzcqZ_x" resolve="statement" />
                           </node>
                         </node>
                       </node>
@@ -1563,7 +1563,7 @@
                     <node concept="32TBzR" id="3Pe5uytFlaq" role="2OqNvi">
                       <node concept="1aIX9F" id="3Pe5uytFlar" role="1xVPHs">
                         <node concept="26LbJo" id="3Pe5uytFlas" role="1aIX9E">
-                          <ref role="26LbJp" to="tpee:4EqhHTp4Mw3" />
+                          <ref role="26LbJp" to="tpee:4EqhHTp4Mw3" resolve="member" />
                         </node>
                       </node>
                     </node>
@@ -1604,7 +1604,7 @@
                     <node concept="32TBzR" id="1a2pD6vlM58" role="2OqNvi">
                       <node concept="1aIX9F" id="1a2pD6vlO3Q" role="1xVPHs">
                         <node concept="26LbJo" id="1a2pD6vlOe3" role="1aIX9E">
-                          <ref role="26LbJp" to="tpee:4EqhHTp4Mw3" />
+                          <ref role="26LbJp" to="tpee:4EqhHTp4Mw3" resolve="member" />
                         </node>
                       </node>
                     </node>
@@ -1631,7 +1631,7 @@
                 </node>
                 <node concept="2OqwBi" id="1a2pD6vl4YD" role="2Oq$k0">
                   <node concept="3Tsc0h" id="1a2pD6vl5XY" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
+                    <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" resolve="member" />
                   </node>
                   <node concept="37vLTw" id="1a2pD6vl4Iy" role="2Oq$k0">
                     <ref role="3cqZAo" node="1a2pD6vkXGi" resolve="parent" />
@@ -2321,7 +2321,10 @@
           <node concept="2OqwBi" id="77gRpGvSrEb" role="3clFbG">
             <node concept="2ShNRf" id="77gRpGvSrE7" role="2Oq$k0">
               <node concept="1pGfFk" id="77gRpGvSrE9" role="2ShVmc">
-                <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;()" resolve="OptimizeImportsHelper" />
+                <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="OptimizeImportsHelper" />
+                <node concept="37vLTw" id="2SW9I0senx0" role="37wK5m">
+                  <ref role="3cqZAo" node="4fuA5EbPd9q" resolve="myContextRepository" />
+                </node>
               </node>
             </node>
             <node concept="liA8E" id="77gRpGvSrEf" role="2OqNvi">

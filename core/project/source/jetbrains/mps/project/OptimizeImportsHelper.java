@@ -23,7 +23,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -55,15 +54,6 @@ public class OptimizeImportsHelper {
   private static final Logger LOG = LogManager.getLogger(OptimizeImportsHelper.class);
 
   private final SRepository myRepository;
-
-  /**
-   * @deprecated please pass the repository to the constructor
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public OptimizeImportsHelper() {
-    this(MPSModuleRepository.getInstance());
-  }
 
   /**
    * @param repository -- is a context repository which contains the modules/models the client want to resolve
