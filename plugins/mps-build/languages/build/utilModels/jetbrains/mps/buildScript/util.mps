@@ -350,10 +350,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -7045,24 +7042,6 @@
       <node concept="3Tm1VV" id="4_YGhOEl1pm" role="1B3o_S" />
       <node concept="3cqZAl" id="4_YGhOEl2y7" role="3clF45" />
       <node concept="P$JXv" id="4_YGhOEll7p" role="lGtFl">
-        <node concept="TUZQ0" id="4_YGhOEll7s" role="TUOzN">
-          <property role="TUZQ4" value="artifact, likely from getArtifact()" />
-          <node concept="zr_55" id="4_YGhOEll7u" role="zr_5Q">
-            <ref role="zr_51" node="4_YGhOElbmn" resolve="layoutNode" />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="4_YGhOEll7v" role="TUOzN">
-          <property role="TUZQ4" value="node that has a path relative to layoutNode, likely from the same model as layoutNode" />
-          <node concept="zr_55" id="4_YGhOEll7x" role="zr_5Q">
-            <ref role="zr_51" node="4_YGhOElcmA" resolve="key" />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="4_YGhOEll7y" role="TUOzN">
-          <property role="TUZQ4" value="path for the key node" />
-          <node concept="zr_55" id="4_YGhOEll7$" role="zr_5Q">
-            <ref role="zr_51" node="4_YGhOEldnE" resolve="location" />
-          </node>
-        </node>
         <node concept="TZ5HA" id="4_YGhOEloym" role="TZ5H$">
           <node concept="1dT_AC" id="4_YGhOEloyn" role="1dT_Ay">
             <property role="1dT_AB" value="" />
@@ -7077,6 +7056,24 @@
           </node>
           <node concept="1dT_AC" id="4_YGhOEloyz" role="1dT_Ay">
             <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4_YGhOEll7s" role="3nqlJM">
+          <property role="TUZQ4" value="artifact, likely from getArtifact()" />
+          <node concept="zr_55" id="4_YGhOEll7u" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOElbmn" resolve="layoutNode" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4_YGhOEll7v" role="3nqlJM">
+          <property role="TUZQ4" value="node that has a path relative to layoutNode, likely from the same model as layoutNode" />
+          <node concept="zr_55" id="4_YGhOEll7x" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOElcmA" resolve="key" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4_YGhOEll7y" role="3nqlJM">
+          <property role="TUZQ4" value="path for the key node" />
+          <node concept="zr_55" id="4_YGhOEll7$" role="zr_5Q">
+            <ref role="zr_51" node="4_YGhOEldnE" resolve="location" />
           </node>
         </node>
       </node>
@@ -7126,19 +7123,19 @@
       <node concept="3Tm1VV" id="4_YGhOElhJK" role="1B3o_S" />
       <node concept="17QB3L" id="4_YGhOEliUu" role="3clF45" />
       <node concept="P$JXv" id="4_YGhOElC$h" role="lGtFl">
-        <node concept="TUZQ0" id="4_YGhOElC$k" role="TUOzN">
+        <node concept="TUZQ0" id="4_YGhOElC$k" role="3nqlJM">
           <property role="TUZQ4" value="artifact, likely the one from getArtifact() call, from a model the moment DH was initialized" />
           <node concept="zr_55" id="4_YGhOElC$m" role="zr_5Q">
             <ref role="zr_51" node="4_YGhOElk6t" resolve="layoutNode" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4_YGhOElC$n" role="TUOzN">
+        <node concept="TUZQ0" id="4_YGhOElC$n" role="3nqlJM">
           <property role="TUZQ4" value="node with path relative to layoutNode, may come from a model other than that of layoutNode (i.e. later transient), and might be different from the key in putLayoutRelativePath()" />
           <node concept="zr_55" id="4_YGhOElC$p" role="zr_5Q">
             <ref role="zr_51" node="4_YGhOElk6v" resolve="key" />
           </node>
         </node>
-        <node concept="x79VA" id="4_YGhOElC$q" role="x79VK">
+        <node concept="x79VA" id="4_YGhOElC$q" role="3nqlJM">
           <property role="x79VB" value="location path for the key node, if any" />
         </node>
       </node>
@@ -8590,7 +8587,7 @@
       </node>
       <node concept="3Tm6S6" id="41__iZjlqRA" role="1B3o_S" />
       <node concept="P$JXv" id="1zM08Z7Mk$$" role="lGtFl">
-        <node concept="x79VA" id="1zM08Z7Mk$H" role="x79VK">
+        <node concept="x79VA" id="1zM08Z7Mk$H" role="3nqlJM">
           <property role="x79VB" value="@code {true} if buffer was augmented" />
         </node>
       </node>

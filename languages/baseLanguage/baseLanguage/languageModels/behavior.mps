@@ -430,10 +430,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -69319,13 +69316,13 @@
             <property role="1dT_AB" value="initialized'). For use from code that loads Java stubs." />
           </node>
         </node>
-        <node concept="TUZQ0" id="4JQsEoqXxoJ" role="TUOzN">
+        <node concept="TUZQ0" id="4JQsEoqXxoJ" role="3nqlJM">
           <property role="TUZQ4" value="the concept of the comment" />
           <node concept="zr_55" id="4JQsEoqXxoL" role="zr_5Q">
             <ref role="zr_51" node="4JQsEoqXq3f" resolve="commentConcept" />
           </node>
         </node>
-        <node concept="x79VA" id="4JQsEoqXxoM" role="x79VK">
+        <node concept="x79VA" id="4JQsEoqXxoM" role="3nqlJM">
           <property role="x79VB" value="a newly created initialized node of {@code commentConcept}" />
         </node>
       </node>

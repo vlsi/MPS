@@ -259,10 +259,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -12266,13 +12265,13 @@
         </node>
       </node>
       <node concept="P$JXv" id="23Rh9MB8a7q" role="lGtFl">
-        <node concept="TUZQ0" id="23Rh9MB8at4" role="TUOzN">
+        <node concept="TUZQ0" id="23Rh9MB8at4" role="3nqlJM">
           <property role="TUZQ4" value="collection to report" />
           <node concept="zr_55" id="23Rh9MB8at5" role="zr_5Q">
             <ref role="zr_51" node="23Rh9MB895U" resolve="classifiers" />
           </node>
         </node>
-        <node concept="TUZQ0" id="23Rh9MB8at6" role="TUOzN">
+        <node concept="TUZQ0" id="23Rh9MB8at6" role="3nqlJM">
           <property role="TUZQ4" value="true indicates we generate a top-level class, false for inner class indicates we shall record relaxed dependency" />
           <node concept="zr_55" id="23Rh9MB8at7" role="zr_5Q">
             <ref role="zr_51" node="23Rh9MB895W" resolve="isTopClassifier" />

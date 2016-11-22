@@ -226,10 +226,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -6027,25 +6026,25 @@
             <property role="1dT_AB" value="but on other hand it is common concept to be deal with." />
           </node>
         </node>
-        <node concept="TUZQ0" id="LKa9XK7udT" role="TUOzN">
+        <node concept="TUZQ0" id="LKa9XK7udT" role="3nqlJM">
           <property role="TUZQ4" value="used as template to copy to all existing or created KeymapChanges" />
           <node concept="zr_55" id="LKa9XK7ueb" role="zr_5Q">
             <ref role="zr_51" node="LKa9XK71vi" resolve="shortcutChange" />
           </node>
         </node>
-        <node concept="TUZQ0" id="LKa9XK6Ixl" role="TUOzN">
+        <node concept="TUZQ0" id="LKa9XK6Ixl" role="3nqlJM">
           <property role="TUZQ4" value="model wich will contains KeymapChanges" />
           <node concept="zr_55" id="LKa9XK6Ixn" role="zr_5Q">
             <ref role="zr_51" node="1adAGAvXBLb" resolve="model" />
           </node>
         </node>
-        <node concept="TUZQ0" id="LKa9XK6Ixo" role="TUOzN">
+        <node concept="TUZQ0" id="LKa9XK6Ixo" role="3nqlJM">
           <property role="TUZQ4" value="list of Keymaps to which copy shortcutChange will be added" />
           <node concept="zr_55" id="LKa9XK6Ixq" role="zr_5Q">
             <ref role="zr_51" node="1adAGAvXEmZ" resolve="keymaps" />
           </node>
         </node>
-        <node concept="TUZQ0" id="LKa9XK6Ixr" role="TUOzN">
+        <node concept="TUZQ0" id="LKa9XK6Ixr" role="3nqlJM">
           <property role="TUZQ4" value="used to open editors and set focus to shortcut" />
           <node concept="zr_55" id="LKa9XK6Ixt" role="zr_5Q">
             <ref role="zr_51" node="1adAGAvXQMj" resolve="editorContext" />

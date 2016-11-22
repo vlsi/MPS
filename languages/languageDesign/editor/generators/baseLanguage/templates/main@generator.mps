@@ -563,7 +563,7 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -12496,7 +12496,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="1OmL7qejOEg" role="lGtFl">
-        <node concept="TZ5HI" id="1OmL7qejPW$" role="TZ5Hx">
+        <node concept="TZ5HI" id="1OmL7qejPW$" role="3nqlJM">
           <node concept="TZ5HA" id="1OmL7qejPW_" role="3HnX3l">
             <node concept="1dT_AC" id="1OmL7qejQAX" role="1dT_Ay">
               <property role="1dT_AB" value="Since MPS 3.5 use generated StyleClass" />

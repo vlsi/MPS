@@ -271,9 +271,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -630,7 +628,7 @@
       <node concept="3Tm1VV" id="8PnvxglocC" role="1B3o_S" />
       <node concept="3clFbS" id="8PnvxglocD" role="3clF47" />
       <node concept="P$JXv" id="8Pnvxglp3V" role="lGtFl">
-        <node concept="x79VA" id="8Pnvxglp3Y" role="x79VK">
+        <node concept="x79VA" id="8Pnvxglp3Y" role="3nqlJM">
           <property role="x79VB" value="MPS (its platform aspect) of this tooling environment, not null when initialized." />
         </node>
       </node>
@@ -820,7 +818,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="P$JXv" id="2$4oShLamFQ" role="lGtFl">
-        <node concept="x79VA" id="2$4oShLamFT" role="x79VK">
+        <node concept="x79VA" id="2$4oShLamFT" role="3nqlJM">
           <property role="x79VB" value="null if we do not want to specify plugins to the platform" />
         </node>
       </node>
@@ -1402,7 +1400,7 @@
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
       <node concept="P$JXv" id="2$4oShLa_j5" role="lGtFl">
-        <node concept="x79VA" id="2$4oShLa_j8" role="x79VK">
+        <node concept="x79VA" id="2$4oShLa_j8" role="3nqlJM">
           <property role="x79VB" value="EnvironmentConfig with no specified plugins. At the time of writing it meant that the platform will load all the plugins. Note that one needs to provide a proper class path." />
         </node>
       </node>

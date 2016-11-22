@@ -149,9 +149,10 @@
       <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -521,7 +522,7 @@
       </node>
       <node concept="17QB3L" id="2ytFvC$HDv$" role="3clF45" />
       <node concept="P$JXv" id="2ytFvC$HEDw" role="lGtFl">
-        <node concept="x79VA" id="2ytFvC$HEDz" role="x79VK">
+        <node concept="x79VA" id="2ytFvC$HEDz" role="3nqlJM">
           <property role="x79VB" value="identifier that can be used to look up this intention via IntentionsManager#getIntentionById()" />
         </node>
       </node>

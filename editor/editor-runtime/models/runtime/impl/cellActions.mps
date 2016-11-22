@@ -245,10 +245,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -2135,16 +2132,16 @@
         </node>
       </node>
       <node concept="P$JXv" id="40AgflwsWwI" role="lGtFl">
-        <node concept="TUZQ0" id="40AgflwsWwL" role="TUOzN">
-          <property role="TUZQ4" value="node to comment. This node must have parent" />
-          <node concept="zr_55" id="40AgflwsWwN" role="zr_5Q">
-            <ref role="zr_51" node="2ETBKOyiRK5" resolve="node" />
-          </node>
-        </node>
         <node concept="x0GOo" id="40AgflwsWAg" role="3nqlJM">
           <property role="x0GOq" value="if node does not have parent" />
           <node concept="3uibUv" id="5FzO4t9hwaW" role="zrq5$">
             <ref role="3uigEE" to="wyt6:~IllegalArgumentException" resolve="IllegalArgumentException" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="40AgflwsWwL" role="3nqlJM">
+          <property role="TUZQ4" value="node to comment. This node must have parent" />
+          <node concept="zr_55" id="40AgflwsWwN" role="zr_5Q">
+            <ref role="zr_51" node="2ETBKOyiRK5" resolve="node" />
           </node>
         </node>
       </node>
@@ -2286,16 +2283,16 @@
             <property role="1dT_AB" value="" />
           </node>
         </node>
-        <node concept="TUZQ0" id="40Agflwt6gB" role="TUOzN">
-          <property role="TUZQ4" value="attribute containing commented node. This node must have parent" />
-          <node concept="zr_55" id="40Agflwt6gD" role="zr_5Q">
-            <ref role="zr_51" node="74g66v1JYyK" resolve="attribute" />
-          </node>
-        </node>
         <node concept="x0GOo" id="40Agflwt6mz" role="3nqlJM">
           <property role="x0GOq" value="if attribute has no parent   " />
           <node concept="3uibUv" id="5FzO4t9hxNO" role="zrq5$">
             <ref role="3uigEE" to="wyt6:~IllegalArgumentException" resolve="IllegalArgumentException" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="40Agflwt6gB" role="3nqlJM">
+          <property role="TUZQ4" value="attribute containing commented node. This node must have parent" />
+          <node concept="zr_55" id="40Agflwt6gD" role="zr_5Q">
+            <ref role="zr_51" node="74g66v1JYyK" resolve="attribute" />
           </node>
         </node>
       </node>
@@ -5245,14 +5242,14 @@
             <property role="1dT_AB" value="Also if containment link of the commented node is singular and non optional comments or deletes the existing child whether it is instance of abstract concept or not respectively" />
           </node>
         </node>
-        <node concept="x79VA" id="24Me8yynH52" role="x79VK">
-          <property role="x79VB" value="node which was under the comment" />
-        </node>
         <node concept="x0GOo" id="24Me8yynHdj" role="3nqlJM">
           <property role="x0GOq" value="if node to uncomment does not have parent" />
           <node concept="3uibUv" id="24Me8yynHdz" role="zrq5$">
             <ref role="3uigEE" to="wyt6:~IllegalStateException" resolve="IllegalStateException" />
           </node>
+        </node>
+        <node concept="x79VA" id="24Me8yynH52" role="3nqlJM">
+          <property role="x79VB" value="node which was under the comment" />
         </node>
       </node>
     </node>

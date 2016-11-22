@@ -285,10 +285,9 @@
       <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -3207,7 +3206,7 @@
       <property role="TrG5h" value="check" />
       <node concept="P$JXv" id="3HjgqlBzXvC" role="lGtFl">
         <node concept="TZ5HA" id="3HjgqlBzXvD" role="TZ5H$" />
-        <node concept="x79VA" id="3HjgqlBzXvR" role="x79VK">
+        <node concept="x79VA" id="3HjgqlBzXvR" role="3nqlJM">
           <property role="x79VB" value="whether state has changed after the check" />
         </node>
       </node>

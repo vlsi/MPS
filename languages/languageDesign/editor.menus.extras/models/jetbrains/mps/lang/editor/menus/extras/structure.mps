@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -48,7 +49,7 @@
     <property role="R4oN_" value="performs an intention" />
     <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="PrWs8" id="6kJcyCQ$ioX" role="PzmwI">
-      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
     </node>
     <node concept="1TJgyj" id="2ytFvC$HnDi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -72,7 +73,7 @@
     <property role="R4oN_" value="performs a refactoring" />
     <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="PrWs8" id="46W80XA3sdS" role="PzmwI">
-      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
     </node>
     <node concept="1TJgyj" id="46W80XA3sdU" role="1TKVEi">
       <property role="IQ2ns" value="4736696158595695482" />
@@ -89,7 +90,7 @@
     <property role="R4oN_" value="plugin action item" />
     <ref role="1TJDcQ" to="tpc2:1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="PrWs8" id="20Jj4S2C96i" role="PzmwI">
-      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleMenuPart" />
+      <ref role="PrY4T" to="tpc2:6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
     </node>
     <node concept="1TJgyj" id="20Jj4S2C96k" role="1TKVEi">
       <property role="IQ2ns" value="2319156231054332308" />

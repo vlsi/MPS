@@ -176,7 +176,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -301,10 +301,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -3862,14 +3859,14 @@
             <property role="1dT_AB" value="Check for isValid() before running this method" />
           </node>
         </node>
-        <node concept="x79VA" id="77iVR6LYlYT" role="x79VK">
-          <property role="x79VB" value="true if nodes were moved. Otherwise if there is no place for nodes to be moved false is returned" />
-        </node>
         <node concept="x0GOo" id="4_YM0vJWoWm" role="3nqlJM">
           <property role="x0GOq" value="if mover has invalid state" />
           <node concept="3uibUv" id="4_YM0vJWoZI" role="zrq5$">
             <ref role="3uigEE" to="wyt6:~IllegalStateException" resolve="IllegalStateException" />
           </node>
+        </node>
+        <node concept="x79VA" id="77iVR6LYlYT" role="3nqlJM">
+          <property role="x79VB" value="true if nodes were moved. Otherwise if there is no place for nodes to be moved false is returned" />
         </node>
       </node>
     </node>
@@ -4123,7 +4120,7 @@
             <property role="1dT_AB" value="3) All nodes to move have same non-null containment link" />
           </node>
         </node>
-        <node concept="x79VA" id="6UI0_$q9NUv" role="x79VK">
+        <node concept="x79VA" id="6UI0_$q9NUv" role="3nqlJM">
           <property role="x79VB" value="true if valid" />
         </node>
       </node>
@@ -5634,19 +5631,19 @@
       </node>
       <node concept="3Tm1VV" id="77iVR6M7k8q" role="1B3o_S" />
       <node concept="P$JXv" id="54vOPpLlsz0" role="lGtFl">
-        <node concept="TUZQ0" id="54vOPpLlsz3" role="TUOzN">
+        <node concept="TUZQ0" id="54vOPpLlsz3" role="3nqlJM">
           <property role="TUZQ4" value="node to start finding from" />
           <node concept="zr_55" id="54vOPpLlsz5" role="zr_5Q">
             <ref role="zr_51" node="77iVR6M6ffC" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="54vOPpLlsz6" role="TUOzN">
+        <node concept="TUZQ0" id="54vOPpLlsz6" role="3nqlJM">
           <property role="TUZQ4" value="current editor context" />
           <node concept="zr_55" id="54vOPpLlsz8" role="zr_5Q">
             <ref role="zr_51" node="1LQBkgEV_Q3" resolve="editorContext" />
           </node>
         </node>
-        <node concept="x79VA" id="54vOPpLlsz9" role="x79VK">
+        <node concept="x79VA" id="54vOPpLlsz9" role="3nqlJM">
           <property role="x79VB" value="ancestor of the node which is contained in multiple role" />
         </node>
       </node>

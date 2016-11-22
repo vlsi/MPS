@@ -246,9 +246,7 @@
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -406,7 +404,7 @@
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="afterMove" />
         <node concept="P$JXv" id="1FSMaHel_pl" role="lGtFl">
-          <node concept="x79VA" id="1FSMaHel_pr" role="x79VK">
+          <node concept="x79VA" id="1FSMaHel_pr" role="3nqlJM">
             <property role="x79VB" value="null if there is no data to save" />
           </node>
         </node>
