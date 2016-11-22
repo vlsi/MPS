@@ -59,10 +59,15 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> results = new SearchResults<SNode>();
     Object value = query.getObjectHolder().getObject();
-    if (!(value instanceof SNode)) {
+    SNode node = null;
+    if (value instanceof SNodeReference) {
+      node = query.getScope().resolve((SNodeReference) value);
+    } else if (value instanceof SNode) {
+      node = (SNode) value;
+    }
+    if (node == null) {
       return results;
     }
-    SNode node = (SNode) value;
     SAbstractConcept c = getSConcept();
     if (node.getConcept().isSubConceptOf(c) && isApplicable(node)) {
       List<SNode> resSN = ListSequence.fromList(new ArrayList<SNode>());

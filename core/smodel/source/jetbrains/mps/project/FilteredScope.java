@@ -68,6 +68,8 @@ public abstract class FilteredScope extends BaseScope {
     }
   }
 
+  // resolve(SNodeReference) is not overridden as there's no acceptNode and default implementation (goes into resolve(SModelReference)) is fine.
+
   protected abstract boolean acceptModule(SModule module);
 
   protected abstract boolean acceptModel(SModel model);

@@ -45,12 +45,11 @@ public class AffectingRulesFinder extends BaseFinder {
 
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     Object target = query.getObjectHolder().getObject();
-    if (!(target instanceof SNodeReference) || ((SNodeReference) target).getModelReference() == null) {
+    if (!(target instanceof SNodeReference)) {
       return new SearchResults();
     }
     // here's sort of workaround for missing SearchScope.resolve(SNodeReference)
-    SModel targetModel = query.getScope().resolve(((SNodeReference) target).getModelReference());
-    SNode term = targetModel == null ? null : targetModel.getNode(((SNodeReference) target).getNodeId());
+    SNode term = query.getScope().resolve((SNodeReference) target);
     if (term == null) {
       return new SearchResults();
     }

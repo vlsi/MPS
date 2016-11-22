@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Should be used only as find usages search scope
@@ -50,4 +52,18 @@ public interface SearchScope {
    */
   @Nullable
   SModule resolve(@NotNull SModuleReference reference);
+
+
+  /**
+   * Find out if a node is visible in the scope.
+   * Caller is responsible to ensure proper model access
+   * @param reference node to look up in the scope
+   * @return node instance of {@code null} if scope doesn't know it.
+   */
+  @Nullable
+  default SNode resolve(@NotNull SNodeReference reference) {
+    SModelReference mr = reference.getModelReference();
+    SModel m = mr == null || reference.getNodeId() == null ? null : resolve(mr);
+    return m == null ? null : m.getNode(reference.getNodeId());
+  }
 }

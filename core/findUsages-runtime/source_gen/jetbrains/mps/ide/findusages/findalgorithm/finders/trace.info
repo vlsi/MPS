@@ -329,32 +329,35 @@
       <node id="8267733531687412467" at="55,45,56,27" concept="9" />
       <node id="8267733531687412478" at="59,80,60,62" concept="8" />
       <node id="8267733531687412485" at="60,62,61,55" concept="8" />
-      <node id="7573448463612175365" at="62,36,63,21" concept="9" />
-      <node id="8267733531687412495" at="64,5,65,31" concept="8" />
-      <node id="1359910031795685451" at="65,31,66,39" concept="8" />
-      <node id="8267733531687412530" at="67,68,68,72" concept="8" />
-      <node id="8267733531687412537" at="68,72,69,54" concept="2" />
-      <node id="8267733531687412549" at="70,35,71,48" concept="2" />
-      <node id="8267733531687412556" at="72,7,73,47" concept="8" />
-      <node id="8267733531687412563" at="73,47,74,51" concept="2" />
-      <node id="8267733531687412580" at="75,33,76,99" concept="2" />
-      <node id="8267733531687412514" at="78,12,79,196" concept="2" />
-      <node id="8267733531687412592" at="80,5,81,19" concept="9" />
+      <node id="8267733531687412495" at="61,55,62,22" concept="8" />
+      <node id="609078574275978609" at="63,42,64,62" concept="2" />
+      <node id="609078574275955879" at="65,40,66,27" concept="2" />
+      <node id="609078574275970363" at="68,23,69,21" concept="9" />
+      <node id="1359910031795685451" at="70,5,71,39" concept="8" />
+      <node id="8267733531687412530" at="72,68,73,72" concept="8" />
+      <node id="8267733531687412537" at="73,72,74,54" concept="2" />
+      <node id="8267733531687412549" at="75,35,76,48" concept="2" />
+      <node id="8267733531687412556" at="77,7,78,47" concept="8" />
+      <node id="8267733531687412563" at="78,47,79,51" concept="2" />
+      <node id="8267733531687412580" at="80,33,81,99" concept="2" />
+      <node id="8267733531687412514" at="83,12,84,196" concept="2" />
+      <node id="8267733531687412592" at="85,5,86,19" concept="9" />
       <node id="8267733531687412374" at="23,0,25,0" concept="1" trace="GeneratedFinder#()V" />
-      <node id="8267733531687412512" at="78,10,80,5" concept="0" />
+      <node id="8267733531687412512" at="83,10,85,5" concept="0" />
       <node id="8267733531687412445" at="52,0,55,0" concept="7" trace="getSearchedNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SearchScope;Ljava/util/List;)V" />
       <node id="8267733531687412461" at="55,0,58,0" concept="7" trace="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7573448463612170980" at="61,55,64,5" concept="6" />
-      <node id="8267733531687412544" at="69,54,72,7" concept="5" />
-      <node id="8267733531687412575" at="74,51,77,7" concept="5" />
+      <node id="609078574275991731" at="67,5,70,5" concept="6" />
+      <node id="8267733531687412544" at="74,54,77,7" concept="5" />
+      <node id="8267733531687412575" at="79,51,82,7" concept="5" />
       <node id="8267733531687412378" at="25,0,29,0" concept="7" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8267733531687412386" at="29,0,33,0" concept="7" trace="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="9174479522270526398" at="33,0,37,0" concept="7" trace="isUsedByDefault#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8267733531687412394" at="37,0,41,0" concept="7" trace="getLongDescription#()Ljava/lang/String;" />
       <node id="5237129338040909437" at="42,0,46,0" concept="7" trace="getDeclarationNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="8267733531687412426" at="47,0,51,0" concept="7" trace="canNavigate#()Z" />
-      <node id="8267733531687412504" at="66,39,80,5" concept="6" />
-      <node id="8267733531687412469" at="58,0,83,0" concept="7" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <node id="7573448463612170980" at="62,22,67,5" concept="6" />
+      <node id="8267733531687412504" at="71,39,85,5" concept="6" />
+      <node id="8267733531687412469" at="58,0,88,0" concept="7" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <scope id="8267733531687412377" at="23,28,23,28" />
       <scope id="8267733531687412383" at="26,43,27,16" />
       <scope id="8267733531687412391" at="30,40,31,16" />
@@ -370,10 +373,12 @@
       </scope>
       <scope id="8267733531687412455" at="52,85,53,23" />
       <scope id="8267733531687412466" at="55,45,56,27" />
-      <scope id="7573448463612170982" at="62,36,63,21" />
-      <scope id="8267733531687412548" at="70,35,71,48" />
-      <scope id="8267733531687412579" at="75,33,76,99" />
-      <scope id="8267733531687412513" at="78,12,79,196" />
+      <scope id="7573448463612170982" at="63,42,64,62" />
+      <scope id="609078574275962635" at="65,40,66,27" />
+      <scope id="609078574275991733" at="68,23,69,21" />
+      <scope id="8267733531687412548" at="75,35,76,48" />
+      <scope id="8267733531687412579" at="80,33,81,99" />
+      <scope id="8267733531687412513" at="83,12,84,196" />
       <scope id="8267733531687412374" at="23,0,25,0" />
       <scope id="8267733531687412445" at="52,0,55,0">
         <var name="_results" id="8267733531687412452" />
@@ -383,10 +388,10 @@
       <scope id="8267733531687412461" at="55,0,58,0">
         <var name="node" id="8267733531687412464" />
       </scope>
-      <scope id="8267733531687412544" at="69,54,72,7">
+      <scope id="8267733531687412544" at="74,54,77,7">
         <var name="resnode" id="8267733531687412546" />
       </scope>
-      <scope id="8267733531687412575" at="74,51,77,7">
+      <scope id="8267733531687412575" at="79,51,82,7">
         <var name="resnode" id="8267733531687412577" />
       </scope>
       <scope id="8267733531687412378" at="25,0,29,0">
@@ -401,21 +406,21 @@
       <scope id="8267733531687412394" at="37,0,41,0" />
       <scope id="5237129338040909437" at="42,0,46,0" />
       <scope id="8267733531687412426" at="47,0,51,0" />
-      <scope id="8267733531687412529" at="67,68,77,7">
+      <scope id="8267733531687412529" at="72,68,82,7">
         <var name="res" id="8267733531687412557" />
         <var name="resSN" id="8267733531687412531" />
       </scope>
-      <scope id="8267733531687412477" at="59,80,81,19">
+      <scope id="8267733531687412477" at="59,80,86,19">
         <var name="c" id="1359910031795685452" />
         <var name="node" id="8267733531687412496" />
         <var name="results" id="8267733531687412479" />
         <var name="value" id="8267733531687412486" />
       </scope>
-      <scope id="8267733531687412469" at="58,0,83,0">
+      <scope id="8267733531687412469" at="58,0,88,0">
         <var name="monitor" id="8267733531687412475" />
         <var name="query" id="8267733531687412473" />
       </scope>
-      <unit id="8267733531687412365" at="21,0,85,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
+      <unit id="8267733531687412365" at="21,0,90,0" name="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
     </file>
   </root>
   <root nodeRef="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)/8267733531687413132">
