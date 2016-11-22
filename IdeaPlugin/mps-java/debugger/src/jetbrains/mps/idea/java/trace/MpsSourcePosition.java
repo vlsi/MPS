@@ -141,14 +141,9 @@ public class MpsSourcePosition extends SourcePosition {
     return myNavigatable.canNavigateToSource();
   }
 
-  public SNode getNode() {
-    if (myNodePointer == null) {
-      return null;
-    }
-    // FIXME this is plain wrong. If you get a node, you're likely gonna access it,
-    // hence, it's outer code responsibility to ensure read access.
-    final SRepository repo = ProjectHelper.getProjectRepository(myProject);
-    return new ModelAccessHelper(repo).runReadAction(() -> myNodePointer.resolve(repo));
+  @NotNull
+  public SNodeReference getNode() {
+    return myNodePointer;
   }
 
   @Nullable

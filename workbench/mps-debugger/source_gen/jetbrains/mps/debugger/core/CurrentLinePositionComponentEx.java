@@ -23,13 +23,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public abstract class CurrentLinePositionComponentEx<S> {
   private FileEditorManager myFileEditorManager;
@@ -93,16 +90,8 @@ public abstract class CurrentLinePositionComponentEx<S> {
    */
   @Nullable
   /*package*/ Runnable attachPainterRunnable(final S debugSession, final boolean focus) {
-    final CurrentLinePainter newPainter = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<CurrentLinePainter>() {
-      @Override
-      public CurrentLinePainter compute() {
-        SNode node = getNode(debugSession);
-        if (node != null) {
-          return new CurrentLinePainter(SNodeOperations.getPointer(node));
-        }
-        return null;
-      }
-    });
+    SNodeReference node = getNode(debugSession);
+    final CurrentLinePainter newPainter = (node == null ? null : new CurrentLinePainter(node));
     if (newPainter != null) {
       final boolean visible = getCurrentSession() == null || getCurrentSession() == debugSession;
       newPainter.setVisible(visible);
@@ -135,7 +124,9 @@ public abstract class CurrentLinePositionComponentEx<S> {
     }
     return null;
   }
-  protected abstract SNode getNode(S session);
+
+  @Nullable
+  protected abstract SNodeReference getNode(S session);
 
   /**
    * 
@@ -231,7 +222,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   private class MyRepositoryListener extends CommandListenerAdapter {
     @Override
     public void commandFinished() {
-      for (S session : CollectionSequence.fromCollection(getAllSessions())) {
+      for (S session : getAllSessions()) {
         reAttachPainter(session, false);
       }
     }
