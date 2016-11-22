@@ -6,19 +6,20 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
-import java.util.Set;
 import org.jetbrains.annotations.NotNull;
+import java.util.Set;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.List;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.MouseEvent;
@@ -36,6 +37,8 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   private final LeftMarginMouseListener myMouseListener = new BreakpointsUiComponentEx.MyLeftMarginMouseListener();
   private final BreakpointsUiComponentEx.MyEditorComponentCreateListener myEditorComponentCreationHandler = new BreakpointsUiComponentEx.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
+  private final MultiMap<L, BreakpointIconRenderrerEx<L>> myBreakpointRender = new MultiMap<L, BreakpointIconRenderrerEx<L>>();
+
   public BreakpointsUiComponentEx(Project project, FileEditorManager manager) {
     myProject = project;
     myFileEditorManager = manager;
@@ -52,9 +55,14 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
   public void dispose() {
     myMessageBusConnection.disconnect();
+    myBreakpointRender.clear();
   }
 
+  @NotNull
   protected abstract Set<L> getBreakpointsForComponent(@NotNull EditorComponent component);
+
+  @NotNull
+  protected abstract List<EditorComponent> getComponentsForBreakpoint(@NotNull L breakpoint);
 
   protected abstract BreakpointPainterEx<L> createPainter(L breakpoint);
 
@@ -122,7 +130,9 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     Set<L> breakpointsForRoot = getBreakpointsForComponent(editorComponent);
     for (L breakpoint : SetSequence.fromSet(breakpointsForRoot)) {
       editorComponent.addAdditionalPainter(createPainter(breakpoint));
-      editorComponent.getLeftEditorHighlighter().addIconRenderer(createRenderrer(breakpoint, editorComponent));
+      BreakpointIconRenderrerEx<L> r = createRenderrer(breakpoint, editorComponent);
+      myBreakpointRender.putValue(breakpoint, r);
+      editorComponent.getLeftEditorHighlighter().addIconRenderer(r);
     }
     editorComponent.repaintExternalComponent();
   }
@@ -135,25 +145,28 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     Set<L> breakpointsForRoot = getBreakpointsForComponent(editorComponent);
     for (L breakpoint : SetSequence.fromSet(breakpointsForRoot)) {
       editorComponent.removeAdditionalPainterByItem(breakpoint);
+      editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(myBreakpointRender.get(breakpoint));
     }
-    editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrerEx.TYPE);
+    // stale renderers may persist in myBreakpointRenderer, I have no means to identify EditorComponents to use them as additional key along with breakpoint itself 
+    // I don't care as these stale renders are only for equals() match in removeAllIconsRenderers(). 
   }
 
-  protected void addLocationBreakpoint(L breakpoint, SNode node) {
-    List<EditorComponent> editorComponents = EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
-    for (EditorComponent editorComponent : editorComponents) {
+  protected void addLocationBreakpoint(L breakpoint) {
+    for (EditorComponent editorComponent : getComponentsForBreakpoint(breakpoint)) {
       editorComponent.addAdditionalPainter(createPainter(breakpoint));
-      editorComponent.getLeftEditorHighlighter().addIconRenderer(createRenderrer(breakpoint, editorComponent));
+      BreakpointIconRenderrerEx<L> r = createRenderrer(breakpoint, editorComponent);
+      myBreakpointRender.putValue(breakpoint, r);
+      editorComponent.getLeftEditorHighlighter().addIconRenderer(r);
       editorComponent.repaintExternalComponent();
     }
   }
-  protected void removeLocationBreakpoint(L breakpoint, SNode node) {
-    List<EditorComponent> editorComponents = EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
-    for (EditorComponent editorComponent : editorComponents) {
+  protected void removeLocationBreakpoint(L breakpoint) {
+    for (EditorComponent editorComponent : getComponentsForBreakpoint(breakpoint)) {
       editorComponent.removeAdditionalPainterByItem(breakpoint);
-      editorComponent.getLeftEditorHighlighter().removeIconRenderer(node, BreakpointIconRenderrerEx.TYPE);
+      editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(myBreakpointRender.get(breakpoint));
       editorComponent.repaintExternalComponent();
     }
+    myBreakpointRender.remove(breakpoint);
   }
   public void repaintBreakpoints() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {

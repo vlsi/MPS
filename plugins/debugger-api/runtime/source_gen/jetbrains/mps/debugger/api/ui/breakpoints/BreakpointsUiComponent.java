@@ -26,18 +26,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import java.util.List;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import com.intellij.openapi.ui.Messages;
-import java.util.List;
-import java.util.Collections;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import com.intellij.openapi.project.Project;
 import org.jdom.Element;
 import org.jdom.Attribute;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
@@ -94,6 +95,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       }
     });
   }
+
   @NotNull
   @Override
   protected Set<ILocationBreakpoint> getBreakpointsForComponent(@NotNull final EditorComponent editorComponent) {
@@ -136,6 +138,22 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     });
     return result.value;
   }
+
+  @NotNull
+  @Override
+  protected List<EditorComponent> getComponentsForBreakpoint(@NotNull final ILocationBreakpoint breakpoint) {
+    // reverse operation to getBreakpointsForComponent 
+    return new ModelAccessHelper(myMPSProject.getModelAccess()).runReadAction(new Computable<List<EditorComponent>>() {
+      public List<EditorComponent> compute() {
+        SNode node = breakpoint.getLocation().getNodePointer().resolve(myMPSProject.getRepository());
+        if (node != null) {
+          return EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
+        }
+        return Collections.emptyList();
+      }
+    });
+  }
+
   @Override
   protected EditorCell findDebuggableOrTraceableCell(EditorCell foundCell) {
     EditorCell cell = findDebuggableCell(foundCell);
@@ -193,14 +211,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       }
     }
   }
-  @NotNull
-  private List<EditorComponent> findComponentForLocationBreakpoint(@NotNull ILocationBreakpoint breakpoint) {
-    SNode node = breakpoint.getLocation().getSNode();
-    if (node != null) {
-      return EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
-    }
-    return Collections.emptyList();
-  }
+
   @Override
   protected BreakpointIconRenderrerEx<ILocationBreakpoint> createRenderrer(ILocationBreakpoint breakpoint, EditorComponent component) {
     return new BreakpointIconRenderer(breakpoint, component);
@@ -260,34 +271,17 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     }
     @Override
     public void breakpointAdded(@NotNull final IBreakpoint breakpoint) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (breakpoint instanceof ILocationBreakpoint) {
-            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
-            if (node != null) {
-              addLocationBreakpoint((ILocationBreakpoint) breakpoint, node);
-            }
-          }
-          breakpoint.addBreakpointListener(myBreakpointListener);
-        }
-      });
+      if (breakpoint instanceof ILocationBreakpoint) {
+        addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+      }
+      breakpoint.addBreakpointListener(myBreakpointListener);
     }
     @Override
     public void breakpointRemoved(@NotNull final IBreakpoint breakpoint) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (breakpoint instanceof ILocationBreakpoint) {
-            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
-            if (node != null) {
-              removeLocationBreakpoint((ILocationBreakpoint) breakpoint, node);
-            }
-          }
-          breakpoint.removeBreakpointListener(myBreakpointListener);
-        }
-      });
-
+      if (breakpoint instanceof ILocationBreakpoint) {
+        removeLocationBreakpoint((ILocationBreakpoint) breakpoint);
+      }
+      breakpoint.removeBreakpointListener(myBreakpointListener);
     }
   }
   private class MyBreakpointListener implements IBreakpointListener {
@@ -295,17 +289,11 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     }
     @Override
     public void breakpointEnabledStateToggled(final IBreakpoint breakpoint, boolean enabled) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (breakpoint instanceof ILocationBreakpoint) {
-            List<EditorComponent> editorComponents = findComponentForLocationBreakpoint((ILocationBreakpoint) breakpoint);
-            for (EditorComponent editorComponent : editorComponents) {
-              editorComponent.repaintExternalComponent();
-            }
-          }
+      if (breakpoint instanceof ILocationBreakpoint) {
+        for (EditorComponent editorComponent : getComponentsForBreakpoint((ILocationBreakpoint) breakpoint)) {
+          editorComponent.repaintExternalComponent();
         }
-      });
+      }
     }
   }
   private class MyDebugSessionAdapter extends DebugSessionManagerComponent.DebugSessionAdapter {

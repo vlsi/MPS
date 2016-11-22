@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -472,6 +472,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     boolean wasModified = false;
     for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext(); ) {
       EditorMessageIconRenderer renderer = it.next();
+      // XXX I would prefer removeIconRenderer that takes SNodeReference instead of an SNode (e.g. BreakpointsUiComponentEx won't need to record
+      // renderer instances then).
       if (renderer.getNode() == snode && (type == null || renderer.getType() == type)) {
         it.remove();
         wasModified = true;
@@ -482,7 +484,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
   }
 
-  public void removeAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
+  public void removeAllIconRenderers(Collection<? extends EditorMessageIconRenderer> renderers) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeAllIconRenderers() should be called in eventDispatchThread";
     if (myIconRenderers.removeAll(renderers)) {
       relayoutOnIconRendererChanges();
