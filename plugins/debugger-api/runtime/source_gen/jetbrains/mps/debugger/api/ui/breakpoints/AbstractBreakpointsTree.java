@@ -12,7 +12,7 @@ import javax.swing.event.TreeSelectionEvent;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 import javax.swing.JComponent;
@@ -24,9 +24,7 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -101,8 +99,7 @@ import javax.swing.UIManager;
   @Override
   public void selectBreakpoint(@Nullable final IBreakpoint breakpoint) {
     if (breakpoint != null) {
-      MPSTreeNode treeNode = ModelAccess.instance().runReadAction(new Computable<MPSTreeNode>() {
-        @Override
+      MPSTreeNode treeNode = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<MPSTreeNode>() {
         public MPSTreeNode compute() {
           return myTree.findNodeForData(new AbstractBreakpointsTree.BreakpointNodeData(breakpoint));
         }
@@ -210,23 +207,23 @@ import javax.swing.UIManager;
       return IconManager.getIconFor(model.resolve(myProject.getRepository()));
     }
   }
-  private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNodeReference> {
+  private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNode> {
     private RootGroupKind() {
     }
     @Override
-    public SNodeReference getGroup(@NotNull AbstractBreakpointsTree.BreakpointNodeData breakpointNodeData) {
+    public SNode getGroup(@NotNull AbstractBreakpointsTree.BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getNodePointer().resolve(myProject.getRepository());
         if (node != null) {
-          return new SNodePointer(node.getContainingRoot());
+          return node.getContainingRoot();
         }
       }
       return null;
     }
     @Override
-    public Icon getIcon(SNodeReference group) {
-      return IconManager.getIconFor(group.resolve(myProject.getRepository()));
+    public Icon getIcon(SNode group) {
+      return IconManager.getIconFor(group);
     }
   }
   protected class BreakpointNodeData implements CheckBoxNodeRenderer.NodeData {

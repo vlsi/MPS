@@ -11,7 +11,6 @@
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
@@ -749,52 +748,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3Gc6Q_RZwdp" role="jymVt" />
-    <node concept="3clFb_" id="3SnNvqCaJWo" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getSNode" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="3SnNvqCaJWp" role="1B3o_S" />
-      <node concept="3uibUv" id="3SnNvqCaJWq" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="3clFbS" id="3SnNvqCaJWr" role="3clF47">
-        <node concept="3cpWs6" id="3SnNvqCaJWs" role="3cqZAp">
-          <node concept="2OqwBi" id="3SnNvqCaJWt" role="3cqZAk">
-            <node concept="liA8E" id="6SyhPqtSbQN" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-              <node concept="2YIFZM" id="6SyhPqtSbQO" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="3Gc6Q_RZBgF" role="2Oq$k0">
-              <node concept="37vLTw" id="3Gc6Q_RZB6r" role="2Oq$k0">
-                <ref role="3cqZAo" node="3Gc6Q_RZzjR" resolve="myTargetCodeLocation" />
-              </node>
-              <node concept="liA8E" id="3Gc6Q_RZBpl" role="2OqNvi">
-                <ref role="37wK5l" to="fwk:~NodeTraceInfo.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3SnNvqCaJWw" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
-      <node concept="P$JXv" id="2Fg1BDkKWiD" role="lGtFl">
-        <node concept="TZ5HI" id="2Fg1BDkKWiE" role="3nqlJM">
-          <node concept="TZ5HA" id="2Fg1BDkKWiF" role="3HnX3l">
-            <node concept="1dT_AC" id="2Fg1BDkKWD4" role="1dT_Ay">
-              <property role="1dT_AB" value="to resolve a node, one needs a repository. We are not going to pass repo here, as it's not location's task to update itself. Instead, breakpoint shall manage location's data" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2Fg1BDkKWiG" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3Gc6Q_RTR9J" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCaJWx" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getTargetCodePosition" />
