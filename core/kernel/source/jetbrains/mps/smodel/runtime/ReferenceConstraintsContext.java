@@ -15,25 +15,64 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ReferenceConstraintsContext {
-  SModel getModel();
-
-  boolean isExists();
-
+  /**
+   *
+   * @return closest not-null ancestor of the reference
+   */
+  @NotNull
   SNode getContextNode();
 
-  String getContextRole();
+  /**
+   *
+   * @return containment link between context node and it's child, or null if context node is a node with the reference
+   */
+  @Nullable
+  SContainmentLink getContainmentLink();
 
+  /**
+   *
+   * @return position in containment link
+   */
   int getPosition();
+
+  /**
+   *
+   * @return node that contains the reference
+   */
+  @Nullable
+  SNode getReferenceNode();
+
+  /**
+   *
+   * @return true if the reference exists
+   * @deprecated use {@code context.getReferenceNode().getReference(link) != null} instead
+   */
+  boolean isExists();
+
+  /**
+   *
+   * @return context model
+   * @deprecated  use {@code context.getContextNode().getModel()} instead
+   */
+  @Deprecated
+  SModel getModel();
+
+  /**
+   *
+   * @deprecated use {@link #getContainmentLink()} instead
+   */
+  @Deprecated
+  String getContextRole();
 
   @Deprecated
   SNode getEnclosingNode();
-
-  @Deprecated
-  SNode getReferenceNode();
 
   @Deprecated
   SNode getLinkTarget();
