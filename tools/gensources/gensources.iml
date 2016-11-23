@@ -152,8 +152,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable.operations/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable.operations/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" isTestSource="false" />
@@ -324,8 +322,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable.operations/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable.operations/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingGenerated.data/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/classes_gen" />
@@ -1037,6 +1033,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testCompilation">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testConsMigrations">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/generator/source_gen" isTestSource="false" />
