@@ -44,7 +44,6 @@
     <import index="rq2b" ref="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" />
     <import index="msle" ref="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" />
     <import index="537h" ref="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" />
-    <import index="v569" ref="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)" />
     <import index="b9cx" ref="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)" />
     <import index="tild" ref="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" />
     <import index="5ivf" ref="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)" />
@@ -1176,15 +1175,6 @@
     </node>
     <node concept="lpD6B" id="3FJ0r$qNTEC" role="lpD6w">
       <ref role="2R4JvD" to="fw8r:5E$kzZSw9_K" resolve="BitemporalCollectionSuperclassTester" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="6mKaYA2xL5P">
-    <node concept="2R4zua" id="6mKaYA2xL5R" role="2R4z3u">
-      <property role="2R4zu8" value="f5b70e84-5208-49eb-a417-d53c9f82bdf2" />
-      <property role="2R4zub" value="jetbrains.mps.lang.traceable.operations.test" />
-    </node>
-    <node concept="lpD6D" id="6mKaYA2xMFk" role="lpD6w">
-      <ref role="lpD7u" to="v569:6mKaYA2xCGo" resolve="CopyWithTrace" />
     </node>
   </node>
   <node concept="lpD6F" id="3FJ0r$qO2Hu">

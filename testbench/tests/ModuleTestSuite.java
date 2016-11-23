@@ -52,7 +52,6 @@ import org.junit.runners.Suite;
     TestModule_jetbrains_mps_lang_extension_tests.class,
     TestModule_jetbrains_mps_lang_pattern_test.class,
     TestModule_jetbrains_mps_lang_smodel_unittest.class,
-    TestModule_jetbrains_mps_lang_traceable_operations_test.class,
     TestModule_jetbrains_mps_make_tests.class,
     TestModule_jetbrains_mps_smodel_test.class,
     TestModule_jetbrains_mps_testActions.class,

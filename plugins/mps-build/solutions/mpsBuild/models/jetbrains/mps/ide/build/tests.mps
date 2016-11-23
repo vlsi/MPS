@@ -2062,47 +2062,8 @@
     </node>
     <node concept="22LTRH" id="3yaq6Y8lhnN" role="1hWBAP">
       <property role="TrG5h" value="smodel" />
-      <node concept="22LTRF" id="3yaq6Y8lhnO" role="22LTRK">
-        <ref role="22LTRG" node="3yaq6Y8lhnP" resolve="traceable-operations-tests" />
-      </node>
       <node concept="22LTRF" id="3_1qLajoFoI" role="22LTRK">
         <ref role="22LTRG" node="4Etbw8EUKkn" resolve="smodel" />
-      </node>
-    </node>
-    <node concept="2G$12M" id="3yaq6Y8lhnP" role="3989C9">
-      <property role="TrG5h" value="traceable-operations-tests" />
-      <node concept="1E1JtA" id="3yaq6Y8lhP5" role="2G$12L">
-        <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.traceable.operations.test" />
-        <property role="3LESm3" value="f5b70e84-5208-49eb-a417-d53c9f82bdf2" />
-        <property role="2GAjPV" value="false" />
-        <property role="aoJFB" value="tests" />
-        <node concept="55IIr" id="3yaq6Y8lhP6" role="3LF7KH">
-          <node concept="2Ry0Ak" id="3yaq6Y8lhP9" role="iGT6I">
-            <property role="2Ry0Am" value="testbench" />
-            <node concept="2Ry0Ak" id="1X3mOAZ$WYG" role="2Ry0An">
-              <property role="2Ry0Am" value="testsolutions" />
-              <node concept="2Ry0Ak" id="1X3mOAZ$WZj" role="2Ry0An">
-                <property role="2Ry0Am" value="traceable.operations.test" />
-                <node concept="2Ry0Ak" id="1X3mOAZ$WZn" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.traceable.operations.test.msd" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="3yaq6Y8lhPj" role="3bR37C">
-          <node concept="3bR9La" id="3yaq6Y8lhPk" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="3yaq6Y8lhPl" role="3bR37C">
-          <node concept="3bR9La" id="3yaq6Y8lhPm" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
-          </node>
-        </node>
       </node>
     </node>
     <node concept="2G$12M" id="4Etbw8EUKkn" role="3989C9">
@@ -2255,9 +2216,6 @@
       </node>
     </node>
     <node concept="1l3spV" id="3yaq6Y8lhoh" role="1l3spN">
-      <node concept="L2wRC" id="3yaq6Y8li3a" role="39821P">
-        <ref role="L2wRA" node="3yaq6Y8lhP5" resolve="jetbrains.mps.lang.traceable.operations.test" />
-      </node>
       <node concept="L2wRC" id="3_1qLajoFoO" role="39821P">
         <ref role="L2wRA" node="3_1qLajoFfI" resolve="jetbrains.mps.smodel.test" />
       </node>
