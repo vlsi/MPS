@@ -24,6 +24,7 @@
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -32,9 +33,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodeByConcept_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.NodeChooser" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -44,6 +46,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration" />
   </dependency>
@@ -51,11 +54,9 @@
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodeByConcept_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.NodeByConceptChooser" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -69,6 +70,7 @@
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -79,12 +81,12 @@
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodesDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.NodeChooser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -94,18 +96,17 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor" file="NodeBySeveralConcepts_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodesDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>

@@ -51,7 +51,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       final Wrappers._boolean isPackaged = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode node = BuildScript_Configuration.this.getNode().getNode();
+          SNode node = BuildScript_Configuration.this.getNode().getNodeResolved();
           isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
         }
       });
@@ -161,6 +161,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return BuildScript_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
   }
 }

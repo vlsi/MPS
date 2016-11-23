@@ -15,8 +15,10 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.execution.lib.ui.NodeChooser;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
@@ -33,7 +35,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode node = getNode();
+          SNode node = getNodeResolved();
           if (node == null) {
             errorText.value = "Node is not specified.";
           } else if (!(myIsValid.invoke(node))) {
@@ -57,36 +59,40 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-  public String getNodeId() {
-    return myState.myNodeId;
+  public String getNodePointer() {
+    return myState.myNodePointer;
   }
-  public String getModelId() {
-    return myState.myModelId;
+  public String getNodeText() {
+    return myState.myNodeText;
   }
-  public void setNodeId(String value) {
-    myState.myNodeId = value;
+  public void setNodePointer(String value) {
+    myState.myNodePointer = value;
   }
-  public void setModelId(String value) {
-    myState.myModelId = value;
+  public void setNodeText(String value) {
+    myState.myNodeText = value;
   }
   @Nullable
-  public SNode getNode() {
-    return check_h3hwcn_a0a0(((SNodePointer) getNodePointer()));
+  @Deprecated
+  public SNode getNodeResolved() {
+    return check_h3hwcn_a0a0(getNode());
   }
-  public SNodeReference getNodePointer() {
-    if (this.getModelId() == null || this.getNodeId() == null) {
+  public SNodeReference getNode() {
+    if (this.getNodePointer() == null) {
       return null;
     }
-    return new SNodePointer(this.getModelId(), this.getNodeId());
+    return PersistenceFacade.getInstance().createNodeReference(this.getNodePointer());
   }
   public void setNode(@Nullable SNode node) {
     if (node == null) {
-      this.setModelId(null);
-      this.setNodeId(null);
+      this.setNodePointer(null);
+      this.setNodeText(null);
     } else {
-      this.setModelId(node.getModel().getReference().toString());
-      this.setNodeId(node.getNodeId().toString());
+      setNode(SNodeOperations.getPointer(node));
+      this.setNodeText(NodeChooser.getFqName(node));
     }
+  }
+  /*package*/ void setNode(@Nullable SNodeReference nodePtr) {
+    this.setNodePointer((nodePtr == null ? null : PersistenceFacade.getInstance().asString(nodePtr)));
   }
   protected static Logger LOG = LogManager.getLogger(NodeByConcept_Configuration.class);
   @Override
@@ -104,15 +110,15 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return clone;
   }
   public class MyState {
-    public String myNodeId;
-    public String myModelId;
+    public String myNodePointer;
+    public String myNodeText;
     public MyState() {
     }
     @Override
     public Object clone() throws CloneNotSupportedException {
       NodeByConcept_Configuration.MyState state = new NodeByConcept_Configuration.MyState();
-      state.myNodeId = myNodeId;
-      state.myModelId = myModelId;
+      state.myNodePointer = myNodePointer;
+      state.myNodeText = myNodeText;
       return state;
     }
   }
@@ -135,7 +141,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     }
     return myEditorEx;
   }
-  private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
+  private static SNode check_h3hwcn_a0a0(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

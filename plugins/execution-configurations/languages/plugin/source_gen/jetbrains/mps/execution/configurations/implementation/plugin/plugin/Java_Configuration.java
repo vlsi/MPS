@@ -59,11 +59,12 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     {
       this.getNode().checkConfiguration();
       final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
-      MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
+      final MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
       mpsProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-            hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
+          SNode node = Java_Configuration.this.getNode().getNode().resolve(mpsProject.getRepository());
+          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+            hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
           }
         }
       });
@@ -174,6 +175,6 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     return Java_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
   }
 }

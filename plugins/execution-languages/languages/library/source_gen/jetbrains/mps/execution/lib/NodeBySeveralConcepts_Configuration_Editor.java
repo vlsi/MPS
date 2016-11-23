@@ -6,7 +6,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import com.intellij.openapi.util.Factory;
 
@@ -20,18 +19,12 @@ public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx
     return myChooser;
   }
   public void applyEditorTo(final NodeBySeveralConcepts_Configuration configuration) throws ConfigurationException {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        configuration.setNode(myChooser.getNode());
-      }
-    });
+    configuration.setNode(myChooser.getNode());
+    configuration.setNodeText(myChooser.getText());
   }
   public void resetEditorFrom(final NodeBySeveralConcepts_Configuration configuration) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myChooser.setNode(configuration.getNode());
-      }
-    });
+    myChooser.setNode(configuration.getNode());
+    myChooser.setText(configuration.getNodeText());
   }
   private List<NodesDescriptor> myTargets;
   public NodeBySeveralConcepts_Configuration_Editor(final List<NodesDescriptor> targets) {

@@ -60,7 +60,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     final Wrappers._T<List<String>> undefinedMacro = new Wrappers._T<List<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+        SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNodeResolved(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
         String scriptsPath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(node, Context.defaultContext());
         if (scriptsPath != null) {
           file.value = FileSystem.getInstance().getFileByPath(scriptsPath);

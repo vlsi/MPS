@@ -18,10 +18,6 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ScopeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeByConceptChooser extends NodeChooser {
   @NotNull
@@ -70,26 +66,5 @@ public class NodeByConceptChooser extends NodeChooser {
         }
       }).toListSequence();
     }
-  }
-
-  @Override
-  protected Iterable<SModel> getModels(String model) {
-    return ScopeOperations.getModelsByName(myScope, model);
-  }
-
-  @Override
-  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        if (!(SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(myTargetConcept)))) {
-          return false;
-        }
-        if (myAcceptor == null) {
-          return getFqName(it).equals(fqName);
-        } else {
-          return myAcceptor.invoke(it) && getFqName(it).equals(fqName);
-        }
-      }
-    });
   }
 }

@@ -629,9 +629,9 @@
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>

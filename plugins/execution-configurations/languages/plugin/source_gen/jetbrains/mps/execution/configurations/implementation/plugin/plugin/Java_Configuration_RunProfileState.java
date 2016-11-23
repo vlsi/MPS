@@ -17,7 +17,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
@@ -47,7 +47,7 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
     Project project = myEnvironment.getProject();
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
     console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
-    SNodePointer pointer = myRunConfiguration.getNode().getNodePointer();
+    SNodeReference pointer = myRunConfiguration.getNode().getNode();
     if (pointer == null) {
       console.dispose();
       throw new ExecutionException("No node selected.");

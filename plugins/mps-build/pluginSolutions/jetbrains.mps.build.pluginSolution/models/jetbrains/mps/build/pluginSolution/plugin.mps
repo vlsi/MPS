@@ -31,6 +31,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" />
+    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -616,7 +617,7 @@
                 <ref role="3cqZAo" node="7yLt8tTSJNQ" resolve="myChooser" />
               </node>
               <node concept="liA8E" id="7yLt8tTSJPF" role="2OqNvi">
-                <ref role="37wK5l" to="xk9i:14R2qyOCnPG" resolve="dispose" />
+                <ref role="37wK5l" to="jkm4:~ComponentWithBrowseButton.dispose():void" resolve="dispose" />
               </node>
             </node>
           </node>
@@ -819,7 +820,7 @@
                                     <ref role="3B5MYn" to="arit:6l_Qx579h0V" resolve="common" />
                                   </node>
                                   <node concept="3Tsc0h" id="1KUoCipvy9E" role="2OqNvi">
-                                    <ref role="3TtcxE" to="8xvf:6l_Qx579cUk" />
+                                    <ref role="3TtcxE" to="8xvf:6l_Qx579cUk" resolve="parts" />
                                   </node>
                                 </node>
                                 <node concept="1z4cxt" id="1KUoCipvy9F" role="2OqNvi">
@@ -890,7 +891,7 @@
                                             <node concept="3w_OXm" id="1KUoCipvyac" role="2OqNvi" />
                                             <node concept="2OqwBi" id="1KUoCipvyad" role="2Oq$k0">
                                               <node concept="3TrEf2" id="1KUoCipvyae" role="2OqNvi">
-                                                <ref role="3Tt5mk" to="3ior:6qcrfIJFv3E" />
+                                                <ref role="3Tt5mk" to="3ior:6qcrfIJFv3E" resolve="defaultPath" />
                                               </node>
                                               <node concept="1PxgMI" id="1KUoCipvyaf" role="2Oq$k0">
                                                 <ref role="1m5ApE" to="3ior:6qcrfIJFt02" resolve="BuildFolderMacro" />
@@ -921,7 +922,7 @@
                                 </node>
                                 <node concept="2OqwBi" id="1KUoCipvyan" role="2Oq$k0">
                                   <node concept="3Tsc0h" id="1KUoCipvyao" role="2OqNvi">
-                                    <ref role="3TtcxE" to="3ior:4RPz6WoY4Cy" />
+                                    <ref role="3TtcxE" to="3ior:4RPz6WoY4Cy" resolve="macros" />
                                   </node>
                                   <node concept="37vLTw" id="1KUoCipvyap" role="2Oq$k0">
                                     <ref role="3cqZAo" node="1KUoCipvy8V" resolve="node" />
