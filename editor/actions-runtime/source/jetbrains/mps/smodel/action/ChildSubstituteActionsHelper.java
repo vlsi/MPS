@@ -109,7 +109,7 @@ public class ChildSubstituteActionsHelper {
       }
 
       // pretend we are going to substitute more concrete concept
-      SNode refinedChildConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild);
+      SNode refinedChildConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild).getDeclarationNode();
       if (refinedChildConcept != null) {
         childConcept = refinedChildConcept;
       }
