@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/community/jps/jps-builders/src/org/jetbrains/jps/incremental/java/OptimizedFileManager.java" />
+      <file url="file://$PROJECT_DIR$/community/jps/jps-builders/src/org/jetbrains/jps/javac/OptimizedFileManager.java" />
+      <file url="file://$PROJECT_DIR$/community/jps/jps-builders/src/org/jetbrains/jps/javac/OptimizedFileManager17.java" />
+      <file url="file://$PROJECT_DIR$/community/java/java-tests/testSrc/com/intellij/index/IndexTestGenerator.scala" />
+    </excludeFromCompile>
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="java-runtime" target="1.1" />
+      <module name="junit_rt" target="1.1" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
