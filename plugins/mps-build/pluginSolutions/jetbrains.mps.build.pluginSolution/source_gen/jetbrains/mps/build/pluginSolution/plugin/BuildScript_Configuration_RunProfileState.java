@@ -16,7 +16,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
 import java.util.List;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -58,21 +60,23 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     final Wrappers._T<IFile> file = new Wrappers._T<IFile>(null);
     final Wrappers._T<String> mainTaskName = new Wrappers._T<String>();
     final Wrappers._T<List<String>> undefinedMacro = new Wrappers._T<List<String>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNodeResolved(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-        String scriptsPath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(node, Context.defaultContext());
+        SNodeReference configuredNode = myRunConfiguration.getNode().getNode();
+        SNode projectNode = SNodeOperations.cast((configuredNode == null ? null : configuredNode.resolve(mpsProject.getRepository())), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+        String scriptsPath = (projectNode != null ? BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(projectNode, Context.defaultContext()) : null);
         if (scriptsPath != null) {
           file.value = FileSystem.getInstance().getFileByPath(scriptsPath);
           // todo 
-          file.value = file.value.getDescendant(BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(node));
+          file.value = file.value.getDescendant(BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(projectNode));
           // todo select task 
           mainTaskName.value = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)", "7306485738221408315"), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, 0x6565da114724ce94L, "parts"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, "jetbrains.mps.build.workflow.structure.BwfTask"));
             }
           }), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, "jetbrains.mps.build.workflow.structure.BwfTask")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-          undefinedMacro.value = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))).where(new IWhereFilter<SNode>() {
+          undefinedMacro.value = ListSequence.fromList(SLinkOperations.getChildren(projectNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")) && (SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, 0x668c6cfbafadf0eaL, "defaultPath")) == null);
             }
