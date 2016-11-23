@@ -42,7 +42,7 @@ public class DefaultMenuReferences_Finder extends GeneratedFinder {
       monitor.start("All default menu references", 2);
 
       try {
-        List<SNode> allReferences = (List<SNode>) FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", SNodeOperations.asNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default")), scope, monitor.subTask(1));
+        List<SNode> allReferences = (List<SNode>) FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "6718020819487620876"), scope, monitor.subTask(1));
 
         for (SNode ref : ListSequence.fromList(allReferences)) {
           if (SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")) == SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"))) {

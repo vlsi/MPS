@@ -24,7 +24,6 @@ import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -91,7 +90,7 @@ public class AndOrTransforms_Looking_Contribution extends TransformationMenuBase
         @Nullable
         @Override
         public String getLabelText(String pattern) {
-          return SPropertyOperations.getString(SNodeOperations.asNode(myParameterObject), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+          return SNodeOperations.asNode(SConceptOperations.conceptAlias(myParameterObject));
         }
 
         @Override

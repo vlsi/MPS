@@ -859,7 +859,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/1296460694774881120">
     <file name="IncompleteMemberHelper.java">
       <node id="6224545524898249906" at="23,92,24,248" concept="9" />
-      <node id="6224545524898267585" at="26,41,27,200" concept="10" />
+      <node id="6224545524898267585" at="26,41,27,51" concept="10" />
       <node id="6224545524898244640" at="29,7,30,0" concept="12" />
       <node id="6224545524879192341" at="30,0,31,1681" concept="10" />
       <node id="3849351486105548100" at="34,77,35,128" concept="9" />
@@ -910,7 +910,7 @@
       <node id="5759891770222244017" at="75,0,82,0" concept="13" trace="buildMethodName#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="3849351486102300008" at="34,0,42,0" concept="13" trace="isKnownTypeName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="1296460694774881138" at="23,0,33,0" concept="13" trace="isJavaKeyWordNotApplicableAsModifier#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <scope id="6224545524898267584" at="26,41,27,200" />
+      <scope id="6224545524898267584" at="26,41,27,51" />
       <scope id="3849351486103949422" at="37,39,38,361" />
       <scope id="3663192954215503163" at="43,94,44,137" />
       <scope id="5759891770220262562" at="47,50,48,860" />

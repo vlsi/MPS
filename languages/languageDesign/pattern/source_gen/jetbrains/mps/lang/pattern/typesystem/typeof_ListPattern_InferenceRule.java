@@ -31,7 +31,7 @@ public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runt
       }
     } else {
       String role = attributedNode.getRoleInParent();
-      SNode linkDeclaration = AbstractConceptDeclaration__BehaviorDescriptor.findLinkDeclaration_idhEwILKz.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(parent)), role);
+      SNode linkDeclaration = AbstractConceptDeclaration__BehaviorDescriptor.findLinkDeclaration_idhEwILKz.invoke(SNodeOperations.getConceptDeclaration(parent), role);
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491231762", 0, null);

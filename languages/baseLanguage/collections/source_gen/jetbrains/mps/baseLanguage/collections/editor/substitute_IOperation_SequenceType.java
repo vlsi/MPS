@@ -145,13 +145,9 @@ public class substitute_IOperation_SequenceType extends SubstituteMenuBase {
         }));
         ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSeqOp).subtract(Sequence.fromIterable(subconceptOfSortedSetOp)).subtract(Sequence.fromIterable(subconceptOfSetOp)).subtract(Sequence.fromIterable(subconceptOfSortedMapOp)).subtract(Sequence.fromIterable(subconceptOfMapOp)).subtract(Sequence.fromIterable(subconceptOfIATN)));
 
-        return ListSequence.fromList(allApplicable).distinct().select(new ISelector<SAbstractConcept, SNode>() {
-          public SNode select(SAbstractConcept it) {
-            return (SNode) SNodeOperations.asNode(it);
-          }
-        }).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
+        return ListSequence.fromList(allApplicable).distinct().select(new ISelector<SAbstractConcept, SAbstractConcept>() {
+          public SAbstractConcept select(SAbstractConcept it) {
+            return (SAbstractConcept) it;
           }
         }).toListSequence();
       }

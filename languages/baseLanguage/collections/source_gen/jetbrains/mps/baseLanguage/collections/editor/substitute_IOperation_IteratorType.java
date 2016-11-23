@@ -85,13 +85,9 @@ public class substitute_IOperation_IteratorType extends SubstituteMenuBase {
           public boolean accept(SConcept it) {
             return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
-        }).select(new ISelector<SConcept, SNode>() {
-          public SNode select(SConcept it) {
-            return (SNode) (SNode) SNodeOperations.asNode(it);
-          }
-        }).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
+        }).select(new ISelector<SConcept, SAbstractConcept>() {
+          public SAbstractConcept select(SConcept it) {
+            return ((SAbstractConcept) it);
           }
         }).toListSequence();
       }
