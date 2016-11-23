@@ -18103,16 +18103,8 @@
                       <node concept="1bVj0M" id="6kJcyCQ_C0K" role="23t8la">
                         <node concept="3clFbS" id="6kJcyCQ_C0L" role="1bW5cS">
                           <node concept="3clFbF" id="6kJcyCQ_Ccz" role="3cqZAp">
-                            <node concept="10QFUN" id="6kJcyCQ_I1b" role="3clFbG">
-                              <node concept="3THzug" id="6kJcyCQ_Igx" role="10QFUM">
-                                <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-                              </node>
-                              <node concept="2OqwBi" id="6kJcyCQ_CvQ" role="10QFUP">
-                                <node concept="37vLTw" id="6kJcyCQ_Ccy" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6kJcyCQ_C0M" resolve="it" />
-                                </node>
-                                <node concept="FGMqu" id="6kJcyCQ_DI4" role="2OqNvi" />
-                              </node>
+                            <node concept="3B5_sB" id="4YXTt1AIr_Y" role="3clFbG">
+                              <ref role="3B5MYn" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
                             </node>
                           </node>
                         </node>

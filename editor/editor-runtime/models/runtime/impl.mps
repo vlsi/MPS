@@ -265,7 +265,6 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -400,14 +399,11 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="1$sIUMYazEN" role="3uHU7w">
-                  <node concept="2OqwBi" id="3p8IqUIFaZu" role="2Oq$k0">
-                    <node concept="2OqwBi" id="1$sIUMYazEK" role="2Oq$k0">
-                      <node concept="37vLTw" id="3GM_nagTAnA" role="2Oq$k0">
-                        <ref role="3cqZAo" node="11BHxZ7C1kn" resolve="deprecatable" />
-                      </node>
-                      <node concept="3NT_Vc" id="3p8IqUIF9qX" role="2OqNvi" />
+                  <node concept="2OqwBi" id="1$sIUMYazEK" role="2Oq$k0">
+                    <node concept="37vLTw" id="3GM_nagTAnA" role="2Oq$k0">
+                      <ref role="3cqZAo" node="11BHxZ7C1kn" resolve="deprecatable" />
                     </node>
-                    <node concept="FGMqu" id="3p8IqUIFce3" role="2OqNvi" />
+                    <node concept="3NT_Vc" id="3p8IqUIF9qX" role="2OqNvi" />
                   </node>
                   <node concept="2qgKlT" id="1$sIUMYazEO" role="2OqNvi">
                     <ref role="37wK5l" to="tpcu:hOwoPtR" resolve="isDeprecated" />

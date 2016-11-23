@@ -570,7 +570,6 @@
         <property id="559557797393017702" name="name" index="BaHAW" />
       </concept>
       <concept id="1761385620274348152" name="jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression" flags="nn" index="2CBFar" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
       </concept>
@@ -645,6 +644,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
@@ -34241,15 +34241,10 @@
                   <node concept="3clFbS" id="5py1MO3NK70" role="1bW5cS">
                     <node concept="3clFbF" id="5py1MO3NK71" role="3cqZAp">
                       <node concept="2OqwBi" id="5py1MO3NK72" role="3clFbG">
-                        <node concept="2OqwBi" id="1UVYfNZzh_x" role="2Oq$k0">
-                          <node concept="37vLTw" id="5py1MO3NK73" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5py1MO3NK75" resolve="it" />
-                          </node>
-                          <node concept="FGMqu" id="1UVYfNZzkUE" role="2OqNvi" />
+                        <node concept="37vLTw" id="5py1MO3NK73" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5py1MO3NK75" resolve="it" />
                         </node>
-                        <node concept="3TrcHB" id="5py1MO3NK74" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                        </node>
+                        <node concept="3n3YKJ" id="4YXTt1AG8zU" role="2OqNvi" />
                       </node>
                     </node>
                   </node>

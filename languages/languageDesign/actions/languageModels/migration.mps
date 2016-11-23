@@ -327,7 +327,6 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
       </concept>
@@ -377,6 +376,9 @@
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
         <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
       </concept>
@@ -13222,18 +13224,8 @@
                     </node>
                   </node>
                   <node concept="3JPx81" id="AIV2SdElGN" role="2OqNvi">
-                    <node concept="1eOMI4" id="AIV2SdE$ot" role="25WWJ7">
-                      <node concept="10QFUN" id="AIV2SdE$ou" role="1eOMHV">
-                        <node concept="2OqwBi" id="AIV2SdE$oq" role="10QFUP">
-                          <node concept="35c_gC" id="AIV2SdE$or" role="2Oq$k0">
-                            <ref role="35c_gD" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-                          </node>
-                          <node concept="FGMqu" id="AIV2SdE$os" role="2OqNvi" />
-                        </node>
-                        <node concept="3Tqbb2" id="AIV2SdEBcI" role="10QFUM">
-                          <ref role="ehGHo" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
-                        </node>
-                      </node>
+                    <node concept="3B5_sB" id="4YXTt1AIeTX" role="25WWJ7">
+                      <ref role="3B5MYn" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
                     </node>
                   </node>
                 </node>
@@ -13289,18 +13281,8 @@
                       </node>
                     </node>
                     <node concept="3JPx81" id="AIV2SdEJMW" role="2OqNvi">
-                      <node concept="1eOMI4" id="AIV2SdEJMX" role="25WWJ7">
-                        <node concept="10QFUN" id="AIV2SdEJMY" role="1eOMHV">
-                          <node concept="2OqwBi" id="AIV2SdEJMZ" role="10QFUP">
-                            <node concept="35c_gC" id="AIV2SdEJN0" role="2Oq$k0">
-                              <ref role="35c_gD" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-                            </node>
-                            <node concept="FGMqu" id="AIV2SdEJN1" role="2OqNvi" />
-                          </node>
-                          <node concept="3Tqbb2" id="AIV2SdEJN2" role="10QFUM">
-                            <ref role="ehGHo" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
-                          </node>
-                        </node>
+                      <node concept="3B5_sB" id="4YXTt1AIeU7" role="25WWJ7">
+                        <ref role="3B5MYn" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
                       </node>
                     </node>
                   </node>
