@@ -287,7 +287,7 @@
       <node id="8750596094204760417" at="45,0,48,0" concept="5" trace="checkConfiguration#()V" />
       <node id="8750596094204760417" at="59,73,62,5" concept="4" />
       <node id="8750596094204760417" at="68,14,71,9" concept="4" />
-      <node id="8750596094204760417" at="75,0,78,0" concept="5" trace="getNode#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
+      <node id="8750596094204760417" at="75,0,78,0" concept="5" trace="getNode#()Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;" />
       <node id="8750596094204760417" at="86,45,89,7" concept="4" />
       <node id="8750596094204760417" at="102,0,105,0" concept="1" trace="DemoApplication_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Configuration_Factory;Ljava/lang/String;)V" />
       <node id="8750596094204760417" at="113,0,116,0" concept="5" trace="createRunnerSettings#(Lcom/intellij/execution/configurations/ConfigurationInfoProvider;)Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />

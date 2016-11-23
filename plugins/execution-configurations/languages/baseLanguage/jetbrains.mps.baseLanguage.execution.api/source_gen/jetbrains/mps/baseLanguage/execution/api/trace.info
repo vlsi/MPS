@@ -592,90 +592,82 @@
   </root>
   <root nodeRef="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)/1240470842553276028">
     <file name="JavaRunParameters_Configuration.java">
-      <node id="1240470842553276028" at="24,76,25,57" concept="2" />
-      <node id="1240470842553276028" at="29,26,30,81" concept="14" />
-      <node id="1240470842553276028" at="31,5,32,83" concept="2" />
-      <node id="1240470842553276028" at="34,51,35,39" concept="8" />
-      <node id="1240470842553276028" at="37,61,38,40" concept="2" />
-      <node id="1240470842553276028" at="40,0,41,0" concept="11" trace="LOG" />
-      <node id="1240470842553276028" at="42,50,43,49" concept="7" />
-      <node id="1240470842553276028" at="44,9,45,36" concept="2" />
-      <node id="1240470842553276028" at="45,36,46,80" concept="2" />
-      <node id="1240470842553276028" at="46,80,47,19" concept="8" />
-      <node id="1240470842553276028" at="49,42,50,26" concept="2" />
-      <node id="1240470842553276028" at="52,5,53,17" concept="8" />
-      <node id="1240470842553276062" at="56,0,57,0" concept="3" trace="myJavaRunParameters" />
-      <node id="1240470842553276028" at="60,61,61,100" concept="7" />
-      <node id="1240470842553276028" at="62,40,63,64" concept="2" />
-      <node id="1240470842553276028" at="64,7,65,19" concept="8" />
-      <node id="1240470842553276028" at="70,0,71,0" concept="3" trace="myEditorEx" />
-      <node id="1240470842553276028" at="71,64,72,49" concept="8" />
-      <node id="1240470842553276028" at="74,61,75,56" concept="8" />
-      <node id="1240470842553276028" at="78,29,79,31" concept="2" />
-      <node id="1240470842553276028" at="80,5,81,22" concept="8" />
-      <node id="1240470842553276028" at="19,0,21,0" concept="3" trace="myState" />
-      <node id="1240470842553276028" at="21,0,23,0" concept="6" trace="checkConfiguration#()V" />
-      <node id="1240470842553276028" at="57,0,59,0" concept="1" trace="MyState#()V" />
-      <node id="1240470842553276028" at="68,0,70,0" concept="1" trace="JavaRunParameters_Configuration#()V" />
-      <node id="1240470842553276028" at="28,73,31,5" concept="5" />
-      <node id="1240470842553276028" at="34,0,37,0" concept="6" trace="getJavaRunParameters#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-      <node id="1240470842553276028" at="37,0,40,0" concept="6" trace="setJavaRunParameters#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
-      <node id="1240470842553276028" at="48,45,51,7" concept="5" />
-      <node id="1240470842553276028" at="61,100,64,7" concept="5" />
-      <node id="1240470842553276028" at="71,0,74,0" concept="6" trace="createCloneTemplate#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
-      <node id="1240470842553276028" at="74,0,77,0" concept="6" trace="getEditor#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration_Editor;" />
-      <node id="1240470842553276028" at="77,74,80,5" concept="5" />
-      <node id="1240470842553276028" at="23,0,27,0" concept="6" trace="writeExternal#(Lorg/jdom/Element;)V" />
-      <node id="1240470842553276028" at="77,0,83,0" concept="6" trace="getEditorEx#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
-      <node id="1240470842553276028" at="27,0,34,0" concept="6" trace="readExternal#(Lorg/jdom/Element;)V" />
-      <node id="1240470842553276028" at="59,0,67,0" concept="6" trace="clone#()Ljava/lang/Object;" />
-      <node id="1240470842553276028" at="43,49,52,5" concept="15" />
-      <node id="1240470842553276028" at="41,0,55,0" concept="6" trace="clone#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
-      <scope id="1240470842553276028" at="21,73,21,73" />
-      <scope id="1240470842553276028" at="57,22,57,22" />
-      <scope id="1240470842553276028" at="68,44,68,44" />
-      <scope id="1240470842553276028" at="24,76,25,57" />
-      <scope id="1240470842553276028" at="29,26,30,81" />
-      <scope id="1240470842553276028" at="34,51,35,39" />
-      <scope id="1240470842553276028" at="37,61,38,40" />
-      <scope id="1240470842553276028" at="49,42,50,26" />
-      <scope id="1240470842553276028" at="62,40,63,64" />
-      <scope id="1240470842553276028" at="71,64,72,49" />
-      <scope id="1240470842553276028" at="74,61,75,56" />
-      <scope id="1240470842553276028" at="78,29,79,31" />
-      <scope id="1240470842553276028" at="21,0,23,0" />
-      <scope id="1240470842553276028" at="57,0,59,0" />
-      <scope id="1240470842553276028" at="68,0,70,0" />
-      <scope id="1240470842553276028" at="34,0,37,0" />
-      <scope id="1240470842553276028" at="37,0,40,0">
+      <node id="1240470842553276028" at="22,76,23,57" concept="2" />
+      <node id="1240470842553276028" at="27,26,28,81" concept="14" />
+      <node id="1240470842553276028" at="29,5,30,83" concept="2" />
+      <node id="1240470842553276028" at="32,51,33,39" concept="8" />
+      <node id="1240470842553276028" at="35,61,36,40" concept="2" />
+      <node id="1240470842553276028" at="38,0,39,0" concept="11" trace="LOG" />
+      <node id="1240470842553276028" at="40,50,41,49" concept="7" />
+      <node id="1240470842553276028" at="42,9,43,36" concept="2" />
+      <node id="1240470842553276028" at="43,36,44,80" concept="2" />
+      <node id="1240470842553276028" at="44,80,45,19" concept="8" />
+      <node id="1240470842553276028" at="47,42,48,26" concept="2" />
+      <node id="1240470842553276028" at="50,5,51,17" concept="8" />
+      <node id="1240470842553276062" at="54,0,55,0" concept="3" trace="myJavaRunParameters" />
+      <node id="1240470842553276028" at="58,61,59,100" concept="7" />
+      <node id="1240470842553276028" at="60,40,61,64" concept="2" />
+      <node id="1240470842553276028" at="62,7,63,19" concept="8" />
+      <node id="1240470842553276028" at="68,64,69,49" concept="8" />
+      <node id="1240470842553276028" at="71,61,72,56" concept="8" />
+      <node id="1240470842553276028" at="17,0,19,0" concept="3" trace="myState" />
+      <node id="1240470842553276028" at="19,0,21,0" concept="6" trace="checkConfiguration#()V" />
+      <node id="1240470842553276028" at="55,0,57,0" concept="1" trace="MyState#()V" />
+      <node id="1240470842553276028" at="66,0,68,0" concept="1" trace="JavaRunParameters_Configuration#()V" />
+      <node id="1240470842553276028" at="26,73,29,5" concept="5" />
+      <node id="1240470842553276028" at="32,0,35,0" concept="6" trace="getJavaRunParameters#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+      <node id="1240470842553276028" at="35,0,38,0" concept="6" trace="setJavaRunParameters#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+      <node id="1240470842553276028" at="46,45,49,7" concept="5" />
+      <node id="1240470842553276028" at="59,100,62,7" concept="5" />
+      <node id="1240470842553276028" at="68,0,71,0" concept="6" trace="createCloneTemplate#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
+      <node id="1240470842553276028" at="71,0,74,0" concept="6" trace="getEditor#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration_Editor;" />
+      <node id="1240470842553276028" at="21,0,25,0" concept="6" trace="writeExternal#(Lorg/jdom/Element;)V" />
+      <node id="1240470842553276028" at="25,0,32,0" concept="6" trace="readExternal#(Lorg/jdom/Element;)V" />
+      <node id="1240470842553276028" at="57,0,65,0" concept="6" trace="clone#()Ljava/lang/Object;" />
+      <node id="1240470842553276028" at="41,49,50,5" concept="15" />
+      <node id="1240470842553276028" at="39,0,53,0" concept="6" trace="clone#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
+      <scope id="1240470842553276028" at="19,73,19,73" />
+      <scope id="1240470842553276028" at="55,22,55,22" />
+      <scope id="1240470842553276028" at="66,44,66,44" />
+      <scope id="1240470842553276028" at="22,76,23,57" />
+      <scope id="1240470842553276028" at="27,26,28,81" />
+      <scope id="1240470842553276028" at="32,51,33,39" />
+      <scope id="1240470842553276028" at="35,61,36,40" />
+      <scope id="1240470842553276028" at="47,42,48,26" />
+      <scope id="1240470842553276028" at="60,40,61,64" />
+      <scope id="1240470842553276028" at="68,64,69,49" />
+      <scope id="1240470842553276028" at="71,61,72,56" />
+      <scope id="1240470842553276028" at="19,0,21,0" />
+      <scope id="1240470842553276028" at="55,0,57,0" />
+      <scope id="1240470842553276028" at="66,0,68,0" />
+      <scope id="1240470842553276028" at="32,0,35,0" />
+      <scope id="1240470842553276028" at="35,0,38,0">
         <var name="value" id="1240470842553276028" />
       </scope>
-      <scope id="1240470842553276028" at="44,9,47,19" />
-      <scope id="1240470842553276028" at="48,0,51,7">
+      <scope id="1240470842553276028" at="42,9,45,19" />
+      <scope id="1240470842553276028" at="46,0,49,7">
         <var name="ex" id="1240470842553276028" />
       </scope>
-      <scope id="1240470842553276028" at="48,45,51,7" />
+      <scope id="1240470842553276028" at="46,45,49,7" />
+      <scope id="1240470842553276028" at="68,0,71,0" />
       <scope id="1240470842553276028" at="71,0,74,0" />
-      <scope id="1240470842553276028" at="74,0,77,0" />
-      <scope id="1240470842553276028" at="23,0,27,0">
+      <scope id="1240470842553276028" at="21,0,25,0">
         <var name="element" id="1240470842553276028" />
       </scope>
-      <scope id="1240470842553276028" at="28,73,32,83" />
-      <scope id="1240470842553276028" at="77,74,81,22" />
-      <scope id="1240470842553276028" at="60,61,65,19">
+      <scope id="1240470842553276028" at="26,73,30,83" />
+      <scope id="1240470842553276028" at="58,61,63,19">
         <var name="state" id="1240470842553276028" />
       </scope>
-      <scope id="1240470842553276028" at="77,0,83,0" />
-      <scope id="1240470842553276028" at="27,0,34,0">
+      <scope id="1240470842553276028" at="25,0,32,0">
         <var name="element" id="1240470842553276028" />
       </scope>
-      <scope id="1240470842553276028" at="59,0,67,0" />
-      <scope id="1240470842553276028" at="42,50,53,17">
+      <scope id="1240470842553276028" at="57,0,65,0" />
+      <scope id="1240470842553276028" at="40,50,51,17">
         <var name="clone" id="1240470842553276028" />
       </scope>
-      <scope id="1240470842553276028" at="41,0,55,0" />
-      <unit id="1240470842553276028" at="55,0,68,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration$MyState" />
-      <unit id="1240470842553276028" at="18,0,84,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
+      <scope id="1240470842553276028" at="39,0,53,0" />
+      <unit id="1240470842553276028" at="53,0,66,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration$MyState" />
+      <unit id="1240470842553276028" at="16,0,75,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
     </file>
     <file name="JavaRunParameters_Configuration_Editor.java">
       <node id="1240470842553276030" at="11,0,12,0" concept="3" trace="myJavaOptionsEditor" />

@@ -132,8 +132,8 @@
       <node id="4468328282078607076" at="79,73,82,5" concept="4" />
       <node id="4468328282078607076" at="88,14,91,9" concept="4" />
       <node id="4468328282078607076" at="98,14,101,9" concept="4" />
-      <node id="4468328282078607076" at="105,0,108,0" concept="5" trace="getNode#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
-      <node id="4468328282078607076" at="108,0,111,0" concept="5" trace="getSettings#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
+      <node id="4468328282078607076" at="105,0,108,0" concept="5" trace="getNode#()Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;" />
+      <node id="4468328282078607076" at="108,0,111,0" concept="5" trace="getSettings#()Ljetbrains/mps/execution/api/settings/IPersistentConfiguration;" />
       <node id="4468328282078607076" at="120,45,123,7" concept="4" />
       <node id="4468328282078607076" at="136,0,139,0" concept="1" trace="BuildScript_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/build/pluginSolution/plugin/BuildScript_Configuration_Factory;Ljava/lang/String;)V" />
       <node id="4468328282078607076" at="147,0,150,0" concept="5" trace="createRunnerSettings#(Lcom/intellij/execution/configurations/ConfigurationInfoProvider;)Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
