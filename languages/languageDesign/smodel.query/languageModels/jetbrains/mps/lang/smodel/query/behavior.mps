@@ -112,7 +112,6 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -808,9 +807,11 @@
           <node concept="3cpWsn" id="60B$833breC" role="3cpWs9">
             <property role="TrG5h" value="alias" />
             <node concept="17QB3L" id="60B$833brez" role="1tU5fm" />
-            <node concept="2OqwBi" id="64VftqE$Cmc" role="33vP2m">
+            <node concept="2OqwBi" id="XfBUhNEs8z" role="33vP2m">
               <node concept="13iPFW" id="60B$833peTq" role="2Oq$k0" />
-              <node concept="3n3YKJ" id="XfBUhN$Sg5" role="2OqNvi" />
+              <node concept="3TrcHB" id="XfBUhNEsEH" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
+              </node>
             </node>
           </node>
         </node>

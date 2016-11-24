@@ -254,7 +254,6 @@
       <concept id="767145758118872828" name="jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation" flags="nn" index="2DeJnW" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
@@ -913,12 +912,9 @@
           <node concept="1hCUdq" id="1wEcoXjJ_ie" role="1hCUd6">
             <node concept="3clFbS" id="1wEcoXjJ_if" role="2VODD2">
               <node concept="3clFbF" id="1wEcoXjJ_ig" role="3cqZAp">
-                <node concept="2OqwBi" id="1wEcoXjJ_ij" role="3clFbG">
-                  <node concept="2OqwBi" id="4YXTt1AIXdU" role="2Oq$k0">
-                    <node concept="2ZBlsa" id="1wEcoXjJ_im" role="2Oq$k0" />
-                    <node concept="3n3YKJ" id="4YXTt1AIXPN" role="2OqNvi" />
-                  </node>
-                  <node concept="FGMqu" id="1wEcoXjJ_il" role="2OqNvi" />
+                <node concept="2OqwBi" id="4YXTt1AIXdU" role="3clFbG">
+                  <node concept="2ZBlsa" id="1wEcoXjJ_im" role="2Oq$k0" />
+                  <node concept="3n3YKJ" id="4YXTt1AIXPN" role="2OqNvi" />
                 </node>
               </node>
             </node>
