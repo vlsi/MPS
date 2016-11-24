@@ -54,9 +54,6 @@
     <file name="CheckedModuleQualifiedName_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.CheckedModuleQualifiedName_BehaviorDescriptor" />
     </file>
-    <file name="CheckedModuleReference_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.CheckedModuleReference_BehaviorDescriptor" />
-    </file>
     <file name="ChildAttributeQualifier_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.ChildAttributeQualifier_BehaviorDescriptor" />
     </file>

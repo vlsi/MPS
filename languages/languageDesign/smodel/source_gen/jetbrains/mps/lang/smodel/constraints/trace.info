@@ -15,7 +15,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,97,0" name="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,95,0" name="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/1213104840262">
@@ -1203,87 +1203,6 @@
       <scope id="4040588429969031617" at="22,0,44,0" />
       <unit id="4040588429969031617" at="25,147,41,5" name="jetbrains.mps.lang.smodel.constraints.ModuleReferenceExpression_Constraints$1" />
       <unit id="4040588429969031617" at="17,0,45,0" name="jetbrains.mps.lang.smodel.constraints.ModuleReferenceExpression_Constraints" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/4357968816427488501">
-    <file name="CheckedModuleReference_Constraints.java">
-      <node id="4357968816427488501" at="22,47,23,166" concept="11" />
-      <node id="4357968816427488501" at="27,84,28,119" concept="5" />
-      <node id="4357968816427488501" at="31,37,32,20" concept="6" />
-      <node id="4357968816427488501" at="35,42,36,41" concept="5" />
-      <node id="4357968816427529241" at="37,9,38,192" concept="5" />
-      <node id="4357968816427529259" at="39,61,40,28" concept="6" />
-      <node id="4357968816427529227" at="41,11,42,109" concept="5" />
-      <node id="4357968816427529184" at="42,109,43,91" concept="5" />
-      <node id="4357968816427529211" at="43,91,44,93" concept="6" />
-      <node id="4357968816427488501" at="48,37,49,20" concept="6" />
-      <node id="4357968816427488501" at="52,62,53,41" concept="5" />
-      <node id="4357968816427528473" at="54,9,55,127" concept="5" />
-      <node id="4357968816427528484" at="55,127,56,208" concept="2" />
-      <node id="4357968816427488501" at="60,40,61,20" concept="6" />
-      <node id="4357968816427488501" at="64,70,65,41" concept="5" />
-      <node id="4357968816427528462" at="66,9,67,127" concept="5" />
-      <node id="4357968816427528469" at="67,127,68,32" concept="6" />
-      <node id="4357968816427488501" at="71,7,72,22" concept="6" />
-      <node id="4357968816427488501" at="22,0,25,0" concept="1" trace="CheckedModuleReference_Constraints#()V" />
-      <node id="4357968816427529249" at="38,192,41,11" concept="3" />
-      <node id="4357968816427488501" at="30,0,34,0" concept="4" trace="hasOwnGetter#()Z" />
-      <node id="4357968816427488501" at="47,0,51,0" concept="4" trace="hasOwnSetter#()Z" />
-      <node id="4357968816427488501" at="53,41,57,9" concept="0" />
-      <node id="4357968816427488501" at="59,0,63,0" concept="4" trace="hasOwnValidator#()Z" />
-      <node id="4357968816427488501" at="65,41,69,9" concept="0" />
-      <node id="4357968816427488501" at="51,0,59,0" concept="4" trace="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <node id="4357968816427488501" at="63,0,71,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="4357968816427488501" at="36,41,45,9" concept="0" />
-      <node id="4357968816427488501" at="34,0,47,0" concept="4" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="4357968816427488501" at="28,119,71,7" concept="2" />
-      <node id="4357968816427488501" at="26,0,74,0" concept="4" trace="getSpecifiedProperties#()Ljava/util/Map;" />
-      <scope id="4357968816427488501" at="22,47,23,166" />
-      <scope id="4357968816427488501" at="31,37,32,20" />
-      <scope id="4357968816427529250" at="39,61,40,28" />
-      <scope id="4357968816427488501" at="48,37,49,20" />
-      <scope id="4357968816427488501" at="60,40,61,20" />
-      <scope id="4357968816427494443" at="54,9,56,208">
-        <var name="module" id="4357968816427528474" />
-      </scope>
-      <scope id="4357968816427526047" at="66,9,68,32">
-        <var name="module" id="4357968816427528463" />
-      </scope>
-      <scope id="4357968816427488501" at="22,0,25,0" />
-      <scope id="4357968816427488501" at="30,0,34,0" />
-      <scope id="4357968816427488501" at="47,0,51,0" />
-      <scope id="4357968816427488501" at="59,0,63,0" />
-      <scope id="4357968816427488501" at="52,62,57,9">
-        <var name="propertyName" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427488501" at="64,70,69,9">
-        <var name="propertyName" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427494439" at="37,9,44,93">
-        <var name="module" id="4357968816427529185" />
-        <var name="moduleReference" id="4357968816427529228" />
-        <var name="original" id="4357968816427529242" />
-      </scope>
-      <scope id="4357968816427488501" at="51,0,59,0">
-        <var name="node" id="4357968816427488501" />
-        <var name="propertyValue" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427488501" at="63,0,71,0">
-        <var name="node" id="4357968816427488501" />
-        <var name="propertyValue" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427488501" at="35,42,45,9">
-        <var name="propertyName" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427488501" at="34,0,47,0">
-        <var name="node" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427488501" at="27,84,72,22">
-        <var name="properties" id="4357968816427488501" />
-      </scope>
-      <scope id="4357968816427488501" at="26,0,74,0" />
-      <unit id="4357968816427488501" at="29,151,71,5" name="jetbrains.mps.lang.smodel.constraints.CheckedModuleReference_Constraints$1" />
-      <unit id="4357968816427488501" at="21,0,75,0" name="jetbrains.mps.lang.smodel.constraints.CheckedModuleReference_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/5253134957341833007">

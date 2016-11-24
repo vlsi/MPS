@@ -8319,32 +8319,6 @@
       </node>
     </node>
   </node>
-  <node concept="1YbPZF" id="3LUBoMdoXjQ">
-    <property role="TrG5h" value="typeof_CheckedModuleReference" />
-    <property role="3GE5qa" value="reference" />
-    <node concept="3clFbS" id="3LUBoMdoXjR" role="18ibNy">
-      <node concept="1Z5TYs" id="3LUBoMdoX_u" role="3cqZAp">
-        <node concept="mw_s8" id="3LUBoMdoX_y" role="1ZfhKB">
-          <node concept="2c44tf" id="3LUBoMdoX_z" role="mwGJk">
-            <node concept="3uibUv" id="3LUBoMdoYK$" role="2c44tc">
-              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="3LUBoMdoX_x" role="1ZfhK$">
-          <node concept="1Z2H0r" id="3LUBoMdoX_r" role="mwGJk">
-            <node concept="1YBJjd" id="3LUBoMdoX_t" role="1Z2MuG">
-              <ref role="1YBMHb" node="3LUBoMdoXjS" resolve="ref" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="3LUBoMdoXjS" role="1YuTPh">
-      <property role="TrG5h" value="ref" />
-      <ref role="1YaFvo" to="tp25:3LUBoMdoXjN" resolve="CheckedModuleReference" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="7eX9cM$YhJC">
     <property role="TrG5h" value="typeof_ConceptFqNameRefExpression" />
     <property role="3GE5qa" value="reference" />
