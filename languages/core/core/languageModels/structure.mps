@@ -10,7 +10,7 @@
   <imports />
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
@@ -331,6 +331,9 @@
   <node concept="PlHQZ" id="1_TrU5E6oyb">
     <property role="TrG5h" value="IDontSubstituteByDefault" />
     <property role="EcuMT" value="1835621062190663819" />
+    <node concept="asaX9" id="7pLHo_31Wuo" role="lGtFl">
+      <property role="YLQ7P" value="Create empty default substitute menu for the concept instead of implementing this interface concept" />
+    </node>
   </node>
   <node concept="PlHQZ" id="2UAn0GTuXmY">
     <property role="TrG5h" value="ScopeFacade" />
