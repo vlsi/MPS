@@ -6085,6 +6085,23 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5A5jZrz4jY6" role="3clF47">
+        <node concept="3cpWs8" id="7vEL9Rt9CXX" role="3cqZAp">
+          <node concept="3cpWsn" id="7vEL9Rt9CXY" role="3cpWs9">
+            <property role="TrG5h" value="rf" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="7vEL9Rt9CXZ" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+            </node>
+            <node concept="2ShNRf" id="7vEL9Rt9Ddj" role="33vP2m">
+              <node concept="1pGfFk" id="7vEL9Rt9EMC" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
+                <node concept="37vLTw" id="7vEL9Rt9ENQ" role="37wK5m">
+                  <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5A5jZrz7bXy" role="3cqZAp">
           <node concept="2OqwBi" id="5A5jZrz7bXz" role="3clFbG">
             <node concept="2OqwBi" id="5A5jZrz7bY7" role="2Oq$k0">
@@ -6130,14 +6147,18 @@
                                 <node concept="3uibUv" id="5A5jZrz7bXL" role="1tU5fm">
                                   <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                                 </node>
-                                <node concept="2YIFZM" id="5A5jZrz7bYj" role="33vP2m">
-                                  <ref role="1Pybhc" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
-                                  <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.createModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="createModule" />
-                                  <node concept="37vLTw" id="5A5jZrz7bXN" role="37wK5m">
-                                    <ref role="3cqZAo" node="5A5jZrz7bXS" resolve="moduleHandle" />
+                                <node concept="2OqwBi" id="7vEL9Rt9F30" role="33vP2m">
+                                  <node concept="37vLTw" id="7vEL9Rt9ESq" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7vEL9Rt9CXY" resolve="rf" />
                                   </node>
-                                  <node concept="37vLTw" id="2BGPXkEwzI5" role="37wK5m">
-                                    <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
+                                  <node concept="liA8E" id="7vEL9Rt9Fko" role="2OqNvi">
+                                    <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.instantiateModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="instantiateModule" />
+                                    <node concept="37vLTw" id="7vEL9Rt9FpW" role="37wK5m">
+                                      <ref role="3cqZAo" node="5A5jZrz7bXS" resolve="moduleHandle" />
+                                    </node>
+                                    <node concept="37vLTw" id="7vEL9Rt9Fz_" role="37wK5m">
+                                      <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>

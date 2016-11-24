@@ -596,31 +596,34 @@
       <node id="6450649963068211557" at="16,0,17,0" concept="4" trace="myHandlesToLoad" />
       <node id="6450649963068211650" at="18,108,19,24" concept="3" />
       <node id="6450649963068211892" at="19,24,20,36" concept="3" />
-      <node id="6450649963068964720" at="26,72,27,88" concept="8" />
-      <node id="6450649963068964725" at="27,88,28,38" concept="3" />
-      <node id="6450649963068964735" at="31,7,32,21" concept="9" />
+      <node id="8640935017362919293" at="23,25,24,76" concept="8" />
+      <node id="6450649963068964720" at="27,72,28,73" concept="8" />
+      <node id="6450649963068964725" at="28,73,29,38" concept="3" />
+      <node id="6450649963068964735" at="32,7,33,21" concept="9" />
       <node id="6450649963068209186" at="18,0,22,0" concept="2" trace="ProjectModulesFiller#(Ljetbrains/mps/project/Project;Ljava/lang/Iterable;)V" />
-      <node id="6450649963068964716" at="25,25,29,9" concept="5" />
-      <node id="6450649963068964714" at="25,0,31,0" concept="7" trace="run#()V" />
-      <node id="6450649963068964706" at="23,25,31,7" concept="3" />
-      <node id="6450649963068211075" at="23,0,34,0" concept="7" trace="load#()Ljetbrains/mps/project/Project;" />
+      <node id="6450649963068964716" at="26,25,30,9" concept="5" />
+      <node id="6450649963068964714" at="26,0,32,0" concept="7" trace="run#()V" />
+      <node id="6450649963068964706" at="24,76,32,7" concept="3" />
+      <node id="6450649963068211075" at="23,0,35,0" concept="7" trace="load#()Ljetbrains/mps/project/Project;" />
       <scope id="6450649963068209189" at="18,108,20,36" />
-      <scope id="6450649963068964718" at="26,72,28,38">
+      <scope id="6450649963068964718" at="27,72,29,38">
         <var name="module" id="6450649963068964719" />
       </scope>
       <scope id="6450649963068209186" at="18,0,22,0">
         <var name="moduleHandles" id="6450649963068210539" />
         <var name="project" id="6450649963068211390" />
       </scope>
-      <scope id="6450649963068964715" at="25,25,29,9" />
-      <scope id="6450649963068964716" at="25,25,29,9">
+      <scope id="6450649963068964715" at="26,25,30,9" />
+      <scope id="6450649963068964716" at="26,25,30,9">
         <var name="moduleHandle" id="6450649963068964728" />
       </scope>
-      <scope id="6450649963068964714" at="25,0,31,0" />
-      <scope id="6450649963068211078" at="23,25,32,21" />
-      <scope id="6450649963068211075" at="23,0,34,0" />
-      <unit id="6450649963068964712" at="24,50,31,5" name="jetbrains.mps.tool.environment.ProjectModulesFiller$1" />
-      <unit id="6450649963068208885" at="14,0,35,0" name="jetbrains.mps.tool.environment.ProjectModulesFiller" />
+      <scope id="6450649963068964714" at="26,0,32,0" />
+      <scope id="6450649963068211078" at="23,25,33,21">
+        <var name="rf" id="8640935017362919294" />
+      </scope>
+      <scope id="6450649963068211075" at="23,0,35,0" />
+      <unit id="6450649963068964712" at="25,50,32,5" name="jetbrains.mps.tool.environment.ProjectModulesFiller$1" />
+      <unit id="6450649963068208885" at="14,0,36,0" name="jetbrains.mps.tool.environment.ProjectModulesFiller" />
     </file>
   </root>
   <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/6450649963068241948">
