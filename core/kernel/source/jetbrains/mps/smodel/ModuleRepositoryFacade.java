@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -236,17 +235,34 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     return module != null ? module.getModuleReference() : null;
   }
 
-  public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
+  /**
+   * Instantiate a new module according to description and register it with the facade's repository.
+   * If there's module already (expected scenario), just updates its relation to another {@linkplain MPSModuleOwner module owner}
+   *   (same module could get published with few owners)
+   * @return instance of a module, either new one or existing from the facade's repository.
+   * @throws IllegalAccessException if handle describes unknown module kind.
+   */
+  @NotNull
+  public SModule instantiateModule(@NotNull ModuleHandle handle, @NotNull MPSModuleOwner owner) {
     LOG.debug("Creating a module " + handle);
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
-      return INSTANCE.newLanguageInstance(handle, owner);
+      return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
-      return INSTANCE.newSolutionInstance(handle, owner);
+      return newSolutionInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
-      return INSTANCE.newDevKitInstance(handle, owner);
+      return newDevKitInstance(handle, owner);
     } else {
       throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
     }
+  }
+
+  /**
+   * @deprecated use instance counterpart {@link #instantiateModule(ModuleHandle, MPSModuleOwner)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
+    return INSTANCE.instantiateModule(handle, owner);
   }
 
   private Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
