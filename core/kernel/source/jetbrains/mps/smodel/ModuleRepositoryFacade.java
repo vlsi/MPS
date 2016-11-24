@@ -169,7 +169,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   /**
    * Provisional code to get rid of uses of direct static instance of MPSModuleRepository.
-   * IMPLEMENTATION NOTE: shall collect names of all modules and use them instead if global MPSModuleRepository
+   * IMPLEMENTATION NOTE: shall collect names of all modules and use them instead of global MPSModuleRepository
    * @param fqName module namespace
    * @return named module, if any
    */

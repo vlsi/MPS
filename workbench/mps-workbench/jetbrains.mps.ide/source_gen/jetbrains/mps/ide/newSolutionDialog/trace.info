@@ -46,7 +46,7 @@
       <node id="4543209876460425560" at="125,5,126,102" concept="7" />
       <node id="4543209876460425571" at="127,26,128,21" concept="8" />
       <node id="4543209876460425650" at="130,34,131,45" concept="8" />
-      <node id="4543209876460425653" at="133,81,134,47" concept="8" />
+      <node id="4543209876460425653" at="133,50,134,47" concept="8" />
       <node id="4543209876460425660" at="136,66,137,37" concept="8" />
       <node id="6456559845239236674" at="138,5,139,80" concept="7" />
       <node id="3946779641918795114" at="139,80,140,99" concept="9" />
@@ -159,7 +159,7 @@
       <node id="4543209876460447576" at="88,0,91,0" concept="6" trace="invoke#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/Project;)Ljetbrains/mps/project/Solution;" />
       <node id="8784082215665182095" at="96,0,99,0" concept="6" trace="invoke#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/Project;)Ljetbrains/mps/smodel/Language;" />
       <node id="8784082215665268247" at="104,0,107,0" concept="6" trace="invoke#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/Project;)Ljetbrains/mps/project/DevKit;" />
-      <node id="8720557803585309179" at="119,83,122,5" concept="5" />
+      <node id="8720557803585309179" at="119,112,122,5" concept="5" />
       <node id="4543209876460447230" at="122,5,125,5" concept="5" />
       <node id="4543209876460425567" at="126,102,129,5" concept="5" />
       <node id="4543209876460425575" at="129,5,132,5" concept="5" />
@@ -200,7 +200,7 @@
       <node id="2273513587775220600" at="277,0,292,0" concept="11" trace="createNewLanguageDescriptor#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
       <node id="8784082215682422437" at="69,0,85,0" concept="11" trace="createSandboxSolution#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;Ljetbrains/mps/project/MPSProject;)Ljetbrains/mps/project/Solution;" />
       <node id="2273513587775220486" at="257,0,276,0" concept="11" trace="createNewSolutionDescriptor#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-      <node id="4543209876460424807" at="119,0,148,0" concept="11" trace="check#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4543209876460424807" at="119,0,148,0" concept="11" trace="check#(Ljetbrains/mps/smodel/ModuleRepositoryFacade;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="8784082215664425847" at="149,0,213,0" concept="11" trace="createNewLanguage#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;ZZLjetbrains/mps/smodel/MPSModuleOwner;)Ljetbrains/mps/smodel/Language;" />
       <scope id="8084576643565880458" at="177,0,177,39">
         <var name="ioException" id="8084576643565880460" />
@@ -214,7 +214,7 @@
       <scope id="4543209876460447231" at="123,33,124,40" />
       <scope id="4543209876460425568" at="127,26,128,21" />
       <scope id="4543209876460425576" at="130,34,131,45" />
-      <scope id="4543209876460425588" at="133,81,134,47" />
+      <scope id="4543209876460425588" at="133,50,134,47" />
       <scope id="4543209876460425601" at="136,66,137,37" />
       <scope id="6456559845239236597" at="142,200,143,52" />
       <scope id="4455451047507436663" at="151,34,152,98" />
@@ -387,13 +387,14 @@
         <var name="descriptorFile" id="2273513587775220491" />
         <var name="namespace" id="2273513587775220489" />
       </scope>
-      <scope id="4543209876460424810" at="119,83,146,16">
+      <scope id="4543209876460424810" at="119,112,146,16">
         <var name="message" id="4543209876460425561" />
         <var name="moduleDir" id="6456559845239236675" />
       </scope>
       <scope id="4543209876460424807" at="119,0,148,0">
         <var name="extension" id="4543209876460424812" />
         <var name="namespace" id="4543209876460424814" />
+        <var name="repo" id="8640935017362239409" />
         <var name="rootPath" id="4543209876460424816" />
       </scope>
       <scope id="8784082215664425850" at="150,174,211,20">

@@ -32,7 +32,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
-    <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
@@ -903,6 +902,12 @@
     <node concept="2tJIrI" id="6s6LYnVtP3B" role="jymVt" />
     <node concept="2YIFZL" id="3WcIkZau4TB" role="jymVt">
       <property role="TrG5h" value="check" />
+      <node concept="37vLTG" id="7vEL9Rt72YL" role="3clF46">
+        <property role="TrG5h" value="repo" />
+        <node concept="3uibUv" id="7vEL9Rt73pB" role="1tU5fm">
+          <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+        </node>
+      </node>
       <node concept="37vLTG" id="3WcIkZau4TG" role="3clF46">
         <property role="TrG5h" value="extension" />
         <node concept="17QB3L" id="3WcIkZau4TH" role="1tU5fm" />
@@ -1044,12 +1049,11 @@
           <node concept="3y3z36" id="3WcIkZau55S" role="3clFbw">
             <node concept="10Nm6u" id="3WcIkZau55T" role="3uHU7w" />
             <node concept="2OqwBi" id="3WcIkZau55U" role="3uHU7B">
-              <node concept="2YIFZM" id="3WcIkZau55V" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+              <node concept="37vLTw" id="7vEL9Rt84FM" role="2Oq$k0">
+                <ref role="3cqZAo" node="7vEL9Rt72YL" resolve="repo" />
               </node>
               <node concept="liA8E" id="3WcIkZau55W" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModuleByFqName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByFqName" />
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModuleByName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByName" />
                 <node concept="37vLTw" id="2BHiRxglgY$" role="37wK5m">
                   <ref role="3cqZAo" node="3WcIkZau4TI" resolve="namespace" />
                 </node>
@@ -1226,7 +1230,7 @@
             <node concept="YS8fn" id="3RkWhWCOHdE" role="3cqZAp">
               <node concept="2ShNRf" id="3RkWhWCOHfK" role="YScLw">
                 <node concept="1pGfFk" id="3RkWhWCOTqd" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                   <node concept="3cpWs3" id="3RkWhWCOU7$" role="37wK5m">
                     <node concept="3cpWs3" id="3RkWhWCOTSI" role="3uHU7B">
                       <node concept="Xl_RD" id="3RkWhWCOTs8" role="3uHU7B">

@@ -7,7 +7,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import com.intellij.project.ProjectKt;
 import org.apache.log4j.Logger;
@@ -18,6 +17,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.Solution;
 import java.io.IOException;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 
 public class NewLanguageDialog extends DialogWrapper {
@@ -28,7 +28,7 @@ public class NewLanguageDialog extends DialogWrapper {
   private final String myVirtualFolder;
 
   public NewLanguageDialog(MPSProject project, @Nullable String virtualFolder) {
-    super(ProjectHelper.toIdeaProject(project));
+    super(project.getProject());
     setTitle("New Language");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
@@ -101,7 +101,7 @@ public class NewLanguageDialog extends DialogWrapper {
   }
 
   private boolean check() {
-    myError = NewModuleUtil.check(MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
+    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
     setErrorText(myError);
     return myError == null;
   }

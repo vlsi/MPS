@@ -7,12 +7,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import com.intellij.project.ProjectKt;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 
 public class NewSolutionDialog extends DialogWrapper {
@@ -24,7 +24,7 @@ public class NewSolutionDialog extends DialogWrapper {
   private String myVirtualFolder;
 
   public NewSolutionDialog(MPSProject project, @Nullable String virtualFolder) {
-    super(ProjectHelper.toIdeaProject(project));
+    super(project.getProject());
     setTitle("New Solution");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
@@ -81,7 +81,7 @@ public class NewSolutionDialog extends DialogWrapper {
   }
 
   private boolean check() {
-    myError = NewModuleUtil.check(MPSExtentions.DOT_SOLUTION, mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation());
+    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_SOLUTION, mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation());
     setErrorText(myError);
     return myError == null;
   }

@@ -20,9 +20,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.DevKit;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -30,12 +30,12 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
 import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -116,7 +116,7 @@ public class NewModuleUtil {
     });
   }
 
-  public static String check(String extension, String namespace, String rootPath) {
+  public static String check(ModuleRepositoryFacade repo, String extension, String namespace, String rootPath) {
     if (MPSExtentions.DOT_LANGUAGE.equals(extension) && !(SourceVersion.isName(namespace))) {
       return "Language namespace should be valid Java package";
     }
@@ -130,7 +130,7 @@ public class NewModuleUtil {
     if (namespace.length() == 0) {
       return "Namespace should be specified";
     }
-    if (MPSModuleRepository.getInstance().getModuleByFqName(namespace) != null) {
+    if (repo.getModuleByName(namespace) != null) {
       return "Module namespace already exists";
     }
     if (NameUtil.shortNameFromLongName(namespace).length() == 0) {
