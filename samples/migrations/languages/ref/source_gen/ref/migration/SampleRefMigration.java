@@ -16,15 +16,13 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class SampleRefMigration extends MigrationScriptBase {
@@ -65,8 +63,8 @@ public class SampleRefMigration extends MigrationScriptBase {
         SNode newNode = _quotation_createNode_u457zm_a0b0a0a01a5();
 
         // find the target of the old reference and its containing model 
-        final SReference oldRef = oldNode.getReference("target");
-        SModel oldModel = oldRef.getTargetSModelReference().resolve(MPSModuleRepository.getInstance());
+        final SReference oldRef = oldNode.getReference(MetaAdapterFactory.getReferenceLink(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));
+        SModel oldModel = oldRef.getTargetSModelReference().resolve(m.getRepository());
 
         // get the id of the component that the old component has been migrated into 
         SNode newNodeId = ListSequence.fromList(SLinkOperations.getChildren(MapSequence.fromMap(requiredData).get(oldModel.getModule()), MetaAdapterFactory.getContainmentLink(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL, 0x1b931c975a732f9aL, "entry"))).findFirst(new IWhereFilter<SNode>() {
@@ -76,7 +74,7 @@ public class SampleRefMigration extends MigrationScriptBase {
         });
 
         // get the new component instance 
-        SNode newTarget = oldModel.getNode(SNodeId.Regular.fromString(SPropertyOperations.getString(newNodeId, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f7bL, "newId"))));
+        SNode newTarget = oldModel.getNode(PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(newNodeId, MetaAdapterFactory.getProperty(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, 0x1b931c975a732f7bL, "newId"))));
 
         // set the reference to point to it 
         SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104932a6c9L, 0x6aff2c104932a6caL, "target"), (SNode) newTarget);

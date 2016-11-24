@@ -14,10 +14,10 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="3whe" ref="r:56f66470-c4a8-46fa-8473-a0079c000cbf(decl.structure)" />
     <import index="71f1" ref="r:df5dd9b9-2235-4ecc-b54b-358db13f3f15(ref.structure)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
+    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -134,16 +134,16 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
+      </concept>
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
@@ -403,10 +403,10 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="1Ij79tqvk1B" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SNode.getReference(java.lang.String):org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
-                          <node concept="prKvN" id="1Ij79tqvk1C" role="37wK5m">
-                            <ref role="prhl4" to="71f1:6FZb119cltd" resolve="OldComponentRef" />
-                            <ref role="prhl7" to="71f1:6FZb119cEqq" resolve="target" />
+                          <ref role="37wK5l" to="mhbf:~SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
+                          <node concept="359W_D" id="6s_qFz8JO3j" role="37wK5m">
+                            <ref role="359W_E" to="71f1:6FZb119cltd" resolve="OldComponentRef" />
+                            <ref role="359W_F" to="71f1:6FZb119cEqq" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -429,9 +429,13 @@
                         </node>
                         <node concept="liA8E" id="1Ij79tqvnEY" role="2OqNvi">
                           <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-                          <node concept="2YIFZM" id="4Bpw$w4o5be" role="37wK5m">
-                            <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                            <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                          <node concept="2OqwBi" id="6s_qFz8JMC5" role="37wK5m">
+                            <node concept="37vLTw" id="6s_qFz8JLp8" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1Ij79tquYll" resolve="m" />
+                            </node>
+                            <node concept="liA8E" id="6s_qFz8JNKm" role="2OqNvi">
+                              <ref role="37wK5l" to="lui2:~SModule.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -527,15 +531,20 @@
                         </node>
                         <node concept="liA8E" id="1Ij79tqwQlu" role="2OqNvi">
                           <ref role="37wK5l" to="mhbf:~SModel.getNode(org.jetbrains.mps.openapi.model.SNodeId):org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                          <node concept="2YIFZM" id="1Ij79tqwQlv" role="37wK5m">
-                            <ref role="37wK5l" to="w1kc:~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolve="fromString" />
-                            <ref role="1Pybhc" to="w1kc:~SNodeId$Regular" resolve="SNodeId.Regular" />
-                            <node concept="2OqwBi" id="1Ij79tqwQlw" role="37wK5m">
-                              <node concept="37vLTw" id="1Ij79tqwQlx" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1Ij79tqwN2d" resolve="newNodeId" />
-                              </node>
-                              <node concept="3TrcHB" id="1Ij79tqwQly" role="2OqNvi">
-                                <ref role="3TsBF5" to="3whe:1Ij79tqsMXV" resolve="newId" />
+                          <node concept="2OqwBi" id="6s_qFz8JQlJ" role="37wK5m">
+                            <node concept="2YIFZM" id="6s_qFz8JSHP" role="2Oq$k0">
+                              <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                              <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                            </node>
+                            <node concept="liA8E" id="6s_qFz8JT77" role="2OqNvi">
+                              <ref role="37wK5l" to="dush:~PersistenceFacade.createNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="createNodeId" />
+                              <node concept="2OqwBi" id="6s_qFz8JSHQ" role="37wK5m">
+                                <node concept="37vLTw" id="6s_qFz8JSHR" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1Ij79tqwN2d" resolve="newNodeId" />
+                                </node>
+                                <node concept="3TrcHB" id="6s_qFz8JSHS" role="2OqNvi">
+                                  <ref role="3TsBF5" to="3whe:1Ij79tqsMXV" resolve="newId" />
+                                </node>
                               </node>
                             </node>
                           </node>
