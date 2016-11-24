@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -80,7 +80,7 @@
           <node concept="2OqwBi" id="4oOE$qI8nfp" role="3Ah4Yx">
             <node concept="3__QtB" id="4oOE$qI8nfo" role="2Oq$k0" />
             <node concept="3TrEf2" id="4oOE$qI8nft" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpib:gZ4bqmg" />
+              <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
             </node>
           </node>
         </node>
@@ -90,7 +90,7 @@
               <node concept="2OqwBi" id="4oOE$qI8nfO" role="3Ah4Yx">
                 <node concept="3__QtB" id="4oOE$qI8nfP" role="2Oq$k0" />
                 <node concept="3TrEf2" id="4oOE$qI8nfQ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpib:gZ4bMnD" />
+                  <ref role="3Tt5mk" to="tpib:gZ4bMnD" resolve="exception" />
                 </node>
               </node>
             </node>
@@ -100,7 +100,7 @@
             <node concept="2OqwBi" id="4oOE$qI8nfE" role="3uHU7B">
               <node concept="3__QtB" id="4oOE$qI8nfD" role="2Oq$k0" />
               <node concept="3TrEf2" id="4oOE$qI8nfI" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpib:gZ4bMnD" />
+                <ref role="3Tt5mk" to="tpib:gZ4bMnD" resolve="exception" />
               </node>
             </node>
           </node>
@@ -119,7 +119,7 @@
           <node concept="2OqwBi" id="7axhZYhGSUd" role="2GsD0m">
             <node concept="3__QtB" id="7axhZYhGSUc" role="2Oq$k0" />
             <node concept="3Tsc0h" id="7axhZYhGSUi" role="2OqNvi">
-              <ref role="3TtcxE" to="tpib:h0abpxz" />
+              <ref role="3TtcxE" to="tpib:h0abpxz" resolve="textExpression" />
             </node>
           </node>
           <node concept="3clFbS" id="7axhZYhGSU8" role="2LFqv$">

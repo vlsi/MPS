@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -535,7 +535,7 @@
                                   <ref role="3cqZAo" node="7viJmryW0So" resolve="node" />
                                 </node>
                                 <node concept="3Tsc0h" id="7viJmryWbhf" role="2OqNvi">
-                                  <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
+                                  <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" resolve="member" />
                                 </node>
                               </node>
                               <node concept="TSZUe" id="7viJmryVVNW" role="2OqNvi">
@@ -558,7 +558,7 @@
                                       <ref role="3cqZAo" node="7viJmryW0So" resolve="node" />
                                     </node>
                                     <node concept="3Tsc0h" id="7viJmryWgaV" role="2OqNvi">
-                                      <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
+                                      <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" resolve="member" />
                                     </node>
                                   </node>
                                   <node concept="v3k3i" id="7viJmryWkiq" role="2OqNvi">

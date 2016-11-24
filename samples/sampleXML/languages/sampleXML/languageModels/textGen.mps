@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -280,7 +280,7 @@
               <ref role="3cqZAo" node="hZL6vfW" resolve="element" />
             </node>
             <node concept="3Tsc0h" id="hZL6zSC" role="2OqNvi">
-              <ref role="3TtcxE" to="dghb:hP5YayU" />
+              <ref role="3TtcxE" to="dghb:hP5YayU" resolve="attribute" />
             </node>
           </node>
           <node concept="3cpWsn" id="hZL6zSD" role="1Duv9x">
@@ -407,7 +407,7 @@
               <ref role="3cqZAo" node="hZL6vfW" resolve="element" />
             </node>
             <node concept="3Tsc0h" id="hZL6zTk" role="2OqNvi">
-              <ref role="3TtcxE" to="dghb:hP5YayV" />
+              <ref role="3TtcxE" to="dghb:hP5YayV" resolve="content" />
             </node>
           </node>
           <node concept="3cpWsn" id="hZL6zTl" role="1Duv9x">
@@ -445,7 +445,7 @@
                 <ref role="3cqZAo" node="hZL6nQV" resolve="node" />
               </node>
               <node concept="3TrEf2" id="hZL6iyZ" role="2OqNvi">
-                <ref role="3Tt5mk" to="dghb:hP5YayS" />
+                <ref role="3Tt5mk" to="dghb:hP5YayS" resolve="rootElement" />
               </node>
             </node>
           </node>

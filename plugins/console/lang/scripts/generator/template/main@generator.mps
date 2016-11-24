@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -162,7 +162,7 @@
               <node concept="2OqwBi" id="1sQ3YjaUUpb" role="2Oq$k0">
                 <node concept="30H73N" id="1sQ3YjaUUiv" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1sQ3YjaUVF1" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="1sQ3YjaUXgw" role="2OqNvi">
@@ -217,7 +217,7 @@
                         <node concept="3clFbF" id="1whNchEKZ9C" role="3cqZAp">
                           <node concept="2OqwBi" id="1whNchEKZ9D" role="3clFbG">
                             <node concept="3TrEf2" id="1whNchEKZ9E" role="2OqNvi">
-                              <ref role="3Tt5mk" to="z2sp:1whNchEKXLF" />
+                              <ref role="3Tt5mk" to="z2sp:1whNchEKXLF" resolve="script" />
                             </node>
                             <node concept="30H73N" id="1whNchEKZ9F" role="2Oq$k0" />
                           </node>
@@ -275,7 +275,7 @@
                       <node concept="3clFbF" id="23X86fnVCQB" role="3cqZAp">
                         <node concept="2OqwBi" id="23X86fnVCQy" role="3clFbG">
                           <node concept="3TrEf2" id="1sQ3YjaURYh" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                           </node>
                           <node concept="30H73N" id="23X86fnVCQA" role="2Oq$k0" />
                         </node>
@@ -300,13 +300,13 @@
                             <ref role="1m5ApE" to="z2sp:23X86fnRD$Y" resolve="RefactorOperation" />
                             <node concept="2OqwBi" id="23X86fnVEHU" role="1m5AlR">
                               <node concept="3TrEf2" id="1sQ3YjaUS$R" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                               </node>
                               <node concept="30H73N" id="23X86fnVEHY" role="2Oq$k0" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1sQ3YjaUU23" role="2OqNvi">
-                            <ref role="3Tt5mk" to="z2sp:23X86fnRD_Y" />
+                            <ref role="3Tt5mk" to="z2sp:23X86fnRD_Y" resolve="refactoring" />
                           </node>
                         </node>
                       </node>

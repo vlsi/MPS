@@ -5,7 +5,7 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -155,7 +155,7 @@
               </node>
             </node>
             <node concept="3TrEf2" id="2q5hg4g7B5" role="2OqNvi">
-              <ref role="3Tt5mk" to="kisg:2q5hg4fVKq" />
+              <ref role="3Tt5mk" to="kisg:2q5hg4fVKq" resolve="valueType" />
             </node>
           </node>
         </node>
@@ -182,13 +182,13 @@
           <node concept="2pJPED" id="7U4XhjnR3Tq" role="2pJPEn">
             <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
             <node concept="2pIpSj" id="7U4XhjnR3Tr" role="2pJxcM">
-              <ref role="2pIpSl" to="tpee:g7uigIF" />
+              <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
               <node concept="36bGnv" id="7U4XhjnR3Ts" role="2pJxcZ">
                 <ref role="36bGnp" to="33ny:~List" resolve="List" />
               </node>
             </node>
             <node concept="2pIpSj" id="7U4XhjnR3Tu" role="2pJxcM">
-              <ref role="2pIpSl" to="tpee:g91_B6F" />
+              <ref role="2pIpSl" to="tpee:g91_B6F" resolve="parameter" />
               <node concept="2pJPED" id="7U4XhjnR3Tt" role="2pJxcZ">
                 <ref role="2pJxaS" to="kisg:4s4uRp_lDhd" resolve="WatchableType" />
               </node>

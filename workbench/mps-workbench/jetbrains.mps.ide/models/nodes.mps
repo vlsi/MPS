@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -814,7 +814,7 @@
                   <ref role="3cqZAo" node="4cg0dYPIxFK" resolve="rule" />
                 </node>
                 <node concept="3TrEf2" id="3_kHiPlqRQE" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                  <ref role="3Tt5mk" to="tpd4:h5YuTL0" resolve="applicableNode" />
                 </node>
               </node>
             </node>
@@ -920,7 +920,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="3_kHiPlqLgX" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpd4:h5YaFr9" />
+                  <ref role="3Tt5mk" to="tpd4:h5YaFr9" resolve="concept" />
                 </node>
               </node>
             </node>

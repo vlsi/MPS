@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -209,7 +209,7 @@
                   <ref role="3B5MYn" to="nwdh:5nqBR0spPiC" resolve="TestGenerated" />
                 </node>
                 <node concept="3Tsc0h" id="2swde3nL7rg" role="2OqNvi">
-                  <ref role="3TtcxE" to="c5w2:5nqBR0spfeu" />
+                  <ref role="3TtcxE" to="c5w2:5nqBR0spfeu" resolve="weave" />
                 </node>
               </node>
               <node concept="3cmrfG" id="2swde3nL7ri" role="37wK5m">
@@ -242,7 +242,7 @@
                   <ref role="3B5MYn" to="nwdh:5nqBR0spPiC" resolve="TestGenerated" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KGSs" role="2OqNvi">
-                  <ref role="3TtcxE" to="c5w2:5nqBR0spfev" />
+                  <ref role="3TtcxE" to="c5w2:5nqBR0spfev" resolve="weaveEach" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KGzm" role="37wK5m">
@@ -275,7 +275,7 @@
                   <ref role="3B5MYn" to="nwdh:5nqBR0spPiC" resolve="TestGenerated" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KS0K" role="2OqNvi">
-                  <ref role="3TtcxE" to="c5w2:5nqBR0sq15I" />
+                  <ref role="3TtcxE" to="c5w2:5nqBR0sq15I" resolve="weaveMany" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KRH$" role="37wK5m">
@@ -308,7 +308,7 @@
                   <ref role="3B5MYn" to="nwdh:5nqBR0spPiC" resolve="TestGenerated" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KSIA" role="2OqNvi">
-                  <ref role="3TtcxE" to="c5w2:5nqBR0sq15J" />
+                  <ref role="3TtcxE" to="c5w2:5nqBR0sq15J" resolve="weaveEachMany" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KSfa" role="37wK5m">
@@ -341,7 +341,7 @@
                   <ref role="3B5MYn" to="nwdh:2swde3nL3jk" resolve="TestInterpreted" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KHN_" role="2OqNvi">
-                  <ref role="3TtcxE" to="a2l1:5nqBR0spfeu" />
+                  <ref role="3TtcxE" to="a2l1:5nqBR0spfeu" resolve="weave" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KHxu" role="37wK5m">
@@ -374,7 +374,7 @@
                   <ref role="3B5MYn" to="nwdh:2swde3nL3jk" resolve="TestInterpreted" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KJnL" role="2OqNvi">
-                  <ref role="3TtcxE" to="a2l1:5nqBR0spfev" />
+                  <ref role="3TtcxE" to="a2l1:5nqBR0spfev" resolve="weaveEach" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KIQF" role="37wK5m">
@@ -407,7 +407,7 @@
                   <ref role="3B5MYn" to="nwdh:2swde3nL3jk" resolve="TestInterpreted" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KLxN" role="2OqNvi">
-                  <ref role="3TtcxE" to="a2l1:5nqBR0sq15I" />
+                  <ref role="3TtcxE" to="a2l1:5nqBR0sq15I" resolve="weaveMany" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KK0W" role="37wK5m">
@@ -440,7 +440,7 @@
                   <ref role="3B5MYn" to="nwdh:2swde3nL3jk" resolve="TestInterpreted" />
                 </node>
                 <node concept="3Tsc0h" id="42TXcA3KO42" role="2OqNvi">
-                  <ref role="3TtcxE" to="a2l1:5nqBR0sq15J" />
+                  <ref role="3TtcxE" to="a2l1:5nqBR0sq15J" resolve="weaveEachMany" />
                 </node>
               </node>
               <node concept="3cmrfG" id="42TXcA3KNQM" role="37wK5m">

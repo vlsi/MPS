@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -178,7 +178,7 @@
     <property role="3GE5qa" value="api" />
     <ref role="1M2myG" to="tp33:J8xZ2l39B4" resolve="PullUpMethod" />
     <node concept="1N5Pfh" id="3FxWUsVBLvk" role="1Mr941">
-      <ref role="1N5Vy1" to="tp33:3FxWUsVB_nq" />
+      <ref role="1N5Vy1" to="tp33:3FxWUsVB_nq" resolve="newMethodDeclaration" />
       <node concept="13QW63" id="3FxWUsVBLvr" role="1N6uqs">
         <node concept="3clFbS" id="3FxWUsVBLvs" role="2VODD2">
           <node concept="3cpWs8" id="2oxEt$Etk1g" role="3cqZAp">
@@ -214,7 +214,7 @@
                           <ref role="3cqZAo" node="2oxEt$Etk1h" resolve="ancestor" />
                         </node>
                         <node concept="3TrEf2" id="2oxEt$Etk1N" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp33:5Ls_1gSlNir" />
+                          <ref role="3Tt5mk" to="tp33:5Ls_1gSlNir" resolve="newClassifier" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="2oxEt$Etk1x" role="2OqNvi">
@@ -304,7 +304,7 @@
     <property role="3GE5qa" value="api" />
     <ref role="1M2myG" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
     <node concept="1N5Pfh" id="iM1WADvixQ" role="1Mr941">
-      <ref role="1N5Vy1" to="tp33:1ZdZFkoL3Lp" />
+      <ref role="1N5Vy1" to="tp33:1ZdZFkoL3Lp" resolve="methodDeclaration" />
       <node concept="13QW63" id="iM1WADviSL" role="1N6uqs">
         <node concept="3clFbS" id="iM1WADviSN" role="2VODD2">
           <node concept="3cpWs8" id="iM1WADvjj8" role="3cqZAp">
@@ -334,7 +334,7 @@
                 <ref role="1m5ApE" to="tp33:4HFrnGEoSOz" resolve="DirectClassifierSpecification" />
                 <node concept="2OqwBi" id="iM1WADvjjk" role="1m5AlR">
                   <node concept="3TrEf2" id="iM1WADvjjl" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp33:4HFrnGEow_Z" />
+                    <ref role="3Tt5mk" to="tp33:4HFrnGEow_Z" resolve="oldClassifier" />
                   </node>
                   <node concept="37vLTw" id="iM1WADvjjm" role="2Oq$k0">
                     <ref role="3cqZAo" node="iM1WADvjj9" resolve="ancestor" />
@@ -368,7 +368,7 @@
                           </node>
                           <node concept="2OqwBi" id="iM1WADvjj$" role="2Oq$k0">
                             <node concept="3TrEf2" id="iM1WADvjj_" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp33:4HFrnGEoSTt" />
+                              <ref role="3Tt5mk" to="tp33:4HFrnGEoSTt" resolve="classifier" />
                             </node>
                             <node concept="37vLTw" id="iM1WADvjjA" role="2Oq$k0">
                               <ref role="3cqZAo" node="iM1WADvjji" resolve="classifierSpecification" />

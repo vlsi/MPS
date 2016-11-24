@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -177,11 +177,11 @@
                 <ref role="1YBMHb" node="2CQKr1MXq_L" resolve="customConstructorUsage" />
               </node>
               <node concept="3TrEf2" id="xDsYzSwWpS" role="2OqNvi">
-                <ref role="3Tt5mk" to="fbxt:5UC0dNSN76N" />
+                <ref role="3Tt5mk" to="fbxt:5UC0dNSN76N" resolve="customConstructor" />
               </node>
             </node>
             <node concept="3TrEf2" id="2SRf3Tboe0l" role="2OqNvi">
-              <ref role="3Tt5mk" to="fbxt:2SRf3Tboe0j" />
+              <ref role="3Tt5mk" to="fbxt:2SRf3Tboe0j" resolve="returnType" />
             </node>
           </node>
         </node>
@@ -205,11 +205,11 @@
                 <ref role="1YBMHb" node="2CQKr1MXq_L" resolve="customConstructorUsage" />
               </node>
               <node concept="3TrEf2" id="PlUMNxUidl" role="2OqNvi">
-                <ref role="3Tt5mk" to="fbxt:5UC0dNSN76N" />
+                <ref role="3Tt5mk" to="fbxt:5UC0dNSN76N" resolve="customConstructor" />
               </node>
             </node>
             <node concept="3TrEf2" id="PlUMNxUidm" role="2OqNvi">
-              <ref role="3Tt5mk" to="fbxt:4ECm7aRgLwn" />
+              <ref role="3Tt5mk" to="fbxt:4ECm7aRgLwn" resolve="arguments" />
             </node>
           </node>
         </node>
@@ -232,7 +232,7 @@
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="1ZERt_dQcev" role="2OqNvi">
-                      <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" />
+                      <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" resolve="parameter" />
                     </node>
                   </node>
                   <node concept="34oBXx" id="1ZERt_dQhrR" role="2OqNvi" />
@@ -243,7 +243,7 @@
                       <ref role="1YBMHb" node="2CQKr1MXq_L" resolve="customConstructorUsage" />
                     </node>
                     <node concept="3Tsc0h" id="1ZERt_dQhs7" role="2OqNvi">
-                      <ref role="3TtcxE" to="fbxt:5UC0dNSN770" />
+                      <ref role="3TtcxE" to="fbxt:5UC0dNSN770" resolve="element" />
                     </node>
                   </node>
                   <node concept="34oBXx" id="1ZERt_dQhKr" role="2OqNvi" />
@@ -265,7 +265,7 @@
                         <ref role="1YBMHb" node="2CQKr1MXq_L" resolve="customConstructorUsage" />
                       </node>
                       <node concept="3Tsc0h" id="6df5rwTMC2Q" role="2OqNvi">
-                        <ref role="3TtcxE" to="fbxt:5UC0dNSN770" />
+                        <ref role="3TtcxE" to="fbxt:5UC0dNSN770" resolve="element" />
                       </node>
                     </node>
                     <node concept="34jXtK" id="6df5rwTMC2R" role="2OqNvi">
@@ -289,7 +289,7 @@
                           </node>
                         </node>
                         <node concept="3Tsc0h" id="1ZERt_dQL1e" role="2OqNvi">
-                          <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" />
+                          <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" resolve="parameter" />
                         </node>
                       </node>
                       <node concept="34jXtK" id="1ZERt_dQL1f" role="2OqNvi">
@@ -361,7 +361,7 @@
               <ref role="1YBMHb" node="69lMhYgJrxQ" resolve="customConstructor" />
             </node>
             <node concept="3TrEf2" id="2SRf3TboitI" role="2OqNvi">
-              <ref role="3Tt5mk" to="fbxt:2SRf3Tboe0j" />
+              <ref role="3Tt5mk" to="fbxt:2SRf3Tboe0j" resolve="returnType" />
             </node>
           </node>
         </node>
@@ -389,7 +389,7 @@
               <ref role="1YBMHb" node="4ECm7aRhxD$" resolve="customConstructorParameter" />
             </node>
             <node concept="3TrEf2" id="4ECm7aRhxDN" role="2OqNvi">
-              <ref role="3Tt5mk" to="fbxt:4ECm7aRgN0C" />
+              <ref role="3Tt5mk" to="fbxt:4ECm7aRgN0C" resolve="type" />
             </node>
           </node>
         </node>
@@ -425,7 +425,7 @@
                 <ref role="1YBMHb" node="4ECm7aRhxDQ" resolve="customConstructorParameterReference" />
               </node>
               <node concept="3TrEf2" id="3Xj90HoxL8M" role="2OqNvi">
-                <ref role="3Tt5mk" to="fbxt:4ECm7aRhsT_" />
+                <ref role="3Tt5mk" to="fbxt:4ECm7aRhsT_" resolve="parameter" />
               </node>
             </node>
           </node>
@@ -452,11 +452,11 @@
                 <ref role="1YBMHb" node="PlUMNxTBMz" resolve="customConstructorUsage" />
               </node>
               <node concept="3TrEf2" id="PlUMNxTHtF" role="2OqNvi">
-                <ref role="3Tt5mk" to="fbxt:5UC0dNSN76N" />
+                <ref role="3Tt5mk" to="fbxt:5UC0dNSN76N" resolve="customConstructor" />
               </node>
             </node>
             <node concept="3TrEf2" id="PlUMNxTHtG" role="2OqNvi">
-              <ref role="3Tt5mk" to="fbxt:4ECm7aRgLwn" />
+              <ref role="3Tt5mk" to="fbxt:4ECm7aRgLwn" resolve="arguments" />
             </node>
           </node>
         </node>
@@ -481,7 +481,7 @@
                     <ref role="1YBMHb" node="PlUMNxTBMz" resolve="customConstructorUsage" />
                   </node>
                   <node concept="3Tsc0h" id="PlUMNxTHut" role="2OqNvi">
-                    <ref role="3TtcxE" to="fbxt:5UC0dNSN770" />
+                    <ref role="3TtcxE" to="fbxt:5UC0dNSN770" resolve="element" />
                   </node>
                 </node>
                 <node concept="34oBXx" id="PlUMNxTHu$" role="2OqNvi" />
@@ -495,7 +495,7 @@
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="PlUMNxTHu9" role="2OqNvi">
-                    <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" />
+                    <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" resolve="parameter" />
                   </node>
                 </node>
                 <node concept="34oBXx" id="PlUMNxTHue" role="2OqNvi" />
@@ -535,7 +535,7 @@
                       <ref role="1YBMHb" node="474u_1Nw7G0" resolve="listCustomParameter" />
                     </node>
                     <node concept="3TrEf2" id="474u_1Nwd2V" role="2OqNvi">
-                      <ref role="3Tt5mk" to="fbxt:4ECm7aRgN0C" />
+                      <ref role="3Tt5mk" to="fbxt:4ECm7aRgN0C" resolve="type" />
                     </node>
                   </node>
                 </node>

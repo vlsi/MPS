@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -198,7 +198,7 @@
   <node concept="1M2fIO" id="hDMFIYG">
     <ref role="1M2myG" to="tp5g:hBxON8j" resolve="TestNodeReference" />
     <node concept="1N5Pfh" id="hDMFIYH" role="1Mr941">
-      <ref role="1N5Vy1" to="tp5g:hBxOPr6" />
+      <ref role="1N5Vy1" to="tp5g:hBxOPr6" resolve="declaration" />
       <node concept="1MUpDS" id="hDMFIYI" role="1N6uqs">
         <node concept="3clFbS" id="hDMFIYJ" role="2VODD2">
           <node concept="3clFbJ" id="hSmk_V4" role="3cqZAp">
@@ -317,7 +317,7 @@
     <property role="3GE5qa" value="scopes" />
     <ref role="1M2myG" to="tp5g:3aUmKV2nYBN" resolve="ScopesExpectedNode" />
     <node concept="1N5Pfh" id="3iQxHqkinCB" role="1Mr941">
-      <ref role="1N5Vy1" to="tp5g:3wYn_nuyrKv" />
+      <ref role="1N5Vy1" to="tp5g:3wYn_nuyrKv" resolve="ref" />
       <node concept="13QW63" id="3iQxHqkinCD" role="1N6uqs">
         <node concept="3clFbS" id="3iQxHqkinCE" role="2VODD2">
           <node concept="3clFbJ" id="2$CGp_M0GI6" role="3cqZAp">
@@ -368,7 +368,7 @@
                         <ref role="3cqZAo" node="3iQxHqkitXj" resolve="scopesTest" />
                       </node>
                       <node concept="3TrEf2" id="1$sIUMYazKc" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp5g:4IvydoGulmm" />
+                        <ref role="3Tt5mk" to="tp5g:4IvydoGulmm" resolve="checkingReference" />
                       </node>
                     </node>
                     <node concept="2yIwOk" id="4k9eBec_lNO" role="2OqNvi" />
@@ -390,7 +390,7 @@
     <property role="3GE5qa" value="scopes" />
     <ref role="1M2myG" to="tp5g:so7passww9" resolve="ScopesTest" />
     <node concept="1N5Pfh" id="4IvydoGvh7l" role="1Mr941">
-      <ref role="1N5Vy1" to="tp5g:4IvydoGulmm" />
+      <ref role="1N5Vy1" to="tp5g:4IvydoGulmm" resolve="checkingReference" />
       <node concept="13QW63" id="4IvydoGvh7u" role="1N6uqs">
         <node concept="3clFbS" id="4IvydoGvh7v" role="2VODD2">
           <node concept="3cpWs6" id="4IvydoGvwRY" role="3cqZAp">

@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -262,11 +262,11 @@
                 <node concept="2OqwBi" id="2LtJ7HQcfrm" role="2Oq$k0">
                   <node concept="13iPFW" id="2LtJ7HQcfrl" role="2Oq$k0" />
                   <node concept="3TrEf2" id="2LtJ7HQcfrv" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp68:2LtJ7HQbXNT" />
+                    <ref role="3Tt5mk" to="tp68:2LtJ7HQbXNT" resolve="stmts" />
                   </node>
                 </node>
                 <node concept="3Tsc0h" id="2LtJ7HQcfrI" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpee:fzcqZ_x" />
+                  <ref role="3TtcxE" to="tpee:fzcqZ_x" resolve="statement" />
                 </node>
               </node>
             </node>
@@ -281,7 +281,7 @@
               <node concept="2OqwBi" id="2LtJ7HQcfs2" role="25WWJ7">
                 <node concept="13iPFW" id="2LtJ7HQcfs1" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2LtJ7HQdhbv" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp68:2LtJ7HQcflg" />
+                  <ref role="3Tt5mk" to="tp68:2LtJ7HQcflg" resolve="innerExpr" />
                 </node>
               </node>
             </node>
@@ -430,7 +430,7 @@
                 <node concept="2OqwBi" id="7H3c2f3rrkq" role="3uHU7w">
                   <node concept="13iPFW" id="7H3c2f3rrkp" role="2Oq$k0" />
                   <node concept="3TrEf2" id="7H3c2f3rrkv" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp68:7H3c2f3q6_O" />
+                    <ref role="3Tt5mk" to="tp68:7H3c2f3q6_O" resolve="staticMethodDeclaration" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="7H3c2f3rrkh" role="3uHU7B">
@@ -438,7 +438,7 @@
                     <ref role="3cqZAo" node="7H3c2f3rrjR" resolve="es" />
                   </node>
                   <node concept="3TrEf2" id="7H3c2f3rrkl" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp68:373Y828UwF6" />
+                    <ref role="3Tt5mk" to="tp68:373Y828UwF6" resolve="method" />
                   </node>
                 </node>
               </node>
@@ -519,7 +519,7 @@
                       <ref role="3cqZAo" node="55buE1DVoLt" resolve="es" />
                     </node>
                     <node concept="3TrEf2" id="55buE1DVoLn" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp68:373Y828UwF6" />
+                      <ref role="3Tt5mk" to="tp68:373Y828UwF6" resolve="method" />
                     </node>
                   </node>
                 </node>

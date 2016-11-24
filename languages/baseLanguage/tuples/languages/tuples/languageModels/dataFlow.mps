@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -124,7 +124,7 @@
                       </node>
                     </node>
                     <node concept="3TrEf2" id="i1LCz8y" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:fzcqZ_w" />
+                      <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -132,7 +132,7 @@
               <node concept="2OqwBi" id="i1LAY0o" role="1DdaDG">
                 <node concept="3__QtB" id="i1LAY0p" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="i1LAY0q" role="2OqNvi">
-                  <ref role="3TtcxE" to="cx9y:i1LsocI" />
+                  <ref role="3TtcxE" to="cx9y:i1LsocI" resolve="component" />
                 </node>
               </node>
             </node>
@@ -148,7 +148,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="i1LAIqA" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fz7vLUn" />
+                <ref role="3Tt5mk" to="tpee:fz7vLUn" resolve="lValue" />
               </node>
             </node>
             <node concept="3__QtB" id="i1LAAkr" role="3uHU7B" />
@@ -170,7 +170,7 @@
                 <node concept="2OqwBi" id="i1L_zE0" role="1DdaDG">
                   <node concept="3__QtB" id="i1L_zCE" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="i1L_zUN" role="2OqNvi">
-                    <ref role="3TtcxE" to="cx9y:i1LsocI" />
+                    <ref role="3TtcxE" to="cx9y:i1LsocI" resolve="component" />
                   </node>
                 </node>
               </node>
@@ -191,7 +191,7 @@
           <node concept="2OqwBi" id="i2sIBsm" role="2GsD0m">
             <node concept="3__QtB" id="i2sIBrT" role="2Oq$k0" />
             <node concept="3Tsc0h" id="i2sICyg" role="2OqNvi">
-              <ref role="3TtcxE" to="cx9y:i2r_BrL" />
+              <ref role="3TtcxE" to="cx9y:i2r_BrL" resolve="componentRef" />
             </node>
           </node>
           <node concept="3clFbS" id="i2sIAqn" role="2LFqv$">
@@ -201,7 +201,7 @@
                   <ref role="2Gs0qQ" node="i2sIAql" resolve="cref" />
                 </node>
                 <node concept="3TrEf2" id="i2sIGea" role="2OqNvi">
-                  <ref role="3Tt5mk" to="cx9y:i2r_lDx" />
+                  <ref role="3Tt5mk" to="cx9y:i2r_lDx" resolve="value" />
                 </node>
               </node>
             </node>
@@ -218,7 +218,7 @@
           <node concept="2OqwBi" id="i3HUk5P" role="3Ah4Yx">
             <node concept="3__QtB" id="i3HUjBo" role="2Oq$k0" />
             <node concept="3TrEf2" id="i3HUkHp" role="2OqNvi">
-              <ref role="3Tt5mk" to="cx9y:i1LFl1m" />
+              <ref role="3Tt5mk" to="cx9y:i1LFl1m" resolve="tuple" />
             </node>
           </node>
         </node>
@@ -226,7 +226,7 @@
           <node concept="2OqwBi" id="i3HUlDI" role="3Ah4Yx">
             <node concept="3__QtB" id="i3HUlDi" role="2Oq$k0" />
             <node concept="3TrEf2" id="i3HUm20" role="2OqNvi">
-              <ref role="3Tt5mk" to="cx9y:i1LF_YG" />
+              <ref role="3Tt5mk" to="cx9y:i1LF_YG" resolve="index" />
             </node>
           </node>
         </node>

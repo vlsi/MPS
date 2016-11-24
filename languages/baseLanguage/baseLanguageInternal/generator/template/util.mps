@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -537,7 +537,7 @@
                     <ref role="3cqZAo" node="7Evf$wpZFlI" resolve="node" />
                   </node>
                   <node concept="3TrEf2" id="7Evf$wpZFmZ" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp68:373Y828UwF5" />
+                    <ref role="3Tt5mk" to="tp68:373Y828UwF5" resolve="inner" />
                   </node>
                 </node>
               </node>
@@ -721,7 +721,7 @@
                     <ref role="3cqZAo" node="53cdeWkjJpC" resolve="node" />
                   </node>
                   <node concept="3TrEf2" id="53cdeWkjJq6" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp68:6HzP3h7923e" />
+                    <ref role="3Tt5mk" to="tp68:6HzP3h7923e" resolve="inner" />
                   </node>
                 </node>
               </node>

@@ -2,7 +2,7 @@
 <model ref="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -85,7 +85,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3754890006475816675" />
       <ref role="20lvS9" to="fb9u:O$iR4J$g4X" resolve="SettingsEditor" />
-      <ref role="20ksaX" to="fb9u:O$iR4J$g0x" />
+      <ref role="20ksaX" to="fb9u:O$iR4J$g0x" resolve="editor" />
     </node>
     <node concept="1TJgyj" id="48qzi2IBQyu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -151,7 +151,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1048802521465114237" />
       <ref role="20lvS9" node="25jQf71X6T9" resolve="RunConfiguration" />
-      <ref role="20ksaX" to="fb9u:O$iR4JBsUi" />
+      <ref role="20ksaX" to="fb9u:O$iR4JBsUi" resolve="configuration" />
     </node>
     <node concept="PrWs8" id="Ue65oztDR5" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -256,7 +256,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="946964771156870354" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-      <ref role="20ksaX" to="tpee:fzcqZ_G" />
+      <ref role="20ksaX" to="tpee:fzcqZ_G" resolve="expression" />
     </node>
     <node concept="1TJgyj" id="1ovLDatNZew" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -507,7 +507,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="parameterDeclaration" />
       <property role="IQ2ns" value="6550182048787583937" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="5FAUXTS7S0k" resolve="BeforeTaskParameter" />
     </node>
   </node>

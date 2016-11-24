@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -300,7 +300,7 @@
             <node concept="2OqwBi" id="5MInrmV8tFZ" role="2Oq$k0">
               <node concept="2Sf5sV" id="5MInrmV8tFY" role="2Oq$k0" />
               <node concept="3Tsc0h" id="5MInrmV8tG3" role="2OqNvi">
-                <ref role="3TtcxE" to="tpee:g96eVAe" />
+                <ref role="3TtcxE" to="tpee:g96eVAe" resolve="typeVariableDeclaration" />
               </node>
             </node>
             <node concept="2Kehj3" id="5MInrmV8tG8" role="2OqNvi" />
@@ -315,7 +315,7 @@
             <node concept="2OqwBi" id="5MInrmV8tFN" role="2Oq$k0">
               <node concept="2Sf5sV" id="5MInrmV8tFM" role="2Oq$k0" />
               <node concept="3Tsc0h" id="5MInrmV8tFR" role="2OqNvi">
-                <ref role="3TtcxE" to="tpee:g96eVAe" />
+                <ref role="3TtcxE" to="tpee:g96eVAe" resolve="typeVariableDeclaration" />
               </node>
             </node>
             <node concept="3GX2aA" id="5MInrmV8tFW" role="2OqNvi" />

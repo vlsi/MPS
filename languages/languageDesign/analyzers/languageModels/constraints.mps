@@ -6,7 +6,7 @@
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -194,7 +194,7 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1M2myG" to="bj1v:3E8vDQwHcVs" resolve="InstructionReference" />
     <node concept="1N5Pfh" id="6pR8a$lPE8i" role="1Mr941">
-      <ref role="1N5Vy1" to="bj1v:3E8vDQwHcV_" />
+      <ref role="1N5Vy1" to="bj1v:3E8vDQwHcV_" resolve="instruction" />
       <node concept="1MUpDS" id="6pR8a$lPE8j" role="1N6uqs">
         <node concept="3clFbS" id="6pR8a$lPE8k" role="2VODD2">
           <node concept="3cpWs8" id="6pR8a$lPE8l" role="3cqZAp">
@@ -230,7 +230,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="7fxZEB1xvl7" role="2OqNvi">
-                  <ref role="3Tt5mk" to="bj1v:3_iNRJnrAh0" />
+                  <ref role="3Tt5mk" to="bj1v:3_iNRJnrAh0" resolve="analyzer" />
                 </node>
               </node>
             </node>
@@ -247,7 +247,7 @@
                       <ref role="3cqZAo" node="7fxZEB1xvl0" resolve="analyzer" />
                     </node>
                     <node concept="3Tsc0h" id="7fxZEB1xxX4" role="2OqNvi">
-                      <ref role="3TtcxE" to="bj1v:2S_HFuhAG4S" />
+                      <ref role="3TtcxE" to="bj1v:2S_HFuhAG4S" resolve="instruction" />
                     </node>
                   </node>
                   <node concept="3QWeyG" id="7fxZEB1x$qy" role="2OqNvi">
@@ -258,15 +258,15 @@
                             <ref role="3cqZAo" node="7fxZEB1xvl0" resolve="analyzer" />
                           </node>
                           <node concept="3Tsc0h" id="7fxZEB1xAy$" role="2OqNvi">
-                            <ref role="3TtcxE" to="bj1v:7fxZEB1sZw4" />
+                            <ref role="3TtcxE" to="bj1v:7fxZEB1sZw4" resolve="usedContainers" />
                           </node>
                         </node>
                         <node concept="13MTOL" id="7fxZEB1xD4v" role="2OqNvi">
-                          <ref role="13MTZf" to="bj1v:7fxZEB1sSup" />
+                          <ref role="13MTZf" to="bj1v:7fxZEB1sSup" resolve="containter" />
                         </node>
                       </node>
                       <node concept="13MTOL" id="7fxZEB1xFzW" role="2OqNvi">
-                        <ref role="13MTZf" to="bj1v:7fxZEB1sH3D" />
+                        <ref role="13MTZf" to="bj1v:7fxZEB1sH3D" resolve="instruction" />
                       </node>
                     </node>
                   </node>
@@ -312,7 +312,7 @@
                       <node concept="nLn13" id="5hLfAui9CN" role="1m5AlR" />
                     </node>
                     <node concept="3TrEf2" id="5hLfAui9CO" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                      <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                     </node>
                   </node>
                   <node concept="3JvlWi" id="5hLfAui9CP" role="2OqNvi" />
@@ -328,7 +328,7 @@
     <property role="3GE5qa" value="Analyzer" />
     <ref role="1M2myG" to="bj1v:5hLfAui9Cm" resolve="AnalyzerRunnerCreator" />
     <node concept="1N5Pfh" id="9V7Nft$K_u" role="1Mr941">
-      <ref role="1N5Vy1" to="bj1v:5hLfAui9Cn" />
+      <ref role="1N5Vy1" to="bj1v:5hLfAui9Cn" resolve="analyzer" />
       <node concept="1MUpDS" id="9V7Nft$K_v" role="1N6uqs">
         <node concept="3clFbS" id="9V7Nft$K_w" role="2VODD2">
           <node concept="3clFbF" id="9V7Nft$K_x" role="3cqZAp">
@@ -347,7 +347,7 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1M2myG" to="bj1v:6ViLkrkrEhy" resolve="IsOperation" />
     <node concept="1N5Pfh" id="6ViLkrkrHiY" role="1Mr941">
-      <ref role="1N5Vy1" to="bj1v:6ViLkrkrEhz" />
+      <ref role="1N5Vy1" to="bj1v:6ViLkrkrEhz" resolve="instruction" />
       <node concept="1MUpDS" id="6ViLkrkrHiZ" role="1N6uqs">
         <node concept="3clFbS" id="6ViLkrkrHj0" role="2VODD2">
           <node concept="3cpWs8" id="7fxZEB1x8yD" role="3cqZAp">
@@ -375,7 +375,7 @@
                   <ref role="3cqZAo" node="7fxZEB1x8yE" resolve="analyzer" />
                 </node>
                 <node concept="3Tsc0h" id="6ViLkrkrHjg" role="2OqNvi">
-                  <ref role="3TtcxE" to="bj1v:2S_HFuhAG4S" />
+                  <ref role="3TtcxE" to="bj1v:2S_HFuhAG4S" resolve="instruction" />
                 </node>
               </node>
               <node concept="3QWeyG" id="7fxZEB1x8uN" role="2OqNvi">
@@ -386,15 +386,15 @@
                         <ref role="3cqZAo" node="7fxZEB1x8yE" resolve="analyzer" />
                       </node>
                       <node concept="3Tsc0h" id="7fxZEB1x8R2" role="2OqNvi">
-                        <ref role="3TtcxE" to="bj1v:7fxZEB1sZw4" />
+                        <ref role="3TtcxE" to="bj1v:7fxZEB1sZw4" resolve="usedContainers" />
                       </node>
                     </node>
                     <node concept="13MTOL" id="7fxZEB1xa3S" role="2OqNvi">
-                      <ref role="13MTZf" to="bj1v:7fxZEB1sSup" />
+                      <ref role="13MTZf" to="bj1v:7fxZEB1sSup" resolve="containter" />
                     </node>
                   </node>
                   <node concept="13MTOL" id="7fxZEB1xaYR" role="2OqNvi">
-                    <ref role="13MTZf" to="bj1v:7fxZEB1sH3D" />
+                    <ref role="13MTZf" to="bj1v:7fxZEB1sH3D" resolve="instruction" />
                   </node>
                 </node>
               </node>
@@ -431,7 +431,7 @@
     <property role="3GE5qa" value="Rules" />
     <ref role="1M2myG" to="bj1v:4ipeeu8WK4g" resolve="ApplicableNodeReference" />
     <node concept="1N5Pfh" id="4ipeeu8WK4K" role="1Mr941">
-      <ref role="1N5Vy1" to="bj1v:4ipeeu8WK4h" />
+      <ref role="1N5Vy1" to="bj1v:4ipeeu8WK4h" resolve="applicableNode" />
       <node concept="1MUpDS" id="4ipeeu8WK4L" role="1N6uqs">
         <node concept="3clFbS" id="4ipeeu8WK4M" role="2VODD2">
           <node concept="3cpWs8" id="4ipeeu8WK59" role="3cqZAp">
@@ -483,7 +483,7 @@
                           <ref role="3cqZAo" node="4ipeeu8WYQ0" resolve="rule" />
                         </node>
                         <node concept="3TrEf2" id="4ipeeu8WZ5g" role="2OqNvi">
-                          <ref role="3Tt5mk" to="bj1v:2S_HFuhBt_m" />
+                          <ref role="3Tt5mk" to="bj1v:2S_HFuhBt_m" resolve="condition" />
                         </node>
                       </node>
                     </node>
@@ -504,7 +504,7 @@
                     <ref role="3cqZAo" node="4ipeeu8WYQ0" resolve="rule" />
                   </node>
                   <node concept="3TrEf2" id="4ipeeu8WZ4P" role="2OqNvi">
-                    <ref role="3Tt5mk" to="bj1v:2S_HFuhBt_m" />
+                    <ref role="3Tt5mk" to="bj1v:2S_HFuhBt_m" resolve="condition" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="4ipeeu8WZ4U" role="2OqNvi">
@@ -574,7 +574,7 @@
     <property role="3GE5qa" value="Analyzer" />
     <ref role="1M2myG" to="bj1v:3tEjlbSL27S" resolve="AnalyzerConstructorParameterReference" />
     <node concept="1N5Pfh" id="3tEjlbSL85a" role="1Mr941">
-      <ref role="1N5Vy1" to="bj1v:3tEjlbSL27T" />
+      <ref role="1N5Vy1" to="bj1v:3tEjlbSL27T" resolve="declaration" />
       <node concept="13QW63" id="3tEjlbSL85i" role="1N6uqs">
         <node concept="3clFbS" id="3tEjlbSL85k" role="2VODD2">
           <node concept="3cpWs6" id="3tEjlbSL97p" role="3cqZAp">
@@ -594,7 +594,7 @@
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="3tEjlbSLaOn" role="2OqNvi">
-                    <ref role="3TtcxE" to="bj1v:3tEjlbSKIc3" />
+                    <ref role="3TtcxE" to="bj1v:3tEjlbSKIc3" resolve="constructorParameters" />
                   </node>
                 </node>
               </node>
@@ -628,7 +628,7 @@
               </node>
               <node concept="1BlSNk" id="3eVfSJefhFo" role="2OqNvi">
                 <ref role="1BmUXE" to="bj1v:nUEAIXlVr8" resolve="Rule" />
-                <ref role="1Bn3mz" to="bj1v:4ipeeu8Vzea" />
+                <ref role="1Bn3mz" to="bj1v:4ipeeu8Vzea" resolve="actions" />
               </node>
             </node>
             <node concept="2OqwBi" id="3eVfSJeeXt4" role="3uHU7B">
@@ -651,7 +651,7 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1M2myG" to="bj1v:7fxZEB1sSuo" resolve="CustomInstructionsContainerReference" />
     <node concept="1N5Pfh" id="7fxZEB1t65E" role="1Mr941">
-      <ref role="1N5Vy1" to="bj1v:7fxZEB1sSup" />
+      <ref role="1N5Vy1" to="bj1v:7fxZEB1sSup" resolve="containter" />
       <node concept="1X3_iC" id="7fxZEB1tr$N" role="lGtFl">
         <property role="3V$3am" value="searchScopeFactory" />
         <property role="3V$3ak" value="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410/1148687345559" />

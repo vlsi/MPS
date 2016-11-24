@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -169,7 +169,7 @@
   <node concept="1M2fIO" id="2t$Vq$DP4vF">
     <ref role="1M2myG" to="vgj4:2t$Vq$DOzUO" resolve="BinaryOperationReference" />
     <node concept="1N5Pfh" id="2t$Vq$DP4vV" role="1Mr941">
-      <ref role="1N5Vy1" to="vgj4:2t$Vq$DOzUP" />
+      <ref role="1N5Vy1" to="vgj4:2t$Vq$DOzUP" resolve="binaryOperation" />
       <node concept="1MUpDS" id="2t$Vq$DP4wg" role="1N6uqs">
         <node concept="3clFbS" id="2t$Vq$DP4wh" role="2VODD2">
           <node concept="3cpWs8" id="2t$Vq$DP4wi" role="3cqZAp">
@@ -322,7 +322,7 @@
   <node concept="1M2fIO" id="2t$Vq$DPw93">
     <ref role="1M2myG" to="vgj4:2t$Vq$DPw8R" resolve="CustomOperator" />
     <node concept="1N5Pfh" id="2t$Vq$DPw9q" role="1Mr941">
-      <ref role="1N5Vy1" to="vgj4:2t$Vq$DPw8T" />
+      <ref role="1N5Vy1" to="vgj4:2t$Vq$DPw8T" resolve="declaration" />
       <node concept="1MUpDS" id="2t$Vq$DPw9r" role="1N6uqs">
         <node concept="3clFbS" id="2t$Vq$DPw9s" role="2VODD2">
           <node concept="3clFbF" id="ZogSShkHVK" role="3cqZAp">
@@ -343,7 +343,7 @@
   <node concept="1M2fIO" id="1n8rXLwx7v6">
     <ref role="1M2myG" to="vgj4:1n8rXLwx7pJ" resolve="CustomOperatorUsage" />
     <node concept="1N5Pfh" id="1n8rXLwx7vi" role="1Mr941">
-      <ref role="1N5Vy1" to="vgj4:1n8rXLwx7pK" />
+      <ref role="1N5Vy1" to="vgj4:1n8rXLwx7pK" resolve="operator" />
       <node concept="1MUpDS" id="1n8rXLwx7vj" role="1N6uqs">
         <node concept="3clFbS" id="1n8rXLwx7vk" role="2VODD2">
           <node concept="3clFbF" id="ZogSShkHV$" role="3cqZAp">
@@ -364,7 +364,7 @@
   <node concept="1M2fIO" id="6oKb3Me04dk">
     <ref role="1M2myG" to="vgj4:6oKb3MdXML9" resolve="ContainerImport" />
     <node concept="1N5Pfh" id="6oKb3Me04gb" role="1Mr941">
-      <ref role="1N5Vy1" to="vgj4:6oKb3MdXMP5" />
+      <ref role="1N5Vy1" to="vgj4:6oKb3MdXMP5" resolve="container" />
       <node concept="13QW63" id="6oKb3Me04gd" role="1N6uqs">
         <node concept="3clFbS" id="6oKb3Me04ge" role="2VODD2">
           <node concept="3cpWs6" id="6oKb3Me04WS" role="3cqZAp">

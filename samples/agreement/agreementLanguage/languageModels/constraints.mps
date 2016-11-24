@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -87,7 +87,7 @@
   <node concept="1M2fIO" id="hER9xqv">
     <ref role="1M2myG" to="tpna:gbEE10G" resolve="ValueReference" />
     <node concept="1N5Pfh" id="hER9B6K" role="1Mr941">
-      <ref role="1N5Vy1" to="tpna:gbEE5gF" />
+      <ref role="1N5Vy1" to="tpna:gbEE5gF" resolve="value" />
       <node concept="1MUpDS" id="hER9EYA" role="1N6uqs">
         <node concept="3clFbS" id="hER9EYB" role="2VODD2">
           <node concept="3cpWs8" id="hER9Fm4" role="3cqZAp">
@@ -132,7 +132,7 @@
   <node concept="1M2fIO" id="hER9R7U">
     <ref role="1M2myG" to="tpna:gbEyzKR" resolve="EventVariableReference" />
     <node concept="1N5Pfh" id="hER9SCn" role="1Mr941">
-      <ref role="1N5Vy1" to="tpna:gbEyEa3" />
+      <ref role="1N5Vy1" to="tpna:gbEyEa3" resolve="eventVariable" />
       <node concept="1MUpDS" id="hER9VmX" role="1N6uqs">
         <node concept="3clFbS" id="hER9VmY" role="2VODD2">
           <node concept="3cpWs8" id="hER9VJp" role="3cqZAp">
@@ -160,7 +160,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="hER9VJz" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpna:gbs4h0$" />
+                  <ref role="3Tt5mk" to="tpna:gbs4h0$" resolve="type" />
                 </node>
               </node>
             </node>

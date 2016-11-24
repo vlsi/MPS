@@ -4,7 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -152,7 +152,7 @@
   <node concept="1M2fIO" id="5US8fp9IPdU">
     <ref role="1M2myG" to="wch2:5US8fp9IPdT" resolve="PrivateFieldReferenceOperation" />
     <node concept="1N5Pfh" id="5US8fp9IPdV" role="1Mr941">
-      <ref role="1N5Vy1" to="tpee:hqOxapj" />
+      <ref role="1N5Vy1" to="tpee:hqOxapj" resolve="fieldDeclaration" />
       <node concept="13QW63" id="5z_5WH3Tu8g" role="1N6uqs">
         <node concept="3clFbS" id="5z_5WH3Tu8h" role="2VODD2">
           <node concept="3SKdUt" id="5US8fp9IPdY" role="3cqZAp">
@@ -194,7 +194,7 @@
                   <node concept="21POm0" id="5US8fp9IPe5" role="1m5AlR" />
                 </node>
                 <node concept="3TrEf2" id="5US8fp9IPe6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                  <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                 </node>
               </node>
             </node>
@@ -236,7 +236,7 @@
                   <ref role="3cqZAo" node="5US8fp9IPe8" resolve="classifierType" />
                 </node>
                 <node concept="3TrEf2" id="6QsAWbDI4DD" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                  <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                 </node>
               </node>
               <node concept="3w_OXm" id="6QsAWbDI4E1" role="2OqNvi" />
@@ -337,7 +337,7 @@
   <node concept="1M2fIO" id="5US8fp9IR07">
     <ref role="1M2myG" to="wch2:5US8fp9IR06" resolve="PrivateInstanceMethodCallOperation" />
     <node concept="1N5Pfh" id="5US8fp9IR08" role="1Mr941">
-      <ref role="1N5Vy1" to="tpee:hwllgre" />
+      <ref role="1N5Vy1" to="tpee:hwllgre" resolve="instanceMethodDeclaration" />
       <node concept="13QW63" id="5z_5WH3TXKz" role="1N6uqs">
         <node concept="3clFbS" id="5z_5WH3TXK$" role="2VODD2">
           <node concept="3clFbJ" id="5US8fp9IR0k" role="3cqZAp">
@@ -374,7 +374,7 @@
                   <node concept="21POm0" id="5US8fp9IR0_" role="1m5AlR" />
                 </node>
                 <node concept="3TrEf2" id="5US8fp9IR0A" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                  <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                 </node>
               </node>
             </node>
@@ -416,7 +416,7 @@
                   <ref role="3cqZAo" node="5US8fp9IR0C" resolve="classifierType" />
                 </node>
                 <node concept="3TrEf2" id="5z_5WH3TUmI" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                  <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                 </node>
               </node>
               <node concept="3w_OXm" id="5z_5WH3TUmJ" role="2OqNvi" />
@@ -517,7 +517,7 @@
   <node concept="1M2fIO" id="3$0WX3VmNNr">
     <ref role="1M2myG" to="wch2:3$0WX3VmNr9" resolve="PrivateStaticFieldReference" />
     <node concept="1N5Pfh" id="3$0WX3VmOx$" role="1Mr941">
-      <ref role="1N5Vy1" to="tpee:f_2Pw7K" />
+      <ref role="1N5Vy1" to="tpee:f_2Pw7K" resolve="staticFieldDeclaration" />
       <node concept="13QW63" id="5z_5WH3VVJp" role="1N6uqs">
         <node concept="3clFbS" id="5z_5WH3VVJq" role="2VODD2">
           <node concept="3clFbJ" id="5z_5WH3VWnj" role="3cqZAp">
@@ -567,7 +567,7 @@
                           <ref role="3cqZAo" node="5z_5WH3VWnu" resolve="instance" />
                         </node>
                         <node concept="3TrEf2" id="5z_5WH4fdhf" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:gDPxDYr" />
+                          <ref role="3Tt5mk" to="tpee:gDPxDYr" resolve="classifier" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="5z_5WH4fgmR" role="2OqNvi">
@@ -632,7 +632,7 @@
   <node concept="1M2fIO" id="2Vme0ZnCJFc">
     <ref role="1M2myG" to="wch2:2Vme0ZnCJFb" resolve="PrivateStaticMethodCall" />
     <node concept="1N5Pfh" id="2Vme0ZnCJFd" role="1Mr941">
-      <ref role="1N5Vy1" to="tpee:fIYIWN3" />
+      <ref role="1N5Vy1" to="tpee:fIYIWN3" resolve="staticMethodDeclaration" />
       <node concept="13QW63" id="5z_5WH46CHW" role="1N6uqs">
         <node concept="3clFbS" id="5z_5WH46CHX" role="2VODD2">
           <node concept="3clFbJ" id="5z_5WH46$Pv" role="3cqZAp">
@@ -682,7 +682,7 @@
                           <ref role="3cqZAo" node="5z_5WH46$PE" resolve="call" />
                         </node>
                         <node concept="3TrEf2" id="5z_5WH4ftIt" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:gDPybl6" />
+                          <ref role="3Tt5mk" to="tpee:gDPybl6" resolve="classConcept" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="5z_5WH4fxqk" role="2OqNvi">

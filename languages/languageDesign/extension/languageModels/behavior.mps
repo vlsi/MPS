@@ -5,7 +5,7 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -228,7 +228,7 @@
                 <node concept="2OqwBi" id="5Sg$D5FMge6" role="1m5AlR">
                   <node concept="13iPFW" id="5Sg$D5FMge7" role="2Oq$k0" />
                   <node concept="3TrEf2" id="5Sg$D5FMge8" role="2OqNvi">
-                    <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+                    <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" resolve="objectType" />
                   </node>
                 </node>
               </node>
@@ -238,7 +238,7 @@
             <node concept="2OqwBi" id="5Sg$D5FMge0" role="2Oq$k0">
               <node concept="13iPFW" id="5Sg$D5FMgdX" role="2Oq$k0" />
               <node concept="3TrEf2" id="5Sg$D5FMge5" role="2OqNvi">
-                <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+                <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" resolve="objectType" />
               </node>
             </node>
             <node concept="1mIQ4w" id="5Sg$D5FMgdP" role="2OqNvi">
@@ -258,7 +258,7 @@
                   <node concept="2OqwBi" id="5Sg$D5FMge9" role="1Ub_4B">
                     <node concept="13iPFW" id="5Sg$D5FMgea" role="2Oq$k0" />
                     <node concept="3TrEf2" id="5Sg$D5FMgeb" role="2OqNvi">
-                      <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+                      <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" resolve="objectType" />
                     </node>
                   </node>
                 </node>
@@ -307,11 +307,11 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="6j5CbT7vrfB" role="2OqNvi">
-                <ref role="3Tt5mk" to="v54s:3f064wGFUBl" />
+                <ref role="3Tt5mk" to="v54s:3f064wGFUBl" resolve="extensionPoint" />
               </node>
             </node>
             <node concept="3TrEf2" id="6j5CbT7vrfL" role="2OqNvi">
-              <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+              <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" resolve="objectType" />
             </node>
           </node>
         </node>
@@ -339,7 +339,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="5Sg$D5FMgeC" role="2OqNvi">
-                <ref role="3Tt5mk" to="v54s:3f064wGFUBl" />
+                <ref role="3Tt5mk" to="v54s:3f064wGFUBl" resolve="extensionPoint" />
               </node>
             </node>
             <node concept="2qgKlT" id="5Sg$D5FMgeM" role="2OqNvi">
@@ -387,7 +387,7 @@
                 <node concept="2OqwBi" id="5JRjEZJSfk4" role="2Oq$k0">
                   <node concept="13iPFW" id="5JRjEZJSfjT" role="2Oq$k0" />
                   <node concept="3TrEf2" id="5JRjEZJSfk9" role="2OqNvi">
-                    <ref role="3Tt5mk" to="v54s:5JRjEZJSeHl" />
+                    <ref role="3Tt5mk" to="v54s:5JRjEZJSeHl" resolve="extensionPoint" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="5JRjEZJSfkj" role="2OqNvi">
@@ -417,7 +417,7 @@
                 <node concept="2OqwBi" id="3vRuGRS5f0" role="2Oq$k0">
                   <node concept="13iPFW" id="4y_vFkED7zy" role="2Oq$k0" />
                   <node concept="3TrEf2" id="3vRuGRS5f2" role="2OqNvi">
-                    <ref role="3Tt5mk" to="v54s:3f064wGFUBl" />
+                    <ref role="3Tt5mk" to="v54s:3f064wGFUBl" resolve="extensionPoint" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="4y_vFkED6Yf" role="2OqNvi">
@@ -473,7 +473,7 @@
                 <node concept="2OqwBi" id="2KgYA8kbGOo" role="2Oq$k0">
                   <node concept="13iPFW" id="2KgYA8kbGOl" role="2Oq$k0" />
                   <node concept="3TrEf2" id="2KgYA8kbGOt" role="2OqNvi">
-                    <ref role="3Tt5mk" to="v54s:2KgYA8kbFkT" />
+                    <ref role="3Tt5mk" to="v54s:2KgYA8kbFkT" resolve="extensionPoint" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="aRphP9WKMZ" role="2OqNvi">

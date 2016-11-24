@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -193,7 +193,7 @@
               <node concept="2OqwBi" id="6xkNu_iwnGq" role="37vLTx">
                 <node concept="_YI3z" id="6xkNu_iwnGr" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6xkNu_iwnGs" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hwllgre" />
+                  <ref role="3Tt5mk" to="tpee:hwllgre" resolve="instanceMethodDeclaration" />
                 </node>
               </node>
               <node concept="2OqwBi" id="6xkNu_iwnGt" role="37vLTJ">
@@ -201,7 +201,7 @@
                   <ref role="3cqZAo" node="6xkNu_iwnGh" resolve="methodCall" />
                 </node>
                 <node concept="3TrEf2" id="6xkNu_iwnIg" role="2OqNvi">
-                  <ref role="3Tt5mk" to="uigu:6EBM_lhyT5L" />
+                  <ref role="3Tt5mk" to="uigu:6EBM_lhyT5L" resolve="instanceMethodDeclaration" />
                 </node>
               </node>
             </node>
@@ -213,14 +213,14 @@
                   <ref role="3cqZAo" node="6xkNu_iwnGh" resolve="methodCall" />
                 </node>
                 <node concept="3Tsc0h" id="6xkNu_iwnG$" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                  <ref role="3TtcxE" to="tpee:fz7wK6I" resolve="actualArgument" />
                 </node>
               </node>
               <node concept="X8dFx" id="6xkNu_iwnG_" role="2OqNvi">
                 <node concept="2OqwBi" id="6xkNu_iwnGA" role="25WWJ7">
                   <node concept="_YI3z" id="6xkNu_iwnGB" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="6xkNu_iwnGC" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                    <ref role="3TtcxE" to="tpee:fz7wK6I" resolve="actualArgument" />
                   </node>
                 </node>
               </node>
@@ -263,7 +263,7 @@
               <node concept="2OqwBi" id="6xkNu_iwnH5" role="33vP2m">
                 <node concept="_YI3z" id="6xkNu_iwnH6" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6xkNu_iwnH7" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hwllgre" />
+                  <ref role="3Tt5mk" to="tpee:hwllgre" resolve="instanceMethodDeclaration" />
                 </node>
               </node>
             </node>

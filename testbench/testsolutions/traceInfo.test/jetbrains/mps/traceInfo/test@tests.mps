@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="140c4818-bfbc-4850-bf7c-e3d80739a03c" name="jetbrains.mps.traceInfo.tracemacro.testlang" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -1701,11 +1701,11 @@
                       <node concept="1uHKPH" id="1PhAakM9uJk" role="2OqNvi" />
                       <node concept="2OqwBi" id="1PhAakM9uJl" role="2Oq$k0">
                         <node concept="13MTOL" id="1PhAakM9uJm" role="2OqNvi">
-                          <ref role="13MTZf" to="tpee:fzcqZ_x" />
+                          <ref role="13MTZf" to="tpee:fzcqZ_x" resolve="statement" />
                         </node>
                         <node concept="2OqwBi" id="1PhAakM9uJn" role="2Oq$k0">
                           <node concept="13MTOL" id="1PhAakM9uJo" role="2OqNvi">
-                            <ref role="13MTZf" to="tpee:fzclF7Z" />
+                            <ref role="13MTZf" to="tpee:fzclF7Z" resolve="body" />
                           </node>
                           <node concept="2OqwBi" id="1PhAakM9uJp" role="2Oq$k0">
                             <node concept="3zZkjj" id="1PhAakM9uJq" role="2OqNvi">

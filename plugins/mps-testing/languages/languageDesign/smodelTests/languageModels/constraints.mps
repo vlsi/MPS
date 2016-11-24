@@ -4,7 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -60,7 +60,7 @@
   <node concept="1M2fIO" id="7Ac3mvqAwni">
     <ref role="1M2myG" to="yetq:7Ac3mvq__F6" resolve="ReferenceContainer" />
     <node concept="1N5Pfh" id="7Ac3mvqAwnj" role="1Mr941">
-      <ref role="1N5Vy1" to="yetq:7Ac3mvq__F7" />
+      <ref role="1N5Vy1" to="yetq:7Ac3mvq__F7" resolve="root" />
       <node concept="1MUpDS" id="7Ac3mvqAwnk" role="1N6uqs">
         <node concept="3clFbS" id="7Ac3mvqAwnl" role="2VODD2">
           <node concept="3clFbF" id="7Ac3mvqAwnm" role="3cqZAp">
@@ -89,7 +89,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="7Ac3mvqB180" role="1Mr941">
-      <ref role="1N5Vy1" to="yetq:7Ac3mvq__F9" />
+      <ref role="1N5Vy1" to="yetq:7Ac3mvq__F9" resolve="rightChild" />
       <node concept="1MUpDS" id="7Ac3mvqB182" role="1N6uqs">
         <node concept="3clFbS" id="7Ac3mvqB183" role="2VODD2">
           <node concept="3clFbF" id="7Ac3mvqB184" role="3cqZAp">
@@ -118,7 +118,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="7Ac3mvqB181" role="1Mr941">
-      <ref role="1N5Vy1" to="yetq:7Ac3mvq__F8" />
+      <ref role="1N5Vy1" to="yetq:7Ac3mvq__F8" resolve="leftChild" />
       <node concept="1MUpDS" id="7Ac3mvqB18l" role="1N6uqs">
         <node concept="3clFbS" id="7Ac3mvqB18m" role="2VODD2">
           <node concept="3clFbF" id="7Ac3mvqB18n" role="3cqZAp">

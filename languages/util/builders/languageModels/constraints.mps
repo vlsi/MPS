@@ -6,7 +6,7 @@
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -278,7 +278,7 @@
     <property role="3GE5qa" value="simple" />
     <ref role="1M2myG" to="pmg0:6k$kQGI9c2U" resolve="SimpleBuilder" />
     <node concept="1N5Pfh" id="6k$kQGI9AiS" role="1Mr941">
-      <ref role="1N5Vy1" to="pmg0:6k$kQGI9c2V" />
+      <ref role="1N5Vy1" to="pmg0:6k$kQGI9c2V" resolve="declaration" />
       <node concept="1MUpDS" id="6k$kQGI9AiT" role="1N6uqs">
         <node concept="3clFbS" id="6k$kQGI9AiU" role="2VODD2">
           <node concept="3cpWs8" id="6k$kQGI9Fjw" role="3cqZAp">
@@ -508,7 +508,7 @@
                       </node>
                     </node>
                     <node concept="13MTOL" id="6K2Bohp6Udi" role="2OqNvi">
-                      <ref role="13MTZf" to="pmg0:6k$kQGI6xSX" />
+                      <ref role="13MTZf" to="pmg0:6k$kQGI6xSX" resolve="builder" />
                     </node>
                   </node>
                 </node>
@@ -542,7 +542,7 @@
     <property role="3GE5qa" value="simple" />
     <ref role="1M2myG" to="pmg0:4Hc0vRp0DN$" resolve="SimpleBuilderParameterReference" />
     <node concept="1N5Pfh" id="4Hc0vRp0DNH" role="1Mr941">
-      <ref role="1N5Vy1" to="pmg0:4Hc0vRp0DN_" />
+      <ref role="1N5Vy1" to="pmg0:4Hc0vRp0DN_" resolve="parameter" />
       <node concept="1MUpDS" id="4Hc0vRp0DNI" role="1N6uqs">
         <node concept="3clFbS" id="4Hc0vRp0DNJ" role="2VODD2">
           <node concept="3clFbF" id="4Hc0vRp0GAE" role="3cqZAp">
@@ -564,7 +564,7 @@
                 </node>
               </node>
               <node concept="3Tsc0h" id="6K2Bohp6Law" role="2OqNvi">
-                <ref role="3TtcxE" to="pmg0:4Hc0vRp0gIh" />
+                <ref role="3TtcxE" to="pmg0:4Hc0vRp0gIh" resolve="parameter" />
               </node>
             </node>
           </node>
@@ -576,7 +576,7 @@
     <property role="3GE5qa" value="bean" />
     <ref role="1M2myG" to="pmg0:2kIZjjSDoV7" resolve="BeanPropertyBuilder" />
     <node concept="1N5Pfh" id="2kIZjjSDoVu" role="1Mr941">
-      <ref role="1N5Vy1" to="pmg0:2kIZjjSDoV8" />
+      <ref role="1N5Vy1" to="pmg0:2kIZjjSDoV8" resolve="setter" />
       <node concept="1MUpDS" id="2kIZjjSDIkg" role="1N6uqs">
         <node concept="3clFbS" id="2kIZjjSDIkh" role="2VODD2">
           <node concept="3cpWs8" id="2kIZjjSDIkt" role="3cqZAp">
@@ -677,7 +677,7 @@
                           <ref role="3cqZAo" node="2kIZjjSDSI$" resolve="method" />
                         </node>
                         <node concept="3Tsc0h" id="2kIZjjSDSJC" role="2OqNvi">
-                          <ref role="3TtcxE" to="tpee:fzclF7Y" />
+                          <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
                         </node>
                       </node>
                       <node concept="34oBXx" id="2kIZjjSDSJH" role="2OqNvi" />
@@ -756,7 +756,7 @@
     <property role="3GE5qa" value="bean" />
     <ref role="1M2myG" to="pmg0:5M3yimiSuIZ" resolve="BeanBuilder" />
     <node concept="1N5Pfh" id="5M3yimiSPBT" role="1Mr941">
-      <ref role="1N5Vy1" to="pmg0:5M3yimiSuJ0" />
+      <ref role="1N5Vy1" to="pmg0:5M3yimiSuJ0" resolve="constructor" />
       <node concept="13QW63" id="3bMJRke5J4$" role="1N6uqs">
         <node concept="3clFbS" id="3bMJRke5J4_" role="2VODD2">
           <node concept="3clFbF" id="5M3yimiSPBW" role="3cqZAp">
@@ -807,7 +807,7 @@
     <property role="3GE5qa" value="simple" />
     <ref role="1M2myG" to="pmg0:4Fc1sznbG1v" resolve="SimpleBuilderPropertyBuilder" />
     <node concept="1N5Pfh" id="4Fc1sznbQNv" role="1Mr941">
-      <ref role="1N5Vy1" to="pmg0:4Fc1sznbG1x" />
+      <ref role="1N5Vy1" to="pmg0:4Fc1sznbG1x" resolve="declaration" />
       <node concept="1MUpDS" id="4Fc1sznbQNw" role="1N6uqs">
         <node concept="3clFbS" id="4Fc1sznbQNx" role="2VODD2">
           <node concept="3cpWs8" id="2YLfMN6t97T" role="3cqZAp">
@@ -859,7 +859,7 @@
                         <ref role="3cqZAo" node="2YLfMN6tcgz" resolve="dcl" />
                       </node>
                       <node concept="3Tsc0h" id="2YLfMN6tch9" role="2OqNvi">
-                        <ref role="3TtcxE" to="pmg0:4Fc1sznat87" />
+                        <ref role="3TtcxE" to="pmg0:4Fc1sznat87" resolve="property" />
                       </node>
                     </node>
                   </node>
@@ -879,7 +879,7 @@
                         <ref role="2Gs0qQ" node="2YLfMN6tchc" resolve="builders" />
                       </node>
                       <node concept="3Tsc0h" id="2YLfMN6tchu" role="2OqNvi">
-                        <ref role="3TtcxE" to="pmg0:6k$kQGI6xSX" />
+                        <ref role="3TtcxE" to="pmg0:6k$kQGI6xSX" resolve="builder" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="2YLfMN6tcho" role="2LFqv$">
@@ -911,7 +911,7 @@
                                     <ref role="3cqZAo" node="2YLfMN6tchB" resolve="extdecl" />
                                   </node>
                                   <node concept="3Tsc0h" id="2YLfMN6tcis" role="2OqNvi">
-                                    <ref role="3TtcxE" to="pmg0:5rdgdYBzsFP" />
+                                    <ref role="3TtcxE" to="pmg0:5rdgdYBzsFP" resolve="property" />
                                   </node>
                                 </node>
                               </node>
@@ -924,7 +924,7 @@
                               <ref role="3cqZAo" node="2YLfMN6tchB" resolve="extdecl" />
                             </node>
                             <node concept="3TrEf2" id="2YLfMN6tcie" role="2OqNvi">
-                              <ref role="3Tt5mk" to="pmg0:5rdgdYBzsFQ" />
+                              <ref role="3Tt5mk" to="pmg0:5rdgdYBzsFQ" resolve="extended" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="3GM_nagTwV3" role="3uHU7B">
@@ -953,7 +953,7 @@
                   <ref role="3cqZAo" node="4Fc1sznbXwp" resolve="contextBuilder" />
                 </node>
                 <node concept="3TrEf2" id="2YLfMN6tcgL" role="2OqNvi">
-                  <ref role="3Tt5mk" to="pmg0:6k$kQGI9c2V" />
+                  <ref role="3Tt5mk" to="pmg0:6k$kQGI9c2V" resolve="declaration" />
                 </node>
               </node>
             </node>
@@ -969,7 +969,7 @@
                   <ref role="3cqZAo" node="2YLfMN6tcgz" resolve="dcl" />
                 </node>
                 <node concept="3TrEf2" id="2YLfMN6tcgV" role="2OqNvi">
-                  <ref role="3Tt5mk" to="pmg0:3jPK7hzQBgP" />
+                  <ref role="3Tt5mk" to="pmg0:3jPK7hzQBgP" resolve="extends" />
                 </node>
               </node>
               <node concept="37vLTw" id="3GM_nagTAvX" role="37vLTJ">
@@ -990,7 +990,7 @@
     <property role="3GE5qa" value="simple" />
     <ref role="1M2myG" to="pmg0:6k$kQGI6xSS" resolve="SimpleBuilderDeclaration" />
     <node concept="1N5Pfh" id="5oOCLRAZ0sK" role="1Mr941">
-      <ref role="1N5Vy1" to="pmg0:3jPK7hzQBgP" />
+      <ref role="1N5Vy1" to="pmg0:3jPK7hzQBgP" resolve="extends" />
       <node concept="1MUpDS" id="5oOCLRAZ0sL" role="1N6uqs">
         <node concept="3clFbS" id="5oOCLRAZ0sM" role="2VODD2">
           <node concept="3cpWs8" id="5oOCLRAZ0sN" role="3cqZAp">
@@ -1066,7 +1066,7 @@
                     <ref role="3cqZAo" node="5oOCLRAZ0tm" resolve="builders" />
                   </node>
                   <node concept="3Tsc0h" id="6K2Bohp6U9U" role="2OqNvi">
-                    <ref role="3TtcxE" to="pmg0:6k$kQGI6xSX" />
+                    <ref role="3TtcxE" to="pmg0:6k$kQGI6xSX" resolve="builder" />
                   </node>
                 </node>
                 <node concept="3cpWsn" id="6K2Bohp6U9E" role="1Duv9x">

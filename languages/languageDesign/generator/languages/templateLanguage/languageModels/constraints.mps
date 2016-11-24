@@ -7,7 +7,7 @@
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -253,7 +253,7 @@
   <node concept="1M2fIO" id="hDMFHe3">
     <ref role="1M2myG" to="tpf8:gZlhOrr" resolve="Root_MappingRule" />
     <node concept="1N5Pfh" id="hDMFHkv" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:gZlhOrt" />
+      <ref role="1N5Vy1" to="tpf8:gZlhOrt" resolve="template" />
       <node concept="1MUpDS" id="hDMFHkw" role="1N6uqs">
         <node concept="3clFbS" id="hDMFHkx" role="2VODD2">
           <node concept="3cpWs6" id="hDMFHky" role="3cqZAp">
@@ -271,7 +271,7 @@
   <node concept="1M2fIO" id="hDMFHTl">
     <ref role="1M2myG" to="tpf8:gYVPola" resolve="CreateRootRule" />
     <node concept="1N5Pfh" id="hDMFHTm" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:gYVPold" />
+      <ref role="1N5Vy1" to="tpf8:gYVPold" resolve="templateNode" />
       <node concept="1MUpDS" id="hDMFHTn" role="1N6uqs">
         <node concept="3clFbS" id="hDMFHTo" role="2VODD2">
           <node concept="3cpWs6" id="hDMFHTp" role="3cqZAp">
@@ -308,7 +308,7 @@
     <property role="3GE5qa" value="rule.argument" />
     <ref role="1M2myG" to="tpf8:42YwEPgeNM8" resolve="TemplateArgumentPatternVarRefExpression" />
     <node concept="1N5Pfh" id="42YwEPgeQ9$" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:42YwEPgeNV4" />
+      <ref role="1N5Vy1" to="tpf8:42YwEPgeNV4" resolve="patternVarDecl" />
       <node concept="1MUpDS" id="42YwEPgeQ9_" role="1N6uqs">
         <node concept="3clFbS" id="42YwEPgeQ9A" role="2VODD2">
           <node concept="3cpWs8" id="42YwEPgeQ9B" role="3cqZAp">
@@ -358,7 +358,7 @@
                     <ref role="3cqZAo" node="42YwEPgeQ9I" resolve="rule" />
                   </node>
                   <node concept="3TrEf2" id="42YwEPgeQ9X" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
+                    <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" resolve="pattern" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="42YwEPgeQ9Y" role="2OqNvi" />
@@ -377,7 +377,7 @@
                           <ref role="3cqZAo" node="42YwEPgeQ9I" resolve="rule" />
                         </node>
                         <node concept="3TrEf2" id="42YwEPgeQa7" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
+                          <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" resolve="pattern" />
                         </node>
                       </node>
                       <node concept="2Rf3mk" id="42YwEPgeQa8" role="2OqNvi">
@@ -420,7 +420,7 @@
     <property role="3GE5qa" value="rule.argument" />
     <ref role="1M2myG" to="tpf8:4bn6ZJF6_RB" resolve="TemplateArgumentPropertyPatternRefExpression" />
     <node concept="1N5Pfh" id="4bn6ZJF6_RN" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:4bn6ZJF6_RD" />
+      <ref role="1N5Vy1" to="tpf8:4bn6ZJF6_RD" resolve="propertyPattern" />
       <node concept="1MUpDS" id="4bn6ZJF6_RQ" role="1N6uqs">
         <node concept="3clFbS" id="4bn6ZJF6_RR" role="2VODD2">
           <node concept="3cpWs8" id="4bn6ZJF6_RS" role="3cqZAp">
@@ -470,7 +470,7 @@
                     <ref role="3cqZAo" node="4bn6ZJF6_RZ" resolve="rule" />
                   </node>
                   <node concept="3TrEf2" id="4bn6ZJF6_Se" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
+                    <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" resolve="pattern" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="4bn6ZJF6_Sf" role="2OqNvi" />
@@ -489,7 +489,7 @@
                           <ref role="3cqZAo" node="4bn6ZJF6_RZ" resolve="rule" />
                         </node>
                         <node concept="3TrEf2" id="4bn6ZJF6_So" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
+                          <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" resolve="pattern" />
                         </node>
                       </node>
                       <node concept="2Rf3mk" id="4bn6ZJF6_Sp" role="2OqNvi">
@@ -518,7 +518,7 @@
     <property role="3GE5qa" value="rule.argument" />
     <ref role="1M2myG" to="tpf8:4bn6ZJF6_RC" resolve="TemplateArgumentLinkPatternRefExpression" />
     <node concept="1N5Pfh" id="4bn6ZJF6_SI" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:4bn6ZJF6_RE" />
+      <ref role="1N5Vy1" to="tpf8:4bn6ZJF6_RE" resolve="patternVar" />
       <node concept="1MUpDS" id="4bn6ZJF6_SJ" role="1N6uqs">
         <node concept="3clFbS" id="4bn6ZJF6_SK" role="2VODD2">
           <node concept="3cpWs8" id="4bn6ZJF6_SL" role="3cqZAp">
@@ -568,7 +568,7 @@
                     <ref role="3cqZAo" node="4bn6ZJF6_SS" resolve="rule" />
                   </node>
                   <node concept="3TrEf2" id="4bn6ZJF6_T7" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
+                    <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" resolve="pattern" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="4bn6ZJF6_T8" role="2OqNvi" />
@@ -587,7 +587,7 @@
                           <ref role="3cqZAo" node="4bn6ZJF6_SS" resolve="rule" />
                         </node>
                         <node concept="3TrEf2" id="4bn6ZJF6_Th" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
+                          <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" resolve="pattern" />
                         </node>
                       </node>
                       <node concept="2Rf3mk" id="4bn6ZJF6_Ti" role="2OqNvi">
@@ -616,7 +616,7 @@
     <property role="3GE5qa" value="parameter" />
     <ref role="1M2myG" to="tpf8:$79JWCfbYa" resolve="GeneratorParameterReference" />
     <node concept="1N5Pfh" id="6SPT5KYq$hO" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:$79JWCfbYc" />
+      <ref role="1N5Vy1" to="tpf8:$79JWCfbYc" resolve="declaration" />
       <node concept="Bn3R3" id="6SPT5KYq$hP" role="Bn3R6">
         <node concept="3clFbS" id="6SPT5KYq$hQ" role="2VODD2">
           <node concept="3clFbF" id="6SPT5KYqV$0" role="3cqZAp">
@@ -635,7 +635,7 @@
               <node concept="2OqwBi" id="4N$Ncbg_fpK" role="3uHU7w">
                 <node concept="Bn53e" id="4N$Ncbg_fpJ" role="2Oq$k0" />
                 <node concept="3TrEf2" id="4N$Ncbg_fpO" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpf8:$79JWCe2bl" />
+                  <ref role="3Tt5mk" to="tpf8:$79JWCe2bl" resolve="type" />
                 </node>
               </node>
             </node>
@@ -648,7 +648,7 @@
     <property role="3GE5qa" value="rule.argument" />
     <ref role="1M2myG" to="tpf8:4lQlo5qukTT" resolve="TemplateArgumentParameterExpression" />
     <node concept="1N5Pfh" id="4lQlo5quodZ" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:4lQlo5qukTU" />
+      <ref role="1N5Vy1" to="tpf8:4lQlo5qukTU" resolve="parameter" />
       <node concept="1MUpDS" id="4lQlo5quoe0" role="1N6uqs">
         <node concept="3clFbS" id="4lQlo5quoe1" role="2VODD2">
           <node concept="3clFbJ" id="4lQlo5qup7d" role="3cqZAp">
@@ -663,7 +663,7 @@
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="QzR6ThiGde" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpf8:QzR6ThdYDm" />
+                    <ref role="3TtcxE" to="tpf8:QzR6ThdYDm" resolve="parameter" />
                   </node>
                 </node>
               </node>
@@ -1039,7 +1039,7 @@
     <property role="3GE5qa" value="macro" />
     <ref role="1M2myG" to="tpf8:QzR6Tht7mj" resolve="TemplateSwitchMacro" />
     <node concept="1N5Pfh" id="QzR6Ti2cS_" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:1vDgt48Nz5N" />
+      <ref role="1N5Vy1" to="tpf8:1vDgt48Nz5N" resolve="template" />
       <node concept="13QW63" id="QzR6Ti2cTW" role="1N6uqs">
         <node concept="3clFbS" id="QzR6Ti2cTX" role="2VODD2">
           <node concept="3clFbF" id="QzR6Thth7X" role="3cqZAp">
@@ -1064,7 +1064,7 @@
     <property role="3GE5qa" value="macro" />
     <ref role="1M2myG" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
     <node concept="1N5Pfh" id="QzR6Ti2cI3" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:1vDgt48Nz5N" />
+      <ref role="1N5Vy1" to="tpf8:1vDgt48Nz5N" resolve="template" />
       <node concept="13QW63" id="QzR6Ti2cJh" role="1N6uqs">
         <node concept="3clFbS" id="QzR6Ti2cJi" role="2VODD2">
           <node concept="3clFbF" id="QzR6ThtQb$" role="3cqZAp">
@@ -1089,7 +1089,7 @@
     <property role="3GE5qa" value="rule.consequence" />
     <ref role="1M2myG" to="tpf8:h0j$61m" resolve="TemplateDeclarationReference" />
     <node concept="1N5Pfh" id="QzR6Ti2cyD" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:1vDgt48Nz5N" />
+      <ref role="1N5Vy1" to="tpf8:1vDgt48Nz5N" resolve="template" />
       <node concept="13QW63" id="QzR6Ti2cyN" role="1N6uqs">
         <node concept="3clFbS" id="QzR6Ti2cyO" role="2VODD2">
           <node concept="3clFbF" id="QzR6Ti2c_g" role="3cqZAp">
@@ -1113,7 +1113,7 @@
   <node concept="1M2fIO" id="55eznTdJrgJ">
     <ref role="1M2myG" to="tpf8:gcjVnq8" resolve="TemplateSwitch" />
     <node concept="1N5Pfh" id="55eznTdJrz2" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:gcphYgk" />
+      <ref role="1N5Vy1" to="tpf8:gcphYgk" resolve="modifiedSwitch" />
       <node concept="13QW63" id="55eznTdJv1l" role="1N6uqs">
         <node concept="3clFbS" id="55eznTdJv1n" role="2VODD2">
           <node concept="3clFbF" id="rez4bFFRGY" role="3cqZAp">
@@ -1138,7 +1138,7 @@
     <property role="3GE5qa" value="rule.argument" />
     <ref role="1M2myG" to="tpf8:3PJ9groyE0C" resolve="TemplateArgumentVariableRefExpression" />
     <node concept="1N5Pfh" id="3PJ9groyFT0" role="1Mr941">
-      <ref role="1N5Vy1" to="tpf8:2n6lsTIwfRq" />
+      <ref role="1N5Vy1" to="tpf8:2n6lsTIwfRq" resolve="varmacro" />
       <node concept="1dDu$B" id="79OxvCzfwr6" role="1N6uqs">
         <ref role="1dDu$A" to="tpf8:4mp7qFmCXde" resolve="VarMacro" />
       </node>

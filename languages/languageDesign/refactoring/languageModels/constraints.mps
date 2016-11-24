@@ -4,7 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -113,7 +113,7 @@
     <property role="3GE5qa" value="RefDecl.Arg.Field" />
     <ref role="1M2myG" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
     <node concept="1N5Pfh" id="4Lb$w0Yiqq2" role="1Mr941">
-      <ref role="1N5Vy1" to="tp1h:4Lb$w0Yi3EF" />
+      <ref role="1N5Vy1" to="tp1h:4Lb$w0Yi3EF" resolve="refactoringField" />
       <node concept="1MUpDS" id="4Lb$w0Yiqq3" role="1N6uqs">
         <node concept="3clFbS" id="4Lb$w0Yiqq4" role="2VODD2">
           <node concept="3clFbF" id="4Lb$w0YiqrP" role="3cqZAp">
@@ -129,7 +129,7 @@
                 </node>
               </node>
               <node concept="3Tsc0h" id="4Lb$w0YiqrE" role="2OqNvi">
-                <ref role="3TtcxE" to="tp1h:5YKiRiBuebp" />
+                <ref role="3TtcxE" to="tp1h:5YKiRiBuebp" resolve="field" />
               </node>
             </node>
           </node>
@@ -141,7 +141,7 @@
     <property role="3GE5qa" value="RefDecl.Arg.Parameters" />
     <ref role="1M2myG" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
     <node concept="1N5Pfh" id="4Lb$w0YiqrS" role="1Mr941">
-      <ref role="1N5Vy1" to="tp1h:5YKiRiBvdC7" />
+      <ref role="1N5Vy1" to="tp1h:5YKiRiBvdC7" resolve="refactoringParameter" />
       <node concept="1MUpDS" id="4Lb$w0YiqrT" role="1N6uqs">
         <node concept="3clFbS" id="4Lb$w0YiqrU" role="2VODD2">
           <node concept="3clFbF" id="4Lb$w0YiqrV" role="3cqZAp">
@@ -157,7 +157,7 @@
                 </node>
               </node>
               <node concept="3Tsc0h" id="4Lb$w0Yiqs3" role="2OqNvi">
-                <ref role="3TtcxE" to="tp1h:5YKiRiBuebo" />
+                <ref role="3TtcxE" to="tp1h:5YKiRiBuebo" resolve="parameter" />
               </node>
             </node>
           </node>
@@ -180,7 +180,7 @@
                     <node concept="nLn13" id="6Tyhu1Fon8W" role="1m5AlR" />
                   </node>
                   <node concept="3TrEf2" id="6Tyhu1Fon93" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                    <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                   </node>
                 </node>
                 <node concept="3JvlWi" id="59tlBvdaHx$" role="2OqNvi" />

@@ -5,7 +5,7 @@
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -722,7 +722,7 @@
                                           <ref role="3cqZAo" node="7YwKlJL2N74" resolve="it" />
                                         </node>
                                         <node concept="3Tsc0h" id="7YwKlJL3z8b" role="2OqNvi">
-                                          <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" />
+                                          <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" resolve="commentPart" />
                                         </node>
                                       </node>
                                       <node concept="34oBXx" id="7YwKlJL3LIA" role="2OqNvi" />
@@ -735,7 +735,7 @@
                                           <ref role="3cqZAo" node="7YwKlJL2N74" resolve="it" />
                                         </node>
                                         <node concept="3Tsc0h" id="7YwKlJL2NJg" role="2OqNvi">
-                                          <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" />
+                                          <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" resolve="commentPart" />
                                         </node>
                                       </node>
                                       <node concept="1uHKPH" id="7YwKlJL3OKX" role="2OqNvi" />
@@ -779,14 +779,14 @@
                                               <ref role="3cqZAo" node="7YwKlJL2$zY" resolve="oldComment" />
                                             </node>
                                             <node concept="3Tsc0h" id="7YwKlJL4L5H" role="2OqNvi">
-                                              <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" />
+                                              <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" resolve="commentPart" />
                                             </node>
                                           </node>
                                           <node concept="1uHKPH" id="7YwKlJL4L5I" role="2OqNvi" />
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="7YwKlJL4ODK" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="tpee:5vlcUuJ5JXC" />
+                                        <ref role="3Tt5mk" to="tpee:5vlcUuJ5JXC" resolve="commentedStatement" />
                                       </node>
                                     </node>
                                   </node>
@@ -999,7 +999,7 @@
                                   </node>
                                 </node>
                                 <node concept="3Tsc0h" id="161JGLBMBI8" role="2OqNvi">
-                                  <ref role="3TtcxE" to="tpee:hiAJF2X" />
+                                  <ref role="3TtcxE" to="tpee:hiAJF2X" resolve="annotation" />
                                 </node>
                               </node>
                               <node concept="2HxqBE" id="161JGLBMBI9" role="2OqNvi">
@@ -1016,7 +1016,7 @@
                                             <ref role="3cqZAo" node="161JGLBMBIF" resolve="annotation" />
                                           </node>
                                           <node concept="3TrEf2" id="161JGLBMBIh" role="2OqNvi">
-                                            <ref role="3Tt5mk" to="tpee:hiAI5P0" />
+                                            <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
                                           </node>
                                         </node>
                                       </node>

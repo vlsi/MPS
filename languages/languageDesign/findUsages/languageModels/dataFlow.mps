@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -54,7 +54,7 @@
           <node concept="2OqwBi" id="2qHItohYSD5" role="3Ah4Yx">
             <node concept="3__QtB" id="1lvusB2cGW_" role="2Oq$k0" />
             <node concept="3TrEf2" id="2qHItohYSDb" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:htO1k2z" />
+              <ref role="3Tt5mk" to="tp3b:htO1k2z" resolve="foundNode" />
             </node>
           </node>
         </node>
@@ -70,7 +70,7 @@
           <node concept="2OqwBi" id="1lvusB2cO6F" role="3Ah4Yx">
             <node concept="3__QtB" id="1lvusB2cO6E" role="2Oq$k0" />
             <node concept="3TrEf2" id="1lvusB2cOoj" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:hzmZew4" />
+              <ref role="3Tt5mk" to="tp3b:hzmZew4" resolve="queryNode" />
             </node>
           </node>
         </node>
@@ -78,7 +78,7 @@
           <node concept="2OqwBi" id="1lvusB2cOom" role="3Ah4Yx">
             <node concept="3__QtB" id="1lvusB2cOon" role="2Oq$k0" />
             <node concept="3TrEf2" id="1lvusB2cOop" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:hzmZew5" />
+              <ref role="3Tt5mk" to="tp3b:hzmZew5" resolve="queryScope" />
             </node>
           </node>
         </node>
@@ -94,7 +94,7 @@
           <node concept="2OqwBi" id="5$1A31LN77S" role="3Ah4Yx">
             <node concept="3__QtB" id="5$1A31LN77R" role="2Oq$k0" />
             <node concept="3TrEf2" id="5$1A31LN77W" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:5xq1uvO4jl0" />
+              <ref role="3Tt5mk" to="tp3b:5xq1uvO4jl0" resolve="progress" />
             </node>
           </node>
         </node>
@@ -102,7 +102,7 @@
           <node concept="2OqwBi" id="5$1A31LN781" role="3Ah4Yx">
             <node concept="3__QtB" id="5$1A31LN780" role="2Oq$k0" />
             <node concept="3TrEf2" id="5$1A31LN785" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:5xq1uvO4jkY" />
+              <ref role="3Tt5mk" to="tp3b:5xq1uvO4jkY" resolve="queryNode" />
             </node>
           </node>
         </node>
@@ -110,7 +110,7 @@
           <node concept="2OqwBi" id="5$1A31LN78a" role="3Ah4Yx">
             <node concept="3__QtB" id="5$1A31LN789" role="2Oq$k0" />
             <node concept="3TrEf2" id="5$1A31LN78e" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:5xq1uvO4jkZ" />
+              <ref role="3Tt5mk" to="tp3b:5xq1uvO4jkZ" resolve="scope" />
             </node>
           </node>
         </node>
@@ -126,7 +126,7 @@
           <node concept="2OqwBi" id="5$1A31LNYWc" role="3Ah4Yx">
             <node concept="3__QtB" id="5$1A31LNYWb" role="2Oq$k0" />
             <node concept="3TrEf2" id="5$1A31LNYWg" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3b:htO26cB" />
+              <ref role="3Tt5mk" to="tp3b:htO26cB" resolve="foundNode" />
             </node>
           </node>
         </node>

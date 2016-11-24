@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -129,7 +129,7 @@
   <node concept="1M2fIO" id="4ECm7aRhsTN">
     <ref role="1M2myG" to="fbxt:4ECm7aRhsT$" resolve="CustomConstructorParameterReference" />
     <node concept="1N5Pfh" id="3hKVNhiGLjC" role="1Mr941">
-      <ref role="1N5Vy1" to="fbxt:4ECm7aRhsT_" />
+      <ref role="1N5Vy1" to="fbxt:4ECm7aRhsT_" resolve="parameter" />
       <node concept="1MUpDS" id="3hKVNhiGLjD" role="1N6uqs">
         <node concept="3clFbS" id="3hKVNhiGLjE" role="2VODD2">
           <node concept="3cpWs8" id="3hKVNhiIofE" role="3cqZAp">
@@ -150,7 +150,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="3hKVNhiIofO" role="2OqNvi">
-                  <ref role="3Tt5mk" to="fbxt:4ECm7aRgLwn" />
+                  <ref role="3Tt5mk" to="fbxt:4ECm7aRgLwn" resolve="arguments" />
                 </node>
               </node>
             </node>
@@ -186,7 +186,7 @@
                         </node>
                       </node>
                       <node concept="3TrEf2" id="474u_1NwQsQ" role="2OqNvi">
-                        <ref role="3Tt5mk" to="fbxt:474u_1Nwd2W" />
+                        <ref role="3Tt5mk" to="fbxt:474u_1Nwd2W" resolve="list" />
                       </node>
                     </node>
                   </node>
@@ -219,7 +219,7 @@
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="474u_1NwL5x" role="2OqNvi">
-                      <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" />
+                      <ref role="3TtcxE" to="fbxt:4ECm7aRgLwx" resolve="parameter" />
                     </node>
                   </node>
                 </node>

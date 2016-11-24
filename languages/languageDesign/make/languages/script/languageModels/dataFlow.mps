@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -64,7 +64,7 @@
           <node concept="2OqwBi" id="40Y6fh$WFcn" role="3Ah4Yx">
             <node concept="3__QtB" id="40Y6fh$WFcm" role="2Oq$k0" />
             <node concept="3TrEf2" id="40Y6fh$WFtD" role="2OqNvi">
-              <ref role="3Tt5mk" to="q9ra:230qvwa_M1L" />
+              <ref role="3Tt5mk" to="q9ra:230qvwa_M1L" resolve="resource" />
             </node>
           </node>
         </node>
@@ -80,7 +80,7 @@
           <node concept="2OqwBi" id="apaq_sC7SX" role="3Ah4Yx">
             <node concept="3__QtB" id="apaq_sC7SW" role="2Oq$k0" />
             <node concept="3TrEf2" id="apaq_sC7T1" role="2OqNvi">
-              <ref role="3Tt5mk" to="q9ra:apaq_sBOnA" />
+              <ref role="3Tt5mk" to="q9ra:apaq_sBOnA" resolve="expected" />
             </node>
           </node>
         </node>
@@ -88,7 +88,7 @@
           <node concept="2OqwBi" id="apaq_sC7T6" role="3Ah4Yx">
             <node concept="3__QtB" id="apaq_sC7T5" role="2Oq$k0" />
             <node concept="3TrEf2" id="apaq_sC7Ta" role="2OqNvi">
-              <ref role="3Tt5mk" to="q9ra:apaq_sBOnB" />
+              <ref role="3Tt5mk" to="q9ra:apaq_sBOnB" resolve="ofTotal" />
             </node>
           </node>
         </node>
@@ -104,7 +104,7 @@
           <node concept="2OqwBi" id="apaq_sC7Th" role="3Ah4Yx">
             <node concept="3__QtB" id="apaq_sC7Tg" role="2Oq$k0" />
             <node concept="3TrEf2" id="apaq_sC7Tl" role="2OqNvi">
-              <ref role="3Tt5mk" to="q9ra:apaq_sBNjk" />
+              <ref role="3Tt5mk" to="q9ra:apaq_sBNjk" resolve="amount" />
             </node>
           </node>
         </node>
@@ -112,7 +112,7 @@
           <node concept="2OqwBi" id="tyT6pgwUOM" role="3Ah4Yx">
             <node concept="3__QtB" id="tyT6pgwUOL" role="2Oq$k0" />
             <node concept="3TrEf2" id="tyT6pgwUOQ" role="2OqNvi">
-              <ref role="3Tt5mk" to="q9ra:1DQidxxwrK0" />
+              <ref role="3Tt5mk" to="q9ra:1DQidxxwrK0" resolve="comment" />
             </node>
           </node>
         </node>

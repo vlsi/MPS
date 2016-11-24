@@ -7,7 +7,7 @@
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -206,7 +206,7 @@
   <node concept="1M2fIO" id="hDMFISI">
     <ref role="1M2myG" to="tp4f:hyWEnem" resolve="IMemberOperation" />
     <node concept="1N5Pfh" id="hDMFISJ" role="1Mr941">
-      <ref role="1N5Vy1" to="tp4f:hyWH_vG" />
+      <ref role="1N5Vy1" to="tp4f:hyWH_vG" resolve="member" />
       <node concept="1MUpDS" id="hDMFISK" role="1N6uqs">
         <node concept="3clFbS" id="hDMFISL" role="2VODD2">
           <node concept="3cpWs8" id="hDMFISM" role="3cqZAp">
@@ -217,7 +217,7 @@
               </node>
               <node concept="2OqwBi" id="hDMFISP" role="33vP2m">
                 <node concept="3TrEf2" id="hDMFISQ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                  <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                 </node>
                 <node concept="1PxgMI" id="hDMFISR" role="2Oq$k0">
                   <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
@@ -320,7 +320,7 @@
   <node concept="1M2fIO" id="hDMPC7x">
     <ref role="1M2myG" to="tp4f:hyWthE1" resolve="ThisClassifierExpression" />
     <node concept="1N5Pfh" id="hJ2qcjN" role="1Mr941">
-      <ref role="1N5Vy1" to="tp4f:hJ2nkJ3" />
+      <ref role="1N5Vy1" to="tp4f:hJ2nkJ3" resolve="classifier" />
       <node concept="1MUpDS" id="hJ2qd0Z" role="1N6uqs">
         <node concept="3clFbS" id="hJ2qd10" role="2VODD2">
           <node concept="3cpWs6" id="hJ2qdqE" role="3cqZAp">
@@ -365,7 +365,7 @@
     <property role="3GE5qa" value="Types" />
     <ref role="1M2myG" to="tp4f:hyWukbY" resolve="DefaultClassifierType" />
     <node concept="1N5Pfh" id="hHlNjdN" role="1Mr941">
-      <ref role="1N5Vy1" to="tp4f:hyWumMg" />
+      <ref role="1N5Vy1" to="tp4f:hyWumMg" resolve="classifier" />
       <node concept="1MUpDS" id="hHlNk5Y" role="1N6uqs">
         <node concept="3clFbS" id="hHlNk5Z" role="2VODD2">
           <node concept="3cpWs8" id="hHlNviw" role="3cqZAp">

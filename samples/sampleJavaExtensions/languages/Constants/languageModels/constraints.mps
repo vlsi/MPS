@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -92,7 +92,7 @@
   <node concept="1M2fIO" id="3tw0l3PalT2">
     <ref role="1M2myG" to="nd9w:3tw0l3Pakp_" resolve="ConstantReference" />
     <node concept="1N5Pfh" id="3tw0l3PalT3" role="1Mr941">
-      <ref role="1N5Vy1" to="nd9w:3tw0l3PakpA" />
+      <ref role="1N5Vy1" to="nd9w:3tw0l3PakpA" resolve="original" />
       <node concept="1dDu$B" id="5aCokQ65pLP" role="1N6uqs">
         <ref role="1dDu$A" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
       </node>
@@ -101,7 +101,7 @@
   <node concept="1M2fIO" id="2lb0lXX1HLx">
     <ref role="1M2myG" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
     <node concept="1N5Pfh" id="2lb0lXX1HLA" role="1Mr941">
-      <ref role="1N5Vy1" to="nd9w:3tw0l3PakpA" />
+      <ref role="1N5Vy1" to="nd9w:3tw0l3PakpA" resolve="original" />
       <node concept="13QW63" id="2lb0lXX1HOI" role="1N6uqs">
         <node concept="3clFbS" id="2lb0lXX1HOK" role="2VODD2">
           <node concept="3clFbJ" id="2lb0lXX200_" role="3cqZAp">
@@ -119,7 +119,7 @@
                     <node concept="2rP1CM" id="2lb0lXX2bsn" role="1m5AlR" />
                   </node>
                   <node concept="3TrEf2" id="2lb0lXX2czA" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" />
+                    <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" resolve="targetSetOfConstants" />
                   </node>
                 </node>
               </node>
@@ -151,12 +151,12 @@
                   <node concept="2rP1CM" id="2lb0lXX2ngR" role="1m5AlR" />
                 </node>
                 <node concept="3TrEf2" id="2lb0lXX2ngS" role="2OqNvi">
-                  <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" />
+                  <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" resolve="targetSetOfConstants" />
                 </node>
               </node>
               <node concept="359W_D" id="5TYh2YDXH9X" role="37wK5m">
                 <ref role="359W_E" to="nd9w:1iYrdV1xxgn" resolve="Constants" />
-                <ref role="359W_F" to="nd9w:1iYrdV1xxgC" />
+                <ref role="359W_F" to="nd9w:1iYrdV1xxgC" resolve="constants" />
               </node>
             </node>
           </node>

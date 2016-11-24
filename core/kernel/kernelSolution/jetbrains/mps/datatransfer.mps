@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -943,7 +943,7 @@
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="1TZ7NoVDTlZ" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpdg:5abCRRje3Wv" />
+                      <ref role="3TtcxE" to="tpdg:5abCRRje3Wv" resolve="preProcessor" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="1TZ7NoVDTm0" role="2LFqv$">
@@ -955,7 +955,7 @@
                               <ref role="2Gs0qQ" node="1TZ7NoVDTlW" resolve="preProcessor" />
                             </node>
                             <node concept="3TrEf2" id="1TZ7NoVDTm6" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpdg:5abCRRjcnId" />
+                              <ref role="3Tt5mk" to="tpdg:5abCRRjcnId" resolve="concept" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="2BHiRxeuFkB" role="3ElQJh">
@@ -1031,7 +1031,7 @@
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="1TZ7NoVDTmx" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpdg:5abCRRje3Wu" />
+                      <ref role="3TtcxE" to="tpdg:5abCRRje3Wu" resolve="postProcessor" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="1TZ7NoVDTmy" role="2LFqv$">
@@ -1096,7 +1096,7 @@
                               <ref role="2Gs0qQ" node="1TZ7NoVDTmu" resolve="postProcessor" />
                             </node>
                             <node concept="3TrEf2" id="1TZ7NoVDTmW" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpdg:5eziI4W39hV" />
+                              <ref role="3Tt5mk" to="tpdg:5eziI4W39hV" resolve="concept" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="2BHiRxeusHL" role="3ElQJh">

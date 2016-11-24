@@ -4,7 +4,7 @@
   <languages>
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -166,7 +166,7 @@
               </node>
             </node>
             <node concept="3TrEf2" id="h8AhK3Y" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp33:h8_XDD_" />
+              <ref role="3Tt5mk" to="tp33:h8_XDD_" resolve="affectedInstanceConcept" />
             </node>
           </node>
         </node>
@@ -212,7 +212,7 @@
                 <ref role="1YBMHb" node="2ggmC1WtpcZ" resolve="part" />
               </node>
               <node concept="3TrEf2" id="2ggmC1WtqGw" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp33:2ggmC1WtnKJ" />
+                <ref role="3Tt5mk" to="tp33:2ggmC1WtnKJ" resolve="factoryMethod" />
               </node>
             </node>
             <node concept="3JvlWi" id="2ggmC1WtqGU" role="2OqNvi" />
@@ -277,7 +277,7 @@
             <node concept="10Nm6u" id="7Ndp1gLjBRY" role="3uHU7w" />
             <node concept="2OqwBi" id="6SPCoQxIKxp" role="3uHU7B">
               <node concept="3TrEf2" id="6SPCoQxILwX" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp33:49356IxH1a1" />
+                <ref role="3Tt5mk" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
               </node>
               <node concept="1YBJjd" id="6SPCoQxIKqq" role="2Oq$k0">
                 <ref role="1YBMHb" node="6OHUDSnCKi9" resolve="pullUpMethod" />
@@ -287,7 +287,7 @@
           <node concept="3clFbC" id="6SPCoQxIKeh" role="3uHU7B">
             <node concept="2OqwBi" id="6SPCoQxIIsm" role="3uHU7B">
               <node concept="3TrEf2" id="6SPCoQxIJrE" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp33:3FxWUsVB_nq" />
+                <ref role="3Tt5mk" to="tp33:3FxWUsVB_nq" resolve="newMethodDeclaration" />
               </node>
               <node concept="1YBJjd" id="6SPCoQxIIlB" role="2Oq$k0">
                 <ref role="1YBMHb" node="6OHUDSnCKi9" resolve="pullUpMethod" />

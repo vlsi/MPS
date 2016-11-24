@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -104,7 +104,7 @@
   <node concept="1M2fIO" id="6$bUG5eHQ1H">
     <ref role="1M2myG" to="f55a:hlYdQAfmdS" resolve="CellModel_Checkbox" />
     <node concept="1N5Pfh" id="6$bUG5eHQ1I" role="1Mr941">
-      <ref role="1N5Vy1" to="f55a:3daRSMLnNZv" />
+      <ref role="1N5Vy1" to="f55a:3daRSMLnNZv" resolve="propertyDeclaration" />
       <node concept="1MUpDS" id="6$bUG5eHRB5" role="1N6uqs">
         <node concept="3clFbS" id="6$bUG5eHRB6" role="2VODD2">
           <node concept="3cpWs8" id="hDMFJs_" role="3cqZAp">
@@ -162,7 +162,7 @@
                             <ref role="3cqZAo" node="6$bUG5eHULm" resolve="it" />
                           </node>
                           <node concept="3TrEf2" id="6$bUG5eHVct" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpce:fKAX2Z_" />
+                            <ref role="3Tt5mk" to="tpce:fKAX2Z_" resolve="dataType" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6$bUG5eIKjS" role="2OqNvi">
