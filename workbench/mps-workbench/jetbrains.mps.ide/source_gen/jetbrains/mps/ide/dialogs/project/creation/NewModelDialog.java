@@ -46,7 +46,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import java.io.File;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.SModuleOperations;
@@ -277,7 +276,7 @@ public class NewModelDialog extends DialogWrapper {
           }
           languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
           // see MPS-18743 
-          MPSModuleRepository.getInstance().saveAll();
+          myProject.getRepository().saveAll();
           myModule.setModuleDescriptor(languageDescriptor);
           myModule.save();
         }

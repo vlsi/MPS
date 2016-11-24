@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
@@ -54,10 +54,10 @@ public class MappingDialog extends DialogWrapper {
       super.doInit(node, new ModelReadRunnable(myProject.getRepository().getModelAccess(), runnable));
     }
   };
-  public MappingDialog(final com.intellij.openapi.project.Project project, Language language) {
-    super(project);
+  public MappingDialog(MPSProject project, Language language) {
+    super(project.getProject());
     setTitle("Choose Mapping Configuration");
-    myProject = ProjectHelper.toMPSProject(project);
+    myProject = project;
     myLanguage = language;
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myMainComponent.add(scrollPane, BorderLayout.CENTER);

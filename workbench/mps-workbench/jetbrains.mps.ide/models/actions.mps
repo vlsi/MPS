@@ -17631,8 +17631,13 @@
       <node concept="3clFbS" id="67BMVWAGqSG" role="3clF47">
         <node concept="XkiVB" id="5Kh0XTSwQ_7" role="3cqZAp">
           <ref role="37wK5l" to="jkm4:~DialogWrapper.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="DialogWrapper" />
-          <node concept="37vLTw" id="2BHiRxgm739" role="37wK5m">
-            <ref role="3cqZAo" node="2gG7g4cXraZ" resolve="project" />
+          <node concept="2OqwBi" id="7vEL9Rtct0M" role="37wK5m">
+            <node concept="37vLTw" id="2BHiRxgm739" role="2Oq$k0">
+              <ref role="3cqZAo" node="2gG7g4cXraZ" resolve="project" />
+            </node>
+            <node concept="liA8E" id="7vEL9RtcuAh" role="2OqNvi">
+              <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="1BqMHWQr_hf" role="3cqZAp">
@@ -17645,12 +17650,8 @@
         </node>
         <node concept="3clFbF" id="2gG7g4cXFMB" role="3cqZAp">
           <node concept="37vLTI" id="2gG7g4cXFN7" role="3clFbG">
-            <node concept="2YIFZM" id="1jvPZ1MMnqz" role="37vLTx">
-              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-              <node concept="37vLTw" id="1spbKcFR3xJ" role="37wK5m">
-                <ref role="3cqZAo" node="2gG7g4cXraZ" resolve="project" />
-              </node>
+            <node concept="37vLTw" id="7vEL9Rtcv03" role="37vLTx">
+              <ref role="3cqZAo" node="2gG7g4cXraZ" resolve="project" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuoZo" role="37vLTJ">
               <ref role="3cqZAo" node="2gG7g4cXFLe" resolve="myProject" />
@@ -17952,9 +17953,9 @@
       </node>
       <node concept="37vLTG" id="2gG7g4cXraZ" role="3clF46">
         <property role="TrG5h" value="project" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="2gG7g4cXEb_" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="7vEL9RtcroC" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="67BMVWAH0qX" role="3clF46">

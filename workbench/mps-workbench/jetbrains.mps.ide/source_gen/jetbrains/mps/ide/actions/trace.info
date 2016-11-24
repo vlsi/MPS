@@ -11722,10 +11722,10 @@
       <node id="6835529810040688435" at="46,0,47,0" concept="7" trace="myResult" />
       <node id="7054831363147695791" at="49,37,50,46" concept="13" />
       <node id="172099346127061649" at="53,64,54,102" concept="6" />
-      <node id="6634087980132952391" at="57,95,58,19" concept="18" />
-      <node id="1863024455910839375" at="58,19,59,45" concept="6" />
-      <node id="2606490174690344103" at="59,45,60,52" concept="6" />
-      <node id="7054831363147695942" at="60,52,61,26" concept="6" />
+      <node id="6634087980132952391" at="57,63,58,32" concept="18" />
+      <node id="1863024455910839375" at="58,32,59,45" concept="6" />
+      <node id="2606490174690344103" at="59,45,60,24" concept="6" />
+      <node id="7054831363147695942" at="60,24,61,26" concept="6" />
       <node id="2630739728628960320" at="61,26,62,72" concept="12" />
       <node id="7054831363147696143" at="62,72,63,57" concept="6" />
       <node id="2729759079909830529" at="63,57,64,62" concept="6" />
@@ -11788,7 +11788,7 @@
       <node id="1815921522227174522" at="67,0,85,0" concept="11" trace="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
       <node id="1815921522227133841" at="65,90,85,7" concept="6" />
       <node id="7054831363147695786" at="96,0,116,0" concept="11" trace="rebuildTree#()Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
-      <node id="7054831363147542057" at="57,0,91,0" concept="4" trace="MappingDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/Language;)V" />
+      <node id="7054831363147542057" at="57,0,91,0" concept="4" trace="MappingDialog#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/smodel/Language;)V" />
       <scope id="7054831363147695784" at="49,37,50,46" />
       <scope id="172099346127061644" at="53,64,54,102" />
       <scope id="1815921522227175439" at="69,50,70,17" />
@@ -11856,7 +11856,7 @@
         <var name="root" id="7054831363147695864" />
       </scope>
       <scope id="7054831363147695786" at="96,0,116,0" />
-      <scope id="7054831363147542060" at="57,95,89,11">
+      <scope id="7054831363147542060" at="57,63,89,11">
         <var name="scrollPane" id="2630739728628960321" />
       </scope>
       <scope id="7054831363147542057" at="57,0,91,0">

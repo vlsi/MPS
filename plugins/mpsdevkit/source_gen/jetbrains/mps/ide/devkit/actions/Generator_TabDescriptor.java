@@ -23,13 +23,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
-import javax.swing.JFrame;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -116,13 +112,10 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     return false;
   }
   public SNode createAspect(final SNode node, final SConcept concept) {
-    Project ideaProject = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    JFrame frame = WindowManager.getInstance().getFrame(ideaProject);
-    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(ideaProject);
-    ModelAccess modelAccess = project.getRepository().getModelAccess();
+    MPSProject mpsProject = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
 
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
-    modelAccess.runReadAction(new Runnable() {
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         language.value = SModelUtil.getDeclaringLanguage(node);
         assert language.value != null : "Language shouldn't be null for " + node;
@@ -131,7 +124,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     final List<Generator> genList = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
     if (ListSequence.fromList(genList).isEmpty()) {
-      NewGeneratorDialog dialog = new NewGeneratorDialog(ideaProject, language.value);
+      NewGeneratorDialog dialog = new NewGeneratorDialog(mpsProject, language.value);
       dialog.show();
       Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
@@ -139,7 +132,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       }
       ListSequence.fromList(genList).addElement(createdGenerator);
     } else {
-      modelAccess.executeCommand(new Runnable() {
+      mpsProject.getModelAccess().executeCommand(new Runnable() {
         public void run() {
           for (Generator generator : genList) {
             if (generator.getOwnTemplateModels().isEmpty()) {
@@ -157,7 +150,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
-    modelAccess.runReadAction(new Runnable() {
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (Generator generator : genList) {
           for (SModel gm : generator.getOwnTemplateModels()) {
@@ -169,7 +162,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     if (ListSequence.fromList(mappings).isEmpty()) {
       // generator is present - this means we don't have template models or mappings 
-      modelAccess.executeCommand(new Runnable() {
+      mpsProject.getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SModel model = null;
           for (Generator generator : genList) {
@@ -190,14 +183,14 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
     if (ListSequence.fromList(mappings).count() > 1) {
-      MappingDialog configurationDialog = new MappingDialog(ideaProject, language.value);
+      MappingDialog configurationDialog = new MappingDialog(mpsProject, language.value);
       configurationDialog.show();
       mapping.value = configurationDialog.getResult();
     } else {
       mapping.value = ListSequence.fromList(mappings).first();
     }
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    modelAccess.executeCommand(new Runnable() {
+    mpsProject.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(mapping.value);
         if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
