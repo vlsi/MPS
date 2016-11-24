@@ -20,9 +20,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Represents a persisted project state
@@ -30,7 +32,7 @@ import java.util.Map;
  */
 public final class ProjectDescriptor {
   private final String myName;
-  private final Map<ModulePath, String> myPath2VFolderMap = new HashMap<>();
+  private final Map<String, String> myPath2VFolderMap = new HashMap<>();
 
   public ProjectDescriptor(@Nullable String name) {
     myName = name;
@@ -42,11 +44,13 @@ public final class ProjectDescriptor {
   }
 
   public List<ModulePath> getModulePaths() {
-    return new ArrayList<>(myPath2VFolderMap.keySet());
+    List<ModulePath> result = new ArrayList<>();
+    myPath2VFolderMap.entrySet().forEach((entry) -> result.add(new ModulePath(entry.getKey(), entry.getValue())));
+    return Collections.unmodifiableList(result);
   }
 
   public boolean contains(@NotNull ModulePath path) {
-    return myPath2VFolderMap.containsKey(path);
+    return myPath2VFolderMap.containsKey(path.getPath());
   }
 
   private static boolean isEmpty(String s) {
@@ -55,17 +59,17 @@ public final class ProjectDescriptor {
 
   @Nullable
   public String addModulePath(@NotNull ModulePath path) {
-    if (contains(path) && isEmpty(path.getVirtualFolder())) {
+    if (myPath2VFolderMap.containsKey(path.getPath()) && isEmpty(path.getVirtualFolder())) {
       LogManager.getLogger(ProjectDescriptor.class).warn("Not adding module path with an empty virtual folder; already have one");
       return null;
     } else {
-      return myPath2VFolderMap.put(path, path.getVirtualFolder());
+      return myPath2VFolderMap.put(path.getPath(), path.getVirtualFolder());
     }
   }
 
   @Nullable
   public String removeModulePath(@NotNull ModulePath path) {
-    return myPath2VFolderMap.remove(path);
+    return myPath2VFolderMap.remove(path.getPath());
   }
 
   public String toString() {
