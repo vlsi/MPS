@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,8 +68,12 @@ public class FilePerRootFormatUtil {
   }
 
   public static ModelLoadResult readModel(SModelHeader header, MultiStreamDataSource dataSource, ModelLoadingState targetState) throws ModelReadException {
-    IModelPersistence mp = ModelPersistence.getPersistence(header.getPersistenceVersion());
-    if (mp == null) throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+    IModelPersistence mp;
+    int persistenceVersion = header.getPersistenceVersion();
+    if (!ModelPersistence.isSupported(persistenceVersion) || (mp = ModelPersistence.getPersistence(persistenceVersion)) == null) {
+      String m = "Can not find appropriate persistence version for model %s (requested:%d)\n Use newer version of JetBrains MPS to load this model.";
+      throw new PersistenceVersionNotFoundException(String.format(m, persistenceVersion, header.getModelReference()), header.getModelReference());
+    }
 
     // load .model file
     DefaultSModel result;
