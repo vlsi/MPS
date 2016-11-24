@@ -10,22 +10,16 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.util.Mapper2;
-import org.jetbrains.mps.openapi.model.SNode;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.log4j.Level;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
@@ -42,73 +36,6 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
   @Override
   public String getComponentName() {
     return "Debug Info Manager";
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void addConceptBreakpointCreator(String baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
-    final Wrappers._T<SAbstractConcept> cBase = new Wrappers._T<SAbstractConcept>(MetaAdapterFactoryByName.getConcept(baseConcept));
-    if (cBase.value == null) {
-      cBase.value = MetaAdapterFactoryByName.getInterfaceConcept(baseConcept);
-    }
-    BreakpointCreator pair = new BreakpointCreator(null, null);
-    pair.canCreate(new _FunctionTypes._return_P2_E0<Boolean, SAbstractConcept, SNode>() {
-      public Boolean invoke(SAbstractConcept c, SNode n) {
-        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(c)), SNodeOperations.asSConcept(cBase.value));
-      }
-    });
-    pair.create(new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
-      public ILocationBreakpoint invoke(SNode node, Project project) {
-        return breakpointCreator.value(node, project);
-      }
-    });
-    MapSequence.fromMap(myCreatorsByConcept).put(baseConcept, pair);
-    SetSequence.fromSet(myCreators).addElement(pair);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void addConceptBreakpointCreator(final SAbstractConcept baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
-    BreakpointCreator pair = new BreakpointCreator(null, null);
-    pair.canCreate(new _FunctionTypes._return_P2_E0<Boolean, SAbstractConcept, SNode>() {
-      public Boolean invoke(SAbstractConcept c, SNode n) {
-        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(c), SNodeOperations.asSConcept(baseConcept));
-      }
-    });
-    pair.create(new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
-      public ILocationBreakpoint invoke(SNode node, Project project) {
-        return breakpointCreator.value(node, project);
-      }
-    });
-    MapSequence.fromMap(myCreatorsByConcept).put(baseConcept.getQualifiedName(), pair);
-    SetSequence.fromSet(myCreators).addElement(pair);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void removeConceptBreakpointCreator(String fqName) {
-    SetSequence.fromSet(myCreators).removeElement(MapSequence.fromMap(myCreatorsByConcept).get(fqName));
-    MapSequence.fromMap(myCreatorsByConcept).removeKey(fqName);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void addCreator(final Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
-    SetSequence.fromSet(myCreators).addElement(new BreakpointCreator(new _FunctionTypes._return_P2_E0<Boolean, SAbstractConcept, SNode>() {
-      public Boolean invoke(SAbstractConcept c, SNode n) {
-        return creator._0().invoke(SNodeOperations.asNode(c), n);
-      }
-    }, creator._1()));
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void removeCreator(final Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
-    SetSequence.fromSet(myCreators).findFirst(new IWhereFilter<BreakpointCreator>() {
-      public boolean accept(BreakpointCreator it) {
-        return it._1() == creator._1();
-      }
-    });
   }
 
   public void addCreator(BreakpointCreator creator) {

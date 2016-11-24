@@ -5923,7 +5923,7 @@
       <node id="1741258697587064933" at="79,230,80,52" concept="9" />
       <node id="1741258697587064939" at="80,52,81,256" concept="9" />
       <node id="1741258697587064948" at="81,256,82,102" concept="9" />
-      <node id="1741258697587064959" at="83,67,84,147" concept="9" />
+      <node id="1741258697587064959" at="83,67,84,123" concept="9" />
       <node id="1741258697587064980" at="87,32,88,201" concept="10" />
       <node id="1741258697587064988" at="89,15,90,197" concept="10" />
       <node id="1741258697587064995" at="93,9,94,73" concept="10" />
@@ -5962,7 +5962,7 @@
       <node id="1741258697587064900" at="154,0,159,0" concept="8" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587064900" at="160,0,165,0" concept="8" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587064974" at="86,0,92,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1741258697587064967" at="84,147,92,14" concept="4" />
+      <node id="1741258697587064967" at="84,123,92,14" concept="4" />
       <node id="1741258697587064955" at="82,102,93,9" concept="6" />
       <node id="1741258697587064900" at="44,0,57,0" concept="8" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="1741258697587064900" at="76,0,96,0" concept="8" trace="getParameters#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/Iterable;" />

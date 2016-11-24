@@ -51,7 +51,7 @@ public class SLinkAccess_Constraints extends BaseConstraintsDescriptor {
               return null;
             }
             SNode dotOperandConcept = SNodeOperation__BehaviorDescriptor.getLeftNodeConcept_idhEwJdFJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation").getDeclarationNode()), enclosingDot);
-            List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(SNodeOperations.asNode(dotOperandConcept));
+            List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(dotOperandConcept);
             return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it);

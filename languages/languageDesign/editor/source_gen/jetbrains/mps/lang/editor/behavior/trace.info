@@ -18505,7 +18505,7 @@
       <node id="7348800710868003985" at="37,50,38,111" concept="5" />
       <node id="878629418303342778" at="41,5,42,24" concept="12" />
       <node id="7348800710868357963" at="45,41,46,207" concept="11" />
-      <node id="7348800710868393474" at="46,207,47,478" concept="12" />
+      <node id="7348800710868393474" at="46,207,47,454" concept="12" />
       <node id="7348800710866892497" at="28,0,31,0" concept="3" trace="EditorComponentDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7348800710867980053" at="36,89,39,9" concept="9" />
       <node id="7348800710866951279" at="24,0,28,0" concept="3" trace="EditorComponentDeclarationScope#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -18516,7 +18516,7 @@
       <scope id="7348800710866892501" at="28,70,29,151" />
       <scope id="7348800710867980056" at="37,50,38,111" />
       <scope id="7348800710866951283" at="24,78,26,35" />
-      <scope id="2467262375109764290" at="45,41,47,478">
+      <scope id="2467262375109764290" at="45,41,47,454">
         <var name="editorComponent" id="7348800710868357966" />
       </scope>
       <scope id="7348800710866892497" at="28,0,31,0">

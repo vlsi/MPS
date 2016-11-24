@@ -1315,8 +1315,8 @@
       <node id="699163291709295825" at="56,0,59,0" concept="6" trace="overrides#()Z" />
       <node id="699163291709407479" at="30,263,34,9" concept="1" />
       <node id="699163291709408708" at="42,264,46,9" concept="1" />
-      <node id="699163291709407479" at="26,387,35,7" concept="1" />
-      <node id="699163291709408708" at="38,387,47,7" concept="1" />
+      <node id="699163291709407479" at="26,327,35,7" concept="1" />
+      <node id="699163291709408708" at="38,326,47,7" concept="1" />
       <node id="699163291709408706" at="37,5,48,5" concept="5" />
       <node id="699163291709350910" at="25,72,37,5" concept="5" />
       <node id="699163291709295825" at="24,0,50,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -1344,8 +1344,8 @@
         <var name="_reporter_2309309498" id="699163291709408708" />
         <var name="errorTarget" id="699163291709408708" />
       </scope>
-      <scope id="699163291709408707" at="38,387,47,7" />
-      <scope id="699163291709350912" at="26,387,36,0" />
+      <scope id="699163291709408707" at="38,326,47,7" />
+      <scope id="699163291709350912" at="26,327,36,0" />
       <scope id="699163291709295826" at="24,131,48,5">
         <var name="creator" id="4480928328923710753" />
       </scope>

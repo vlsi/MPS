@@ -36,7 +36,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -89,7 +88,7 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
             return ListSequence.fromListAndArray(new ArrayList<String>(), HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(it)), HelpProvider__BehaviorDescriptor.getShortHelp_idqgIopNa9Hb.invoke(SNodeOperations.asSConcept(it)));
           } catch (RuntimeException e) {
             if (LOG.isEnabledFor(Level.WARN)) {
-              LOG.warn("Concept " + INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.asNode(it)) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
+              LOG.warn("Concept " + it.getQualifiedName() + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
             }
             try {
               return ListSequence.fromListAndArray(new ArrayList<String>(), HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(it)), "");
