@@ -316,7 +316,6 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -3157,15 +3156,12 @@
                   <node concept="3clFbS" id="7e7F6PQD8F1" role="2VODD2">
                     <node concept="3clFbF" id="7e7F6PQD8NF" role="3cqZAp">
                       <node concept="2OqwBi" id="7e7F6PQDdG9" role="3clFbG">
-                        <node concept="2OqwBi" id="7e7F6PQD9Tf" role="2Oq$k0">
-                          <node concept="2OqwBi" id="7e7F6PQD8Zy" role="2Oq$k0">
-                            <node concept="30H73N" id="7e7F6PQD8NE" role="2Oq$k0" />
-                            <node concept="2yIwOk" id="7e7F6PQD9pA" role="2OqNvi" />
-                          </node>
-                          <node concept="FGMqu" id="7e7F6PQDd4$" role="2OqNvi" />
+                        <node concept="2OqwBi" id="7e7F6PQD8Zy" role="2Oq$k0">
+                          <node concept="30H73N" id="7e7F6PQD8NE" role="2Oq$k0" />
+                          <node concept="2yIwOk" id="7e7F6PQD9pA" role="2OqNvi" />
                         </node>
-                        <node concept="2qgKlT" id="7e7F6PQDe6N" role="2OqNvi">
-                          <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                        <node concept="liA8E" id="XfBUhN$QQo" role="2OqNvi">
+                          <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                         </node>
                       </node>
                     </node>

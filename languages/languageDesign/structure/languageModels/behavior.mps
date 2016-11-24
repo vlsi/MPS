@@ -283,7 +283,6 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -5163,11 +5162,8 @@
                             <node concept="3clFbS" id="6_gUeureVWl" role="1bW5cS">
                               <node concept="3clFbF" id="1oFmEVzc2pe" role="3cqZAp">
                                 <node concept="2OqwBi" id="73yVtVm1itR" role="3clFbG">
-                                  <node concept="2OqwBi" id="73yVtVm1er8" role="2Oq$k0">
-                                    <node concept="37vLTw" id="1oFmEVzc3aF" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="6_gUeurdj16" resolve="nodeConcept" />
-                                    </node>
-                                    <node concept="FGMqu" id="73yVtVm1hyM" role="2OqNvi" />
+                                  <node concept="37vLTw" id="1oFmEVzc3aF" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="6_gUeurdj16" resolve="nodeConcept" />
                                   </node>
                                   <node concept="2qgKlT" id="73yVtVm1jAG" role="2OqNvi">
                                     <ref role="37wK5l" node="73yVtVlWOga" resolve="isSubconceptOf" />

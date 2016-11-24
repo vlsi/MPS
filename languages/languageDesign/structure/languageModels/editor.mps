@@ -573,7 +573,6 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -6889,11 +6888,8 @@
                     <node concept="3cpWsn" id="1wEcoXjJ820" role="3cpWs9">
                       <property role="TrG5h" value="links" />
                       <node concept="2OqwBi" id="1wEcoXjJ821" role="33vP2m">
-                        <node concept="2OqwBi" id="1wEcoXjJ822" role="2Oq$k0">
-                          <node concept="FGMqu" id="1wEcoXjJ823" role="2OqNvi" />
-                          <node concept="2GrUjf" id="1wEcoXjJ824" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="1wEcoXjJ81W" resolve="concept" />
-                          </node>
+                        <node concept="2GrUjf" id="1wEcoXjJ824" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="1wEcoXjJ81W" resolve="concept" />
                         </node>
                         <node concept="2qgKlT" id="1wEcoXjJ825" role="2OqNvi">
                           <ref role="37wK5l" to="tpcn:hEwILKK" resolve="getLinkDeclarations" />

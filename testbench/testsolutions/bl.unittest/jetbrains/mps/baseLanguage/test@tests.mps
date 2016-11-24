@@ -31,7 +31,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="bk90" ref="r:1dca72a1-44ae-4339-a783-4859610b0285(jetbrains.mps.baseLanguage.migration)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -489,7 +488,6 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -497,11 +495,9 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -2923,18 +2919,13 @@
                         <node concept="3clFbF" id="hRzaiOe" role="3cqZAp">
                           <node concept="2OqwBi" id="hRzaiOf" role="3clFbG">
                             <node concept="2OqwBi" id="2wdLO7KgUUr" role="2Oq$k0">
-                              <node concept="2OqwBi" id="7U2DyFDfG3V" role="2Oq$k0">
-                                <node concept="2OqwBi" id="2wdLO7KgUUt" role="2Oq$k0">
-                                  <node concept="2yIwOk" id="7U2DyFDfHvU" role="2OqNvi" />
-                                  <node concept="37vLTw" id="2BHiRxgmDvA" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="hRzaiOb" resolve="it" />
-                                  </node>
+                              <node concept="2OqwBi" id="2wdLO7KgUUt" role="2Oq$k0">
+                                <node concept="2yIwOk" id="7U2DyFDfHvU" role="2OqNvi" />
+                                <node concept="37vLTw" id="2BHiRxgmDvA" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="hRzaiOb" resolve="it" />
                                 </node>
-                                <node concept="FGMqu" id="7U2DyFDfI7B" role="2OqNvi" />
                               </node>
-                              <node concept="3TrcHB" id="2wdLO7KgUUs" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                              </node>
+                              <node concept="3n3YKJ" id="XfBUhN$Rz$" role="2OqNvi" />
                             </node>
                             <node concept="liA8E" id="hRzaiOj" role="2OqNvi">
                               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />

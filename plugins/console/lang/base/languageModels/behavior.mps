@@ -262,7 +262,6 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -1693,14 +1692,11 @@
                                           <property role="Xl_RC" value="Concept " />
                                         </node>
                                         <node concept="2OqwBi" id="qgIopNolB2" role="3uHU7w">
-                                          <node concept="2OqwBi" id="60B$8335t79" role="2Oq$k0">
-                                            <node concept="37vLTw" id="60B$8335nV1" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="60B$8332SL7" resolve="it" />
-                                            </node>
-                                            <node concept="FGMqu" id="60B$8335y$e" role="2OqNvi" />
+                                          <node concept="37vLTw" id="60B$8335nV1" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="60B$8332SL7" resolve="it" />
                                           </node>
-                                          <node concept="2qgKlT" id="60B$8335CHM" role="2OqNvi">
-                                            <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                                          <node concept="liA8E" id="XfBUhN$U61" role="2OqNvi">
+                                            <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                                           </node>
                                         </node>
                                       </node>

@@ -339,7 +339,6 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -2440,12 +2439,9 @@
                     <ref role="37wK5l" to="18ew:~NameUtil.namespaceFromConceptFQName(java.lang.String):java.lang.String" resolve="namespaceFromConceptFQName" />
                     <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                     <node concept="2OqwBi" id="1$sIUMYaz$z" role="37wK5m">
-                      <node concept="2OqwBi" id="1$sIUMYaz$w" role="2Oq$k0">
-                        <node concept="FGMqu" id="1$sIUMYaz$x" role="2OqNvi" />
-                        <node concept="3GLrbK" id="1$sIUMYaz$y" role="2Oq$k0" />
-                      </node>
-                      <node concept="2qgKlT" id="1$sIUMYaz$$" role="2OqNvi">
-                        <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                      <node concept="3GLrbK" id="1$sIUMYaz$y" role="2Oq$k0" />
+                      <node concept="liA8E" id="XfBUhN$VVp" role="2OqNvi">
+                        <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                       </node>
                     </node>
                   </node>
