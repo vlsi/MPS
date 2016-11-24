@@ -39,7 +39,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -173,7 +172,8 @@ public class NewModuleUtil {
     }
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    Language language = (Language) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
+    ModuleRepositoryFacade projectRepoFacade = new ModuleRepositoryFacade(project);
+    Language language = (Language) projectRepoFacade.instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
     descriptor = language.getModuleDescriptor();
 
     if (createMainAspectModels) {
@@ -205,7 +205,7 @@ public class NewModuleUtil {
     language.setLanguageDescriptor(descriptor);
     language.save();
 
-    final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
+    final Generator newGenerator = projectRepoFacade.getModule(generatorDescriptor.getModuleReference(), Generator.class);
 
     boolean alreadyOwnsTemplateModel = false;
     for (SModel modelDescriptor : newGenerator.getModels()) {
