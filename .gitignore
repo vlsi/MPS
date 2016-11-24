@@ -36,4 +36,5 @@ teamcity-info.xml
 /plugins/git4idea/lib
 /plugins/svn4idea/lib
 /plugins/mps-testing/lib
+/plugins/terminal
 /lib/
