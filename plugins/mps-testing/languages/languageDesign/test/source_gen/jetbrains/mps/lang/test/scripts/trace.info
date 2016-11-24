@@ -73,7 +73,7 @@
       <node id="7796829026681060742" at="42,53,43,205" concept="5" />
       <node id="7796829026681249455" at="43,205,44,244" concept="2" />
       <node id="7796829026681053994" at="47,72,48,85" concept="5" />
-      <node id="7796829026681052391" at="48,85,49,91" concept="2" />
+      <node id="7432464101918576363" at="48,85,49,87" concept="2" />
       <node id="7796829026680936652" at="20,0,23,0" concept="7" trace="getOperationsContainer#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7796829026680945150" at="24,0,28,0" concept="7" trace="getErrorReporters#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="7796829026681259802" at="42,0,46,0" concept="7" trace="attachNewContainer#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -87,7 +87,7 @@
       <scope id="7796829026681259805" at="42,53,44,244">
         <var name="container" id="7796829026681060745" />
       </scope>
-      <scope id="7796829026681052390" at="47,72,49,91">
+      <scope id="7796829026681052390" at="47,72,49,87">
         <var name="ruleModelRef" id="7796829026681053995" />
       </scope>
       <scope id="7796829026680936652" at="20,0,23,0">

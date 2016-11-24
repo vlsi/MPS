@@ -9,19 +9,17 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
@@ -40,7 +38,7 @@ public class ScriptsUtil {
     if (startWith == ListSequence.fromList(commands).count()) {
       return;
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    context.getProject().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         ((BaseConsoleTab) context.getOutputWindow()).execute(ListSequence.fromList(commands).getElement(startWith), null, new Runnable() {
           public void run() {
@@ -52,18 +50,18 @@ public class ScriptsUtil {
   }
 
   public static void refactor(final ConsoleContext context, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
-    Project project = ProjectHelper.toIdeaProject(context.getProject());
     SearchResults sr = nodesToRefactoringResult(nodes);
-    RefactoringAccessEx.getInstance().showRefactoringView(project, new RefactoringViewAction() {
+    final SRepository projectRepo = context.getProject().getRepository();
+    RefactoringAccessEx.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(context.getProject()), new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        projectRepo.getModelAccess().executeCommand(new Runnable() {
           public void run() {
             Iterable<SNode> includedNodes;
             if (refactoringViewItem instanceof RefactoringViewItemImpl) {
               List<SNodeReference> nodeRefs = as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
               includedNodes = ListSequence.fromList(nodeRefs).select(new ISelector<SNodeReference, SNode>() {
                 public SNode select(SNodeReference it) {
-                  return it.resolve(MPSModuleRepository.getInstance());
+                  return it.resolve(projectRepo);
                 }
               });
             } else {
@@ -91,8 +89,6 @@ public class ScriptsUtil {
     });
     return result;
   }
-
-
   private static <T> T as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
