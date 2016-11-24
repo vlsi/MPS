@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,20 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.logicalview.PresentationUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeUpdateVisitor;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,13 +38,13 @@ import java.util.Map;
 
 /**
  * Control listeners that track changes to a model node.
- * Invoke {@link #startListening()}/{@link #stopListening()} to enable/disable listening,
+ * Invoke {@link #startListening(SRepository)}/{@link #stopListening(SRepository)} to enable/disable listening,
  * and {@link #attach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}/{@link #detach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)} to \
  * include/exclude selected model tree node from update.
  */
 public class SModelNodeListeners {
   private final ModelChangeListener myModelChangeListener;
-  private final SRepositoryListener myRepositoryListener;
+  private final SRepositoryContentAdapter myRepositoryListener;
   private final GenStatusTracker myGenStatusListener;
 
   /**
@@ -83,14 +81,14 @@ public class SModelNodeListeners {
     myGenStatusListener = new GenStatusTracker(genStatusUpdate);
   }
 
-  public void startListening() {
-    SRepositoryListenerPlug.plug(SRepositoryRegistry.getInstance(), myRepositoryListener);
+  public void startListening(SRepository projectRepository) {
+    new RepoListenerRegistrar(projectRepository, myRepositoryListener).attach();
     ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myGenStatusListener);
   }
 
-  public void stopListening() {
+  public void stopListening(SRepository projectRepository) {
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myGenStatusListener);
-    SRepositoryListenerPlug.unplug(SRepositoryRegistry.getInstance(), myRepositoryListener);
+    new RepoListenerRegistrar(projectRepository, myRepositoryListener).detach();
   }
 
   public void attach(@NotNull SModelTreeNode node) {
@@ -207,39 +205,6 @@ public class SModelNodeListeners {
     public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
       for (SModelTreeNode treeNode : findTreeNode(sm)) {
         updateNodePresentation(treeNode, false, false);
-      }
-    }
-  }
-
-  // ensures repository listener being attached/detached from Read command
-  //
-  private static class SRepositoryListenerPlug implements Runnable {
-    private final boolean myIsAttach;
-    private final SRepositoryRegistry myWhere;
-    private final SRepositoryListener myWhat;
-
-    private SRepositoryListenerPlug(boolean attach, @NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
-      myIsAttach = attach;
-      myWhere = where;
-      myWhat = what;
-    }
-
-    public static void plug(@NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
-      getModelAccess().runReadAction(new SRepositoryListenerPlug(true, where, what));
-    }
-    public static void unplug(@NotNull SRepositoryRegistry where, @NotNull SRepositoryListener what) {
-      getModelAccess().runReadAction(new SRepositoryListenerPlug(false, where, what));
-    }
-    private static ModelAccess getModelAccess() {
-      // no idea how to get correct ModelAccess for SRepositoryRegistry, and don't want to use smodel.ModelAccess
-      return MPSModuleRepository.getInstance().getModelAccess();
-    }
-    @Override
-    public void run() {
-      if (myIsAttach) {
-        myWhere.addGlobalListener(myWhat);
-      } else {
-        myWhere.removeGlobalListener(myWhat);
       }
     }
   }

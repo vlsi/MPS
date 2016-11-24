@@ -2706,7 +2706,7 @@
               <node concept="2OqwBi" id="tk8S9S$jNq" role="3clFbG">
                 <node concept="2ShNRf" id="tk8S9S$fI6" role="2Oq$k0">
                   <node concept="1pGfFk" id="tk8S9S$jMv" role="2ShVmc">
-                    <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
+                    <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryListener)" resolve="RepoListenerRegistrar" />
                     <node concept="1rXfSq" id="7CX_2aIME$O" role="37wK5m">
                       <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
                     </node>
@@ -2818,7 +2818,7 @@
               <node concept="2OqwBi" id="tk8S9S$mG1" role="3clFbG">
                 <node concept="2ShNRf" id="tk8S9S$mG2" role="2Oq$k0">
                   <node concept="1pGfFk" id="tk8S9S$mG3" role="2ShVmc">
-                    <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
+                    <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryListener)" resolve="RepoListenerRegistrar" />
                     <node concept="1rXfSq" id="7CX_2aIMECy" role="37wK5m">
                       <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
                     </node>
