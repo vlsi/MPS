@@ -3742,10 +3742,13 @@
                                     <node concept="1UU6SM" id="3g99cIN5jqR" role="1UU7Ll">
                                       <node concept="3clFbS" id="3g99cIN5jqS" role="2VODD2">
                                         <node concept="3clFbF" id="3g99cIN5jqT" role="3cqZAp">
-                                          <node concept="2OqwBi" id="3g99cIN5jqU" role="3clFbG">
-                                            <node concept="30H73N" id="3g99cIN5jqV" role="2Oq$k0" />
-                                            <node concept="3TrEf2" id="3g99cIN5jqW" role="2OqNvi">
-                                              <ref role="3Tt5mk" to="tp1t:gHN6uun" resolve="searchScopeFactory" />
+                                          <node concept="1PxgMI" id="OxzdsehT2X" role="3clFbG">
+                                            <ref role="1m5ApE" to="tp1t:gHMUpHN" resolve="ConstraintFunction_ReferentSearchScope_Factory" />
+                                            <node concept="2OqwBi" id="3g99cIN5jqU" role="1m5AlR">
+                                              <node concept="30H73N" id="3g99cIN5jqV" role="2Oq$k0" />
+                                              <node concept="3TrEf2" id="3g99cIN5jqW" role="2OqNvi">
+                                                <ref role="3Tt5mk" to="tp1t:gHN6uun" resolve="searchScopeFactory" />
+                                              </node>
                                             </node>
                                           </node>
                                         </node>
