@@ -159,18 +159,23 @@ public class ModelConstraints {
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
-    return new OkReferenceDescriptor(reference);
+    return new OkReferenceDescriptor(reference, reference.getLink().getTargetConcept());
+  }
+
+  @NotNull
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference, @NotNull SAbstractConcept targetConcept) {
+    return new OkReferenceDescriptor(reference, targetConcept);
   }
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode sourceNode, @NotNull SReferenceLink association) {
-    return getReferenceDescriptor(sourceNode, association, null);
+    return new OkReferenceDescriptor(association, sourceNode, association.getTargetConcept());
   }
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode sourceNode, @NotNull SReferenceLink association,
-      @Nullable SAbstractConcept targetConcept) {
-    return new OkReferenceDescriptor(association, sourceNode, targetConcept == null ? association.getTargetConcept() : targetConcept);
+      @NotNull SAbstractConcept targetConcept) {
+    return new OkReferenceDescriptor(association, sourceNode, targetConcept);
   }
 
   /**
@@ -189,26 +194,40 @@ public class ModelConstraints {
     return new OkReferenceDescriptor(referenceLink, referenceNode, referenceLink.getTargetConcept());
   }
 
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
-      /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
-      @NotNull SConcept smartConcept) {
-    return getSmartReferenceDescriptor(contextNode, containmentLink, position, smartConcept, (SConcept) null);
+
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
+      int position, @NotNull SReferenceLink association) {
+    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position, association.getTargetConcept());
+  }
+
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
+      int position, @NotNull SReferenceLink association, @NotNull SAbstractConcept targetConcept) {
+    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position, targetConcept);
   }
 
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
       /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
-      @NotNull SConcept smartConcept, SAbstractConcept targetConcept) {
+      @NotNull SAbstractConcept smartConcept) {
     SReferenceLink smartReferenceLink = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
     if (smartReferenceLink == null) {
       return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
     }
-    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position,
-        targetConcept == null ? smartReferenceLink.getTargetConcept() : targetConcept);
+    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position, smartReferenceLink.getTargetConcept());
+  }
+
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
+      /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
+      @NotNull SAbstractConcept smartConcept, @NotNull SAbstractConcept targetConcept) {
+    SReferenceLink smartReferenceLink = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+    if (smartReferenceLink == null) {
+      return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
+    }
+    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position, targetConcept);
   }
 
   /**
-   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SConcept)} or
-   * {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SConcept, SAbstractConcept)} instead.
+   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} or
+   * {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept, SAbstractConcept)} instead.
    * It doesn't work for specialized links.
    */
   @NotNull
@@ -220,12 +239,12 @@ public class ModelConstraints {
     if (containmentLink instanceof InvalidContainmentLink) {
       return new ErrorReferenceDescriptor("can't find containment link for role '" + role + "' in '" + concept + "'");
     }
-    return getSmartReferenceDescriptor(enclosingNode, containmentLink, index, MetaAdapterByDeclaration.getInstanceConcept(smartConcept));
+    return getSmartReferenceDescriptor(enclosingNode, containmentLink, index, MetaAdapterByDeclaration.getConcept(smartConcept));
   }
 
   /**
-   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SConcept)} or
-   * {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SConcept, SAbstractConcept)} instead.
+   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} or
+   * {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept, SAbstractConcept)} instead.
    */
   @NotNull
   @Deprecated

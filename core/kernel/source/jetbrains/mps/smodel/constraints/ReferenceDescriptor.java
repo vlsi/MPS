@@ -79,7 +79,7 @@ public abstract class ReferenceDescriptor {
   static class OkReferenceDescriptor extends ReferenceDescriptor {
     // main parameters for ScopeProvider calculating
     @NotNull
-    private final SConcept myNodeConcept;
+    private final SAbstractConcept myNodeConcept;
     @NotNull
     private final SReferenceLink myReferenceLink;
 
@@ -100,7 +100,7 @@ public abstract class ReferenceDescriptor {
     @Nullable
     private final ReferenceScopeProvider myScopeProvider;
 
-    OkReferenceDescriptor(@NotNull SConcept nodeConcept, @NotNull SReferenceLink referenceLink, @NotNull SNode contextNode,
+    OkReferenceDescriptor(@NotNull SAbstractConcept nodeConcept, @NotNull SReferenceLink referenceLink, @NotNull SNode contextNode,
         /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position, @NotNull SAbstractConcept linkTarget) {
       myReference = null;
       myReferenceNode = null;
@@ -125,13 +125,13 @@ public abstract class ReferenceDescriptor {
       myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
     }
 
-    OkReferenceDescriptor(@NotNull SReference reference) {
+    OkReferenceDescriptor(@NotNull SReference reference, @NotNull SAbstractConcept linkTarget) {
       myReference = reference;
       myReferenceNode = myReference.getSourceNode();
       myNodeConcept = myReferenceNode.getConcept();
       myReferenceLink = myReference.getLink();
       myContextNode = myReferenceNode;
-      myLinkTarget = getClosedTargetConcept(myReference);
+      myLinkTarget = linkTarget;
       myContainmentLink = null;
       myPosition = 0;
       myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
@@ -181,16 +181,8 @@ public abstract class ReferenceDescriptor {
       return myScopeProvider;
     }
 
-    @NotNull
-    SAbstractConcept getClosedTargetConcept(SReference ref) {
-      if (ref instanceof DynamicReference) {
-        return ref.getLink().getTargetConcept();
-      }
-      return ref.getTargetNode().getConcept();
-    }
-
     @Nullable
-    private static ReferenceScopeProvider getScopeProvider(SConcept nodeConcept, SReferenceLink associationLink) {
+    private static ReferenceScopeProvider getScopeProvider(SAbstractConcept nodeConcept, SReferenceLink associationLink) {
       ReferenceConstraintsDescriptor refConstraintsDescriptor =
           ConceptRegistryUtil.getConstraintsDescriptor(nodeConcept).getReference(associationLink);
       if (refConstraintsDescriptor != null) {
