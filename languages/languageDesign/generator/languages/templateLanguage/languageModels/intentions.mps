@@ -303,7 +303,6 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -7463,12 +7462,9 @@
                 <property role="Xl_RC" value="Replace with instance of  " />
               </node>
               <node concept="2OqwBi" id="1Q7lWNZfMFU" role="3uHU7w">
-                <node concept="2OqwBi" id="4wz6$Jeq$LN" role="2Oq$k0">
-                  <node concept="38Zlrr" id="1Q7lWNZfMFV" role="2Oq$k0" />
-                  <node concept="FGMqu" id="4wz6$Jeq$Rr" role="2OqNvi" />
-                </node>
-                <node concept="2qgKlT" id="1Q7lWNZfMFW" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:hEwIMiw" resolve="getPresentation" />
+                <node concept="38Zlrr" id="1Q7lWNZfMFV" role="2Oq$k0" />
+                <node concept="liA8E" id="UfaGPFEfoQ" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
             </node>
