@@ -43,7 +43,7 @@ public final class MultiForEachStatement__BehaviorDescriptor extends BaseBHDescr
 
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea18L, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable"))) {
-      if (ScopeUtils.comeFrom("body", __thisNode__, child)) {
+      if (ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body"), __thisNode__, child)) {
         return Scopes.forVariables(kind, ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fe9f2L, 0x7d7db8f4181fea16L, "forEach"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7d7db8f4181fea15L, 0x7d7db8f4181fea42L, "variable")) != null);

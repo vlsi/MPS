@@ -37,7 +37,7 @@ public final class Calculator__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106fa3191L, "jetbrains.mps.calculator.structure.InputField")) && ScopeUtils.comeFrom("outputField", __thisNode__, child)) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106fa3191L, "jetbrains.mps.calculator.structure.InputField")) && ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, 0x12106fddf51L, "outputField"), __thisNode__, child)) {
       return SimpleRoleScope.forNamedElements(__thisNode__, MetaAdapterFactory.getContainmentLink(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, 0x12106fb26e8L, "inputField"));
     }
     return ScopeUtils.lazyParentScope(__thisNode__, kind);

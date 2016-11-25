@@ -332,7 +332,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -18388,19 +18387,11 @@
             </node>
             <node concept="2YIFZM" id="3bmz3KN2vl3" role="33vP2m">
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
+              <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
               <node concept="37vLTw" id="3bmz3KN2vl4" role="37wK5m">
                 <ref role="3cqZAo" node="7nrhK3uHfap" resolve="statement" />
               </node>
-              <node concept="Xl_RD" id="3bmz3KN2vl5" role="37wK5m">
-                <property role="Xl_RC" value="" />
-              </node>
-              <node concept="2OqwBi" id="3bmz3KN2vl6" role="37wK5m">
-                <node concept="37vLTw" id="3bmz3KN2vl7" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7nrhK3uHfap" resolve="statement" />
-                </node>
-                <node concept="2bSWHS" id="3bmz3KN2vl8" role="2OqNvi" />
-              </node>
+              <node concept="10Nm6u" id="Oxzdsekm$7" role="37wK5m" />
               <node concept="35c_gC" id="EB2Sz2RNUw" role="37wK5m">
                 <ref role="35c_gD" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
               </node>

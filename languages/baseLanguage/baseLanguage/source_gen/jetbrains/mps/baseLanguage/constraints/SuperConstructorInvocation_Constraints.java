@@ -44,7 +44,7 @@ public class SuperConstructorInvocation_Constraints extends BaseConstraintsDescr
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x216400b63b2e0f21L, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x216400b63b2e0f21L, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

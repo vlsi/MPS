@@ -44,7 +44,7 @@ public class RefTestMethodCall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfeL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfeL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

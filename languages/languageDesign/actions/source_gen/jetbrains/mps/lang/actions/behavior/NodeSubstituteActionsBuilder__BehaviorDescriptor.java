@@ -53,7 +53,7 @@ public final class NodeSubstituteActionsBuilder__BehaviorDescriptor extends Base
   }
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (kind == MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266742db0L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration").getDeclarationNode()) {
-      if (ScopeUtils.comeFrom("precondition", __thisNode__, child)) {
+      if (ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x10ccb7fcf83L, "precondition"), __thisNode__, child)) {
         // all SubstituteNodeBuilderVariables are invisible in precondition block 
         return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child);
       }

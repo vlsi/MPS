@@ -299,7 +299,7 @@ public class InlineMethodRefactoring {
       }
     }
 
-    Scope scope = Scope.getScope(statement, "", SNodeOperations.getIndexInParent(statement), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+    Scope scope = Scope.getScope(statement, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     if (scope != null) {
       FilteringScope variables = new FilteringScope(scope) {
         @Override

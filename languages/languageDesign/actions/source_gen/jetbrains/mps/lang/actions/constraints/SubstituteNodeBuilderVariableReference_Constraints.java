@@ -44,7 +44,7 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266742db0L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266742db0L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

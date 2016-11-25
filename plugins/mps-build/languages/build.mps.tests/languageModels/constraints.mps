@@ -124,9 +124,9 @@
       <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
-      <concept id="4656991770397278586" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole" flags="nn" index="$OBgH" />
       <concept id="4656991770397278600" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position" flags="nn" index="$OBjv" />
-      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
+      <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
+      <concept id="5564765827938108528" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containmentLink" flags="ng" index="3dgs5T" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="1213100494875" name="referent" index="1Mr941" />
@@ -216,8 +216,8 @@
     </node>
     <node concept="1N5Pfh" id="7rX0uLRY4Dj" role="1Mr941">
       <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" resolve="module" />
-      <node concept="13QW63" id="7rX0uLRYOZE" role="1N6uqs">
-        <node concept="3clFbS" id="7rX0uLRYOZG" role="2VODD2">
+      <node concept="3dgokm" id="OxzdsekxxH" role="1N6uqs">
+        <node concept="3clFbS" id="OxzdsekxxI" role="2VODD2">
           <node concept="3clFbF" id="7rX0uLRZ9a7" role="3cqZAp">
             <node concept="2ShNRf" id="7rX0uLRZ9a5" role="3clFbG">
               <node concept="YeOm9" id="7rX0uLRZ9vj" role="2ShVmc">
@@ -230,7 +230,7 @@
                     <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                     <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
                     <node concept="2rP1CM" id="7rX0uLRZ6db" role="37wK5m" />
-                    <node concept="$OBgH" id="3umvbTBImKK" role="37wK5m" />
+                    <node concept="3dgs5T" id="Oxzdseky0V" role="37wK5m" />
                     <node concept="$OBjv" id="7rX0uLRZ6qw" role="37wK5m" />
                     <node concept="35c_gC" id="EB2Sz2RPBl" role="37wK5m">
                       <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
@@ -307,8 +307,8 @@
     </node>
     <node concept="1N5Pfh" id="3umvbTB_ti4" role="1Mr941">
       <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdG" resolve="group" />
-      <node concept="13QW63" id="3umvbTB_tiO" role="1N6uqs">
-        <node concept="3clFbS" id="3umvbTB_tiQ" role="2VODD2">
+      <node concept="3dgokm" id="OxzdsekvNK" role="1N6uqs">
+        <node concept="3clFbS" id="OxzdsekvNL" role="2VODD2">
           <node concept="3clFbF" id="3umvbTB_tRT" role="3cqZAp">
             <node concept="2ShNRf" id="3umvbTB_tRV" role="3clFbG">
               <node concept="YeOm9" id="3umvbTB_tRW" role="2ShVmc">
@@ -321,7 +321,7 @@
                     <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                     <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
                     <node concept="2rP1CM" id="3umvbTB_tS0" role="37wK5m" />
-                    <node concept="$OBgH" id="3umvbTBIqB2" role="37wK5m" />
+                    <node concept="3dgs5T" id="Oxzdsekwtv" role="37wK5m" />
                     <node concept="$OBjv" id="3umvbTB_tS2" role="37wK5m" />
                     <node concept="35c_gC" id="EB2Sz2RORZ" role="37wK5m">
                       <ref role="35c_gD" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />

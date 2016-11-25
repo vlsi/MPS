@@ -8,6 +8,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -71,11 +73,12 @@ public abstract class Scope {
   /**
    * Get scope for smart reference, when node doesn't exist yet
    * 
-   * @deprecated use {@link jetbrains.mps.scope.Scope#getScope(SNode, String, int, SAbstractConcept) } instead
+   * @deprecated use {@link jetbrains.mps.scope.Scope#getScope(SNode, SContainmentLink, int, SAbstractConcept) } instead
    */
   @Deprecated
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
-    return getScope(node, role, index, SNodeOperations.asSConcept(kind));
+    SContainmentLink link = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAggregation(role);
+    return getScope(node, link, index, SNodeOperations.asSConcept(kind));
   }
   /**
    * Get scope for existing node.
@@ -98,9 +101,9 @@ public abstract class Scope {
   /**
    * Get scope for smart reference, when node doesn't exist yet
    */
-  public static Scope getScope(SNode node, String role, int index, SAbstractConcept kind) {
+  public static Scope getScope(SNode node, SContainmentLink link, int index, SAbstractConcept kind) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
-      Scope scope = ((Scope) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), SMethodTrimmedId.create("getScope", null, "52_Geb4QFgX"), kind, role, ((int) index)));
+      Scope scope = ((Scope) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), SMethodTrimmedId.create("getScope", null, "52_Geb4QFgX"), kind, link, ((int) index)));
       if (scope != null) {
         return scope;
       }

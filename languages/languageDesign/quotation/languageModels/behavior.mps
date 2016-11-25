@@ -16,6 +16,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
@@ -316,8 +317,10 @@
         <node concept="3bZ5Sz" id="EB2Sz2SRel" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="EB2Sz2SRem" role="3clF46">
-        <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="EB2Sz2SRen" role="1tU5fm" />
+        <property role="TrG5h" value="link" />
+        <node concept="3uibUv" id="OxzdseikHu" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="37vLTG" id="EB2Sz2SReo" role="3clF46">
         <property role="TrG5h" value="index" />

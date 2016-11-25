@@ -39,7 +39,7 @@ public final class AbstractForStatement__BehaviorDescriptor extends BaseBHDescri
 
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-      if (ScopeUtils.comeFrom("body", __thisNode__, child)) {
+      if (ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body"), __thisNode__, child)) {
         return Scopes.forVariables(kind, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, 0x10a6979f36bL, "variable")), ScopeUtils.lazyParentScope(__thisNode__, kind));
       } else {
         return ScopeUtils.lazyParentScope(__thisNode__, kind);

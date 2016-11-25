@@ -68,7 +68,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x73048d24d425f35eL, "jetbrains.mps.baseLanguage.structure.SuperInerfaceKind"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContainmentLink(), _context.getPosition(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x73048d24d425f35eL, "jetbrains.mps.baseLanguage.structure.SuperInerfaceKind"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }

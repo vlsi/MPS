@@ -5389,7 +5389,7 @@
                     </node>
                     <node concept="2YIFZM" id="37YPOYhWSUG" role="33vP2m">
                       <ref role="1Pybhc" to="35tq:~Scope" resolve="Scope" />
-                      <ref role="37wK5l" to="35tq:~Scope.getScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.scope.Scope" resolve="getScope" />
+                      <ref role="37wK5l" to="35tq:~Scope.getScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.scope.Scope" resolve="getScope" />
                       <node concept="2OqwBi" id="37YPOYhWSUH" role="37wK5m">
                         <node concept="37vLTw" id="2BHiRxghg_6" role="2Oq$k0">
                           <ref role="3cqZAo" node="59r$iG97NUL" resolve="_context" />
@@ -5402,8 +5402,8 @@
                         <node concept="37vLTw" id="2BHiRxgm$O2" role="2Oq$k0">
                           <ref role="3cqZAo" node="59r$iG97NUL" resolve="_context" />
                         </node>
-                        <node concept="liA8E" id="37YPOYhWSUM" role="2OqNvi">
-                          <ref role="37wK5l" to="ze1i:~ReferenceConstraintsContext.getContextRole():java.lang.String" resolve="getContextRole" />
+                        <node concept="liA8E" id="OxzdsemGUD" role="2OqNvi">
+                          <ref role="37wK5l" to="ze1i:~ReferenceConstraintsContext.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="37YPOYhWSUN" role="37wK5m">

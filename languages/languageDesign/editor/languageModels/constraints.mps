@@ -196,8 +196,8 @@
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
-      <concept id="1205764368223" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget" flags="nn" index="2Xa2p7" />
-      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
+      <concept id="1205764368223" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTargetNode" flags="nn" index="2Xa2p7" />
+      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope_Old" flags="in" index="13QW63" />
       <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
         <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
@@ -304,6 +304,9 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
+      </concept>
+      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
+        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -2154,7 +2157,7 @@
             </node>
             <node concept="2YIFZM" id="2YuxGLzugEL" role="33vP2m">
               <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-              <ref role="37wK5l" to="o8zo:52_Geb4R1Rv" resolve="getScope" />
+              <ref role="37wK5l" to="o8zo:6GEzh_Hz_xH" resolve="getScope" />
               <node concept="37vLTw" id="2YuxGLzuhmK" role="37wK5m">
                 <ref role="3cqZAo" node="2YuxGLzugYG" resolve="contextNode" />
               </node>
@@ -2164,8 +2167,8 @@
               <node concept="37vLTw" id="2YuxGLzui6v" role="37wK5m">
                 <ref role="3cqZAo" node="2YuxGLzuhIG" resolve="position" />
               </node>
-              <node concept="35c_gC" id="EB2Sz2RQ64" role="37wK5m">
-                <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+              <node concept="3TUQnm" id="2YuxGLzugEP" role="37wK5m">
+                <ref role="3TV0OU" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
               </node>
             </node>
           </node>

@@ -14,6 +14,7 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +31,7 @@ public final class AbstractAntiquotation__BehaviorDescriptor extends BaseBHDescr
 
   public static final SMethod<Integer> getMetaLevelChange_idbc0iGlxcsE = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getMetaLevelChange").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("bc0iGlxcsE").registry(REGISTRY).build();
   public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   /*package*/ static final SMethod<Scope> getScope_id6SHIBw3Z40z = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("6SHIBw3Z40z").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMetaLevelChange_idbc0iGlxcsE, getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX, getScope_id6SHIBw3Z40z);
@@ -44,7 +45,7 @@ public final class AbstractAntiquotation__BehaviorDescriptor extends BaseBHDescr
   /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     return AbstractAntiquotation__BehaviorDescriptor.getScope_id6SHIBw3Z40z.invoke(__thisNode__, kind);
   }
-  /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, String role, int index) {
+  /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink link, int index) {
     return AbstractAntiquotation__BehaviorDescriptor.getScope_id6SHIBw3Z40z.invoke(__thisNode__, kind);
   }
   /*package*/ static Scope getScope_id6SHIBw3Z40z(@NotNull SNode __thisNode__, SAbstractConcept kind) {
@@ -86,7 +87,7 @@ public final class AbstractAntiquotation__BehaviorDescriptor extends BaseBHDescr
       case 1:
         return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 2:
-        return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (String) parameters[1], ((int) (Integer) parameters[2])));
+        return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (SContainmentLink) parameters[1], ((int) (Integer) parameters[2])));
       case 3:
         return (T) ((Scope) getScope_id6SHIBw3Z40z(node, (SAbstractConcept) parameters[0]));
       default:

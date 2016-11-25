@@ -1676,8 +1676,22 @@
                 </node>
                 <node concept="FGMqu" id="52_Geb4QGbW" role="2OqNvi" />
               </node>
-              <node concept="37vLTw" id="52_Geb4QGs3" role="37wK5m">
-                <ref role="3cqZAo" node="52_Geb4QFr7" resolve="role" />
+              <node concept="3K4zz7" id="1x2FBeqAngG" role="37wK5m">
+                <node concept="10Nm6u" id="1x2FBeqAnnX" role="3K4E3e" />
+                <node concept="2OqwBi" id="1x2FBeqAnNz" role="3K4GZi">
+                  <node concept="37vLTw" id="1x2FBeqAnv2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="52_Geb4QFr7" resolve="link" />
+                  </node>
+                  <node concept="liA8E" id="1x2FBeqAoiq" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
+                  </node>
+                </node>
+                <node concept="3clFbC" id="1x2FBeqAmUD" role="3K4Cdx">
+                  <node concept="10Nm6u" id="1x2FBeqAn54" role="3uHU7w" />
+                  <node concept="37vLTw" id="1x2FBeqAmr8" role="3uHU7B">
+                    <ref role="3cqZAo" node="52_Geb4QFr7" resolve="link" />
+                  </node>
+                </node>
               </node>
               <node concept="37vLTw" id="52_Geb4QG$k" role="37wK5m">
                 <ref role="3cqZAo" node="52_Geb4QFrW" resolve="index" />
@@ -1691,8 +1705,10 @@
         <node concept="3bZ5Sz" id="52_Geb4QFqS" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="52_Geb4QFr7" role="3clF46">
-        <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="52_Geb4QFrp" role="1tU5fm" />
+        <property role="TrG5h" value="link" />
+        <node concept="3uibUv" id="OxzdseidOV" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="37vLTG" id="52_Geb4QFrW" role="3clF46">
         <property role="TrG5h" value="index" />
