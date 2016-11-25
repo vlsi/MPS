@@ -14,7 +14,6 @@
     <dependency reexport="false">f1af2340-2212-47dd-a65b-2d6ee9427e3e(jetbrains.mps.testCustomDataFlow)</dependency>
   </dependencies>
   <usedDevKits>
-    <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
   </usedDevKits>
   <languageVersions>
