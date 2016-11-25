@@ -19,6 +19,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -42,6 +43,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -172,6 +174,41 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="3yMlUTkQ5En" resolve="TestSubstituteChildToSpecialize" />
     </node>
+    <node concept="1TJgyj" id="7XjOxAice5O" role="1TKVEi">
+      <property role="IQ2ns" value="9174907873152524660" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="notSubconcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+    </node>
+    <node concept="1TJgyj" id="7XjOxAidktJ" role="1TKVEi">
+      <property role="IQ2ns" value="9174907873152812911" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ambigousSameConcepts" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    </node>
+    <node concept="1TJgyj" id="7XjOxAid$fs" role="1TKVEi">
+      <property role="IQ2ns" value="9174907873152877532" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ambigousWrapSameConcepts" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    </node>
+    <node concept="1TJgyj" id="7XjOxAie6ag" role="1TKVEi">
+      <property role="IQ2ns" value="9174907873153016464" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ambigousDifferentConcepts" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    </node>
+    <node concept="1TJgyj" id="7XjOxAie6aJ" role="1TKVEi">
+      <property role="IQ2ns" value="9174907873153016495" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ambigousWrapDifferentConcepts" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7Nx4mSUrV2Y">
     <property role="EcuMT" value="8998492695587434686" />
@@ -260,10 +297,82 @@
     <property role="34LRSv" value="brother child" />
     <ref role="1TJDcQ" node="7W01XocYQAe" resolve="TestSubstituteChildSuper" />
   </node>
+  <node concept="1TIwiD" id="B8RBnMNfAN">
+    <property role="EcuMT" value="705057939849542067" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraints2" />
+    <property role="3GE5qa" value="constraints" />
+    <ref role="1TJDcQ" node="B8RBnMN6Ur" resolve="TestSubstituteAbstractChildWithConstraints" />
+    <node concept="PrWs8" id="B8RBnMPlEY" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="B8RBnMNfAO">
+    <property role="EcuMT" value="705057939849542068" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraints1" />
+    <property role="3GE5qa" value="constraints" />
+    <ref role="1TJDcQ" node="B8RBnMN6Ur" resolve="TestSubstituteAbstractChildWithConstraints" />
+    <node concept="PrWs8" id="B8RBnMPAXu" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="B8RBnMOQFy">
+    <property role="EcuMT" value="705057939849964258" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraintsWrapper2" />
+    <ref role="1TJDcQ" node="B8RBnMOQFr" resolve="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    <node concept="1TJgyj" id="B8RBnMOQFz" role="1TKVEi">
+      <property role="IQ2ns" value="705057939849964259" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childToWrap" />
+      <ref role="20lvS9" node="B8RBnMOxq8" resolve="TestSubstituteChildWithConstraintsToWrap" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2P6wUVR9Dv0">
+    <property role="EcuMT" value="3262439767570552768" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteGrandChildWithConstraints" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="kuPnPtMseS">
+    <property role="EcuMT" value="368966953912091576" />
+    <property role="TrG5h" value="TestSubstituteSpecialChildAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="kuPnPtMseT" role="lGtFl">
+      <property role="Hh88m" value="attribute" />
+      <node concept="trNpa" id="kuPnPtMseV" role="EQaZv">
+        <ref role="trN6q" node="3yMlUTkQ5Eo" resolve="TestSubstituteSpecialChild" />
+      </node>
+    </node>
+  </node>
   <node concept="1TIwiD" id="3yMlUTkQ5En">
     <property role="EcuMT" value="4085424218237852311" />
     <property role="TrG5h" value="TestSubstituteChildToSpecialize" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7XjOxAidktF">
+    <property role="EcuMT" value="9174907873152812907" />
+    <property role="TrG5h" value="TestSubstitituteAbstractChildAmbigousPosition" />
+    <property role="R5$K7" value="true" />
+    <property role="34LRSv" value="ambigous" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7XjOxAidyW_" role="1TKVEi">
+      <property role="IQ2ns" value="9174907873152872229" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="subchild" />
+      <ref role="20lvS9" node="7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7v1E5Mv$btr">
+    <property role="EcuMT" value="8629363476786100059" />
+    <property role="TrG5h" value="TestSubstituteSpecialSubChild" />
+    <property role="34LRSv" value="sub-child" />
+  </node>
+  <node concept="1TIwiD" id="7c9rxfhSFjx">
+    <property role="EcuMT" value="8289277620556838113" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent" />
+    <property role="R4oN_" value="see TestTransform_ChildWithConstraints_CanBeAncestor_GrandChild " />
+    <ref role="1TJDcQ" node="2P6wUVR9Dv0" resolve="TestSubstituteGrandChildWithConstraints" />
   </node>
   <node concept="1TIwiD" id="3yMlUTkQ5Eo">
     <property role="EcuMT" value="4085424218237852312" />
@@ -324,21 +433,142 @@
       <ref role="20ksaX" node="3oa4cxd_EW0" resolve="multipleChildToSpecializeInCustomEmptyCellWithCustomMenu" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7v1E5Mv$btr">
-    <property role="EcuMT" value="8629363476786100059" />
-    <property role="TrG5h" value="TestSubstituteSpecialSubChild" />
-    <property role="34LRSv" value="sub-child" />
+  <node concept="1TIwiD" id="7XjOxAidyWy">
+    <property role="EcuMT" value="9174907873152872226" />
+    <property role="TrG5h" value="TestSubstitituteAbstractSubChildAmbigousPosition" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
-  <node concept="1TIwiD" id="kuPnPtMseS">
-    <property role="EcuMT" value="368966953912091576" />
-    <property role="TrG5h" value="TestSubstituteSpecialChildAttribute" />
-    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="kuPnPtMseT" role="lGtFl">
-      <property role="Hh88m" value="attribute" />
-      <node concept="trNpa" id="kuPnPtMseV" role="EQaZv">
-        <ref role="trN6q" node="3yMlUTkQ5Eo" resolve="TestSubstituteSpecialChild" />
-      </node>
+  <node concept="1TIwiD" id="B8RBnMOxq8">
+    <property role="EcuMT" value="705057939849877128" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraintsToWrap" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="B8RBnMP1Me">
+    <property role="EcuMT" value="705057939850009742" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraintsWrapper3" />
+    <ref role="1TJDcQ" node="B8RBnMOQFr" resolve="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    <node concept="1TJgyj" id="B8RBnMP1Mf" role="1TKVEi">
+      <property role="IQ2ns" value="705057939850009743" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childToWrap" />
+      <ref role="20lvS9" node="B8RBnMOxq8" resolve="TestSubstituteChildWithConstraintsToWrap" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="B8RBnMOxq7">
+    <property role="EcuMT" value="705057939849877127" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraintsWrapper1" />
+    <ref role="1TJDcQ" node="B8RBnMOQFr" resolve="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    <node concept="1TJgyj" id="B8RBnMOxqb" role="1TKVEi">
+      <property role="IQ2ns" value="705057939849877131" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childToWrap" />
+      <ref role="20lvS9" node="B8RBnMOxq8" resolve="TestSubstituteChildWithConstraintsToWrap" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="B8RBnMN6Ur">
+    <property role="EcuMT" value="705057939849506459" />
+    <property role="TrG5h" value="TestSubstituteAbstractChildWithConstraints" />
+    <property role="R5$K7" value="true" />
+    <property role="3GE5qa" value="constraints" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2P6wUVR9Dv3" role="1TKVEi">
+      <property role="IQ2ns" value="3262439767570552771" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="2P6wUVR9Dv0" resolve="TestSubstituteGrandChildWithConstraints" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7XjOxAie6Go">
+    <property role="EcuMT" value="9174907873153018648" />
+    <property role="TrG5h" value="TestSubstitituteSubChildAmbigousPosition1" />
+    <property role="R5$K7" value="false" />
+    <property role="34LRSv" value="subambigous" />
+    <ref role="1TJDcQ" node="7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+  </node>
+  <node concept="1TIwiD" id="B8RBnMN6Uq">
+    <property role="EcuMT" value="705057939849506458" />
+    <property role="TrG5h" value="TestSubstituteParentWithConstraints" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="constraints" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="B8RBnMN6Us" role="1TKVEi">
+      <property role="IQ2ns" value="705057939849506460" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childCanBeParent" />
+      <ref role="20lvS9" node="B8RBnMN6Ur" resolve="TestSubstituteAbstractChildWithConstraints" />
+    </node>
+    <node concept="1TJgyj" id="B8RBnMNHtL" role="1TKVEi">
+      <property role="IQ2ns" value="705057939849664369" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childCanBeAncestor" />
+      <ref role="20lvS9" node="B8RBnMN6Ur" resolve="TestSubstituteAbstractChildWithConstraints" />
+    </node>
+    <node concept="1TJgyj" id="B8RBnMOdpA" role="1TKVEi">
+      <property role="IQ2ns" value="705057939849795174" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childCanBeChild" />
+      <ref role="20lvS9" node="B8RBnMN6Ur" resolve="TestSubstituteAbstractChildWithConstraints" />
+    </node>
+    <node concept="1TJgyj" id="B8RBnMOz90" role="1TKVEi">
+      <property role="IQ2ns" value="705057939849884224" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWrapperCanBeParent" />
+      <ref role="20lvS9" node="B8RBnMOQFr" resolve="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    </node>
+    <node concept="1TJgyj" id="B8RBnMP1M1" role="1TKVEi">
+      <property role="IQ2ns" value="705057939850009729" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWrapperCanBeAncestor" />
+      <ref role="20lvS9" node="B8RBnMOQFr" resolve="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    </node>
+    <node concept="1TJgyj" id="B8RBnMP1M7" role="1TKVEi">
+      <property role="IQ2ns" value="705057939850009735" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childWrapperCanBeChild" />
+      <ref role="20lvS9" node="B8RBnMOQFr" resolve="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7XjOxAie6Gp">
+    <property role="EcuMT" value="9174907873153018649" />
+    <property role="TrG5h" value="TestSubstitituteSubChildAmbigousPosition2" />
+    <property role="R5$K7" value="false" />
+    <property role="34LRSv" value="subambigous" />
+    <ref role="1TJDcQ" node="7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
+  </node>
+  <node concept="1TIwiD" id="7XjOxAidSJc">
+    <property role="EcuMT" value="9174907873152961484" />
+    <property role="TrG5h" value="TestSubstitituteChildAmbigousPosition1" />
+    <property role="R5$K7" value="false" />
+    <property role="34LRSv" value="ambigous" />
+    <ref role="1TJDcQ" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
+  </node>
+  <node concept="1TIwiD" id="B8RBnMOQFr">
+    <property role="EcuMT" value="705057939849964251" />
+    <property role="3GE5qa" value="constraints" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraintsAbstractWrapper" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7XjOxAickP1">
+    <property role="EcuMT" value="9174907873152552257" />
+    <property role="TrG5h" value="TestSubstituteNotSubconceptOfChild" />
+  </node>
+  <node concept="1TIwiD" id="B8RBnMNHR8">
+    <property role="EcuMT" value="705057939849665992" />
+    <property role="TrG5h" value="TestSubstituteChildWithConstraints3" />
+    <property role="3GE5qa" value="constraints" />
+    <ref role="1TJDcQ" node="B8RBnMN6Ur" resolve="TestSubstituteAbstractChildWithConstraints" />
+  </node>
+  <node concept="1TIwiD" id="7XjOxAidSY3">
+    <property role="EcuMT" value="9174907873152962435" />
+    <property role="TrG5h" value="TestSubstitituteChildAmbigousPosition2" />
+    <property role="R5$K7" value="false" />
+    <property role="34LRSv" value="ambigous" />
+    <ref role="1TJDcQ" node="7XjOxAidktF" resolve="TestSubstitituteAbstractChildAmbigousPosition" />
   </node>
 </model>
 

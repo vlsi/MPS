@@ -10,14 +10,33 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_TestConceptForMenuParameterizedByPrimitiveType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteAbstractChildAmbigousPosition = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteAbstractSubChildAmbigousPosition = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteChildAmbigousPosition1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteChildAmbigousPosition2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteSubChildAmbigousPosition1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstitituteSubChildAmbigousPosition2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteAbstractChildWithConstraints = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChildBrother = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChildSuper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChildToSpecialize = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraints1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraints2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraints3 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraintsAbstractWrapper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraintsToWrap = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraintsWrapper1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraintsWrapper2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildWithConstraintsWrapper3 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptChildToReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptToWrap = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteGrandChildWithConstraints = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteNotSubconceptOfChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParentToReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteParentWithConstraints = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteSpecialChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteSpecialChildAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteSpecialParent = new ConceptPresentationBuilder().create();
@@ -35,36 +54,74 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 0:
         return props_TestConceptForMenuParameterizedByPrimitiveType;
       case 1:
-        return props_TestSubstituteChild;
+        return props_TestSubstitituteAbstractChildAmbigousPosition;
       case 2:
-        return props_TestSubstituteChildBrother;
+        return props_TestSubstitituteAbstractSubChildAmbigousPosition;
       case 3:
-        return props_TestSubstituteChildSuper;
+        return props_TestSubstitituteChildAmbigousPosition1;
       case 4:
-        return props_TestSubstituteChildToSpecialize;
+        return props_TestSubstitituteChildAmbigousPosition2;
       case 5:
-        return props_TestSubstituteConceptChildToReference;
+        return props_TestSubstitituteSubChildAmbigousPosition1;
       case 6:
-        return props_TestSubstituteConceptToWrap;
+        return props_TestSubstitituteSubChildAmbigousPosition2;
       case 7:
-        return props_TestSubstituteParent;
+        return props_TestSubstituteAbstractChildWithConstraints;
       case 8:
-        return props_TestSubstituteParentToReference;
+        return props_TestSubstituteChild;
       case 9:
-        return props_TestSubstituteSpecialChild;
+        return props_TestSubstituteChildBrother;
       case 10:
-        return props_TestSubstituteSpecialChildAttribute;
+        return props_TestSubstituteChildSuper;
       case 11:
-        return props_TestSubstituteSpecialParent;
+        return props_TestSubstituteChildToSpecialize;
       case 12:
-        return props_TestSubstituteSpecialSubChild;
+        return props_TestSubstituteChildWithConstraints1;
       case 13:
-        return props_TestSubstituteSubChild1;
+        return props_TestSubstituteChildWithConstraints2;
       case 14:
-        return props_TestSubstituteSubChild2;
+        return props_TestSubstituteChildWithConstraints3;
       case 15:
-        return props_TestSubstituteSubChildSmartReference;
+        return props_TestSubstituteChildWithConstraintsAbstractWrapper;
       case 16:
+        return props_TestSubstituteChildWithConstraintsToWrap;
+      case 17:
+        return props_TestSubstituteChildWithConstraintsWrapper1;
+      case 18:
+        return props_TestSubstituteChildWithConstraintsWrapper2;
+      case 19:
+        return props_TestSubstituteChildWithConstraintsWrapper3;
+      case 20:
+        return props_TestSubstituteConceptChildToReference;
+      case 21:
+        return props_TestSubstituteConceptToWrap;
+      case 22:
+        return props_TestSubstituteGrandChildWithConstraints;
+      case 23:
+        return props_TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent;
+      case 24:
+        return props_TestSubstituteNotSubconceptOfChild;
+      case 25:
+        return props_TestSubstituteParent;
+      case 26:
+        return props_TestSubstituteParentToReference;
+      case 27:
+        return props_TestSubstituteParentWithConstraints;
+      case 28:
+        return props_TestSubstituteSpecialChild;
+      case 29:
+        return props_TestSubstituteSpecialChildAttribute;
+      case 30:
+        return props_TestSubstituteSpecialParent;
+      case 31:
+        return props_TestSubstituteSpecialSubChild;
+      case 32:
+        return props_TestSubstituteSubChild1;
+      case 33:
+        return props_TestSubstituteSubChild2;
+      case 34:
+        return props_TestSubstituteSubChildSmartReference;
+      case 35:
         return props_TestSubstituteSubConceptToWrap;
     }
     throw new IllegalStateException("Unknown concept " + c);

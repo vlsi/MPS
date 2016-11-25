@@ -58,6 +58,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_h());
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_i());
     result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_j());
+    result.add(new TestSubstituteChild_SubstituteMenu.SubstituteMenuPart_Group_ddv2zo_k());
     return result;
   }
   public class SubstituteMenuPart_Group_ddv2zo_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
@@ -489,6 +490,17 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
+  public class SubstituteMenuPart_Group_ddv2zo_k extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
+    @Override
+    protected boolean isApplicable(SubstituteMenuContext _context) {
+      return eq_ddv2zo_a0a0a11(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d2199230e174L, "notSubconcept"));
+    }
+
+    @Override
+    protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteNotSubconceptOfChild")));
+    }
+  }
   private static boolean eq_ddv2zo_a0f0c1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -514,6 +526,9 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_ddv2zo_a0a0a9(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_ddv2zo_a0a0a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
