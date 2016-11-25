@@ -1747,7 +1747,7 @@
     <ref role="aqKnT" to="tp1t:gVki8JJ" resolve="ConstraintFunctionParameter_oldReferentNode" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJMAn">
-    <ref role="aqKnT" to="tp1t:hyXa2tv" resolve="ConstraintFunctionParameter_linkTarget" />
+    <ref role="aqKnT" to="tp1t:hyXa2tv" resolve="ConstraintFunctionParameter_linkTargetNode" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJMAo">
     <ref role="aqKnT" to="tp1t:3YPB4zZiSNX" resolve="ConstraintFunctionParameter_inEditor" />
@@ -1787,6 +1787,205 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJMA$">
     <ref role="aqKnT" to="tp1t:3oQug8hqyBc" resolve="ConstraintFunctionParameter_parameterNode" />
+  </node>
+  <node concept="24kQdi" id="4OU1gA0w2Bf">
+    <property role="3GE5qa" value="Functions" />
+    <ref role="1XX52x" to="tp1t:4OU1gA0uS0v" resolve="ConstraintFunction_ReferentSearchScope_Scope" />
+    <node concept="PMmxH" id="4OU1gA0w2Cm" role="2wV5jI">
+      <ref role="PMmxG" to="tpen:hqLiD8Q" resolve="ConceptFunction_Component" />
+    </node>
+    <node concept="3EZMnI" id="4OU1gA0w2D5" role="6VMZX">
+      <property role="3EZMnw" value="true" />
+      <node concept="3EZMnI" id="4OU1gA0w2D6" role="3EZMnx">
+        <node concept="PMmxH" id="4OU1gA0w2D7" role="3EZMnx">
+          <property role="1cu_pB" value="0" />
+          <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+          <node concept="VechU" id="4OU1gA0w2D8" role="3F10Kt">
+            <property role="Vb096" value="blue" />
+          </node>
+          <node concept="30gYXW" id="4OU1gA0w2D9" role="3F10Kt">
+            <property role="Vb096" value="lightGray" />
+          </node>
+        </node>
+        <node concept="VPM3Z" id="4OU1gA0w2Da" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="l2Vlx" id="4OU1gA0w2Db" role="2iSdaV" />
+        <node concept="3F0ifn" id="4OU1gA0w2Dc" role="3EZMnx">
+          <property role="3F0ifm" value="provider" />
+          <node concept="VechU" id="4OU1gA0w2Dd" role="3F10Kt">
+            <property role="Vb096" value="blue" />
+          </node>
+          <node concept="30gYXW" id="4OU1gA0w2De" role="3F10Kt">
+            <property role="Vb096" value="lightGray" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4OU1gA0w2Df" role="3EZMnx">
+        <node concept="VPM3Z" id="4OU1gA0w2Dg" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="PMmxH" id="4OU1gA0w2Dh" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="PMmxG" to="tpco:5K$8XMPc9pW" resolve="ShortDescriptionEditorComponent" />
+        <node concept="Vb9p2" id="4OU1gA0w2Di" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4OU1gA0w2Dj" role="3EZMnx">
+        <node concept="VPM3Z" id="4OU1gA0w2Dk" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4OU1gA0w2Dl" role="3EZMnx">
+        <property role="3F0ifm" value="macros:" />
+        <node concept="Vb9p2" id="4OU1gA0w2Dm" role="3F10Kt">
+          <property role="Vbekb" value="PLAIN" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="4OU1gA0w2Dn" role="3EZMnx">
+        <property role="3EZMnw" value="true" />
+        <property role="3EZMnz" value="true" />
+        <node concept="3EZMnI" id="4OU1gA0w2Ec" role="3EZMnx">
+          <node concept="3F0ifn" id="4OU1gA0w2Ed" role="3EZMnx">
+            <property role="3F0ifm" value="referenceNode" />
+          </node>
+          <node concept="3EZMnI" id="4OU1gA0w2Ef" role="3EZMnx">
+            <property role="3EZMnw" value="true" />
+            <node concept="3F0ifn" id="4OU1gA0w2Eg" role="3EZMnx">
+              <property role="3F0ifm" value="node that contains reference link." />
+              <node concept="Vb9p2" id="4OU1gA0w2Eh" role="3F10Kt">
+                <property role="Vbekb" value="PLAIN" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w2Ei" role="3EZMnx">
+              <property role="3F0ifm" value="(optional - may not exist yet. In this case, reference is being created)" />
+              <node concept="Vb9p2" id="4OU1gA0w2Ej" role="3F10Kt">
+                <property role="Vbekb" value="ITALIC" />
+              </node>
+              <node concept="30gYXW" id="4OU1gA0w2Ek" role="3F10Kt">
+                <property role="Vb096" value="pink" />
+              </node>
+            </node>
+            <node concept="VPM3Z" id="4OU1gA0w2El" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="2iRkQZ" id="4OU1gA0w2Em" role="2iSdaV" />
+          </node>
+          <node concept="VPM3Z" id="4OU1gA0w2En" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="4OU1gA0w2Eo" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="4OU1gA0w2D$" role="3EZMnx">
+          <node concept="3F0ifn" id="4OU1gA0w2D_" role="3EZMnx">
+            <property role="3F0ifm" value="contextNode" />
+          </node>
+          <node concept="3EZMnI" id="4OU1gA0w6pa" role="3EZMnx">
+            <node concept="VPM3Z" id="4OU1gA0w6pc" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w2DA" role="3EZMnx">
+              <property role="3F0ifm" value="closest not-null context node." />
+              <node concept="Vb9p2" id="4OU1gA0w2DB" role="3F10Kt">
+                <property role="Vbekb" value="PLAIN" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w6pe" role="3EZMnx">
+              <property role="3F0ifm" value="if referenceNode exists then contextNode equals referenceNode." />
+              <node concept="Vb9p2" id="4OU1gA0w6uj" role="3F10Kt">
+                <property role="Vbekb" value="ITALIC" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="4OU1gA0w6pf" role="2iSdaV" />
+          </node>
+          <node concept="VPM3Z" id="4OU1gA0w2DC" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="4OU1gA0w2DD" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="4OU1gA0w2DE" role="3EZMnx">
+          <node concept="3F0ifn" id="4OU1gA0w2DF" role="3EZMnx">
+            <property role="3F0ifm" value="containmentLink" />
+          </node>
+          <node concept="3EZMnI" id="4OU1gA0w6A$" role="3EZMnx">
+            <node concept="VPM3Z" id="4OU1gA0w6A_" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w6AA" role="3EZMnx">
+              <property role="3F0ifm" value="containment link between context node and its non-exist child" />
+              <node concept="Vb9p2" id="4OU1gA0w6AB" role="3F10Kt">
+                <property role="Vbekb" value="PLAIN" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w7rF" role="3EZMnx">
+              <property role="3F0ifm" value="where reference is being created." />
+              <node concept="Vb9p2" id="4OU1gA0w8ia" role="3F10Kt" />
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w6AC" role="3EZMnx">
+              <property role="3F0ifm" value="if referenceNode exists then this parameter has no sence." />
+              <node concept="Vb9p2" id="4OU1gA0w6AD" role="3F10Kt">
+                <property role="Vbekb" value="ITALIC" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="4OU1gA0w6AE" role="2iSdaV" />
+          </node>
+          <node concept="VPM3Z" id="4OU1gA0w2DI" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="4OU1gA0w2DJ" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="4OU1gA0w2DK" role="3EZMnx">
+          <node concept="3F0ifn" id="4OU1gA0w2DL" role="3EZMnx">
+            <property role="3F0ifm" value="position" />
+          </node>
+          <node concept="3F0ifn" id="4OU1gA0w2DM" role="3EZMnx">
+            <property role="3F0ifm" value="context node child position in role." />
+            <node concept="Vb9p2" id="4OU1gA0w2DN" role="3F10Kt">
+              <property role="Vbekb" value="PLAIN" />
+            </node>
+          </node>
+          <node concept="VPM3Z" id="4OU1gA0w2DO" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="4OU1gA0w2DP" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="4OU1gA0w2Ep" role="3EZMnx">
+          <node concept="VPM3Z" id="4OU1gA0w2Eq" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="3F0ifn" id="4OU1gA0w2Er" role="3EZMnx">
+            <property role="3F0ifm" value="linkTarget" />
+          </node>
+          <node concept="3EZMnI" id="4OU1gA0w8r7" role="3EZMnx">
+            <node concept="VPM3Z" id="4OU1gA0w8ra" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w8rc" role="3EZMnx">
+              <property role="3F0ifm" value="concept where link can refer to." />
+              <node concept="Vb9p2" id="4OU1gA0w8rd" role="3F10Kt">
+                <property role="Vbekb" value="PLAIN" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="4OU1gA0w8rp" role="3EZMnx">
+              <property role="3F0ifm" value="it can be useful in case when link is supposed to be specialized." />
+              <node concept="Vb9p2" id="4OU1gA0w8t$" role="3F10Kt">
+                <property role="Vbekb" value="ITALIC" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="4OU1gA0w8re" role="2iSdaV" />
+          </node>
+          <node concept="2iRfu4" id="4OU1gA0w2Ev" role="2iSdaV" />
+        </node>
+        <node concept="VPM3Z" id="4OU1gA0w2ES" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2EHx9g" id="4OU1gA0w2ET" role="2iSdaV" />
+      </node>
+      <node concept="VPM3Z" id="4OU1gA0w2EU" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+      </node>
+      <node concept="2iRkQZ" id="4OU1gA0w2EV" role="2iSdaV" />
+    </node>
   </node>
 </model>
 

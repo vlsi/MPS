@@ -140,7 +140,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTarget_SubstituteMenu" file="ConstraintFunctionParameter_linkTarget_SubstituteMenu.java">
+  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTargetNode_SubstituteMenu" file="ConstraintFunctionParameter_linkTargetNode_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -247,6 +247,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_Scope_Editor" file="ConstraintFunction_ReferentSearchScope_Scope_Editor.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.constraints.editor.ConstraintsFunctionParameter_node_SubstituteMenu" file="ConstraintsFunctionParameter_node_SubstituteMenu.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -272,7 +287,7 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_exists_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_inEditor_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkNode_SubstituteMenu" />
-    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTarget_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_linkTargetNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_newReferentNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_oldReferentNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_parameterNode_SubstituteMenu" />
@@ -282,6 +297,7 @@
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_smartReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunctionParameter_visible_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_AbstractBase_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_Scope_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.ConstraintsFunctionParameter_node_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.InheritedNodeScopeFactory_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.constraints.editor.NodeDefaultSearchScope_Editor" />

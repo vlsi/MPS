@@ -373,8 +373,8 @@
   <node concept="1TIwiD" id="hyXa2tv">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="target concept (useful for specialized links)" />
-    <property role="TrG5h" value="ConstraintFunctionParameter_linkTarget" />
+    <property role="R4oN_" value="target concept node (useful for specialized links)" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_linkTargetNode" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="linkTarget" />
@@ -383,6 +383,7 @@
     <node concept="PrWs8" id="1653mnvB5YZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="4OU1gA0vgrS" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="gLWqvmI">
     <property role="R5$K7" value="false" />
@@ -651,6 +652,7 @@
     <node concept="PrWs8" id="1653mnvAmr0" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="4OU1gA0uWhI" role="lGtFl" />
   </node>
   <node concept="PlHQZ" id="7ipADkTf7eE">
     <property role="TrG5h" value="NodeScopeFactory" />
@@ -735,14 +737,17 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="creates scope for the reference (jetbrains.mps.scope.Scope)" />
-    <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_Scope" />
+    <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_Scope_Old" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
-    <property role="34LRSv" value="reference scope" />
+    <property role="34LRSv" value="reference scope (deprecated)" />
     <property role="EcuMT" value="5676632058862809931" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node concept="PrWs8" id="4V7sGwd7bdc" role="PzmwI">
       <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
+    </node>
+    <node concept="asaX9" id="4OU1gA0uRQC" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
     </node>
   </node>
   <node concept="1TIwiD" id="5Q2IUnK$7k9">
@@ -806,6 +811,33 @@
     <property role="EcuMT" value="6702802731807424858" />
     <property role="R4oN_" value="return false if node cannot be a ancestor of given node" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="4OU1gA0uS0v">
+    <property role="EcuMT" value="5564765827938091039" />
+    <property role="3GE5qa" value="Functions" />
+    <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_Scope" />
+    <property role="34LRSv" value="reference scope" />
+    <property role="R4oN_" value="creates scope for the reference (jetbrains.mps.scope.Scope)" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="4OU1gA0uS0w" role="PzmwI">
+      <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4OU1gA0uWhK">
+    <property role="EcuMT" value="5564765827938108528" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_containmentLink" />
+    <property role="34LRSv" value="containmentLink" />
+    <property role="R4oN_" value="containment link between contextNode and its child" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="4OU1gA0vgAx">
+    <property role="EcuMT" value="5564765827938191777" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_linkTarget" />
+    <property role="34LRSv" value="linkTarget" />
+    <property role="R4oN_" value="target concept (useful for specialized links)" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 

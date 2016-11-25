@@ -521,7 +521,7 @@
             </node>
             <node concept="TSZUe" id="2D1PBM_bykj" role="2OqNvi">
               <node concept="3B5_sB" id="2D1PBM_bykf" role="25WWJ7">
-                <ref role="3B5MYn" to="tp1t:hyXa2tv" resolve="ConstraintFunctionParameter_linkTarget" />
+                <ref role="3B5MYn" to="tp1t:hyXa2tv" resolve="ConstraintFunctionParameter_linkTargetNode" />
               </node>
             </node>
           </node>
@@ -1982,7 +1982,7 @@
   </node>
   <node concept="13h7C7" id="4V7sGwd7c50">
     <property role="3GE5qa" value="Functions" />
-    <ref role="13h7C2" to="tp1t:4V7sGwd7bdb" resolve="ConstraintFunction_ReferentSearchScope_Scope" />
+    <ref role="13h7C2" to="tp1t:4V7sGwd7bdb" resolve="ConstraintFunction_ReferentSearchScope_Scope_Old" />
     <node concept="13hLZK" id="4V7sGwd7c51" role="13h7CW">
       <node concept="3clFbS" id="4V7sGwd7c52" role="2VODD2" />
     </node>
@@ -3505,6 +3505,175 @@
     </node>
     <node concept="13hLZK" id="5O58T9kT$5S" role="13h7CW">
       <node concept="3clFbS" id="5O58T9kT$5T" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="4OU1gA0uS1o">
+    <property role="3GE5qa" value="Functions" />
+    <ref role="13h7C2" to="tp1t:4OU1gA0uS0v" resolve="ConstraintFunction_ReferentSearchScope_Scope" />
+    <node concept="13i0hz" id="6PjwVxt7z3c" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="6PjwVxt7z3d" role="1B3o_S" />
+      <node concept="3clFbS" id="6PjwVxt7z3e" role="3clF47">
+        <node concept="3clFbF" id="6PjwVxt7z3f" role="3cqZAp">
+          <node concept="2c44tf" id="6PjwVxt7z3g" role="3clFbG">
+            <node concept="3uibUv" id="6PjwVxt7z3h" role="2c44tc">
+              <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="6PjwVxt7z3i" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="4OU1gA0uS1z" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="usesParameterObjectFor" />
+      <ref role="13i0hy" to="tpek:hEwIGRw" resolve="usesParameterObjectFor" />
+      <node concept="3clFbS" id="4OU1gA0uS1$" role="3clF47">
+        <node concept="3cpWs6" id="4OU1gA0uS1_" role="3cqZAp">
+          <node concept="3clFbT" id="4OU1gA0uS1A" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4OU1gA0uS1B" role="3clF46">
+        <property role="TrG5h" value="parameter" />
+        <node concept="3Tqbb2" id="4OU1gA0uS1C" role="1tU5fm">
+          <ref role="ehGHo" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node concept="10P_77" id="4OU1gA0uS1D" role="3clF45" />
+      <node concept="3Tm1VV" id="4OU1gA0uS1E" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="4OU1gA0uS1F" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+      <node concept="3Tm1VV" id="4OU1gA0uS1G" role="1B3o_S" />
+      <node concept="_YKpA" id="4OU1gA0uS1H" role="3clF45">
+        <node concept="3Tqbb2" id="4OU1gA0uS1I" role="_ZDj9">
+          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4OU1gA0uS1J" role="3clF47">
+        <node concept="3cpWs8" id="4OU1gA0uS1K" role="3cqZAp">
+          <node concept="3cpWsn" id="4OU1gA0uS1L" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="_YKpA" id="4OU1gA0uS1M" role="1tU5fm">
+              <node concept="3Tqbb2" id="4OU1gA0uS1N" role="_ZDj9">
+                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4OU1gA0uS1O" role="33vP2m">
+              <node concept="13iAh5" id="4OU1gA0uS1P" role="2Oq$k0">
+                <ref role="3eA5LN" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+              </node>
+              <node concept="2qgKlT" id="4OU1gA0uS1Q" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4OU1gA0uS1W" role="3cqZAp">
+          <node concept="2OqwBi" id="4OU1gA0uS1X" role="3clFbG">
+            <node concept="37vLTw" id="4OU1gA0uS1Y" role="2Oq$k0">
+              <ref role="3cqZAo" node="4OU1gA0uS1L" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="4OU1gA0uS1Z" role="2OqNvi">
+              <node concept="3B5_sB" id="4OU1gA0uS20" role="25WWJ7">
+                <ref role="3B5MYn" to="tp1t:gVkakXD" resolve="ConstraintFunctionParameter_referenceNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4OU1gA0uS21" role="3cqZAp">
+          <node concept="2OqwBi" id="4OU1gA0uS22" role="3clFbG">
+            <node concept="37vLTw" id="4OU1gA0uS23" role="2Oq$k0">
+              <ref role="3cqZAo" node="4OU1gA0uS1L" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="4OU1gA0uS24" role="2OqNvi">
+              <node concept="3B5_sB" id="4OU1gA0uS25" role="25WWJ7">
+                <ref role="3B5MYn" to="tp1t:7LJrcbBIRrK" resolve="ConstraintFunctionParameter_contextNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4OU1gA0v8oT" role="3cqZAp">
+          <node concept="2OqwBi" id="4OU1gA0vaYN" role="3clFbG">
+            <node concept="37vLTw" id="4OU1gA0v8oR" role="2Oq$k0">
+              <ref role="3cqZAo" node="4OU1gA0uS1L" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="4OU1gA0vf1V" role="2OqNvi">
+              <node concept="3B5_sB" id="4OU1gA0vf6s" role="25WWJ7">
+                <ref role="3B5MYn" to="tp1t:4OU1gA0uWhK" resolve="ConstraintFunctionParameter_containmentLink" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4OU1gA0uS2v" role="3cqZAp">
+          <node concept="2OqwBi" id="4OU1gA0uS2w" role="3clFbG">
+            <node concept="37vLTw" id="4OU1gA0uS2x" role="2Oq$k0">
+              <ref role="3cqZAo" node="4OU1gA0uS1L" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="4OU1gA0uS2y" role="2OqNvi">
+              <node concept="3B5_sB" id="4OU1gA0uS2z" role="25WWJ7">
+                <ref role="3B5MYn" to="tp1t:42wXlt$sC68" resolve="ConstraintFunctionParameter_position" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4OU1gA0uS2b" role="3cqZAp">
+          <node concept="2OqwBi" id="4OU1gA0uS2c" role="3clFbG">
+            <node concept="37vLTw" id="4OU1gA0uS2d" role="2Oq$k0">
+              <ref role="3cqZAo" node="4OU1gA0uS1L" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="4OU1gA0uS2e" role="2OqNvi">
+              <node concept="3B5_sB" id="4OU1gA0uS2f" role="25WWJ7">
+                <ref role="3B5MYn" to="tp1t:4OU1gA0vgAx" resolve="ConstraintFunctionParameter_linkTarget" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4OU1gA0uS2D" role="3cqZAp">
+          <node concept="37vLTw" id="4OU1gA0uS2E" role="3cqZAk">
+            <ref role="3cqZAo" node="4OU1gA0uS1L" resolve="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="4OU1gA0uS1p" role="13h7CW">
+      <node concept="3clFbS" id="4OU1gA0uS1q" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="4OU1gA0uWic">
+    <property role="3GE5qa" value="Parameters" />
+    <ref role="13h7C2" to="tp1t:4OU1gA0uWhK" resolve="ConstraintFunctionParameter_containmentLink" />
+    <node concept="13i0hz" id="4OU1gA0v38h" role="13h7CS">
+      <property role="TrG5h" value="getType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:27DJnJtIQ9C" resolve="getType" />
+      <node concept="3Tm1VV" id="4OU1gA0v38i" role="1B3o_S" />
+      <node concept="3clFbS" id="4OU1gA0v38j" role="3clF47">
+        <node concept="3cpWs6" id="4OU1gA0v38k" role="3cqZAp">
+          <node concept="2c44tf" id="4OU1gA0v38l" role="3cqZAk">
+            <node concept="3uibUv" id="4OU1gA0v67t" role="2c44tc">
+              <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="4OU1gA0v38n" role="3clF45">
+        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+      </node>
+    </node>
+    <node concept="13hLZK" id="4OU1gA0uWid" role="13h7CW">
+      <node concept="3clFbS" id="4OU1gA0uWie" role="2VODD2" />
     </node>
   </node>
 </model>
