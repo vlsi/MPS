@@ -13,6 +13,7 @@ import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
@@ -51,7 +52,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       final Wrappers._boolean isPackaged = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode node = BuildScript_Configuration.this.getNode().getNodeResolved();
+          SNode node = BuildScript_Configuration.this.getNode().getNode().resolve(MPSModuleRepository.getInstance());
           isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
         }
       });

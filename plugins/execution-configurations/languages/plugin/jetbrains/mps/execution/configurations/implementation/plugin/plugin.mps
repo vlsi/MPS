@@ -8530,9 +8530,13 @@
                           </node>
                           <node concept="liA8E" id="1QpbsSXkd$" role="2OqNvi">
                             <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-                            <node concept="2YIFZM" id="1QpbsSXkd_" role="37wK5m">
-                              <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                              <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                            <node concept="2OqwBi" id="5QqGGkvouKK" role="37wK5m">
+                              <node concept="37vLTw" id="5QqGGkvou8C" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1QpbsT04cO" resolve="project" />
+                              </node>
+                              <node concept="liA8E" id="5QqGGkvovQf" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                              </node>
                             </node>
                           </node>
                         </node>
