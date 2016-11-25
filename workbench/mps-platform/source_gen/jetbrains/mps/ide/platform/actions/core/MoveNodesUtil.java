@@ -229,7 +229,7 @@ public class MoveNodesUtil {
         throw new IllegalArgumentException();
       }
       NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
-      MapSequence.fromMap(copyMap.getCopyMap()).put(ListSequence.fromList(nodesToMove).first(), myTarget.resolve(myProject.getRepository()));
+      copyMap.putInCopyMap(MapSequence.<SNode, SNode>fromMapAndKeysArray(new HashMap<SNode, SNode>(), ListSequence.fromList(nodesToMove).first()).withValues(myTarget.resolve(myProject.getRepository())));
       for (SNode oldNode : SetSequence.fromSet(MapSequence.fromMap(ifKeepOldNodes).keySet())) {
         if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
           SNodeOperations.detachNode(oldNode);
