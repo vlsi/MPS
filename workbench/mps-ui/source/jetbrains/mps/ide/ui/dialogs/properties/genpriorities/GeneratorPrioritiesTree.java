@@ -34,7 +34,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -45,6 +44,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.BorderFactory;
@@ -68,17 +68,17 @@ public class GeneratorPrioritiesTree {
   private CheckboxTree myCheckboxTree;
 
   // FIXME isRight = !isLeft, depGenerators used only when isRight - bloody sh!t. Why not initTree is package local, so that caller could configure this Tree(?!) as needed?
-  public GeneratorPrioritiesTree(@NotNull final Generator generator, @NotNull MappingConfig_AbstractRef mapping, boolean isLeft, final Set<SModuleReference> depGenerators) {
+  public GeneratorPrioritiesTree(@NotNull final SRepository repo, @NotNull final Generator generator, @NotNull MappingConfig_AbstractRef mapping, boolean isLeft, final Set<SModuleReference> depGenerators) {
     myRootNode = new CheckedTreeNodeEx(null, "Generators", createRootIcon());
     final boolean isRight = !isLeft;
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    repo.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         initTree(generator);
         if (isRight) {
           for (SModuleReference ref : depGenerators) {
-            SModule gen = ref.resolve(MPSModuleRepository.getInstance());
+            SModule gen = ref.resolve(repo);
             if (gen instanceof Generator)
               initTree((Generator) gen);
           }

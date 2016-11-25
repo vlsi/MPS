@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,17 @@ import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -68,9 +73,9 @@ public class SelectionInfoImpl implements SelectionInfo {
     }
   }
 
-  public SelectionInfoImpl(@NotNull String selectionClassName, String moduleID) {
+  public SelectionInfoImpl(@NotNull String selectionClassName, @Nullable SModuleReference moduleID) {
     this(selectionClassName);
-    myModuleID = moduleID;
+    myModuleID = moduleID == null ? null : PersistenceFacade.getInstance().asString(moduleID);
   }
 
   public SelectionInfoImpl(@NotNull String selectionClassName) {
@@ -91,31 +96,46 @@ public class SelectionInfoImpl implements SelectionInfo {
   @Override
   public Selection createSelection(EditorComponent editorComponent) {
     try {
-      Class<Selection> selectionClass;
+      Class<?> selectionClass;
       if (myModuleID != null) {
-        SModule module = MPSModuleRepository.getInstance().getModuleByFqName(myModuleID);
-        if (module == null) {
-          LOG.error("Specified selection class module was not found by ID: " + myModuleID);
+        SRepository repo = editorComponent.getEditorContext().getRepository();
+        // XXX I have no idea whether there's model read access when #createSelection is invoked, rather take one.
+        ReloadableModule reloadableModule = new ModelAccessHelper(repo).runReadAction(() -> {
+          SModule module;
+          try {
+            SModuleReference mr = PersistenceFacade.getInstance().createModuleReference(myModuleID);
+            module = mr.resolve(repo);
+          } catch (IllegalArgumentException ex) {
+            // fallback, perhaps, it's an old selection, where just module name has been stored
+            // TODO remove this fallback once 3.5 is out
+            module = new ModuleRepositoryFacade(repo).getModuleByName(myModuleID);
+          }
+          if (module == null) {
+            LOG.error("Specified selection class module was not found by ID: " + myModuleID);
+            return null;
+          }
+          if (!(module instanceof ReloadableModule)) {
+            LOG.error(String.format("Module %s of specified selection class (%s) can not load classes", myModuleID, mySelectionClassName));
+            return null;
+          }
+          return (ReloadableModule) module;
+        });
+        if (reloadableModule == null) {
           return null;
         }
-        if (!(module instanceof ReloadableModule)) {
-          LOG.error("Specified selection class module was not Language: " + myModuleID);
-          return null;
-        }
-        selectionClass = (Class<Selection>) ((ReloadableModule) module).getClass(mySelectionClassName);
+        // I know it's odd to access module outside ot model read (although the module is likely deployed and shall not
+        // get disposed unexpectedly). Just don't want to refactor the a lot (exception handling for both if/else cases).
+        selectionClass = reloadableModule.getClass(mySelectionClassName);
       } else {
-        selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
+        selectionClass = getClass().getClassLoader().loadClass(mySelectionClassName);
       }
       if (!Selection.class.isAssignableFrom(selectionClass)) {
         LOG.error("Serialized selection class: " + mySelectionClassName + " is not a subclass of " + Selection.class.getName());
         return null;
       }
-      Constructor<Selection> constructor = selectionClass.getConstructor(EditorComponent.class, Map.class, CellInfo.class);
+      Constructor<Selection> constructor = ((Class<Selection>) selectionClass).getConstructor(EditorComponent.class, Map.class, CellInfo.class);
       return constructor.newInstance(editorComponent, myProperties, myCellInfo);
-    } catch (ClassNotFoundException e) {
-      LOG.error(null, e);
-      return null;
-    } catch (NoSuchMethodException e) {
+    } catch (ClassNotFoundException | NoSuchMethodException e) {
       LOG.error(null, e);
       return null;
     } catch (InvocationTargetException e) {

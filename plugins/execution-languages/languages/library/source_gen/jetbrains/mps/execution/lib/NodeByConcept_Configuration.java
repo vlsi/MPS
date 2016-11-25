@@ -5,17 +5,15 @@ package jetbrains.mps.execution.lib;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.lib.ui.NodeChooser;
 import org.apache.log4j.Logger;
@@ -23,26 +21,27 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeByConcept_Configuration implements IPersistentConfiguration {
   @NotNull
   private NodeByConcept_Configuration.MyState myState = new NodeByConcept_Configuration.MyState();
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
-      final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SNode node = getNodeResolved();
-          if (node == null) {
-            errorText.value = "Node is not specified.";
-          } else if (!(myIsValid.invoke(node))) {
-            errorText.value = "Node is not valid.";
+      String errorText = null;
+      if (this.getNodePointer() == null) {
+        errorText = "Node is not specified.";
+      } else {
+        try {
+          PersistenceFacade.getInstance().createNodeReference(this.getNodePointer());
+        } catch (IllegalArgumentException ex) {
+          errorText = "Node reference is not valid";
+          if (ex.getMessage() != null) {
+            errorText = String.format("%s: %s", errorText, ex.getMessage());
           }
         }
-      });
-      if (isNotEmptyString(errorText.value)) {
-        throw new RuntimeConfigurationError(errorText.value);
+      }
+      if ((errorText != null && errorText.length() > 0)) {
+        throw new RuntimeConfigurationError(errorText);
       }
     }
   }
@@ -68,11 +67,6 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
   }
   public void setNodeText(String value) {
     myState.myNodeText = value;
-  }
-  @Nullable
-  @Deprecated
-  public SNode getNodeResolved() {
-    return check_h3hwcn_a0a0(getNode());
   }
   public SNodeReference getNode() {
     if (this.getNodePointer() == null) {
@@ -131,14 +125,5 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
   }
   public NodeByConcept_Configuration_Editor getEditor() {
     return new NodeByConcept_Configuration_Editor(myConcept, myIsValid);
-  }
-  private static SNode check_h3hwcn_a0a0(SNodeReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
-    }
-    return null;
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 import java.util.Collections;
@@ -102,7 +103,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   }
   @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
-    SelectionInfoImpl selectionInto = new SelectionInfoImpl(this.getClass().getName(), "jetbrains.mps.lang.editor.table.runtime");
+    SelectionInfoImpl selectionInto = new SelectionInfoImpl(this.getClass().getName(), PersistenceFacade.getInstance().createModuleReference("258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)"));
     selectionInto.setCellInfo(myTableCell.getCellInfo());
     selectionInto.getPropertiesMap().put(COLUMN_NUMBER_PROPERTY, Integer.toString(myColumnNumber));
     return selectionInto;

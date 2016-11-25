@@ -102,6 +102,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionStoreException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.AbstractMultipleSelection" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.TableModel" file="TableModel.java">

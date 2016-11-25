@@ -62,8 +62,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.genpriorities.GeneratorPrioritiesTree;
 import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
-import jetbrains.mps.project.ModuleInstanceCondition;
-import jetbrains.mps.project.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
@@ -82,7 +80,9 @@ import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.VisibleModuleCondition;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -1009,7 +1009,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            myCurrentTree = new GeneratorPrioritiesTree(myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
+            myCurrentTree = new GeneratorPrioritiesTree(myProject.getRepository(), myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
             myMappings.put(mapping, myCurrentTree);
 
             CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
@@ -1079,7 +1079,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            myCurrentTree = new GeneratorPrioritiesTree(myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
+            myCurrentTree = new GeneratorPrioritiesTree(myProject.getRepository(), myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
 
             final DialogWrapper dialogWrapper = new DialogWrapper(ProjectHelper.toIdeaProject(myProject)) {
               {

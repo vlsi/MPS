@@ -20,7 +20,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -53,7 +53,8 @@ public final class ModuleSuite__BehaviorDescriptor extends BaseBHDescriptor {
     if (moduleReference == null) {
       return null;
     }
-    return moduleReference.resolve(MPSModuleRepository.getInstance());
+    // if repository of this node<ModuleSuite> doesn't match your needs, pass proper SRepository here. There ain't no such thing as global repository 
+    return moduleReference.resolve(SNodeOperations.getModel(__thisNode__).getRepository());
   }
   /*package*/ static Iterable<SNode> getNotMutedTests_id7tF7F0nXrAX(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).where(new IWhereFilter<SNode>() {
