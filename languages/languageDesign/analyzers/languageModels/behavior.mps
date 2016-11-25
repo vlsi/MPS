@@ -14,7 +14,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -122,7 +121,6 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -453,59 +451,6 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="3OYWvKo505H">
-    <property role="3GE5qa" value="Rules" />
-    <ref role="13h7C2" to="bj1v:2S_HFuhBwHz" resolve="PatternCondition" />
-    <node concept="13hLZK" id="3OYWvKo505I" role="13h7CW">
-      <node concept="3clFbS" id="3OYWvKo505J" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="3OYWvKo505W" role="13h7CS">
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getApplicableConcept" />
-      <property role="13i0it" value="true" />
-      <ref role="13i0hy" node="3OYWvKo505O" resolve="getApplicableConcept" />
-      <node concept="3Tm1VV" id="3OYWvKo505X" role="1B3o_S" />
-      <node concept="3clFbS" id="3OYWvKo505Y" role="3clF47">
-        <node concept="3cpWs6" id="3OYWvKo5060" role="3cqZAp">
-          <node concept="2OqwBi" id="3OYWvKo5061" role="3cqZAk">
-            <node concept="FGMqu" id="4vXWNHn24bY" role="2OqNvi" />
-            <node concept="2OqwBi" id="3OYWvKo5062" role="2Oq$k0">
-              <node concept="2qgKlT" id="4vXWNHn2486" role="2OqNvi">
-                <ref role="37wK5l" to="tp2b:4vXWNHn1_L$" resolve="getQuotedNodeConcept" />
-              </node>
-              <node concept="2OqwBi" id="3OYWvKo5063" role="2Oq$k0">
-                <node concept="13iPFW" id="3OYWvKo5064" role="2Oq$k0" />
-                <node concept="3TrEf2" id="3OYWvKo5069" role="2OqNvi">
-                  <ref role="3Tt5mk" to="bj1v:2S_HFuhBx12" resolve="pattern" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="3OYWvKo505Z" role="3clF45">
-        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      </node>
-    </node>
-  </node>
-  <node concept="13h7C7" id="3OYWvKo505K">
-    <property role="3GE5qa" value="Rules" />
-    <ref role="13h7C2" to="bj1v:2S_HFuhBtro" resolve="ApplicableCondition" />
-    <node concept="13i0hz" id="3OYWvKo505O" role="13h7CS">
-      <property role="13i0iv" value="true" />
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getApplicableConcept" />
-      <property role="13i0it" value="true" />
-      <node concept="3Tqbb2" id="3OYWvKo505P" role="3clF45">
-        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      </node>
-      <node concept="3clFbS" id="3OYWvKo505Q" role="3clF47" />
-      <node concept="3Tm1VV" id="3OYWvKo505R" role="1B3o_S" />
-    </node>
-    <node concept="13hLZK" id="3OYWvKo505L" role="13h7CW">
-      <node concept="3clFbS" id="3OYWvKo505M" role="2VODD2" />
-    </node>
-  </node>
   <node concept="13h7C7" id="7wwiZxTDPuy">
     <property role="3GE5qa" value="Instructions" />
     <ref role="13h7C2" to="bj1v:5JpT3MjX6ua" resolve="Instruction" />
@@ -804,33 +749,6 @@
     </node>
     <node concept="13hLZK" id="7zQRkz$T2vb" role="13h7CW">
       <node concept="3clFbS" id="7zQRkz$T2vc" role="2VODD2" />
-    </node>
-  </node>
-  <node concept="13h7C7" id="4ipeeu8Vyh0">
-    <property role="3GE5qa" value="Rules" />
-    <ref role="13h7C2" to="bj1v:4ipeeu8UrBu" resolve="ConceptCondition" />
-    <node concept="13hLZK" id="4ipeeu8Vyh1" role="13h7CW">
-      <node concept="3clFbS" id="4ipeeu8Vyh2" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="4ipeeu8Vyh3" role="13h7CS">
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getApplicableConcept" />
-      <property role="13i0it" value="true" />
-      <ref role="13i0hy" node="3OYWvKo505O" resolve="getApplicableConcept" />
-      <node concept="3Tm1VV" id="4ipeeu8Vyh4" role="1B3o_S" />
-      <node concept="3clFbS" id="4ipeeu8Vyh5" role="3clF47">
-        <node concept="3clFbF" id="4ipeeu8Vzaa" role="3cqZAp">
-          <node concept="2OqwBi" id="4ipeeu8Vzac" role="3clFbG">
-            <node concept="13iPFW" id="4ipeeu8Vzab" role="2Oq$k0" />
-            <node concept="3TrEf2" id="4ipeeu8Vzag" role="2OqNvi">
-              <ref role="3Tt5mk" to="bj1v:4ipeeu8Vyel" resolve="concept" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="4ipeeu8Vyh6" role="3clF45">
-        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      </node>
     </node>
   </node>
   <node concept="13h7C7" id="3tEjlbSMTnC">
