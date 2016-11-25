@@ -238,6 +238,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private void update() {
     ThreadUtils.assertEDT();
+    if (myTaskInProgress) { // this happens to be called inside the UpdatingTask#doUpdate
+      LOG.debug("Rescheduling update");
+      reschedule();
+    }
     LOG.debug("Updating");
     Delta<PluginLoader> loadersDelta;
     Delta<ReloadableModule> moduleDelta;
@@ -255,15 +259,14 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       LOG.debug("Nothing to do in update");
       return;
     }
-
-    assert !myTaskInProgress.get();
+    assert !myTaskInProgress;
 
     Set<PluginContributor> toUnloadContributors = calcContributorsToUnload(myCurrentContributors, getPluginModules(moduleDelta.toUnload));
     Set<PluginContributor> toLoadContributors =
         new ModelAccessHelper(myModelAccess).runReadAction(() -> createPluginContributors(getPluginModules(moduleDelta.toLoad)));
     Delta<PluginContributor> contributorDelta = new Delta<>(toLoadContributors, toUnloadContributors);
 
-    assert !myTaskInProgress.get();
+    assert !myTaskInProgress;
     UpdatingTask task = new UpdatingTask(null, loadersDelta, contributorDelta);
     runTask(task);
   }
@@ -316,14 +319,16 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     private void doUpdate(ProgressMonitor monitor) {
       try {
-        myTaskInProgress.compareAndSet(false, true);
+        ThreadUtils.assertEDT();
+        assert !myTaskInProgress;
+        myTaskInProgress = true;
         removeLoaders(monitor);
         removeContributors(monitor);
         addLoaders(monitor);
         addFactories(monitor);
         addContributors(monitor);
       } finally{
-        myTaskInProgress.compareAndSet(true, false);
+        myTaskInProgress = false;
       }
     }
 
@@ -424,7 +429,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
   }
 
-  private final AtomicBoolean myTaskInProgress = new AtomicBoolean(false);
+  private volatile boolean myTaskInProgress = false;
   private final Object myDeltaLock = new Object();
   private final Object myLoadersDeltaLock = new Object();
   private final Delta<ReloadableModule> myDelta = new Delta<>();
