@@ -360,10 +360,6 @@
   <dependency className="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" file="BootstrapAwareMetaObject_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.CheckedModuleQualifiedName_BehaviorDescriptor" file="CheckedModuleQualifiedName_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.ChildAttributeQualifier_BehaviorDescriptor" file="ChildAttributeQualifier_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

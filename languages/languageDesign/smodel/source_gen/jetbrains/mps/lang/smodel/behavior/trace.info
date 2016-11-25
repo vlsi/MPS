@@ -51,9 +51,6 @@
     <file name="BootstrapAwareMetaObject_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" />
     </file>
-    <file name="CheckedModuleQualifiedName_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.CheckedModuleQualifiedName_BehaviorDescriptor" />
-    </file>
     <file name="ChildAttributeQualifier_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.ChildAttributeQualifier_BehaviorDescriptor" />
     </file>

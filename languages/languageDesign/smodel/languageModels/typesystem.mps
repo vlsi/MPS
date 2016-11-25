@@ -10020,30 +10020,6 @@
       <ref role="1YaFvo" to="tp25:36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
     </node>
   </node>
-  <node concept="1YbPZF" id="625yo8RZLm2">
-    <property role="TrG5h" value="typeof_CheckedModuleQualifiedName" />
-    <property role="3GE5qa" value="reference" />
-    <node concept="3clFbS" id="625yo8RZLm3" role="18ibNy">
-      <node concept="1Z5TYs" id="625yo8RZLux" role="3cqZAp">
-        <node concept="mw_s8" id="625yo8RZLvK" role="1ZfhKB">
-          <node concept="2c44tf" id="625yo8RZLvG" role="mwGJk">
-            <node concept="17QB3L" id="625yo8RZLxF" role="2c44tc" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="625yo8RZLu$" role="1ZfhK$">
-          <node concept="1Z2H0r" id="625yo8RZLmA" role="mwGJk">
-            <node concept="1YBJjd" id="625yo8RZLmZ" role="1Z2MuG">
-              <ref role="1YBMHb" node="625yo8RZLm5" resolve="ref" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="625yo8RZLm5" role="1YuTPh">
-      <property role="TrG5h" value="ref" />
-      <ref role="1YaFvo" to="tp25:625yo8RZEU6" resolve="CheckedModuleQualifiedName" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="3EurpdvY6K4">
     <property role="TrG5h" value="typeof_OfConceptOperation" />
     <property role="3GE5qa" value="sequence" />

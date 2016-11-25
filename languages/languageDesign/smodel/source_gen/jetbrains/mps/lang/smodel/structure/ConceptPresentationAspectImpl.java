@@ -21,7 +21,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AttributeAccess = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BootstrapAwareMetaObject = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CheckedModuleQualifiedName = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ChildAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ChildNodeRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptAliasOperation = new ConceptPresentationBuilder().create();
@@ -211,8 +210,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AttributeQualifier;
       case LanguageConceptSwitch.BootstrapAwareMetaObject:
         return props_BootstrapAwareMetaObject;
-      case LanguageConceptSwitch.CheckedModuleQualifiedName:
-        return props_CheckedModuleQualifiedName;
       case LanguageConceptSwitch.ChildAttributeQualifier:
         return props_ChildAttributeQualifier;
       case LanguageConceptSwitch.ChildNodeRefExpression:

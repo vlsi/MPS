@@ -2199,19 +2199,6 @@
       <ref role="20lvS9" node="36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="625yo8RZEU6">
-    <property role="3GE5qa" value="reference" />
-    <property role="TrG5h" value="CheckedModuleQualifiedName" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="module qualified name" />
-    <property role="EcuMT" value="6955116391921790598" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyi" id="625yo8RZF8_" role="1TKVEl">
-      <property role="TrG5h" value="moduleId" />
-      <property role="IQ2nx" value="6955116391921791525" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="44$dP9uanu0">
     <property role="3GE5qa" value="sequence" />
     <property role="TrG5h" value="OfConceptOperation" />
