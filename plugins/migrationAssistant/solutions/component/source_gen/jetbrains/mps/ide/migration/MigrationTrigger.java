@@ -376,7 +376,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   });
                 }
               });
-            } else {
+            } else if (resave) {
               // if project is to be reloaded, not resetting migrationQueued flag until reload 
               resetMigrationQueuedFlag();
             }

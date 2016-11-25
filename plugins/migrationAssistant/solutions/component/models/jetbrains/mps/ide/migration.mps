@@ -232,6 +232,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -253,6 +254,10 @@
       <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
@@ -3366,18 +3371,21 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="9aQIb" id="2utABIFy_uQ" role="9aQIa">
-                                <node concept="3clFbS" id="2utABIFy_uR" role="9aQI4">
-                                  <node concept="3SKdUt" id="2BGZPGehqyL" role="3cqZAp">
-                                    <node concept="3SKdUq" id="2BGZPGehqyN" role="3SKWNk">
+                              <node concept="3eNFk2" id="2_Nn7s1p4t9" role="3eNLev">
+                                <node concept="3clFbS" id="2_Nn7s1p4ta" role="3eOfB_">
+                                  <node concept="3SKdUt" id="2_Nn7s1p4tb" role="3cqZAp">
+                                    <node concept="3SKdUq" id="2_Nn7s1p4tc" role="3SKWNk">
                                       <property role="3SKdUp" value="if project is to be reloaded, not resetting migrationQueued flag until reload" />
                                     </node>
                                   </node>
-                                  <node concept="3clFbF" id="2utABIFyAr0" role="3cqZAp">
-                                    <node concept="1rXfSq" id="2utABIFyAqZ" role="3clFbG">
+                                  <node concept="3clFbF" id="2_Nn7s1p4td" role="3cqZAp">
+                                    <node concept="1rXfSq" id="2_Nn7s1p4te" role="3clFbG">
                                       <ref role="37wK5l" node="7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
                                     </node>
                                   </node>
+                                </node>
+                                <node concept="37vLTw" id="2_Nn7s1p7nO" role="3eO9$A">
+                                  <ref role="3cqZAo" node="4OwAxHLmju" resolve="resave" />
                                 </node>
                               </node>
                             </node>
