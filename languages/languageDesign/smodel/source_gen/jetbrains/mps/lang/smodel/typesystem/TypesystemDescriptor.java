@@ -481,6 +481,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ConceptEqualsExpression_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_ConceptSwitch_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
