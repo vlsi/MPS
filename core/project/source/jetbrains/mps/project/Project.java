@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -26,11 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -45,13 +42,14 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   private final String myName;
   private final ProjectScope myScope = new ProjectScope();
-  private final SRepositoryBase myRepository;
+  private final ProjectRepository myRepository;
 
   private boolean myDisposed;
 
   protected Project(String name) {
     myName = name;
-    myRepository = new ProjectRepository(this); // AP fixme : 'this' should not be used here
+    myRepository = new ProjectRepository(this);
+    myRepository.init();
   }
 
   @NotNull

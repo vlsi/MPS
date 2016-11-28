@@ -152,7 +152,7 @@ public abstract class ProjectBase extends Project {
    */
   private void loadModules() {
     getModelAccess().checkWriteAccess();
-    myModuleLoader.updateModule2PathMap(myProjectDescriptor.getModulePaths());
+    myModuleLoader.updatePathsInProject(myProjectDescriptor.getModulePaths());
   }
 
   private void fireModulesLoaded() {

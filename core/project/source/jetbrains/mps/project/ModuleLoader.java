@@ -77,9 +77,9 @@ final class ModuleLoader {
   }
 
   /**
-   * updates the module-to-path map
+   * updates module paths in the project.
    */
-  public void updateModule2PathMap(final List<ModulePath> newModulePaths) {
+  public void updatePathsInProject(final List<ModulePath> newModulePaths) {
     LOG.info("Loading modules...");
     clearErrorsBuffer();
 
