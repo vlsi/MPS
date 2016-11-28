@@ -35,9 +35,6 @@ public class UnpackHelper extends DependenciesHelper {
     if (withContent) {
       requiredWithContent.add(n);
     }
-    if (artifactId != null) {
-      mapArtifactId(n, artifactId);
-    }
     if (!(requiredSet.add(n))) {
       return;
     }
@@ -65,7 +62,7 @@ public class UnpackHelper extends DependenciesHelper {
     for (SNode n : required) {
       Collection<Object> artifacts = artifactIds.get(n);
       // FIXME artifacts parameter is never used, what's its purpose, after all? 
-      BuildLayout_PathElement__BehaviorDescriptor.unpack_id6bGbH3Svq6g.invoke(n, this, (artifacts != null ? artifacts : Collections.emptyList()));
+      BuildLayout_PathElement__BehaviorDescriptor.unpack_id6bGbH3Svq6g.invoke(n, this, Collections.emptyList());
     }
   }
   public boolean isRequired(SNode n) {

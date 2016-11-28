@@ -80,11 +80,7 @@ public class FetchDependenciesProcessor {
       if (!(check(node))) {
         return;
       }
-      if (!(checkArtifactId(artifactId))) {
-        // false is possible only when artifactId is SNode from transient model 
-        artifactId = helper.getOriginalNode((SNode) artifactId);
-      }
-      helper.add(node, false, artifactId);
+      helper.add(node, false, null);
     }
     @Override
     public void addWithContent(SNode node) {
