@@ -1,9 +1,9 @@
 <project name="Get Idea Platform" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
 
-  <property name="idea.platform.version" value="163.5644.15" />
-  <property name="idea.platform.snapshot" value="163-SNAPSHOT" />
-  <property name="ivy.jar.dir" value="${basedir}/ivy" />
-  <property name="ivy.cache.ttl.default" value="eternal" />
+  <property name="idea.platform.version" value="163.7743.44"/>
+  <property name="idea.platform.snapshot" value="163-SNAPSHOT"/>
+  <property name="ivy.jar.dir" value="${basedir}/ivy"/>
+  <property name="ivy.cache.ttl.default" value="eternal"/>
 
   <target name="install-ivy">
     <property name="mps.ivy.home" value="${user.home}"/>
@@ -18,8 +18,8 @@
     <condition property="platformNeedUpdate" value="true" else="false">
       <not>
         <and>
-          <equals arg1="${buildTxtExist}" arg2="true" />
-          <equals arg1="${idea.platform.version}" arg2="${currentVersion}" />
+          <equals arg1="${buildTxtExist}" arg2="true"/>
+          <equals arg1="${idea.platform.version}" arg2="${current.version}"/>
         </and>
       </not>
     </condition>
@@ -31,17 +31,27 @@
     </condition>
   </target>
 
-  <target name="readFile" depends="checkFileExist" if="${buildTxtExist}">
-    <loadfile property="currentVersion" srcfile="../lib/build.txt">
+  <target name="readFile" depends="checkFileExist" if="${buildTxtExist}" description="Load platform version from build.txt to property">
+    <loadfile property="current.version" srcfile="../lib/build.txt">
       <filterchain>
+        <replacestring from="MPS-" to=""/>
         <striplinebreaks/>
       </filterchain>
     </loadfile>
+    <loadfile property="current.version2" failonerror="false">
+      <zipentry zipfile="../platform.zip" name="lib/build.txtdd"/>
+      <filterchain>
+        <replacestring from="MPS-" to=""/>
+        <striplinebreaks/>
+      </filterchain>
+    </loadfile>
+    <echo message="File build.txt contains build number: ${current.version}"/>
+    <echo message="File build.txt contains build number: ${current.version2}"/>
   </target>
 
   <target name="checkSnapshot" depends="readFile">
     <condition property="isSnapshot" value="true" else="false">
-      <equals arg1="${idea.platform.snapshot}" arg2="${idea.platform.version}" />
+      <equals arg1="${idea.platform.snapshot}" arg2="${idea.platform.version}"/>
     </condition>
   </target>
 
@@ -58,11 +68,29 @@
   </target>
 
   <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">
-    <delete dir="../lib"/>
+    <antcall target="clean"/>
+    <antcall target="force-resolve"/>
+  </target>
+
+  <target name="clean" description="Delete platform files">
+    <delete dir="../lib" includeemptydirs="true">
+      <exclude name="diffutils-1.2.1.jar"/>
+      <exclude name="src/diffutils-1.2.1-sources.jar"/>
+    </delete>
     <delete dir="../plugins/cvsIntegration/lib"/>
     <delete dir="../plugins/git4idea/lib"/>
     <delete dir="../plugins/svn4idea/lib"/>
-    <antcall target="force-resolve"/>
+    <delete dir="../plugins/terminal"/>
+  </target>
+
+  <target name="download" description="Download platform artifacts">
+    <get src="https://teamcity.jetbrains.com/guestAuth/repository/downloadAll/MPS_35_Distribution_Platform/${idea.platform.version}/artifacts.zip"
+         dest="../platform.zip" verbose="true"/>
+  </target>
+
+  <target name="setup" depends="checkPlatformIsUpToDate,download" if="${platformNeedUpdate}">
+    <antcall target="clean"/>
+    <unzip src="../platform.zip" dest="../" overwrite="true"/>
   </target>
 
 </project>
