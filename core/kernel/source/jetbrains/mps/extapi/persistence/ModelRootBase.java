@@ -40,9 +40,9 @@ import java.util.Set;
 public abstract class ModelRootBase implements ModelRoot {
   private static Logger LOG = Logger.getLogger(ModelRootBase.class);
 
-  @Nullable private SModule myModule;
+  @Nullable private SModuleBase myModule;
   @Nullable private volatile SRepository myRepository;
-  private final Set<SModel> myModels = new HashSet<SModel>();
+  private final Set<SModel> myModels = new HashSet<>();
   private ModuleListener myModuleListener;
 
   @Nullable
@@ -51,7 +51,7 @@ public abstract class ModelRootBase implements ModelRoot {
     return myModule;
   }
 
-  public void setModule(@NotNull SModule module) {
+  public void setModule(@NotNull SModuleBase module) {
     assert myModule == null;
     checkNotRegistered();
     myModule = module;
@@ -96,8 +96,10 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void dispose() {
-    for (SModel model : getModels()) {
-      unregister(model);
+    if (myModule != null) {
+      for (SModel model : getModels()) {
+        myModule.unregisterModel((SModelBase) model);
+      }
     }
     if (myModuleListener != null) {
       assert myModule != null;
@@ -117,7 +119,7 @@ public abstract class ModelRootBase implements ModelRoot {
     return myRepository != null;
   }
 
-  protected void register(SModel model) {
+  protected void registerModel(SModel model) {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
     assert module.getModel(model.getModelId()) == null;
@@ -126,13 +128,16 @@ public abstract class ModelRootBase implements ModelRoot {
     myModels.add(model);
   }
 
-  protected void unregister(SModel model) {
+  private void unregisterModel(SModel model) {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
     assert module.getModel(model.getModelId()) != null;
     assert myModels.contains(model);
-
-    module.unregisterModel((SModelBase) model);
+    if (model instanceof EditableSModelBase && ((EditableSModelBase) model).isChanged()) {
+      ((EditableSModelBase) model).resolveDiskConflict();
+    } else {
+      module.unregisterModel((SModelBase) model);
+    }
   }
 
   public void update() {
@@ -140,29 +145,28 @@ public abstract class ModelRootBase implements ModelRoot {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
 
-    Set<SModelId> loaded = new HashSet<SModelId>();
+    Set<SModelId> loaded = new HashSet<>();
     Iterable<SModel> allModels = loadModels();
     for (SModel model : allModels) {
       SModel oldModel = module.getModel(model.getModelId());
-      if (oldModel == null) {
-        register(model);
-      } else if (oldModel == model) {
+      if (oldModel == model) {
         //do nothing
-      } else if (oldModel.getModelRoot() != model.getModelRoot()) {
-        LOG.warn("Trying to load model `" + model.getModelName() + "' which is already loaded by another model root");
+      } else if (oldModel != null && oldModel.getModelRoot() != model.getModelRoot()) {
+        LOG.warn("Trying to load model `" + model + "' which is already loaded by another model root");
       } else if (loaded.contains(model.getModelId())) {
-        LOG.warn("loadModels() returned model `" + model.getModelName() + "' twice");
+        LOG.warn("loadModels() returned model `" + model + "' twice");
       } else {
-        LOG.warn("loadModels() loaded model `" + model.getModelName() + "' which was already loaded. Ignoring.");
+        if (oldModel != null) {
+          LOG.warn("loadModels() loaded model `" + model + "' which id is already present.");
+          unregisterModel(oldModel);
+        }
+        registerModel(model);
       }
       loaded.add(model.getModelId());
     }
     for (SModel model : getModels()) {
-      if (loaded.contains(model.getModelId())) continue;
-      if (model instanceof EditableSModelBase && ((EditableSModelBase) model).isChanged()) {
-        ((EditableSModelBase) model).resolveDiskConflict();
-      } else {
-        module.unregisterModel((SModelBase) model);
+      if (!loaded.contains(model.getModelId())) {
+        unregisterModel(model);
       }
     }
   }

@@ -114,7 +114,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     SModel model = factory.create(source, opts);
     ((SModelBase) model).setModelRoot(this);
     // TODO fix
-    register(model);
+    registerModel(model);
     return model;
   }
 

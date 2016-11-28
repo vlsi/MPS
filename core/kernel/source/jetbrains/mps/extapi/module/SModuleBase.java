@@ -264,7 +264,6 @@ public abstract class SModuleBase implements SModule {
       myIdToModelMap.remove(reference.getModelId());
       myModels.remove(model);
       model.detach();
-
     }
     fireModelRemoved(reference);
   }

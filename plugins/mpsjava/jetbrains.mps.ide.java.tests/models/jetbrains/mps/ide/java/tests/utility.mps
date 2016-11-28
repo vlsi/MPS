@@ -39,6 +39,7 @@
     <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
+    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1006,9 +1007,14 @@
         <node concept="3clFbF" id="3$PIpB7IceT" role="3cqZAp">
           <node concept="2OqwBi" id="3$PIpB7IceU" role="3clFbG">
             <node concept="liA8E" id="3$PIpB7IceV" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="setModule" />
-              <node concept="1rXfSq" id="4MN2Gxt4OpD" role="37wK5m">
-                <ref role="37wK5l" node="4MN2Gxt4Ei8" resolve="getModule" />
+              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(jetbrains.mps.extapi.module.SModuleBase):void" resolve="setModule" />
+              <node concept="10QFUN" id="1YJzxT$LtHj" role="37wK5m">
+                <node concept="3uibUv" id="1YJzxT$LtTV" role="10QFUM">
+                  <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                </node>
+                <node concept="1rXfSq" id="4MN2Gxt4OpD" role="10QFUP">
+                  <ref role="37wK5l" node="4MN2Gxt4Ei8" resolve="getModule" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="3$PIpB7IceW" role="2Oq$k0">
@@ -1342,9 +1348,14 @@
         <node concept="3clFbF" id="5Nq0x4ogOkB" role="3cqZAp">
           <node concept="2OqwBi" id="5Nq0x4ogOI9" role="3clFbG">
             <node concept="liA8E" id="5Nq0x4ogP3f" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="setModule" />
-              <node concept="1rXfSq" id="4MN2Gxt4OWO" role="37wK5m">
-                <ref role="37wK5l" node="4MN2Gxt4Ei8" resolve="getModule" />
+              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(jetbrains.mps.extapi.module.SModuleBase):void" resolve="setModule" />
+              <node concept="10QFUN" id="1YJzxT$Lqkj" role="37wK5m">
+                <node concept="3uibUv" id="1YJzxT$LtvL" role="10QFUM">
+                  <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                </node>
+                <node concept="1rXfSq" id="4MN2Gxt4OWO" role="10QFUP">
+                  <ref role="37wK5l" node="4MN2Gxt4Ei8" resolve="getModule" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="5Nq0x4ogOkA" role="2Oq$k0">
@@ -1998,9 +2009,14 @@
         <node concept="3clFbF" id="Tb4Psnn76S" role="3cqZAp">
           <node concept="2OqwBi" id="Tb4Psnn76T" role="3clFbG">
             <node concept="liA8E" id="Tb4Psnn76U" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="setModule" />
-              <node concept="37vLTw" id="Tb4Psnn76V" role="37wK5m">
-                <ref role="3cqZAo" node="Tb4Psnn76$" resolve="mod1" />
+              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(jetbrains.mps.extapi.module.SModuleBase):void" resolve="setModule" />
+              <node concept="10QFUN" id="1YJzxT$Lu8q" role="37wK5m">
+                <node concept="3uibUv" id="1YJzxT$Lug6" role="10QFUM">
+                  <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                </node>
+                <node concept="37vLTw" id="Tb4Psnn76V" role="10QFUP">
+                  <ref role="3cqZAo" node="Tb4Psnn76$" resolve="mod1" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="Tb4Psnn76W" role="2Oq$k0">
@@ -2194,9 +2210,14 @@
         <node concept="3clFbF" id="Tb4Psnn787" role="3cqZAp">
           <node concept="2OqwBi" id="Tb4Psnn788" role="3clFbG">
             <node concept="liA8E" id="Tb4Psnn789" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="setModule" />
-              <node concept="37vLTw" id="Tb4Psnn78a" role="37wK5m">
-                <ref role="3cqZAo" node="Tb4Psnn76C" resolve="mod2" />
+              <ref role="37wK5l" to="ends:~ModelRootBase.setModule(jetbrains.mps.extapi.module.SModuleBase):void" resolve="setModule" />
+              <node concept="10QFUN" id="1YJzxT$LLVM" role="37wK5m">
+                <node concept="3uibUv" id="1YJzxT$LM2X" role="10QFUM">
+                  <ref role="3uigEE" to="31cb:~SModuleBase" resolve="SModuleBase" />
+                </node>
+                <node concept="37vLTw" id="Tb4Psnn78a" role="10QFUP">
+                  <ref role="3cqZAo" node="Tb4Psnn76C" resolve="mod2" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="Tb4Psnn78b" role="2Oq$k0">
