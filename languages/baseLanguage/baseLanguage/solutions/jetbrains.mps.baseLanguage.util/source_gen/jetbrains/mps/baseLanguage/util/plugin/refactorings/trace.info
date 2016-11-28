@@ -3556,10 +3556,12 @@
       <node id="1642079203062675680" at="36,19,37,198" concept="11" />
       <node id="1642079203062675690" at="38,12,39,200" concept="11" />
       <node id="1642079203062675677" at="40,5,41,0" concept="13" />
-      <node id="8492459591399166299" at="45,124,46,80" concept="4" />
+      <node id="8492459591399166299" at="45,117,46,80" concept="4" />
       <node id="8492459591399166317" at="47,12,48,30" concept="4" />
+      <node id="8492459591399166306" at="51,62,52,46" concept="11" />
       <node id="1642079203062675688" at="38,10,40,5" concept="0" />
       <node id="8492459591399166315" at="47,10,49,5" concept="0" />
+      <node id="8492459591399166306" at="51,0,54,0" concept="15" trace="eq_z7f2gu_a0a0e#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="8492459591399166322" at="15,0,19,0" concept="2" trace="ClassExtractMethodRefactoringProcessor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
       <node id="1642079203062675678" at="35,34,40,5" concept="8" />
       <node id="8492459591399166297" at="44,39,49,5" concept="8" />
@@ -3570,9 +3572,14 @@
       <node id="8492459591399166170" at="19,0,34,0" concept="9" trace="createMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1642079203062675679" at="36,19,37,198" />
       <scope id="1642079203062675689" at="38,12,39,200" />
-      <scope id="8492459591399166298" at="45,124,46,80" />
+      <scope id="8492459591399166298" at="45,117,46,80" />
       <scope id="8492459591399166316" at="47,12,48,30" />
+      <scope id="8492459591399166306" at="51,62,52,46" />
       <scope id="8492459591399166325" at="15,90,17,25" />
+      <scope id="8492459591399166306" at="51,0,54,0">
+        <var name="a" id="8492459591399166306" />
+        <var name="b" id="8492459591399166306" />
+      </scope>
       <scope id="8492459591399166322" at="15,0,19,0">
         <var name="clazz" id="8492459591399166335" />
         <var name="nodesToExtract" id="8492459591399166337" />
@@ -3594,7 +3601,7 @@
         <var name="declaration" id="8492459591399166261" />
         <var name="parameters" id="8492459591399166263" />
       </scope>
-      <unit id="8492459591399166166" at="13,0,52,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor" />
+      <unit id="8492459591399166166" at="13,0,55,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor" />
     </file>
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/8492459591399166501">

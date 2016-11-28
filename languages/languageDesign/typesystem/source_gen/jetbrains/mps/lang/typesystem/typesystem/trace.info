@@ -3399,7 +3399,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/8030577887428929108">
     <file name="JoinType_supertypeOf_arguments_InequationReplacementRule.java">
       <node id="176833115774928743" at="24,50,25,20" concept="8" />
-      <node id="1269166727599041977" at="29,105,30,20" concept="8" />
+      <node id="1269166727599041977" at="29,100,30,20" concept="8" />
       <node id="216062478518715046" at="34,84,35,20" concept="8" />
       <node id="5293313440027747665" at="39,169,40,20" concept="8" />
       <node id="8030577887428961179" at="42,5,43,17" concept="8" />
@@ -3428,7 +3428,7 @@
       <node id="176833115774977722" at="95,139,96,31" concept="8" />
       <node id="4903733294584216031" at="100,84,101,139" concept="3" />
       <node id="216062478518759976" at="101,139,102,31" concept="8" />
-      <node id="1269166727599073781" at="106,105,107,139" concept="3" />
+      <node id="1269166727599073781" at="106,102,107,139" concept="3" />
       <node id="1269166727599078008" at="107,139,108,31" concept="8" />
       <node id="8991952304890041665" at="112,169,113,139" concept="3" />
       <node id="8991952304890044830" at="113,139,114,14" concept="1" />
@@ -3438,6 +3438,9 @@
       <node id="8030577887428929108" at="125,73,126,107" concept="8" />
       <node id="8030577887428929108" at="129,57,130,148" concept="8" />
       <node id="8030577887428929108" at="132,59,133,151" concept="8" />
+      <node id="1269166727599058603" at="135,64,136,46" concept="8" />
+      <node id="1269166727599068517" at="138,64,139,46" concept="8" />
+      <node id="1269166727599068517" at="141,66,142,46" concept="8" />
       <node id="8030577887428929108" at="20,0,22,0" concept="2" trace="JoinType_supertypeOf_arguments_InequationReplacementRule#()V" />
       <node id="176833115774928741" at="23,187,26,7" concept="5" />
       <node id="1269166727599041975" at="28,187,31,7" concept="5" />
@@ -3448,6 +3451,9 @@
       <node id="8030577887428929108" at="125,0,128,0" concept="6" trace="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8030577887428929108" at="129,0,132,0" concept="6" trace="getApplicableSubtypeConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8030577887428929108" at="132,0,135,0" concept="6" trace="getApplicableSupertypeConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1269166727599058603" at="135,0,138,0" concept="11" trace="eq_6boqzn_a0a0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="1269166727599068517" at="138,0,141,0" concept="11" trace="eq_6boqzn_a0a0c0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="1269166727599068517" at="141,0,144,0" concept="11" trace="eq_6boqzn_a0a0c0b0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="176833115774972202" at="93,187,97,7" concept="5" />
       <node id="216062478518759974" at="99,187,103,7" concept="5" />
       <node id="1269166727599068513" at="105,187,109,7" concept="5" />
@@ -3458,7 +3464,7 @@
       <node id="8030577887428961159" at="37,5,42,5" concept="4" />
       <node id="176833115774977717" at="47,50,53,9" concept="0" />
       <node id="4903733294584216031" at="58,84,64,9" concept="0" />
-      <node id="1269166727599073781" at="69,105,75,9" concept="0" />
+      <node id="1269166727599073781" at="69,100,75,9" concept="0" />
       <node id="8991952304890041665" at="80,169,86,9" concept="0" />
       <node id="176833115774972200" at="92,35,98,5" concept="4" />
       <node id="216062478518759972" at="98,5,104,5" concept="4" />
@@ -3477,7 +3483,7 @@
       <node id="8030577887428929108" at="45,0,91,0" concept="6" trace="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
       <scope id="8030577887428929108" at="20,69,20,69" />
       <scope id="176833115774928742" at="24,50,25,20" />
-      <scope id="1269166727599041976" at="29,105,30,20" />
+      <scope id="1269166727599041976" at="29,100,30,20" />
       <scope id="216062478518715045" at="34,84,35,20" />
       <scope id="5293313440027575446" at="39,169,40,20" />
       <scope id="8030577887428929108" at="119,27,120,16" />
@@ -3485,10 +3491,13 @@
       <scope id="8030577887428929108" at="125,73,126,107" />
       <scope id="8030577887428929108" at="129,57,130,148" />
       <scope id="8030577887428929108" at="132,59,133,151" />
+      <scope id="1269166727599058603" at="135,64,136,46" />
+      <scope id="1269166727599068517" at="138,64,139,46" />
+      <scope id="1269166727599068517" at="141,66,142,46" />
       <scope id="8030577887428929108" at="20,0,22,0" />
       <scope id="176833115774972203" at="94,50,96,31" />
       <scope id="216062478518759975" at="100,84,102,31" />
-      <scope id="1269166727599068514" at="106,105,108,31" />
+      <scope id="1269166727599068514" at="106,102,108,31" />
       <scope id="8991952304890030601" at="112,169,114,14" />
       <scope id="176833115774928740" at="23,187,26,7" />
       <scope id="1269166727599041974" at="28,187,31,7" />
@@ -3503,6 +3512,18 @@
       </scope>
       <scope id="8030577887428929108" at="129,0,132,0" />
       <scope id="8030577887428929108" at="132,0,135,0" />
+      <scope id="1269166727599058603" at="135,0,138,0">
+        <var name="a" id="1269166727599058603" />
+        <var name="b" id="1269166727599058603" />
+      </scope>
+      <scope id="1269166727599068517" at="138,0,141,0">
+        <var name="a" id="1269166727599068517" />
+        <var name="b" id="1269166727599068517" />
+      </scope>
+      <scope id="1269166727599068517" at="141,0,144,0">
+        <var name="a" id="1269166727599068517" />
+        <var name="b" id="1269166727599068517" />
+      </scope>
       <scope id="176833115774977717" at="48,9,52,117">
         <var name="_info_12389875345" id="176833115774977717" />
         <var name="_nodeToCheck_1029348928467" id="176833115774977717" />
@@ -3549,7 +3570,7 @@
       </scope>
       <scope id="176833115774972203" at="47,50,54,15" />
       <scope id="216062478518759975" at="58,84,65,15" />
-      <scope id="1269166727599068514" at="69,105,76,15" />
+      <scope id="1269166727599068514" at="69,100,76,15" />
       <scope id="8991952304890030601" at="80,169,87,14" />
       <scope id="176833115774972201" at="46,187,55,7" />
       <scope id="216062478518759973" at="57,187,66,7" />
@@ -3594,7 +3615,7 @@
         <var name="supertype" id="8030577887428929108" />
         <var name="typeCheckingContext" id="8030577887428929108" />
       </scope>
-      <unit id="8030577887428929108" at="19,0,136,0" name="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_arguments_InequationReplacementRule" />
+      <unit id="8030577887428929108" at="19,0,145,0" name="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_arguments_InequationReplacementRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/8090891477833033257">

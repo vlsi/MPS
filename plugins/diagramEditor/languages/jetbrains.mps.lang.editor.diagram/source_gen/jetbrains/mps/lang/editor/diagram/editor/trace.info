@@ -2517,96 +2517,96 @@
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/4088443785018595449">
     <file name="DiagramNodeParameters.java">
-      <node id="4088443785021674119" at="25,78,26,201" concept="8" />
-      <node id="4088443785021954678" at="29,399,30,34" concept="2" />
-      <node id="6377978676692421990" at="30,34,31,13" concept="8" />
-      <node id="4088443785021679175" at="32,5,33,204" concept="2" />
-      <node id="4088443785021810372" at="33,204,34,27" concept="2" />
-      <node id="4088443785019523027" at="34,27,35,57" concept="7" />
-      <node id="1497735617371803010" at="35,57,36,0" concept="10" />
-      <node id="4088443785019168937" at="36,0,37,202" concept="7" />
-      <node id="4088443785018825540" at="37,202,38,81" concept="7" />
-      <node id="1497735617371938980" at="38,81,39,0" concept="10" />
-      <node id="1497735617371956361" at="41,231,42,229" concept="2" />
-      <node id="1497735617371991395" at="42,229,43,232" concept="2" />
-      <node id="1497735617371941853" at="45,5,46,0" concept="10" />
-      <node id="4088443785018904043" at="46,0,47,27" concept="7" />
-      <node id="1497735617372219574" at="49,231,50,232" concept="2" />
-      <node id="1497735617372219480" at="50,232,51,259" concept="2" />
-      <node id="1497735617372481725" at="51,259,52,24" concept="2" />
-      <node id="1497735617372422622" at="53,73,54,151" concept="2" />
-      <node id="1497735617372497047" at="54,151,55,24" concept="2" />
-      <node id="1497735617371944727" at="57,5,58,0" concept="10" />
-      <node id="4088443785018969412" at="59,59,60,77" concept="2" />
-      <node id="4088443785018915582" at="60,77,61,22" concept="2" />
-      <node id="4088443785021820516" at="62,5,63,27" concept="2" />
-      <node id="4088443785019075336" at="65,98,66,193" concept="8" />
-      <node id="4088443785018931034" at="69,21,70,30" concept="2" />
-      <node id="1497735617371761813" at="71,5,72,31" concept="2" />
-      <node id="4088443785018931525" at="72,31,73,37" concept="2" />
-      <node id="1497735617371793194" at="73,37,74,30" concept="2" />
-      <node id="4088443785018595449" at="23,0,25,0" concept="1" trace="DiagramNodeParameters#()V" />
-      <node id="4088443785018595449" at="25,0,28,0" concept="6" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
-      <node id="4088443785018595449" at="65,0,68,0" concept="6" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4088443785018931032" at="68,117,71,5" concept="5" />
-      <node id="4088443785021914085" at="28,137,32,5" concept="5" />
-      <node id="1497735617371950109" at="40,234,44,7" concept="5" />
-      <node id="4088443785018854230" at="58,0,62,5" concept="4" />
-      <node id="1497735617371950106" at="39,0,45,5" concept="4" />
-      <node id="1497735617372141034" at="48,234,56,7" concept="5" />
-      <node id="4088443785018916971" at="68,0,76,0" concept="6" trace="appendParameter#(Ljava/lang/String;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;ZZ)V" />
-      <node id="1497735617372034854" at="47,27,57,5" concept="4" />
-      <node id="4088443785018595449" at="28,0,65,0" concept="6" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
-      <scope id="4088443785018595449" at="23,34,23,34" />
-      <scope id="4088443785018595452" at="25,78,26,201" />
-      <scope id="4088443785018595449" at="65,98,66,193" />
-      <scope id="4088443785018931033" at="69,21,70,30" />
-      <scope id="4088443785018595449" at="23,0,25,0" />
-      <scope id="4088443785021914088" at="29,399,31,13" />
-      <scope id="1497735617371950110" at="41,231,43,232" />
-      <scope id="1497735617372347669" at="53,73,55,24" />
-      <scope id="4088443785018854236" at="59,59,61,22" />
-      <scope id="4088443785018595449" at="25,0,28,0">
+      <node id="4088443785021674119" at="26,78,27,201" concept="8" />
+      <node id="4088443785021954678" at="30,423,31,34" concept="2" />
+      <node id="6377978676692421990" at="31,34,32,13" concept="8" />
+      <node id="4088443785021679175" at="33,5,34,204" concept="2" />
+      <node id="4088443785021810372" at="34,204,35,27" concept="2" />
+      <node id="4088443785019523027" at="35,27,36,57" concept="7" />
+      <node id="1497735617371803010" at="36,57,37,0" concept="10" />
+      <node id="4088443785019168937" at="37,0,38,202" concept="7" />
+      <node id="4088443785018825540" at="38,202,39,81" concept="7" />
+      <node id="1497735617371938980" at="39,81,40,0" concept="10" />
+      <node id="1497735617371956361" at="42,231,43,229" concept="2" />
+      <node id="1497735617371991395" at="43,229,44,232" concept="2" />
+      <node id="1497735617371941853" at="46,5,47,0" concept="10" />
+      <node id="4088443785018904043" at="47,0,48,27" concept="7" />
+      <node id="1497735617372219574" at="50,231,51,232" concept="2" />
+      <node id="1497735617372219480" at="51,232,52,259" concept="2" />
+      <node id="1497735617372481725" at="52,259,53,24" concept="2" />
+      <node id="1497735617372422622" at="54,73,55,151" concept="2" />
+      <node id="1497735617372497047" at="55,151,56,24" concept="2" />
+      <node id="1497735617371944727" at="58,5,59,0" concept="10" />
+      <node id="4088443785018969412" at="60,59,61,77" concept="2" />
+      <node id="4088443785018915582" at="61,77,62,22" concept="2" />
+      <node id="4088443785021820516" at="63,5,64,27" concept="2" />
+      <node id="4088443785019075336" at="66,98,67,193" concept="8" />
+      <node id="4088443785018931034" at="70,21,71,30" concept="2" />
+      <node id="1497735617371761813" at="72,5,73,31" concept="2" />
+      <node id="4088443785018931525" at="73,31,74,37" concept="2" />
+      <node id="1497735617371793194" at="74,37,75,30" concept="2" />
+      <node id="4088443785018595449" at="24,0,26,0" concept="1" trace="DiagramNodeParameters#()V" />
+      <node id="4088443785018595449" at="26,0,29,0" concept="6" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="4088443785018595449" at="66,0,69,0" concept="6" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4088443785018931032" at="69,117,72,5" concept="5" />
+      <node id="4088443785021914085" at="29,137,33,5" concept="5" />
+      <node id="1497735617371950109" at="41,234,45,7" concept="5" />
+      <node id="4088443785018854230" at="59,0,63,5" concept="4" />
+      <node id="1497735617371950106" at="40,0,46,5" concept="4" />
+      <node id="1497735617372141034" at="49,234,57,7" concept="5" />
+      <node id="4088443785018916971" at="69,0,77,0" concept="6" trace="appendParameter#(Ljava/lang/String;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;ZZ)V" />
+      <node id="1497735617372034854" at="48,27,58,5" concept="4" />
+      <node id="4088443785018595449" at="29,0,66,0" concept="6" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
+      <scope id="4088443785018595449" at="24,34,24,34" />
+      <scope id="4088443785018595452" at="26,78,27,201" />
+      <scope id="4088443785018595449" at="66,98,67,193" />
+      <scope id="4088443785018931033" at="70,21,71,30" />
+      <scope id="4088443785018595449" at="24,0,26,0" />
+      <scope id="4088443785021914088" at="30,423,32,13" />
+      <scope id="1497735617371950110" at="42,231,44,232" />
+      <scope id="1497735617372347669" at="54,73,56,24" />
+      <scope id="4088443785018854236" at="60,59,62,22" />
+      <scope id="4088443785018595449" at="26,0,29,0">
         <var name="editorContext" id="4088443785018595449" />
         <var name="node" id="4088443785018595449" />
       </scope>
-      <scope id="1497735617372141035" at="49,231,52,24" />
-      <scope id="4088443785018595449" at="65,0,68,0">
+      <scope id="1497735617372141035" at="50,231,53,24" />
+      <scope id="4088443785018595449" at="66,0,69,0">
         <var name="editorContext" id="4088443785018595449" />
         <var name="node" id="4088443785018595449" />
         <var name="parameterObject" id="4088443785018595449" />
       </scope>
-      <scope id="1497735617371950108" at="40,234,44,7" />
-      <scope id="4088443785018854230" at="58,0,62,5">
+      <scope id="1497735617371950108" at="41,234,45,7" />
+      <scope id="4088443785018854230" at="59,0,63,5">
         <var name="nextDefinedParameter" id="4088443785018854232" />
       </scope>
-      <scope id="1497735617371950106" at="39,0,45,5">
+      <scope id="1497735617371950106" at="40,0,46,5">
         <var name="nextSpecifiedParameter" id="1497735617371950107" />
       </scope>
-      <scope id="4088443785018916973" at="68,117,74,30" />
-      <scope id="1497735617372034860" at="48,234,56,7" />
-      <scope id="4088443785018916971" at="68,0,76,0">
+      <scope id="4088443785018916973" at="69,117,75,30" />
+      <scope id="1497735617372034860" at="49,234,57,7" />
+      <scope id="4088443785018916971" at="69,0,77,0">
         <var name="isBold" id="1497735617371711191" />
         <var name="isEmpty" id="4088443785018930499" />
         <var name="parameterName" id="4088443785018920538" />
         <var name="styledText" id="4088443785018920586" />
       </scope>
-      <scope id="1497735617372034854" at="47,27,57,5">
+      <scope id="1497735617372034854" at="48,27,58,5">
         <var name="nextSpecifiedParameter" id="1497735617372034856" />
       </scope>
-      <scope id="4088443785018595449" at="28,137,63,27">
+      <scope id="4088443785018595449" at="29,137,64,27">
         <var name="definedParameters" id="4088443785019168940" />
         <var name="isEmpty" id="4088443785018904046" />
         <var name="selectedNode" id="4088443785019523028" />
         <var name="specifiedParameters" id="4088443785018825543" />
       </scope>
-      <scope id="4088443785018595449" at="28,0,65,0">
+      <scope id="4088443785018595449" at="29,0,66,0">
         <var name="editorContext" id="4088443785018595449" />
         <var name="node" id="4088443785018595449" />
         <var name="parameterObject" id="4088443785018595449" />
         <var name="styledText" id="4088443785018595449" />
       </scope>
-      <unit id="4088443785018595449" at="22,0,77,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramNodeParameters" />
+      <unit id="4088443785018595449" at="23,0,78,0" name="jetbrains.mps.lang.editor.diagram.editor.DiagramNodeParameters" />
     </file>
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/5142486769432525834">

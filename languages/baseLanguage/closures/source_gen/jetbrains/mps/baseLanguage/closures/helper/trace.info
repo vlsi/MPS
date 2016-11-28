@@ -1299,6 +1299,7 @@
       <node id="2684739085678641386" at="100,194,101,20" concept="12" />
       <node id="2684739085678641388" at="102,7,103,1384" concept="12" />
       <node id="2684739085678641412" at="104,5,105,17" concept="12" />
+      <node id="2684739085678641371" at="107,62,108,46" concept="12" />
       <node id="2684739085678641055" at="23,0,25,0" concept="3" trace="TypeMatcher#()V" />
       <node id="2684739085678641206" at="55,10,57,5" concept="1" />
       <node id="2684739085678641059" at="25,0,28,0" concept="10" trace="getMap#()Ljava/util/Map;" />
@@ -1311,7 +1312,8 @@
       <node id="2684739085678641331" at="89,59,92,5" concept="9" />
       <node id="2684739085678641344" at="92,5,95,5" concept="9" />
       <node id="2684739085678641357" at="95,5,98,5" concept="9" />
-      <node id="2684739085678641379" at="99,102,102,7" concept="9" />
+      <node id="2684739085678641379" at="99,95,102,7" concept="9" />
+      <node id="2684739085678641371" at="107,0,110,0" concept="15" trace="eq_qra058_a0d0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="2684739085678641227" at="60,130,64,9" concept="9" />
       <node id="2684739085678641078" at="29,25,34,5" concept="9" />
       <node id="2684739085678641309" at="81,70,86,5" concept="8" />
@@ -1343,6 +1345,7 @@
       <scope id="2684739085678641345" at="93,386,94,18" />
       <scope id="2684739085678641358" at="96,388,97,18" />
       <scope id="2684739085678641385" at="100,194,101,20" />
+      <scope id="2684739085678641371" at="107,62,108,46" />
       <scope id="2684739085678641055" at="23,0,25,0" />
       <scope id="2684739085678641228" at="61,49,63,17" />
       <scope id="2684739085678641059" at="25,0,28,0" />
@@ -1361,8 +1364,12 @@
         <var name="typeVar" id="2684739085678641278" />
       </scope>
       <scope id="2684739085678641313" at="82,33,85,7" />
+      <scope id="2684739085678641371" at="107,0,110,0">
+        <var name="a" id="2684739085678641371" />
+        <var name="b" id="2684739085678641371" />
+      </scope>
       <scope id="2684739085678641286" at="75,46,79,19" />
-      <scope id="2684739085678641378" at="99,102,103,1384" />
+      <scope id="2684739085678641378" at="99,95,103,1384" />
       <scope id="2684739085678641309" at="81,70,86,5">
         <var name="left" id="2684739085678641311" />
       </scope>
@@ -1402,7 +1409,7 @@
         <var name="absType" id="2684739085678641169" />
         <var name="realType" id="2684739085678641171" />
       </scope>
-      <unit id="2684739085678641048" at="21,0,108,0" name="jetbrains.mps.baseLanguage.closures.helper.TypeMatcher" />
+      <unit id="2684739085678641048" at="21,0,111,0" name="jetbrains.mps.baseLanguage.closures.helper.TypeMatcher" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590339(jetbrains.mps.baseLanguage.closures.helper)/515790726266555281">
