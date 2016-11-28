@@ -111,10 +111,6 @@
     <copy todir="${build.layout}/license">
       <fileset dir="${artifacts.mpsStandalone}/license" />
     </copy>
-    <mkdir dir="${build.layout}/plugin" />
-    <copy todir="${build.layout}/plugin">
-      <fileset file="${basedir}/plugin/MPSPlugin.jar" />
-    </copy>
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-build" />
     <copy todir="${build.layout}/plugins/mps-build">

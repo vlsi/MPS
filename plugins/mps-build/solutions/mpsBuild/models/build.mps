@@ -18887,23 +18887,6 @@
           <ref role="3ygNvj" node="1aRUp2KiMC$" resolve="license" />
         </node>
       </node>
-      <node concept="398223" id="3IKDaVZn4n1" role="39821P">
-        <node concept="3_J27D" id="3IKDaVZn4n2" role="Nbhlr">
-          <node concept="3Mxwew" id="3IKDaVZn4ng" role="3MwsjC">
-            <property role="3MwjfP" value="plugin" />
-          </node>
-        </node>
-        <node concept="28jJK3" id="35zoHQHRZ3x" role="39821P">
-          <node concept="55IIr" id="5bqL32k02xc" role="28jJRO">
-            <node concept="2Ry0Ak" id="5bqL32k02xd" role="iGT6I">
-              <property role="2Ry0Am" value="plugin" />
-              <node concept="2Ry0Ak" id="5bqL32k02xe" role="2Ry0An">
-                <property role="2Ry0Am" value="MPSPlugin.jar" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="398223" id="3IKDaVZn4nh" role="39821P">
         <node concept="3_I8Xc" id="6qT2v0r302E" role="39821P">
           <ref role="3_I8Xa" node="6b4RkXS7XdG" resolve="mps-build" />
@@ -32518,7 +32501,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="1JaUSFUm4G_" role="3989C9">
-      <property role="m$_wk" value="jetbrains.mps.editor.contextActionsTool" />
+      <property role="m$_wk" value="jetbrains.mps.editor.contextActions" />
       <node concept="3_J27D" id="1JaUSFUm4GB" role="m$_yQ">
         <node concept="3Mxwew" id="1JaUSFUm4GC" role="3MwsjC">
           <property role="3MwjfP" value="MPS Context Actions Tool" />
@@ -32526,7 +32509,7 @@
       </node>
       <node concept="3_J27D" id="1JaUSFUm4GD" role="m_cZH">
         <node concept="3Mxwew" id="1JaUSFUm4GE" role="3MwsjC">
-          <property role="3MwjfP" value="editor.contextActionsTool" />
+          <property role="3MwjfP" value="context-tool" />
         </node>
       </node>
       <node concept="3_J27D" id="1JaUSFUm4GF" role="m$_w8">
@@ -32590,23 +32573,7 @@
     </node>
     <node concept="1l3spV" id="1JaUSFUm4H0" role="1l3spN">
       <node concept="m$_wl" id="1JaUSFUm4H1" role="39821P">
-        <ref role="m_rDy" node="1JaUSFUm4G_" resolve="jetbrains.mps.editor.contextActionsTool" />
-        <node concept="398223" id="601$vVQgYpI" role="39821P">
-          <node concept="L2wRC" id="1JaUSFUm4H5" role="39821P">
-            <ref role="L2wRA" node="1JaUSFUm4WO" resolve="jetbrains.mps.editor.contextActionsTool.pluginSolution" />
-          </node>
-          <node concept="3_J27D" id="601$vVQgYpK" role="Nbhlr">
-            <node concept="3Mxwew" id="601$vVQgYqu" role="3MwsjC">
-              <property role="3MwjfP" value="modules" />
-            </node>
-          </node>
-          <node concept="L2wRC" id="601$vVQgYqw" role="39821P">
-            <ref role="L2wRA" node="601$vVQgYdL" resolve="jetbrains.mps.editor.contextActionsTool.lang.menus" />
-          </node>
-          <node concept="L2wRC" id="pUqJj8tAqz" role="39821P">
-            <ref role="L2wRA" node="pUqJj8tAhK" resolve="jetbrains.mps.editor.contextActionsTool.lang.menus.runtime" />
-          </node>
-        </node>
+        <ref role="m_rDy" node="1JaUSFUm4G_" resolve="jetbrains.mps.editor.contextActions" />
       </node>
     </node>
     <node concept="2sgV4H" id="1JaUSFUm5U4" role="1l3spa">
