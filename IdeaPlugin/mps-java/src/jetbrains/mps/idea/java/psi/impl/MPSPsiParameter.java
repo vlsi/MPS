@@ -78,7 +78,7 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
       repository.getModelAccess().runReadAction(() -> {
         SNode typeNode = type.getSNodeReference().resolve(repository);
         // TODO: is there better way to get instance of some concept?
-        final SConcept concept = MetaAdapterFactory.getConcept(SConceptId.deserialize("1219920932475"), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+        final SConcept concept = MetaAdapterFactory.getConcept(SConceptId.deserialize("f3061a53-9226-4cc5-a443-f952ceaf5816/1219920932475"), "jetbrains.mps.baseLanguage.structure.VariableArityType");
         myIsVararg = SNodeOperations.isInstanceOf(typeNode, concept);
       });
     }

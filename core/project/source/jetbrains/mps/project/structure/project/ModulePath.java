@@ -22,10 +22,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * AP todo: get rid of it, stop persisting, build ui tree having only the file structure
  * path representation in the project tree, needs to be persisted
+ * equal iff both keys are equal
  */
 public final class ModulePath {
   private final Logger LOG = LogManager.getLogger(ModulePath.class);
@@ -74,19 +76,14 @@ public final class ModulePath {
       return false;
     }
 
-    ModulePath modulePath = (ModulePath) obj;
+    ModulePath another = (ModulePath) obj;
 
-    return myPath.equals(modulePath.myPath)
-        && (myVirtualFolder == null
-        ? modulePath.myVirtualFolder == null
-        : myVirtualFolder.equals(modulePath.myVirtualFolder));
+    return myPath.equals(another.myPath) && Objects.equals(myVirtualFolder, another.myVirtualFolder);
   }
 
   @Override
   public int hashCode() {
-    int result = myPath.hashCode();
-    result = 31 * result + (myVirtualFolder != null ? myVirtualFolder.hashCode() : 0);
-    return result;
+    return myPath.hashCode() + 31 * myVirtualFolder.hashCode();
   }
 
   @Override
