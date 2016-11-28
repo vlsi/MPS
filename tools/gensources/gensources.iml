@@ -1151,7 +1151,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.testWeaving/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.testWeaving/test_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceable.operations.test/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/actions.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.closures.unittest/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.doubleDispatch.test/classes_gen" />
@@ -1205,7 +1204,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/lang.actions.testLang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.testWeaving/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceable.operations.test/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../workbench">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-workbench/pluginSolutions/baseLanguage.lightweightdsl/source_gen" isTestSource="false" />
