@@ -228,7 +228,9 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    update();
+    if (!event.getCreated().isEmpty() || !event.getRemoved().isEmpty()) {
+      update();
+    }
   }
 
   @Override
