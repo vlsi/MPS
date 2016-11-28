@@ -77,7 +77,12 @@ public abstract class Scope {
    */
   @Deprecated
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
-    SContainmentLink link = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAggregation(role);
+    ConceptMetaInfoConverter concept = as_nq90a_a0a0a6(SNodeOperations.getConcept(node), ConceptMetaInfoConverter.class);
+    if (concept == null || role == null) {
+      return getScope(node, null, index, SNodeOperations.asSConcept(kind));
+    }
+
+    SContainmentLink link = concept.convertAggregation(role);
     return getScope(node, link, index, SNodeOperations.asSConcept(kind));
   }
   /**
@@ -136,5 +141,8 @@ public abstract class Scope {
     }
 
     return SNodeOperations.getParent(n);
+  }
+  private static <T> T as_nq90a_a0a0a6(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
