@@ -142,8 +142,6 @@ public final class DeleteModuleHelper {
       }
       myProject.removeModule(module);
       myProject.save();
-// FIXME !!!!!!!!!!!!!!!!!!!!
-//      ((StandaloneMPSProject) project).update();
     }
 
     // TODO: remove after Generator will be moved it's own descriptor file
