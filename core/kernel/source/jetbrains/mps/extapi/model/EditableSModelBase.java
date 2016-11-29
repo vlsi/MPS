@@ -236,7 +236,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     if (!changeFile) {
       save();
     } else {
-      if (changeFile && !(getSource() instanceof FileDataSource)) {
+      if (!(getSource() instanceof FileDataSource)) {
         throw new UnsupportedOperationException("cannot change model file on non-file data source");
       }
 
