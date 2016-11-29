@@ -32,10 +32,10 @@ public final class BuildMpsLayout_PluginDescriptor__BehaviorDescriptor extends B
   public static final SMethod<Boolean> exports_id5FtnUVJQES1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exports").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FtnUVJQES1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""));
   public static final SMethod<String> location_id6b4RkXS8sT2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("location").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6b4RkXS8sT2").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(DependenciesHelper.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
   public static final SMethod<Void> appendName_id1bWeed$ownT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("appendName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$ownT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(StringBuilder.class, ""));
-  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(Iterable.class, ""));
+  public static final SMethod<Void> unpack_id6IqTD4bJTWZ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6IqTD4bJTWZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""));
   public static final SMethod<String> pluginXml_idQkG2t1cwfm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("pluginXml").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("QkG2t1cwfm").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(exports_id5FtnUVJQES1, location_id6b4RkXS8sT2, appendName_id1bWeed$ownT, unpack_id6bGbH3Svq6g, pluginXml_idQkG2t1cwfm);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(exports_id5FtnUVJQES1, location_id6b4RkXS8sT2, appendName_id1bWeed$ownT, unpack_id6IqTD4bJTWZ, pluginXml_idQkG2t1cwfm);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -66,7 +66,7 @@ public final class BuildMpsLayout_PluginDescriptor__BehaviorDescriptor extends B
     }
     sb.append(BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));
   }
-  /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
+  /*package*/ static void unpack_id6IqTD4bJTWZ(@NotNull SNode __thisNode__, UnpackHelper helper) {
     String parentLocation = helper.getContentLocation(helper.parent(__thisNode__));
     helper.putLocation(__thisNode__, parentLocation + "/" + BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));
   }
@@ -98,7 +98,7 @@ public final class BuildMpsLayout_PluginDescriptor__BehaviorDescriptor extends B
         appendName_id1bWeed$ownT(node, (SNode) parameters[0], (StringBuilder) parameters[1]);
         return null;
       case 3:
-        unpack_id6bGbH3Svq6g(node, (UnpackHelper) parameters[0], (Iterable<Object>) parameters[1]);
+        unpack_id6IqTD4bJTWZ(node, (UnpackHelper) parameters[0]);
         return null;
       default:
         throw new BHMethodNotFoundException(this, method);

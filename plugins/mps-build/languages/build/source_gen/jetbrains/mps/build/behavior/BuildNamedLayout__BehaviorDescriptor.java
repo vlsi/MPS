@@ -33,10 +33,10 @@ public final class BuildNamedLayout__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<String> getAssembleSubTaskId_id450ejGzh8bO = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAssembleSubTaskId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("450ejGzh8bO").registry(REGISTRY).build();
   public static final SMethod<String> getPrepareSubTaskId_id450ejGzh8bD = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPrepareSubTaskId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("450ejGzh8bD").registry(REGISTRY).build();
   public static final SMethod<Void> appendName_id1bWeed$ownT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("appendName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$ownT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(StringBuilder.class, ""));
-  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(Iterable.class, ""));
+  public static final SMethod<Void> unpack_id6IqTD4bJTWZ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6IqTD4bJTWZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""));
   public static final SMethod<String> location_id6b4RkXS8sT2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("location").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6b4RkXS8sT2").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(DependenciesHelper.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getChildrenOutputDir_WithMacro_id450ejGzh8bb, getAssembleSubTaskId_id450ejGzh8bO, getPrepareSubTaskId_id450ejGzh8bD, appendName_id1bWeed$ownT, unpack_id6bGbH3Svq6g, location_id6b4RkXS8sT2);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getChildrenOutputDir_WithMacro_id450ejGzh8bb, getAssembleSubTaskId_id450ejGzh8bO, getPrepareSubTaskId_id450ejGzh8bD, appendName_id1bWeed$ownT, unpack_id6IqTD4bJTWZ, location_id6b4RkXS8sT2);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -57,7 +57,7 @@ public final class BuildNamedLayout__BehaviorDescriptor extends BaseBHDescriptor
     }
     sb.append(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
+  /*package*/ static void unpack_id6IqTD4bJTWZ(@NotNull SNode __thisNode__, UnpackHelper helper) {
     // nop 
   }
   /*package*/ static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
@@ -90,7 +90,7 @@ public final class BuildNamedLayout__BehaviorDescriptor extends BaseBHDescriptor
         appendName_id1bWeed$ownT(node, (SNode) parameters[0], (StringBuilder) parameters[1]);
         return null;
       case 4:
-        unpack_id6bGbH3Svq6g(node, (UnpackHelper) parameters[0], (Iterable<Object>) parameters[1]);
+        unpack_id6IqTD4bJTWZ(node, (UnpackHelper) parameters[0]);
         return null;
       case 5:
         return (T) ((String) location_id6b4RkXS8sT2(node, (DependenciesHelper) parameters[0], (Object) parameters[1]));

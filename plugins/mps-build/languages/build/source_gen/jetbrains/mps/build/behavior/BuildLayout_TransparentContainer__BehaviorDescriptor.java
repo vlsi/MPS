@@ -28,9 +28,9 @@ public final class BuildLayout_TransparentContainer__BehaviorDescriptor extends 
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getChildrenOutputDir_WithMacro_id450ejGzh8bb = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getChildrenOutputDir_WithMacro").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("450ejGzh8bb").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
-  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(Iterable.class, ""));
+  public static final SMethod<Void> unpack_id6IqTD4bJTWZ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6IqTD4bJTWZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getChildrenOutputDir_WithMacro_id450ejGzh8bb, unpack_id6bGbH3Svq6g);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getChildrenOutputDir_WithMacro_id450ejGzh8bb, unpack_id6IqTD4bJTWZ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -38,7 +38,7 @@ public final class BuildLayout_TransparentContainer__BehaviorDescriptor extends 
   /*package*/ static String getChildrenOutputDir_WithMacro_id450ejGzh8bb(@NotNull SNode __thisNode__, Context context) {
     return (String) BuildLayout_Container__BehaviorDescriptor.getChildrenOutputDir_WithMacro_id450ejGzh8bb.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container")), context);
   }
-  /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
+  /*package*/ static void unpack_id6IqTD4bJTWZ(@NotNull SNode __thisNode__, UnpackHelper helper) {
     SNode parent = helper.parent(__thisNode__);
     String parentLocation = helper.getContentLocation(parent);
     helper.putLocation(__thisNode__, parentLocation);
@@ -64,7 +64,7 @@ public final class BuildLayout_TransparentContainer__BehaviorDescriptor extends 
       case 0:
         return (T) ((String) getChildrenOutputDir_WithMacro_id450ejGzh8bb(node, (Context) parameters[0]));
       case 1:
-        unpack_id6bGbH3Svq6g(node, (UnpackHelper) parameters[0], (Iterable<Object>) parameters[1]);
+        unpack_id6IqTD4bJTWZ(node, (UnpackHelper) parameters[0]);
         return null;
       default:
         throw new BHMethodNotFoundException(this, method);

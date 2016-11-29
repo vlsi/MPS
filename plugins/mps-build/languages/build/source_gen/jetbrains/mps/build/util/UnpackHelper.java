@@ -7,21 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.Collection;
-import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedHashSet;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
-import java.util.Collections;
 
 public class UnpackHelper extends DependenciesHelper {
   private final VisibleArtifacts visible;
   private final List<SNode> required = new ArrayList<SNode>();
   private final Set<SNode> requiredSet = new HashSet<SNode>();
   private final Set<SNode> requiredWithContent = new HashSet<SNode>();
-  private final Map<SNode, Collection<Object>> artifactIds = new HashMap<SNode, Collection<Object>>();
   private boolean evaluated = false;
   private final List<SNode> statements = new ArrayList<SNode>();
   private PathProvider myPathProvider;
@@ -31,7 +25,8 @@ public class UnpackHelper extends DependenciesHelper {
     this.visible = visible;
     this.myPathProvider = new PathProvider(genContext, visible.getProject());
   }
-  /*package*/ void add(SNode n, boolean withContent, Object artifactId) {
+
+  /*package*/ void add(SNode n, boolean withContent) {
     if (withContent) {
       requiredWithContent.add(n);
     }
@@ -41,18 +36,11 @@ public class UnpackHelper extends DependenciesHelper {
 
     SNode parent = visible.parent(n);
     if (parent != null) {
-      add(parent, true, null);
+      add(parent, true);
     }
     ListSequence.fromList(required).addElement(n);
   }
-  private void mapArtifactId(SNode n, Object artifactId) {
-    Collection<Object> collection = artifactIds.get(n);
-    if (collection == null) {
-      collection = new LinkedHashSet<Object>();
-      artifactIds.put(n, collection);
-    }
-    collection.add(artifactId);
-  }
+
   public void eval() {
     if (evaluated) {
       return;
@@ -60,9 +48,7 @@ public class UnpackHelper extends DependenciesHelper {
     evaluated = true;
 
     for (SNode n : required) {
-      Collection<Object> artifacts = artifactIds.get(n);
-      // FIXME artifacts parameter is never used, what's its purpose, after all? 
-      BuildLayout_PathElement__BehaviorDescriptor.unpack_id6bGbH3Svq6g.invoke(n, this, Collections.emptyList());
+      BuildLayout_PathElement__BehaviorDescriptor.unpack_id6IqTD4bJTWZ.invoke(n, this);
     }
   }
   public boolean isRequired(SNode n) {

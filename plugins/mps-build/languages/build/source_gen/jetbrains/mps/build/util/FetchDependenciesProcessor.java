@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -73,21 +72,19 @@ public class FetchDependenciesProcessor {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, false, null);
+      helper.add(node, false);
     }
     @Override
     public void add(SNode node, Object artifactId) {
-      if (!(check(node))) {
-        return;
-      }
-      helper.add(node, false, null);
+      genContext.showWarningMessage(dep, "FIXME stop using RequiredDependenciesBuilder.add(node<>,Object)");
+      add(node);
     }
     @Override
     public void addWithContent(SNode node) {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, true, null);
+      helper.add(node, true);
     }
 
     @Override
@@ -97,6 +94,7 @@ public class FetchDependenciesProcessor {
       if ((node == null)) {
         return;
       }
+      // helper.requiresFetch() is invoked with gc.getOriginaInput, hence need originalNode here. 
       node = helper.getOriginalNode(node);
       if ((node == null)) {
         return;
@@ -107,13 +105,6 @@ public class FetchDependenciesProcessor {
     private boolean check(SNode node) {
       if (!(artifacts.contains(node))) {
         genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
-        return false;
-      }
-      return true;
-    }
-    private boolean checkArtifactId(Object artifactId) {
-      if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
-        genContext.showWarningMessage(dep, "FIXME registering artifact from transient model");
         return false;
       }
       return true;

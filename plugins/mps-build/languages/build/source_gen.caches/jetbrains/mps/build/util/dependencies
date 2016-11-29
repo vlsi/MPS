@@ -92,7 +92,6 @@
     <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
-    <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -259,6 +258,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.RequiredDependenciesBuilder" file="RequiredDependenciesBuilder.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -297,15 +297,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.UnpackHelper" file="UnpackHelper.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.util.PathProvider" />

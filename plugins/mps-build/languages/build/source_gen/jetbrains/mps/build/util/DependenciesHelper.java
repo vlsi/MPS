@@ -146,7 +146,7 @@ public class DependenciesHelper {
     return requiresFetch.contains(node);
   }
 
-  public void doFetch(SNode node) {
+  /*package*/ void doFetch(SNode node) {
     requiresFetch.add(node);
   }
   public MacroHelper getMacroHelper() {

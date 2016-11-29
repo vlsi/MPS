@@ -7,6 +7,11 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public interface RequiredDependenciesBuilder {
   void add(SNode node);
+  /**
+   * 
+   * @deprecated it's identical to add(node)
+   */
+  @Deprecated
   void add(SNode node, Object artifactId);
   void addWithContent(SNode node);
   void needsFetch(SNode node);

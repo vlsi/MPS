@@ -39,7 +39,7 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Void> appendName_id1bWeed$ownT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("appendName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$ownT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(StringBuilder.class, ""));
-  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(Iterable.class, ""));
+  public static final SMethod<Void> unpack_id6IqTD4bJTWZ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6IqTD4bJTWZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""));
   public static final SMethod<String> location_id6b4RkXS8sT2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("location").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6b4RkXS8sT2").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(DependenciesHelper.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
   public static final SMethod<Boolean> exports_id5FtnUVJQES1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exports").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FtnUVJQES1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""));
   public static final SMethod<String> getChildrenOutputDir_WithMacro_id450ejGzh8bb = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getChildrenOutputDir_WithMacro").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("450ejGzh8bb").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
@@ -48,7 +48,7 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
   public static final SMethod<Boolean> isFolder_id1bWeed$oPYW = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFolder").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oPYW").registry(REGISTRY).build();
   /*package*/ static final SMethod<SNode> findGroup_id7cOEBlPT2gC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findGroup").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7cOEBlPT2gC").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(appendName_id1bWeed$ownT, unpack_id6bGbH3Svq6g, location_id6b4RkXS8sT2, exports_id5FtnUVJQES1, getChildrenOutputDir_WithMacro_id450ejGzh8bb, getOutputPath_WithMacro_idfzIHCHip1Q, getApproximateName_id4RsV8qJH_Br, isFolder_id1bWeed$oPYW, findGroup_id7cOEBlPT2gC);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(appendName_id1bWeed$ownT, unpack_id6IqTD4bJTWZ, location_id6b4RkXS8sT2, exports_id5FtnUVJQES1, getChildrenOutputDir_WithMacro_id450ejGzh8bb, getOutputPath_WithMacro_idfzIHCHip1Q, getApproximateName_id4RsV8qJH_Br, isFolder_id1bWeed$oPYW, findGroup_id7cOEBlPT2gC);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -59,7 +59,7 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
     }
     sb.append(BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x5b7be37b4dee5919L, "plugin")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4def2c96L, "containerName")), null));
   }
-  /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
+  /*package*/ static void unpack_id6IqTD4bJTWZ(@NotNull SNode __thisNode__, UnpackHelper helper) {
     // TODO extract! (it is a copy of Folder behavior) 
     SNode parent = helper.parent(__thisNode__);
     String parentLocation = helper.getContentLocation(parent);
@@ -244,7 +244,7 @@ public final class BuildMpsLayout_Plugin__BehaviorDescriptor extends BaseBHDescr
         appendName_id1bWeed$ownT(node, (SNode) parameters[0], (StringBuilder) parameters[1]);
         return null;
       case 1:
-        unpack_id6bGbH3Svq6g(node, (UnpackHelper) parameters[0], (Iterable<Object>) parameters[1]);
+        unpack_id6IqTD4bJTWZ(node, (UnpackHelper) parameters[0]);
         return null;
       case 2:
         return (T) ((String) location_id6b4RkXS8sT2(node, (DependenciesHelper) parameters[0], (Object) parameters[1]));

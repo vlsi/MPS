@@ -76,7 +76,6 @@
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.DescendantsScope" />
     <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
-    <classNode dependClassName="jetbrains.mps.build.util.ScopeUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
@@ -147,7 +146,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars__BehaviorDescriptor" file="BuildMpsLayout_ModuleJars__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -219,7 +217,6 @@
   <dependency className="jetbrains.mps.build.mps.behavior.BuildMpsLayout_PluginDescriptor__BehaviorDescriptor" file="BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

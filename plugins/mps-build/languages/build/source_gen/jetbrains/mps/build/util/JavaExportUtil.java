@@ -92,7 +92,7 @@ public class JavaExportUtil {
           }
         });
       } else {
-        builder.add(artifact, library);
+        builder.add(artifact);
       }
     }
   }
@@ -115,7 +115,7 @@ public class JavaExportUtil {
 
       SNode artifact = SNodeOperations.as(artifacts.findArtifact(n), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (artifact != null) {
-        builder.add(artifact, n);
+        builder.add(artifact);
         hasDependencies = true;
       }
     }

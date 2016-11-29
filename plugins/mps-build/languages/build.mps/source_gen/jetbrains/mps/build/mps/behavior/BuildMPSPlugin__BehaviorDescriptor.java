@@ -28,7 +28,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
-import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
@@ -77,7 +76,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     })) {
       SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (pluginArtifact != null) {
-        builder.add(pluginArtifact, plugin);
+        builder.add(pluginArtifact);
       }
     }
 
@@ -89,26 +88,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
       SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((antMpsJar != null)) {
         helper.putArtifact("ant-mps", antMpsJar);
-        builder.add(antMpsJar, antMpsModule);
-      }
-
-      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-      // 1. ScopeUtil.getVisibleJarsScope builds VisibleArtifacts once again 
-      // 2. With switch to transient models to build artifacts, scope returned from the 
-      // method didn't resolve artifacts in the form IDEA::whatever (for tranient models, 
-      // there was modelplusimported scope 
-      Scope visibleJarsScope = new ScopeUtil.VisibleJarsScope(artifacts);
-      SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
-      if ((jdom != null)) {
-        SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-        if ((jdomJar != null)) {
-        }
-      }
-      SNode log4j = visibleJarsScope.resolve(mpsCore, "IDEA::lib/log4j.jar");
-      if ((log4j != null)) {
-        SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-        if ((log4jJar != null)) {
-        }
+        builder.add(antMpsJar);
       }
     }
     // FIXME consider JavaExternalLibraryHelper re-use  
@@ -119,8 +99,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
       SNode jdomArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(jdomJarRef, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (jdomArtifact != null) {
         helper.putArtifact("jdom", jdomArtifact);
-        // FIXME artifact id is of no use, imo, why do we pass it there? 
-        builder.add(jdomArtifact, jdomLib);
+        builder.add(jdomArtifact);
       }
     }
     SNode log4jLib = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(project, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary").getDeclarationNode(), "parts", ((int) 0)).resolve(project, "log4j-lib"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
@@ -129,7 +108,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
       SNode log4jArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(log4jJarRef, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (log4jArtifact != null) {
         helper.putArtifact("log4j", log4jArtifact);
-        builder.add(log4jArtifact, log4jLib);
+        builder.add(log4jArtifact);
       }
     }
 
@@ -147,7 +126,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
           SNode depLayoutNode = SNodeOperations.as(artifacts.findArtifact(gentestDep), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
           if (depLayoutNode != null) {
             // FIXME what's the purpose of uuid string to node mapping here? I didn't find any use 
-            builder.add(depLayoutNode, gentestDep);
+            builder.add(depLayoutNode);
           }
         }
       }

@@ -59,7 +59,7 @@ public final class BuildModuleTestsPlugin__BehaviorDescriptor extends BaseBHDesc
         // specify explicitly what we need maybe? 
         helper.putArtifact("mps-test-folder", SNodeOperations.as(SNodeOperations.getParent(mpsTestJar), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")));
         helper.putArtifact("mps-test", mpsTestJar);
-        builder.add(mpsTestJar, mpsTestModule);
+        builder.add(mpsTestJar);
       }
     }
   }

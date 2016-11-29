@@ -33,7 +33,7 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(Iterable.class, ""));
+  public static final SMethod<Void> unpack_id6IqTD4bJTWZ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6IqTD4bJTWZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""));
   public static final SMethod<Boolean> isFile_id1bWeed$oPZ2 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFile").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oPZ2").registry(REGISTRY).build();
   public static final SMethod<Boolean> exports_id5FtnUVJQES1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exports").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FtnUVJQES1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""));
   /*package*/ static final SMethod<Boolean> scanInJarNodes_id5bqm540K$Gi = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("scanInJarNodes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("5bqm540K$Gi").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Object.class, ""));
@@ -43,12 +43,12 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Boolean> hasFileModeAttribute_id5zIo$W4pFU5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasFileModeAttribute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFU5").registry(REGISTRY).build();
   public static final SMethod<String> getExpectedExtension_id62K_yvYRytT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getExpectedExtension").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("62K_yvYRytT").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(unpack_id6bGbH3Svq6g, isFile_id1bWeed$oPZ2, exports_id5FtnUVJQES1, scanInJarNodes_id5bqm540K$Gi, getApproximateName_id4RsV8qJDnFm, getFileSetExtension_id5zIo$W4pFTK, hasPrefixAttribute_id5zIo$W4pFU0, hasFileModeAttribute_id5zIo$W4pFU5, getExpectedExtension_id62K_yvYRytT);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(unpack_id6IqTD4bJTWZ, isFile_id1bWeed$oPZ2, exports_id5FtnUVJQES1, scanInJarNodes_id5bqm540K$Gi, getApproximateName_id4RsV8qJDnFm, getFileSetExtension_id5zIo$W4pFTK, hasPrefixAttribute_id5zIo$W4pFU0, hasFileModeAttribute_id5zIo$W4pFU5, getExpectedExtension_id62K_yvYRytT);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
+  /*package*/ static void unpack_id6IqTD4bJTWZ(@NotNull SNode __thisNode__, UnpackHelper helper) {
     SNode parent = helper.parent(__thisNode__);
     String parentLocation = helper.getContentLocation(parent);
     String zipLocation = parentLocation + "/" + BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper.getMacroHelper());
@@ -126,7 +126,7 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
     }
     switch (methodIndex) {
       case 0:
-        unpack_id6bGbH3Svq6g(node, (UnpackHelper) parameters[0], (Iterable<Object>) parameters[1]);
+        unpack_id6IqTD4bJTWZ(node, (UnpackHelper) parameters[0]);
         return null;
       case 1:
         return (T) ((Boolean) isFile_id1bWeed$oPZ2(node));
